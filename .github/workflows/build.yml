@@ -1,0 +1,87 @@
+name: Validate and build RUNEFALL
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      windows:
+        description: Build Windows x86_64 as well
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: runefall-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      RUNEFALL_TOOLS_DIR: /tmp/runefall-tools
+      XDG_DATA_HOME: /tmp/runefall-data
+      XDG_CACHE_HOME: /tmp/runefall-cache
+      GODOT_BIN: /tmp/runefall-tools/godot
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/runefall-tools
+            /tmp/runefall-data/godot/export_templates
+          key: godot-4.6.3-linux-web-nothreads-windows-v1
+      - name: Set up Godot and export templates
+        run: bash tools/setup_godot.sh
+      - name: Build and run regression tests
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* || "${{ github.event.inputs.windows }}" == "true" ]]; then
+            python tools/build.py --windows
+          else
+            python tools/build.py
+          fi
+      - name: Upload playable builds
+        uses: actions/upload-artifact@v4
+        with:
+          name: runefall-${{ github.sha }}
+          path: |
+            build/runefall-*.zip
+            build/manifest.json
+          retention-days: 14
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy playable web build
+        id: deployment
+        uses: actions/deploy-pages@v4
