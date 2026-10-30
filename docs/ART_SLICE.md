@@ -1,6 +1,6 @@
 # 대표 아트 구간 · 제작 및 검수 계약
 
-작성일: 2026-10-30. 첫 범위는 **리라 몸체·룬검, 근접 수호병·검, 순례자 전투 공간의 모듈 키트**입니다. 제작 입력은 [asset_specs.json](../art_source/production/asset_specs.json), 모션 계약은 [motion_contract.json](../art_source/production/motion_contract.json)에 있습니다. 현재 2D 콘셉트가 존재하며 3D 모델·스킨·클립·실제 게임의 최종 품질은 아직 검수 전입니다.
+작성일: 2026-10-30. 첫 범위는 **리라 몸체·룬검, 근접 수호병·검, 순례자 전투 공간의 모듈 키트**입니다. 제작 입력은 [asset_specs.json](../art_source/production/asset_specs.json), 모션 계약은 [motion_contract.json](../art_source/production/motion_contract.json)에 있습니다. 현재 2D 콘셉트 3장과 리라의 실제 VARCO 3D·53본 리깅·locomotion 후보가 존재합니다. 전투 모션과 최종 변형·장면 품질은 검수 전이며, 게임은 기존 피벗 자산을 기본으로 사용합니다.
 
 ## 사용 가능한 참조와 남은 제작
 
@@ -11,6 +11,23 @@
 | 전투 공간 | [구도와 재질 목표](../art_source/production/references/sanctuary-courtyard-target.png) | 개별 기둥·문·바닥·화로로 조립, 중앙 전투 공간과 출입구 가독성, 플레이 카메라에서 재질/조명 일치 |
 
 세 이미지는 네이티브 이미지 생성 도구로 만든 개발용 2D 콘셉트입니다. VARCO 생성 모델·최종 리그·실제 게임 화면으로 표시하지 않습니다. 출처와 SHA-256은 [참조 manifest](../art_source/production/references/manifest.json)에 보관합니다.
+
+## 리라 첫 후보의 실제 결과
+
+| 산출물 | 확인한 결과 | 남은 조건 |
+|---|---|---|
+| [원본 source.glb](../art_source/production/candidates/lyra-001/source.glb) | VARCO 1회 생성, 8만 삼각형·재질 1개, 스킨/클립 없음 | 손·어깨·천/머리카락 겹침·재질 정리, 리토폴로지/LOD |
+| [정면](../art_source/production/candidates/lyra-001/front.png)·[측면](../art_source/production/candidates/lyra-001/side.png)·[후면](../art_source/production/candidates/lyra-001/back.png) | 원본의 Blender REST 렌더 | 최종 얼굴/손·동작 중 변형·게임 조명 품질 승인 아님 |
+| [lyra-locomotion.glb](../art_source/production/candidates/lyra-001/lyra-locomotion.glb) | 53본·스킨 1개, `idle`·`walk`·`run`과 bind-pose `RESET` | 전투 6클립·BoneMap·루프 이음새·발 접지·그립 검수 |
+| [후처리 보고서](../art_source/production/candidates/lyra-001/preparation.json) | 공통 원점 정규화, 재반입 키 1.82m·REST 바닥 약 0, 원본 4개 SHA 불변 | 다른 bind pose 리타겟·전 구간 연속 포즈·동적 root motion 합격 아님 |
+
+사용자가 지정한 빈 Flow에서 명시적으로 승인된 리라 1건을 생성했습니다. 생성 당시 `PRIVATE` 설정을 확인했고 메시 200포인트, 리깅과 3개 stock 모션은 각각 0포인트여서 총 200포인트이며 추가 구매는 없습니다. 기존 Flow의 생성물은 수정하지 않았습니다. 비용·입력 해시·출처·검수 상태는 [후보 manifest](../art_source/production/candidates/lyra-001/manifest.json)에서 확인합니다.
+
+모션별 리그/메시의 공통 원점 차이를 본 이름·부모·rest linear 행렬·topology·named weights·world 관계로 확인한 뒤 메모리에서 정규화했습니다. 시작·중간·끝의 source→target 표본 포즈 오차는 키 1.82m 기준 최대 7.1e-7m였습니다. 전체 자산의 정적 wrapper로 크기와 바닥을 맞췄으며 게임 이동 권한은 추가하지 않았습니다. 재사용 절차는 [아트 스킬](../.agents/skills/runefall-art/SKILL.md), 구현은 [후처리 도구](../tools/prepare_character_candidate.py)와 [REST 검수 렌더 도구](../tools/render_glb_review.py)에 있습니다.
+
+파생 후보도 8만 삼각형으로 Windows 6.5만·웹 3.2만 목표를 초과합니다. `walk`는 stock `jog_looping`, `run`은 `sprint`에서 온 샘플입니다. 현재 구간 길이는 대기 약 10.17초·조깅 4.57초·sprint 1.47초이며, 아래 표의 제작 목표 길이나 게임 이동 속도에 맞는 최종 모션으로 승인하지 않았습니다. 루프·발 접지와 방향/보폭을 검수한 뒤 별도로 편집합니다.
+
+실제 Godot 4.7.2의 독립 프로젝트에서도 53본·스킨 바인딩·4클립, 높이 1.82000023m·바닥 Y 약 0과 `AnimationTree` 수동 샘플링을 확인했습니다. [반입 결과와 재현 스크립트](validation/lyra-001/README.md)를 보관합니다. 이동 클립의 loop mode는 현재 모두 `NONE`이며 기본 9모션 장착 조건을 통과한 상태가 아닙니다.
 
 ## G0 · 생성 입력 확인
 

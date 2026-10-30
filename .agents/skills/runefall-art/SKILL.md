@@ -17,6 +17,14 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 - `art_source/production/`의 입력 명세와 실제 생성 후보는 분리합니다. `tools/check_art_production.py`는 입력·참조 해시·게임 공격 값의 일치만, `tools/inspect_glb.py`는 바이너리 구조와 명시 요구 조건만 검사합니다. 최종 반입은 두 검사와 실제 화면·변형·성능 검수까지 확인합니다.
 - 현재 도형 블록아웃은 최종 제작 방식이 아닙니다. 주인공 1명·적 1종·전투 공간 1개부터 형태·재질·리그·모션·조명·VFX를 함께 검수한 뒤 확장합니다. 상세 범위는 아트 가이드에서 확인합니다.
 
+## 실제 후보 검수와 재사용 절차
+
+1. 새 Flow 목록이 비거나 오래돼도 사용자가 준 실제 Flow ID를 `get_flow_graph`로 직접 확인합니다. 빈 대상인지 확인한 뒤 명시적인 `flowId`·노드 scope로 실행합니다. 이미 완료한 생성물을 리깅/모션에 사용할 때는 그 task를 참조하는 입력 노드로 고정해 유료 upstream 재실행을 막습니다. 실행 직전 실제 비용·사용자 승인 범위를 대조합니다.
+2. 원본 GLB는 해시와 생성 설정을 보관하고 수정하지 않습니다. `tools/render_glb_review.py`는 새 출력 디렉터리에 정면·측면·후면 REST 렌더를 생성합니다. Blender 이미지의 lazy loading 여부를 텍스처 누락으로 판정하지 않습니다.
+3. `tools/prepare_character_candidate.py`는 검증된 Blender에서 같은 리그의 대기/조깅/달리기 후보를 결합합니다. 이름·부모·rest 행렬·mesh topology·named weights가 일치해야 합니다. 원점 차이는 `--normalize-origin-translation`을 명시하고 전체 본/메시의 공통 평행이동을 입증한 경우에만 메모리에서 정규화합니다. 허용오차를 늘려 다른 bind pose를 통과시키지 않습니다.
+4. 각 모션의 시작·중간·끝에서 source→target evaluated vertex 오차를 다시 확인합니다. 전체 리그·메시·모션에 공통인 정적 wrapper로 키를 맞추고 `--ground-rest-feet`로 REST 바닥을 맞춥니다. 이 정적 변환을 게임 이동이나 동적 root-motion 검수 완료로 간주하지 않습니다. 원본 SHA 불변, 정상 종료, GLB 재반입 높이/바닥, skin/clip 구조를 확인합니다.
+5. 실제 결과는 `art_source/production/candidates/`에 입력 명세와 구분해 보관합니다. source/파생 GLB의 bytes·SHA를 manifest에 기록해 CI로 무결성을 확인합니다. 임시 서명 URL·인증·계정 원문은 저장하지 않습니다. 후보가 폴리곤 예산을 초과하면 리토폴로지/LOD 필요를 표시하고, 3개 locomotion+RESET을 필수 9모션 완료로 기록하지 않습니다.
+
 ## 버전 실험의 완료 기준
 
 프로세스 정상 종료, GLB 구조·재질·변환·메시 비교, Godot의 오류 없는 반입, 실제 씬의 시각·모션 확인을 분리해 기록합니다. 출력 파일이 존재한다고 배치 성공으로 처리하지 않습니다. 현재 보관한 LTS 실험은 구조·반입 비교를 통과했어도 배치 종료 실패가 남아 있으므로 제작 버전을 자동 교체하지 않습니다.

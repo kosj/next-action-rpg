@@ -125,6 +125,7 @@ def check_production(root=ROOT):
         "ok": False,
         "scope": "planned_source_contract_and_reference_integrity_only",
         "counts": {"assets": 0, "references": 0, "clips": 0, "attack_resources": 0},
+        "candidate_sources_checked": 0,
         "errors": [],
         "not_checked": ["MCP authentication or generation", "image or 3D visual quality", "skin deformation", "runtime animation integration", "hardware performance"],
     }
@@ -322,6 +323,63 @@ def check_production(root=ROOT):
         if not isinstance(angles, list) or len(angles) != 2 or not all(same_number(angles[index], value) for index, value in enumerate(expected_angles)):
             errors.append(f"{label}: signed sweep angles differ from current arc")
 
+    # Candidate metadata is optional and has no required schema/status here.
+    # Only the declared local bytes are checked; this cannot approve runtime art.
+    candidates = PRODUCTION / "candidates"
+    for manifest_path in sorted((root / candidates).glob("*/manifest.json")):
+        relative = manifest_path.relative_to(root)
+        label = str(relative)
+        checked_path = local_file(str(relative), label, candidates)
+        if checked_path is None:
+            continue
+        try:
+            candidate = load_json(checked_path)
+        except (OSError, UnicodeError, ValueError) as error:
+            errors.append(f"{label}: {error}")
+            continue
+        if not isinstance(candidate, dict):
+            errors.append(f"{label}: candidate manifest must be an object")
+            continue
+        folder = relative.parent
+
+        def candidate_file(filename, byte_count, digest, artifact_label):
+            if not isinstance(filename, str) or not filename or Path(filename).is_absolute():
+                errors.append(f"{artifact_label}: expected a candidate-relative file path")
+                return False
+            target = local_file(str(folder / filename), artifact_label, folder)
+            if type(byte_count) is not int or byte_count < 0 or not isinstance(digest, str) or not SHA256.fullmatch(digest):
+                errors.append(f"{artifact_label}: expected byte count and SHA-256 metadata")
+                return False
+            if target is None:
+                return False
+            try:
+                actual_bytes = 0
+                actual_digest = hashlib.sha256()
+                with target.open("rb") as stream:
+                    for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                        actual_bytes += len(chunk)
+                        actual_digest.update(chunk)
+            except OSError as error:
+                errors.append(f"{artifact_label}: cannot read source: {error}")
+                return False
+            matched = True
+            if actual_bytes != byte_count:
+                errors.append(f"{artifact_label}: byte count mismatch")
+                matched = False
+            if actual_digest.hexdigest() != digest:
+                errors.append(f"{artifact_label}: SHA-256 mismatch")
+                matched = False
+            return matched
+
+        if candidate_file(candidate.get("source_file"), candidate.get("source_bytes"), candidate.get("source_sha256"), label + ": source"):
+            report["candidate_sources_checked"] += 1
+        derived = candidate.get("derived_files", [])
+        if not isinstance(derived, list) or not all(isinstance(entry, dict) for entry in derived):
+            errors.append(f"{label}: optional derived_files must be an object list")
+            continue
+        for index, entry in enumerate(derived):
+            candidate_file(entry.get("file"), entry.get("bytes"), entry.get("sha256"), f"{label}: derived_files[{index}]")
+
     report["ok"] = not errors
     return report
 
@@ -339,7 +397,7 @@ def main(argv=None):
         print(json.dumps(report, ensure_ascii=False, indent=2))
     elif report["ok"]:
         counts = report["counts"]
-        print(f"ART_PRODUCTION_OK assets={counts['assets']} references={counts['references']} clips={counts['clips']} attack_resources={counts['attack_resources']}")
+        print(f"ART_PRODUCTION_OK assets={counts['assets']} references={counts['references']} clips={counts['clips']} attack_resources={counts['attack_resources']} candidate_sources={report['candidate_sources_checked']}")
         print("Checked planning structure, local reference integrity, and three literal attack contracts; visual/runtime quality is not approved.")
     else:
         print("Art production validation failed:", file=sys.stderr)

@@ -1,0 +1,321 @@
+{
+  "status": "prepared_candidate_not_animation_or_visual_approval",
+  "blender": "4.3.2",
+  "sources": [
+    {
+      "path": "build/art-candidates/lyra_body/varco-001/raw-rigged.glb",
+      "sha256": "89a2c235988c23f5536d1085e5cdc50d1c3274b70aedb4ce515261863359ec18",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 0
+    },
+    {
+      "path": "build/art-candidates/lyra_body/varco-001/raw-idle.glb",
+      "sha256": "71b0631015e6c5d6cfde556ea3985fa2a180f4b2f92a82a6d939c42a2d5b2374",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/lyra_body/varco-001/raw-jog.glb",
+      "sha256": "1a51455f0571d63aa7a369c5bc012f76928a32d813243d915303b6d4f816cb05",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/lyra_body/varco-001/raw-sprint.glb",
+      "sha256": "69ad06570e441d2796f5f823e355bc6b9bdbaa56ec93440523804f052af81821",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    }
+  ],
+  "base_mesh_and_materials": "retained from base; motion meshes are not exported",
+  "excluded_import_helpers": [
+    "Icosphere"
+  ],
+  "height": {
+    "source_rest_m": 1.000190019607544,
+    "uniform_wrapper_scale": 1.8196542300173464,
+    "target_m": 1.82,
+    "reimported_rest_m": 1.820000410079956,
+    "bounds": {
+      "min": [
+        -0.8822833895683289,
+        -0.2218439280986786,
+        2.384185791015625e-07
+      ],
+      "max": [
+        0.8817270398139954,
+        0.2159002125263214,
+        1.8200006484985352
+      ],
+      "height": 1.820000410079956
+    },
+    "recentered_xy": false,
+    "ground_rest_feet": true,
+    "wrapper_translation_blender": [
+      0.0,
+      0.0,
+      0.9092835187911987
+    ]
+  },
+  "bones": 53,
+  "motions": {
+    "idle": {
+      "source_action": "Anim_0_Armature.001",
+      "source_frames": [
+        2.0,
+        307.0
+      ],
+      "duration_seconds": 10.166666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/lyra_body/varco-001/raw-idle.glb",
+      "rest_matrix_error_max": 1.2218952178955078e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.007602468132972717,
+          0.014935992658138275,
+          -0.0054426491260528564
+        ],
+        "translation_world": [
+          -0.007602468132972717,
+          0.014935992658138275,
+          -0.0054426491260528564
+        ],
+        "linear_identity_max_error": 9.033828973770142e-07,
+        "bone_translation_residual_max": 5.115852475825479e-07,
+        "mesh_translation_residual_max": 1.8773254778988859e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 1.4677643775939941e-06,
+        "bone_translation_residual_max": 6.25130463445191e-07,
+        "mesh_translation_residual_max": 2.0087442697605516e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.773408312231481e-07,
+        3.3295009987807767e-07,
+        3.773408312231481e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        1.6272313645364013e-07,
+        1.8326005155218905e-07,
+        1.6272313645364013e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        6.86629839693463e-07,
+        6.05854057627842e-07,
+        6.86629839693463e-07
+      ]
+    },
+    "walk": {
+      "source_action": "Anim_0_Armature.002",
+      "source_frames": [
+        2.0,
+        139.0
+      ],
+      "duration_seconds": 4.566666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/lyra_body/varco-001/raw-jog.glb",
+      "rest_matrix_error_max": 1.862645149230957e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.04792885482311249,
+          0.021400615572929382,
+          0.008081883192062378
+        ],
+        "translation_world": [
+          0.04792885482311249,
+          0.021400615572929382,
+          0.008081883192062378
+        ],
+        "linear_identity_max_error": 1.9473955035209656e-06,
+        "bone_translation_residual_max": 9.373196101881224e-07,
+        "mesh_translation_residual_max": 2.0485709734063626e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 1.9669532775878906e-06,
+        "bone_translation_residual_max": 9.420762650917937e-07,
+        "mesh_translation_residual_max": 1.9329375112917767e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.3881714942759493e-07,
+        3.017255176799981e-07,
+        2.846862848779976e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.1747528790423905e-07,
+        3.332000937312528e-07,
+        1.9428737179048804e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        6.165300591583425e-07,
+        5.490361145505821e-07,
+        5.180306025061716e-07
+      ]
+    },
+    "run": {
+      "source_action": "Anim_0_Armature.003",
+      "source_frames": [
+        2.0,
+        46.0
+      ],
+      "duration_seconds": 1.4666666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/lyra_body/varco-001/raw-sprint.glb",
+      "rest_matrix_error_max": 1.6093254089355469e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.10207207500934601,
+          0.03248387575149536,
+          0.11327800154685974
+        ],
+        "translation_world": [
+          0.10207207500934601,
+          0.03248387575149536,
+          0.11327800154685974
+        ],
+        "linear_identity_max_error": 1.259148120880127e-06,
+        "bone_translation_residual_max": 7.411455452346077e-07,
+        "mesh_translation_residual_max": 2.3063729244715134e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 1.6773119568824768e-06,
+        "bone_translation_residual_max": 8.088065830519628e-07,
+        "mesh_translation_residual_max": 2.4501440253603027e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 62671,
+        "mesh_polygons": 80000
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.2304947657404543e-07,
+        3.8886035533845093e-07,
+        2.772777388383209e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.407356265396403e-07,
+        2.010276550536162e-07,
+        3.8743019104003906e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.878383465528514e-07,
+        7.075913904776606e-07,
+        5.045496103667957e-07
+      ]
+    }
+  },
+  "exported_clips": [
+    "idle",
+    "RESET",
+    "run",
+    "walk"
+  ],
+  "reset": "Generated identity bone pose curves, two identical keys at frames 0 and 1; not an extra motion",
+  "export_flags": {
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_renderable": true,
+    "export_yup": true,
+    "export_apply": false,
+    "export_animations": true,
+    "export_animation_mode": "ACTIONS",
+    "export_anim_single_armature": true,
+    "export_force_sampling": true,
+    "export_frame_range": false,
+    "export_frame_step": 1,
+    "export_optimize_animation_size": false,
+    "export_nla_strips": false,
+    "export_extras": true
+  },
+  "loop_configuration": "glTF has no standard loop flag. Inspect foot/root seams, then configure Godot idle/walk/run loop modes; RESET must not loop",
+  "output_sha256": "8141e4b400504e821df1b78e9b9ab9e8da2c2e2f987a729d18130c6c06f64cae",
+  "limitations": [
+    "Only three locomotion candidates; the nine required gameplay clips are not complete",
+    "Bone pose curves and matching rest transforms do not prove foot contact, seamless loops, visual quality or gameplay timing",
+    "No object root-motion curves or gameplay events were added"
+  ],
+  "output_file": "lyra-locomotion.glb",
+  "source_storage_note": "Provider originals remain in ignored build/art-candidates; hashes identify inputs. The generated rest source and combined derivative are retained here."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-001",
+  "created_on": "2026-10-30",
+  "status": "generated_rigged_locomotion_candidate_not_approved_for_runtime",
+  "provider": "VARCO 3D official MCP through the Codex client",
+  "source_task_id": "ad11b9c2-bdfb-4c9c-9866-4e6909eed235",
+  "provider_license_setting": "PRIVATE",
+  "community_published": false,
+  "input_reference": "../../references/lyra-front-concept.png",
+  "input_sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+  "source_file": "source.glb",
+  "source_bytes": 15904156,
+  "source_sha256": "651c3f79ed7941bcf89693888e5d2ba38fbe8f408d89f8d0cb70a582a31c0925",
+  "point_usage": {
+    "mesh_generation": 200,
+    "additional_point_purchase": false,
+    "rigging": 0,
+    "three_locomotion_samples": 0,
+    "total": 200
+  },
+  "parameters": {
+    "count": 1,
+    "polygon_count": 80000,
+    "t_pose": true,
+    "pbr": true,
+    "texture_size": 2048,
+    "topology": "tri"
+  },
+  "structural_inspection": "passed_core_embedded_GLTF_checks",
+  "rest_pose_renders": [
+    "front.png",
+    "side.png",
+    "back.png"
+  ],
+  "runtime_replacement": false,
+  "visual_approval": false,
+  "measured_height_m": 1.0001901388168335,
+  "target_height_m": 1.82,
+  "normalization_scale_required": 1.8196540131388954,
+  "remaining_review": [
+    "Clean shoulder artifacts, fingers and cloth/hair overlaps; compare materials with the concept.",
+    "Retopology and LODs: the 80,000-triangle source exceeds the Windows 65,000 and web 32,000 triangle targets.",
+    "Review skin deformation, root/foot motion, seamless loops, foot contact, facing and weapon grip in Godot.",
+    "Author the six required combat clips and match actual gameplay strike windows before mounting as the default avatar.",
+    "The original source has no skin or animation; the separate derivative contains one skin and only three locomotion motions plus RESET.",
+    "No final AAA quality or target hardware performance claim."
+  ],
+  "derived_files": [
+    {
+      "file": "lyra-locomotion.glb",
+      "bytes": 18365092,
+      "sha256": "8141e4b400504e821df1b78e9b9ab9e8da2c2e2f987a729d18130c6c06f64cae"
+    }
+  ],
+  "preparation_report": "preparation.json",
+  "derived_rig": {
+    "bones": 53,
+    "skins": 1,
+    "clips": [
+      "idle",
+      "walk",
+      "run",
+      "RESET"
+    ],
+    "stock_motion_keys": {
+      "idle": "standing_idle_1_looping",
+      "walk": "jog_looping",
+      "run": "sprint"
+    },
+    "in_place_requested": true,
+    "loop_seams_verified": false,
+    "foot_contact_verified": false,
+    "root_motion_reviewed": false,
+    "required_combat_clips_missing": [
+      "dodge",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "hit"
+    ]
+  },
+  "derived_measurements": {
+    "height_m": 1.820000410079956,
+    "floor_z_blender_m": 2.384185791015625e-07,
+    "max_source_target_sampled_vertex_error_m": 7.075913904776606e-07
+  },
+  "budget_review": {
+    "triangles": 80000,
+    "windows_lod0_target_max": 65000,
+    "web_lod0_target_max": 32000,
+    "status": "over_both_runtime_targets_requires_retopology_and_lods"
+  }
+}

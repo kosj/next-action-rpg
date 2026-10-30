@@ -46,6 +46,10 @@ async def run(url, output=Path("build/verification")):
         await page.goto(test_url, wait_until="networkidle")
         await page.wait_for_function("!document.getElementById('loading')", timeout=120000)
         await page.wait_for_function("window.__RUNEFALL_STATE !== undefined", timeout=30000)
+        expected_commit = os.environ.get("RUNEFALL_EXPECTED_COMMIT")
+        if expected_commit:
+            build_id = await page.evaluate("window.__RUNEFALL_STATE.build_id")
+            assert isinstance(build_id, str) and build_id.rsplit(" · ", 1)[-1] == expected_commit[:8], ("Published build differs from expected commit", build_id, expected_commit[:8])
         await page.bring_to_front()
 
     async def state(page):

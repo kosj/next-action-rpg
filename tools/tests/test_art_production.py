@@ -147,6 +147,40 @@ class ArtProductionTests(unittest.TestCase):
         self.save()
         self.assertFalse(self.report()["ok"])
 
+    def test_candidate_source_and_optional_derived_files_detect_tampering(self):
+        folder = self.root / production.PRODUCTION / "candidates/fixture-001"
+        folder.mkdir(parents=True)
+        source = b"candidate source fixture"
+        rig = b"derived rig fixture"
+        (folder / "source.glb").write_bytes(source)
+        (folder / "rigged.glb").write_bytes(rig)
+        candidate = {
+            "source_file": "source.glb", "source_bytes": len(source), "source_sha256": hashlib.sha256(source).hexdigest(),
+            "derived_files": [{"file": "rigged.glb", "bytes": len(rig), "sha256": hashlib.sha256(rig).hexdigest()}]
+        }
+        (folder / "manifest.json").write_text(json.dumps(candidate), encoding="utf-8")
+        report = self.report()
+        self.assertTrue(report["ok"], report["errors"])
+        self.assertEqual(report["candidate_sources_checked"], 1)
+        (folder / "source.glb").write_bytes(source + b"tamper")
+        self.assertTrue(any(": source: SHA-256 mismatch" in error for error in self.report()["errors"]))
+        (folder / "source.glb").write_bytes(source)
+        (folder / "rigged.glb").write_bytes(rig + b"tamper")
+        self.assertTrue(any("derived_files[0]: SHA-256 mismatch" in error for error in self.report()["errors"]))
+
+    def test_candidate_source_and_derived_paths_cannot_escape_their_folder(self):
+        folder = self.root / production.PRODUCTION / "candidates/fixture-001"
+        folder.mkdir(parents=True)
+        data = b"source fixture"
+        (folder / "source.glb").write_bytes(data)
+        candidate = {"source_file": "../../asset_specs.json", "source_bytes": len(data), "source_sha256": hashlib.sha256(data).hexdigest()}
+        (folder / "manifest.json").write_text(json.dumps(candidate), encoding="utf-8")
+        self.assertTrue(any(": source: path escapes allowed source root" in error for error in self.report()["errors"]))
+        candidate["source_file"] = "source.glb"
+        candidate["derived_files"] = [{"file": "../outside.glb", "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}]
+        (folder / "manifest.json").write_text(json.dumps(candidate), encoding="utf-8")
+        self.assertTrue(any("derived_files[0]: path escapes allowed source root" in error for error in self.report()["errors"]))
+
 
 if __name__ == "__main__":
     unittest.main()

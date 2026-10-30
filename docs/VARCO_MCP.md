@@ -37,7 +37,15 @@ python tools/varco_mcp.py call list_flow_sessions --arguments build/empty-argume
 
 `empty-arguments.json` 내용은 `{}`입니다. 이 도구는 **공식 `codex app-server --stdio`**의 발견/도구 호출 API를 사용합니다. MCP 서버에 직접 HTTP 요청을 보내거나 인증 파일을 읽지 않으며 모델 추론 turn 없이 ephemeral thread에서 명시한 도구만 호출합니다. 발견한 도구 이름·필수 인자를 확인하고 전체 인자 스키마 검증은 서버가 담당합니다. 예상치 못한 대화형 승인 요청은 자동 승인하지 않습니다. 이 API는 Codex 0.163.0에서 확인한 experimental API이므로 클라이언트 업데이트 시 호환성을 다시 검사합니다.
 
-성공 결과에는 계정·Flow 내용이나 일시적인 다운로드 URL이 포함될 수 있어 `build/` 또는 임시 디렉터리에만 보관합니다. 인증 정보·콜백·계정 요금제·임시 URL을 지식 DB나 소스에 옮기지 않습니다. 첫 생성 계획은 [varco_lyra_plan.json](../art_source/production/varco_lyra_plan.json)에 있습니다. 리라 참조 이미지는 구체적인 사용자 승인을 받은 뒤 실제 업로드에 성공했으며 3D 생성은 새 대상 Flow를 확인한 뒤 실행합니다. 이전 결과가 있는 Flow를 빈 Flow로 간주하거나 조용히 수정하지 않습니다.
+성공 결과에는 계정·Flow 내용이나 일시적인 다운로드 URL이 포함될 수 있어 `build/` 또는 임시 디렉터리에만 보관합니다. 인증 정보·콜백·계정 요금제·임시 URL을 지식 DB나 소스에 옮기지 않습니다. 첫 생성 설정과 실행 결과는 [varco_lyra_plan.json](../art_source/production/varco_lyra_plan.json)에 있습니다. 사용자의 구체적인 업로드·1회 생성 승인 후, 사용자가 제공한 실제 Flow ID를 `get_flow_graph`로 조회해 빈 대상을 확인하고 리라 1건 생성을 완료했습니다. 초기 목록이 비거나 기존 Flow만 보여도 명시적인 대상 ID의 직접 조회 결과로 판단합니다. 이전 결과가 있는 Flow를 빈 Flow로 간주하거나 조용히 수정하지 않습니다.
+
+## 첫 실제 생성과 후처리 결과
+
+생성 직전 `PRIVATE` 설정과 실행 범위를 확인하고 `ImageInput → Generate3D`의 후보 노드 하나만 실행했습니다. 리라 메시 1건에 200포인트를 사용했습니다. 완료된 mesh task를 참조하는 `3DInput → Rig`와 완료된 rig task를 참조하는 `Rigged3DInput → Animate`를 따로 구성해 유료 생성 노드를 다시 실행하지 않았습니다. `humanoid-fingers` 리깅과 `standing_idle_1_looping`/`jog_looping`/`sprint`의 in-place 샘플 3개는 0포인트였으며 총 200포인트·추가 구매 없음입니다. 이 비용은 이번 실제 호출의 결과이며 다른 계정/시점의 고정 요금으로 사용하지 않습니다.
+
+[실제 원본과 후보](../art_source/production/candidates/lyra-001/manifest.json)에 해시·생성 설정·REST 3면 렌더를 보관합니다. Blender 후처리로 53본·스킨 1개와 `idle`/`walk`/`run`/`RESET`을 결합하고 키 1.82m·REST 바닥 0을 맞췄습니다. 원본 4개를 보존한 채 공통 원점 차이를 입증하고 표본 포즈 오차를 확인했습니다. `pivotToBottom`의 변경만으로 모션 간 원점 일치가 보장되지 않으므로 [준비 도구](../tools/prepare_character_candidate.py)의 엄격한 관계/포즈 검사를 사용합니다.
+
+이 결과는 검수용 후보입니다. 전투 6클립·BoneMap·루프/발 접지·최종 재질/장면 품질은 남아 있고, 8만 삼각형은 Windows/웹 예산을 넘으므로 경량화해야 합니다. 현재 기본 게임 캐릭터는 기존 피벗 모델입니다. 연결·생성·Blender 후처리의 성공을 최종 아바타나 AAA 품질 완료로 표시하지 않습니다.
 
 ## 첫 호출과 Flow 선택
 
