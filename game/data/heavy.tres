@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/core/attack_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+title = "룬 가르기"
+damage = 42.0
+poise = 48.0
+startup = 0.32
+active = 0.22
+recovery = 0.32
+arc = 170.0
+reach = 3.3

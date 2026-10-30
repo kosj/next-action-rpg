@@ -7,3 +7,4 @@ dist/
 __pycache__/
 .env
 .DS_Store
+game/build_id.txt
