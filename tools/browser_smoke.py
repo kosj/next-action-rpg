@@ -85,8 +85,13 @@ async def run(url, output=Path("build/verification")):
                 await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.kind === 'OptionButton')", timeout=15000)
                 await click_button(page, "균형")
                 await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.popup_visible)", timeout=30000)
-                await page.keyboard.press("ArrowDown")
-                await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.popup_visible && b.popup_focus === 1)", timeout=30000)
+                popup = next(item for item in (await state(page))["buttons"] if item.get("popup_visible"))
+                # A popup opened by mouse can initially have no keyboard focus (-1).
+                # In that case the first Down focuses row 0, and the second row 1.
+                targets = [0, 1] if popup["popup_focus"] < 0 else ([1] if popup["popup_focus"] == 0 else [])
+                for target in targets:
+                    await page.keyboard.press("ArrowDown")
+                    await page.wait_for_function("target => window.__RUNEFALL_STATE.buttons.some(b => b.popup_visible && b.popup_focus === target)", arg=target, timeout=30000)
                 await page.keyboard.press("Enter")
                 await page.wait_for_function("window.__RUNEFALL_STATE.quality === 1", timeout=15000)
                 await click_button(page, "완료")
