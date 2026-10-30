@@ -1,0 +1,41 @@
+---
+name: runefall-development
+description: Implement and verify RUNEFALL GDScript gameplay changes, especially combat, saves, UI input, and checkpoint recovery. Use before changing game scripts or regression tests.
+---
+
+# RUNEFALL 게임 구현
+
+## 입력과 근거
+
+현재 요청, [설계](../../../docs/DESIGN.md), 관련 코드와 지식 DB를 확인합니다. `python tools/knowledge.py search --tag combat` 또는 `--tag save`로 기존 실패 사례를 찾습니다. 물리·질의는 [godot-physics](../godot-physics/SKILL.md), 테스트 방식은 [godot-gdscript-headless-testing](../godot-gdscript-headless-testing/SKILL.md)을 필요에 맞게 읽습니다.
+
+## 변경과 회귀 확인
+
+1. 예상 동작과 문제가 생기는 입력·프레임·저장 상태를 먼저 특정합니다.
+2. 전투 판정은 물리 틱에서 처리합니다. 베기의 경로·안쪽·큰 delta, 벽 가림, 한 번의 공격에서 중복 피해, 패링에 따른 공격 취소를 관련 변경에서 확인합니다. `intersect_shape`가 모션까지 쓸어 준다고 가정하지 않습니다.
+3. UI에서 게임으로 복귀할 때 전역 `Input` 폴링에 클릭이 남을 수 있습니다. 일시정지·이어하기·모달 종료 입력과 새 공격의 경계를 보존합니다.
+4. 저장은 유효성 검사·스냅샷·백업·실패 롤백 계약을 유지합니다. 저장 실패를 휴식·구매 성공으로 표시하지 않습니다. 설정 저장과 실제 여정 존재를 구분하고 정상적인 기존 v1 저장과 호환합니다.
+5. 의미 있는 동작 변경은 기존 `combat_regressions.gd`·`save_regressions.gd`·`test_runner.gd`의 알맞은 검사로 확인합니다. 코드의 문장을 그대로 복제하는 테스트는 추가하지 않습니다.
+
+## 실행
+
+`tools/toolchain.json`에 맞는 엔진과 동일한 템플릿을 사용하고 `GODOT_BIN`을 해당 실행 파일로 지정합니다. 새 환경은 `bash tools/setup_godot.sh`가 출력한 경로를 사용합니다.
+
+```bash
+python tools/build.py --test-only
+```
+
+통합 runner는 autoload·전체 씬·물리 프레임이 필요한 Node 씬입니다. 단순 SceneTree 예제로 교체하지 않습니다. 검사 수를 스킬에 고정하지 않고 실행 결과의 실패 수·종료 코드·watchdog·각 suite 완료를 확인합니다.
+
+웹 입력·저장·UI를 바꿨으면 웹을 다시 내보낸 뒤 실제 브라우저도 검사합니다.
+
+```bash
+python tools/build.py
+python tools/check_web.py
+```
+
+Playwright/Chromium 준비는 루트 README를 참조합니다. QA 데이터는 읽기 전용으로 유지합니다. 소프트웨어 WebGL 성공을 Windows GPU 성능으로 해석하지 않습니다.
+
+## 완료
+
+문제·해결 조건·검증 근거를 지식 DB에 갱신합니다. 게임 코드 검사와 별도로 `python tools/knowledge.py check`를 통과시킵니다. 배포가 작업 범위에 있으면 [릴리스 스킬](../runefall-release/SKILL.md)로 이어갑니다.

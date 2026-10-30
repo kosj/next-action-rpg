@@ -53,6 +53,7 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 
 ## 제작 문서
 
+- [반복 작업 스킬과 지식 DB](knowledge/README.md) · [작업 시작 규칙](AGENTS.md)
 - [최신 자료·공개 스킬에 따른 재검증 근거](docs/ENGINEERING_EVIDENCE.md)
 - [설계와 현재 구현 상태](docs/DESIGN.md)
 - [Blender·VARCO 아트 제작 가이드](docs/ART_PIPELINE.md)
