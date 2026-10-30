@@ -58,9 +58,12 @@ func run() -> void:
 	file.close()
 	check(session.load_game() and session.shards == 41, "Recover a damaged primary from backup")
 	session.new_game()
+	session.journey_started = false
+	check(session.save_game() and not session.has_save, "Saving title settings does not create a journey slot")
 	world = load("res://scenes/main.tscn").instantiate()
 	get_tree().root.add_child(world)
 	await get_tree().physics_frame
+	check(not world.start_game(false) and not world.started and world.ui.menu.visible, "Settings-only saves cannot be used to skip the new-journey prologue")
 	var valid_save_path: String = session.save_path
 	session.save_path = "user://missing_regression_directory/save.json"
 	world.ui.start_game(true)

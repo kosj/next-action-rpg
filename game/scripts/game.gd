@@ -66,7 +66,7 @@ func _ready() -> void:
 		get_tree().quit()
 
 func start_game(fresh: bool) -> bool:
-	var restored := Session.new_game() if fresh else Session.load_game()
+	var restored := Session.new_game() if fresh else (Session.load_game() and Session.has_save)
 	if not restored:
 		ui.toast("저장할 수 없어 새 여정을 시작하지 않았습니다." if fresh else "이어갈 저장을 불러오지 못했습니다.")
 		return false

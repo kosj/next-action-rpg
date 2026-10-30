@@ -107,6 +107,30 @@ static func run(_session: Node, check: Callable) -> bool:
 	probe.denied_write = ""
 	_cleanup(probe.save_path)
 	probe.free()
+	var journey := FaultSession.new()
+	journey.save_path = "user://journey_audit_%d.json" % Time.get_ticks_usec()
+	_cleanup(journey.save_path)
+	journey.volume = 0.35
+	check.call(journey.save_game() and not journey.has_save and not journey.journey_started, "Save audit: settings-only save does not create a journey")
+	var reloaded := FaultSession.new()
+	reloaded.save_path = journey.save_path
+	check.call(reloaded.load_game() and not reloaded.has_save and not reloaded.journey_started and is_equal_approx(reloaded.volume, 0.35), "Save audit: settings reload without a phantom continue slot")
+	check.call(reloaded.new_game() and reloaded.has_save and reloaded.journey_started, "Save audit: starting a real journey creates a continue slot")
+	check.call(journey.load_game() and journey.has_save and journey.journey_started, "Save audit: real journey remains resumable after reload")
+	var legacy_journey := journey.snapshot()
+	legacy_journey.erase("journey_started")
+	check.call(journey.apply_save(legacy_journey) and journey.journey_started, "Save audit: existing v1 files keep their journey without the optional flag")
+	legacy_journey.journey_started = "false"
+	check.call(not journey.apply_save(legacy_journey) and journey.journey_started, "Save audit: malformed journey flags are rejected without altering progress")
+	var failed_journey := FaultSession.new()
+	failed_journey.save_path = journey.save_path + ".first"
+	failed_journey.denied_write = failed_journey.save_path + ".tmp"
+	check.call(not failed_journey.new_game() and not failed_journey.has_save and not failed_journey.journey_started, "Save audit: failed new journey rolls back its resumable marker")
+	_cleanup(failed_journey.save_path)
+	failed_journey.free()
+	_cleanup(journey.save_path)
+	journey.free()
+	reloaded.free()
 	return true
 
 static func _write_raw(path: String, text: String) -> void:

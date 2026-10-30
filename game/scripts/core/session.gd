@@ -15,6 +15,7 @@ var shake: bool = true
 var volume: float = 0.7
 var quality: int = 0
 var has_save: bool = false
+var journey_started: bool = false
 var build_id: String = ""
 var save_path: String = SAVE_PATH
 var _persistence_notice_sent: bool = false
@@ -24,7 +25,7 @@ func _ready() -> void:
 	configure_inputs()
 	if FileAccess.file_exists("res://build_id.txt"):
 		build_id = FileAccess.get_file_as_string("res://build_id.txt").strip_edges()
-	has_save = load_game()
+	load_game()
 
 func configure_inputs() -> void:
 	var keys := {"forward": KEY_W, "back": KEY_S, "left": KEY_A, "right": KEY_D,
@@ -58,6 +59,7 @@ func configure_inputs() -> void:
 func new_game() -> bool:
 	var previous := snapshot()
 	var previous_has_save := has_save
+	journey_started = true
 	completed.clear()
 	checkpoint = 0
 	shards = 0
@@ -71,7 +73,7 @@ func new_game() -> bool:
 
 func snapshot() -> Dictionary:
 	# A snapshot must not share arrays with mutable live progress (rollback uses it).
-	return {"version": SAVE_VERSION, "completed": completed.duplicate(), "checkpoint": checkpoint,
+	return {"version": SAVE_VERSION, "journey_started": journey_started, "completed": completed.duplicate(), "checkpoint": checkpoint,
 		"shards": shards, "upgrades": upgrades.duplicate(), "lore": lore_found.duplicate(),
 		"settings": {"shake": shake, "volume": volume, "quality": quality}}
 
@@ -114,6 +116,10 @@ func _normalize_save(data: Dictionary) -> Dictionary:
 			return {}
 		if int(value) not in clean_lore:
 			clean_lore.append(int(value))
+	# Old v1 files predate this distinction and represent an existing journey.
+	var saved_journey: Variant = data.get("journey_started", true)
+	if not saved_journey is bool:
+		return {}
 	var saved_shake: Variant = settings.get("shake", true)
 	var saved_volume: Variant = settings.get("volume", 0.7)
 	var saved_quality: Variant = settings.get("quality", 0)
@@ -125,11 +131,12 @@ func _normalize_save(data: Dictionary) -> Dictionary:
 		return {}
 	if not _valid_integer(saved_quality, 0, 1):
 		return {}
-	return {"version": SAVE_VERSION, "completed": clean_completed, "checkpoint": int(point),
+	return {"version": SAVE_VERSION, "journey_started": saved_journey, "completed": clean_completed, "checkpoint": int(point),
 		"shards": int(money), "upgrades": clean_upgrades, "lore": clean_lore,
 		"settings": {"shake": saved_shake, "volume": float(saved_volume), "quality": int(saved_quality)}}
 
 func _apply_state(data: Dictionary) -> void:
+	journey_started = data.journey_started
 	completed.assign(data.completed)
 	checkpoint = data.checkpoint
 	shards = data.shards
@@ -196,7 +203,7 @@ func save_game() -> bool:
 			return _save_failed("백업을 교체하지 못해 저장을 취소했습니다. 이전 저장은 유지됩니다.")
 	if _replace_file(save_path + ".tmp", save_path) != OK:
 		return _save_failed("저장 실패 · 이전 저장은 유지됩니다.")
-	has_save = true
+	has_save = journey_started
 	changed.emit()
 	if OS.has_feature("web") and not OS.is_userfs_persistent() and not _persistence_notice_sent:
 		_persistence_notice_sent = true
@@ -209,7 +216,7 @@ func load_game() -> bool:
 		if data.is_empty():
 			continue
 		_apply_state(data)
-		has_save = true
+		has_save = journey_started
 		if path == save_path + ".bak":
 			call_deferred("emit_notice", "백업 저장을 복구했습니다.")
 		return true

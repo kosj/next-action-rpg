@@ -27,7 +27,7 @@
 
 `Sanctuary`는 충돌이 있는 방·길·문과 시각 자산을 생성합니다. `game.gd`는 순차 전투·상호작용·보상·체크포인트를 관리합니다. `RuneHUD`는 일시정지 중에도 UI를 처리하고, 전투 도중에는 진행을 대신 결정하지 않습니다.
 
-저장 v1 필드는 `version`, `completed`, `checkpoint`, `shards`, `upgrades`, `lore`, `settings`입니다. 알 수 없는 버전은 적용하지 않고 백업을 확인합니다. 런타임 인스턴스나 Resource 객체를 저장하지 않습니다.
+저장 v1 필드는 `version`, `completed`, `checkpoint`, `shards`, `upgrades`, `lore`, `settings`와 선택 필드 `journey_started`입니다. 설정만 저장한 파일은 이어하기 슬롯을 만들지 않으며, 이 필드가 없는 기존 v1 파일은 여정이 시작된 것으로 읽습니다. 알 수 없는 버전은 적용하지 않고 백업을 확인합니다. 런타임 인스턴스나 Resource 객체를 저장하지 않습니다.
 
 ## 아직 완료하지 않은 품질 작업
 

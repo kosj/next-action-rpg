@@ -22,6 +22,7 @@ async def run(url, output=Path("build/verification")):
                  "browser-errors.json", "browser-persistence.json"):
         (output / name).unlink(missing_ok=True)
     errors = []
+    stage = "initial_load"
     parts = urlsplit(url)
     query = dict(parse_qsl(parts.query))
     query["qa"] = "1"
@@ -36,14 +37,16 @@ async def run(url, output=Path("build/verification")):
         launch_options["executable_path"] = executable
 
     def attach_errors(page):
-        page.on("pageerror", lambda error: errors.append(str(error)))
-        page.on("console", lambda message: errors.append(message.text) if message.type == "error" else None)
+        page.on("pageerror", lambda error: errors.append(f"{stage}: {error}"))
+        page.on("console", lambda message: errors.append(f"{stage}: {message.text}") if message.type == "error" else None)
 
     async def ready(page):
         attach_errors(page)
+        await page.bring_to_front()
         await page.goto(test_url, wait_until="networkidle")
         await page.wait_for_function("!document.getElementById('loading')", timeout=120000)
         await page.wait_for_function("window.__RUNEFALL_STATE !== undefined", timeout=30000)
+        await page.bring_to_front()
 
     async def state(page):
         return await page.evaluate("window.__RUNEFALL_STATE")
@@ -58,6 +61,11 @@ async def run(url, output=Path("build/verification")):
         y = canvas["y"] + (button["y"] + button["h"] / 2) / status["ui_height"] * canvas["height"]
         await page.mouse.click(x, y)
 
+    async def release_input(page):
+        await page.keyboard.press("Escape")
+        await page.wait_for_function("window.__RUNEFALL_STATE.paused", timeout=30000)
+        await page.wait_for_function("!document.pointerLockElement", timeout=15000)
+
     async with async_playwright() as playwright:
         # A persistent profile is required to test IndexedDB after the browser closes.
         # Its temporary directory isolates this run from the developer's saves.
@@ -67,6 +75,7 @@ async def run(url, output=Path("build/verification")):
             tour_completed = False
             try:
                 await ready(page)
+                stage = "first_tour"
                 assert not (await state(page))["has_save"], "Fresh profile unexpectedly contains a save"
                 await page.screenshot(path=str(output / "01-title.png"))
                 await click_button(page, "새로운 서약")
@@ -118,12 +127,18 @@ async def run(url, output=Path("build/verification")):
                     await page.screenshot(path=str(output / "failure.png"))
                     (output / "failure-state.json").write_text(json.dumps(await state(page), indent=2))
                 (output / "browser-errors.json").write_text(json.dumps(errors, ensure_ascii=False, indent=2))
+                if tour_completed:
+                    await release_input(page)
+                stage = "first_browser_close"
                 await context.close()
 
+            stage = "restart_load"
             context = await playwright.chromium.launch_persistent_context(profile, **launch_options)
             page = context.pages[0]
+            continue_completed = False
             try:
                 await ready(page)
+                stage = "continue_tour"
                 assert (await state(page))["has_save"], "IndexedDB save did not survive a browser restart"
                 await click_button(page, "여정 이어가기")
                 await page.wait_for_function("window.__RUNEFALL_STATE.started && !window.__RUNEFALL_STATE.modal", timeout=15000)
@@ -132,9 +147,13 @@ async def run(url, output=Path("build/verification")):
                 assert status["quality"] == 1, "Saved graphics settings did not survive the restart"
                 await page.screenshot(path=str(output / "05-continue.png"))
                 (output / "browser-persistence.json").write_text(json.dumps(status, indent=2))
+                continue_completed = True
             finally:
-                (output / "browser-errors.json").write_text(json.dumps(errors, ensure_ascii=False, indent=2))
+                if continue_completed:
+                    await release_input(page)
+                stage = "second_browser_close"
                 await context.close()
+                (output / "browser-errors.json").write_text(json.dumps(errors, ensure_ascii=False, indent=2))
     if errors:
         raise RuntimeError("Browser errors: " + json.dumps(errors, ensure_ascii=False))
     print("RUNEFALL_BROWSER_OK · WebGL, modal, input, combat entry, browser restart persistence")

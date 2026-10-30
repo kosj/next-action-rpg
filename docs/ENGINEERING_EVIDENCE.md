@@ -10,7 +10,7 @@
 | 웹·Windows | [웹 내보내기](https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_web.html), [렌더러 비교](https://docs.godotengine.org/en/4.7/tutorials/rendering/renderers.html) | GDScript, 웹 Compatibility/WebGL 2.0·단일 스레드, Windows Forward+를 유지합니다. 웹과 Windows는 같은 전투 코드를 공유합니다. |
 | 공격·카메라 | [물리 공간 질의](https://docs.godotengine.org/en/4.7/classes/class_physicsdirectspacestate3d.html), [물리 처리](https://docs.godotengine.org/en/4.7/tutorials/physics/physics_introduction.html) | `intersect_shape`가 motion을 처리하지 않으므로 베기의 각도·이동을 명시적으로 표본화합니다. 360도 스킬은 원통 영역으로 검사하고 카메라 충돌 질의는 물리 틱으로 이동합니다. |
 | 물리 엔진 | [Jolt 차이](https://docs.godotengine.org/en/4.7/tutorials/physics/using_jolt_physics.html) | 버전 변경과 충돌 엔진 변경을 한 번에 묶지 않습니다. 명시된 GodotPhysics3D를 유지하고 공격 거리·문·벽·패링을 회귀 검사합니다. |
-| 저장 | [FileAccess](https://docs.godotengine.org/en/4.7/classes/class_fileaccess.html), [DirAccess](https://docs.godotengine.org/en/4.7/classes/class_diraccess.html), [JSON](https://docs.godotengine.org/en/4.7/classes/class_json.html) | 검증된 primary만 backup으로 회전하고 쓰기·flush·rename 실패를 검사합니다. 새 게임과 강화 실패 시 상태를 복원합니다. v1 저장 구조와 정상적인 기존 파일 호환은 유지합니다. |
+| 저장 | [FileAccess](https://docs.godotengine.org/en/4.7/classes/class_fileaccess.html), [DirAccess](https://docs.godotengine.org/en/4.7/classes/class_diraccess.html), [JSON](https://docs.godotengine.org/en/4.7/classes/class_json.html) | 검증된 primary만 backup으로 회전하고 쓰기·flush·rename 실패를 검사합니다. 새 게임과 강화 실패 시 상태를 복원합니다. 선택 필드로 설정과 여정의 존재를 구분하며 정상적인 기존 v1 파일 호환은 유지합니다. |
 | 웹 저장 | [웹 영속 저장 제약](https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_web.html#using-cookies-for-data-persistence) | `is_userfs_persistent()`만으로 저장을 보장하지 않습니다. 읽기 전용 QA 상태와 별도 Chromium 프로필로 브라우저 종료·재시작 후 이어하기를 검사합니다. |
 | 아트 | [3D 반입](https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html), [Humanoid 리타겟](https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html), [Blender LTS](https://www.blender.org/download/lts/) | 현재 GLB는 임시 피벗 모델이며 skins/animations가 없습니다. 최종 리그 +Z와 게임 이동 -Z를 분리하고 Skeleton3D·BoneMap·AnimationLibrary·AnimationTree를 갖춘 대표 캐릭터부터 검증합니다. Blender 4.3.2 원본은 LTS 재내보내기 동등성 확인 전까지 보존합니다. |
 | 무료 생성 자산 | [VARCO 2026-10-12 라이선스 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate) | Free 생성물의 Public/CC BY 4.0 조건을 반영합니다. 고유 주인공·룬은 Blender 직접 제작을 유지하고, 공개 가능한 범용 소품부터 VARCO로 제작합니다. 현재 게임에 VARCO 생성물은 없습니다. |
@@ -31,7 +31,7 @@
 - 패링이 준비된 검 공격·충격파를 취소하고, 약한 후속타가 반격 경직을 줄이지 않게 합니다.
 - 휴식·사망 복귀가 입력 예약·차지·패링·경직·쿨다운·대상을 정리하고 새 게임은 초기 룬으로 시작합니다.
 - 손상 primary → backup 복구 → 저장 → primary 재손상 순서에서도 정상 backup을 보존합니다.
-- 임시 파일 쓰기·backup 쓰기·각 rename 실패, 저장 실패 후 구매와 새 게임 롤백을 검사합니다. 체크포인트 저장 실패를 휴식 성공으로 표시하지 않습니다.
+- 임시 파일 쓰기·backup 쓰기·각 rename 실패, 저장 실패 후 구매와 새 게임 롤백을 검사합니다. 체크포인트 저장 실패를 휴식 성공으로 표시하지 않습니다. 설정만 저장했을 때 여정이 생기지 않도록 선택 필드 `journey_started`를 추가하고 기존 v1 파일의 호환을 유지합니다.
 - 실제 웹 검사를 CI에 추가하고 하위 URL, 모달·입력·첫 전투, 브라우저 재시작 후 저장 복원을 검사합니다.
 
 ## 남은 검증
