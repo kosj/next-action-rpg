@@ -1,0 +1,9 @@
+game/.godot/
+build/
+dist/
+.cache/
+*.blend1
+*.blend2
+__pycache__/
+.env
+.DS_Store
