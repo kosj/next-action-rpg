@@ -49,7 +49,7 @@ Python 3.10 이상을 사용합니다. Playwright와 Chromium이 있으면 `pyth
 
 저장은 Godot의 `user://runefall_v1.json`에 기록됩니다. 체크포인트·강화·전투 완료 시 저장하고 이전 파일을 백업합니다. 웹 저장은 해당 브라우저와 배포 주소에 종속되며 브라우저 데이터 삭제 시 사라질 수 있습니다. Windows와 자동 동기화하지 않습니다.
 
-GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며, 태그 또는 수동 실행에서 Windows ZIP도 생성합니다. **Actions → 실행 결과 → Artifacts**에서 다운로드합니다. main의 성공 빌드는 **GitHub Pages**로 배포합니다. 저장소 Settings → Pages에서 Source를 **GitHub Actions**로 활성화해야 합니다. [배포 안내](docs/DEPLOYMENT.md)를 참고하세요.
+GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며, 태그 또는 수동 실행에서 Windows ZIP도 생성합니다. **Actions → 실행 결과 → Artifacts**에서 다운로드합니다. 버전 태그의 빌드는 [GitHub Releases](https://github.com/kosj/next-action-rpg/releases)에도 자동 첨부합니다. main의 성공 빌드는 **GitHub Pages**로 배포합니다. 저장소 Settings → Pages에서 Source를 **GitHub Actions**로 활성화해야 합니다. [배포 안내](docs/DEPLOYMENT.md)를 참고하세요.
 
 ## 제작 문서
 

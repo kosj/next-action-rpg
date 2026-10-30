@@ -37,7 +37,7 @@ Windows x86_64 EXE와 PCK를 ZIP으로 제공합니다. Forward+가 기본이며
 ## GitHub Actions
 
 - PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → ZIP·SHA-256 아티팩트 업로드.
-- `v*` 태그 / 수동 Windows 선택: Windows 빌드 추가.
+- `v*` 태그 / 수동 Windows 선택: Windows 빌드 추가. 버전 태그의 ZIP·매니페스트는 GitHub Releases에도 자동 첨부합니다.
 - main의 성공 빌드: Pages 아티팩트 생성 → GitHub Pages 배포.
 - 큰 `.blend` 원본은 실행에 필요하지 않으므로 CI에서 LFS 다운로드를 하지 않습니다.
 
