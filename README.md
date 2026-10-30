@@ -57,6 +57,7 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 - [최신 자료·공개 스킬에 따른 재검증 근거](docs/ENGINEERING_EVIDENCE.md)
 - [설계와 현재 구현 상태](docs/DESIGN.md)
 - [Blender·VARCO 아트 제작 가이드](docs/ART_PIPELINE.md)
+- [VARCO 공식 MCP 연결과 검증 절차](docs/VARCO_MCP.md)
 - [웹·Windows 배포 안내](docs/DEPLOYMENT.md)
 - [검증 결과와 남은 작업](docs/VALIDATION.md)
 - [외부 구성 요소와 라이선스](THIRD_PARTY_NOTICES.md)

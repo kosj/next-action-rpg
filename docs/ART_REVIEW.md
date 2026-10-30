@@ -2,6 +2,12 @@
 
 확인일: **2026-10-30**. 저장소의 실제 자산·반입 설정과 공식 자료를 대조했습니다. 아래 성능 수치는 목표 PC의 실측 결과가 아니라 GLB 파일 구조를 읽은 정적 계수입니다.
 
+## MCP와 제작 방향 정정
+
+추가 조사에서 [VARCO의 공식 MCP 설정 문서](https://3d.varco.ai/mcp/setup.md)와 [Codex 연결 안내](https://3d.varco.ai/docs/blog/2026-07-14-connect-varco-3d-to-codex-or-claude-with-one-prompt)를 확인했습니다. 서버는 `https://3d.varco.ai/api/mcp`이며 연결 가능성과 현재 세션의 등록·인증 상태는 별개입니다. 기존 조사에서 Blender Bridge만 확인하고 MCP 경로를 빠뜨린 것은 조사 누락입니다. [연결·인증 검증 절차](VARCO_MCP.md)를 추가했습니다.
+
+단순 도형을 조합한 현재 화면은 Blender의 품질 한계를 보여 주는 근거가 아닙니다. 최종 조형·텍스처·스킨·모션·장면 조명이 없는 블록아웃의 한계입니다. 주인공을 포함한 VARCO 생성 후보와 Blender 후처리, Godot의 조명·VFX를 함께 검수하는 방식으로 방향을 갱신했습니다. 첫 범위와 합격 기준은 [아트 제작 가이드](ART_PIPELINE.md)에 기록합니다.
+
 ## 버전과 판단
 
 재검증 시작 시 실행 기준은 Godot 4.6.3, 원본 생성기는 Blender 4.3.2입니다. [Godot 공식 최신 릴리스](https://github.com/godotengine/godot/releases/tag/4.7.2-stable)는 4.7.2-stable(2026-08-18), [Blender 공식 유지 버전 목록](https://www.blender.org/download/lts/)에는 5.2.3 LTS와 4.5.15 LTS(2026-10-22)가 표시됩니다.
@@ -42,7 +48,7 @@ Godot는 반입 시 자동 메시 LOD를 만들 수 있지만, 스킨 메시의 
 
 [In-Place 옵션](https://3d.varco.ai/docs/release-notes/2026-02-04-in-place-animation-control)과 [휴머노이드 루프 모션](https://3d.varco.ai/docs/release-notes/2026-10-07-looping-animations-ready-to-use)은 코드 주도 이동에 사용할 후보입니다. 생성 결과가 게임에 맞는 보폭·관절 품질을 보장한다고 간주하지 않고 같은 검수 씬을 통과시킵니다.
 
-[2026-10-12 라이선스 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate)은 Free 생성물이 Public(CC BY 4.0), Private 선택은 Plus 이상임을 명시합니다. Community 게시는 CC0로 유지되므로 자동 게시를 제작 파이프라인에 넣지 않습니다. 현재 자산에는 VARCO 생성물이 없으며, 무료 우선의 고유 캐릭터·룬은 직접 제작하고 공유 가능한 소품부터 생성하는 기준을 유지합니다.
+[2026-10-12 라이선스 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate)은 Free 생성물이 Public(CC BY 4.0), Private 선택은 Plus 이상임을 명시합니다. Community 게시는 CC0로 유지되므로 자동 게시를 제작 파이프라인에 넣지 않습니다. 현재 자산에는 VARCO 생성물이 없습니다. 생성 범위를 소품으로 제한하지 않고 캐릭터·룬도 생성 후보에 포함하며, 자산 용도와 계정 플랜에 맞는 공개 범위·귀속 조건을 생성 전에 확인합니다.
 
 ## 읽고 선택 적용한 공개 스킬
 
