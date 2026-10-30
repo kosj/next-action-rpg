@@ -55,3 +55,13 @@ Godot는 반입 시 자동 메시 LOD를 만들 수 있지만, 스킨 메시의 
 | [Godot development](https://github.com/saschb2b/skills/blob/72111b74be5f21b59a3f247d40ef570365042f33/skills/engineering/godot/SKILL.md) | `72111b74be5f21b59a3f247d40ef570365042f33`, 2026-06-21, MIT | 먼저 실제 엔진 버전을 확인하고 오래된 버전 주장을 공식 자료에 재확인하는 원칙. 문서 스냅샷 자체는 2026-06-19입니다. |
 
 `godot-animation` 파일의 최신 변경은 10월 24일이며, 컬렉션 HEAD는 확인 당시 `19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9`(10월 28일)였습니다. 전체 컬렉션을 도입한다면 개별 파일 변경일과 컬렉션 고정 리비전을 구분해 기록합니다. 원문을 저장소에 복사할 때는 해당 리비전의 [LICENSE](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/a873f517e5a0f3a2bf5b2414688e811c783b042c/LICENSE)와 [NOTICE](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/a873f517e5a0f3a2bf5b2414688e811c783b042c/NOTICE)를 함께 보존합니다. 이 검토 문서는 원칙을 요약해 적용하며 외부 스킬 원문·코드를 복사하지 않았습니다.
+# 추가 실험: Blender 5.2.3 LTS
+
+공식 Linux 아카이브의 SHA-256 `78486c018b4443efe5e75ab54c290ed8c15abafd249b862c2c9ce2530a918eec`를 검증하고, `/tmp`의 별도 복사본에서 기존 생성기를 실행했습니다. 공유 Blender 원본과 게임 GLB는 바꾸지 않았습니다.
+
+- 네 GLB의 노드명·부모·전체/관절 로컬 행렬(최대 오차 0), 재질 JSON, 메시·프리미티브·삼각형 수가 일치했습니다.
+- Godot 4.7.2에서 양쪽 파일을 실제 반입하고 NodePath·Node3D 변환·surface 수를 비교해 실패 0개, 반입 오류·경고 0개를 확인했습니다.
+- 생성 완료 뒤 프로세스가 PulseAudio 경고와 함께 남아 최종 30초 제한을 넘겼습니다. 정상 배치 종료 게이트는 미통과입니다.
+- 원시 BIN/accessor는 바이트 동일하지 않고, keeper BIN은 186,680→187,688바이트입니다. 시각적 동등성·스킨·모션은 검증하지 않았습니다.
+
+따라서 자동 생성 실행 기준은 Blender 4.3.2로 유지합니다. 구조 비교 통과를 전체 파일·최종 아트 동등성으로 확대해 해석하지 않습니다. [구조 비교](validation/blender-lts/comparison.json), [프로세스 종료 기록](validation/blender-lts/export-process-result.json), [Godot 비교 로그](validation/blender-lts/godot-comparison.log)를 보존합니다.

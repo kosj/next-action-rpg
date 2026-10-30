@@ -91,6 +91,8 @@ func start_game(fresh: bool) -> bool:
 
 func set_paused(value: bool) -> void:
 	get_tree().paused = value
+	if not value and started and is_instance_valid(player):
+		player.discard_ui_actions()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if value or not started else Input.MOUSE_MODE_CAPTURED
 
 func return_to_title() -> void:

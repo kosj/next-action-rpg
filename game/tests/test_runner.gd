@@ -89,6 +89,21 @@ func run() -> void:
 	world.ui.close_modal()
 	var player: RunePlayer = world.player
 	check(player.active and not player.dead, "Start a new playable journey")
+	await get_tree().physics_frame
+	world.set_paused(true)
+	Input.action_press("light")
+	world.set_paused(false)
+	player._physics_process(1.0 / 60.0)
+	check(player.strike == null and player.input_buffer == 0, "A continue or resume click cannot leak into a sword attack")
+	Input.action_release("light")
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	Input.action_press("light")
+	player._physics_process(1.0 / 60.0)
+	check(player.strike != null, "Fresh attacks work after the UI input guard expires")
+	Input.action_release("light")
+	player.strike = null
+	player.discard_ui_actions()
 	player.invulnerability = 0
 	player.parry_time = 0.22
 	player.facing = Vector3.FORWARD

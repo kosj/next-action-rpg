@@ -27,6 +27,7 @@ var combo_timeout: float = 0.0
 var input_buffer: float = 0.0
 var buffered_heavy: bool = false
 var heavy_held: float = 0.0
+var ui_input_guard: int = 0
 var dodge_time: float = 0.0
 var dodge_cooldown: float = 0.0
 var dodge_direction: Vector3
@@ -84,6 +85,15 @@ func restore(point: Vector3) -> void:
 	locked_target = null
 	invulnerability = 1.0
 	velocity = Vector3.ZERO
+	discard_ui_actions()
+
+func discard_ui_actions() -> void:
+	# GUI events also update Input's action polling. Do not turn the click used
+	# to continue/resume into the first sword attack of the resumed game.
+	input_buffer = 0.0
+	buffered_heavy = false
+	heavy_held = 0.0
+	ui_input_guard = 2
 
 func _physics_process(delta: float) -> void:
 	if not active:
@@ -91,6 +101,10 @@ func _physics_process(delta: float) -> void:
 		return
 	if dead:
 		visual.pose(delta, 0, -1, false, false, true)
+		return
+	if ui_input_guard > 0:
+		ui_input_guard -= 1
+		visual.pose(delta, 0)
 		return
 	dodge_time = maxf(0.0, dodge_time - delta)
 	dodge_cooldown = maxf(0.0, dodge_cooldown - delta)
