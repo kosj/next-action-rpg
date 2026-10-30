@@ -6,6 +6,15 @@ var world: Node3D
 var session: Node
 
 func _ready() -> void:
+	var watchdog := Timer.new()
+	watchdog.one_shot = true
+	watchdog.wait_time = 45.0
+	watchdog.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(watchdog)
+	watchdog.timeout.connect(func():
+		push_error("Regression suite timed out before completing")
+		get_tree().quit(1))
+	watchdog.start()
 	run.call_deferred()
 
 func check(condition: bool, message: String) -> void:
@@ -52,7 +61,20 @@ func run() -> void:
 	world = load("res://scenes/main.tscn").instantiate()
 	get_tree().root.add_child(world)
 	await get_tree().physics_frame
+	var valid_save_path: String = session.save_path
+	session.save_path = "user://missing_regression_directory/save.json"
+	world.ui.start_game(true)
+	check(not world.started and world.ui.menu.visible and not world.ui.hud.visible, "Failed new-game save leaves the title and prior journey intact")
+	var previous_checkpoint: int = session.checkpoint
+	world.interaction_kind = "checkpoint"
+	world.interaction_index = (previous_checkpoint + 1) % 3
+	world.player.health = 50
+	world.interact()
+	check(session.checkpoint == previous_checkpoint and world.player.health == 50, "Failed checkpoint save cannot claim a new rest point or restore health")
+	session.save_path = valid_save_path
+	world.player.rune = 90.0
 	world.start_game(true)
+	check(world.player.rune == 35.0, "A fresh journey resets rune instead of inheriting the previous run")
 	await get_tree().process_frame
 	var dialog_panel: Control = world.ui.modal.get_child(1).get_child(0)
 	check(dialog_panel.global_position.x >= 0 and dialog_panel.global_position.y >= 0, "Dialog remains inside viewport")
@@ -160,6 +182,8 @@ func run() -> void:
 	world.started = false
 	# Let the chapter-ending timer release its coroutine before freeing its owner.
 	await get_tree().create_timer(2.1).timeout
+	check(load("res://tests/save_regressions.gd").run(session, check) == true, "Save regression suite completes")
+	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
 	ledger = null
 	second = null
 	sweep = null

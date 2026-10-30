@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		if death_time > 3:
 			queue_free()
 		return
-	if player == null or not player.active or player.dead:
+	if not is_instance_valid(player) or not player.active or player.dead:
 		visual.pose(delta, 0.0)
 		return
 	stagger = maxf(0.0, stagger - delta)
@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 	poise_meter = maxf(0.0, poise_meter - delta * 4)
 	if is_boss and phase == 1 and health <= max_health * 0.5:
 		phase = 2
-		stagger = 0.8
+		interrupt_attack(0.8)
 		world.announce("봉인이 깨어집니다", "수호자가 두 번째 형상을 드러냅니다.")
 		world.spawn_ring(global_position, 6, Color("e89467"))
 	var direction := player.global_position - global_position
@@ -107,8 +107,10 @@ func _physics_process(delta: float) -> void:
 		return
 	var desired := Vector3.ZERO
 	if strike != null:
-		strike.step(delta, facing, 2)
-		if strike.elapsed >= strike.data.duration():
+		var current_strike := strike
+		current_strike.step(delta, facing, 2)
+		# A successful parry can cancel this strike during receive_hit().
+		if strike == current_strike and current_strike.elapsed >= current_strike.data.duration():
 			strike = null
 			cooldown = 0.75 if is_boss and phase == 2 else randf_range(1.0, 2.0)
 	elif burst_time > 0:
@@ -179,10 +181,8 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 	health = maxf(0.0, health - amount)
 	poise_meter += poise
 	if (not is_boss and (kind != "shield" or poise >= 35)) or poise_meter >= (180 if is_boss else 65):
-		stagger = 1.4 if poise_meter >= 180 else 0.28
+		interrupt_attack(1.4 if poise_meter >= 180 else 0.28)
 		poise_meter = 0
-		strike = null
-		burst_time = 0
 	player.on_hit(amount, global_position + Vector3.UP * 1.5)
 	if health <= 0:
 		dead = true
@@ -192,3 +192,10 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 		warning.hide()
 		Session.shards += 80 if is_boss else (20 if elite else 9)
 		defeated.emit(self)
+
+func interrupt_attack(duration: float) -> void:
+	stagger = maxf(stagger, duration)
+	strike = null
+	burst_time = 0.0
+	if is_instance_valid(warning):
+		warning.hide()

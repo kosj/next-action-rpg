@@ -47,7 +47,12 @@ func _ready() -> void:
 	apply_quality()
 	# A complete headless scene load can be exercised without starting gameplay.
 	if "--smoke" in OS.get_cmdline_user_args():
-		start_game(true)
+		var original_path := Session.save_path
+		Session.save_path = "user://smoke_%d.json" % Time.get_ticks_usec()
+		if not start_game(true):
+			Session.save_path = original_path
+			get_tree().quit(1)
+			return
 		ui.close_modal()
 		await get_tree().physics_frame
 		print("RUNEFALL_SMOKE_OK rooms=%d player_hp=%d" % [Sanctuary.CENTERS.size(),player.health])
@@ -55,19 +60,24 @@ func _ready() -> void:
 		await get_tree().create_timer(0.15).timeout
 		await get_tree().process_frame
 		await get_tree().process_frame
+		for suffix in ["", ".bak", ".tmp", ".bak.tmp"]:
+			DirAccess.remove_absolute(Session.save_path + suffix)
+		Session.save_path = original_path
 		get_tree().quit()
 
-func start_game(fresh: bool) -> void:
+func start_game(fresh: bool) -> bool:
+	var restored := Session.new_game() if fresh else Session.load_game()
+	if not restored:
+		ui.toast("저장할 수 없어 새 여정을 시작하지 않았습니다." if fresh else "이어갈 저장을 불러오지 못했습니다.")
+		return false
 	reset_encounter()
-	if fresh:
-		Session.new_game()
-	else:
-		Session.load_game()
 	started = true
 	play_seconds = 0
 	last_region = -2
 	player.locked_target = null
 	player.active = true
+	if fresh:
+		player.rune = 35.0
 	player.restore(Sanctuary.CHECKPOINTS[Session.checkpoint] + Vector3.UP * 0.15)
 	rig.cinematic = false
 	rig.yaw = 0
@@ -77,6 +87,7 @@ func start_game(fresh: bool) -> void:
 	ui.announce("무너진 성역", "CHAPTER I  ·  THE LAST VOW")
 	if fresh:
 		ui.show_dialog("마지막 서약", "PROLOGUE", "검사 리라, 너는 한때 이 성역의 순례자였다.\n\n사라진 동료들을 찾아 돌아왔지만, 문을 지키는 것은\n타락한 수호자와 꺼지지 않는 룬의 잔향뿐이다.\n\n일곱 봉인을 정화하고 성역의 심장에 도달하라.\n길가의 기록은 이곳에 남은 진실을 알려 줄 것이다.\n\n거점의 기록관과 대장장이에게 E로 말을 걸 수 있습니다.", [{"text":"성역으로 향한다", "call":ui.close_modal}])
+	return true
 
 func set_paused(value: bool) -> void:
 	get_tree().paused = value
@@ -264,9 +275,12 @@ func update_interaction() -> void:
 func interact() -> void:
 	match interaction_kind:
 		"checkpoint":
+			var previous_checkpoint := Session.checkpoint
 			Session.checkpoint = interaction_index
+			if not Session.save_game():
+				Session.checkpoint = previous_checkpoint
+				return
 			player.restore(Sanctuary.CHECKPOINTS[interaction_index] + Vector3.UP * 0.15)
-			Session.save_game()
 			Audio.play_sound("rune")
 			show_upgrades("룬의 안식처", "체력과 회복약이 보충되었습니다.\n룬 조각으로 검에 새로운 힘을 새길 수 있습니다.")
 		"npc":
@@ -289,11 +303,11 @@ func show_upgrades(title: String, description: String) -> void:
 		var level := Session.upgrades[index]
 		var text := "%s  [%d/3]  ·  %s" % [names[index],level,"완성" if level >= 3 else "%d 조각" % (35+level*25)]
 		actions.append({"text":text, "call":func():
-			if Session.buy_upgrade(index):
+			if Session.upgrades[index] >= 3 or Session.shards < 35 + Session.upgrades[index] * 25:
+				ui.toast("조각이 부족하거나 이미 완성한 룬입니다.")
+			elif Session.buy_upgrade(index):
 				player.refresh_stats()
 				Audio.play_sound("rune")
-			else:
-				ui.toast("조각이 부족하거나 이미 완성한 룬입니다.")
 			show_upgrades(title, description)})
 	actions.append({"text":"여정을 계속한다", "call":ui.close_modal})
 	ui.show_dialog(title, "RUNE FORGING  ·  보유 조각 %d" % Session.shards, description, actions)

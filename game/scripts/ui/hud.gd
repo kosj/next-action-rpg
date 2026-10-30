@@ -180,6 +180,7 @@ func build_hud() -> void:
 	lock_marker = label("◇", 35, GOLD)
 	hud.add_child(lock_marker)
 	toast_label = label("", 15, MINT)
+	toast_label.z_index = 20
 	root.add_child(toast_label)
 	anchored(toast_label, Control.PRESET_CENTER_BOTTOM, Vector2(-430,-180), Vector2(860,36))
 	toast_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -230,9 +231,10 @@ func show_title() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func start_game(fresh: bool) -> void:
+	if not world.start_game(fresh):
+		return
 	menu.hide()
 	hud.show()
-	world.start_game(fresh)
 
 func show_dialog(title: String, subtitle: String, body: String, actions: Array[Dictionary]) -> void:
 	close_modal(false)
@@ -280,7 +282,9 @@ func show_pause() -> void:
 	show_dialog("잠시 멈춘 여정", "PAUSED", "체크포인트에서 체력과 회복약을 보충할 수 있습니다.\n진행은 체크포인트·강화·전투 완료 시 자동 저장됩니다.", [{"text":"계속하기", "call":close_modal}, {"text":"환경 설정", "call":show_settings}, {"text":"조작 안내", "call":show_help}, {"text":"타이틀로", "call":func(): close_modal(); world.return_to_title(); show_title()}])
 
 func show_settings() -> void:
-	show_dialog("환경 설정", "SETTINGS", "", [{"text":"완료", "call":func(): Session.save_game(); close_modal()}])
+	show_dialog("환경 설정", "SETTINGS", "", [{"text":"완료", "call":func():
+		if Session.save_game():
+			close_modal()}])
 	var column: VBoxContainer = modal.get_child(1).get_child(0).get_child(0)
 	var volume_title := label("전체 음량", 17, GOLD)
 	column.add_child(volume_title)
@@ -336,7 +340,20 @@ func _process(delta: float) -> void:
 		var rect := Rect2()
 		if is_instance_valid(modal):
 			rect = modal.get_child(1).get_child(0).get_global_rect()
+		var buttons: Array[Dictionary] = []
+		for control in root.find_children("*", "Button", true, false):
+			if control.is_visible_in_tree() and not control.is_queued_for_deletion():
+				var bounds: Rect2 = control.get_global_rect()
+				var button_info := {"text":control.text, "kind":control.get_class(),
+					"x":bounds.position.x,"y":bounds.position.y,"w":bounds.size.x,"h":bounds.size.y}
+				if control is OptionButton:
+					button_info["popup_visible"] = control.get_popup().visible
+					button_info["popup_focus"] = control.get_popup().get_focused_item()
+				buttons.append(button_info)
 		var status := {"started":world.started, "paused":get_tree().paused,
+			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
+			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,
+			"quality":Session.quality,"fps":Engine.get_frames_per_second(),
 			"dead":player.dead, "health":player.health, "z":player.global_position.z,
 			"encounter":world.active_encounter, "hits":player.combo_hits,
 			"modal":is_instance_valid(modal), "modal_x":rect.position.x,"modal_y":rect.position.y,

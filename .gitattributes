@@ -3,3 +3,4 @@
 *.glb binary
 *.ttf binary
 *.wav binary
+.agents/skills/** -whitespace

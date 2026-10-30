@@ -15,7 +15,7 @@
 
 ## 로컬 웹 빌드
 
-Godot 4.6.3 Standard와 동일 버전 템플릿을 사용합니다. 웹은 Compatibility / WebGL 2.0, 스레드·GDExtension·PWA 비활성으로 내보냅니다. 배포는 HTTPS, 로컬 개발은 localhost를 사용합니다.
+Godot 4.7.2 Standard와 동일 버전 템플릿을 사용합니다. 웹은 Compatibility / WebGL 2.0, 스레드·GDExtension·PWA 비활성으로 내보냅니다. 배포는 HTTPS, 로컬 개발은 localhost를 사용합니다.
 
 ```bash
 python tools/build.py
@@ -36,12 +36,12 @@ Windows x86_64 EXE와 PCK를 ZIP으로 제공합니다. Forward+가 기본이며
 
 ## GitHub Actions
 
-- PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → ZIP·SHA-256 아티팩트 업로드.
+- PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → 실제 Chromium·저장 재접속 검사 → ZIP·SHA-256 아티팩트 업로드.
 - `v*` 태그 / 수동 Windows 선택: Windows 빌드 추가. 버전 태그의 ZIP·매니페스트는 GitHub Releases에도 자동 첨부합니다.
 - main의 성공 빌드: Pages 아티팩트 생성 → GitHub Pages 배포.
 - 큰 `.blend` 원본은 실행에 필요하지 않으므로 CI에서 LFS 다운로드를 하지 않습니다.
 
-실제 GPU 성능·Windows 플레이·Edge 동작은 별도 확인 항목입니다. headless 검사가 이를 대신하지 않습니다.
+실제 GPU 성능·Windows 플레이·Edge 동작은 별도 확인 항목입니다. headless 검사와 소프트웨어 WebGL 검사가 이를 대신하지 않습니다.
 
 ## 롤백
 

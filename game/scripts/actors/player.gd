@@ -65,12 +65,23 @@ func restore(point: Vector3) -> void:
 	global_position = point
 	refresh_stats()
 	health = max_health
-	rune = maxf(rune, 35.0)
+	rune = clampf(rune, 35.0, max_rune)
 	potions = 3
 	dead = false
 	strike = null
 	combo = 0
+	combo_hits = 0
+	combo_timeout = 0.0
+	input_buffer = 0.0
+	buffered_heavy = false
+	heavy_held = 0.0
 	dodge_time = 0.0
+	dodge_cooldown = 0.0
+	parry_time = 0.0
+	parry_cooldown = 0.0
+	stagger = 0.0
+	hit_pause = 0.0
+	locked_target = null
 	invulnerability = 1.0
 	velocity = Vector3.ZERO
 
@@ -201,7 +212,7 @@ func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool 
 		parried.emit()
 		for enemy in get_tree().get_nodes_in_group("enemies"):
 			if not enemy.dead and enemy.global_position.distance_to(global_position) < 5:
-				enemy.stagger = 1.4
+				enemy.interrupt_attack(1.4)
 		return
 	health = maxf(0, health - amount)
 	invulnerability = 0.7
@@ -216,6 +227,8 @@ func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool 
 
 func use_skill(index: int) -> bool:
 	var costs: Array[float] = [25.0, 45.0, 80.0]
+	if index < 0 or index >= costs.size():
+		return false
 	if dead or rune < costs[index] or stagger > 0 or dodge_time > 0 or strike != null:
 		return false
 	rune -= costs[index]
