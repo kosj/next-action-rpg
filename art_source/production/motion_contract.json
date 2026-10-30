@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "verification_status": "pending",
+  "reviewed_on": "2026-10-30",
+  "source_commit": "52562899c454958b8806d317145bab9516923b10",
+  "scope": "First Lyra art slice: nine authored clips. This does not cover all existing gameplay states or enable runtime replacement by itself.",
+  "units": {
+    "time": "seconds",
+    "distance": "metres",
+    "authoring_fps_hint": 60
+  },
+  "timing_rule": "Use the exact second values below. Fractional Blender keyframe positions are allowed; do not round .13s to an integer 60fps frame and move the hit window.",
+  "ownership": {
+    "movement": "RunePlayer CharacterBody3D physics",
+    "damage_and_parry": "gameplay code and CombatStrike only",
+    "clips": "AnimationPlayer library",
+    "playback_and_blending": "AnimationTree, driven from gameplay state and elapsed time",
+    "forbidden_clip_authority": [
+      "apply damage",
+      "change invulnerability",
+      "spend rune or potion",
+      "advance combo or grant rewards",
+      "move the CharacterBody root",
+      "decide attack completion solely from animation_finished"
+    ]
+  },
+  "motion_extraction": {
+    "in_place": true,
+    "root_translation_export": "constant zero on locomotion/attack/dodge root; bake skeletal pose only",
+    "root_rotation_export": "constant rest orientation; world facing belongs to the controller",
+    "virtual_locomotion": "author contact/stride against source movement, then remove virtual translation; verify feet in world coordinates with actual physics movement",
+    "ik": "optional runtime foot/hand correction after rest/bone mapping; no IK implementation is implied"
+  },
+  "source_constraints": {
+    "default_locomotion_mps": 6.4,
+    "sprint_mps": 8.5,
+    "input_buffer_s": 0.2,
+    "dodge_duration_s": 0.32,
+    "dodge_speed_mps": 17.0,
+    "dodge_invulnerability_s": 0.29,
+    "dodge_cooldown_s": 0.48,
+    "parry_window_s": 0.22,
+    "parry_cooldown_s": 0.65,
+    "parry_success_invulnerability_s": 0.4,
+    "hit_stagger_s": 0.15,
+    "hit_invulnerability_s": 0.7,
+    "landed_hit_pause_s": 0.035
+  },
+  "integration_prerequisites": [
+    "ActorVisual.pose now accepts a read-only scalar presentation snapshot. Mount a validated rig explicitly through mount_rig; the current prototype remains the default until final art acceptance.",
+    "RunePlayer/RuneEnemy snapshots provide attack identity and actual CombatStrike elapsed/duration. Do not infer the active attack from the legacy normalized swing value. Startup/active/recovery are contracted by the effective attack data below.",
+    "Drive attack clip position from gameplay elapsed time or a synchronized physics clock, including .035s landed-hit pause and interruption. Rendering must not run the clip ahead while physics is paused.",
+    "Current default movement named walk is 6.4m/s combat locomotion, closer to a fast jog. A normal slow walk clip retimed blindly will visibly slide or look rushed.",
+    "Light_1, light_2 and light_3 all use the same signed horizontal arc sweep in current code. Do not author a reversed second active cut or purely vertical third active cut and claim it matches the current predicate.",
+    "Stop the active visual state on parry/stagger/death/restore and discard pending visual events. A canceled clip cannot emit delayed strike VFX.",
+    "A full runtime swap needs coverage for heavy/charged-heavy/three skills/death/heal and lock-on strafing as well. These are explicitly outside the nine-clip slice, not silently complete."
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "status": "planned",
+      "duration_s": 1.8,
+      "loop": true,
+      "purpose": "Balanced ready stance, sword in the right hand, subtle breathing; no hip/feet drift.",
+      "duration_source": "art_target",
+      "root_motion": false,
+      "contacts": {
+        "both_feet": "planted for the full loop"
+      },
+      "events": [],
+      "loop_acceptance": "same first/last root and planted-foot transforms; no perceptible seam at real-time playback"
+    },
+    {
+      "name": "walk",
+      "status": "planned",
+      "duration_s": 0.48,
+      "loop": true,
+      "purpose": "Default 6.4m/s combat jog, not a slow pedestrian walk.",
+      "duration_source": "art_target_against_player_speed",
+      "root_motion": false,
+      "virtual_speed_mps": 6.4,
+      "virtual_cycle_distance_m": 3.072,
+      "contacts": {
+        "left_foot_target_interval_s": [
+          0.0,
+          0.14
+        ],
+        "right_foot_target_interval_s": [
+          0.24,
+          0.38
+        ]
+      },
+      "events": [
+        {
+          "time_s": 0.0,
+          "name": "footstep_left",
+          "authority": "visual_audio_only"
+        },
+        {
+          "time_s": 0.24,
+          "name": "footstep_right",
+          "authority": "visual_audio_only"
+        }
+      ],
+      "playback_rule": "scale by measured horizontal speed / 6.4 within reviewed limits, blend to idle near zero, separately review locked-target lateral/backward movement"
+    },
+    {
+      "name": "run",
+      "status": "planned",
+      "duration_s": 0.4,
+      "loop": true,
+      "purpose": "Committed 8.5m/s sprint, controlled torso and weapon, no large cape obscuring combat.",
+      "duration_source": "art_target_against_player_speed",
+      "root_motion": false,
+      "virtual_speed_mps": 8.5,
+      "virtual_cycle_distance_m": 3.4,
+      "contacts": {
+        "left_foot_target_interval_s": [
+          0.0,
+          0.09
+        ],
+        "right_foot_target_interval_s": [
+          0.2,
+          0.29
+        ]
+      },
+      "events": [
+        {
+          "time_s": 0.0,
+          "name": "footstep_left",
+          "authority": "visual_audio_only"
+        },
+        {
+          "time_s": 0.2,
+          "name": "footstep_right",
+          "authority": "visual_audio_only"
+        }
+      ],
+      "playback_rule": "match measured velocity, not only sprint-button state; do not keep sprinting feet after collision stops movement"
+    },
+    {
+      "name": "dodge",
+      "status": "planned",
+      "duration_s": 0.32,
+      "loop": false,
+      "purpose": "Compact directional evasive burst with clear start and planted recovery; no mandatory full roll.",
+      "duration_source": "gameplay_dodge_duration",
+      "root_motion": false,
+      "gameplay_windows": {
+        "dodge_s": [
+          0,
+          0.32
+        ],
+        "invulnerability_s": [
+          0,
+          0.29
+        ],
+        "cooldown_s": 0.48
+      },
+      "nominal_continuous_unblocked_distance_m": 5.44,
+      "contacts": {
+        "launch": "rear-foot push at start",
+        "recovery_target_interval_s": [
+          0.24,
+          0.32
+        ]
+      },
+      "events": [
+        {
+          "time_s": 0.0,
+          "name": "dodge_start",
+          "authority": "code_drives_visual_audio"
+        }
+      ],
+      "direction_rule": "code may dodge forward, backward or sideways independent of facing; the first forward candidate must not imply all directional clips are finished"
+    },
+    {
+      "name": "light_1",
+      "status": "planned",
+      "duration_s": 0.52,
+      "loop": false,
+      "purpose": "Fast right-to-left opening cut, readable torso windup and recovering guard.",
+      "duration_source": "effective_AttackData_resource",
+      "root_motion": false,
+      "resource": "game/data/light_1.tres",
+      "effective_data": {
+        "damage": 18.0,
+        "poise": 14.0,
+        "startup": 0.13,
+        "active": 0.17,
+        "recovery": 0.22,
+        "reach": 2.7,
+        "arc": 130.0,
+        "lunge": 3.5
+      },
+      "gameplay_windows": {
+        "startup_s": [
+          0,
+          0.13
+        ],
+        "active_s": [
+          0.13,
+          0.3
+        ],
+        "recovery_s": [
+          0.3,
+          0.52
+        ],
+        "cancel_eligible_from_s": 0.3
+      },
+      "sweep_angles_degrees": [
+        -65.0,
+        65.0
+      ],
+      "nominal_continuous_unblocked_lunge_m": 1.1655,
+      "contacts": {
+        "rule": "author a virtual lunge/step and verify world-space planting under code-driven motion; code can shorten movement on walls",
+        "front_foot_target_plant_s": 0.2405
+      },
+      "events": [
+        {
+          "time_s": 0.13,
+          "name": "blade_trail_begin",
+          "authority": "visual_only_from_code_phase"
+        },
+        {
+          "time_s": 0.3,
+          "name": "blade_trail_end",
+          "authority": "visual_only_from_code_phase"
+        }
+      ],
+      "hit_rule": "impact VFX/audio only on actual landed_hit/on_hit, not an unconditional animation contact event",
+      "transition_rule": "follow code cancel at active_end when buffered; stop immediately on hit/parry/dodge/death/restore, with at most a short reviewed visual-only inertial blend"
+    },
+    {
+      "name": "light_2",
+      "status": "planned",
+      "duration_s": 0.52,
+      "loop": false,
+      "purpose": "Second cut with a fast re-chamber and the same signed active sweep as current code.",
+      "duration_source": "effective_AttackData_resource",
+      "root_motion": false,
+      "resource": "game/data/light_2.tres",
+      "effective_data": {
+        "damage": 22.0,
+        "poise": 14.0,
+        "startup": 0.13,
+        "active": 0.17,
+        "recovery": 0.22,
+        "reach": 2.7,
+        "arc": 150.0,
+        "lunge": 4.5
+      },
+      "gameplay_windows": {
+        "startup_s": [
+          0,
+          0.13
+        ],
+        "active_s": [
+          0.13,
+          0.3
+        ],
+        "recovery_s": [
+          0.3,
+          0.52
+        ],
+        "cancel_eligible_from_s": 0.3
+      },
+      "sweep_angles_degrees": [
+        -75.0,
+        75.0
+      ],
+      "nominal_continuous_unblocked_lunge_m": 1.4985,
+      "contacts": {
+        "rule": "author a virtual lunge/step and verify world-space planting under code-driven motion; code can shorten movement on walls",
+        "front_foot_target_plant_s": 0.2405
+      },
+      "events": [
+        {
+          "time_s": 0.13,
+          "name": "blade_trail_begin",
+          "authority": "visual_only_from_code_phase"
+        },
+        {
+          "time_s": 0.3,
+          "name": "blade_trail_end",
+          "authority": "visual_only_from_code_phase"
+        }
+      ],
+      "hit_rule": "impact VFX/audio only on actual landed_hit/on_hit, not an unconditional animation contact event",
+      "transition_rule": "follow code cancel at active_end when buffered; stop immediately on hit/parry/dodge/death/restore, with at most a short reviewed visual-only inertial blend"
+    },
+    {
+      "name": "light_3",
+      "status": "planned",
+      "duration_s": 0.7,
+      "loop": false,
+      "purpose": "Heavier descending-diagonal finisher whose horizontal progression still matches the signed code arc.",
+      "duration_source": "effective_AttackData_resource",
+      "root_motion": false,
+      "resource": "game/data/light_3.tres",
+      "effective_data": {
+        "damage": 32.0,
+        "poise": 28.0,
+        "startup": 0.18,
+        "active": 0.22,
+        "recovery": 0.3,
+        "reach": 3.1,
+        "arc": 130.0,
+        "lunge": 3.5
+      },
+      "gameplay_windows": {
+        "startup_s": [
+          0,
+          0.18
+        ],
+        "active_s": [
+          0.18,
+          0.4
+        ],
+        "recovery_s": [
+          0.4,
+          0.7
+        ],
+        "cancel_eligible_from_s": 0.4
+      },
+      "sweep_angles_degrees": [
+        -65.0,
+        65.0
+      ],
+      "nominal_continuous_unblocked_lunge_m": 1.5575,
+      "contacts": {
+        "rule": "author a virtual lunge/step and verify world-space planting under code-driven motion; code can shorten movement on walls",
+        "front_foot_target_plant_s": 0.323
+      },
+      "events": [
+        {
+          "time_s": 0.18,
+          "name": "blade_trail_begin",
+          "authority": "visual_only_from_code_phase"
+        },
+        {
+          "time_s": 0.4,
+          "name": "blade_trail_end",
+          "authority": "visual_only_from_code_phase"
+        }
+      ],
+      "hit_rule": "impact VFX/audio only on actual landed_hit/on_hit, not an unconditional animation contact event",
+      "transition_rule": "follow code cancel at active_end when buffered; stop immediately on hit/parry/dodge/death/restore, with at most a short reviewed visual-only inertial blend"
+    },
+    {
+      "name": "parry",
+      "status": "planned",
+      "duration_s": 0.22,
+      "loop": false,
+      "purpose": "Quick guard into a readable narrow intercept pose with controlled weapon grip.",
+      "duration_source": "gameplay_parry_window",
+      "root_motion": false,
+      "gameplay_windows": {
+        "parry_s": [
+          0,
+          0.22
+        ],
+        "cooldown_s": 0.65,
+        "success_invulnerability_s": 0.4
+      },
+      "contacts": {
+        "both_feet": "stable planted guard; code reduces requested movement to .1 during parry"
+      },
+      "events": [],
+      "success_rule": "parry_time is cleared immediately on success; success flash and follow-up pose are driven by parried signal, not by a scheduled clip event",
+      "failure_rule": "at window end recover with blend; do not extend gameplay parry or hold until cooldown ends"
+    },
+    {
+      "name": "hit",
+      "status": "planned",
+      "duration_s": 0.15,
+      "loop": false,
+      "purpose": "Short torso recoil with the feet kept grounded and stable silhouette.",
+      "duration_source": "gameplay_stagger_duration",
+      "root_motion": false,
+      "gameplay_windows": {
+        "stagger_s": [
+          0,
+          0.15
+        ],
+        "invulnerability_s": [
+          0,
+          0.7
+        ]
+      },
+      "contacts": {
+        "both_feet": "use a short additive torso recoil or an authored balanced recovery; avoid moving root"
+      },
+      "events": [],
+      "recovery_rule": "allow controller locomotion again at stagger end; .7s invulnerability is not a .7s locked hit animation",
+      "integration_note": "current pose API has no hit argument; requires explicit presentation state, not just this clip file"
+    }
+  ],
+  "deferred_existing_states": {
+    "heavy": {
+      "status": "pending",
+      "duration_s": 0.86,
+      "startup_s": 0.32,
+      "active_s": 0.22,
+      "recovery_s": 0.32,
+      "charge_threshold_s": 0.65,
+      "note": "charged heavy changes power, not these timings; must supply reviewed clip mapping before a full runtime replacement"
+    },
+    "skills_1_2_3": {
+      "status": "pending",
+      "startup_s": 0.16,
+      "active_s": 0.35,
+      "recovery_s": 0.28,
+      "duration_s": 0.79,
+      "arcs_degrees": [
+        160,
+        360,
+        360
+      ],
+      "lunge_mps": [
+        13,
+        0,
+        0
+      ]
+    },
+    "death_heal_lockon_strafes": {
+      "status": "pending",
+      "note": "explicit animation/pose mapping and runtime acceptance required; no silent idle fallback during an attack or death"
+    }
+  },
+  "sources": [
+    "game/scripts/core/attack_data.gd",
+    "game/data/light_1.tres",
+    "game/data/light_2.tres",
+    "game/data/light_3.tres",
+    "game/data/heavy.tres",
+    "game/scripts/actors/player.gd",
+    "game/scripts/actors/actor_visual.gd",
+    "game/scripts/core/strike.gd"
+  ]
+}

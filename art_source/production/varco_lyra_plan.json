@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "reference_uploaded_waiting_for_target_flow",
+  "purpose": "A reviewed translation of the first Lyra candidate into discovered VARCO Flow node types. Placeholders must be replaced from real tool results; this file is not a raw MCP request.",
+  "reference": "art_source/production/references/lyra-front-concept.png",
+  "reference_sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+  "flow": {
+    "expected_name": "RUNEFALL Art Slice",
+    "flow_id": null,
+    "require_explicit_id_and_empty_graph": true
+  },
+  "preconditions": [
+    "An authenticated official MCP client has discovered these exact tool and node schemas.",
+    "The user has approved this reference image's upload to VARCO and one generation within the point limit.",
+    "An empty target Flow has been selected from actual list_flow_sessions/get_flow_graph results.",
+    "Current account eligibility, point estimate and generated-asset license are confirmed before running."
+  ],
+  "upload": {
+    "tool": "upload_image",
+    "status": "completed_after_explicit_user_approval",
+    "data_source": "base64 of the exact local reference file, never an authentication token",
+    "result_url": null,
+    "result_url_note": "The actual result is kept only in temporary local client output, not this public file.",
+    "persist_temporary_url_in_source_control": false
+  },
+  "nodes": [
+    {
+      "label": "lyra_reference",
+      "nodeType": "ImageInput",
+      "x": 0,
+      "y": 0,
+      "intrinsic": {"value": [{"type": "image", "url": "${upload_image_result_url}"}]}
+    },
+    {
+      "label": "lyra_candidate",
+      "nodeType": "Generate3D",
+      "x": 480,
+      "y": 0,
+      "intrinsic": {
+        "count": [{"type": "int", "value": 1}],
+        "polygonCount": [{"type": "int", "value": 80000}],
+        "topology": [{"type": "string", "value": "tri"}],
+        "tPose": [{"type": "int", "value": 1}],
+        "useAlpha": [{"type": "int", "value": 0}],
+        "usePbrTexture": [{"type": "int", "value": 1}],
+        "textureSize": [{"type": "int", "value": 2048}],
+        "generateTexture": [{"type": "int", "value": 1}]
+      },
+      "license": "Resolve the actual account/node license before execution; do not silently publish to Community or impose a public license.",
+      "model": "Use the real node's remembered/recommended option; no invented model identifier."
+    }
+  ],
+  "edges": [{"from": "lyra_reference", "fromPort": "out", "to": "lyra_candidate", "toPort": "image"}],
+  "run": {
+    "tool": "run_flow",
+    "scope": ["${lyra_candidate_node_id}"],
+    "empty_scope_allowed": false,
+    "candidate_count": 1,
+    "point_estimate_checked_on": "2026-10-30",
+    "point_estimate": 200,
+    "point_limit_for_this_request": 200,
+    "purchase_additional_points": false,
+    "status": "not_started"
+  },
+  "after_run": [
+    "Poll get_flow_graph status; Generate3D may take 4 to 10 minutes or longer without being a failure.",
+    "Use get_output_downloads(exportType=glb,pivotToBottom=true) only after success.",
+    "Download into gitignored build/art-candidates/lyra_body and inspect with tools/inspect_glb.py.",
+    "Record selected license, permanent source task identity, input hash and local output hash; exclude signed download URLs.",
+    "Review geometry/materials before adding Rig or Animate. Do not overwrite the current runtime hero model."
+  ]
+}

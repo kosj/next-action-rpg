@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "verification_status": "pending",
+  "reviewed_on": "2026-10-30",
+  "source_commit": "52562899c454958b8806d317145bab9516923b10",
+  "purpose": "Reviewed production inputs and acceptance targets, not a VARCO MCP tool payload or generated asset manifest.",
+  "generation_policy": {
+    "provider": "VARCO 3D",
+    "transport": "official_mcp",
+    "flow_id": null,
+    "execution_status": "not_requested_by_this_spec",
+    "tool_schema": "Discover real node types and parameter schemas after OAuth; do not invent API fields from this document.",
+    "license_status": "pending_per_asset_before_generation",
+    "provenance": [
+      "provider",
+      "model_version",
+      "prompt_revision",
+      "seed_if_supported",
+      "input_reference_sha256",
+      "selected_license",
+      "attribution",
+      "permanent_source_url",
+      "blender_edit_revision"
+    ],
+    "do_not_record": [
+      "OAuth tokens",
+      "temporary authorization URLs",
+      "signed download URLs"
+    ],
+    "single_image_input": "One subject, one full-body view. Use the single_view prompt. Turnarounds are consistency review inputs and must not be submitted as a multi-character image-to-3D source."
+  },
+  "coordinate_contract": {
+    "units": "metres",
+    "gltf_up": "+Y",
+    "asset_authored_front": "+Z",
+    "blender_scene_up": "+Z",
+    "blender_character_front_before_gltf_export": "-Y",
+    "game_actor_front": "-Z",
+    "current_visual_wrapper_y_rotation_rad": 3.141592653589793,
+    "conversion_rule": "Keep exactly one +Z asset to -Z actor correction in the wrapper; do not also rotate the mesh or rig by 180 degrees.",
+    "origin": "ground projection between the feet at y=0 for characters; tile/module bottom reference for environment",
+    "root_transform": "unit scale and no baked locomotion translation; bind pose and every animation share the same rest skeleton"
+  },
+  "quality_status": "No generated candidate or final rig, material, animation, visual-quality, or hardware-performance result is implied by this specification.",
+  "assets": [
+    {
+      "id": "lyra_body",
+      "status": "planned",
+      "generation_status": "pending_oauth_and_candidate_generation",
+      "visual_acceptance": "pending",
+      "runtime_replacement": "blocked_until_rig_motion_and_scene_acceptance",
+      "role": "hero body and clothing; separate rune sword subasset",
+      "target_height_m": 1.82,
+      "height_source": "art target, compared with existing player capsule height 1.85m and centre y=.95m",
+      "generation_input": {
+        "kind": "single_image_to_3d",
+        "reference_file": "art_source/production/references/lyra-front-concept.png",
+        "reference_sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+        "reference_status": "concept_available_pending_3d_candidate_review"
+      },
+      "identity_prompt": "Original adult female rune swordswoman Lyra, grounded realistic dark-fantasy action RPG art, athletic believable adult anatomy and calm focused face, silver-grey long hair tied into a practical low braided ponytail, fitted dark iron segmented cuirass over charcoal underlayers, muted teal split waist cloth with short rear panels, restrained aged-gold edge trim and one small geometric rune clasp on the sternum, functional gauntlets with five clearly separated fingers, protective knee plates and flat practical armored boots, clean readable shoulder and hip silhouette, consistent asymmetrical teal cloth tab on her LEFT hip. Physically plausible iron, woven cloth, leather and brushed gold; intentional local wear at edges, fine authored detail without baked lighting. This is the same original person and outfit in every view.",
+      "reference_prompts": {
+        "single_view": "Original adult female rune swordswoman Lyra, grounded realistic dark-fantasy action RPG art, athletic believable adult anatomy and calm focused face, silver-grey long hair tied into a practical low braided ponytail, fitted dark iron segmented cuirass over charcoal underlayers, muted teal split waist cloth with short rear panels, restrained aged-gold edge trim and one small geometric rune clasp on the sternum, functional gauntlets with five clearly separated fingers, protective knee plates and flat practical armored boots, clean readable shoulder and hip silhouette, consistent asymmetrical teal cloth tab on her LEFT hip. Physically plausible iron, woven cloth, leather and brushed gold; intentional local wear at edges, fine authored detail without baked lighting. This is the same original person and outfit in every view. Single full-body near-frontal three-quarter view, approximately 15 degrees off front, neutral relaxed A-pose with arms 25 degrees away from the torso and palms visible. Both legs straight and slightly apart, fingers apart, both boots entirely visible and planted. No weapon in hand and no scabbard crossing the body. Neutral mid-grey seamless studio background, even soft neutral illumination, restrained ambient contact at the feet, sharp material detail. One character only.",
+        "front": "Original adult female rune swordswoman Lyra, grounded realistic dark-fantasy action RPG art, athletic believable adult anatomy and calm focused face, silver-grey long hair tied into a practical low braided ponytail, fitted dark iron segmented cuirass over charcoal underlayers, muted teal split waist cloth with short rear panels, restrained aged-gold edge trim and one small geometric rune clasp on the sternum, functional gauntlets with five clearly separated fingers, protective knee plates and flat practical armored boots, clean readable shoulder and hip silhouette, consistent asymmetrical teal cloth tab on her LEFT hip. Physically plausible iron, woven cloth, leather and brushed gold; intentional local wear at edges, fine authored detail without baked lighting. This is the same original person and outfit in every view. Orthographic full-body FRONT view for consistency review, neutral A-pose, both feet on the same baseline, palms visible, no held weapon, neutral grey background and soft even studio lighting. Keep height, scale, costume and damage exactly consistent with the approved single-view candidate.",
+        "side": "Original adult female rune swordswoman Lyra, grounded realistic dark-fantasy action RPG art, athletic believable adult anatomy and calm focused face, silver-grey long hair tied into a practical low braided ponytail, fitted dark iron segmented cuirass over charcoal underlayers, muted teal split waist cloth with short rear panels, restrained aged-gold edge trim and one small geometric rune clasp on the sternum, functional gauntlets with five clearly separated fingers, protective knee plates and flat practical armored boots, clean readable shoulder and hip silhouette, consistent asymmetrical teal cloth tab on her LEFT hip. Physically plausible iron, woven cloth, leather and brushed gold; intentional local wear at edges, fine authored detail without baked lighting. This is the same original person and outfit in every view. Orthographic full-body RIGHT SIDE profile for consistency review, neutral A-pose with hands kept clear of the torso, no held weapon, neutral grey background and soft even studio lighting. Preserve the approved head, hair, torso thickness, armor and boot proportions.",
+        "back": "Original adult female rune swordswoman Lyra, grounded realistic dark-fantasy action RPG art, athletic believable adult anatomy and calm focused face, silver-grey long hair tied into a practical low braided ponytail, fitted dark iron segmented cuirass over charcoal underlayers, muted teal split waist cloth with short rear panels, restrained aged-gold edge trim and one small geometric rune clasp on the sternum, functional gauntlets with five clearly separated fingers, protective knee plates and flat practical armored boots, clean readable shoulder and hip silhouette, consistent asymmetrical teal cloth tab on her LEFT hip. Physically plausible iron, woven cloth, leather and brushed gold; intentional local wear at edges, fine authored detail without baked lighting. This is the same original person and outfit in every view. Orthographic full-body BACK view for consistency review, neutral A-pose, both feet on the same baseline, no held weapon, neutral grey background and soft even studio lighting. Preserve the same hair construction, cloth length, silhouette and costume seams; do not redesign the back."
+      },
+      "negative_prompt": "multiple people or duplicate bodies, turnaround grid for the single-view input, montage, cropped head or feet, dynamic action pose, perspective foreshortening, crossed limbs, hands hidden against thighs, weapon fused to fingers, extra or missing limbs or fingers, childlike body, toy proportions, featureless capsule body, inconsistent costume between views, floating parts, intersecting armor, giant unsupported shoulder spikes, text, watermark, logo, baked dramatic shadows or glow hiding the surface, exposed modern zippers or electronics, neon emissive skin, high heels, impractical floor-length cape, face copied from an existing franchise",
+      "palette_targets": {
+        "dark_iron": "#28343D",
+        "teal_cloth": "#2D7375",
+        "aged_gold": "#B69A62",
+        "silver_hair": "#D7DADE",
+        "charcoal_underlayer": "#252A2E"
+      },
+      "material_contract": {
+        "max_body_material_slots_initial_target": 5,
+        "roles": [
+          "skin",
+          "hair",
+          "iron",
+          "cloth_leather",
+          "gold_trim"
+        ],
+        "base_color": "sRGB without directional lighting or painted contact shadows",
+        "normal_map": "OpenGL tangent-space +Y, linear sampling",
+        "orm": "linear packed R=occlusion G=roughness B=metallic; validate glTF slot wiring",
+        "hair": "scalp plus restrained alpha-scissor cards; preserve silhouette on web and inspect overdraw",
+        "metallicity": "metal for iron/gold, dielectric for skin/cloth/leather; wear changes roughness and exposed metal, not arbitrary glow"
+      },
+      "rig_contract": {
+        "type": "skinned_humanoid",
+        "planned_export_root": "LyraRoot",
+        "rest_pose": "Humanoid-compatible T-pose for mapping; A-pose reference is generation input and must be corrected in Blender",
+        "required_roles": [
+          "hips",
+          "spine",
+          "chest",
+          "neck",
+          "head",
+          "left_upper_arm",
+          "left_lower_arm",
+          "left_hand",
+          "right_upper_arm",
+          "right_lower_arm",
+          "right_hand",
+          "left_upper_leg",
+          "left_lower_leg",
+          "left_foot",
+          "right_upper_leg",
+          "right_lower_leg",
+          "right_foot"
+        ],
+        "bone_map": "pending: map actual imported skeleton to SkeletonProfileHumanoid; do not infer compatibility from names alone",
+        "max_vertex_influences_initial_target": 4,
+        "cloth_and_hair": "first pass skinned to stable support bones; dynamic cloth is deferred"
+      },
+      "subassets": [
+        {
+          "id": "lyra_runeblade",
+          "status": "planned",
+          "separate_from_body": true,
+          "prompt": "One original straight rune longsword isolated on neutral grey, dark iron double-edged blade, aged-gold narrow crossguard, charcoal wrapped practical grip, one thin teal geometric rune channel recessed into the blade. Complete sword visible in orthographic front and side review views; single sword only, no person, no effects obscuring the edges.",
+          "negative_prompt": "sword merged with a hand, oversized fantasy slab, multiple swords, curved blade, illegible text, baked light beam, logo",
+          "target_total_length_m": 1.35,
+          "target_blade_length_m": 1.03,
+          "origin": "centre of the right-hand grip",
+          "local_axes": {
+            "blade_toward_tip": "+Y",
+            "crossguard": "+X",
+            "blade_flat_normal": "+Z"
+          },
+          "socket": "runtime BoneAttachment3D on mapped right-hand bone, adjusted grip transform validated at rest and all attack contacts",
+          "gameplay_reach_warning": "AttackData.reach is a generous gameplay volume from the actor root; it is not the physical sword length. Do not scale the weapon to 2.7m to conceal a visual/predicate mismatch."
+        }
+      ],
+      "derived_profiles": {
+        "windows": {
+          "status": "planned_budget_not_measured",
+          "body_triangles_lod0_target_max": 65000,
+          "texture_edge_target_max_px": 4096,
+          "body_material_slots_target_max": 5,
+          "renderer": "Forward+"
+        },
+        "web": {
+          "status": "planned_budget_not_measured",
+          "body_triangles_lod0_target_max": 32000,
+          "texture_edge_target_max_px": 2048,
+          "body_material_slots_target_max": 5,
+          "renderer": "Compatibility/WebGL2",
+          "rule": "derive from the same source, preserve face silhouette, hands, joint deformation and large material separation"
+        }
+      },
+      "sources": [
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/actor_visual.gd",
+        "docs/ART_PIPELINE.md"
+      ],
+      "reference": {
+        "file": "art_source/production/references/lyra-front-concept.png",
+        "sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+        "provider": "OpenAI image generation (native session tool)",
+        "status": "generated_2d_concept_only",
+        "runtime_asset": false,
+        "varco_generated": false
+      },
+      "required_candidate_corrections": [
+        "Keep visible separated fingers and realistic hand topology after mesh generation.",
+        "Preserve the tied silver-grey braid without merging it into the shoulder armor; simplify flyaway strands into a scalp/cards plan.",
+        "Keep teal skirt panels clear of thighs and knees through dodge, crouched windup and recovery."
+      ]
+    },
+    {
+      "id": "sentinel_melee",
+      "status": "planned",
+      "generation_status": "pending_oauth_and_candidate_generation",
+      "visual_acceptance": "pending",
+      "runtime_replacement": "blocked_until_rig_motion_and_scene_acceptance",
+      "role": "representative melee guardian; shield and ranged variants are deferred",
+      "target_height_m": 1.95,
+      "height_source": "existing ordinary enemy capsule height in enemy.gd",
+      "generation_input": {
+        "kind": "single_image_to_3d",
+        "reference_file": "art_source/production/references/sentinel-front-concept.png",
+        "reference_sha256": "d55443e566a223f7cf9d5d1a20409632e83c8308cf376d8ca02c0c6c443016ec",
+        "reference_status": "concept_available_pending_3d_candidate_review"
+      },
+      "identity_prompt": "Original ruined sanctuary humanoid sentinel, 1.95 metre adult-proportioned armored guardian, broad but plausible shoulders, closed angular bronze helmet with one narrow horizontal visor, dark ruined bronze segmented plate armor, ash-grey short cloth skirt and leather joints, restrained desaturated green oxidation in recesses, three thin amber rune cracks on the chest, heavy grounded boots and visibly articulated knees, five clearly separated fingers, no shield for this first melee variant. Distinct readable silhouette from the female protagonist, ancient disciplined craftsmanship rather than scrap armor. Use the same guardian, armor construction and damage locations in every view.",
+      "reference_prompts": {
+        "single_view": "Original ruined sanctuary humanoid sentinel, 1.95 metre adult-proportioned armored guardian, broad but plausible shoulders, closed angular bronze helmet with one narrow horizontal visor, dark ruined bronze segmented plate armor, ash-grey short cloth skirt and leather joints, restrained desaturated green oxidation in recesses, three thin amber rune cracks on the chest, heavy grounded boots and visibly articulated knees, five clearly separated fingers, no shield for this first melee variant. Distinct readable silhouette from the female protagonist, ancient disciplined craftsmanship rather than scrap armor. Use the same guardian, armor construction and damage locations in every view. Single full-body near-frontal three-quarter view, approximately 15 degrees off front, neutral relaxed A-pose with arms 25 degrees away from the torso and palms visible. Both legs straight and slightly apart, fingers apart, both boots entirely visible and planted. No weapon in hand and no scabbard crossing the body. Neutral mid-grey seamless studio background, even soft neutral illumination, restrained ambient contact at the feet, sharp material detail. One character only.",
+        "front": "Original ruined sanctuary humanoid sentinel, 1.95 metre adult-proportioned armored guardian, broad but plausible shoulders, closed angular bronze helmet with one narrow horizontal visor, dark ruined bronze segmented plate armor, ash-grey short cloth skirt and leather joints, restrained desaturated green oxidation in recesses, three thin amber rune cracks on the chest, heavy grounded boots and visibly articulated knees, five clearly separated fingers, no shield for this first melee variant. Distinct readable silhouette from the female protagonist, ancient disciplined craftsmanship rather than scrap armor. Use the same guardian, armor construction and damage locations in every view. Orthographic full-body FRONT view for consistency review, neutral A-pose, both feet on the same baseline, palms visible, no held weapon, neutral grey background and soft even studio lighting. Keep height, scale, costume and damage exactly consistent with the approved single-view candidate.",
+        "side": "Original ruined sanctuary humanoid sentinel, 1.95 metre adult-proportioned armored guardian, broad but plausible shoulders, closed angular bronze helmet with one narrow horizontal visor, dark ruined bronze segmented plate armor, ash-grey short cloth skirt and leather joints, restrained desaturated green oxidation in recesses, three thin amber rune cracks on the chest, heavy grounded boots and visibly articulated knees, five clearly separated fingers, no shield for this first melee variant. Distinct readable silhouette from the female protagonist, ancient disciplined craftsmanship rather than scrap armor. Use the same guardian, armor construction and damage locations in every view. Orthographic full-body RIGHT SIDE profile for consistency review, neutral A-pose with hands kept clear of the torso, no held weapon, neutral grey background and soft even studio lighting. Preserve the approved head, hair, torso thickness, armor and boot proportions.",
+        "back": "Original ruined sanctuary humanoid sentinel, 1.95 metre adult-proportioned armored guardian, broad but plausible shoulders, closed angular bronze helmet with one narrow horizontal visor, dark ruined bronze segmented plate armor, ash-grey short cloth skirt and leather joints, restrained desaturated green oxidation in recesses, three thin amber rune cracks on the chest, heavy grounded boots and visibly articulated knees, five clearly separated fingers, no shield for this first melee variant. Distinct readable silhouette from the female protagonist, ancient disciplined craftsmanship rather than scrap armor. Use the same guardian, armor construction and damage locations in every view. Orthographic full-body BACK view for consistency review, neutral A-pose, both feet on the same baseline, no held weapon, neutral grey background and soft even studio lighting. Preserve the same hair construction, cloth length, silhouette and costume seams; do not redesign the back."
+      },
+      "negative_prompt": "multiple people or duplicate bodies, turnaround grid for the single-view input, montage, cropped head or feet, dynamic action pose, perspective foreshortening, crossed limbs, hands hidden against thighs, weapon fused to fingers, extra or missing limbs or fingers, childlike body, toy proportions, featureless capsule body, inconsistent costume between views, floating parts, intersecting armor, giant unsupported shoulder spikes, text, watermark, logo, baked dramatic shadows or glow hiding the surface, heroine silver hair or teal silk, readable modern insignia, modern firearms, shield fused to the torso, exposed glowing full body",
+      "palette_targets": {
+        "ruined_bronze": "#654A35",
+        "ash_cloth": "#666662",
+        "oxidation": "#45675B",
+        "rune_crack": "#DC863C"
+      },
+      "material_contract": {
+        "max_body_material_slots_initial_target": 4,
+        "roles": [
+          "bronze",
+          "cloth",
+          "leather",
+          "rune_crack"
+        ],
+        "metallicity": "bronze plates are metallic; patina and dirt are dielectric",
+        "emission": "restrained thin crack masks; never bake the game telegraph warning into the chest texture",
+        "normal_and_orm": "same tangent-space and ORM channel contract as lyra_body"
+      },
+      "rig_contract": {
+        "type": "skinned_humanoid",
+        "planned_export_root": "SentinelRoot",
+        "bone_map": "pending actual-skeleton mapping and retarget tests",
+        "same_rest_skeleton_for_clips": true,
+        "max_vertex_influences_initial_target": 4
+      },
+      "subassets": [
+        {
+          "id": "sentinel_sword",
+          "status": "planned",
+          "separate_from_body": true,
+          "prompt": "One ancient straight bronze-and-dark-iron guardian sword, chipped but functional cutting edge, simple strong crossguard and leather grip, same ruined sanctuary craft as the sentinel, isolated fully visible on neutral grey with even lighting.",
+          "origin": "grip centre",
+          "local_axes": {
+            "blade_toward_tip": "+Y",
+            "crossguard": "+X",
+            "blade_flat_normal": "+Z"
+          },
+          "socket": "mapped right hand BoneAttachment3D; verify reach and telegraph readability in game"
+        }
+      ],
+      "derived_profiles": {
+        "windows": {
+          "status": "planned_budget_not_measured",
+          "body_triangles_lod0_target_max": 42000,
+          "texture_edge_target_max_px": 2048,
+          "body_material_slots_target_max": 4
+        },
+        "web": {
+          "status": "planned_budget_not_measured",
+          "body_triangles_lod0_target_max": 22000,
+          "texture_edge_target_max_px": 2048,
+          "body_material_slots_target_max": 4
+        }
+      },
+      "motion_scope": [
+        "idle",
+        "walk",
+        "attack_melee",
+        "hit",
+        "parried",
+        "death"
+      ],
+      "attack_contract": {
+        "startup_s": 0.7,
+        "active_s": 0.2,
+        "recovery_s": 0.6,
+        "duration_s": 1.5,
+        "active_interval_s": [
+          0.7,
+          0.9
+        ],
+        "reach_m": 3.0,
+        "arc_degrees": 100.0,
+        "movement_during_active_mps": 3.0,
+        "warning": "AttackData.lunge=2.0 is not the enemy movement speed; enemy.gd drives 3.0m/s only during the active interval."
+      },
+      "sources": [
+        "game/data/enemy_attack.tres",
+        "game/scripts/actors/enemy.gd",
+        "docs/ART_PIPELINE.md"
+      ],
+      "reference": {
+        "file": "art_source/production/references/sentinel-front-concept.png",
+        "sha256": "d55443e566a223f7cf9d5d1a20409632e83c8308cf376d8ca02c0c6c443016ec",
+        "provider": "OpenAI image generation (native session tool)",
+        "status": "generated_2d_concept_only",
+        "runtime_asset": false,
+        "varco_generated": false
+      },
+      "required_candidate_corrections": [
+        "The concept contains a large rigid halo behind the helmet. Export it as a separate rigid accessory or shrink/remove it if it intersects shoulders, obscures the head or hides the gameplay warning.",
+        "The concept has a long dark wine tabard. Shorten and split the runtime cloth into controlled panels clear of knees/boots; keep ash cloth with a restrained desaturated wine accent if retained.",
+        "Reduce extreme helmet/shoulder spikes where they obstruct 100-degree attack readability or intersect raised arms.",
+        "Keep the reference image as a concept; none of these corrections has been performed on a 3D model yet."
+      ]
+    },
+    {
+      "id": "pilgrim_courtyard",
+      "status": "planned",
+      "generation_status": "pending_oauth_and_candidate_generation",
+      "visual_acceptance": "pending",
+      "role": "first combat room modular visual kit; existing collision layout remains authoritative",
+      "identity_prompt": "Original ruined pilgrims sanctuary courtyard for a grounded dark-fantasy action RPG: pale weathered limestone paving, dark basalt structural blocks, thin aged-gold inlay circles, restrained teal rune details, broken ceremonial pillars and a monumental damaged exit portal. Early cold morning with a restrained warm grazing key light, cool sky fill, visible contact shadows and readable neutral character values. Ancient human stone craft, layered wear, sparse moss in protected seams, clear separation of dressed paving, broken edges and structural stone. Keep the central combat space open and the exit portal readable behind the enemy.",
+      "reference_prompts": {
+        "single_view": "Original ruined pilgrims sanctuary courtyard for a grounded dark-fantasy action RPG: pale weathered limestone paving, dark basalt structural blocks, thin aged-gold inlay circles, restrained teal rune details, broken ceremonial pillars and a monumental damaged exit portal. Early cold morning with a restrained warm grazing key light, cool sky fill, visible contact shadows and readable neutral character values. Ancient human stone craft, layered wear, sparse moss in protected seams, clear separation of dressed paving, broken edges and structural stone. Keep the central combat space open and the exit portal readable behind the enemy. One readable in-game third-person composition from the south entrance looking north toward the damaged portal, camera about 3.5m above paving and 6.7m behind an adult-height scale marker, approximately 56-degree FOV. No characters, UI, depth-of-field blur or particle fog hiding the materials. This image is scene-art direction only; generate modular props separately instead of turning the whole image into one combat mesh.",
+        "front": "Original ruined pilgrims sanctuary courtyard for a grounded dark-fantasy action RPG: pale weathered limestone paving, dark basalt structural blocks, thin aged-gold inlay circles, restrained teal rune details, broken ceremonial pillars and a monumental damaged exit portal. Early cold morning with a restrained warm grazing key light, cool sky fill, visible contact shadows and readable neutral character values. Ancient human stone craft, layered wear, sparse moss in protected seams, clear separation of dressed paving, broken edges and structural stone. Keep the central combat space open and the exit portal readable behind the enemy. Orthographic FRONT elevation of one damaged ceremonial portal module only, neutral grey background and neutral illumination, complete silhouette visible, no perspective, no scene or other props.",
+        "side": "Original ruined pilgrims sanctuary courtyard for a grounded dark-fantasy action RPG: pale weathered limestone paving, dark basalt structural blocks, thin aged-gold inlay circles, restrained teal rune details, broken ceremonial pillars and a monumental damaged exit portal. Early cold morning with a restrained warm grazing key light, cool sky fill, visible contact shadows and readable neutral character values. Ancient human stone craft, layered wear, sparse moss in protected seams, clear separation of dressed paving, broken edges and structural stone. Keep the central combat space open and the exit portal readable behind the enemy. Orthographic SIDE elevation of the same portal module, neutral grey background, preserve the approved width, stone thickness, breaks and trim locations.",
+        "back": "Original ruined pilgrims sanctuary courtyard for a grounded dark-fantasy action RPG: pale weathered limestone paving, dark basalt structural blocks, thin aged-gold inlay circles, restrained teal rune details, broken ceremonial pillars and a monumental damaged exit portal. Early cold morning with a restrained warm grazing key light, cool sky fill, visible contact shadows and readable neutral character values. Ancient human stone craft, layered wear, sparse moss in protected seams, clear separation of dressed paving, broken edges and structural stone. Keep the central combat space open and the exit portal readable behind the enemy. Orthographic BACK elevation of the same portal module, neutral grey background, believable rear masonry and same damage, no redesign.",
+        "pillar_single_view": "One original sanctuary pillar module, about 7m tall, pale weathered limestone shaft on dark basalt plinth, restrained aged-gold collar and a thin teal rune inset, complete isolated object from a near-front three-quarter view, neutral grey background and even lighting, believable stone thickness, no attached floor or adjacent building.",
+        "floor_material_single_view": "One evenly lit orthographic top-down square of pale worn limestone paving with restrained small edge chips and sparse seam moss, physically plausible surface detail, seamless tileable borders, no perspective, no directional shadows, no text, no loose props, neutral base colour suited to authoring albedo/normal/roughness maps."
+      },
+      "negative_prompt": "entire arena exported as a single fused mesh, narrow maze, rubble in the central combat lane, modern architecture, glowing floor hiding telegraphs, baked volumetric fog, pure black shadows, exaggerated bloom, identical random damage on every module, multiple scale references, UI, captions, watermark",
+      "layout_contract": {
+        "source": "game/scripts/world/sanctuary.gd::CENTERS[0] and build_room",
+        "room_world_centre_m": [
+          0,
+          0,
+          -38
+        ],
+        "room_half_extent_m": 20,
+        "visual_footprint_m": [
+          40,
+          40
+        ],
+        "entry_direction_local": "+Z",
+        "exit_direction_local": "-Z",
+        "gate_planes_local_z_m": [
+          19.5,
+          -19.5
+        ],
+        "central_clear_combat_box_local_xz_m": [
+          -11,
+          -11,
+          11,
+          11
+        ],
+        "existing_columns_local_x_m": [
+          -18,
+          18
+        ],
+        "existing_column_rows_local_z_m": [
+          -17,
+          -5,
+          7,
+          17
+        ],
+        "rubble_rule": "keep loose visual rubble outside the central clear box and do not add collision without a gameplay regression check",
+        "source_collision_rule": "use separate simple colliders; the generated visual kit must not silently move gates, spawn points or floor height"
+      },
+      "module_targets": [
+        {
+          "id": "paving_tile",
+          "size_m": [
+            4,
+            0.15,
+            4
+          ],
+          "pivot": "centre at bottom",
+          "placement": "repeat with material/rotation variation, preserve flat navigation surface"
+        },
+        {
+          "id": "pillar",
+          "height_target_m": 7.0,
+          "base_footprint_target_m": [
+            1.6,
+            1.6
+          ],
+          "pivot": "base centre",
+          "placement": "perimeter only"
+        },
+        {
+          "id": "portal",
+          "size_target_m": [
+            17,
+            7.8,
+            1.6
+          ],
+          "pivot": "base centre",
+          "placement": "north edge, collision gate is a separate existing object"
+        },
+        {
+          "id": "broken_slab_cluster",
+          "footprint_target_max_m": [
+            2,
+            2
+          ],
+          "pivot": "floor contact centre",
+          "placement": "perimeter only"
+        },
+        {
+          "id": "brazier",
+          "height_target_m": 2.0,
+          "pivot": "floor contact centre",
+          "placement": "edge framing; thin controlled rune emission"
+        }
+      ],
+      "material_contract": {
+        "roles": [
+          "limestone",
+          "basalt",
+          "aged_gold_trim",
+          "teal_rune"
+        ],
+        "trim_sheet_plan": "shared stone atlas plus trim atlas, sparse decals after material acceptance",
+        "same_pbr_channels_as_characters": true,
+        "lighting_not_in_texture": true,
+        "web_lighting": "baked/static ambient contribution or supported simple fill; retain direct lighting and contact readability without relying on Forward+ only effects"
+      },
+      "derived_profiles": {
+        "windows": {
+          "status": "planned_budget_not_measured",
+          "stone_texture_edge_target_max_px": 4096,
+          "unique_material_slots_initial_target_max": 8,
+          "renderer": "Forward+"
+        },
+        "web": {
+          "status": "planned_budget_not_measured",
+          "stone_texture_edge_target_max_px": 2048,
+          "unique_material_slots_initial_target_max": 6,
+          "renderer": "Compatibility/WebGL2",
+          "rule": "share meshes/materials and use LOD; account for transparent overdraw and actual draw calls separately"
+        }
+      },
+      "sources": [
+        "game/scripts/world/sanctuary.gd",
+        "game/scripts/world/camera_rig.gd",
+        "game/scripts/game.gd"
+      ],
+      "reference": {
+        "file": "art_source/production/references/sanctuary-courtyard-target.png",
+        "sha256": "2f9e6e9783af8d639901120f55ba59f175fd35d689cd9bac45f8681b20a1309e",
+        "provider": "OpenAI image generation (native session tool)",
+        "status": "generated_2d_concept_only",
+        "runtime_asset": false,
+        "varco_generated": false,
+        "usage": "environment style/composition target only; modular props require their own isolated single-object inputs"
+      }
+    }
+  ]
+}

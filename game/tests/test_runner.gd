@@ -202,6 +202,7 @@ func run() -> void:
 	await get_tree().create_timer(2.1).timeout
 	check(load("res://tests/save_regressions.gd").run(session, check) == true, "Save regression suite completes")
 	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
+	check(await load("res://tests/skeletal_regressions.gd").run(world, check) == true, "Skeletal presentation suite completes")
 	ledger = null
 	second = null
 	sweep = null

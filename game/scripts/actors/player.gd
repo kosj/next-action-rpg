@@ -36,6 +36,7 @@ var parry_cooldown: float = 0.0
 var invulnerability: float = 0.0
 var hit_pause: float = 0.0
 var stagger: float = 0.0
+var presentation_death_elapsed: float = 0.0
 var world: Node3D
 
 func _ready() -> void:
@@ -69,6 +70,7 @@ func restore(point: Vector3) -> void:
 	rune = clampf(rune, 35.0, max_rune)
 	potions = 3
 	dead = false
+	presentation_death_elapsed = 0.0
 	strike = null
 	combo = 0
 	combo_hits = 0
@@ -100,11 +102,12 @@ func _physics_process(delta: float) -> void:
 		visual.pose(delta, 0)
 		return
 	if dead:
-		visual.pose(delta, 0, -1, false, false, true)
+		presentation_death_elapsed += delta
+		visual.pose(delta, 0, -1, false, false, true, presentation_snapshot())
 		return
 	if ui_input_guard > 0:
 		ui_input_guard -= 1
-		visual.pose(delta, 0)
+		visual.pose(delta, 0, -1.0, false, false, false, presentation_snapshot(0.0))
 		return
 	dodge_time = maxf(0.0, dodge_time - delta)
 	dodge_cooldown = maxf(0.0, dodge_cooldown - delta)
@@ -180,7 +183,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1.0, delta * 18.0))
 	var swing := clampf((strike.elapsed - strike.data.startup + 0.15) / (strike.data.active + 0.15), 0.0, 1.0) if strike != null else -1.0
-	visual.pose(delta, Vector2(velocity.x, velocity.z).length(), swing, dodge_time > 0.0, parry_time > 0.0)
+	visual.pose(delta, Vector2(velocity.x, velocity.z).length(), swing, dodge_time > 0.0, parry_time > 0.0, false, presentation_snapshot())
 	if global_position.y < -8:
 		world.recover_from_fall()
 
@@ -204,6 +207,18 @@ func begin_attack(heavy: bool, chain: int) -> void:
 			facing = (nearest.global_position - global_position).normalized()
 			facing.y = 0
 	Audio.play_sound("slash", 1.0 + chain * 0.12)
+
+func presentation_snapshot(speed: float = -1.0) -> Dictionary:
+	# Fresh scalar values only: a renderer cannot mutate the strike or combat state.
+	return {
+		"speed":Vector2(velocity.x, velocity.z).length() if speed < 0.0 else speed,
+		"dead":dead, "death_elapsed":presentation_death_elapsed, "stagger":stagger, "hit_elapsed":maxf(0.0, 0.15-stagger), "hit_duration":0.15,
+		"dodge_remaining":dodge_time, "dodge_elapsed":maxf(0.0, 0.32-dodge_time), "dodge_duration":0.32,
+		"parry_remaining":parry_time, "parry_elapsed":maxf(0.0, 0.22-parry_time), "parry_duration":0.22,
+		"attack_id":String(strike.presentation_id) if strike != null else "",
+		"attack_elapsed":strike.elapsed if strike != null else 0.0,
+		"attack_duration":strike.data.duration() if strike != null else 0.0,
+	}
 
 func on_hit(amount: float, point: Vector3) -> void:
 	rune = minf(max_rune, rune + 7.0 + Session.upgrades[2] * 1.5)
@@ -236,6 +251,7 @@ func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool 
 	Audio.play_sound("hit", 0.7)
 	if health <= 0:
 		dead = true
+		presentation_death_elapsed = 0.0
 		Audio.play_sound("death")
 		died.emit()
 
@@ -256,7 +272,7 @@ func use_skill(index: int) -> bool:
 	data.startup = 0.16
 	data.active = 0.35
 	data.recovery = 0.28
-	strike = CombatStrike.new(self, data, 1.0 + Session.upgrades[0] * 0.15)
+	strike = CombatStrike.new(self, data, 1.0 + Session.upgrades[0] * 0.15, StringName("skill_%d" % (index+1)))
 	invulnerability = 0.3 if index < 2 else 0.65
 	skill_effect.emit(global_position, data.reach, Color("b8f7e3") if index == 2 else Color("53d5d0"))
 	Audio.play_sound("rune", 0.85 + index * 0.15)

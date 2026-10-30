@@ -9,11 +9,15 @@ var hit_ids: Dictionary = {}
 var previous_origin: Vector3
 var started: bool = false
 var multiplier: float = 1.0
+var presentation_id: StringName
 
-func _init(actor: CharacterBody3D, attack: AttackData, power: float = 1.0) -> void:
+func _init(actor: CharacterBody3D, attack: AttackData, power: float = 1.0, visual_id: StringName = &"") -> void:
 	source = actor
 	data = attack
 	multiplier = power
+	presentation_id = visual_id if not visual_id.is_empty() else StringName(attack.resource_path.get_file().get_basename())
+	if presentation_id.is_empty():
+		presentation_id = &"unmapped_attack"
 	previous_origin = actor.global_position
 
 func register_target(id: int) -> bool:

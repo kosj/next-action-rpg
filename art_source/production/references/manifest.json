@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-10-30",
+  "assets": [
+    {
+      "file": "lyra-front-concept.png",
+      "bytes": 2060941,
+      "sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+      "width": 1024,
+      "height": 1536,
+      "purpose": "single_character_image_to_3d_reference",
+      "status": "generated_concept_reference",
+      "provider": "OpenAI image generation (native session tool)",
+      "varco_generated": false,
+      "runtime_asset": false,
+      "requires_human_and_game_scene_review": true
+    },
+    {
+      "file": "sentinel-front-concept.png",
+      "bytes": 2503977,
+      "sha256": "d55443e566a223f7cf9d5d1a20409632e83c8308cf376d8ca02c0c6c443016ec",
+      "width": 1024,
+      "height": 1536,
+      "purpose": "single_character_image_to_3d_reference",
+      "status": "generated_concept_reference",
+      "provider": "OpenAI image generation (native session tool)",
+      "varco_generated": false,
+      "runtime_asset": false,
+      "requires_human_and_game_scene_review": true
+    },
+    {
+      "file": "sanctuary-courtyard-target.png",
+      "bytes": 3234676,
+      "sha256": "2f9e6e9783af8d639901120f55ba59f175fd35d689cd9bac45f8681b20a1309e",
+      "width": 1672,
+      "height": 941,
+      "purpose": "environment_style_and_composition_target",
+      "status": "generated_concept_reference",
+      "provider": "OpenAI image generation (native session tool)",
+      "varco_generated": false,
+      "runtime_asset": false,
+      "requires_human_and_game_scene_review": true
+    }
+  ],
+  "notes": [
+    "These are 2D concept references, not 3D models or implemented game screenshots.",
+    "Character concepts still require topology, skin, material and motion review after 3D generation.",
+    "Environment target is visual direction; build it from separate modular assets rather than one monolithic generated scene.",
+    "Images are development sources outside game/ and are not packaged into runtime builds."
+  ]
+}

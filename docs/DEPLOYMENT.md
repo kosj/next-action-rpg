@@ -4,7 +4,7 @@
 
 **플레이 URL: https://kosj.github.io/next-action-rpg/**
 
-2026-10-30 사용자가 Pages Source를 GitHub Actions로 활성화한 뒤, 이미 성공한 build를 유지하고 실패했던 deploy만 재실행했습니다. [배포 실행의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)가 성공했고 공개 URL의 HTTPS HTTP 200 응답을 확인했습니다. 배포한 게임 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`의 v0.1.1입니다.
+2026-10-30 사용자가 Pages Source를 GitHub Actions로 활성화한 뒤, 이미 성공한 build를 유지하고 실패했던 deploy만 재실행했습니다. [최초 배포 실행의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)가 성공했고 공개 URL의 HTTPS HTTP 200 응답을 확인했습니다. 최초 배포 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`의 v0.1.1이며, 이후 main의 검증된 빌드가 같은 주소에 자동 게시됩니다. 현재 실행 버전·커밋은 타이틀의 빌드 번호와 해당 Actions 실행으로 확인합니다.
 
 ## GitHub Pages 최초 설정
 

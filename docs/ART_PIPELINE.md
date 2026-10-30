@@ -39,6 +39,8 @@ python art_source/generate_audio.py
 
 현재 네 GLB에는 `skins`와 `animations`가 없습니다. 최종 캐릭터는 별도의 `Skeleton3D`·스킨 웨이트·`AnimationLibrary`를 반입한 후 `AnimationPlayer`의 클립을 `AnimationTree`에서 재생·블렌딩하는 방식으로 전환합니다. 임시 피벗을 곧바로 합치면 현재 코드 애니메이션이 깨지므로, 메시 통합은 최종 리깅 이후 수행합니다. 이동·공격 시간과 판정은 게임 코드가 계속 소유합니다.
 
+v0.1.2에는 선택적 `ActorVisual.mount_rig()`와 게임 상태의 시간을 사용하는 스킨 연결부를 추가했습니다. 실제 Skin·필수 클립·트랙·루프 검사와 단일 클립 시간 동기화까지 구현했으며, 최종 자산·BoneMap·크로스페이드·변형 품질을 완료한 것은 아닙니다. [대표 구간 명세](ART_SLICE.md)와 `tools/inspect_glb.py`, `tools/check_art_production.py`로 반입 전 구조와 계약을 확인합니다.
+
 ## VARCO 생성물 기록
 
 [2026-10-12 공식 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate)에 따르면 Free 플랜의 새 생성물은 Public(CC BY 4.0)이며, Private 선택은 Plus 이상에서 제공합니다. Community에 게시하면 CC0가 되며 게시를 취소해도 유지됩니다. 계정 플랜을 나중에 바꾸어도 생성 시 라이선스가 자동 변경되지는 않습니다.

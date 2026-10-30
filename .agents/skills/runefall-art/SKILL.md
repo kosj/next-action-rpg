@@ -13,6 +13,8 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 - `art_source/generate_assets.py`는 기존 원본과 GLB를 덮어씁니다. 수작업 자산을 보존하고 임시 출력에서 비교한 뒤 적용합니다. `.blend`는 LFS, 런타임 GLB는 일반 Git으로 관리합니다.
 - 고유 주인공·룬도 VARCO 생성 후보와 Blender 후처리를 조합합니다. 생성 사용 범위를 소품으로 제한하지 않습니다. VARCO 사용 전 생성 당시 플랜·라이선스·공개 범위를 공식 정책과 대조하고 자산 URL·제작자·귀속 표기를 기록합니다.
 - [공식 MCP 연결 가이드](../../../docs/VARCO_MCP.md)에 따라 서버 존재·현재 클라이언트 등록·OAuth·도구 발견·실제 호출을 구분합니다. 사용 가능한 도구와 플러그인을 검색하기 전에 연결 불가로 단정하지 않습니다. 클라이언트의 OAuth를 사용하고 MCP 엔드포인트나 토큰 교환을 수동 호출하지 않습니다.
+- 현재 환경은 `tools/varco_mcp.py`를 통해 공식 Codex app-server의 도구 발견·호출 API를 사용할 수 있습니다. 새 세션에서는 `catalog`와 실제 읽기 호출로 상태를 확인합니다. Flow 목록이 비어 있으면 대상 Flow를 준비하고, 실제 스키마의 `flowId`를 명시합니다. 임의 ID나 오래된 workflow 이름을 만들지 않습니다.
+- `art_source/production/`의 입력 명세와 실제 생성 후보는 분리합니다. `tools/check_art_production.py`는 입력·참조 해시·게임 공격 값의 일치만, `tools/inspect_glb.py`는 바이너리 구조와 명시 요구 조건만 검사합니다. 최종 반입은 두 검사와 실제 화면·변형·성능 검수까지 확인합니다.
 - 현재 도형 블록아웃은 최종 제작 방식이 아닙니다. 주인공 1명·적 1종·전투 공간 1개부터 형태·재질·리그·모션·조명·VFX를 함께 검수한 뒤 확장합니다. 상세 범위는 아트 가이드에서 확인합니다.
 
 ## 버전 실험의 완료 기준
