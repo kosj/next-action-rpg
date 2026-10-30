@@ -1,0 +1,29 @@
+---
+name: runefall-art
+description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blender upgrades, and migrate prototype pivots to skeletal animation. Use for model generation, rigging, animation, or art-pipeline changes.
+---
+
+# RUNEFALL 아트 제작과 반입
+
+[아트 파이프라인](../../../docs/ART_PIPELINE.md)과 [재검증 기록](../../../docs/ART_REVIEW.md)을 먼저 확인합니다. `python tools/knowledge.py search --tag art`로 실험 결과와 라이선스 조건을 찾습니다. 리그·애니메이션 변경에는 [godot-animation](../godot-animation/SKILL.md)을 적용합니다.
+
+## 원본과 생성
+
+- 현재 검증된 Blender 버전은 아트 가이드에서 확인합니다. 새 버전은 별도 디렉터리·체크아웃에서 먼저 시험합니다.
+- `art_source/generate_assets.py`는 기존 원본과 GLB를 덮어씁니다. 수작업 자산을 보존하고 임시 출력에서 비교한 뒤 적용합니다. `.blend`는 LFS, 런타임 GLB는 일반 Git으로 관리합니다.
+- 고유 주인공·룬은 직접 제작을 기본으로 합니다. VARCO 사용 전 생성 당시 플랜·라이선스·공개 범위를 공식 정책과 대조하고 자산 URL·제작자·귀속 표기를 기록합니다. 계정·API·Bridge가 연결돼 있다고 가정하지 않습니다.
+
+## 버전 실험의 완료 기준
+
+프로세스 정상 종료, GLB 구조·재질·변환·메시 비교, Godot의 오류 없는 반입, 실제 씬의 시각·모션 확인을 분리해 기록합니다. 출력 파일이 존재한다고 배치 성공으로 처리하지 않습니다. 현재 보관한 LTS 실험은 구조·반입 비교를 통과했어도 배치 종료 실패가 남아 있으므로 제작 버전을 자동 교체하지 않습니다.
+
+## 반입 계약
+
+1. 단위 1m·발바닥 높이·무기 위치를 확인합니다. 게임 이동 -Z와 Humanoid 리타겟 +Z를 구분하고 180도 보정을 중복 적용하지 않습니다.
+2. 현재 GLB의 임시 피벗과 최종 `Skeleton3D`·스킨 웨이트를 구분합니다. 최종 자산은 BoneMap, RESET 포즈, 클립 트랙, 루프·발 접지를 검사합니다.
+3. `AnimationPlayer`는 클립, `AnimationTree`는 블렌딩·표현을 담당합니다. 실제 이동·공격 타이밍·피해 판정은 게임 코드가 소유합니다.
+4. 웹 Compatibility의 재질·조명 대체와 Windows 화면을 확인합니다. LOD 설정만으로 성능을 합격 처리하지 않고 드로콜·프레임 시간을 측정합니다.
+
+## 완료
+
+변경한 자산의 원본·수정 이력·사용 조건과 실제 검증 범위를 기록합니다. 최종 리그·성능이 미검증이면 지식 상태를 `pending`으로 유지합니다. 반입 후 게임 검사가 필요하면 [개발 스킬](../runefall-development/SKILL.md)을 따릅니다.
