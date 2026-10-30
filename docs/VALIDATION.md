@@ -17,8 +17,10 @@
 ## 배포 확인
 
 - 사용자가 2026-10-30 소스 저장소를 공개로 전환했고 API에서도 public을 확인했습니다.
-- GitHub Pages 배포 작업과 실행 아티팩트를 준비했습니다. 공개 전환 후에도 Pages 생성 API는 연결 앱의 권한 부족으로 HTTP 403을 반환하여, 저장소 소유자의 최초 Pages 활성화가 필요합니다.
-- 실제 배포 완료 여부는 Actions의 `deploy` 결과와 공개 URL의 HTTP 응답을 확인해야 합니다. 예정 주소를 배포 완료로 간주하지 않습니다.
+- 소유자가 Pages Source를 GitHub Actions로 활성화한 뒤 [run 41076834637의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)에서 기존 성공 build를 유지하고 deploy를 재실행해 성공했습니다.
+- 실제 공개 URL https://kosj.github.io/next-action-rpg/ 의 HTTPS HTTP 200 응답을 확인했습니다. 배포 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`입니다.
+
+공개 URL을 대상으로 한 클라우드 Chromium 추가 검사는 초기 접속에서 `ERR_CERT_AUTHORITY_INVALID`가 발생해 게임 조작 단계에 도달하지 못했습니다. 같은 환경의 curl·Python HTTPS 요청은 인증서 검증을 유지한 채 HTTP 200을 받았습니다. 관리형 프록시 CA를 기존 브라우저 NSS 신뢰 DB에 추가한 뒤에도 Chromium 오류가 남아 있어, 공개 주소의 실제 브라우저 조작을 통과했다고 기록하지 않습니다. 이는 CI의 로컬 웹·브라우저 재시작 검사 성공과 Pages 배포 성공을 취소하는 결과가 아니며, TLS 검증을 끄지 않았습니다.
 
 ## 미검증·후속 작업
 

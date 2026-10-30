@@ -1,13 +1,21 @@
 # GitHub 웹 배포 · Windows 빌드
 
+## 현재 공개 배포
+
+**플레이 URL: https://kosj.github.io/next-action-rpg/**
+
+2026-10-30 사용자가 Pages Source를 GitHub Actions로 활성화한 뒤, 이미 성공한 build를 유지하고 실패했던 deploy만 재실행했습니다. [배포 실행의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)가 성공했고 공개 URL의 HTTPS HTTP 200 응답을 확인했습니다. 배포한 게임 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`의 v0.1.1입니다.
+
 ## GitHub Pages 최초 설정
+
+아래 최초 설정은 이 저장소에서 완료됐습니다. 새 저장소로 이전할 때 참고합니다.
 
 1. [Settings → Pages](https://github.com/kosj/next-action-rpg/settings/pages)에서 **Build and deployment → Source → GitHub Actions**를 선택합니다.
 2. main의 **Validate and build RUNEFALL** 워크플로를 실행합니다. main 변경 시 자동으로 실행되며 Actions 화면에서 수동 실행할 수도 있습니다.
 3. `build`가 검사와 내보내기를 마치면 `deploy`가 실행 빌드를 게시합니다. Pages 환경과 워크플로 요약에 실제 배포 주소가 표시됩니다.
 4. 사용자 지정 도메인이 없다면 예상 주소는 `https://kosj.github.io/next-action-rpg/`입니다. **Pages 설정과 배포 성공을 확인하기 전에는 이 주소를 활성 서비스로 안내하지 않습니다.**
 
-2026-10-30 사용자가 저장소를 공개로 전환했고 API의 `visibility: public`을 확인했습니다. 공개 전환 후에도 Pages 생성 요청은 현재 연결 앱의 권한 부족으로 HTTP 403을 반환했습니다. 사이트 조회의 HTTP 404와 생성 요청의 HTTP 403은 별개입니다. 저장소 소유자가 최초 Pages 설정을 해야 하며, 이 오류만으로 계정 플랜 부족이라고 단정할 수 없습니다.
+초기에는 공개 전환 후에도 Pages 생성 요청이 연결 앱의 권한 부족으로 HTTP 403을 반환했습니다. 사이트 조회의 HTTP 404와 생성 요청의 HTTP 403은 별개입니다. 이 문제는 소유자가 최초 Pages 설정을 완료한 뒤 해결됐습니다. 같은 오류만으로 계정 플랜 부족이라고 단정하지 않습니다.
 
 [`configure-pages@v5`의 공식 입력 정의](https://github.com/actions/configure-pages/blob/v5/action.yml)에 따르면 `enablement: true`로 사이트를 생성하려면 기본 `GITHUB_TOKEN` 이외의 토큰이 필요합니다. 따라서 워크플로에 이 옵션만 추가해 최초 설정을 해결하려고 하지 않습니다. Source를 GitHub Actions로 설정한 후에는 기존 성공 build를 유지하고 실패한 deploy 작업만 재실행할 수 있습니다.
 

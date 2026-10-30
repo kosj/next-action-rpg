@@ -34,6 +34,8 @@ python tools/check_web.py
 
 main의 build 성공 → deploy 성공 → 실제 URL의 HTTP 응답과 실행을 확인합니다. ZIP 다운로드 성공은 Pages 게시 성공과 별개입니다. 예상 URL을 활성 주소로 표시하지 않습니다.
 
+공개 URL 검사에서 관리형 클라우드 브라우저만 인증서 오류가 나면 인증서 검증을 유지한 HTTPS 클라이언트 결과와 비교합니다. 프록시 CA의 브라우저 신뢰 설정을 확인하고 TLS 검증을 끄지 않습니다. HTTP 접속·배포 성공과 공개 주소의 실제 브라우저 조작 성공을 별도로 기록하고, 환경 오류를 Pages 배포 실패로 오인하지 않습니다.
+
 Pages가 아직 설정되지 않았거나 연결 권한이 없으면 실패한 작업·HTTP 상태와 필요한 최초 설정을 보고합니다. 저장소 공개 전환과 Pages 최초 활성화는 별개의 설정입니다. 저장소 metadata의 admin=true만으로 연결 앱의 관리 권한을 판단하지 않습니다. 계정 플랜 부족이라고 단정하거나 공개 범위를 임의로 변경하지 않습니다.
 
 `configure-pages@v5`의 `enablement: true`는 기본 `GITHUB_TOKEN` 이외의 Pages 생성 권한 토큰이 필요합니다. [공식 입력 정의](https://github.com/actions/configure-pages/blob/v5/action.yml)를 확인하고, 권한이 부족한 기본 토큰으로 같은 생성 요청을 반복하지 않습니다. 최초 설정이 완료되면 이미 성공한 build를 다시 실행하는 대신 해당 run의 실패한 deploy job만 재실행할 수 있습니다. 활성화한 뒤에는 지식 DB의 제약 상태를 실제 확인 결과로 갱신합니다.

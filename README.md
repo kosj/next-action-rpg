@@ -4,6 +4,8 @@ Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬
 
 **현재 버전: v0.1.1 플레이 가능한 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름을 구현했습니다. 캐릭터와 환경, 음향은 직접 제작한 임시 자산이며 AAA급 완성 아트가 아닙니다. 목표 플레이 시간 30~60분과 RTX 3060급 60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
 
+**[웹에서 플레이하기](https://kosj.github.io/next-action-rpg/)** — PC 브라우저에서 키보드·마우스로 실행합니다.
+
 ![웹에서 실행한 프로토타입 전투 화면](docs/screenshots/combat.png)
 
 ## 실행
@@ -62,4 +64,4 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 - [검증 결과와 남은 작업](docs/VALIDATION.md)
 - [외부 구성 요소와 라이선스](THIRD_PARTY_NOTICES.md)
 
-사용자가 2026-10-30 저장소를 공개로 전환했습니다. 소스와 원본 아트는 이 공개 저장소에서 관리하며 웹 빌드는 GitHub Pages로 배포합니다. 저장소 공개 전환과 Pages 최초 활성화는 별개이며, 실제 게시 여부는 [배포 안내](docs/DEPLOYMENT.md)를 확인하세요.
+사용자가 2026-10-30 저장소를 공개로 전환하고 Pages Source를 GitHub Actions로 활성화했습니다. 웹 빌드는 [GitHub Pages](https://kosj.github.io/next-action-rpg/)에 게시되어 있으며 main의 성공 빌드가 자동 배포됩니다. 실제 배포 근거는 [배포 안내](docs/DEPLOYMENT.md)를 확인하세요.

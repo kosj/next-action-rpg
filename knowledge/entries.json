@@ -92,13 +92,36 @@
     {
       "id": "pages-enablement-blocker",
       "kind": "limitation",
-      "status": "pending",
-      "title": "Pages 최초 활성화가 없어 공개 웹 플레이는 미게시 상태다",
-      "summary": "사용자가 저장소를 public으로 전환한 후에도 Pages 사이트는 없고 생성 요청은 연결 앱 권한 부족으로 HTTP 403을 반환했다. metadata의 admin=true와 앱의 API 권한은 별개다. configure-pages@v5 자동 최초 활성화도 기본 GITHUB_TOKEN 이외의 권한 토큰이 필요하다. 소유자의 Settings/Pages에서 Source=GitHub Actions 활성화와 성공 배포·실제 URL 검증이 남아 있다. 공개 범위를 임의 변경하거나 계정 플랜 부족으로 단정하지 않는다.",
+      "status": "superseded",
+      "title": "해결된 과거 제약: Pages 최초 활성화 전에는 공개 웹을 게시할 수 없었다",
+      "summary": "초기에는 저장소를 public으로 전환한 후에도 Pages 사이트가 없고 생성 요청은 연결 앱 권한 부족으로 HTTP 403을 반환했다. metadata의 admin=true와 앱 API 권한은 별개다. 소유자가 Source=GitHub Actions로 최초 설정한 뒤 실패한 deploy를 재실행해 해결했다. 현재 상태는 pages-public-deployment를 참조한다. 자동 최초 활성화에는 기본 GITHUB_TOKEN 이외의 권한 토큰이 필요하다는 제약은 새 저장소에서 유효하다.",
       "tags": ["deployment", "web", "github", "pages", "배포"],
       "checked_on": "2026-10-30",
       "context": {"repository": "kosj/next-action-rpg (public)", "release": "v0.1.1"},
       "sources": ["docs/DEPLOYMENT.md", ".github/workflows/build.yml", "https://github.com/kosj/next-action-rpg/actions/runs/41071830733", "https://github.com/actions/configure-pages/blob/v5/action.yml", "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages"]
+    },
+    {
+      "id": "pages-public-deployment",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "GitHub Pages 공개 배포는 최초 설정 후 실패한 deploy만 재실행해 완료했다",
+      "summary": "소유자가 Pages Source=GitHub Actions로 활성화한 뒤 기존 성공 build를 유지하고 run 41076834637의 실패한 deploy만 재실행했다. attempt 2에서 배포가 성공했고 https://kosj.github.io/next-action-rpg/ 의 HTTPS HTTP 200을 확인했다. main의 검증된 빌드는 이 주소로 자동 배포된다. 과거 HTTP 403/404 기록을 현재 미배포 상태로 오인하지 않는다.",
+      "tags": ["deployment", "web", "github", "pages", "배포"],
+      "checked_on": "2026-10-30",
+      "context": {"repository": "kosj/next-action-rpg (public)", "release": "v0.1.1", "commit": "4b182802e6138e66b42fc91f15b0dadd5c97acc1", "run_attempt": "41076834637/2"},
+      "sources": ["docs/DEPLOYMENT.md", "docs/VALIDATION.md", ".github/workflows/build.yml", "https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2", "https://kosj.github.io/next-action-rpg/"],
+      "supersedes": ["pages-enablement-blocker"]
+    },
+    {
+      "id": "public-browser-ca-trust",
+      "kind": "limitation",
+      "status": "pending",
+      "title": "공개 URL의 추가 브라우저 검사는 클라우드 인증서 신뢰 설정 확인이 남아 있다",
+      "summary": "Pages 배포와 인증서 검증을 유지한 curl/Python HTTPS 접속은 성공했으나 이 클라우드의 Chromium은 초기 접속에서 ERR_CERT_AUTHORITY_INVALID를 반환했다. 관리형 프록시 CA를 기존 NSS 신뢰 DB에 추가한 뒤에도 같은 오류가 남았다. 공개 주소의 실제 조작은 완료하지 못했으며 CI의 로컬 WebGL·입력·저장 재시작 검증 성공과 구분한다. TLS 검증을 끄거나 이 환경 오류를 Pages 미배포로 오인하지 않는다.",
+      "tags": ["deployment", "web", "testing", "chromium", "certificate"],
+      "checked_on": "2026-10-30",
+      "context": {"platform": "managed Linux cloud", "browser": "Chromium", "site": "https://kosj.github.io/next-action-rpg/"},
+      "sources": ["docs/VALIDATION.md", ".agents/skills/runefall-release/SKILL.md", "tools/browser_smoke.py"]
     },
     {
       "id": "release-assets-ci-token",
