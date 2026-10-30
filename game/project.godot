@@ -30,8 +30,5 @@ renderer/rendering_method.web="gl_compatibility"
 common/physics_ticks_per_second=60
 3d/physics_engine="GodotPhysics3D"
 
-[gui]
-theme/custom_font="res://assets/fonts/NotoSansKR.ttf"
-
 [audio]
 driver/enable_input=false
