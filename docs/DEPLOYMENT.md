@@ -6,6 +6,8 @@
 
 2026-10-30 사용자가 Pages Source를 GitHub Actions로 활성화한 뒤, 이미 성공한 build를 유지하고 실패했던 deploy만 재실행했습니다. [최초 배포 실행의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)가 성공했고 공개 URL의 HTTPS HTTP 200 응답을 확인했습니다. 최초 배포 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`의 v0.1.1이며, 이후 main의 검증된 빌드가 같은 주소에 자동 게시됩니다. 현재 실행 버전·커밋은 타이틀의 빌드 번호와 해당 Actions 실행으로 확인합니다.
 
+v0.1.2에서는 [build·deploy·공개 URL 브라우저 검사](https://github.com/kosj/next-action-rpg/actions/runs/41123086701)를 모두 통과했습니다. 실제 실행 커밋과 WebGL·입력·브라우저 재시작 저장을 검증했으며, [릴리스 다운로드 무결성과 함께 근거](validation/v0.1.2/README.md)를 보관합니다.
+
 ## GitHub Pages 최초 설정
 
 아래 최초 설정은 이 저장소에서 완료됐습니다. 새 저장소로 이전할 때 참고합니다.
@@ -46,7 +48,7 @@ Windows x86_64 EXE와 PCK를 ZIP으로 제공합니다. Forward+가 기본이며
 
 - PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → 실제 Chromium·저장 재접속 검사 → ZIP·SHA-256 아티팩트 업로드.
 - `v*` 태그 / 수동 Windows 선택: Windows 빌드 추가. 버전 태그의 ZIP·매니페스트는 GitHub Releases에도 자동 첨부합니다.
-- main의 성공 빌드: Pages 아티팩트 생성 → GitHub Pages 배포.
+- main의 성공 빌드: Pages 아티팩트 생성 → GitHub Pages 배포 → 실제 공개 HTTPS 주소의 실행 커밋·WebGL·입력·브라우저 재시작 저장 검사.
 - 큰 `.blend` 원본은 실행에 필요하지 않으므로 CI에서 LFS 다운로드를 하지 않습니다.
 
 실제 GPU 성능·Windows 플레이·Edge 동작은 별도 확인 항목입니다. headless 검사와 소프트웨어 WebGL 검사가 이를 대신하지 않습니다.

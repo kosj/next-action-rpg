@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-30",
+  "site": "https://kosj.github.io/next-action-rpg/",
+  "source_commit": "7162bd2568547a26512992407c8d70e43fdb00f8",
+  "observed_build_id": "0.1.2 · 7162bd25",
+  "workflow_run": "https://github.com/kosj/next-action-rpg/actions/runs/41123086701",
+  "jobs": {
+    "build": "success",
+    "deploy": "success",
+    "verify_public_web": "success"
+  },
+  "https_certificate_verification": "enabled",
+  "runtime_commit_verified": true,
+  "browser_errors": [],
+  "checks": [
+    "public HTTPS HTTP 200",
+    "actual exported build ID matches deployment commit",
+    "WebGL startup",
+    "modal layout",
+    "movement, combat entry, attack and dodge input",
+    "full browser close and same-profile IndexedDB restoration"
+  ],
+  "limitations": [
+    "Software Chromium on GitHub hosted Linux; no target hardware, Windows execution, gamepad or full chapter human play validation",
+    "Managed cloud local Chromium certificate trust remains a separate environment issue"
+  ]
+}

@@ -92,5 +92,30 @@
     "windows_lod0_target_max": 65000,
     "web_lod0_target_max": 32000,
     "status": "over_both_runtime_targets_requires_retopology_and_lods"
+  },
+  "provider_tasks": {
+    "rigging": {
+      "task_id": "bf80947b-f0e8-4dac-9bf6-98577eceae93",
+      "raw_export": "raw-rigged.glb",
+      "sha256": "89a2c235988c23f5536d1085e5cdc50d1c3274b70aedb4ce515261863359ec18"
+    },
+    "motions": {
+      "idle": {
+        "task_id": "174440e2-9a16-4196-9f5f-d9da6d2c6c9a",
+        "raw_export": "raw-idle.glb",
+        "sha256": "71b0631015e6c5d6cfde556ea3985fa2a180f4b2f92a82a6d939c42a2d5b2374"
+      },
+      "walk": {
+        "task_id": "1cda153b-f63e-406b-b997-92376f854ede",
+        "raw_export": "raw-jog.glb",
+        "sha256": "1a51455f0571d63aa7a369c5bc012f76928a32d813243d915303b6d4f816cb05"
+      },
+      "run": {
+        "task_id": "c7ef047e-f552-4682-9e53-b3ae1f29b299",
+        "raw_export": "raw-sprint.glb",
+        "sha256": "69ad06570e441d2796f5f823e355bc6b9bdbaa56ec93440523804f052af81821"
+      }
+    },
+    "export_note": "Hashes identify original pivotToBottom=false GLB exports. Query get_output_downloads for the completed tasks; do not rerun Generate3D/Rig/Animate to retrieve source files."
   }
 }

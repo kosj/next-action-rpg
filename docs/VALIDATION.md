@@ -12,7 +12,8 @@
 - Blender 4.3.2의 실제 후처리와 정상 종료를 확인했습니다. 동일한53본·메시/웨이트/원점 관계를 입증하고 3시점 포즈 오차를 확인한 뒤 키1.82m·REST 바닥0으로 정규화했습니다. 최대 표본 오차는7.1e-7m이며 원본4파일은 불변입니다. 파생 GLB는 skin1·idle/walk/run/RESET 구조 요구를 통과했습니다. [후처리 근거](../art_source/production/candidates/lyra-001/preparation.json)를 참조합니다.
 - [실제 Godot 후보 반입 감사](validation/lyra-001/README.md)에서 53본·skin53binds·4클립, CPU 스킨 REST 높이1.82000023m·바닥Y 약0과 AnimationTree 수동 샘플링의 실제 bone 변화를 확인했습니다. 이동3클립은 현재 loop mode `NONE`이며 최종 루프/변형 품질 승인이 아닙니다.
 - 실제 후보는8만 폴리곤으로 Windows6.5만·웹3.2만 목표를 초과합니다. 리토폴로지/LOD·전투6클립·BoneMap·크로스페이드·발 접지·루프·재질/장면 품질 검수는 남아 있습니다. 런타임 기본 자산은 기존 피벗 모델이며 후보를 완성 아바타로 장착하지 않았습니다.
-- main 배포 후 공개 HTTPS 주소에서 실행 중인 커밋·WebGL·입력·브라우저 재시작 저장을 검사하는 `verify_public_web` CI job을 추가했습니다. 추가 시점에는 실행 전이며 실제 통과 기록은 배포 후 갱신합니다.
+- [v0.1.2 태그 CI](https://github.com/kosj/next-action-rpg/actions/runs/41123131649)가 build/release를 통과해 웹·Windows ZIP과 매니페스트 3개를 게시했습니다. 실제 첨부를 다시 내려받아 버전·커밋·파일 크기·SHA-256·ZIP CRC를 [검증](validation/v0.1.2/release-verification.json)했습니다.
+- [main CI](https://github.com/kosj/next-action-rpg/actions/runs/41123086701)의 build·Pages deploy·`verify_public_web`이 모두 통과했습니다. 공개 HTTPS 주소의 HTTP200과 실제 실행 중인 `0.1.2 · 7162bd25`, WebGL·모달·이동·첫 전투/공격/회피·브라우저 종료/재시작 저장 복원을 확인했습니다. [실제 상태·오류0·캡처 근거](validation/v0.1.2/README.md)를 보관합니다. TLS 검증은 유지했습니다.
 
 ## v0.1.1 · 기존 플레이 루프와 최초 배포 검증
 
@@ -36,7 +37,7 @@
 - 소유자가 Pages Source를 GitHub Actions로 활성화한 뒤 [run 41076834637의 2번째 시도](https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2)에서 기존 성공 build를 유지하고 deploy를 재실행해 성공했습니다.
 - 실제 공개 URL https://kosj.github.io/next-action-rpg/ 의 HTTPS HTTP 200 응답을 확인했습니다. 최초 배포 소스는 `4b182802e6138e66b42fc91f15b0dadd5c97acc1`이며 이후 검증된 main 변경이 자동 게시됩니다.
 
-공개 URL을 대상으로 한 클라우드 Chromium 추가 검사는 초기 접속에서 `ERR_CERT_AUTHORITY_INVALID`가 발생해 게임 조작 단계에 도달하지 못했습니다. 같은 환경의 curl·Python HTTPS 요청은 인증서 검증을 유지한 채 HTTP 200을 받았습니다. 관리형 프록시 CA를 기존 브라우저 NSS 신뢰 DB에 추가한 뒤에도 Chromium 오류가 남아 있어, 공개 주소의 실제 브라우저 조작을 통과했다고 기록하지 않습니다. 이는 CI의 로컬 웹·브라우저 재시작 검사 성공과 Pages 배포 성공을 취소하는 결과가 아니며, TLS 검증을 끄지 않았습니다.
+최초 배포 당시 이 관리형 클라우드의 Chromium 추가 검사는 초기 접속에서 `ERR_CERT_AUTHORITY_INVALID`가 발생해 게임 조작 단계에 도달하지 못했습니다. 같은 환경의 curl·Python HTTPS 요청은 인증서 검증을 유지한 채 HTTP 200을 받았습니다. 관리형 프록시 CA를 기존 브라우저 NSS 신뢰 DB에 추가한 뒤에도 Chromium 오류가 남아 있어, 이 클라우드 브라우저의 조작 성공으로 기록하지 않습니다. 이후 v0.1.2의 GitHub hosted runner에서 공개 주소의 실제 브라우저 조작·실행 커밋·재시작 저장 검사를 통과했고 위 기록에 근거를 보관했습니다. 로컬 클라우드 CA 문제 자체가 해결된 것은 아닙니다. 이는 CI의 로컬 웹·브라우저 재시작 검사 성공과 Pages 배포 성공을 취소하는 결과가 아니며, TLS 검증을 끄지 않았습니다.
 
 ## 미검증·후속 작업
 

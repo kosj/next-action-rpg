@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-30",
+  "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.2",
+  "workflow_run": "https://github.com/kosj/next-action-rpg/actions/runs/41123131649",
+  "source_commit": "7162bd2568547a26512992407c8d70e43fdb00f8",
+  "application": "0.1.2",
+  "godot": "4.7.2",
+  "downloaded_artifacts": [
+    {
+      "file": "runefall-web.zip",
+      "bytes": 17889302,
+      "sha256": "9c926dc38007784b722dcdba1a6b86a06347db876d36b54d28b436a5c6d421c9",
+      "download_size_matches": true,
+      "download_sha256_matches": true,
+      "zip_crc_valid": true,
+      "zip_file_count": 14
+    },
+    {
+      "file": "runefall-windows.zip",
+      "bytes": 45730828,
+      "sha256": "412fbe9facbabd9f5b3e18cd5f51029f4f4856a10ffd8402f869f2d9d47b2027",
+      "download_size_matches": true,
+      "download_sha256_matches": true,
+      "zip_crc_valid": true,
+      "zip_file_count": 6
+    }
+  ],
+  "scope": "Published file integrity and export verification; Windows hardware execution and performance are not tested."
+}

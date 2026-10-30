@@ -104,35 +104,35 @@
       "id": "pages-public-deployment",
       "kind": "workflow",
       "status": "verified",
-      "title": "GitHub Pages 공개 배포는 최초 설정 후 실패한 deploy만 재실행해 완료했다",
-      "summary": "소유자가 Pages Source=GitHub Actions로 활성화한 뒤 기존 성공 build를 유지하고 run 41076834637의 실패한 deploy만 재실행했다. attempt 2에서 배포가 성공했고 https://kosj.github.io/next-action-rpg/ 의 HTTPS HTTP 200을 확인했다. main의 검증된 빌드는 이 주소로 자동 배포된다. 과거 HTTP 403/404 기록을 현재 미배포 상태로 오인하지 않는다.",
+      "title": "Pages 최초 설정 후 검증된 main을 자동 배포하고 공개 실행 커밋까지 확인한다",
+      "summary": "소유자가 Pages Source=GitHub Actions로 최초 활성화한 뒤 실패한 deploy만 재실행해 초기403/404제약을 해결했다. v0.1.2 main run41123086701은 build·deploy·verify_public_web을 모두 통과했고 공개 HTTPS 주소의0.1.2 ·7162bd25 실행·WebGL·입력·브라우저 재시작 저장을 확인했다. 과거 Pages 활성화 실패나 관리형 클라우드의 로컬 CA 문제를 현재 미배포로 오인하지 않는다. 이후 main의 실제 배포와 검사는 해당 실행을 다시 확인한다.",
       "tags": ["deployment", "web", "github", "pages", "배포"],
       "checked_on": "2026-10-30",
-      "context": {"repository": "kosj/next-action-rpg (public)", "release": "v0.1.1", "commit": "4b182802e6138e66b42fc91f15b0dadd5c97acc1", "run_attempt": "41076834637/2"},
-      "sources": ["docs/DEPLOYMENT.md", "docs/VALIDATION.md", ".github/workflows/build.yml", "https://github.com/kosj/next-action-rpg/actions/runs/41076834637/attempts/2", "https://kosj.github.io/next-action-rpg/"],
+      "context": {"repository": "kosj/next-action-rpg (public)", "release": "v0.1.2", "commit": "7162bd2568547a26512992407c8d70e43fdb00f8", "run": "41123086701"},
+      "sources": ["docs/DEPLOYMENT.md", "docs/VALIDATION.md", ".github/workflows/build.yml", "docs/validation/v0.1.2/public-web-verification.json", "https://github.com/kosj/next-action-rpg/actions/runs/41123086701", "https://kosj.github.io/next-action-rpg/"],
       "supersedes": ["pages-enablement-blocker"]
     },
     {
       "id": "public-browser-ca-trust",
       "kind": "limitation",
       "status": "pending",
-      "title": "공개 URL의 추가 브라우저 검사는 클라우드 인증서 신뢰 설정 확인이 남아 있다",
-      "summary": "Pages 배포와 인증서 검증을 유지한 curl/Python HTTPS 접속은 성공했으나 이 클라우드의 Chromium은 초기 접속에서 ERR_CERT_AUTHORITY_INVALID를 반환했다. 관리형 프록시 CA를 기존 NSS 신뢰 DB에 추가한 뒤에도 같은 오류가 남았다. 공개 주소의 실제 조작은 완료하지 못했으며 CI의 로컬 WebGL·입력·저장 재시작 검증 성공과 구분한다. TLS 검증을 끄거나 이 환경 오류를 Pages 미배포로 오인하지 않는다.",
+      "title": "관리형 클라우드 Chromium의 로컬 CA 신뢰 문제는 hosted 공개 검사와 구분한다",
+      "summary": "관리형 클라우드 Chromium은 공개 Pages 초기 접속에서 ERR_CERT_AUTHORITY_INVALID를 반환했고 프록시 CA를 NSS에 추가한 뒤에도 같았다. 같은 환경의 인증서 검증 유지 HTTPS 요청은200이다. v0.1.2는 GitHub hosted runner에서 실제 공개 주소의 실행 커밋·WebGL·입력·브라우저 재시작 저장 검사를 통과했다. 로컬 브라우저 CA 신뢰 문제 자체는 미해결이며 Pages 미배포나 사이트 인증서 결함으로 오인하지 않는다. TLS 검증은 끄지 않는다.",
       "tags": ["deployment", "web", "testing", "chromium", "certificate"],
       "checked_on": "2026-10-30",
       "context": {"platform": "managed Linux cloud", "browser": "Chromium", "site": "https://kosj.github.io/next-action-rpg/"},
-      "sources": ["docs/VALIDATION.md", ".agents/skills/runefall-release/SKILL.md", "tools/browser_smoke.py"]
+      "sources": ["docs/VALIDATION.md", ".agents/skills/runefall-release/SKILL.md", "docs/validation/v0.1.2/public-web-verification.json", "https://github.com/kosj/next-action-rpg/actions/runs/41123086701"]
     },
     {
       "id": "release-assets-ci-token",
       "kind": "workflow",
       "status": "verified",
       "title": "릴리스 바이너리 첨부는 태그 CI의 일회성 토큰으로 처리한다",
-      "summary": "이 작업 환경의 로컬 바이너리 업로드는 uploads.github.com에서 401을 반환했다. 검증한 커밋을 대상으로 메타데이터/버전 태그를 생성하고 태그 CI의 contents:write 토큰으로 첨부하면 성공했다. v0.1.1 웹/Windows ZIP과 manifest 3개를 내려받아 크기·SHA-256·ZIP 무결성·앱/엔진 버전·커밋을 확인했다. Pages 게시와는 별개다.",
+      "summary": "이 환경의 로컬 바이너리 업로드는 uploads.github.com에서401을 반환한 전례가 있다. 검증된 PR과 동일한 tree의 main 병합 커밋을 태그로 지정하고 CI의 contents:write 일회성 토큰으로 배포했다. v0.1.2 태그 CI의 build/release 성공과3첨부를 확인했고, 실제 웹/Windows ZIP을 다시 내려받아 manifest의 크기·SHA-256·버전·커밋 및 ZIP CRC를 검증했다. Pages 게시와 Windows 실기기 실행은 별도 검사다.",
       "tags": ["deployment", "github", "release", "export"],
       "checked_on": "2026-10-30",
-      "context": {"commit": "289f99eec4389eeb63dfb3e601d4f5b0e4175097", "release": "v0.1.1"},
-      "sources": [".github/workflows/build.yml", ".agents/skills/runefall-release/SKILL.md", "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.1", "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"]
+      "context": {"commit": "7162bd2568547a26512992407c8d70e43fdb00f8", "release": "v0.1.2"},
+      "sources": [".github/workflows/build.yml", ".agents/skills/runefall-release/SKILL.md", "docs/validation/v0.1.2/release-manifest.json", "docs/validation/v0.1.2/release-verification.json", "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.2", "https://github.com/kosj/next-action-rpg/actions/runs/41123131649"]
     },
     {
       "id": "blender-lts-batch-exit",

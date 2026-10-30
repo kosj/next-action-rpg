@@ -50,3 +50,5 @@ python tools/inspect_glb.py art_source/production/candidates/lyra-001/lyra-locom
 명령은 저장소 루트에서 실행합니다. 첫 검사는 참조/후보 원본·파생 해시·명세와 실제 공격 수치의 일치를 확인하고, GLB 검사는 구조와 명시한 skin/clip 요구 조건을 확인합니다. 최종 캐릭터 후보에는 `--require-skin`과 필요한 `--require-clip`을 추가합니다. 현재 피벗 모델은 이 최종 기준에 실패하는 것이 정상입니다. 얼굴·의상·변형·발 접지·실제 화면·성능 검수는 별도로 수행합니다.
 
 실제 검수 렌더는 `tools/render_glb_review.py`, 같은 리그의 3개 locomotion 결합은 `tools/prepare_character_candidate.py`를 사용합니다. 두 도구 모두 별도 Blender 배경 프로세스에서 새 출력에만 기록하며 원본을 덮어쓰지 않습니다. 원점 정규화는 본·메시·웨이트 관계와 표본 포즈를 확인하는 명시적 옵션이며, 정적 크기/바닥 정렬을 동적 root-motion 검수로 간주하지 않습니다.
+
+원점 정규화에 사용한 provider 원본 4개의 task ID와 SHA는 [후보 manifest](candidates/lyra-001/manifest.json)의 `provider_tasks`에 기록합니다. 중복 메시가 포함된 개별 모션 수출물은 `build/`에 두며, 새 환경에서는 완료 task의 내보내기만 조회합니다. 원본 재조회에 `run_flow`를 사용해 유료 생성 upstream을 다시 실행하지 않습니다.

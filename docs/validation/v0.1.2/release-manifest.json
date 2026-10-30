@@ -1,0 +1,17 @@
+{
+  "version": "0.1.2",
+  "godot": "4.7.2",
+  "commit": "7162bd25",
+  "artifacts": [
+    {
+      "file": "runefall-web.zip",
+      "bytes": 17889302,
+      "sha256": "9c926dc38007784b722dcdba1a6b86a06347db876d36b54d28b436a5c6d421c9"
+    },
+    {
+      "file": "runefall-windows.zip",
+      "bytes": 45730828,
+      "sha256": "412fbe9facbabd9f5b3e18cd5f51029f4f4856a10ffd8402f869f2d9d47b2027"
+    }
+  ]
+}
