@@ -35,12 +35,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/requirements-dev.txt
+      - name: Read pinned engine version
+        id: toolchain
+        run: python -c 'import json,os; v=json.load(open("tools/toolchain.json"))["godot_version"]; print("godot="+v, file=open(os.environ["GITHUB_OUTPUT"],"a"))'
       - uses: actions/cache@v4
         with:
           path: |
             /tmp/runefall-tools
             /tmp/runefall-data/godot/export_templates
-          key: godot-4.6.3-linux-web-nothreads-windows-v1
+          key: godot-${{ steps.toolchain.outputs.godot }}-linux-web-nothreads-windows-v2
       - name: Set up Godot and export templates
         run: bash tools/setup_godot.sh
       - name: Build and run regression tests
@@ -50,6 +55,21 @@ jobs:
           else
             python tools/build.py
           fi
+      - name: Install browser validation tools
+        run: |
+          python -m pip install --disable-pip-version-check -r tools/requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Validate exported WebGL and persistent saves
+        timeout-minutes: 7
+        run: python tools/check_web.py
+      - name: Upload browser verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-verification-${{ github.sha }}
+          path: build/verification
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Upload playable builds
         uses: actions/upload-artifact@v4
         with:

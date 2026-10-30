@@ -6,6 +6,15 @@ var world: Node3D
 var session: Node
 
 func _ready() -> void:
+	var watchdog := Timer.new()
+	watchdog.one_shot = true
+	watchdog.wait_time = 45.0
+	watchdog.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(watchdog)
+	watchdog.timeout.connect(func():
+		push_error("Regression suite timed out before completing")
+		get_tree().quit(1))
+	watchdog.start()
 	run.call_deferred()
 
 func check(condition: bool, message: String) -> void:
@@ -49,10 +58,26 @@ func run() -> void:
 	file.close()
 	check(session.load_game() and session.shards == 41, "Recover a damaged primary from backup")
 	session.new_game()
+	session.journey_started = false
+	check(session.save_game() and not session.has_save, "Saving title settings does not create a journey slot")
 	world = load("res://scenes/main.tscn").instantiate()
 	get_tree().root.add_child(world)
 	await get_tree().physics_frame
+	check(not world.start_game(false) and not world.started and world.ui.menu.visible, "Settings-only saves cannot be used to skip the new-journey prologue")
+	var valid_save_path: String = session.save_path
+	session.save_path = "user://missing_regression_directory/save.json"
+	world.ui.start_game(true)
+	check(not world.started and world.ui.menu.visible and not world.ui.hud.visible, "Failed new-game save leaves the title and prior journey intact")
+	var previous_checkpoint: int = session.checkpoint
+	world.interaction_kind = "checkpoint"
+	world.interaction_index = (previous_checkpoint + 1) % 3
+	world.player.health = 50
+	world.interact()
+	check(session.checkpoint == previous_checkpoint and world.player.health == 50, "Failed checkpoint save cannot claim a new rest point or restore health")
+	session.save_path = valid_save_path
+	world.player.rune = 90.0
 	world.start_game(true)
+	check(world.player.rune == 35.0, "A fresh journey resets rune instead of inheriting the previous run")
 	await get_tree().process_frame
 	var dialog_panel: Control = world.ui.modal.get_child(1).get_child(0)
 	check(dialog_panel.global_position.x >= 0 and dialog_panel.global_position.y >= 0, "Dialog remains inside viewport")
@@ -64,6 +89,21 @@ func run() -> void:
 	world.ui.close_modal()
 	var player: RunePlayer = world.player
 	check(player.active and not player.dead, "Start a new playable journey")
+	await get_tree().physics_frame
+	world.set_paused(true)
+	Input.action_press("light")
+	world.set_paused(false)
+	player._physics_process(1.0 / 60.0)
+	check(player.strike == null and player.input_buffer == 0, "A continue or resume click cannot leak into a sword attack")
+	Input.action_release("light")
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	Input.action_press("light")
+	player._physics_process(1.0 / 60.0)
+	check(player.strike != null, "Fresh attacks work after the UI input guard expires")
+	Input.action_release("light")
+	player.strike = null
+	player.discard_ui_actions()
 	player.invulnerability = 0
 	player.parry_time = 0.22
 	player.facing = Vector3.FORWARD
@@ -160,6 +200,8 @@ func run() -> void:
 	world.started = false
 	# Let the chapter-ending timer release its coroutine before freeing its owner.
 	await get_tree().create_timer(2.1).timeout
+	check(load("res://tests/save_regressions.gd").run(session, check) == true, "Save regression suite completes")
+	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
 	ledger = null
 	second = null
 	sweep = null

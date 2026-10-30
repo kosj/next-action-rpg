@@ -1,15 +1,15 @@
 # RUNEFALL · 무너진 성역
 
-Godot 4.6.3으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬 검사 **리라**가 몰락한 성역의 일곱 봉인을 정화합니다. 빠른 지상 콤보와 회피, 적중으로 충전하는 룬 스킬이 전투의 중심입니다.
+Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬 검사 **리라**가 몰락한 성역의 일곱 봉인을 정화합니다. 빠른 지상 콤보와 회피, 적중으로 충전하는 룬 스킬이 전투의 중심입니다.
 
-**현재 버전: v0.1.0 플레이 가능한 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름을 구현했습니다. 캐릭터와 환경, 음향은 직접 제작한 임시 자산이며 AAA급 완성 아트가 아닙니다. 목표 플레이 시간 30~60분과 RTX 3060급 60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
+**현재 버전: v0.1.1 플레이 가능한 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름을 구현했습니다. 캐릭터와 환경, 음향은 직접 제작한 임시 자산이며 AAA급 완성 아트가 아닙니다. 목표 플레이 시간 30~60분과 RTX 3060급 60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
 
 ![웹에서 실행한 프로토타입 전투 화면](docs/screenshots/combat.png)
 
 ## 실행
 
-1. **Godot 4.6.3 Standard**에서 `game/project.godot`을 엽니다. .NET 버전은 필요하지 않습니다.
-2. 에셋 불러오기가 끝나면 **F6이 아닌 F5**로 전체 게임을 실행합니다.
+1. **Godot 4.7.2 Standard**에서 `game/project.godot`을 엽니다. .NET 버전은 필요하지 않습니다.
+2. 에셋 불러오기가 끝나면 **F5**로 전체 게임을 실행합니다.
 3. 타이틀에서 새로운 서약을 시작하거나 저장한 여정을 이어갑니다.
 
 Blender가 없어도 게임을 실행할 수 있습니다. 반입한 GLB 파일이 저장소에 포함되어 있습니다. Blender 원본을 편집하려면 Git LFS를 설치한 뒤 `git lfs pull`을 실행하고 **Blender 4.3.2**를 사용합니다.
@@ -32,7 +32,7 @@ Blender가 없어도 게임을 실행할 수 있습니다. 반입한 GLB 파일�
 
 ## 빌드와 테스트
 
-엔진과 동일한 **4.6.3 export templates**를 설치합니다. Linux 자동 설치는 `bash tools/setup_godot.sh`를 사용할 수 있습니다. 스크립트가 출력하는 `GODOT_BIN`, `XDG_DATA_HOME`을 환경 변수로 설정합니다.
+엔진과 동일한 **4.7.2 export templates**를 설치합니다. Linux 자동 설치는 `bash tools/setup_godot.sh`를 사용할 수 있습니다. 스크립트가 출력하는 `GODOT_BIN`, `XDG_DATA_HOME`을 환경 변수로 설정합니다.
 
 ```bash
 python tools/build.py --test-only
@@ -43,7 +43,7 @@ python -m http.server 8060 --directory build/web
 
 브라우저에서 `http://localhost:8060`으로 접속합니다. HTML 파일을 직접 열면 실행되지 않습니다. 산출물은 `build/runefall-web.zip`, `build/runefall-windows.zip`이며, 파일 크기와 SHA-256은 `build/manifest.json`에 기록됩니다. Windows ZIP은 압축을 푼 후 EXE와 PCK를 같은 폴더에 두고 실행합니다.
 
-Python 3.10 이상을 사용합니다. Playwright와 Chromium이 있으면 `python tools/browser_smoke.py http://127.0.0.1:8060`으로 실제 웹 실행과 화면 캡처를 검증할 수 있습니다. `CHROMIUM_PATH`로 브라우저 경로를 지정합니다.
+Python 3.10 이상을 사용합니다. `python -m pip install -r tools/requirements-dev.txt`로 검증 도구를 설치합니다. Playwright와 Chromium이 있으면 `python tools/browser_smoke.py http://127.0.0.1:8060`으로 실제 웹 실행과 화면 캡처를 검증할 수 있습니다. `python tools/check_web.py`는 하위 URL에서 서빙해 검사하며 브라우저 종료·재시작 후 저장 복원까지 확인합니다. `CHROMIUM_PATH`로 브라우저 경로를 지정합니다.
 
 ## 저장과 배포
 
@@ -53,6 +53,7 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 
 ## 제작 문서
 
+- [최신 자료·공개 스킬에 따른 재검증 근거](docs/ENGINEERING_EVIDENCE.md)
 - [설계와 현재 구현 상태](docs/DESIGN.md)
 - [Blender·VARCO 아트 제작 가이드](docs/ART_PIPELINE.md)
 - [웹·Windows 배포 안내](docs/DEPLOYMENT.md)

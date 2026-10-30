@@ -22,9 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		yaw -= event.relative.x * 0.0025
 		pitch = clampf(pitch - event.relative.y * 0.002, -0.65, 0.6)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	time += delta
-	if player == null:
+	if not is_instance_valid(player):
 		return
 	var target := player.global_position + Vector3.UP * 1.4
 	if cinematic:

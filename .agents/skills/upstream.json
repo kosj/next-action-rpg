@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+  "revision": "19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9",
+  "reviewed_on": "2026-10-30",
+  "target_engine": "Godot 4.7",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "godot-physics/SKILL.md",
+      "upstream": "skills/godot/godot-physics/SKILL.md",
+      "sha256": "e318719b45091bc2731eb2ebd256027f23f7f50a39b06eb7047608cf8426b297"
+    },
+    {
+      "path": "godot-export/SKILL.md",
+      "upstream": "skills/godot/godot-export/SKILL.md",
+      "sha256": "473552185df50d5ab4a2ef874f47e08ffd7f6f552e191a7a5922c288b29800a6"
+    },
+    {
+      "path": "godot-gdscript-headless-testing/SKILL.md",
+      "upstream": "skills/godot/godot-gdscript-headless-testing/SKILL.md",
+      "sha256": "980ecf1815cb179bc92749e419e3d5c87cc998413c57ed87035e34dc45e87034"
+    },
+    {
+      "path": "godot-animation/SKILL.md",
+      "upstream": "skills/godot/godot-animation/SKILL.md",
+      "sha256": "43a339c8445b804ba84c32889ec9e4ca80e323003df74a35bcf4d3a7c8e9e99b"
+    },
+    {
+      "path": "godot-physics/references/bodies-and-queries.md",
+      "upstream": "skills/godot/godot-physics/references/bodies-and-queries.md",
+      "sha256": "5d1616f73d9f0161df501cbcb1bdbbc3c4b8c2abb687172e1d02a5d5e7907223"
+    },
+    {
+      "path": "godot-export/references/presets-and-cli.md",
+      "upstream": "skills/godot/godot-export/references/presets-and-cli.md",
+      "sha256": "ab2388a1870a0b813d110066bb54bad9f3787d067d13043d10944baec5b13dc1"
+    },
+    {
+      "path": "godot-animation/references/animation-tree-and-tween.md",
+      "upstream": "skills/godot/godot-animation/references/animation-tree-and-tween.md",
+      "sha256": "488900f895505dc6190b6e3626a4367c841dfda6ed288de8cf68a9891775c159"
+    },
+    {
+      "path": "LICENSE",
+      "upstream": "LICENSE",
+      "sha256": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c"
+    },
+    {
+      "path": "NOTICE",
+      "upstream": "NOTICE",
+      "sha256": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+    }
+  ]
+}

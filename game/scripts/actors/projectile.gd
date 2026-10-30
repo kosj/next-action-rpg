@@ -18,7 +18,7 @@ func _ready() -> void:
 	add_child(sphere)
 
 func _physics_process(delta: float) -> void:
-	if not player.active or player.dead:
+	if not is_instance_valid(player) or not player.active or player.dead:
 		queue_free()
 		return
 	var next := global_position + direction * 10.0 * delta

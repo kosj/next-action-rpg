@@ -1,0 +1,118 @@
+[
+  {
+    "model": "boss.glb",
+    "baseline": {
+      "nodes": 53,
+      "meshes": 39,
+      "primitives": 39,
+      "materials": 5,
+      "triangles": 5588,
+      "skins": 0,
+      "animations": 0
+    },
+    "blender_5_2": {
+      "nodes": 53,
+      "meshes": 39,
+      "primitives": 39,
+      "materials": 5,
+      "triangles": 5588,
+      "skins": 0,
+      "animations": 0
+    },
+    "node_names_equal": true,
+    "parent_relationships_equal": true,
+    "joint_names_equal": true,
+    "joint_max_local_transform_error": 0,
+    "all_nodes_max_local_transform_error": 0.0,
+    "changed_nodes": {},
+    "materials_semantically_equal": true,
+    "material_differences": {}
+  },
+  {
+    "model": "hero.glb",
+    "baseline": {
+      "nodes": 56,
+      "meshes": 42,
+      "primitives": 42,
+      "materials": 7,
+      "triangles": 6272,
+      "skins": 0,
+      "animations": 0
+    },
+    "blender_5_2": {
+      "nodes": 56,
+      "meshes": 42,
+      "primitives": 42,
+      "materials": 7,
+      "triangles": 6272,
+      "skins": 0,
+      "animations": 0
+    },
+    "node_names_equal": true,
+    "parent_relationships_equal": true,
+    "joint_names_equal": true,
+    "joint_max_local_transform_error": 0,
+    "all_nodes_max_local_transform_error": 0.0,
+    "changed_nodes": {},
+    "materials_semantically_equal": true,
+    "material_differences": {}
+  },
+  {
+    "model": "keeper.glb",
+    "baseline": {
+      "nodes": 51,
+      "meshes": 38,
+      "primitives": 38,
+      "materials": 7,
+      "triangles": 5840,
+      "skins": 0,
+      "animations": 0
+    },
+    "blender_5_2": {
+      "nodes": 51,
+      "meshes": 38,
+      "primitives": 38,
+      "materials": 7,
+      "triangles": 5840,
+      "skins": 0,
+      "animations": 0
+    },
+    "node_names_equal": true,
+    "parent_relationships_equal": true,
+    "joint_names_equal": true,
+    "joint_max_local_transform_error": 0,
+    "all_nodes_max_local_transform_error": 0.0,
+    "changed_nodes": {},
+    "materials_semantically_equal": true,
+    "material_differences": {}
+  },
+  {
+    "model": "sentinel.glb",
+    "baseline": {
+      "nodes": 51,
+      "meshes": 37,
+      "primitives": 37,
+      "materials": 5,
+      "triangles": 5372,
+      "skins": 0,
+      "animations": 0
+    },
+    "blender_5_2": {
+      "nodes": 51,
+      "meshes": 37,
+      "primitives": 37,
+      "materials": 5,
+      "triangles": 5372,
+      "skins": 0,
+      "animations": 0
+    },
+    "node_names_equal": true,
+    "parent_relationships_equal": true,
+    "joint_names_equal": true,
+    "joint_max_local_transform_error": 0,
+    "all_nodes_max_local_transform_error": 0.0,
+    "changed_nodes": {},
+    "materials_semantically_equal": true,
+    "material_differences": {}
+  }
+]
