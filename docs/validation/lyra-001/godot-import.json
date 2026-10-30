@@ -1,0 +1,120 @@
+{
+  "clips": {
+    "RESET": {
+      "duration_seconds": 0.0333333350718021,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "idle": {
+      "duration_seconds": 10.1666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "run": {
+      "duration_seconds": 1.46666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "walk": {
+      "duration_seconds": 4.56666660308838,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "errors": [],
+  "limitations": [
+    "No visual quality, full deformation, loop-seam, foot contact, BoneMap, dynamic root-motion or hardware performance approval",
+    "REST CPU skin uses Skeleton global rest x Skin inverse bind x weighted vertex, then skeleton world transform; no rendered GPU deformation audit",
+    "The six required combat clips are absent and the candidate is not the default gameplay avatar"
+  ],
+  "manual_animation_tree_samples": {
+    "idle": {
+      "changed_bones": 21,
+      "max_bone_local_position_change_m": 0.0,
+      "max_bone_rotation_change_rad": 0.029297923669219,
+      "sample_times_seconds": [
+        0.0,
+        2.54166674613953
+      ],
+      "tree_active": true
+    },
+    "run": {
+      "changed_bones": 23,
+      "max_bone_local_position_change_m": 0.0418073236942291,
+      "max_bone_rotation_change_rad": 2.35979914665222,
+      "sample_times_seconds": [
+        0.0,
+        0.366666674613953
+      ],
+      "tree_active": true
+    },
+    "walk": {
+      "changed_bones": 23,
+      "max_bone_local_position_change_m": 0.0456599108874798,
+      "max_bone_rotation_change_rad": 1.6688951253891,
+      "sample_times_seconds": [
+        0.0,
+        1.14166665077209
+      ],
+      "tree_active": true
+    }
+  },
+  "meshes": [
+    {
+      "path": "CandidateUniformScale/Armature/Skeleton3D/texture_mapping",
+      "skeleton_path_resolves": true,
+      "skin_bind_count": 53,
+      "skin_present": true,
+      "surface_vertices": 62758
+    }
+  ],
+  "rest_bounds_godot_y_up": {
+    "floor_y_m": 1.78813934326172e-07,
+    "height_m": 1.82000023126602,
+    "max": [
+      0.881726980209351,
+      1.82000041007996,
+      0.221840530633926
+    ],
+    "method": "CPU linear skinning: skeleton_world * sum(weight * bone_global_rest * inverse_bind * vertex)",
+    "min": [
+      -0.882283389568329,
+      1.78813934326172e-07,
+      -0.215896919369698
+    ]
+  },
+  "scope": "Actual GLB import, CPU-skinned REST/world bounds, Skin binding presence, clips and manual AnimationTree bone sampling only",
+  "skeleton": {
+    "bones": 53,
+    "motion_scale": 1.0,
+    "path": "CandidateUniformScale/Armature/Skeleton3D"
+  },
+  "status": "passed",
+  "source": {
+    "path": "art_source/production/candidates/lyra-001/lyra-locomotion.glb",
+    "sha256": "8141e4b400504e821df1b78e9b9ab9e8da2c2e2f987a729d18130c6c06f64cae",
+    "unchanged": true
+  },
+  "fresh_import": {
+    "editor_exit_code": 0,
+    "runtime_audit_exit_code": 0,
+    "errors_or_warnings": 0,
+    "separate_project": true,
+    "import_cache_cleared": true
+  }
+}

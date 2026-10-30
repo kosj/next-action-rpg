@@ -21,9 +21,9 @@
 
 `AttackData`는 피해량·자세 피해·준비/활성/회복 시간·거리·각도·전진량·패링 가능 여부를 정의하는 Resource입니다. 공격 중에는 공유 Resource를 변경하지 않습니다.
 
-`CombatStrike`는 공격 인스턴스마다 시간과 대상별 타격 기록을 소유합니다. 물리 공간에 구체를 연속 표본화하여 이전·현재 검 위치 사이를 검사하고, 공통 `receive_hit(amount, poise, origin, parryable)`로 피해를 전달합니다. 벽과 대상 고정은 별도 물리 질의로 처리합니다.
+`CombatStrike`는 공격 인스턴스마다 시간과 대상별 타격 기록을 소유합니다. 방향 베기는 칼날 캡슐 전체의 위치·각도를 연속 표본화하고 원형 스킬은 원통 영역으로 검사하며, 공통 `receive_hit(amount, poise, origin, parryable)`로 피해를 전달합니다. 벽과 대상 고정은 별도 물리 질의로 처리합니다.
 
-`RunePlayer`와 `RuneEnemy`는 이동·피격 상태를 소유하고, 전투 성공과 사망을 신호로 전달합니다. `ActorVisual`은 Blender에서 내보낸 관절 피벗을 움직이는 임시 애니메이션 계층입니다. 최종 스켈레톤과 AnimationTree로 교체할 때 전투 시간·판정은 이 표현 계층으로 옮기지 않습니다.
+`RunePlayer`와 `RuneEnemy`는 이동·피격 상태를 소유하고, 전투 성공과 사망을 신호로 전달합니다. `ActorVisual`의 기본 표현은 Blender에서 내보낸 관절 피벗이며, 선택적 `SkeletalVisualBridge`는 검증한 Skin·AnimationPlayer와 AnimationTree를 장착합니다. 읽기 전용 표현 snapshot의 실제 행동 시간을 따라 클립을 샘플링하며 누락 상태는 명시적인 피벗 fallback을 사용합니다. 전투 시간·이동·판정은 표현 계층으로 옮기지 않습니다.
 
 `Sanctuary`는 충돌이 있는 방·길·문과 시각 자산을 생성합니다. `game.gd`는 순차 전투·상호작용·보상·체크포인트를 관리합니다. `RuneHUD`는 일시정지 중에도 UI를 처리하고, 전투 도중에는 진행을 대신 결정하지 않습니다.
 

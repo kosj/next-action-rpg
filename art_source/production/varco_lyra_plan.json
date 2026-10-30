@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "status": "completed_generation_rig_and_locomotion_candidates_pending_runtime_review",
+  "purpose": "Recorded translation of the first Lyra generation into discovered VARCO node types, with successful execution evidence. Placeholders describe reusable configuration; this is not a raw MCP request or a command to regenerate.",
+  "reference": "art_source/production/references/lyra-front-concept.png",
+  "reference_sha256": "97c477d0f2ba9b9be16d4d167cdad1e1803d3fbd78c2de4cb277e6cd09c117ef",
+  "flow": {
+    "expected_name": "RUNEFALL Art Slice",
+    "flow_id": "36eeaa83-211b-4fba-a8ad-e547e2cdb697",
+    "require_explicit_id_and_empty_graph": true,
+    "selection_status": "Explicit user-provided ID queried directly and verified empty before changes; pre-existing flows untouched."
+  },
+  "preconditions": [
+    "An authenticated official MCP client has discovered these exact tool and node schemas.",
+    "The user has approved this reference image's upload to VARCO and one generation within the point limit.",
+    "An empty target Flow has been selected from actual list_flow_sessions/get_flow_graph results.",
+    "Current account eligibility, point estimate and generated-asset license are confirmed before running."
+  ],
+  "upload": {
+    "tool": "upload_image",
+    "status": "completed_after_explicit_user_approval",
+    "data_source": "base64 of the exact local reference file, never an authentication token",
+    "result_url": null,
+    "result_url_note": "The actual result is kept only in temporary local client output, not this public file.",
+    "persist_temporary_url_in_source_control": false
+  },
+  "nodes": [
+    {
+      "label": "lyra_reference",
+      "nodeType": "ImageInput",
+      "x": 0,
+      "y": 0,
+      "intrinsic": {
+        "value": [
+          {
+            "type": "image",
+            "url": "${upload_image_result_url}"
+          }
+        ]
+      }
+    },
+    {
+      "label": "lyra_candidate",
+      "nodeType": "Generate3D",
+      "x": 480,
+      "y": 0,
+      "intrinsic": {
+        "count": [
+          {
+            "type": "int",
+            "value": 1
+          }
+        ],
+        "polygonCount": [
+          {
+            "type": "int",
+            "value": 80000
+          }
+        ],
+        "topology": [
+          {
+            "type": "string",
+            "value": "tri"
+          }
+        ],
+        "tPose": [
+          {
+            "type": "int",
+            "value": 1
+          }
+        ],
+        "useAlpha": [
+          {
+            "type": "int",
+            "value": 0
+          }
+        ],
+        "usePbrTexture": [
+          {
+            "type": "int",
+            "value": 1
+          }
+        ],
+        "textureSize": [
+          {
+            "type": "int",
+            "value": 2048
+          }
+        ],
+        "generateTexture": [
+          {
+            "type": "int",
+            "value": 1
+          }
+        ]
+      },
+      "license": "PRIVATE setting verified before this generation; no Community publication.",
+      "model": "Use the real node's remembered/recommended option; no invented model identifier."
+    }
+  ],
+  "edges": [
+    {
+      "from": "lyra_reference",
+      "fromPort": "out",
+      "to": "lyra_candidate",
+      "toPort": "image"
+    }
+  ],
+  "run": {
+    "tool": "run_flow",
+    "scope": [
+      "${lyra_candidate_node_id}"
+    ],
+    "empty_scope_allowed": false,
+    "candidate_count": 1,
+    "point_estimate_checked_on": "2026-10-30",
+    "point_estimate": 200,
+    "point_limit_for_this_request": 200,
+    "purchase_additional_points": false,
+    "status": "completed_successfully",
+    "actual_points": 200
+  },
+  "after_run": [
+    "Completed: polled actual get_flow_graph success and exported/downloaded GLB into ignored candidate storage.",
+    "Completed: recorded PRIVATE setting, permanent source task, input/output hashes and actual point usage; excluded signed URLs.",
+    "Completed: preserved original rest source and combined 53-bone idle/walk/run/RESET candidate, with REST renders and Blender preparation proof.",
+    "Remaining: clean geometry/materials, retopologize and build LODs; 80000 triangles exceeds Windows 65000 and web 32000 targets.",
+    "Remaining: author six required combat clips; review BoneMap, loop seams, foot contact, facing, grip, gameplay timing and actual scene quality before runtime replacement."
+  ],
+  "followup_results": {
+    "rigging": {
+      "node_type": "Rig",
+      "preset": "humanoid-fingers",
+      "actual_points": 0,
+      "status": "completed"
+    },
+    "locomotion": {
+      "node_type": "Animate",
+      "stock_keys": [
+        "standing_idle_1_looping",
+        "jog_looping",
+        "sprint"
+      ],
+      "in_place_requested": true,
+      "actual_points": 0,
+      "status": "three_completed_candidates"
+    },
+    "upstream_reexecution_prevention": "Separate 3DInput/Rigged3DInput nodes reference completed mesh/rig tasks; run_flow scope contains only intended downstream nodes.",
+    "total_points": 200,
+    "additional_point_purchase": false,
+    "manifest": "art_source/production/candidates/lyra-001/manifest.json",
+    "source_glb": "art_source/production/candidates/lyra-001/source.glb",
+    "prepared_glb": "art_source/production/candidates/lyra-001/lyra-locomotion.glb",
+    "preparation_report": "art_source/production/candidates/lyra-001/preparation.json",
+    "runtime_replacement": false,
+    "visual_approval": false
+  }
+}

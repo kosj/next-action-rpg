@@ -150,10 +150,10 @@
       "kind": "limitation",
       "status": "pending",
       "title": "최종 리그·모션은 임시 피벗 모델을 별도로 대체해야 한다",
-      "summary": "현재 GLB 4개는 skins/animations가 없는 도형 블록아웃이며 Blender 품질 한계의 근거가 아니다. VARCO 생성 후보와 Blender 후처리를 조합해 리라 1명·수호병 1종·전투 공간 1개를 먼저 검수한다. 최종 스킨·BoneMap·클립 9개·발 접지와 실제 조명/VFX 검증은 남아 있다. 이동·공격 시간·피해 판정은 게임 코드가 소유하며 현재 아트를 AAA 완성으로 표시하지 않는다.",
+      "summary": "현재 게임의 기본 GLB 4개는 skins/animations가 없는 도형 블록아웃이다. 별도 후보에는 VARCO 리라 1건·53본 스킨·대기/조깅/달리기와 RESET을 실제 생성·후처리했다. 선택적 스킨 장착/게임 시간 동기화 연결부도 구현했다. 후보는 8만 폴리곤으로 웹/Windows 예산을 초과하며, 전투6클립·BoneMap·크로스페이드·루프/발 접지·최종 재질/조명/VFX 검수 후 기본 피벗 자산을 대체해야 한다. 현재 아트를 AAA 완성으로 표시하지 않는다.",
       "tags": ["art", "animation", "rig", "리그"],
       "checked_on": "2026-10-30",
-      "context": {"godot": "4.7.2", "assets": "v0.1.1 prototype GLBs"},
+      "context": {"godot": "4.7.2", "application": "v0.1.2", "runtime": "prototype pivots; separate real skeletal candidate"},
       "sources": ["docs/ART_PIPELINE.md", "docs/ART_REVIEW.md", ".agents/skills/godot-animation/SKILL.md", "https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html"]
     },
     {
@@ -161,10 +161,10 @@
       "kind": "decision",
       "status": "verified",
       "title": "VARCO는 생성 당시 공개 범위와 라이선스를 자산별로 기록한다",
-      "summary": "공식 2026-10-12 정책에 따르면 Free의 새 생성물은 Public/CC BY 4.0이고 Community 게시물은 CC0다. 저장소 공개 여부가 생성 당시 라이선스를 변경하지 않는다. 주인공·룬도 VARCO 후보와 Blender 후처리를 조합할 수 있으며 소품으로 사용 범위를 제한하지 않는다. 자산 용도·계정 플랜·공개 범위·귀속 조건은 생성 전에 재확인한다. 현재 게임에는 VARCO 생성 자산이 없다.",
+      "summary": "공식2026-10-12정책에서 Free 새 생성물의 Public/CC BY4.0 및 Community CC0를 확인했다. 저장소 공개 여부는 생성 당시 설정을 변경하지 않는다. 이번 리라 원본은 생성 직전 PRIVATE 설정을 확인하고 후보manifest에 기록했다. 사용 조건과 공개 범위는 각 생성 당시 다시 확인한다. 실제 VARCO 후보는 art_source에 보관하며 현재 게임 기본 자산은 기존 프로토타입이다.",
       "tags": ["art", "varco", "license", "라이선스"],
       "checked_on": "2026-10-30",
-      "context": {"policy_date": "2026-10-12", "release": "v0.1.1"},
+      "context": {"policy_date": "2026-10-12", "application": "v0.1.2", "candidate": "PRIVATE generation setting recorded"},
       "sources": ["docs/ART_PIPELINE.md", "docs/ART_REVIEW.md", "https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate"]
     },
     {
@@ -180,14 +180,47 @@
     },
     {
       "id": "varco-client-connection",
-      "kind": "limitation",
-      "status": "pending",
-      "title": "현재 작업 클라이언트의 VARCO 등록·OAuth·실제 호출은 확인 전이다",
-      "summary": "공식 연결 방법과 CLI 옵션 지원은 확인했지만 현재 세션에 VARCO 도구는 없다. 서버 등록·OAuth 승인·새 도구 발견·대상 Flow 읽기 및 작은 변경의 호출 결과를 각각 확인해야 한다. 클라우드 CLI와 사용자의 앱 설정이 동일하다고 가정하지 않는다. 계정 토큰이나 임시 인증 URL은 지식 DB에 기록하지 않는다.",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "현재 Codex 클라이언트의 VARCO 등록·OAuth·실제 읽기 호출을 확인했다",
+      "summary": "공식 Codex CLI로 varco-3d를 등록하고 사용자의 OAuth 승인을 --no-browser 숨김 입력으로 전달해 로그인 성공을 확인했다. 공식 app-server API로 인증 상태 oAuth·도구 목록·계정/가격·노드·Flow 조회를 확인했고 tools/varco_mcp.py의 실제 Flow 조회도 성공했다. 이 도구는 서버 HTTP나 인증 파일을 직접 읽지 않는다. 새 환경에서는 catalog와 읽기 호출로 다시 확인하고 클라우드 설정이 사용자의 다른 앱에도 적용됐다고 가정하지 않는다. 토큰·콜백·계정 원문은 저장소에 기록하지 않는다.",
       "tags": ["art", "varco", "mcp", "oauth", "connection", "연결"],
       "checked_on": "2026-10-30",
-      "context": {"client": "current managed cloud session", "state": "not authenticated or tool-call verified"},
-      "sources": ["docs/VARCO_MCP.md", ".agents/skills/runefall-art/SKILL.md", "https://3d.varco.ai/mcp/setup.md"]
+      "context": {"client": "managed cloud Codex CLI 0.163.0", "state": "OAuth and read-only MCP calls verified"},
+      "sources": ["docs/VARCO_MCP.md", "tools/varco_mcp.py", "tools/tests/test_varco_mcp.py", "https://3d.varco.ai/mcp/setup.md"]
+    },
+    {
+      "id": "skeletal-presentation-bridge",
+      "kind": "decision",
+      "status": "verified",
+      "title": "스킨 표현은 실제 게임 상태의 시간만 따라가고 누락 상태는 피벗으로 복구한다",
+      "summary": "ActorVisual.mount_rig는 실제 Skin/weights/bone/RESET/필수9클립/루프/트랙을 검증한다. 플레이어와 적의 값 전용 snapshot을 AnimationTree/TimeSeek에 전달해 실제 행동 시간에 맞는 bone pose를 샘플링한다. 리그 외부·임의 property·실행·게임플레이 대상 트랙은 거부한다. 판정·이동 권한은 코드에 남고 저작되지 않은 heavy/skill/death 상태는 명시적 fallback을 사용한다. 합성 검증은 최종 아트·BoneMap·크로스페이드 합격이 아니다.",
+      "tags": ["art", "animation", "rig", "combat", "testing"],
+      "checked_on": "2026-10-30",
+      "context": {"godot": "4.7.2", "application": "v0.1.2", "validation": "163 Godot checks, 0 failures"},
+      "sources": ["game/scripts/actors/skeletal_visual_bridge.gd", "game/scripts/actors/actor_visual.gd", "game/tests/skeletal_regressions.gd", "docs/ART_SLICE.md"]
+    },
+    {
+      "id": "production-art-contract-checks",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "제작 입력·참조 해시·공격 수치와 실제 모델 구조 검사는 별도 게이트다",
+      "summary": "리라/수호병/성역 2D 참조3개와 입력·9모션 계약을 보관한다. check_art_production은 참조/후보 source·파생파일의 해시/경로와 AttackData 기본값+.tres 숫자 override의 판정 구간을 검사한다. inspect_glb는 구조와 명시적 skin/clip/node 요구를 검사한다. 기존4피벗은 구조만 통과하며 skin이 없고, 실제 리라 파생 후보는 skin1·3locomotion+RESET 구조 요구를 통과한다. 이 검사는 시각·변형·발 접지·게임 화면·성능 합격을 의미하지 않는다.",
+      "tags": ["art", "testing", "glb", "pipeline", "knowledge"],
+      "checked_on": "2026-10-30",
+      "context": {"application": "v0.1.2", "references": "3 native-generated 2D concepts, not VARCO models", "motion_contract": "9 planned clips"},
+      "sources": ["tools/inspect_glb.py", "tools/check_art_production.py", "art_source/production/asset_specs.json", "art_source/production/motion_contract.json", "art_source/production/references/manifest.json", "docs/ART_SLICE.md"]
+    },
+    {
+      "id": "varco-first-candidate",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "명시적인 빈 Flow에서 리라 1건을 생성하고 완료 task로 후속 리깅·모션을 고정했다",
+      "summary": "사용자가 준 실제 Flow ID를 직접 조회해 빈 대상임을 확인한 뒤 승인된 이미지 업로드와 PRIVATE 설정의 Generate3D 1건을 완료했다. 메시 200포인트·리깅0·대기/조깅/달리기0으로 총200포인트이며 추가 구매와 유료 재생성은 없었다. 완료된 mesh/rig task를 별도 입력 노드에 고정하고 scope를 지정해 upstream 재생성을 막았다. 원본 GLB와 REST 3면 렌더·후처리된53본/3모션+RESET 후보를 보관했다. 최종9모션·시각 품질·런타임 교체는 별도 미완료다.",
+      "tags": ["art", "varco", "mcp", "generation", "approval"],
+      "checked_on": "2026-10-30",
+      "context": {"application": "v0.1.2", "generation_status": "one source mesh, one rig, three locomotion candidates completed"},
+      "sources": ["art_source/production/varco_lyra_plan.json", "art_source/production/candidates/lyra-001/manifest.json", "art_source/production/candidates/lyra-001/preparation.json", "docs/VARCO_MCP.md", "docs/ART_SLICE.md"]
     },
     {
       "id": "public-skills-provenance",
@@ -210,6 +243,17 @@
       "checked_on": "2026-10-30",
       "context": {"release": "v0.1.1", "validated_platform": "Linux cloud and software Chromium"},
       "sources": ["docs/VALIDATION.md", "docs/DESIGN.md", "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"]
+    },
+    {
+      "id": "skeletal-candidate-origin-normalization",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "같은 VARCO 리그의 원점 차이는 공통 평행이동을 입증하고 샘플 포즈로 다시 확인한다",
+      "summary": "동일 리그의 stock 모션 수출물에서 모든53본과62,671정점의 공통 원점 이동을 확인했다. 본 이름/부모/rest linear 행렬·메시 topology·named weights·world 관계를 증명한 후 source 메모리에서만 정규화했다. 3시점 source→target 포즈 오차는1.82m scale에서 최대7.1e-7m였고 원본4SHA는 불변이다. 정적 wrapper로 키1.82m/REST 바닥0을 맞춘 뒤 재반입했다. 이 검사는 다른 bind pose 리타겟·연속 구간 전체·루프·동적 root motion 합격을 의미하지 않는다.",
+      "tags": ["art", "animation", "blender", "rig", "origin", "normalization"],
+      "checked_on": "2026-10-30",
+      "context": {"blender": "4.3.2", "application": "v0.1.2", "sample_fractions": "0, 0.5, 1", "vertex_tolerance_m": "1e-4"},
+      "sources": ["tools/prepare_character_candidate.py", "art_source/production/candidates/lyra-001/preparation.json", "docs/validation/lyra-001/godot-import.json", ".agents/skills/runefall-art/SKILL.md"]
     }
   ]
 }

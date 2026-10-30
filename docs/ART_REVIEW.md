@@ -48,7 +48,7 @@ Godot는 반입 시 자동 메시 LOD를 만들 수 있지만, 스킨 메시의 
 
 [In-Place 옵션](https://3d.varco.ai/docs/release-notes/2026-02-04-in-place-animation-control)과 [휴머노이드 루프 모션](https://3d.varco.ai/docs/release-notes/2026-10-07-looping-animations-ready-to-use)은 코드 주도 이동에 사용할 후보입니다. 생성 결과가 게임에 맞는 보폭·관절 품질을 보장한다고 간주하지 않고 같은 검수 씬을 통과시킵니다.
 
-[2026-10-12 라이선스 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate)은 Free 생성물이 Public(CC BY 4.0), Private 선택은 Plus 이상임을 명시합니다. Community 게시는 CC0로 유지되므로 자동 게시를 제작 파이프라인에 넣지 않습니다. 현재 자산에는 VARCO 생성물이 없습니다. 생성 범위를 소품으로 제한하지 않고 캐릭터·룬도 생성 후보에 포함하며, 자산 용도와 계정 플랜에 맞는 공개 범위·귀속 조건을 생성 전에 확인합니다.
+[2026-10-12 라이선스 변경](https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate)은 Free 생성물이 Public(CC BY 4.0), Private 선택은 Plus 이상임을 명시합니다. Community 게시는 CC0로 유지되므로 자동 게시를 제작 파이프라인에 넣지 않습니다. 기본 게임 자산은 기존 프로토타입이며, 별도 [리라 후보](ART_SLICE.md)에 실제 VARCO 생성물과 PRIVATE 설정·원본/파생 해시를 기록했습니다. 생성 범위를 소품으로 제한하지 않고 캐릭터·룬도 생성 후보에 포함하며, 자산 용도와 계정 플랜에 맞는 공개 범위·귀속 조건을 생성 전에 확인합니다.
 
 ## 읽고 선택 적용한 공개 스킬
 

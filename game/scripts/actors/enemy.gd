@@ -11,6 +11,7 @@ var health: float = 85.0
 var max_health: float = 85.0
 var poise_meter: float = 0.0
 var stagger: float = 0.0
+var presentation_stagger_duration: float = 0.0
 var cooldown: float = 1.0
 var strike: CombatStrike
 var facing: Vector3 = Vector3.FORWARD
@@ -85,7 +86,7 @@ func _plane(size: Vector2, color: Color) -> MeshInstance3D:
 func _physics_process(delta: float) -> void:
 	if dead:
 		death_time += delta
-		visual.pose(delta, 0.0, -1.0, false, false, true)
+		visual.pose(delta, 0.0, -1.0, false, false, true, presentation_snapshot())
 		if death_time > 3:
 			queue_free()
 		return
@@ -145,7 +146,7 @@ func _physics_process(delta: float) -> void:
 					data.startup = 0.68 if phase == 1 else 0.44
 				elif elite:
 					data.damage = 22.0
-				strike = CombatStrike.new(self, data)
+				strike = CombatStrike.new(self, data, 1.0, &"enemy_attack")
 	if stagger > 0:
 		desired = Vector3.ZERO
 	if strike != null and strike.elapsed >= strike.data.startup and strike.elapsed < strike.data.startup + strike.data.active:
@@ -166,7 +167,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1, delta * 9))
 	var swing := clampf((strike.elapsed - strike.data.startup + 0.15) / (strike.data.active + 0.15), 0, 1) if strike != null else -1.0
-	visual.pose(delta, Vector2(velocity.x, velocity.z).length(), swing)
+	visual.pose(delta, Vector2(velocity.x, velocity.z).length(), swing, false, false, false, presentation_snapshot())
 	warning.visible = strike != null and strike.elapsed < strike.data.startup
 	bar.visible = health < max_health and not is_boss
 	bar.scale.x = maxf(0.01, health / max_health)
@@ -194,8 +195,19 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 		defeated.emit(self)
 
 func interrupt_attack(duration: float) -> void:
+	if duration > stagger:
+		presentation_stagger_duration = duration
 	stagger = maxf(stagger, duration)
 	strike = null
 	burst_time = 0.0
 	if is_instance_valid(warning):
 		warning.hide()
+
+func presentation_snapshot() -> Dictionary:
+	return {
+		"speed":Vector2(velocity.x, velocity.z).length(), "dead":dead, "death_elapsed":death_time, "stagger":stagger,
+		"hit_elapsed":maxf(0.0, maxf(0.28, presentation_stagger_duration)-stagger), "hit_duration":maxf(0.28, presentation_stagger_duration),
+		"attack_id":String(strike.presentation_id) if strike != null else ("burst" if burst_time > 0.0 else ""),
+		"attack_elapsed":strike.elapsed if strike != null else maxf(0.0, 1.15-burst_time),
+		"attack_duration":strike.data.duration() if strike != null else 1.15,
+	}

@@ -350,7 +350,7 @@ func _process(delta: float) -> void:
 					button_info["popup_visible"] = control.get_popup().visible
 					button_info["popup_focus"] = control.get_popup().get_focused_item()
 				buttons.append(button_info)
-		var status := {"started":world.started, "paused":get_tree().paused,
+		var status := {"build_id":Session.build_id, "started":world.started, "paused":get_tree().paused,
 			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
 			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,
 			"quality":Session.quality,"fps":Engine.get_frames_per_second(),
