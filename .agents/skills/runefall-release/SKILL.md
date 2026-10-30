@@ -10,7 +10,7 @@ description: Build, validate, and publish RUNEFALL web or Windows distributions 
 ## 준비
 
 1. `python tools/knowledge.py search --tag deployment`와 `--tag toolchain`으로 이미 확인한 제약을 찾습니다.
-2. 요청 범위·작업 트리·대상 커밋과 CI 상태를 확인합니다. 소스 저장소는 비공개로 유지합니다.
+2. 요청 범위·작업 트리·대상 커밋과 CI 상태를 확인합니다. 저장소 공개 범위는 사용자의 최신 결정과 실제 API 상태를 따릅니다. 과거의 비공개 유지 지침을 현재 결정으로 오인하지 않습니다.
 3. 엔진의 원본은 `tools/toolchain.json`, 게임 버전의 원본은 `game/project.godot`입니다. 동일 버전 엔진·템플릿을 준비합니다. `tools/build.py`가 버전·태그 불일치를 거부하는 계약을 유지합니다.
 
 ## 빌드와 실행
@@ -34,7 +34,9 @@ python tools/check_web.py
 
 main의 build 성공 → deploy 성공 → 실제 URL의 HTTP 응답과 실행을 확인합니다. ZIP 다운로드 성공은 Pages 게시 성공과 별개입니다. 예상 URL을 활성 주소로 표시하지 않습니다.
 
-Pages가 아직 설정되지 않았거나 연결 권한이 없으면 실패한 작업·HTTP 상태와 필요한 최초 설정을 보고합니다. 계정 플랜 부족이라고 단정하거나 소스를 공개로 바꾸지 않습니다. 활성화한 뒤에는 지식 DB의 제약 상태를 실제 확인 결과로 갱신합니다.
+Pages가 아직 설정되지 않았거나 연결 권한이 없으면 실패한 작업·HTTP 상태와 필요한 최초 설정을 보고합니다. 저장소 공개 전환과 Pages 최초 활성화는 별개의 설정입니다. 저장소 metadata의 admin=true만으로 연결 앱의 관리 권한을 판단하지 않습니다. 계정 플랜 부족이라고 단정하거나 공개 범위를 임의로 변경하지 않습니다.
+
+`configure-pages@v5`의 `enablement: true`는 기본 `GITHUB_TOKEN` 이외의 Pages 생성 권한 토큰이 필요합니다. [공식 입력 정의](https://github.com/actions/configure-pages/blob/v5/action.yml)를 확인하고, 권한이 부족한 기본 토큰으로 같은 생성 요청을 반복하지 않습니다. 최초 설정이 완료되면 이미 성공한 build를 다시 실행하는 대신 해당 run의 실패한 deploy job만 재실행할 수 있습니다. 활성화한 뒤에는 지식 DB의 제약 상태를 실제 확인 결과로 갱신합니다.
 
 ## 결과 기록
 

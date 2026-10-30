@@ -7,9 +7,9 @@
 3. `build`가 검사와 내보내기를 마치면 `deploy`가 실행 빌드를 게시합니다. Pages 환경과 워크플로 요약에 실제 배포 주소가 표시됩니다.
 4. 사용자 지정 도메인이 없다면 예상 주소는 `https://kosj.github.io/next-action-rpg/`입니다. **Pages 설정과 배포 성공을 확인하기 전에는 이 주소를 활성 서비스로 안내하지 않습니다.**
 
-현재 작업 연결은 Pages 설정 API를 조회할 권한이 없어 HTTP 403을 반환했습니다. 저장소 소유자가 최초 Pages 설정을 해야 합니다. 이 오류만으로 계정의 플랜이 부족하다고 단정할 수 없습니다.
+2026-10-30 사용자가 저장소를 공개로 전환했고 API의 `visibility: public`을 확인했습니다. 공개 전환 후에도 Pages 생성 요청은 현재 연결 앱의 권한 부족으로 HTTP 403을 반환했습니다. 사이트 조회의 HTTP 404와 생성 요청의 HTTP 403은 별개입니다. 저장소 소유자가 최초 Pages 설정을 해야 하며, 이 오류만으로 계정 플랜 부족이라고 단정할 수 없습니다.
 
-[GitHub 공식 문서](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)에 따르면 비공개 저장소의 Pages는 GitHub Pro·Team·Enterprise에서 사용할 수 있습니다. 설정 화면에서 사용 불가로 표시되면 소스를 비공개로 유지한 채 배포 전용 공개 저장소를 별도 구성하는 방안을 선택할 수 있습니다. 이 구현은 소스 저장소의 공개 여부를 변경하거나 새 공개 저장소를 만들지 않습니다.
+[`configure-pages@v5`의 공식 입력 정의](https://github.com/actions/configure-pages/blob/v5/action.yml)에 따르면 `enablement: true`로 사이트를 생성하려면 기본 `GITHUB_TOKEN` 이외의 토큰이 필요합니다. 따라서 워크플로에 이 옵션만 추가해 최초 설정을 해결하려고 하지 않습니다. Source를 GitHub Actions로 설정한 후에는 기존 성공 build를 유지하고 실패한 deploy 작업만 재실행할 수 있습니다.
 
 배포는 GitHub가 발급하는 일회성 `GITHUB_TOKEN`과 OIDC를 사용하므로 별도의 itch.io 계정이나 장기 배포 키가 필요하지 않습니다. 워크플로의 배포 작업에만 `pages:write`, `id-token:write`를 부여합니다. PR은 배포하지 않습니다.
 

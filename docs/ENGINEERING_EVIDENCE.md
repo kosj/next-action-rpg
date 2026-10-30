@@ -39,4 +39,4 @@
 
 실제 Windows/게임패드, RTX 3060급 60fps·장시간 메모리, 고주사율 카메라 보간, 3명 이상의 30~60분 플레이테스트는 별도 검증 대상입니다. 현재 37~42개 모델 프리미티브와 런타임 성역의 드로콜을 측정한 뒤 최적화를 결정합니다. 상세 아트 근거는 [ART_REVIEW.md](ART_REVIEW.md), 실제 검사 결과는 [VALIDATION.md](VALIDATION.md)에 기록합니다.
 
-Pages 최초 활성화에 필요한 관리 권한은 현재 연결에 없었습니다. 소스 비공개 상태는 유지하며, 실제 게시 성공과 공개 URL의 HTTP 응답을 확인하기 전에는 웹 배포 완료로 안내하지 않습니다.
+사용자가 2026-10-30 저장소를 공개로 전환했고 API에서도 public을 확인했습니다. 공개 전환 후에도 Pages 최초 생성 요청은 연결 앱의 권한 부족으로 HTTP 403을 반환했습니다. [`configure-pages@v5`의 입력 정의](https://github.com/actions/configure-pages/blob/v5/action.yml)도 기본 GITHUB_TOKEN으로는 자동 최초 활성화할 수 없음을 명시합니다. 실제 게시 성공과 공개 URL의 HTTP 응답을 확인하기 전에는 웹 배포 완료로 안내하지 않습니다.
