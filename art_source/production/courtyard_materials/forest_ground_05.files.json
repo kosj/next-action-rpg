@@ -1,0 +1,29 @@
+{
+  "Diffuse": {
+    "1k": {
+      "jpg": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_diff_1k.jpg",
+        "md5": "7fcf121f5d2ac2ffe665d42d5fe69478",
+        "size": 655934
+      }
+    }
+  },
+  "nor_gl": {
+    "1k": {
+      "jpg": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_nor_gl_1k.jpg",
+        "md5": "4fd06cb053e3124afd06fbd2d87caa74",
+        "size": 1167042
+      }
+    }
+  },
+  "arm": {
+    "1k": {
+      "jpg": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_arm_1k.jpg",
+        "md5": "2c4df8d0f886f301a4ff206e139856f0",
+        "size": 812641
+      }
+    }
+  }
+}

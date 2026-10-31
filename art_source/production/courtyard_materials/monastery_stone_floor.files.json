@@ -1,0 +1,29 @@
+{
+  "Diffuse": {
+    "2k": {
+      "jpg": {
+        "size": 3021140,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/monastery_stone_floor/monastery_stone_floor_diff_2k.jpg",
+        "md5": "35420aa52b8257920b1d7566fb80ab4d"
+      }
+    }
+  },
+  "nor_gl": {
+    "1k": {
+      "jpg": {
+        "size": 1063115,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/monastery_stone_floor/monastery_stone_floor_nor_gl_1k.jpg",
+        "md5": "257ccdbbe1c2a23f74cece55b81861ac"
+      }
+    }
+  },
+  "arm": {
+    "1k": {
+      "jpg": {
+        "size": 645382,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/monastery_stone_floor/monastery_stone_floor_arm_1k.jpg",
+        "md5": "7ef459c183e5efb94b48e32042182e24"
+      }
+    }
+  }
+}

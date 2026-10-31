@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-gameplay-001",
+  "created_on": "2026-10-31",
+  "status": "reviewed_skeletal_gameplay_preview",
+  "provider": "VARCO PRIVATE body derivative; project-authored Blender motion",
+  "source_file": "source.glb",
+  "source_bytes": 17146728,
+  "source_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+  "geometry_input": "../sentinel-web-001/locomotion.glb",
+  "geometry_input_sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+  "triangles": 22000,
+  "skins": 1,
+  "bones": 53,
+  "clips": 10,
+  "profile": "sentinel_melee",
+  "runtime_replacement": true,
+  "runtime_scope": "ordinary melee only; ranged/shield/boss/elite retain their prototype art",
+  "runtime_file": "game/assets/models/production/sentinel_gameplay.glb",
+  "motion_authorship": "All runtime poses, action curves and locomotion cycles are newly authored; no provider stock FCurves or numerical pose samples copied. Body geometry/rest/weights are reused.",
+  "point_usage_this_step": 0,
+  "additional_points_purchased": false,
+  "visual_approval": false,
+  "target_hardware_performance_approval": false,
+  "source_curves_copied": 0,
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 124177,
+      "sha256": "007901f1eca95c78f3e6f78fbd4ec2dba47741c39a70360d3489c1805e9dddda"
+    },
+    {
+      "file": "godot-audit.json",
+      "bytes": 3756,
+      "sha256": "3ef64ba13a6c2d7e8d4f6f3a098b00cf32bb081f4f67b5bf353b7237ed58a388"
+    },
+    {
+      "file": "godot-import.log",
+      "bytes": 3643,
+      "sha256": "d1c9b78f30c0412d1e151c4e896d62cfc6a0411c56194717cd850c02a65a2b9b"
+    },
+    {
+      "file": "godot-runtime.log",
+      "bytes": 232,
+      "sha256": "e7c9fa15d50eb8c9810e8fdb2fe208531a5e1c7d3879ff72c1b55d6fa20bbce9"
+    },
+    {
+      "file": "grip-review.json",
+      "bytes": 10031,
+      "sha256": "49bd3cd0c32280543d35117302f816697613f5e9705f77574a2ba9a0c2cdde8d"
+    },
+    {
+      "file": "grip_oblique.png",
+      "bytes": 1789851,
+      "sha256": "fa1bbcaa3ec25c15e4830d31e2e4e9019882cffaaf85f5770735802432d1cbc4"
+    },
+    {
+      "file": "grip_palmar.png",
+      "bytes": 1957585,
+      "sha256": "ec8e14705eca7d5c73473db55e58a3e477f878e2976c6f0addd073ba2528d728"
+    },
+    {
+      "file": "inspection.json",
+      "bytes": 4053,
+      "sha256": "f860b13e95bf1c2c5fceb0d5389ac78776b10c2f616ee19b779c80d8368da49b"
+    },
+    {
+      "file": "recipe.json",
+      "bytes": 1205,
+      "sha256": "2a153b327361e2ed3b752fc16d66b1d691ab185e7c9185de413ffd5b339916f1"
+    },
+    {
+      "file": "review.json",
+      "bytes": 18900,
+      "sha256": "3bcab2ceae99c42233c1e58ffd27da18fa48532288ecc105a2598f377d7d690c"
+    }
+  ],
+  "authoring_tools": [
+    {
+      "repository_file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "repository_file": "tools/character_gait.py",
+      "sha256": "81590d1e6850b26e63477f35281cab8bb3c4bbf40b82a1565191e146f4e35a46"
+    }
+  ],
+  "remaining_review": [
+    "Final rendered cross-state contact and action footwork; bounded80ms pose blend and gait phase preservation are implemented in the runtime bridge",
+    "Final finger/armor/hair/cloth deformation and face detail",
+    "Target GPU frame time/draw calls/memory and Windows real-device execution"
+  ],
+  "preview_scope": "Structural/authoritative clock/socket/selected actual rendered poses reviewed; final AAA and target hardware performance remain unapproved"
+}

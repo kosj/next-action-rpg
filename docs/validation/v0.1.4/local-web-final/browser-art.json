@@ -1,0 +1,433 @@
+{
+  "title": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 0,
+    "encounter": -1,
+    "health": 120,
+    "z": 5,
+    "input_ready": false,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000053405762,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551359057426453,
+        0.207536935806274,
+        0.158965080976486,
+        0.679052472114563,
+        -0.354730099439621,
+        -0.569319069385529,
+        0.298211544752121
+      ],
+      "sampled_time": 0.266666666666667,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "performance": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": -11.9199447631836,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000065326691,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551890581846237,
+        0.20301578938961,
+        0.159846782684326,
+        0.68013608455658,
+        -0.352453947067261,
+        -0.570918679237366,
+        0.295369297266006
+      ],
+      "sampled_time": 1.06666666666667,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "balanced": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 0,
+    "encounter": -1,
+    "health": 120,
+    "z": -11.9199447631836,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000053405762,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551658347249031,
+        0.205291584134102,
+        0.159421667456627,
+        0.679489374160767,
+        -0.353725850582123,
+        -0.570154845714569,
+        0.29680922627449
+      ],
+      "sampled_time": 0.799999976158138,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "restored": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": -11.9199447631836,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000065326691,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551491230726242,
+        0.206882029771805,
+        0.159116297960281,
+        0.679023206233978,
+        -0.354622393846512,
+        -0.569653332233429,
+        0.297767639160156
+      ],
+      "sampled_time": 0.166666618982944,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "safe_idle": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": -11.9199447631836,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000029563904,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.055189460515976,
+        0.203232645988464,
+        0.159812539815903,
+        0.679963827133179,
+        -0.352704703807831,
+        -0.570858776569366,
+        0.295582175254822
+      ],
+      "sampled_time": 1.36666661898294,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "safe_attack": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": -13.0720329284668,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000101089478,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        0.0954223498702049,
+        0.186721205711365,
+        0.165083959698677,
+        -0.231321543455124,
+        0.0395685099065304,
+        0.9594486951828,
+        -0.156150206923485
+      ],
+      "sampled_time": 0.38333331927275,
+      "state": "light_1",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "after_safe_attack": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": -13.1420335769653,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000065326691,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551726296544075,
+        0.204445376992226,
+        0.159578546881676,
+        0.679740488529205,
+        -0.353235870599747,
+        -0.570426523685455,
+        0.296295285224915
+      ],
+      "sampled_time": 0.883333261807745,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "combat_entry": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": 0,
+    "health": 120,
+    "z": -20.8220500946045,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000089168549,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551948919892311,
+        0.202966243028641,
+        0.159866958856583,
+        0.680276036262512,
+        -0.352295726537704,
+        -0.571046888828278,
+        0.294987708330154
+      ],
+      "sampled_time": 1.28333326180774,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": [
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.19000113010406,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.055091381072998,
+          0.1841801404953,
+          0.159208357334137,
+          0.67948967218399,
+          -0.353719890117645,
+          -0.570159673690796,
+          0.296806365251541
+        ],
+        "sampled_time": 0.449999988079071,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      },
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.18999981880188,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.0550913736224174,
+          0.184180155396461,
+          0.159208357334137,
+          0.67948967218399,
+          -0.353719860315323,
+          -0.570159673690796,
+          0.296806365251541
+        ],
+        "sampled_time": 0.449999978144964,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      },
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.18999934196472,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.0550913736224174,
+          0.184180155396461,
+          0.159208357334137,
+          0.67948967218399,
+          -0.353719860315323,
+          -0.570159673690796,
+          0.296806365251541
+        ],
+        "sampled_time": 0.449999978144964,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      }
+    ]
+  },
+  "combat": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": 0,
+    "health": 120,
+    "z": -28.8396511077881,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000029563904,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551640838384628,
+        0.205462500452995,
+        0.159389466047287,
+        0.67943811416626,
+        -0.353823482990265,
+        -0.570102214813232,
+        0.296911269426346
+      ],
+      "sampled_time": 0.783333237965882,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": [
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.19000017642975,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.0550966262817383,
+          0.203645333647728,
+          0.159306675195694,
+          0.679643094539642,
+          -0.35342475771904,
+          -0.570318460464478,
+          0.296501368284225
+        ],
+        "sampled_time": 0.850000000000001,
+        "state": "idle",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      },
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.19000113010406,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.0346208810806274,
+          0.200713664293289,
+          0.191599860787392,
+          -0.48438635468483,
+          0.179856494069099,
+          0.802624046802521,
+          -0.298020511865616
+        ],
+        "sampled_time": 1.3,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      },
+      {
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "grip_to_tip_m": 1.1900007724762,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "right_hand_pose": [
+          -0.0346208810806274,
+          0.200713664293289,
+          0.191599860787392,
+          -0.48438635468483,
+          0.179856494069099,
+          0.802624046802521,
+          -0.298020511865616
+        ],
+        "sampled_time": 1.3,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true
+      }
+    ]
+  },
+  "restart_title": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": 5,
+    "input_ready": false,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000041484833,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551686808466911,
+        0.204950869083405,
+        0.159485638141632,
+        0.679584383964539,
+        -0.353537052869797,
+        -0.570264160633087,
+        0.296606510877609
+      ],
+      "sampled_time": 0.833333333333334,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  },
+  "restart": {
+    "build_id": "0.1.4 \u00b7 1b8d95b9",
+    "quality": 1,
+    "encounter": -1,
+    "health": 120,
+    "z": 6,
+    "input_ready": true,
+    "hero_art": {
+      "grip_to_tip_m": 1.19000041484833,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551521629095078,
+        0.206611037254333,
+        0.159169808030128,
+        0.679090559482574,
+        -0.354482859373093,
+        -0.569746792316437,
+        0.297601342201233
+      ],
+      "sampled_time": 0.133333333333333,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "enemy_art": []
+  }
+}

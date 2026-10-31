@@ -1,0 +1,2379 @@
+{
+  "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "output_sha256": "468d1e8a94cfa8d0765f9edcc0b0226ddc3a6c6631b7fe55eb394b2ce3f9d44a",
+  "source_path": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+  "output_path": "/workspace/next-action-rpg/build/art-candidates/aaa-art/weights/lyra/bounded/lyra-gameplay-weights.glb",
+  "source_and_output_bytes": 17889448,
+  "sampling": "every exported timestamp and every adjacent midpoint",
+  "sample_count": 2358,
+  "clip_count": 20,
+  "clips": [
+    "charge",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "RESET",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "before_edge_max_ratio_distribution": {
+    "min": 0.9999871238754492,
+    "p50": 1.023508867745521,
+    "p90": 1.2518113855583652,
+    "p95": 1.3754083283799905,
+    "p99": 1.703677292547838,
+    "p999": 2.517569190110699,
+    "max": 4.710154462656586
+  },
+  "after_edge_max_ratio_distribution": {
+    "min": 0.9999871238754492,
+    "p50": 1.0229515088077683,
+    "p90": 1.2572047819768637,
+    "p95": 1.381541474291551,
+    "p99": 1.6850059715551302,
+    "p999": 2.1914789582276386,
+    "max": 3.5952913813713354
+  },
+  "before_edge_max_extension_mm_distribution": {
+    "min": -0.00018372179641859554,
+    "p50": 0.32781975208811054,
+    "p90": 4.035508493538902,
+    "p95": 6.354783029950188,
+    "p99": 12.643667299411517,
+    "p999": 23.11685380976133,
+    "max": 38.61814890507607
+  },
+  "after_edge_max_extension_mm_distribution": {
+    "min": -0.00018372179641859554,
+    "p50": 0.3212583319334821,
+    "p90": 4.090759318855867,
+    "p95": 6.3947439199067775,
+    "p99": 12.016883744569107,
+    "p999": 20.368121635991365,
+    "max": 38.61814890507607
+  },
+  "edge_extension_envelope_change_mm_distribution": {
+    "min": -24.179922015801445,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "p99": 1.971768077549308,
+    "p999": 7.0250433158144245,
+    "max": 22.634671816143513
+  },
+  "edge_extension_envelope_change_counts": {
+    "improved_over_1mm": 727,
+    "worsened_over_1mm": 999,
+    "worsened_over_2mm": 563,
+    "worsened_over_5mm": 128,
+    "worsened_over_10mm": 24
+  },
+  "edge_ratio_envelope_change_distribution": {
+    "min": -3.46797758654827,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "p99": 0.13977760587146915,
+    "p999": 0.5724368056865612,
+    "max": 1.2504989718611235
+  },
+  "worst_original_ratio_edges_at_identical_poses": [
+    {
+      "before": {
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 5.82011412616529,
+        "posed_length_mm": 27.41363652452808,
+        "extension_mm": 21.593522398362786,
+        "ratio": 4.710154462656586,
+        "vertices": [
+          {
+            "vertex": 24121,
+            "rest_world_xyz_m_y_up": [
+              -0.10014361406134883,
+              1.3077297072200034,
+              -0.07760125363970645
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13643720070681106,
+              1.2227750276848572,
+              0.0517807197360702
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.38973626494407654,
+              "Spine2": 0.35449180006980896,
+              "RightShoulder": 0.18387378752231598,
+              "RightArm": 0.07189814746379852
+            }
+          },
+          {
+            "vertex": 24122,
+            "rest_world_xyz_m_y_up": [
+              -0.09956932072213447,
+              1.302102546339326,
+              -0.0789720111037015
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13352753273260412,
+              1.1961920546585678,
+              0.04574856880440551
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.41536492109298706,
+              "Spine2": 0.34855350852012634,
+              "RightShoulder": 0.16911718249320984,
+              "Spine": 0.06696439534425735
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 5.820112703784433,
+        "posed_length_mm": 9.951933879044809,
+        "extension_mm": 4.1318211752603755,
+        "ratio": 1.7099211622781336,
+        "vertices": [
+          {
+            "vertex": 24121,
+            "rest_world_xyz_m_y_up": [
+              -0.10014361589454582,
+              1.3077297273850765,
+              -0.07760125447228912
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13573922096779473,
+              1.218247946112074,
+              0.052193026190317265
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.38614290952682495,
+              "Spine2": 0.35107195377349854,
+              "RightShoulder": 0.2064449042081833,
+              "RightArm": 0.05634024739265442
+            }
+          },
+          {
+            "vertex": 24122,
+            "rest_world_xyz_m_y_up": [
+              -0.09956932410049218,
+              1.3021025679608698,
+              -0.07897201252336761
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13593200155460072,
+              1.2088457725803021,
+              0.048936808068526724
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.4240734279155731,
+              "Spine2": 0.3500204384326935,
+              "RightShoulder": 0.18472188711166382,
+              "RightArm": 0.04118426516652107
+            }
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "edge_index": 17930,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 6.117189257878103,
+        "posed_length_mm": 28.136063684630972,
+        "extension_mm": 22.01887442675287,
+        "ratio": 4.599508450453053,
+        "vertices": [
+          {
+            "vertex": 8122,
+            "rest_world_xyz_m_y_up": [
+              -0.11429394639173439,
+              1.2949318572010304,
+              -0.07091556366180396
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13971214655979072,
+              1.1870010389426626,
+              0.05875911055299411
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.4401888847351074,
+              "Spine2": 0.3270723223686218,
+              "RightShoulder": 0.1567554771900177,
+              "Spine": 0.07598331570625305
+            }
+          },
+          {
+            "vertex": 8124,
+            "rest_world_xyz_m_y_up": [
+              -0.11141317453885936,
+              1.299913499950499,
+              -0.06884086043843717
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1381832176683466,
+              1.2149110111621626,
+              0.06197375000668976
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.41875213384628296,
+              "Spine2": 0.33386605978012085,
+              "RightShoulder": 0.1713481992483139,
+              "RightArm": 0.07603359967470169
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 17930,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 6.117166112446206,
+        "posed_length_mm": 9.081423936469811,
+        "extension_mm": 2.9642578240236053,
+        "ratio": 1.4845802401854709,
+        "vertices": [
+          {
+            "vertex": 8122,
+            "rest_world_xyz_m_y_up": [
+              -0.11429394948554415,
+              1.2949318752038754,
+              -0.07091556484559826
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14080602142252463,
+              1.1985831187201217,
+              0.06111088414255819
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.47641927003860474,
+              "Spine2": 0.31975439190864563,
+              "RightShoulder": 0.16675223410129547,
+              "RightArm": 0.03707411512732506
+            }
+          },
+          {
+            "vertex": 8124,
+            "rest_world_xyz_m_y_up": [
+              -0.11141317331020327,
+              1.2999134861567962,
+              -0.06884085951987418
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13742578136453212,
+              1.2069070471864052,
+              0.06243695078961067
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.43634331226348877,
+              "Spine2": 0.32854509353637695,
+              "RightShoulder": 0.18551163375377655,
+              "RightArm": 0.04959994554519653
+            }
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "edge_index": 20489,
+        "clip": "run",
+        "time_s": 0.11999999731779099,
+        "rest_length_mm": 6.068062692994835,
+        "posed_length_mm": 27.412488890296142,
+        "extension_mm": 21.344426197301306,
+        "ratio": 4.517502583146016,
+        "vertices": [
+          {
+            "vertex": 9302,
+            "rest_world_xyz_m_y_up": [
+              -0.01062481094702287,
+              1.1376780662268589,
+              0.17195732985526266
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.009644217561060627,
+              0.9564378507571661,
+              0.1776074355294489
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5845073461532593,
+              "Hips": 0.23005826771259308,
+              "Spine1": 0.11840221285820007,
+              "LeftUpLeg": 0.06703219562768936
+            }
+          },
+          {
+            "vertex": 9304,
+            "rest_world_xyz_m_y_up": [
+              -0.013835238308412524,
+              1.1357783216063342,
+              0.1671713595899827
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.01416219089292449,
+              0.9629989984054433,
+              0.15137799013556605
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5860803127288818,
+              "Hips": 0.22459474205970764,
+              "Spine1": 0.12589584290981293,
+              "RightUpLeg": 0.0634291023015976
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 20489,
+        "clip": "run",
+        "time_s": 0.11999999731779099,
+        "rest_length_mm": 6.068106641849602,
+        "posed_length_mm": 6.190721346867522,
+        "extension_mm": 0.12261470501791996,
+        "ratio": 1.02020641894661,
+        "vertices": [
+          {
+            "vertex": 9302,
+            "rest_world_xyz_m_y_up": [
+              -0.010624774531933858,
+              1.1376780166387028,
+              0.17195730831113495
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.010174837781501588,
+              0.9603683497461618,
+              0.17470792172554825
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5729537606239319,
+              "Hips": 0.2772740125656128,
+              "Spine1": 0.11901507526636124,
+              "LeftUpLeg": 0.030757129192352295
+            }
+          },
+          {
+            "vertex": 9304,
+            "rest_world_xyz_m_y_up": [
+              -0.013835370302105502,
+              1.1357783562847388,
+              0.1671713618470599
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.013433718586635654,
+              0.9589137933310153,
+              0.16964936537737477
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5757717490196228,
+              "Hips": 0.27204591035842896,
+              "Spine1": 0.12420987337827682,
+              "LeftUpLeg": 0.027972497045993805
+            }
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "edge_index": 34258,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 4.812270837419893,
+        "posed_length_mm": 20.45265510881702,
+        "extension_mm": 15.640384271397124,
+        "ratio": 4.250104742604791,
+        "vertices": [
+          {
+            "vertex": 15621,
+            "rest_world_xyz_m_y_up": [
+              0.09109336515863803,
+              1.1911304885804161,
+              -0.028191805207645877
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09412401543963667,
+              0.9907971585119916,
+              -0.006812477240643738
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5481277704238892,
+              "Spine1": 0.32174351811408997,
+              "Hips": 0.07561046630144119,
+              "LeftUpLeg": 0.05451822653412819
+            }
+          },
+          {
+            "vertex": 15622,
+            "rest_world_xyz_m_y_up": [
+              0.08921739492342141,
+              1.1939585255994316,
+              -0.024779929930274
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09148400572721975,
+              1.0046226576717732,
+              0.008026559881132106
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5222185254096985,
+              "Spine1": 0.35153284668922424,
+              "Hips": 0.06921235471963882,
+              "Spine2": 0.05703629180788994
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 34258,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 4.812217096277222,
+        "posed_length_mm": 4.987976707621043,
+        "extension_mm": 0.1757596113438212,
+        "ratio": 1.0365236247300211,
+        "vertices": [
+          {
+            "vertex": 15621,
+            "rest_world_xyz_m_y_up": [
+              0.0910933542769546,
+              1.191130523171402,
+              -0.028191802459237893
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09349499365042123,
+              1.0022429033427387,
+              0.004010853136995694
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48305267095565796,
+              "Spine1": 0.3731173574924469,
+              "Hips": 0.11188951134681702,
+              "Spine2": 0.03194047883152962
+            }
+          },
+          {
+            "vertex": 15622,
+            "rest_world_xyz_m_y_up": [
+              0.08921739158700939,
+              1.193958476051277,
+              -0.02477992909159315
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09147538130551128,
+              1.0045823770817464,
+              0.007925944481594293
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4477315843105316,
+              "Spine1": 0.4110603928565979,
+              "Hips": 0.10172342509031296,
+              "Spine2": 0.03948457911610603
+            }
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "edge_index": 33291,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 4.812270837419893,
+        "posed_length_mm": 20.45265510881702,
+        "extension_mm": 15.640384271397124,
+        "ratio": 4.250104742604791,
+        "vertices": [
+          {
+            "vertex": 15173,
+            "rest_world_xyz_m_y_up": [
+              0.09109336515863803,
+              1.1911304885804161,
+              -0.028191805207645877
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09412401543963667,
+              0.9907971585119916,
+              -0.006812477240643738
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5481277704238892,
+              "Spine1": 0.32174351811408997,
+              "Hips": 0.07561046630144119,
+              "LeftUpLeg": 0.05451822653412819
+            }
+          },
+          {
+            "vertex": 15174,
+            "rest_world_xyz_m_y_up": [
+              0.08921739492342141,
+              1.1939585255994316,
+              -0.024779929930274
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09148400572721975,
+              1.0046226576717732,
+              0.008026559881132106
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5222185254096985,
+              "Spine1": 0.35153284668922424,
+              "Hips": 0.06921235471963882,
+              "Spine2": 0.05703629180788994
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 33291,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 4.812217096277222,
+        "posed_length_mm": 4.987976707621043,
+        "extension_mm": 0.1757596113438212,
+        "ratio": 1.0365236247300211,
+        "vertices": [
+          {
+            "vertex": 15173,
+            "rest_world_xyz_m_y_up": [
+              0.0910933542769546,
+              1.191130523171402,
+              -0.028191802459237893
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09349499365042123,
+              1.0022429033427387,
+              0.004010853136995694
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48305267095565796,
+              "Spine1": 0.3731173574924469,
+              "Hips": 0.11188951134681702,
+              "Spine2": 0.03194047883152962
+            }
+          },
+          {
+            "vertex": 15174,
+            "rest_world_xyz_m_y_up": [
+              0.08921739158700939,
+              1.193958476051277,
+              -0.02477992909159315
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.09147538130551128,
+              1.0045823770817464,
+              0.007925944481594293
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4477315843105316,
+              "Spine1": 0.4110603928565979,
+              "Hips": 0.10172342509031296,
+              "Spine2": 0.03948457911610603
+            }
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "edge_index": 17925,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 7.030059117284017,
+        "posed_length_mm": 29.52198924889708,
+        "extension_mm": 22.49193013161306,
+        "ratio": 4.199394166731071,
+        "vertices": [
+          {
+            "vertex": 8120,
+            "rest_world_xyz_m_y_up": [
+              -0.1259895022089957,
+              1.290407267613764,
+              -0.0604856449800479
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14210404758268314,
+              1.1802108498075259,
+              0.07225417189359643
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.4549405574798584,
+              "Spine2": 0.3114437460899353,
+              "RightShoulder": 0.14933374524116516,
+              "Spine": 0.08428195118904114
+            }
+          },
+          {
+            "vertex": 8121,
+            "rest_world_xyz_m_y_up": [
+              -0.12049972236157344,
+              1.294777237723923,
+              -0.060918553348712635
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13892329606785325,
+              1.20954070885127,
+              0.07116328350012724
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.43435993790626526,
+              "Spine2": 0.3238585889339447,
+              "RightShoulder": 0.16246959567070007,
+              "RightArm": 0.07931186258792877
+            }
+          }
+        ]
+      },
+      "after_at_identical_pose": {
+        "edge_index": 17925,
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "rest_length_mm": 7.03006385792784,
+        "posed_length_mm": 9.105522680211967,
+        "extension_mm": 2.0754588222841277,
+        "ratio": 1.295226169239362,
+        "vertices": [
+          {
+            "vertex": 8120,
+            "rest_world_xyz_m_y_up": [
+              -0.125989506813987,
+              1.2904073010090955,
+              -0.06048564683506588
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14224946755039866,
+              1.1903432083544983,
+              0.07408171385473394
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.5171956419944763,
+              "Spine2": 0.2977033257484436,
+              "RightShoulder": 0.15311859548091888,
+              "RightArm": 0.03198246285319328
+            }
+          },
+          {
+            "vertex": 8121,
+            "rest_world_xyz_m_y_up": [
+              -0.120499725823082,
+              1.2947772773094732,
+              -0.06091855520017157
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13846306278134723,
+              1.1982813404327106,
+              0.07172380348459369
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.4779926538467407,
+              "Spine2": 0.3096541166305542,
+              "RightShoulder": 0.16936641931533813,
+              "RightArm": 0.042986832559108734
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "worst_repaired_ratio_edge": {
+    "edge_index": 28730,
+    "clip": "walk_left",
+    "time_s": 0.4300000071525574,
+    "rest_length_mm": 2.8500643208130914,
+    "posed_length_mm": 10.246811688973255,
+    "extension_mm": 7.396747368160164,
+    "ratio": 3.5952913813713354,
+    "vertices": [
+      {
+        "vertex": 13054,
+        "rest_world_xyz_m_y_up": [
+          -0.004728761337509813,
+          0.8773696080000238,
+          0.017877785378409596
+        ],
+        "posed_world_xyz_m_y_up": [
+          -0.008085601957114589,
+          0.7002117577117414,
+          0.03514955147912203
+        ],
+        "anatomical_region_estimate": "pelvis/upper-leg and attached clothing",
+        "weights": {
+          "RightUpLeg": 0.5185867547988892,
+          "LeftUpLeg": 0.39585480093955994,
+          "Hips": 0.0855584368109703
+        }
+      },
+      {
+        "vertex": 13055,
+        "rest_world_xyz_m_y_up": [
+          -0.0019904844410984714,
+          0.8779447210312974,
+          0.01733561264522302
+        ],
+        "posed_world_xyz_m_y_up": [
+          0.00010203379642920879,
+          0.7002835627014781,
+          0.028988819818026965
+        ],
+        "anatomical_region_estimate": "pelvis/upper-leg and attached clothing",
+        "weights": {
+          "RightUpLeg": 0.4691692292690277,
+          "LeftUpLeg": 0.44119808077812195,
+          "Hips": 0.08963267505168915
+        }
+      }
+    ]
+  },
+  "largest_extension_envelope_increases": [
+    {
+      "maximum_extension_envelope_change_mm": 22.634671816143513,
+      "original_maximum_extension_mm": 10.185623353746298,
+      "repaired_maximum_extension_mm": 32.82029516988981,
+      "source_at_repaired_peak": {
+        "edge_index": 17067,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 21.52592598882549,
+        "posed_length_mm": 31.711549342571782,
+        "extension_mm": 10.18562335374629,
+        "ratio": 1.4731793354224965,
+        "vertices": [
+          {
+            "vertex": 7686,
+            "rest_world_xyz_m_y_up": [
+              -0.14096284203524692,
+              1.1298888922424877,
+              0.010133283961735485
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14559068518362406,
+              0.9080588635015273,
+              -0.02994907634407922
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45376765727996826,
+              "RightUpLeg": 0.2840810716152191,
+              "Hips": 0.1455298662185669,
+              "Spine1": 0.11662138998508453
+            }
+          },
+          {
+            "vertex": 7691,
+            "rest_world_xyz_m_y_up": [
+              -0.13875619169409192,
+              1.1506421316938409,
+              0.015405782062547849
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14240480533553457,
+              0.937261333834785,
+              -0.018003857311549756
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5167186260223389,
+              "RightUpLeg": 0.20558632910251617,
+              "Spine1": 0.165976420044899,
+              "Hips": 0.11171859502792358
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17067,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 21.52597591684704,
+        "posed_length_mm": 54.346271086736856,
+        "extension_mm": 32.82029516988981,
+        "ratio": 2.524683261593887,
+        "vertices": [
+          {
+            "vertex": 7686,
+            "rest_world_xyz_m_y_up": [
+              -0.14096283690423897,
+              1.1298888751256166,
+              0.010133299014245952
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14519851312826765,
+              0.9112859079665736,
+              -0.026543236981853523
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45376765727996826,
+              "RightUpLeg": 0.2600078284740448,
+              "Hips": 0.16960309445858002,
+              "Spine1": 0.11662138998508453
+            }
+          },
+          {
+            "vertex": 7691,
+            "rest_world_xyz_m_y_up": [
+              -0.1387561867487937,
+              1.1506421480542823,
+              0.015405869261522325
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1400749682754643,
+              0.9561513361078,
+              0.0036951463558656493
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5167186260223389,
+              "Hips": 0.24299630522727966,
+              "Spine1": 0.165976420044899,
+              "RightUpLeg": 0.07430863380432129
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 19.723598048133706,
+      "original_maximum_extension_mm": 8.824390544415813,
+      "repaired_maximum_extension_mm": 28.54798859254952,
+      "source_at_repaired_peak": {
+        "edge_index": 17046,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 22.658469398927128,
+        "posed_length_mm": 31.48285994334294,
+        "extension_mm": 8.824390544415813,
+        "ratio": 1.3894521906600472,
+        "vertices": [
+          {
+            "vertex": 7677,
+            "rest_world_xyz_m_y_up": [
+              -0.14583713951074428,
+              1.1276755539208816,
+              0.06885865257896137
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14915807391892494,
+              0.9202015585299983,
+              0.015234132095949187
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4557003676891327,
+              "RightUpLeg": 0.2965080738067627,
+              "Hips": 0.1341893970966339,
+              "Spine1": 0.1136021837592125
+            }
+          },
+          {
+            "vertex": 7688,
+            "rest_world_xyz_m_y_up": [
+              -0.1400898248735947,
+              1.1468318818994776,
+              0.0795080520146189
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14272712956619144,
+              0.9440921000433061,
+              0.03470347854479302
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5126701593399048,
+              "RightUpLeg": 0.21805007755756378,
+              "Spine1": 0.15220384299755096,
+              "Hips": 0.11707593500614166
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17046,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 22.658511027592198,
+        "posed_length_mm": 51.20649962014172,
+        "extension_mm": 28.54798859254952,
+        "ratio": 2.2599234149933976,
+        "vertices": [
+          {
+            "vertex": 7677,
+            "rest_world_xyz_m_y_up": [
+              -0.1458371471930652,
+              1.127675538656843,
+              0.06885867008214092
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14889629608595673,
+              0.9219797357952975,
+              0.019465185414883505
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4557003676891327,
+              "RightUpLeg": 0.27313467860221863,
+              "Hips": 0.15756277740001678,
+              "Spine1": 0.1136021837592125
+            }
+          },
+          {
+            "vertex": 7688,
+            "rest_world_xyz_m_y_up": [
+              -0.14008988974992861,
+              1.1468318905550428,
+              0.07950814592943795
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14130469382751148,
+              0.9534812052661271,
+              0.05911528755441815
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5126701593399048,
+              "Hips": 0.23468704521656036,
+              "Spine1": 0.15220384299755096,
+              "RightUpLeg": 0.10043896734714508
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 17.43508961699815,
+      "original_maximum_extension_mm": 6.600511636454795,
+      "repaired_maximum_extension_mm": 24.035601253452946,
+      "source_at_repaired_peak": {
+        "edge_index": 17043,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 17.82197841300849,
+        "posed_length_mm": 24.42249004946329,
+        "extension_mm": 6.600511636454798,
+        "ratio": 1.3703579638294814,
+        "vertices": [
+          {
+            "vertex": 7676,
+            "rest_world_xyz_m_y_up": [
+              -0.1451971817222495,
+              1.1297885216163288,
+              0.0461232629928476
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14901164932250394,
+              0.9167777354216133,
+              -0.0017027437373184446
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45005545020103455,
+              "RightUpLeg": 0.28734201192855835,
+              "Hips": 0.1480897068977356,
+              "Spine1": 0.11451283097267151
+            }
+          },
+          {
+            "vertex": 7685,
+            "rest_world_xyz_m_y_up": [
+              -0.13988240175225786,
+              1.1439569172331068,
+              0.055537751511656436
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14308951371201806,
+              0.9358366761161708,
+              0.012373587802841042
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.49723783135414124,
+              "RightUpLeg": 0.2321009486913681,
+              "Spine1": 0.14929603040218353,
+              "Hips": 0.12136520445346832
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17043,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 17.8220062940441,
+        "posed_length_mm": 41.85760754749705,
+        "extension_mm": 24.035601253452946,
+        "ratio": 2.348647332791334,
+        "vertices": [
+          {
+            "vertex": 7676,
+            "rest_world_xyz_m_y_up": [
+              -0.14519718533927298,
+              1.1297885222684656,
+              0.0461232759345035
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1487808743407302,
+              0.9185048663315682,
+              0.0011964822783347992
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45005545020103455,
+              "RightUpLeg": 0.269957572221756,
+              "Hips": 0.16547414660453796,
+              "Spine1": 0.11451283097267151
+            }
+          },
+          {
+            "vertex": 7685,
+            "rest_world_xyz_m_y_up": [
+              -0.13988243489268784,
+              1.1439569217528642,
+              0.055537828079240036
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14166354518966354,
+              0.946230266107316,
+              0.03173670399708835
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.49723783135414124,
+              "Hips": 0.22456593811511993,
+              "Spine1": 0.14929603040218353,
+              "RightUpLeg": 0.1289002150297165
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 16.126015556487175,
+      "original_maximum_extension_mm": 7.053138939179307,
+      "repaired_maximum_extension_mm": 23.179154495666484,
+      "source_at_repaired_peak": {
+        "edge_index": 17083,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 24.47273483852008,
+        "posed_length_mm": 31.52587377769939,
+        "extension_mm": 7.053138939179307,
+        "ratio": 1.28820395373539,
+        "vertices": [
+          {
+            "vertex": 7691,
+            "rest_world_xyz_m_y_up": [
+              -0.13875619169409192,
+              1.1506421316938409,
+              0.015405782062547849
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14240480533553457,
+              0.937261333834785,
+              -0.018003857311549756
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5167186260223389,
+              "RightUpLeg": 0.20558632910251617,
+              "Spine1": 0.165976420044899,
+              "Hips": 0.11171859502792358
+            }
+          },
+          {
+            "vertex": 7696,
+            "rest_world_xyz_m_y_up": [
+              -0.13395812453929892,
+              1.1326381179943692,
+              -0.0004608115467889324
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13845517290073903,
+              0.911415865188753,
+              -0.035618989202751035
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.25745120644569397,
+              "Hips": 0.13792824745178223,
+              "Spine1": 0.12297990918159485
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17083,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 24.47278505190916,
+        "posed_length_mm": 47.651939547575644,
+        "extension_mm": 23.179154495666484,
+        "ratio": 1.9471400352065056,
+        "vertices": [
+          {
+            "vertex": 7691,
+            "rest_world_xyz_m_y_up": [
+              -0.1387561867487937,
+              1.1506421480542823,
+              0.015405869261522325
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1400749682754643,
+              0.9561513361078,
+              0.0036951463558656493
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5167186260223389,
+              "Hips": 0.24299630522727966,
+              "Spine1": 0.165976420044899,
+              "RightUpLeg": 0.07430863380432129
+            }
+          },
+          {
+            "vertex": 7696,
+            "rest_world_xyz_m_y_up": [
+              -0.13395811202806876,
+              1.1326381160281846,
+              -0.00046077871385475435
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13741232763757957,
+              0.920162582142912,
+              -0.027424417836681255
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.19775015115737915,
+              "Hips": 0.19762930274009705,
+              "Spine1": 0.12297990918159485
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 14.088254986452611,
+      "original_maximum_extension_mm": 4.9782442499333355,
+      "repaired_maximum_extension_mm": 19.066499236385948,
+      "source_at_repaired_peak": {
+        "edge_index": 17050,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 11.451232585124428,
+        "posed_length_mm": 16.279974539218227,
+        "extension_mm": 4.8287419540937995,
+        "ratio": 1.421678794679842,
+        "vertices": [
+          {
+            "vertex": 7679,
+            "rest_world_xyz_m_y_up": [
+              -0.14391072759570392,
+              1.1289333126637866,
+              0.026291426038351016
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14828639658421094,
+              0.9101519787253687,
+              -0.018386333294318526
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4409174919128418,
+              "RightUpLeg": 0.2947275638580322,
+              "Hips": 0.14875994622707367,
+              "Spine1": 0.11559499055147171
+            }
+          },
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157846614932054,
+              1.1400887881364374,
+              0.027407961413256313
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14547957727138175,
+              0.9251521870247882,
+              -0.012715964054423375
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "RightUpLeg": 0.2472161054611206,
+              "Spine1": 0.13999991118907928,
+              "Hips": 0.12841051816940308
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17050,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 11.451237858533107,
+        "posed_length_mm": 30.517737094919053,
+        "extension_mm": 19.066499236385948,
+        "ratio": 2.665016435072841,
+        "vertices": [
+          {
+            "vertex": 7679,
+            "rest_world_xyz_m_y_up": [
+              -0.14391072990668213,
+              1.128933329578283,
+              0.02629143189490425
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14816885103606647,
+              0.9110844273412728,
+              -0.017184047964851817
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4409174919128418,
+              "RightUpLeg": 0.2868100106716156,
+              "Hips": 0.1566775143146515,
+              "Spine1": 0.11559499055147171
+            }
+          },
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157847205725949,
+              1.1400888060455383,
+              0.027408018929139865
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14417851636930656,
+              0.9354387051639371,
+              0.000768073313101211
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "Hips": 0.21086002886295319,
+              "RightUpLeg": 0.1647666096687317,
+              "Spine1": 0.13999991118907928
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 13.887088977105805,
+      "original_maximum_extension_mm": 6.480748229678941,
+      "repaired_maximum_extension_mm": 20.367837206784746,
+      "source_at_repaired_peak": {
+        "edge_index": 55748,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 19.413317606951598,
+        "posed_length_mm": 25.894065836630535,
+        "extension_mm": 6.480748229678941,
+        "ratio": 1.333830021271495,
+        "vertices": [
+          {
+            "vertex": 25256,
+            "rest_world_xyz_m_y_up": [
+              0.13658209548292094,
+              1.1405471449399682,
+              -0.016058676867138348
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.14050041909839428,
+              0.9165453415466641,
+              -0.0253137420750371
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5219936966896057,
+              "LeftUpLeg": 0.20953971147537231,
+              "Hips": 0.16118654608726501,
+              "Spine1": 0.10728002339601517
+            }
+          },
+          {
+            "vertex": 25262,
+            "rest_world_xyz_m_y_up": [
+              0.13872804094426036,
+              1.1221513907311067,
+              -0.010239050962280966
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.14288200483602953,
+              0.8911501379383495,
+              -0.029776289398964796
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45798879861831665,
+              "LeftUpLeg": 0.2824438214302063,
+              "Hips": 0.1782456487417221,
+              "Spine1": 0.08132173120975494
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 55748,
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "rest_length_mm": 19.41332922396114,
+        "posed_length_mm": 39.781166430745884,
+        "extension_mm": 20.367837206784746,
+        "ratio": 2.0491676606218316,
+        "vertices": [
+          {
+            "vertex": 25256,
+            "rest_world_xyz_m_y_up": [
+              0.13658207843614115,
+              1.1405471619241043,
+              -0.01605865564701077
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.13961263006042554,
+              0.9274733297447826,
+              -0.013886729047576164
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5219936966896057,
+              "Hips": 0.2359161227941513,
+              "LeftUpLeg": 0.13481014966964722,
+              "Spine1": 0.10728002339601517
+            }
+          },
+          {
+            "vertex": 25262,
+            "rest_world_xyz_m_y_up": [
+              0.13872804094426036,
+              1.1221513907311067,
+              -0.010239050962280966
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.14288200483602953,
+              0.8911501379383495,
+              -0.029776289398964796
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45798879861831665,
+              "LeftUpLeg": 0.2824438214302063,
+              "Hips": 0.1782456487417221,
+              "Spine1": 0.08132173120975494
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 12.43389605606394,
+      "original_maximum_extension_mm": 4.713571185765573,
+      "repaired_maximum_extension_mm": 17.147467241829514,
+      "source_at_repaired_peak": {
+        "edge_index": 19315,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 13.65728123137522,
+        "posed_length_mm": 18.370852417140796,
+        "extension_mm": 4.713571185765573,
+        "ratio": 1.3451324686012152,
+        "vertices": [
+          {
+            "vertex": 8760,
+            "rest_world_xyz_m_y_up": [
+              -0.13395812453929892,
+              1.1326381179943692,
+              -0.0004608115467889324
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13845517290073903,
+              0.911415865188753,
+              -0.035618989202751035
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.25745120644569397,
+              "Hips": 0.13792824745178223,
+              "Spine1": 0.12297990918159485
+            }
+          },
+          {
+            "vertex": 8761,
+            "rest_world_xyz_m_y_up": [
+              -0.13444776755262183,
+              1.1461373645075472,
+              -0.0024737506737445916
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13840119749722202,
+              0.929621563677817,
+              -0.033161785972760996
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5184907913208008,
+              "RightUpLeg": 0.2097262591123581,
+              "Spine1": 0.1533815562725067,
+              "Hips": 0.11840138584375381
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 19315,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 13.657281888490454,
+        "posed_length_mm": 30.804749130319962,
+        "extension_mm": 17.147467241829506,
+        "ratio": 2.255554903372125,
+        "vertices": [
+          {
+            "vertex": 8760,
+            "rest_world_xyz_m_y_up": [
+              -0.13395811202806876,
+              1.1326381160281846,
+              -0.00046077871385475435
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13741232763757957,
+              0.920162582142912,
+              -0.027424417836681255
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.19775015115737915,
+              "Hips": 0.19762930274009705,
+              "Spine1": 0.12297990918159485
+            }
+          },
+          {
+            "vertex": 8761,
+            "rest_world_xyz_m_y_up": [
+              -0.13444774245917945,
+              1.1461373690406664,
+              -0.002473681773522868
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1361492308545087,
+              0.9484980829189043,
+              -0.015406241965431557
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5184907913208008,
+              "Hips": 0.23786506056785583,
+              "Spine1": 0.1533815562725067,
+              "RightUpLeg": 0.09026259183883667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 12.43389605606394,
+      "original_maximum_extension_mm": 4.713571185765573,
+      "repaired_maximum_extension_mm": 17.147467241829514,
+      "source_at_repaired_peak": {
+        "edge_index": 17091,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 13.65728123137522,
+        "posed_length_mm": 18.370852417140796,
+        "extension_mm": 4.713571185765573,
+        "ratio": 1.3451324686012152,
+        "vertices": [
+          {
+            "vertex": 7696,
+            "rest_world_xyz_m_y_up": [
+              -0.13395812453929892,
+              1.1326381179943692,
+              -0.0004608115467889324
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13845517290073903,
+              0.911415865188753,
+              -0.035618989202751035
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.25745120644569397,
+              "Hips": 0.13792824745178223,
+              "Spine1": 0.12297990918159485
+            }
+          },
+          {
+            "vertex": 7699,
+            "rest_world_xyz_m_y_up": [
+              -0.13444776755262183,
+              1.1461373645075472,
+              -0.0024737506737445916
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13840119749722202,
+              0.929621563677817,
+              -0.033161785972760996
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5184907913208008,
+              "RightUpLeg": 0.2097262591123581,
+              "Spine1": 0.1533815562725067,
+              "Hips": 0.11840138584375381
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17091,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 13.657281888490454,
+        "posed_length_mm": 30.804749130319962,
+        "extension_mm": 17.147467241829506,
+        "ratio": 2.255554903372125,
+        "vertices": [
+          {
+            "vertex": 7696,
+            "rest_world_xyz_m_y_up": [
+              -0.13395811202806876,
+              1.1326381160281846,
+              -0.00046077871385475435
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13741232763757957,
+              0.920162582142912,
+              -0.027424417836681255
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48164063692092896,
+              "RightUpLeg": 0.19775015115737915,
+              "Hips": 0.19762930274009705,
+              "Spine1": 0.12297990918159485
+            }
+          },
+          {
+            "vertex": 7699,
+            "rest_world_xyz_m_y_up": [
+              -0.13444774245917945,
+              1.1461373690406664,
+              -0.002473681773522868
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1361492308545087,
+              0.9484980829189043,
+              -0.015406241965431557
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5184907913208008,
+              "Hips": 0.23786506056785583,
+              "Spine1": 0.1533815562725067,
+              "RightUpLeg": 0.09026259183883667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 12.200389912145152,
+      "original_maximum_extension_mm": 4.202252157510998,
+      "repaired_maximum_extension_mm": 16.40264206965615,
+      "source_at_repaired_peak": {
+        "edge_index": 17056,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 20.070658941632296,
+        "posed_length_mm": 24.272911099143297,
+        "extension_mm": 4.202252157511001,
+        "ratio": 1.2093729044836852,
+        "vertices": [
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157846614932054,
+              1.1400887881364374,
+              0.027407961413256313
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14547957727138175,
+              0.9251521870247882,
+              -0.012715964054423375
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "RightUpLeg": 0.2472161054611206,
+              "Spine1": 0.13999991118907928,
+              "Hips": 0.12841051816940308
+            }
+          },
+          {
+            "vertex": 7686,
+            "rest_world_xyz_m_y_up": [
+              -0.14096284203524692,
+              1.1298888922424877,
+              0.010133283961735485
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14559068518362406,
+              0.9080588635015273,
+              -0.02994907634407922
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45376765727996826,
+              "RightUpLeg": 0.2840810716152191,
+              "Hips": 0.1455298662185669,
+              "Spine1": 0.11662138998508453
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17056,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 20.070713628340197,
+        "posed_length_mm": 36.47335569799635,
+        "extension_mm": 16.40264206965615,
+        "ratio": 1.817242594029907,
+        "vertices": [
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157847205725949,
+              1.1400888060455383,
+              0.027408018929139865
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14417851636930656,
+              0.9354387051639371,
+              0.000768073313101211
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "Hips": 0.21086002886295319,
+              "RightUpLeg": 0.1647666096687317,
+              "Spine1": 0.13999991118907928
+            }
+          },
+          {
+            "vertex": 7686,
+            "rest_world_xyz_m_y_up": [
+              -0.14096283690423897,
+              1.1298888751256166,
+              0.010133299014245952
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14519851312826765,
+              0.9112859079665736,
+              -0.026543236981853523
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.45376765727996826,
+              "RightUpLeg": 0.2600078284740448,
+              "Hips": 0.16960309445858002,
+              "Spine1": 0.11662138998508453
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 12.196624758377144,
+      "original_maximum_extension_mm": 8.774728242600741,
+      "repaired_maximum_extension_mm": 20.971353000977885,
+      "source_at_repaired_peak": {
+        "edge_index": 19376,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 20.751133527009802,
+        "posed_length_mm": 29.525861769610543,
+        "extension_mm": 8.774728242600741,
+        "ratio": 1.422855369861097,
+        "vertices": [
+          {
+            "vertex": 8784,
+            "rest_world_xyz_m_y_up": [
+              -0.07301065304511516,
+              1.124683162034731,
+              -0.06051909178264209
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.07658234932805628,
+              0.9099688392718375,
+              -0.07537789160638718
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5553753972053528,
+              "Hips": 0.2011408805847168,
+              "RightUpLeg": 0.16108523309230804,
+              "Spine1": 0.08239846676588058
+            }
+          },
+          {
+            "vertex": 8786,
+            "rest_world_xyz_m_y_up": [
+              -0.07209635603090726,
+              1.1043542805812612,
+              -0.06458236416784698
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.07653197390650976,
+              0.8808096997463034,
+              -0.08001670154919478
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4465160667896271,
+              "Hips": 0.27838703989982605,
+              "RightUpLeg": 0.2145097404718399,
+              "Spine1": 0.060587115585803986
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 19376,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 20.751120117358493,
+        "posed_length_mm": 41.72247311833638,
+        "extension_mm": 20.971353000977885,
+        "ratio": 2.0106130600359817,
+        "vertices": [
+          {
+            "vertex": 8784,
+            "rest_world_xyz_m_y_up": [
+              -0.07301061595026677,
+              1.1246831517819804,
+              -0.060519100623667166
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.07533283973470889,
+              0.9213244160989805,
+              -0.07012303694954118
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5553753972053528,
+              "Hips": 0.25749269127845764,
+              "RightUpLeg": 0.1047334223985672,
+              "Spine1": 0.08239846676588058
+            }
+          },
+          {
+            "vertex": 8786,
+            "rest_world_xyz_m_y_up": [
+              -0.07209635603090726,
+              1.1043542805812612,
+              -0.06458236416784698
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.07653197390650976,
+              0.8808096997463034,
+              -0.08001670154919478
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4465160667896271,
+              "Hips": 0.27838703989982605,
+              "RightUpLeg": 0.2145097404718399,
+              "Spine1": 0.060587115585803986
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 12.19370269704916,
+      "original_maximum_extension_mm": 5.955485430096582,
+      "repaired_maximum_extension_mm": 18.14918812714574,
+      "source_at_repaired_peak": {
+        "edge_index": 17057,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 15.130667567837575,
+        "posed_length_mm": 21.086152997934157,
+        "extension_mm": 5.955485430096582,
+        "ratio": 1.3936036135481444,
+        "vertices": [
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157846614932054,
+              1.1400887881364374,
+              0.027407961413256313
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14547957727138175,
+              0.9251521870247882,
+              -0.012715964054423375
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "RightUpLeg": 0.2472161054611206,
+              "Spine1": 0.13999991118907928,
+              "Hips": 0.12841051816940308
+            }
+          },
+          {
+            "vertex": 7690,
+            "rest_world_xyz_m_y_up": [
+              -0.14051240953051602,
+              1.1523584418575656,
+              0.0361975132731363
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.1438379175118099,
+              0.942308983522395,
+              -0.0005679133702273086
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5127272009849548,
+              "RightUpLeg": 0.20564864575862885,
+              "Spine1": 0.17213891446590424,
+              "Hips": 0.10948526114225388
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 17057,
+        "clip": "run",
+        "time_s": 0.10000000149011612,
+        "rest_length_mm": 15.130677870560916,
+        "posed_length_mm": 33.27986599770666,
+        "extension_mm": 18.14918812714574,
+        "ratio": 2.199496035961337,
+        "vertices": [
+          {
+            "vertex": 7682,
+            "rest_world_xyz_m_y_up": [
+              -0.14157847205725949,
+              1.1400888060455383,
+              0.027408018929139865
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14417851636930656,
+              0.9354387051639371,
+              0.000768073313101211
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.48437345027923584,
+              "Hips": 0.21086002886295319,
+              "RightUpLeg": 0.1647666096687317,
+              "Spine1": 0.13999991118907928
+            }
+          },
+          {
+            "vertex": 7690,
+            "rest_world_xyz_m_y_up": [
+              -0.14051242875158193,
+              1.1523584447890465,
+              0.03619761104691786
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.14165637078723364,
+              0.959191914909754,
+              0.023940757431678707
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5127272009849548,
+              "Hips": 0.2443927824497223,
+              "Spine1": 0.17213891446590424,
+              "RightUpLeg": 0.07074112445116043
+            }
+          }
+        ]
+      }
+    },
+    {
+      "maximum_extension_envelope_change_mm": 11.715188398021532,
+      "original_maximum_extension_mm": 6.34912470029656,
+      "repaired_maximum_extension_mm": 18.06431309831809,
+      "source_at_repaired_peak": {
+        "edge_index": 55811,
+        "clip": "run",
+        "time_s": 0.30000001192092896,
+        "rest_length_mm": 15.260655702803374,
+        "posed_length_mm": 21.56716700008029,
+        "extension_mm": 6.306511297276914,
+        "ratio": 1.4132529702585723,
+        "vertices": [
+          {
+            "vertex": 25287,
+            "rest_world_xyz_m_y_up": [
+              0.14988547840327338,
+              1.1408369333980088,
+              0.03636821128717458
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.1526700994179829,
+              0.9299278135962179,
+              -0.002241775835149511
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5079260468482971,
+              "LeftUpLeg": 0.2271924912929535,
+              "Hips": 0.14689901471138,
+              "Spine1": 0.11798252910375595
+            }
+          },
+          {
+            "vertex": 25289,
+            "rest_world_xyz_m_y_up": [
+              0.15640585415980637,
+              1.1285357615758016,
+              0.030118932586903936
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.15968767123202618,
+              0.9125605568047576,
+              -0.012931713617174823
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4707690477371216,
+              "LeftUpLeg": 0.2790244221687317,
+              "Hips": 0.1554708033800125,
+              "Spine1": 0.09473573416471481
+            }
+          }
+        ]
+      },
+      "repaired_at_peak": {
+        "edge_index": 55811,
+        "clip": "run",
+        "time_s": 0.30000001192092896,
+        "rest_length_mm": 15.260582016280406,
+        "posed_length_mm": 33.32489511459849,
+        "extension_mm": 18.064313098318085,
+        "ratio": 2.1837237320992466,
+        "vertices": [
+          {
+            "vertex": 25287,
+            "rest_world_xyz_m_y_up": [
+              0.1498854665096691,
+              1.140836825914096,
+              0.036368239751403166
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.1517172090875441,
+              0.9390363874920594,
+              0.01109728379768057
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.5079259872436523,
+              "Hips": 0.22464272379875183,
+              "LeftUpLeg": 0.14944875240325928,
+              "Spine1": 0.11798252165317535
+            }
+          },
+          {
+            "vertex": 25289,
+            "rest_world_xyz_m_y_up": [
+              0.156405853926561,
+              1.128535762257054,
+              0.03011894024548574
+            ],
+            "posed_world_xyz_m_y_up": [
+              0.1594784361646428,
+              0.9145896982175343,
+              -0.01017879131432071
+            ],
+            "anatomical_region_estimate": "thorax/abdomen",
+            "weights": {
+              "Spine": 0.4707690477371216,
+              "LeftUpLeg": 0.26123499870300293,
+              "Hips": 0.17326022684574127,
+              "Spine1": 0.09473573416471481
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "strict_byte_mask": {
+    "passed": true,
+    "forbidden_changed_bytes": 0,
+    "only_allowed_ranges": [
+      {
+        "start": 1561808,
+        "end_exclusive": 1665004,
+        "attribute": "JOINTS_0"
+      },
+      {
+        "start": 1665004,
+        "end_exclusive": 2077788,
+        "attribute": "WEIGHTS_0"
+      }
+    ],
+    "all_preserved_bytes_source_sha256": "712f0cd63f6a6833927175b966f187c6eca6e5f6eda24a2577d7e2ff7d45b1da",
+    "all_preserved_bytes_output_sha256": "712f0cd63f6a6833927175b966f187c6eca6e5f6eda24a2577d7e2ff7d45b1da"
+  },
+  "four_influences_normalized": true,
+  "weight_sum_max_error": 1.043081283569336e-07,
+  "hand_finger_weight_vertex_count": 1552,
+  "hand_finger_weight_rows_byte_exact": true,
+  "rest_evaluated_vertex_max_difference_mm": 0.00015921451837214759,
+  "algorithm": {
+    "script": "tools/repair_character_weights.py",
+    "script_sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+    "geodesic_radius_m": 0.045,
+    "iterations": 24,
+    "scope": "thorax/abdomen; no arm-parent folding or hand/tabard smoothing",
+    "source_audit_keys_only_used_for_patch_locality": true,
+    "final_before_after_audits_include_all_exported_keys_and_midpoints": true
+  },
+  "automatic_visual_approval": false,
+  "aaa_art_approval": "pending",
+  "limitations": [
+    "Envelope deltas compare per-edge maxima over identical sampled poses; full temporal arrays remain separate.",
+    "Sampling all keys and midpoints is not a continuous deformation proof.",
+    "Unchanged hand anatomy, source clothing intersections, texture/sculpt fidelity, transitions and device performance remain art gates."
+  ],
+  "runtime_adoption": "rejected",
+  "all_repair_attempts_rejected": true,
+  "rejection_reason": "Local target edges improve, but other torso edges extend substantially more. Keep original authored runtime GLBs.",
+  "source_exported_timestamp_count": 1189,
+  "original_worst_absolute_extension_edge": {
+    "edge_index": 1237,
+    "clip": "heavy",
+    "time_s": 0.2199999988079071,
+    "rest_length_mm": 36.229009742982605,
+    "posed_length_mm": 74.84715864805867,
+    "extension_mm": 38.61814890507607,
+    "ratio": 2.0659454724002284,
+    "vertices": [
+      {
+        "vertex": 558,
+        "rest_world_xyz_m_y_up": [
+          -0.70132474835285,
+          1.394237009781214,
+          0.08343094570103511
+        ],
+        "posed_world_xyz_m_y_up": [
+          -0.33172675368597593,
+          1.2416511753760808,
+          -0.0036402678175468392
+        ],
+        "anatomical_region_estimate": "hand/finger skin",
+        "weights": {
+          "HandLoRA_Bip01_R_Finger0": 0.9443150162696838,
+          "HandLoRA_Bip01_R_Finger01": 0.05348072201013565,
+          "RightForeArm": 0.0022042428608983755
+        }
+      },
+      {
+        "vertex": 569,
+        "rest_world_xyz_m_y_up": [
+          -0.6813308885098779,
+          1.4118484019971933,
+          0.0588825123548588
+        ],
+        "posed_world_xyz_m_y_up": [
+          -0.25844019415533726,
+          1.252974944872008,
+          -0.01378667576582726
+        ],
+        "anatomical_region_estimate": "hand/finger skin",
+        "weights": {
+          "HandLoRA_Bip01_R_Finger0": 0.5075418949127197,
+          "RightForeArm": 0.48980557918548584,
+          "RightHand": 0.0026525238063186407
+        }
+      }
+    ]
+  },
+  "original_worst_ratio_edge": {
+    "edge_index": 53059,
+    "clip": "heavy",
+    "time_s": 0.6299999952316284,
+    "rest_length_mm": 5.82011412616529,
+    "posed_length_mm": 27.41363652452808,
+    "extension_mm": 21.593522398362786,
+    "ratio": 4.710154462656586,
+    "vertices": [
+      {
+        "vertex": 24121,
+        "rest_world_xyz_m_y_up": [
+          -0.10014361406134883,
+          1.3077297072200034,
+          -0.07760125363970645
+        ],
+        "posed_world_xyz_m_y_up": [
+          -0.13643720070681106,
+          1.2227750276848572,
+          0.0517807197360702
+        ],
+        "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+        "weights": {
+          "Spine1": 0.38973626494407654,
+          "Spine2": 0.35449180006980896,
+          "RightShoulder": 0.18387378752231598,
+          "RightArm": 0.07189814746379852
+        }
+      },
+      {
+        "vertex": 24122,
+        "rest_world_xyz_m_y_up": [
+          -0.09956932072213447,
+          1.302102546339326,
+          -0.0789720111037015
+        ],
+        "posed_world_xyz_m_y_up": [
+          -0.13352753273260412,
+          1.1961920546585678,
+          0.04574856880440551
+        ],
+        "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+        "weights": {
+          "Spine1": 0.41536492109298706,
+          "Spine2": 0.34855350852012634,
+          "RightShoulder": 0.16911718249320984,
+          "Spine": 0.06696439534425735
+        }
+      }
+    ]
+  },
+  "repair_parameters": {
+    "source": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+    "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "output": "build/art-candidates/aaa-art/weights/lyra/bounded/lyra-gameplay-weights.glb",
+    "output_sha256": "468d1e8a94cfa8d0765f9edcc0b0226ddc3a6c6631b7fe55eb394b2ce3f9d44a",
+    "source_byte_count": 17889448,
+    "output_byte_count": 17889448,
+    "byte_identical_except": [
+      {
+        "attribute": "JOINTS_0",
+        "start": 1561808,
+        "end_exclusive": 1665004
+      },
+      {
+        "attribute": "WEIGHTS_0",
+        "start": 1665004,
+        "end_exclusive": 2077788
+      }
+    ],
+    "preserved_byte_exact": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "indices",
+      "all images and material JSON",
+      "all node/rest transforms",
+      "inverse bind matrices",
+      "all animation samplers/channels/timestamps",
+      "all skin joint names/order",
+      "every other byte outside JOINTS_0 and WEIGHTS_0"
+    ],
+    "clips": [
+      "charge",
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "clip_count": 20,
+    "measured_bad_edges": 101,
+    "seed_welded_vertices": 110,
+    "geodesic_radius_m": 0.045,
+    "smoothing_iterations": 24,
+    "smoothing_welded_vertices": 604,
+    "changed_source_vertices": 1847,
+    "normalized_weight_sum_max_error": 1.1920928955078125e-07,
+    "allocated_influences": 4,
+    "anatomical_folds": [
+      {
+        "source_bone": "LeftUpLeg",
+        "destination_bone": "Hips",
+        "reason": "remove anatomically remote thigh influence above the pelvis",
+        "welded_vertices": 266,
+        "maximum_transferred_weight": 0.12463454291838875
+      },
+      {
+        "source_bone": "RightUpLeg",
+        "destination_bone": "Hips",
+        "reason": "remove anatomically remote thigh influence above the pelvis",
+        "welded_vertices": 229,
+        "maximum_transferred_weight": 0.1385064041059655
+      },
+      {
+        "source_bone": "Spine",
+        "destination_bone": "Spine1",
+        "reason": "coherent upper-thorax spine chain removes abrupt fourth-influence exchange",
+        "welded_vertices": 618,
+        "maximum_transferred_weight": 0.30164949745409286
+      },
+      {
+        "source_bone": "Hips",
+        "destination_bone": "Spine1",
+        "reason": "upper-thorax spine chain replaces remote pelvic/thigh influence",
+        "welded_vertices": 186,
+        "maximum_transferred_weight": 0.030854754440129945
+      }
+    ],
+    "scope": "thorax/abdomen weights only; hands, arms outside torso, head, lower limbs and split tabard preserve source weights",
+    "source_position_accessor_sha256": "be45405f9b16494e40a417487a1e7c2ebe2f9b62b4156385ae90b6bcadc6abf8",
+    "source_indices_accessor_sha256": "82c5e04afff4b0a288ed32cf81e75f6f12b5a2f60717f0da982ec38747f2cea4",
+    "limitations": [
+      "Geometry and textures are deliberately unchanged: holes, generated sculpt/UV and hand topology remain art gates.",
+      "This is a deformation repair candidate, not final AAA art approval."
+    ]
+  },
+  "tool_sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+  "evidence_validation_scope": [
+    "matching JSON source SHA must equal exact input GLB",
+    "JSON vertex/edge counts and NPZ measured-edge order must match the parsed mesh",
+    "NPZ clip/time schedule must match this source and declared sampling mode",
+    "NPZ finite extrema array shape and all quantile summaries must equal companion JSON",
+    "new audits also embed source SHA and topology counts inside NPZ; original keys-only NPZ uses the validated JSON association"
+  ],
+  "inspected_findings": [
+    "The original worst thorax edge is visibly less pinched at the sampled attack pose, but this isolated crop does not show the newly damaged lower torso.",
+    "All-candidate adoption rejected after full per-edge maximum-envelope comparison; no AAA art approval.",
+    "Generated glove/wrist anatomy is unchanged and remains a separate quality blocker.",
+    "Zero welded boundary/nonmanifold edges does not prove absence of self-intersection or that a tabard opening matches art intent."
+  ],
+  "source_topology": {
+    "position_weld_tolerance_m": 1e-06,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "geometry_changed": false
+  },
+  "blender_source_validation": {
+    "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "bpy_rest_mapping_max_error_m": 4.352931227913359e-06,
+    "samples": [
+      {
+        "case": "right_torso_max_ratio",
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "bpy_vs_cpu_max_error_m": 2.452678624815927e-06,
+        "bpy_vs_cpu_p99_error_m": 2.182346152890736e-06
+      },
+      {
+        "case": "right_thumb_max_mm",
+        "clip": "heavy",
+        "time_s": 0.2199999988079071,
+        "bpy_vs_cpu_max_error_m": 2.5982771538349506e-06,
+        "bpy_vs_cpu_p99_error_m": 2.0721188492543882e-06
+      },
+      {
+        "case": "abdomen_side",
+        "clip": "dodge",
+        "time_s": 0.1599999964237213,
+        "bpy_vs_cpu_max_error_m": 3.6648375220063023e-06,
+        "bpy_vs_cpu_p99_error_m": 2.925984817888974e-06
+      }
+    ]
+  },
+  "blender_candidate_validation": {
+    "source_sha256": "468d1e8a94cfa8d0765f9edcc0b0226ddc3a6c6631b7fe55eb394b2ce3f9d44a",
+    "bpy_rest_mapping_max_error_m": 4.352931227913359e-06,
+    "samples": [
+      {
+        "case": "right_torso_max_ratio",
+        "clip": "heavy",
+        "time_s": 0.6299999952316284,
+        "bpy_vs_cpu_max_error_m": 2.452678624815927e-06,
+        "bpy_vs_cpu_p99_error_m": 2.182346152890736e-06
+      }
+    ]
+  },
+  "renders": [
+    {
+      "role": "before",
+      "path": "art_source/production/character_actions/deformation_review/lyra-before.png",
+      "sha256": "ee668e6fa5672dc505651e2196427a28bf8174622c16cd2cd7cb05aa1e98c6da",
+      "bytes": 810862,
+      "clip": "heavy",
+      "time_s": 0.6299999952316284,
+      "framing": "identical camera, lights, material and 768x768 Cycles24; worst original ratio target, not newly worsened edge"
+    },
+    {
+      "role": "rejected_after",
+      "path": "art_source/production/character_actions/deformation_review/lyra-rejected_after.png",
+      "sha256": "8a7c36ac9647310625409b2966ce4c5cbb064c830dc5fbac913dba99e9779811",
+      "bytes": 812032,
+      "clip": "heavy",
+      "time_s": 0.6299999952316284,
+      "framing": "identical camera, lights, material and 768x768 Cycles24; worst original ratio target, not newly worsened edge"
+    }
+  ],
+  "reproduction_render_cases": "art_source/production/character_actions/deformation_review/lyra-render-cases.json",
+  "original_source_runtime_unchanged": true
+}

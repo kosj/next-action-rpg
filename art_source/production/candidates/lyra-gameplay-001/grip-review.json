@@ -1,0 +1,345 @@
+{
+  "blender": "4.3.2",
+  "automatic_visual_approval": false,
+  "source": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+    "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1"
+  },
+  "sword": {
+    "path": "/workspace/next-action-rpg/game/assets/models/production/rune_sword_web.glb",
+    "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+  },
+  "live_author_evidence": null,
+  "blender_action_aliases_from_rig_nla": {
+    "walk_right": "walk_right_Armature",
+    "walk_left": "walk_left_Armature",
+    "walk_back": "walk_back_Armature",
+    "walk": "walk_Armature",
+    "skill_3": "skill_3_Armature",
+    "skill_2": "skill_2_Armature",
+    "skill_1": "skill_1_Armature",
+    "run": "run_Armature",
+    "RESET": "RESET_Armature",
+    "parry": "parry_Armature",
+    "light_3": "light_3_Armature",
+    "light_2": "light_2_Armature",
+    "light_1": "light_1_Armature",
+    "idle": "idle_Armature",
+    "hit": "hit_Armature",
+    "heavy": "heavy_Armature",
+    "heal": "heal_Armature",
+    "dodge": "dodge_Armature",
+    "death": "death_Armature",
+    "charge": "charge_Armature"
+  },
+  "relative_imported_rig_uniform_scale": 1.81895116964976,
+  "renderable_meshes": [
+    "texture_mapping"
+  ],
+  "excluded_blender_hidden_custom_shape_meshes": [
+    "Icosphere"
+  ],
+  "right_hand_rest_world_gltf": [
+    [
+      -0.3548099100589752,
+      -1.7829288244247437,
+      -0.062107741832733154,
+      -0.6866433024406433
+    ],
+    [
+      -0.062106795608997345,
+      -0.05094107985496521,
+      1.8171770572662354,
+      1.4254287481307983
+    ],
+    [
+      -1.7829289436340332,
+      0.35658490657806396,
+      -0.05094030499458313,
+      0.014260947704315186
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "socket": {
+    "bone": "RightHand",
+    "unit_basis_columns": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "offset_m": [
+      0.054999999701976776,
+      0.10000000149011612,
+      -0.05999999865889549
+    ],
+    "quaternion_xyzw": [
+      0.5,
+      -0.5,
+      0.5,
+      0.5
+    ],
+    "divide_basis_and_offset_by_relative_rig_scale": true,
+    "right_grasp_sword_y_m": 0.055,
+    "left_grasp_sword_y_m": -0.065,
+    "source_front_bridge_in_socket": false
+  },
+  "rest_palm_raycasts_joint_local_physical_m": [
+    {
+      "x_m": -0.02,
+      "y_m": 0.06,
+      "palmar_first_surface_z_m": -0.034550607204437256
+    },
+    {
+      "x_m": -0.02,
+      "y_m": 0.08,
+      "palmar_first_surface_z_m": -0.030270114541053772
+    },
+    {
+      "x_m": -0.02,
+      "y_m": 0.1,
+      "palmar_first_surface_z_m": -0.02929326891899109
+    },
+    {
+      "x_m": -0.02,
+      "y_m": 0.12,
+      "palmar_first_surface_z_m": null
+    },
+    {
+      "x_m": 0,
+      "y_m": 0.06,
+      "palmar_first_surface_z_m": -0.031730785965919495
+    },
+    {
+      "x_m": 0,
+      "y_m": 0.08,
+      "palmar_first_surface_z_m": -0.030722975730895996
+    },
+    {
+      "x_m": 0,
+      "y_m": 0.1,
+      "palmar_first_surface_z_m": -0.028856277465820312
+    },
+    {
+      "x_m": 0,
+      "y_m": 0.12,
+      "palmar_first_surface_z_m": -0.025394007563591003
+    },
+    {
+      "x_m": 0.02,
+      "y_m": 0.06,
+      "palmar_first_surface_z_m": -0.035904958844184875
+    },
+    {
+      "x_m": 0.02,
+      "y_m": 0.08,
+      "palmar_first_surface_z_m": -0.03500615060329437
+    },
+    {
+      "x_m": 0.02,
+      "y_m": 0.1,
+      "palmar_first_surface_z_m": -0.03136773407459259
+    },
+    {
+      "x_m": 0.02,
+      "y_m": 0.12,
+      "palmar_first_surface_z_m": -0.028483569622039795
+    }
+  ],
+  "rest_handle_depth_candidates": [
+    {
+      "socket_z_m": -0.015,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": -0.020458530130781583,
+      "median_oriented_distance_m": 0.0010687734866223764,
+      "vertices_below_minus_1mm": 53,
+      "vertices_below_minus_5mm": 39,
+      "minimum_distance_m": 2.502648567315191e-05,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    },
+    {
+      "socket_z_m": -0.055,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": -0.002385057878818486,
+      "median_oriented_distance_m": 0.022749597468646243,
+      "vertices_below_minus_1mm": 8,
+      "vertices_below_minus_5mm": 0,
+      "minimum_distance_m": 0.00016081659123301506,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    },
+    {
+      "socket_z_m": -0.058,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": 0.00039761931399340256,
+      "median_oriented_distance_m": 0.02544436592143029,
+      "vertices_below_minus_1mm": 0,
+      "vertices_below_minus_5mm": 0,
+      "minimum_distance_m": 0.00039761929656378925,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    },
+    {
+      "socket_z_m": -0.06,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": 0.0022527335062108023,
+      "median_oriented_distance_m": 0.02662338511981943,
+      "vertices_below_minus_1mm": 0,
+      "vertices_below_minus_5mm": 0,
+      "minimum_distance_m": 0.0022527335677295923,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    },
+    {
+      "socket_z_m": -0.065,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": 0.006890526999512758,
+      "median_oriented_distance_m": 0.03048884838426602,
+      "vertices_below_minus_1mm": 0,
+      "vertices_below_minus_5mm": 0,
+      "minimum_distance_m": 0.006890526972711086,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    },
+    {
+      "socket_z_m": -0.05999999865889549,
+      "sample_vertices": 133,
+      "minimum_oriented_distance_m": 0.0022527335062108023,
+      "median_oriented_distance_m": 0.02662338511981943,
+      "vertices_below_minus_1mm": 0,
+      "vertices_below_minus_5mm": 0,
+      "minimum_distance_m": 0.0022527335677295923,
+      "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+    }
+  ],
+  "samples": [
+    {
+      "clip": "charge",
+      "time_s": 0.65,
+      "blender_frame": 15.600000000000001,
+      "live_authored_pose_metrics": null,
+      "body_bounds_blender_z_up_m": {
+        "min": [
+          -0.35289883613586426,
+          -0.4299066662788391,
+          0.00012224912643432617
+        ],
+        "max": [
+          0.3009261190891266,
+          0.18483540415763855,
+          1.7005516290664673
+        ],
+        "size": [
+          0.6538249254226685,
+          0.6147420406341553,
+          1.7004294395446777
+        ]
+      },
+      "feet": {
+        "left": {
+          "fixed_rest_sole_vertices": 228,
+          "minimum_height_m": 0.00024133920669555664,
+          "median_height_m": 0.007781505584716797,
+          "vertices_within_20mm_of_rest_floor": 177
+        },
+        "right": {
+          "fixed_rest_sole_vertices": 227,
+          "minimum_height_m": 0.00012224912643432617,
+          "median_height_m": 0.010977029800415039,
+          "vertices_within_20mm_of_rest_floor": 166
+        }
+      },
+      "edge_stretch_ratio_max": 2.869774419820153,
+      "edge_stretch_ratio_p99": 1.3074328786304252,
+      "right_hand_world_blender": [
+        [
+          0.18116794526576996,
+          -0.25873586535453796,
+          -1.7913169860839844,
+          -0.10034182667732239
+        ],
+        [
+          1.0274578332901,
+          -1.467360496520996,
+          0.31585755944252014,
+          -0.28997766971588135
+        ],
+        [
+          -1.4899969100952148,
+          -1.0433073043823242,
+          5.962988325336482e-07,
+          1.3274108171463013
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "sword_markers_gameplay_y_up_m": {
+        "BladeTip": [
+          0.1693326234817505,
+          2.2001075744628906,
+          -1.0215837955474854
+        ],
+        "GripOrigin": [
+          0.04999981075525284,
+          1.2249997854232788,
+          -0.3499997854232788
+        ],
+        "Guard": [
+          0.06593585014343262,
+          1.3560640811920166,
+          -0.4403778314590454
+        ]
+      },
+      "sword_grip_to_tip_m": 1.1900002590616678,
+      "sword_total_axis_length_m": 1.3499998680781573,
+      "sword_world_aabb_size_m": [
+        0.27527838945388794,
+        0.7742209434509277,
+        1.1068476438522339
+      ],
+      "handle_nearest_body_surface": {
+        "sample_vertices": 133,
+        "minimum_oriented_distance_m": -0.0019470613260637037,
+        "median_oriented_distance_m": 0.010628991760313511,
+        "vertices_below_minus_1mm": 4,
+        "vertices_below_minus_5mm": 0,
+        "minimum_distance_m": 0.000712646113242954,
+        "method": "nearest evaluated body triangle, oriented by its winding; open/overlapping shells and final grasp require human review"
+      },
+      "blade_horizontal_azimuth_deg": 10.075644127794414,
+      "blade_gameplay_sweep_angle_deg": -10.075644127794414,
+      "gameplay_root_displacement_added": false
+    }
+  ],
+  "renders": [
+    "poses_front.png",
+    "poses_oblique.png",
+    "grip_palmar.png",
+    "grip_oblique.png"
+  ],
+  "limitations": [
+    "Source pose sampling independently resets bones; runtime crossfades require separate engine checks.",
+    "Foot metrics use fixed rest sole vertices and rest floor zero; they do not prove foot IK or correct root motion.",
+    "Mesh stretch ratios flag deformation changes; human image review is separate.",
+    "Socket/hand contact is a measured candidate; anatomy, glove penetration and final artistry need visual review.",
+    "Source-facing +Z bridge is applied exactly once only to gameplay numerical marker coordinates."
+  ],
+  "angle_convention": "gameplay_sweep_angle follows Godot Vector3.FORWARD.rotated(UP, angle); atan2(+x,-z) world heading has the opposite sign",
+  "sources_unchanged": true
+}

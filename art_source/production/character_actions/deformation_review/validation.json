@@ -1,0 +1,43 @@
+{
+  "tool": "tools/repair_character_weights.py",
+  "tool_sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+  "wrong_character_evidence_rejected": true,
+  "tampered_npz_topology_rejected": true,
+  "no_glb_written_by_rejected_calls": true,
+  "frozen_glb_checks": [
+    {
+      "path": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "unchanged": true
+    },
+    {
+      "path": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "unchanged": true
+    },
+    {
+      "path": "game/assets/models/production/lyra_gameplay.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/next-action-rpg/build/art-candidates/character-integration/sentinel-gameplay.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "unchanged": true
+    },
+    {
+      "path": "art_source/production/candidates/sentinel-gameplay-001/source.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "unchanged": true
+    },
+    {
+      "path": "game/assets/models/production/sentinel_gameplay.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "unchanged": true
+    }
+  ],
+  "all_repair_attempts_rejected": true,
+  "runtime_assets_replaced": false,
+  "aaa_art_approval": "pending",
+  "heavy_review_data": "Full per-frame JSON, per-edge NPZ and rejected GLBs remain ignored under build/art-candidates/aaa-art/weights/; not copied to source art."
+}

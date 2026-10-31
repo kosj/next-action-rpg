@@ -42,6 +42,7 @@ jobs:
           python tools/knowledge.py check
           python -m unittest discover -s tools/tests -p 'test_*.py'
           python tools/check_art_production.py
+          python art_source/production/courtyard_materials/sync_materials.py
           python tools/inspect_glb.py game/assets/models/*.glb game/assets/models/production/*.glb --require-embedded
           python tools/inspect_glb.py art_source/production/candidates/*/*.glb --require-embedded
           python tools/inspect_glb.py art_source/production/candidates/lyra-001/lyra-locomotion.glb --require-skin --require-clip idle --require-clip walk --require-clip run --require-clip RESET
@@ -72,7 +73,9 @@ jobs:
           python -m pip install --disable-pip-version-check -r tools/requirements-dev.txt
           python -m playwright install --with-deps chromium
       - name: Validate exported WebGL and persistent saves
-        timeout-minutes: 7
+        # Software WebGL now verifies skinned characters and a real safe-area
+        # attack as well as two quality modes and a full browser restart.
+        timeout-minutes: 10
         run: python tools/check_web.py
       - name: Upload browser verification
         if: always()
@@ -124,7 +127,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.deploy.result == 'success'
     needs: deploy
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     permissions:
       contents: read
     steps:
@@ -184,7 +187,7 @@ jobs:
               time.sleep(1)
           PY
       - name: Verify public WebGL, input, and browser restart persistence
-        timeout-minutes: 7
+        timeout-minutes: 10
         env:
           RUNEFALL_TEST_URL: ${{ steps.public_url.outputs.url }}
           RUNEFALL_EXPECTED_COMMIT: ${{ github.sha }}

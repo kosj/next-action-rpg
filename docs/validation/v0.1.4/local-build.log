@@ -1,0 +1,366 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (2 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | lyra_gameplay.glb[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | sentinel_gameplay.glb[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (8 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  55% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  77% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Started Preparing scenes for reload (1 steps)[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Analyzing scene [empty][39m[0m
+[  50% ] [90m[1mpreload_reimporting_scene[22m | Preparation done.[39m[0m
+[92m[ DONE ][39m [1mpreload_reimporting_scene[22m
+[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[   0% ] [90m[1mreimport[22m | lyra_gameplay_Image_0.png[39m[0m
+[  11% ] [90m[1mreimport[22m | lyra_gameplay_Image_1.png[39m[0m
+[  22% ] [90m[1mreimport[22m | lyra_gameplay_Image_2.png[39m[0m
+[  22% ] [90m[1mreimport[22m | lyra_gameplay_Image_2.png[39m[0m
+[  22% ] [90m[1mreimport[22m | lyra_gameplay_Image_2.png[39m[0m
+[  22% ] [90m[1mreimport[22m | lyra_gameplay_Image_2.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  33% ] [90m[1mreimport[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  44% ] [90m[1mreimport[22m | sentinel_gameplay_Image_1.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  55% ] [90m[1mreimport[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  66% ] [90m[1mreimport[22m | lyra_gameplay.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Import Scene (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Importing Scene...[39m[0m
+[   1% ] [90m[1mimport[22m | Running Custom Script...[39m[0m
+[  99% ] [90m[1mimport[22m | Saving...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  77% ] [90m[1mreimport[22m | sentinel_gameplay.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Import Scene (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Importing Scene...[39m[0m
+[   1% ] [90m[1mimport[22m | Running Custom Script...[39m[0m
+[  99% ] [90m[1mimport[22m | Saving...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  88% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (8 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RUNEFALL_CHARGE_PREPARATION: {"grip_travel_m":0.0446708202362061,"held":true,"hip_drop_m":0.0453291535377502}
+RUNEFALL_TESTS: 268 checks, 0 failures
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ambience.wav-c4e6e35e7a9e0e868516f43e62765e9c.sample[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/audio/ambience.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/death.wav-021a45cab225299ddf24ec88f548f45a.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/audio/death.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://assets/audio/dodge.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://assets/audio/hit.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/parry.wav-fe9de3226f32ec87c32a07b214c891b4.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://assets/audio/parry.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune.wav-0e45c2de3222a396c4d8db07b1683f0a.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://assets/audio/rune.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/slash.wav-c23cb59b0ceabbfe38a50714459d5291.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://assets/audio/slash.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansKR.ttf-3ae954ae8c14792ea34daf89520c1713.fontdata[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/NotoSansKR.ttf.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay.glb-36473b43136aff2b2a22dada3d61e831.scn[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay.glb.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_0.png-9079f4495022edc4e8d59f95f4891028.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_0.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_1.png-9b325d41f4f0dd9192cc7d936e80f6b4.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_1.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_2.png-bc89a118db39cdbc668d3ee1af7cbe1e.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_2.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway.glb-1244b94bd80b12ed82a0b26346999ae6.scn[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway.glb.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_0.png-0a088e5a6572f4ed027315dc1c845f01.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_0.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_1.png-b59850e2d969ab7c45b705df8f00a9d7.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_1.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_2.png-02b2ea78d9606bffa3cd5a054059e95e.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_2.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web.glb-055ef7ed3df3ed6fb5b0d646d96ab622.scn[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web.glb.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_0.png-21f805924d516212e1e7484319b9aa44.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_0.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_1.png-8140034ffaff4d264751e2a1912c601f.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_1.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_2.png-43355593b6261712efcb1d6f9a2113c1.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_2.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web.glb-80a1346159dff2086e7ce6ea54adc254.scn[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_0.png-52f1a5e428fbb70884efb65f8114426f.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_0.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_1.png-73f1e4b287b3a06cea910886f360432a.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_1.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_2.png-e2395d326ccceb77bc0778b6eab6fa0e.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_2.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay.glb-8caf40fedea95b8596c8516ae5d51aca.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay.glb.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_0.png-3adb620a0bb48e4a7bc087e4ed10a52c.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_0.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_1.png-01e139b92e9b8dee11d3f55d9a8f5ad7.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_1.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_2.png-e94d8e9565d469be794c0f0a4231a8f0.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_2.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/boss.glb-b78d9e548ce784ca54345bb630d9c02e.scn[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://assets/models/boss.glb.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hero.glb-2ed7d39ad98e6f5e3acea744920685b3.scn[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/models/hero.glb.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/keeper.glb-8ea026f2bbcb317e842d0b84a2a54f28.scn[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://assets/models/keeper.glb.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel.glb-871522b336932b05767144f3148e129c.scn[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://assets/models/sentinel.glb.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/stone.gdshader[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://data/character_grips.json[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-d30f0b353a7074426ad47ed010faf298-enemy_attack.res[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-cd4daef383add652343f36d2c8dbbcc9-heavy.res[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-4f74aceeb6b4d2a6a338b086e9bb336b-light_1.res[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-0647a3482447b4732612a348e45bc826-light_2.res[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-997f5f7c76988b72b45568d9f805d4b4-light_3.res[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/actor_visual.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/enemy.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/player.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/production_character_art.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/projectile.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/skeletal_visual_bridge.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/core/attack_data.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://scripts/core/audio.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://scripts/core/session.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/core/strike.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/hud.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://scripts/world/camera_rig.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/world/effect.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/world/sanctuary.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/game.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://build_id.txt[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.svg.import[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/enemy_attack.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/heavy.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_1.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_2.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_3.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scenes/main.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/actor_visual.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/enemy.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/player.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/production_character_art.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/projectile.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/skeletal_visual_bridge.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/attack_data.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/audio.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/session.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/strike.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/hud.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/camera_rig.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/effect.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/sanctuary.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/game.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.svg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ambience.wav-c4e6e35e7a9e0e868516f43e62765e9c.sample[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/audio/ambience.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/death.wav-021a45cab225299ddf24ec88f548f45a.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/audio/death.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://assets/audio/dodge.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://assets/audio/hit.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/parry.wav-fe9de3226f32ec87c32a07b214c891b4.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://assets/audio/parry.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune.wav-0e45c2de3222a396c4d8db07b1683f0a.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://assets/audio/rune.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/slash.wav-c23cb59b0ceabbfe38a50714459d5291.sample[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://assets/audio/slash.wav.import[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansKR.ttf-3ae954ae8c14792ea34daf89520c1713.fontdata[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/NotoSansKR.ttf.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay.glb-36473b43136aff2b2a22dada3d61e831.scn[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay.glb.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_0.png-9079f4495022edc4e8d59f95f4891028.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_0.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_1.png-9b325d41f4f0dd9192cc7d936e80f6b4.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_1.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lyra_gameplay_Image_2.png-bc89a118db39cdbc668d3ee1af7cbe1e.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/lyra_gameplay_Image_2.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway.glb-1244b94bd80b12ed82a0b26346999ae6.scn[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway.glb.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_0.png-0a088e5a6572f4ed027315dc1c845f01.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_0.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_1.png-b59850e2d969ab7c45b705df8f00a9d7.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_1.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pilgrim_gateway_Image_2.png-02b2ea78d9606bffa3cd5a054059e95e.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/pilgrim_gateway_Image_2.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web.glb-055ef7ed3df3ed6fb5b0d646d96ab622.scn[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web.glb.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_0.png-21f805924d516212e1e7484319b9aa44.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_0.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_1.png-8140034ffaff4d264751e2a1912c601f.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_1.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rune_sword_web_Image_2.png-43355593b6261712efcb1d6f9a2113c1.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/rune_sword_web_Image_2.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web.glb-80a1346159dff2086e7ce6ea54adc254.scn[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_0.png-52f1a5e428fbb70884efb65f8114426f.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_0.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_1.png-73f1e4b287b3a06cea910886f360432a.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_1.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sanctuary_pillar_web_Image_2.png-e2395d326ccceb77bc0778b6eab6fa0e.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sanctuary_pillar_web_Image_2.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay.glb-8caf40fedea95b8596c8516ae5d51aca.scn[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay.glb.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_0.png-3adb620a0bb48e4a7bc087e4ed10a52c.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_0.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_1.png-01e139b92e9b8dee11d3f55d9a8f5ad7.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_1.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel_gameplay_Image_2.png-e94d8e9565d469be794c0f0a4231a8f0.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://assets/models/production/sentinel_gameplay_Image_2.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/boss.glb-b78d9e548ce784ca54345bb630d9c02e.scn[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://assets/models/boss.glb.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hero.glb-2ed7d39ad98e6f5e3acea744920685b3.scn[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/models/hero.glb.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/keeper.glb-8ea026f2bbcb317e842d0b84a2a54f28.scn[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://assets/models/keeper.glb.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sentinel.glb-871522b336932b05767144f3148e129c.scn[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://assets/models/sentinel.glb.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/shaders/stone.gdshader[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://data/character_grips.json[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-d30f0b353a7074426ad47ed010faf298-enemy_attack.res[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-cd4daef383add652343f36d2c8dbbcc9-heavy.res[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-4f74aceeb6b4d2a6a338b086e9bb336b-light_1.res[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-0647a3482447b4732612a348e45bc826-light_2.res[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-997f5f7c76988b72b45568d9f805d4b4-light_3.res[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/actor_visual.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/enemy.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/player.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/production_character_art.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/projectile.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/skeletal_visual_bridge.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/core/attack_data.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://scripts/core/audio.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://scripts/core/session.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/core/strike.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/hud.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://scripts/world/camera_rig.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/world/effect.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://scripts/world/sanctuary.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://scripts/game.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://build_id.txt[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.svg.import[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/enemy_attack.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/heavy.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_1.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_2.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://data/light_3.tres.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scenes/main.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/actor_visual.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/enemy.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/player.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/production_character_art.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/projectile.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/actors/skeletal_visual_bridge.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/attack_data.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/audio.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/session.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/core/strike.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/ui/hud.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/camera_rig.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/effect.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/world/sanctuary.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/game.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.svg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+
+[
+  {
+    "file": "runefall-web.zip",
+    "bytes": 89968652,
+    "sha256": "55b4b98ce7829fa10b1e0453d9b709573a39ddd1bb879cd5f1a844c29f1060e1"
+  },
+  {
+    "file": "runefall-windows.zip",
+    "bytes": 117810129,
+    "sha256": "530cb726290208eecb4de5a17cec035feddf19994905fb12b4bd4c0384490a16"
+  }
+]

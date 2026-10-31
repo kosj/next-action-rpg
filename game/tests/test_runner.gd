@@ -204,12 +204,16 @@ func run() -> void:
 	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
 	check(await load("res://tests/skeletal_regressions.gd").run(world, check) == true, "Skeletal presentation suite completes")
 	check(await load("res://tests/art_integration_regressions.gd").run(world, check) == true, "Generated static art integration suite completes")
+	check(await load("res://tests/production_character_regressions.gd").run(world, check) == true, "Production character skin, socket and gameplay presentation suite completes")
+	check(await load("res://tests/skeletal_transition_regressions.gd").run(world, check) == true, "Production skeletal transitions preserve clocks, priority and same-frame sockets")
+	check(await load("res://tests/audio_lifecycle_regressions.gd").run(world, check) == true, "Audio shutdown, deferred callbacks and explicit restart preserve playback lifetime")
 	ledger = null
 	second = null
 	sweep = null
 	world.queue_free()
-	get_tree().root.get_node("Audio").stop_all()
-	await get_tree().create_timer(0.15).timeout
+	var audio := get_tree().root.get_node("Audio")
+	audio.stop_all()
+	check(await audio.wait_until_stopped(), "Audio shutdown releases actual playback references and queued players before exit")
 	await get_tree().process_frame
 	await get_tree().process_frame
 	for suffix in ["", ".bak", ".tmp"]:

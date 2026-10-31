@@ -3,6 +3,9 @@ extends Node3D
 
 const COURTYARD_PILLAR_SCENE: PackedScene = preload("res://assets/models/production/sanctuary_pillar_web.glb")
 const COURTYARD_GATEWAY_SCENE: PackedScene = preload("res://assets/models/production/pilgrim_gateway.glb")
+const COURTYARD_ART = preload("res://scripts/world/courtyard_art.gd")
+const COURTYARD_FLOOR: StandardMaterial3D = preload("res://assets/materials/courtyard/floor_stone.tres")
+const COURTYARD_WALL: StandardMaterial3D = preload("res://assets/materials/courtyard/wall_limestone.tres")
 
 const CENTERS: Array[Vector3] = [Vector3(0,0,-38), Vector3(10,0,-90), Vector3(-10,0,-145), Vector3(10,0,-200), Vector3(-10,0,-255), Vector3(0,0,-310), Vector3(0,0,-375)]
 const CHECKPOINTS: Array[Vector3] = [Vector3(0,0,6), Vector3(0,0,-116), Vector3(-5,0,-281)]
@@ -73,29 +76,46 @@ func mat(color: Color, metal: float = 0, emissive: bool = false) -> StandardMate
 
 func lighting() -> void:
 	var environment_node := WorldEnvironment.new()
+	environment_node.name = "SanctuaryEnvironment"
 	var env := Environment.new()
-	env.background_mode = Environment.BG_COLOR
-	env.background_color = Color("182b36")
-	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color("8faab4")
-	env.ambient_light_energy = 0.65
+	# A real sky supplies broad reflections to the imported PBR metal. Flat
+	# ambient colour made silver hair, stone and black armour equally cyan.
+	var sky_material := ProceduralSkyMaterial.new()
+	sky_material.sky_top_color = Color("344c65")
+	sky_material.sky_horizon_color = Color("b7b9af")
+	sky_material.ground_horizon_color = Color("a4aaa4")
+	sky_material.ground_bottom_color = Color("303d45")
+	sky_material.sky_curve = 0.22
+	sky_material.sky_energy_multiplier = 0.8
+	var sky := Sky.new()
+	sky.sky_material = sky_material
+	sky.radiance_size = Sky.RADIANCE_SIZE_128
+	env.sky = sky
+	env.background_mode = Environment.BG_SKY
+	env.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
+	env.reflected_light_source = Environment.REFLECTION_SOURCE_SKY
+	env.ambient_light_energy = 0.72
 	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	env.fog_enabled = true
-	env.fog_light_color = Color("344c53")
-	env.fog_density = 0.0065
+	env.fog_light_color = Color("8295a1")
+	env.fog_light_energy = 0.55
+	env.fog_density = 0.003
+	env.fog_sky_affect = 0.15
 	environment_node.environment = env
 	add_child(environment_node)
 	var sun := DirectionalLight3D.new()
-	sun.rotation_degrees = Vector3(-38, -30, 0)
-	sun.light_color = Color("ffe3b0")
-	sun.light_energy = 1.65
+	sun.name = "SanctuaryKey"
+	sun.rotation_degrees = Vector3(-32, -38, 0)
+	sun.light_color = Color("fff0da")
+	sun.light_energy = 1.25
 	sun.shadow_enabled = true
 	sun.directional_shadow_max_distance = 65
 	add_child(sun)
 	var fill := DirectionalLight3D.new()
+	fill.name = "SanctuaryFill"
 	fill.rotation_degrees = Vector3(-25, 145, 0)
-	fill.light_color = Color("79b7cf")
-	fill.light_energy = 0.55
+	fill.light_color = Color("b1c6dc")
+	fill.light_energy = 0.25
 	add_child(fill)
 
 func block(point: Vector3, size: Vector3, material: Material, collision: bool = false) -> MeshInstance3D:
@@ -150,7 +170,24 @@ func build_road(start: Vector3, end: Vector3, width: float = 12.0) -> void:
 
 func build_room(center: Vector3, half: float, index: int) -> void:
 	block(center + Vector3(0,-2.0,0), Vector3(half * 2,4,half * 2), dark, true)
-	block(center + Vector3(0,-0.12,0), Vector3(half * 2,0.25,half * 2), stone)
+	var floor_visual := block(center + Vector3(0,-0.12,0), Vector3(half * 2,0.25,half * 2), stone)
+	var courtyard_wall: StandardMaterial3D
+	if index == 0:
+		# A plane has an unambiguous 0..1 UV range, unlike the BoxMesh atlas.
+		# This changes only the non-colliding skin above the original foundation.
+		var floor_mesh := PlaneMesh.new()
+		floor_mesh.size = Vector2(half * 2, half * 2)
+		floor_visual.mesh = floor_mesh
+		floor_visual.position = center + Vector3.UP * 0.005
+		floor_visual.name = "CourtyardFlagstone"
+		var floor_material := COURTYARD_FLOOR.duplicate() as StandardMaterial3D
+		floor_material.uv1_scale = Vector3.ONE * (half * 2 / 1.8)
+		floor_visual.material_override = floor_material
+		floor_visual.set_meta("physical_tile_meters", 1.8)
+		courtyard_wall = COURTYARD_WALL.duplicate() as StandardMaterial3D
+		courtyard_wall.uv1_triplanar = true
+		courtyard_wall.uv1_world_triplanar = true
+		courtyard_wall.uv1_scale = Vector3.ONE / 2.0
 	for radius in [3.2, 4.0, 8.5]:
 		ring(center + Vector3.UP * 0.035, radius, trim if radius != 3.2 else glow)
 	for side in [-1, 1]:
@@ -158,8 +195,8 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 			# Consume the same height sample even when the first room uses a fixed
 			# canonical pillar, preserving all later rooms' seeded decoration.
 			column(center + Vector3(side * (half - 2),0,z_offset), 5.5 + rng.randf_range(0,2.5), index == 0)
-		block(center + Vector3(side * half,0.65,0), Vector3(0.65,1.3,half * 2), dark, true)
-		block(center + Vector3(side * half,1.33,0), Vector3(0.8,0.08,half * 2), trim)
+		block(center + Vector3(side * half,0.65,0), Vector3(0.65,1.3,half * 2), courtyard_wall if index == 0 else dark, true)
+		block(center + Vector3(side * half,1.33,0), Vector3(0.8,0.08,half * 2), courtyard_wall if index == 0 else trim)
 		for z_offset in [-11, 11]:
 			brazier(center + Vector3(side * (half - 4),0,z_offset))
 	for spoke in range(8):
@@ -172,6 +209,10 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 		var position_offset := Vector3(side * rng.randf_range(12,half-1),0,rng.randf_range(-half+2,half-2))
 		var slab := block(center + position_offset + Vector3.UP * 0.12, Vector3(rng.randf_range(0.3,1),0.24,rng.randf_range(0.4,1.3)), dark)
 		slab.rotation.y = rng.randf_range(0,TAU)
+		if index == 0:
+			# Keep the original RNG sequence for every later room. The first room's
+			# old floating cuboids are replaced by grounded, clustered edge debris.
+			slab.hide()
 	if index >= 0:
 		var pair: Array[Node3D] = []
 		for side in [-1, 1]:
@@ -187,6 +228,10 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 	# Broken monumental doorway at the far side.
 	if index == 0:
 		_courtyard_gateway(center + Vector3(0,0,-half+2))
+		var dressing := COURTYARD_ART.new() as Node3D
+		dressing.name = "CourtyardArt"
+		dressing.position = center
+		add_child(dressing)
 	else:
 		for side in [-1, 1]:
 			column(center + Vector3(side * 7.5,0,-half+2), 8.5 if index == 6 else 7.0)

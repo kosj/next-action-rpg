@@ -48,3 +48,9 @@ Pages가 아직 설정되지 않았거나 연결 권한이 없으면 실패한 �
 ## 결과 기록
 
 지식에는 버전·커밋·CI/릴리스의 영구 URL과 검증 범위를 기록합니다. 토큰·서명된 만료 URL·전체 비밀 로그는 보관하지 않습니다. 매번 달라지는 검사 수나 릴리스 버전을 이 스킬에 고정하지 않습니다.
+
+
+## 실제 종료와 배포 파일 검증을 반복할 때
+
+- 테스트 assertion 성공 뒤에도 engine stderr의 resource/오브젝트 누수를 확인합니다. Godot의 AudioPlayer.stop은 mixer의 최종 참조 해제와 다를 수 있습니다. [Audio 조건 대기](../../../game/scripts/core/audio.gd)와 [실제 lifecycle 회귀](../../../game/tests/audio_lifecycle_regressions.gd)처럼 WeakRef·노드 해제를 유한 시간 안에 관찰하고 지연 callback 재생을 차단합니다. 고정 sleep을 늘리거나 오류 검출을 빼서 통과시키지 않습니다.
+- 릴리스에서 직접 내려받은 manifest·Web/Windows ZIP은 `python tools/verify_release.py DOWNLOAD_DIRECTORY --commit FULL_SHA --version APP_VERSION`으로 대조합니다. 정확 버전/엔진/검토한커밋, 파일 byte·SHA·ZIP CRC, 실행 파일·의존 라이선스와 웹 원시 용량을 확인합니다. [검증 도구](../../../tools/verify_release.py)의 파일 검증과 Windows 실제 실행·아트 승인을 구분합니다. 서명된 redirect URL이나 인증 값은 기록하지 않습니다.

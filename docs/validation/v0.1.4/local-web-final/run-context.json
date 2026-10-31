@@ -1,0 +1,29 @@
+{
+  "phase": "passed",
+  "export_manifest": {
+    "version": "0.1.4",
+    "godot": "4.7.2",
+    "commit": "1b8d95b9",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 111553520,
+        "sha256": "53a2cc132dee8a53ad5ca71c63a2f6489f9ae3a4f7b3c79108c2056a5a4ee6bd"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 139394996,
+        "sha256": "dbabfa59133493cb68b1088949092d6fa92faf4e20c194a4d001cd2b01336e45"
+      }
+    ]
+  },
+  "source_asset_sha256": {
+    "lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+  },
+  "timing": {
+    "outcome": "passed",
+    "seconds": 316.961,
+    "scope": "Fresh-profile full local WebGL, character art, quality, combat, real committed saves and same-profile browser restart"
+  }
+}

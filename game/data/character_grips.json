@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "offset_units": "meters_before_rig_scale",
+  "hero": {
+    "bone": "RightHand",
+    "basis_columns": [0, 0, 1, -1, 0, 0, 0, -1, 0],
+    "offset_m": [0.055, 0.1, -0.06]
+  },
+  "sentinel_melee": {
+    "bone": "RightHand",
+    "basis_columns": [0, 0, 1, -1, 0, 0, 0, -1, 0],
+    "offset_m": [0.05892857142857143, 0.10714285714285715, -0.06428571428571428]
+  }
+}

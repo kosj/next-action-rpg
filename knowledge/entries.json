@@ -343,16 +343,16 @@
     {
       "id": "art-skeleton-contract",
       "kind": "limitation",
-      "status": "pending",
-      "title": "최종 리그·모션은 임시 피벗 모델을 별도로 대체해야 한다",
-      "summary": "현재 게임의 기본 GLB 4개는 skins/animations가 없는 도형 블록아웃이다. 별도 후보에는 VARCO 리라 1건·53본 스킨·대기/조깅/달리기와 RESET을 실제 생성·후처리했다. 선택적 스킨 장착/게임 시간 동기화 연결부도 구현했다. 후보는 8만 폴리곤으로 웹/Windows 예산을 초과하며, 전투6클립·BoneMap·크로스페이드·루프/발 접지·최종 재질/조명/VFX 검수 후 기본 피벗 자산을 대체해야 한다. 현재 아트를 AAA 완성으로 표시하지 않는다.",
+      "status": "superseded",
+      "title": "이전 제약: v0.1.2 기본 캐릭터는 피벗이고 스킨은 별도 후보였다",
+      "summary": "v0.1.2 당시 기본 GLB4개는 skin/animation 없는 블록아웃이었고 별도 리라8만 삼각형 후보의 전투 모션·경량화·장착이 남아 있었다. v0.1.4에서 리라32k와 일반 melee 수호병22k의 실제 스킨·프로젝트 저작 상태를 runtime에 반입했으므로 현재 runtime이 모두 피벗이라는 결론은 대체됐다. 최종 변형·교차 전환·재질·목표 기기 성능은 새 제한 항목으로 계속 추적한다.",
       "tags": [
         "art",
         "animation",
         "rig",
         "리그"
       ],
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "context": {
         "godot": "4.7.2",
         "application": "v0.1.2",
@@ -362,7 +362,8 @@
         "docs/ART_PIPELINE.md",
         "docs/ART_REVIEW.md",
         ".agents/skills/godot-animation/SKILL.md",
-        "https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html"
+        "https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html",
+        "docs/CHARACTER_INTEGRATION.md"
       ]
     },
     {
@@ -444,7 +445,7 @@
       "kind": "decision",
       "status": "verified",
       "title": "스킨 표현은 실제 게임 상태의 시간만 따라가고 누락 상태는 피벗으로 복구한다",
-      "summary": "ActorVisual.mount_rig는 실제 Skin/weights/bone/RESET/필수9클립/루프/트랙을 검증한다. 플레이어와 적의 값 전용 snapshot을 AnimationTree/TimeSeek에 전달해 실제 행동 시간에 맞는 bone pose를 샘플링한다. 리그 외부·임의 property·실행·게임플레이 대상 트랙은 거부한다. 판정·이동 권한은 코드에 남고 저작되지 않은 heavy/skill/death 상태는 명시적 fallback을 사용한다. 합성 검증은 최종 아트·BoneMap·크로스페이드 합격이 아니다.",
+      "summary": "ActorVisual의 기본 클립·Skin/weights/bone/RESET/루프/트랙 검증과 값 전용 gameplay snapshot을 유지한다. production은 완전한 본 채널을 검증한 명시적 opt-in으로 보행 phase를 보존하고 최대80ms의 local 본 포즈·시각 yaw 보간을 적용한다. hit/dodge/parry/death와 공격 active는 정확한 목표를 사용하며 hit pause·epoch와 최종 손 socket을 같은 시점으로 맞춘다. 기본 sparse fixture는 즉시 표본을 유지한다. 실제 리라 전환27개 검사는 통과했지만 runtime 발 IK·속도 연속성·최종 접촉/변형·AAA 승인과 최신 전체 빌드 통과는 별도다. 판정·이동·HP 권한은 게임 코드에 남는다.",
       "tags": [
         "art",
         "animation",
@@ -452,17 +453,26 @@
         "combat",
         "testing"
       ],
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "context": {
         "godot": "4.7.2",
-        "application": "v0.1.2",
-        "validation": "163 Godot checks, 0 failures"
+        "application": "v0.1.4 development",
+        "validation": "Latest305 native assertions, clean shutdown and localWeb316.961s passed; archived43 standalone model checks describe an earlier bridge revision. Exact public SHA evidence is separate in PR6/Actions"
       },
       "sources": [
         "game/scripts/actors/skeletal_visual_bridge.gd",
         "game/scripts/actors/actor_visual.gd",
         "game/tests/skeletal_regressions.gd",
-        "docs/ART_SLICE.md"
+        "docs/ART_SLICE.md",
+        "game/scripts/actors/production_character_art.gd",
+        "game/tests/production_character_regressions.gd",
+        "docs/CHARACTER_INTEGRATION.md",
+        "game/tests/skeletal_transition_regressions.gd",
+        "docs/validation/v0.1.4/transition-polish.json",
+        "docs/validation/v0.1.4/transition-polish-runtime.log",
+        "docs/validation/v0.1.4/art-quality-build-summary.json",
+        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+        "https://github.com/kosj/next-action-rpg/pull/6"
       ]
     },
     {
@@ -549,17 +559,17 @@
       "kind": "limitation",
       "status": "pending",
       "title": "Windows 실기기·게임패드·목표 프레임과 플레이 시간은 미검증이다",
-      "summary": "Windows 내보내기와 소프트웨어 Chromium 검사는 통과했지만 실제 Windows/Edge/패드, Ryzen 5 5600·RTX 3060급 목표 60fps·장시간 메모리, 3명 이상의 길 찾기·난이도·30~60분 완료 시간 검증은 남아 있다. 자동 검사가 사람의 전체 챕터 플레이를 대체하지 않는다.",
+      "summary": "이전판의Windows내보내기·소프트웨어Chromium성공과v0.1.4의스킨/표본접지수치검사를실제Windows/Edge/패드·Ryzen5 5600/RTX3060급60fps·장시간메모리·3명이상난이도/길찾기·30~60분완료시간으로확대하지않는다. v0.1.4 새내보내기/브라우저결과도별도기록하며자동검사는사람의전체챕터플레이를대체하지않는다.",
       "tags": [
         "testing",
         "performance",
         "windows",
         "플레이테스트"
       ],
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "context": {
-        "release": "v0.1.1",
-        "validated_platform": "Linux cloud and software Chromium"
+        "application": "v0.1.4 character preview",
+        "validated_scope": "Source and CPU/standalone gait metrics do not establish target GPU or Windows execution readiness"
       },
       "sources": [
         "docs/VALIDATION.md",
@@ -828,6 +838,462 @@
         "docs/validation/v0.1.3/ci/browser-persistence.json",
         "https://github.com/kosj/next-action-rpg/pull/5",
         "https://github.com/kosj/next-action-rpg/actions/runs/41161650156"
+      ]
+    },
+    {
+      "id": "v014-skeletal-preview",
+      "kind": "decision",
+      "status": "verified",
+      "title": "리라와 일반 근접 수호병에 실제 스킨 프리뷰를 반입한다",
+      "summary": "리라32k·53본·19상태+RESET과 일반 melee 수호병22k·53본·9상태+RESET을 runtime에 설치했다. 모든 runtime 행동/이동 키는 프로젝트 Bpy 저작이며 stock FCurve·수치 포즈를 복사하지 않았다. 보관된 charge/그립 판본의 통합268개·독립43개 native와 당시 Web/Windows export 결과는 해당 판본의 기록으로 유지한다. 이후 production 전환 phase/80ms pose blend의 실제 리라 fixture27개가 통과했다. 초기 로컬 Web·최종 파일/공개 배포·최신 전체 빌드 검증을 구분하며 현재 전체 빌드 성공을 이 기록으로 주장하지 않는다. ranged/shield/elite/boss는 기존 표현이고 최종 AAA/목표 기기 성능 승인은 pending이다.",
+      "tags": [
+        "art",
+        "animation",
+        "rig",
+        "validation",
+        "version"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "version": "0.1.4 development",
+        "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+        "scope": "Archived268 native and43 independent model checks and exports cover their recorded revision; added Lyra transition fixture27 passed; latest whole-build/browser/public acceptance and final AAA art remain separate",
+        "latest_validation": "Local integrated305 native assertions,Python41,Web/Windows export and complete localWeb316.961s passed; exact public commit evidence is recorded in PR6 and its Actions runs"
+      },
+      "sources": [
+        "docs/CHARACTER_INTEGRATION.md",
+        "docs/VALIDATION.md",
+        "game/assets/models/production/lyra_gameplay.glb",
+        "game/assets/models/production/sentinel_gameplay.glb",
+        "game/scripts/actors/production_character_art.gd",
+        "game/tests/production_character_regressions.gd",
+        "art_source/production/candidates/lyra-gameplay-001/manifest.json",
+        "art_source/production/candidates/sentinel-gameplay-001/manifest.json",
+        "docs/validation/v0.1.4/README.md",
+        "docs/validation/v0.1.4/production-summary.json",
+        "docs/validation/v0.1.4/transition-polish.json",
+        "docs/validation/v0.1.4/transition-polish-runtime.log",
+        "docs/validation/v0.1.4/art-quality-build-summary.json",
+        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+        "https://github.com/kosj/next-action-rpg/pull/6"
+      ],
+      "supersedes": [
+        "art-skeleton-contract"
+      ]
+    },
+    {
+      "id": "character-preview-final-art-review",
+      "kind": "limitation",
+      "status": "pending",
+      "title": "실제 스킨 프리뷰와 최종 변형·전환·장면 품질을 구분한다",
+      "summary": "실제 리라·일반 근접 수호병 스킨과 첫 방 PBR/장면 개선은 검토 가능한 제작 단계다. production의 phase 보존·최대80ms 포즈 보간은 구현되어 실제 리라 전환27개 검사를 통과했다. 얼굴·양손 근접, 모든 저작 키와 클립 전체의 변형/관통, 손·발 접촉과 공격 발디딤, 전환의 최종 시각 품질, 머리/의상, 재질·구도·조명·VFX와 목표 GPU 성능은 같은 runtime 판본으로 확인해야 한다. 자동 웨이트 보정 후보는 새 국소 악화로 모두 기각했고 원래 GLB를 유지한다. 구조·저작 표본·과거 브라우저 통과는 최종 AAA 승인이 아니며 현재 승인 상태는 pending이다.",
+      "tags": [
+        "art",
+        "animation",
+        "quality",
+        "performance",
+        "pending"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "application": "v0.1.4 preview",
+        "unverified": "Final same-revision face/hands, full deformation/contact/action footwork, visual quality of implemented transitions, hair/cloth, complete scene/VFX and real target GPU performance"
+      },
+      "sources": [
+        "docs/CHARACTER_INTEGRATION.md",
+        "docs/ART_SLICE.md",
+        "docs/VALIDATION.md",
+        "docs/AAA_ART_QUALITY.md",
+        "docs/validation/v0.1.4/transition-polish.json",
+        "art_source/production/character_actions/deformation_review/README.md"
+      ]
+    },
+    {
+      "id": "skeletal-socket-scale-and-frame",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "손 socket은 같은 프레임 포즈와 리그 scale을 함께 검증한다",
+      "summary": "Skeleton3D.get_bone_global_pose는Skeleton기준이며BoneAttachment의정상갱신신호는deferred다. modifier없는baked프리뷰는수동Tree.advance뒤on_skeleton_update로당프레임본을따르고고정그립은별도WeaponGrip자식에둔다. 수입정규화scale만역수보정해검1.35m/grip→tip1.19m를유지하고actor1.25배scale는보존한다. 실제모델감사와기존socket33표본을구분하며향후Modifiers는최종skeleton_updated뒤검증한다.",
+      "tags": [
+        "art",
+        "rig",
+        "bone",
+        "weapon",
+        "transform",
+        "testing"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2",
+        "hero_rig_scale": "1.8189517",
+        "sentinel_rig_scale": "1.9514694",
+        "validation": "Actual imported scene socket/world-length checks; anatomical grasp is not final approval"
+      },
+      "sources": [
+        "game/scripts/actors/actor_visual.gd",
+        "game/data/character_grips.json",
+        "game/tests/production_character_regressions.gd",
+        "docs/CHARACTER_INTEGRATION.md",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/bone_attachment_3d.cpp",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/skeleton_3d.cpp",
+        "docs/validation/v0.1.4/production-summary.json",
+        "art_source/production/candidates/lyra-gameplay-001/godot-audit.json"
+      ]
+    },
+    {
+      "id": "importer-bone-display-helpers",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "Blender importer의 bone widget을 실제 메시 bounds에서 제외한다",
+      "summary": "glTF원본은1mesh/22000tri인데Blender가추가한bone.custom_shape Icosphere80tri를REST검수bounds에포함해바닥−1m/키2.95m로잘못프레이밍했다. source GLB와정규화키1.95m는정상이었다. renderer는실제posebone.custom_shape로참조된helper만숨기고metadata/bounds에서제외하며이름이나작은메시라는휴리스틱으로production geometry를삭제하지않는다. 제외목록과sourceSHA불변을기록한다.",
+      "tags": [
+        "art",
+        "blender",
+        "render",
+        "bounds",
+        "pipeline"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "blender": "4.3.2",
+        "candidate": "sentinel-web-001",
+        "verified_result": "1 mesh,22000tri;normalized REST height1.95000005m and floor5.96e-8m"
+      },
+      "sources": [
+        "tools/render_glb_review.py",
+        "art_source/production/candidates/sentinel-web-001/rest-review/review.json",
+        "art_source/production/candidates/sentinel-web-001/review-summary.json",
+        ".agents/skills/runefall-art/SKILL.md"
+      ]
+    },
+    {
+      "id": "project-authored-runtime-gaits",
+      "kind": "decision",
+      "status": "verified",
+      "title": "runtime 이동·행동 키는 프로젝트 저작과 측정 가능한 접지로 관리한다",
+      "summary": "새runtime은기존stockactions를제거한후analytical leg/hand IK와semantic pose키를Bpy에서저작한다. standalone100Hz gait는reach clamp0·loop endpoint≤3e-7·선택sole stance drift≤약1.08mm/ground≤약.93mm를측정했다. 보관된최신authoring보고서의이동10cycle도clamp0·endpoint≤3e-7·drift≤약1.08mm·ground≤약.741mm다. 저작단계표본수치이며GPU의전프레임·교차상태·cloth·목표성능승인을대신하지않는다.",
+      "tags": [
+        "art",
+        "animation",
+        "gait",
+        "ik",
+        "foot",
+        "provenance"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "authoring": "Blender4.3.2;100Hz analytical gait sampling",
+        "hero_reference_speed": "6.4/8.5m/s",
+        "sentinel_reference_speed": "3.6m/s",
+        "scope": "Standalone and archived authoring-stage100Hz contact/loop samples; no rendered all-frame or hardware approval"
+      },
+      "sources": [
+        "tools/author_character_actions.py",
+        "tools/character_gait.py",
+        "art_source/production/character_actions/lyra.json",
+        "art_source/production/character_actions/sentinel.json",
+        "docs/CHARACTER_INTEGRATION.md",
+        "art_source/production/candidates/lyra-gameplay-001/authoring.json",
+        "art_source/production/candidates/sentinel-gameplay-001/authoring.json"
+      ]
+    },
+    {
+      "id": "character-capsule-visual-floor",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "스킨 발바닥0과 actor capsule bottom의 좌표를 구분한다",
+      "summary": "source스킨REST바닥이0이어도player capsule중심.95m/높이1.85m의바닥은actor원점보다.025m위다. 스킨시각자식에현재capsulebottom만보정(hero+.025m,Sentinel0m)하고원본리그·충돌크기·HP·이동을바꾸지않는다. 각수동pose에서기존position.y=0강제설정으로보정을지우지않으며restore/fallback도각표현기준을유지한다.",
+      "tags": [
+        "art",
+        "rig",
+        "physics",
+        "floor",
+        "collision"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "application": "v0.1.4 installed preview",
+        "validation": "Independent production-model checks preserve controller/capsule/collision/health and visual sole offset"
+      },
+      "sources": [
+        "game/scripts/actors/actor_visual.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/enemy.gd",
+        "game/tests/production_character_regressions.gd",
+        "docs/CHARACTER_INTEGRATION.md",
+        "docs/validation/v0.1.4/production-summary.json"
+      ]
+    },
+    {
+      "id": "headless-input-injection-boundary",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "물리 신호 직후 입력 주입은 실제 just_pressed 경계를 확인한다",
+      "summary": "새heal회귀fixture에서physics_frame신호직후Input.action_press를주입했지만just_pressed가false이고HP/포션이그대로인실제관찰이있었다. process_frame경계에서주입하도록고쳐즉시회복·이동·표현시계assert를유지한225개회귀가통과했다. fixture타이밍문제를게임heal로직약화나고정대기로숨기지않고실제효과와키상태·프레임을함께확인한다.",
+      "tags": [
+        "testing",
+        "input",
+        "headless",
+        "physics",
+        "combat"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2",
+        "application": "v0.1.4 development",
+        "validated": "225 native regressions0fail; gameplay healing semantics unchanged"
+      },
+      "sources": [
+        "game/tests/skeletal_regressions.gd",
+        "game/scripts/actors/player.gd",
+        ".agents/skills/runefall-art/SKILL.md",
+        "docs/VALIDATION.md"
+      ]
+    },
+    {
+      "id": "charge-held-end-pose-regression",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "충전 끝의 상태 이름·손가락 변화만으로 실제 장전 포즈를 승인하지 않는다",
+      "summary": "이전hero파일은charge0.65초끝에서Hips와실제검GripOrigin이idle위치로돌아가변위0이었고새43개검사중1개가실패했다. 최신데이터는골반45.329mm·grip44.671mm의실제장전변위를만들며1.3초hold도0.65초포즈를유지해43개모두통과했다. 상태명/clip존재/finger-only변화가아닌몸/무기world변위와duration이후hold를검사하고게임차지시간·피해/이동권한은바꾸지않는다.",
+      "tags": [
+        "art",
+        "animation",
+        "charge",
+        "testing",
+        "hold",
+        "regression"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2",
+        "before_hero_sha256": "ea92de7f378dae9d828effae84a6e35bafd70b66c2895fd76b80910531afd990",
+        "after_hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "validation": "One old-asset failure preserved; final43 independent and268 integrated checks passed"
+      },
+      "sources": [
+        "docs/validation/v0.1.4/production-charge-before-fix.json",
+        "docs/validation/v0.1.4/production-summary.json",
+        "game/tests/production_character_regressions.gd",
+        "art_source/production/candidates/lyra-gameplay-001/authoring.json",
+        "docs/CHARACTER_INTEGRATION.md"
+      ]
+    },
+    {
+      "id": "courtyard-cc0-pbr-materials",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "첫 courtyard PBR은 공식 CC0 원본·물리 크기·채널을 고정한다",
+      "summary": "Poly Haven monastery_stone_floor(Amal Kumar,1.8m), white_sandstone_blocks_02(Rob Tuytel,2m), forest_ground_05(Charlotte Baglioni,2m)의 공개 CC0 JPEG9장을 사용한다. 원본9,785,368 bytes·publisher MD5·SHA-256와 API metadata를 보존했다. albedo sRGB, OpenGL+Y normal과 ARM linear, AO=R/roughness=G/stone·soil metallic=0이며 독립 Godot4.7.2에서 재질3개·채널·실제 mipmaps를 확인했다. 중립 Blender 렌더를 검토했으며 통합 장면·AAA 승인 범위는 아니다.",
+      "tags": [
+        "art",
+        "material",
+        "pbr",
+        "cc0",
+        "provenance",
+        "courtyard"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "provider": "Poly Haven official public API and CC0 license, checked 2026-10-31",
+        "scope": "Source provenance and hashes; isolated material/texture import; neutral studio visual review only",
+        "physical_units": "Official Public-API swagger.yml defines dimensions in millimeters; convert to meters"
+      },
+      "sources": [
+        "art_source/production/courtyard_materials/manifest.json",
+        "art_source/production/courtyard_materials/source_metadata.json",
+        "art_source/production/courtyard_materials/LICENSE.md",
+        "art_source/production/courtyard_materials/validation.json",
+        "art_source/production/courtyard_materials/sync_materials.py",
+        "THIRD_PARTY_NOTICES.md",
+        "https://polyhaven.com/license",
+        "https://github.com/Poly-Haven/Public-API/blob/master/swagger.yml"
+      ]
+    },
+    {
+      "id": "godot-texture-import-budget-and-mips",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "원본 이미지 용량과 밉맵 포함 runtime 용량을 따로 측정한다",
+      "summary": "독립 fresh headless import에서 새 JPEG sidecar는 mipmaps/generate=false였다. 이방성 필터만으로 mip 생성까지 완료되지 않아 .import에 mipmaps=true·normal hint·압축 정책을 고정하고 실제 imported Image.has_mipmaps를 검증했다. courtyard 원본 JPEG9,785,368 bytes는 lossless+mip .ctex에서21,504,226 bytes가 됐다. 원본 파일·import·전체 PCK/Web 전송량·상주 메모리를 구분하고 최종 빌드 용량 gate와 실제 품질/성능을 다시 확인한다.",
+      "tags": [
+        "art",
+        "texture",
+        "mipmap",
+        "budget",
+        "web",
+        "godot",
+        "pipeline"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable; isolated gl_compatibility review project",
+        "measured": "9 source JPEGs = 9,785,368 bytes; imported lossless mipmapped CTEX = 21,504,226 bytes",
+        "scope": "Texture import measurement; complete current game export and hardware residency are separate checks"
+      },
+      "sources": [
+        "art_source/production/courtyard_materials/README.md",
+        "art_source/production/courtyard_materials/validation.json",
+        "art_source/production/courtyard_materials/sync_materials.py",
+        "game/assets/materials/courtyard/floor_albedo.jpg.import",
+        "game/assets/materials/courtyard/floor_normal.jpg.import",
+        "docs/AAA_ART_QUALITY.md",
+        "tools/build.py"
+      ]
+    },
+    {
+      "id": "aaa-representative-slice-acceptance",
+      "kind": "limitation",
+      "status": "pending",
+      "title": "리라·근접 수호병·첫 방의 AAA 최종 승인은 같은 판본의 화면·동작·실기기 근거가 필요하다",
+      "summary": "사용자는 스텔라 블레이드에 견줄 실사 지향 AAA 아트 품질을 요구한다. 대표 구간은 실제 gameplay/얼굴/양손 근접과 전체 모션의 변형·상태 전환·손/발 접촉·공격 발디딤, 머리/의상·재질 분리와 크기·구도/조명/전투 VFX, Web/Windows 실제 목표 GPU 성능을 검토한다. 삼각형·해상도·생성·스켈레톤/검사 수치를 품질 인증으로 사용하지 않는다. Web 경량화에서도 주요 인물·무기·표면·전투 가독성을 보존한다. 현재 프리뷰와 PBR 개선은 제작 단계이며 최종 AAA 승인은 pending이다.",
+      "tags": [
+        "art",
+        "aaa",
+        "quality",
+        "acceptance",
+        "animation",
+        "performance",
+        "pending"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "representative_slice": "Lyra and rune sword; regular melee sentinel and sword; first sanctuary courtyard",
+        "acceptance": "Pending; final same-revision visual and hardware evidence is required",
+        "targets": "Windows1080p and Web720p at60fps/16.7ms are goals, not measured achievement; target GPU/CPU/render path must be recorded"
+      },
+      "sources": [
+        "docs/AAA_ART_QUALITY.md",
+        "docs/ART_SLICE.md",
+        "docs/CHARACTER_INTEGRATION.md",
+        "docs/VALIDATION.md",
+        "art_source/production/asset_specs.json",
+        "art_source/production/motion_contract.json",
+        "art_source/production/references/manifest.json",
+        ".agents/skills/runefall-art/SKILL.md"
+      ]
+    },
+    {
+      "id": "production-phase-bounded-pose-blend",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "완전한 production 본 포즈는 phase 보존과 최대80ms 시각 보간으로 전환한다",
+      "summary": "ActorVisual 명시적 opt-in은 이동 방향/클립 길이가 바뀌어도 정규화한 좌우 발 cycle phase를 유지한다. AnimationTree가 gameplay 시간의 정확한 target을 표본화한 후 현재 표시 pose에서 최대80ms local position/rotation/scale와 visual yaw를 보간한다. hit·dodge·parry·death는 즉시, 공격 보간은 남은 startup 이내이며 active는 정확한 원래 target이다. 같은 zero-delta hit pause는 phase·본·검·보간을 고정하고 epoch reset은 이력을 지운다. 실제 리라+기본 sparse 계약 fixture27개가 통과했다. 제한된 pose/marker/clock 검증이며 발 IK·속도 연속성·최종 접촉/변형·AAA·전체 빌드 합격은 아니다.",
+      "tags": [
+        "art",
+        "animation",
+        "transition",
+        "phase",
+        "presentation",
+        "testing"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2; presentation step1/60s; maximum blend0.08s",
+        "bridge_sha256": "c2f0920d0f286fa0732793be47a438ebb04b2bd6b77c0f36549ed46b523e2e78",
+        "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "scope": "27 actual production Lyra/sparse-contract assertions; no latest whole-build, final visual/contact or target GPU approval"
+      },
+      "sources": [
+        "game/scripts/actors/skeletal_visual_bridge.gd",
+        "game/scripts/actors/actor_visual.gd",
+        "game/tests/skeletal_transition_regressions.gd",
+        "docs/validation/v0.1.4/transition-polish.json",
+        "docs/validation/v0.1.4/transition-polish-runtime.log",
+        ".agents/skills/runefall-art/SKILL.md"
+      ]
+    },
+    {
+      "id": "immutable-import-tracks-and-pose-feedback",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "수동 포즈 보간은 importer가 제거한 상수 본 채널까지 검증한다",
+      "summary": "Godot animation/remove_immutable_tracks=true가53본의 저작159 transform 채널을55 imported tracks로 줄여 RootMask0·RightHandMask2를 만들었다. 일반 mount는 가능했지만 완전한 target overwrite를 요구한 transition opt-in은 정확히 거부됐다. 두 production .glb.import를 false로 고정하고 재반입해 채널 완전성을 복구했다. 모든 clip과 RESET의 position/rotation/scale guard를 유지해 이전 blended pose가 빠진 채널의 다음 target으로 feedback되지 않게 한다. sparse fixture는 기본 즉시 표본 계약을 유지하고 보간 opt-in을 강제하지 않는다.",
+      "tags": [
+        "art",
+        "godot",
+        "import",
+        "animation",
+        "immutable",
+        "transition",
+        "feedback"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2",
+        "observed_before": "159 authored channels ->55 imported tracks; RootMask0, RightHandMask2; strict production opt-in rejected",
+        "correction": "Both production GLB sidecars remove_immutable_tracks=false and reimport; actual Lyra transition27 checks then passed",
+        "scope": "Complete target-channel contract; source GLB existence alone does not establish imported Animation completeness"
+      },
+      "sources": [
+        "docs/validation/v0.1.4/transition-import-diagnostic.log",
+        "game/assets/models/production/lyra_gameplay.glb.import",
+        "game/assets/models/production/sentinel_gameplay.glb.import",
+        "game/scripts/actors/skeletal_visual_bridge.gd",
+        "game/tests/skeletal_transition_regressions.gd",
+        "docs/validation/v0.1.4/transition-polish-runtime.log"
+      ]
+    },
+    {
+      "id": "weight-repair-per-edge-worsening",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "웨이트 보정은 글로벌 분포 개선 뒤의 새 국소 edge 악화까지 검사한다",
+      "summary": "자동 weight repair 후보는 모두 기각했고 원래 Lyra A89·Sentinel214 runtime GLB를 유지한다. 최종 제한 보정은 목표 결함과 ratio 분포를 개선했지만 다른 torso edge의 새 extension 증가가 리라+22.635mm·수호병+49.450mm였고 수호병 global absolute extension도58.660→64.200mm로 악화됐다. 같은 edge ID/topology·timestamp/midpoint의 원본/후보와 edge별 envelope·같은 peak pose를 대조하고 새 악화 부위도 렌더해야 한다. 선택한 원래 최악 부위의 예쁜 after 샷, global max ratio/percentile, 구조 불변·정규화 통과만으로 채택하지 않는다.",
+      "tags": [
+        "art",
+        "weights",
+        "deformation",
+        "repair",
+        "rejection",
+        "quality"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "sampling": "Every exported timestamp and interval midpoint;20/10 clips; finite sampling is not continuous deformation proof",
+        "runtime_hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "runtime_sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+        "decision": "All automated repair candidates rejected; original runtime retained; final deformation and AAA acceptance pending"
+      },
+      "sources": [
+        "tools/repair_character_weights.py",
+        "art_source/production/character_actions/deformation_review/README.md",
+        "art_source/production/character_actions/deformation_review/validation.json",
+        "art_source/production/character_actions/deformation_review/lyra-review.json",
+        "art_source/production/character_actions/deformation_review/sentinel-review.json",
+        ".agents/skills/runefall-art/SKILL.md",
+        "docs/AAA_ART_QUALITY.md"
+      ]
+    },
+    {
+      "id": "audio-server-deferred-playback-shutdown",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "AudioPlayer.stop 이후 실제 mixer playback 참조 해제를 확인하고 종료한다",
+      "summary": "Godot4.7.2 stop_basic은서버에stop을요청하고player참조를비우지만server는FADE_OUT_TO_DELETION→mix삭제예약→main-thread maybe_cleanup에서최종unref한다. playing=false나고정.15초는해제증명이아니다. Audio는WeakRef만추적하며stop/stream해제/queue_free와epoch/finished/SFX차단을분리하고,조건대기는실제playback참조0·player0을유한wallbudget내확인한다. 명시적start는music노드를재생성한다. 실제9개집중검사에서2/3playback이34.152/96.012ms에0이됐고전체305개가오류없이종료했다. 이시간은고정대기값으로사용하지않는다.",
+      "tags": [
+        "audio",
+        "godot",
+        "lifecycle",
+        "testing",
+        "shutdown",
+        "pipeline"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable; Linux WAV playback",
+        "validation": "Focused9 lifecycle assertions and integrated305 native assertions passed without shutdown errors",
+        "scope": "Actual playback lifetime and callback guard; no sound-design or target-hardware approval"
+      },
+      "sources": [
+        "game/scripts/core/audio.gd",
+        "game/tests/audio_lifecycle_regressions.gd",
+        "game/tests/test_runner.gd",
+        "docs/validation/v0.1.4/audio-lifecycle.json",
+        "docs/validation/v0.1.4/art-quality-build-summary.json",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/audio/audio_stream_player_internal.cpp",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_server.cpp"
       ]
     }
   ]

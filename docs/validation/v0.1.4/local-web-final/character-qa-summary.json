@@ -1,0 +1,111 @@
+{
+  "outcome": "passed",
+  "scope": "Full local fresh-profile Chromium SwiftShader WebGL; frozen final art-quality development export. This is not a public deployment or hardware performance result.",
+  "build_id": "0.1.4 · 1b8d95b9",
+  "expected_commit_validation": "unset for dirty local development export",
+  "context": "run-context.json",
+  "duration_seconds": 316.961,
+  "quality_cycle": [
+    1,
+    0,
+    1
+  ],
+  "quality_health": [
+    120,
+    120,
+    120
+  ],
+  "quality_z": [
+    -11.9199447631836,
+    -11.9199447631836,
+    -11.9199447631836
+  ],
+  "safe_attack_state": "light_1",
+  "safe_attack_sampled_time": 0.38333331927275,
+  "safe_attack_health": 120,
+  "safe_attack_encounter": -1,
+  "safe_attack_z": -13.0720329284668,
+  "after_safe_attack_state": "idle",
+  "right_hand_translation_delta_skeleton_local": 0.15160584736548793,
+  "right_hand_rotation_delta_radians": 1.3991645945685551,
+  "hand_pose_scope": "Skeleton-local pose; translation is before inherited normalization scale; normalized quaternion sign ignored for angular delta",
+  "weapon_grip_to_tip_m": 1.19000101089478,
+  "live_normal_melee_skeletal": 3,
+  "live_normal_melee_grip_to_tip_m": [
+    1.19000017642975,
+    1.19000113010406,
+    1.1900007724762
+  ],
+  "combat_health": 120,
+  "restart": {
+    "quality": 1,
+    "checkpoint": 0,
+    "z": 6,
+    "health": 120
+  },
+  "restart_hero": "skeletal",
+  "restart_weapon_attached": true,
+  "restart_weapon_grip_to_tip_m": 1.19000041484833,
+  "stored_quality": {
+    "balanced_before_wait": [
+      1
+    ],
+    "waiting_quality_0": [
+      0
+    ],
+    "balanced_committed": [
+      0
+    ],
+    "after_settings_done": [
+      0
+    ],
+    "waiting_quality_1": [
+      1
+    ],
+    "restored_committed": [
+      1
+    ],
+    "before_browser_close": [
+      1
+    ],
+    "after_browser_restart": [
+      1
+    ]
+  },
+  "storage_reads": 9,
+  "storage_completed_reads": 9,
+  "storage_max_read_seconds": 4.178,
+  "storage_primary_reads": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "storage_key_counts": [
+    34,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    34
+  ],
+  "first_browser_max_raf_gap_ms": 10432.800000000001,
+  "restart_browser_max_raf_gap_ms": 9216.300000000001,
+  "errors": [],
+  "source_asset_sha256": {
+    "lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+  },
+  "qa_source_sha256": {
+    "tools/browser_smoke.py": "1dffaa151c3bffcff3fbf79e29893f6923fb031d1c15997d9f57a6b58612cfd2",
+    "game/scripts/ui/hud.gd": "c108d61bfb170d2293b47402335cb262f89b086fabc06e2cd45f78f43a97c165"
+  }
+}

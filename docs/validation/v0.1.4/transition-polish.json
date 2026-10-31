@@ -1,0 +1,25 @@
+{
+	"blend_max_seconds": 0.08,
+	"bridge_sha256": "c2f0920d0f286fa0732793be47a438ebb04b2bd6b77c0f36549ed46b523e2e78",
+	"hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+	"marker_jump_m": {
+		"direction": {
+			"polished_m": 0.0961731895804405,
+			"raw_m": 0.830470681190491
+		},
+		"start": {
+			"polished_m": 0.0333803221583366,
+			"raw_m": 0.263961672782898
+		},
+		"stop": {
+			"polished_m": 0.0811189860105515,
+			"raw_m": 0.700257241725922
+		},
+		"walk_to_run": {
+			"polished_m": 0.0190990008413792,
+			"raw_m": 0.307383567094803
+		}
+	},
+	"presentation_step_seconds": 0.0166666666666667,
+	"scope": "Actual production pose transitions, visual markers and clocks only; no runtime foot IK, velocity continuity, final deformation or AAA approval."
+}

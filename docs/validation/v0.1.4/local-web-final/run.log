@@ -1,0 +1,15 @@
+RUNEFALL_BROWSER_STAGE initial_load 0.000s
+RUNEFALL_BROWSER_STAGE first_tour 19.000s
+RUNEFALL_BROWSER_STAGE safe_quality_approach 97.816s
+RUNEFALL_BROWSER_STAGE balanced_quality_tour 123.264s
+RUNEFALL_BROWSER_STAGE restore_performance_quality 177.510s
+RUNEFALL_BROWSER_STAGE settings_durable_commit 217.755s
+RUNEFALL_BROWSER_STAGE safe_skeletal_attack 226.966s
+RUNEFALL_BROWSER_STAGE first_combat 241.447s
+RUNEFALL_BROWSER_STAGE first_browser_close 280.145s
+RUNEFALL_BROWSER_STAGE restart_load 281.620s
+RUNEFALL_BROWSER_STAGE continue_tour 298.701s
+RUNEFALL_BROWSER_STAGE second_browser_close 316.084s
+RUNEFALL_BROWSER_STAGE completed 316.867s
+RUNEFALL_BROWSER_OK · WebGL, skeletal hero/melee, hand weapon, quality 0/1, input, combat, browser restart persistence
+RUNEFALL_BROWSER_TIMING {"outcome": "passed", "seconds": 316.961, "scope": "Fresh-profile full local WebGL, character art, quality, combat, real committed saves and same-profile browser restart"}

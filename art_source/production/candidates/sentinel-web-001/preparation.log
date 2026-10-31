@@ -1,0 +1,28 @@
+Extensions: writing cache failed ([Errno 30] Read-only file system: '/home/agent/.config/blender/4.3/extensions').
+03:34:36 | INFO: Data are loaded, start creating Blender stuff
+03:34:36 | INFO: Blender create Mesh node 0
+03:34:36 | INFO: glTF import finished in 0.20s
+03:34:36 | INFO: Data are loaded, start creating Blender stuff
+03:34:36 | INFO: Blender create Mesh node 0
+03:34:36 | INFO: glTF import finished in 0.21s
+03:34:37 | INFO: Data are loaded, start creating Blender stuff
+03:34:37 | INFO: Blender create Mesh node 0
+03:34:37 | INFO: glTF import finished in 0.15s
+03:34:38 | INFO: Data are loaded, start creating Blender stuff
+03:34:38 | INFO: Blender create Mesh node 0
+03:34:38 | INFO: glTF import finished in 0.17s
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+03:34:39 | INFO: Starting glTF 2.0 export
+03:34:39 | INFO: Extracting primitive: Mesh_0
+03:34:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+03:34:39 | INFO: Primitives created: 1
+03:34:43 | INFO: Finished glTF 2.0 export in 4.728742361068726 s
+
+03:34:43 | INFO: Data are loaded, start creating Blender stuff
+03:34:43 | INFO: Blender create Mesh node Mesh_0
+03:34:44 | INFO: glTF import finished in 0.59s
+RUNEFALL_CHARACTER_CANDIDATE_OK: /workspace/.runefall-task/character-integration/sentinel/sentinel-locomotion.glb
+RUNEFALL_CHARACTER_SOURCES_UNCHANGED: 4 files
+Blender 4.3.2
+
+Blender quit

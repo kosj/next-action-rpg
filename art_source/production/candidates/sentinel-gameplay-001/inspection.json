@@ -1,0 +1,168 @@
+{
+  "path": "/workspace/next-action-rpg/build/art-candidates/character-integration/sentinel-gameplay.glb",
+  "bytes": 17146728,
+  "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+  "structurally_valid": true,
+  "requirements_met": true,
+  "errors": [],
+  "counts": {
+    "nodes": 56,
+    "meshes": 1,
+    "mesh_primitives": 1,
+    "mesh_triangles": 22000,
+    "materials": 1,
+    "skins": 1,
+    "skinned_mesh_nodes": 1,
+    "animations": 10
+  },
+  "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+  "node_names": [
+    "Head",
+    "Neck",
+    "HandLoRA_Bip01_L_Finger11",
+    "HandLoRA_Bip01_L_Finger1",
+    "HandLoRA_Bip01_L_Finger02",
+    "HandLoRA_Bip01_L_Finger01",
+    "HandLoRA_Bip01_L_Finger0",
+    "HandLoRA_Bip01_L_Finger21",
+    "HandLoRA_Bip01_L_Finger2",
+    "HandLoRA_Bip01_L_Finger12",
+    "HandLoRA_Bip01_L_Finger31",
+    "HandLoRA_Bip01_L_Finger3",
+    "HandLoRA_Bip01_L_Finger22",
+    "HandLoRA_Bip01_L_Finger41",
+    "HandLoRA_Bip01_L_Finger4",
+    "HandLoRA_Bip01_L_Finger32",
+    "HandLoRA_Bip01_L_Finger42",
+    "LeftHand",
+    "LeftForeArm",
+    "LeftArm",
+    "LeftShoulder",
+    "HandLoRA_Bip01_R_Finger02",
+    "HandLoRA_Bip01_R_Finger01",
+    "HandLoRA_Bip01_R_Finger0",
+    "HandLoRA_Bip01_R_Finger12",
+    "HandLoRA_Bip01_R_Finger11",
+    "HandLoRA_Bip01_R_Finger1",
+    "HandLoRA_Bip01_R_Finger22",
+    "HandLoRA_Bip01_R_Finger21",
+    "HandLoRA_Bip01_R_Finger2",
+    "HandLoRA_Bip01_R_Finger32",
+    "HandLoRA_Bip01_R_Finger31",
+    "HandLoRA_Bip01_R_Finger3",
+    "HandLoRA_Bip01_R_Finger42",
+    "HandLoRA_Bip01_R_Finger41",
+    "HandLoRA_Bip01_R_Finger4",
+    "RightHand",
+    "RightForeArm",
+    "RightArm",
+    "RightShoulder",
+    "Spine2",
+    "Spine1",
+    "Spine",
+    "LeftToeBase",
+    "LeftFoot",
+    "LeftLeg",
+    "LeftUpLeg",
+    "RightToeBase",
+    "RightFoot",
+    "RightLeg",
+    "RightUpLeg",
+    "Hips",
+    "Root",
+    "texture_mapping",
+    "Armature",
+    "CandidateUniformScale"
+  ],
+  "animations": [
+    {
+      "index": 0,
+      "name": "death",
+      "channels": 159,
+      "duration_seconds": 1.100000023841858
+    },
+    {
+      "index": 1,
+      "name": "enemy_attack",
+      "channels": 159,
+      "duration_seconds": 1.5
+    },
+    {
+      "index": 2,
+      "name": "hit",
+      "channels": 159,
+      "duration_seconds": 0.2800000011920929
+    },
+    {
+      "index": 3,
+      "name": "idle",
+      "channels": 159,
+      "duration_seconds": 1.600000023841858
+    },
+    {
+      "index": 4,
+      "name": "RESET",
+      "channels": 159,
+      "duration_seconds": 0.009999999776482582
+    },
+    {
+      "index": 5,
+      "name": "run",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    },
+    {
+      "index": 6,
+      "name": "walk",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    },
+    {
+      "index": 7,
+      "name": "walk_back",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    },
+    {
+      "index": 8,
+      "name": "walk_left",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    },
+    {
+      "index": 9,
+      "name": "walk_right",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    }
+  ],
+  "resources": [
+    {
+      "type": "buffer",
+      "index": 0,
+      "storage": "bin_chunk",
+      "declared_bytes": 16773004
+    },
+    {
+      "type": "image",
+      "index": 0,
+      "storage": "buffer_view",
+      "bytes_available": 5576080
+    },
+    {
+      "type": "image",
+      "index": 1,
+      "storage": "buffer_view",
+      "bytes_available": 3315728
+    },
+    {
+      "type": "image",
+      "index": 2,
+      "storage": "buffer_view",
+      "bytes_available": 5033655
+    }
+  ],
+  "all_resource_bytes_available": true,
+  "warnings": [],
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+}

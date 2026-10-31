@@ -1,0 +1,20 @@
+{
+  "checked_date": "2026-10-31",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "isolated_material_import_and_load": "passed",
+  "checks": [
+    "Three StandardMaterial3D resources load with all textures",
+    "OpenGL normal textures enabled",
+    "Roughness uses shared ARM green; AO uses shared ARM red",
+    "Nonmetallic surfaces; mipmapped anisotropic filter",
+    "All nine imported Image resources contain mipmaps",
+    "All JPEGs fully decode as RGB; source MD5 and pinned SHA-256 match",
+    "Raw JPEG package stays below 10,000,000 bytes"
+  ],
+  "source_texture_bytes": 9785368,
+  "imported_lossless_mipmapped_ctex_bytes": 21504226,
+  "blender_version": "4.3.2",
+  "review_image": "build/art-review/courtyard-materials/material-review.png",
+  "review_image_sha256": "39c8cd98d643ccf286e7edd4e51e3d02462fbfc199faa51ea84ee4f21147ab60",
+  "visual_review": "Inspected neutral-light flagstone, pale sandstone and forest-soil patches; normals/roughness and physical UV repeats present. Game composition and final Web export are separate integration checks."
+}

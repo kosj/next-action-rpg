@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "source_sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "existing_output_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "author_tool_sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40",
+  "existing_output_rejected": {
+    "returncode": 1,
+    "source_unchanged": true,
+    "existing_output_unchanged": true
+  },
+  "incompatible_roles_rejected": {
+    "returncode": 1,
+    "fixture_change": "LeftHand renamed only in preserved derived fixture; fixture recipe SHA updated for this negative test",
+    "output_created": false,
+    "source_unchanged": true
+  }
+}

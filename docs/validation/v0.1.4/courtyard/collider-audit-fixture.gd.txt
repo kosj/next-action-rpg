@@ -1,0 +1,41 @@
+extends Node
+func fingerprint(root_node: Node) -> Array[String]:
+ var rows: Array[String] = []
+ for shape in root_node.find_children("*", "CollisionShape3D", true, false):
+  var geometry: Shape3D = shape.shape
+  var info := [geometry.get_class(), str(shape.global_transform), shape.disabled, shape.get_parent().collision_layer, shape.get_parent().collision_mask]
+  if geometry is BoxShape3D:
+   info.append(str(geometry.size))
+  elif geometry is CylinderShape3D:
+   info.append_array([geometry.radius,geometry.height])
+  rows.append(JSON.stringify(info))
+ rows.sort()
+ return rows
+func _ready() -> void:
+ var current := Sanctuary.new()
+ add_child(current)
+ var baseline := load("res://courtyard_baseline.gd").new() as Node3D
+ add_child(baseline)
+ var art := current.get_node("CourtyardArt")
+ var floor_node := current.get_node("CourtyardFlagstone") as MeshInstance3D
+ var result := {
+  "engine": Engine.get_version_info().string,
+  "collider_count": fingerprint(current).size(),
+  "baseline_collider_count": fingerprint(baseline).size(),
+  "colliders_unchanged": fingerprint(current) == fingerprint(baseline),
+  "shared_rng_state_unchanged": current.rng.state == baseline.rng.state,
+  "art_collision_shape_count": art.find_children("*", "CollisionShape3D", true, false).size(),
+  "art_physics_body_count": art.find_children("*", "PhysicsBody3D", true, false).size(),
+  "art_logical_instances": art.get_meta("logical_instances"),
+  "art_logical_triangles": art.get_meta("logical_triangles"),
+  "art_surface_batches": art.get_meta("surface_batches"),
+  "floor_size": str((floor_node.mesh as PlaneMesh).size),
+  "floor_y": floor_node.position.y,
+  "floor_uv_scale": str((floor_node.material_override as StandardMaterial3D).uv1_scale),
+  "floor_albedo_present": (floor_node.material_override as StandardMaterial3D).albedo_texture != null
+ }
+ print("RUNEFALL_COURTYARD_AUDIT: ", JSON.stringify(result))
+ var output := FileAccess.open("/workspace/.runefall-task/courtyard-scene/audit.json",FileAccess.WRITE)
+ output.store_string(JSON.stringify(result,"  "))
+ output.close()
+ get_tree().quit(0 if result.colliders_unchanged and result.shared_rng_state_unchanged and result.art_collision_shape_count == 0 else 1)

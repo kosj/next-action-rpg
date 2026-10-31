@@ -325,6 +325,22 @@ func floating_damage(amount: float, position_3d: Vector3) -> void:
 	root.add_child(node)
 	damage_numbers.append({"label":node, "point":position_3d, "time":0.0})
 
+func _qa_character_art(visual: ActorVisual) -> Dictionary:
+	# Export values only. Browser QA cannot use this snapshot to drive a rig.
+	var report := visual.presentation_report()
+	if is_instance_valid(visual.skeletal_bridge):
+		var bridge := visual.skeletal_bridge
+		report["sampled_time"] = bridge.sampled_time
+		var skeleton := bridge.get_skeleton()
+		if is_instance_valid(skeleton):
+			var hand := skeleton.find_bone("RightHand")
+			if hand >= 0:
+				var pose := skeleton.get_bone_global_pose(hand)
+				var hand_rotation := pose.basis.orthonormalized().get_rotation_quaternion()
+				report["right_hand_pose"] = [pose.origin.x,pose.origin.y,pose.origin.z,
+					hand_rotation.x,hand_rotation.y,hand_rotation.z,hand_rotation.w]
+	return report
+
 func _process(delta: float) -> void:
 	toast_time = maxf(0, toast_time - delta)
 	toast_label.modulate.a = minf(1, toast_time)
@@ -350,12 +366,21 @@ func _process(delta: float) -> void:
 					button_info["popup_visible"] = control.get_popup().visible
 					button_info["popup_focus"] = control.get_popup().get_focused_item()
 				buttons.append(button_info)
+		var enemy_art: Array[Dictionary] = []
+		for actor in get_tree().get_nodes_in_group("enemies"):
+			var enemy := actor as RuneEnemy
+			if enemy != null and is_instance_valid(enemy.visual) and not enemy.is_queued_for_deletion():
+				var art := _qa_character_art(enemy.visual)
+				art.merge({"kind":enemy.kind,"elite":enemy.elite,"boss":enemy.is_boss,"dead":enemy.dead}, true)
+				enemy_art.append(art)
 		var status := {"build_id":Session.build_id, "started":world.started, "paused":get_tree().paused,
 			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
 			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,
 			"quality":Session.quality,"fps":Engine.get_frames_per_second(),
 			"dead":player.dead, "health":player.health, "z":player.global_position.z,
 			"encounter":world.active_encounter, "hits":player.combo_hits,
+			"input_ready":player.active and not player.dead and not get_tree().paused and player.ui_input_guard == 0,
+			"hero_art":_qa_character_art(player.visual), "enemy_art":enemy_art,
 			"modal":is_instance_valid(modal), "modal_x":rect.position.x,"modal_y":rect.position.y,
 			"modal_w":rect.size.x,"modal_h":rect.size.y,"hud_y":health_bar.global_position.y}
 		JavaScriptBridge.eval("window.__RUNEFALL_STATE = " + JSON.stringify(status))

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-gameplay-001",
+  "created_on": "2026-10-31",
+  "status": "reviewed_skeletal_gameplay_preview",
+  "provider": "VARCO PRIVATE body derivative; project-authored Blender motion",
+  "source_file": "source.glb",
+  "source_bytes": 17889448,
+  "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "geometry_input": "../lyra-web-001/motion-library.glb",
+  "geometry_input_sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "triangles": 32000,
+  "skins": 1,
+  "bones": 53,
+  "clips": 20,
+  "profile": "hero",
+  "runtime_replacement": true,
+  "runtime_scope": "hero",
+  "runtime_file": "game/assets/models/production/lyra_gameplay.glb",
+  "motion_authorship": "All runtime poses, action curves and locomotion cycles are newly authored; no provider stock FCurves or numerical pose samples copied. Body geometry/rest/weights are reused.",
+  "point_usage_this_step": 0,
+  "additional_points_purchased": false,
+  "visual_approval": false,
+  "target_hardware_performance_approval": false,
+  "source_curves_copied": 0,
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 271841,
+      "sha256": "353fc498946e505afdeca1b3cd7aba196a38bffd627862aeb328afe8286324cf"
+    },
+    {
+      "file": "godot-audit.json",
+      "bytes": 3756,
+      "sha256": "3ef64ba13a6c2d7e8d4f6f3a098b00cf32bb081f4f67b5bf353b7237ed58a388"
+    },
+    {
+      "file": "godot-import.log",
+      "bytes": 3643,
+      "sha256": "d1c9b78f30c0412d1e151c4e896d62cfc6a0411c56194717cd850c02a65a2b9b"
+    },
+    {
+      "file": "godot-runtime.log",
+      "bytes": 232,
+      "sha256": "e7c9fa15d50eb8c9810e8fdb2fe208531a5e1c7d3879ff72c1b55d6fa20bbce9"
+    },
+    {
+      "file": "grip-review.json",
+      "bytes": 10345,
+      "sha256": "8ce0453077b5c0f0946da9fe648c584210782db8dc24f4a99281cc6a12e64a5e"
+    },
+    {
+      "file": "grip_oblique.png",
+      "bytes": 1708469,
+      "sha256": "c29e16ddb9c4f560ab1e2e2053bb9cafda597ed8b4ed510a68a71968231a5b27"
+    },
+    {
+      "file": "grip_palmar.png",
+      "bytes": 1717097,
+      "sha256": "914b2dc00ebf3f45510bc1f732baf495df959841c594808ac33f243e7e1d57d7"
+    },
+    {
+      "file": "inspection.json",
+      "bytes": 5308,
+      "sha256": "a507e75a142b7ebdf15898cd9eefb9f1487d6920e217a914178b63e2f7f08ed8"
+    },
+    {
+      "file": "recipe.json",
+      "bytes": 1203,
+      "sha256": "25fa856d41699e8d5dd09bb4f880b0ab0ac5361ffa84018741218012bd18b97f"
+    },
+    {
+      "file": "review.json",
+      "bytes": 72717,
+      "sha256": "2157bcd4af988d2a22f977ebd6e7740d7d767653b8437428ff342b4d48ebf93d"
+    }
+  ],
+  "authoring_tools": [
+    {
+      "repository_file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "repository_file": "tools/character_gait.py",
+      "sha256": "81590d1e6850b26e63477f35281cab8bb3c4bbf40b82a1565191e146f4e35a46"
+    }
+  ],
+  "remaining_review": [
+    "Final rendered cross-state contact and action footwork; bounded80ms pose blend and gait phase preservation are implemented in the runtime bridge",
+    "Final finger/armor/hair/cloth deformation and face detail",
+    "Target GPU frame time/draw calls/memory and Windows real-device execution"
+  ],
+  "preview_scope": "Structural/authoritative clock/socket/selected actual rendered poses reviewed; final AAA and target hardware performance remain unapproved"
+}

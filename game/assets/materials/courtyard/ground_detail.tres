@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/materials/courtyard/ground_albedo.jpg" id="1_albedo"]
+[ext_resource type="Texture2D" path="res://assets/materials/courtyard/ground_normal.jpg" id="2_normal"]
+[ext_resource type="Texture2D" path="res://assets/materials/courtyard/ground_arm.jpg" id="3_arm"]
+
+[resource]
+resource_name = "Courtyard / forest soil and debris"
+albedo_texture = ExtResource("1_albedo")
+metallic = 0.0
+roughness = 1.0
+roughness_texture = ExtResource("3_arm")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.9
+normal_texture = ExtResource("2_normal")
+ao_enabled = true
+ao_light_affect = 0.65
+ao_texture = ExtResource("3_arm")
+ao_texture_channel = 0
+texture_filter = 5

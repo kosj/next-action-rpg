@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-10-31",
+  "status": "passed",
+  "scope": "Local uncommitted runtime code/art with baseHEAD1b8d95b9; native assertions, error-free import and Web/Windows exports. Public commit/browser/hardware/AAA approval separate.",
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "native_checks": 305,
+  "failures": 0,
+  "errors_or_warnings": [],
+  "process_exit_code": 0,
+  "web_raw_bytes": 141912072,
+  "web_budget_bytes": 150000000,
+  "manifest": {
+    "version": "0.1.4",
+    "godot": "4.7.2",
+    "commit": "1b8d95b9",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 111553520,
+        "sha256": "53a2cc132dee8a53ad5ca71c63a2f6489f9ae3a4f7b3c79108c2056a5a4ee6bd"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 139394996,
+        "sha256": "dbabfa59133493cb68b1088949092d6fa92faf4e20c194a4d001cd2b01336e45"
+      }
+    ]
+  },
+  "source_files_sha256": {
+    "game/assets/models/production/lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "game/assets/models/production/lyra_gameplay.glb.import": "bf1b24cdefbd83e47172b04798e0063d4f733441510180b54af285d53dc42243",
+    "game/assets/models/production/sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+    "game/assets/models/production/sentinel_gameplay.glb.import": "dbafa7274e999702813e54df88c0621249aca2554111772af4a71aa593a9d1d5",
+    "game/data/character_grips.json": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+    "game/export_presets.cfg": "beee046cfeb16e941245abba68aa275804625223b632362007b84f686dbdbfea",
+    "game/project.godot": "d4d3e546a54a1a279e69de74a7e1e4679b3da4d3cbcd9283b7221bf66b906024",
+    "game/scripts/actors/actor_visual.gd": "aca00f27257fe23e61e40cb1762190f2696f627a4d5a2294e07d5e7270b9e17a",
+    "game/scripts/actors/enemy.gd": "fd279d316c4e3c7920d7a08db822826bdadb27d282bfc5d22bfe710bbe12a92d",
+    "game/scripts/actors/player.gd": "daf865c123cb030e6a27fc9b9cd357fb9e56cb848935143993da36b70f35b435",
+    "game/scripts/actors/production_character_art.gd": "1a8ffa75564dfc431874781c00f2c46f133af632644e9560b41b912c38f35243",
+    "game/scripts/actors/projectile.gd": "f4f426c08dd53264bd4b126623fc2b589453a7eda98bf03c23ca1d1e6a524a74",
+    "game/scripts/actors/skeletal_visual_bridge.gd": "c2f0920d0f286fa0732793be47a438ebb04b2bd6b77c0f36549ed46b523e2e78",
+    "game/scripts/core/attack_data.gd": "7922a86a49c92707807043260ec185acb41a221ed0217856fd260ef56f2fc3a8",
+    "game/scripts/core/audio.gd": "cf6638dd5b8c5d21753de498d3751f9b39cfb7904a68006c57d551dd9951af75",
+    "game/scripts/core/session.gd": "6521c7337c0f272aa9e2230abf8dd92fb9422bf9118ffb4ca5f59ccc4c931771",
+    "game/scripts/core/strike.gd": "f58a59e614d05856800557ef7763efb68697da52fc33d14e493025a9bfbb0f8c",
+    "game/scripts/game.gd": "426eb91beec935ae9232b578b3f8abcd5b04969c5099a6ed1d5cbdb855951de0",
+    "game/scripts/ui/hud.gd": "c108d61bfb170d2293b47402335cb262f89b086fabc06e2cd45f78f43a97c165",
+    "game/scripts/world/camera_rig.gd": "a9f8126839465e450a81bf9330478509e8cfd297d51ee64a9c94a9e6079c7e52",
+    "game/scripts/world/courtyard_art.gd": "a1b8e80cc0f00a856f2eefd3b8fc63ad59ad1c719c6febad13430f4a2a4d8437",
+    "game/scripts/world/effect.gd": "2887bb2226de948353079391263f10d7466fa7c958f03882d3322037be768ac1",
+    "game/scripts/world/sanctuary.gd": "50e2634210707cb6fbf5626b71cbae343b477ab9d0088f2ff05fdf872b902867"
+  },
+  "runtime_weight_repairs_adopted": false,
+  "aaa_approval": false
+}
