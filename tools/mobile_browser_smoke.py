@@ -120,6 +120,7 @@ class MobileRun:
         self.read_serial = 0
         self.reader = readonly_storage_reader()
         self.page = self.client = self.touch = None
+        self.latest = None
 
     def write(self, name, value):
         (self.output / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -133,7 +134,8 @@ class MobileRun:
         print(f"RUNEFALL_MOBILE_STAGE {name} {row['elapsed_seconds']:.3f}s", flush=True)
 
     async def state(self):
-        return await self.page.evaluate("structuredClone(window.__RUNEFALL_STATE)")
+        self.latest = await self.page.evaluate("structuredClone(window.__RUNEFALL_STATE)")
+        return self.latest
 
     async def wait(self, expression, argument=None, timeout=UI_TIMEOUT):
         # page.evaluate awaits this Promise and serializes the satisfying
@@ -141,10 +143,11 @@ class MobileRun:
         # another renderer round trip while a real joystick is still held.
         # This is an awaited Promise, not a truthy async polling predicate.
         async with asyncio.timeout(timeout / 1000):
-            return await self.page.evaluate(
+            self.latest = await self.page.evaluate(
                 "a => new Promise(resolve => { function poll() { const s = window.__RUNEFALL_STATE; "
                 "if (s && (" + expression + ")) resolve(structuredClone(s)); "
                 "else requestAnimationFrame(poll); } poll(); })", argument)
+            return self.latest
 
     async def next_state(self, before):
         return await self.wait("s.physics_frame > a", before["physics_frame"])
@@ -430,6 +433,13 @@ class MobileRun:
         self.write("mobile-navigation.json", self.navigation)
         assert math.hypot(stopped["x"]-x, stopped["z"]-z) < 1.2, stopped
 
+    async def safe_spawn(self):
+        # Setup only: avoid repeated exact-origin walks while the player is
+        # safely inside the spawn platform. Core action assertions stay intact.
+        state = self.latest or await self.state()
+        if abs(state["x"]) > 7 or not -1 <= state["z"] <= 12:
+            await self.navigate(0,6)
+
     async def resize(self, size, angle=0):
         await self.page.set_viewport_size(size)
         await self.client.send("Emulation.setDeviceMetricsOverride", {
@@ -442,11 +452,13 @@ class MobileRun:
         await self.idle()
         await self.stick((0, -.6))
         await self.touch_action("heavy", hold=True)
-        held = await self.wait("s.charge_elapsed>.1 && s.touch.active_pointers.length>=2")
+        held = await self.wait("s.charge_elapsed>.1 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy') && s.touch.active_pointers.length>=2")
+        await self.record(reason+"-held",status=held)
         await change()
         cleared = await self.wait("s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
         assert cleared["touch"]["cancel_count"] > held["touch"]["cancel_count"], (reason, held, cleared)
         assert cleared["hero_art"]["state"] not in ["heavy", "light_1", "light_2", "light_3"], cleared
+        await self.record(reason+"-cleared",status=cleared)
         if self.touch.points:
             await self.touch.cancel()
         if cleared["paused"] and cleared["modal"]:
@@ -477,11 +489,12 @@ class MobileRun:
         assert {p["owner"] for p in simultaneous["touch"]["active_pointers"]} >= {"stick","look","action"}
         await self.record("06-three-pointer-light",screenshot=True,status=simultaneous)
         await self.touch.move(action,*await self.css(origin,simultaneous))
-        owned = await self.next_state(simultaneous)
+        owned = await self.wait("s.touch.active_pointers.some(p => p.owner==='action' && p.action==='light' && Math.hypot(p.position[0]-a.x,p.position[1]-a.y)<1)",
+                                {"x":origin[0],"y":origin[1]})
         assert any(p["owner"]=="action" and p["action"]=="light" for p in owned["touch"]["active_pointers"]), owned
         assert abs(owned["camera_yaw"]-simultaneous["camera_yaw"]) < .001, owned
         await self.touch.end(action)
-        await self.wait("s.touch.active_pointers.length===2 && !s.touch.pressed_actions.includes('light')")
+        await self.wait("s.touch.active_pointers.length===2 && !s.touch.pressed_actions.includes('light') && s.touch.active_pointers.some(p=>p.owner==='stick') && s.touch.active_pointers.some(p=>p.owner==='look')")
         await self.touch.end(look)
         await self.touch.end(stick)
         await self.idle()
@@ -575,18 +588,18 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                     await qa.layout("05-shop-menu")
                     await qa.tap_button("여정을 계속한다")
                     await qa.stable(shop)
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
 
                     qa.mark("three_pointer_movement_look_light")
                     await qa.multitouch_light()
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
 
                     sprint_stick = await qa.stick((.95, 0))
                     sprint = await qa.touch_action("sprint", hold=True)
                     await qa.record("sprint", status=await qa.wait("s.hero_art.state==='run'"))
                     await qa.touch.end(sprint); await qa.touch.end(sprint_stick)
                     await qa.idle()
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
 
                     qa.mark("hold_heavy_dodge_parry_heal_skill")
                     heavy = await qa.touch_action("heavy", hold=True)
@@ -595,7 +608,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                     await qa.touch.end(heavy)
                     await qa.record("heavy-release", status=await qa.wait("s.hero_art.state==='heavy'"))
                     await qa.idle()
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
                     for action_name, cost in [("skill_2", 45), ("skill_3", 80)]:
                         gated = await qa.idle()
                         if gated["rune"] < cost:
@@ -618,17 +631,17 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                         after = await qa.state()
                         assert after["potions"] == heal["potions"], after
                     await qa.record("heal-legitimate-or-full-health-noop")
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
                     skill = await qa.idle()
                     assert skill["rune"] >= 25, skill
                     await qa.touch_action("skill_1")
                     await qa.record("08-skill-one", screenshot=True, status=await qa.wait("s.hero_art.state==='skill_1' && Math.abs(s.rune-(a-25))<.01", skill["rune"]))
                     await qa.idle()
-                    await qa.navigate(0, 6)
+                    await qa.safe_spawn()
 
                     qa.mark("pause_cancel_focus_and_quality")
                     await qa.stick((0, -.6)); await qa.touch_action("heavy", hold=True)
-                    await qa.wait("s.charge_elapsed>.1")
+                    await qa.wait("s.charge_elapsed>.1 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
                     await qa.touch_action("pause")
                     paused = await qa.wait("s.paused && s.modal && s.touch.active_pointers.length===0")
                     await qa.touch.release()

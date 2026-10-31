@@ -111,3 +111,7 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 변경한 자산의 원본·수정 이력·사용 조건과 실제 검증 범위를 기록합니다. 최종 리그·성능이 미검증이면 지식 상태를 `pending`으로 유지합니다. 반입 후 게임 검사가 필요하면 [개발 스킬](../runefall-development/SKILL.md)을 따릅니다.
 
 - 리그 원점 평행 이동은 먼저 armature 사본에서 기존 rest 허용 오차를 검사합니다. `Armature.transform()`이 roll/basis를 다시 계산해 오차를 늘리면 연결을 잠시 해제한 head/tail 단회 이동과 roll·연결 복원을 검증합니다. 원본 공통 이동·토폴로지·웨이트·재질·표본 포즈 검사는 유지하며 허용 오차를 넓혀 통과시키지 않습니다.
+
+## 피부 PBR 국소 수정
+
+ORM의 실제 UV 표본·linear 채널과 metallic/roughness factor를 확인합니다. 수치가 잘못됐다는 사실만으로 얼굴 일부 재질을 바꿔 채택하지 않습니다. [피부 재질 기각 사례](../../../art_source/production/character_polish/skin_material_review/decision.json)처럼 경계가 얼굴 안에서 끊기면 새 불연속이 생깁니다. 검토한 의미 경계와 불확실 영역을 분리하고 원본 이미지·UV·웨이트·모션·BIN 보존을 입증한 뒤 동일 중립 front/quarter/side에서 우선 비교합니다. 여기서 실패하면 actual Game A/B·runtime 편입 전에 기각하고 원본을 유지합니다. Blender 표본/재질 통과와 AAA/실기기 검수는 별개입니다.

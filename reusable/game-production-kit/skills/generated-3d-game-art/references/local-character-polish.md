@@ -1,4 +1,4 @@
-# 국소 캐릭터 수정: 눈 소켓·웨이트·검 궤적
+# 국소 캐릭터 수정: 눈 소켓·웨이트·피부 재질·검 궤적
 
 이 문서는 대상 프로젝트에서 다시 측정할 절차다. 특정 캐릭터의 치수·상한·solver 결과·승인을 상속하지 않는다. [검수 양식](art-review.md)에 원본/후보/도구 해시와 판정 범위를 기록하고 [자산 기록](asset-record.json)에 연결한다. 해당 수정을 하지 않는 자산에 모든 항목을 강제하지 않는다.
 
@@ -27,6 +27,14 @@
 - 게임의 ActorVisual·runtime 재질 조작을 제거한 독립 씬에서도 같은 현상인지 재현한다. 특정 primitive 순서에서만 다르면 실제 엔진 고정 리비전의 importer 처리 순서를 조사하고 source를 연결한다. 한 판본에서 확인한 처리 순서 결함을 모든 엔진/버전의 일반 규칙으로 쓰지 않는다.
 - 원본 GLB·이미지를 그대로 두고 고칠 수 있으면 필요한 자산의 import sidecar에만 post-import hook을 지정한다. 예상 part 이름/개수·color array·재질을 검증하고 해당 material을 복제한 뒤 필요한 사용 flag만 바꾼다. 구조가 달라지면 조용히 전체 재질을 덮어쓰지 않고 명시적으로 실패시킨다. 공유 재질이나 프로젝트 전체의 global override로 결함을 가리지 않는다.
 - 실제 재반입 후 모든 해당 part의 color array·effective flag와 독립 씬/목표 renderer 화면을 다시 확인한다. hook 작성·source 원인 확인·재반입 성공·시각 승인 상태를 나누어 기록한다. 엔진 교체 때 재현과 보정 필요성을 재검사해 더 이상 필요한지 판단한다.
+
+## 국소 피부 재질과 semantic 경계
+
+1. 반짝임을 곧바로 과한 normal이나 roughness 탓으로 정하지 않는다. 원본 GLB의 재질 factor·생략 시 실효 기본값, 실제 UV의 packed metallic/roughness/AO channel과 색 공간을 읽기 전용으로 확인한다. UV 표본은 sampling·filter·mip 조건을 명시하며 실제 카메라의 GPU shading과 구분한다. 큰 UV bounding box에 떨어진 island가 포함됐다는 이유로 얼굴의 유효 픽셀 수를 인증하지 않는다.
+2. 피부·입술·콧구멍·머리카락·금속의 소유 경계를 실제 source triangle/UV로 확인하고 source SHA에 묶인 검토 mask를 남긴다. 보수적으로 얼굴 내부만 골랐거나 불확실한 border를 제외한 mask는 완전한 semantic 분할이 아니다. 진단 색으로 선택 범위를 확인한 화면과 일반 PBR 재질의 외관 검수를 구분한다. 공간·색 휴리스틱만으로 불확실한 경계를 자동 편입하지 않는다.
+3. 실험은 새 파생에서 필요한 material만 복제해 한 물성씩 바꾸고, 기존 material·이미지·geometry/UV·skin/rest·모션 보존을 확인한다. primitive의 index를 분할했다면 oriented triangle multiset과 원래 속성 보존을 검사한다. material/surface 그룹 증가의 렌더 비용도 별도로 남긴다. 원본 byte prefix 보존이나 새 이미지가 없다는 사실을 외관 개선/비용 불변으로 바꾸지 않는다.
+4. 국소 피부를 metallic0으로 만드는 것처럼 물리적으로 타당한 수정도, 주변 원래 material과의 hard 경계에서 polygon 모양 seam을 만들 수 있다. 동일 조명·포즈·카메라의 정면·사선·측면으로 얼굴 중심뿐 아니라 mask의 전체 경계를 본다. 색/반사 차이가 실제 적용됐다는 사실과 새 이음새 없이 결함을 해결했다는 시각 판정을 분리한다.
+5. 중립 일반 재질 렌더에서 새 seam이 확인되면 후보를 `rejected`로 남기고 원래 runtime을 유지한다. 그 gate 이후 실행하지 않은 실제 Game/Web A/B나 기기 검수를 합격으로 기록하지 않는다. 다음 후보는 전체 semantic 경계 소유와 재질 전이의 제작 범위를 다시 정하고 별도의 source/recipe/해시·시각 gate로 평가한다. 특정 국소 mask의 실패를 모든 피부 재질 수선의 불가능성으로 일반화하지 않는다.
 
 ## 실제 칼끝으로 만드는 시각 궤적
 

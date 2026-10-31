@@ -15,6 +15,21 @@
     "asset_forward_axis": null,
     "weapon_blade_axis": null
   },
+  "mobile_input_profile": {
+    "status": "pending",
+    "named_action_and_touch_alias_contract": null,
+    "pointer_ownership_and_terminal_paths": null,
+    "gui_gameplay_handoff_and_emulation_policy": null,
+    "merged_edge_and_analog_policy": null,
+    "logical_window_content_size": null,
+    "css_backing_viewport_coordinate_policy": null,
+    "render_pixel_ratio_policy": null,
+    "native_and_web_safe_area_policy": null,
+    "orientation_and_resize_policy": null,
+    "optional_browser_features": [],
+    "target_device_matrix": [],
+    "real_device_validation": "pending"
+  },
   "save": {
     "schema_version": null,
     "primary_path": null,

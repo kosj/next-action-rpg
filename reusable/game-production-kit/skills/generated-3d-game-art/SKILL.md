@@ -8,7 +8,7 @@ description: >
 
 # 생성형 3D 게임 아트
 
-이 폴더만 복사해 사용할 수 있는 제작·검수 절차다. [자산 기록 양식](references/asset-record.json)과 [검수 양식](references/art-review.md)을 현재 프로젝트에 맞게 채운다. 눈 소켓·국소 웨이트·검 궤적을 수정할 때는 [국소 캐릭터 수정 절차](references/local-character-polish.md)를 함께 읽는다. 빈 값과 `pending`은 미확인이며 승인·실행 이력이 아니다.
+이 폴더만 복사해 사용할 수 있는 제작·검수 절차다. [자산 기록 양식](references/asset-record.json)과 [검수 양식](references/art-review.md)을 현재 프로젝트에 맞게 채운다. 눈 소켓·국소 웨이트·피부 재질·검 궤적을 수정할 때는 [국소 캐릭터 수정 절차](references/local-character-polish.md)를 함께 읽는다. 빈 값과 `pending`은 미확인이며 승인·실행 이력이 아니다.
 
 ## 시작할 때
 
@@ -45,6 +45,8 @@ Godot **4.7.2**, Blender **4.3.2**는 아래 실패 유형을 관찰한 과거 �
 맵별 의미·채널·색 공간과 normal Y 규약을 제공자 자료 및 실제 픽셀/재질 설정으로 대조한다. 보통 albedo는 sRGB, normal·packed 재질 데이터는 linear지만 이름만으로 단정하지 않는다. AO/roughness/metallic 채널 배치, 단위가 확인된 물리적 표면 크기, UV 반복을 기록한다.
 
 source `COLOR_0`와 실제 imported vertex-color array, primitive별 effective material의 vertex-color 사용 flag를 따로 검사한다. 색 데이터가 보존돼도 flag가 꺼지면 화면에 반영되지 않을 수 있다. 현재 엔진의 독립 씬·고정 importer source로 재현하고 필요한 자산에 한정한 post-import 보정을 검토한다. [국소 수정 절차](references/local-character-polish.md)의 범위/재반입 gate를 따르며 다른 엔진 판본의 보편적 결함으로 일반화하지 않는다.
+
+피부의 metallic처럼 물성 오류가 의심되면 실제 UV의 packed channel과 생략된 factor의 실효값을 읽고 재질 소유 부위를 검토한다. 국소 material을 물리적으로 타당한 값으로 고쳐도 mask 경계가 새 polygon seam을 만들 수 있다. 원본 geometry·이미지·리그 보존과 최종 외관은 별개이며, 동일 조명·정면/측면에서 경계 결함이 보이면 후보를 기각하고 원본을 유지한다. [국소 피부 재질 절차](references/local-character-polish.md#국소-피부-재질과-semantic-경계)를 따르고 미실행 Game A/B를 합격으로 기록하지 않는다.
 
 필터 설정과 실제 mip 생성은 별개다. 최초 headless import와 에디터 감지 결과가 다를 수 있으므로 재현 가능한 import 정책과 반입된 mip를 확인한다. 원본 이미지 bytes, 압축·mip 포함 import bytes, 전체 배포 전송량, 상주 메모리를 구분한다. LOD·텍스처 축소 후 얼굴·손·실루엣·재질·전투 가독성을 다시 검토하고 최종 export를 측정한다.
 

@@ -1,18 +1,19 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.1.0** · 정리일 **2026-10-31**.
+버전 **1.2.0** · 정리일 **2026-10-31**.
 
-기존 프로젝트에서 축적한 지식 51항목을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
+기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
 ## 필요한 것부터 사용하기
 
 | 구성 | 사용하는 상황 |
 | --- | --- |
 | [evidence-led-project-memory](skills/evidence-led-project-memory/SKILL.md) | 어떤 프로젝트에서든 결정·실패·근거·검증 상태를 관리할 때 |
-| [godot-web-production](skills/godot-web-production/SKILL.md) | Godot 웹/Windows 빌드, 실제 브라우저 입력·저장, 공개 배포를 검증할 때 |
+| [godot-web-production](skills/godot-web-production/SKILL.md) | Godot 웹/Windows 빌드, 모바일 터치·화면 좌표, 실제 브라우저 입력·저장, 공개 배포를 검증할 때 |
+| [모바일 Web 절차](skills/godot-web-production/references/mobile-web-input.md)·[검수 양식](skills/godot-web-production/references/mobile-input-report.json) | 포인터 수명·에뮬레이션·동시 물리 입력과 CSS/viewport·safe area를 함께 검수할 때 |
 | [generated-3d-game-art](skills/generated-3d-game-art/SKILL.md) | 생성형 3D·Blender·리그·모션·PBR·아트 품질을 검수할 때 |
 | [사례집](HANDBOOK.md) | 문제의 원인, 재사용할 원칙, 다시 확인할 조건을 빠르게 찾을 때 |
-| [출처 스냅샷](provenance.json) | 원래 51항목의 상태·날짜·고정 커밋 근거를 추적할 때 |
+| [출처 스냅샷](provenance.json) | 원래 항목의 상태·날짜·고정 커밋 근거를 추적할 때 |
 
 각 스킬 폴더의 `references/`에 해당 템플릿을 함께 넣었습니다. 선택한 **스킬 폴더 전체**만 복사해도 로컬 참조가 유지됩니다. 일반 소프트웨어 프로젝트라면 첫 번째 스킬만 가져가면 됩니다.
 
@@ -23,6 +24,8 @@
 3. 웹/게임 작업에는 [프로젝트 설정 템플릿](skills/godot-web-production/references/project-profile.json)의 빈 값을 채웁니다. 엔진·템플릿·Blender 버전, 프로젝트 경로, 이동/무기 축, 저장 식별자, 배포 주소, 성능·용량 목표를 실제 프로젝트에서 결정합니다.
 4. 지식 기록은 [항목 템플릿](skills/evidence-led-project-memory/references/knowledge-entry.json)으로 시작합니다. 템플릿의 자리표시자를 실제 값으로 바꾸고 로컬 근거를 연결하기 전까지 `pending`을 유지합니다. 원래 프로젝트의 `verified`를 새 프로젝트에 복사하지 않습니다.
 5. 관련 공식 문서와 실제 코드/도구 스키마를 다시 확인하고, 필요한 작은 실험·실제 화면·플랫폼 검사로 적용을 검증합니다. 완료한 범위와 남은 범위를 따로 기록합니다.
+
+모바일 작업이면 [입력·화면 절차](skills/godot-web-production/references/mobile-web-input.md)를 선택하고 새 프로젝트의 포인터/action 소유권과 좌표 변환을 검수 양식에 기록합니다. desktop touch emulation·소프트웨어 WebGL·실제 Android/iOS와 목표 GPU의 결과를 분리하며, 원래 프로젝트의 권한·기기 접근·QA 통과를 승계하지 않습니다.
 
 예: 새 캐릭터에서 무기가 커진다면 고정 스케일 값을 복사하지 않고, 수입 리그의 정규화 스케일과 actor의 의도 스케일을 나눠 실측합니다. 저장 설정이 바뀌었다면 메모리 값뿐 아니라 영구 저장과 새 브라우저 프로세스의 복원까지 확인합니다.
 
@@ -48,3 +51,5 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 - 공개 스킬 원문을 별도로 가져올 때는 그 자료의 리비전·LICENSE·NOTICE를 보존합니다. 이 묶음의 출처 링크는 원문과 적용 판단을 구분하기 위한 것입니다.
 
 판본1.1.0은 국소 눈 소켓의 전체 표면 fit, solver 단위/엄밀한 제약, 실제 marker 기반 잔상, imported COLOR_0 사용 flag의 검수 절차를 보완합니다. 원본 엔진의 특정 버그·치수·표본 통과를 대상 프로젝트에 고정하지 않습니다.
+
+판본1.2.0은 모바일 Web의 입력 소유권·GUI 전환·동시 장치 해제·CSS/backing/논리 좌표·safe area·선택적 브라우저 기능과 기기별 증거를 기록하는 절차를 추가합니다. 아트 절차에는 국소 피부 metallic 수정으로 새 경계 이음새가 생긴 실패를 반영합니다. 원래 사례의 자동 검사 통과나 재질 수치 교정을 최종 화면·실기기·아트 승인으로 바꾸지 않습니다.

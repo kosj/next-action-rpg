@@ -87,6 +87,9 @@
 |---|---|---|
 | albedo 색 공간·normal 규약·packed map 채널 | 미입력 | pending |
 | source COLOR_0 / imported array·양자화 / part별 effective color flag·독립 씬·범위 제한 import 보정/재반입 | 미입력 | pending |
+| 실제 UV의 packed channel·생략 factor 실효값·sampling/filter/mip 조건 | 미입력 | pending |
+| semantic material 소유 mask·불확실 경계·진단 선택 화면 / 일반 PBR 외관 분리 | 미입력 | pending |
+| 국소 물성 변경 전후의 정면/사선/측면 경계 seam·surface 비용·중립 gate / 실제 Game A/B 각각 | 미입력 | pending |
 | 물리적 타일 크기·UV 반복·금속/천/피부 구분 | 미입력 | pending |
 | 실제 imported mip·압축·필터·LOD | 미입력 | pending |
 | 원본/import/build 전송량/상주 메모리 각각 | 미입력 | pending |

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "checked_on": null,
+  "scope": null,
+  "expected_source_revision": null,
+  "observed_build_id": null,
+  "tested_url": null,
+  "engine_version_and_source_revision": null,
+  "current_project_authority": {
+    "status": "pending",
+    "instruction_evidence": null,
+    "device_and_browser_access_scope": null,
+    "upload_or_paid_service_scope": null
+  },
+  "test_environment": {
+    "kind": null,
+    "kind_options": ["native_fixture", "desktop_touch_emulation", "real_mobile_browser"],
+    "physical_device_model": null,
+    "os": null,
+    "browser_version": null,
+    "renderer": null,
+    "quality_mode": null,
+    "profile_scope": "test-only"
+  },
+  "input_contract": {
+    "status": "pending",
+    "pointer_ownership_and_terminal_paths_evidence": null,
+    "emulated_mouse_order_and_setter_behavior_evidence": null,
+    "gui_activation_reentrance_and_handoff_evidence": null,
+    "cancel_focus_pause_restore_cleanup_evidence": null,
+    "concurrent_physical_touch_hold_release_evidence": null,
+    "merged_process_and_physics_edge_evidence": null,
+    "analog_strength_deadzone_and_diagonal_limit_evidence": null,
+    "actual_gameplay_effect_and_authority_evidence": null
+  },
+  "screen_mapping": {
+    "status": "pending",
+    "css_canvas_rect": null,
+    "canvas_backing_size": null,
+    "logical_viewport_size": null,
+    "device_pixel_ratio": null,
+    "coordinate_transform_evidence": null,
+    "control_hit_rect_and_readability_evidence": null,
+    "safe_area_source_and_conversion_evidence": null,
+    "orientation_resize_and_browser_toolbar_evidence": null,
+    "look_sensitivity_units_and_evidence": null
+  },
+  "browser_capabilities": {
+    "status": "pending",
+    "webgl_context_result": null,
+    "optional_pointer_lock_and_rejection_result": null,
+    "optional_fullscreen_gesture_and_rejection_result": null,
+    "inline_play_and_menu_recovery_evidence": null,
+    "official_sources_and_compatibility_snapshot": []
+  },
+  "real_device_performance": {
+    "status": "pending",
+    "gpu_cpu_os_browser": null,
+    "resolution_and_pixel_budget": null,
+    "frame_time_distribution_ms": null,
+    "memory_and_loading": null,
+    "evidence": []
+  },
+  "stages": [],
+  "errors": [],
+  "artifacts": [],
+  "unverified": ["physical multi-touch behavior", "real mobile browser execution", "target-device performance", "final art quality"],
+  "note": "빈 값이나 errors 배열은 통과가 아니다. native fixture·desktop touch emulation·실제 기기와 성능의 검증 범위를 나누고 대상 프로젝트의 근거로 갱신한다. 과거 권한·QA 상태는 승계하지 않는다."
+}
