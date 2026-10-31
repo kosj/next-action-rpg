@@ -37,7 +37,9 @@ ACTIONS = {"light", "heavy", "dodge", "parry", "heal", "skill_1", "skill_2", "sk
            "interact", "lock_on", "target_next", "pause", "sprint"}
 FIRST_ROOM_RASTERS = {"03-portrait-gameplay", "10-landscape-gameplay", "12-narrow-gameplay",
                       "15-restarted-touch-controls", "rotation-portrait", "rotation-landscape",
-                      "scroll-gameplay-after"}
+                      "scroll-gameplay-after","narrow-before-landscape","narrow-after",
+                      "restart-initial-portrait","restart-landscape","restart-narrow",
+                      "restart-returned-portrait","restart-restored"}
 
 
 def first_room_raster_report(path):
@@ -144,6 +146,7 @@ class MobileRun:
         self.progress, self.errors, self.states = [], [], {}
         self.events, self.layouts, self.storage = [], [], []
         self.storage_trace, self.save_targets = [], []
+        self.storage_observations = []
         self.navigation = []
         self.action_observations = []
         self.rasters = []
@@ -196,9 +199,12 @@ class MobileRun:
             return
         try:
             async with asyncio.timeout(10):
-                self.write("mobile-failure-state.json", await self.state())
+                metrics=await self.browser_metrics()
+                self.latest=metrics["qa"]
+                self.write("mobile-failure-state.json",metrics["qa"])
+                self.write("mobile-failure-browser-metrics.json",metrics)
                 self.write("mobile-failure-touch-observation.json", await self.page.evaluate(
-                    "({touches:window.__RUNEFALL_MOBILE_TOUCH_OBS,read:window.__RUNEFALL_QA_IDB_READ,actions:window.__RUNEFALL_MOBILE_ACTION_OBS})"))
+                    "({touches:window.__RUNEFALL_MOBILE_TOUCH_OBS,read:window.__RUNEFALL_QA_IDB_READ,actions:window.__RUNEFALL_MOBILE_ACTION_OBS,storage:window.__RUNEFALL_MOBILE_COMMIT_OBS})"))
             await self.page.screenshot(path=str(self.output / "mobile-failure.png"), timeout=15000)
         except Exception as error:
             self.write("mobile-failure-diagnostic.json", {"error": str(error)})
@@ -459,17 +465,82 @@ class MobileRun:
         return result["saves"]
 
     async def commit(self, quality):
-        async with asyncio.timeout(STORAGE_TIMEOUT):
-            while True:
-                rows = await self.read_saves()
-                self.storage.append({"stage": self.stage, "quality_expected": quality, "rows": rows})
-                self.write("mobile-storage.json", self.storage)
-                if len(rows) == 1:
-                    save = rows[0]["save"]
-                    if (save.get("version") == 1 and save.get("journey_started") is True
-                            and save.get("checkpoint") == 0 and save.get("settings", {}).get("quality") == quality):
-                        return
-                await self.page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
+        started=time.monotonic()
+        print(f"RUNEFALL_MOBILE_STORAGE begin quality={quality}",flush=True)
+        observation=None
+        wall_timeout=False
+        try:
+            async with asyncio.timeout(STORAGE_TIMEOUT):
+                observation=await self.page.evaluate(self.commit_script(),{
+                    "quality":quality,"timeout_ms":STORAGE_TIMEOUT*1000,
+                    "first_id":self.read_serial+1,"targets":self.save_targets,"stage":self.stage})
+        except TimeoutError:
+            wall_timeout=True
+            # Diagnostic collection cannot turn a late result into a pass.
+            async with asyncio.timeout(10):
+                observation=await self.page.evaluate("({observation:structuredClone(window.__RUNEFALL_MOBILE_COMMIT_OBS),reader:structuredClone(window.__RUNEFALL_QA_IDB_READ)})")
+            self.write("mobile-storage-timeout.json",observation)
+            observation=observation["observation"]
+        except Exception:
+            async with asyncio.timeout(10):
+                observation=await self.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_COMMIT_OBS)")
+            raise
+        finally:
+            if observation:
+                attempts=observation.get("attempts",[])
+                for attempt in attempts:
+                    self.storage.append({"stage":self.stage,"quality_expected":quality,
+                        "rows":attempt["saves"],"request_id":attempt["request_id"],
+                        "completed_ms":attempt["completed_ms"],"within_js_budget":attempt["within_budget"]})
+                    self.storage_trace.append({"stage":self.stage,"request_id":attempt["request_id"],
+                        "seconds":round(attempt["seconds"],3),"diagnostic":attempt["diagnostic"],
+                        "completed_ms":attempt["completed_ms"],"within_js_budget":attempt["within_budget"]})
+                pending=observation.get("pending")
+                self.read_serial+=len(attempts)+(1 if pending else 0)
+                self.save_targets[:]=observation.get("targets",self.save_targets)
+                self.write("mobile-storage.json",self.storage)
+                self.write("mobile-storage-diagnostics.json",self.storage_trace)
+                self.storage_observations.append({
+                    **observation,"python_wall_timeout":wall_timeout,
+                    "python_seconds":round(time.monotonic()-started,3)})
+                self.write("mobile-storage-observation.json",self.storage_observations)
+        if wall_timeout:
+            raise TimeoutError(f"Actual primary quality{quality} was not observed within30s wall; readonly diagnostics retained")
+        assert observation and observation.get("outcome")=="matched",observation
+        print(f"RUNEFALL_MOBILE_STORAGE committed quality={quality} reads={len(observation['attempts'])} seconds={time.monotonic()-started:.3f}",flush=True)
+
+    def commit_script(self):
+        # Embed the exact AST-extracted desktop reader. The browser awaits each
+        # readonly transaction and a real rAF; Python performs one round trip.
+        # Both clocks are bounded. Diagnostic globals contain copies only.
+        return r"""async options => {
+          const read=READONLY_READER_LITERAL;
+          const started=performance.now(), deadline=started+options.timeout_ms;
+          const obs=window.__RUNEFALL_MOBILE_COMMIT_OBS={
+            stage:options.stage,quality_expected:options.quality,started_at:started,
+            timeout_ms:options.timeout_ms,phase:'starting',attempts:[],pending:null,
+            targets:options.targets};
+          while(performance.now()<deadline){
+            const request_id=options.first_id+obs.attempts.length, read_started=performance.now();
+            obs.phase='reading';obs.pending={request_id,started_ms:read_started-started};
+            const result=await read({id:request_id,targets:obs.targets});
+            const completed=performance.now(), within_budget=completed<deadline;
+            obs.targets=result.targets;obs.pending=null;
+            obs.attempts.push({request_id,started_ms:read_started-started,
+              completed_ms:completed-started,seconds:(completed-read_started)/1000,
+              within_budget,saves:result.saves,diagnostic:result.diagnostic});
+            const save=result.saves.length===1?result.saves[0].save:null;
+            if(within_budget && save && save.version===1 && save.journey_started===true &&
+               save.checkpoint===0 && save.settings && save.settings.quality===options.quality){
+              obs.phase='completed';obs.outcome='matched';obs.completed_ms=completed-started;
+              return structuredClone(obs);
+            }
+            if(!within_budget)break;
+            obs.phase='animation_frame';await new Promise(resolve=>requestAnimationFrame(resolve));
+          }
+          obs.phase='completed';obs.outcome='js_deadline';
+          obs.completed_ms=performance.now()-started;return structuredClone(obs);
+        }""".replace("READONLY_READER_LITERAL",self.reader)
 
     async def set_quality(self, index, label):
         before = await self.idle()
@@ -572,9 +643,15 @@ class MobileRun:
           return {sampled_at:performance.now(),qa:structuredClone(window.__RUNEFALL_STATE),
             dom:{canvas:{bitmap:[canvas.width,canvas.height],client:[canvas.clientWidth,canvas.clientHeight],
               rect:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},
-              style:{width:style.width,height:style.height,transform:style.transform,
-                objectFit:style.objectFit,display:style.display}},
+              inline_style:canvas.getAttribute('style'),
+              style:{width:style.width,height:style.height,maxWidth:style.maxWidth,maxHeight:style.maxHeight,
+                transform:style.transform,objectFit:style.objectFit,display:style.display}},
               inner:[innerWidth,innerHeight],outer:[outerWidth,outerHeight],dpr:devicePixelRatio,
+              document:{client:[document.documentElement.clientWidth,document.documentElement.clientHeight],
+                scroll:[document.documentElement.scrollWidth,document.documentElement.scrollHeight],
+                body_client:[document.body.clientWidth,document.body.clientHeight],
+                body_scroll:[document.body.scrollWidth,document.body.scrollHeight],
+                viewport_meta:document.querySelector('meta[name=viewport]')?.content},
               screen:{width:screen.width,height:screen.height,availWidth:screen.availWidth,
                 availHeight:screen.availHeight,angle:screen.orientation.angle,type:screen.orientation.type},
               visual_viewport:viewport?{width:viewport.width,height:viewport.height,scale:viewport.scale,
@@ -639,24 +716,28 @@ class MobileRun:
 
 
 async def run(url, output=Path("build/verification/mobile"), phase="full", rotation_driver="playwright"):
-    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus","scroll-focus"], phase
+    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","settings-focus","rotation-focus","scroll-focus","narrow-focus","restart-focus"], phase
     assert rotation_driver in ["double","playwright"], rotation_driver
     assert phase == "rotation-focus" or rotation_driver == "playwright", "Diagnostic driver selection is rotation-focus only"
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     for name in ["mobile-progress.json", "mobile-errors.json", "mobile-states.json", "mobile-layout.json",
                  "mobile-storage.json", "mobile-storage-diagnostics.json", "mobile-result.json",
-                 "mobile-failure-state.json", "mobile-failure-diagnostic.json", "mobile-failure.png",
+                 "mobile-failure-state.json", "mobile-failure-diagnostic.json", "mobile-failure.png","mobile-failure-browser-metrics.json",
                  "mobile-failure-touch-observation.json", "mobile-touch-observation.json",
                  "mobile-dispatched-touch-events.json", "mobile-browser.json", "mobile-environment.json",
-                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json","mobile-scroll-gestures.json"]:
+                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json","mobile-scroll-gestures.json",
+                 "mobile-storage-observation.json","mobile-storage-timeout.json","mobile-narrow-metrics.json",
+                 "mobile-restart-metrics.json","mobile-restarted-touch-observation.json"]:
         (output/name).unlink(missing_ok=True)
     for name in ["01-portrait-title", "02-portrait-prologue", "03-portrait-gameplay", "04-rest-menu",
                  "05-shop-menu", "06-three-pointer-light", "07-heavy-held", "08-skill-one",
                  "09-portrait-settings", "10-landscape-gameplay", "11-landscape-settings",
                  "12-narrow-gameplay", "13-narrow-settings", "14-touch-combat-paused",
                  "15-restarted-touch-controls","rotation-portrait","rotation-landscape",
-                 "scroll-landscape-settings","scroll-gameplay-after"]:
+                 "scroll-landscape-settings","scroll-gameplay-after","narrow-before-landscape","narrow-after",
+                 "restart-initial-settings","restart-initial-portrait","restart-landscape","restart-narrow",
+                 "restart-returned-portrait","restart-restored"]:
         (output/(name+".png")).unlink(missing_ok=True)
     qa = MobileRun(output,rotation_driver)
     # A prior success must never survive a failed rerun in this output folder.
@@ -697,6 +778,80 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                     await qa.stable()
                     if phase == "full":
                         await qa.layout("03-portrait-gameplay")
+                    elif phase == "restart-focus":
+                        qa.mark("focused_restart_settings")
+                        await qa.set_quality(1,"restart-initial")
+                        await qa.layout("restart-initial-portrait")
+                        metrics={"initial":await qa.browser_metrics()}
+                        qa.write("mobile-restart-metrics.json",metrics)
+                        for label,size,angle in [("restart-landscape",LANDSCAPE,90),
+                                                 ("restart-narrow",NARROW,0),
+                                                 ("restart-returned-portrait",PORTRAIT,0)]:
+                            qa.mark(label)
+                            await qa.resize(size,angle)
+                            await qa.wait("s.paused && s.modal")
+                            await qa.tap_button("계속하기")
+                            await qa.stable()
+                            await qa.layout(label)
+                            metrics[label]=await qa.browser_metrics()
+                            qa.write("mobile-restart-metrics.json",metrics)
+                        observation=await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)")
+                        assert observation["trusted"],observation
+                        qa.write("mobile-touch-observation.json",observation)
+                        await qa.commit(1)
+                        qa.mark("complete_browser_restart")
+                        # This closes the entire Chromium process, then starts
+                        # another process with the same persistent profile.
+                        await context.close()
+                        context=await playwright.chromium.launch_persistent_context(profile,**options)
+                        await qa.bind(context,context.pages[0])
+                        await qa.ready(test_url)
+                        await qa.wait("s.has_save && s.quality===1")
+                        await qa.tap_button("여정 이어가기")
+                        restored=await qa.stable()
+                        assert restored["health"]==120 and restored["checkpoint"]==0 and abs(restored["z"]-6)<1.5,restored
+                        assert restored["touch"]["available"] and restored["touch"]["visible"],restored
+                        await qa.layout("restart-restored")
+                        await qa.commit(1)
+                        restored=await qa.state()
+                        durable=qa.storage[-1]["rows"][0]["save"]
+                        assert restored["fs_persistent"] is True,restored
+                        assert restored["save_primary"]==durable and durable["settings"]["quality"]==1,(restored,durable)
+                        await qa.record("restart-memory-durable-match",status=restored)
+                        metrics["restored"]=await qa.browser_metrics()
+                        qa.write("mobile-restart-metrics.json",metrics)
+                        qa.write("mobile-restarted-touch-observation.json",await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)"))
+                        assert not qa.errors,qa.errors
+                        qa.mark("restart_focused_completed")
+                        qa.write("mobile-result.json",{"outcome":"restart_focused_passed","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Actual quality1 UI/primary, landscape/narrow/portrait and complete same-profile Chromium restart with memory/durable equality only. No quality0 transition or full-workflow approval."})
+                        print("RUNEFALL_MOBILE_RESTART_FOCUSED_OK · quality1/viewports/full restart only; full workflow pending",flush=True)
+                        return
+                    elif phase == "narrow-focus":
+                        qa.mark("focused_landscape_to_narrow")
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("narrow-before-landscape")
+                        metrics={"before":await qa.browser_metrics()}
+                        qa.write("mobile-narrow-metrics.json",metrics)
+                        qa.mark("focused_narrow_resize")
+                        await qa.resize(NARROW)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("narrow-after")
+                        metrics["after"]=await qa.browser_metrics()
+                        qa.write("mobile-narrow-metrics.json",metrics)
+                        assert not qa.errors,qa.errors
+                        qa.mark("narrow_recorded")
+                        qa.write("mobile-result.json",{"outcome":"narrow_recorded","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Fresh actual journey; landscape-to-narrow viewport diagnostic and original rasters only; manual review required, not settings/persistence/full approval"})
+                        print("RUNEFALL_MOBILE_NARROW_RECORDED · diagnostic only; raster review required",flush=True)
+                        return
                     elif phase == "scroll-focus":
                         qa.mark("focused_button_start_scroll")
                         await qa.resize(LANDSCAPE,90)
@@ -789,7 +944,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         await qa.idle()
                         await qa.safe_spawn()
 
-                    if phase != "lifecycle-tail":
+                    if phase not in ["lifecycle-tail","settings-focus"]:
                         qa.mark("hold_heavy_dodge_parry_heal_skill")
                         heavy = await qa.touch_action("heavy", hold=True)
                         charged = await qa.wait("s.charge_elapsed>=.65 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
@@ -825,7 +980,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         await qa.safe_spawn()
 
                     qa.mark("pause_cancel_focus_and_quality")
-                    if phase != "lifecycle-tail":
+                    if phase not in ["lifecycle-tail","settings-focus"]:
                         await qa.stick((0, -(.14+.86*.1))); await qa.touch_action("heavy", hold=True)
                         await qa.wait("s.charge_elapsed>.1 && s.touch.pressed_actions.includes('heavy') && Math.hypot(...s.touch.stick_vector)>.05")
                         await qa.touch_action("pause")
@@ -834,7 +989,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         await qa.tap_button("계속하기")
                         await qa.stable(paused)
                     await qa.set_quality(1, "09-portrait")
-                    if phase != "lifecycle-tail":
+                    if phase not in ["lifecycle-tail","settings-focus"]:
                         await qa.cancelled("touchcancel", qa.touch.cancel)
 
                     async def focus_loss():
@@ -859,13 +1014,26 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         # Observe the same cancellation effect after the real
                         # foreground return, without relying on background FPS.
                         await qa.wait("s.paused && s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
-                    await qa.cancelled("focus-loss", focus_loss)
+                    if phase != "settings-focus":
+                        await qa.cancelled("focus-loss", focus_loss)
 
                     qa.mark("landscape_and_narrow_orientation")
-                    await qa.cancelled("landscape-input-clear", lambda: qa.resize(LANDSCAPE, 90))
+                    if phase == "settings-focus":
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                    else:
+                        await qa.cancelled("landscape-input-clear", lambda: qa.resize(LANDSCAPE, 90))
                     await qa.layout("10-landscape-gameplay")
                     await qa.set_quality(0, "11-landscape")
-                    await qa.cancelled("narrow-input-clear", lambda: qa.resize(NARROW))
+                    if phase == "settings-focus":
+                        await qa.resize(NARROW)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                    else:
+                        await qa.cancelled("narrow-input-clear", lambda: qa.resize(NARROW))
                     await qa.layout("12-narrow-gameplay")
                     await qa.set_quality(1, "13-narrow")
                     await qa.resize(PORTRAIT)
@@ -920,10 +1088,10 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                     context = None
         assert not qa.errors, qa.errors
         qa.mark("completed")
-        qa.write("mobile-result.json", {"outcome": "passed" if phase == "full" else "lifecycle_focused_passed", "phase":phase, "seconds": round(time.monotonic() - qa.started, 3),
-                                       "scope": "Chromium full touch workflow" if phase == "full" else "Focused lifecycle subset recorded by phase; quality/committed saves and full browser restart included. lifecycle-tail omits already observed actions/touchcancel and covers focus/orientation/persistence only; not full approval",
+        qa.write("mobile-result.json", {"outcome": "passed" if phase == "full" else ("settings_focused_passed" if phase == "settings-focus" else "lifecycle_focused_passed"), "phase":phase, "seconds": round(time.monotonic() - qa.started, 3),
+                                       "scope": "Chromium full touch workflow" if phase == "full" else ("Settings focus: portrait quality1, landscape Button-start scroll/quality0, narrow quality1, actual primary commits and complete browser restart; focus/cancellation/combat/shop not repeated; not full approval" if phase == "settings-focus" else "Focused lifecycle subset recorded by phase; quality/committed saves and full browser restart included. lifecycle-tail omits already observed actions/touchcancel and covers focus/orientation/persistence only; not full approval"),
                                        "states": list(qa.states), "errors": qa.errors})
-        print("RUNEFALL_MOBILE_OK · full workflow" if phase == "full" else "RUNEFALL_MOBILE_LIFECYCLE_FOCUSED_OK · lifecycle/quality/IDB/restart only; full workflow pending", flush=True)
+        print("RUNEFALL_MOBILE_OK · full workflow" if phase == "full" else ("RUNEFALL_MOBILE_SETTINGS_FOCUSED_OK · settings/IDB/restart only; full workflow pending" if phase == "settings-focus" else "RUNEFALL_MOBILE_LIFECYCLE_FOCUSED_OK · lifecycle/quality/IDB/restart only; full workflow pending"), flush=True)
     except Exception as error:
         await qa.failure()
         qa.write("mobile-result.json", {"outcome": "failed", "stage": qa.stage,
@@ -941,7 +1109,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url")
     parser.add_argument("--output", type=Path, default=Path("build/verification/mobile"))
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus","scroll-focus"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","settings-focus","rotation-focus","scroll-focus","narrow-focus","restart-focus"],default="full")
     parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright")
     arguments = parser.parse_args()
     asyncio.run(run(arguments.url, arguments.output,arguments.phase,arguments.rotation_driver))

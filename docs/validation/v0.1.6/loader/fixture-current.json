@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "scope": "Actual source shell callback with stub Engine Promise; early progress plus late callback after real loading DOM removal. No WASM/gameplay/save/restart approval.",
+  "browser_closed": true,
+  "cases": {
+    "before": {
+      "source": "/workspace/next-action-rpg/docs/validation/v0.1.6/loader/before.html",
+      "source_sha256": "db5804981eb8430a7f129e1c52611995f474920d25551c988fbb13d7517049c9",
+      "state": {
+        "events": [],
+        "completed": true,
+        "early_value": 0.5,
+        "removed": true
+      },
+      "page_errors": [
+        "Cannot set properties of null (setting 'value')"
+      ]
+    },
+    "after": {
+      "source": "/workspace/next-action-rpg/game/web/shell.html",
+      "source_sha256": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+      "state": {
+        "events": [],
+        "completed": true,
+        "early_value": 0.5,
+        "removed": true
+      },
+      "page_errors": []
+    }
+  }
+}

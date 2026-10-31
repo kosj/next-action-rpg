@@ -1,0 +1,62 @@
+{
+  "scope": "Diagnostic CSS-only A/B; same original PCK/WASM/model/input/read-only save fields; generated index.html changed with same canonical shell CSS replacement",
+  "source_head": "7061eaf582dc68647ca2d6547d9a53638c7c756c",
+  "build_id": "0.1.6 \u00b7 mobile-diagnostics",
+  "change": "Canvas width and height100% author CSS important; normal inline pixel style no longer controls client size; engine bitmap/DPR untouched",
+  "files": [
+    {
+      "name": "index.apple-touch-icon.png",
+      "before_sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+      "after_sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+      "identical": true
+    },
+    {
+      "name": "index.audio.position.worklet.js",
+      "before_sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+      "after_sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+      "identical": true
+    },
+    {
+      "name": "index.audio.worklet.js",
+      "before_sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+      "after_sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+      "identical": true
+    },
+    {
+      "name": "index.html",
+      "before_sha256": "395621311b9375e1a92119d108b73e97515733a539152895fa3d9789d9961e09",
+      "after_sha256": "db5804981eb8430a7f129e1c52611995f474920d25551c988fbb13d7517049c9",
+      "identical": false
+    },
+    {
+      "name": "index.icon.png",
+      "before_sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+      "after_sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+      "identical": true
+    },
+    {
+      "name": "index.js",
+      "before_sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "after_sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+      "identical": true
+    },
+    {
+      "name": "index.pck",
+      "before_sha256": "a859110ba5a80078040d912597dec440be72a7328543788fde8c1a6f3e17d4c1",
+      "after_sha256": "a859110ba5a80078040d912597dec440be72a7328543788fde8c1a6f3e17d4c1",
+      "identical": true
+    },
+    {
+      "name": "index.png",
+      "before_sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+      "after_sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+      "identical": true
+    },
+    {
+      "name": "index.wasm",
+      "before_sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "after_sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+      "identical": true
+    }
+  ]
+}

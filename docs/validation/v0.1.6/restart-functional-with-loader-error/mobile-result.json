@@ -1,0 +1,10 @@
+{
+  "outcome": "failed",
+  "stage": "complete_browser_restart",
+  "seconds": 294.612,
+  "errors": [
+    "complete_browser_restart: Cannot set properties of null (setting 'value')"
+  ],
+  "exception_type": "AssertionError",
+  "exception": "[\"complete_browser_restart: Cannot set properties of null (setting 'value')\"]"
+}

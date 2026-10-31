@@ -1,0 +1,534 @@
+[
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 1,
+    "seconds": 3.365,
+    "diagnostic": {
+      "request_id": 1,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "databases_request",
+          "milliseconds": 130519.59999999776
+        },
+        {
+          "phase": "databases_response",
+          "milliseconds": 131096.19999999925
+        },
+        {
+          "phase": "open_request",
+          "milliseconds": 131096.19999999925
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 132210.59999999776
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 132211.09999999776
+        },
+        {
+          "phase": "keys_response",
+          "milliseconds": 132773.09999999776
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 132773.5
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 133884
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 133884
+        }
+      ],
+      "key_count": 33,
+      "primary_reads": 1,
+      "cached_targets": false
+    },
+    "completed_ms": 3365.39999999851,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 2,
+    "seconds": 1.132,
+    "diagnostic": {
+      "request_id": 2,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 134415.09999999776
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 134430.69999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 134430.79999999702
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 134430.79999999702
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 135546.5
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 135546.5
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 5027.800000000745,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 3,
+    "seconds": 2.28,
+    "diagnostic": {
+      "request_id": 3,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 136093.8999999985
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 136664.19999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 136664.29999999702
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 136664.29999999702
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 138373.5
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 138373.5
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 7854.800000000745,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 4,
+    "seconds": 1.648,
+    "diagnostic": {
+      "request_id": 4,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 138911.3999999985
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 139463.79999999702
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 139463.79999999702
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 139463.79999999702
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 140559.3999999985
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 140559.5
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 10040.800000000745,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 5,
+    "seconds": 1.67,
+    "diagnostic": {
+      "request_id": 5,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 141101.59999999776
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 141665.5
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 141666
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 141666.19999999925
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 142772
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 142772
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 12253.300000000745,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 6,
+    "seconds": 1.638,
+    "diagnostic": {
+      "request_id": 6,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 143463.79999999702
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 144020.09999999776
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 144020.19999999925
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 144020.19999999925
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 145101.3999999985
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 145101.3999999985
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 14582.699999999255,
+    "within_js_budget": true
+  },
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "request_id": 7,
+    "seconds": 2.776,
+    "diagnostic": {
+      "request_id": 7,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 145660.29999999702
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 146194.59999999776
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 146194.79999999702
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 146194.79999999702
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 148436.69999999925
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 148436.69999999925
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 17918,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 8,
+    "seconds": 5.124,
+    "diagnostic": {
+      "request_id": 8,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 305533.3999999985
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 306857.799999997
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 306858
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 306858
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 310657
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 310657
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 5123.89999999851,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 9,
+    "seconds": 3.614,
+    "diagnostic": {
+      "request_id": 9,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 311901.299999997
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 313186.19999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 313186.299999997
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 313186.299999997
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 315515.3999999985
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 315515.3999999985
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 9982.199999999255,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 10,
+    "seconds": 3.546,
+    "diagnostic": {
+      "request_id": 10,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 316771.3999999985
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 317937.69999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 317938
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 317938
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 320317.3999999985
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 320317.3999999985
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 14784.199999999255,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 11,
+    "seconds": 2.515,
+    "diagnostic": {
+      "request_id": 11,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 321665.69999999925
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 322929.09999999776
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 322929.19999999925
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 322929.19999999925
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 324180.59999999776
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 324180.69999999925
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 18647.5,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 12,
+    "seconds": 3.733,
+    "diagnostic": {
+      "request_id": 12,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 325388.299999997
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 326600.19999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 326600.299999997
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 326600.299999997
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 329121.09999999776
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 329121.09999999776
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 23587.89999999851,
+    "within_js_budget": true
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "request_id": 13,
+    "seconds": 3.566,
+    "diagnostic": {
+      "request_id": 13,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 330311.69999999925
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 331493
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 331493.09999999776
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 331493.09999999776
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 333877
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 333877
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "completed_ms": 28343.89999999851,
+    "within_js_budget": true
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "focused_narrow_resize",
+  "seconds": 155.66,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}

@@ -14,3 +14,5 @@
 최종 resize 수정과 freed-UI 복원 가드는 [375 native·오류0](native-final.json)·[원본 native log](native-final.log)·[Python41](python-final.log)에서 확인했다. [실제 화면 회전 A/B·raster guard](rotation/README.md)는 별도 진단이며 최종 빌드 전체·공개 주소 검증은 PR #8의 확정 실행으로 대조한다.
 
 이후 실제 Button-start 스크롤 실패를 [동일 경로 A/B](scroll/README.md)로 수정했고 [native375·오류0](native-after-scroll.json)을 확인했다. 전체 최신 실행 판정은 PR #8의 실제 커밋·CI와 대조한다.
+
+[Canvas 축소 CSS](canvas-css/README.md)·[로딩 callback](loader/README.md)·[저장 관찰의 지역/hosted 범위](storage-observation/README.md)를 구분한다. 최신 native375·오류0은 [native-css-loader.json](native-css-loader.json), 실제 loader DOM 회귀는 [fixture-current.json](loader/fixture-current.json)이다. 최종 actual 전체·공개 주소 결과는 PR #8의 확정 실행으로 확인한다.

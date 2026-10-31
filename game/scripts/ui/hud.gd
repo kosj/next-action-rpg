@@ -644,6 +644,9 @@ func _process(delta: float) -> void:
 				enemy_art.append(art)
 		var status := {"build_id":Session.build_id, "started":world.started, "paused":get_tree().paused,
 			"viewport_geometry":_qa_viewport_geometry(),
+			"save_primary":Session._read_valid_save(Session.save_path),
+			"save_primary_mtime":FileAccess.get_modified_time(Session.save_path),
+			"fs_persistent":OS.is_userfs_persistent(),
 			"physics_frame":Engine.get_physics_frames(), "dpr":float(JavaScriptBridge.eval("window.devicePixelRatio || 1")),
 			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
 			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,

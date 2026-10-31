@@ -46,3 +46,5 @@ python tools/check_web.py
 [회전 후 최종 screen-attach 재진입 오류](validation/v0.1.6/rotation/README.md)는 즉시 입력 정리와 deferred content 설정으로 수정했다. 동일조건 원본 PNG에서360px strip→1688px 전체폭으로 복구됐고, 단일 공식 Playwright 회전 경로에서도 확인했다. 숫자 좌표뿐 아니라 해당 daylight 장면의 실제 raster를 검사한다.
 
 [가로 설정의 Button-start 스크롤](validation/v0.1.6/scroll/README.md)은 모바일 Button/CheckButton의 부모 이벤트 전달로 수정했다. 실제 같은 드래그의0→91·Done·게임복귀·primary값을 확인했으며 Slider 처리는 유지했다. 최종 native375는 [수정후 근거](validation/v0.1.6/native-after-scroll.json)를 참조한다.
+
+[작은 화면으로 복귀할 때 canvas inline 폭 feedback](validation/v0.1.6/canvas-css/README.md)을 CSS 소유권으로 수정했고 [로딩창 제거 후 늦은 callback](validation/v0.1.6/loader/README.md)도 실제 DOM 재현으로 수정했다. 실제 restart 기능과 pageerror 실패를 별도로 보존하며 최종 전체·공개 URL 승인은 PR #8에서 확인한다.

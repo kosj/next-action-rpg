@@ -1,0 +1,105 @@
+{
+  "scope": "Final7061 lifecycle-tail failed durable-quality observation; no narrow/restart/full approval",
+  "result": "FAIL: quality1-to0 primary not observed within unchanged30s budget",
+  "actual_memory": {
+    "build_id": "0.1.6 \u00b7 7061eaf5",
+    "quality": 0,
+    "health": 120,
+    "paused": false,
+    "hero": "idle",
+    "physics_frame": 3173,
+    "active_pointers": []
+  },
+  "completed_quality0_reads": [
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "quality_expected": 0,
+      "rows": [
+        {
+          "database": "/userfs",
+          "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+          "timestamp": "2026-10-31T12:55:46.173Z",
+          "save": {
+            "checkpoint": 0,
+            "completed": [],
+            "journey_started": true,
+            "lore": [],
+            "settings": {
+              "quality": 1,
+              "shake": true,
+              "volume": 0.7
+            },
+            "shards": 0,
+            "upgrades": [
+              0,
+              0,
+              0
+            ],
+            "version": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "quality_expected": 0,
+      "rows": [
+        {
+          "database": "/userfs",
+          "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+          "timestamp": "2026-10-31T12:55:46.173Z",
+          "save": {
+            "checkpoint": 0,
+            "completed": [],
+            "journey_started": true,
+            "lore": [],
+            "settings": {
+              "quality": 1,
+              "shake": true,
+              "volume": 0.7
+            },
+            "shards": 0,
+            "upgrades": [
+              0,
+              0,
+              0
+            ],
+            "version": 1
+          }
+        }
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "quality_expected": 0,
+      "rows": [
+        {
+          "database": "/userfs",
+          "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+          "timestamp": "2026-10-31T12:55:46.173Z",
+          "save": {
+            "checkpoint": 0,
+            "completed": [],
+            "journey_started": true,
+            "lore": [],
+            "settings": {
+              "quality": 1,
+              "shake": true,
+              "volume": 0.7
+            },
+            "shards": 0,
+            "upgrades": [
+              0,
+              0,
+              0
+            ],
+            "version": 1
+          }
+        }
+      ]
+    }
+  ],
+  "pending_final_read_result": "Unavailable at deadline; cannot infer whether commit happened after the last completed old-quality read",
+  "manual_png_review": "Original failure PNG inspected: full-width normal landscape gameplay resumed; no modal/input ownership remains",
+  "script_or_app_changed": false
+}

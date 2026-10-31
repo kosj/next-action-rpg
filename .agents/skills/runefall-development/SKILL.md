@@ -47,3 +47,5 @@ Playwright/Chromium 준비는 루트 README를 참조합니다. QA 데이터는 
 Window.size_changed 안에서 content scale을 동기로 재설정하지 않습니다. [실제 screen-attach 재진입 사례](../../../docs/validation/v0.1.6/rotation/README.md)처럼 public 좌표/transform이 정상이어도 outer cached rect가 최종화면을 덮을 수 있습니다. 소유 입력은 즉시 정리하고 최신 CSS 설정은 1회 coalesced deferred로 적용합니다. 같은 driver/품질/자산의 실제 PNG A/B와 고정 장면 raster guard로 검증하며 headless getter 검사로 대체하지 않습니다.
 
 모바일 modal 스크롤은 빈 여백만 테스트하지 않습니다. [Button-start 드래그 실패/수정](../../../docs/validation/v0.1.6/scroll/README.md)처럼 실제 버튼에서 시작해 부모 ScrollContainer 전달·SCROLL_BEGIN 클릭 취소·fresh scroll값·Done과 실제 저장까지 확인합니다. wheel 전파 옵션을 touch drag 보증으로 간주하지 않고 Slider의 별도 소유권을 보존합니다. 같은 gesture geometry를 재사용하고 progress가 없으면 유한 시간에 실패시킵니다.
+
+모바일 축소에서는 [canvas CSS feedback](../../../docs/validation/v0.1.6/canvas-css/README.md)의 inline/computed/client/inner/documentScroll/visualViewport·DPR/bitmap·실제PNG를 대조합니다. 표시영역소유권만수정하고숫자clamp로가리지않습니다. [로딩callback](../../../docs/validation/v0.1.6/loader/README.md)은UI제거뒤late실행을재현하고원본callback/실제DOM으로검사합니다. 기능성공과pageerror0을별도로판정합니다.
