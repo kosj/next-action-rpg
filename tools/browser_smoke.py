@@ -20,7 +20,7 @@ async def run(url, output=Path("build/verification")):
     for name in ("01-title.png", "02-prologue.png", "03-pause.png", "04-gameplay.png",
                  "05-continue.png", "failure.png", "failure-state.json", "browser-state.json",
                  "browser-errors.json", "browser-persistence.json", "browser-quality.json", "06-balanced-gameplay.png",
-                 "browser-storage.json"):
+                 "07-performance-gameplay.png", "browser-storage.json"):
         (output / name).unlink(missing_ok=True)
     errors = []
     stage = "initial_load"
@@ -180,6 +180,56 @@ async def run(url, output=Path("build/verification")):
                 await select_quality(page, 1)
                 await click_button(page, "완료")
                 await page.wait_for_function("!window.__RUNEFALL_STATE.paused", timeout=15000)
+                stage = "safe_quality_approach"
+                await page.keyboard.down("w")
+                await page.wait_for_function("window.__RUNEFALL_STATE.z <= -10", timeout=90000)
+                await page.keyboard.up("w")
+                status = await state(page)
+                # First combat starts below z=-19.5. Compare both rendered
+                # quality modes and wait for storage while safely outside it.
+                assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
+                assert status["quality"] == 1 and not status["dead"] and status["health"] > 0, status
+                quality_states = {"performance": status}
+                await page.screenshot(path=str(output / "07-performance-gameplay.png"))
+                stage = "balanced_quality_tour"
+                await release_input(page)
+                await click_button(page, "환경 설정")
+                await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.kind === 'OptionButton')", timeout=15000)
+                await select_quality(page, 0)
+                await click_button(page, "완료")
+                await page.wait_for_function("!window.__RUNEFALL_STATE.paused", timeout=15000)
+                storage_states["balanced_before_wait"] = await persisted_saves(page)
+                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
+                status = await state(page)
+                assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
+                assert status["quality"] == 0 and not status["dead"] and status["health"] > 0, status
+                quality_states["balanced"] = status
+                await page.screenshot(path=str(output / "06-balanced-gameplay.png"))
+                await release_input(page)
+                await wait_persisted_quality(page, 0)
+                storage_states["balanced_committed"] = await persisted_saves(page)
+                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
+                stage = "restore_performance_quality"
+                await click_button(page, "환경 설정")
+                await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.kind === 'OptionButton')", timeout=15000)
+                await select_quality(page, 1)
+                await click_button(page, "완료")
+                await page.wait_for_function("!window.__RUNEFALL_STATE.paused && window.__RUNEFALL_STATE.quality === 1", timeout=15000)
+                status = await state(page)
+                assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
+                assert not status["dead"] and status["health"] > 0, status
+                quality_states["restored"] = status
+                (output / "browser-quality.json").write_text(json.dumps(quality_states, indent=2))
+                storage_states["after_settings_done"] = await persisted_saves(page)
+                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
+                await release_input(page)
+                stage = "settings_durable_commit"
+                await wait_persisted_quality(page, 1)
+                storage_states["restored_committed"] = await persisted_saves(page)
+                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
+                stage = "first_combat"
+                await click_button(page, "계속하기")
+                await page.wait_for_function("!window.__RUNEFALL_STATE.paused", timeout=15000)
                 await page.keyboard.down("w")
                 await page.wait_for_function("window.__RUNEFALL_STATE.encounter === 0", timeout=90000)
                 await page.keyboard.up("w")
@@ -195,40 +245,8 @@ async def run(url, output=Path("build/verification")):
                 await page.screenshot(path=str(output / "04-gameplay.png"))
                 status = await state(page)
                 assert not status["dead"] and status["health"] > 0, status
+                assert status["quality"] == 1, status
                 (output / "browser-state.json").write_text(json.dumps(status, indent=2))
-                quality_states = {"performance": status}
-                stage = "balanced_quality_tour"
-                await release_input(page)
-                await click_button(page, "환경 설정")
-                await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.kind === 'OptionButton')", timeout=15000)
-                await select_quality(page, 0)
-                await click_button(page, "완료")
-                await page.wait_for_function("!window.__RUNEFALL_STATE.paused", timeout=15000)
-                storage_states["balanced_before_wait"] = await persisted_saves(page)
-                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
-                status = await state(page)
-                assert status["quality"] == 0 and not status["dead"], status
-                quality_states["balanced"] = status
-                await page.screenshot(path=str(output / "06-balanced-gameplay.png"))
-                await release_input(page)
-                await wait_persisted_quality(page, 0)
-                storage_states["balanced_committed"] = await persisted_saves(page)
-                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
-                stage = "restore_performance_quality"
-                await click_button(page, "환경 설정")
-                await page.wait_for_function("window.__RUNEFALL_STATE.buttons.some(b => b.kind === 'OptionButton')", timeout=15000)
-                await select_quality(page, 1)
-                await click_button(page, "완료")
-                await page.wait_for_function("!window.__RUNEFALL_STATE.paused && window.__RUNEFALL_STATE.quality === 1", timeout=15000)
-                quality_states["restored"] = await state(page)
-                (output / "browser-quality.json").write_text(json.dumps(quality_states, indent=2))
-                storage_states["after_settings_done"] = await persisted_saves(page)
-                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
-                await release_input(page)
-                stage = "settings_durable_commit"
-                await wait_persisted_quality(page, 1)
-                storage_states["restored_committed"] = await persisted_saves(page)
-                (output / "browser-storage.json").write_text(json.dumps(storage_states, indent=2))
                 tour_completed = True
             finally:
                 if errors or not tour_completed:

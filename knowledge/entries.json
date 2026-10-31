@@ -768,6 +768,33 @@
         "docs/ART_BATCH_2026_10_31.md",
         "art_source/production/candidates/lyra-web-001/godot-audit-motion-library.json"
       ]
+    },
+    {
+      "id": "browser-quality-before-combat",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "웹 품질·저장 대기는 적 없는 접근 구역에서 검사한다",
+      "summary": "최초v0.1.3 CI는 전투 중 품질복원 관찰 HP40에서 Escape 일시정지 대기에 들어갔고,30초후HP0·dead·pausedfalse로실패했다. 저장품질0→1커밋과오류0은정상이라저장실패/입력유실의확정원인으로표시하지않는다. 품질·저장검사는실제이동으로도달한안전접근구역(z≈−10,encounter−1)에서먼저실행하고동일tour의전투진입·공격·회피·생존·재시작검사는이어수행한다. 무적이나직접상태변조로대체하지않는다.",
+      "tags": [
+        "web",
+        "testing",
+        "combat",
+        "quality",
+        "save",
+        "ci"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "failure_run": "41161007423",
+        "failed_head": "d48bc5cfc6b8c214f89338a3d7e91e2dfb732eda",
+        "remedy_runtime": "pending fresh local and CI checks"
+      },
+      "sources": [
+        "tools/browser_smoke.py",
+        "docs/validation/v0.1.3/ci-before-safe-quality/README.md",
+        "docs/validation/v0.1.3/ci-before-safe-quality/failure-state.json",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41161007423"
+      ]
     }
   ]
 }
