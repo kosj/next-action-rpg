@@ -1752,6 +1752,47 @@
         "docs/validation/v0.1.7/after-settings/mobile-result.json",
         "docs/validation/v0.1.7/after-settings/mobile-storage-observation.json"
       ]
+    },
+    {
+      "id": "combat-quality-function-versus-heavy-impact",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "강공격의 큰 수치와 AAA 전투 표현의 완성도를 구분한다",
+      "summary": "실제20클립·100Hz bake·80ms보간과기능375검사가있어도별도강타안무/발디딤/피격패키지승인은아니다. v017의완충heavy는같은clip에서피해/poise1.65배이고일반무방패적0.28s경직·공통35ms공격자정지/hitWAV/0.6mring을쓴다. shake.3/.7등이미있는차이는보존해기록한다. 접촉점/법선/재질/공격종류와결과에서공격자·피격자·카메라·VFX·오디오를맞추고약/강/차지×명중/빗맞힘/방어/처치를실제1배속AV·기기에서검수한다. 공식을조밀bake한키수를의미안무로오인하지않고정지사진/홍보영상/기능시험을AAA%나정상속도승인으로승계하지않는다.",
+      "tags": [
+        "combat",
+        "animation",
+        "vfx",
+        "audio",
+        "art",
+        "AAA",
+        "quality",
+        "reference",
+        "전투",
+        "타격감"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "baseline": "v0.1.7 fullcommit6ecfb968dc659c8634ec2b37dc469304f3da5aad",
+        "reference": "UserconfirmedZeusCom2uSBerserker/greatswordstrongblow; officialclass/7sbackgroundframes0,3,6 verified",
+        "scope": "Source/GLB/currentinputstilldesignreview; AAAcombatpresentationrejectedunderprojectcriteria",
+        "not_verified": "Referenceactualcombatvideo/timing andcurrent1xAV/targethardware pending; YouTubeaccessblocked; backgroundCGnotgameplay",
+        "existing_features": "20clips159channels/100Hzbake, max80msblend, activeworldmarkertrail, heavy42/charged69.3, shake.3/.7 alreadyexist"
+      },
+      "sources": [
+        "docs/COMBAT_QUALITY_REVIEW.md",
+        "docs/AAA_ART_QUALITY.md",
+        "docs/validation/combat-quality-v0.1.7/evidence.json",
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/enemy.gd",
+        "game/scripts/world/effect.gd",
+        "game/scripts/world/camera_rig.gd",
+        "game/scripts/core/audio.gd",
+        "game/scripts/actors/skeletal_visual_bridge.gd",
+        "tools/author_character_actions.py",
+        "https://zeus.com2us.com/gameinfo/class",
+        "https://zeus.com2us.com/p/137fc870-5481-44dd-9ca4-205dcaab2f9e"
+      ]
     }
   ]
 }
