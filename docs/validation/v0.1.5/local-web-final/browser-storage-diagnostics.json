@@ -1,0 +1,338 @@
+[
+  {
+    "stage": "balanced_quality_tour",
+    "request_id": 1,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 1,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "databases_request",
+          "milliseconds": 226941.29999999888
+        },
+        {
+          "phase": "databases_response",
+          "milliseconds": 230422.5
+        },
+        {
+          "phase": "open_request",
+          "milliseconds": 230422.5
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 233235.29999999888
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 233235.79999999888
+        },
+        {
+          "phase": "keys_response",
+          "milliseconds": 235130.79999999888
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 235131
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 239369.29999999888
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 239369.40000000037
+        }
+      ],
+      "key_count": 34,
+      "primary_reads": 1,
+      "cached_targets": false
+    },
+    "seconds": 14.027
+  },
+  {
+    "stage": "balanced_quality_tour",
+    "request_id": 2,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 2,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 257072.69999999925
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 258484.09999999963
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 258484.29999999888
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 258484.29999999888
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 264138.69999999925
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 264138.69999999925
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 8.291
+  },
+  {
+    "stage": "balanced_quality_tour",
+    "request_id": 3,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 3,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 266130.9000000004
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 267825.9000000004
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 267826.2999999989
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 267826.2999999989
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 272400.7999999989
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 272401.0999999996
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 8.262
+  },
+  {
+    "stage": "restore_performance_quality",
+    "request_id": 4,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 4,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 348149.2999999989
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 348851.19999999925
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 348851.5999999996
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 348851.5999999996
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 350844.4000000004
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 350844.4000000004
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 3.388
+  },
+  {
+    "stage": "settings_durable_commit",
+    "request_id": 5,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 5,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 355582.9000000004
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 356244.2999999989
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 356244.2999999989
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 356244.2999999989
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 358819.2999999989
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 358819.4000000004
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 3.926
+  },
+  {
+    "stage": "settings_durable_commit",
+    "request_id": 6,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 6,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 359505.69999999925
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 361032.9000000004
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 361033
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 361033
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 362367.7999999989
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 362367.7999999989
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 3.528
+  },
+  {
+    "stage": "first_combat",
+    "request_id": 7,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 7,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "open_request",
+          "milliseconds": 417369.5999999996
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 417371.4000000004
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 417371.5999999996
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 417371.69999999925
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 417382.5999999996
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 417382.5999999996
+        }
+      ],
+      "key_count": 0,
+      "primary_reads": 1,
+      "cached_targets": true
+    },
+    "seconds": 0.021
+  },
+  {
+    "stage": "continue_tour",
+    "request_id": 8,
+    "outcome": "completed",
+    "diagnostic": {
+      "request_id": 8,
+      "phase": "completed",
+      "events": [
+        {
+          "phase": "databases_request",
+          "milliseconds": 24508.900000000373
+        },
+        {
+          "phase": "databases_response",
+          "milliseconds": 24511.199999999255
+        },
+        {
+          "phase": "open_request",
+          "milliseconds": 24511.199999999255
+        },
+        {
+          "phase": "open_response",
+          "milliseconds": 24513
+        },
+        {
+          "phase": "transaction_request",
+          "milliseconds": 24513.299999998882
+        },
+        {
+          "phase": "keys_response",
+          "milliseconds": 24514.299999998882
+        },
+        {
+          "phase": "primary_requests",
+          "milliseconds": 24514.5
+        },
+        {
+          "phase": "transaction_complete",
+          "milliseconds": 24519.099999999627
+        },
+        {
+          "phase": "completed",
+          "milliseconds": 24519.099999999627
+        }
+      ],
+      "key_count": 34,
+      "primary_reads": 1,
+      "cached_targets": false
+    },
+    "seconds": 0.018
+  }
+]

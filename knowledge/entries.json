@@ -1301,7 +1301,7 @@
       "kind": "workflow",
       "status": "verified",
       "title": "프로젝트 사례와 일반 절차를 분리해 독립 스킬 묶음으로 이전한다",
-      "summary": "고정커밋f08d43b의46항목을출처로지식관리·Godot웹제작·생성형3D아트의독립스킬3종과사례집·빈템플릿을정리했다. 각스킬의로컬참조는자기폴더안에두고프로젝트명/치수/Flow/예산/인증/과거verified를대상설정으로이전하지않는다. 새프로젝트는실제조건을채우고pending에서검증한다. stdlib package.py는출처/템플릿/로컬링크를검사하고재현가능ZIP·파일별SHAmanifest를생성/검증한다. 구조검사는새프로젝트실행이나AAA승인이아니다.",
+      "summary": "고정커밋c6be1dc의51항목을출처로스킬3종·사례집·빈템플릿의독립묶음1.1.0을갱신했다. 국소소켓전체표면fit·solver단위/엄밀제약·worldmarker잔상·sourceCOLOR_0와실효재질검수를일반화했다. 원본사례와대상프로젝트pending을구분하며설정/인증/과거승인을승계하지않는다. 새stdlib검증도구로고정git카탈로그·독립rename/extract·동일환경repack·변조/오래된ZIP/깨진링크/symlink거부7가드를재현한다. 구조검사는새프로젝트실행이나AAA승인이아니다.",
       "tags": [
         "knowledge",
         "skills",
@@ -1311,10 +1311,10 @@
       ],
       "checked_on": "2026-10-31",
       "context": {
-        "bundle": "game-production-kit1.0.0",
-        "source_snapshot": "f08d43bf8e9c5e0d295d39596de0bbe405ad9f53;46sourceentries",
+        "bundle": "game-production-kit1.1.0",
+        "source_snapshot": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174;51sourceentries",
         "transfer_scope": "Independent procedures and empty templates; receiving project requires revalidation",
-        "validation": "Standalone extraction/renamed path/repack and7 integrity/provenance checks passed; six knowledge-tool regressions passed. Target project execution pending."
+        "validation": "Executable7 provenance/integrity checks passed,0failed/0skipped; ZIP52162bytes SHAf3d8869e3baabfca529c96ec01f7068dc9a77a9127e7bda063ddbf179b022ff6; targetprojectexecutionpending."
       },
       "sources": [
         "reusable/game-production-kit/README.md",
@@ -1325,7 +1325,8 @@
         "reusable/game-production-kit/skills/godot-web-production/SKILL.md",
         "reusable/game-production-kit/skills/generated-3d-game-art/SKILL.md",
         "docs/validation/knowledge-kit/verification.json",
-        "reusable/game-production-kit.zip.sha256"
+        "reusable/game-production-kit.zip.sha256",
+        "tools/check_portable_knowledge.py"
       ]
     },
     {

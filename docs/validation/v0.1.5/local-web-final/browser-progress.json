@@ -1,0 +1,67 @@
+[
+  {
+    "stage": "initial_load",
+    "elapsed_seconds": 0.0,
+    "utc": "2026-10-31T08:28:14.026122+00:00"
+  },
+  {
+    "stage": "first_tour",
+    "elapsed_seconds": 28.183,
+    "utc": "2026-10-31T08:28:42.209158+00:00"
+  },
+  {
+    "stage": "safe_quality_approach",
+    "elapsed_seconds": 151.035,
+    "utc": "2026-10-31T08:30:45.061182+00:00"
+  },
+  {
+    "stage": "balanced_quality_tour",
+    "elapsed_seconds": 179.257,
+    "utc": "2026-10-31T08:31:13.283403+00:00"
+  },
+  {
+    "stage": "restore_performance_quality",
+    "elapsed_seconds": 274.246,
+    "utc": "2026-10-31T08:32:48.272336+00:00"
+  },
+  {
+    "stage": "settings_durable_commit",
+    "elapsed_seconds": 356.747,
+    "utc": "2026-10-31T08:34:10.772701+00:00"
+  },
+  {
+    "stage": "safe_skeletal_attack",
+    "elapsed_seconds": 364.205,
+    "utc": "2026-10-31T08:34:18.230853+00:00"
+  },
+  {
+    "stage": "first_combat",
+    "elapsed_seconds": 381.197,
+    "utc": "2026-10-31T08:34:35.223440+00:00"
+  },
+  {
+    "stage": "first_browser_close",
+    "elapsed_seconds": 419.219,
+    "utc": "2026-10-31T08:35:13.245594+00:00"
+  },
+  {
+    "stage": "restart_load",
+    "elapsed_seconds": 420.826,
+    "utc": "2026-10-31T08:35:14.851750+00:00"
+  },
+  {
+    "stage": "continue_tour",
+    "elapsed_seconds": 446.317,
+    "utc": "2026-10-31T08:35:40.343189+00:00"
+  },
+  {
+    "stage": "second_browser_close",
+    "elapsed_seconds": 468.431,
+    "utc": "2026-10-31T08:36:02.457297+00:00"
+  },
+  {
+    "stage": "completed",
+    "elapsed_seconds": 471.3,
+    "utc": "2026-10-31T08:36:05.325870+00:00"
+  }
+]

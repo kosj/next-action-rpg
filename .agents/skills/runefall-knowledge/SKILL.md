@@ -44,6 +44,8 @@ python tools/knowledge.py show web-input-after-ui
 
 묶음 판본과 출처를 갱신한 뒤 `python reusable/game-production-kit/scripts/package.py --check`로 내부 링크·템플릿·출처 구조를 확인하고 `--output build/knowledge/game-production-kit.zip`으로 ZIP을 만듭니다. 검증 후 배포본 `reusable/game-production-kit.zip`과 `.sha256`, 해당 검증 보고서를 함께 갱신합니다. CI의 `--verify-source ZIP_PATH`는 배포 ZIP과 현재 source의 파일별 byte/SHA 일치를 검사합니다. 압축 라이브러리가 다른 환경의 ZIP 전체 byte 일치를 요구하지 않습니다. `--verify ZIP_PATH`는 ZIP 자체의 manifest와 무결성을 검사합니다. 독립 경로에 풀어 검사 스크립트를 실행하고, 새로 복사한 스킬이 현재 저장소 경로에 의존하지 않는지도 확인합니다. 구조 검사로 외부 정책의 최신성이나 새 프로젝트 성공을 승인하지 않습니다.
 
+고정 출처 Git object가 있는 제작 저장소에서는 `python tools/check_portable_knowledge.py --report docs/validation/knowledge-kit/verification.json`으로 출처·독립 rename/extract·동일 환경 repack·변조/오래된 ZIP/깨진 링크/외부 symlink 거부를 재현합니다. 필요한 원본이 없는 얕은 checkout에서 검사를 건너뛰거나 `passed`를 쓰지 않습니다. source snapshot을 먼저 커밋하고 묶음이 그 커밋을 참조하게 하여 자기 자신의 미래 SHA를 만들지 않습니다.
+
 ## 완료 기준
 
 ```bash

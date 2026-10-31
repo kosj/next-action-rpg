@@ -1,0 +1,8 @@
+{
+  "scope": "After completed real Web normal gameplay QA; compares all9 original source/asset hashes and every exported Web file to the recorded start context",
+  "all_source_and_asset_inputs_unchanged": true,
+  "all_actual_export_files_unchanged": true,
+  "live_chromium_after_close": 0,
+  "http_server_and_thread_closed": true,
+  "verified_utc": "2026-10-31T08:39:20.731963+00:00"
+}

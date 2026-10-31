@@ -1,0 +1,242 @@
+{
+  "build_id": "0.1.5 \u00b7 c6be1dce",
+  "buttons": [],
+  "checkpoint": 0,
+  "dead": false,
+  "encounter": 0,
+  "enemy_art": [
+    {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "boss": false,
+      "dead": false,
+      "elite": false,
+      "eyes_attached": false,
+      "grip_to_tip_m": 1.19000005722046,
+      "kind": "melee",
+      "mode": "skeletal",
+      "profile": "sentinel_melee",
+      "right_hand_pose": [
+        -0.0551116913557053,
+        0.202386319637299,
+        0.159538552165031,
+        0.679989457130432,
+        -0.352751851081848,
+        -0.570708334445953,
+        0.295757532119751
+      ],
+      "sampled_time": 0.983333333333335,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "boss": false,
+      "dead": false,
+      "elite": false,
+      "eyes_attached": false,
+      "grip_to_tip_m": 1.19000029563904,
+      "kind": "melee",
+      "mode": "skeletal",
+      "profile": "sentinel_melee",
+      "right_hand_pose": [
+        -0.0581334605813026,
+        0.203691557049751,
+        0.166774064302444,
+        0.644232153892517,
+        -0.314533740282059,
+        -0.626633942127228,
+        0.305554151535034
+      ],
+      "sampled_time": 1.41666666666667,
+      "state": "enemy_attack",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "boss": false,
+      "dead": false,
+      "elite": false,
+      "eyes_attached": false,
+      "grip_to_tip_m": 1.18999946117401,
+      "kind": "melee",
+      "mode": "skeletal",
+      "profile": "sentinel_melee",
+      "right_hand_pose": [
+        -0.0581334605813026,
+        0.203691557049751,
+        0.166774064302444,
+        0.644232153892517,
+        -0.314533740282059,
+        -0.626633942127228,
+        0.305554151535034
+      ],
+      "sampled_time": 1.41666666666667,
+      "state": "enemy_attack",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    }
+  ],
+  "fps": 1,
+  "has_save": true,
+  "health": 120,
+  "hero_art": {
+    "blade_trail": {
+      "lifetime": 0.12,
+      "samples": 0,
+      "triangles": 0,
+      "visible": false
+    },
+    "eyes_attached": true,
+    "grip_to_tip_m": 1.19000005722046,
+    "mode": "skeletal",
+    "profile": "hero",
+    "right_hand_pose": [
+      -0.0551491230726242,
+      0.206882029771805,
+      0.159116297960281,
+      0.679023206233978,
+      -0.354622393846512,
+      -0.569653332233429,
+      0.297767639160156
+    ],
+    "sampled_time": 0.166666547457362,
+    "state": "idle",
+    "status": "Rig ready; visual quality remains subject to art review",
+    "weapon_attached": true
+  },
+  "hits": 4,
+  "hud_y": 778,
+  "input_ready": true,
+  "modal": false,
+  "modal_h": 0,
+  "modal_w": 0,
+  "modal_x": 0,
+  "modal_y": 0,
+  "paused": false,
+  "quality": 1,
+  "started": true,
+  "ui_height": 900,
+  "ui_width": 1440,
+  "z": -28.8388824462891,
+  "qa_frame_probe": {
+    "count": 356,
+    "max_gap_ms": 25482.29999999999,
+    "max_gap_at_ms": 320285.8,
+    "last_ms": 415815.3,
+    "long_frames": [
+      {
+        "at_ms": 292320.3,
+        "gap_ms": 1166.7000000000116
+      },
+      {
+        "at_ms": 293553.6,
+        "gap_ms": 1233.2999999999884
+      },
+      {
+        "at_ms": 294803.5,
+        "gap_ms": 1249.9000000000233
+      },
+      {
+        "at_ms": 320285.8,
+        "gap_ms": 25482.29999999999
+      },
+      {
+        "at_ms": 321452.4,
+        "gap_ms": 1166.600000000035
+      },
+      {
+        "at_ms": 324935.6,
+        "gap_ms": 3466.5
+      },
+      {
+        "at_ms": 326135.6,
+        "gap_ms": 1166.5999999999767
+      },
+      {
+        "at_ms": 327435.6,
+        "gap_ms": 1300
+      },
+      {
+        "at_ms": 328568.8,
+        "gap_ms": 1133.2000000000116
+      },
+      {
+        "at_ms": 329718.8,
+        "gap_ms": 1150
+      },
+      {
+        "at_ms": 330918.8,
+        "gap_ms": 1200
+      },
+      {
+        "at_ms": 332085.3,
+        "gap_ms": 1166.5
+      },
+      {
+        "at_ms": 333302,
+        "gap_ms": 1216.7000000000116
+      },
+      {
+        "at_ms": 334452,
+        "gap_ms": 1150
+      },
+      {
+        "at_ms": 335651.9,
+        "gap_ms": 1199.9000000000233
+      },
+      {
+        "at_ms": 336818.5,
+        "gap_ms": 1166.5999999999767
+      },
+      {
+        "at_ms": 338035.1,
+        "gap_ms": 1216.5999999999767
+      },
+      {
+        "at_ms": 340651.7,
+        "gap_ms": 1266.600000000035
+      },
+      {
+        "at_ms": 345451.5,
+        "gap_ms": 1349.9000000000233
+      },
+      {
+        "at_ms": 346751.4,
+        "gap_ms": 1299.9000000000233
+      },
+      {
+        "at_ms": 370967.1,
+        "gap_ms": 2366.5
+      },
+      {
+        "at_ms": 379833.5,
+        "gap_ms": 1416.5999999999767
+      },
+      {
+        "at_ms": 385483.3,
+        "gap_ms": 1966.5999999999767
+      },
+      {
+        "at_ms": 399349.3,
+        "gap_ms": 1216.5
+      }
+    ]
+  }
+}

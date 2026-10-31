@@ -1,0 +1,123 @@
+{
+  "scope": "Actual tools/check_web.py full fresh-profile Web gameplay, input, art integration, quality/committed IDB and complete browser close/restart; distinct from fixed-art fixtures",
+  "phase": "passed",
+  "expected_commit": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174",
+  "export_manifest": {
+    "version": "0.1.5",
+    "godot": "4.7.2",
+    "commit": "c6be1dce",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 111664563,
+        "sha256": "cc5abbbc19c1a6b7971c0fa97e288c6aee2abf27bb3921175de51d75b35eb744"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 139506039,
+        "sha256": "93f8cd68255f1a902deb7f031159377d9795b0269f2c85dd0c976157433a8d32"
+      }
+    ]
+  },
+  "source_inputs": {
+    "tools/browser_smoke.py": {
+      "bytes": 28099,
+      "sha256": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0"
+    },
+    "tools/check_web.py": {
+      "bytes": 1128,
+      "sha256": "f8a2651ea71e8dbc60aba5e49a0d0197ee1fdd05e58b54aab475a1de3b1e2690"
+    },
+    "game/scripts/ui/hud.gd": {
+      "bytes": 19225,
+      "sha256": "c108d61bfb170d2293b47402335cb262f89b086fabc06e2cd45f78f43a97c165"
+    },
+    "game/scripts/actors/actor_visual.gd": {
+      "bytes": 11061,
+      "sha256": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337"
+    },
+    "game/scripts/actors/production_character_art.gd": {
+      "bytes": 5747,
+      "sha256": "140526ef84b4c0d16aaf11159178d064649fd324f049e8422d30a9e4d3c3958b"
+    },
+    "game/import/eye_materials.gd": {
+      "bytes": 1577,
+      "sha256": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b"
+    },
+    "game/assets/models/production/lyra_gameplay.glb": {
+      "bytes": 19438644,
+      "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c"
+    },
+    "game/assets/models/production/lyra_eyes.glb": {
+      "bytes": 112488,
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+    },
+    "game/assets/models/production/sentinel_gameplay.glb": {
+      "bytes": 17146728,
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+    }
+  },
+  "actual_export_files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "FONT_LICENSE.txt": {
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded"
+    },
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_THIRD_PARTY.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 3653,
+      "sha256": "4bd19a13ad8e40d8441ecbe03a45997c6e2f511543fcf6b45031038a311df670"
+    },
+    "index.apple-touch-icon.png": {
+      "bytes": 13950,
+      "sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922"
+    },
+    "index.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "index.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 2753,
+      "sha256": "0db382554769f1ea6c5e5f9b4be96939c1a404196edb34839d620d13c3d9db0b"
+    },
+    "index.icon.png": {
+      "bytes": 5217,
+      "sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd"
+    },
+    "index.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "index.pck": {
+      "bytes": 102083236,
+      "sha256": "7c1996429c802e7e459ed5ea3b767296b9fb5e91be54fef3a94a6ddafa5f300e"
+    },
+    "index.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "timing": {
+    "outcome": "passed",
+    "seconds": 471.812,
+    "scope": "Actual tools/check_web.py full fresh-profile Web gameplay, input, art integration, quality/committed IDB and complete browser close/restart; distinct from fixed-art fixtures"
+  }
+}

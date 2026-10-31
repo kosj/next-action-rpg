@@ -43,7 +43,7 @@ ADD도 밝은 돌 위에서는 옅어지고 뒤쪽 플레이 카메라의 0.24�
 
 ## 아직 남은 품질과 최종 통합
 
-현재 v0.1.5 작업 판본은 최종 `4cc9…` 몸체·`d7d984…` 안구와 검 궤적을 포함해 [native 통합 345검사·실패 0](validation/v0.1.5/native.log), [눈 집중 21검사·실패 0](validation/v0.1.5/eyes-native.log)을 확인했다. [입력 해시와 범위](validation/v0.1.5/character-eyes.json), [실제 blade-marker 궤적 검사](validation/v0.1.5/blade-trail.json)를 보관했다. 이는 현재 미커밋 작업 트리의 native 기술 검증이며 커밋별 CI·공개 배포 증거와 구분한다. 두 품질 설정의 최종 실제 Web 화면, 일반 Web gameplay QA·export·공개 배포 검증은 이 기록 시점에 **`pending`**이다.
+현재 v0.1.5 작업 판본은 최종 `4cc9…` 몸체·`d7d984…` 안구와 검 궤적을 포함해 [native 통합 345검사·실패 0](validation/v0.1.5/native.log), [눈 집중 21검사·실패 0](validation/v0.1.5/eyes-native.log)을 확인했다. [입력 해시와 범위](validation/v0.1.5/character-eyes.json), [실제 blade-marker 궤적 검사](validation/v0.1.5/blade-trail.json)를 보관했다. native 보고서 생성 당시의 입력을 구현 커밋 `c6be1dce`에 고정했다. 두 품질의 정지 Web12장·317.962초와 [정상 플레이/영구 저장/완전 재시작](validation/v0.1.5/local-web-final/README.md)471.812초·오류0을 확인했다. Web/Windows export와 실제 ZIP CRC·SHA·실행 파일/라이선스도 통과했다. 공개 main/tag의 CI·Pages 실행과 Windows 실기기·최종 AAA는 별도 범위다.
 
 - 얼굴: 눈꺼풀 두께·소켓 깊이·안구 접촉, 정면/사선/측면과 Head 포즈, 피부·입·코의 근접 재질, 실제 게임 시선·표정 범위.
 - 머리·의상: 덩어리처럼 보이는 머리카락의 실루엣·가닥·표면, 의상 소유권과 충돌, 갑옷 plate 경계·어깨/흉갑의 찢기는 변형.

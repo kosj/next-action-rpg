@@ -1,0 +1,15 @@
+RUNEFALL_BROWSER_STAGE initial_load 0.000s
+RUNEFALL_BROWSER_STAGE first_tour 28.183s
+RUNEFALL_BROWSER_STAGE safe_quality_approach 151.035s
+RUNEFALL_BROWSER_STAGE balanced_quality_tour 179.257s
+RUNEFALL_BROWSER_STAGE restore_performance_quality 274.246s
+RUNEFALL_BROWSER_STAGE settings_durable_commit 356.747s
+RUNEFALL_BROWSER_STAGE safe_skeletal_attack 364.205s
+RUNEFALL_BROWSER_STAGE first_combat 381.197s
+RUNEFALL_BROWSER_STAGE first_browser_close 419.219s
+RUNEFALL_BROWSER_STAGE restart_load 420.826s
+RUNEFALL_BROWSER_STAGE continue_tour 446.317s
+RUNEFALL_BROWSER_STAGE second_browser_close 468.431s
+RUNEFALL_BROWSER_STAGE completed 471.300s
+RUNEFALL_BROWSER_OK · WebGL, skeletal hero/melee, hand weapon, quality 0/1, input, combat, browser restart persistence
+RUNEFALL_FINAL_NORMAL_QA_TIMING {"outcome": "passed", "seconds": 471.812, "scope": "Actual tools/check_web.py full fresh-profile Web gameplay, input, art integration, quality/committed IDB and complete browser close/restart; distinct from fixed-art fixtures"}

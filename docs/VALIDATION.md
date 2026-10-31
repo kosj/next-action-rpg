@@ -6,7 +6,8 @@
 - [345 native 검사·실패0](validation/v0.1.5/README.md), 실제 source-world 눈 좌표/색상/Head 부착21집중 검사, 실제 Web12장·두 품질317.962초·오류0을 확인했습니다. 고정 art fixture와 정상 입력·저장·재시작 QA를 구분합니다.
 - 실제 주변 면 교차를 전체 표면 refit으로 수정했고, 원본 색이 배열에 있어도 사용 flag가 꺼지는 Godot4.7.2 첫 primitive 문제를 안구 전용 post-import에서 보정했습니다.
 - Web body 계획32,000 대비 실제32,288(+288)와 별도 안구3,840을 명시합니다. 큰 어두운 눈 주변·피부/머리/갑옷/손/발 접촉·Windows 실기기·목표GPU60fps·최종 AAA 승인은 남았습니다.
-- 최종 export·정상 브라우저·공개 SHA의 결과는 [판본별 검증](validation/v0.1.5/README.md)과 [Actions](https://github.com/kosj/next-action-rpg/actions/workflows/build.yml)의 해당 실행에서 확인합니다.
+- 최종 로컬 Web/Windows export와 ZIP 무결성이 통과했고 Web 원시용량은142,040,736bytes다. [정상 Web471.812초·오류0](validation/v0.1.5/local-web-final/README.md)는 품질 전환·실제 저장·베기·전투·완전 브라우저 재시작을 통과했다. 기존15/30초 한도를 유지했으며 Windows 실제 실행·성능은 별도다.
+- 공개 SHA의 결과는 [판본별 검증](validation/v0.1.5/README.md)과 [Actions](https://github.com/kosj/next-action-rpg/actions/workflows/build.yml)의 해당 실행에서 확인합니다.
 
 ## v0.1.4 · 실제 스킨·동작 전환·첫 방 PBR 프리뷰
 

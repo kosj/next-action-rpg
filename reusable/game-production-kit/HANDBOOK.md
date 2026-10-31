@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 원본 46항목의 ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 원본 51항목의 ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -12,6 +12,7 @@
 | `public-skills-provenance` | 공개 스킬의 원문·리비전·해시·LICENSE/NOTICE를 보존하고 프로젝트 판단을 분리한다. | 현재 공식 문서, 원문 변경, 적용할 부분과 적용하지 않을 부분 |
 | `workspace-resume-checkpoints` | 비용이 큰 작업의 재개 정보를 지속되는 작업 위치에 기록한다. | 환경 교체 시 유지되는 경로, 완료 task ID·상태·원본 해시·실제 비용 |
 | `headless-integration-lifecycle` | autoload/전체 씬이 필요한 테스트는 실제 노드 수명과 종료까지 다룬다. | runner 구조, 예약 coroutine, 노드/리소스 해제, stderr |
+| `portable-production-knowledge-kit` | 프로젝트 사례·일반 절차·빈 템플릿을 분리하고 독립 경로의 ZIP 무결성과 source 일치를 검증한다. | 고정 출처·판본·파일별 manifest·복사한 스킬의 독립성. 원본 검증 상태를 대상에 승계하지 않음 |
 | `headless-input-injection-boundary` | 입력 주입 시각과 게임의 실제 just-pressed 처리 경계를 함께 확인한다. | process/physics 신호 순서, 실제 행동 발생과 입력 해제 |
 
 비용·권한·상태를 추측으로 채우지 않습니다. 외부 목록이 비거나 CLI가 실패하면 실제 도구 발견·읽기 호출·지원 API의 실패 범위를 확인합니다. 한 도구의 인증 오류가 다른 연결 경로까지 사용할 수 없다는 뜻은 아닙니다.
@@ -58,6 +59,10 @@
 | `skeletal-presentation-bridge`, `production-art-contract-checks` | 구조·클립/본 매핑·권한 경계와 실제 시간/화면 검증을 분리한다. | bind/정규화 weights/RESET/track 대상/필수 상태, 누락 시 명시 fallback |
 | `project-authored-runtime-gaits` | stock 참고·프로젝트 저작·복제/리타겟의 provenance를 구분한다. 이동 속도와 보폭·stance를 함께 측정한다. | 저작 키·출처 권리, loop seam·reach·발 위치와 실제 이동/방향 |
 | `production-phase-bounded-pose-blend`, `immutable-import-tracks-and-pose-feedback` | 수동 local pose 보간에는 다음 target이 모든 필요한 채널을 덮어써야 한다. phase/hold/취소와 판정 시간을 보존한다. | importer의 상수 트랙 제거, 전체 본 position/rotation/scale. 이 조건이 필요한 경로에만 적용 |
+| `local-weight-solver-units-and-rejection` | solver의 단위/gradient와 기하학적 가능성을 구분하고 엄밀한 물리 상한을 반올림하지 않는다. | 고정 ROI·support, 독립 목적 미분, 정규화 후 실제 효과·새 압축/늘어짐·시각 판정 |
+| `eye-socket-topology-and-whole-surface-fit` | 평면 삽입 대신 실제 눈꺼풀·소켓을 검토하고 주변 전체 표면과 rigid 안구/혼합 skin 경계를 함께 측정한다. | 원본 보존, 전체 주변 면·최대 cornea·동작 drift·좌표 독립 대조. 표본 교차0은 연속 증명이 아님 |
+| `gltf-first-primitive-color-material-flag` | source 색상·imported array·실효 재질 flag를 각각 대조하고 자산 범위를 검증한 import 보정을 사용한다. | 현재 엔진에서 독립 재현·양자화 오차·공유 재질 불변·실제 반입/화면. 다른 판본에 버그를 가정하지 않음 |
+| `blade-trail-world-markers-and-action-clock` | 실제 world marker 이력과 권한 있는 반열린 공격창을 읽고 표현 clock·중단 이력을 분리한다. | 외부 이동/scale·정지·취소·복귀·seek와 실제 on/off 가독성; VFX가 reach/피해를 소유하지 않음 |
 | `weight-repair-per-edge-worsening` | 글로벌 최대/p99가 개선돼도 새 국소 악화를 찾는다. 전 프레임 표본과 실제 렌더로 채택 여부를 정한다. | 모든 key/중간 포즈의 edge별 변화, 부위 소유, 손/옷/갑옷 접촉과 같은 카메라 전후 |
 
 원래 사례의 리깅·모션이 다른 자산에서도 맞는다고 가정하지 않습니다. source SHA·rest·named weight·모션 키를 대조하고 각 자산의 실제 골격과 의상 소유 영역을 확인합니다. 거부한 수선도 원인·근거·재현 절차를 보존하며 성공한 파생으로 표시하지 않습니다.
