@@ -1,12 +1,73 @@
 {
-  "armed_at": 221265,
+  "armed_at": 196355.29999999702,
   "setup_timeout_ms": 60000,
   "rows": [
     {
-      "at": 222630.3999999985,
-      "frame": 1472,
-      "x": 0,
-      "z": -22.836067199707,
+      "at": 197664.29999999702,
+      "frame": 1429,
+      "x": 1.7790191009226e-07,
+      "z": -22.2858600616455,
+      "health": 120,
+      "stagger": 0,
+      "charge_elapsed": 7.19999999999998,
+      "hit_pause": 0,
+      "state": "charge",
+      "attack": {
+        "attack_active": 0,
+        "attack_arc": 0,
+        "attack_duration": 0,
+        "attack_elapsed": 0,
+        "attack_id": "",
+        "attack_instance_id": 0,
+        "attack_reach": 0,
+        "attack_startup": 0,
+        "charge_active": true,
+        "charge_duration": 0.65,
+        "charge_elapsed": 7.19999999999998,
+        "dead": false,
+        "death_elapsed": 0,
+        "dodge_duration": 0.32,
+        "dodge_elapsed": 0.32,
+        "dodge_local_x": 0,
+        "dodge_local_z": 0,
+        "dodge_remaining": 0,
+        "heal_duration": 0.35,
+        "heal_elapsed": 0.35,
+        "heal_remaining": 0,
+        "hit_duration": 0.15,
+        "hit_elapsed": 0.15,
+        "move_local_x": 0,
+        "move_local_z": 0,
+        "parry_duration": 0.22,
+        "parry_elapsed": 0.22,
+        "parry_remaining": 0,
+        "presentation_epoch": 1,
+        "speed": 0,
+        "stagger": 0
+      },
+      "impact_count": 0,
+      "stick": [
+        0,
+        0
+      ],
+      "pressed": [
+        "heavy"
+      ],
+      "target": {
+        "id": 141213831337,
+        "x": 1.3372266494116e-07,
+        "z": -26.1200084686279,
+        "health": 95,
+        "state": "enemy_attack",
+        "sampled_time": 0.333333333333333,
+        "stagger": 0
+      }
+    },
+    {
+      "at": 200550.79999999702,
+      "frame": 1445,
+      "x": 1.7790191009226e-07,
+      "z": -22.2858600616455,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 7.46666666666665,
@@ -54,20 +115,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -26.6599998474121,
+        "id": 141213831337,
+        "x": 1.3372266494116e-07,
+        "z": -26.1200084686279,
         "health": 95,
         "state": "enemy_attack",
-        "sampled_time": 0.583333333333333,
+        "sampled_time": 0.6,
         "stagger": 0
       }
     },
     {
-      "at": 225318.79999999702,
-      "frame": 1488,
-      "x": 0,
-      "z": -22.836067199707,
+      "at": 203398.8999999985,
+      "frame": 1461,
+      "x": 1.7790191009226e-07,
+      "z": -22.2858600616455,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 7.73333333333331,
@@ -115,20 +176,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -26.1600074768066,
+        "id": 141213831337,
+        "x": 1.40060166131661e-07,
+        "z": -25.5700168609619,
         "health": 95,
         "state": "enemy_attack",
-        "sampled_time": 0.850000000000001,
+        "sampled_time": 0.866666666666668,
         "stagger": 0
       }
     },
     {
-      "at": 228002.20000000298,
-      "frame": 1504,
-      "x": 0,
-      "z": -23.0444259643555,
+      "at": 206077.8999999985,
+      "frame": 1477,
+      "x": 1.73101383893481e-07,
+      "z": -22.7025775909424,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 7.99999999999998,
@@ -158,7 +219,7 @@
         "heal_remaining": 0,
         "hit_duration": 0.15,
         "hit_elapsed": 0.15,
-        "move_local_x": 0,
+        "move_local_x": 2.41495712316464e-12,
         "move_local_z": -1,
         "parry_duration": 0.22,
         "parry_elapsed": 0.22,
@@ -176,20 +237,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -26.0600090026855,
+        "id": 141213831337,
+        "x": 1.40636302603525e-07,
+        "z": -25.5200176239014,
         "health": 95,
         "state": "enemy_attack",
-        "sampled_time": 1.11666666666667,
+        "sampled_time": 1.13333333333333,
         "stagger": 0
       }
     },
     {
-      "at": 230666.8999999985,
-      "frame": 1520,
-      "x": 0,
-      "z": -23.4611434936523,
+      "at": 208788.8999999985,
+      "frame": 1493,
+      "x": 1.6830003346513e-07,
+      "z": -23.1192951202393,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 8.26666666666666,
@@ -219,7 +280,7 @@
         "heal_remaining": 0,
         "hit_duration": 0.15,
         "hit_elapsed": 0.15,
-        "move_local_x": 0,
+        "move_local_x": 1.18838272555877e-12,
         "move_local_z": -1,
         "parry_duration": 0.22,
         "parry_elapsed": 0.22,
@@ -237,20 +298,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -26.0600090026855,
+        "id": 141213831337,
+        "x": 1.40636302603525e-07,
+        "z": -25.5200176239014,
         "health": 95,
         "state": "enemy_attack",
-        "sampled_time": 1.38333333333333,
+        "sampled_time": 1.4,
         "stagger": 0
       }
     },
     {
-      "at": 233389.6000000015,
-      "frame": 1536,
-      "x": 0,
-      "z": -23.8778610229492,
+      "at": 211448.1000000015,
+      "frame": 1509,
+      "x": 1.63498185656863e-07,
+      "z": -23.5360126495361,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 8.53333333333334,
@@ -280,7 +341,7 @@
         "heal_remaining": 0,
         "hit_duration": 0.15,
         "hit_elapsed": 0.15,
-        "move_local_x": 0,
+        "move_local_x": 5.23137089203374e-13,
         "move_local_z": -1,
         "parry_duration": 0.22,
         "parry_elapsed": 0.22,
@@ -298,20 +359,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -25.820011138916,
+        "id": 141213831337,
+        "x": 1.42019075610733e-07,
+        "z": -25.4000186920166,
         "health": 95,
         "state": "idle",
-        "sampled_time": 0.0833333333333333,
+        "sampled_time": 0.133333333333333,
         "stagger": 0
       }
     },
     {
-      "at": 236169,
-      "frame": 1552,
-      "x": 0,
-      "z": -24.2945785522461,
+      "at": 214098.3999999985,
+      "frame": 1525,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 8.80000000000002,
@@ -341,7 +402,7 @@
         "heal_remaining": 0,
         "hit_duration": 0.15,
         "hit_elapsed": 0.15,
-        "move_local_x": 0,
+        "move_local_x": 1.11022302462516e-13,
         "move_local_z": -1,
         "parry_duration": 0.22,
         "parry_elapsed": 0.22,
@@ -359,20 +420,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -25.820011138916,
+        "id": 141213831337,
+        "x": 1.42019075610733e-07,
+        "z": -25.4000186920166,
         "health": 95,
         "state": "idle",
-        "sampled_time": 0.35,
+        "sampled_time": 0.4,
         "stagger": 0
       }
     },
     {
-      "at": 239014.8999999985,
-      "frame": 1568,
-      "x": 0,
-      "z": -24.5029373168945,
+      "at": 216746.6000000015,
+      "frame": 1541,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 120,
       "stagger": 0,
       "charge_elapsed": 9.0666666666667,
@@ -420,22 +481,22 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 0,
-        "z": -25.820011138916,
+        "id": 141213831337,
+        "x": 1.42019075610733e-07,
+        "z": -25.4000186920166,
         "health": 95,
         "state": "idle",
-        "sampled_time": 0.616666666666667,
+        "sampled_time": 0.666666666666667,
         "stagger": 0
       }
     },
     {
-      "at": 241731.5,
-      "frame": 1584,
-      "x": 0,
-      "z": -24.5029373168945,
+      "at": 219452,
+      "frame": 1557,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 104,
-      "stagger": 0.0666666666666667,
+      "stagger": 2.08166817117217e-17,
       "charge_elapsed": 9.33333333333338,
       "hit_pause": 0,
       "state": "hit",
@@ -462,7 +523,7 @@
         "heal_elapsed": 0.35,
         "heal_remaining": 0,
         "hit_duration": 0.15,
-        "hit_elapsed": 0.0833333333333333,
+        "hit_elapsed": 0.15,
         "move_local_x": 0,
         "move_local_z": 0,
         "parry_duration": 0.22,
@@ -470,7 +531,7 @@
         "parry_remaining": 0,
         "presentation_epoch": 1,
         "speed": 0,
-        "stagger": 0.0666666666666667
+        "stagger": 2.08166817117217e-17
       },
       "impact_count": 0,
       "stick": [
@@ -481,20 +542,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 2.0662945132699e-07,
-        "z": -25.7685508728027,
+        "id": 141213831337,
+        "x": -1.24676921586797e-06,
+        "z": -25.2440414428711,
         "health": 95,
-        "state": "walk",
-        "sampled_time": 0.414294392974287,
+        "state": "idle",
+        "sampled_time": 0.883333333333334,
         "stagger": 0
       }
     },
     {
-      "at": 244551.3999999985,
-      "frame": 1600,
-      "x": 0,
-      "z": -24.5029373168945,
+      "at": 222276.6000000015,
+      "frame": 1573,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 104,
       "stagger": 0,
       "charge_elapsed": 9.60000000000006,
@@ -542,20 +603,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 8.5234643165677e-07,
-        "z": -25.6118831634521,
+        "id": 141213831337,
+        "x": -1.24676921586797e-06,
+        "z": -25.2440414428711,
         "health": 95,
         "state": "idle",
-        "sampled_time": 1.08333333333333,
+        "sampled_time": 1.15,
         "stagger": 0
       }
     },
     {
-      "at": 247171.3999999985,
-      "frame": 1616,
-      "x": 0,
-      "z": -24.5029373168945,
+      "at": 225024,
+      "frame": 1589,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 104,
       "stagger": 0,
       "charge_elapsed": 9.86666666666674,
@@ -603,20 +664,20 @@
         "heavy"
       ],
       "target": {
-        "id": 141851365537,
-        "x": 8.5234643165677e-07,
-        "z": -25.6118831634521,
+        "id": 141213831337,
+        "x": -1.24676921586797e-06,
+        "z": -25.2440414428711,
         "health": 95,
         "state": "idle",
-        "sampled_time": 1.35,
+        "sampled_time": 1.41666666666667,
         "stagger": 0
       }
     },
     {
-      "at": 249951.20000000298,
-      "frame": 1632,
-      "x": 0,
-      "z": -24.5029373168945,
+      "at": 227813.6000000015,
+      "frame": 1605,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 104,
       "stagger": 0,
       "charge_elapsed": 0,
@@ -662,20 +723,20 @@
       ],
       "pressed": [],
       "target": {
-        "id": 141851365537,
-        "x": 2.37537165048707e-06,
-        "z": -25.2630443572998,
+        "id": 141213831337,
+        "x": -6.23715459369123e-06,
+        "z": -24.7255687713623,
         "health": 95,
-        "state": "enemy_attack",
-        "sampled_time": 0.0333333333333333,
+        "state": "idle",
+        "sampled_time": 1.53333333333333,
         "stagger": 0
       }
     },
     {
-      "at": 252804.20000000298,
-      "frame": 1648,
-      "x": -2.29312813182503e-09,
-      "z": -24.5022029876709,
+      "at": 230815.8999999985,
+      "frame": 1621,
+      "x": 1.58696053631502e-07,
+      "z": -23.952730178833,
       "health": 104,
       "stagger": 0,
       "charge_elapsed": 0,
@@ -685,7 +746,7 @@
         "attack_active": 0.18,
         "attack_arc": 170,
         "attack_duration": 1.06,
-        "attack_elapsed": 0.424444444444444,
+        "attack_elapsed": 0.432222222222222,
         "attack_id": "charged_heavy",
         "attack_instance_id": 5,
         "attack_reach": 1.5,
@@ -721,9 +782,9 @@
       ],
       "pressed": [],
       "target": {
-        "id": 141851365537,
-        "x": 2.37537165048707e-06,
-        "z": -25.2630443572998,
+        "id": 141213831337,
+        "x": -6.23715459369123e-06,
+        "z": -24.7255687713623,
         "health": 25.7,
         "state": "heavy_hit",
         "sampled_time": 0,
@@ -731,17 +792,17 @@
       }
     }
   ],
-  "last_frame": 1648,
+  "last_frame": 1621,
   "baseline_count": 0,
-  "target_id": 141851365537,
+  "target_id": 141213831337,
   "heavy_pointer": 5,
-  "release_at": 247174.6000000015,
+  "release_at": 225028.8999999985,
   "snapshot": {
     "attack": {
       "attack_active": 0.18,
       "attack_arc": 170,
       "attack_duration": 1.06,
-      "attack_elapsed": 0.424444444444444,
+      "attack_elapsed": 0.432222222222222,
       "attack_id": "charged_heavy",
       "attack_instance_id": 5,
       "attack_reach": 1.5,
@@ -770,10 +831,10 @@
       "speed": 0,
       "stagger": 0
     },
-    "build_id": "0.1.8 · 016a17bc",
+    "build_id": "0.1.8 · b6af5a51",
     "buttons": [],
     "camera_pitch": -0.18,
-    "camera_yaw": -2.19161222115081e-06,
+    "camera_yaw": 5.74397072942699e-06,
     "charge_elapsed": 0,
     "checkpoint": 0,
     "dead": false,
@@ -784,14 +845,14 @@
     "enemy_art": [
       {
         "blade_grip_world": [
-          -0.0535693429410458,
-          1.26440787315369,
-          -24.8880443572998
+          -0.0535745620727539,
+          1.26296675205231,
+          -24.3505687713623
         ],
         "blade_tip_world": [
-          -0.172903388738632,
-          2.23951625823975,
-          -24.2164611816406
+          -0.172902539372444,
+          2.23807501792908,
+          -23.6789836883545
         ],
         "blade_trail": {
           "lifetime": 0.12,
@@ -803,11 +864,11 @@
         "dead": false,
         "elite": false,
         "eyes_attached": false,
-        "grip_to_tip_m": 1.19000041484833,
+        "grip_to_tip_m": 1.1900007724762,
         "health": 25.7,
         "hit_pause": 0,
         "hit_reaction": "heavy_hit",
-        "id": 141851365537,
+        "id": 141213831337,
         "kind": "melee",
         "mode": "skeletal",
         "profile": "sentinel_melee",
@@ -831,19 +892,71 @@
         "state": "heavy_hit",
         "status": "Rig ready; visual quality remains subject to art review",
         "weapon_attached": true,
-        "x": 2.37537165048707e-06,
-        "z": -25.2630443572998
+        "x": -6.23715459369123e-06,
+        "z": -24.7255687713623
       },
       {
         "blade_grip_world": [
-          0.683111786842346,
-          1.23578310012817,
-          -26.082426071167
+          0.673396587371826,
+          1.23506045341492,
+          -25.5648498535156
         ],
         "blade_tip_world": [
-          0.305286794900894,
-          2.21089744567871,
-          -25.514533996582
+          0.302417188882828,
+          2.2101731300354,
+          -24.9924602508545
+        ],
+        "blade_trail": {
+          "lifetime": 0.12,
+          "samples": 0,
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000005722046,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 144753824037,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550896376371384,
+          0.188769087195396,
+          0.159208714962006,
+          0.679485976696014,
+          -0.353717505931854,
+          -0.570161640644073,
+          0.296813756227493
+        ],
+        "sampled_time": 0.216058403253556,
+        "stagger": 0,
+        "state": "walk_back",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "x": 0.868507206439972,
+        "z": -25.8895454406738
+      },
+      {
+        "blade_grip_world": [
+          -0.772110223770142,
+          1.23506033420563,
+          -25.5232696533203
+        ],
+        "blade_tip_world": [
+          -0.621032953262329,
+          2.2101731300354,
+          -24.8581142425537
         ],
         "blade_trail": {
           "lifetime": 0.12,
@@ -859,7 +972,7 @@
         "health": 95,
         "hit_pause": 0,
         "hit_reaction": "hit",
-        "id": 145391358245,
+        "id": 146397991291,
         "kind": "melee",
         "mode": "skeletal",
         "profile": "sentinel_melee",
@@ -870,73 +983,21 @@
         ],
         "recoil_requested_m": 0,
         "right_hand_pose": [
-          -0.055088996887207,
-          0.189139202237129,
-          0.159208878874779,
-          0.679484605789185,
-          -0.353716552257538,
-          -0.570162415504456,
-          0.296816498041153
+          -0.0550896897912025,
+          0.18876901268959,
+          0.159208714962006,
+          0.679485976696014,
+          -0.353717535734177,
+          -0.570161640644073,
+          0.296813696622849
         ],
-        "sampled_time": 0.0757857147190301,
+        "sampled_time": 0.216057351341953,
         "stagger": 0,
-        "state": "walk",
+        "state": "walk_back",
         "status": "Rig ready; visual quality remains subject to art review",
         "weapon_attached": true,
-        "x": 0.882105886936188,
-        "z": -26.4047546386719
-      },
-      {
-        "blade_grip_world": [
-          -0.781307458877563,
-          1.23578310012817,
-          -26.0395812988281
-        ],
-        "blade_tip_world": [
-          -0.622246503829956,
-          2.21089744567871,
-          -25.376293182373
-        ],
-        "blade_trail": {
-          "lifetime": 0.12,
-          "samples": 0,
-          "triangles": 0,
-          "visible": false
-        },
-        "boss": false,
-        "dead": false,
-        "elite": false,
-        "eyes_attached": false,
-        "grip_to_tip_m": 1.18999981880188,
-        "health": 95,
-        "hit_pause": 0,
-        "hit_reaction": "hit",
-        "id": 147035525499,
-        "kind": "melee",
-        "mode": "skeletal",
-        "profile": "sentinel_melee",
-        "recoil_displacement": [
-          0,
-          0,
-          0
-        ],
-        "recoil_requested_m": 0,
-        "right_hand_pose": [
-          -0.0550890117883682,
-          0.189139232039452,
-          0.15920889377594,
-          0.67948454618454,
-          -0.353716611862183,
-          -0.5701624751091,
-          0.296816527843475
-        ],
-        "sampled_time": 0.0757861093238546,
-        "stagger": 0,
-        "state": "walk",
-        "status": "Rig ready; visual quality remains subject to art review",
-        "weapon_attached": true,
-        "x": -0.88210517168045,
-        "z": -26.4047317504883
+        "x": -0.868509590625763,
+        "z": -25.8896045684814
       }
     ],
     "fps": 1,
@@ -946,14 +1007,14 @@
     "heavy_held": 0,
     "hero_art": {
       "blade_grip_world": [
-        0.162934571504593,
-        1.38040041923523,
-        -24.7648410797119
+        0.141529604792595,
+        1.36359333992004,
+        -24.2088584899902
       ],
       "blade_tip_world": [
-        1.00275707244873,
-        2.11696815490723,
-        -25.1750469207764
+        0.961656928062439,
+        2.025963306427,
+        -24.7609081268311
       ],
       "blade_trail": {
         "lifetime": 0.12,
@@ -962,19 +1023,19 @@
         "visible": true
       },
       "eyes_attached": true,
-      "grip_to_tip_m": 1.19000113010406,
+      "grip_to_tip_m": 1.19000065326691,
       "mode": "skeletal",
       "profile": "hero",
       "right_hand_pose": [
-        -0.0948751121759415,
-        0.32083323597908,
-        0.110256910324097,
-        0.920527517795563,
-        -0.31888622045517,
-        -0.213266521692276,
-        0.0738790333271027
+        -0.0917329341173172,
+        0.313250839710236,
+        0.110415197908878,
+        0.915022790431976,
+        -0.277964770793915,
+        -0.279729336500168,
+        0.0849728435277939
       ],
-      "sampled_time": 0.424444421532269,
+      "sampled_time": 0.43222219889019,
       "state": "charged_heavy",
       "status": "Rig ready; visual quality remains subject to art review",
       "weapon_attached": true
@@ -1011,31 +1072,52 @@
           "style": "charged",
           "triangles": 33,
           "valid": true,
-          "world_point": "(0.175848, 1.43762, -24.90377)"
+          "world_point": "(0.286808, 1.549666, -24.44676)"
         }
       ],
       "history": [
         {
           "amount": 69.3,
-          "attack_elapsed": 0.424444444444444,
+          "attack_elapsed": 0.432222222222222,
           "attack_id": "charged_heavy",
           "attack_instance_id": 5,
           "attacker_pause": 0.075,
           "blocked": false,
           "contact_blade_grip": [
-            0.16296249628067,
-            1.38041079044342,
-            -24.7648429870605
+            0.14155113697052,
+            1.36405074596405,
+            -24.208854675293
           ],
           "contact_blade_tip": [
-            1.0026843547821,
-            2.11665105819702,
-            -25.1758403778076
+            0.961453258991241,
+            2.02601885795593,
+            -24.76171875
           ],
-          "contact_phase": 0.469135802469135,
+          "contact_damage_axis_base": [
+            0.371812731027603,
+            1.54995799064636,
+            -24.3641223907471
+          ],
+          "contact_damage_axis_tip": [
+            0.878774046897888,
+            1.95926582813263,
+            -24.7059669494629
+          ],
+          "contact_damage_base": [
+            0.28913351893425,
+            1.48320496082306,
+            -24.30837059021
+          ],
+          "contact_damage_tip": [
+            0.961453258991241,
+            2.02601885795593,
+            -24.76171875
+          ],
+          "contact_phase": 0.512345679012345,
           "contact_source": "hurtbox_ray",
+          "damage_start_fraction": 0.18,
           "direction": [
-            3.12504653265933e-06,
+            -8.27579060569406e-06,
             0,
             -1
           ],
@@ -1045,15 +1127,15 @@
           "killed": false,
           "material": "metal",
           "normal": [
-            0.439613342285156,
-            0,
-            0.898187160491943
+            0.717036128044128,
+            0.00246301293373108,
+            0.697031676769257
           ],
-          "physics_frame": 1643,
+          "physics_frame": 1616,
           "point": [
-            0.175847694277763,
-            1.43762040138245,
-            -24.9037704467773
+            0.286808222532272,
+            1.54966592788696,
+            -24.446756362915
           ],
           "poise_broken": true,
           "reaction": "heavy_hit",
@@ -1062,16 +1144,16 @@
           "sequence": 1,
           "source": "player",
           "source_position": [
-            -2.29312813182503e-09,
-            -0.0249107722193003,
-            -24.5022029876709
+            1.58696053631502e-07,
+            -0.0264026187360287,
+            -23.952730178833
           ],
           "strength": "charged",
-          "target_id": 141851365537,
+          "target_id": 141213831337,
           "target_position": [
-            2.37537165048707e-06,
-            0.000121896737255156,
-            -25.2630443572998
+            -6.23715459369123e-06,
+            -0.00131930992938578,
+            -24.7255687713623
           ],
           "victim_pause": 0.075
         }
@@ -1133,7 +1215,7 @@
     ],
     "locked": true,
     "locked_target": true,
-    "locked_target_id": 141851365537,
+    "locked_target_id": 141213831337,
     "max_health": 120,
     "modal": false,
     "modal_h": 0,
@@ -1143,7 +1225,7 @@
     "parry_cooldown": 0,
     "parry_remaining": 0,
     "paused": false,
-    "physics_frame": 1648,
+    "physics_frame": 1621,
     "potions": 3,
     "quality": 0,
     "render_scale": 0.5,
@@ -1166,7 +1248,7 @@
       ],
       "version": 1
     },
-    "save_primary_mtime": 1793484650,
+    "save_primary_mtime": 1793487925,
     "stagger": 0,
     "started": true,
     "touch": {
@@ -1418,11 +1500,11 @@
           "visible_h": 52,
           "visible_line_count": 1,
           "visible_w": 35,
-          "visible_x": 186.091918945312,
-          "visible_y": 375.204223632812,
+          "visible_x": 186.888214111328,
+          "visible_y": 373.329711914062,
           "w": 35,
-          "x": 186.091918945312,
-          "y": 375.204223632812
+          "x": 186.888214111328,
+          "y": 373.329711914062
         },
         {
           "alpha": 0,
@@ -1535,8 +1617,8 @@
         1688
       ]
     },
-    "x": -2.29312813182503e-09,
-    "z": -24.5022029876709
+    "x": 1.58696053631502e-07,
+    "z": -23.952730178833
   },
-  "matched_at": 252804.20000000298
+  "matched_at": 230815.8999999985
 }

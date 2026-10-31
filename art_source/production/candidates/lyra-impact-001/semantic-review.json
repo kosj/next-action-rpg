@@ -10,7 +10,7 @@
     0.52
   ],
   "nominal_actor_travel_m": 0.576,
-  "gameplay_hull": "Charged-only authoritative3D blade segment, length1.19m/radius0.12m, shared smooth(f^2) azimuth/pitch/grip curve; reach1.5m is metadata, not capsule extent",
+  "gameplay_hull": "Full Grip\u2192Tip1.19m remains the display/socket/IK pose protocol. Runtime damage uses its distal82% (start fraction0.18, sharp length0.9758m), radius0.12m and capsule total height trimmed to sharp endpoints. Native and actual focused-browser sharp contact/one-hit/recoil checks verified; full journey, normal-speed AV and AAA approval remain pending.",
   "physics_contract": {
     "startup_s": 0.34,
     "active_s": 0.18,
@@ -37,7 +37,8 @@
     "blade_length_m": 1.19,
     "blade_radius_m": 0.12,
     "floor_offset_m": 0.025,
-    "resource_reach_hint_m": 1.5
+    "resource_reach_hint_m": 1.5,
+    "scope": "Historical authored full-marker trajectory protocol; actual runtime sharp damaging subset is separately specified in runtime_collision."
   },
   "interpolation_audit": {
     "scope": "Actual exported glTF local TRS/slerp FK at every active key and midpoint plus runtime fractions; canonical1.19m blade, no Godot optimizer/terrain/visual/AAA approval.",
@@ -999,7 +1000,7 @@
       }
     ]
   },
-  "scope": "Actual raw exported TRS/slerp key+midpoint FK plus finite authored sole/grip measurements. Runtime import/collision/terrain/hardware/AAA approval pending.",
+  "scope": "Raw exported key+midpoint FK and finite authored sole/grip samples, actual native marker/import/sharp-contact/recoil subsets and actual focused browser functional geometry/recoil. Full journey, committed/public build, terrain, normal-speed visual/audio, target-device and AAA approval remain pending.",
   "pelvis_rotation_peak": {
     "time_s": 0.347,
     "radians_per_s": 3.525844649253539,
@@ -1023,5 +1024,170 @@
       0.22,
       0.52
     ]
+  },
+  "runtime_collision": {
+    "scope": "Runtime collision contract update only; display/socket/IK and authored GLB full-marker pose protocol remain unchanged.",
+    "full_marker_segment_m": 1.19,
+    "blade_damage_start_fraction": 0.18,
+    "excluded_proximal_length_m": 0.2142,
+    "sharp_damage_segment_length_m": 0.9758,
+    "blade_radius_m": 0.12,
+    "damage_start_formula": "lerp(full_grip, full_tip, 0.18)",
+    "damage_end": "full_tip",
+    "capsule_extent": "Capsule total height includes both hemispherical caps and is trimmed to the sharp-segment length; it must not extend beyond the sharp endpoints.",
+    "trajectory": "The sharp subset follows the same smooth(f^2) actor-local full-marker trajectory; no visual/IK/animation retiming or new GLB generation.",
+    "reason": "A clean-CI first contact near the grip exposed handle/proximal capsule overlap while the blade remained raised. Full-marker alignment alone did not validate the damaging surface.",
+    "validation_status": "verified_native_and_narrow_focused_browser_geometry_recoil",
+    "previous_marker_validation_is_not_sharp_contact_approval": true,
+    "native_validation": {
+      "status": "verified_native",
+      "checks": 439,
+      "failures": 0,
+      "report": "docs/validation/v0.1.8/contact.json",
+      "source_report": "build/verification/charged-impact/contact.json",
+      "scope": "Actual native sharp-subset contact/hilt exclusion and resolved recoil-budget regression. Actual frozen actor/skeleton/trail evidence is native-only; terrain, normal-speed AV, target hardware and AAA approval remain pending.",
+      "raised_hilt_regression": {
+        "root_separation_m": 0.725,
+        "early_time_s": 0.38,
+        "early_health": 95.0,
+        "first_contact_time": 0.427457627118644,
+        "final_health": 25.7,
+        "events": 1,
+        "point_projection_on_full_blade": 0.24526233655421,
+        "point_to_damage_axis_m": 0.118650324642658
+      },
+      "primary_contact": {
+        "attack_elapsed_s": 0.46,
+        "point_projection_on_full_blade": 0.962028026233514,
+        "query_point_to_damage_axis_m": 0.113223642110825
+      },
+      "recoil_budget_regression": {
+        "capsule_radii_sum_m": 0.76,
+        "initial_horizontal_separation_m": 0.7449951171875,
+        "requested_m": 0.35,
+        "resolved_horizontal_m": 0.349990844726562,
+        "resolved_path_m": 0.349990844726562,
+        "source_root_unchanged": true,
+        "first_resolved_step_m": 0.0399932861328125,
+        "open_floor_resolved_m": 0.3499755859375,
+        "wall_resolved_m": 0.197509765625
+      },
+      "source_hashes": {
+        "charged_attack": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
+        "fixture": "0351c54bfd0ef4e8bbe98a08826508061272656555cd7332e692bceae56159ad",
+        "hero_body": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+        "hero_reference_body": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c"
+      },
+      "evidence": [
+        {
+          "file": "docs/validation/v0.1.8/contact.json",
+          "sha256": "b58183ac098ee8f6cac7142ad415d44fc0b70b311e2e5805ff204eead576ffca"
+        },
+        {
+          "file": "docs/validation/v0.1.8/native-runtime.log",
+          "sha256": "27d12abdafd230406c207b0b745e37041ad249e50ff7e7edd3aa25549d65db89"
+        },
+        {
+          "file": "docs/validation/v0.1.8/alignment.json",
+          "sha256": "11f2ba721d19b40853285daaead1550bf431265a452563c7cb966c8fa048b584"
+        }
+      ]
+    },
+    "native_validation_history": [
+      {
+        "status": "historical_native_sharp_subset_before_recoil_budget_fix",
+        "checks": 438,
+        "failures": 0,
+        "report": "docs/validation/v0.1.8/contact.json",
+        "source_report": "build/verification/charged-impact/contact.json",
+        "scope": "Prior438-check native sharp-contact result; subsequent focused browser exposed resolved recoil above the existing travel budget. Preserved history, not current-build acceptance.",
+        "raised_hilt_regression": {
+          "root_separation_m": 0.725,
+          "early_time_s": 0.38,
+          "early_health": 95.0,
+          "first_contact_time": 0.427457627118644,
+          "final_health": 25.7,
+          "events": 1,
+          "point_projection_on_full_blade": 0.24526233655421,
+          "point_to_damage_axis_m": 0.118650324642658
+        },
+        "primary_contact": {
+          "attack_elapsed_s": 0.46,
+          "point_projection_on_full_blade": 0.962028026233514,
+          "query_point_to_damage_axis_m": 0.113223642110825
+        }
+      }
+    ],
+    "focused_browser_validation": {
+      "status": "verified_narrow_functional_geometry_and_recoil",
+      "scope": "Actual strict CDP touch in Chromium on a local dirty-preview Web export: whiff exclusion, one confirmed sharp contact/effect, damage/reaction receipts and bounded resolved recoil. This does not verify full journey, committed/public build, frozen frame pair, normal-speed audiovisual semantics, terrain, target hardware or AAA quality.",
+      "seconds": 282.938,
+      "errors": 0,
+      "contact_time_s": 0.4322222222222221,
+      "full_blade_projection_fraction": 0.26374919299824406,
+      "sharp_damage_length_m": 0.9757999848712761,
+      "point_to_damage_inner_axis_m": 0.11855133758392557,
+      "actual_recoil_horizontal_m": 0.3499984741330781,
+      "actual_contact_count": 1,
+      "confirmed_effect_counts": {
+        "confirmed": 1,
+        "actual_effect_spawns": 1
+      },
+      "damage": 69.3,
+      "target_health": [
+        95,
+        25.7
+      ],
+      "final": {
+        "paused": true,
+        "health": 72,
+        "active_pointers": []
+      },
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      },
+      "native_frozen_positive_evidence_separate": "docs/validation/v0.1.8/contact.json",
+      "source_head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+      "source_tree_dirty": true,
+      "raw_web_bytes": 146279323,
+      "export_unchanged": true,
+      "server_closed": true,
+      "chromium_closed": true,
+      "evidence": [
+        {
+          "file": "docs/validation/v0.1.8/mobile-focused-summary.json",
+          "sha256": "d719ae212ead0215b394b729efd36c6801c0cd4e66b8a2a74094418941324398"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-focused-proof.json",
+          "sha256": "502ef964cb449d14873f9a0c7d90f010f66ef239fb18924af7bfa6fba2ebb89d"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-export-context.json",
+          "sha256": "21567f3de8185c37e570816996a6f915cafc49fa278c8f6d66e183e5630284d5"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-release-timeline.json",
+          "sha256": "79f32b9fbdedba178195821efa497bfa749ef420901777d82f393c674261c9d6"
+        }
+      ],
+      "rejected_history": {
+        "report": "docs/validation/v0.1.8/rejected-contact-summary.json",
+        "sha256": "04436f1d743895b29d0c6cc04fa1052e1f883d651d0a9f82fc0da8c987abd3a2",
+        "first_sharp_before_recoil_fix_seconds": 253.9,
+        "status": "rejected_recoil_budget_exceeded",
+        "scope": "Historical failed253.9s run remains rejected despite sharp geometry gates passing."
+      }
+    }
+  },
+  "runtime_marker_validation": {
+    "status": "verified_native_sharp_build",
+    "report": "docs/validation/v0.1.8/alignment.json",
+    "source_body_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "max_grip_error_m": 0.000325741566484794,
+    "max_tip_error_m": 0.0011221815366298,
+    "nominal_support_foot_drift_m": 1.53775363287423e-05,
+    "scope": "Actual native full-marker/nominal stance and moving-charge layer alignment remain verified in the439-check sharp/recoil build. Sharp-contact and recoil-budget evidence is separately scoped in runtime_collision; no terrain IK, normal-speed AV, target-device or AAA approval."
   }
 }

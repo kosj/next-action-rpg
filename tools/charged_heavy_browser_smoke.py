@@ -112,6 +112,34 @@ def segment_distance(point,start,end):
     return math.sqrt(sum((p-a-fraction*d)**2 for p,a,d in zip(point,start,delta)))
 
 
+def validate_sharp_contact(point,grip,tip):
+    length(point);length(grip);length(tip)
+    axis=[b-a for a,b in zip(grip,tip)]
+    full_length=length(axis)
+    assert abs(full_length-1.19)<.003,(grip,tip)
+    damage_base=[a+.18*d for a,d in zip(grip,axis)]
+    sharp_length=length([b-a for a,b in zip(damage_base,tip)])
+    assert abs(sharp_length-.9758)<.003,(damage_base,tip)
+    unit=[d/full_length for d in axis]
+    inner_base=[a+.12*d for a,d in zip(damage_base,unit)]
+    inner_tip=[a-.12*d for a,d in zip(tip,unit)]
+    inner_distance=segment_distance(point,inner_base,inner_tip)
+    # Godot capsule height includes both hemispheres. Its cylinder axis is
+    # inset by the radius, so an outer-segment check alone admits cap corners.
+    assert inner_distance<=.125,('point outside bounded sharp capsule plus5mm tolerance',inner_distance,point,inner_base,inner_tip)
+    distance=segment_distance(point,damage_base,tip)
+    projection=sum((p-a)*d for p,a,d in zip(point,grip,axis))/(full_length*full_length)
+    assert distance<=.125,('point outside sharp damage segment capsule plus5mm tolerance',distance,point,damage_base,tip)
+    # Radial proximity alone admits hilt contacts. The sharp blade begins18%
+    # along the complete presentation blade; allow only5mm positional error.
+    assert projection>=.18-.005/full_length,('contact projects onto proximal hilt',projection,point,grip,tip)
+    assert projection<=1+.005/full_length,('contact projects beyond blade tip',projection,point,grip,tip)
+    return {'point_to_damage_segment_m':distance,'full_blade_projection_fraction':projection,
+        'expected_damage_base':damage_base,'sharp_damage_length_m':sharp_length,
+        'expected_damage_axis_base':inner_base,'expected_damage_axis_tip':inner_tip,
+        'point_to_damage_inner_axis_m':inner_distance}
+
+
 def validate_contact(event):
     assert event['source']=='player' and event['attack_id']=='charged_heavy' and event['strength']=='charged',event
     assert event['attack_instance_id']>0 and event['target_id']>0,event
@@ -135,8 +163,14 @@ def validate_contact(event):
     distance=segment_distance(event['point'],grip,tip)
     # This audits the reported physical sample, not resource reach metadata.
     assert distance<=.125,('point outside .12m blade capsule plus5mm tolerance',distance,event)
+    assert abs(event['damage_start_fraction']-.18)<.00001,event
+    sharp=validate_sharp_contact(event['point'],grip,tip)
+    for field,expected in [('contact_damage_base',sharp['expected_damage_base']),('contact_damage_tip',tip),
+        ('contact_damage_axis_base',sharp['expected_damage_axis_base']),('contact_damage_axis_tip',sharp['expected_damage_axis_tip'])]:
+        length(event[field])
+        assert length([a-b for a,b in zip(event[field],expected)])<.001,(field,event)
     return {'point_to_blade_segment_m':distance,'blade_grip_to_tip_m':length([b-a for a,b in zip(grip,tip)]),
-        'query_sample_time_s':query_time,'packet_attack_elapsed_s':event['attack_elapsed']}
+        'query_sample_time_s':query_time,'packet_attack_elapsed_s':event['attack_elapsed'],**sharp}
 
 
 def validate_frozen_contact(snapshot):
@@ -158,12 +192,13 @@ def validate_frozen_contact(snapshot):
     assert abs(length([b-a for a,b in zip(grip,tip)])-1.19)<.003,art
     distance=segment_distance(event['point'],grip,tip)
     assert distance<=.125,('contact outside actual frozen drawn blade capsule',distance,snapshot)
+    sharp=validate_sharp_contact(event['point'],grip,tip)
     trail=art['blade_trail']
     assert trail['visible'] and trail['samples']>=2 and trail['triangles']>=2,trail
     return {'observed':True,'sequence':event['sequence'],'attack_instance_id':event['attack_instance_id'],
         'packet_attack_elapsed_s':event['attack_elapsed'],'gameplay_attack_elapsed_s':attack['attack_elapsed'],
         'render_sampled_time_s':art['sampled_time'],'point_to_actual_drawn_segment_m':distance,
-        'blade_trail':trail}
+        'actual_drawn_sharp_segment':sharp,'blade_trail':trail}
 
 
 async def run(url,output,phase='charged-heavy-focus',rotation_driver='playwright'):

@@ -1799,7 +1799,7 @@
       "kind": "workflow",
       "status": "verified",
       "title": "차지 강타의 확정 접촉 정보와 공통 시계·양쪽 정지·모션 보정을 함께 검증한다",
-      "summary": "확정 접촉의 세부 시각을 게임/최종 표시/피격/연출이 공유하고 실제 marker와 잔상을 함께 검사한다. 키의 손 목표가 맞아도 IK pole의174도 반전은 중간점에서칼끝1.77m오차를냈다. 연속 elbow-plane과선택적반입으로원본을보존한수정본은native435/0·실제터치집중299.510초/errors0을통과했다. 신규정밀도만유지하고기존100Hz표본을복원해Web146275179B/150MB예산을지켰다. 정상1배속AV·실기기·AAA는별도다.",
+      "summary": "로컬 dirty preview에서 확정 날 접촉·공통 시계·양쪽 정지·최종 검/발·충돌 recoil을 검증했다. native439/0·실제 터치 집중282.938초/errors0,피해69.3·impact/spawn1회·recoil.349998474m와Web146279323B/Windows패키지가통과했다. 이전hilt green과recoil초과실패는보존했다. 최종커밋CI·전체여정·공개릴리스·정상1배속AV·실기기·AAA는pending이다.",
       "tags": [
         "combat",
         "charged",
@@ -1815,7 +1815,7 @@
       "checked_on": "2026-10-31",
       "context": {
         "engine": "Godot4.7.2; current implementation branch feat/charged-heavy-impact",
-        "state": "Verified local native435/0, Python51/0, Web/Windows export+ZIP CRC and actual touch focused299.510s/errors0 on dirty preview. Final committed CI/public/release proof remains separate.",
+        "state": "VERIFIED only local dirty-preview native439/0, Python51/0, strict actual focused CDP touch282.938s/errors0 and Web/Windows exports+ZIP integrity. Final committed CI/full browser journey/public/release/1xAV/target hardware/AAA pending.",
         "contract": "Confirmed contact context, shared gameplay/presentation clock, two-actor hitstop, physical weapon/foot compensation",
         "reference": "Zeus Com2uS Berserker greatsword identity from user/official class sources; actual reference combat timing and current1xAV not verified",
         "quality": "Prototype charged-impact slice; semantic motion, target hardware and final AAA approval pending",
@@ -1829,11 +1829,21 @@
         "selected_body_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
         "selected_solution": "Continuous elbow-plane impact IK; new2hero actions500Hz, raw existing19clips/body/BIN preserved; actualraw key/midpoint188 samples grip.320mm/tip1.280mm and maxjoint9.574deg",
         "actual_imported_alignment": "Actual RunePlayer/capsule actor frame; seven phases including.475 at scales1/1.25: gripmax.325742mm/tipmax1.122182mm; nominal support-foot drift.015378mm; newRightHand531keys and unchangedlight53keys verified",
-        "budget": "Whole500Hz export152592309B rejected against150000000B; retaining new2preciseactions and original100Hzgrid removes702144upsampled keys. Final435source Webraw146275179B; Web/WindowsZIPCRC verified.",
+        "budget": "Whole500Hz export152592309B rejected against150000000B; original100Hzgrid restores702144upsampled keys while retaining new2preciseactions. Historical435Web146275179B and pre-recoil438Web146278635B remain history. Current439Webraw146279323B passes150000000B; Windows export and bothZIP CRC verified. No performance/AAA approval.",
         "contact_clock_failure": "Intermediate real Web receipt queried.454444s but froze displayed.466667s and erased trail via pose(0,newelapsed). Analytic drawn gap estimate.438673m was a diagnosis, not a measured mesh contact.",
-        "contact_clock_fix": "Charged sweep stops at first accepted substep, same-query targets share it; partial movement integrates consumed interval. One positive-delta live contact pose precedes zero-delta stop; actual native final/query/authoritative time.458888889s, drawn.458888864s, point-to-drawn segment.063202679m,8trail samples/mesh/ages unchanged across3physicsframes.",
-        "mobile_focused": "Fresh actual CDP multi-touch: whiff no impacts/spawns; actual incoming-hit recovery HP104, charged69.3 against95HP target, heavy_hit.48, both reported.075 pause, one impact/effect, actual recoil.35002327m, duplicates0. Trusted release to match5.630s<15s; finalpausedHP88/pointers0/errors0.",
-        "browser_scope": "First2driver failures preserved: actual contact but aggregate15s observation response timeout, then interrupted/whiff attempt with no receipt. Final focused observer retains bounded readonly timeline and uses real recovery; full existing15/30/60/1.2m gates unchanged. Short frozen pair unobserved in browser; native positive contact proof is separate."
+        "contact_clock_fix": "Current native contact stops sweep at first accepted substep, same-query targets share it; movement integrates consumed interval and positive-delta live pose precedes zero-delta stop. Query/event/authoritative.46s,drawn.45999997516848s. After3actualphysicsframes bothroots/complete skeletons/attack+victimclocks and8trail samples/mesh/ages unchanged. Separate positive native proof; browser frozen pair unobserved.",
+        "mobile_focused": "Actual trustedCDP max2touches strictfocused282.938s/errors0: whiff0contact/spawn,69.3damage HP95→25.7,heavy_hit.48,bothreportedpause.075,confirmed1/effectspawn1,actualhorizontalrecoil.3499984741330781m. Release→readonlymatch5.787s<15s observation deadline, not audiovisual attack timing. FinalactualpausedHP72/activepointers0.",
+        "browser_scope": "Current local actual focused touch passed on unchanged export; full journey/final committed CI/public/release stillpending. Browser frozen pair observed=false (snapshot outside attacker hitstop); actual native frozen clocks/roots/skeletons/trail is independent. Earlierdriver/hilt/recoil failures preserved; existing15/30/60/1.2m gates unchanged.",
+        "hilt_failure": "CleanCI receipt phase.19753 at.375555s hit from Grip hemisphere: sharp-segment distance.265814m, full-blade projection-.021113 (behindGrip). Local prior299.510s receipt sharp distance.170316/projection.077705 also rejected. Prior contact quality approval is historical/full-grip capsule only.",
+        "sharp_mobile_observation": "Current actual touch querytime.4322222222222221s; fullbladeprojection.26374919299824406>.18,independent sharplength.9757999848712761m/innercapsuleaxisdistance.11855133758392557m<=.125. Point and axes derived independently from drawn/query Grip/Tip, not only trusted exported damage endpoints.",
+        "sharp_mobile_recoil_failure": "Preserved253.900s pre-budget-fix actualsharp mobile FAILED recoil.365348910m>requested.35m/limit.355m despiteerrors0 and geometriccontactpass at.428888889s/projection.254513. Laternative overlap trace and current282.938s strictmobile corrected it without widening limits.",
+        "fixture_provenance_correction": "Frozen contact.json records actualruntimehero0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d separately from referencehero4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c; fixture0351c54bfd0ef4e8bbe98a08826508061272656555cd7332e692bceae56159ad. Earlier hero_body oldpath was reportmetadata, not runtime model change.",
+        "overlap_recoil_native": "ActualGodot4.7.2 native439/0: separation.7449951171875m<capsuleradii.76m; firstresolvedstep.0399932861328125m; finalnet/path both.349990844726562m vsrequested.35m;sourcerootunchangedtrue. Openfloor.3499755859375m,wall.197509765625m. Independentnative proof; current mobile actual.3499984741330781m separately.",
+        "recoil_budget_contract": "Count actual move_and_slide horizontal travel including collision-overlap recovery against requested impulse budget. Distinguish requested motor travel, net displacement and accumulated path; keep collision authority at walls; no teleport correction, tolerance widening or QA-path bypass.",
+        "source_snapshot": "sourceHEAD b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8 with source_tree_dirty=true, buildID0.1.8·b6af5a51; file hashes/export identity in mobile-focused-summary and mobile-export-context. Does not certify a future clean commit.",
+        "historical_mobile_focused": "Rejected historical299.510s green: full-Grip/Tip capsule receipt projection.077705/sharpdistance.170316m. CleanC2green receipt phase.19753/time.375556s/projection-.021113/sharpdistance.265814m also rejected. Frozen in rejected-contact-summary.json, never current sharp approval.",
+        "sharp_geometry_selected": "DisplayGrip→Tip1.19m; proximal18%=.2142m excluded for.9758m sharpsegment; capsuleheight includes caps inside endpoints,ray uses actual inner axis. Independent native hilt rejection and actual strictmobile sharp gates passed after unchanged-bound recoilfix.",
+        "not_verified": "Final clean committed CI, full existing browser journey, public deployment/release, browser frozen-pair positive observation, normal-speed audiovisual acceptance, actual Android/iOS/Safari/Windows hardware, targetGPU performance and AAA approval."
       },
       "sources": [
         "docs/CHARGED_IMPACT_SLICE.md",
@@ -1858,7 +1868,13 @@
         "game/scripts/actors/blade_trail.gd",
         "docs/validation/v0.1.8/contact.json",
         "docs/validation/v0.1.8/mobile-focused-summary.json",
-        "tools/charged_heavy_browser_smoke.py"
+        "tools/charged_heavy_browser_smoke.py",
+        "https://docs.godotengine.org/en/stable/classes/class_capsuleshape3d.html",
+        "docs/validation/v0.1.8/mobile-focused-proof.json",
+        "docs/validation/v0.1.8/mobile-release-timeline.json",
+        "docs/validation/v0.1.8/mobile-export-context.json",
+        "docs/validation/v0.1.8/native-runtime.log",
+        "docs/validation/v0.1.8/rejected-contact-summary.json"
       ]
     }
   ]

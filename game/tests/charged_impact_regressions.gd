@@ -15,7 +15,8 @@ static func _write_contact_proof(report: Dictionary) -> void:
 	report["source_hashes"] = {
 		"fixture":FileAccess.get_sha256("res://tests/charged_impact_regressions.gd"),
 		"charged_attack":FileAccess.get_sha256("res://data/charged_heavy.tres"),
-		"hero_body":FileAccess.get_sha256("res://assets/models/production/lyra_gameplay.glb"),
+		"hero_body":FileAccess.get_sha256("res://assets/models/production/lyra_impact_gameplay.glb"),
+		"hero_reference_body":FileAccess.get_sha256("res://assets/models/production/lyra_gameplay.glb"),
 	}
 	var path := ProjectSettings.globalize_path("res://").path_join("../build/verification/charged-impact/contact.json").simplify_path()
 	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
@@ -186,6 +187,39 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(distant_probe.hits == 0 and overhead_probe.hits == 0 and rear_probe.hits == 0, "Charged contact excludes the old extended proxy range, overhead and rear volumes")
 	for probe in [swept_probe,distant_probe,overhead_probe,rear_probe]:
 		probe.queue_free()
+	# Reproduce the clean-browser hilt-only contact: target roots were only
+	# 0.725m apart while the blade was still raised at t<=0.38. This is not a
+	# speculative empty swing; it uses the real enemy's full capsule hurtbox.
+	_ready_player(player,start)
+	var hilt_enemy := _enemy(fixture,world,Vector3(0,0,1.275))
+	await _tick(tree)
+	await _tick(tree)
+	var hilt_swing := CombatStrike.new(player,RunePlayer.CHARGED_HEAVY,1.65)
+	player.strike = hilt_swing
+	hilt_swing.step(.38,Vector3.FORWARD,4)
+	var early_hilt_health := hilt_enemy.health
+	check.call(is_equal_approx(early_hilt_health,95) and events.is_empty(), "A close enemy touching the raised hilt receives no charged damage through t=0.38")
+	hilt_swing.step(.14,Vector3.FORWARD,4)
+	hilt_swing.step(.4,Vector3.FORWARD,4)
+	check.call(events.size() == 1 and amounts.size() == 1 and absf(hilt_enemy.health-25.7) < .001 and float(events[0].attack_elapsed) > .38, "The later actual blade cut deals 69.3 exactly once after the raised-hilt interval")
+	var hilt_proof: Dictionary = {"root_separation_m":.725,"early_time_s":.38,"early_health":early_hilt_health,"final_health":hilt_enemy.health,"events":events.size()}
+	if not events.is_empty():
+		var close_impact: Dictionary = events[0]
+		var full_grip: Vector3 = close_impact.contact_blade_grip
+		var full_tip: Vector3 = close_impact.contact_blade_tip
+		var sharp_base: Vector3 = close_impact.contact_damage_base
+		var sharp_axis_base: Vector3 = close_impact.contact_damage_axis_base
+		var sharp_axis_tip: Vector3 = close_impact.contact_damage_axis_tip
+		var sharp_nearest := Geometry3D.get_closest_point_to_segment(close_impact.point,sharp_axis_base,sharp_axis_tip)
+		var sharp_projection := (Vector3(close_impact.point)-full_grip).dot(full_tip-full_grip)/full_grip.distance_squared_to(full_tip)
+		check.call(is_equal_approx(float(close_impact.damage_start_fraction),.18) and sharp_base.distance_to(full_grip.lerp(full_tip,.18)) < .00001 and absf(sharp_axis_base.distance_to(sharp_base)-.12) < .00001 and absf(sharp_axis_tip.distance_to(full_tip)-.12) < .00001 and Vector3(close_impact.point).distance_to(sharp_nearest) <= .121 and sharp_projection >= .18-(.005/1.19), "Confirmed charged geometry excludes the proximal 18 percent and keeps both capsule caps inside the sharp segment")
+		hilt_proof.merge({"first_contact_time":float(close_impact.attack_elapsed),"damage_start_fraction":float(close_impact.damage_start_fraction),
+			"full_grip_world":_xyz(full_grip),"full_tip_world":_xyz(full_tip),"damage_base_world":_xyz(sharp_base),
+			"damage_tip_world":_xyz(close_impact.contact_damage_tip),"damage_axis_base_world":_xyz(sharp_axis_base),"damage_axis_tip_world":_xyz(sharp_axis_tip),
+			"point_world":_xyz(close_impact.point),"point_to_damage_axis_m":Vector3(close_impact.point).distance_to(sharp_nearest),"point_projection_on_full_blade":sharp_projection})
+	hilt_enemy.queue_free()
+	events.clear()
+	amounts.clear()
 	var enemy := _enemy(fixture,world,Vector3(0,0,0))
 	enemy.cooldown = 999.0
 	enemy.set_physics_process(true)
@@ -206,7 +240,11 @@ static func run(world: Node3D, check: Callable) -> bool:
 		var impact: Dictionary = events[0]
 		check.call(impact.attack_id == "charged_heavy" and impact.strength == "charged" and impact.source == "player" and int(impact.attack_instance_id) > 0 and int(impact.attack_instance_id) <= CombatStrike.MAX_SAFE_ATTACK_SERIAL and int(impact.attack_instance_id) == player.strike.attack_instance_id, "Confirmed context identifies the real charged strike with a positive JS-safe serial and no object references")
 		var blade_nearest := Geometry3D.get_closest_point_to_segment(impact.point,impact.contact_blade_grip,impact.contact_blade_tip)
-		check.call(impact.contact_source == "hurtbox_ray" and absf(Vector3(impact.normal).length()-1.0) < .001 and Vector3(impact.point).distance_to(blade_nearest) <= .121 and float(impact.contact_phase) > 0.0, "Confirmed surface point is within the physical blade radius rather than an invented chest-height impact")
+		var sharp_nearest := Geometry3D.get_closest_point_to_segment(impact.point,impact.contact_damage_axis_base,impact.contact_damage_axis_tip)
+		var contact_grip: Vector3 = impact.contact_blade_grip
+		var contact_tip: Vector3 = impact.contact_blade_tip
+		var sharp_projection := (Vector3(impact.point)-contact_grip).dot(contact_tip-contact_grip)/contact_grip.distance_squared_to(contact_tip)
+		check.call(impact.contact_source == "hurtbox_ray" and absf(Vector3(impact.normal).length()-1.0) < .001 and Vector3(impact.point).distance_to(sharp_nearest) <= .121 and sharp_projection >= .18-(.005/1.19) and float(impact.contact_phase) > 0.0, "Confirmed surface point is within the sharp blade capsule rather than the hilt or an invented chest-height impact")
 		var grip_marker := player.visual.rig_weapon.find_child("GripOrigin",true,false) as Node3D
 		var tip_marker := player.visual.rig_weapon.find_child("BladeTip",true,false) as Node3D
 		var drawn_nearest := Geometry3D.get_closest_point_to_segment(impact.point,grip_marker.global_position,tip_marker.global_position)
@@ -218,6 +256,9 @@ static func run(world: Node3D, check: Callable) -> bool:
 			"final_authoritative_elapsed":player.strike.elapsed, "final_drawn_sampled_time":player.visual.skeletal_bridge.sampled_time,
 			"point_world":_xyz(impact.point), "normal_world":_xyz(impact.normal),
 			"query_blade_grip_world":_xyz(impact.contact_blade_grip), "query_blade_tip_world":_xyz(impact.contact_blade_tip),
+			"damage_start_fraction":float(impact.damage_start_fraction), "query_damage_base_world":_xyz(impact.contact_damage_base), "query_damage_tip_world":_xyz(impact.contact_damage_tip),
+			"query_damage_axis_base_world":_xyz(impact.contact_damage_axis_base), "query_damage_axis_tip_world":_xyz(impact.contact_damage_axis_tip),
+			"query_point_to_damage_axis_m":Vector3(impact.point).distance_to(sharp_nearest), "point_projection_on_full_blade":sharp_projection, "raised_hilt_regression":hilt_proof,
 			"final_drawn_grip_world":_xyz(grip_marker.global_position), "final_drawn_tip_world":_xyz(tip_marker.global_position),
 			"query_point_to_segment_m":Vector3(impact.point).distance_to(blade_nearest),
 			"final_drawn_point_to_segment_m":Vector3(impact.point).distance_to(drawn_nearest), "drawn_contact_limit_m":.125,
@@ -272,7 +313,6 @@ static func run(world: Node3D, check: Callable) -> bool:
 		"trail_mesh_unchanged":frozen_trail.mesh == frozen_trail_mesh,
 		"trail_samples_and_ages_unchanged":frozen_trail._samples == frozen_trail_samples,
 	}
-	_write_contact_proof(contact_proof)
 	frozen_trail_mesh = null
 	check.call(is_equal_approx(player.invulnerability,frozen_invulnerability) and is_equal_approx(player.dodge_cooldown,.4) and is_equal_approx(player.parry_cooldown,.3), "Hitstop freezes defensive clocks rather than granting early dodge or parry readiness")
 	check.call(player.input_buffer > 0.0 and not player.buffered_heavy, "A short attack tap during hitstop remains buffered without executing an action")
@@ -291,6 +331,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(absf(hit_travel-miss_travel) < 0.008 and absf(hit_travel-.576) < .008, "Confirmed hitstop preserves active travel instead of dropping a contact tick or jumping after stop")
 	check.call(events.size() == 1 and amounts.size() == 1, "Remaining active and recovery frames cannot emit a second confirmed hit")
 	check.call(absf(Vector2(enemy.recoil_displacement.x,enemy.recoil_displacement.z).length()-.35) < .008, "A strong reaction resolves approximately 0.35m of actual collision-motor recoil on open floor")
+	contact_proof["open_floor_recoil_resolved_m"] = Vector2(enemy.recoil_displacement.x,enemy.recoil_displacement.z).length()
 	var shield := _enemy(fixture,world,Vector3(8,0,0),"shield")
 	shield.facing = Vector3.BACK
 	shield.receive_hit(18,14,shield.global_position+Vector3.BACK*2,true,{"attack_id":"light_1","strength":"light"})
@@ -305,6 +346,33 @@ static func run(world: Node3D, check: Callable) -> bool:
 	boss.poise_meter = 150.0
 	boss.receive_hit(69.3,79.2,boss.global_position+Vector3.BACK*3,true,{"attack_id":"charged_heavy","strength":"charged"})
 	check.call(events[-1].poise_broken and is_equal_approx(boss.stagger,1.4) and boss.recoil_remaining > 0.0, "An actual boss poise break retains its 1.4s opening before allowing strong recoil")
+	# Recorded Web combat began recoil with 0.745m between a 0.36m player
+	# capsule and 0.40m victim capsule. Collision recovery is real displacement,
+	# so the following motor steps must spend the remaining distance budget.
+	_ready_player(player,fixture.global_position+Vector3(0,-.025,-4))
+	enemy.global_position = fixture.global_position+Vector3(0,0,-4.745)
+	enemy.health = 95
+	enemy.hit_pause = 0.0
+	enemy.stagger = 0.0
+	enemy.cooldown = 999.0
+	var overlap_player_start := player.global_position
+	var overlap_start := enemy.global_position
+	var overlap_separation := Vector2(overlap_start.x-overlap_player_start.x,overlap_start.z-overlap_player_start.z).length()
+	enemy.receive_hit(69.3,79.2,player.global_position,true,{"attack_id":"charged_heavy","strength":"charged"})
+	enemy.set_physics_process(true)
+	var overlap_trace: Array[Dictionary] = []
+	for index in range(35):
+		await _tick(tree)
+		overlap_trace.append({"physics_frame":Engine.get_physics_frames(),"remaining_s":enemy.recoil_remaining,
+			"displacement":_xyz(enemy.recoil_displacement),"resolved_path_m":enemy.recoil_travelled_m})
+		if enemy.hit_pause <= 0.0 and enemy.recoil_remaining <= 0.0:
+			break
+	enemy.set_physics_process(false)
+	var overlap_travel := Vector2(enemy.recoil_displacement.x,enemy.recoil_displacement.z).length()
+	check.call(overlap_separation < .76 and overlap_travel > .30 and overlap_travel <= .355 and enemy.recoil_travelled_m <= .355 and player.global_position.is_equal_approx(overlap_player_start), "Close-combat collision recovery consumes the actual 0.35m recoil budget without hiding displacement or teleporting either actor")
+	contact_proof["overlap_recoil_regression"] = {"initial_horizontal_separation_m":overlap_separation,"capsule_radii_sum_m":.76,
+		"requested_m":enemy.recoil_requested_m,"resolved_displacement":_xyz(enemy.recoil_displacement),"resolved_horizontal_m":overlap_travel,
+		"resolved_path_m":enemy.recoil_travelled_m,"source_root_unchanged":player.global_position.is_equal_approx(overlap_player_start),"trace":overlap_trace}
 	# A wall is deliberately within the requested recoil budget, but not touching
 	# the initial capsule. The actual travel must stop short; no teleport fallback.
 	enemy.global_position = fixture.global_position+Vector3(0,0,-6)
@@ -324,11 +392,13 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var wall_travel := Vector2(enemy.recoil_displacement.x,enemy.recoil_displacement.z).length()
 	check.call(wall_travel > .08 and wall_travel < .24 and enemy.global_position.z >= fixture.global_position.z-6.21, "Real CharacterBody wall collision truncates requested recoil without crossing the wall")
 	check.call(is_equal_approx(float(events[-1].requested_recoil_m),.35) and absf(wall_travel-.35) > .05, "Confirmed requested recoil is distinguished from measured resolved travel")
+	contact_proof["wall_recoil_resolved_m"] = wall_travel
 	var kill_before := events.size()
 	enemy.hit_pause = 0.0
 	enemy.receive_hit(1000,1000,enemy.global_position+Vector3.BACK*2)
 	enemy.receive_hit(1000,1000,enemy.global_position+Vector3.BACK*2)
 	check.call(events.size() == kill_before+1 and events[-1].killed and float(events[-1].health_after) == 0.0, "Legacy four-argument damage still resolves one kill and dead targets emit no further impact")
+	_write_contact_proof(contact_proof)
 	player.impact_confirmed.disconnect(on_impact)
 	player.landed_hit.disconnect(on_damage)
 	fixture.queue_free()

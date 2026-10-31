@@ -472,7 +472,8 @@
         "blade_pitch_start": 50.0,
         "blade_pitch_end": -45.0,
         "blade_length": 1.19,
-        "blade_radius": 0.12
+        "blade_radius": 0.12,
+        "blade_damage_start_fraction": 0.18
       },
       "active_window_s": [
         0.34,
@@ -482,7 +483,15 @@
       "sweep_progress": "smooth(f^2)=3f^4-2f^6",
       "contacts": "Front left sole authored world plant .30-.52s under the exact active-only translation; actual walls may shorten actor movement. Runtime blocked-contact foot adaptation remains pending.",
       "candidate_manifest": "art_source/production/candidates/lyra-impact-001/manifest.json",
-      "measurements": "art_source/production/candidates/lyra-impact-001/semantic-review.json"
+      "measurements": "art_source/production/candidates/lyra-impact-001/semantic-review.json",
+      "damage_region": {
+        "display_grip_to_tip_m": 1.19,
+        "proximal_exclusion_fraction": 0.18,
+        "proximal_exclusion_m": 0.2142,
+        "sharp_segment_m": 0.9758,
+        "capsule_extent": "height equals trimmed segment length including hemispherical caps; no extension beyond trimmed endpoints",
+        "status": "pending current runtime sharp-contact validation"
+      }
     },
     "heavy_hit": {
       "duration_s": 0.48,

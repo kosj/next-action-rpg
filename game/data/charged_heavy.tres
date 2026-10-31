@@ -22,3 +22,4 @@ blade_pitch_start = 50.0
 blade_pitch_end = -45.0
 blade_length = 1.19
 blade_radius = 0.12
+blade_damage_start_fraction = 0.18

@@ -23,6 +23,7 @@ extends Resource
 @export var blade_pitch_end: float = -45.0
 @export var blade_length: float = 1.19
 @export var blade_radius: float = 0.12
+@export var blade_damage_start_fraction: float = 0.0
 
 func duration() -> float:
 	return startup + active + recovery

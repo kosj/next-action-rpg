@@ -111,14 +111,20 @@ func _step_physical_blade(old_time: float, delta: float, old_origin: Vector3, fo
 		var grip := origin + (points[0]*scale_m).rotated(Vector3.UP,yaw)
 		var tip := origin + (points[1]*scale_m).rotated(Vector3.UP,yaw)
 		var axis := tip-grip
-		blade.height = axis.length()+blade.radius*2.0
-		query.transform = Transform3D(Basis(Quaternion(Vector3.UP,axis.normalized())),(grip+tip)*0.5)
-		if _confirm_overlaps(query,forward,[grip,tip],lerpf(first,last,fraction),time):
+		var direction := axis.normalized()
+		var damage_base := grip.lerp(tip,clampf(data.blade_damage_start_fraction,0.0,1.0))
+		# Godot capsule height includes both hemispheres. Its outer ends stay
+		# inside the authored damage segment; the hilt is not a lethal blunt end.
+		blade.height = maxf(damage_base.distance_to(tip),blade.radius*2.0)
+		query.transform = Transform3D(Basis(Quaternion(Vector3.UP,direction)),(damage_base+tip)*0.5)
+		var damage_axis_base := damage_base+direction*blade.radius
+		var damage_axis_tip := tip-direction*blade.radius
+		if _confirm_overlaps(query,forward,[grip,tip],lerpf(first,last,fraction),time,[damage_base,tip,damage_axis_base,damage_axis_tip]):
 			# Freeze at the first accepted geometric sample. Other targets in this
 			# same query share that instant; future arc samples resume after stop.
 			return
 
-func _confirm_overlaps(query: PhysicsShapeQueryParameters3D, forward: Vector3, blade_points_world: Array[Vector3] = [], contact_phase: float = -1.0, contact_time: float = -1.0) -> bool:
+func _confirm_overlaps(query: PhysicsShapeQueryParameters3D, forward: Vector3, blade_points_world: Array[Vector3] = [], contact_phase: float = -1.0, contact_time: float = -1.0, damage_segment_world: Array[Vector3] = []) -> bool:
 	var confirmed := false
 	for result in source.get_world_3d().direct_space_state.intersect_shape(query, 16):
 		var target: Object = result.collider
@@ -131,10 +137,10 @@ func _confirm_overlaps(query: PhysicsShapeQueryParameters3D, forward: Vector3, b
 			if contact_time >= 0.0:
 				elapsed = contact_time
 			confirmed = true
-			target.receive_hit(data.damage * multiplier, data.poise * multiplier, source.global_position, data.parryable, _contact_context(target, forward, blade_points_world,contact_phase))
+			target.receive_hit(data.damage * multiplier, data.poise * multiplier, source.global_position, data.parryable, _contact_context(target, forward, blade_points_world,contact_phase,damage_segment_world))
 	return confirmed
 
-func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Array[Vector3] = [], contact_phase: float = -1.0) -> Dictionary:
+func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Array[Vector3] = [], contact_phase: float = -1.0, damage_segment_world: Array[Vector3] = []) -> Dictionary:
 	# The sweep confirms a hurtbox overlap, not a triangle-level sword contact.
 	# A ray against that hurtbox supplies an honest surface point/normal. If its
 	# origin is inside or another body intercepts it, label the fallback explicitly.
@@ -146,11 +152,14 @@ func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Arra
 	var center := target.global_position + Vector3.UP * 1.1
 	var ray_from := source.global_position + Vector3.UP * 1.1
 	if blade_points_world.size() == 2:
+		var ray_segment: Array[Vector3] = blade_points_world
+		if damage_segment_world.size() == 4:
+			ray_segment = [damage_segment_world[2],damage_segment_world[3]]
 		for child in target.get_children():
 			if child is CollisionShape3D and child.shape is CapsuleShape3D and not child.disabled:
 				var capsule := child.shape as CapsuleShape3D
 				var half_axis := maxf(0.0,capsule.height*0.5-capsule.radius)
-				var closest := Geometry3D.get_closest_points_between_segments(blade_points_world[0],blade_points_world[1],child.to_global(Vector3.DOWN*half_axis),child.to_global(Vector3.UP*half_axis))
+				var closest := Geometry3D.get_closest_points_between_segments(ray_segment[0],ray_segment[1],child.to_global(Vector3.DOWN*half_axis),child.to_global(Vector3.UP*half_axis))
 				center = closest[1]
 				var outward: Vector3 = closest[0]-center
 				if outward.length_squared() < 0.000001:
@@ -184,4 +193,9 @@ func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Arra
 		"contact_phase":contact_phase, "attack_elapsed":elapsed,
 		"contact_blade_grip":blade_points_world[0] if blade_points_world.size() == 2 else Vector3.ZERO,
 		"contact_blade_tip":blade_points_world[1] if blade_points_world.size() == 2 else Vector3.ZERO,
+		"damage_start_fraction":data.blade_damage_start_fraction if damage_segment_world.size() == 4 else 0.0,
+		"contact_damage_base":damage_segment_world[0] if damage_segment_world.size() == 4 else Vector3.ZERO,
+		"contact_damage_tip":damage_segment_world[1] if damage_segment_world.size() == 4 else Vector3.ZERO,
+		"contact_damage_axis_base":damage_segment_world[2] if damage_segment_world.size() == 4 else Vector3.ZERO,
+		"contact_damage_axis_tip":damage_segment_world[3] if damage_segment_world.size() == 4 else Vector3.ZERO,
 	}

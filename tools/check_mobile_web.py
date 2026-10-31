@@ -34,7 +34,7 @@ def main():
               "game/scripts/actors/player.gd", "game/scripts/game.gd", "game/scripts/world/camera_rig.gd",
               "game/web/shell.html", "game/assets/models/production/lyra_impact_gameplay.glb",
               "game/assets/models/production/lyra_eyes.glb", "game/assets/models/production/sentinel_impact_gameplay.glb",
-              "tools/charged_heavy_browser_smoke.py", "game/scripts/core/strike.gd", "game/scripts/actors/enemy.gd",
+              "tools/charged_heavy_browser_smoke.py", "game/scripts/core/strike.gd", "game/scripts/core/attack_data.gd", "game/scripts/actors/enemy.gd",
               "game/data/charged_heavy.tres", "game/data/heavy.tres", "game/scripts/core/audio.gd",
               "game/import/impact_animation_sampling.gd",
               "game/assets/models/production/lyra_impact_gameplay.glb.import",

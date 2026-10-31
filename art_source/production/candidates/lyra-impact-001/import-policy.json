@@ -106,11 +106,202 @@
   ],
   "animation_import": {
     "file": "game/assets/models/production/lyra_impact_gameplay.glb.import",
-    "sha256": "d1ef504436aac4da4c862294c38e9f362c19e3b9a20e124c6372bde0ab3a1bd9",
+    "sha256": "9431e8a5cad39ce74e9d1b8479a3a8e9acc599aac78461745ac9b44ed7059040",
     "fps": 500,
     "subresource_node": "PATH:AnimationPlayer",
     "optimizer/enabled": false,
     "compression/enabled": false,
-    "scope": "Configured policy only. Godot resamples ALL transform tracks at this FPS, including unchanged raw clips. Actual imported key counts and export budget must be independently verified; raw byte preservation does not imply unchanged runtime key counts."
+    "scope": "Godot imports transform tracks at500Hz; the post-import script keeps new charge/charged_heavy dense and removes only intermediate upsampled keys from unchanged clips, preserving100Hz source-grid samples, endpoints and every track. No geometric/error optimizer or visual-asset reduction.",
+    "import_script": {
+      "path": "res://import/impact_animation_sampling.gd",
+      "file": "game/import/impact_animation_sampling.gd",
+      "sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03"
+    },
+    "verified_import_subset": {
+      "status": "verified_native_sharp_build",
+      "alignment_report": "docs/validation/v0.1.8/alignment.json",
+      "imported_charged_right_hand_keys": 531,
+      "imported_unchanged_light_1_max_keys": 53,
+      "unchanged_clip_track_count": 159,
+      "removed_intermediate_upsampled_keys": 702144,
+      "scope": "Actual native imported key counts and full-marker/nominal stance verified in the439-check sharp/recoil build; actual focused browser functional geometry/recoil also passed separately. Final publication and target-hardware/visual/AAA approval remain pending."
+    },
+    "export_budget_history": {
+      "raw_web_before_mixed_sampling_bytes": 152592309,
+      "raw_web_after_mixed_sampling_bytes": 146273451,
+      "unchanged_limit_bytes": 150000000,
+      "scope": "Measured previous mixed-sampling export. Current collision-fix build must be exported and checked again; not target-device performance or AAA approval."
+    },
+    "current_export": {
+      "status": "web_and_windows_exported_narrow_focused_browser_passed",
+      "raw_web_bytes": 146279323,
+      "unchanged_raw_web_limit_bytes": 150000000,
+      "scope": "Current sharp/hilt/recoil export passed the unchanged byte budget and actual focused browser functional geometry/recoil check; final publication, full journey, audiovisual and target-device performance approval remain pending.",
+      "native_checks": 439
+    },
+    "export_history": [
+      {
+        "status": "historical_438_check_sharp_build_export",
+        "raw_web_bytes": 146278635,
+        "unchanged_raw_web_limit_bytes": 150000000,
+        "scope": "Current sharp/hilt build export passed the unchanged byte budget; this is not browser/runtime visual or target-device performance approval."
+      }
+    ]
+  },
+  "runtime_collision": {
+    "scope": "Runtime collision contract update only; display/socket/IK and authored GLB full-marker pose protocol remain unchanged.",
+    "full_marker_segment_m": 1.19,
+    "blade_damage_start_fraction": 0.18,
+    "excluded_proximal_length_m": 0.2142,
+    "sharp_damage_segment_length_m": 0.9758,
+    "blade_radius_m": 0.12,
+    "damage_start_formula": "lerp(full_grip, full_tip, 0.18)",
+    "damage_end": "full_tip",
+    "capsule_extent": "Capsule total height includes both hemispherical caps and is trimmed to the sharp-segment length; it must not extend beyond the sharp endpoints.",
+    "trajectory": "The sharp subset follows the same smooth(f^2) actor-local full-marker trajectory; no visual/IK/animation retiming or new GLB generation.",
+    "reason": "A clean-CI first contact near the grip exposed handle/proximal capsule overlap while the blade remained raised. Full-marker alignment alone did not validate the damaging surface.",
+    "validation_status": "verified_native_and_narrow_focused_browser_geometry_recoil",
+    "previous_marker_validation_is_not_sharp_contact_approval": true,
+    "native_validation": {
+      "status": "verified_native",
+      "checks": 439,
+      "failures": 0,
+      "report": "docs/validation/v0.1.8/contact.json",
+      "source_report": "build/verification/charged-impact/contact.json",
+      "scope": "Actual native sharp-subset contact/hilt exclusion and resolved recoil-budget regression. Actual frozen actor/skeleton/trail evidence is native-only; terrain, normal-speed AV, target hardware and AAA approval remain pending.",
+      "raised_hilt_regression": {
+        "root_separation_m": 0.725,
+        "early_time_s": 0.38,
+        "early_health": 95.0,
+        "first_contact_time": 0.427457627118644,
+        "final_health": 25.7,
+        "events": 1,
+        "point_projection_on_full_blade": 0.24526233655421,
+        "point_to_damage_axis_m": 0.118650324642658
+      },
+      "primary_contact": {
+        "attack_elapsed_s": 0.46,
+        "point_projection_on_full_blade": 0.962028026233514,
+        "query_point_to_damage_axis_m": 0.113223642110825
+      },
+      "recoil_budget_regression": {
+        "capsule_radii_sum_m": 0.76,
+        "initial_horizontal_separation_m": 0.7449951171875,
+        "requested_m": 0.35,
+        "resolved_horizontal_m": 0.349990844726562,
+        "resolved_path_m": 0.349990844726562,
+        "source_root_unchanged": true,
+        "first_resolved_step_m": 0.0399932861328125,
+        "open_floor_resolved_m": 0.3499755859375,
+        "wall_resolved_m": 0.197509765625
+      },
+      "source_hashes": {
+        "charged_attack": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
+        "fixture": "0351c54bfd0ef4e8bbe98a08826508061272656555cd7332e692bceae56159ad",
+        "hero_body": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+        "hero_reference_body": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c"
+      },
+      "evidence": [
+        {
+          "file": "docs/validation/v0.1.8/contact.json",
+          "sha256": "b58183ac098ee8f6cac7142ad415d44fc0b70b311e2e5805ff204eead576ffca"
+        },
+        {
+          "file": "docs/validation/v0.1.8/native-runtime.log",
+          "sha256": "27d12abdafd230406c207b0b745e37041ad249e50ff7e7edd3aa25549d65db89"
+        },
+        {
+          "file": "docs/validation/v0.1.8/alignment.json",
+          "sha256": "11f2ba721d19b40853285daaead1550bf431265a452563c7cb966c8fa048b584"
+        }
+      ]
+    },
+    "native_validation_history": [
+      {
+        "status": "historical_native_sharp_subset_before_recoil_budget_fix",
+        "checks": 438,
+        "failures": 0,
+        "report": "docs/validation/v0.1.8/contact.json",
+        "source_report": "build/verification/charged-impact/contact.json",
+        "scope": "Prior438-check native sharp-contact result; subsequent focused browser exposed resolved recoil above the existing travel budget. Preserved history, not current-build acceptance.",
+        "raised_hilt_regression": {
+          "root_separation_m": 0.725,
+          "early_time_s": 0.38,
+          "early_health": 95.0,
+          "first_contact_time": 0.427457627118644,
+          "final_health": 25.7,
+          "events": 1,
+          "point_projection_on_full_blade": 0.24526233655421,
+          "point_to_damage_axis_m": 0.118650324642658
+        },
+        "primary_contact": {
+          "attack_elapsed_s": 0.46,
+          "point_projection_on_full_blade": 0.962028026233514,
+          "query_point_to_damage_axis_m": 0.113223642110825
+        }
+      }
+    ],
+    "focused_browser_validation": {
+      "status": "verified_narrow_functional_geometry_and_recoil",
+      "scope": "Actual strict CDP touch in Chromium on a local dirty-preview Web export: whiff exclusion, one confirmed sharp contact/effect, damage/reaction receipts and bounded resolved recoil. This does not verify full journey, committed/public build, frozen frame pair, normal-speed audiovisual semantics, terrain, target hardware or AAA quality.",
+      "seconds": 282.938,
+      "errors": 0,
+      "contact_time_s": 0.4322222222222221,
+      "full_blade_projection_fraction": 0.26374919299824406,
+      "sharp_damage_length_m": 0.9757999848712761,
+      "point_to_damage_inner_axis_m": 0.11855133758392557,
+      "actual_recoil_horizontal_m": 0.3499984741330781,
+      "actual_contact_count": 1,
+      "confirmed_effect_counts": {
+        "confirmed": 1,
+        "actual_effect_spawns": 1
+      },
+      "damage": 69.3,
+      "target_health": [
+        95,
+        25.7
+      ],
+      "final": {
+        "paused": true,
+        "health": 72,
+        "active_pointers": []
+      },
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      },
+      "native_frozen_positive_evidence_separate": "docs/validation/v0.1.8/contact.json",
+      "source_head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+      "source_tree_dirty": true,
+      "raw_web_bytes": 146279323,
+      "export_unchanged": true,
+      "server_closed": true,
+      "chromium_closed": true,
+      "evidence": [
+        {
+          "file": "docs/validation/v0.1.8/mobile-focused-summary.json",
+          "sha256": "d719ae212ead0215b394b729efd36c6801c0cd4e66b8a2a74094418941324398"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-focused-proof.json",
+          "sha256": "502ef964cb449d14873f9a0c7d90f010f66ef239fb18924af7bfa6fba2ebb89d"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-export-context.json",
+          "sha256": "21567f3de8185c37e570816996a6f915cafc49fa278c8f6d66e183e5630284d5"
+        },
+        {
+          "file": "docs/validation/v0.1.8/mobile-release-timeline.json",
+          "sha256": "79f32b9fbdedba178195821efa497bfa749ef420901777d82f393c674261c9d6"
+        }
+      ],
+      "rejected_history": {
+        "report": "docs/validation/v0.1.8/rejected-contact-summary.json",
+        "sha256": "04436f1d743895b29d0c6cc04fa1052e1f883d651d0a9f82fc0da8c987abd3a2",
+        "first_sharp_before_recoil_fix_seconds": 253.9,
+        "status": "rejected_recoil_budget_exceeded",
+        "scope": "Historical failed253.9s run remains rejected despite sharp geometry gates passing."
+      }
+    }
   }
 }

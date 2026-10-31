@@ -18,6 +18,7 @@ var hit_pause_started_frame: int = -1
 var recoil_remaining: float = 0.0
 var recoil_direction: Vector3 = Vector3.ZERO
 var recoil_displacement: Vector3 = Vector3.ZERO
+var recoil_travelled_m: float = 0.0
 var recoil_requested_m: float = 0.0
 const RECOIL_DURATION: float = 0.24
 const RECOIL_DISTANCE: float = 0.35
@@ -115,15 +116,21 @@ func _physics_process(delta: float) -> void:
 	if recoil_remaining > 0.0:
 		# A separate motor branch prevents pursuit/separation from overwriting
 		# impact travel. CharacterBody collision remains authoritative at walls.
-		var fraction := minf(delta, recoil_remaining) / maxf(delta, 0.000001)
-		velocity.x = recoil_direction.x * RECOIL_DISTANCE / RECOIL_DURATION * fraction
-		velocity.z = recoil_direction.z * RECOIL_DISTANCE / RECOIL_DURATION * fraction
+		# move_and_slide may first resolve an existing close-combat overlap.
+		# Count all resolved horizontal travel against the impulse budget, rather
+		# than issuing another full 0.35m on top of that real collision recovery.
+		var distance_left := maxf(0.0,recoil_requested_m-recoil_travelled_m)
+		var motor_step := minf(RECOIL_DISTANCE / RECOIL_DURATION * minf(delta,recoil_remaining),distance_left)
+		velocity.x = recoil_direction.x * motor_step / maxf(delta,0.000001)
+		velocity.z = recoil_direction.z * motor_step / maxf(delta,0.000001)
 		velocity.y -= 24.0 * delta
 		if is_on_floor():
 			velocity.y = -0.1
 		var recoil_start := global_position
 		move_and_slide()
-		recoil_displacement += global_position - recoil_start
+		var resolved_step := global_position-recoil_start
+		recoil_displacement += resolved_step
+		recoil_travelled_m += Vector2(resolved_step.x,resolved_step.z).length()
 		recoil_remaining = maxf(0.0, recoil_remaining - delta)
 		visual.pose(delta, Vector2(velocity.x, velocity.z).length(), -1.0, false, false, false, presentation_snapshot())
 		bar.visible = health < max_health and not is_boss
@@ -231,6 +238,7 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 			recoil_direction = impact.direction
 			recoil_remaining = RECOIL_DURATION
 			recoil_displacement = Vector3.ZERO
+			recoil_travelled_m = 0.0
 			recoil_requested_m = RECOIL_DISTANCE
 			impact.requested_recoil_m = RECOIL_DISTANCE
 	impact.reaction = hit_reaction if interrupted and health > 0.0 else "none"
@@ -281,6 +289,9 @@ func _resolved_impact(context: Dictionary, origin: Vector3, amount: float, block
 		"source_position":Vector3(context.get("source_position",origin)), "target_position":global_position,
 		"contact_phase":float(context.get("contact_phase",-1.0)), "attack_elapsed":float(context.get("attack_elapsed",0.0)),
 		"contact_blade_grip":Vector3(context.get("contact_blade_grip",Vector3.ZERO)), "contact_blade_tip":Vector3(context.get("contact_blade_tip",Vector3.ZERO)),
+		"damage_start_fraction":float(context.get("damage_start_fraction",0.0)),
+		"contact_damage_base":Vector3(context.get("contact_damage_base",Vector3.ZERO)), "contact_damage_tip":Vector3(context.get("contact_damage_tip",Vector3.ZERO)),
+		"contact_damage_axis_base":Vector3(context.get("contact_damage_axis_base",Vector3.ZERO)), "contact_damage_axis_tip":Vector3(context.get("contact_damage_axis_tip",Vector3.ZERO)),
 		"contact_source":contact_source, "material":"metal", "blocked":blocked,
 		"killed":health <= 0.0, "poise_broken":poise_broken, "reaction":"none",
 		"hitstop":0.075 if strength == "charged" else (0.05 if strength == "heavy" else 0.035),

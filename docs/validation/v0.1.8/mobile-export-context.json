@@ -2,13 +2,13 @@
   "scope": "Actual mobile test export bytes and contemporaneous source hashes; dirty previews are not a committed-source or final-release approval",
   "phase": "charged-heavy-focus",
   "rotation_driver": "playwright",
-  "started_utc": "2026-10-31T22:10:06.821707+00:00",
-  "source_head": "016a17bc9327e0bdf5ad5dd51eb104e61d94a442",
+  "started_utc": "2026-10-31T23:04:50.603812+00:00",
+  "source_head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
   "source_tree_dirty": true,
   "export_directory": "/workspace/next-action-rpg/build/web",
   "source_sha256": {
     "tools/mobile_browser_smoke.py": "b4e3b465bb333575d9735fbdcb1efd24505532847fd97d00512a8592fc12f0ad",
-    "tools/check_mobile_web.py": "1dea68c89177c37daf1311dc1ba8fae97df8c26eb50458c8ee4b3313f0e9073a",
+    "tools/check_mobile_web.py": "dcb17827a20cbc4b256e62aa2aa5033343b5d96391b373a8a163e0557278c970",
     "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0",
     "game/project.godot": "1f8837ff7ff88e37d3cebc96dd34ba2c97f17048b16efe9bccd1649e5e4f305c",
     "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
@@ -20,10 +20,11 @@
     "game/assets/models/production/lyra_impact_gameplay.glb": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
     "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
     "game/assets/models/production/sentinel_impact_gameplay.glb": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
-    "tools/charged_heavy_browser_smoke.py": "400cb1cb4833ec8cf16d3f80949a6db810ba59eac9a19079d82ea921d6103a4a",
-    "game/scripts/core/strike.gd": "603f78469f11ed284c40b26032dbd7fc0929d24e71b425fbd06a0d824cf592b7",
-    "game/scripts/actors/enemy.gd": "e848bbdc56012c5be5c49d5382db0d4c7c2a067f1a76c8296e0ecf9e196ec0e4",
-    "game/data/charged_heavy.tres": "1a1e9515dea4e38300d438d932fdab53c8a3898fac0fb376617842ac2892697f",
+    "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "game/scripts/core/strike.gd": "0f8810e08a285d2231aac7f8773d3f9ad377cc67c2ac7e16a6122cdd03efd01a",
+    "game/scripts/core/attack_data.gd": "61b0a43204d67c28b2f0d0ced21bbbad1d0104158945eadaf41328a78bf001ac",
+    "game/scripts/actors/enemy.gd": "fe71694325f81f6a6c00888b34ac74e7aac5a83da6153df4b749ba1654a69b96",
+    "game/data/charged_heavy.tres": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
     "game/data/heavy.tres": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb",
     "game/scripts/core/audio.gd": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
     "game/import/impact_animation_sampling.gd": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
@@ -82,7 +83,7 @@
     },
     "index.html": {
       "bytes": 3171,
-      "sha256": "394df0716e04eef3b950a186c26a7601f4cbb9231a138f154f63f8cdd942a396"
+      "sha256": "95280054645ece650d4fb27deb8653b829f4bbc7b7bcf9b0369c8c12fb8cafd5"
     },
     "index.icon.png": {
       "bytes": 5217,
@@ -93,8 +94,8 @@
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
     },
     "index.pck": {
-      "bytes": 106316616,
-      "sha256": "eef4b30bdfe0ee28314d469d1c6232a3894e73ef8a893960f023506bf028f8bf"
+      "bytes": 106320760,
+      "sha256": "9efb43057f37921b34378684e342c82801cda8ff8d5d54e3e1dc947a120cfea9"
     },
     "index.png": {
       "bytes": 21443,
@@ -106,6 +107,6 @@
     }
   },
   "server_closed": true,
-  "finished_utc": "2026-10-31T22:15:09.522306+00:00",
+  "finished_utc": "2026-10-31T23:09:36.367795+00:00",
   "export_bytes_unchanged": true
 }

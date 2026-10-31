@@ -122,10 +122,10 @@
 	},
 	"scope": "Actual WAV API allocation, swing/contact separation, profile ownership, same-frame crowd cap and observed playback shutdown; listening and rendered Web mix remain separate.",
 	"stop": {
-		"frames": 11,
+		"frames": 13,
 		"initial_pending_playbacks": 33,
 		"pending_playbacks": 0,
 		"players": 0,
-		"seconds": 0.063034
+		"seconds": 0.077953
 	}
 }
