@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.2.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.2.1**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -37,6 +37,7 @@
 | 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
 | --- | --- | --- |
 | `web-persistence-test`, `web-idbfs-async-commit` | 메모리/UI 상태와 durable commit을 분리하고 완전 종료·같은 프로필 재시작까지 검사한다. | 실제 저장 backend/primary key, 동기화 시점, 재시작 후 설정·진행 |
+| `web-unsupported-shader-cache-userfs-directories` | 저장 대기 변경 전에 userfs 키와 cache 기능의 플랫폼별 실제 지원을 조사하고, 미지원 cache의 디렉터리 생성과 유효한 load/save를 구분한다. | 읽기 전용 metadata·고정 source, fresh/기존 프로필과 남는 디렉터리, shader compilation·품질·다른 플랫폼 보존. 키 변화와 primary 커밋·재시작·공개 QA는 별도 판정 |
 | `browser-quality-before-combat` | 설정/저장 대기를 안전 구역에 배치하고 전투 검증을 별도로 유지한다. | 정상 입력으로 접근할 수 있는 구역, 검사 중 실제 HP/진행 보존 |
 | `pages-public-deployment`, `pages-enablement-blocker` | repo 공개, 호스팅 최초 활성화, 배포, 공개 URL 실행은 별개 상태다. 해결된 과거 제약을 다시 현재 제약으로 쓰지 않는다. | 현재 Pages 설정과 token scope, 실제 실패 작업, 공개 빌드 식별자 |
 | `release-assets-ci-token` | 릴리스 첨부는 해당 작업에 맞는 현재 인증 경로로 처리한다. | CLI·연결 앱·CI token 각각의 실제 권한과 만료 상태 |
