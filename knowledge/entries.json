@@ -856,7 +856,8 @@
         "version": "0.1.4 development",
         "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
         "sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
-        "scope": "Archived268 native and43 independent model checks and exports cover their recorded revision; added Lyra transition fixture27 passed; latest whole-build/browser/public acceptance and final AAA art remain separate"
+        "scope": "Archived268 native and43 independent model checks and exports cover their recorded revision; added Lyra transition fixture27 passed; latest whole-build/browser/public acceptance and final AAA art remain separate",
+        "latest_validation": "Local integrated305 native assertions,Python41, Web/Windows export and complete localWeb316.961s passed; exact public commit pending"
       },
       "sources": [
         "docs/CHARACTER_INTEGRATION.md",
@@ -870,7 +871,9 @@
         "docs/validation/v0.1.4/README.md",
         "docs/validation/v0.1.4/production-summary.json",
         "docs/validation/v0.1.4/transition-polish.json",
-        "docs/validation/v0.1.4/transition-polish-runtime.log"
+        "docs/validation/v0.1.4/transition-polish-runtime.log",
+        "docs/validation/v0.1.4/art-quality-build-summary.json",
+        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json"
       ],
       "supersedes": [
         "art-skeleton-contract"

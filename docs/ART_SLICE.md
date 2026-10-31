@@ -45,7 +45,7 @@ v0.1.3 게임에는 hero 검 1개와 첫 courtyard의 기둥 8개·독립 출구
 
 같은 프레임 `RightHand` socket과 리그 scale 역수 보정으로 검 총길이1.35m·grip→tip1.19m를 유지합니다. hero capsule bottom의0.025m는 시각 자식에만 보정하며 collider·HP·판정·이동 권한은 보존합니다. 후방·측면 cycle은 락온과 enemy separation을 표현하고, dodge는 단일 저작 clip과 실제 회피 방향의 시각 yaw를 조합합니다. charge/heal은 정지 gesture이며 이동 중 locomotion·기존 VFX가 우선하고 HP는 즉시 회복됩니다.
 
-초기 revision의 독립 fresh 실제 모델41개·로컬 Web 검증 이후 charge 종료와 그립 데이터를 보정했습니다. 최신 파일의 통합 Godot runner268개·독립 실제 모델43개가 실패0으로 통과했고 Web/Windows 내보내기도 완료했습니다. [검증 근거](validation/v0.1.4/README.md)와 최종 Web·공개 브라우저 결과는 구분합니다. 후속80ms 포즈 이음과 이동 phase 보존은 [반입 기록](CHARACTER_INTEGRATION.md)에 따로 기록합니다. 모든 포즈의 손가락/의상 접촉·최종 재질과 목표 기기 성능은 이 프리뷰의 완료 주장에 포함하지 않습니다. ranged·shield·elite·boss는 기존 표현입니다.
+초기 revision의 독립 fresh 실제 모델41개·로컬 Web 검증 이후 charge 종료와 그립 데이터를 보정했습니다. 초기 파일의 통합268개·독립 실제 모델43개 근거를 보존합니다. 후속 PBR·동작 전환·오디오 수정을 포함한 전체305개·오류0과 Web/Windows 내보내기, 전체 로컬 Web316.961초 성공을 따로 기록합니다. [검증 근거](validation/v0.1.4/README.md)와 최종 Web·공개 브라우저 결과는 구분합니다. 후속80ms 포즈 이음과 이동 phase 보존은 [반입 기록](CHARACTER_INTEGRATION.md)에 따로 기록합니다. 모든 포즈의 손가락/의상 접촉·최종 재질과 목표 기기 성능은 이 프리뷰의 완료 주장에 포함하지 않습니다. ranged·shield·elite·boss는 기존 표현입니다.
 
 ## G0 · 생성 입력 확인
 

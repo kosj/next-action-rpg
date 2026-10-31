@@ -14,3 +14,5 @@ Godot4.7.2·Blender4.3.2에서 실제32k리라/22k수호병을검수했습니다
 [전환 표본](transition-polish.json)과 [집중27개 검사](transition-polish-runtime.log)는 실제53본·손·칼끝의 위치 튐과 phase/clock/우선 상태를 확인합니다. [불변 트랙 제거 진단](transition-import-diagnostic.log)에 따른 두 production import 정책도 보존합니다. [오디오 집중9개](audio-lifecycle-focused.log)와 [실제 playback 소멸 조건](audio-lifecycle.json)은 고정 대기 대신 참조 해제를 확인하며 stale callback·반복 중지·명시적 재개를 검사합니다. 이 집중 검사들을 전체305개에 더한 합계로 표시하지 않습니다.
 
 [첫 방 실제 고정 카메라 검사](courtyard/README.md)는 별도 복사 fixture의 구도·PBR·조명 자료입니다. [전체 key/midpoint 변형 검토](../../../art_source/production/character_actions/deformation_review/README.md)는 원본의 불량과 자동 수선 기각을 기록합니다. 수선된 GLB는 채택하지 않았으며 원본 runtime A89/214를 유지합니다. [AAA 기준](../../AAA_ART_QUALITY.md)의 얼굴·손·갑옷/의상·접촉·실제 목표 GPU 항목은 계속 미승인입니다.
+
+[최신 전체 로컬 Web316.961초 성공](local-web-final/README.md)은 PBR·전환·오디오/QA 수정까지 포함합니다. 앞의 local-web-initial과 구분하며 정확 공개 commit의 성공 주장은 하지 않습니다.
