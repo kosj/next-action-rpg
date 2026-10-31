@@ -7,6 +7,8 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 
 [아트 파이프라인](../../../docs/ART_PIPELINE.md)과 [재검증 기록](../../../docs/ART_REVIEW.md)을 먼저 확인합니다. `python tools/knowledge.py search --tag art`로 실험 결과와 라이선스 조건을 찾습니다. 리그·애니메이션 변경에는 [godot-animation](../godot-animation/SKILL.md)을 적용합니다.
 
+현재 사용자 목표는 AAA 아트 품질입니다. [대표 구간 AAA 승인 기준](../../../docs/AAA_ART_QUALITY.md)을 적용하고 리라·일반 근접 수호병·첫 전투 공간을 함께 검수합니다. 현재 스켈레톤·재질·장면 프리뷰는 검토 가능한 제작 단계이며 최종 AAA 승인은 `pending`입니다. 생성 성공·삼각형/본/클립 수·텍스처 해상도·구조 검사나 저작 표본 수치를 시각 품질 인증으로 사용하지 않습니다.
+
 ## 원본과 생성
 
 - 현재 검증된 Blender 버전은 아트 가이드에서 확인합니다. 새 버전은 별도 디렉터리·체크아웃에서 먼저 시험합니다.
@@ -34,9 +36,46 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 - 정적 소품의 실제 치수·원점·앞뒤 형태를 확인합니다. 단일 이미지에서 생성한 문이 4면 구조가 될 수 있습니다. 이번 파생 recipe는 `art_source/production/batches/2026-10-31/derive_portal.py`와 `derive_props.py`에 보존합니다. 원본 해시를 유지하고 새 출력에서 치수·통과 공간·UV·노멀·재반입을 확인합니다. 평면 절단 캡·휴리스틱 그립은 최종 재질/접촉 승인과 분리합니다.
 - 게임 반입에서는 기존 피벗의 무기 축과 수입 모델의 축을 실제 marker로 대조합니다. 정적 장식과 잠금 장벽의 제어 트리를 분리하고, 시각물만 숨길 때 기존 충돌을 삭제하지 않습니다. source tree 밖의 runtime GLB도 CI 구조 검사에 포함하고 두 품질 모드·진행·카메라 접촉을 실제 검사합니다.
 
+## 실제 캐릭터 프리뷰를 반복 제작할 때
+
+1. 원본 weighted mesh/rest skeleton과 stock 개발 입력을 보존합니다. 새 runtime actions는 [저작 도구](../../../tools/author_character_actions.py)·[gait 도구](../../../tools/character_gait.py)·`art_source/production/character_actions/` recipe에서 provenance와 함께 만들며, stock 이름 변경이나 FCurve/수치 포즈 복사를 프로젝트 저작으로 표시하지 않습니다. 공격창은 현재 gameplay 데이터의 초를 원본으로 사용합니다.
+2. Blender가 glTF를 반입하며 만든 `pose.bones[].custom_shape` 객체는 source geometry와 구분합니다. 공유 REST renderer의 제외 목록·원본 mesh 수/삼각형·source SHA를 대조합니다. 이름이 같거나 작다는 이유로 실제 메시를 제거하지 않습니다.
+3. BoneAttachment는 실제 Skeleton 자식에 실제 본 이름을 지정하고 고정 offset은 별도 WeaponGrip 자식에 둡니다. baked/manual Tree는 그 표본 직후 attachment를 동기화해 world 본/그립/칼끝을 확인합니다. 향후 Modifiers가 있으면 최종 skeleton_updated 이후를 검사합니다. import normalization scale만 역수 보정하고 actor 자체 scale와 실제 검 길이는 보존합니다.
+4. source REST 발바닥0과 CharacterBody capsule bottom을 대조합니다. 필요한 시각 자식 offset만 계산하고 collider·피해·HP·이동 값을 바꾸지 않습니다. 실제 source별 scale/offset은 [그립 데이터](../../../game/data/character_grips.json)·반입 보고서·지식 DB를 참조하고 스킬에 중복 고정하지 않습니다.
+5. runtime Animation은 source와 공유한 채 loop/marker를 수정하지 않습니다. 복제한 리소스에 검수 cycle만 loop로 지정하고 action은 gameplay snapshot elapsed를 수동 샘플링합니다. 방향 이동·회피·charge/heal·death/restore·epoch·hit pause와 서로 다른 actor 재생 독립성을 실제 모델에서 확인합니다. charge 같은 hold는 마지막 키와 duration 이후에도 실제 몸/검의 장전 변위를 유지하는지 검사합니다. 상태명·clip 존재·손가락만의 변화로 장전 포즈를 승인하지 않습니다.
+6. standalone gait의 reach/loop/sole 수치, 결합 후 실제 runtime scene, 전 프레임 변형·교차 전환·하드웨어 성능을 별도 범위로 기록합니다. headless 입력 검사는 process/physics 신호 경계와 실제 just_pressed·행동 효과를 함께 확인하며 fixture 시간 오류를 gameplay 완화나 고정 sleep으로 통과시키지 않습니다. 실제 모델 검사와 기존 runner를 따로 실행했다면 합산 통과로 기록하지 않고 최종 통합 실행 결과를 기다립니다.
+
+## 완전한 본 포즈의 제한적 전환 보간
+
+1. 현재 production은 `ActorVisual`의 명시적 opt-in으로 정규화된 보행 phase를 유지하고 최대80ms 동안 `Skeleton3D` local position/rotation/scale와 시각 yaw를 보간합니다. AnimationTree는 실제 gameplay 시간의 목표 포즈를 먼저 표본화하고, 이후 보간한 최종 손 본에 같은 프레임 소켓을 맞춥니다. 기본 sparse fixture의 즉시 표본 계약은 유지합니다. [실제 리라 전환27개 검사](../../../docs/validation/v0.1.4/transition-polish-runtime.log)와 [범위·입력 해시](../../../docs/validation/v0.1.4/transition-polish.json)를 참조합니다. runtime 발 IK·속도 연속성·최종 접촉/시각 품질의 완료 주장은 포함하지 않습니다.
+2. 수동 본 보간은 모든 클립과 RESET이 모든 본의 position·rotation·scale을 덮어써야 합니다. Godot의 `animation/remove_immutable_tracks=true`가 이번53본의 저작159채널을55트랙으로 줄여 RootMask0·RightHandMask2를 만들었습니다. source GLB가 완전해도 imported Animation을 검사합니다. production `.glb.import` 두 파일은 `false`로 고정하고 재반입해 완전성을 복구했습니다. 불완전한 target을 거부하는 guard를 유지하며, 이전 프레임의 blended pose가 미기록 채널로 feedback되는 것을 허용하지 않습니다. 다른 sparse 자산에 이 opt-in을 강제하지 않습니다.
+3. hit·dodge·parry·death는 즉시 정확한 목표를 표본화합니다. 공격 진입 보간은 남은 startup 이내에 끝내며 active 구간은 원래 저작 목표와 같아야 합니다. hit pause의 같은 zero-delta snapshot은 phase·가중치·본·검을 고정하고, 명시적 시점 이동은 정확한 target을 사용합니다. epoch 복귀는 이전 phase/보간 이력을 지웁니다. 판정·이동·HP·actor transform은 보간이 변경하지 않습니다. 클립 전환·중단·소켓·clock 검사를 시각 및 전체 빌드 검증과 분리합니다.
+
+## 웨이트 보정을 시도할 때
+
+- 원본·runtime SHA를 고정하고 새 출력에서만 실험합니다. [현재 실패 기록](../../../art_source/production/character_actions/deformation_review/README.md)의 자동 보정 후보는 전부 기각됐고 원래 리라·수호병 runtime GLB를 유지합니다. 글로벌 최대/백분위·선택한 근접 샷 개선만으로 채택하지 않습니다.
+- 모든 exported timestamp와 interval midpoint에서 같은 edge ID·순서·topology·시점의 원본/후보를 대조합니다. edge별 최대 extension envelope 변화와 같은 peak pose의 새 악화를 확인하고, 최악 원래 부위와 새로 악화된 부위를 같은 조명·카메라로 렌더합니다. 이번에는 다른 torso 경계가 리라+22.635mm·수호병+49.450mm 더 늘어났습니다. 손/손가락 weight 보존·정규화·불변 geometry/UV/재질/키 검증은 별도로 유지합니다.
+- 부위·의상 소유권·관절 변형을 시각적으로 확인해 수정 범위를 정합니다. 미세한 rest-edge 기준, finite sampling, 표면 용접으로 확인한 topology와 실제 garment opening/self-intersection을 구분합니다. 전체 분포가 좋아져도 새 국소 결함이 있으면 보정을 기각하고 AAA 상태를 `pending`으로 유지합니다.
+
 ## 버전 실험의 완료 기준
 
 프로세스 정상 종료, GLB 구조·재질·변환·메시 비교, Godot의 오류 없는 반입, 실제 씬의 시각·모션 확인을 분리해 기록합니다. 출력 파일이 존재한다고 배치 성공으로 처리하지 않습니다. 현재 보관한 LTS 실험은 구조·반입 비교를 통과했어도 배치 종료 실패가 남아 있으므로 제작 버전을 자동 교체하지 않습니다.
+
+## 공개 PBR 재질과 반입 용량을 반복 관리할 때
+
+1. 공개 원본은 공식 제공자의 자산 ID·작가·영구 URL·라이선스·다운로드 URL·원본 MD5·SHA-256·실제 크기를 manifest에 보관합니다. Poly Haven CC0의 현재 recipe는 [courtyard 기록](../../../art_source/production/courtyard_materials/README.md)입니다. API `dimensions`의 단위는 공식 schema에서 확인한 mm이므로 m로 환산합니다. 형식·해상도와 물리적 반복 크기를 혼동하지 않습니다.
+2. base color는 sRGB, normal·ARM/ORM은 linear이며 OpenGL +Y를 확인합니다. 이번 packed ARM은 R=AO/G=roughness/B=metallic입니다. 재질 slot과 실제 채널을 대조하고 금속이 아닌 돌·흙의 metallic은 0으로 유지합니다. 공유 재질·맵을 재사용하고 각 메시의 실제 길이/타일 m로 UV 반복을 정합니다.
+3. headless 최초 import는 3D 자동 감지가 일어나기 전 `mipmaps/generate=false`일 수 있습니다. 재현 가능한 `.import` 정책에 밉맵·노멀·압축 방식을 명시하고 반입 후 실제 Image의 mip 존재와 재질 채널을 확인합니다. 필터를 이방성으로 설정한 것만으로 밉맵 생성까지 완료됐다고 기록하지 않습니다.
+4. 원본 JPG/PNG와 밉맵 포함 `.ctex`, 전체 PCK/Web 전송량, 상주 메모리를 따로 측정합니다. 이번 원본9,785,368 bytes가 독립 lossless+mip import에서21,504,226 bytes가 됐습니다. 소스 파일 예산만으로 Web 빌드 용량 통과를 예상하지 말고 최종 export gate를 실행합니다. 압축·LOD 변경 뒤에는 비스듬한 바닥의 반짝임·얼굴/손·재질 구분을 다시 봅니다.
+5. `python art_source/production/courtyard_materials/sync_materials.py`로 pinned 해시·용량·import 정책을 검증합니다. `--download`는 누락 원본만 공식 공개 URL에서 복구하며 기존 파일을 조용히 교체하지 않습니다. 새 원본은 새 manifest와 중립 조명·실제 게임 검토를 거칩니다.
+
+## 대표 구간 최종 아트 판정
+
+- 실제 게임의 전신·얼굴·양손 근접과 플레이 카메라 영상, Web 품질0/1·Windows 같은 구도를 확보합니다. 콘셉트·스튜디오 렌더·게임 캡처와 당시 커밋/입력 해시를 구분합니다.
+- 모든 저작 key timestamp와 클립 전체의 출력 프레임 표본을 평가하고 실제 렌더를 봅니다. 어깨·손목·골반·무릎의 체적과 갑옷/천/머리/무기 관통, 손가락·그립·발 접촉을 확인합니다. 수치와 시각 결과를 각각 기록하고 REST·세 시점·손가락만의 변화로 전체 모션을 승인하지 않습니다.
+- 실제 이동·공격 발디딤과 코드 판정, 취소·hit pause·상태 교차 전환·복귀를 1배속과 느린 재생에서 확인합니다. 머리카락·의상의 방식/충돌 범위와 연속성, 첫 방의 구도·표면 크기·조명·공격 예고·VFX 가독성을 함께 검토합니다.
+- Web 경량화에서도 실루엣·얼굴·손·무기·대표 재질과 전투 가독성을 보존합니다. 목표 GPU/CPU·OS·렌더 경로·해상도를 기록하고 실제 교전의 프레임 시간·메모리·로딩을 측정합니다. 소프트웨어 WebGL이나 headless 검사에 목표 하드웨어 성능 합격을 부여하지 않습니다.
+- 판정은 해당 판본의 증거·결함·수정·남은 조건과 함께 남깁니다. [AAA 기준](../../../docs/AAA_ART_QUALITY.md)의 항목이 미검증이면 `pending`을 유지하고 과거 자동 검사 결과를 새 runtime의 통과로 바꾸지 않습니다.
 
 ## 반입 계약
 

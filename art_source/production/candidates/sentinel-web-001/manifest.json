@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-web-001",
+  "created_on": "2026-10-31",
+  "status": "normalized_skeletal_development_candidate_ready_for_project_authored_actions",
+  "provider": "VARCO official MCP through the Codex SDK client",
+  "source_file": "source.glb",
+  "source_bytes": 14670468,
+  "source_sha256": "67fe6639f999dc4c01587da90c14fa8b3b49b634fcbf34c7ce641bdd6dd42b47",
+  "source_task_id": "fbb3535b-4bd1-4d29-9067-f8c6f4642f74",
+  "source_lineage": {
+    "native_source": "../sentinel-native-001/source.glb",
+    "native_source_task_id": "1ddc7bd7-efcd-4e6b-b160-5e925f94ef84",
+    "native_source_sha256": "ccf37c6709c44ff75ef1cb4afdec592cc8165f109c49ffbe3e411f0b4707ea28",
+    "license_setting_inherited_from_native_source": "PRIVATE"
+  },
+  "target_height_m": 1.95,
+  "requested_triangles": 22000,
+  "measured_triangles": 22000,
+  "source_skins": 0,
+  "source_clips": 0,
+  "point_usage": 0,
+  "additional_point_purchase": false,
+  "runtime_replacement": false,
+  "visual_approval": false,
+  "remaining_review": [
+    "Project-authored combat clips and whole-game state mapping",
+    "Cloth/armor/finger deformation through movement and attacks",
+    "Weapon grip, gait speed and foot contact",
+    "Final bronze material response and in-game lighting",
+    "Target hardware performance and final AAA art quality"
+  ],
+  "derived_files": [
+    {
+      "file": "README.md",
+      "bytes": 3050,
+      "sha256": "552ca4cb7540368bcc4b16d609e49057b00a5506c39718c6c13199f8095cc1e2"
+    },
+    {
+      "file": "generation-receipts.json",
+      "bytes": 977,
+      "sha256": "a15548b8309f3b8ae9c927394da75c158651311c5785c5f160f261258ae31800"
+    },
+    {
+      "file": "godot-audit-import.log",
+      "bytes": 1918,
+      "sha256": "b546c32caa0b7f2e2df1c1278a8d7294f351c9891011d559aa702129ff375213"
+    },
+    {
+      "file": "godot-audit-runtime.log",
+      "bytes": 142,
+      "sha256": "d51df6cd216488e3134974d6719b621cc17a7b750e8a3b9eac34519825da1d09"
+    },
+    {
+      "file": "godot-audit.gd",
+      "bytes": 8089,
+      "sha256": "8cde7a3b7d5c913cd35204b9f2b9388292c6aab853794879fa3636383fa1c8f9"
+    },
+    {
+      "file": "godot-audit.json",
+      "bytes": 4338,
+      "sha256": "9d5ee1315a068ccb499f21680cc4291ef1025767bc7151e23d3875892d283561"
+    },
+    {
+      "file": "locomotion-inspection.json",
+      "bytes": 4105,
+      "sha256": "b23c5fb5ae6818805597ae3985aa2e0101a972089b39b13f0c31d75bc663dcf9"
+    },
+    {
+      "file": "locomotion.glb",
+      "bytes": 16256824,
+      "sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11"
+    },
+    {
+      "file": "preparation.json",
+      "bytes": 11632,
+      "sha256": "3afe27f74fd49cbf1ff15dc1028487e819ea1d8da6844dfec778ebd007a7c68a"
+    },
+    {
+      "file": "preparation.log",
+      "bytes": 1576,
+      "sha256": "183f57cabd305201ddb4fb76319ad1b987b6fe9435bfceabec8c34a880113a87"
+    },
+    {
+      "file": "raw-motion-inspection.json",
+      "bytes": 10569,
+      "sha256": "264db4eae1ccfbc666013b8ad3754ed9b5d156414596311c25f38ffad7d6ca10"
+    },
+    {
+      "file": "rest-review/back.png",
+      "bytes": 373220,
+      "sha256": "5556635d8b71823d9cc5071dc83649fb6a783888b5bab44a07e7289adf9cbcc1"
+    },
+    {
+      "file": "rest-review/front.png",
+      "bytes": 377853,
+      "sha256": "7a25b57880510d81a39cc7949d7ca902cdc4dbe4d4bc494cebbc3a0ee6408f1a"
+    },
+    {
+      "file": "rest-review/render.log",
+      "bytes": 17006,
+      "sha256": "d047adb20a91f9a80a0a12f3f6e021f21bb4b8dde27aca05191abfbd1fed4d9b"
+    },
+    {
+      "file": "rest-review/review.json",
+      "bytes": 3487,
+      "sha256": "cb08e2858a7a3eb924e4a4251a8e3108b96609299c10ba3734d32e44a14027f5"
+    },
+    {
+      "file": "rest-review/side.png",
+      "bytes": 315402,
+      "sha256": "318b5ee3132e989eb94fb92f04d1a85ff563fab165bf1e723d4438702a93e1aa"
+    },
+    {
+      "file": "review-summary.json",
+      "bytes": 2264,
+      "sha256": "d08d6f579d6e87f23e5888b159b87e8a9b0854986c8e72222a351d3fb48972cf"
+    },
+    {
+      "file": "rig-inspection.json",
+      "bytes": 3393,
+      "sha256": "4f60605e7f3ecb6e8cbfec157007f74446f21a1e083bc9a9d77e708913d4ab9a"
+    },
+    {
+      "file": "rig.glb",
+      "bytes": 15144304,
+      "sha256": "b1f7f1024b87f11e6e495972dbaadd5f2b4ac3a3536788abb940861d01bce4d1"
+    },
+    {
+      "file": "source-inspection.json",
+      "bytes": 1832,
+      "sha256": "1f1f7e1e65ffdcb234c9d76ac75b441e01f8900a954fdced23d847ad35917d51"
+    }
+  ],
+  "rig_task_id": "427e1552-f2bc-48e4-adc6-704bac09306f",
+  "rig_skins": 1,
+  "rig_clips": 0,
+  "rig_joints": 53,
+  "rig_file": "rig.glb",
+  "normalized_file": "locomotion.glb",
+  "normalized_bytes": 16256824,
+  "normalized_sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+  "normalized_skins": 1,
+  "normalized_joints": 53,
+  "normalized_clips": [
+    "idle",
+    "walk",
+    "run",
+    "RESET"
+  ],
+  "normalization": {
+    "target_height_m": 1.95,
+    "uniform_wrapper_scale": 1.9514693699369268,
+    "blender_reimport_rest_height_m": 1.949999988079071,
+    "blender_reimport_rest_floor_m": 5.960464477539063e-08,
+    "godot_cpu_rest_height_m": 1.94998466968536,
+    "godot_cpu_rest_floor_m": 1.47819519042969e-05,
+    "godot_rest_tolerance_m": 0.0001,
+    "strict_rest_matrix_tolerance": 1e-05,
+    "source_to_target_max_sample_error_m": 8.338420507116193e-07
+  },
+  "provider_tasks": {
+    "remesh": {
+      "provider_task_id": "fbb3535b-4bd1-4d29-9067-f8c6f4642f74",
+      "provider_node_id": "856f3ca9-dcd6-47ed-9be5-aae9e9cc65f9",
+      "bytes": 14670468,
+      "sha256": "67fe6639f999dc4c01587da90c14fa8b3b49b634fcbf34c7ce641bdd6dd42b47",
+      "provider_motion_key": null
+    },
+    "rig": {
+      "provider_task_id": "427e1552-f2bc-48e4-adc6-704bac09306f",
+      "provider_node_id": "93a8d471-12cd-4ecc-95f2-d519cf17125d",
+      "bytes": 15144304,
+      "sha256": "b1f7f1024b87f11e6e495972dbaadd5f2b4ac3a3536788abb940861d01bce4d1",
+      "provider_motion_key": null
+    },
+    "motion_idle": {
+      "provider_task_id": "437ef21d-64e9-46b5-81e1-df174df2a678",
+      "provider_node_id": "cb9ecfc0-f8d2-49d4-9f61-bc064fbab9c1",
+      "bytes": 15268196,
+      "sha256": "ee5a4a141c120aa1a5e48b9adbc29d4fab66c36db7e9c17624212cf13b402c3c",
+      "provider_motion_key": "standing_idle_1_looping"
+    },
+    "motion_walk": {
+      "provider_task_id": "f0cd0207-5efe-4c1c-8fdd-afb05492fcfa",
+      "provider_node_id": "67bd622b-6e22-4dc2-9ef3-96f5f53e17cf",
+      "bytes": 15207108,
+      "sha256": "e920e3864a6cce0477437182d06bed0b22cf1dd93c220cee2cb6145174501fda",
+      "provider_motion_key": "walk_looping"
+    },
+    "motion_jog": {
+      "provider_task_id": "ab5ea2db-ad3d-42e4-ace2-e89b032677f7",
+      "provider_node_id": "93dc5f21-c18b-41a2-8be0-80fc05bd5c23",
+      "bytes": 15210712,
+      "sha256": "daddb3f95e7bdd9248aeed9ad1b7d9b5edb3adc3037176fb204dd03790dec77b",
+      "provider_motion_key": "jog_looping"
+    },
+    "motion_run": {
+      "provider_task_id": "e9a1e18c-1793-468e-b510-5a2dd88843b4",
+      "provider_node_id": "92e66a44-7e3c-441d-bd62-bf50894dfaf7",
+      "bytes": 15172376,
+      "sha256": "584b6cc3c25a207213289fc47e70406e82728c409a487154cbaf8a0cfc03d930",
+      "provider_motion_key": "sprint"
+    }
+  },
+  "development_motion_selection": {
+    "idle": "standing_idle_1_looping",
+    "walk": "jog_looping",
+    "run": "sprint",
+    "unused_alternate": "walk_looping",
+    "gait_or_loop_seam_approved": false,
+    "runtime_plan": "Use normalized mesh/rest skeleton as input for new project-authored runtime clips; these stock samples are development sources only."
+  },
+  "raw_motion_inspection": {
+    "report": "raw-motion-inspection.json",
+    "invalid_sources": [
+      "motion_idle.glb"
+    ],
+    "source_error_preserved": true,
+    "note": "Raw idle has provider timestamp ordering violations. The strict inspector was not weakened; the separate derivative reflects Blender interpretation/rebaking."
+  },
+  "review_summary": "review-summary.json",
+  "rest_pose_renders": [
+    "rest-review/front.png",
+    "rest-review/side.png",
+    "rest-review/back.png"
+  ],
+  "godot_audit": "godot-audit.json"
+}

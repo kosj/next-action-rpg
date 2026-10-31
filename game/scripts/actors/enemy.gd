@@ -43,6 +43,8 @@ func _ready() -> void:
 	visual = ActorVisual.new()
 	add_child(visual)
 	visual.setup("boss" if is_boss else "sentinel")
+	if kind == "melee" and not is_boss and not elite:
+		visual.use_production_profile("sentinel_melee")
 	if elite:
 		visual.scale *= 1.15
 	if kind == "shield":
@@ -204,10 +206,17 @@ func interrupt_attack(duration: float) -> void:
 		warning.hide()
 
 func presentation_snapshot() -> Dictionary:
+	var movement := SkeletalVisualBridge.local_direction(velocity, facing)
 	return {
 		"speed":Vector2(velocity.x, velocity.z).length(), "dead":dead, "death_elapsed":death_time, "stagger":stagger,
+		"move_local_x":movement.x, "move_local_z":movement.y,
+		"locomotion_reference_speed":3.9 if is_boss else 3.6,
 		"hit_elapsed":maxf(0.0, maxf(0.28, presentation_stagger_duration)-stagger), "hit_duration":maxf(0.28, presentation_stagger_duration),
 		"attack_id":String(strike.presentation_id) if strike != null else ("burst" if burst_time > 0.0 else ""),
 		"attack_elapsed":strike.elapsed if strike != null else maxf(0.0, 1.15-burst_time),
 		"attack_duration":strike.data.duration() if strike != null else 1.15,
+		"attack_startup":strike.data.startup if strike != null else 0.0,
+		"attack_active":strike.data.active if strike != null else 0.0,
+		"attack_reach":strike.data.reach if strike != null else 0.0,
+		"attack_arc":strike.data.arc if strike != null else 0.0,
 	}

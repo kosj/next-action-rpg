@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-10-31",
+  "provider": "Poly Haven",
+  "license": "CC0-1.0",
+  "license_url": "https://polyhaven.com/license",
+  "license_legal_code": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+  "units_reference": "https://github.com/Poly-Haven/Public-API/blob/master/swagger.yml",
+  "units_quote": "An array with the dimensions of this asset on each axis in millimeters.",
+  "runtime_texture_budget_bytes": 10000000,
+  "runtime_texture_bytes": 9785368,
+  "sets": [
+    {
+      "key": "floor",
+      "asset_id": "monastery_stone_floor",
+      "source_page": "https://polyhaven.com/a/monastery_stone_floor",
+      "source_metadata": "https://api.polyhaven.com/info/monastery_stone_floor",
+      "source_files": "https://api.polyhaven.com/files/monastery_stone_floor",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "material": "game/assets/materials/courtyard/floor_stone.tres",
+      "tile_meters": [
+        1.8,
+        1.8
+      ],
+      "source_dimensions_mm": [
+        1799.9999523162842,
+        1799.9999523162842
+      ],
+      "source_resolution": [
+        8192,
+        8192
+      ],
+      "maps": [
+        {
+          "path": "game/assets/materials/courtyard/floor_albedo.jpg",
+          "channel": "Diffuse",
+          "resolution": "2k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/monastery_stone_floor/monastery_stone_floor_diff_2k.jpg",
+          "size": 3021140,
+          "md5": "35420aa52b8257920b1d7566fb80ab4d",
+          "sha256": "aa12137fff1728bbbfe98b30480e33a34cba3b5c096575702c1d66939214e14a",
+          "pixels": [
+            2048,
+            2048
+          ],
+          "encoding": "sRGB"
+        },
+        {
+          "path": "game/assets/materials/courtyard/floor_normal.jpg",
+          "channel": "nor_gl",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/monastery_stone_floor/monastery_stone_floor_nor_gl_1k.jpg",
+          "size": 1063115,
+          "md5": "257ccdbbe1c2a23f74cece55b81861ac",
+          "sha256": "f2f1c3e8d52c1e3a49ef59695743872f2adaa57bc0d3f64b129ce988966162c1",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "convention": "tangent-space OpenGL (+Y)"
+        },
+        {
+          "path": "game/assets/materials/courtyard/floor_arm.jpg",
+          "channel": "arm",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/monastery_stone_floor/monastery_stone_floor_arm_1k.jpg",
+          "size": 645382,
+          "md5": "7ef459c183e5efb94b48e32042182e24",
+          "sha256": "66674e9eac9ac60e2124890f63fde95b967f9e1c6f5ee3b07df77cdb9e024457",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "channels": {
+            "R": "ambient occlusion",
+            "G": "roughness",
+            "B": "metallic (not connected; stone/soil metallic=0)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "wall",
+      "asset_id": "white_sandstone_blocks_02",
+      "source_page": "https://polyhaven.com/a/white_sandstone_blocks_02",
+      "source_metadata": "https://api.polyhaven.com/info/white_sandstone_blocks_02",
+      "source_files": "https://api.polyhaven.com/files/white_sandstone_blocks_02",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "material": "game/assets/materials/courtyard/wall_limestone.tres",
+      "tile_meters": [
+        2.0,
+        2.0
+      ],
+      "source_dimensions_mm": [
+        2000,
+        2000
+      ],
+      "source_resolution": [
+        8192,
+        8192
+      ],
+      "maps": [
+        {
+          "path": "game/assets/materials/courtyard/wall_albedo.jpg",
+          "channel": "Diffuse",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_diff_1k.jpg",
+          "size": 910262,
+          "md5": "5a31e6268c764ffccc358420e3aa3fb5",
+          "sha256": "0a43c8bc80581408f9c700ad98d2de64280e694148e37626d6648fdddf47a777",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "sRGB"
+        },
+        {
+          "path": "game/assets/materials/courtyard/wall_normal.jpg",
+          "channel": "nor_gl",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_nor_gl_1k.jpg",
+          "size": 826220,
+          "md5": "0de5ad6426e1415bc36d5d31c3a0f179",
+          "sha256": "14eb23e29a347b97394c65a6f1fe2c7c107da55b18fb95b912c7280c5a43b72d",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "convention": "tangent-space OpenGL (+Y)"
+        },
+        {
+          "path": "game/assets/materials/courtyard/wall_arm.jpg",
+          "channel": "arm",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_arm_1k.jpg",
+          "size": 683632,
+          "md5": "16deb112a37a5e9e966609d23f86ef0e",
+          "sha256": "ec4642059b7dd9baf3f89830b9968710f69601874516ffdc2922b822163a90dc",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "channels": {
+            "R": "ambient occlusion",
+            "G": "roughness",
+            "B": "metallic (not connected; stone/soil metallic=0)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ground",
+      "asset_id": "forest_ground_05",
+      "source_page": "https://polyhaven.com/a/forest_ground_05",
+      "source_metadata": "https://api.polyhaven.com/info/forest_ground_05",
+      "source_files": "https://api.polyhaven.com/files/forest_ground_05",
+      "authors": {
+        "Charlotte Baglioni": "All"
+      },
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "material": "game/assets/materials/courtyard/ground_detail.tres",
+      "tile_meters": [
+        2.0,
+        2.0
+      ],
+      "source_dimensions_mm": [
+        2000,
+        2000
+      ],
+      "source_resolution": [
+        16384,
+        16384
+      ],
+      "maps": [
+        {
+          "path": "game/assets/materials/courtyard/ground_albedo.jpg",
+          "channel": "Diffuse",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_diff_1k.jpg",
+          "size": 655934,
+          "md5": "7fcf121f5d2ac2ffe665d42d5fe69478",
+          "sha256": "9a2c6d085f05cee45d9dbc4b771829d2ad2116ed8a8dd528c5dee62bdbb00558",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "sRGB"
+        },
+        {
+          "path": "game/assets/materials/courtyard/ground_normal.jpg",
+          "channel": "nor_gl",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_nor_gl_1k.jpg",
+          "size": 1167042,
+          "md5": "4fd06cb053e3124afd06fbd2d87caa74",
+          "sha256": "49f9495b475f74f415345049b702d560205f4e51ebb60ce76ed2cd605fa52ed8",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "convention": "tangent-space OpenGL (+Y)"
+        },
+        {
+          "path": "game/assets/materials/courtyard/ground_arm.jpg",
+          "channel": "arm",
+          "resolution": "1k",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_05/forest_ground_05_arm_1k.jpg",
+          "size": 812641,
+          "md5": "2c4df8d0f886f301a4ff206e139856f0",
+          "sha256": "4f145e86fd5612825120cd1d24976667cfeddf77062f8c35193c94444db52f98",
+          "pixels": [
+            1024,
+            1024
+          ],
+          "encoding": "linear data",
+          "channels": {
+            "R": "ambient occlusion",
+            "G": "roughness",
+            "B": "metallic (not connected; stone/soil metallic=0)"
+          }
+        }
+      ]
+    }
+  ]
+}

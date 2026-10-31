@@ -1,0 +1,142 @@
+{
+  "clips": {
+    "RESET": {
+      "duration_seconds": 0.0333333350718021,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "idle": {
+      "duration_seconds": 10.1666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "run": {
+      "duration_seconds": 1.46666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "walk": {
+      "duration_seconds": 4.56666660308838,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "errors": [],
+  "input_sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+  "limitations": [
+    "No visual quality, full deformation, loop-seam, foot contact, BoneMap, dynamic root-motion or hardware performance approval",
+    "REST CPU skin uses Skeleton global rest x Skin inverse bind x weighted vertex, then skeleton world transform; no rendered GPU deformation audit",
+    "The three stock locomotion inputs are development sources only; this audit does not approve runtime gait timing, source fidelity or combat art"
+  ],
+  "manual_animation_tree_samples": {
+    "idle": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 22,
+          "max_bone_local_position_change_m": 0.0,
+          "max_bone_rotation_change_rad": 0.0296940505504608,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 2.54166674613953
+        },
+        {
+          "changed_bones": 24,
+          "max_bone_local_position_change_m": 0.0,
+          "max_bone_rotation_change_rad": 0.0602025054395199,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 5.08333349227905
+        }
+      ],
+      "tree_active": true
+    },
+    "run": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0436371266841888,
+          "max_bone_rotation_change_rad": 2.35979986190796,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 0.366666674613953
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0337732210755348,
+          "max_bone_rotation_change_rad": 1.47249972820282,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 0.733333349227905
+        }
+      ],
+      "tree_active": true
+    },
+    "walk": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.04765834659338,
+          "max_bone_rotation_change_rad": 1.6688951253891,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.14166665077209
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0483989305794239,
+          "max_bone_rotation_change_rad": 1.69840788841248,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.28333330154419
+        }
+      ],
+      "tree_active": true
+    }
+  },
+  "meshes": [
+    {
+      "path": "CandidateUniformScale/Armature/Skeleton3D/texture_mapping",
+      "skeleton_path_resolves": true,
+      "skin_bind_count": 53,
+      "skin_present": true,
+      "surface_vertices": 19131
+    }
+  ],
+  "rest_bounds_godot_y_up": {
+    "floor_y_m": 0.0000147819519042969,
+    "height_m": 1.94998466968536,
+    "max": [
+      0.977200984954834,
+      1.94999945163727,
+      0.234026893973351
+    ],
+    "method": "CPU linear skinning: skeleton_world * sum(weight * bone_global_rest * inverse_bind * vertex)",
+    "min": [
+      -0.97660356760025,
+      0.0000147819519042969,
+      -0.225408717989922
+    ]
+  },
+  "scope": "Actual GLB import, CPU-skinned REST/world bounds, Skin binding presence, clips and manual AnimationTree bone sampling only",
+  "skeleton": {
+    "bones": 53,
+    "motion_scale": 1.0,
+    "path": "CandidateUniformScale/Armature/Skeleton3D"
+  },
+  "status": "passed"
+}

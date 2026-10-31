@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "output_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+  "previous_draft_sha256": "95acd9ecbfcea91859f429a59fc5fb37aa096c7a6fadbf252205bfd9c59ae813",
+  "changed_tracks": 468,
+  "only_changed_tracks_are_finger_transforms": true,
+  "all_nonfinger_and_timeline_samples_exactly_unchanged": true,
+  "maximum_finger_sample_component_delta": {
+    "rotation": 0.22044553607702255,
+    "translation": 1.3317912817001343e-07,
+    "scale": 4.172325134277344e-07
+  },
+  "changed_per_action": {
+    "death": 52,
+    "enemy_attack": 52,
+    "hit": 52,
+    "idle": 52,
+    "run": 52,
+    "walk": 52,
+    "walk_back": 52,
+    "walk_left": 52,
+    "walk_right": 52
+  },
+  "scope": "Actual exported GLB sampler comparison. The per-character curl changes finger rotations plus tiny exporter matrix-decomposition translation/scale differences on finger nodes only. Body/root/hand socket/attack/locomotion samples and every timestamp are exactly unchanged."
+}

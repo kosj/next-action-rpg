@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-31T04:46:56.953101+00:00",
+  "label": "Fixed real-Game scene inspection / pre-final character weight repair; not final gameplay QA or AAA approval",
+  "engine": "Godot 4.7.2 stable",
+  "renderer": "WebGL 2 / Compatibility / Chromium SwiftShader (software renderer)",
+  "viewport_pixels": [
+    1440,
+    900
+  ],
+  "quality": 0,
+  "game_ui_hidden": true,
+  "scene_physics_paused": true,
+  "baseline_git_commit": "1b8d95b9f2805e42e10e9408f847458a220d9919",
+  "baseline_source_path": "game/scripts/world/sanctuary.gd",
+  "baseline_preparation": "git show baseline_git_commit:path; remove only class_name Sanctuary to instantiate beside current Sanctuary",
+  "scene_source_files": {
+    "game/scripts/world/sanctuary.gd": {
+      "bytes": 14279,
+      "sha256": "50e2634210707cb6fbf5626b71cbae343b477ab9d0088f2ff05fdf872b902867"
+    },
+    "game/scripts/world/courtyard_art.gd": {
+      "bytes": 8457,
+      "sha256": "a1b8e80cc0f00a856f2eefd3b8fc63ad59ad1c719c6febad13430f4a2a4d8437"
+    },
+    "game/scripts/world/courtyard_art.gd.uid": {
+      "bytes": 20,
+      "sha256": "4e8462b9f44c77fb0a0119ff2a49dcdaf3844690f17a2a77e272793b7175b89e"
+    },
+    "game/assets/materials/courtyard/floor_stone.tres": {
+      "bytes": 780,
+      "sha256": "3dad005107be7549c534e33c4ab600318270a373f17efd4c07f4f2b18528ea74"
+    },
+    "game/assets/materials/courtyard/wall_limestone.tres": {
+      "bytes": 770,
+      "sha256": "5e637a911deab929fce614afc982269ccabcf68a17e8c9cdee3e3aa0d60bd26b"
+    },
+    "game/assets/materials/courtyard/ground_detail.tres": {
+      "bytes": 776,
+      "sha256": "ab3b9b70dbbb1c1d76683692c67237569cb1ac968eb7e02e11c903dfa50e354c"
+    },
+    "game/assets/materials/courtyard/floor_albedo.jpg": {
+      "bytes": 3021140,
+      "sha256": "aa12137fff1728bbbfe98b30480e33a34cba3b5c096575702c1d66939214e14a"
+    },
+    "game/assets/materials/courtyard/floor_arm.jpg": {
+      "bytes": 645382,
+      "sha256": "66674e9eac9ac60e2124890f63fde95b967f9e1c6f5ee3b07df77cdb9e024457"
+    },
+    "game/assets/materials/courtyard/floor_normal.jpg": {
+      "bytes": 1063115,
+      "sha256": "f2f1c3e8d52c1e3a49ef59695743872f2adaa57bc0d3f64b129ce988966162c1"
+    },
+    "game/assets/materials/courtyard/ground_albedo.jpg": {
+      "bytes": 655934,
+      "sha256": "9a2c6d085f05cee45d9dbc4b771829d2ad2116ed8a8dd528c5dee62bdbb00558"
+    },
+    "game/assets/materials/courtyard/ground_arm.jpg": {
+      "bytes": 812641,
+      "sha256": "4f145e86fd5612825120cd1d24976667cfeddf77062f8c35193c94444db52f98"
+    },
+    "game/assets/materials/courtyard/ground_normal.jpg": {
+      "bytes": 1167042,
+      "sha256": "49f9495b475f74f415345049b702d560205f4e51ebb60ce76ed2cd605fa52ed8"
+    },
+    "game/assets/materials/courtyard/wall_albedo.jpg": {
+      "bytes": 910262,
+      "sha256": "0a43c8bc80581408f9c700ad98d2de64280e694148e37626d6648fdddf47a777"
+    },
+    "game/assets/materials/courtyard/wall_arm.jpg": {
+      "bytes": 683632,
+      "sha256": "ec4642059b7dd9baf3f89830b9968710f69601874516ffdc2922b822163a90dc"
+    },
+    "game/assets/materials/courtyard/wall_normal.jpg": {
+      "bytes": 826220,
+      "sha256": "14eb23e29a347b97394c65a6f1fe2c7c107da55b18fb95b912c7280c5a43b72d"
+    }
+  },
+  "character_runtime_in_inspection": {
+    "assets/models/production/lyra_gameplay.glb": {
+      "bytes": 17889448,
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1"
+    },
+    "assets/models/production/sentinel_gameplay.glb": {
+      "bytes": 17146728,
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+    }
+  },
+  "views": {
+    "balanced-inspection.png": {
+      "player_xyz": [
+        0,
+        0.15,
+        -25
+      ],
+      "camera_rig": "RuneCamera",
+      "yaw_radians": 0,
+      "pitch_radians": -0.18,
+      "vertical_fov_degrees": 56
+    },
+    "detail-inspection.png": {
+      "player_xyz": [
+        11,
+        0.15,
+        -42
+      ],
+      "camera_rig": "RuneCamera",
+      "yaw_radians": -0.7,
+      "pitch_radians": -0.18,
+      "vertical_fov_degrees": 56
+    }
+  },
+  "inspection_artifacts": {
+    "balanced-inspection.png": {
+      "bytes": 1553619,
+      "sha256": "ab6dc14913d2e36f84259fc0dcf1d39ce64b654e94d8dd7dddde8dd92113bd5d"
+    },
+    "detail-inspection.png": {
+      "bytes": 1568925,
+      "sha256": "06df99f3caf7c80ec5aa9c5afd6a937027eca36de11d31f7da6027660a1ef3d7"
+    },
+    "scene-audit.json": {
+      "bytes": 480,
+      "sha256": "f4afed6a8a2df3999c0355cc578667069e27d8f1cbbd0fb07dbe67421c74a616"
+    },
+    "scene-audit.log": {
+      "bytes": 523,
+      "sha256": "39cdc23c9518cace85e92c71a7716b2c4fd5221290dc9778833b309bfac54c2c"
+    },
+    "web-inspection-console.json": {
+      "bytes": 628,
+      "sha256": "bf84be10c969eedfc8a83101a1a3641ed7a4045c78e19098419e615314c3f5ea"
+    },
+    "web-inspection-state.json": {
+      "bytes": 2698,
+      "sha256": "3f39407ac2d20b42eb93e4f8cc1defb1ab7171a7f46a8dc4a2766163b739eb5e"
+    },
+    "web-inspection-progress.log": {
+      "bytes": 108,
+      "sha256": "d8f719762091f692537d324947fc13182a21076c66cca72338cb32c2bbc52ca2"
+    },
+    "scene-inspection-fixture.gd.txt": {
+      "bytes": 1132,
+      "sha256": "8480253237bb08cd07f8f2c2ad62b192b56dcc9925d1a809e7b00a30a947025a"
+    },
+    "collider-audit-fixture.gd.txt": {
+      "bytes": 2205,
+      "sha256": "ae464044a2dbe5e42d3eca03c260570f645ca715a7cca895cd4309a27b7f6c5b"
+    }
+  },
+  "isolated_web_package": {
+    "scope": "Inspection copy includes fixture/audit resources; final release bytes must be measured separately",
+    "total_bytes": 141733615,
+    "files": {
+      "index.apple-touch-icon.png": {
+        "bytes": 13950,
+        "sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922"
+      },
+      "index.audio.position.worklet.js": {
+        "bytes": 2973,
+        "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+      },
+      "index.audio.worklet.js": {
+        "bytes": 7298,
+        "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+      },
+      "index.html": {
+        "bytes": 2753,
+        "sha256": "561750afb1bdb2729eb8ea132e0615c58a59382871985d2b0f6b3f42d0bb00d9"
+      },
+      "index.icon.png": {
+        "bytes": 5217,
+        "sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd"
+      },
+      "index.js": {
+        "bytes": 279815,
+        "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+      },
+      "index.pck": {
+        "bytes": 101885412,
+        "sha256": "870239967c41cc601e836142e9c9048f9b57a1b193a907ece04e2de726869542"
+      },
+      "index.png": {
+        "bytes": 21443,
+        "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+      },
+      "index.wasm": {
+        "bytes": 39514754,
+        "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+      }
+    }
+  },
+  "validation_limits": [
+    "Fixed player Y0.15 and paused physics do not validate dynamic foot grounding or combat",
+    "These character GLBs precede the final weight-repair and deformation review",
+    "Logical instances/triangles/surface batches are source geometry counts, not measured GPU draw calls or FPS",
+    "The scene remains below the AAA visual target; distant primitives and geometric unweathered skyline need further production art"
+  ]
+}

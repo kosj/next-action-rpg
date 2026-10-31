@@ -9,6 +9,96 @@ var clock: float = 0.0
 var base_scale: Vector3 = Vector3.ONE
 var skeletal_bridge: SkeletalVisualBridge
 var rig_status: String = "Prototype pivot visual"
+var production_profile: String = ""
+var weapon_socket: BoneAttachment3D
+var weapon_grip: Node3D
+var rig_weapon: Node3D
+var ground_offset_y: float = 0.0
+
+func use_production_profile(profile: String) -> Dictionary:
+	var prepared := ProductionCharacterArt.prepare(profile)
+	if not prepared.ok:
+		rig_status = prepared.reason
+		return prepared
+	var grip := _read_grip(profile)
+	if not grip.ok:
+		rig_status = grip.reason
+		return grip
+	var result := mount_rig(prepared.scene, {}, prepared.states)
+	if not result.ok:
+		return result
+	var transitions := skeletal_bridge.enable_transition_polish()
+	if not transitions.ok:
+		clear_rig()
+		rig_status = transitions.reason
+		return transitions
+	production_profile = profile
+	ground_offset_y = _capsule_floor_offset()
+	var skeleton := ProductionCharacterArt.find_type(skeletal_bridge.rig, "Skeleton3D") as Skeleton3D
+	weapon_socket = BoneAttachment3D.new()
+	weapon_socket.name = "RightHandWeaponSocket"
+	weapon_socket.bone_name = &"RightHand"
+	skeleton.add_child(weapon_socket)
+	weapon_socket.on_skeleton_update()
+	weapon_grip = Node3D.new()
+	weapon_grip.name = "WeaponGrip"
+	weapon_socket.add_child(weapon_grip)
+	# The GLB's height-normalization wrapper is inherited by the hand. Cancel
+	# that uniform scale here, preserving the actor's own scale and 1.35m sword.
+	var relative := skeletal_bridge.global_transform.affine_inverse() * weapon_socket.global_transform
+	var inherited := relative.basis.get_scale()
+	if inherited.x <= 0.0 or absf(inherited.x-inherited.y) > 0.0001 or absf(inherited.x-inherited.z) > 0.0001:
+		clear_rig()
+		rig_status = "Weapon socket requires a uniform, positive rig scale"
+		return {"ok":false, "reason":rig_status}
+	weapon_grip.transform = Transform3D(grip.basis.scaled(Vector3.ONE/inherited.x), grip.offset/inherited.x)
+	rig_weapon = RUNE_SWORD_SCENE.instantiate() as Node3D
+	rig_weapon.name = "Runeblade"
+	weapon_grip.add_child(rig_weapon)
+	pose(0.0, 0.0, -1.0, false, false, false, {"speed":0.0})
+	return result
+
+func _capsule_floor_offset() -> float:
+	# The player's capsule bottom is .025m above its controller origin. Align
+	# the normalized boot sole to that bottom without moving the collider/body.
+	if get_parent() is CharacterBody3D:
+		for child in get_parent().get_children():
+			if child is CollisionShape3D and child.shape is CapsuleShape3D and not child.disabled:
+				return child.position.y - child.shape.height * 0.5
+	return 0.0
+
+func _read_grip(profile: String) -> Dictionary:
+	var path := "res://data/character_grips.json"
+	if not FileAccess.file_exists(path):
+		return {"ok":false, "reason":"Character weapon grip is not installed"}
+	var document = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not document is Dictionary or not document.get(profile) is Dictionary:
+		return {"ok":false, "reason":"Character weapon grip is not defined: " + profile}
+	var entry: Dictionary = document[profile]
+	var axes = entry.get("basis_columns", [])
+	var offset = entry.get("offset_m", [])
+	if not axes is Array or axes.size() != 9 or not offset is Array or offset.size() != 3:
+		return {"ok":false, "reason":"Character weapon grip has invalid dimensions"}
+	for value in axes + offset:
+		if not (value is float or value is int) or not is_finite(float(value)):
+			return {"ok":false, "reason":"Character weapon grip must be finite"}
+	var basis := Basis(Vector3(axes[0],axes[1],axes[2]), Vector3(axes[3],axes[4],axes[5]), Vector3(axes[6],axes[7],axes[8]))
+	var point := Vector3(offset[0],offset[1],offset[2])
+	if not basis.is_equal_approx(basis.orthonormalized()) or basis.determinant() < 0.9999 or point.length() > 0.25:
+		return {"ok":false, "reason":"Character weapon grip must be a right-handed unit basis near the palm"}
+	return {"ok":true, "basis":basis, "offset":point}
+
+func presentation_report() -> Dictionary:
+	var skeletal := is_instance_valid(skeletal_bridge) and skeletal_bridge.visible
+	var length := 0.0
+	if is_instance_valid(rig_weapon):
+		var grip := rig_weapon.find_child("GripOrigin", true, false) as Node3D
+		var tip := rig_weapon.find_child("BladeTip", true, false) as Node3D
+		if grip != null and tip != null:
+			length = grip.global_position.distance_to(tip.global_position)
+	return {"mode":"skeletal" if skeletal else "prototype", "profile":production_profile,
+		"state":String(skeletal_bridge.selected_state) if skeletal else "", "weapon_attached":is_instance_valid(weapon_socket),
+		"grip_to_tip_m":length, "status":rig_status}
 
 func mount_rig(scene: PackedScene, aliases: Dictionary = {}, required_states: Array[StringName] = SkeletalVisualBridge.REQUIRED_STATES, facing_correction: float = PI) -> Dictionary:
 	var candidate := SkeletalVisualBridge.new()
@@ -24,6 +114,11 @@ func mount_rig(scene: PackedScene, aliases: Dictionary = {}, required_states: Ar
 	return result
 
 func clear_rig() -> void:
+	weapon_socket = null
+	weapon_grip = null
+	rig_weapon = null
+	production_profile = ""
+	ground_offset_y = 0.0
 	if is_instance_valid(skeletal_bridge):
 		skeletal_bridge.free()
 	skeletal_bridge = null
@@ -68,7 +163,11 @@ func pose(delta: float, speed: float, swing: float = -1.0, dodge: bool = false, 
 		if is_instance_valid(model):
 			model.visible = not presented
 		if presented:
-			position.y = 0.0
+			if is_instance_valid(weapon_socket):
+				# Skeleton's normal notification is deferred. The baked rig has no
+				# modifiers: update this hand socket after this exact manual sample.
+				weapon_socket.on_skeleton_update()
+			position.y = ground_offset_y
 			rotation.z = 0.0
 			return
 		rig_status = skeletal_bridge.last_error

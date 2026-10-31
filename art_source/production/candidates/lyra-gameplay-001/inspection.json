@@ -1,0 +1,228 @@
+{
+  "path": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+  "bytes": 17889448,
+  "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "structurally_valid": true,
+  "requirements_met": true,
+  "errors": [],
+  "counts": {
+    "nodes": 56,
+    "meshes": 1,
+    "mesh_primitives": 1,
+    "mesh_triangles": 32000,
+    "materials": 1,
+    "skins": 1,
+    "skinned_mesh_nodes": 1,
+    "animations": 20
+  },
+  "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+  "node_names": [
+    "Head",
+    "Neck",
+    "HandLoRA_Bip01_L_Finger02",
+    "HandLoRA_Bip01_L_Finger01",
+    "HandLoRA_Bip01_L_Finger0",
+    "HandLoRA_Bip01_L_Finger12",
+    "HandLoRA_Bip01_L_Finger11",
+    "HandLoRA_Bip01_L_Finger1",
+    "HandLoRA_Bip01_L_Finger22",
+    "HandLoRA_Bip01_L_Finger21",
+    "HandLoRA_Bip01_L_Finger2",
+    "HandLoRA_Bip01_L_Finger32",
+    "HandLoRA_Bip01_L_Finger31",
+    "HandLoRA_Bip01_L_Finger3",
+    "HandLoRA_Bip01_L_Finger42",
+    "HandLoRA_Bip01_L_Finger41",
+    "HandLoRA_Bip01_L_Finger4",
+    "LeftHand",
+    "LeftForeArm",
+    "LeftArm",
+    "LeftShoulder",
+    "HandLoRA_Bip01_R_Finger02",
+    "HandLoRA_Bip01_R_Finger01",
+    "HandLoRA_Bip01_R_Finger0",
+    "HandLoRA_Bip01_R_Finger12",
+    "HandLoRA_Bip01_R_Finger11",
+    "HandLoRA_Bip01_R_Finger1",
+    "HandLoRA_Bip01_R_Finger22",
+    "HandLoRA_Bip01_R_Finger21",
+    "HandLoRA_Bip01_R_Finger2",
+    "HandLoRA_Bip01_R_Finger32",
+    "HandLoRA_Bip01_R_Finger31",
+    "HandLoRA_Bip01_R_Finger3",
+    "HandLoRA_Bip01_R_Finger42",
+    "HandLoRA_Bip01_R_Finger41",
+    "HandLoRA_Bip01_R_Finger4",
+    "RightHand",
+    "RightForeArm",
+    "RightArm",
+    "RightShoulder",
+    "Spine2",
+    "Spine1",
+    "Spine",
+    "LeftToeBase",
+    "LeftFoot",
+    "LeftLeg",
+    "LeftUpLeg",
+    "RightToeBase",
+    "RightFoot",
+    "RightLeg",
+    "RightUpLeg",
+    "Hips",
+    "Root",
+    "texture_mapping",
+    "Armature",
+    "CandidateUniformScale"
+  ],
+  "animations": [
+    {
+      "index": 0,
+      "name": "charge",
+      "channels": 159,
+      "duration_seconds": 0.6499999761581421
+    },
+    {
+      "index": 1,
+      "name": "death",
+      "channels": 159,
+      "duration_seconds": 1.100000023841858
+    },
+    {
+      "index": 2,
+      "name": "dodge",
+      "channels": 159,
+      "duration_seconds": 0.3199999928474426
+    },
+    {
+      "index": 3,
+      "name": "heal",
+      "channels": 159,
+      "duration_seconds": 0.3499999940395355
+    },
+    {
+      "index": 4,
+      "name": "heavy",
+      "channels": 159,
+      "duration_seconds": 0.8600000143051147
+    },
+    {
+      "index": 5,
+      "name": "hit",
+      "channels": 159,
+      "duration_seconds": 0.15000000596046448
+    },
+    {
+      "index": 6,
+      "name": "idle",
+      "channels": 159,
+      "duration_seconds": 1.600000023841858
+    },
+    {
+      "index": 7,
+      "name": "light_1",
+      "channels": 159,
+      "duration_seconds": 0.5199999809265137
+    },
+    {
+      "index": 8,
+      "name": "light_2",
+      "channels": 159,
+      "duration_seconds": 0.5199999809265137
+    },
+    {
+      "index": 9,
+      "name": "light_3",
+      "channels": 159,
+      "duration_seconds": 0.699999988079071
+    },
+    {
+      "index": 10,
+      "name": "parry",
+      "channels": 159,
+      "duration_seconds": 0.2199999988079071
+    },
+    {
+      "index": 11,
+      "name": "RESET",
+      "channels": 159,
+      "duration_seconds": 0.009999999776482582
+    },
+    {
+      "index": 12,
+      "name": "run",
+      "channels": 159,
+      "duration_seconds": 0.4000000059604645
+    },
+    {
+      "index": 13,
+      "name": "skill_1",
+      "channels": 159,
+      "duration_seconds": 0.7900000214576721
+    },
+    {
+      "index": 14,
+      "name": "skill_2",
+      "channels": 159,
+      "duration_seconds": 0.7900000214576721
+    },
+    {
+      "index": 15,
+      "name": "skill_3",
+      "channels": 159,
+      "duration_seconds": 0.7900000214576721
+    },
+    {
+      "index": 16,
+      "name": "walk",
+      "channels": 159,
+      "duration_seconds": 0.47999998927116394
+    },
+    {
+      "index": 17,
+      "name": "walk_back",
+      "channels": 159,
+      "duration_seconds": 0.47999998927116394
+    },
+    {
+      "index": 18,
+      "name": "walk_left",
+      "channels": 159,
+      "duration_seconds": 0.47999998927116394
+    },
+    {
+      "index": 19,
+      "name": "walk_right",
+      "channels": 159,
+      "duration_seconds": 0.47999998927116394
+    }
+  ],
+  "resources": [
+    {
+      "type": "buffer",
+      "index": 0,
+      "storage": "bin_chunk",
+      "declared_bytes": 17153208
+    },
+    {
+      "type": "image",
+      "index": 0,
+      "storage": "buffer_view",
+      "bytes_available": 5229499
+    },
+    {
+      "type": "image",
+      "index": 1,
+      "storage": "buffer_view",
+      "bytes_available": 3112961
+    },
+    {
+      "type": "image",
+      "index": 2,
+      "storage": "buffer_view",
+      "bytes_available": 4749806
+    }
+  ],
+  "all_resource_bytes_available": true,
+  "warnings": [],
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+}

@@ -3,7 +3,8 @@ extends Node3D
 
 # AnimationTree owns playback; elapsed action time comes only from gameplay.
 const REQUIRED_STATES: Array[StringName] = [&"idle", &"walk", &"run", &"dodge", &"light_1", &"light_2", &"light_3", &"parry", &"hit"]
-const LOOP_STATES: Array[StringName] = [&"idle", &"walk", &"run"]
+const LOOP_STATES: Array[StringName] = [&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right", &"run_back", &"run_left", &"run_right"]
+const TRANSITION_SECONDS := 0.08
 var animation_player: AnimationPlayer
 var animation_tree: AnimationTree
 var rig: Node3D
@@ -14,6 +15,90 @@ var selected_clip: StringName = &""
 var sampled_time: float = 0.0
 var locomotion_clock: float = 0.0
 var _clip_node: AnimationNodeAnimation
+var _skeleton: Skeleton3D
+var _base_rig_yaw: float = 0.0
+var _presentation_epoch: int = 0
+var _transition_polish_enabled: bool = false
+var _has_presented_pose: bool = false
+var _gait_phase: float = 0.0
+var _idle_clock: float = 0.0
+var _blend_elapsed: float = 0.0
+var _blend_duration: float = 0.0
+var _blend_yaw: float = 0.0
+var _blend_positions := PackedVector3Array()
+var _blend_rotations: Array[Quaternion] = []
+var _blend_scales := PackedVector3Array()
+
+# Facing uses gameplay -Z. Snapshots expose only fresh scalar components,
+# never mutable controller/skeleton references.
+static func local_direction(direction: Vector3, facing: Vector3) -> Vector2:
+	var horizontal := Vector3(direction.x, 0.0, direction.z)
+	var forward := Vector3(facing.x, 0.0, facing.z)
+	if not horizontal.is_finite() or not forward.is_finite() or horizontal.length_squared() <= 0.000001:
+		return Vector2.ZERO
+	if forward.length_squared() <= 0.000001:
+		forward = Vector3.FORWARD
+	var yaw := atan2(-forward.x, -forward.z)
+	var local := horizontal.normalized().rotated(Vector3.UP, -yaw)
+	return Vector2(local.x, local.z)
+
+func get_skeleton() -> Skeleton3D:
+	return _skeleton
+
+func enable_transition_polish(enabled: bool = true) -> Dictionary:
+	# An explicit production opt-in. Sparse synthetic/imported clips keep their
+	# original immediate-sampling contract; every blended target must overwrite
+	# every local bone channel so yesterday's blended pose cannot feed back.
+	if enabled:
+		var reason := _complete_pose_error()
+		if not reason.is_empty():
+			return {"ok":false, "reason":reason}
+	_transition_polish_enabled = enabled
+	reset_presentation(_presentation_epoch)
+	return {"ok":true, "reason":""}
+
+func transition_report() -> Dictionary:
+	return {"enabled":_transition_polish_enabled, "active":_blend_duration > 0.0,
+		"elapsed":_blend_elapsed, "duration":_blend_duration, "gait_phase":_gait_phase}
+
+func _complete_pose_error() -> String:
+	if not is_instance_valid(_skeleton) or animation_player == null:
+		return "Transition polish requires a mounted skeletal rig"
+	var root := animation_player.get_node(animation_player.root_node)
+	var animations: Array = clips.values()
+	animations.append(&"RESET")
+	for clip: StringName in animations:
+		var animation := animation_player.get_animation(clip)
+		var channels: Dictionary = {}
+		for track in range(animation.get_track_count()):
+			var path := animation.track_get_path(track)
+			var names := path.get_concatenated_names()
+			var target := root if names.is_empty() else root.get_node_or_null(NodePath(names))
+			var type := animation.track_get_type(track)
+			if target != _skeleton or path.get_subname_count() != 1 or not type in [Animation.TYPE_POSITION_3D, Animation.TYPE_ROTATION_3D, Animation.TYPE_SCALE_3D]:
+				return "Transition polish requires complete skeleton-only transform clips: %s" % clip
+			var bone := _skeleton.find_bone(path.get_subname(0))
+			var bit := 1 if type == Animation.TYPE_POSITION_3D else (2 if type == Animation.TYPE_ROTATION_3D else 4)
+			channels[bone] = int(channels.get(bone, 0)) | bit
+		for bone in range(_skeleton.get_bone_count()):
+			if channels.get(bone, 0) != 7:
+				return "Transition polish requires all bone channels in %s: %s" % [clip, _skeleton.get_bone_name(bone)]
+	return ""
+
+func bone_report() -> Dictionary:
+	var names: Array[StringName] = []
+	var roles: Dictionary = {}
+	if is_instance_valid(_skeleton):
+		for index in range(_skeleton.get_bone_count()):
+			names.append(_skeleton.get_bone_name(index))
+		# Exact provider bone names only; absence never invents a hand mapping.
+		var role_names := {"right_hand":"RightHand", "left_hand":"LeftHand", "hips":"Hips", "head":"Head"}
+		for role in role_names:
+			var bone_name: String = role_names[role]
+			var index := _skeleton.find_bone(bone_name)
+			if index >= 0:
+				roles[role] = {"name":bone_name, "index":index}
+	return {"names":names, "roles":roles}
 
 func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: Array[StringName] = REQUIRED_STATES, facing_correction: float = PI) -> Dictionary:
 	if rig != null or required_states.is_empty() or not &"idle" in required_states:
@@ -71,7 +156,9 @@ func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: 
 	rig = instance
 	clips = candidate_clips
 	animation_player = player
+	_skeleton = skeleton
 	rig.rotation.y += facing_correction # Humanoid +Z -> gameplay -Z, once in this wrapper.
+	_base_rig_yaw = rig.rotation.y
 	_disable_automatic_playback(rig)
 	add_child(rig)
 	animation_tree = AnimationTree.new()
@@ -90,8 +177,57 @@ func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: 
 	blend.connect_node(&"output", 0, &"Clock")
 	animation_tree.tree_root = blend
 	animation_tree.active = true
+	reset_presentation()
 	last_error = ""
-	return {"ok":true, "reason":"", "bones":skeleton.get_bone_count(), "states":clips.keys()}
+	return {"ok":true, "reason":"", "bones":skeleton.get_bone_count(), "states":clips.keys(), "bone_mapping":bone_report()}
+
+func reset_presentation(epoch: int = 0) -> void:
+	_presentation_epoch = epoch
+	locomotion_clock = 0.0
+	selected_state = &""
+	selected_clip = &""
+	sampled_time = 0.0
+	_has_presented_pose = false
+	_gait_phase = 0.0
+	_idle_clock = 0.0
+	_clear_transition()
+	if is_instance_valid(rig):
+		rig.rotation.y = _base_rig_yaw
+	if animation_tree != null and _clip_node != null:
+		_clip_node.animation = &"RESET"
+		animation_tree.set("parameters/Clock/seek_request", 0.0)
+		animation_tree.advance(0.0)
+
+func _clear_transition() -> void:
+	_blend_elapsed = 0.0
+	_blend_duration = 0.0
+	_blend_positions.clear()
+	_blend_rotations.clear()
+	_blend_scales.clear()
+
+func _capture_transition(duration: float) -> void:
+	_clear_transition()
+	_blend_duration = duration
+	_blend_yaw = rig.rotation.y - _base_rig_yaw
+	for bone in range(_skeleton.get_bone_count()):
+		_blend_positions.append(_skeleton.get_bone_pose_position(bone))
+		_blend_rotations.append(_skeleton.get_bone_pose_rotation(bone))
+		_blend_scales.append(_skeleton.get_bone_pose_scale(bone))
+
+func _blend_pose(delta: float, visual_yaw: float) -> void:
+	if _blend_duration <= 0.0:
+		return
+	_blend_elapsed = minf(_blend_duration, _blend_elapsed + maxf(delta, 0.0))
+	if _blend_elapsed >= _blend_duration:
+		_clear_transition()
+		return # The exact authored target is already sampled, including yaw.
+	var amount := _blend_elapsed / _blend_duration
+	amount = amount * amount * (3.0 - 2.0 * amount)
+	for bone in range(_skeleton.get_bone_count()):
+		_skeleton.set_bone_pose_position(bone, _blend_positions[bone].lerp(_skeleton.get_bone_pose_position(bone), amount))
+		_skeleton.set_bone_pose_rotation(bone, _blend_rotations[bone].slerp(_skeleton.get_bone_pose_rotation(bone), amount))
+		_skeleton.set_bone_pose_scale(bone, _blend_scales[bone].lerp(_skeleton.get_bone_pose_scale(bone), amount))
+	rig.rotation.y = _base_rig_yaw + lerp_angle(_blend_yaw, visual_yaw, amount)
 
 func _failure(reason: String) -> Dictionary:
 	last_error = reason
@@ -208,10 +344,18 @@ func _validate_tracks(player: AnimationPlayer, animation: Animation, boundary: N
 func present(delta: float, snapshot: Dictionary) -> bool:
 	if animation_tree == null:
 		return false
-	var speed: float = maxf(0.0, float(snapshot.get("speed", 0.0)))
+	var speed := float(snapshot.get("speed", 0.0))
+	if not is_finite(speed) or not is_finite(delta):
+		last_error = "Presentation speed and delta must be finite"
+		return false
+	speed = maxf(0.0, speed)
+	var epoch := int(snapshot.get("presentation_epoch", _presentation_epoch))
+	if epoch != _presentation_epoch:
+		reset_presentation(epoch)
 	var state: StringName = &"idle"
 	var elapsed: float = 0.0
 	var duration: float = 0.0
+	var visual_yaw := 0.0
 	if snapshot.get("dead", false):
 		state = &"death"
 		elapsed = float(snapshot.get("death_elapsed", 0.0))
@@ -224,6 +368,12 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		state = &"dodge"
 		elapsed = float(snapshot.get("dodge_elapsed", 0.0))
 		duration = float(snapshot.get("dodge_duration", 0.32))
+		var direction := Vector2(float(snapshot.get("dodge_local_x", 0.0)), float(snapshot.get("dodge_local_z", -1.0)))
+		if not direction.is_finite():
+			last_error = "Dodge direction must be finite"
+			return false
+		if direction.length_squared() > 0.000001:
+			visual_yaw = atan2(-direction.x, -direction.y)
 	elif float(snapshot.get("parry_remaining", 0.0)) > 0.0:
 		state = &"parry"
 		elapsed = float(snapshot.get("parry_elapsed", 0.0))
@@ -234,16 +384,55 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		duration = float(snapshot.get("attack_duration", 0.0))
 	elif speed > 0.1:
 		state = &"run" if speed >= 7.4 else &"walk"
+		var direction := Vector2(float(snapshot.get("move_local_x", 0.0)), float(snapshot.get("move_local_z", -1.0)))
+		if not direction.is_finite():
+			last_error = "Locomotion direction must be finite"
+			return false
+		# Nearest cardinal axis, with exact diagonal ties choosing forward/back.
+		# Side/back sprint uses the authored directional walk cycle at its actual
+		# velocity ratio; it must never silently play the forward sprint cycle.
+		if absf(direction.x) > absf(direction.y):
+			state = &"walk_right" if direction.x > 0.0 else &"walk_left"
+		elif direction.y > 0.0:
+			state = &"walk_back"
+	elif bool(snapshot.get("charge_active", false)):
+		state = &"charge"
+		elapsed = float(snapshot.get("charge_elapsed", 0.0))
+		duration = float(snapshot.get("charge_duration", 0.65))
+	elif float(snapshot.get("heal_remaining", 0.0)) > 0.0:
+		# The potion effect is instant and locomotion/actions keep priority. This
+		# stationary gesture introduces no gameplay lock or delayed healing.
+		state = &"heal"
+		elapsed = float(snapshot.get("heal_elapsed", 0.0))
+		duration = float(snapshot.get("heal_duration", 0.35))
 	if not clips.has(state):
 		last_error = "No authored clip for state: %s" % state
+		_has_presented_pose = false
+		_clear_transition()
 		return false # Caller shows the original visual instead of faking a clip.
-	selected_state = state
-	selected_clip = clips[state]
-	var length := animation_player.get_animation(selected_clip).length
+	var next_clip: StringName = clips[state]
+	var length := animation_player.get_animation(next_clip).length
+	var previous_time := sampled_time
+	var state_changed := state != selected_state or next_clip != selected_clip
 	if state in LOOP_STATES:
 		var reference_speed := 8.5 if state == &"run" else 6.4
-		locomotion_clock += maxf(delta, 0.0) * (1.0 if state == &"idle" else speed / reference_speed)
-		sampled_time = fposmod(locomotion_clock, length)
+		reference_speed = float(snapshot.get("locomotion_reference_speed", reference_speed))
+		if not is_finite(reference_speed) or reference_speed <= 0.0:
+			last_error = "Locomotion reference speed must be finite and positive"
+			return false
+		var advance := maxf(delta, 0.0) * (1.0 if state == &"idle" else speed / reference_speed)
+		locomotion_clock += advance
+		if _transition_polish_enabled:
+			if state == &"idle":
+				_idle_clock += advance
+				sampled_time = fposmod(_idle_clock, length)
+			else:
+				# Keep the same left/right-foot phase when a direction or cycle
+				# length changes. Idle breathing has an independent clock.
+				_gait_phase = fposmod(_gait_phase + advance / length, 1.0)
+				sampled_time = _gait_phase * length
+		else:
+			sampled_time = fposmod(locomotion_clock, length)
 	else:
 		if state == &"death" and duration <= 0.0:
 			duration = length
@@ -251,8 +440,35 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 			last_error = "Action requires finite gameplay elapsed and duration: %s" % state
 			return false
 		sampled_time = clampf(elapsed / duration, 0.0, 1.0) * length
+	if _transition_polish_enabled:
+		var attack := not String(snapshot.get("attack_id", "")).is_empty() and state == StringName(snapshot.attack_id)
+		var startup := float(snapshot.get("attack_startup", 0.0)) if attack else 0.0
+		if not is_finite(startup):
+			last_error = "Attack startup must be finite"
+			return false
+		var blend_duration := minf(TRANSITION_SECONDS, maxf(0.0, startup-elapsed)) if attack else TRANSITION_SECONDS
+		var restarted := not state in LOOP_STATES and sampled_time < previous_time-0.000001
+		# Zero-delta changed samples are explicit audit/editor seeks. An unchanged
+		# zero-delta snapshot retains its exact blend weight and gait phase.
+		var exact_seek := delta <= 0.0 and (state_changed or absf(sampled_time-previous_time) > 0.000001)
+		if not _has_presented_pose or exact_seek or state in [&"hit", &"dodge", &"parry", &"death"] or (attack and elapsed >= startup):
+			_clear_transition()
+		elif state_changed or restarted:
+			if blend_duration > 0.0:
+				_capture_transition(blend_duration)
+			else:
+				_clear_transition()
+	selected_state = state
+	selected_clip = next_clip
+	rig.rotation.y = _base_rig_yaw + visual_yaw
 	_clip_node.animation = selected_clip
 	animation_tree.set("parameters/Clock/seek_request", sampled_time)
 	animation_tree.advance(0.0)
+	# AnimationTree remains the only playback owner and has sampled the exact
+	# gameplay target. This bounded visual blend changes no target clock, actor,
+	# collision or hitbox. ActorVisual updates its hand socket after this pose.
+	if _transition_polish_enabled:
+		_blend_pose(delta, visual_yaw)
+	_has_presented_pose = true
 	last_error = ""
 	return true

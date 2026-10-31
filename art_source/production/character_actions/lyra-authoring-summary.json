@@ -1,0 +1,651 @@
+{
+  "profile": "lyra",
+  "source": {
+    "file": "motion-library.glb",
+    "sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+    "unchanged": true
+  },
+  "expected_clips": [
+    "RESET",
+    "charge",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "exported_durations_seconds": {
+    "charge": 0.6499999761581421,
+    "death": 1.100000023841858,
+    "dodge": 0.3199999928474426,
+    "heal": 0.3499999940395355,
+    "heavy": 0.8600000143051147,
+    "hit": 0.15000000596046448,
+    "idle": 1.600000023841858,
+    "light_1": 0.5199999809265137,
+    "light_2": 0.5199999809265137,
+    "light_3": 0.699999988079071,
+    "parry": 0.2199999988079071,
+    "RESET": 0.009999999776482582,
+    "run": 0.4000000059604645,
+    "skill_1": 0.7900000214576721,
+    "skill_2": 0.7900000214576721,
+    "skill_3": 0.7900000214576721,
+    "walk": 0.47999998927116394,
+    "walk_back": 0.47999998927116394,
+    "walk_left": 0.47999998927116394,
+    "walk_right": 0.47999998927116394
+  },
+  "source_fcurves_copied_or_sampled": 0,
+  "max_ik_reach_clamp_m": 0.0,
+  "finger_curl_rad": [
+    0.65,
+    1.35,
+    1.4
+  ],
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false,
+    "rig_uniform_scale": 1.8189517259597778,
+    "physical_offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "local_offset": [
+      0.030237196081154386,
+      0.054976720147553435,
+      -0.032986032088532055
+    ],
+    "weapon_child_uniform_scale": 0.5497672014755343
+  },
+  "output_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "structural_inspection": {
+    "structurally_valid": true,
+    "requirements_met": true,
+    "counts": {
+      "nodes": 56,
+      "meshes": 1,
+      "mesh_primitives": 1,
+      "mesh_triangles": 32000,
+      "materials": 1,
+      "skins": 1,
+      "skinned_mesh_nodes": 1,
+      "animations": 20
+    }
+  },
+  "limitations": [
+    "Procedural prototype, not AAA or final anatomy/material/deformation approval.",
+    "No runtime crossfade: arbitrary locomotion-to-action and forced cancellations can change pose abruptly.",
+    "AoE skill2/3 volumes are rune effects, not physical blade-length coverage."
+  ],
+  "action_summaries": {
+    "light_1": {
+      "duration_seconds": 0.52,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.430305843099965e-07,
+      "active_window": {
+        "start": 0.13,
+        "end": 0.30000000000000004,
+        "gameplay_arc_deg": 130.0
+      },
+      "active_azimuth_deg": [
+        -64.99999585468822,
+        -57.35293787388303,
+        -49.70588419553611,
+        -42.05881879973256,
+        -34.41177280567186,
+        -26.764712482071364,
+        -19.11763493066033,
+        -11.470589346794458,
+        -3.8235246551345337,
+        3.8235274384852587,
+        11.47058636389463,
+        19.117637791180773,
+        26.764701809824984,
+        34.41176049335046,
+        42.058826158606145,
+        49.70588340307518,
+        57.35293603156712,
+        64.99999884553321
+      ],
+      "minimum_skinned_floor_z_m": -8.233153891978873e-08,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.022568562756034
+    },
+    "light_2": {
+      "duration_seconds": 0.52,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.4856369670647795e-07,
+      "active_window": {
+        "start": 0.13,
+        "end": 0.30000000000000004,
+        "gameplay_arc_deg": 150.0
+      },
+      "active_azimuth_deg": [
+        -74.99999746510775,
+        -66.17647290878374,
+        -57.35293787388303,
+        -48.52941674672287,
+        -39.70589281924641,
+        -30.882355816081738,
+        -22.05883151730775,
+        -13.235282706765915,
+        -4.411772704994013,
+        4.411763667149443,
+        13.235286862244637,
+        22.058822021989858,
+        30.882354063192395,
+        39.70588275547914,
+        48.52940770033477,
+        57.35293603156712,
+        66.17646877049822,
+        74.99999911447169
+      ],
+      "minimum_skinned_floor_z_m": -1.9254370542398647e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.0740940088263233
+    },
+    "light_3": {
+      "duration_seconds": 0.7,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.4314476359010817e-07,
+      "active_window": {
+        "start": 0.18,
+        "end": 0.4,
+        "gameplay_arc_deg": 130.0
+      },
+      "active_azimuth_deg": [
+        -64.99999585468822,
+        -59.09090945000122,
+        -53.181816451656246,
+        -47.27273001651812,
+        -41.36363641781399,
+        -35.45454665468799,
+        -29.54545519657452,
+        -23.636363479067587,
+        -17.727270832424804,
+        -11.818180465225536,
+        -5.909086547214013,
+        8.537735444738561e-07,
+        5.909091144984634,
+        11.818181300901228,
+        17.727272325507897,
+        23.636358591088232,
+        29.54545371106855,
+        35.45454745559257,
+        41.36363806199685,
+        47.27273001651812,
+        53.18182191950422,
+        59.09090243297278,
+        64.99999884553321
+      ],
+      "minimum_skinned_floor_z_m": -1.3654052466449684e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.1377155781427972
+    },
+    "heavy": {
+      "duration_seconds": 0.86,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.744136200952474e-07,
+      "active_window": {
+        "start": 0.32,
+        "end": 0.54,
+        "gameplay_arc_deg": 170.0
+      },
+      "active_azimuth_deg": [
+        -85.00000001452331,
+        -77.27272258998715,
+        -69.54545274475042,
+        -61.818186894124544,
+        -54.09090376028396,
+        -46.36364208681675,
+        -38.636361202033385,
+        -30.90909348009303,
+        -23.181814079845463,
+        -15.454523027935371,
+        -7.727246166656139,
+        -8.537736462515938e-07,
+        7.72726477911096,
+        15.454538014448085,
+        23.181813629189453,
+        30.90908761990435,
+        38.63636813424958,
+        46.36364680018621,
+        54.090908242962456,
+        61.81818087363213,
+        69.54545271890588,
+        77.27272742593473,
+        85.00000001452331
+      ],
+      "minimum_skinned_floor_z_m": -3.876960541049357e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 4.169494674819521
+    },
+    "skill_1": {
+      "duration_seconds": 0.79,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.4620758953479386e-07,
+      "active_window": {
+        "start": 0.16,
+        "end": 0.51,
+        "gameplay_arc_deg": 160.0
+      },
+      "active_azimuth_deg": [
+        -80.00000030991939,
+        -75.4285741883701,
+        -70.85714424181067,
+        -66.2857089444778,
+        -61.714284708691125,
+        -57.142861632649584,
+        -52.57143259307681,
+        -48.00000351426695,
+        -43.42857033917517,
+        -38.85713785395791,
+        -34.28571035553603,
+        -29.714281977697194,
+        -25.142854723889712,
+        -20.571435922817006,
+        -15.999995318658364,
+        -11.428570318866285,
+        -6.857131348862688,
+        -2.28572247599091,
+        2.285709543370055,
+        6.857143216193348,
+        11.428558923345278,
+        15.999997901385784,
+        20.57143312417306,
+        25.142854913420617,
+        29.714285363252536,
+        34.285720744376945,
+        38.85714213908683,
+        43.42857020673016,
+        47.99999640606831,
+        52.57143259307681,
+        57.142858942877844,
+        61.714285281930216,
+        66.285713254783,
+        70.85713976223596,
+        75.42857161079255,
+        79.9999983805358
+      ],
+      "minimum_skinned_floor_z_m": -4.093796484028189e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.5257600435524457
+    },
+    "skill_2": {
+      "duration_seconds": 0.79,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.7978144454976402e-07,
+      "active_window": {
+        "start": 0.16,
+        "end": 0.51,
+        "gameplay_arc_deg": 360.0
+      },
+      "active_azimuth_deg": [
+        -74.99999658121611,
+        -70.7142858222843,
+        -66.42856972811585,
+        -62.14286107654962,
+        -57.85714922758329,
+        -53.57143457074496,
+        -49.2857200786222,
+        -45.0,
+        -40.71429695842694,
+        -36.428577008665755,
+        -32.142853664060205,
+        -27.857134308346822,
+        -23.57142870681069,
+        -19.285713210133334,
+        -14.999995937436392,
+        -10.714285886614517,
+        -6.428561565746633,
+        -2.1428621284584675,
+        2.1428516349491775,
+        6.428565425404411,
+        10.714285251708825,
+        15.000003418783907,
+        19.2857207849692,
+        23.57142714173718,
+        27.85714504822288,
+        32.14285077241671,
+        36.428581064570814,
+        40.71428919279247,
+        45.00000482967235,
+        49.28571375667467,
+        53.57143457074496,
+        57.857147410643556,
+        62.14285663364131,
+        66.42856836244653,
+        70.7142858222843,
+        75.00000088225454
+      ],
+      "minimum_skinned_floor_z_m": -7.725798528923633e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.2791930507516316
+    },
+    "skill_3": {
+      "duration_seconds": 0.79,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.40533775945871e-07,
+      "active_window": {
+        "start": 0.16,
+        "end": 0.51,
+        "gameplay_arc_deg": 360.0
+      },
+      "active_azimuth_deg": [
+        -1.0720862548649178e-05,
+        0.0,
+        1.920027912931489e-06,
+        -6.770475771099615e-06,
+        -3.3858010403037433e-06,
+        3.5672180954260817e-06,
+        -2.8843452638534493e-06,
+        -6.907462387639308e-06,
+        2.023649265183901e-05,
+        1.5756424450789669e-06,
+        1.816330245351545e-05,
+        -6.615825838010725e-05,
+        9.425242331376392e-05,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06,
+        -9.795982276528595e-06
+      ],
+      "minimum_skinned_floor_z_m": -9.514695058499001e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 3.0181469545456827
+    },
+    "idle": {
+      "duration_seconds": 1.6,
+      "authorship": "project-authored semantic IK",
+      "loop": true,
+      "loop_endpoint_max_channel_error": 0.0,
+      "max_grip_target_error_m": 1.8405347059720195e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": -1.3654052466449684e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.515351979129601
+    },
+    "dodge": {
+      "duration_seconds": 0.32,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.739355553676002e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": 2.6086432569627505e-08,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 4.0391101106263125
+    },
+    "parry": {
+      "duration_seconds": 0.22,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.5092533408178257e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": 2.6086432569627505e-08,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.4995076264138003
+    },
+    "hit": {
+      "duration_seconds": 0.15,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.5597359400584043e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": -2.812255317508061e-08,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.4995076264138003
+    },
+    "charge": {
+      "duration_seconds": 0.65,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.5273690223693848e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": -1.7086011112610322e-06,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.869819894372807
+    },
+    "heal": {
+      "duration_seconds": 0.35,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.6858739404357614e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": 2.6086432569627505e-08,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.4995076264138003
+    },
+    "death": {
+      "duration_seconds": 1.1,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.8189185285171422e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": -2.449584961539131e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 2.641365695373517
+    },
+    "walk": {
+      "duration_s": 0.48,
+      "reference_speed_m_s": 6.4,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.155,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.13440000000000002,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 1.6391277313232422e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.0009605494466937148,
+      "skinned_stance_floor_max_abs_m": 0.0007401108741760254,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "run": {
+      "duration_s": 0.4,
+      "reference_speed_m_s": 8.5,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.18,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.11200000000000002,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 1.7881393432617188e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.001077057921862339,
+      "skinned_stance_floor_max_abs_m": 0.0007401108741760254,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_back": {
+      "duration_s": 0.48,
+      "reference_speed_m_s": 6.4,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.155,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.13440000000000002,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.384185791015625e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.0007516622297794524,
+      "skinned_stance_floor_max_abs_m": 0.00074005126953125,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_left": {
+      "duration_s": 0.48,
+      "reference_speed_m_s": 6.4,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.55,
+      "pelvis_drop_m": 0.155,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.13440000000000002,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.086162567138672e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.0008495520756409007,
+      "skinned_stance_floor_max_abs_m": 0.0007404685020446777,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_right": {
+      "duration_s": 0.48,
+      "reference_speed_m_s": 6.4,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": -0.55,
+      "pelvis_drop_m": 0.155,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.13440000000000002,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 1.7881393432617188e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.000783532168125731,
+      "skinned_stance_floor_max_abs_m": 0.00074005126953125,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    }
+  }
+}

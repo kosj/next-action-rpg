@@ -1,0 +1,157 @@
+{
+  "monastery_stone_floor": {
+    "date_published": 1682553600,
+    "name": "Monastery Stone Floor",
+    "categories": [
+      "rock",
+      "outdoor",
+      "floor",
+      "man made"
+    ],
+    "type": 1,
+    "authors": {
+      "Amal Kumar": "All"
+    },
+    "info": null,
+    "dimensions": [
+      1799.9999523162842,
+      1799.9999523162842
+    ],
+    "max_resolution": [
+      8192,
+      8192
+    ],
+    "tags": [
+      "rock",
+      "rocks",
+      "stone",
+      "floor",
+      "pathway",
+      "slates",
+      "slate",
+      "path",
+      "walkway",
+      "weathered"
+    ],
+    "files_hash": "2b15d54cd0518be212cf14f320c761ab33e71ea6",
+    "description": "Free 8K texture of a weathered monastery stone floor: irregular slate slabs, rough chipped edges, worn faces and gritty mortar joints with dirt.",
+    "category_id": "0dc6c67b-4dfa-5355-ad12-9918fc376459",
+    "category": "Stone/Slabs & Tiles/Slate",
+    "attributes": {
+      "surface_use": "floor",
+      "condition": [
+        "weathered",
+        "worn",
+        "damaged"
+      ],
+      "origin": "man_made",
+      "setting": "outdoor"
+    },
+    "img_version": "1108252e",
+    "download_count": 56777,
+    "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/monastery_stone_floor.png?width=256&height=256&format=webp&v=1108252e"
+  },
+  "white_sandstone_blocks_02": {
+    "date_published": 1530331927,
+    "name": "White Sandstone Blocks 02",
+    "type": 1,
+    "authors": {
+      "Rob Tuytel": "All"
+    },
+    "dimensions": [
+      2000,
+      2000
+    ],
+    "categories": [
+      "brick",
+      "man made",
+      "outdoor",
+      "wall",
+      "collection: the_shed"
+    ],
+    "tags": [
+      "blocks",
+      "sandstone",
+      "uneven",
+      "damaged"
+    ],
+    "max_resolution": [
+      8192,
+      8192
+    ],
+    "files_hash": "311e05c6993568fa9d3f1a0cf24730ca9b0f91d6",
+    "description": "Free 8K texture of white sandstone blocks - uneven, chipped blocks with rough, granular surfaces, deep mortar joints and subtle beige dusting and weathered details.",
+    "category_id": "711f00d1-14a5-537f-addc-52bc3da7cd0e",
+    "category": "Brick & Block/Stone Block & Paver/Sandstone Brick & Block",
+    "collections": [
+      "the_shed"
+    ],
+    "attributes": {
+      "surface_use": "wall",
+      "condition": [
+        "weathered",
+        "damaged"
+      ],
+      "origin": "man_made",
+      "setting": "outdoor"
+    },
+    "img_version": "0b9d17c5",
+    "download_count": 56330,
+    "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/white_sandstone_blocks_02.png?width=256&height=256&format=webp&v=0b9d17c5"
+  },
+  "forest_ground_05": {
+    "type": 1,
+    "name": "Forest Ground 05",
+    "categories": [
+      "outdoor",
+      "terrain",
+      "natural",
+      "sand"
+    ],
+    "tags": [
+      "rough",
+      "uneven",
+      "dirt",
+      "soil",
+      "compact soil",
+      "scattered rocks",
+      "scattered leaves",
+      "forest debris",
+      "organic matter",
+      "leaf litter",
+      "forest floor",
+      "earthy",
+      "dry soil",
+      "natural path",
+      "hikers trail"
+    ],
+    "description": "Free 16K texture of compact forest soil: dark brown earth with fine grit, small stones and faint leaf fragments, slightly damp, subtle roughness and variation.",
+    "authors": {
+      "Charlotte Baglioni": "All"
+    },
+    "max_resolution": [
+      16384,
+      16384
+    ],
+    "dimensions": [
+      2000,
+      2000
+    ],
+    "files_hash": "7f41f3c32906da4c5de717f58e78c467a2958e06",
+    "date_published": 1783468800,
+    "category_id": "2b016db1-a760-53aa-89ac-54c30f13214a",
+    "category": "Ground & Terrain/Forest Floor/Forest Soil",
+    "attributes": {
+      "surface_use": "ground",
+      "origin": "natural",
+      "setting": "outdoor",
+      "condition": [
+        "dirty"
+      ]
+    },
+    "info": "This forest ground was scanned near the entrance of the Ichikawa Zoo, in Japan. The zoo became really famous when a [video](https://x.com/Euphorbia10182/status/2018888215525269643) about a baby monkey (Punch!) holding a monkey plushie as a substitute mother went viral.",
+    "img_version": "962b5172",
+    "download_count": 5188,
+    "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/forest_ground_05.png?width=256&height=256&format=webp&v=962b5172"
+  }
+}

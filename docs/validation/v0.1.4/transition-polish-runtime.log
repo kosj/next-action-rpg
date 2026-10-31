@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Sparse synthetic rigs retain immediate sampling unless production polish is explicitly enabled
+PASS Polish rejects incomplete pose channels without changing the existing synthetic action clock
+PASS Transition fixture mounts actual weighted production hero 0: 
+PASS Transition fixture mounts actual weighted production hero 1: 
+PASS Transition fixture mounts actual weighted production hero 2: 
+PASS Complete actual production bone channels opt in to bounded presentation blending
+PASS Actual start transition reduces the first-frame body/foot/hand/blade marker jump by at least half
+PASS Actual stop transition reduces the first-frame body/foot/hand/blade marker jump by at least half
+PASS Actual direction transition reduces the first-frame body/foot/hand/blade marker jump by at least half
+PASS Actual walk_to_run transition reduces the first-frame body/foot/hand/blade marker jump by at least half
+PASS Changing between actual walk and run preserves normalized left/right-foot cycle phase despite unequal clip lengths
+PASS Directional changes preserve the same normalized gait phase instead of restarting a foot cycle
+PASS Hit-paused zero-delta holds freeze all 53 bones, weapon, transition weight and locomotion phase without automatic playback
+PASS The same-frame hand socket follows the final blended Skeleton pose
+PASS hit presentation interrupts a blend immediately at the authoritative action sample
+PASS dodge presentation interrupts a blend immediately at the authoritative action sample
+PASS parry presentation interrupts a blend immediately at the authoritative action sample
+PASS death presentation interrupts a blend immediately at the authoritative action sample
+PASS Attack entry blends only within remaining startup while its sampled target retains gameplay elapsed
+PASS At active attack start and throughout the strike the real Skeleton and weapon are the exact unblended authored target
+PASS Transition progress depends on accumulated presentation seconds rather than rendered frame count
+PASS An explicit changed-time zero-delta audit seek samples the exact target pose
+PASS Interrupting an unfinished blend starts from its currently displayed pose instead of snapping to an outgoing raw clip
+PASS Leaving a side dodge smoothly restores visual rig yaw and its same-frame weapon, without rotating the actor
+PASS A presentation epoch resets gait/blend history and starts directly on the new authored pose without a T-pose blend
+PASS Transition polish never translates or rotates the authoritative visual actor wrapper
+PASS Transition fixture reaches its end
+RUNEFALL_TRANSITIONS: 27 checks, 0 failures

@@ -1,0 +1,45 @@
+{
+  "scope": "Prototype guard grip recipe selection, not complete anatomical approval",
+  "source_report": "build/art-review/character-integration/grip-curl-comparison.json",
+  "comparisons": 27,
+  "chosen_finger_curl_rad": [
+    0.65,
+    1.35,
+    1.4
+  ],
+  "physical_socket_offset_m": [
+    0.055,
+    0.1,
+    -0.06
+  ],
+  "baseline_min_oriented_clearance_m": -0.00652,
+  "chosen_min_oriented_clearance_m": -0.002464,
+  "chosen_hilt_vertices_below_minus_1mm": 5,
+  "chosen_hilt_vertices_below_minus_5mm": 0,
+  "limitations": [
+    "Small residual glove/hilt overlap remains; thumb and per-digit geometry/weights need art polish.",
+    "Signed-nearest-normal distances are local mesh measurements, not watertight collision proof."
+  ],
+  "hero_profile": "lyra",
+  "sentinel_profile": {
+    "source_report": "build/art-review/character-integration/sentinel-grip-curl-comparison.json",
+    "comparisons": 25,
+    "measurement_pose": "enemy_attack at .8 seconds, actual mesh and same socket",
+    "chosen_finger_curl_rad": [
+      0.2,
+      1.1,
+      1.4
+    ],
+    "baseline_finger_curl_rad": [
+      0.65,
+      1.35,
+      1.4
+    ],
+    "baseline_min_oriented_clearance_m": -0.010804,
+    "chosen_min_oriented_clearance_m": -8.934e-05,
+    "chosen_hilt_vertices_below_minus_1mm": 0,
+    "chosen_hilt_vertices_below_minus_5mm": 0,
+    "hilt_vertices_within_3mm_contact": 5,
+    "approval": "Localized recipe selection; idle/start/active/end pose and closed-hand review remains separate."
+  }
+}

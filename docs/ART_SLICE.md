@@ -1,8 +1,10 @@
 # 대표 아트 구간 · 제작 및 검수 계약
 
-작성일: 2026-10-30. 첫 범위는 **리라 몸체·룬검, 근접 수호병·검, 순례자 전투 공간의 모듈 키트**입니다. 제작 입력은 [asset_specs.json](../art_source/production/asset_specs.json), 모션 계약은 [motion_contract.json](../art_source/production/motion_contract.json)에 있습니다. 현재 2D 콘셉트 3장과 리라의 실제 VARCO 3D·53본 리깅·locomotion 후보가 존재합니다. 전투 모션과 최종 변형·장면 품질은 검수 전이며, 캐릭터 본체는 기존 피벗 자산을 기본으로 사용하며, 후속 배치에서 첫 courtyard의 정적 소품과 hero 검을 프리뷰로 반입했습니다.
+작성일: 2026-10-30. 첫 범위는 **리라 몸체·룬검, 근접 수호병·검, 순례자 전투 공간의 모듈 키트**입니다. 제작 입력은 [asset_specs.json](../art_source/production/asset_specs.json), 모션 계약은 [motion_contract.json](../art_source/production/motion_contract.json)에 있습니다. v0.1.4에서는 리라와 일반 melee 수호병의 실제53본 스킨에 프로젝트 저작 모션을 반입했습니다. 첫 courtyard의 정적 소품·검과 함께 실제 게임 프리뷰를 구성합니다. 다른 적/보스와 최종 변형·전환·재질·장면 품질은 검수 범위가 따로 남습니다. 과거 생성·개발 stock 후보의 결과는 아래에 판본별로 보존합니다.
 
 ## 사용 가능한 참조와 남은 제작
+
+최종 품질 요구는 [AAA 아트 승인 기준](AAA_ART_QUALITY.md)을 따릅니다. 실제 게임의 얼굴·손 근접, 모든 동작·교차 전환과 대표 교전, 플랫폼별 화면·목표 기기 성능을 같은 판본으로 검토합니다. 현재 프리뷰의 최종 AAA 승인은 `pending`입니다.
 
 | 대상 | 현재 입력 | 실제 제작에서 확인할 항목 |
 |---|---|---|
@@ -29,13 +31,21 @@
 
 실제 Godot 4.7.2의 독립 프로젝트에서도 53본·스킨 바인딩·4클립, 높이 1.82000023m·바닥 Y 약 0과 `AnimationTree` 수동 샘플링을 확인했습니다. [반입 결과와 재현 스크립트](validation/lyra-001/README.md)를 보관합니다. 이동 클립의 loop mode는 현재 모두 `NONE`이며 기본 9모션 장착 조건을 통과한 상태가 아닙니다.
 
-## 2026-10-31 추가 생성 배치
+## 2026-10-31 추가 생성 배치 · v0.1.3
 
 [후속 배치 기록](ART_BATCH_2026_10_31.md)에 실제 9개 실행·합계 **1,250포인트**와 추가 구매 없음을 기록합니다. 룬검·기둥·넓은 출구 문과 서로 다른 입력 경로의 수호병 후보 2종을 생성했습니다. native 수호병 참조는 개별 업로드·생성 승인 후 실행했으며 이전 승인 대기는 해소됐습니다.
 
-게임에는 hero 검 1개와 첫 courtyard의 기둥 8개·독립 출구 문틀 1개를 정적 프리뷰로 반입했습니다. 기존 손 피벗·RNG 순서·기단과 문 잠금 제어를 보존하고, 실제 메시 bounds·카메라 충돌 레이·플레이어 캡슐의 잠금→해제·PBR·quality와 리그 fallback 검사를 추가했습니다. 기본 플레이어·적 본체는 기존 피벗 모델이며 다른 방의 장식도 유지합니다.
+v0.1.3 게임에는 hero 검 1개와 첫 courtyard의 기둥 8개·독립 출구 문틀 1개를 정적 프리뷰로 반입했습니다. 기존 손 피벗·RNG 순서·기단과 문 잠금 제어를 보존하고, 실제 메시 bounds·카메라 충돌 레이·플레이어 캡슐의 잠금→해제·PBR·quality와 리그 fallback 검사를 추가했습니다. 기본 플레이어·적 본체는 기존 피벗 모델이며 다른 방의 장식도 유지합니다.
 
 무료 리라 Remesh의 32,000삼각형·14,110,392바이트 정적 원본을 별도 재리깅한 뒤, stock 11개·RESET을 결합한 **32k·53본·스킨 1개·12클립·18,279,128바이트** 파생 라이브러리를 준비했습니다. 초기 rest matrix 검사 실패는 본 평행이동 과정의 basis 반올림을 피하는 경로로 해결했고 엄격한 1e-5 검사값은 유지했습니다. 원본 12개 SHA 보존과 3시점 포즈 최대 오차8.15e-7m를 확인했으며, 새 원본 중 timestamp 문제가 있는 4개는 보존하고 별도 파생만 재샘플링했습니다. 기존 80k 기반 12클립 라이브러리와 구분하며, 실제 Godot 4.7.2의 독립 fresh 반입·runtime 감사도 통과했습니다. 53본·53 skin binds·12클립과 비RESET 11클립의 bone pose 변화를 확인했으며, REST 높이 1.819985688m·바닥 Y 1.40071e-5m는 기존 1e-4m 허용 범위 안입니다. 모든 clip의 loop mode는 NONE입니다. 상세 근거는 후보 폴더의 `godot-audit-motion-library.json`입니다. 게임플레이 시각 검수는 진행 중입니다. 두 경로 모두 기본 gameplay 9상태·전투 타이밍·발 접지·최종 품질 승인이 아니고 기본 아바타를 교체하지 않았습니다.
+
+## v0.1.4 캐릭터 프리뷰 반입
+
+[캐릭터 반입 계약·검증 기록](CHARACTER_INTEGRATION.md)에 공식 Godot4.7.2 API, 최신 공개 스킬 대조, 실제 상태·시간·그립·접지 범위를 정리했습니다. 리라32,000삼각형·53본·19상태+RESET, 일반 melee 수호병22,000삼각형·53본·9상태+RESET을 게임에 설치했습니다. 두 runtime의 모든 이동·행동 키는 프로젝트 Bpy 저작이며 기존 stock FCurve·수치 포즈를 복사하지 않았습니다. 수호병 Remesh·리깅·개발 이동 샘플의 이번 실제 비용은0포인트이며 추가 구매는 없습니다.
+
+같은 프레임 `RightHand` socket과 리그 scale 역수 보정으로 검 총길이1.35m·grip→tip1.19m를 유지합니다. hero capsule bottom의0.025m는 시각 자식에만 보정하며 collider·HP·판정·이동 권한은 보존합니다. 후방·측면 cycle은 락온과 enemy separation을 표현하고, dodge는 단일 저작 clip과 실제 회피 방향의 시각 yaw를 조합합니다. charge/heal은 정지 gesture이며 이동 중 locomotion·기존 VFX가 우선하고 HP는 즉시 회복됩니다.
+
+초기 revision의 독립 fresh 실제 모델41개·로컬 Web 검증 이후 charge 종료와 그립 데이터를 보정했습니다. 최신 파일의 통합 Godot runner268개·독립 실제 모델43개가 실패0으로 통과했고 Web/Windows 내보내기도 완료했습니다. [검증 근거](validation/v0.1.4/README.md)와 최종 Web·공개 브라우저 결과는 구분합니다. 후속80ms 포즈 이음과 이동 phase 보존은 [반입 기록](CHARACTER_INTEGRATION.md)에 따로 기록합니다. 모든 포즈의 손가락/의상 접촉·최종 재질과 목표 기기 성능은 이 프리뷰의 완료 주장에 포함하지 않습니다. ranged·shield·elite·boss는 기존 표현입니다.
 
 ## G0 · 생성 입력 확인
 
@@ -84,13 +94,13 @@
 
 ## G3 · Godot 표현 계층 통합
 
-`ActorVisual.mount_rig(scene, aliases, required_states, facing_correction)`로 검수한 PackedScene을 선택적으로 장착하고 `clear_rig()`로 기존 피벗 표현으로 돌아갈 수 있습니다. 기본 계약은 위 9개 상태와 RESET입니다. 가져온 클립 이름이 다르면 `aliases`에서 상태 이름을 실제 라이브러리/클립 이름으로 매핑합니다.
+`ActorVisual.mount_rig(scene, aliases, required_states, facing_correction)`로 검수한 PackedScene을 선택적으로 장착하고 `clear_rig()`로 기존 피벗 표현으로 돌아갈 수 있습니다. 기본 API 계약은 위 9개 상태와 RESET입니다. 실제 v0.1.4 profile은 `ProductionCharacterArt`에서 hero19상태·일반 melee9상태를 요구하고 자동 장착합니다. 가져온 클립 이름이 다르면 `aliases`에서 상태 이름을 실제 라이브러리/클립 이름으로 매핑합니다.
 
 플레이어와 적의 `presentation_snapshot()`은 공격 ID·실제 elapsed/duration·경직·회피·패링 시간을 값으로 전달합니다. `SkeletalVisualBridge`의 AnimationTree/TimeSeek는 이 시간을 따라 실제 bone pose를 샘플링하며 AnimationPlayer의 자동 재생은 끕니다. 표현 계층이 전투 객체를 수정하거나 클립 이벤트로 피해·이동을 결정하지 않습니다.
 
 장착 전에 실제 Skin과 정규화된 vertex weights·bone binding, RESET·클립·루프 조건·트랙 대상을 검사합니다. 리그 밖/절대 경로·게임플레이 객체·임의 property나 실행 트랙은 거부합니다. 구조 검사와 합성 bone pose의 시간 동기화는 회귀 검사로 확인했으며 최종 자산의 BoneMap·발 접지·크로스페이드·시각 품질은 여전히 별도 검수 대상입니다.
 
-9개 클립은 첫 검수 범위입니다. 강공격/차지·스킬 3종·사망·회복·락온 측면/후방 이동은 이미 게임에 있는 상태이며 이 아트 범위에서는 후속입니다. 전체 게임의 캐릭터를 바꾸기 전에는 각 상태의 별도 모션 또는 검증한 임시 표현 매핑을 명시합니다. 공격·사망 중에 조용히 idle로 돌아가는 것을 합격 처리하지 않습니다. 선택적 스켈레톤 어댑터를 사용하면 미반입 상태의 기존 피벗 표현을 유지합니다.
+위9개는 초기 검수 범위입니다. v0.1.4 hero는 heavy/charge·세 skill·death·heal·후방/측면 이동을 포함한19상태를 저작했고 일반 melee도 separation용 방향 cycle을 포함합니다. 단일 dodge+방향yaw, 정지charge/heal·이동loco 우선 정책을 명시적으로 사용합니다. 공격·사망 중 누락 상태를 조용히 idle로 바꾸지 않으며 불량/미반입 profile과 다른 적 변형은 기존 피벗 표현으로 복구합니다. Production의80ms 포즈 보간과 phase 보존을 추가했으며 최종 교차 전환의 접촉·발디딤·변형 품질은 별도 검수입니다.
 
 ## G4 · 실제 화면 샷과 플레이 검수
 
@@ -105,7 +115,7 @@
 
 첫 방은 기존 world centre (0, 0, -38), 40×40m 바닥을 유지합니다. 중앙 x/z ±11m는 조형물 없는 교전 공간으로 두며, 최종 플레이 동선에서 최소 18m 안팎의 연속된 교전 폭을 다시 확인합니다. 기둥·잔해는 주변부에 배치하고 생성물 때문에 문·적 생성점·플레이 바닥 높이를 이동시키지 않습니다.
 
-Windows Forward+와 웹 Compatibility를 각각 같은 구도로 캡처합니다. 웹은 같은 원본에서 LOD·2K 이하 텍스처·공유 재질·지원하는 조명 대체를 사용하되 얼굴/손/실루엣을 보존합니다. 예산 수치를 만족하는 것만으로 화면이 완성됐다고 판단하지 않습니다.
+현재 Web·Windows 프리뷰는 Compatibility를 사용합니다. Windows의 향후 Forward+ 경로는 별도 반입·화면 검수를 거칩니다. 플랫폼별 같은 구도를 캡처하고, 웹은 같은 원본에서 LOD·2K 이하 텍스처·공유 재질·지원하는 조명 대체를 사용하되 얼굴/손/실루엣을 보존합니다. 예산 수치를 만족하는 것만으로 화면이 완성됐다고 판단하지 않습니다.
 
 ## G5 · 성능과 확장 조건
 

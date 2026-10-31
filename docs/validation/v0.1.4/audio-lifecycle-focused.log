@@ -1,0 +1,54 @@
+WorkerThreadPool: 5 threads, 1 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+Loading resource: /workspace/next-action-rpg/build/verification/character-integration/audio-lifecycle-runner.gd remapped: /workspace/next-action-rpg/build/verification/character-integration/audio-lifecycle-runner.gd
+Completed load for: '/workspace/next-action-rpg/build/verification/character-integration/audio-lifecycle-runner.gd' remapped '/workspace/next-action-rpg/build/verification/character-integration/audio-lifecycle-runner.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://scripts/core/session.gd remapped: res://scripts/core/session.gd
+Completed load for: 'res://scripts/core/session.gd' remapped 'res://scripts/core/session.gd' at thread -1
+Loading resource: res://scripts/core/audio.gd remapped: res://scripts/core/audio.gd
+Completed load for: 'res://scripts/core/audio.gd' remapped 'res://scripts/core/audio.gd' at thread -1
+Loaded system CA certificates
+Loading resource: res://assets/audio/slash.wav remapped: res://assets/audio/slash.wav
+Loading resource: res://.godot/imported/slash.wav-c23cb59b0ceabbfe38a50714459d5291.sample remapped: res://.godot/imported/slash.wav-c23cb59b0ceabbfe38a50714459d5291.sample
+Completed load for: 'res://assets/audio/slash.wav' remapped 'res://assets/audio/slash.wav' at thread -1
+Loading resource: res://assets/audio/hit.wav remapped: res://assets/audio/hit.wav
+Loading resource: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample remapped: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample
+Completed load for: 'res://assets/audio/hit.wav' remapped 'res://assets/audio/hit.wav' at thread -1
+Loading resource: res://assets/audio/parry.wav remapped: res://assets/audio/parry.wav
+Loading resource: res://.godot/imported/parry.wav-fe9de3226f32ec87c32a07b214c891b4.sample remapped: res://.godot/imported/parry.wav-fe9de3226f32ec87c32a07b214c891b4.sample
+Completed load for: 'res://assets/audio/parry.wav' remapped 'res://assets/audio/parry.wav' at thread -1
+Loading resource: res://assets/audio/dodge.wav remapped: res://assets/audio/dodge.wav
+Loading resource: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample remapped: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample
+Completed load for: 'res://assets/audio/dodge.wav' remapped 'res://assets/audio/dodge.wav' at thread -1
+Loading resource: res://assets/audio/rune.wav remapped: res://assets/audio/rune.wav
+Loading resource: res://.godot/imported/rune.wav-0e45c2de3222a396c4d8db07b1683f0a.sample remapped: res://.godot/imported/rune.wav-0e45c2de3222a396c4d8db07b1683f0a.sample
+Completed load for: 'res://assets/audio/rune.wav' remapped 'res://assets/audio/rune.wav' at thread -1
+Loading resource: res://assets/audio/death.wav remapped: res://assets/audio/death.wav
+Loading resource: res://.godot/imported/death.wav-021a45cab225299ddf24ec88f548f45a.sample remapped: res://.godot/imported/death.wav-021a45cab225299ddf24ec88f548f45a.sample
+Completed load for: 'res://assets/audio/death.wav' remapped 'res://assets/audio/death.wav' at thread -1
+Loading resource: res://assets/audio/ambience.wav remapped: res://assets/audio/ambience.wav
+Loading resource: res://.godot/imported/ambience.wav-c4e6e35e7a9e0e868516f43e62765e9c.sample remapped: res://.godot/imported/ambience.wav-c4e6e35e7a9e0e868516f43e62765e9c.sample
+Completed load for: 'res://assets/audio/ambience.wav' remapped 'res://assets/audio/ambience.wav' at thread -1
+Loading resource: res://tests/audio_lifecycle_regressions.gd remapped: res://tests/audio_lifecycle_regressions.gd
+Completed load for: 'res://tests/audio_lifecycle_regressions.gd' remapped 'res://tests/audio_lifecycle_regressions.gd' at thread -1
+PASS Audio lifecycle fixture first drains existing real gameplay audio before testing restart
+PASS Explicit start and a real rune sound allocate observable music and effect playbacks
+PASS Repeated permanent stop is idempotent and does not invalidate another stop waiter
+PASS Stop drains actual mixer-held references and queued players while stale loop/sound callbacks remain blocked
+PASS A later explicit start creates a working music player instead of accessing the freed stopped player
+PASS A completion captured in the old epoch cannot restart the replacement music player
+PASS The current epoch still loops music normally after an explicit restart
+PASS Restarted music and effects also release every actual playback before final shutdown
+PASS Audio lifecycle fixture reaches its end
+RUNEFALL_AUDIO_LIFECYCLE: 9 checks, 0 failures
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

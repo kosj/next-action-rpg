@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified.",
+  "files": [
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_idle.glb",
+      "structurally_valid": false,
+      "requirements_met": false,
+      "errors": [
+        "animations[0].samplers[0]: times must be nonnegative and strictly increasing"
+      ]
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_walk.glb",
+      "bytes": 15207108,
+      "sha256": "e920e3864a6cce0477437182d06bed0b22cf1dd93c220cee2cb6145174501fda",
+      "structurally_valid": true,
+      "requirements_met": true,
+      "errors": [],
+      "counts": {
+        "nodes": 54,
+        "meshes": 1,
+        "mesh_primitives": 1,
+        "mesh_triangles": 22000,
+        "materials": 1,
+        "skins": 1,
+        "skinned_mesh_nodes": 1,
+        "animations": 1
+      },
+      "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+      "node_names": [
+        "Root",
+        "Hips",
+        "Spine",
+        "Spine1",
+        "Spine2",
+        "Neck",
+        "Head",
+        "LeftShoulder",
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand",
+        "RightShoulder",
+        "RightArm",
+        "RightForeArm",
+        "RightHand",
+        "LeftUpLeg",
+        "LeftLeg",
+        "LeftFoot",
+        "LeftToeBase",
+        "RightUpLeg",
+        "RightLeg",
+        "RightFoot",
+        "RightToeBase",
+        "HandLoRA_Bip01_L_Finger0",
+        "HandLoRA_Bip01_L_Finger01",
+        "HandLoRA_Bip01_L_Finger02",
+        "HandLoRA_Bip01_L_Finger1",
+        "HandLoRA_Bip01_L_Finger11",
+        "HandLoRA_Bip01_L_Finger12",
+        "HandLoRA_Bip01_L_Finger2",
+        "HandLoRA_Bip01_L_Finger21",
+        "HandLoRA_Bip01_L_Finger22",
+        "HandLoRA_Bip01_L_Finger3",
+        "HandLoRA_Bip01_L_Finger31",
+        "HandLoRA_Bip01_L_Finger32",
+        "HandLoRA_Bip01_L_Finger4",
+        "HandLoRA_Bip01_L_Finger41",
+        "HandLoRA_Bip01_L_Finger42",
+        "HandLoRA_Bip01_R_Finger0",
+        "HandLoRA_Bip01_R_Finger01",
+        "HandLoRA_Bip01_R_Finger02",
+        "HandLoRA_Bip01_R_Finger1",
+        "HandLoRA_Bip01_R_Finger11",
+        "HandLoRA_Bip01_R_Finger12",
+        "HandLoRA_Bip01_R_Finger2",
+        "HandLoRA_Bip01_R_Finger21",
+        "HandLoRA_Bip01_R_Finger22",
+        "HandLoRA_Bip01_R_Finger3",
+        "HandLoRA_Bip01_R_Finger31",
+        "HandLoRA_Bip01_R_Finger32",
+        "HandLoRA_Bip01_R_Finger4",
+        "HandLoRA_Bip01_R_Finger41",
+        "HandLoRA_Bip01_R_Finger42",
+        "texture_mapping"
+      ],
+      "animations": [
+        {
+          "index": 0,
+          "name": null,
+          "channels": 20,
+          "duration_seconds": 4.533333234488964
+        }
+      ],
+      "resources": [
+        {
+          "type": "buffer",
+          "index": 0,
+          "storage": "bin_chunk",
+          "declared_bytes": 15185080
+        },
+        {
+          "type": "image",
+          "index": 0,
+          "storage": "buffer_view",
+          "bytes_available": 5033655
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "storage": "buffer_view",
+          "bytes_available": 3315728
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "storage": "buffer_view",
+          "bytes_available": 5576080
+        }
+      ],
+      "all_resource_bytes_available": true,
+      "warnings": [],
+      "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_jog.glb",
+      "bytes": 15210712,
+      "sha256": "daddb3f95e7bdd9248aeed9ad1b7d9b5edb3adc3037176fb204dd03790dec77b",
+      "structurally_valid": true,
+      "requirements_met": true,
+      "errors": [],
+      "counts": {
+        "nodes": 54,
+        "meshes": 1,
+        "mesh_primitives": 1,
+        "mesh_triangles": 22000,
+        "materials": 1,
+        "skins": 1,
+        "skinned_mesh_nodes": 1,
+        "animations": 1
+      },
+      "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+      "node_names": [
+        "Root",
+        "Hips",
+        "Spine",
+        "Spine1",
+        "Spine2",
+        "Neck",
+        "Head",
+        "LeftShoulder",
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand",
+        "RightShoulder",
+        "RightArm",
+        "RightForeArm",
+        "RightHand",
+        "LeftUpLeg",
+        "LeftLeg",
+        "LeftFoot",
+        "LeftToeBase",
+        "RightUpLeg",
+        "RightLeg",
+        "RightFoot",
+        "RightToeBase",
+        "HandLoRA_Bip01_L_Finger0",
+        "HandLoRA_Bip01_L_Finger01",
+        "HandLoRA_Bip01_L_Finger02",
+        "HandLoRA_Bip01_L_Finger1",
+        "HandLoRA_Bip01_L_Finger11",
+        "HandLoRA_Bip01_L_Finger12",
+        "HandLoRA_Bip01_L_Finger2",
+        "HandLoRA_Bip01_L_Finger21",
+        "HandLoRA_Bip01_L_Finger22",
+        "HandLoRA_Bip01_L_Finger3",
+        "HandLoRA_Bip01_L_Finger31",
+        "HandLoRA_Bip01_L_Finger32",
+        "HandLoRA_Bip01_L_Finger4",
+        "HandLoRA_Bip01_L_Finger41",
+        "HandLoRA_Bip01_L_Finger42",
+        "HandLoRA_Bip01_R_Finger0",
+        "HandLoRA_Bip01_R_Finger01",
+        "HandLoRA_Bip01_R_Finger02",
+        "HandLoRA_Bip01_R_Finger1",
+        "HandLoRA_Bip01_R_Finger11",
+        "HandLoRA_Bip01_R_Finger12",
+        "HandLoRA_Bip01_R_Finger2",
+        "HandLoRA_Bip01_R_Finger21",
+        "HandLoRA_Bip01_R_Finger22",
+        "HandLoRA_Bip01_R_Finger3",
+        "HandLoRA_Bip01_R_Finger31",
+        "HandLoRA_Bip01_R_Finger32",
+        "HandLoRA_Bip01_R_Finger4",
+        "HandLoRA_Bip01_R_Finger41",
+        "HandLoRA_Bip01_R_Finger42",
+        "texture_mapping"
+      ],
+      "animations": [
+        {
+          "index": 0,
+          "name": null,
+          "channels": 21,
+          "duration_seconds": 4.5666665360331535
+        }
+      ],
+      "resources": [
+        {
+          "type": "buffer",
+          "index": 0,
+          "storage": "bin_chunk",
+          "declared_bytes": 15188256
+        },
+        {
+          "type": "image",
+          "index": 0,
+          "storage": "buffer_view",
+          "bytes_available": 5033655
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "storage": "buffer_view",
+          "bytes_available": 3315728
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "storage": "buffer_view",
+          "bytes_available": 5576080
+        }
+      ],
+      "all_resource_bytes_available": true,
+      "warnings": [],
+      "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_run.glb",
+      "bytes": 15172376,
+      "sha256": "584b6cc3c25a207213289fc47e70406e82728c409a487154cbaf8a0cfc03d930",
+      "structurally_valid": true,
+      "requirements_met": true,
+      "errors": [],
+      "counts": {
+        "nodes": 54,
+        "meshes": 1,
+        "mesh_primitives": 1,
+        "mesh_triangles": 22000,
+        "materials": 1,
+        "skins": 1,
+        "skinned_mesh_nodes": 1,
+        "animations": 1
+      },
+      "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+      "node_names": [
+        "Root",
+        "Hips",
+        "Spine",
+        "Spine1",
+        "Spine2",
+        "Neck",
+        "Head",
+        "LeftShoulder",
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand",
+        "RightShoulder",
+        "RightArm",
+        "RightForeArm",
+        "RightHand",
+        "LeftUpLeg",
+        "LeftLeg",
+        "LeftFoot",
+        "LeftToeBase",
+        "RightUpLeg",
+        "RightLeg",
+        "RightFoot",
+        "RightToeBase",
+        "HandLoRA_Bip01_L_Finger0",
+        "HandLoRA_Bip01_L_Finger01",
+        "HandLoRA_Bip01_L_Finger02",
+        "HandLoRA_Bip01_L_Finger1",
+        "HandLoRA_Bip01_L_Finger11",
+        "HandLoRA_Bip01_L_Finger12",
+        "HandLoRA_Bip01_L_Finger2",
+        "HandLoRA_Bip01_L_Finger21",
+        "HandLoRA_Bip01_L_Finger22",
+        "HandLoRA_Bip01_L_Finger3",
+        "HandLoRA_Bip01_L_Finger31",
+        "HandLoRA_Bip01_L_Finger32",
+        "HandLoRA_Bip01_L_Finger4",
+        "HandLoRA_Bip01_L_Finger41",
+        "HandLoRA_Bip01_L_Finger42",
+        "HandLoRA_Bip01_R_Finger0",
+        "HandLoRA_Bip01_R_Finger01",
+        "HandLoRA_Bip01_R_Finger02",
+        "HandLoRA_Bip01_R_Finger1",
+        "HandLoRA_Bip01_R_Finger11",
+        "HandLoRA_Bip01_R_Finger12",
+        "HandLoRA_Bip01_R_Finger2",
+        "HandLoRA_Bip01_R_Finger21",
+        "HandLoRA_Bip01_R_Finger22",
+        "HandLoRA_Bip01_R_Finger3",
+        "HandLoRA_Bip01_R_Finger31",
+        "HandLoRA_Bip01_R_Finger32",
+        "HandLoRA_Bip01_R_Finger4",
+        "HandLoRA_Bip01_R_Finger41",
+        "HandLoRA_Bip01_R_Finger42",
+        "texture_mapping"
+      ],
+      "animations": [
+        {
+          "index": 0,
+          "name": null,
+          "channels": 21,
+          "duration_seconds": 1.4666667506098747
+        }
+      ],
+      "resources": [
+        {
+          "type": "buffer",
+          "index": 0,
+          "storage": "bin_chunk",
+          "declared_bytes": 15149984
+        },
+        {
+          "type": "image",
+          "index": 0,
+          "storage": "buffer_view",
+          "bytes_available": 5033655
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "storage": "buffer_view",
+          "bytes_available": 3315728
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "storage": "buffer_view",
+          "bytes_available": 5576080
+        }
+      ],
+      "all_resource_bytes_available": true,
+      "warnings": [],
+      "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+    }
+  ]
+}

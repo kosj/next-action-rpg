@@ -1,0 +1,312 @@
+{
+  "profile": "sentinel",
+  "source": {
+    "file": "locomotion.glb",
+    "sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+    "unchanged": true
+  },
+  "expected_clips": [
+    "RESET",
+    "death",
+    "enemy_attack",
+    "hit",
+    "idle",
+    "run",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "exported_durations_seconds": {
+    "death": 1.100000023841858,
+    "enemy_attack": 1.5,
+    "hit": 0.2800000011920929,
+    "idle": 1.600000023841858,
+    "RESET": 0.009999999776482582,
+    "run": 0.699999988079071,
+    "walk": 0.699999988079071,
+    "walk_back": 0.699999988079071,
+    "walk_left": 0.699999988079071,
+    "walk_right": 0.699999988079071
+  },
+  "source_fcurves_copied_or_sampled": 0,
+  "max_ik_reach_clamp_m": 0.0,
+  "finger_curl_rad": [
+    0.2,
+    1.1,
+    1.4
+  ],
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false,
+    "rig_uniform_scale": 1.9514694213867188,
+    "physical_offset_m": [
+      0.05892857142857143,
+      0.10714285714285715,
+      -0.06428571428571428
+    ],
+    "local_offset": [
+      0.03019702526862893,
+      0.05490368230659806,
+      -0.03294220938395883
+    ],
+    "weapon_child_uniform_scale": 0.5124343681949152
+  },
+  "output_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+  "structural_inspection": {
+    "structurally_valid": true,
+    "requirements_met": true,
+    "counts": {
+      "nodes": 56,
+      "meshes": 1,
+      "mesh_primitives": 1,
+      "mesh_triangles": 22000,
+      "materials": 1,
+      "skins": 1,
+      "skinned_mesh_nodes": 1,
+      "animations": 10
+    }
+  },
+  "limitations": [
+    "Procedural prototype, not AAA or final anatomy/material/deformation approval.",
+    "No runtime crossfade: arbitrary locomotion-to-action and forced cancellations can change pose abruptly.",
+    "AoE skill2/3 volumes are rune effects, not physical blade-length coverage."
+  ],
+  "action_summaries": {
+    "enemy_attack": {
+      "duration_seconds": 1.5,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.642856523474745e-07,
+      "active_window": {
+        "start": 0.7,
+        "end": 0.8999999999999999,
+        "gameplay_arc_deg": 100.0
+      },
+      "active_azimuth_deg": [
+        -49.99999910282049,
+        -45.00000241483648,
+        -40.000008745521754,
+        -35.00000386972919,
+        -30.0000016953033,
+        -25.000007240438613,
+        -20.000002558917416,
+        -14.999995053545183,
+        -9.999984458161906,
+        -4.999993181278532,
+        1.7075472925031871e-06,
+        4.999994074212781,
+        10.000005823478233,
+        15.000000885528316,
+        20.000000222854695,
+        24.999994859930332,
+        29.999997030197726,
+        35.00000219240192,
+        40.000010940702644,
+        45.000002414836075,
+        49.99998948023022
+      ],
+      "minimum_skinned_floor_z_m": 3.7725158108514734e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 6.98678132256759
+    },
+    "idle": {
+      "duration_seconds": 1.6,
+      "authorship": "project-authored semantic IK",
+      "loop": true,
+      "loop_endpoint_max_channel_error": 0.0,
+      "max_grip_target_error_m": 1.7760690213829602e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": 3.190932602592511e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 4.510084372285583
+    },
+    "hit": {
+      "duration_seconds": 0.28,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 1.6049041769309353e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": 4.935682227369398e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 4.508418264284483
+    },
+    "death": {
+      "duration_seconds": 1.1,
+      "authorship": "project-authored semantic IK",
+      "loop": false,
+      "loop_endpoint_max_channel_error": null,
+      "max_grip_target_error_m": 2.388837865275353e-07,
+      "active_window": null,
+      "active_azimuth_deg": [],
+      "minimum_skinned_floor_z_m": -2.6248994799971115e-07,
+      "deformation_scope": "Actual evaluated mesh edges >=2mm at10Hz plus endpoints; ratios are measurements, not quality approval.",
+      "maximum_sampled_edge_stretch_ratio": 5.263795698763442
+    },
+    "walk": {
+      "duration_s": 0.7,
+      "reference_speed_m_s": 3.6,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.10178571428571428,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.196,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.086162567138672e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.00104378096931929,
+      "skinned_stance_floor_max_abs_m": 0.00017458200454711914,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "run": {
+      "duration_s": 0.7,
+      "reference_speed_m_s": 3.6,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.10178571428571428,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.196,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.086162567138672e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.00104378096931929,
+      "skinned_stance_floor_max_abs_m": 0.00017458200454711914,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_back": {
+      "duration_s": 0.7,
+      "reference_speed_m_s": 3.6,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.0,
+      "pelvis_drop_m": 0.10178571428571428,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.196,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.980232238769531e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.0008411933640941448,
+      "skinned_stance_floor_max_abs_m": 0.00017452239990234375,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_left": {
+      "duration_s": 0.7,
+      "reference_speed_m_s": 3.6,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": 0.55,
+      "pelvis_drop_m": 0.10178571428571428,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.196,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.384185791015625e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.000996523139043713,
+      "skinned_stance_floor_max_abs_m": 0.00017464160919189453,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    },
+    "walk_right": {
+      "duration_s": 0.7,
+      "reference_speed_m_s": 3.6,
+      "sample_fps": 100,
+      "source": "project_authored_analytic_leg_ik; provider curves were not read",
+      "direction_blender_world": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "pelvis_yaw_rad": -0.55,
+      "pelvis_drop_m": 0.10178571428571428,
+      "stance_duty_per_foot": 0.28,
+      "stance_time_s": 0.196,
+      "max_target_reach_clamp_m": 0.0,
+      "loop_endpoint_bone_matrix_error": 2.086162567138672e-07,
+      "skinned_sole_samples_per_foot": {
+        "Left": 32,
+        "Right": 32
+      },
+      "skinned_stance_world_drift_m": 0.0009650075240616218,
+      "skinned_stance_floor_max_abs_m": 0.00017440319061279297,
+      "horizontal_root_animation": "constant bind Root channels only; gameplay translation simulated only for foot audit",
+      "limitations": [
+        "Loop seam/contact metrics do not approve cross-state transitions, cloth intersections, rendered style or hardware performance"
+      ]
+    }
+  }
+}

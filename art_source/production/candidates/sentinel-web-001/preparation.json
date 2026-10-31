@@ -1,0 +1,359 @@
+{
+  "status": "prepared_candidate_not_animation_or_visual_approval",
+  "blender": "4.3.2",
+  "sources": [
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/rig.glb",
+      "sha256": "b1f7f1024b87f11e6e495972dbaadd5f2b4ac3a3536788abb940861d01bce4d1",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 0
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_idle.glb",
+      "sha256": "ee5a4a141c120aa1a5e48b9adbc29d4fab66c36db7e9c17624212cf13b402c3c",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_jog.glb",
+      "sha256": "daddb3f95e7bdd9248aeed9ad1b7d9b5edb3adc3037176fb204dd03790dec77b",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "/workspace/.runefall-task/character-integration/sentinel/motion_run.glb",
+      "sha256": "584b6cc3c25a207213289fc47e70406e82728c409a487154cbaf8a0cfc03d930",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    }
+  ],
+  "base_mesh_and_materials": "retained from base; motion meshes are not exported",
+  "excluded_import_helpers": [
+    "Icosphere"
+  ],
+  "height": {
+    "source_rest_m": 0.9992470443248749,
+    "uniform_wrapper_scale": 1.9514693699369268,
+    "target_m": 1.95,
+    "reimported_rest_m": 1.949999988079071,
+    "bounds": {
+      "min": [
+        -0.9766036868095398,
+        -0.2340303510427475,
+        5.960464477539063e-08
+      ],
+      "max": [
+        0.977200984954834,
+        0.22541214525699615,
+        1.9500000476837158
+      ],
+      "height": 1.949999988079071
+    },
+    "recentered_xy": false,
+    "ground_rest_feet": true,
+    "wrapper_translation_blender": [
+      0.0,
+      0.0,
+      0.9755704998970032
+    ]
+  },
+  "bones": 53,
+  "motions": {
+    "idle": {
+      "source_action": "Anim_0_Armature.001",
+      "source_frames": [
+        2.0,
+        307.0
+      ],
+      "duration_seconds": 10.166666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "/workspace/.runefall-task/character-integration/sentinel/motion_idle.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.293156623840332e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.007865197956562042,
+          0.01376153901219368,
+          -0.007303744554519653
+        ],
+        "translation_world": [
+          -0.007865197956562042,
+          0.01376153901219368,
+          -0.007303744554519653
+        ],
+        "linear_identity_max_error": 1.1399388313293457e-06,
+        "bone_translation_residual_max": 6.282721692210046e-07,
+        "mesh_translation_residual_max": 1.3308465985876508e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 3.296881914138794e-06,
+        "bone_translation_residual_max": 9.015856733407049e-07,
+        "mesh_translation_residual_max": 1.2561466768449073e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "origin_translation_application": {
+        "method": "armature_data_translation",
+        "trial_roundtrip_matrix_error_max": 3.3080577850341797e-06,
+        "trial_canonical_rest_error_max": 3.293156623840332e-06,
+        "applied_roundtrip_matrix_error_max": 3.3080577850341797e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": false
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.938968378799561e-07,
+        2.8817474254688197e-07,
+        2.938968378799561e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        1.666000468656264e-07,
+        2.4510598405593604e-07,
+        1.666000468656264e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.73530677044053e-07,
+        5.623641832696998e-07,
+        5.73530677044053e-07
+      ]
+    },
+    "walk": {
+      "source_action": "Anim_0_Armature.002",
+      "source_frames": [
+        2.0,
+        139.0
+      ],
+      "duration_seconds": 4.566666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "/workspace/.runefall-task/character-integration/sentinel/motion_jog.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.3527612686157227e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.04601220786571503,
+          0.0027132704854011536,
+          0.012329816818237305
+        ],
+        "translation_world": [
+          0.04601220786571503,
+          0.0027132704854011536,
+          0.012329816818237305
+        ],
+        "linear_identity_max_error": 1.3634562492370605e-06,
+        "bone_translation_residual_max": 7.452652501568164e-07,
+        "mesh_translation_residual_max": 1.867580441331087e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 3.351829946041107e-06,
+        "bone_translation_residual_max": 1.0038413210004734e-06,
+        "mesh_translation_residual_max": 1.9996397916049756e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "origin_translation_application": {
+        "method": "armature_data_translation",
+        "trial_roundtrip_matrix_error_max": 3.337860107421875e-06,
+        "trial_canonical_rest_error_max": 3.3527612686157227e-06,
+        "applied_roundtrip_matrix_error_max": 3.337860107421875e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": false
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.755707801715572e-07,
+        4.272893356960913e-07,
+        2.3442704562175682e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        3.831801077909407e-07,
+        1.5976935808277381e-06,
+        3.588868187107545e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.37767936754416e-07,
+        8.338420507116193e-07,
+        4.5747719901566497e-07
+      ]
+    },
+    "run": {
+      "source_action": "Anim_0_Armature.003",
+      "source_frames": [
+        2.0,
+        46.0
+      ],
+      "duration_seconds": 1.4666666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "/workspace/.runefall-task/character-integration/sentinel/motion_run.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.516674041748047e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.10117757320404053,
+          0.009566552937030792,
+          0.1255454421043396
+        ],
+        "translation_world": [
+          0.10117757320404053,
+          0.009566552937030792,
+          0.1255454421043396
+        ],
+        "linear_identity_max_error": 2.2118911147117615e-06,
+        "bone_translation_residual_max": 1.0300212946737292e-06,
+        "mesh_translation_residual_max": 2.1103037950796704e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 3.5176053643226624e-06,
+        "bone_translation_residual_max": 1.0201155477683046e-06,
+        "mesh_translation_residual_max": 2.1103037950796704e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 19107,
+        "mesh_polygons": 22000
+      },
+      "origin_translation_application": {
+        "method": "armature_data_translation",
+        "trial_roundtrip_matrix_error_max": 3.3080577850341797e-06,
+        "trial_canonical_rest_error_max": 3.516674041748047e-06,
+        "applied_roundtrip_matrix_error_max": 3.3080577850341797e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": false
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.604110068812318e-07,
+        3.538829710196828e-07,
+        2.602375924076584e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        8.698453132999292e-07,
+        1.557795072281867e-06,
+        1.84220784432001e-06
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        7.033310405168508e-07,
+        6.905917784871881e-07,
+        5.078456904896759e-07
+      ]
+    }
+  },
+  "exported_clips": [
+    "idle",
+    "RESET",
+    "run",
+    "walk"
+  ],
+  "motion_sets": {
+    "locomotion_candidates": [
+      "idle",
+      "walk",
+      "run"
+    ],
+    "additional_source_candidates": [],
+    "gameplay_contract_approved": false
+  },
+  "reset": "Generated identity bone pose curves, two identical keys at frames 0 and 1; not an extra motion",
+  "export_flags": {
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_renderable": true,
+    "export_yup": true,
+    "export_apply": false,
+    "export_animations": true,
+    "export_animation_mode": "ACTIONS",
+    "export_anim_single_armature": true,
+    "export_force_sampling": true,
+    "export_frame_range": false,
+    "export_frame_step": 1,
+    "export_optimize_animation_size": false,
+    "export_nla_strips": false,
+    "export_extras": true
+  },
+  "loop_configuration": "glTF has no standard loop flag. Inspect foot/root seams, then configure Godot idle/walk/run loop modes; RESET must not loop",
+  "output_sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+  "limitations": [
+    "Only three locomotion candidates; the nine required gameplay clips are not complete",
+    "Bone pose curves and matching rest transforms do not prove foot contact, seamless loops, visual quality or gameplay timing",
+    "Additional source candidates retain imported durations; they are not retimed, edited or mapped to gameplay states",
+    "No object root-motion curves or gameplay events were added"
+  ]
+}

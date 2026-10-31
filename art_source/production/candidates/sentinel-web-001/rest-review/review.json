@@ -1,0 +1,146 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T03:39:13.797960+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "/workspace/next-action-rpg/art_source/production/candidates/sentinel-web-001/locomotion.glb",
+    "sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+    "bytes": 16256824,
+    "unchanged": true
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "size": 640,
+    "samples": 16,
+    "pose": "REST",
+    "denoising": false,
+    "color_management": "AgX / Base Contrast",
+    "source_rescaled": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.9766036868095398,
+      -0.2340303510427475,
+      5.960464477539063e-08
+    ],
+    "max": [
+      0.977200984954834,
+      0.22541214525699615,
+      1.9500000476837158
+    ],
+    "size": [
+      1.9538047313690186,
+      0.45944249629974365,
+      1.9500000476837158
+    ],
+    "center": [
+      0.0002986490726470947,
+      -0.004309102892875671,
+      0.9750000238418579
+    ]
+  },
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 22000,
+    "material_count_gltf": 1,
+    "material_names_blender": [
+      "material_0"
+    ],
+    "skin_count_gltf": 1,
+    "armatures_blender": [
+      {
+        "name": "Armature",
+        "bones": 53
+      }
+    ],
+    "clip_count_gltf": 4,
+    "clip_names_gltf": [
+      "idle",
+      "RESET",
+      "run",
+      "walk"
+    ],
+    "actions_blender": [
+      {
+        "name": "idle_Armature",
+        "frame_range": [
+          0.0,
+          244.0
+        ]
+      },
+      {
+        "name": "RESET_Armature",
+        "frame_range": [
+          0.0,
+          0.8000000715255737
+        ]
+      },
+      {
+        "name": "run_Armature",
+        "frame_range": [
+          0.0,
+          35.20000076293945
+        ]
+      },
+      {
+        "name": "walk_Armature",
+        "frame_range": [
+          0.0,
+          109.5999984741211
+        ]
+      }
+    ],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "excluded_importer_bone_display_helpers": [
+    "Icosphere"
+  ],
+  "views": [
+    {
+      "name": "front",
+      "file": "front.png",
+      "camera_position_blender": [
+        0.0002986490726470947,
+        -7.819528102874756,
+        0.9750000238418579
+      ],
+      "ortho_scale": 2.3054895401000977,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "side",
+      "file": "side.png",
+      "camera_position_blender": [
+        7.815517425537109,
+        -0.004309102892875671,
+        0.9750000238418579
+      ],
+      "ortho_scale": 2.300999879837036,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "back",
+      "file": "back.png",
+      "camera_position_blender": [
+        0.0002986490726470947,
+        7.810909748077393,
+        0.9750000238418579
+      ],
+      "ortho_scale": 2.3054895401000977,
+      "lights_rotate_with_view": true
+    }
+  ],
+  "limitations": [
+    "Static rest-pose render only; animation, deformation and gameplay integration require separate review",
+    "Blender source units and transforms are preserved; camera and studio adjust to the bounds",
+    "Triangle totals are imported mesh counts, not runtime draw calls or GPU performance"
+  ]
+}

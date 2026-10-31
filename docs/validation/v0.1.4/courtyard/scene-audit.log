@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RUNEFALL_COURTYARD_AUDIT: {"art_collision_shape_count":0,"art_logical_instances":404,"art_logical_triangles":12400,"art_physics_body_count":0,"art_surface_batches":9,"baseline_collider_count":178,"collider_count":178,"colliders_unchanged":true,"engine":"4.7.2-stable (official)","floor_albedo_present":true,"floor_size":"(40.0, 40.0)","floor_uv_scale":"(22.22222, 22.22222, 22.22222)","floor_y":0.00499999988824129,"shared_rng_state_unchanged":true}

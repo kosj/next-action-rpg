@@ -1,0 +1,31 @@
+{
+	"audio_script_sha256": "cf6638dd5b8c5d21753de498d3751f9b39cfb7904a68006c57d551dd9951af75",
+	"driver_mix_rate_hz": 44100.0,
+	"engine_lifetime": "stop_basic clears player refs after requesting stop; server marks FADE_OUT_TO_DELETION, the mixer removes it, and AudioServer.update/maybe_cleanup performs the final unref on the main thread.",
+	"engine_sources": [
+		"https://github.com/godotengine/godot/blob/4.7.2-stable/scene/audio/audio_stream_player_internal.cpp",
+		"https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_server.cpp"
+	],
+	"initial_gameplay_drain": {
+		"frames": 12,
+		"initial_pending_playbacks": 2,
+		"pending_playbacks": 0,
+		"players": 0,
+		"seconds": 0.069574
+	},
+	"queued_callback_drain": {
+		"frames": 14,
+		"initial_pending_playbacks": 2,
+		"pending_playbacks": 0,
+		"players": 0,
+		"seconds": 0.096359
+	},
+	"restarted_drain": {
+		"frames": 13,
+		"initial_pending_playbacks": 3,
+		"pending_playbacks": 0,
+		"players": 0,
+		"seconds": 0.089526
+	},
+	"scope": "Actual WAV playback lifetime, permanent stop, stale callbacks, idempotence and explicit restart; no fixed delay or muted audio substitute."
+}

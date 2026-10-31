@@ -1,0 +1,29 @@
+{
+  "Diffuse": {
+    "1k": {
+      "jpg": {
+        "size": 910262,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_diff_1k.jpg",
+        "md5": "5a31e6268c764ffccc358420e3aa3fb5"
+      }
+    }
+  },
+  "nor_gl": {
+    "1k": {
+      "jpg": {
+        "size": 826220,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_nor_gl_1k.jpg",
+        "md5": "0de5ad6426e1415bc36d5d31c3a0f179"
+      }
+    }
+  },
+  "arm": {
+    "1k": {
+      "jpg": {
+        "size": 683632,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_sandstone_blocks_02/white_sandstone_blocks_02_arm_1k.jpg",
+        "md5": "16deb112a37a5e9e966609d23f86ef0e"
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "node_version": "v24.19.0",
+  "scope": "Controlled Node IndexedDB events: readonly requests, key discovery, primary-only reads, upgrade abort and invalid-data rejection. This is not real-browser persistence or a performance benchmark.",
+  "cases": [
+    {
+      "id": "discover_primary",
+      "status": "passed",
+      "metrics": {
+        "enumerations": 1,
+        "opens": 1,
+        "closed": 1,
+        "key_batches": 1,
+        "value_reads": [
+          "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json"
+        ],
+        "modes": [
+          "readonly"
+        ],
+        "upgrade_aborted": false
+      }
+    },
+    {
+      "id": "cached_lookup",
+      "status": "passed",
+      "metrics": {
+        "enumerations": 0,
+        "opens": 1,
+        "closed": 1,
+        "key_batches": 0,
+        "value_reads": [
+          "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json"
+        ],
+        "modes": [
+          "readonly"
+        ],
+        "upgrade_aborted": false
+      }
+    },
+    {
+      "id": "missing_store",
+      "status": "passed",
+      "metrics": {
+        "enumerations": 1,
+        "opens": 1,
+        "closed": 1,
+        "key_batches": 0,
+        "value_reads": [],
+        "modes": [],
+        "upgrade_aborted": false
+      }
+    },
+    {
+      "id": "abort_upgrade",
+      "status": "passed",
+      "metrics": {
+        "enumerations": 1,
+        "opens": 1,
+        "closed": 0,
+        "key_batches": 0,
+        "value_reads": [],
+        "modes": [],
+        "upgrade_aborted": true
+      }
+    },
+    {
+      "id": "malformed_primary",
+      "status": "passed",
+      "metrics": {
+        "enumerations": 1,
+        "opens": 1,
+        "closed": 1,
+        "key_batches": 1,
+        "value_reads": [
+          "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json"
+        ],
+        "modes": [
+          "readonly"
+        ],
+        "upgrade_aborted": false
+      }
+    }
+  ],
+  "reader_file": "tools/browser_smoke.py:read_persisted_saves",
+  "reader_sha256": "48e72200bc2c22d44d64cf091766837ddbc67cc9b1f8687e300b8ffcb5e9a5a5",
+  "fixture_file": "tools/tests/browser_storage_fixture.cjs",
+  "fixture_sha256": "f06b795939506d832a6e223bf9897d74996676dc38db99e49aed14d22a444799",
+  "checked_at_utc": "2026-10-31T04:50:55.478819+00:00"
+}

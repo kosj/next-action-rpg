@@ -1,0 +1,14 @@
+{
+  "status": "expected_old_asset_rejection",
+  "hero_sha256": "ea92de7f378dae9d828effae84a6e35bafd70b66c2895fd76b80910531afd990",
+  "checks": 43,
+  "failures": 1,
+  "reason": "At .65s charge returns Hips and actual weapon GripOrigin to idle; finger-only changes do not prove preparation",
+  "charge_metrics": {
+    "grip_travel_m": 0.0,
+    "held": true,
+    "hip_drop_m": 0.0
+  },
+  "runtime_log": "charge-before-fix-runtime.log",
+  "scope": "New charge-semantic regression on the prior frozen asset; final positive run awaits the replacement hero"
+}

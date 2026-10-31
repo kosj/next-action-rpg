@@ -1,5 +1,17 @@
 # 검증 결과
 
+## v0.1.4 · 실제 스킨·동작 전환·첫 방 PBR 프리뷰
+
+- [반입 기록](CHARACTER_INTEGRATION.md)의 리라32k·53본·19상태+RESET과 일반 melee 수호병22k·53본·9상태+RESET을 runtime에 설치했습니다. 다른 적·보스는 기존 표현을 유지합니다. 모든 runtime 이동·행동 키는 프로젝트 Bpy 저작이며 stock FCurve·수치 포즈를 복사하지 않았습니다.
+- 최신 Godot4.7.2 전체 runner **305개·실패0**, 오류·경고0과 Web·Windows 내보내기 정상 종료를 확인했습니다. [실제 로그·source SHA·manifest](validation/v0.1.4/README.md)를 보관합니다. 이전268개 통합 및 독립43개 반입 결과는 당시 판본으로 보존하며 최신305개에 중복 합산하지 않습니다.
+- Production 전용 최대80ms 포즈 보간과 이동 정규화 phase 보존을 추가했습니다. [집중27개 검사](validation/v0.1.4/transition-polish-runtime.log)는 실제 손/발/칼끝의 첫프레임 튐 감소, hitpause·epoch·즉시 우선 상태·공격 active의 정확한 목표 포즈와 같은 프레임 socket을 확인합니다. runtime foot IK와 최종 접촉/발디딤 승인은 아닙니다.
+- 종료 시 AudioServer가 아직 보유한 WAV playback 참조 때문에 발견한 누수는 고정timer 대신 실제 WeakRef·player 해제 조건으로 수정했습니다. [실제9개 집중검사와 종료 자료](validation/v0.1.4/audio-lifecycle.json)는 stale callback·반복 중지·명시적 재개·최종 참조0을 확인합니다. 전체305개 검사도 오류 없이 종료했습니다.
+- 첫 방에 [CC0 PBR3종](../art_source/production/courtyard_materials/README.md), 실제 크기의UV·밉맵, sky 반사·키/필 조명과 주변/배경 석재를 반입했습니다. [실제 Web 고정 카메라 검사](validation/v0.1.4/courtyard/README.md)와 기존178개 충돌체·공유RNG 일치 근거를 기록합니다. 별도 fixture의 정지 화면으로 이동·접지·공격 품질을 승인하지 않습니다.
+- 원본의 전체 저작key+midpoint 리라2,358·수호병1,608표본에서 흉갑/손목 등 [실제 변형 불량](../art_source/production/character_actions/deformation_review/README.md)을 찾았습니다. 자동 수선은 새 경계 악화22.635/49.450mm로 **모두 기각**했습니다. 원본 runtime A89/214를 유지하며 수작업 웨이트·의상 소유/메시 분리가 남습니다. 선택 렌더나 최대비율 개선만으로 합격 처리하지 않았습니다.
+- 새 전체 웹 원시합계는 **141,912,072bytes**로150,000,000bytes 예산 이내입니다. [로컬 manifest](validation/v0.1.4/art-quality-build-summary.json)의 ZIP크기/SHA와 원시크기를 구분합니다. 수호병 경량화·리깅·개발 샘플의 이번 실제 비용은 **0포인트**, 추가 구매는 없으며 이전1,250포인트 배치와 구분합니다.
+- **현재 자동 검증 잔여:** 최신 export의 전체 브라우저 조작·스킨·품질0/1·읽기 전용 저장 관찰·완전종료/재시작과 정확 공개 커밋 배포 확인. 초기294.774초 Web 성공은 마지막 pose/PBR/전환/오디오 보정 전의 별도 결과입니다. 로컬 빌드번호 `0.1.4 · 1b8d95b9`에는 커밋 전 개발 변경이 포함되며 공개본의 정확 커밋 검증을 대신하지 않습니다.
+- **AAA 최종 승인 미완료:** [검수 기준](AAA_ART_QUALITY.md)의 얼굴·손·갑옷/천·머리카락·동적 접촉·공격 발디딤·최종 표면/장면과 실제 목표 GPU60fps·Windows 실기기 실행은 남아 있습니다. 현재 두 플랫폼의 렌더 경로는 Compatibility이며 Windows Forward+는 별도 계획입니다.
+
 ## v0.1.3 · 생성 소품 반입과 배치 검수
 
 - Godot 4.7.2 회귀 **179개·실패 0개**, Python 검사 **36개**, 제작 입력 계약과 원본/파생 무결성 검사를 통과했습니다.

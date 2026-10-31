@@ -1,0 +1,43 @@
+{
+  "build_id": "0.1.4 \u00b7 1b8d95b9",
+  "buttons": [],
+  "checkpoint": 0,
+  "dead": false,
+  "encounter": -1,
+  "enemy_art": [],
+  "fps": 2,
+  "has_save": true,
+  "health": 120,
+  "hero_art": {
+    "grip_to_tip_m": 1.19000053405762,
+    "mode": "skeletal",
+    "profile": "hero",
+    "right_hand_pose": [
+      -0.0551522150635719,
+      0.206611290574074,
+      0.159169793128967,
+      0.67909049987793,
+      -0.35448294878006,
+      -0.569746732711792,
+      0.297601342201233
+    ],
+    "sampled_time": 0.133333333333333,
+    "state": "idle",
+    "status": "Rig ready; visual quality remains subject to art review",
+    "weapon_attached": true
+  },
+  "hits": 0,
+  "hud_y": 778,
+  "input_ready": true,
+  "modal": false,
+  "modal_h": 0,
+  "modal_w": 0,
+  "modal_x": 0,
+  "modal_y": 0,
+  "paused": false,
+  "quality": 1,
+  "started": true,
+  "ui_height": 900,
+  "ui_width": 1440,
+  "z": 6
+}

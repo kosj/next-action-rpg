@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-31",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "checks": 43,
+  "failures": 0,
+  "import_errors_or_warnings": [],
+  "runtime_errors_or_warnings": [],
+  "isolated_project": true,
+  "import_mode": "Initial fixture imported without .godot cache; final changed GLBs reimported, importer source_md5 matched to each final source",
+  "scope": "Real production GLBs inside a copied game with actual Session/Audio autoloads and a dedicated Node driver; not complete chapter traversal",
+  "inputs": [
+    {
+      "source": "/workspace/next-action-rpg/build/art-candidates/character-integration/lyra-gameplay.glb",
+      "runtime_copy": "/workspace/next-action-rpg/build/verification/character-integration/production-model-audit/game/assets/models/production/lyra_gameplay.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "bytes": 17889448
+    },
+    {
+      "source": "/workspace/next-action-rpg/build/art-candidates/character-integration/sentinel-gameplay.glb",
+      "runtime_copy": "/workspace/next-action-rpg/build/verification/character-integration/production-model-audit/game/assets/models/production/sentinel_gameplay.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "bytes": 17146728
+    }
+  ],
+  "import_cache_checks": [
+    {
+      "runtime_file": "lyra_gameplay.glb",
+      "godot_source_md5_matches": true
+    },
+    {
+      "runtime_file": "sentinel_gameplay.glb",
+      "godot_source_md5_matches": true
+    }
+  ],
+  "source_hashes_unchanged_after_audit": true,
+  "snapshot_game_files_sha256": {
+    "scripts/actors/actor_visual.gd": "ed92d9118a2c6edd815801e1c7eac76b165de844f65490fe90a130392faadf69",
+    "scripts/actors/production_character_art.gd": "1a8ffa75564dfc431874781c00f2c46f133af632644e9560b41b912c38f35243",
+    "scripts/actors/skeletal_visual_bridge.gd": "af171f8f8eefa7251fb21c650eb2bb3ab9dfb49a41300e5e3eac6d7d52421b5f",
+    "scripts/actors/player.gd": "daf865c123cb030e6a27fc9b9cd357fb9e56cb848935143993da36b70f35b435",
+    "scripts/actors/enemy.gd": "fd279d316c4e3c7920d7a08db822826bdadb27d282bfc5d22bfe710bbe12a92d",
+    "tests/production_character_regressions.gd": "917ed0abf875ccc32af252634f1dd6a9afcc2118d7460bdd3f731561f559060f",
+    "data/character_grips.json": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0"
+  },
+  "charge_regression": {
+    "before": "charge-before-fix.json",
+    "before_checks": 43,
+    "before_failures": 1,
+    "before_hip_drop_m": 0.0,
+    "before_grip_travel_m": 0.0,
+    "after_metrics": {
+      "grip_travel_m": 0.0446708202362061,
+      "held": true,
+      "hip_drop_m": 0.0453291535377502
+    },
+    "held_pose_at_1_3s_matches_0_65s": true
+  },
+  "coverage": [
+    "Actual required19hero/9sentinel states plusRESET and53bone skin/bind mappings",
+    "CPU-skinned REST meter height/floor",
+    "Same-frame RightHand world transform after manual AnimationTree sample",
+    "Physical1.19m grip-to-tip /1.35m total sword and external actor1.25scale preservation",
+    "Real three-light active blade direction vsCombatStrike sweep",
+    "Actual feet move in imported forward/back/side/run cycles",
+    "Hit-paused actualrig/weapon do not advance across two process frames",
+    "Controller/capsule/collision/health invariants and hero2.5cm sole offset",
+    "Full charge ends in meaningful body/weapon preparation and holds beyond .65s without finger-only false positives"
+  ],
+  "limitations": [
+    "Not a GPU deformation or visual quality approval",
+    "Not stance-foot sliding, armor/cloth penetration or full motion fidelity approval",
+    "Not target hardware performance, Windows execution or a full gameplay chapter test"
+  ]
+}

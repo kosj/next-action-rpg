@@ -1,0 +1,70 @@
+{
+  "status": "normalized_development_candidate_reviewed_not_runtime_art_approval",
+  "source_sha256": "23983d4b9fbbd1aeedbf1b6c3c38c2f404032b3cb7ef621bf887027913525c11",
+  "source_unchanged": true,
+  "measured_triangles": 22000,
+  "measured_skin_count": 1,
+  "measured_bones": 53,
+  "clips": [
+    "idle",
+    "walk",
+    "run",
+    "RESET"
+  ],
+  "blender_rest_bounds": {
+    "min": [
+      -0.9766036868095398,
+      -0.2340303510427475,
+      5.960464477539063e-08
+    ],
+    "max": [
+      0.977200984954834,
+      0.22541214525699615,
+      1.9500000476837158
+    ],
+    "size": [
+      1.9538047313690186,
+      0.45944249629974365,
+      1.9500000476837158
+    ],
+    "center": [
+      0.0002986490726470947,
+      -0.004309102892875671,
+      0.9750000238418579
+    ]
+  },
+  "blender_review_excluded_helpers": [
+    "Icosphere"
+  ],
+  "godot_cpu_rest_bounds": {
+    "floor_y_m": 1.47819519042969e-05,
+    "height_m": 1.94998466968536,
+    "max": [
+      0.977200984954834,
+      1.94999945163727,
+      0.234026893973351
+    ],
+    "method": "CPU linear skinning: skeleton_world * sum(weight * bone_global_rest * inverse_bind * vertex)",
+    "min": [
+      -0.97660356760025,
+      1.47819519042969e-05,
+      -0.225408717989922
+    ]
+  },
+  "normalization_uniform_wrapper_scale": 1.9514693699369268,
+  "normalized_source_to_target_max_sample_error_m": 8.338420507116193e-07,
+  "source_hashes_verified": true,
+  "visual_observations": [
+    "Rest silhouette retains a closed helmet, layered shoulder/hip/knee plates, gold edging and divided short burgundy cloth.",
+    "No halo or weapon is fused into the body. Three views show front/side/back of the normalized candidate.",
+    "Finger shape is not fully separable in these 640px views and is not accepted as final gripping topology."
+  ],
+  "not_approved": [
+    "Project-authored combat clips and whole-game state mapping",
+    "Cloth/armor/finger deformation through movement and attacks",
+    "Weapon grip, gait speed and foot contact",
+    "Final bronze material response and in-game lighting",
+    "Target hardware performance and final AAA art quality"
+  ],
+  "reviewer_note": "Blender importer bone-display Icosphere is excluded by the shared reviewer; it is not part of the source GLB mesh."
+}

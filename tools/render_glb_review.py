@@ -177,6 +177,13 @@ def main():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(source), import_pack_images=True)
     imported = list(bpy.context.scene.objects)
+    # glTF's Blender importer creates viewport-only mesh objects for custom
+    # bone displays. They are not source geometry and can sit below the feet.
+    helpers = {bone.custom_shape for obj in imported if obj.type == "ARMATURE"
+               for bone in obj.pose.bones if bone.custom_shape is not None}
+    for helper in helpers:
+        helper.hide_render = True
+    imported = [obj for obj in imported if obj not in helpers]
     metadata = imported_metadata(imported, document)
     for obj in imported:
         obj.animation_data_clear()
@@ -235,6 +242,7 @@ def main():
                    "pose": "REST", "denoising": False, "color_management": "AgX / Base Contrast", "source_rescaled": False},
         "bounds_blender_z_up": {"min": list(lower), "max": list(upper), "size": list(size), "center": list(center)},
         "asset": metadata,
+        "excluded_importer_bone_display_helpers": sorted(obj.name for obj in helpers),
         "views": views,
         "limitations": ["Static rest-pose render only; animation, deformation and gameplay integration require separate review",
                         "Blender source units and transforms are preserved; camera and studio adjust to the bounds",

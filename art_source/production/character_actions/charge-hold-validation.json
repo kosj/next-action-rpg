@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "output_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "previous_pulse_draft_sha256": "ea92de7f378dae9d828effae84a6e35bafd70b66c2895fd76b80910531afd990",
+  "unchanged_noncharge_clips": [
+    "RESET",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "unchanged_noncharge_clip_count": 19,
+  "actual_charge_duration_seconds": 0.6499999761581421,
+  "actual_weapon_grip_end_minus_start_gltf_m": [
+    3.1121546169299297e-07,
+    0.04467111492122977,
+    -1.1681231565363603e-07
+  ],
+  "authored_target_elevation_m_before_floor_correction": 0.045,
+  "floor_correction_start_end_m": [
+    0.00032902245703780864,
+    0.0
+  ],
+  "expected_delta_m_with_floor_correction": [
+    0.0,
+    0.04467097754296219,
+    0.0
+  ],
+  "all_30_finger_rotation_tracks_constant_reviewed_grasp": true,
+  "root_transform_unchanged": true,
+  "hips_horizontal_translation_unchanged": true,
+  "hold_contract": "The runtime clamps charge time to the final .65-second sample; the authored endpoint now retains readiness. Actual endpoint elevation includes the measured ground correction. Gameplay input/timers unchanged.",
+  "scope": "Actual final GLB endpoint and exact unchanged noncharge samples; not quality, collision or controller approval."
+}

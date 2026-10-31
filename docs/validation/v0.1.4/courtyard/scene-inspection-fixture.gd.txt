@@ -1,0 +1,31 @@
+extends Node
+# Isolated inspection fixture only; deliberately excluded from the source repo.
+func _ready() -> void:
+ process_mode = Node.PROCESS_MODE_ALWAYS
+ call_deferred("configure")
+func configure() -> void:
+ var world = get_parent()
+ world.player.position = Vector3(0,0.15,-25)
+ world.player.active = false
+ world.rig.cinematic = false
+ world.rig.yaw = 0
+ world.rig.pitch = -0.18
+ world.rig.snap()
+ world.begin_encounter(0)
+ world.ui.hide()
+ await get_tree().physics_frame
+ await get_tree().physics_frame
+ world.rig._physics_process(1.0)
+ world.rig.set_physics_process(false)
+ world.player.set_physics_process(false)
+ get_tree().paused = true
+ Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+ print("RUNEFALL_ART_VIEW_READY fixed game-camera scene inspection, not a gameplay test")
+func _input(event: InputEvent) -> void:
+ if event is InputEventKey and event.pressed and event.physical_keycode == KEY_V:
+  var world = get_parent()
+  world.player.position = Vector3(11,0.15,-42)
+  world.rig.yaw = -0.7
+  world.rig.snap()
+  world.rig._physics_process(1.0)
+  print("RUNEFALL_ART_DETAIL_READY actual RuneCamera at courtyard east edge")

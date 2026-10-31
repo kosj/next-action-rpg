@@ -1,0 +1,35 @@
+{
+  "flow_id": "36eeaa83-211b-4fba-a8ad-e547e2cdb697",
+  "source_task_id": "1ddc7bd7-efcd-4e6b-b160-5e925f94ef84",
+  "executions": [
+    {
+      "stage": "remesh",
+      "execution_id": "3a6dfbb4-16f8-4014-a733-4c0167a929bd",
+      "reported_points": 0,
+      "scope_node_ids": [
+        "856f3ca9-dcd6-47ed-9be5-aae9e9cc65f9"
+      ]
+    },
+    {
+      "stage": "rig",
+      "execution_id": "ee665484-c3ed-494b-ab9e-8f9a286dca23",
+      "reported_points": 0,
+      "scope_node_ids": [
+        "93a8d471-12cd-4ecc-95f2-d519cf17125d"
+      ]
+    },
+    {
+      "stage": "motions",
+      "execution_id": "abbdea37-613d-4100-a9cb-1dc4d32a8d34",
+      "reported_points": 0,
+      "scope_node_ids": [
+        "cb9ecfc0-f8d2-49d4-9f61-bc064fbab9c1",
+        "67bd622b-6e22-4dc2-9ef3-96f5f53e17cf",
+        "93dc5f21-c18b-41a2-8be0-80fc05bd5c23",
+        "92e66a44-7e3c-441d-bd62-bf50894dfaf7"
+      ]
+    }
+  ],
+  "reported_points_total": 0,
+  "additional_points_purchased": false
+}
