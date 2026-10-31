@@ -100,16 +100,22 @@ static func _socket_matches_current_pose(visual: ActorVisual) -> bool:
 	var expected := skeleton.global_transform * skeleton.get_bone_global_pose(hand)
 	return visual.weapon_socket.global_transform.is_equal_approx(expected)
 
-static func _textured(mesh: MeshInstance3D) -> bool:
+static func _textured(mesh: MeshInstance3D, has_eyelid_wall: bool = false) -> bool:
 	if mesh.mesh == null or mesh.material_override != null:
 		return false
 	for surface in range(mesh.mesh.get_surface_count()):
 		if mesh.get_surface_override_material(surface) != null:
 			return false
 		var material := mesh.get_active_material(surface) as BaseMaterial3D
+		# The eye-opening derivative adds exactly one opaque, nonmetallic inner
+		# lid wall. Only that named second body surface is intentionally plain.
+		if has_eyelid_wall and surface == 1:
+			if material == null or material.resource_name != "NewEyelidInnerDepth" or material.transparency != BaseMaterial3D.TRANSPARENCY_DISABLED or material.metallic != 0.0 or absf(material.roughness-0.57) > 0.0001 or material.albedo_texture != null:
+				return false
+			continue
 		if material == null or material.albedo_texture == null or material.normal_texture == null:
 			return false
-	return mesh.mesh.get_surface_count() > 0
+	return mesh.mesh.get_surface_count() == 2 if has_eyelid_wall else mesh.mesh.get_surface_count() > 0
 
 static func _pose(visual: ActorVisual, snapshot: Dictionary, delta: float = 0.0) -> void:
 	visual.pose(delta, float(snapshot.get("speed", 0.0)), -1.0, false, false, false, snapshot)
@@ -213,9 +219,14 @@ static func _profile_checks(world: Node3D, check: Callable, profile: String) -> 
 	check.call(bounds.ok and absf(bounds.upper.y-bounds.lower.y-expected_height) < 0.001 and absf(bounds.lower.y) < 0.001, "%s CPU-skinned REST height and soles match its meter-scale capsule contract" % profile)
 	check.call(absf(_weapon_span(visual)-GRIP_TO_TIP_M) < 0.002 and absf(_weapon_axial_length(visual)-TOTAL_SWORD_M) < 0.003, "%s keeps the real 1.19m grip-to-tip and 1.35m total sword instead of inheriting the body normalization scale" % profile)
 	var materials_ok := true
+	var body_count := 0
 	for mesh in _meshes(bridge.rig):
-		materials_ok = materials_ok and _textured(mesh)
-	check.call(materials_ok, "%s body and attached sword retain their imported textured PBR without overrides" % profile)
+		if is_instance_valid(visual.eye_model) and visual.eye_model.is_ancestor_of(mesh):
+			continue # Procedural eye parts have their own explicit material audit.
+		var body := mesh.skin != null
+		body_count += int(body)
+		materials_ok = materials_ok and _textured(mesh, profile == "hero" and body)
+	check.call(materials_ok and body_count == 1, "%s preserves textured body/sword PBR; only the explicit inner eyelid surface is plain" % profile)
 	var actor_transform := visual.transform
 	var actions: Dictionary = {&"death":bridge.animation_player.get_animation(&"death").length, &"hit":0.15 if profile == "hero" else 0.28}
 	if profile == "hero":

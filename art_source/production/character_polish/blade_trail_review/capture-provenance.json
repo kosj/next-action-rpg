@@ -1,0 +1,26 @@
+{
+  "scope": "Isolated fixed-art fixture built from frozen A89/214 characters. No eye candidate, full gameplay QA or AAA approval.",
+  "private_directory": "/workspace/.runefall-task/character-polish/trail-lookdev",
+  "output_directory": "/workspace/next-action-rpg/build/art-review/character-polish/trail",
+  "fixture_sha256": {
+    "game/trail_capture.gd": "9b97e24f36392efa27b891152fa3f148676c112f6a53c29992e3e77395d0b9d9",
+    "game/scenes/main.tscn": "e9a266f0562406e438d3db47d4c14128f68de550c535ef569a7161413f68c180",
+    "capture_web.py": "a1b1a8a02e8bb639cb977f09acab73b261a89352a98fc4d8f59e648bf960858a"
+  },
+  "export_sha256": {
+    "index.apple-touch-icon.png": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.html": "1a25689c439df6ca71b4f42da3ae439eff1d5a13f8836b0aab2eeba61377d515",
+    "index.icon.png": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.pck": "a973233938bc2df05a884c03ad9967ac2d3a4570c1f27a33a43ec564ad1b19f4",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  },
+  "source_manifest_sha256": "f5d666c51abe0122b7e2e81df4a3d3069bde453a265a092c87feadb5f73e3724",
+  "build_notes": [
+    "First editor import under restricted local TCP reported _inet_open/ERR_CANT_CREATE; resource import exited 0; no script errors.",
+    "Web export under approved network access exited 0 with no errors/warnings; uses original project preset and actual GL Compatibility runtime."
+  ]
+}

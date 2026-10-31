@@ -1,0 +1,38 @@
+[
+  {
+    "type": "log",
+    "text": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org"
+  },
+  {
+    "type": "log",
+    "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+  },
+  {
+    "type": "log",
+    "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.995173394680023,0.0,-0.0981321185827255,-0.0121408430859447,0.992317259311676,-0.123122222721577,0.0973781943321228,0.123719356954098,0.98752772808075],\"camera_fov\":56.0,\"camera_position\":[0.649999976158142,2.40582752227783,-18.4082469940186],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":false,\"duration\":0.52,\"elapsed\":0.24,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":8,\"triangles\":14,\"visible\":true},\"grip_to_tip_m\":1.19000136852264,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":false,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"ready\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.995173394680023,0.0,-0.0981321185827255,-0.0121408430859447,0.992317259311676,-0.123122222721577,0.0973781943321228,0.123719356954098,0.98752772808075],\"camera_fov\":56.0,\"camera_position\":[0.649999976158142,2.40582752227783,-18.4082469940186],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":false,\"duration\":0.52,\"elapsed\":0.24,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":8,\"triangles\":14,\"visible\":false},\"grip_to_tip_m\":1.19000136852264,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":true,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"changed\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.768221259117126,0.0,-0.64018440246582,-0.143772184848785,0.974455833435059,-0.172526612877846,0.623831450939178,0.224579334259033,0.748597681522369],\"camera_fov\":56.0,\"camera_position\":[2.5,1.87999999523163,-22.0],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":true,\"duration\":0.52,\"elapsed\":0.24,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":8,\"triangles\":14,\"visible\":false},\"grip_to_tip_m\":1.19000136852264,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":true,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"changed\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.768221259117126,0.0,-0.64018440246582,-0.143772184848785,0.974455833435059,-0.172526612877846,0.623831450939178,0.224579334259033,0.748597681522369],\"camera_fov\":56.0,\"camera_position\":[2.5,1.87999999523163,-22.0],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":true,\"duration\":0.52,\"elapsed\":0.24,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":8,\"triangles\":14,\"visible\":true},\"grip_to_tip_m\":1.19000136852264,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":false,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"changed\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.768221259117126,0.0,-0.64018440246582,-0.143772184848785,0.974455833435059,-0.172526612877846,0.623831450939178,0.224579334259033,0.748597681522369],\"camera_fov\":56.0,\"camera_position\":[2.5,1.87999999523163,-22.0],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":true,\"duration\":0.52,\"elapsed\":0.18,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":4,\"triangles\":6,\"visible\":true},\"grip_to_tip_m\":1.19000041484833,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":false,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"changed\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  },
+  {
+    "type": "log",
+    "text": "RUNEFALL_TRAIL_ART {\"active\":0.17,\"attack\":\"light_1\",\"blend_mode\":1,\"camera_basis\":[0.768221259117126,0.0,-0.64018440246582,-0.143772184848785,0.974455833435059,-0.172526612877846,0.623831450939178,0.224579334259033,0.748597681522369],\"camera_fov\":56.0,\"camera_position\":[2.5,1.87999999523163,-22.0],\"depth_draw_mode\":2,\"depth_test_enabled\":true,\"detail_reframe\":true,\"duration\":0.52,\"elapsed\":0.18,\"hero_art\":{\"blade_trail\":{\"lifetime\":0.12,\"samples\":4,\"triangles\":6,\"visible\":false},\"grip_to_tip_m\":1.19000041484833,\"mode\":\"skeletal\",\"profile\":\"hero\",\"state\":\"light_1\",\"status\":\"Rig ready; visual quality remains subject to art review\",\"weapon_attached\":true},\"hero_position\":[0.0,-0.0199999995529652,-25.0],\"hidden_ribbon_only\":true,\"quality\":0,\"sample_hz\":60,\"scope\":\"Fixed-art fixture, not gameplay/timing QA or AAA proof\",\"stage\":\"changed\",\"startup\":0.13,\"trail_tint\":\"8bd9cbff\"}"
+  }
+]

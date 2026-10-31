@@ -1,0 +1,334 @@
+{
+  "scope": "Independent readonly GLB source/derivative structure and local source-preservation audit; no visual, collision, continuous animation or AAA approval",
+  "files": {
+    "source": {
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "bytes": 17889448,
+      "bin_bytes": 17153208,
+      "nodes": 56,
+      "skins": 1,
+      "joint_counts": [
+        53
+      ],
+      "images": 3,
+      "textures": 3,
+      "materials": 1,
+      "mesh_primitives": 1,
+      "primitive_triangles": [
+        32000
+      ],
+      "primitive_vertices": [
+        25799
+      ],
+      "animations": [
+        "charge",
+        "death",
+        "dodge",
+        "heal",
+        "heavy",
+        "hit",
+        "idle",
+        "light_1",
+        "light_2",
+        "light_3",
+        "parry",
+        "RESET",
+        "run",
+        "skill_1",
+        "skill_2",
+        "skill_3",
+        "walk",
+        "walk_back",
+        "walk_left",
+        "walk_right"
+      ]
+    },
+    "body": {
+      "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+      "bytes": 19438644,
+      "bin_bytes": 18700808,
+      "nodes": 56,
+      "skins": 1,
+      "joint_counts": [
+        53
+      ],
+      "images": 3,
+      "textures": 3,
+      "materials": 2,
+      "mesh_primitives": 2,
+      "primitive_triangles": [
+        32152,
+        136
+      ],
+      "primitive_vertices": [
+        26036,
+        26036
+      ],
+      "animations": [
+        "charge",
+        "death",
+        "dodge",
+        "heal",
+        "heavy",
+        "hit",
+        "idle",
+        "light_1",
+        "light_2",
+        "light_3",
+        "parry",
+        "RESET",
+        "run",
+        "skill_1",
+        "skill_2",
+        "skill_3",
+        "walk",
+        "walk_back",
+        "walk_left",
+        "walk_right"
+      ]
+    },
+    "eyes_web": {
+      "sha256": "81331bf35a6ab831db42f5838fc043287d21f297712a06854ca227a1fc719521",
+      "bytes": 112492,
+      "bin_bytes": 110080,
+      "nodes": 1,
+      "skins": 0,
+      "joint_counts": [],
+      "images": 0,
+      "textures": 0,
+      "materials": 3,
+      "mesh_primitives": 3,
+      "primitive_triangles": [
+        2176,
+        1024,
+        640
+      ],
+      "primitive_vertices": [
+        2176,
+        2176,
+        2176
+      ],
+      "animations": []
+    }
+  },
+  "preservation": {
+    "animations_json_exact": true,
+    "skins_json_exact": true,
+    "nodes_json_exact": true,
+    "images_json_exact": true,
+    "textures_json_exact": true,
+    "samplers_json_exact": true,
+    "original_material_prefix_exact": true,
+    "accessors_prefix_exact": true,
+    "bufferViews_prefix_exact": true,
+    "original_bin_prefix_byte_exact": true,
+    "original_attribute_rows": {
+      "POSITION": {
+        "component_type_exact": true,
+        "normalized_flag_exact": true,
+        "first_source_rows_byte_exact": true
+      },
+      "NORMAL": {
+        "component_type_exact": true,
+        "normalized_flag_exact": true,
+        "first_source_rows_byte_exact": true
+      },
+      "TEXCOORD_0": {
+        "component_type_exact": true,
+        "normalized_flag_exact": true,
+        "first_source_rows_byte_exact": true
+      },
+      "JOINTS_0": {
+        "component_type_exact": true,
+        "normalized_flag_exact": true,
+        "first_source_rows_byte_exact": true
+      },
+      "WEIGHTS_0": {
+        "component_type_exact": true,
+        "normalized_flag_exact": true,
+        "first_source_rows_byte_exact": true
+      }
+    }
+  },
+  "topology_preservation": {
+    "source_triangles": 32000,
+    "candidate_surface_triangles": 32152,
+    "candidate_wall_triangles": 136,
+    "source_triangles_not_retained_with_same_indices": [
+      13863,
+      13864,
+      13865,
+      13871,
+      13877,
+      13891,
+      15713,
+      15714,
+      15715,
+      15716,
+      16209,
+      16211,
+      16214,
+      16221,
+      16226,
+      16229,
+      16231,
+      16238,
+      16245,
+      16275
+    ],
+    "matches_explicit_cut_plus_refinement": true,
+    "unchanged_source_triangles_count": 31980,
+    "new_vertex_rows": 237,
+    "body_attribute_names_exact": true
+  },
+  "new_weights": {
+    "shape": [
+      237,
+      4
+    ],
+    "all_finite": true,
+    "nonnegative": true,
+    "maximum_sum_error": 0.0,
+    "valid_joint_indices": true,
+    "maximum_positive_slots": 2,
+    "inner_rim_rows": 34,
+    "inner_rim_head_weight_min": 0.9801972508430481,
+    "inner_rim_head_weight_max": 0.9905354976654053,
+    "inner_rim_is_rigid_head": false
+  },
+  "actual_exported_topology": {
+    "body_default_node_trs": {
+      "weld_tolerance_m": 1e-06,
+      "boundary_edges": 34,
+      "nonmanifold_edges": 0,
+      "degenerate_welded_faces": 0
+    },
+    "web_eye_rigid_local": {
+      "weld_tolerance_m": 1e-07,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_welded_faces": 0
+    }
+  },
+  "local_t_junction_check": {
+    "scope": "All new237 exported vertex rows against actual edges whose triangle AABB overlaps edited patch; endpoints excluded by1um; not full mesh intersection proof",
+    "candidate_edges": 643,
+    "new_vertices": 237,
+    "distance_tolerance_m": 1e-07,
+    "hits_count": 0,
+    "examples": []
+  },
+  "surface_row_interpolation": {
+    "rows_checked": 135,
+    "source_patch_triangles": 20,
+    "unmatched_rows": [],
+    "max_source_plane_distance_local": 4.6305876578235444e-08,
+    "max_UV_error": 4.708489431681784e-08,
+    "max_named_weight_error": 6.472727753781271e-08,
+    "scope": "Float32 output projected independently onto declared source patch; closest matching UV/weight seam selected. Lid depth rows intentionally excluded."
+  },
+  "canonical_default_head": {
+    "node_index": 0,
+    "default_world_matrix": [
+      [
+        1.8189517259597734,
+        4.4311758178878764e-16,
+        1.2425456949465236e-07,
+        0.0029659499752276147
+      ],
+      [
+        3.0136140874704505e-08,
+        1.7646423305459604,
+        -0.44116032482905193,
+        1.6102725692190836
+      ],
+      [
+        -1.2054464295528442e-07,
+        0.44116035112426344,
+        1.7646424357268404,
+        -0.007067116503481479
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_vs_body_default_nodes_exact": true,
+    "note": "Default node TRS and inverse-bind bytes are preserved. The default Head world*inverseBind is near identity; a nonidentity global Head orientation alone is not evidence of a Blender/CPU pose mismatch. Actual Blender used-vertex comparison is the separate courtyard audit.",
+    "inverse_inverse_bind_matrix": [
+      [
+        1.8189517259597778,
+        -2.4985646588000527e-15,
+        1.2425459772202885e-07,
+        0.0029659499414265156
+      ],
+      [
+        3.0136142470382765e-08,
+        1.764642357826233,
+        -0.4411604106426239,
+        1.6102728843688965
+      ],
+      [
+        -1.2054466935751407e-07,
+        0.44116029143333435,
+        1.764642357826233,
+        -0.007067068479955196
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "default_world_times_inverse_bind_matrix": [
+      [
+        0.9999999903648367,
+        4.7338872799275256e-15,
+        -1.2267504294107276e-14,
+        1.6808126505202248e-11
+      ],
+      [
+        1.1537166855840919e-15,
+        0.9999999506515127,
+        3.232137518931546e-08,
+        -2.579005264902179e-07
+      ],
+      [
+        1.6517377696801185e-14,
+        2.0269067121490825e-08,
+        1.0000000234037631,
+        -8.068189103014461e-08
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "maximum_default_skin_matrix_difference_from_identity": 2.579005264902179e-07,
+    "node_authored_TRS": {
+      "translation": [
+        2.34427477430188e-11,
+        0.032230112701654434,
+        3.71314605729367e-08
+      ],
+      "rotation": [
+        3.3527612686157227e-08,
+        -2.3314683517128287e-15,
+        7.443356551743144e-16,
+        1
+      ]
+    }
+  },
+  "inputs_still_match_at_audit_end": true,
+  "important_scope_notes": [
+    "34 inner-rim vertices retain blended original boundary weights: Head weights0.98019725..0.99053550; they are not rigid-Head geometry. Separate eyeballs use a rigid Head attachment.",
+    "Original triangle triples are preserved outside cut9+adjacent conformance11=20 explicitly changed source faces, not outside only the9 clipped faces.",
+    "Body boundary34 is intentional inner-socket topology under1um geometric weld. Web globes are closed under0.1um weld. This and the local Tjunction check do not prove absence of geometric intersections.",
+    "The existing5-pose Blender BVH diagnostic remains a separate failed clearance result; canonical Head rest agreement does not certify its positive intersections as an audit-space mistake."
+  ]
+}

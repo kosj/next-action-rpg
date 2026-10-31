@@ -1,0 +1,52 @@
+{
+  "capture_result": "passed",
+  "visual_decision": "rejected: MIX does not improve readability at unchanged alpha",
+  "scope": "Two bounded fixed-art comparisons only; original A89/214 and actual Game/RuneCamera; no gameplay, target-hardware or AAA approval.",
+  "only_visual_delta": "Actual trail material uses BLEND_MODE_MIX instead of ADD. Alpha .34 distal/.035 base, tint8bd9cb, geometry, sample lifetime and history remain unchanged.",
+  "comparison": [
+    {
+      "add": "../01-game-trail-024.png",
+      "mix": "01-game-mix-024.png",
+      "matched_camera_hero_pose_time_quality": true,
+      "add_blend_mode": 1,
+      "mix_blend_mode": 0
+    },
+    {
+      "add": "../04-detail-trail-024.png",
+      "mix": "02-detail-mix-024.png",
+      "matched_camera_hero_pose_time_quality": true,
+      "add_blend_mode": 1,
+      "mix_blend_mode": 0
+    }
+  ],
+  "findings": [
+    "MIX avoids a luminous wash but blends the pale mint into sunlit stone, making the already subtle .24s trail harder to distinguish.",
+    "No opaque fan appears at unchanged alpha; this does not compensate for reduced contrast.",
+    "At this default rear-camera .24s pose the blade/trail is partly edge-on. MIX cannot resolve that geometric visibility limit.",
+    "Retain ADD for this restrained preview baseline. Real-speed multi-enemy readability and final art approval remain pending."
+  ],
+  "original_body_sha256": {
+    "lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+  },
+  "capture_timing": {
+    "seconds": 62.541,
+    "scope": "Two MIX fixed-art fixture comparisons; not gameplay/timing QA"
+  },
+  "errors": [],
+  "screenshots_sha256": {
+    "01-game-mix-024.png": "e00d43dbe79948bd35dbe97413a8c9c98e5f62e80a456194aa0391dea54168f0",
+    "02-detail-mix-024.png": "c06b339b407ecf1da6b2346d189ad2ad2ccbf9346a1424fdaaf69e275ad95db8"
+  },
+  "export_sha256": {
+    "index.apple-touch-icon.png": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.html": "9ff18c88ebdf3a7fc891a94593419fa4d2aceeba18423bd1928db6808a8e8697",
+    "index.icon.png": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.pck": "7acc5dc413580b25611685023c3d9457d2552249849f4c9d4dee33d1ea7428d2",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  }
+}

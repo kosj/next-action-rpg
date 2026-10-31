@@ -1,0 +1,176 @@
+{
+  "outcome": "passed",
+  "scope": "Actual tools/check_web.py full fresh-profile Web gameplay, input, art integration, quality/committed IDB and complete browser close/restart; distinct from fixed-art fixtures",
+  "build_id": "0.1.5 · c6be1dce",
+  "expected_commit": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174",
+  "expected_commit_checked": true,
+  "duration_seconds": 471.812,
+  "quality_cycle": [
+    1,
+    0,
+    1
+  ],
+  "quality_health": [
+    120,
+    120,
+    120
+  ],
+  "quality_z": [
+    -12.2399463653564,
+    -12.2399463653564,
+    -12.2399463653564
+  ],
+  "hero_modes": [
+    "skeletal"
+  ],
+  "all_recorded_hero_eyes_attached": true,
+  "safe_attack_state": "light_1",
+  "safe_attack_sampled_time": 0.516666647715446,
+  "safe_attack_encounter": -1,
+  "safe_attack_health": 120,
+  "safe_attack_z": -13.4620294570923,
+  "after_safe_attack_state": "idle",
+  "safe_attack_blade_trail": {
+    "lifetime": 0.12,
+    "samples": 0,
+    "triangles": 0,
+    "visible": false
+  },
+  "right_hand_translation_delta_skeleton_local": 0.000912661763956234,
+  "right_hand_rotation_delta_radians": 0.009022269573937702,
+  "hand_pose_scope": "Skeleton-local; translation precedes inherited normalization scale; quaternion sign ignored",
+  "weapon_grip_to_tip_m": 1.19000017642975,
+  "live_normal_melee_skeletal": 3,
+  "live_normal_melee_grip_to_tip_m": [
+    1.19000005722046,
+    1.19000029563904,
+    1.18999946117401
+  ],
+  "combat_health": 120,
+  "combat_hits": 4,
+  "restart": {
+    "quality": 1,
+    "checkpoint": 0,
+    "z": 6,
+    "health": 120
+  },
+  "restart_hero_art": {
+    "blade_trail": {
+      "lifetime": 0.12,
+      "samples": 0,
+      "triangles": 0,
+      "visible": false
+    },
+    "eyes_attached": true,
+    "grip_to_tip_m": 1.19000053405762,
+    "mode": "skeletal",
+    "profile": "hero",
+    "right_hand_pose": [
+      -0.0551359057426453,
+      0.207536935806274,
+      0.158965080976486,
+      0.679052472114563,
+      -0.354730099439621,
+      -0.569319069385529,
+      0.298211544752121
+    ],
+    "sampled_time": 0.266666666666667,
+    "state": "idle",
+    "status": "Rig ready; visual quality remains subject to art review",
+    "weapon_attached": true
+  },
+  "stored_quality": {
+    "balanced_before_wait": [
+      1
+    ],
+    "waiting_quality_0": [
+      0
+    ],
+    "balanced_committed": [
+      0
+    ],
+    "after_settings_done": [
+      1
+    ],
+    "waiting_quality_1": [
+      1
+    ],
+    "restored_committed": [
+      1
+    ],
+    "before_browser_close": [
+      1
+    ],
+    "after_browser_restart": [
+      1
+    ]
+  },
+  "storage_reads": 8,
+  "storage_max_read_seconds": 14.027,
+  "storage_key_counts": [
+    34,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    34
+  ],
+  "storage_primary_reads": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "first_browser_max_raf_gap_ms": 25482.29999999999,
+  "restart_browser_max_raf_gap_ms": 16882.699999999997,
+  "errors": [],
+  "source_inputs": {
+    "tools/browser_smoke.py": {
+      "bytes": 28099,
+      "sha256": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0"
+    },
+    "tools/check_web.py": {
+      "bytes": 1128,
+      "sha256": "f8a2651ea71e8dbc60aba5e49a0d0197ee1fdd05e58b54aab475a1de3b1e2690"
+    },
+    "game/scripts/ui/hud.gd": {
+      "bytes": 19225,
+      "sha256": "c108d61bfb170d2293b47402335cb262f89b086fabc06e2cd45f78f43a97c165"
+    },
+    "game/scripts/actors/actor_visual.gd": {
+      "bytes": 11061,
+      "sha256": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337"
+    },
+    "game/scripts/actors/production_character_art.gd": {
+      "bytes": 5747,
+      "sha256": "140526ef84b4c0d16aaf11159178d064649fd324f049e8422d30a9e4d3c3958b"
+    },
+    "game/import/eye_materials.gd": {
+      "bytes": 1577,
+      "sha256": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b"
+    },
+    "game/assets/models/production/lyra_gameplay.glb": {
+      "bytes": 19438644,
+      "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c"
+    },
+    "game/assets/models/production/lyra_eyes.glb": {
+      "bytes": 112488,
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+    },
+    "game/assets/models/production/sentinel_gameplay.glb": {
+      "bytes": 17146728,
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+    }
+  },
+  "limitations": [
+    "Local Chromium SwiftShader functional evidence only; public Pages/CI validation is separate.",
+    "Not fixed-art evidence or AAA approval; dark eye surround/stare remains documented.",
+    "Windows packaging/native suites are separate evidence; this run does not measure target-GPU performance."
+  ]
+}

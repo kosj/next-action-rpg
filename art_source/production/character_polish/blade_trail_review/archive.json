@@ -1,0 +1,125 @@
+{
+  "scope": "Selected original fixed Web trail images before eye-body adoption; no live gameplay/AAA/hardware approval.",
+  "files": [
+    {
+      "file": "01-game-trail-024.png",
+      "bytes": 1544901,
+      "sha256": "243e434bf8d03396299a070186ad1a32ee8fa58fabe9f62ad13f45d0dcab850a"
+    },
+    {
+      "file": "05-detail-trail-018.png",
+      "bytes": 1636939,
+      "sha256": "d079304f580908a6c89ebbb12eaaf95d4dc74d2f60e8b0d2487fe7c71a2f8beb"
+    },
+    {
+      "file": "06-detail-no-trail-018.png",
+      "bytes": 1636765,
+      "sha256": "bbe1623da27939d0be375044ff51f2ed60a220b77a7615c46dde4f7dc1874fa2"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4864,
+      "sha256": "b56f9e111a1da9e9647cb77ff0fe688e5b9f58f6e819885f863100c2a5c2e872"
+    },
+    {
+      "file": "capture-console.json",
+      "bytes": 6496,
+      "sha256": "1d3348559ee1c129eccdae191bdfe96c7ba3faa615051bac3566d35fae51ade2"
+    },
+    {
+      "file": "capture-provenance.json",
+      "bytes": 1869,
+      "sha256": "385793ba818a1b813017c0d4e5940fc6e73086b872658855ea2b59b031c95d81"
+    },
+    {
+      "file": "capture-states.json",
+      "bytes": 7502,
+      "sha256": "aa2403edfe6c475c18a0552631c6738afae885a88fa88090a302d84ee0d34f64"
+    },
+    {
+      "file": "capture-timing.json",
+      "bytes": 97,
+      "sha256": "8f7473ac9fc09bf7e2c636247e37110919ddadd7ecda5a69e1f7d263a492308b"
+    },
+    {
+      "file": "capture.log",
+      "bytes": 374,
+      "sha256": "eabfba7428726142e999b9ee2d14ed3971df7e47eafbbc3a1a853213f4c2297e"
+    },
+    {
+      "file": "capture_web.py",
+      "bytes": 4352,
+      "sha256": "a1b1a8a02e8bb639cb977f09acab73b261a89352a98fc4d8f59e648bf960858a"
+    },
+    {
+      "file": "export.log",
+      "bytes": 17332,
+      "sha256": "f6e23b41b558bc7331bbfdb5ea3e5de7b30b61092416ff8adcac27a510fc786e"
+    },
+    {
+      "file": "import.log",
+      "bytes": 6617,
+      "sha256": "517e1d38e45104408fa0c862b4f7e10bc0d393ed5dfbc20d9bd1e0b8637c3013"
+    },
+    {
+      "file": "mix/capture-console.json",
+      "bytes": 2440,
+      "sha256": "c5435065ac4c654a53f2bdb61cceb5ac8cb67816cbeea53ae1fbb1373c551bc4"
+    },
+    {
+      "file": "mix/capture-states.json",
+      "bytes": 2505,
+      "sha256": "788f4032018538cb60b57399ebba576834feda58395db01f24d9525eb2bd5324"
+    },
+    {
+      "file": "mix/capture-timing.json",
+      "bytes": 100,
+      "sha256": "db923314b6a2ac3bb2d08b8524396a1617063a8920d3a3e3ca3c186923614e05"
+    },
+    {
+      "file": "mix/capture.log",
+      "bytes": 147,
+      "sha256": "b0574665c25b59a9f8e3fe152ed7b67966c07e55ae9fc1cea79e02f8ede6f4d6"
+    },
+    {
+      "file": "mix/capture_web.py",
+      "bytes": 4060,
+      "sha256": "999755b55b94c32468faf7ce67e9b6d8c1c67aea8292b398e6562404aebaf3bd"
+    },
+    {
+      "file": "mix/export.log",
+      "bytes": 17332,
+      "sha256": "f6e23b41b558bc7331bbfdb5ea3e5de7b30b61092416ff8adcac27a510fc786e"
+    },
+    {
+      "file": "mix/mix-provenance.json",
+      "bytes": 549,
+      "sha256": "b90d75d616d0483946e46ed5db7918444781a23a0b8c628288aed4038f59b50e"
+    },
+    {
+      "file": "mix/review.json",
+      "bytes": 2813,
+      "sha256": "9d09957ad5c213adb621fbc83a0b0b3fd2163f3ab0ea9355e0ab08251d6504e5"
+    },
+    {
+      "file": "mix/trail_capture.gd",
+      "bytes": 4403,
+      "sha256": "d18a0118f2a88ed2989e4a9bcba0cfed0794dd4cacfeb623caf0626cf45cdf77"
+    },
+    {
+      "file": "review.json",
+      "bytes": 3990,
+      "sha256": "9114a0a722a52b471163c2e7a7b831c1df77278875bd090bf899959c83e4f6ef"
+    },
+    {
+      "file": "source-manifest.json",
+      "bytes": 18036,
+      "sha256": "f5d666c51abe0122b7e2e81df4a3d3069bde453a265a092c87feadb5f73e3724"
+    },
+    {
+      "file": "trail_capture.gd",
+      "bytes": 4203,
+      "sha256": "9b97e24f36392efa27b891152fa3f148676c112f6a53c29992e3e77395d0b9d9"
+    }
+  ]
+}

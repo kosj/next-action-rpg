@@ -1,0 +1,25 @@
+{
+  "capture_result": "passed",
+  "visual_decision": "rejected",
+  "root_decision": "Reject9f palette; retain validated d7d reference",
+  "reference_eye_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "candidate_eye_sha256": "9f2c513f7efaeb54741645ebe9b2ee99c66c66c5711c1c55678b1c482fd7064c",
+  "shots": 4,
+  "same_camera_pose_quality_as_reference": true,
+  "capture_duration_seconds": 112.423,
+  "actual_pck_color_probe": "actual-pck-color-proof/verification.json",
+  "findings": [
+    "The changed candidate COLOR_0 is genuinely present in the actual exported Web PCK imported scene. This is not a stale source/import cache.",
+    "Front and three-quarter quality0/1 show only a very subtle iris/pupil difference. The dark eye surround and large dark region continue to dominate.",
+    "The observed difference does not justify a naturalness or material-readability improvement claim. Reject this one alternative; no second palette variant was attempted.",
+    "Reference d7d maintains validated sampled geometry/import placement. Its dark stylized stare remains an explicit unresolved art limitation.",
+    "No final face/AAA, normal gameplay, Windows or hardware performance approval is given."
+  ],
+  "errors": [],
+  "screenshots_sha256": {
+    "02-face-front-neutral-q0.png": "4bf913b015aa5d05b637c64391460ec8a081f86ed4df35ac269538c2e31a4d2d",
+    "02-face-front-neutral-q1.png": "3990ffcf60f3d0f08a2078dd779519ccce23457938759fd9359d0b83841b2478",
+    "03-face-threequarter-neutral-q0.png": "45dfb336f93d0ab9ac306032ae68370168370495a133a6c91c8b2be6c92d31cf",
+    "03-face-threequarter-neutral-q1.png": "86616e72e239869e909495bff6bd9f77b0f188ae557b8bdcc691ccc18ec28eb4"
+  }
+}

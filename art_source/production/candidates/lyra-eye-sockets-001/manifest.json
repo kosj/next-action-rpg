@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-eye-sockets-001",
+  "created_on": "2026-10-31",
+  "status": "reviewed_incremental_geometry_native_and_fixed_Web_preview",
+  "provider": "Source VARCO PRIVATE body; project-authored local topology and procedural eyes",
+  "source_file": "source.glb",
+  "source_bytes": 19438644,
+  "source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "geometry_input": "../lyra-gameplay-001/source.glb",
+  "geometry_input_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "body_triangles": 32288,
+  "web_eye_triangles": 3840,
+  "body_plus_web_eyes_triangles": 36128,
+  "original_Web_body_target": 32000,
+  "body_target_excess": 288,
+  "skins": 1,
+  "bones": 53,
+  "clips": 20,
+  "point_usage_this_step": 0,
+  "additional_points_purchased": false,
+  "images_edited_or_generated": false,
+  "runtime_replacement": true,
+  "runtime_file": "game/assets/models/production/lyra_gameplay.glb",
+  "runtime_eyes": "game/assets/models/production/lyra_eyes.glb",
+  "visual_approval": false,
+  "target_hardware_performance_approval": false,
+  "preview_scope": "Source preservation, finite local geometry/collision, studio and actual fixed Web twoquality views, native attachment/colors. Normal packaged play and final AAA/hardware approval are separate.",
+  "derived_files": [
+    {
+      "file": "FINAL_REVIEW.json",
+      "bytes": 9636,
+      "sha256": "c3ef0fd01d69cc95cc0e362bb5eb1aface235c8d24a991a5b01e240136065af9"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4011,
+      "sha256": "2828435c184e54ec052f3a3ad50949ed41f378f01a87e162f0220801da40727b"
+    },
+    {
+      "file": "anchor-samples.json",
+      "bytes": 2588,
+      "sha256": "4d80b7611f912da7bb153038b341ad9cae5252129a7c3d622ed6647510ead58a"
+    },
+    {
+      "file": "bvh-pose-check.json",
+      "bytes": 1649,
+      "sha256": "7a42e91231903f6e0a70c4a9e3468f272c8c11a912065f84a52ee904a4f15dec"
+    },
+    {
+      "file": "eyes-reference.glb",
+      "bytes": 327248,
+      "sha256": "87172646dbc3acba0070b574b6d8e38209b438a5a03a85498cb3b18f0fd9ac4c"
+    },
+    {
+      "file": "eyes-web.glb",
+      "bytes": 112488,
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+    },
+    {
+      "file": "failed-intersection-map.json",
+      "bytes": 2265,
+      "sha256": "df27e0e5e7a81c1ef3b4691a15a8fa0d8b8ff67db86cbdd002972ba26572dd81"
+    },
+    {
+      "file": "initial-derivation.json",
+      "bytes": 9482,
+      "sha256": "0e1f0ae233a9ab87e926eef02f2415a5ff1b655dc8d240caee7c1bc912b80585"
+    },
+    {
+      "file": "pose-space-check.json",
+      "bytes": 4272,
+      "sha256": "4174819c70b04130887a078cf13d7ec9aaf2e94f1215b09f06fff054f10de8d2"
+    },
+    {
+      "file": "recipe.json",
+      "bytes": 1665,
+      "sha256": "5faa68b2528cb22e3961126e19a3bef3183909c6278028f0a644e853f19265fc"
+    },
+    {
+      "file": "refit-delta-audit.json",
+      "bytes": 6193,
+      "sha256": "60d9e181152a40c54b2fe010bf909c57d09871fab6fc78995f8f275d9b7ba6ac"
+    },
+    {
+      "file": "refit.json",
+      "bytes": 7341,
+      "sha256": "e035c3ab7b08ba02b2cb552ecd076f25fcc75ecbdf5161b079696edd2b48d644"
+    },
+    {
+      "file": "review-recipes/REPRODUCTION.md",
+      "bytes": 6263,
+      "sha256": "1098fd2490ebc8a5071efe04873c52d32c3be23c8608c50a53163b2318c95891"
+    },
+    {
+      "file": "review-recipes/bvh_pose_check_failed_identity.py",
+      "bytes": 4379,
+      "sha256": "3ddd6a17babb259634592f853e49c517a7e86032b6b57a0c1f85f4540fbe495c"
+    },
+    {
+      "file": "review-recipes/bvh_pose_check_final.py",
+      "bytes": 4618,
+      "sha256": "388b24f1756dccfce2cc3fac5e56272853f8fd26567b255f75ca3e43115973f7"
+    },
+    {
+      "file": "review-recipes/canonical_region_fixture.py",
+      "bytes": 1917,
+      "sha256": "5150115c4a3c6a38fcc3b958f5c05e54991ec4b528457a7770f40ee828e72c5d"
+    },
+    {
+      "file": "review-recipes/derive_tool_at_build.py",
+      "bytes": 28086,
+      "sha256": "1f7ab7b2deb21ca587860b30c9db610472934e3aefc55151f3d90e66ccf4ba37"
+    },
+    {
+      "file": "review-recipes/derive_tool_at_final.py",
+      "bytes": 37955,
+      "sha256": "e3af9b96462ef2f9bb2ec62afad810e775957c3f93d43d5816ee477ee793d8ef"
+    },
+    {
+      "file": "review-recipes/pose_space_check.py",
+      "bytes": 2949,
+      "sha256": "bd369239a22c2ffac458d311f5c88b1d3d866ff0cc67f969904bde6bc993bfbe"
+    },
+    {
+      "file": "review-recipes/web_surface_error_final.py",
+      "bytes": 2767,
+      "sha256": "aa4246e8e03ac8fc3db464a25a03cb5dd2b202442de4e8c07ad99dd8aa7f4c92"
+    },
+    {
+      "file": "source-audit.json",
+      "bytes": 8839,
+      "sha256": "483b48c469449e4cf085dcd7e0e4a1fcd74b2cbd55d7dc439cb52f458441f3ee"
+    },
+    {
+      "file": "studio/close/face_side.png",
+      "bytes": 660869,
+      "sha256": "5063ad72b23bf43ca88dc86b76c9151db0c5f560be402487966aec74674578af"
+    },
+    {
+      "file": "studio/close/head_three_quarter.png",
+      "bytes": 669372,
+      "sha256": "5e74371a34f3604d729ef722f7bde9cedb9d544ffe6d9856e4a779a9a5a14860"
+    },
+    {
+      "file": "studio/close/review.json",
+      "bytes": 11483,
+      "sha256": "eef44d5863290971e1b5cad06a0139ae4cd05e92c983dc7c7f2192f9dad644a3"
+    },
+    {
+      "file": "studio/pitch/face_front.png",
+      "bytes": 669391,
+      "sha256": "a1b8466d13a1b02f9f43dd36da1424207872f3cf0b5fa01b1ee3485155d98fe1"
+    },
+    {
+      "file": "studio/pitch/review.json",
+      "bytes": 10517,
+      "sha256": "c191cb72e27c5d01e1766e37ab402063c3007a92383912aeac43dbf66c03b893"
+    },
+    {
+      "file": "studio/rest/face_front.png",
+      "bytes": 676483,
+      "sha256": "86584625bafa1d0c63f9555fd91d4b07e0235b313045ad371fc8db96ed90a022"
+    },
+    {
+      "file": "studio/rest/head_three_quarter.png",
+      "bytes": 506997,
+      "sha256": "9cc46bfefc2e1d80f84bfc7a7b0a34d07e207821e2b0107793eb59f4df44ca76"
+    },
+    {
+      "file": "studio/rest/review.json",
+      "bytes": 11456,
+      "sha256": "149bc61fe1e5f60e4f8a9f27ec3ab8ad5225d3b6fa1318b787570b01d79f0274"
+    },
+    {
+      "file": "studio/yaw/face_front.png",
+      "bytes": 683683,
+      "sha256": "ac7140f214653374fe8062485118c671ebee485eec8d2fb6e9cdff458484b195"
+    },
+    {
+      "file": "studio/yaw/review.json",
+      "bytes": 10519,
+      "sha256": "7c95d08dad9a04b1c9b4f0e10edc96b6376bfb124c94ac9ef6c5edf759dff138"
+    },
+    {
+      "file": "surface-error.json",
+      "bytes": 795,
+      "sha256": "21b96cff4cc380f2a7ba162598cc2886ae9e8c3801c08d884d867203cf2e3b62"
+    },
+    {
+      "file": "translation-proof.json",
+      "bytes": 1431,
+      "sha256": "e924ff2aae518e5fe5eafb52a5423d1d19c10865ff54e8ca546c0481881cd017"
+    }
+  ],
+  "authoring_tools": [
+    {
+      "repository_file": "tools/derive_character_eye_sockets.py",
+      "sha256": "e3af9b96462ef2f9bb2ec62afad810e775957c3f93d43d5816ee477ee793d8ef"
+    },
+    {
+      "repository_file": "tools/derive_character_eyes.py",
+      "sha256": "f438c974e44603ea40ada53f5df01d5309a20912831ddbb787c96bea3319a736"
+    },
+    {
+      "repository_file": "tools/review_character_regions.py",
+      "sha256": "0f6e93f37a967c71a133326beffce52ba1f47fdeb9a86783713f609316fd2a1f"
+    },
+    {
+      "repository_file": "game/import/eye_materials.gd",
+      "sha256": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b"
+    },
+    {
+      "repository_file": "tools/build_eye_fixture.py",
+      "sha256": "c996ad0ba8210fe5b2d08d29cc21033894382c952192e6e12046780496489486"
+    }
+  ],
+  "fixed_Web_review": "docs/validation/v0.1.5/eyes-web-reference/review.json",
+  "rejected_palette": "art_source/production/character_polish/rejected_eye_palette/decision.json",
+  "fixture_generator": "tools/build_eye_fixture.py"
+}

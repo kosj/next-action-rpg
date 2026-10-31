@@ -1,19 +1,21 @@
-# v0.1.4 캐릭터 스켈레톤 프리뷰 계약
+# 캐릭터 스켈레톤 프리뷰 계약
 
 확인일: **2026-10-31**. 목표는 실제 리라·근접 수호병 메시를 현재 게임 시간에 맞춰 움직이는 웹 프리뷰입니다. 최종 AAA 캐릭터, 모션 캡처 품질, 전체 적/보스 교체나 목표 기기 60fps 달성을 뜻하지 않습니다. 정적 소품의 기존 반입 결과는 [아트 배치 기록](ART_BATCH_2026_10_31.md), 전체 검수 단계는 [대표 아트 구간](ART_SLICE.md)을 따릅니다.
+
+v0.1.5에는 [국소 눈 소켓·곡면 안구와 검 잔상](CHARACTER_POLISH.md)을 추가했습니다. [최종 native 근거](validation/v0.1.5/character-eyes.json)는 통합345개·실패0, 독립 좌표·색상·Head 부착을 확인합니다. 아래의 v0.1.4 검증 수치·이력은 당시 범위로 보존하며 현재 Web·공개 배포의 실행 근거로 대신하지 않습니다.
 
 ## 입력과 현재 증거
 
 | 대상 | 확인한 입력·상태 | 검증 범위와 남은 조건 |
 |---|---|---|
-| 리라 runtime | [lyra_gameplay.glb](../game/assets/models/production/lyra_gameplay.glb), [저작 recipe](../art_source/production/character_actions/lyra.json). 32,000삼각형·53본·스킨1·19상태+RESET, 17,889,448바이트 | 실제 hero profile에 설치. 독립 Godot 반입·포즈·무기·시간 검증 통과. 최종 얼굴/손·의상 변형·교차 전환과 타격감은 후속 아트 검수 |
+| 리라 runtime | [lyra_gameplay.glb](../game/assets/models/production/lyra_gameplay.glb), [저작 recipe](../art_source/production/character_actions/lyra.json). 몸체32,288삼각형·19,438,644바이트와 안구3,840삼각형·112,488바이트. 53본·스킨1·19상태+RESET | 실제 hero profile에 설치. 독립 Godot 반입·포즈·무기·시간 검증 통과. 최종 얼굴/손·의상 변형·교차 전환과 타격감은 후속 아트 검수 |
 | 일반 melee 수호병 runtime | [sentinel_gameplay.glb](../game/assets/models/production/sentinel_gameplay.glb), [저작 recipe](../art_source/production/character_actions/sentinel.json). 22,000삼각형·53본·스킨1·9상태+RESET, 17,146,728바이트 | 실제 일반 melee profile에 설치. ranged·shield·elite·boss는 기존 표현을 사용하며 이 프리뷰 승인을 상속하지 않음 |
 | 보존한 제작 입력 | [리라 웹 원본](../art_source/production/candidates/lyra-web-001/manifest.json), [수호병 웹 정규화 후보](../art_source/production/candidates/sentinel-web-001/manifest.json). 리라1.82m·수호병1.95m의 rest skeleton·메시·웨이트를 입력으로 재사용 | 개발용 stock 라이브러리와 raw timestamp 문제는 원본 기록대로 보존. runtime은 source actions를 삭제하고 새 프로젝트 키만 저작함 |
-| 게임 표현·검증 | [ActorVisual](../game/scripts/actors/actor_visual.gd), [ProductionCharacterArt](../game/scripts/actors/production_character_art.gd), [SkeletalVisualBridge](../game/scripts/actors/skeletal_visual_bridge.gd), [실제 모델 검사](../game/tests/production_character_regressions.gd) | 최신 데이터로 통합 Godot runner268개·독립 실제 모델43개·실패0, Web/Windows 내보내기 확인. 초기 revision 로컬 Web 통과는 별도 기록이며 최종 Web·공개 주소 검사는 완료 후 갱신 |
+| 게임 표현·검증 | [ActorVisual](../game/scripts/actors/actor_visual.gd), [ProductionCharacterArt](../game/scripts/actors/production_character_art.gd), [SkeletalVisualBridge](../game/scripts/actors/skeletal_visual_bridge.gd), [실제 모델 검사](../game/tests/production_character_regressions.gd) | v0.1.5 실제 데이터로 통합345개·실패0. 눈·블레이드의 전용 회귀를 포함하며, 정상 Web 입력·저장·공개 주소 및 Windows 실행은 각각의 검증 기록을 참조 |
 
 runtime 모션은 [author_character_actions.py](../tools/author_character_actions.py)와 [character_gait.py](../tools/character_gait.py)의 순수 프로젝트 저작 Bpy 키입니다. 기존 stock FCurve·샘플 수치 포즈를 복사하거나 긴 stock slash를 단순 재명명/압축하지 않았습니다. 원본의 중복 timestamp와 Blender 해석 파생의 승인 범위도 그대로 구분합니다.
 
-runtime GLB SHA-256은 리라 `a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1`, 수호병 `214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721`입니다. 제작 입력과 게임 사본의 해시는 [리라 gameplay manifest](../art_source/production/candidates/lyra-gameplay-001/manifest.json)·[수호병 gameplay manifest](../art_source/production/candidates/sentinel-gameplay-001/manifest.json)와 대조합니다. 초기 데이터 revision에서는 별도 실제 모델41개와 fresh 로컬 Web294.774초 검사(오류0)가 통과했고, 이후 charge 종료·손 그립 데이터를 보정한 최신 파일로 통합268개를 다시 통과했습니다. 최신 파일의 [독립43개·통합268개 검사와 내보내기 근거](validation/v0.1.4/README.md)를 보관합니다. 최신 Web·공개 CI 결과를 초기 revision 결과로 대신하지 않습니다.
+현재 runtime GLB SHA-256은 리라 몸체 `4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c`, 안구 `d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4`, 수호병 `214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721`입니다. 원본 리라 A89는 별도 보존하고 현재 파생은 [눈 소켓 manifest](../art_source/production/candidates/lyra-eye-sockets-001/manifest.json)와 대조합니다. v0.1.4 제작 입력과 사본 해시는 [리라 gameplay manifest](../art_source/production/candidates/lyra-gameplay-001/manifest.json)·[수호병 gameplay manifest](../art_source/production/candidates/sentinel-gameplay-001/manifest.json)와 대조합니다. 초기 데이터 revision에서는 별도 실제 모델41개와 fresh 로컬 Web294.774초 검사(오류0)가 통과했고, 이후 charge 종료·손 그립 데이터를 보정한 최신 파일로 통합268개를 다시 통과했습니다. 최신 파일의 [독립43개·통합268개 검사와 내보내기 근거](validation/v0.1.4/README.md)를 보관합니다. 최신 Web·공개 CI 결과를 초기 revision 결과로 대신하지 않습니다.
 
 ## 공식 API와 최신 공개 스킬 재검증
 

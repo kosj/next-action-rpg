@@ -1,0 +1,5 @@
+{
+  "outcome": "passed",
+  "seconds": 471.812,
+  "scope": "Actual tools/check_web.py full fresh-profile Web gameplay, input, art integration, quality/committed IDB and complete browser close/restart; distinct from fixed-art fixtures"
+}

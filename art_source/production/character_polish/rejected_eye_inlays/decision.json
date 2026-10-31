@@ -1,0 +1,33 @@
+{
+  "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "source_unchanged": true,
+  "original_shots": "lyra-regions-001/",
+  "initial_eye_trial": "ocular-001-rest/",
+  "final_eye_calibration": "ocular-001-calibrated-rest/",
+  "runtime_adoption": "rejected",
+  "final_aaa_approval": "pending",
+  "images_edited_or_generated": false,
+  "review_capture": "Actual unchanged body plus reimported separate GLB; Cycles CPU1, neutral studio, exact baseline cameras",
+  "final_candidate": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eyes/ocular-001-calibrated/eyes.glb",
+    "sha256": "dc4dd2d24b4147d25bdf1eabd9c854950d3cfdabb890aa5e31ed55e6d46f65c6",
+    "bytes": 62684,
+    "vertices": 1296,
+    "triangles": 1406,
+    "materials": 3,
+    "texture_images": 0,
+    "skins": 0
+  },
+  "final_rest_clearance": {
+    "method": "BVH nearest actual reimported eye vertices to actual evaluated source-body triangles",
+    "vertex_samples": 1149,
+    "nearest_distance_min_m": 0.000252702011493966,
+    "nearest_distance_max_m": 0.001136076869443059,
+    "signed_outward_min_m": 0.00025270201501825795,
+    "signed_outward_max_m": 0.0011360770372448314,
+    "penetrating_vertex_count": 0,
+    "within_declared_clearance_limit": true,
+    "nonpenetrating": true
+  },
+  "side_and_head_pose_tests": "Not run after failure of the front visual acceptance gate; no acceptance asserted."
+}

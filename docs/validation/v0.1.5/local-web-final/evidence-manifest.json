@@ -1,0 +1,70 @@
+{
+  "04-gameplay.png": {
+    "bytes": 656747,
+    "sha256": "e11c23a046d42ee6d1fa46dda8773e2320b4ece469c6487a266980aa92d45990"
+  },
+  "05-continue.png": {
+    "bytes": 530775,
+    "sha256": "57864b7f9071e8a543f4751feb50d3dc795df6e51136f8322c95799db6c0ac5f"
+  },
+  "08-skeletal-attack.png": {
+    "bytes": 495380,
+    "sha256": "aaaea83c96f5fd3781598c73e24862bcf9314b137410e5f66e00c443c4ec398e"
+  },
+  "README.md": {
+    "bytes": 3846,
+    "sha256": "62d48ccb9a7375e0a2fe79ad6124d1cce28f6d9b940b2f492a9c17d43d3e145c"
+  },
+  "browser-art.json": {
+    "bytes": 14395,
+    "sha256": "799249b721ad2ceeb8a206e245b0c2961eef28a40bec625ba4d618572e388c6a"
+  },
+  "browser-errors.json": {
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "browser-persistence.json": {
+    "bytes": 1506,
+    "sha256": "26c7d815c4743545c4fdb6f9aa262f58b66fbd7ed64827b47503b06f70420f7d"
+  },
+  "browser-progress.json": {
+    "bytes": 1566,
+    "sha256": "897badea5de1cca4b44301bf85c95f55cc4c791326c7e60fb82a367efba1654c"
+  },
+  "browser-quality.json": {
+    "bytes": 10243,
+    "sha256": "90e5d34b555d4debbb72a377aed057fb8ee5f14374498e3187b70c848df4131a"
+  },
+  "browser-state.json": {
+    "bytes": 5343,
+    "sha256": "9f366a0f92b19c65649222da10abb7156b0469f275e8d2f67bbc7b3cf6d08cc3"
+  },
+  "browser-storage-diagnostics.json": {
+    "bytes": 7893,
+    "sha256": "f74fc86339c5b2e83221b5a3e800e886abd54e669fe8599693e478c2dc78b84d"
+  },
+  "browser-storage.json": {
+    "bytes": 4600,
+    "sha256": "d6734c98550defe523b15861ed5154fae8965f8e746cbf4a37f72924bdd1cddd"
+  },
+  "character-qa-summary.json": {
+    "bytes": 4688,
+    "sha256": "f283f21148263c3ac63ab667bb5f3e75c3c52bca1595790a9300fb3d9f5bf9a0"
+  },
+  "post-run-verification.json": {
+    "bytes": 386,
+    "sha256": "5f162891f40b385a6bc8fbd4c8d231a2f58118ec57e048a885e7e041ab7e67df"
+  },
+  "run-context.json": {
+    "bytes": 4395,
+    "sha256": "c19f8ce1d92122e5d73e7d43ce64c4d39d54fd3d702b2ef6d61e18f37bb05a40"
+  },
+  "run-timing.json": {
+    "bytes": 236,
+    "sha256": "59c05022d651c9fec41d6dca1b83f5308ac4043d4f366b47cb9d93395c3c8b1d"
+  },
+  "run.log": {
+    "bytes": 1025,
+    "sha256": "e22f506cce04dcd1e26873ac08c3a051903dd02a218c7ebe751212c357784012"
+  }
+}

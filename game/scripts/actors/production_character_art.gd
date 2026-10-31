@@ -25,7 +25,8 @@ static var _prepared: Dictionary = {}
 static func definition(profile: String) -> Dictionary:
 	if profile == "hero":
 		return {"path":"res://assets/models/production/lyra_gameplay.glb", "states":HERO_STATES,
-			"height":1.82, "grip_profile":"lyra", "walk_speed":6.4}
+			"height":1.82, "grip_profile":"lyra", "walk_speed":6.4,
+			"eye_path":"res://assets/models/production/lyra_eyes.glb"}
 	if profile == "sentinel_melee":
 		return {"path":"res://assets/models/production/sentinel_gameplay.glb", "states":SENTINEL_STATES,
 			"height":1.95, "grip_profile":"sentinel", "walk_speed":3.6}
@@ -42,6 +43,13 @@ static func prepare(profile: String) -> Dictionary:
 	var source := load(config.path) as PackedScene
 	if source == null or not source.can_instantiate():
 		return {"ok":false, "reason":"Character art cannot be instantiated: " + profile}
+	var eyes: PackedScene
+	if config.has("eye_path"):
+		if not ResourceLoader.exists(config.eye_path, "PackedScene"):
+			return {"ok":false, "reason":"Character eye geometry is not installed: " + profile}
+		eyes = load(config.eye_path) as PackedScene
+		if eyes == null or not eyes.can_instantiate():
+			return {"ok":false, "reason":"Character eye geometry cannot be instantiated: " + profile}
 	var instance := source.instantiate() as Node3D
 	if instance == null:
 		return {"ok":false, "reason":"Character art root must be spatial: " + profile}
@@ -97,7 +105,7 @@ static func prepare(profile: String) -> Dictionary:
 	if packed_result != OK:
 		return {"ok":false, "reason":"Character runtime scene could not be prepared"}
 	var result := {"ok":true, "reason":"", "scene":packed, "states":config.states,
-		"profile":profile, "bone_map":map, "config":config}
+		"profile":profile, "bone_map":map, "config":config, "eyes":eyes}
 	_prepared[profile] = result
 	return result
 

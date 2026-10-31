@@ -1,0 +1,10 @@
+{
+  "decision": "rejected",
+  "reason": "Actual Web front/threequarter quality0/1 only showed negligible perceptual benefit; large dark eye-surround/regions remain. No second variant.",
+  "candidate_sha256": "9f2c513f7efaeb54741645ebe9b2ee99c66c66c5711c1c55678b1c482fd7064c",
+  "kept_runtime_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "actual_export_colors": "Probe confirmed COLOR_0 applied in actual remapped Web PCK; not stale cache",
+  "geometry": "All non-COLOR0 RGB bytes, headers and JSON exact; expanded imported triangle positions exact",
+  "aaa_approval": "pending",
+  "Web_evidence": "docs/validation/v0.1.5/eyes-web-palette/"
+}

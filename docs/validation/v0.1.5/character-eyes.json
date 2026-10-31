@@ -1,0 +1,32 @@
+{
+  "actual_pose_max_error_m": 5.33120157797384e-07,
+  "actual_pose_samples": 57,
+  "body_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "diameters_m": [
+    0.0248002260923386,
+    0.0248000547289848
+  ],
+  "external_1_25_diameters_m": [
+    0.0310001838952303,
+    0.0310001280158758
+  ],
+  "external_transform_anchor_max_error_m": 1.86210866104375e-06,
+  "eyes_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "import_vertex_max_error_m": 1.29653085423342e-06,
+  "rest_anchor_max_error_m": 1.29387763081468e-06,
+  "scope": "Attachment/units/materials only; eyelid collisions and AAA visual approval are separate.",
+  "focused_checks": 21,
+  "focused_failures": 0,
+  "final_integrated_checks": 345,
+  "final_integrated_failures": 0,
+  "input_manifest_scope": "Current uncommitted v0.1.5 worktree based on2fcfbfcbc7128072e1fb0d0932f1e94954202b32; commit-specific CI/public proofs are separate",
+  "material_import_fix": "Explicitly scoped EditorScenePostImport enables all3 nonwhite COLOR_0 materials; source GLB unchanged; no material overrides",
+  "sources": {
+    "game/scripts/actors/actor_visual.gd": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+    "game/scripts/actors/production_character_art.gd": "140526ef84b4c0d16aaf11159178d064649fd324f049e8422d30a9e4d3c3958b",
+    "game/import/eye_materials.gd": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b",
+    "game/assets/models/production/lyra_eyes.glb.import": "1c247ea8c1989750e33e1b54c3db690651a12066dda43847e2ecf7dc4e36aedf",
+    "game/tests/character_eye_regressions.gd": "33a0050dbc7721dad9b72ad6e43381e7aace140fcde240a07fa02e8d3dbd19b1",
+    "game/tests/fixtures/lyra_eye_fit.json": "16f2b6f6f93438f76e91105f1017eb390afe46db6ff1f745e43a51f581b39bf6"
+  }
+}

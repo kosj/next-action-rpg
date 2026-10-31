@@ -1,0 +1,41 @@
+{
+  "scope": "LocalC1 exports and file integrity; source same game as final feature, no actual Windows run/hardware/AAA approval",
+  "source_commit": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174",
+  "version": "0.1.5",
+  "godot": "4.7.2",
+  "native_checks": 345,
+  "native_failures": 0,
+  "export_exit": 0,
+  "Web_raw_bytes": 142040736,
+  "Web_budget_bytes": 150000000,
+  "package_verification": {
+    "version": "0.1.5",
+    "godot": "4.7.2",
+    "expected_main_sha": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174",
+    "manifest_commit": "c6be1dce",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 111664563,
+        "sha256": "cc5abbbc19c1a6b7971c0fa97e288c6aee2abf27bb3921175de51d75b35eb744",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 142040736
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 139506039,
+        "sha256": "93f8cd68255f1a902deb7f031159377d9795b0269f2c85dd0c976157433a8d32",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 211461013
+      }
+    ],
+    "status": "verified",
+    "scope": "Downloaded bytes and packaging; no hardware or art approval"
+  }
+}

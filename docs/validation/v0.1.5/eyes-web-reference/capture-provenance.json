@@ -1,0 +1,21 @@
+{
+  "scope": "Final d7d984 eye reference fixed-art fixture; not gameplay or AAA approval",
+  "fixture_sha256": {
+    "eye_capture.gd": "f04b7414f654624134dbdcfeed6df5b55f338a0174b0a92b74ae006750871d89",
+    "game/scenes/main.tscn": "b096cb77309f4b1bc315fd93d04f252d9c8bd4247cd0a6648916d855942aa043",
+    "capture_web.py": "0f3f0a5b92bcc88d983b612ddea6971f10daf71fef23f1a2591b8554d94b73ee"
+  },
+  "source_manifest_sha256": "6b15f76118c1b735e00b85049806ffd93c99737e6ec9f200df8c4d74231fcdae",
+  "export_sha256": {
+    "index.apple-touch-icon.png": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.html": "3bc94dc8cc89fac762b8b31c29025703b01d5844db2d316f9c30ec596d56e3ca",
+    "index.icon.png": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.pck": "55d8390c942da7617caccb4ff30724c906d50a3da12d3326ded7cf2f2e26a7d4",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  },
+  "private_directory": "/workspace/.runefall-task/character-polish/eyes-web"
+}

@@ -1,0 +1,47 @@
+{
+  "final_reproducer_tool_sha256": "0cf8109a3f656ef363d2baa95ec6345b20c3132eb3e72e3e38549e265572ec99",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "finite_difference_scope": "Independent central difference of the target edge objective at its exact source pose; not a proof of global optimality or every nonlinear constraint Jacobian.",
+  "characters": {
+    "lyra": {
+      "maximum_target_objective_gradient_absolute_error": 4.70608938485384e-08,
+      "maximum_target_objective_gradient_magnitude": 16015.000144218538,
+      "difference_step_in_weight_units": 1e-06,
+      "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "runtime_unchanged": true
+    },
+    "sentinel": {
+      "maximum_target_objective_gradient_absolute_error": 1.5967816580086946e-07,
+      "maximum_target_objective_gradient_magnitude": 20774.844345373498,
+      "difference_step_in_weight_units": 1e-06,
+      "source_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "runtime_unchanged": true
+    }
+  },
+  "knowledge_scope": "A reproduced numerical-scaling failure and a rejected, fixed-region deformation experiment; no AAA approval or impossibility claim.",
+  "frozen_file_checks": [
+    {
+      "path": "game/assets/models/production/lyra_gameplay.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "unchanged": true
+    },
+    {
+      "path": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "unchanged": true
+    },
+    {
+      "path": "game/assets/models/production/sentinel_gameplay.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "unchanged": true
+    },
+    {
+      "path": "art_source/production/candidates/sentinel-gameplay-001/source.glb",
+      "sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+      "unchanged": true
+    }
+  ]
+}

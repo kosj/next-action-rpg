@@ -1,0 +1,74 @@
+{
+  "build_id": "0.1.5 \u00b7 c6be1dce",
+  "buttons": [],
+  "checkpoint": 0,
+  "dead": false,
+  "encounter": -1,
+  "enemy_art": [],
+  "fps": 2,
+  "has_save": true,
+  "health": 120,
+  "hero_art": {
+    "blade_trail": {
+      "lifetime": 0.12,
+      "samples": 0,
+      "triangles": 0,
+      "visible": false
+    },
+    "eyes_attached": true,
+    "grip_to_tip_m": 1.19000053405762,
+    "mode": "skeletal",
+    "profile": "hero",
+    "right_hand_pose": [
+      -0.0551359057426453,
+      0.207536935806274,
+      0.158965080976486,
+      0.679052472114563,
+      -0.354730099439621,
+      -0.569319069385529,
+      0.298211544752121
+    ],
+    "sampled_time": 0.266666666666667,
+    "state": "idle",
+    "status": "Rig ready; visual quality remains subject to art review",
+    "weapon_attached": true
+  },
+  "hits": 0,
+  "hud_y": 778,
+  "input_ready": true,
+  "modal": false,
+  "modal_h": 0,
+  "modal_w": 0,
+  "modal_x": 0,
+  "modal_y": 0,
+  "paused": false,
+  "quality": 1,
+  "started": true,
+  "ui_height": 900,
+  "ui_width": 1440,
+  "z": 6,
+  "qa_frame_probe": {
+    "count": 45,
+    "max_gap_ms": 16882.699999999997,
+    "max_gap_at_ms": 19847.1,
+    "last_ms": 29580,
+    "long_frames": [
+      {
+        "at_ms": 19847.1,
+        "gap_ms": 16882.699999999997
+      },
+      {
+        "at_ms": 24696.9,
+        "gap_ms": 4849.800000000003
+      },
+      {
+        "at_ms": 27913.4,
+        "gap_ms": 3216.5
+      },
+      {
+        "at_ms": 29580,
+        "gap_ms": 1666.5999999999985
+      }
+    ]
+  }
+}

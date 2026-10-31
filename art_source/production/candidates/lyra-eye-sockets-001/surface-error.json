@@ -1,0 +1,14 @@
+{
+  "source_eye_sha256": "87172646dbc3acba0070b574b6d8e38209b438a5a03a85498cb3b18f0fd9ac4c",
+  "web_eye_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "actual_glb_reimport": true,
+  "reference_triangles": 11904,
+  "web_triangles": 3840,
+  "sample_count": 17792,
+  "visible_front_sample_count": 14976,
+  "sampled_web_to_reference_distance_max_m": 0.000722443510312587,
+  "sampled_visible_front_distance_max_m": 1.7623226085561328e-05,
+  "sampled_visible_front_mean_m": 5.324458223463848e-06,
+  "scope": "Vertices, triangle centroids and edge midpoints to reference BVH; front means source-world relative z>5.5mm",
+  "limitations": "Finite one-way sample, not continuous Hausdorff bound. Occluded back is intentionally coarser. No hardware performance approval."
+}

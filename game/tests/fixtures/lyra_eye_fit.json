@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "scope": "Frozen actual Web-eye vertices and independent source Head REST anchors; attachment/scale/material regression, not visual or AAA approval.",
+  "source_body_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "socket_body_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "eye_glb_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "mesh_name": "FittedOcularInlays",
+  "expected_triangles": 3840,
+  "materials": [
+    {
+      "name": "EyeSclera",
+      "roughness": 0.46,
+      "metallic": 0,
+      "source_vertex_colors_constant_white": false,
+      "vertex_color_required": true
+    },
+    {
+      "name": "GrayGreenIris",
+      "roughness": 0.34,
+      "metallic": 0,
+      "source_vertex_colors_constant_white": false,
+      "vertex_color_required": true
+    },
+    {
+      "name": "Pupil",
+      "roughness": 0.28,
+      "metallic": 0,
+      "source_vertex_colors_constant_white": false,
+      "vertex_color_required": true
+    }
+  ],
+  "source_head_rest_world_y_up_rows": [
+    [
+      1.8189517259597734,
+      4.4311743724707094e-16,
+      1.242545679687788e-07,
+      0.0029659499752276147
+    ],
+    [
+      3.013614142532767e-08,
+      1.7646423295536653,
+      -0.44116033288957396,
+      1.6102725691871016
+    ],
+    [
+      -1.205446413616261e-07,
+      0.44116035918478597,
+      1.7646424347345453,
+      -0.007067116243689964
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "source_head_rest_rigid_world_y_up_rows": [
+    [
+      0.9999999999999977,
+      2.4361144693367006e-16,
+      6.831108630499034e-08,
+      0.0029659499752276147
+    ],
+    [
+      1.6567862134673314e-08,
+      0.9701425290182761,
+      -0.24253548233277186,
+      1.6102725691871016
+    ],
+    [
+      -6.627149013425312e-08,
+      0.242535509544527,
+      0.9701425358212086,
+      -0.007067116243689964
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "samples": [
+    {
+      "name": "image_left_front_pole",
+      "eye": "image_left",
+      "role": "front_pole",
+      "source_accessor_vertex": 0,
+      "head_rigid_local_m": [
+        -0.03745906427502632,
+        0.0939779132604599,
+        0.09670443087816238
+      ],
+      "source_world_y_up_m": [
+        -0.03449310769381387,
+        1.6779902832220965,
+        0.10954294911462227
+      ],
+      "source_linear_rgba": [
+        0.001934984466060996,
+        0.0023219813592731953,
+        0.002089783316478133,
+        1.0
+      ]
+    },
+    {
+      "name": "image_left_back_pole",
+      "eye": "image_left",
+      "role": "back_pole",
+      "source_accessor_vertex": 1024,
+      "head_rigid_local_m": [
+        -0.03745906427502632,
+        0.0879630297422409,
+        0.07264489680528641
+      ],
+      "source_world_y_up_m": [
+        -0.034493109337346776,
+        1.6779902796150479,
+        0.08474294887954338
+      ],
+      "source_linear_rgba": [
+        0.34239163994789124,
+        0.36724647879600525,
+        0.34239163994789124,
+        1.0
+      ]
+    },
+    {
+      "name": "image_left_outer_surface",
+      "eye": "image_left",
+      "role": "outer_surface",
+      "source_accessor_vertex": 832,
+      "head_rigid_local_m": [
+        -0.027066757902503014,
+        0.09232866764068604,
+        0.09010746330022812
+      ],
+      "source_world_y_up_m": [
+        -0.02410080177193661,
+        1.677990278791183,
+        0.10274294894436527
+      ],
+      "source_linear_rgba": [
+        0.34239163994789124,
+        0.36724647879600525,
+        0.34239163994789124,
+        1.0
+      ]
+    },
+    {
+      "name": "image_right_front_pole",
+      "eye": "image_right",
+      "role": "front_pole",
+      "source_accessor_vertex": 1088,
+      "head_rigid_local_m": [
+        0.030158553272485733,
+        0.09392333030700684,
+        0.09648612141609192
+      ],
+      "source_world_y_up_m": [
+        0.033124509838785066,
+        1.6779902788885526,
+        0.10931791503394701
+      ],
+      "source_linear_rgba": [
+        0.001934984466060996,
+        0.0023219813592731953,
+        0.002089783316478133,
+        1.0
+      ]
+    },
+    {
+      "name": "image_right_back_pole",
+      "eye": "image_right",
+      "role": "back_pole",
+      "source_accessor_vertex": 2112,
+      "head_rigid_local_m": [
+        0.030158555135130882,
+        0.08790845423936844,
+        0.07242658734321594
+      ],
+      "source_world_y_up_m": [
+        0.03312451005789731,
+        1.6779902825096291,
+        0.08451791660589836
+      ],
+      "source_linear_rgba": [
+        0.34239163994789124,
+        0.36724647879600525,
+        0.34239163994789124,
+        1.0
+      ]
+    },
+    {
+      "name": "image_right_outer_surface",
+      "eye": "image_right",
+      "role": "outer_surface",
+      "source_accessor_vertex": 1920,
+      "head_rigid_local_m": [
+        0.04055085778236389,
+        0.09227409213781357,
+        0.08988915383815765
+      ],
+      "source_world_y_up_m": [
+        0.043516813898017176,
+        1.6779902816857641,
+        0.1025179166707205
+      ],
+      "source_linear_rgba": [
+        0.34239163994789124,
+        0.36724647879600525,
+        0.34239163994789124,
+        1.0
+      ]
+    }
+  ],
+  "diameter_range_m": [
+    0.0235,
+    0.0255
+  ],
+  "position_tolerance_m": 2e-05,
+  "import_vertex_tolerance_m": 3e-06,
+  "coordinate_contract": "glTF Head REST-local orthonormal basis in physical meters; original body glTF is source+Z-facing; gameplay applies exactly one PI yaw; eye root rotation/translation identity.",
+  "provenance": {
+    "derivation": "build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/refit.json",
+    "source_eye": "build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes-web.glb"
+  },
+  "body_material_contract": {
+    "body_meshes": 1,
+    "skin_bind_count": 53,
+    "surfaces": 2,
+    "textured_surface": {
+      "index": 0,
+      "name": "material_0",
+      "albedo_and_normal_required": true
+    },
+    "new_inner_wall": {
+      "index": 1,
+      "name": "NewEyelidInnerDepth",
+      "triangles": 136,
+      "metallic": 0.0,
+      "roughness": 0.57,
+      "opaque": true
+    }
+  },
+  "import_vertex_color_channel_tolerance": 0.0039225686274509805,
+  "globe_centers_source_world_y_up_m": {
+    "image_left": [
+      -0.03449310753494501,
+      1.6779902788810432,
+      0.0967429436362354
+    ],
+    "image_right": [
+      0.033124509383924305,
+      1.6779902788810432,
+      0.09651791484249896
+    ]
+  }
+}

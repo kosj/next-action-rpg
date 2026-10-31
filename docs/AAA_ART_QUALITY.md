@@ -59,6 +59,7 @@
 | --- | --- | --- |
 | 참조·생성·파생 이력 | [참조 manifest](../art_source/production/references/manifest.json), [생성 배치](ART_BATCH_2026_10_31.md), 캐릭터 recipe·해시 | 입력·출처 자료가 있으며 시각 승인 자료와 구분 |
 | 실제 스킨·상태·시간·소켓 | [캐릭터 반입 기록](CHARACTER_INTEGRATION.md), [판본별 검증](validation/v0.1.4/README.md) | 기술 검증 범위가 기록됨. 현재 최종 AAA 승인 `pending` |
+| 국소 눈 형상·색상·검 잔상 | [v0.1.5 증거](validation/v0.1.5/README.md), [채택·기각 기록](CHARACTER_POLISH.md) | native345·고정 Web 두 품질의 국소 검수. 큰 어두운 눈 주변·피부/머리/표정과 전체 전투·실기기·AAA 승인은 `pending` |
 | 얼굴·양손·전체 변형·접촉·전환 | 후보 REST/그립 렌더·저작 수치와 검토 도구 | 통합 판본의 전체 시각 검토·결함 수정 `pending` |
 | 머리카락·의상·대표 장면·타격 연출 | 현재 게임 프리뷰와 입력 명세 | 최종 근접·동작·플레이 화면 승인 `pending` |
 | courtyard PBR 원본·반입 | [manifest](../art_source/production/courtyard_materials/manifest.json), [독립 검증](../art_source/production/courtyard_materials/validation.json) | 라이선스·해시·채널·밉맵 확인. 통합 장면 승인 `pending` |
