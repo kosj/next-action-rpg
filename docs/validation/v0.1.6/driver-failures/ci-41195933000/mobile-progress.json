@@ -1,0 +1,17 @@
+[
+  {
+    "stage": "portrait_title",
+    "elapsed_seconds": 23.666,
+    "utc": "2026-10-31T11:22:27.663652+00:00"
+  },
+  {
+    "stage": "rest_and_shop_taps",
+    "elapsed_seconds": 131.276,
+    "utc": "2026-10-31T11:24:15.273454+00:00"
+  },
+  {
+    "stage": "three_pointer_movement_look_light",
+    "elapsed_seconds": 255.845,
+    "utc": "2026-10-31T11:26:19.843003+00:00"
+  }
+]

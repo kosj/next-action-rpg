@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "hold_heavy_dodge_parry_heal_skill",
+  "seconds": 171.437,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}

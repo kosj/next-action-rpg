@@ -21,7 +21,7 @@ def main():
     parser.add_argument("--output", type=Path, default=root / "build/verification/mobile")
     parser.add_argument("--web-dir", type=Path, default=root / "build/web",
                         help="Actual export directory; preliminary previews are separate from build/web")
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus"],default="full")
     args = parser.parse_args()
     web = args.web_dir.resolve()
     if not (web / "index.html").is_file():

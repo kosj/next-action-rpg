@@ -41,3 +41,5 @@ Playwright/Chromium 준비는 루트 README를 참조합니다. QA 데이터는 
 ## 완료
 
 문제·해결 조건·검증 근거를 지식 DB에 갱신합니다. 게임 코드 검사와 별도로 `python tools/knowledge.py check`를 통과시킵니다. 배포가 작업 범위에 있으면 [릴리스 스킬](../runefall-release/SKILL.md)로 이어갑니다.
+
+자동 터치 조작에서는 [피드백·짧은 상태 실패](../../../docs/validation/v0.1.6/driver-failures/README.md)를 확인합니다. 움직이는 포인터를 유지하며 geometry RPC를 반복하지 않고 한 gesture의 좌표를 재사용하되 layout 세대를 검증합니다. 단발/회피/차지 release는 입력 전에 읽기 전용 관찰자를 arm해 미래 physics snapshot을 복사합니다. 이동량·소유권·실제 효과·영구 저장의 assertion과 유한 시간은 유지하고, 검사 도구 실패·앱 실패·집중/전체 통과를 구분합니다.
