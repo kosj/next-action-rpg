@@ -1,5 +1,11 @@
 # 검증 결과
 
+## v0.1.8 · 완충 강타·강피격 대표 단위
+
+- 전용 안무·칼날 경로·공통 접촉 시계·양쪽 정지·잔상·강피격·충돌 recoil·카메라·다층 음향을 연결했다. [구현과 범위](CHARGED_IMPACT_SLICE.md).
+- [로컬435 native·51 Python·실제 터치299.510초/errors0와 Web/Windows 내보내기](validation/v0.1.8/README.md)를 확인했다. 원본/반입 곡선의 중간점, 실제 표시 검과 접촉점, 정지 중 잔상과 두 actor의 시계를 함께 검사한다. Web146,275,179B로150MB 예산을 유지했다.
+- 위 자료는 dirty preview다. 최종 커밋·전체 브라우저·공개 주소·릴리스 파일은 해당 PR/Actions에서 확인한다. 실제1배속 AV·실기기·목표GPU·전체 AAA 아트 승인은 별도다.
+
 ## v0.1.7 · Web 사용자 저장소
 
 - Web의 미지원 shader binary cache가 만든 빈29디렉터리를 실제 readonly IDB에서 확인하고 한 줄의Web전용설정으로fresh33→5키·cache29→1을 확인했습니다. [공식 고정 소스와 실제 전후 원문](validation/v0.1.7/README.md)을 보관합니다.

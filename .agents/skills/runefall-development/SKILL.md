@@ -17,6 +17,8 @@ description: Implement and verify RUNEFALL GDScript gameplay changes, especially
 4. 저장은 유효성 검사·스냅샷·백업·실패 롤백 계약을 유지합니다. 저장 실패를 휴식·구매 성공으로 표시하지 않습니다. 설정 저장과 실제 여정 존재를 구분하고 정상적인 기존 v1 저장과 호환합니다.
 5. 의미 있는 동작 변경은 기존 `combat_regressions.gd`·`save_regressions.gd`·`test_runner.gd`의 알맞은 검사로 확인합니다. 코드의 문장을 그대로 복제하는 테스트는 추가하지 않습니다.
 
+차지 강타·접촉 피드백은 [제작 단위 계약](../../../docs/CHARGED_IMPACT_SLICE.md)을 읽습니다. 확정 hurtbox 접촉/ray/proxy의 근거를 구분하고 같은 결과에서 공격자·피격자·카메라·VFX·음향을 연결합니다. 공통 gameplay/presentation clock과 양쪽 hitstop·입력 버퍼·phase 이동·최종 검/발 위치를 실제 모델로 확인합니다. dense bake·기능 통과와 의미 있는 안무·정상1배속 AV·실기기/AAA 승인은 각각 판정하며, 새 입력/자산의 결과가 나오기 전에는 `pending`을 유지합니다.
+
 ## 실행
 
 `tools/toolchain.json`에 맞는 엔진과 동일한 템플릿을 사용하고 `GODOT_BIN`을 해당 실행 파일로 지정합니다. 새 환경은 `bash tools/setup_godot.sh`가 출력한 경로를 사용합니다.

@@ -3,7 +3,7 @@ extends RefCounted
 class HitTarget:
 	extends StaticBody3D
 	var hits: int = 0
-	func receive_hit(_amount: float, _poise: float, _origin: Vector3, _parryable: bool = true) -> void:
+	func receive_hit(_amount: float, _poise: float, _origin: Vector3, _parryable: bool = true, _context: Dictionary = {}) -> void:
 		hits += 1
 
 static func _target(parent: Node3D, point: Vector3) -> HitTarget:
@@ -93,6 +93,8 @@ static func run(world: Node, check: Callable) -> bool:
 	check.call(enemy.stagger >= 1.4, "Weak follow-up attacks cannot shorten parry stagger")
 	player.active = false
 	enemy.stagger = 0.0
+	# Arrange a new, unpaused enemy swing after the preceding follow-up hit.
+	enemy.hit_pause = 0.0
 	enemy.burst_time = 0.0
 	enemy.facing = Vector3.BACK
 	enemy.strike = CombatStrike.new(enemy, RuneEnemy.BASE_ATTACK)

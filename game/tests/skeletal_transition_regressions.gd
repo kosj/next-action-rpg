@@ -190,7 +190,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(polished.global_transform.is_equal_approx(actor_transform), "Transition polish never translates or rotates the authoritative visual actor wrapper")
 	var report := {"scope":"Actual production pose transitions, visual markers and clocks only; no runtime foot IK, velocity continuity, final deformation or AAA approval.",
 		"presentation_step_seconds":DT, "blend_max_seconds":SkeletalVisualBridge.TRANSITION_SECONDS,
-		"marker_jump_m":metrics, "hero_sha256":FileAccess.get_sha256("res://assets/models/production/lyra_gameplay.glb"),
+		"marker_jump_m":metrics, "hero_sha256":FileAccess.get_sha256(ProductionCharacterArt.definition("hero").path),
 		"bridge_sha256":FileAccess.get_sha256("res://scripts/actors/skeletal_visual_bridge.gd")}
 	var report_file := FileAccess.open(ProjectSettings.globalize_path("res://").path_join(REPORT_PATH).simplify_path(), FileAccess.WRITE)
 	if report_file != null:

@@ -1,0 +1,109 @@
+{
+	"imported_charged_right_hand_keys": 531,
+	"imported_unchanged_light_1_max_keys": 53,
+	"max_grip_error_m": 0.000325741566484794,
+	"max_tip_error_m": 0.0011221815366298,
+	"nominal_support_foot_drift_m": 0.0000153775363287423,
+	"samples": [
+		{
+			"grip_error_m": 0.0000293233351840172,
+			"phase": 0.0,
+			"sampled_time": 0.339999981646268,
+			"scale": 1.0,
+			"tip_error_m": 0.00105762551538646
+		},
+		{
+			"grip_error_m": 0.0000101160012491164,
+			"phase": 0.1,
+			"sampled_time": 0.3579999806746,
+			"scale": 1.0,
+			"tip_error_m": 0.00106001459062099
+		},
+		{
+			"grip_error_m": 0.0000291483356704703,
+			"phase": 0.25,
+			"sampled_time": 0.384999979217097,
+			"scale": 1.0,
+			"tip_error_m": 0.000993186025880277
+		},
+		{
+			"grip_error_m": 0.0000108142603494343,
+			"phase": 0.5,
+			"sampled_time": 0.429999976787927,
+			"scale": 1.0,
+			"tip_error_m": 0.00102644390426576
+		},
+		{
+			"grip_error_m": 0.000325741566484794,
+			"phase": 0.75,
+			"sampled_time": 0.474999974358757,
+			"scale": 1.0,
+			"tip_error_m": 0.00111285492312163
+		},
+		{
+			"grip_error_m": 0.0000184415694093332,
+			"phase": 0.9,
+			"sampled_time": 0.501999972901254,
+			"scale": 1.0,
+			"tip_error_m": 0.0010684949811548
+		},
+		{
+			"grip_error_m": 0.0000176193298102589,
+			"phase": 1.0,
+			"sampled_time": 0.519999971929586,
+			"scale": 1.0,
+			"tip_error_m": 0.00107919564470649
+		},
+		{
+			"grip_error_m": 0.0000140904803629383,
+			"phase": 0.0,
+			"sampled_time": 0.339999981646268,
+			"scale": 1.25,
+			"tip_error_m": 0.00105794693809003
+		},
+		{
+			"grip_error_m": 0.0000100370243671932,
+			"phase": 0.1,
+			"sampled_time": 0.3579999806746,
+			"scale": 1.25,
+			"tip_error_m": 0.00105287472251803
+		},
+		{
+			"grip_error_m": 0.0000250858611252625,
+			"phase": 0.25,
+			"sampled_time": 0.384999979217097,
+			"scale": 1.25,
+			"tip_error_m": 0.000995395472273231
+		},
+		{
+			"grip_error_m": 0.0000231908798014047,
+			"phase": 0.5,
+			"sampled_time": 0.429999976787927,
+			"scale": 1.25,
+			"tip_error_m": 0.00105515029281378
+		},
+		{
+			"grip_error_m": 0.000323510728776455,
+			"phase": 0.75,
+			"sampled_time": 0.474999974358757,
+			"scale": 1.25,
+			"tip_error_m": 0.0011221815366298
+		},
+		{
+			"grip_error_m": 0.0000206241766136372,
+			"phase": 0.9,
+			"sampled_time": 0.501999972901254,
+			"scale": 1.25,
+			"tip_error_m": 0.00106870685704052
+		},
+		{
+			"grip_error_m": 0.0000168001915881177,
+			"phase": 1.0,
+			"sampled_time": 0.519999971929586,
+			"scale": 1.25,
+			"tip_error_m": 0.00108194549102336
+		}
+	],
+	"scope": "Imported actual marker/nominal stance and moving-charge layer alignment only; no terrain IK, normal-speed AV, target-device or AAA approval",
+	"source_body_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d"
+}

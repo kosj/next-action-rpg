@@ -13,6 +13,9 @@ var interaction_index: int = -1
 var last_region: int = -2
 var lock_cooldown: float = 0.0
 var play_seconds: float = 0.0
+var impact_count: int = 0
+var impact_spawn_count: int = 0
+var impact_history: Array[Dictionary] = []
 
 const LORE: Array[String] = [
 	"이 성역의 룬은 빛을 만드는 것이 아니라, 어둠을 가두는 자물쇠였다.\n\n수호자 아스테르는 누구도 기억하지 못하는 서약을 지켰다.\n그의 검이 우리를 향한다면… 그가 지키는 것은 무엇일까?",
@@ -34,9 +37,8 @@ func _ready() -> void:
 		spawn_ring(player.global_position + Vector3.UP, 3.0, Color("efd39b"))
 		ui.toast("완벽한 패링 · 룬 +22"))
 	player.landed_hit.connect(func(amount: float, point: Vector3):
-		ui.floating_damage(amount, point)
-		rig.shake_strength = maxf(rig.shake_strength, 0.3 if amount < 40 else 0.7)
-		spawn_ring(point, 0.6, Color("b5e8d5")))
+		ui.floating_damage(amount, point))
+	player.impact_confirmed.connect(_on_impact_confirmed)
 	player.skill_effect.connect(spawn_ring)
 	rig = RuneCamera.new()
 	rig.player = player
@@ -66,6 +68,41 @@ func _ready() -> void:
 			DirAccess.remove_absolute(Session.save_path + suffix)
 		Session.save_path = original_path
 		get_tree().quit()
+
+func _on_impact_confirmed(context: Dictionary) -> void:
+	rig.apply_impact(context)
+	Audio.play_impact(context)
+	# A bounded presentation budget also covers radial attacks hitting a crowd.
+	var effects: Array[Node] = []
+	for active_effect in get_tree().get_nodes_in_group("impact_effects"):
+		if not active_effect.is_queued_for_deletion():
+			effects.append(active_effect)
+	if effects.size() >= 8:
+		effects[0].queue_free()
+	var effect := RuneImpactEffect.new()
+	add_child(effect)
+	effect.setup(context, Session.quality)
+	impact_spawn_count += 1
+	impact_count += 1
+	var observation := context.duplicate(true)
+	observation["sequence"] = impact_count
+	observation["physics_frame"] = Engine.get_physics_frames()
+	observation["attacker_pause"] = player.hit_pause
+	# Export values, never actor references or a writable command channel.
+	for key in observation:
+		if observation[key] is Vector3:
+			var vector: Vector3 = observation[key]
+			observation[key] = [vector.x, vector.y, vector.z]
+	impact_history.append(observation)
+	if impact_history.size() > 32:
+		impact_history.pop_front()
+
+func impact_presentation_report() -> Dictionary:
+	var active_effects: Array[Dictionary] = []
+	for effect in get_tree().get_nodes_in_group("impact_effects"):
+		if not effect.is_queued_for_deletion():
+			active_effects.append(effect.presentation_report())
+	return {"count":impact_count,"spawn_count":impact_spawn_count,"history":impact_history.duplicate(true),"effects":active_effects,"camera":rig.impact_report()}
 
 func start_game(fresh: bool) -> bool:
 	var restored := Session.new_game() if fresh else (Session.load_game() and Session.has_save)
@@ -125,6 +162,8 @@ func reset_encounter() -> void:
 	for child in get_children():
 		if child is RuneProjectile:
 			child.queue_free()
+	for effect in get_tree().get_nodes_in_group("impact_effects"):
+		effect.queue_free()
 
 func _physics_process(delta: float) -> void:
 	TouchControls.set_gameplay_active(started and not player.dead)

@@ -145,8 +145,8 @@ static func _action(profile: String, state: StringName, elapsed: float, duration
 	match state:
 		&"dodge":
 			snapshot.merge({"dodge_remaining":maxf(0.0001, duration-elapsed), "dodge_elapsed":elapsed, "dodge_duration":duration, "dodge_local_x":0.0, "dodge_local_z":-1.0})
-		&"hit":
-			snapshot.merge({"stagger":maxf(0.0001, duration-elapsed), "hit_elapsed":elapsed, "hit_duration":duration})
+		&"hit", &"heavy_hit":
+			snapshot.merge({"stagger":maxf(0.0001, duration-elapsed), "hit_elapsed":elapsed, "hit_duration":duration, "hit_reaction":String(state)})
 		&"parry":
 			snapshot.merge({"parry_remaining":maxf(0.0001, duration-elapsed), "parry_elapsed":elapsed, "parry_duration":duration})
 		&"charge":
@@ -232,9 +232,10 @@ static func _profile_checks(world: Node3D, check: Callable, profile: String) -> 
 	if profile == "hero":
 		for index in range(3):
 			actions[StringName("light_%d" % (index+1))] = RunePlayer.LIGHTS[index].duration()
-		actions.merge({&"heavy":RunePlayer.HEAVY.duration(), &"skill_1":0.79, &"skill_2":0.79, &"skill_3":0.79, &"dodge":0.32, &"parry":0.22, &"charge":0.65, &"heal":0.35})
+		actions.merge({&"heavy":RunePlayer.HEAVY.duration(), &"charged_heavy":RunePlayer.CHARGED_HEAVY.duration(), &"skill_1":0.79, &"skill_2":0.79, &"skill_3":0.79, &"dodge":0.32, &"parry":0.22, &"charge":0.65, &"heal":0.35})
 	else:
 		actions[&"enemy_attack"] = RuneEnemy.BASE_ATTACK.duration()
+		actions[&"heavy_hit"] = 0.48
 	var actions_ok := true
 	var clocks_ok := true
 	var root_motion_ok := true

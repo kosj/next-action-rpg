@@ -1793,6 +1793,73 @@
         "https://zeus.com2us.com/gameinfo/class",
         "https://zeus.com2us.com/p/137fc870-5481-44dd-9ca4-205dcaab2f9e"
       ]
+    },
+    {
+      "id": "charged-impact-confirmed-contact-clock",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "차지 강타의 확정 접촉 정보와 공통 시계·양쪽 정지·모션 보정을 함께 검증한다",
+      "summary": "확정 접촉의 세부 시각을 게임/최종 표시/피격/연출이 공유하고 실제 marker와 잔상을 함께 검사한다. 키의 손 목표가 맞아도 IK pole의174도 반전은 중간점에서칼끝1.77m오차를냈다. 연속 elbow-plane과선택적반입으로원본을보존한수정본은native435/0·실제터치집중299.510초/errors0을통과했다. 신규정밀도만유지하고기존100Hz표본을복원해Web146275179B/150MB예산을지켰다. 정상1배속AV·실기기·AAA는별도다.",
+      "tags": [
+        "combat",
+        "charged",
+        "contact",
+        "clock",
+        "hitstop",
+        "animation",
+        "art",
+        "전투",
+        "차지",
+        "타격감"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "engine": "Godot4.7.2; current implementation branch feat/charged-heavy-impact",
+        "state": "Verified local native435/0, Python51/0, Web/Windows export+ZIP CRC and actual touch focused299.510s/errors0 on dirty preview. Final committed CI/public/release proof remains separate.",
+        "contract": "Confirmed contact context, shared gameplay/presentation clock, two-actor hitstop, physical weapon/foot compensation",
+        "reference": "Zeus Com2uS Berserker greatsword identity from user/official class sources; actual reference combat timing and current1xAV not verified",
+        "quality": "Prototype charged-impact slice; semantic motion, target hardware and final AAA approval pending",
+        "intermediate_marker_failure": "Godot4.7.2 imported actual actor frame; t~.475s/activephase.75; grip_max.264342m,tip_max1.767758m; nominal support-foot drift1.893mm passed separately",
+        "failing_body_sha256": "b6bc88d72ad1605a70f3b00ffedda21e67064f012a1c5700d0b96e9ad4216bf7",
+        "fixture_correction": "Earlier Node3D fixture omitted RunePlayer capsule visual floor+.025m and had separate25mm bias; fixture corrected without changing gameplay/rig/tolerance",
+        "raw_source_continuity": "RawGLB .47→.48s RightArm/RightHand shortest rotations174.04deg/174.83deg; elbow~.53m per10ms; near-collinear fixedIKpole and interpolated counter-rotation break between-key contact",
+        "import_scope": "NewGLBs only: Lyra500Hz/Sentinel100Hz, nodeoptimizer/compression disabled; Lyra post-import restores unchanged original100Hzsamples, endpoints and tracks; newcharge/charged_heavy500Hz retained. No claim optimizer caused raw IK flip.",
+        "observation_protocol": "Positive JS-safe attack serial replaces RefCounted ObjectID for exact browser observations; functional424 pass does not approve skeletal continuity",
+        "next_candidate": "Selected stable-plane candidate is locally verified; no normal-speed AV/target-hardware/AAA approval",
+        "selected_body_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+        "selected_solution": "Continuous elbow-plane impact IK; new2hero actions500Hz, raw existing19clips/body/BIN preserved; actualraw key/midpoint188 samples grip.320mm/tip1.280mm and maxjoint9.574deg",
+        "actual_imported_alignment": "Actual RunePlayer/capsule actor frame; seven phases including.475 at scales1/1.25: gripmax.325742mm/tipmax1.122182mm; nominal support-foot drift.015378mm; newRightHand531keys and unchangedlight53keys verified",
+        "budget": "Whole500Hz export152592309B rejected against150000000B; retaining new2preciseactions and original100Hzgrid removes702144upsampled keys. Final435source Webraw146275179B; Web/WindowsZIPCRC verified.",
+        "contact_clock_failure": "Intermediate real Web receipt queried.454444s but froze displayed.466667s and erased trail via pose(0,newelapsed). Analytic drawn gap estimate.438673m was a diagnosis, not a measured mesh contact.",
+        "contact_clock_fix": "Charged sweep stops at first accepted substep, same-query targets share it; partial movement integrates consumed interval. One positive-delta live contact pose precedes zero-delta stop; actual native final/query/authoritative time.458888889s, drawn.458888864s, point-to-drawn segment.063202679m,8trail samples/mesh/ages unchanged across3physicsframes.",
+        "mobile_focused": "Fresh actual CDP multi-touch: whiff no impacts/spawns; actual incoming-hit recovery HP104, charged69.3 against95HP target, heavy_hit.48, both reported.075 pause, one impact/effect, actual recoil.35002327m, duplicates0. Trusted release to match5.630s<15s; finalpausedHP88/pointers0/errors0.",
+        "browser_scope": "First2driver failures preserved: actual contact but aggregate15s observation response timeout, then interrupted/whiff attempt with no receipt. Final focused observer retains bounded readonly timeline and uses real recovery; full existing15/30/60/1.2m gates unchanged. Short frozen pair unobserved in browser; native positive contact proof is separate."
+      },
+      "sources": [
+        "docs/CHARGED_IMPACT_SLICE.md",
+        "docs/COMBAT_QUALITY_REVIEW.md",
+        "game/data/charged_heavy.tres",
+        "game/scripts/core/strike.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/enemy.gd",
+        "game/scripts/actors/skeletal_visual_bridge.gd",
+        "tools/author_character_actions.py",
+        ".agents/skills/godot-animation/SKILL.md",
+        "reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md",
+        "tools/author_impact_actions.py",
+        "game/tests/charged_impact_regressions.gd",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/editor/import/3d/resource_importer_scene.cpp",
+        "tools/audit_impact_curve.py",
+        "game/tests/charged_blade_alignment_regressions.gd",
+        "game/import/impact_animation_sampling.gd",
+        "docs/validation/v0.1.8/local-preview.json",
+        "art_source/production/candidates/lyra-impact-001/rejected-b6bc-summary.json",
+        "https://github.com/godotengine/godot/blob/4.7.2-stable/modules/gltf/gltf_document.cpp",
+        "game/scripts/actors/blade_trail.gd",
+        "docs/validation/v0.1.8/contact.json",
+        "docs/validation/v0.1.8/mobile-focused-summary.json",
+        "tools/charged_heavy_browser_smoke.py"
+      ]
     }
   ]
 }

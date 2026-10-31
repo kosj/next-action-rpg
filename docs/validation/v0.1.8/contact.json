@@ -1,0 +1,89 @@
+{
+	"after_three_physics_frames": {
+		"actor_roots_unchanged": true,
+		"attack_clock_unchanged": true,
+		"attack_elapsed": 0.458888888888889,
+		"complete_skeletons_unchanged": true,
+		"trail_ages_s": [
+			0.108888888888889,
+			0.0922222222222222,
+			0.0755555555555556,
+			0.0588888888888889,
+			0.0422222222222222,
+			0.0255555555555556,
+			0.00888888888888889,
+			0.0
+		],
+		"trail_mesh_unchanged": true,
+		"trail_samples": 8,
+		"trail_samples_and_ages_unchanged": true,
+		"trail_visible": true,
+		"victim_clock_unchanged": true,
+		"victim_hit_elapsed": 0.0
+	},
+	"attack_id": "charged_heavy",
+	"attack_instance_id": 15,
+	"contact_observed": true,
+	"contact_phase": 0.660493827160493,
+	"contact_source": "hurtbox_ray",
+	"drawn_contact_limit_m": 0.125,
+	"engine": "4.7.2-stable (official)",
+	"event_attack_elapsed": 0.458888888888889,
+	"final_authoritative_elapsed": 0.458888888888889,
+	"final_drawn_grip_world": [
+		240.033615112305,
+		9.29127216339111,
+		241.396133422852
+	],
+	"final_drawn_point_to_segment_m": 0.0632026791572571,
+	"final_drawn_sampled_time": 0.458888864117348,
+	"final_drawn_tip_world": [
+		240.358489990234,
+		9.53038597106934,
+		240.276580810547
+	],
+	"normal_world": [
+		0.735906183719635,
+		0.0,
+		0.677083551883698
+	],
+	"point_world": [
+		240.294357299805,
+		9.52922916412354,
+		240.27082824707
+	],
+	"query_blade_grip_world": [
+		240.033752441406,
+		9.29127216339111,
+		241.449615478516
+	],
+	"query_blade_tip_world": [
+		240.358413696289,
+		9.52922916412354,
+		240.32975769043
+	],
+	"query_contact_time": 0.458888888888889,
+	"query_point_to_segment_m": 0.0870396494865417,
+	"schema_version": 1,
+	"scope": "Actual native charged contact clocks, final displayed weapon markers and frozen trail; no normal-speed art, audio or target-hardware approval.",
+	"source_hashes": {
+		"charged_attack": "1a1e9515dea4e38300d438d932fdab53c8a3898fac0fb376617842ac2892697f",
+		"fixture": "74861fb8a314c93c9167b3dae9d2a8f2432c0e350bee15ef69842bb3989e21b0",
+		"hero_body": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c"
+	},
+	"trail_before_stop": {
+		"ages_s": [
+			0.108888888888889,
+			0.0922222222222222,
+			0.0755555555555556,
+			0.0588888888888889,
+			0.0422222222222222,
+			0.0255555555555556,
+			0.00888888888888889,
+			0.0
+		],
+		"samples": 8,
+		"triangles": 14,
+		"visible": true
+	}
+}

@@ -1,0 +1,81 @@
+{
+  "scope": "Local dirty implementation preview; native/import and Web/Windows package verification only. Committed CI/public browser/release proofs are separate.",
+  "version": "0.1.8",
+  "source_head_before_commit": "016a17bc9327e0bdf5ad5dd51eb104e61d94a442",
+  "source_tree_dirty": true,
+  "native": {
+    "checks": 435,
+    "failures": 0,
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "evidence": "native-runtime.log",
+    "scope": "Actual first-contact packet, authoritative and final displayed clocks; actual drawn blade contact; positive contact-frame trail and frozen mesh/samples/ages. contact.json produced by final actual native execution."
+  },
+  "export": {
+    "web_raw_bytes": 146275179,
+    "budget_bytes": 150000000,
+    "windows_export": true,
+    "zip_crc_verified": true
+  },
+  "sampling": {
+    "rejected_scene_wide_500_hz_raw_bytes": 152592309,
+    "selected_new_actions_hz": 500,
+    "unchanged_actions_hz": 100,
+    "removed_upsampled_keys": 702144,
+    "visual_reduction": false
+  },
+  "not_verified": [
+    "Normal-speed audiovisual acceptance",
+    "Actual Android/iOS/Safari/Windows devices",
+    "Target GPU performance",
+    "Final AAA art approval"
+  ],
+  "files": {
+    "alignment.json": {
+      "bytes": 2748,
+      "sha256": "11f2ba721d19b40853285daaead1550bf431265a452563c7cb966c8fa048b584"
+    },
+    "audio.json": {
+      "bytes": 2892,
+      "sha256": "211a212ce07000073cded6ce3ed0e7d4c2c285d01a256514f05f8100322588f3"
+    },
+    "contact.json": {
+      "bytes": 2317,
+      "sha256": "18af22c7c90ab47059279f890af19ce49db1afd3f3833cdefb2d717c659066f1"
+    },
+    "native-runtime.log": {
+      "bytes": 3932,
+      "sha256": "1c087d149c61bc4875e8ccc1ee9730088f8c9d2736e896e298c60c53ddfc4acc"
+    },
+    "mobile-focused-summary.json": {
+      "bytes": 8935,
+      "sha256": "b9b429d668a869db9b76f4e91cffeca45df93b7fc25fca143acaa7675f5ffdc0"
+    },
+    "mobile-focused-proof.json": {
+      "bytes": 44153,
+      "sha256": "c0fd2fc37c10c80c8c69bbd588025a24a5458d0d39e169caeeada3390a966fa6"
+    },
+    "mobile-release-timeline.json": {
+      "bytes": 36516,
+      "sha256": "ec09f1ace6d469b6f9dbbbca75c4f9a0414f5b59f2730f0b89caf7339397553f"
+    },
+    "mobile-export-context.json": {
+      "bytes": 6862,
+      "sha256": "4cfd07a0981cbfc686df521c17c107bc1c656d5238073b0763ab4d5ba8c189e6"
+    },
+    "mobile-after-contact-paused.png": {
+      "bytes": 247246,
+      "sha256": "d449ae11365f0e1b687f5e600538ac0328e5ed4bf0db0e9a3a450d9207d9dff3"
+    }
+  },
+  "python": {
+    "tests": 51,
+    "failures": 0
+  },
+  "mobile_focused": {
+    "seconds": 299.51,
+    "errors": 0,
+    "result": "passed",
+    "scope": "Dirty implementation preview; no final committed/public build, full workflow, normal-speed AV, target-device or AAA approval",
+    "frozen_pair": "unobserved by browser; positive native gate recorded in contact.json"
+  }
+}

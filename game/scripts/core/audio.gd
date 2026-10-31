@@ -7,10 +7,16 @@ var _music_requested: bool = false
 var _lifecycle_epoch: int = 0
 var _playbacks: Array[WeakRef] = []
 var last_stop_wait: Dictionary = {}
+const MAX_EFFECT_PLAYERS := 32
+const IMPACT_KEYS: Array[String] = ["contact_tick", "metal_light", "metal_heavy", "body_thump", "charge_sub", "debris_tail", "metal_block", "swing_heavy", "swing_charged"]
+var _last_attack: Dictionary = {}
+var _last_impact: Dictionary = {}
 
 func _ready() -> void:
 	for key: String in ["slash", "hit", "parry", "dodge", "rune", "death", "ambience"]:
 		sounds[key] = load("res://assets/audio/%s.wav" % key)
+	for key: String in IMPACT_KEYS:
+		sounds["impact_"+key] = load("res://assets/audio/impact/%s.wav" % key)
 	_ensure_music_player()
 
 func _ensure_music_player() -> void:
@@ -105,16 +111,89 @@ func wait_until_stopped(timeout_seconds: float = 8.0) -> bool:
 	return false # A caller explicitly resumed audio during this shutdown.
 
 func play_sound(key: String, pitch: float = 1.0) -> void:
-	if _stopped or not sounds.has(key):
-		return
+	_play_clip(key, pitch, -8.0)
+
+func _effect_player_count() -> int:
+	var count := 0
+	for child in get_children():
+		if child is AudioStreamPlayer and child != music_player and not child.is_queued_for_deletion():
+			count += 1
+	return count
+
+func _play_clip(key: String, pitch: float, volume_db: float) -> bool:
+	if _stopped or not sounds.has(key) or not is_finite(pitch) or pitch <= 0.0 or not is_finite(volume_db):
+		return false
+	if _effect_player_count() >= MAX_EFFECT_PLAYERS:
+		return false
 	var player := AudioStreamPlayer.new()
 	player.stream = sounds[key]
-	player.pitch_scale = pitch
-	player.volume_db = -8.0
+	player.pitch_scale = clampf(pitch, 0.25, 4.0)
+	player.volume_db = volume_db
+	player.set_meta("sound_key", key)
 	add_child(player)
 	player.finished.connect(player.queue_free)
 	player.play()
 	_track_playback(player)
+	return true
+
+func play_attack(attack_id: String, pitch: float = 1.0) -> void:
+	# This is an attack-start swing, including whiffs. No contact/low-end layer.
+	var key := "slash"
+	if attack_id == "charged_heavy":
+		key = "impact_swing_charged"
+	elif attack_id == "heavy":
+		key = "impact_swing_heavy"
+	if attack_id.is_empty():
+		_last_attack = {"accepted":false, "reason":"empty_attack"}
+		return
+	var gain := -11.0 if key == "impact_swing_charged" else (-12.0 if key == "impact_swing_heavy" else -8.0)
+	var played := _play_clip(key, pitch, gain)
+	_last_attack = {"accepted":played, "attack_id":attack_id, "pitch":pitch,
+		"phase":"attack_start_swing_only", "sound_key":key, "impact_layers":0}
+
+func _impact_profile(context: Dictionary) -> Dictionary:
+	var strength := String(context.get("strength", "light"))
+	if bool(context.get("blocked", false)):
+		return {"style":"blocked_metal", "layers":[{"key":"contact_tick", "db":-22.0}, {"key":"metal_block", "db":-13.0}, {"key":"debris_tail", "db":-28.0}]}
+	if strength == "charged":
+		return {"style":"charged", "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-13.0}, {"key":"body_thump", "db":-15.0}, {"key":"charge_sub", "db":-18.0}, {"key":"debris_tail", "db":-23.0}]}
+	if strength in ["heavy", "skill"]:
+		return {"style":strength, "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-15.0}, {"key":"body_thump", "db":-14.0}, {"key":"debris_tail", "db":-25.0}]}
+	return {"style":"light", "layers":[{"key":"contact_tick", "db":-18.0}, {"key":"metal_light", "db":-18.0}]}
+
+func play_impact(context: Dictionary) -> void:
+	# Only the confirmed impact dispatcher calls this API. The context is copied
+	# as scalar/value diagnostics; it cannot grant damage or delayed effects.
+	_last_impact = {"accepted":false, "reason":"invalid_confirmed_context"}
+	if _stopped or String(context.get("attack_id", "")).is_empty():
+		return
+	if not String(context.get("contact_source", "")) in ["hurtbox_ray", "hurtbox_proxy"]:
+		return
+	if not String(context.get("strength", "")) in ["light", "heavy", "charged", "skill"]:
+		return
+	for key: String in ["point", "normal", "direction"]:
+		var value: Variant = context.get(key)
+		if not value is Vector3 or not value.is_finite():
+			return
+	var profile := _impact_profile(context)
+	var played: Array[Dictionary] = []
+	# A dense same-frame crowd must not simply sum full-level transients. Start
+	# every layer now (no timer callback), using the current live voice density.
+	var density_db := -linear_to_db(1.0+float(_effect_player_count())/4.0)-1.5
+	for layer: Dictionary in profile.layers:
+		var gain := float(layer.db)+density_db
+		if _play_clip("impact_"+String(layer.key), 1.0, gain):
+			played.append({"key":String(layer.key), "volume_db":gain})
+	_last_impact = {"accepted":not played.is_empty(), "style":String(profile.style),
+		"attack_id":String(context.attack_id), "strength":String(context.strength),
+		"blocked":bool(context.get("blocked", false)), "killed":bool(context.get("killed", false)),
+		"poise_broken":bool(context.get("poise_broken", false)), "contact_source":String(context.contact_source),
+		"point":context.point, "layers":played, "density_headroom_db":density_db, "epoch":_lifecycle_epoch}
+
+func presentation_report() -> Dictionary:
+	return {"last_attack":_last_attack.duplicate(true), "last_impact":_last_impact.duplicate(true),
+		"effect_players":_effect_player_count(), "effect_player_budget":MAX_EFFECT_PLAYERS,
+		"stopped":_stopped, "epoch":_lifecycle_epoch}
 
 func _process(_delta: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(maxf(Session.volume, 0.0001)))

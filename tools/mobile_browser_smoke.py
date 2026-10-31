@@ -949,7 +949,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         heavy = await qa.touch_action("heavy", hold=True)
                         charged = await qa.wait("s.charge_elapsed>=.65 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
                         await qa.record("07-heavy-held", screenshot=True, status=charged)
-                        await qa.record("heavy-release", status=await qa.observe_action("s.hero_art.state==='heavy'",None,lambda:qa.touch.end(heavy)))
+                        await qa.record("heavy-release", status=await qa.observe_action("s.hero_art.state==='charged_heavy'",None,lambda:qa.touch.end(heavy)))
                         await qa.idle()
                         await qa.safe_spawn()
                         for action_name, cost in [("skill_2", 45), ("skill_3", 80)]:

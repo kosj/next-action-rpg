@@ -1,0 +1,315 @@
+{
+  "license": "not-selected",
+  "license_scope": "New original project audio; no third-party samples; repository owner has not selected a redistribution license.",
+  "authorship": "Original deterministic oscillator, filtered-noise and inharmonic-resonator DSP authored for RUNEFALL",
+  "generator": "tools/generate_impact_audio.py",
+  "generator_sha256": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+  "numpy_version": "2.3.5",
+  "rng": "numpy.random.default_rng/PCG64",
+  "rate_hz": 44100,
+  "channels": 2,
+  "pcm_bits": 16,
+  "base_seed": 71031,
+  "individual_peak_target": 0.58,
+  "files": [
+    {
+      "file": "game/assets/audio/impact/contact_tick.wav",
+      "sha256": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+      "bytes": 11508,
+      "frames": 2866,
+      "seconds": 0.06498866213151927,
+      "sound_body_seconds": 0.065,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.002630385487528345,
+      "seed": 71031,
+      "peak": 0.5800042725913266,
+      "rms": 0.09038961664503428,
+      "dc": [
+        -1.6611610182329981e-06,
+        -1.7250518266266034e-06
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/metal_light.wav",
+      "sha256": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+      "bytes": 38852,
+      "frames": 9702,
+      "seconds": 0.22,
+      "sound_body_seconds": 0.22,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 2.2675736961451248e-05,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.0015192743764172335,
+      "seed": 71032,
+      "peak": 0.5800042725913266,
+      "rms": 0.11062490467512065,
+      "dc": [
+        -2.6278254809573376e-05,
+        -2.635374895793741e-05
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/metal_heavy.wav",
+      "sha256": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+      "bytes": 58256,
+      "frames": 14553,
+      "seconds": 0.33,
+      "sound_body_seconds": 0.33,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.003129251700680272,
+      "seed": 71033,
+      "peak": 0.5800042725913266,
+      "rms": 0.10519759435671334,
+      "dc": [
+        -3.6048455843633624e-05,
+        -3.606103820169409e-05
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/body_thump.wav",
+      "sha256": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+      "bytes": 31796,
+      "frames": 7938,
+      "seconds": 0.18,
+      "sound_body_seconds": 0.18,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.001564625850340136,
+      "seed": 71034,
+      "peak": 0.5800042725913266,
+      "rms": 0.13785243522076288,
+      "dc": [
+        0.00035057070881431245,
+        0.0003505053504543948
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/charge_sub.wav",
+      "sha256": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+      "bytes": 56492,
+      "frames": 14112,
+      "seconds": 0.32,
+      "sound_body_seconds": 0.32,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.002290249433106576,
+      "seed": 71035,
+      "peak": 0.5800042725913266,
+      "rms": 0.14013084404727388,
+      "dc": [
+        0.00010728622839446262,
+        0.0001072321635746711
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/debris_tail.wav",
+      "sha256": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+      "bytes": 74132,
+      "frames": 18522,
+      "seconds": 0.42,
+      "sound_body_seconds": 0.42,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.041405895691609976,
+      "seed": 71036,
+      "peak": 0.5800042725913266,
+      "rms": 0.059255149584684974,
+      "dc": [
+        7.859480088574557e-06,
+        7.846298570607446e-06
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/metal_block.wav",
+      "sha256": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+      "bytes": 51200,
+      "frames": 12789,
+      "seconds": 0.29,
+      "sound_body_seconds": 0.29,
+      "quiet_lead_seconds": 0.0,
+      "first_nonzero_pcm_seconds": 0.0,
+      "designed_envelope_peak_seconds": null,
+      "measured_waveform_peak_seconds": 0.002494331065759637,
+      "seed": 71037,
+      "peak": 0.5800042725913266,
+      "rms": 0.10748570683864708,
+      "dc": [
+        2.1985067464411614e-05,
+        2.2073360908043953e-05
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/swing_heavy.wav",
+      "sha256": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf",
+      "bytes": 79424,
+      "frames": 19845,
+      "seconds": 0.45,
+      "sound_body_seconds": 0.25,
+      "quiet_lead_seconds": 0.2,
+      "first_nonzero_pcm_seconds": 0.2,
+      "designed_envelope_peak_seconds": 0.325,
+      "measured_waveform_peak_seconds": 0.3198412698412698,
+      "seed": 71038,
+      "peak": 0.5800042725913266,
+      "rms": 0.09423883767514914,
+      "dc": [
+        1.011901196029936e-06,
+        1.0149768835554435e-06
+      ]
+    },
+    {
+      "file": "game/assets/audio/impact/swing_charged.wav",
+      "sha256": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+      "bytes": 104120,
+      "frames": 26019,
+      "seconds": 0.59,
+      "sound_body_seconds": 0.31,
+      "quiet_lead_seconds": 0.28,
+      "first_nonzero_pcm_seconds": 0.28,
+      "designed_envelope_peak_seconds": 0.43500000000000005,
+      "measured_waveform_peak_seconds": 0.4034240362811791,
+      "seed": 71039,
+      "peak": 0.5800042725913266,
+      "rms": 0.09022154906694776,
+      "dc": [
+        2.290735578102729e-06,
+        2.233261925604281e-06
+      ]
+    }
+  ],
+  "profiles": {
+    "light": {
+      "layers": [
+        {
+          "key": "contact_tick",
+          "db": -18
+        },
+        {
+          "key": "metal_light",
+          "db": -18
+        }
+      ],
+      "sum_peak_at_zero_density": 0.09614326926632816,
+      "global_group_headroom_db": -1.5
+    },
+    "heavy": {
+      "layers": [
+        {
+          "key": "contact_tick",
+          "db": -17
+        },
+        {
+          "key": "metal_heavy",
+          "db": -15
+        },
+        {
+          "key": "body_thump",
+          "db": -14
+        },
+        {
+          "key": "debris_tail",
+          "db": -25
+        }
+      ],
+      "sum_peak_at_zero_density": 0.1692992800742438,
+      "global_group_headroom_db": -1.5
+    },
+    "charged": {
+      "layers": [
+        {
+          "key": "contact_tick",
+          "db": -17
+        },
+        {
+          "key": "metal_heavy",
+          "db": -13
+        },
+        {
+          "key": "body_thump",
+          "db": -15
+        },
+        {
+          "key": "charge_sub",
+          "db": -18
+        },
+        {
+          "key": "debris_tail",
+          "db": -23
+        }
+      ],
+      "sum_peak_at_zero_density": 0.2081800594830535,
+      "global_group_headroom_db": -1.5
+    },
+    "blocked_metal": {
+      "layers": [
+        {
+          "key": "contact_tick",
+          "db": -22
+        },
+        {
+          "key": "metal_block",
+          "db": -13
+        },
+        {
+          "key": "debris_tail",
+          "db": -28
+        }
+      ],
+      "sum_peak_at_zero_density": 0.12335891855538315,
+      "global_group_headroom_db": -1.5
+    }
+  },
+  "attack_start_timeline": {
+    "heavy": {
+      "asset": "swing_heavy",
+      "quiet_lead_seconds": 0.2,
+      "sound_body_seconds": 0.25,
+      "designed_envelope_peak_seconds": 0.325,
+      "end_seconds": 0.45,
+      "playback_pitch": 1.0
+    },
+    "charged_heavy": {
+      "asset": "swing_charged",
+      "quiet_lead_seconds": 0.28,
+      "sound_body_seconds": 0.31,
+      "designed_envelope_peak_seconds": 0.435,
+      "end_seconds": 0.59,
+      "playback_pitch": 1.0
+    },
+    "clock_scope": "Baked timing is relative to attack-start playback at pitch1. Audio follows the mixer clock, and does not freeze with presentation hitpause. Stop_all still cancels playback; no delayed timer/async work is added."
+  },
+  "audition": {
+    "path": "build/art-review/impact-audio/audition.wav",
+    "timeline": [
+      {
+        "profile": "light",
+        "start_seconds": 0.0,
+        "duration": 0.22
+      },
+      {
+        "profile": "heavy",
+        "start_seconds": 0.57,
+        "duration": 0.42
+      },
+      {
+        "profile": "charged",
+        "start_seconds": 1.3399999999999999,
+        "duration": 0.42
+      },
+      {
+        "profile": "blocked_metal",
+        "start_seconds": 2.11,
+        "duration": 0.42
+      }
+    ],
+    "sha256": "d3dab70b3e8309fc60b47d5ad34cfa59327758c95e986e0d6e395c864b3e4a81"
+  },
+  "scope": "Offline generation/peak verification only; actual mix/listening/Web playback and combat AV review separate"
+}

@@ -439,5 +439,62 @@
     "game/scripts/actors/player.gd",
     "game/scripts/actors/actor_visual.gd",
     "game/scripts/core/strike.gd"
-  ]
+  ],
+  "impact_slice": {
+    "status": "authored_incremental_candidate_pending_runtime_visual_review",
+    "scope": "Charged-heavy hero and Sentinel heavy-hit only; original nine-clip plan remains a historical input contract, not an installed-asset inventory.",
+    "charged_heavy": {
+      "resource": "game/data/charged_heavy.tres",
+      "duration_s": 1.06,
+      "effective_data": {
+        "startup": 0.34,
+        "active": 0.18,
+        "recovery": 0.54,
+        "arc": 170.0,
+        "reach": 1.5
+      },
+      "explicit_physics_fields": {
+        "phase_lunge": true,
+        "startup_lunge": 0.0,
+        "active_lunge": 3.2,
+        "recovery_lunge": 0.0,
+        "physical_blade_sweep": true,
+        "blade_grip_start": [
+          0.22,
+          1.445,
+          -0.28
+        ],
+        "blade_grip_end": [
+          -0.24,
+          1.125,
+          -0.14
+        ],
+        "blade_pitch_start": 50.0,
+        "blade_pitch_end": -45.0,
+        "blade_length": 1.19,
+        "blade_radius": 0.12
+      },
+      "active_window_s": [
+        0.34,
+        0.52
+      ],
+      "actor_translation_nominal_m": 0.576,
+      "sweep_progress": "smooth(f^2)=3f^4-2f^6",
+      "contacts": "Front left sole authored world plant .30-.52s under the exact active-only translation; actual walls may shorten actor movement. Runtime blocked-contact foot adaptation remains pending.",
+      "candidate_manifest": "art_source/production/candidates/lyra-impact-001/manifest.json",
+      "measurements": "art_source/production/candidates/lyra-impact-001/semantic-review.json"
+    },
+    "heavy_hit": {
+      "duration_s": 0.48,
+      "snapshot_state": "hit_reaction=heavy_hit",
+      "snapshot_clock": [
+        "hit_elapsed",
+        "hit_duration"
+      ],
+      "normal_hit_retained": true,
+      "candidate_manifest": "art_source/production/candidates/sentinel-impact-001/manifest.json"
+    },
+    "moving_charge": "Independent charge clock filtered to Spine descendants only; Root/Hips/legs use the original locomotion sample and phase. Overlay-only transitions blend upper bones only.",
+    "acceptance": "Source/structure/numeric evidence only until same-revision actual runtime contact, hit-pause, transitions and visual review are recorded; not AAA approval."
+  }
 }

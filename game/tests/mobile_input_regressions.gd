@@ -281,7 +281,7 @@ static func _exercise(world: Node3D, context: Dictionary, check: Callable) -> bo
 	check.call(player.heavy_held >= .65 and player.strike == null and bool(player.presentation_snapshot().charge_active), "Holding a real heavy touch advances the real player's charged-heavy clock without releasing an attack")
 	_touch(context,83,false,_button("heavy"))
 	await _ticks(tree,1)
-	check.call(player.strike != null and player.strike.data == RunePlayer.HEAVY and player.heavy_held == 0.0, "Normal heavy-finger release starts the actual heavy strike and consumes its held clock")
+	check.call(player.strike != null and player.strike.data == RunePlayer.CHARGED_HEAVY and player.strike.presentation_id == &"charged_heavy" and player.heavy_held == 0.0, "Normal charged-finger release starts the dedicated charged-heavy strike and consumes its held clock")
 	await _arrange(world,context)
 	await tree.process_frame
 	_key(true)

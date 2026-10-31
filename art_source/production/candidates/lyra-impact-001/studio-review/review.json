@@ -1,0 +1,154 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "build/art-candidates/charged-heavy/lyra-005/lyra_impact_gameplay.glb",
+  "input_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+  "weapon": "game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "blender": "4.3.2",
+  "clip": "charged_heavy",
+  "imported_action": "charged_heavy_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8339322209358215,
+      -0.15282638370990753,
+      0.53028404712677,
+      4.5
+    ],
+    [
+      0.551866888999939,
+      0.2309376746416092,
+      -0.8013181090354919,
+      -7.0
+    ],
+    [
+      -3.19237969392816e-09,
+      0.9608911871910095,
+      0.276926189661026,
+      3.5999999046325684
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 3.5,
+  "shots": [
+    {
+      "time_s": 0.0,
+      "file": "charged_heavy-0000.png",
+      "sha256": "733cab6152636643457a5ae62e6f95aca577b955a8f3c78f0af44f80c3cb1c0d",
+      "virtual_actor_travel_m": 0.0,
+      "actual_weapon_grip_m": [
+        -0.25999969244003296,
+        -0.1199999526143074,
+        1.4800001382827759
+      ],
+      "actual_weapon_tip_m": [
+        -0.7157213091850281,
+        -0.331512451171875,
+        2.558741331100464
+      ]
+    },
+    {
+      "time_s": 0.34,
+      "file": "charged_heavy-0340.png",
+      "sha256": "86a5d23c13605c9a2c9bb114b06184863d9eebea6f7f12edcad77d09a5da92da",
+      "virtual_actor_travel_m": 0.0,
+      "actual_weapon_grip_m": [
+        -0.22000007331371307,
+        -0.2799999415874481,
+        1.4199997186660767
+      ],
+      "actual_weapon_tip_m": [
+        -0.9816630482673645,
+        -0.34573253989219666,
+        2.3319485187530518
+      ]
+    },
+    {
+      "time_s": 0.43,
+      "file": "charged_heavy-0430.png",
+      "sha256": "1392e0dd72afa321845880a05ec25b54b384e011527b6e503d3d5add0f1d3e9b",
+      "virtual_actor_travel_m": 0.2879999999999999,
+      "actual_weapon_grip_m": [
+        -0.14812488853931427,
+        -0.5461247563362122,
+        1.369999885559082
+      ],
+      "actual_weapon_tip_m": [
+        -0.9773257374763489,
+        -1.0544471740722656,
+        2.055664300918579
+      ]
+    },
+    {
+      "time_s": 0.475,
+      "file": "charged_heavy-0475.png",
+      "sha256": "06b63e58f7a41e19772aaaf1982064956f52c5756375aa48d86cc6f69a5f0370",
+      "virtual_actor_travel_m": 0.4319999999999999,
+      "actual_weapon_grip_m": [
+        0.05295011028647423,
+        -0.6291375160217285,
+        1.2304059267044067
+      ],
+      "actual_weapon_tip_m": [
+        0.37533843517303467,
+        -1.7670868635177612,
+        1.0991169214248657
+      ]
+    },
+    {
+      "time_s": 0.52,
+      "file": "charged_heavy-0520.png",
+      "sha256": "1cff48874cd73c09558d45a5e70011da1a5652affc00dcd1991ea7eb4903dd21",
+      "virtual_actor_travel_m": 0.576,
+      "actual_weapon_grip_m": [
+        0.2399999350309372,
+        -0.7159998416900635,
+        1.0999999046325684
+      ],
+      "actual_weapon_tip_m": [
+        1.0785670280456543,
+        -0.7902683019638062,
+        0.2589341104030609
+      ]
+    },
+    {
+      "time_s": 0.7,
+      "file": "charged_heavy-0700.png",
+      "sha256": "5a5a1101aef840b5c1079142cabcb36b0a1c940e427fe7bd03f6e79a17f59c54",
+      "virtual_actor_travel_m": 0.576,
+      "actual_weapon_grip_m": [
+        0.22215986251831055,
+        -0.6830000877380371,
+        1.0827997922897339
+      ],
+      "actual_weapon_tip_m": [
+        1.1334631443023682,
+        -0.685918390750885,
+        0.3175416588783264
+      ]
+    },
+    {
+      "time_s": 1.06,
+      "file": "charged_heavy-1060.png",
+      "sha256": "b43f8e643cbd8545f225fc8c0f6a6ab0aac13e3c2bba7b70dbb0f31442ca665d",
+      "virtual_actor_travel_m": 0.576,
+      "actual_weapon_grip_m": [
+        -0.049999821931123734,
+        -0.9259997010231018,
+        1.1800000667572021
+      ],
+      "actual_weapon_tip_m": [
+        -0.1693323254585266,
+        -1.597582459449768,
+        2.1551079750061035
+      ]
+    }
+  ]
+}

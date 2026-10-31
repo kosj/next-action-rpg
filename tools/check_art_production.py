@@ -9,6 +9,7 @@ import json
 import math
 from pathlib import Path
 import re
+import struct
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -101,6 +102,48 @@ def parse_attack_resource(path, defaults):
     if any(value < 0 for value in values.values()) or values["active"] <= 0:
         raise ValueError(f"{path.name}: tracked attack values must be nonnegative and active must be positive")
     return values
+
+
+def check_literal_overrides(path, expected):
+    """Extra impact fields accept only explicit bool, number or Vector3 literals."""
+    assignments={}
+    active=False
+    for number,line in enumerate(path.read_text(encoding="utf-8").splitlines(),1):
+        line=line.split('#',1)[0].strip()
+        if line.startswith('['):
+            active=line=='[resource]'
+        if not active:
+            continue
+        match=re.fullmatch(r'(\w+)\s*=\s*(.+)',line)
+        if not match or match.group(1) not in expected:
+            continue
+        field,expression=match.groups()
+        if field in assignments:
+            raise ValueError(f'{path.name}:{number}: duplicate impact field {field}')
+        value=expected[field]
+        if type(value) is bool:
+            if expression not in ('true','false'):
+                raise ValueError(f'{field}: only a boolean literal is supported')
+            actual=expression=='true'
+            matched=actual==value
+        elif isinstance(value,list) and len(value)==3:
+            vector=re.fullmatch(r'Vector3\(([^()]*)\)',expression)
+            if vector is None:
+                raise ValueError(f'{field}: only Vector3 numeric literals are supported')
+            parts=vector.group(1).split(',')
+            if len(parts)!=3:
+                raise ValueError(f'{field}: expected three Vector3 components')
+            actual=[numeric_literal(part,field) for part in parts]
+            matched=all(same_number(a,b) for a,b in zip(actual,value))
+        else:
+            actual=numeric_literal(expression,field)
+            matched=same_number(actual,value)
+        if not matched:
+            raise ValueError(f'{field}: impact motion/physics literal mismatch')
+        assignments[field]=actual
+    missing=expected.keys()-assignments.keys()
+    if missing:
+        raise ValueError('Missing explicit impact fields: '+', '.join(sorted(missing)))
 
 
 def unique_object(pairs):
@@ -323,6 +366,28 @@ def check_production(root=ROOT):
         if not isinstance(angles, list) or len(angles) != 2 or not all(same_number(angles[index], value) for index, value in enumerate(expected_angles)):
             errors.append(f"{label}: signed sweep angles differ from current arc")
 
+    impact=motions.get('impact_slice')
+    if impact is not None:
+        if not isinstance(impact,dict) or not isinstance(impact.get('charged_heavy'),dict):
+            errors.append('impact_slice: expected charged_heavy object')
+        else:
+            charged=impact['charged_heavy']
+            path=local_file(charged.get('resource'),'impact_slice charged_heavy')
+            if path is not None and defaults is not None:
+                try:
+                    values=parse_attack_resource(path,defaults)
+                    for field in ['startup','active','recovery','arc','reach']:
+                        if not same_number(values[field],charged.get('effective_data',{}).get(field)):
+                            raise ValueError('charged_heavy '+field+' differs from motion contract')
+                    if not same_number(sum(values[k] for k in ['startup','active','recovery']),charged.get('duration_s')):
+                        raise ValueError('charged_heavy duration differs from motion contract')
+                    extra=charged.get('explicit_physics_fields')
+                    if not isinstance(extra,dict) or not extra:
+                        raise ValueError('Missing explicit physical blade/lunge fields')
+                    check_literal_overrides(path,extra)
+                except (OSError,ValueError) as error:
+                    errors.append('impact_slice: '+str(error))
+
     # Candidate metadata is optional and has no required schema/status here.
     # Only the declared local bytes are checked; this cannot approve runtime art.
     candidates = PRODUCTION / "candidates"
@@ -379,6 +444,50 @@ def check_production(root=ROOT):
             continue
         for index, entry in enumerate(derived):
             candidate_file(entry.get("file"), entry.get("bytes"), entry.get("sha256"), f"{label}: derived_files[{index}]")
+
+        # New installed animation candidates pin both their runtime copy and
+        # the actual tools/recipe used. Legacy historical manifests stay valid.
+        pins = candidate.get("provenance_files", [])
+        if not isinstance(pins, list) or not all(isinstance(pin, dict) for pin in pins):
+            errors.append(f"{label}: provenance_files must be an object list")
+            pins = []
+        installation = candidate.get("runtime_installation")
+        if installation is not None:
+            if not isinstance(installation, dict):
+                errors.append(f"{label}: runtime_installation must be an object")
+            else:
+                pins = pins + [installation]
+                if installation.get("sha256") != candidate.get("source_sha256"):
+                    errors.append(f"{label}: runtime copy must match candidate source SHA-256")
+        for index, pin in enumerate(pins):
+            pin_label = f"{label}: pinned_file[{index}]"
+            target = local_file(pin.get("file"), pin_label)
+            if target is None:
+                continue
+            digest = pin.get("sha256")
+            if not isinstance(digest, str) or not SHA256.fullmatch(digest):
+                errors.append(f"{pin_label}: expected SHA-256")
+                continue
+            if hashlib.sha256(target.read_bytes()).hexdigest() != digest:
+                errors.append(f"{pin_label}: SHA-256 mismatch")
+        expected_names = candidate.get("expected_clips")
+        if expected_names is not None:
+            if not isinstance(expected_names, list) or not expected_names or not all(isinstance(name,str) and name for name in expected_names) or len(set(expected_names)) != len(expected_names):
+                errors.append(f"{label}: expected_clips must contain unique nonempty names")
+            elif isinstance(candidate.get("source_file"),str):
+                source = local_file(str(folder/candidate["source_file"]), label+": clip_source", folder)
+                if source is not None:
+                    try:
+                        with source.open("rb") as stream:
+                            magic, version, length, size, kind = struct.unpack("<IIIII",stream.read(20))
+                            if magic != 0x46546c67 or version != 2 or length != source.stat().st_size or kind != 0x4e4f534a or size > 16*1024*1024:
+                                raise ValueError("expected bounded complete GLB2 JSON")
+                            document=json.loads(stream.read(size))
+                        actual_names=[entry.get("name") for entry in document.get("animations",[])]
+                        if sorted(actual_names) != sorted(expected_names):
+                            errors.append(f"{label}: expected_clips differ from actual GLB animations")
+                    except (OSError, ValueError, TypeError, struct.error) as error:
+                        errors.append(f"{label}: cannot inspect candidate clips: {error}")
 
     report["ok"] = not errors
     return report

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-impact-001",
+  "status": "authored_incremental_slice_pending_runtime_and_visual_review",
+  "source_file": "source.glb",
+  "source_bytes": 21315424,
+  "source_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+  "source_parent": "/workspace/next-action-rpg/game/assets/models/production/lyra_gameplay.glb",
+  "source_parent_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "runtime_installation": {
+    "file": "game/assets/models/production/lyra_impact_gameplay.glb",
+    "sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "scope": "Candidate raw bytes copied; Godot import may resample all transform tracks. Actual runtime phase/visual/performance acceptance pending."
+  },
+  "provenance_files": [
+    {
+      "file": "art_source/production/character_actions/lyra-impact.json",
+      "sha256": "0304eb66deabe89cb3767ef33c6c3b38d749c5222fb48afff940697c62165529"
+    },
+    {
+      "file": "tools/author_impact_actions.py",
+      "sha256": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/audit_impact_curve.py",
+      "sha256": "b3debad4f9316a2e5694b60e65106cd3c10e5d393c10ed1ced73c1b234e239d4"
+    },
+    {
+      "file": "tools/render_impact_review.py",
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "charge",
+    "charged_heavy",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 9031557,
+      "sha256": "f7117a3e7552d41dbaa971e06eebeaee3eca5b43db4a956a1fed3e6932e90364"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 30079,
+      "sha256": "9aec31a141c64433df5db6d53a0ac12264660631af5b5091979c49dd506835cb"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 5113,
+      "sha256": "5f59e1dae556edd3ec6ccb317d5f59669c9e58922efd29c934bfeedf4beab615"
+    },
+    {
+      "file": "rejected-b6bc-summary.json",
+      "bytes": 1063,
+      "sha256": "bb98d1438708ecc0174a1c315f33f79c247c0b5495a90e9c10953b7d0407b833"
+    },
+    {
+      "file": "midpoint-comparison.json",
+      "bytes": 773,
+      "sha256": "427a8936f3ec624fc137090cd00a3f6064064aebe8053b9f03205b7447e6cdda"
+    }
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "source_bytes": 19438644,
+    "output_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "output_bytes": 21315424,
+    "retained_animation_names": [
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [
+      "charge"
+    ],
+    "authored_animation_names": [
+      "charge",
+      "charged_heavy"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "New charge/charged_heavy or heavy_hit only; body and unrelated original animations retained byte for byte. Original runtime/source files remain immutable historical inputs.",
+  "authoring_revision": "lyra-005",
+  "rejected_history": [
+    {
+      "source_sha256": "b6bc88d72ad1605a70f3b00ffedda21e67064f012a1c5700d0b96e9ad4216bf7",
+      "status": "rejected_midpoint_fk",
+      "summary_file": "rejected-b6bc-summary.json"
+    }
+  ],
+  "review": {
+    "scope": "Fixed actual reimport Blender studio captures, not actual Godot gameplay/normal-speed/AAA approval",
+    "file": "studio-review/review.json",
+    "sha256": "a3a86af8813c93a186cc1c6bf486248431f8eeae3bdc3659a41a877205313cf3",
+    "rendered_glb_sha256_matches_candidate": true
+  }
+}

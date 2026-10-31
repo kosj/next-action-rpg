@@ -534,6 +534,12 @@ func _qa_character_art(visual: ActorVisual) -> Dictionary:
 				var hand_rotation := pose.basis.orthonormalized().get_rotation_quaternion()
 				report["right_hand_pose"] = [pose.origin.x,pose.origin.y,pose.origin.z,
 					hand_rotation.x,hand_rotation.y,hand_rotation.z,hand_rotation.w]
+		if is_instance_valid(visual.rig_weapon):
+			for marker_name in ["GripOrigin", "BladeTip"]:
+				var marker := visual.rig_weapon.find_child(marker_name, true, false) as Node3D
+				if marker != null:
+					var point := marker.global_position
+					report["blade_grip_world" if marker_name == "GripOrigin" else "blade_tip_world"] = [point.x,point.y,point.z]
 	return report
 
 func _qa_visible_rect(control: Control) -> Rect2:
@@ -640,7 +646,11 @@ func _process(delta: float) -> void:
 			var enemy := actor as RuneEnemy
 			if enemy != null and is_instance_valid(enemy.visual) and not enemy.is_queued_for_deletion():
 				var art := _qa_character_art(enemy.visual)
-				art.merge({"kind":enemy.kind,"elite":enemy.elite,"boss":enemy.is_boss,"dead":enemy.dead}, true)
+				art.merge({"id":enemy.get_instance_id(),"kind":enemy.kind,"elite":enemy.elite,"boss":enemy.is_boss,"dead":enemy.dead,
+					"health":enemy.health,"x":enemy.global_position.x,"z":enemy.global_position.z,"stagger":enemy.stagger,
+					"hit_pause":enemy.hit_pause,"hit_reaction":enemy.hit_reaction,
+					"recoil_requested_m":enemy.recoil_requested_m,
+					"recoil_displacement":[enemy.recoil_displacement.x,enemy.recoil_displacement.y,enemy.recoil_displacement.z]}, true)
 				enemy_art.append(art)
 		var status := {"build_id":Session.build_id, "started":world.started, "paused":get_tree().paused,
 			"viewport_geometry":_qa_viewport_geometry(),
@@ -665,6 +675,8 @@ func _process(delta: float) -> void:
 			"interaction_targets":_qa_interaction_targets(),
 			"touch":TouchControls.presentation_report(),"ui":_qa_ui_report(),
 			"encounter":world.active_encounter, "hits":player.combo_hits,
+			"impact":world.impact_presentation_report(), "hit_pause":player.hit_pause,
+			"attack":player.presentation_snapshot(),
 			"input_ready":player.active and not player.dead and not get_tree().paused and player.ui_input_guard == 0,
 			"hero_art":_qa_character_art(player.visual), "enemy_art":enemy_art,
 			"modal":is_instance_valid(modal), "modal_x":rect.position.x,"modal_y":rect.position.y,

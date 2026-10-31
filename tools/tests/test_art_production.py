@@ -5,6 +5,7 @@ from io import StringIO
 import json
 from pathlib import Path
 import sys
+import struct
 from tempfile import TemporaryDirectory
 import unittest
 
@@ -180,6 +181,51 @@ class ArtProductionTests(unittest.TestCase):
         candidate["derived_files"] = [{"file": "../outside.glb", "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}]
         (folder / "manifest.json").write_text(json.dumps(candidate), encoding="utf-8")
         self.assertTrue(any("derived_files[0]: path escapes allowed source root" in error for error in self.report()["errors"]))
+
+    def test_candidate_installed_runtime_and_recipe_pins_detect_tampering(self):
+        folder=self.root/production.PRODUCTION/'candidates/impact-fixture'
+        folder.mkdir(parents=True)
+        payload=json.dumps({'animations':[{'name':'charged_heavy'},{'name':'RESET'}]}).encode()
+        payload+=b' '*((-len(payload))%4)
+        data=struct.pack('<IIIII',0x46546c67,2,20+len(payload),len(payload),0x4e4f534a)+payload
+        (folder/'source.glb').write_bytes(data)
+        runtime=self.root/'game/runtime.glb';runtime.write_bytes(data)
+        recipe=self.root/'recipe.json';recipe.write_text('{"profile":"impact"}')
+        candidate={'source_file':'source.glb','source_bytes':len(data),'source_sha256':hashlib.sha256(data).hexdigest(),
+            'runtime_installation':{'file':'game/runtime.glb','sha256':hashlib.sha256(data).hexdigest()},
+            'provenance_files':[{'file':'recipe.json','sha256':hashlib.sha256(recipe.read_bytes()).hexdigest()}],
+            'expected_clips':['charged_heavy','RESET']}
+        manifest=folder/'manifest.json';manifest.write_text(json.dumps(candidate))
+        self.assertTrue(self.report()['ok'])
+        runtime.write_bytes(data+b'changed')
+        self.assertTrue(any('pinned_file' in e and 'mismatch' in e for e in self.report()['errors']))
+        runtime.write_bytes(data);recipe.write_text('{"profile":"different"}')
+        self.assertTrue(any('pinned_file' in e and 'mismatch' in e for e in self.report()['errors']))
+
+    def test_candidate_missing_authored_clip_is_rejected(self):
+        folder=self.root/production.PRODUCTION/'candidates/impact-fixture'
+        folder.mkdir(parents=True)
+        payload=json.dumps({'animations':[{'name':'RESET'}]}).encode();payload+=b' '*((-len(payload))%4)
+        data=struct.pack('<IIIII',0x46546c67,2,20+len(payload),len(payload),0x4e4f534a)+payload
+        (folder/'source.glb').write_bytes(data)
+        candidate={'source_file':'source.glb','source_bytes':len(data),'source_sha256':hashlib.sha256(data).hexdigest(),
+            'expected_clips':['charged_heavy','RESET']}
+        (folder/'manifest.json').write_text(json.dumps(candidate))
+        self.assertTrue(any('expected_clips differ' in e for e in self.report()['errors']))
+
+    def test_impact_curve_and_phase_literals_cannot_drift(self):
+        self.motions['impact_slice']={'charged_heavy':{'resource':'game/data/charged.tres','duration_s':1.06,
+            'effective_data':{'startup':.34,'active':.18,'recovery':.54,'arc':170.0,'reach':1.5},
+            'explicit_physics_fields':{'active_lunge':3.2,'physical_blade_sweep':True,'blade_grip_end':[-.24,1.125,-.14]}}}
+        self.save()
+        resource=self.root/'game/data/charged.tres'
+        original='[gd_resource type="Resource" format=3]\n[resource]\nstartup = 0.34\nactive = 0.18\nrecovery = 0.54\narc = 170.0\nreach = 1.5\nactive_lunge = 3.2\nphysical_blade_sweep = true\nblade_grip_end = Vector3(-0.24, 1.125, -0.14)\n'
+        resource.write_text(original)
+        self.assertTrue(self.report()['ok'])
+        resource.write_text(original.replace('1.125','1.2'))
+        self.assertTrue(any('literal mismatch' in e for e in self.report()['errors']))
+        resource.write_text(original.replace('3.2','3.0 + 0.2'))
+        self.assertTrue(any('unsupported numeric expression' in e for e in self.report()['errors']))
 
 
 if __name__ == "__main__":

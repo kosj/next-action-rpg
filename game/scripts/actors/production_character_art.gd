@@ -6,10 +6,10 @@ extends RefCounted
 const HERO_STATES: Array[StringName] = [
 	&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right",
 	&"dodge", &"light_1", &"light_2", &"light_3", &"parry", &"hit",
-	&"heavy", &"charge", &"skill_1", &"skill_2", &"skill_3", &"death", &"heal",
+	&"heavy", &"charge", &"charged_heavy", &"skill_1", &"skill_2", &"skill_3", &"death", &"heal",
 ]
 const SENTINEL_STATES: Array[StringName] = [
-	&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right", &"enemy_attack", &"hit", &"death",
+	&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right", &"enemy_attack", &"hit", &"heavy_hit", &"death",
 ]
 const CYCLES: Array[StringName] = [&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right"]
 const SEMANTIC_BONES := {
@@ -24,11 +24,11 @@ static var _prepared: Dictionary = {}
 
 static func definition(profile: String) -> Dictionary:
 	if profile == "hero":
-		return {"path":"res://assets/models/production/lyra_gameplay.glb", "states":HERO_STATES,
+		return {"path":"res://assets/models/production/lyra_impact_gameplay.glb", "states":HERO_STATES,
 			"height":1.82, "grip_profile":"lyra", "walk_speed":6.4,
 			"eye_path":"res://assets/models/production/lyra_eyes.glb"}
 	if profile == "sentinel_melee":
-		return {"path":"res://assets/models/production/sentinel_gameplay.glb", "states":SENTINEL_STATES,
+		return {"path":"res://assets/models/production/sentinel_impact_gameplay.glb", "states":SENTINEL_STATES,
 			"height":1.95, "grip_profile":"sentinel", "walk_speed":3.6}
 	return {}
 

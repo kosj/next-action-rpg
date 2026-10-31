@@ -1,0 +1,11 @@
+{
+  "scope": "Old/new actual GLB and same attached runtime sword, EXACT .475s, fixed Blender4.3.2 neutral studio. Comparison is static, not actual gameplay/AAA approval.",
+  "old_sha256": "b6bc88d72ad1605a70f3b00ffedda21e67064f012a1c5700d0b96e9ad4216bf7",
+  "new_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+  "camera_matrices_equal": true,
+  "orthographic_scales_equal": true,
+  "old_actual_frame_png_sha256": "74c45c2c0376263063adb37907b580026737a99140dbe693c58d821a822b6bb5",
+  "new_actual_frame_png_sha256": "06b63e58f7a41e19772aaaf1982064956f52c5756375aa48d86cc6f69a5f0370",
+  "comparison_png_sha256": "2c0cf28e91fbdd5ff583c1447476765ae01ba649f963ee840ed1b55c40f04f8a",
+  "old_exact_key_samples_did_not_detect_midpoint_failure": true
+}
