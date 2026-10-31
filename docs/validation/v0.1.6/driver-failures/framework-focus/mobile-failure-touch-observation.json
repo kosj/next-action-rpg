@@ -1,0 +1,588 @@
+{
+  "touches": {
+    "events": [
+      {
+        "type": "touchstart",
+        "touches": [
+          1
+        ],
+        "changed": [
+          1
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          1
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          2
+        ],
+        "changed": [
+          2
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          2
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          3
+        ],
+        "changed": [
+          3
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          3
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          4
+        ],
+        "changed": [
+          4
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          4
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          5
+        ],
+        "changed": [
+          5
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          5
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          6
+        ],
+        "changed": [
+          6
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          6
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          7
+        ],
+        "changed": [
+          7
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          7
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          8
+        ],
+        "changed": [
+          8
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          8
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          9
+        ],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          9
+        ],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          9
+        ],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          9
+        ],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          9
+        ],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          9
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          10
+        ],
+        "changed": [
+          10
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          10
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          11
+        ],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          11
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          12
+        ],
+        "changed": [
+          12
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          12
+        ],
+        "changed": [
+          12
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          12,
+          13
+        ],
+        "changed": [
+          13
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          12,
+          13,
+          14
+        ],
+        "changed": [
+          14
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [
+          12,
+          13
+        ],
+        "changed": [
+          14
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [
+          13
+        ],
+        "changed": [
+          12
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          13
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          15
+        ],
+        "changed": [
+          15
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          15
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          16
+        ],
+        "changed": [
+          16
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          16
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          17
+        ],
+        "changed": [
+          17
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          17
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          18
+        ],
+        "changed": [
+          18
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          18
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          19
+        ],
+        "changed": [
+          19
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          19
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          20
+        ],
+        "changed": [
+          20
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          20
+        ],
+        "changed": [
+          20
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          20,
+          21
+        ],
+        "changed": [
+          21
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchcancel",
+        "touches": [],
+        "changed": [
+          20,
+          21
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          22
+        ],
+        "changed": [
+          22
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchend",
+        "touches": [],
+        "changed": [
+          22
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          23
+        ],
+        "changed": [
+          23
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchmove",
+        "touches": [
+          23
+        ],
+        "changed": [
+          23
+        ],
+        "trusted": true
+      },
+      {
+        "type": "touchstart",
+        "touches": [
+          23,
+          24
+        ],
+        "changed": [
+          24
+        ],
+        "trusted": true
+      }
+    ],
+    "max_points": 3,
+    "trusted": true,
+    "focus": [
+      {
+        "type": "focus",
+        "focused": true,
+        "visibility": "visible"
+      }
+    ]
+  },
+  "read": {
+    "request_id": 5,
+    "phase": "completed",
+    "events": [
+      {
+        "phase": "open_request",
+        "milliseconds": 402104
+      },
+      {
+        "phase": "open_response",
+        "milliseconds": 403134.799999997
+      },
+      {
+        "phase": "transaction_request",
+        "milliseconds": 403134.8999999985
+      },
+      {
+        "phase": "primary_requests",
+        "milliseconds": 403134.8999999985
+      },
+      {
+        "phase": "transaction_complete",
+        "milliseconds": 405223.19999999925
+      },
+      {
+        "phase": "completed",
+        "milliseconds": 405223.19999999925
+      }
+    ],
+    "key_count": 0,
+    "primary_reads": 1,
+    "cached_targets": true
+  },
+  "actions": {}
+}

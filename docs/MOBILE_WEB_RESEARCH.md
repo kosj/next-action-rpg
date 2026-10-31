@@ -117,3 +117,7 @@ GodotPrompter 각 파일의 관측 Git blob은 input-handling=`01f299df638147c95
 - desktop mouse emulation/Chromium touch fixture와 실제 Android Chrome·iOS Safari 결과를 나눠 기록한다. 같은 빌드의 실제 기기 GPU/OS/브라우저·품질·frame time·메모리·로딩을 확보하기 전에는 실기기 합격을 붙이지 않는다.
 
 다른 프로젝트에 옮길 때는 **포인터 소유권과 모든 종료 경로**, **원래/에뮬레이션 이벤트 순서와 설정 전환**, **각 입력 장치의 action 해제 범위**, **loop별 edge 시점**, **CSS/backing/논리 좌표의 단일 변환**, **native/Web safe area 차이**, **선택적 브라우저 기능과 실제 기기 검증**을 절차로 재사용한다. 이 프로젝트의 버튼 위치·크기·감도·공격 값이나 특정 브라우저 지원표를 영구 기본값으로 복사하지 않는다.
+
+## 10. 자동화 프레임워크의 포커스 기본값 실측
+
+고정 Playwright1.62.0의 설치 driver coreBundle.js37399(SHA2563258d1cf334c6afc95f22aa9c292436cb976b391e0437f1359c83b84f0cb9d66)는 main page에 Emulation.setFocusEmulationEnabled(true)를 적용한다. 이 상태의 탭 전환은 실제 blur 검증이 아니었다. [원본 실패와 실제 빈 페이지 probe](validation/v0.1.6/driver-failures/framework-focus/native-tab-focus-probe.json)에서 해당 override만 false로 해제해 document.hasFocus false·trusted blur와 복귀 trusted focus를 확인했다. 게임 상태나 synthetic blur를 쓰지 않았다. 최종 Game 판정은 전환의 trusted blur와 foreground 복귀 후 실제 pause/입력 clear를 모두 요구하며, 이 프레임워크 실측 자체를 Game 전체 승인으로 표시하지 않는다.

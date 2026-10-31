@@ -1551,7 +1551,7 @@
       "kind": "pitfall",
       "status": "verified",
       "title": "터치 자동 조작의 피드백 지연과 짧은 상태의 관찰 시점을 분리한다",
-      "summary": "최종앱의 local전체485.534초·CI전체433.972초가3pointer/sprint후보조원점이동의60초조건에서실패했다. CI는매steer의bounding_box RPC대기중timeout이었고끝위치는목표.726m/HP120/errors0였다. 별도lifecycle171.437초는실제약5.667m회피후cooldown을늦게읽어실패했다. 실패를게임결함이나통과로덮지않는다. 같은gesture의CSS geometry를캐시하고필요한이동확인후stickcenter/독립해제로setup이동을줄인다. 짧은상태는실입력전readonly관찰을arm하고미래physics snapshot을복사한다. 15초전체/UI·30초IDB·60초이동과최종1.2m조건은유지하며수정driver의최종통과는별도검증한다.",
+      "summary": "최종앱의 local전체485.534초·CI전체433.972초가3pointer/sprint후보조원점이동의60초조건에서실패했다. CI는매steer의bounding_box RPC대기중timeout이었고끝위치는목표.726m/HP120/errors0였다. 별도lifecycle171.437초는실제약5.667m회피후cooldown을늦게읽어실패했다. 실패를게임결함이나통과로덮지않는다. 같은gesture의CSS geometry를캐시하고필요한이동확인후stickcenter/독립해제로setup이동을줄인다. 짧은상태는실입력전readonly관찰을arm하고미래physics snapshot을복사한다. 15초전체/UI·30초IDB·60초이동과최종1.2m조건은유지하며수정driver의최종통과는별도검증한다. Playwright1.62는페이지focus를기본고정해실제tab blur를가렸다. 빈페이지에서기본override만풀어trustedblur/focus를관찰했으며 Game검증은foreground복귀후실제pause/clear를요구한다.",
       "tags": [
         "mobile",
         "qa",
@@ -1559,7 +1559,9 @@
         "feedback",
         "timing",
         "browser",
-        "pitfall"
+        "pitfall",
+        "focus",
+        "playwright"
       ],
       "checked_on": "2026-10-31",
       "context": {
@@ -1573,7 +1575,8 @@
         "docs/validation/v0.1.6/driver-failures/local-transient/mobile-result.json",
         "docs/validation/v0.1.6/driver-failures/ci-41195933000/mobile-result.json",
         "tools/mobile_browser_smoke.py",
-        "tools/check_mobile_web.py"
+        "tools/check_mobile_web.py",
+        "docs/validation/v0.1.6/driver-failures/framework-focus/native-tab-focus-probe.json"
       ]
     }
   ]

@@ -195,7 +195,7 @@ class MobileRun:
             }, {capture:true,passive:true});
           }
           for (const type of ['blur','focus','visibilitychange']) {
-            window.addEventListener(type, () => report.focus.push({type, focused:document.hasFocus(),
+            window.addEventListener(type, event => report.focus.push({type, trusted:event.isTrusted, focused:document.hasFocus(),
               visibility:document.visibilityState}), {capture:true});
           }
         })();""")
@@ -547,7 +547,7 @@ class MobileRun:
 
 
 async def run(url, output=Path("build/verification/mobile"), phase="full"):
-    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus"], phase
+    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail"], phase
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     for name in ["mobile-progress.json", "mobile-errors.json", "mobile-states.json", "mobile-layout.json",
@@ -648,59 +648,76 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                         await qa.idle()
                         await qa.safe_spawn()
 
-                    qa.mark("hold_heavy_dodge_parry_heal_skill")
-                    heavy = await qa.touch_action("heavy", hold=True)
-                    charged = await qa.wait("s.charge_elapsed>=.65 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
-                    await qa.record("07-heavy-held", screenshot=True, status=charged)
-                    await qa.record("heavy-release", status=await qa.observe_action("s.hero_art.state==='heavy'",None,lambda:qa.touch.end(heavy)))
-                    await qa.idle()
-                    await qa.safe_spawn()
-                    for action_name, cost in [("skill_2", 45), ("skill_3", 80)]:
-                        gated = await qa.idle()
-                        if gated["rune"] < cost:
-                            await qa.touch_action(action_name)
-                            after_gated = await qa.stable(gated)
-                            assert abs(after_gated["rune"]-gated["rune"]) < .01
-                            await qa.record(action_name + "-resource-gated", status=after_gated)
-                    await qa.record("dodge", status=await qa.observe_tap("dodge","s.dodge_cooldown>0"))
-                    await qa.idle()
-                    await qa.record("parry", status=await qa.observe_tap("parry","s.parry_cooldown>0"))
-                    await qa.idle()
-                    heal = await qa.state()
-                    await qa.touch_action("heal")
-                    if heal["health"] < heal["max_health"] and heal["potions"] > 0:
-                        await qa.wait("s.health>a.hp && s.potions===a.potions-1", {"hp": heal["health"], "potions": heal["potions"]})
-                    else:
-                        await qa.stable(heal)
-                        after = await qa.state()
-                        assert after["potions"] == heal["potions"], after
-                    await qa.record("heal-legitimate-or-full-health-noop")
-                    await qa.safe_spawn()
-                    skill = await qa.idle()
-                    assert skill["rune"] >= 25, skill
-                    await qa.record("08-skill-one", screenshot=True, status=await qa.observe_tap("skill_1","s.hero_art.state==='skill_1' && Math.abs(s.rune-(a-25))<.01",skill["rune"]))
-                    await qa.idle()
-                    await qa.safe_spawn()
+                    if phase != "lifecycle-tail":
+                        qa.mark("hold_heavy_dodge_parry_heal_skill")
+                        heavy = await qa.touch_action("heavy", hold=True)
+                        charged = await qa.wait("s.charge_elapsed>=.65 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
+                        await qa.record("07-heavy-held", screenshot=True, status=charged)
+                        await qa.record("heavy-release", status=await qa.observe_action("s.hero_art.state==='heavy'",None,lambda:qa.touch.end(heavy)))
+                        await qa.idle()
+                        await qa.safe_spawn()
+                        for action_name, cost in [("skill_2", 45), ("skill_3", 80)]:
+                            gated = await qa.idle()
+                            if gated["rune"] < cost:
+                                await qa.touch_action(action_name)
+                                after_gated = await qa.stable(gated)
+                                assert abs(after_gated["rune"]-gated["rune"]) < .01
+                                await qa.record(action_name + "-resource-gated", status=after_gated)
+                        await qa.record("dodge", status=await qa.observe_tap("dodge","s.dodge_cooldown>0"))
+                        await qa.idle()
+                        await qa.record("parry", status=await qa.observe_tap("parry","s.parry_cooldown>0"))
+                        await qa.idle()
+                        heal = await qa.state()
+                        await qa.touch_action("heal")
+                        if heal["health"] < heal["max_health"] and heal["potions"] > 0:
+                            await qa.wait("s.health>a.hp && s.potions===a.potions-1", {"hp": heal["health"], "potions": heal["potions"]})
+                        else:
+                            await qa.stable(heal)
+                            after = await qa.state()
+                            assert after["potions"] == heal["potions"], after
+                        await qa.record("heal-legitimate-or-full-health-noop")
+                        await qa.safe_spawn()
+                        skill = await qa.idle()
+                        assert skill["rune"] >= 25, skill
+                        await qa.record("08-skill-one", screenshot=True, status=await qa.observe_tap("skill_1","s.hero_art.state==='skill_1' && Math.abs(s.rune-(a-25))<.01",skill["rune"]))
+                        await qa.idle()
+                        await qa.safe_spawn()
 
                     qa.mark("pause_cancel_focus_and_quality")
-                    await qa.stick((0, -(.14+.86*.1))); await qa.touch_action("heavy", hold=True)
-                    await qa.wait("s.charge_elapsed>.1 && s.touch.pressed_actions.includes('heavy') && Math.hypot(...s.touch.stick_vector)>.05")
-                    await qa.touch_action("pause")
-                    paused = await qa.wait("s.paused && s.modal && s.touch.active_pointers.length===0")
-                    await qa.touch.release()
-                    await qa.tap_button("계속하기")
-                    await qa.stable(paused)
+                    if phase != "lifecycle-tail":
+                        await qa.stick((0, -(.14+.86*.1))); await qa.touch_action("heavy", hold=True)
+                        await qa.wait("s.charge_elapsed>.1 && s.touch.pressed_actions.includes('heavy') && Math.hypot(...s.touch.stick_vector)>.05")
+                        await qa.touch_action("pause")
+                        paused = await qa.wait("s.paused && s.modal && s.touch.active_pointers.length===0")
+                        await qa.touch.release()
+                        await qa.tap_button("계속하기")
+                        await qa.stable(paused)
                     await qa.set_quality(1, "09-portrait")
-                    await qa.cancelled("touchcancel", qa.touch.cancel)
+                    if phase != "lifecycle-tail":
+                        await qa.cancelled("touchcancel", qa.touch.cancel)
 
                     async def focus_loss():
+                        # Playwright initializes every Chromium page with
+                        # Emulation.setFocusEmulationEnabled(true), which keeps
+                        # document.hasFocus true across genuine tab activation.
+                        # Restore native focus behavior before switching tabs;
+                        # never dispatch synthetic blur or write Godot state.
+                        await qa.client.send("Emulation.setFocusEmulationEnabled", {"enabled": False})
                         blank = await context.new_page()
                         try:
-                            await blank.bring_to_front()
-                            await qa.page.wait_for_function("!document.hasFocus() || document.visibilityState==='hidden'", timeout=UI_TIMEOUT)
+                            async with asyncio.timeout(UI_TIMEOUT / 1000):
+                                await blank.bring_to_front()
+                                await qa.page.wait_for_function("!document.hasFocus()", timeout=UI_TIMEOUT)
+                                assert await qa.page.evaluate("window.__RUNEFALL_MOBILE_TOUCH_OBS.focus.some(e=>e.type==='blur' && e.trusted && !e.focused)")
                         finally:
                             await qa.page.bring_to_front()
                             await blank.close()
+                            await qa.page.wait_for_function("document.hasFocus()", timeout=UI_TIMEOUT)
+                            await qa.client.send("Emulation.setFocusEmulationEnabled", {"enabled": True})
+                        # Hidden tabs may suspend rAF and the Godot QA emitter.
+                        # Observe the same cancellation effect after the real
+                        # foreground return, without relying on background FPS.
+                        await qa.wait("s.paused && s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
                     await qa.cancelled("focus-loss", focus_loss)
 
                     qa.mark("landscape_and_narrow_orientation")
@@ -763,7 +780,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
         assert not qa.errors, qa.errors
         qa.mark("completed")
         qa.write("mobile-result.json", {"outcome": "passed" if phase == "full" else "lifecycle_focused_passed", "phase":phase, "seconds": round(time.monotonic() - qa.started, 3),
-                                       "scope": "Chromium full touch workflow" if phase == "full" else "Lifecycle focus: heavy/dodge/parry/heal/skill, pause/cancel/focus, orientation, quality/committed saves and full browser restart only; shop/multitouch/sprint/combat not repeated; not full approval",
+                                       "scope": "Chromium full touch workflow" if phase == "full" else "Focused lifecycle subset recorded by phase; quality/committed saves and full browser restart included. lifecycle-tail omits already observed actions/touchcancel and covers focus/orientation/persistence only; not full approval",
                                        "states": list(qa.states), "errors": qa.errors})
         print("RUNEFALL_MOBILE_OK · full workflow" if phase == "full" else "RUNEFALL_MOBILE_LIFECYCLE_FOCUSED_OK · lifecycle/quality/IDB/restart only; full workflow pending", flush=True)
     except Exception as error:
@@ -783,6 +800,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url")
     parser.add_argument("--output", type=Path, default=Path("build/verification/mobile"))
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail"],default="full")
     arguments = parser.parse_args()
     asyncio.run(run(arguments.url, arguments.output,arguments.phase))
