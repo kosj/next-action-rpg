@@ -27,6 +27,7 @@
 | `save-settings-vs-journey` | 설정 저장과 실제 플레이 여정 시작은 서로 다른 상태다. | 타이틀 이어하기 조건, 새 게임/설정만 저장/복귀 시나리오 |
 | `web-input-after-ui` | UI 클릭이 곧바로 공격으로 누수될 수 있다. 이벤트 소비와 fresh-press 경계를 둔다. | 마우스/패드/키보드별 재개 입력, 실제 공격 효과 |
 | `touch-input-alias-lifecycle` | pointer 소유권과 장치별 action 해제 범위를 나누고 merged edge·GUI 전환을 검사한다. | cancel/release·초점/복귀·에뮬레이션 재진입, 동시 물리 입력·process/physics 경계. native fixture 통과와 실제 Web을 구분 |
+| `mobile-driver-feedback-and-transient-observation` | 실제 입력 전에 짧은 상태의 읽기 전용 관찰을 시작하고, 같은 gesture의 geometry를 반복 조회하며 이전 입력을 오래 유지하지 않는다. | 입력 응답 지연·미래 frame snapshot·최종 실제 위치·pointer 종료·유한 시간. driver 실패와 앱 결함, 집중/전체 통과를 구분 |
 | `charge-held-end-pose-regression` | 상태명이나 손가락 변화만으로 차지/장전 동작을 승인하지 않는다. | 끝 시점의 실제 몸/무기 이동, 임계 이후 hold, 취소와 release 타이밍 |
 
 게임 코드의 초 단위를 클립 제작의 원본으로 씁니다. 클립이 부족하다고 피해 창을 임의로 늘리거나 검을 길게 만들어 접촉 문제를 숨기지 않습니다. 표현과 판정의 불일치는 실제 영상·marker·게임 데이터를 함께 보며 해결합니다.
