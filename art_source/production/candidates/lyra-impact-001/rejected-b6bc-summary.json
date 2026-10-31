@@ -1,0 +1,24 @@
+{
+  "scope": "Actual exported glTF local TRS/slerp FK at every active key and midpoint plus runtime fractions; canonical1.19m blade, no Godot optimizer/terrain/visual/AAA approval.",
+  "active_samples": 44,
+  "max_grip_error_m": 0.2632099661460002,
+  "max_tip_error_m": 1.766662991646624,
+  "max_arm_joint_key_step_degrees": 174.8261851042178,
+  "worst_joint_step": {
+    "bone": "RightHand",
+    "interval_s": [
+      0.4699999988079071,
+      0.47999998927116394
+    ]
+  },
+  "grip_limit_m": 0.003,
+  "tip_limit_m": 0.003,
+  "joint_step_limit_degrees": 45,
+  "passed": false,
+  "source_sha256": "b6bc88d72ad1605a70f3b00ffedda21e67064f012a1c5700d0b96e9ad4216bf7",
+  "status": "rejected",
+  "reason": "Exact hand targets at keys hid opposing IK twist across .47\u2192.48; native and independent actual raw GLB FK both failed at .475.",
+  "native_actual_actor_frame_max_grip_error_m": 0.264,
+  "native_actual_actor_frame_max_tip_error_m": 1.767,
+  "action": "Continuous elbow-plane IK; new2actions500Hz, actual raw GLB key+midpoint gate; no tolerance increase."
+}

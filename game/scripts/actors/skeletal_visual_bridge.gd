@@ -15,6 +15,9 @@ var selected_clip: StringName = &""
 var sampled_time: float = 0.0
 var locomotion_clock: float = 0.0
 var _clip_node: AnimationNodeAnimation
+var _charge_clip_node: AnimationNodeAnimation
+var _charge_layer_active: bool = false
+var _charge_layer_time: float = 0.0
 var _skeleton: Skeleton3D
 var _base_rig_yaw: float = 0.0
 var _presentation_epoch: int = 0
@@ -28,6 +31,14 @@ var _blend_yaw: float = 0.0
 var _blend_positions := PackedVector3Array()
 var _blend_rotations: Array[Quaternion] = []
 var _blend_scales := PackedVector3Array()
+var _blend_upper_only: bool = false
+
+func _is_upper_bone(index: int) -> bool:
+	while index >= 0:
+		if _skeleton.get_bone_name(index) == "Spine":
+			return true
+		index = _skeleton.get_bone_parent(index)
+	return false
 
 # Facing uses gameplay -Z. Snapshots expose only fresh scalar components,
 # never mutable controller/skeleton references.
@@ -59,7 +70,8 @@ func enable_transition_polish(enabled: bool = true) -> Dictionary:
 
 func transition_report() -> Dictionary:
 	return {"enabled":_transition_polish_enabled, "active":_blend_duration > 0.0,
-		"elapsed":_blend_elapsed, "duration":_blend_duration, "gait_phase":_gait_phase}
+		"elapsed":_blend_elapsed, "duration":_blend_duration, "gait_phase":_gait_phase,
+		"charge_upper_body":_charge_layer_active,"charge_sampled_time":_charge_layer_time}
 
 func _complete_pose_error() -> String:
 	if not is_instance_valid(_skeleton) or animation_player == null:
@@ -174,7 +186,35 @@ func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: 
 	blend.add_node(&"Clip", _clip_node)
 	blend.add_node(&"Clock", seek)
 	blend.connect_node(&"Clock", 0, &"Clip")
-	blend.connect_node(&"output", 0, &"Clock")
+	if clips.has(&"charge") and _skeleton.find_bone("Spine") >= 0:
+		# Filter an independent charge clock onto Spine descendants only. Hips,
+		# Root and every leg/foot remain the current locomotion sample.
+		_charge_clip_node = AnimationNodeAnimation.new()
+		_charge_clip_node.animation = clips[&"charge"]
+		var charge_clock := AnimationNodeTimeSeek.new()
+		var upper := AnimationNodeBlend2.new()
+		upper.filter_enabled = true
+		var charge_animation := animation_player.get_animation(clips[&"charge"])
+		var spine := _skeleton.find_bone("Spine")
+		for track in range(charge_animation.get_track_count()):
+			var path := charge_animation.track_get_path(track)
+			if path.get_subname_count() != 1:
+				continue
+			var bone := _skeleton.find_bone(path.get_subname(0))
+			while bone >= 0:
+				if bone == spine:
+					upper.set_filter_path(path, true)
+					break
+				bone = _skeleton.get_bone_parent(bone)
+		blend.add_node(&"ChargeClip", _charge_clip_node)
+		blend.add_node(&"ChargeClock", charge_clock)
+		blend.add_node(&"ChargeUpper", upper)
+		blend.connect_node(&"ChargeClock", 0, &"ChargeClip")
+		blend.connect_node(&"ChargeUpper", 0, &"Clock")
+		blend.connect_node(&"ChargeUpper", 1, &"ChargeClock")
+		blend.connect_node(&"output", 0, &"ChargeUpper")
+	else:
+		blend.connect_node(&"output", 0, &"Clock")
 	animation_tree.tree_root = blend
 	animation_tree.active = true
 	reset_presentation()
@@ -191,6 +231,11 @@ func reset_presentation(epoch: int = 0) -> void:
 	_gait_phase = 0.0
 	_idle_clock = 0.0
 	_clear_transition()
+	_charge_layer_active = false
+	_charge_layer_time = 0.0
+	if _charge_clip_node != null and animation_tree != null:
+		animation_tree.set("parameters/ChargeUpper/blend_amount", 0.0)
+		animation_tree.set("parameters/ChargeClock/seek_request", 0.0)
 	if is_instance_valid(rig):
 		rig.rotation.y = _base_rig_yaw
 	if animation_tree != null and _clip_node != null:
@@ -204,9 +249,11 @@ func _clear_transition() -> void:
 	_blend_positions.clear()
 	_blend_rotations.clear()
 	_blend_scales.clear()
+	_blend_upper_only = false
 
-func _capture_transition(duration: float) -> void:
+func _capture_transition(duration: float, upper_only: bool = false) -> void:
 	_clear_transition()
+	_blend_upper_only = upper_only
 	_blend_duration = duration
 	_blend_yaw = rig.rotation.y - _base_rig_yaw
 	for bone in range(_skeleton.get_bone_count()):
@@ -224,10 +271,13 @@ func _blend_pose(delta: float, visual_yaw: float) -> void:
 	var amount := _blend_elapsed / _blend_duration
 	amount = amount * amount * (3.0 - 2.0 * amount)
 	for bone in range(_skeleton.get_bone_count()):
+		if _blend_upper_only and not _is_upper_bone(bone):
+			continue
 		_skeleton.set_bone_pose_position(bone, _blend_positions[bone].lerp(_skeleton.get_bone_pose_position(bone), amount))
 		_skeleton.set_bone_pose_rotation(bone, _blend_rotations[bone].slerp(_skeleton.get_bone_pose_rotation(bone), amount))
 		_skeleton.set_bone_pose_scale(bone, _blend_scales[bone].lerp(_skeleton.get_bone_pose_scale(bone), amount))
-	rig.rotation.y = _base_rig_yaw + lerp_angle(_blend_yaw, visual_yaw, amount)
+	if not _blend_upper_only:
+		rig.rotation.y = _base_rig_yaw + lerp_angle(_blend_yaw, visual_yaw, amount)
 
 func _failure(reason: String) -> Dictionary:
 	last_error = reason
@@ -361,7 +411,7 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		elapsed = float(snapshot.get("death_elapsed", 0.0))
 		duration = float(snapshot.get("death_duration", 0.0))
 	elif float(snapshot.get("stagger", 0.0)) > 0.0:
-		state = &"hit"
+		state = StringName(snapshot.get("hit_reaction", "hit"))
 		elapsed = float(snapshot.get("hit_elapsed", 0.0))
 		duration = float(snapshot.get("hit_duration", 0.15))
 	elif float(snapshot.get("dodge_remaining", 0.0)) > 0.0:
@@ -414,6 +464,18 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 	var length := animation_player.get_animation(next_clip).length
 	var previous_time := sampled_time
 	var state_changed := state != selected_state or next_clip != selected_clip
+	var previous_charge_time := _charge_layer_time
+	var charge_layer := _charge_clip_node != null and state in LOOP_STATES and state != &"idle" and bool(snapshot.get("charge_active", false))
+	var charge_layer_changed := charge_layer != _charge_layer_active
+	if charge_layer:
+		var charge_duration := float(snapshot.get("charge_duration", 0.65))
+		var charge_elapsed := float(snapshot.get("charge_elapsed", 0.0))
+		if not is_finite(charge_duration) or charge_duration <= 0.0 or not is_finite(charge_elapsed):
+			last_error = "Moving charge requires finite gameplay elapsed and duration"
+			return false
+		_charge_layer_time = clampf(charge_elapsed/charge_duration,0.0,1.0)*animation_player.get_animation(clips[&"charge"]).length
+	else:
+		_charge_layer_time = 0.0
 	if state in LOOP_STATES:
 		var reference_speed := 8.5 if state == &"run" else 6.4
 		reference_speed = float(snapshot.get("locomotion_reference_speed", reference_speed))
@@ -450,19 +512,23 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		var restarted := not state in LOOP_STATES and sampled_time < previous_time-0.000001
 		# Zero-delta changed samples are explicit audit/editor seeks. An unchanged
 		# zero-delta snapshot retains its exact blend weight and gait phase.
-		var exact_seek := delta <= 0.0 and (state_changed or absf(sampled_time-previous_time) > 0.000001)
-		if not _has_presented_pose or exact_seek or state in [&"hit", &"dodge", &"parry", &"death"] or (attack and elapsed >= startup):
+		var exact_seek := delta <= 0.0 and (state_changed or absf(sampled_time-previous_time) > 0.000001 or charge_layer_changed or absf(_charge_layer_time-previous_charge_time) > 0.000001)
+		if not _has_presented_pose or exact_seek or state in [&"hit", &"heavy_hit", &"dodge", &"parry", &"death"] or (attack and elapsed >= startup):
 			_clear_transition()
-		elif state_changed or restarted:
+		elif state_changed or restarted or charge_layer_changed:
 			if blend_duration > 0.0:
-				_capture_transition(blend_duration)
+				_capture_transition(blend_duration, charge_layer_changed and not state_changed and not restarted)
 			else:
 				_clear_transition()
 	selected_state = state
 	selected_clip = next_clip
+	_charge_layer_active = charge_layer
 	rig.rotation.y = _base_rig_yaw + visual_yaw
 	_clip_node.animation = selected_clip
 	animation_tree.set("parameters/Clock/seek_request", sampled_time)
+	if _charge_clip_node != null:
+		animation_tree.set("parameters/ChargeUpper/blend_amount", 1.0 if charge_layer else 0.0)
+		animation_tree.set("parameters/ChargeClock/seek_request", _charge_layer_time)
 	animation_tree.advance(0.0)
 	# AnimationTree remains the only playback owner and has sampled the exact
 	# gameplay target. This bounded visual blend changes no target clock, actor,

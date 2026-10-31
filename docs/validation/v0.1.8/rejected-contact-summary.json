@@ -1,0 +1,211 @@
+{
+  "scope": "Historical rejected observations; neither old green CI nor geometry-only success approves the current release. Current evidence is separate.",
+  "old_full_grip": [
+    {
+      "source": "https://github.com/kosj/next-action-rpg/blob/10118b3cbc2b138441cd08b8ca283354d65d8cd9/docs/validation/v0.1.8/mobile-focused-proof.json",
+      "seconds": 299.51,
+      "full_blade_projection": 0.077705,
+      "point_to_sharp_segment_m": 0.170316,
+      "decision": "Rejected: hit near hilt; full-Grip/Tip capsule gate was insufficient"
+    },
+    {
+      "source": "https://github.com/kosj/next-action-rpg/actions/runs/41248082053",
+      "head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+      "synthetic_merge": "d4d63cec0cf68346c069d2a952d39f59c91d036c",
+      "seconds": 286.941,
+      "attack_elapsed_s": 0.375555555555556,
+      "full_blade_projection": -0.021113,
+      "point_to_sharp_segment_m": 0.265814,
+      "decision": "Rejected despite all three CI jobs passing: receipt behind Grip"
+    }
+  ],
+  "sharp_before_recoil_fix": {
+    "scope": "Actual sharp contact gates passed, focused run FAILED unchanged recoil bound; not complete current approval.",
+    "overall_result": {
+      "outcome": "failed",
+      "stage": "charged_heavy_actual_contact",
+      "seconds": 253.9,
+      "errors": [],
+      "exception_type": "AssertionError",
+      "exception": "{'blade_grip_world': [-0.17599555850029, 1.23763406276703, -25.1707077026367], 'blade_tip_world': [-1.11508119106293, 1.85839223861694, -24.7848606109619], 'blade_trail': {'lifetime': 0.12, 'samples': 0, 'triangles': 0, 'visible': False}, 'boss': False, 'dead': False, 'elite': False, 'eyes_attached': False, 'grip_to_tip_m': 1.19000017642975, 'health': 25.7, 'hit_pause': 0, 'hit_reaction': 'heavy_hit', 'id': 141465489566, 'kind': 'melee', 'mode': 'skeletal', 'profile': 'sentinel_melee', 'recoil_displacement': [0.000262245186604559, -0.000103508937172592, -0.365348815917969], 'recoil_requested_m': 0.35, 'right_hand_pose': [-0.0942457616329193, 0.196409836411476, 0.117559984326363, 0.942262828350067, -0.264992564916611, -0.197086602449417, 0.0554673746228218], 'sampled_time': 0.316666666666667, 'stagger': 0, 'state': 'enemy_attack', 'status': 'Rig ready; visual quality remains subject to art review', 'weapon_attached': True, 'x': -0.00651206634938717, 'z': -25.4576568603516}"
+    },
+    "contact_event": {
+      "amount": 69.3,
+      "attack_elapsed": 0.428888888888889,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 5,
+      "attacker_pause": 0.075,
+      "blocked": false,
+      "contact_blade_grip": [
+        0.151273429393768,
+        1.37313067913055,
+        -24.8332901000977
+      ],
+      "contact_blade_tip": [
+        0.983682930469513,
+        2.06933975219727,
+        -25.3216419219971
+      ],
+      "contact_damage_axis_base": [
+        0.38504758477211,
+        1.56865429878235,
+        -24.9704399108887
+      ],
+      "contact_damage_axis_tip": [
+        0.899742484092712,
+        1.99913382530212,
+        -25.2723960876465
+      ],
+      "contact_damage_base": [
+        0.301107138395309,
+        1.49844837188721,
+        -24.9211940765381
+      ],
+      "contact_damage_tip": [
+        0.983682930469513,
+        2.06933975219727,
+        -25.3216419219971
+      ],
+      "contact_phase": 0.493827160493827,
+      "contact_source": "hurtbox_ray",
+      "damage_start_fraction": 0.18,
+      "direction": [
+        0.000717844464816153,
+        0,
+        -0.999999761581421
+      ],
+      "health_after": 25.7,
+      "health_before": 95,
+      "hitstop": 0.075,
+      "killed": false,
+      "material": "metal",
+      "normal": [
+        0.73991870880127,
+        0.0340840257704258,
+        0.671832323074341
+      ],
+      "physics_frame": 1668,
+      "point": [
+        0.296502709388733,
+        1.56457543373108,
+        -25.050838470459
+      ],
+      "poise_broken": true,
+      "reaction": "heavy_hit",
+      "reaction_duration": 0.48,
+      "requested_recoil_m": 0.35,
+      "sequence": 1,
+      "source": "player",
+      "source_position": [
+        1.97318513528444e-07,
+        -0.0240596029907465,
+        -24.5742073059082
+      ],
+      "strength": "charged",
+      "target_id": 141465489566,
+      "target_position": [
+        0.000535252329427749,
+        0.000941827252972871,
+        -25.3195705413818
+      ],
+      "victim_pause": 0.075
+    },
+    "sharp_contact_validation": {
+      "point_to_blade_segment_m": 0.11549620372919832,
+      "blade_grip_to_tip_m": 1.1900000642243913,
+      "query_sample_time_s": 0.4288888888888889,
+      "packet_attack_elapsed_s": 0.428888888888889,
+      "point_to_damage_segment_m": 0.11549620372919882,
+      "full_blade_projection_fraction": 0.254513037045375,
+      "expected_damage_base": [
+        0.3011071395874021,
+        1.4984483122825596,
+        -24.92119342803959
+      ],
+      "sharp_damage_length_m": 0.9758000526640012,
+      "expected_damage_axis_base": [
+        0.3850475889471207,
+        1.5686542654414435,
+        -24.970438987254013
+      ],
+      "expected_damage_axis_tip": [
+        0.8997424811097945,
+        1.9991337990383862,
+        -25.272396362782676
+      ],
+      "point_to_damage_inner_axis_m": 0.11967000235547567
+    },
+    "frozen_contact_validation": {
+      "observed": false,
+      "reason": "copied snapshot outside charged attacker hitstop"
+    },
+    "actual_recoil_displacement": [
+      0.000262245186604559,
+      -0.000103508937172592,
+      -0.365348815917969
+    ],
+    "actual_recoil_horizontal_m": 0.3653489100369671,
+    "requested_recoil_m": 0.35,
+    "allowed_max_m": 0.355,
+    "collision_geometry_clue": {
+      "actual_contact_center_distance_m": 0.7453634275167647,
+      "sum_actor_capsule_radii_m": 0.76,
+      "initial_overlap_deficit_m": 0.014636572483235355,
+      "actual_recoil_excess_m": 0.015348910036967145,
+      "excess_minus_overlap_m": 0.00071233755373179,
+      "scope": "Consistent with collision recovery; no per-step motor trace to establish causality."
+    }
+  },
+  "sharp_before_recoil_fix_input": {
+    "source_head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+    "source_tree_dirty": true,
+    "source_sha256": {
+      "tools/mobile_browser_smoke.py": "b4e3b465bb333575d9735fbdcb1efd24505532847fd97d00512a8592fc12f0ad",
+      "tools/check_mobile_web.py": "dcb17827a20cbc4b256e62aa2aa5033343b5d96391b373a8a163e0557278c970",
+      "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0",
+      "game/project.godot": "1f8837ff7ff88e37d3cebc96dd34ba2c97f17048b16efe9bccd1649e5e4f305c",
+      "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+      "game/scripts/ui/hud.gd": "b17fb0460414e40a2eb453fe01c79e99f164054060c519eb270f82917f810115",
+      "game/scripts/actors/player.gd": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+      "game/scripts/game.gd": "6902824a62f37ad8663ff44319e5abbabcf76db93977416ec27ac094762900f3",
+      "game/scripts/world/camera_rig.gd": "1cb5b3c692dc30ba8bb26a313ba891f4a714380e31c1256d0012067d2a459a2f",
+      "game/web/shell.html": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+      "game/assets/models/production/lyra_impact_gameplay.glb": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+      "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+      "game/assets/models/production/sentinel_impact_gameplay.glb": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+      "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+      "game/scripts/core/strike.gd": "0f8810e08a285d2231aac7f8773d3f9ad377cc67c2ac7e16a6122cdd03efd01a",
+      "game/scripts/core/attack_data.gd": "61b0a43204d67c28b2f0d0ced21bbbad1d0104158945eadaf41328a78bf001ac",
+      "game/scripts/actors/enemy.gd": "9f9787c124f3e6fae48ca7d7f673b8a481c729652345afeac82785565a3c1cb5",
+      "game/data/charged_heavy.tres": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
+      "game/data/heavy.tres": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb",
+      "game/scripts/core/audio.gd": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
+      "game/import/impact_animation_sampling.gd": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+      "game/assets/models/production/lyra_impact_gameplay.glb.import": "9431e8a5cad39ce74e9d1b8479a3a8e9acc599aac78461745ac9b44ed7059040",
+      "game/assets/models/production/sentinel_impact_gameplay.glb.import": "4f05816f9fdf1567e0ac31db17b1fb84279833f402bac4817a8f74f11053495a",
+      "game/scripts/world/impact_effect.gd": "f9027b67ff9cc8e051f83c86c3262e4236cb4f0c16e89f38f1eed86f35407be1",
+      "game/scripts/actors/actor_visual.gd": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+      "game/scripts/actors/production_character_art.gd": "6f13d723edcbbd3db163c15ee0925c2b85e3f2e07aea0b3f36c6f4515f0fa0ee",
+      "game/scripts/actors/skeletal_visual_bridge.gd": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+      "tools/author_impact_actions.py": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5",
+      "tools/author_character_actions.py": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40",
+      "tools/generate_impact_audio.py": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+      "tools/render_impact_review.py": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378",
+      "game/assets/audio/impact/body_thump.wav": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+      "game/assets/audio/impact/charge_sub.wav": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+      "game/assets/audio/impact/contact_tick.wav": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+      "game/assets/audio/impact/debris_tail.wav": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+      "game/assets/audio/impact/metal_block.wav": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+      "game/assets/audio/impact/metal_heavy.wav": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+      "game/assets/audio/impact/metal_light.wav": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+      "game/assets/audio/impact/swing_charged.wav": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+      "game/assets/audio/impact/swing_heavy.wav": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf"
+    }
+  },
+  "corrected_native_evidence": "contact.json",
+  "unverified": [
+    "Normal-speed audiovisual quality",
+    "Actual target-device performance",
+    "AAA approval"
+  ]
+}

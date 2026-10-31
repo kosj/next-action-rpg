@@ -1,0 +1,193 @@
+{
+  "scope": "Dirty-preview actual focused charged-heavy CDP touch; not full journey, committed/public build, normal-speed AV, target hardware, or AAA approval.",
+  "result": {
+    "outcome": "charged_heavy_focused_passed",
+    "seconds": 282.938,
+    "errors": [],
+    "scope": "Actual charged whiff/no burst, first encounter charged contact, once per strike-target,69.3 damage/heavy_hit/.075 both-hitstop/collision recoil only; not full workflow or AAA audiovisual approval"
+  },
+  "source_head": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+  "source_tree_dirty": true,
+  "build_id": "0.1.8 · b6af5a51",
+  "raw_web_bytes": 146279323,
+  "export_unchanged": true,
+  "server_closed": true,
+  "chromium_closed": true,
+  "whiff_counts": {
+    "before": [
+      0,
+      0
+    ],
+    "after": [
+      0,
+      0
+    ]
+  },
+  "trusted_touch": {
+    "trusted": true,
+    "max_points": 2
+  },
+  "actual_contact_count": 1,
+  "damage": 69.3,
+  "target_health": [
+    95,
+    25.7
+  ],
+  "reaction": {
+    "id": "heavy_hit",
+    "duration": 0.48,
+    "both_hitstop_seconds": [
+      0.075,
+      0.075
+    ]
+  },
+  "physical_sample_checks": [
+    {
+      "point_to_blade_segment_m": 0.11679369251550424,
+      "blade_grip_to_tip_m": 1.1899999815503368,
+      "query_sample_time_s": 0.4322222222222221,
+      "packet_attack_elapsed_s": 0.432222222222222,
+      "point_to_damage_segment_m": 0.11679369251550419,
+      "full_blade_projection_fraction": 0.26374919299824406,
+      "expected_damage_base": [
+        0.28913351893424977,
+        1.4832050061225885,
+        -24.30837020874026
+      ],
+      "sharp_damage_length_m": 0.9757999848712761,
+      "expected_damage_axis_base": [
+        0.37181272579802294,
+        1.549958094081074,
+        -24.364121208734737
+      ],
+      "expected_damage_axis_tip": [
+        0.8787740521274678,
+        1.9592657699974445,
+        -24.705967750005524
+      ],
+      "point_to_damage_inner_axis_m": 0.11855133758392557
+    }
+  ],
+  "frozen_contact_check": {
+    "observed": false,
+    "reason": "copied snapshot outside charged attacker hitstop"
+  },
+  "actual_recoil_horizontal_m": 0.3499984741330781,
+  "counts": {
+    "confirmed": 1,
+    "actual_effect_spawns": 1
+  },
+  "release_match_seconds": 5.787,
+  "final": {
+    "paused": true,
+    "health": 72,
+    "active_pointers": []
+  },
+  "source_hashes": {
+    "tools/mobile_browser_smoke.py": "b4e3b465bb333575d9735fbdcb1efd24505532847fd97d00512a8592fc12f0ad",
+    "tools/check_mobile_web.py": "dcb17827a20cbc4b256e62aa2aa5033343b5d96391b373a8a163e0557278c970",
+    "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0",
+    "game/project.godot": "1f8837ff7ff88e37d3cebc96dd34ba2c97f17048b16efe9bccd1649e5e4f305c",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "game/scripts/ui/hud.gd": "b17fb0460414e40a2eb453fe01c79e99f164054060c519eb270f82917f810115",
+    "game/scripts/actors/player.gd": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+    "game/scripts/game.gd": "6902824a62f37ad8663ff44319e5abbabcf76db93977416ec27ac094762900f3",
+    "game/scripts/world/camera_rig.gd": "1cb5b3c692dc30ba8bb26a313ba891f4a714380e31c1256d0012067d2a459a2f",
+    "game/web/shell.html": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+    "game/assets/models/production/lyra_impact_gameplay.glb": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "game/assets/models/production/sentinel_impact_gameplay.glb": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+    "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "game/scripts/core/strike.gd": "0f8810e08a285d2231aac7f8773d3f9ad377cc67c2ac7e16a6122cdd03efd01a",
+    "game/scripts/core/attack_data.gd": "61b0a43204d67c28b2f0d0ced21bbbad1d0104158945eadaf41328a78bf001ac",
+    "game/scripts/actors/enemy.gd": "fe71694325f81f6a6c00888b34ac74e7aac5a83da6153df4b749ba1654a69b96",
+    "game/data/charged_heavy.tres": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
+    "game/data/heavy.tres": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb",
+    "game/scripts/core/audio.gd": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
+    "game/import/impact_animation_sampling.gd": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+    "game/assets/models/production/lyra_impact_gameplay.glb.import": "9431e8a5cad39ce74e9d1b8479a3a8e9acc599aac78461745ac9b44ed7059040",
+    "game/assets/models/production/sentinel_impact_gameplay.glb.import": "4f05816f9fdf1567e0ac31db17b1fb84279833f402bac4817a8f74f11053495a",
+    "game/scripts/world/impact_effect.gd": "f9027b67ff9cc8e051f83c86c3262e4236cb4f0c16e89f38f1eed86f35407be1",
+    "game/scripts/actors/actor_visual.gd": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+    "game/scripts/actors/production_character_art.gd": "6f13d723edcbbd3db163c15ee0925c2b85e3f2e07aea0b3f36c6f4515f0fa0ee",
+    "game/scripts/actors/skeletal_visual_bridge.gd": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+    "tools/author_impact_actions.py": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5",
+    "tools/author_character_actions.py": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40",
+    "tools/generate_impact_audio.py": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+    "tools/render_impact_review.py": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378",
+    "game/assets/audio/impact/body_thump.wav": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+    "game/assets/audio/impact/charge_sub.wav": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+    "game/assets/audio/impact/contact_tick.wav": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+    "game/assets/audio/impact/debris_tail.wav": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+    "game/assets/audio/impact/metal_block.wav": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+    "game/assets/audio/impact/metal_heavy.wav": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+    "game/assets/audio/impact/metal_light.wav": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+    "game/assets/audio/impact/swing_charged.wav": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+    "game/assets/audio/impact/swing_heavy.wav": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf"
+  },
+  "web_export_hashes": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "FONT_LICENSE.txt": {
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded"
+    },
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_THIRD_PARTY.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 4298,
+      "sha256": "43869fd6e07ea7fbcd4496424a667eab8d2642bb6595a7c41db336bc07560325"
+    },
+    "index.apple-touch-icon.png": {
+      "bytes": 13950,
+      "sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922"
+    },
+    "index.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "index.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 3171,
+      "sha256": "95280054645ece650d4fb27deb8653b829f4bbc7b7bcf9b0369c8c12fb8cafd5"
+    },
+    "index.icon.png": {
+      "bytes": 5217,
+      "sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd"
+    },
+    "index.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "index.pck": {
+      "bytes": 106320760,
+      "sha256": "9efb43057f37921b34378684e342c82801cda8ff8d5d54e3e1dc947a120cfea9"
+    },
+    "index.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "evidence": [
+    "mobile-focused-proof.json",
+    "mobile-release-timeline.json",
+    "mobile-export-context.json",
+    "mobile-after-contact-paused.png",
+    "rejected-contact-summary.json"
+  ]
+}

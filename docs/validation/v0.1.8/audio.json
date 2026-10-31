@@ -1,0 +1,131 @@
+{
+	"audio_script_sha256": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
+	"crowd_effect_players": 32,
+	"final_drained": true,
+	"profiles": {
+		"blocked": {
+			"accepted": true,
+			"attack_id": "charged_heavy",
+			"blocked": true,
+			"contact_source": "hurtbox_proxy",
+			"density_headroom_db": -13.5411998265592,
+			"epoch": 6,
+			"killed": false,
+			"layers": [
+				{
+					"key": "contact_tick",
+					"volume_db": -35.5411998265593
+				},
+				{
+					"key": "metal_block",
+					"volume_db": -26.5411998265593
+				},
+				{
+					"key": "debris_tail",
+					"volume_db": -41.5411998265593
+				}
+			],
+			"point": "(2.0, 1.0, -3.0)",
+			"poise_broken": true,
+			"strength": "charged",
+			"style": "blocked_metal"
+		},
+		"charged": {
+			"accepted": true,
+			"attack_id": "charged_heavy",
+			"blocked": false,
+			"contact_source": "hurtbox_proxy",
+			"density_headroom_db": -10.2866538766053,
+			"epoch": 6,
+			"killed": false,
+			"layers": [
+				{
+					"key": "contact_tick",
+					"volume_db": -27.2866538766053
+				},
+				{
+					"key": "metal_heavy",
+					"volume_db": -23.2866538766053
+				},
+				{
+					"key": "body_thump",
+					"volume_db": -25.2866538766053
+				},
+				{
+					"key": "charge_sub",
+					"volume_db": -28.2866538766053
+				},
+				{
+					"key": "debris_tail",
+					"volume_db": -33.2866538766053
+				}
+			],
+			"point": "(2.0, 1.0, -3.0)",
+			"poise_broken": true,
+			"strength": "charged",
+			"style": "charged"
+		},
+		"heavy": {
+			"accepted": true,
+			"attack_id": "charged_heavy",
+			"blocked": false,
+			"contact_source": "hurtbox_proxy",
+			"density_headroom_db": -6.36076097372589,
+			"epoch": 6,
+			"killed": false,
+			"layers": [
+				{
+					"key": "contact_tick",
+					"volume_db": -23.3607609737259
+				},
+				{
+					"key": "metal_heavy",
+					"volume_db": -21.3607609737259
+				},
+				{
+					"key": "body_thump",
+					"volume_db": -20.3607609737259
+				},
+				{
+					"key": "debris_tail",
+					"volume_db": -31.3607609737259
+				}
+			],
+			"point": "(2.0, 1.0, -3.0)",
+			"poise_broken": true,
+			"strength": "heavy",
+			"style": "heavy"
+		},
+		"light": {
+			"accepted": true,
+			"attack_id": "charged_heavy",
+			"blocked": false,
+			"contact_source": "hurtbox_proxy",
+			"density_headroom_db": -3.43820026016113,
+			"epoch": 6,
+			"killed": false,
+			"layers": [
+				{
+					"key": "contact_tick",
+					"volume_db": -21.4382002601611
+				},
+				{
+					"key": "metal_light",
+					"volume_db": -21.4382002601611
+				}
+			],
+			"point": "(2.0, 1.0, -3.0)",
+			"poise_broken": true,
+			"strength": "light",
+			"style": "light"
+		}
+	},
+	"scope": "Actual WAV API allocation, swing/contact separation, profile ownership, same-frame crowd cap and observed playback shutdown; listening and rendered Web mix remain separate.",
+	"stop": {
+		"frames": 13,
+		"initial_pending_playbacks": 33,
+		"pending_playbacks": 0,
+		"players": 0,
+		"seconds": 0.077953
+	}
+}

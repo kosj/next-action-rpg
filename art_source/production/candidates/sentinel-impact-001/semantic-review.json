@@ -1,0 +1,8 @@
+{
+  "duration_s": 0.48,
+  "sample_hz": 100,
+  "max_right_grip_error_m": 2.4028122425079346e-07,
+  "max_left_support_error_m": null,
+  "minimum_blade_tip_height_m": 1.760266661643982,
+  "scope": "Finite new heavy-hit authored pose samples; runtime deformation/transition/visual review pending."
+}

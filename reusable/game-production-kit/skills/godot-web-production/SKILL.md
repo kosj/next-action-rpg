@@ -1,6 +1,6 @@
 ---
 name: godot-web-production
-description: Build and validate Godot Web/Windows projects with reproducible toolchains, mobile touch and responsive viewport mapping, real input and durable browser saves, exact-commit publishing and clean asynchronous shutdown. Use for game integration tests, mobile web controls, web exports, release automation or deployment failures.
+description: Build and validate Godot Web/Windows projects with reproducible toolchains, mobile touch and responsive viewport mapping, real input and durable browser saves, exact-commit publishing and clean asynchronous shutdown. Use for game integration tests, mobile web controls, combat presentation assessment, web exports, release automation or deployment failures.
 ---
 
 # Godot 웹 제작과 배포 검증
@@ -18,6 +18,10 @@ description: Build and validate Godot Web/Windows projects with reproducible too
 3. UI 재개/이어하기 클릭과 게임 공격 입력이 같은 이벤트를 공유할 수 있습니다. UI가 소비한 입력을 구분하고 필요한 release/fresh-press 경계를 사용합니다. 임의 긴 cooldown으로 입력 누수를 숨기지 않습니다.
 4. 저장은 스키마·자료형·유한 값·범위를 검증합니다. 검증된 primary만 backup으로 회전하고 실패 시 기존 정상 파일을 보존합니다. 설정 저장과 실제 여정 시작을 구분합니다. 대상 파일시스템의 실제 rename/write 실패를 검사합니다.
 5. headless fixture에서 autoload·전체 씬이 필요하면 실제 Node/SceneTree 수명을 유지합니다. 입력 주입은 process/physics 신호 경계와 `just_pressed`·실제 행동을 함께 확인합니다. fixture 오류를 게임 판정 완화로 해결하지 않습니다.
+
+## 전투 기능과 시청각 품질
+
+동작·VFX·타격감의 완성도를 평가할 때는 [전투 품질 검수](references/combat-quality-review.md)를 적용합니다. 기능 검사와 클립 수, 실제 포즈·접촉·정상1배속 영상/음향과 기기 측정의 근거를 구분하고, 참고 게임의 직업·무기·판본과 관찰 범위를 확인합니다. 이미 존재하는 보간·차지·궤적을 빠뜨리지 않으며 단순한 수치 증가를 시청각 품질 승인으로 바꾸지 않습니다.
 
 ## 모바일 Web 입력과 반응형 화면
 

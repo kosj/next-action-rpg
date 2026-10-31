@@ -202,14 +202,18 @@ func run() -> void:
 	await get_tree().create_timer(2.1).timeout
 	check(load("res://tests/save_regressions.gd").run(session, check) == true, "Save regression suite completes")
 	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
+	check(await load("res://tests/charged_impact_regressions.gd").run(world, check) == true, "Charged blade contacts, shared hitstop and collision recoil suite completes")
+	check(await load("res://tests/impact_presentation_regressions.gd").run(world, check) == true, "Contact camera, effect crowd budget and lifetime suite completes")
 	check(await load("res://tests/skeletal_regressions.gd").run(world, check) == true, "Skeletal presentation suite completes")
 	check(await load("res://tests/art_integration_regressions.gd").run(world, check) == true, "Generated static art integration suite completes")
 	check(await load("res://tests/production_character_regressions.gd").run(world, check) == true, "Production character skin, socket and gameplay presentation suite completes")
+	check(await load("res://tests/charged_blade_alignment_regressions.gd").run(world, check) == true, "Imported charged blade, planted foot and moving charge agree with gameplay")
 	check(await load("res://tests/skeletal_transition_regressions.gd").run(world, check) == true, "Production skeletal transitions preserve clocks, priority and same-frame sockets")
 	check(await load("res://tests/blade_trail_regressions.gd").run(world, check) == true, "Displayed blade trails preserve action windows, world-space history and lifecycle")
 	check(await load("res://tests/character_eye_regressions.gd").run(world, check) == true, "Actual eye geometry preserves source anchors, Head sockets, units and imported colors")
 	check(await load("res://tests/mobile_input_regressions.gd").run(world, check) == true, "Actual touch pointers preserve actions, ownership, viewport and device lifecycle")
 	check(await load("res://tests/audio_lifecycle_regressions.gd").run(world, check) == true, "Audio shutdown, deferred callbacks and explicit restart preserve playback lifetime")
+	check(await load("res://tests/impact_audio_regressions.gd").run(world, check) == true, "Confirmed impact audio layers, crowd voices and shutdown preserve playback lifetime")
 	ledger = null
 	second = null
 	sweep = null

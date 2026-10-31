@@ -4,11 +4,13 @@ extends CharacterBody3D
 signal hurt
 signal died
 signal landed_hit(amount: float, position: Vector3)
+signal impact_confirmed(context: Dictionary)
 signal parried
 signal skill_effect(position: Vector3, radius: float, color: Color)
 
 const LIGHTS: Array[AttackData] = [preload("res://data/light_1.tres"), preload("res://data/light_2.tres"), preload("res://data/light_3.tres")]
 const HEAVY: AttackData = preload("res://data/heavy.tres")
+const CHARGED_HEAVY: AttackData = preload("res://data/charged_heavy.tres")
 const HEAL_PRESENTATION_DURATION: float = 0.35
 var visual: ActorVisual
 var max_health: float = 120.0
@@ -36,6 +38,7 @@ var parry_time: float = 0.0
 var parry_cooldown: float = 0.0
 var invulnerability: float = 0.0
 var hit_pause: float = 0.0
+var hit_pause_started_frame: int = -1
 var stagger: float = 0.0
 var presentation_death_elapsed: float = 0.0
 var presentation_heal_remaining: float = 0.0
@@ -91,6 +94,7 @@ func restore(point: Vector3) -> void:
 	parry_cooldown = 0.0
 	stagger = 0.0
 	hit_pause = 0.0
+	hit_pause_started_frame = -1
 	locked_target = null
 	invulnerability = 1.0
 	velocity = Vector3.ZERO
@@ -116,6 +120,14 @@ func _physics_process(delta: float) -> void:
 		ui_input_guard -= 1
 		visual.pose(delta, 0, -1.0, false, false, false, presentation_snapshot(0.0))
 		return
+	if hit_pause > 0.0:
+		# Preserve short attack taps, but no timers, movement or defensive/skill
+		# actions may advance or replace the confirmed-contact pose during stop.
+		_buffer_attack_input(0.0)
+		if Engine.get_physics_frames() > hit_pause_started_frame:
+			hit_pause = maxf(0.0, hit_pause - delta)
+		visual.pose(0.0, 0.0, -1.0, false, false, false, presentation_snapshot())
+		return
 	if hit_pause <= 0.0:
 		presentation_heal_remaining = maxf(0.0, presentation_heal_remaining - delta)
 	dodge_time = maxf(0.0, dodge_time - delta)
@@ -127,16 +139,7 @@ func _physics_process(delta: float) -> void:
 	combo_timeout = maxf(0.0, combo_timeout - delta)
 	if combo_timeout == 0.0:
 		combo_hits = 0
-	if TouchControls.action_just_pressed("light"):
-		input_buffer = 0.2
-		buffered_heavy = false
-	if TouchControls.action_just_pressed("heavy"):
-		heavy_held = 0.0
-	if TouchControls.action_pressed("heavy"):
-		heavy_held += delta
-	if TouchControls.action_just_released("heavy"):
-		input_buffer = 0.2
-		buffered_heavy = true
+	_buffer_attack_input(delta)
 	if TouchControls.action_just_pressed("heal") and potions > 0 and health < max_health and strike == null:
 		potions -= 1
 		health = minf(max_health, health + max_health * 0.55)
@@ -160,11 +163,21 @@ func _physics_process(delta: float) -> void:
 	for index in range(3):
 		if TouchControls.action_just_pressed("skill_%d" % (index + 1)):
 			use_skill(index)
-	if hit_pause > 0.0:
-		hit_pause -= delta
-		return
+	var stepped_strike := strike
+	var strike_elapsed_before := strike.elapsed if strike != null else 0.0
 	if strike != null:
 		strike.step(delta, facing, 4)
+		if hit_pause > 0.0:
+			# The hit was confirmed inside step(). Present that exact authoritative
+			# attack sample after resolving this tick's already-consumed movement.
+			# Hit stop freezes the following ticks, never discards phase travel.
+			var consumed_delta := clampf(strike.elapsed-strike_elapsed_before,0.0,delta)
+			var contact_lunge := strike.data.lunge_between(strike_elapsed_before,strike.elapsed) * consumed_delta / maxf(delta,0.000001)
+			_move_character(facing * contact_lunge, delta)
+			# This is the one live sample at contact, not an editor seek. In
+			# particular the active blade ribbon must append before zero-delta stop.
+			visual.pose(consumed_delta, 0.0, -1.0, false, false, false, presentation_snapshot())
+			return
 		if input_buffer > 0.0 and strike.data.can_cancel(strike.elapsed):
 			begin_attack(buffered_heavy, (combo + 1) % 3)
 		elif strike.elapsed >= strike.data.duration():
@@ -182,18 +195,13 @@ func _physics_process(delta: float) -> void:
 			facing = to_target.normalized()
 	var desired := direction * speed
 	if strike != null:
-		desired = facing * strike.data.lunge * (1.0 if strike.elapsed < strike.data.startup + strike.data.active else 0.15)
+		var lunge_speed := strike.data.lunge_between(strike_elapsed_before, strike.elapsed) if strike == stepped_strike else strike.data.lunge_at(strike.elapsed)
+		desired = facing * lunge_speed
 	if dodge_time > 0.0:
 		desired = dodge_direction * 17.0
 	if stagger > 0.0 or parry_time > 0.0:
 		desired *= 0.1
-	velocity.x = desired.x
-	velocity.z = desired.z
-	velocity.y -= 24.0 * delta
-	if is_on_floor():
-		velocity.y = -0.1
-	move_and_slide()
-	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1.0, delta * 18.0))
+	_move_character(desired, delta)
 	if strike != null or dodge_time > 0.0 or parry_time > 0.0 or stagger > 0.0 or _charge_presentation_active():
 		presentation_heal_remaining = 0.0
 	var swing := clampf((strike.elapsed - strike.data.startup + 0.15) / (strike.data.active + 0.15), 0.0, 1.0) if strike != null else -1.0
@@ -201,12 +209,34 @@ func _physics_process(delta: float) -> void:
 	if global_position.y < -8:
 		world.recover_from_fall()
 
+func _move_character(desired: Vector3, delta: float) -> void:
+	velocity.x = desired.x
+	velocity.z = desired.z
+	velocity.y -= 24.0 * delta
+	if is_on_floor():
+		velocity.y = -0.1
+	move_and_slide()
+	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1.0, delta * 18.0))
+
+func _buffer_attack_input(delta: float) -> void:
+	if TouchControls.action_just_pressed("light"):
+		input_buffer = 0.2
+		buffered_heavy = false
+	if TouchControls.action_just_pressed("heavy"):
+		heavy_held = 0.0
+	if TouchControls.action_pressed("heavy"):
+		heavy_held += delta
+	if TouchControls.action_just_released("heavy"):
+		input_buffer = 0.2
+		buffered_heavy = true
+
 func begin_attack(heavy: bool, chain: int) -> void:
 	presentation_heal_remaining = 0.0
 	combo = chain
-	var data: AttackData = HEAVY if heavy else LIGHTS[chain]
+	var charged := heavy and heavy_held >= 0.65
+	var data: AttackData = (CHARGED_HEAVY if charged else HEAVY) if heavy else LIGHTS[chain]
 	var power := 1.0 + Session.upgrades[0] * 0.15
-	if heavy and heavy_held >= 0.65:
+	if charged:
 		power *= 1.65
 	strike = CombatStrike.new(self, data, power)
 	input_buffer = 0.0
@@ -221,7 +251,7 @@ func begin_attack(heavy: bool, chain: int) -> void:
 		if nearest != null:
 			facing = (nearest.global_position - global_position).normalized()
 			facing.y = 0
-	Audio.play_sound("slash", 1.0 + chain * 0.12)
+	Audio.play_attack(String(strike.presentation_id), 1.0 if heavy else 1.0 + chain * 0.12)
 
 func presentation_snapshot(speed: float = -1.0) -> Dictionary:
 	# Fresh scalar values only: a renderer cannot mutate the strike or combat state.
@@ -238,6 +268,7 @@ func presentation_snapshot(speed: float = -1.0) -> Dictionary:
 		"dodge_remaining":dodge_time, "dodge_elapsed":maxf(0.0, 0.32-dodge_time), "dodge_duration":0.32,
 		"parry_remaining":parry_time, "parry_elapsed":maxf(0.0, 0.22-parry_time), "parry_duration":0.22,
 		"attack_id":String(strike.presentation_id) if strike != null else "",
+		"attack_instance_id":strike.attack_instance_id if strike != null else 0,
 		"attack_elapsed":strike.elapsed if strike != null else 0.0,
 		"attack_duration":strike.data.duration() if strike != null else 0.0,
 		"attack_startup":strike.data.startup if strike != null else 0.0,
@@ -249,15 +280,19 @@ func presentation_snapshot(speed: float = -1.0) -> Dictionary:
 func _charge_presentation_active() -> bool:
 	return heavy_held > 0.0 and TouchControls.action_pressed("heavy") and strike == null and dodge_time <= 0.0 and parry_time <= 0.0 and stagger <= 0.0 and not dead
 
-func on_hit(amount: float, point: Vector3) -> void:
+func on_hit(amount: float, point: Vector3, context: Dictionary = {}) -> void:
 	rune = minf(max_rune, rune + 7.0 + Session.upgrades[2] * 1.5)
 	combo_hits += 1
 	combo_timeout = 3.0
-	hit_pause = 0.035
+	hit_pause = maxf(hit_pause, float(context.get("hitstop", 0.035)))
+	hit_pause_started_frame = Engine.get_physics_frames()
 	landed_hit.emit(amount, point)
-	Audio.play_sound("hit", randf_range(0.9, 1.15))
+	if not context.is_empty():
+		impact_confirmed.emit(context.duplicate(true))
+	else:
+		Audio.play_sound("hit", randf_range(0.9, 1.15))
 
-func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool = true) -> void:
+func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool = true, _context: Dictionary = {}) -> void:
 	if dead or invulnerability > 0.0 or not active:
 		return
 	var incoming := origin - global_position

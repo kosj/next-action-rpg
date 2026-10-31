@@ -1,0 +1,105 @@
+{
+  "scope": "Local dirty implementation preview: actual native/import, strict focused touch and Web/Windows packages. Final committed CI/public/release proofs are separate.",
+  "version": "0.1.8",
+  "source_head_before_commit": "b6af5a5118bd3dd8a6d8f70a056a5568bfc7bbe8",
+  "source_tree_dirty": true,
+  "native": {
+    "checks": 439,
+    "failures": 0,
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "evidence": "native-runtime.log",
+    "scope": "Actual clocks, drawn markers, positive frozen trail, sharp/hilt rejection, actual overlap/open/wall recoil; contact.json from actual current execution."
+  },
+  "export": {
+    "web_raw_bytes": 146279323,
+    "budget_bytes": 150000000,
+    "windows_export": true,
+    "zip_crc_verified": true,
+    "manifest": {
+      "version": "0.1.8",
+      "godot": "4.7.2",
+      "commit": "b6af5a51",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 115584896,
+          "sha256": "4f1407bb80a1fdd7b8f09433a8ff48a972351676938715a3cb6ce56080351292"
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 143426203,
+          "sha256": "0d44fc3985e4d7f8192b4021f32fb3972ae4100ef2097ccdba4a2504aed702b2"
+        }
+      ]
+    }
+  },
+  "sampling": {
+    "rejected_scene_wide_500_hz_raw_bytes": 152592309,
+    "selected_new_actions_hz": 500,
+    "unchanged_actions_hz": 100,
+    "removed_upsampled_keys": 702144,
+    "visual_reduction": false
+  },
+  "not_verified": [
+    "Normal-speed audiovisual acceptance",
+    "Actual Android/iOS/Safari/Windows devices",
+    "Target GPU performance",
+    "Final AAA art approval"
+  ],
+  "python": {
+    "tests": 51,
+    "failures": 0
+  },
+  "mobile_focused": {
+    "seconds": 282.938,
+    "errors": 0,
+    "result": "passed",
+    "scope": "Dirty-preview actual focused charged-heavy CDP touch; not full journey, committed/public build, normal-speed AV, target hardware, or AAA approval.",
+    "frozen_pair": {
+      "observed": false,
+      "reason": "copied snapshot outside charged attacker hitstop"
+    }
+  },
+  "files": {
+    "alignment.json": {
+      "bytes": 2748,
+      "sha256": "11f2ba721d19b40853285daaead1550bf431265a452563c7cb966c8fa048b584"
+    },
+    "audio.json": {
+      "bytes": 2892,
+      "sha256": "b1d957ec983fb1899cf5ca95efde31a24500fc7d672641f12da5a56117bb4c2b"
+    },
+    "contact.json": {
+      "bytes": 7972,
+      "sha256": "b58183ac098ee8f6cac7142ad415d44fc0b70b311e2e5805ff204eead576ffca"
+    },
+    "mobile-after-contact-paused.png": {
+      "bytes": 247647,
+      "sha256": "452b640d7ba1e399fe9b4a33ceb1286e11869b8b940b63188eb5b96be6658429"
+    },
+    "mobile-export-context.json": {
+      "bytes": 6970,
+      "sha256": "21567f3de8185c37e570816996a6f915cafc49fa278c8f6d66e183e5630284d5"
+    },
+    "mobile-focused-proof.json": {
+      "bytes": 46534,
+      "sha256": "502ef964cb449d14873f9a0c7d90f010f66ef239fb18924af7bfa6fba2ebb89d"
+    },
+    "mobile-focused-summary.json": {
+      "bytes": 8960,
+      "sha256": "d719ae212ead0215b394b729efd36c6801c0cd4e66b8a2a74094418941324398"
+    },
+    "mobile-release-timeline.json": {
+      "bytes": 39058,
+      "sha256": "79f32b9fbdedba178195821efa497bfa749ef420901777d82f393c674261c9d6"
+    },
+    "native-runtime.log": {
+      "bytes": 3932,
+      "sha256": "27d12abdafd230406c207b0b745e37041ad249e50ff7e7edd3aa25549d65db89"
+    },
+    "rejected-contact-summary.json": {
+      "bytes": 10898,
+      "sha256": "04436f1d743895b29d0c6cc04fa1052e1f883d651d0a9f82fc0da8c987abd3a2"
+    }
+  }
+}

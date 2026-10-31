@@ -12,6 +12,16 @@ var max_health: float = 85.0
 var poise_meter: float = 0.0
 var stagger: float = 0.0
 var presentation_stagger_duration: float = 0.0
+var hit_reaction: String = "hit"
+var hit_pause: float = 0.0
+var hit_pause_started_frame: int = -1
+var recoil_remaining: float = 0.0
+var recoil_direction: Vector3 = Vector3.ZERO
+var recoil_displacement: Vector3 = Vector3.ZERO
+var recoil_travelled_m: float = 0.0
+var recoil_requested_m: float = 0.0
+const RECOIL_DURATION: float = 0.24
+const RECOIL_DISTANCE: float = 0.35
 var cooldown: float = 1.0
 var strike: CombatStrike
 var facing: Vector3 = Vector3.FORWARD
@@ -86,6 +96,11 @@ func _plane(size: Vector2, color: Color) -> MeshInstance3D:
 	return node
 
 func _physics_process(delta: float) -> void:
+	if hit_pause > 0.0:
+		if Engine.get_physics_frames() > hit_pause_started_frame:
+			hit_pause = maxf(0.0, hit_pause - delta)
+		visual.pose(0.0, 0.0, -1.0, false, false, dead, presentation_snapshot())
+		return
 	if dead:
 		death_time += delta
 		visual.pose(delta, 0.0, -1.0, false, false, true, presentation_snapshot())
@@ -98,6 +113,29 @@ func _physics_process(delta: float) -> void:
 	stagger = maxf(0.0, stagger - delta)
 	cooldown = maxf(0.0, cooldown - delta)
 	poise_meter = maxf(0.0, poise_meter - delta * 4)
+	if recoil_remaining > 0.0:
+		# A separate motor branch prevents pursuit/separation from overwriting
+		# impact travel. CharacterBody collision remains authoritative at walls.
+		# move_and_slide may first resolve an existing close-combat overlap.
+		# Count all resolved horizontal travel against the impulse budget, rather
+		# than issuing another full 0.35m on top of that real collision recovery.
+		var distance_left := maxf(0.0,recoil_requested_m-recoil_travelled_m)
+		var motor_step := minf(RECOIL_DISTANCE / RECOIL_DURATION * minf(delta,recoil_remaining),distance_left)
+		velocity.x = recoil_direction.x * motor_step / maxf(delta,0.000001)
+		velocity.z = recoil_direction.z * motor_step / maxf(delta,0.000001)
+		velocity.y -= 24.0 * delta
+		if is_on_floor():
+			velocity.y = -0.1
+		var recoil_start := global_position
+		move_and_slide()
+		var resolved_step := global_position-recoil_start
+		recoil_displacement += resolved_step
+		recoil_travelled_m += Vector2(resolved_step.x,resolved_step.z).length()
+		recoil_remaining = maxf(0.0, recoil_remaining - delta)
+		visual.pose(delta, Vector2(velocity.x, velocity.z).length(), -1.0, false, false, false, presentation_snapshot())
+		bar.visible = health < max_health and not is_boss
+		bar.scale.x = maxf(0.01, health / max_health)
+		return
 	if is_boss and phase == 1 and health <= max_health * 0.5:
 		phase = 2
 		interrupt_attack(0.8)
@@ -174,31 +212,96 @@ func _physics_process(delta: float) -> void:
 	bar.visible = health < max_health and not is_boss
 	bar.scale.x = maxf(0.01, health / max_health)
 
-func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool = true) -> void:
+func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool = true, context: Dictionary = {}) -> void:
 	if dead:
 		return
 	var front := (origin - global_position).normalized().dot(facing) > 0.2
-	if kind == "shield" and front and poise < 35:
+	var blocked := kind == "shield" and front and poise < 35
+	if blocked:
 		amount *= 0.3
-		world.spawn_ring(global_position + Vector3.UP, 0.6, Color("e5be7b"))
+	var health_before := health
 	health = maxf(0.0, health - amount)
 	poise_meter += poise
-	if (not is_boss and (kind != "shield" or poise >= 35)) or poise_meter >= (180 if is_boss else 65):
-		interrupt_attack(1.4 if poise_meter >= 180 else 0.28)
+	var poise_broken := poise_meter >= (180.0 if is_boss else 65.0)
+	var impact := _resolved_impact(context, origin, amount, blocked, poise_broken)
+	impact.health_before = health_before
+	impact.health_after = health
+	var strong: bool = impact.strength in ["heavy", "charged"]
+	var interrupted := (not is_boss and (kind != "shield" or poise >= 35)) or poise_broken
+	if interrupted:
+		var reaction_duration := 1.4 if poise_meter >= 180.0 else 0.28
+		if strong:
+			reaction_duration = maxf(reaction_duration, 0.48)
+		interrupt_attack(reaction_duration, "heavy_hit" if strong else "hit")
 		poise_meter = 0
-	player.on_hit(amount, global_position + Vector3.UP * 1.5)
+		if strong and not blocked and (not is_boss or poise_broken) and health > 0.0:
+			recoil_direction = impact.direction
+			recoil_remaining = RECOIL_DURATION
+			recoil_displacement = Vector3.ZERO
+			recoil_travelled_m = 0.0
+			recoil_requested_m = RECOIL_DISTANCE
+			impact.requested_recoil_m = RECOIL_DISTANCE
+	impact.reaction = hit_reaction if interrupted and health > 0.0 else "none"
+	impact.reaction_duration = presentation_stagger_duration if interrupted and health > 0.0 else 0.0
+	hit_pause = maxf(hit_pause, float(impact.hitstop))
+	hit_pause_started_frame = Engine.get_physics_frames()
+	impact.victim_pause = hit_pause
 	if health <= 0:
 		dead = true
+		recoil_remaining = 0.0
 		collision_layer = 0
 		collision_mask = 0
 		bar.hide()
 		warning.hide()
 		Session.shards += 80 if is_boss else (20 if elite else 9)
+	bar.visible = health > 0.0 and health < max_health and not is_boss
+	bar.scale.x = maxf(0.01, health / max_health)
+	visual.pose(0.0, 0.0, -1.0, false, false, dead, presentation_snapshot())
+	player.on_hit(amount, impact.point, impact)
+	if dead:
 		defeated.emit(self)
 
-func interrupt_attack(duration: float) -> void:
-	if duration > stagger:
-		presentation_stagger_duration = duration
+func _resolved_impact(context: Dictionary, origin: Vector3, amount: float, blocked: bool, poise_broken: bool) -> Dictionary:
+	var incoming := global_position - origin
+	incoming.y = 0.0
+	if incoming.length_squared() < 0.000001:
+		incoming = -facing
+	incoming = incoming.normalized()
+	var strength := String(context.get("strength", "light"))
+	if not strength in ["light", "heavy", "charged", "skill"]:
+		strength = "light"
+	var point: Vector3 = context.get("point", global_position + Vector3.UP * 1.1)
+	var normal: Vector3 = context.get("normal", -incoming)
+	var direction: Vector3 = context.get("direction", incoming)
+	if not point.is_finite():
+		point = global_position + Vector3.UP * 1.1
+	if not normal.is_finite() or normal.length_squared() < 0.000001:
+		normal = -incoming
+	if not direction.is_finite() or direction.length_squared() < 0.000001:
+		direction = incoming
+	var contact_source := String(context.get("contact_source", "hurtbox_proxy"))
+	if not contact_source in ["hurtbox_ray", "hurtbox_proxy"]:
+		contact_source = "hurtbox_proxy"
+	return {
+		"attack_id":String(context.get("attack_id", "legacy")), "strength":strength,
+		"attack_instance_id":int(context.get("attack_instance_id", 0)), "source":String(context.get("source", "player")),
+		"point":point, "normal":normal.normalized(), "direction":direction.normalized(),
+		"source_position":Vector3(context.get("source_position",origin)), "target_position":global_position,
+		"contact_phase":float(context.get("contact_phase",-1.0)), "attack_elapsed":float(context.get("attack_elapsed",0.0)),
+		"contact_blade_grip":Vector3(context.get("contact_blade_grip",Vector3.ZERO)), "contact_blade_tip":Vector3(context.get("contact_blade_tip",Vector3.ZERO)),
+		"damage_start_fraction":float(context.get("damage_start_fraction",0.0)),
+		"contact_damage_base":Vector3(context.get("contact_damage_base",Vector3.ZERO)), "contact_damage_tip":Vector3(context.get("contact_damage_tip",Vector3.ZERO)),
+		"contact_damage_axis_base":Vector3(context.get("contact_damage_axis_base",Vector3.ZERO)), "contact_damage_axis_tip":Vector3(context.get("contact_damage_axis_tip",Vector3.ZERO)),
+		"contact_source":contact_source, "material":"metal", "blocked":blocked,
+		"killed":health <= 0.0, "poise_broken":poise_broken, "reaction":"none",
+		"hitstop":0.075 if strength == "charged" else (0.05 if strength == "heavy" else 0.035),
+		"amount":amount, "target_id":get_instance_id(), "reaction_duration":0.0, "requested_recoil_m":0.0,
+	}
+
+func interrupt_attack(duration: float, reaction: String = "hit") -> void:
+	if duration > stagger or reaction == "heavy_hit":
+		presentation_stagger_duration = maxf(duration,stagger)
+		hit_reaction = reaction
 	stagger = maxf(stagger, duration)
 	strike = null
 	burst_time = 0.0
@@ -212,6 +315,7 @@ func presentation_snapshot() -> Dictionary:
 		"move_local_x":movement.x, "move_local_z":movement.y,
 		"locomotion_reference_speed":3.9 if is_boss else 3.6,
 		"hit_elapsed":maxf(0.0, maxf(0.28, presentation_stagger_duration)-stagger), "hit_duration":maxf(0.28, presentation_stagger_duration),
+		"hit_reaction":hit_reaction, "hit_pause":hit_pause,
 		"attack_id":String(strike.presentation_id) if strike != null else ("burst" if burst_time > 0.0 else ""),
 		"attack_elapsed":strike.elapsed if strike != null else maxf(0.0, 1.15-burst_time),
 		"attack_duration":strike.data.duration() if strike != null else 1.15,

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "profile": "lyra",
+  "source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "height_m": 1.82,
+  "triangles": 32288,
+  "fps": 500,
+  "motion_authorship": "New impact actions only; original body and unrelated animation bytes retained by GLB graft, no provider curves used to author new actions.",
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false
+  },
+  "guard": {
+    "grip_m": [
+      -0.05,
+      -0.35,
+      1.18
+    ],
+    "azimuth_deg": -10.0,
+    "pitch_deg": 55.0,
+    "pelvis_drop_m": 0.07,
+    "lean_deg": 5.0
+  },
+  "finger_curl_rad": [
+    0.65,
+    1.35,
+    1.4
+  ],
+  "locomotion": {
+    "walk_speed": 6.4,
+    "run_speed": 8.5
+  },
+  "quality_status": "authored prototype requiring visual/foot/contact review, not AAA approval",
+  "impact_slice": {
+    "charged_heavy": {
+      "startup": 0.34,
+      "active": 0.18,
+      "recovery": 0.54,
+      "actor_speed_m_s": [
+        0,
+        3.2,
+        0
+      ],
+      "nominal_actor_travel_m": 0.576,
+      "gameplay_arc_deg": 170,
+      "gameplay_reach_m": 1.5,
+      "two_hand_support": true,
+      "physical_blade_length_m": 1.19,
+      "physical_blade_radius_m": 0.12,
+      "physical_trajectory": "same-phase3D capsule from authoritative actor-local grip/tip; smooth(f^2) azimuth/pitch; no horizontal reach proxy"
+    }
+  },
+  "sampling_rationale": "Only new charge/charged_heavy use500Hz to keep actual nonlinear local-TRS midpoint blade FK within3mm after continuous elbow-plane IK; original unrelated clips remain byte-exact. Sample density is not visual quality approval."
+}

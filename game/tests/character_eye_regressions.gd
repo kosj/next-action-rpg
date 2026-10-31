@@ -4,6 +4,43 @@ extends RefCounted
 # not eyelid collision, visual acceptance, gaze/blink or AAA quality checks.
 const FIT_PATH := "res://tests/fixtures/lyra_eye_fit.json"
 
+static func _glb_parts(path: String) -> Dictionary:
+	var bytes := FileAccess.get_file_as_bytes(path)
+	if bytes.size() < 28 or bytes.decode_u32(0) != 0x46546c67:
+		return {}
+	var json_size := bytes.decode_u32(12)
+	var bin_header := 20 + json_size
+	if bin_header + 8 > bytes.size():
+		return {}
+	var document: Variant = JSON.parse_string(bytes.slice(20, bin_header).get_string_from_utf8())
+	if not document is Dictionary:
+		return {}
+	return {"document":document,"binary":bytes.slice(bin_header+8)}
+
+static func _frozen_body_geometry(path: String, expected_sha: String) -> bool:
+	if FileAccess.get_sha256(path) == expected_sha:
+		return true
+	# The eye fit remains pinned to the measured original. New animations may
+	# be appended only if every original geometry/rest/texture byte survives.
+	var original_path := "res://assets/models/production/lyra_gameplay.glb"
+	if FileAccess.get_sha256(original_path) != expected_sha:
+		return false
+	var original := _glb_parts(original_path)
+	var runtime := _glb_parts(path)
+	if original.is_empty() or runtime.is_empty():
+		return false
+	for key in ["nodes","meshes","skins","materials","images","textures","samplers","scenes","scene"]:
+		if original.document.get(key) != runtime.document.get(key):
+			return false
+	for key in ["accessors","bufferViews"]:
+		var frozen: Array = original.document.get(key, [])
+		var derived: Array = runtime.document.get(key, [])
+		if derived.slice(0, frozen.size()) != frozen:
+			return false
+	var original_bin: PackedByteArray = original.binary
+	var runtime_bin: PackedByteArray = runtime.binary
+	return runtime_bin.slice(0, original_bin.size()) == original_bin
+
 static func _v(value: Array) -> Vector3:
 	return Vector3(value[0], value[1], value[2])
 
@@ -194,7 +231,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	if not fixture_ok:
 		return false
 	var definition := ProductionCharacterArt.definition("hero")
-	check.call(definition.has("eye_path") and FileAccess.get_sha256(definition.get("eye_path", "")) == fixture.eye_glb_sha256 and FileAccess.get_sha256(definition.path) == fixture.socket_body_sha256, "Runtime body and eye geometry match the separately measured frozen input assets")
+	check.call(definition.has("eye_path") and FileAccess.get_sha256(definition.get("eye_path", "")) == fixture.eye_glb_sha256 and _frozen_body_geometry(definition.path, fixture.socket_body_sha256), "Runtime eyes and every original body/rest/texture byte match the frozen eye-fit inputs through animation-only derivation")
 	var holder := Node3D.new()
 	world.add_child(holder)
 	var visual := ActorVisual.new()
@@ -244,7 +281,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 			maximum_pose_error = maxf(maximum_pose_error,_head_error(visual,bindings))
 			clips_ok = clips_ok and visual.skeletal_bridge.selected_state == state and visual.eye_socket.global_transform.is_equal_approx(_head(visual))
 			samples += 1
-	check.call(clips_ok and samples == 57 and maximum_pose_error <= float(fixture.position_tolerance_m), "All 19 actual gameplay clips keep eye vertices on the current Head pose in 57 same-frame samples")
+	check.call(clips_ok and samples == ProductionCharacterArt.HERO_STATES.size()*3 and maximum_pose_error <= float(fixture.position_tolerance_m), "Every actual gameplay clip, including charged heavy, keeps eye vertices on the current Head in three same-frame samples")
 	visual.skeletal_bridge.reset_presentation()
 	_pose(visual, {"speed":0.0})
 	_pose(visual, {"speed":8.5}, 1.0/60.0)

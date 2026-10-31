@@ -1,0 +1,216 @@
+{
+  "baseline_commit": "6ecfb968dc659c8634ec2b37dc469304f3da5aad",
+  "baseline_version": "0.1.7",
+  "reference_confirmed_by_user": "ZeusGodofHubrisBerserker; greatsword/strongblow",
+  "reference_class_url": "https://zeus.com2us.com/gameinfo/class",
+  "reference_embedded_video_url": "https://www.youtube.com/watch?v=9CmiYo06gOQ",
+  "reference_frame_limit": "OfficialYouTubeactualgameplayframesnotexamined; executionenvironmentYouTubedomainproxy403. No frameduration/hitstop/audio claims.",
+  "official_background": {
+    "url": "https://zeuscommunity-fn.com2us.com/zeuscommunity/public/brand/assets/brand/bg_class_berserker.mp4",
+    "bytes": 2613614,
+    "sha256": "934968686810d5ef0338a8702d773ee03d45aa53d3c4b090ffe16cca7502c09a",
+    "duration_seconds": 7,
+    "fps": 30,
+    "width": 2878,
+    "height": 1280,
+    "audio_streams": 0,
+    "inspected_source_frame_seconds": [
+      0,
+      3,
+      6
+    ],
+    "scope": "Promotionalpresentationonly, notrealcombatinput/timing/performance; media keptprivateandnotredistributed"
+  },
+  "source_glb": {
+    "path": "game/assets/models/production/lyra_gameplay.glb",
+    "bytes": 19438644,
+    "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "clip_count": 20,
+    "clips": [
+      {
+        "name": "charge",
+        "channels": 159,
+        "unique_input_key_counts": [
+          66
+        ]
+      },
+      {
+        "name": "death",
+        "channels": 159,
+        "unique_input_key_counts": [
+          111
+        ]
+      },
+      {
+        "name": "dodge",
+        "channels": 159,
+        "unique_input_key_counts": [
+          33
+        ]
+      },
+      {
+        "name": "heal",
+        "channels": 159,
+        "unique_input_key_counts": [
+          36
+        ]
+      },
+      {
+        "name": "heavy",
+        "channels": 159,
+        "unique_input_key_counts": [
+          87
+        ]
+      },
+      {
+        "name": "hit",
+        "channels": 159,
+        "unique_input_key_counts": [
+          16
+        ]
+      },
+      {
+        "name": "idle",
+        "channels": 159,
+        "unique_input_key_counts": [
+          161
+        ]
+      },
+      {
+        "name": "light_1",
+        "channels": 159,
+        "unique_input_key_counts": [
+          53
+        ]
+      },
+      {
+        "name": "light_2",
+        "channels": 159,
+        "unique_input_key_counts": [
+          53
+        ]
+      },
+      {
+        "name": "light_3",
+        "channels": 159,
+        "unique_input_key_counts": [
+          71
+        ]
+      },
+      {
+        "name": "parry",
+        "channels": 159,
+        "unique_input_key_counts": [
+          23
+        ]
+      },
+      {
+        "name": "RESET",
+        "channels": 159,
+        "unique_input_key_counts": [
+          2
+        ]
+      },
+      {
+        "name": "run",
+        "channels": 159,
+        "unique_input_key_counts": [
+          41
+        ]
+      },
+      {
+        "name": "skill_1",
+        "channels": 159,
+        "unique_input_key_counts": [
+          80
+        ]
+      },
+      {
+        "name": "skill_2",
+        "channels": 159,
+        "unique_input_key_counts": [
+          80
+        ]
+      },
+      {
+        "name": "skill_3",
+        "channels": 159,
+        "unique_input_key_counts": [
+          80
+        ]
+      },
+      {
+        "name": "walk",
+        "channels": 159,
+        "unique_input_key_counts": [
+          49
+        ]
+      },
+      {
+        "name": "walk_back",
+        "channels": 159,
+        "unique_input_key_counts": [
+          49
+        ]
+      },
+      {
+        "name": "walk_left",
+        "channels": 159,
+        "unique_input_key_counts": [
+          49
+        ]
+      },
+      {
+        "name": "walk_right",
+        "channels": 159,
+        "unique_input_key_counts": [
+          49
+        ]
+      }
+    ]
+  },
+  "current_still": {
+    "path": "charge.png",
+    "sha256": "cda4ceab65519ffe14f5ced53999319823e1e1623cbb6fbb4416fc5566c2ffb0",
+    "origin_run": 41215144865,
+    "origin_job": 124585254341,
+    "origin_artifact": 13048234929,
+    "origin_build_id": "0.1.7 · 6ecfb968",
+    "state": "charge",
+    "sampled_clip_time": 0.649999976158142,
+    "reported_software_fps": 1,
+    "scope": "Actualinputstill, notnormal-speedanimation/hardwareapproval"
+  },
+  "verified_code_values": {
+    "light1_damage": 18,
+    "heavy_damage": 42,
+    "charged_damage": 69.3,
+    "heavy_poise": 48,
+    "charged_poise": 79.2,
+    "charge_threshold_s": 0.65,
+    "heavy_startup_active_recovery_s": [
+      0.32,
+      0.22,
+      0.32
+    ],
+    "heavy_uses_same_clip_after_charge": true,
+    "ordinary_melee_max_hp": 95,
+    "ordinary_melee_stagger_s": 0.28,
+    "attacker_hitpause_s": 0.035,
+    "camera_low_high_shake": [
+      0.3,
+      0.7
+    ],
+    "camera_damage_threshold": 40,
+    "common_hit_effect_ring_radius_m": 0.6,
+    "maximum_existing_runtime_blend_s": 0.08
+  },
+  "judgement": {
+    "internal_AAA_combat_presentation": "rejected",
+    "functional_contracts": "Previouslyverified; notrerunforthisreadonlyreview",
+    "normal_speed_gameplay_AV": "pending",
+    "reference_combat_frame_measurement": "pending",
+    "target_hardware_performance": "pending",
+    "AAA_percentage": "notassigned"
+  }
+}

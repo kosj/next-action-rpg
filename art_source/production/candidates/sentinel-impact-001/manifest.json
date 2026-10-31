@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-impact-001",
+  "status": "authored_incremental_slice_pending_runtime_and_visual_review",
+  "source_file": "source.glb",
+  "source_bytes": 17287040,
+  "source_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+  "source_parent": "/workspace/next-action-rpg/game/assets/models/production/sentinel_gameplay.glb",
+  "source_parent_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+  "runtime_installation": {
+    "file": "game/assets/models/production/sentinel_impact_gameplay.glb",
+    "sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+    "scope": "Candidate raw bytes copied; Godot import may resample all transform tracks. Actual runtime phase/visual/performance acceptance pending."
+  },
+  "provenance_files": [
+    {
+      "file": "art_source/production/character_actions/sentinel-impact.json",
+      "sha256": "418f88afbbd8fd9342f2770cf107a1dc4f107179c748123f4a459d7e27516a8d"
+    },
+    {
+      "file": "tools/author_impact_actions.py",
+      "sha256": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/audit_impact_curve.py",
+      "sha256": "b3debad4f9316a2e5694b60e65106cd3c10e5d393c10ed1ced73c1b234e239d4"
+    },
+    {
+      "file": "tools/render_impact_review.py",
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "death",
+    "enemy_attack",
+    "heavy_hit",
+    "hit",
+    "idle",
+    "run",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 518033,
+      "sha256": "ae0ee891e62de601e4e19bf7f757f5699ecf43bc69ef5f2c1613af8609953941"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 296,
+      "sha256": "ed9f8448c703a5fe46262372ada2f45c491316959760e42d0def0f01b2899f4d"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 5141,
+      "sha256": "9fc4e8ec2ccc413539abafe4c87c7c4a50e0c1d97080bf34b890873ce0fbce20"
+    }
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+    "source_bytes": 17146728,
+    "output_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+    "output_bytes": 17287040,
+    "retained_animation_names": [
+      "death",
+      "enemy_attack",
+      "hit",
+      "idle",
+      "RESET",
+      "run",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [],
+    "authored_animation_names": [
+      "heavy_hit"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "New charge/charged_heavy or heavy_hit only; body and unrelated original animations retained byte for byte. Original runtime/source files remain immutable historical inputs.",
+  "authoring_revision": "sentinel-003",
+  "review": {
+    "scope": "Fixed actual reimport Blender studio captures, not actual Godot gameplay/normal-speed/AAA approval",
+    "file": "studio-review/review.json",
+    "sha256": "d2f80743ad9b8be8e44650813e03e8bdb2be6fa6fc9684101a27f4d284c3664a",
+    "rendered_glb_sha256_matches_candidate": true
+  }
+}
