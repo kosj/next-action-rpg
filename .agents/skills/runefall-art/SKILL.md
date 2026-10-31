@@ -115,3 +115,9 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 ## 피부 PBR 국소 수정
 
 ORM의 실제 UV 표본·linear 채널과 metallic/roughness factor를 확인합니다. 수치가 잘못됐다는 사실만으로 얼굴 일부 재질을 바꿔 채택하지 않습니다. [피부 재질 기각 사례](../../../art_source/production/character_polish/skin_material_review/decision.json)처럼 경계가 얼굴 안에서 끊기면 새 불연속이 생깁니다. 검토한 의미 경계와 불확실 영역을 분리하고 원본 이미지·UV·웨이트·모션·BIN 보존을 입증한 뒤 동일 중립 front/quarter/side에서 우선 비교합니다. 여기서 실패하면 actual Game A/B·runtime 편입 전에 기각하고 원본을 유지합니다. Blender 표본/재질 통과와 AAA/실기기 검수는 별개입니다.
+
+## 전투 기능과 대검 타격감의 비교 검수
+
+- [전투 품질 검수 절차](../../../reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md)를 적용합니다. 기능 검사·피해량·클립 수는 시청각 품질 승인이 아닙니다. 촘촘한 저작 키와 현재80ms bounded blend가 이미 존재하는지 확인하고, 그 존재를 동작의 의미·가감속·발디딤·차지 레이어 완성으로 해석하지 않습니다. 실제 선택 clip과 이동/차지 우선순위를 대조합니다.
+- 참고 게임·직업·무기·버전의 동일성은 사용자 확인과 공식 자료로 검증합니다. 영상 접근이 막혔으면 보지 못한 범위를 명시하고 타격 시점이나 음향을 측정했다고 쓰지 않습니다. 사용자 평가·정적 코드·정지 화면·실제1배속 영상/음향·목표 기기 측정을 별도 근거로 남깁니다.
+- 약공격/강공격/차지의 명중·빗나감·막힘·처치 조합을 실제 게임에서 비교하고 공격자·피격자·카메라·VFX·음향을 같은 확정 접촉 시점과 대조합니다. MMORPG의 대검 연출 스타일과 이 실시간 액션 RPG의 입력 반응·취소/복귀 품질을 따로 판단합니다. 임의 AAA 달성률이나 미관찰 영상의 타이밍을 만들지 않으며 미검증 품질은 `pending`입니다.
