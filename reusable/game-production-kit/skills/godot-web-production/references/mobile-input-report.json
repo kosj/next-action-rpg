@@ -99,5 +99,16 @@
     "before_after_scroll_value": null,
     "drag_click_cancellation": null,
     "final_button_and_committed_save": null
+  },
+  "canvas_ownership": {
+    "status": "pending",
+    "inline_computed_client_bitmap_and_dpr": null,
+    "inner_outer_document_scroll_and_visual_viewport": null,
+    "shrink_grow_original_rasters": []
+  },
+  "async_ui_lifecycle": {
+    "status": "pending",
+    "early_late_unmount_callback_evidence": null,
+    "functional_and_pageerror_outcomes_separate": true
   }
 }

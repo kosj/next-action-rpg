@@ -41,7 +41,9 @@
 | `pages-public-deployment`, `pages-enablement-blocker` | repo 공개, 호스팅 최초 활성화, 배포, 공개 URL 실행은 별개 상태다. 해결된 과거 제약을 다시 현재 제약으로 쓰지 않는다. | 현재 Pages 설정과 token scope, 실제 실패 작업, 공개 빌드 식별자 |
 | `release-assets-ci-token` | 릴리스 첨부는 해당 작업에 맞는 현재 인증 경로로 처리한다. | CLI·연결 앱·CI token 각각의 실제 권한과 만료 상태 |
 | `public-browser-ca-trust` | 클라우드의 CA 신뢰 문제와 배포 장애를 구분하고 TLS 검증을 유지한다. | 정상 trust 환경/hosted runner의 실제 결과, URL·source commit |
+| `web-loader-progress-after-dom-removal` | 로딩 UI 제거 뒤 도착하는 비동기 callback의 현재 element·작업 수명을 확인하고 cleanup/abort와 늦은 호출을 함께 다룬다. | 실제 DOM의 초기 표시·제거·late callback·cleanup, 기능 상태와 page error의 별도 판정. 집중 fixture 성공을 최종 브라우저 QA로 승계하지 않음 |
 | `mobile-css-viewport-and-evidence` | CSS client·canvas backing·논리 viewport를 한 번씩 변환하고 native/Web safe area와 선택 API를 구분한다. | resize/회전·DPR·버튼 hit rect·UI 넘침·fullscreen 거부·브라우저 기능. 에뮬레이션과 실제 기기 증거를 분리 |
+| `web-canvas-inline-css-viewport-feedback` | adaptive canvas의 inline CSS와 페이지 cascade가 viewport에 만드는 피드백을 확인하고 CSS 표시 영역과 bitmap/DPR 소유권을 분리한다. | 축소→확대·회전의 client/inline/computed/inner/outer/scroll·visualViewport scale·논리/bitmap 대조, 동일 산출물의 CSS-only A/B와 실제 PNG·터치 행동. 지표 clamp나 DPR 제거로 통과시키지 않음 |
 | `touch-scroll-button-event-propagation` | 실제 버튼 위에서 시작한 scroll gesture를 보존하고 child consume·부모 전달·drag 시작 시 pending click 취소를 함께 검사한다. | wheel/touch 경로와 Slider 소유권 구분, 새 frame의 scroll value·콘텐츠 이동·pointer 해제·callback/우발 클릭, 실제 완료 버튼을 통한 설정 저장. 수정 후 브라우저 검증은 별도 |
 | `godot-window-resize-reentrant-screen-attach` | 크기 변경 signal 안의 content-scale setter 재진입을 피한다. 입력은 즉시 종료하고 화면 설정은 외부 처리 후 deferred로 모은다. | CPU/public transform이 정상이어도 최종 screen attach가 오래될 수 있다. 동일 조건 원본 raster A/B와 대상 장면 이미지 guard를 사용 |
 

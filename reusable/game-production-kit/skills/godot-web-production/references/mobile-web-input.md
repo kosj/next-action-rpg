@@ -24,6 +24,14 @@
 - native safe-area API가 Web에서도 구현됐는지 확인한다. Web은 CSS safe-area 환경 값과 실제 canvas rect를 교차해 필요한 inset만 논리 좌표로 한 번 변환한다. canvas padding을 중복 적용하지 않는다. viewport meta, 주소창 변화·회전·fullscreen 전후를 검사한다.
 - Pointer Lock·fullscreen은 실제 브라우저의 사용자 gesture/권한·실패를 다룬다. 터치 이동/look와 인라인 플레이가 선택 API에 의존하지 않게 한다. 기능 존재·요청 성공·실제 게임 동작은 각각 확인한다.
 
+## canvas inline CSS와 viewport 피드백
+
+1. 화면을 줄였다가 키우는 연속 resize와 회전을 실제 DOM 환경에서 재현한다. screen/outer 크기, document client 크기, window inner 크기, document scroll 크기, canvas client/bounding rect·inline style·computed style, visualViewport 크기/scale, 엔진 논리 viewport와 bitmap 크기를 같은 시점에 기록한다. 하나의 viewport 지표만 정상이라고 화면 배율을 승인하지 않는다.
+2. 엔진의 adaptive canvas sizing이 inline CSS 크기를 쓰는지, 페이지의 CSS 규칙과 어떤 cascade/우선순위로 경쟁하는지 대상 판본의 source와 실제 DOM에서 확인한다. canvas 표시가 페이지보다 커지고 다시 window inner/scroll·자동 축소에 영향을 주는 피드백이 있는지 비교한다. 초기 desktop 또는 landscape 크기가 모바일 표시 크기로 남는지도 검사한다.
+3. 페이지가 소유할 CSS 표시 영역과 엔진이 소유할 bitmap/DPR·렌더 해상도를 명시적으로 분리한다. CSS 수정이 필요한 경우 해당 엔진의 sizing/cascade와 호스팅 구조에 맞춰 적용하고 고정 크기나 `!important`를 모든 프로젝트의 영구 기본값으로 강제하지 않는다. 논리 viewport·입력 좌표·safe area도 새 표시 영역과 맞는지 다시 확인한다.
+4. 원인 분리는 같은 PCK/데이터·WASM·JS·QA·모델을 유지한 HTML/CSS-only A/B처럼 변경 범위를 고정해 수행한다. 실제 배포 파일 해시와 원본 DOM/이미지를 남기고 다른 엔진 코드·자산 변경이 섞인 비교를 CSS 단독 근거로 쓰지 않는다. DOM 지표를 clamp하거나 DPR을 없애서 기대값만 맞추지 않는다.
+5. 수정 후 새 frame에서 DOM 표시 영역·visualViewport scale·논리 viewport·bitmap의 관계를 재측정한다. 실제 PNG가 화면 폭을 채우는지, UI 열/버튼 크기·hit rect와 터치 행동이 일치하는지도 확인한다. 특정 장면의 픽셀 guard나 한 기기의 성공을 다른 화면·엔진·실기기 승인으로 확대하지 않는다. 원래 실패·집중 A/B·최종 브라우저/실기기 검증은 각각 기록하고 미실행 범위는 `pending`으로 둔다.
+
 ## 버튼에서 시작하는 스크롤과 이벤트 전달
 
 1. 긴 설정/메뉴의 실제 Button·CheckButton 위에서 시작한 손가락 drag 경로를 유지해 재현한다. 빈 여백으로 시작점을 옮겨 QA를 통과시키거나 scroll 값을 직접 쓰지 않는다. 동일 gesture의 시작 control·좌표·move/end·실제 소유 pointer와 화면을 기록한다. native fixture·브라우저 trusted gesture·실제 휴대기기에서 관찰한 범위는 구분한다.
@@ -31,6 +39,13 @@
 3. 수정은 스크롤 안에서 부모 전달이 필요한 버튼 계층에 한정해 검토한다. Slider처럼 자기 drag를 소유하는 control과 구분하고 모든 control을 일괄 PASS로 바꾸지 않는다. drag 시작/SCROLL_BEGIN 경로가 Button의 pending click을 취소하는지 확인한다. 짧은 tap은 callback이 한 번 발생하고, 스크롤 drag 후 release는 우발적인 클릭·설정 변경·메뉴 닫기를 만들지 않아야 한다.
 4. 실제 gesture 후 새 frame에서 scroll value·maximum·page 크기와 콘텐츠 이동, pointer 해제, 실제 control/callback 상태를 함께 관찰한다. 레이아웃 값이나 Done 버튼의 bounding box만으로 스크롤 성공을 판단하지 않는다. 화면 밖 완료 버튼이 화면 안으로 이동했는지 실제 화면과 hit rect를 대조한다.
 5. 설정을 바꾼 뒤 같은 실제 스크롤 경로로 완료 버튼에 도달하고 그 버튼을 눌러 설정 반영·저장을 확인한다. callback 직접 호출·빈 여백 gesture·테스트 측 상태/저장 쓰기로 대체하지 않는다. 실패 재현·수정 후 집중 검사·최종 전체 브라우저 검증을 각각 기록한다. native 검사나 export 성공만 확인했다면 수정 후 브라우저·실기기 판정은 `pending`으로 유지한다.
+
+## 로딩 UI 제거 뒤의 비동기 콜백
+
+1. 로딩 완료 Promise나 화면 전환으로 UI를 제거해도 progress 등 비동기 콜백이 더 도착할 수 있다. 등록 시점의 element와 현재 DOM의 수명을 구분하고, 콜백이 실제로 UI에 접근하는 시점에 대상 element와 해당 작업이 여전히 유효한지 확인한다. 특정 guard 문자열을 모든 프로젝트에 고정하지 말고 사용 API의 완료·취소·unmount 계약에 맞춘다.
+2. 가능한 경우 cleanup에서 구독 해제·abort를 수행하고, 취소가 보장하지 못하는 이미 예약된 콜백도 안전하게 종료하도록 한다. 이전 작업이 새 화면을 갱신하지 않도록 작업 세대/수명도 구분한다. 정상적인 초기 progress 표시까지 생략해 오류만 없애지 않는다.
+3. 실제 DOM에서 초기 콜백의 정상 업데이트, UI 제거, 제거 뒤 늦은 콜백, cleanup 뒤의 반복 호출을 순서대로 검사한다. 실제 shell과 제한된 Engine stub/Promise를 쓰는 집중 fixture는 그 DOM 수명 계약의 근거이며 전체 게임·최종 배포 검증과 범위를 구분한다. 원래 실패와 수정 후 초기 표시/늦은 콜백 완료·오류 결과를 함께 남긴다.
+4. 이어하기·설정/영구 저장·복귀 같은 기능이 모두 성공해도 늦은 page error가 있으면 전체 브라우저 검증 실패를 보존한다. 기능 상태와 console/page error를 별도로 기록하고, 늦은 callback까지 관찰하는 종료 경계를 둔다. 오류를 필터로 숨기거나 성공 단계만 합산하지 않는다. 수정 뒤 최종 빌드의 브라우저 실행을 다시 확인하기 전에는 집중 fixture의 성공을 전체 QA로 승계하지 않는다.
 
 ## 근거와 승인 범위
 
