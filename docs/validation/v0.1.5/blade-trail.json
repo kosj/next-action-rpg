@@ -1,0 +1,13 @@
+{
+	"bounded_geometry": {
+		"lifetime": 0.12,
+		"samples": 12,
+		"triangles": 22,
+		"visible": true
+	},
+	"external_scale": 1.25,
+	"same_frame_tip": true,
+	"scope": "Actual blade-marker ribbon timing, world-space history and lifetime; no AAA or target GPU approval",
+	"source_sha256": "99647eb9aa3c164aad68bfa7c3c26c654ea6c92f94a86c7464f00307fa15f6e6",
+	"world_space_history": true
+}

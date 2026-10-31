@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "checks": {
+    "existing_output_rejected": {
+      "returncode": 1,
+      "expected": true
+    },
+    "explicit_replace_same_bytes": {
+      "returncode": 0,
+      "expected": true
+    },
+    "source_refit_overwrite_rejected": {
+      "returncode": 1,
+      "expected": true
+    },
+    "wrong_head_contract_rejected": {
+      "returncode": 1,
+      "expected": true
+    },
+    "palette_without_chain_rejected": {
+      "returncode": 1,
+      "expected": true
+    },
+    "color_only_palette_chain_verified": {
+      "returncode": 0,
+      "expected": true
+    },
+    "non_rgb_bytes_rejected": {
+      "returncode": 1,
+      "expected": true
+    }
+  },
+  "original_inputs_and_current_fixture_sha256_unchanged": {
+    "/workspace/next-action-rpg/art_source/production/candidates/lyra-eye-sockets-001/eyes-web.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "/workspace/next-action-rpg/art_source/production/candidates/lyra-eye-sockets-001/refit.json": "e035c3ab7b08ba02b2cb552ecd076f25fcc75ecbdf5161b079696edd2b48d644",
+    "/workspace/next-action-rpg/art_source/production/candidates/lyra-eye-sockets-001/source.glb": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "/workspace/next-action-rpg/game/tests/fixtures/lyra_eye_fit.json": "16f2b6f6f93438f76e91105f1017eb390afe46db6ff1f745e43a51f581b39bf6"
+  },
+  "current_d7_build_path_reproduction": "Byte exact with existing fixture SHA16f2b6f6f93438f76e91105f1017eb390afe46db6ff1f745e43a51f581b39bf6",
+  "portable_archive_reproduction": "All data identical; only provenance paths change from ignored build to public archive.",
+  "scope": "CLI byte/input/overwrite/Head/palette guards; no runtime adoption, native/browser or visual approval.",
+  "tool_sha256": "c996ad0ba8210fe5b2d08d29cc21033894382c952192e6e12046780496489486",
+  "final_palette_decision": "Rejected by actual Web comparison; runtime d7d and existing fixture16f2 remain unchanged."
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "Single rejected COLOR_0-only alternative; unchanged physical geometry and actual runtime hook",
+  "fixture_sha256": {
+    "eye_capture.gd": "f04b7414f654624134dbdcfeed6df5b55f338a0174b0a92b74ae006750871d89",
+    "game/scenes/main.tscn": "b096cb77309f4b1bc315fd93d04f252d9c8bd4247cd0a6648916d855942aa043",
+    "capture_web.py": "611c5a8b6c69fca3e180641acc32447219fa4bc63e6c59198a025487b8761eef"
+  },
+  "source_manifest_sha256": "4731067a03386051726c30f2beb602b70b42cc474a65ba659403093113f84a76",
+  "export_sha256": {
+    "index.apple-touch-icon.png": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.html": "a2562236e343acb320debb0d33c12f57b16b461ac7e203d41893ed3ef8631213",
+    "index.icon.png": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba",
+    "index.pck": "52ff29a2639c6fd6ccf99e79a1b2ecfd70906d212099ee536a905ec8cb32ce15",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  },
+  "probe_source_sha256": {
+    "color_probe.gd": "3f3a1458331bf9371995211ab58ffba1088fd657de5476faf145280d9b74b24a",
+    "verify_colors.py": "e4741e0fff6ac456cb9668a62eed3239c026be20cc26718d85a3abd4eb3d0df3"
+  },
+  "private_directory": "/workspace/.runefall-task/character-polish/eyes-web/palette"
+}

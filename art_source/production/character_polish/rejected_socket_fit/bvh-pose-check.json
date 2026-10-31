@@ -1,0 +1,218 @@
+{
+  "body_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "eyes_sha256": "bbd38b745c605acc4998f9a1d85b1b6baeb386b55de92622c0b6e74724bc8dce",
+  "checker_sha256": "3ddd6a17babb259634592f853e49c517a7e86032b6b57a0c1f85f4540fbe495c",
+  "blender": "4.3.2",
+  "actual_glb_reimport": true,
+  "samples": [
+    {
+      "pose": "rest",
+      "yaw_degrees": 0,
+      "pitch_degrees": 0,
+      "bvh_broadphase_pairs": 46,
+      "noncoplanar_edge_triangle_intersection_pairs": 46,
+      "intersection_examples": [
+        [
+          15556,
+          256
+        ],
+        [
+          15556,
+          255
+        ],
+        [
+          15556,
+          254
+        ],
+        [
+          15556,
+          252
+        ],
+        [
+          15556,
+          253
+        ],
+        [
+          15556,
+          251
+        ],
+        [
+          15556,
+          250
+        ],
+        [
+          15556,
+          249
+        ],
+        [
+          15556,
+          248
+        ],
+        [
+          15556,
+          246
+        ]
+      ]
+    },
+    {
+      "pose": "yaw_left",
+      "yaw_degrees": -15,
+      "pitch_degrees": 0,
+      "bvh_broadphase_pairs": 28,
+      "noncoplanar_edge_triangle_intersection_pairs": 28,
+      "intersection_examples": [
+        [
+          13916,
+          241
+        ],
+        [
+          13916,
+          240
+        ],
+        [
+          13916,
+          239
+        ],
+        [
+          13916,
+          251
+        ],
+        [
+          13916,
+          252
+        ],
+        [
+          13916,
+          250
+        ],
+        [
+          13916,
+          248
+        ],
+        [
+          13916,
+          249
+        ],
+        [
+          13916,
+          247
+        ],
+        [
+          13916,
+          246
+        ]
+      ]
+    },
+    {
+      "pose": "yaw_right",
+      "yaw_degrees": 15,
+      "pitch_degrees": 0,
+      "bvh_broadphase_pairs": 62,
+      "noncoplanar_edge_triangle_intersection_pairs": 62,
+      "intersection_examples": [
+        [
+          13916,
+          80
+        ],
+        [
+          13916,
+          260
+        ],
+        [
+          13916,
+          258
+        ],
+        [
+          13916,
+          10640
+        ],
+        [
+          13916,
+          79
+        ],
+        [
+          13916,
+          10639
+        ],
+        [
+          13916,
+          10638
+        ],
+        [
+          13916,
+          78
+        ],
+        [
+          13916,
+          10637
+        ],
+        [
+          13916,
+          77
+        ]
+      ]
+    },
+    {
+      "pose": "pitch_up",
+      "yaw_degrees": 0,
+      "pitch_degrees": -10,
+      "bvh_broadphase_pairs": 0,
+      "noncoplanar_edge_triangle_intersection_pairs": 0,
+      "intersection_examples": []
+    },
+    {
+      "pose": "pitch_down",
+      "yaw_degrees": 0,
+      "pitch_degrees": 10,
+      "bvh_broadphase_pairs": 109,
+      "noncoplanar_edge_triangle_intersection_pairs": 103,
+      "intersection_examples": [
+        [
+          32271,
+          10823
+        ],
+        [
+          32271,
+          10822
+        ],
+        [
+          32271,
+          10820
+        ],
+        [
+          32271,
+          11014
+        ],
+        [
+          32271,
+          10821
+        ],
+        [
+          32271,
+          10819
+        ],
+        [
+          32271,
+          10818
+        ],
+        [
+          32271,
+          10816
+        ],
+        [
+          32271,
+          10817
+        ],
+        [
+          32271,
+          10814
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "Five manual head poses; no continuous collision proof",
+    "BVH broadphase filtered by finite noncoplanar edge/triangle segment tests",
+    "Visual quality and full animation cornea collision require separate scope"
+  ]
+}

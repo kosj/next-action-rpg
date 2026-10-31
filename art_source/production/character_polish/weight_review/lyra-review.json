@@ -1,0 +1,1698 @@
+{
+  "runtime_adoption": "rejected",
+  "final_art_status": "pending",
+  "all_body_runtime_files_unchanged": true,
+  "no_scaled_glb_written": true,
+  "no_final_visual_review_performed": true,
+  "reason": "Submillimetre target improvement does not resolve the visible armour defect. Approximate numerical feasibility is not final art approval.",
+  "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+  "final_reproducer_tool_sha256": "0cf8109a3f656ef363d2baa95ec6345b20c3132eb3e72e3e38549e265572ec99",
+  "tool_sha_at_original_scaled_run": "38cb03a2b3430d62197871fc3dc2484ac9ed0f433e4c4f01993822c78d3b3570",
+  "final_tool_changes_after_scaled_run": "Added raw/normalized units CLI for reproduction, clarified discrete boundary limitation, and lazy-imported SciPy; physical optimization and normalized solve unchanged.",
+  "finite_difference_check": {
+    "maximum_target_objective_gradient_absolute_error": 4.70608938485384e-08,
+    "maximum_target_objective_gradient_magnitude": 16015.000144218538,
+    "difference_step_in_weight_units": 1e-06,
+    "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "runtime_unchanged": true
+  },
+  "raw_solver_probe": {
+    "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "candidate_sha256": "7d0b7514a7f5399c600dcfe3324b9d3dbc9e86e98e0828a1f1bb76e25f36154e",
+    "source_path": "/workspace/next-action-rpg/game/assets/models/production/lyra_gameplay.glb",
+    "source_geometry_positions_sha256": "be45405f9b16494e40a417487a1e7c2ebe2f9b62b4156385ae90b6bcadc6abf8",
+    "source_geometry_indices_sha256": "82c5e04afff4b0a288ed32cf81e75f6f12b5a2f60717f0da982ec38747f2cea4",
+    "sample_count": 2358,
+    "exported_key_count": 1189,
+    "clip_count": 20,
+    "clips": [
+      "charge",
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "sampling": "Every exported timestamp plus every adjacent midpoint; finite, not continuous proof",
+    "complete_mesh_comparison": "All changed/incident edges evaluated at every sample; all other vertex weight bytes and thus all other posed edges are provably identical. Original full-mesh baseline SHA/schedule/topology validated.",
+    "roi": {
+      "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "manual_specification": {
+        "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.63,
+        "anchor_y_up_m": [
+          -0.09985646739124165,
+          1.3049161267796672,
+          -0.07828663237170398
+        ]
+      },
+      "geodesic_radius_m": 0.03,
+      "maximum_weight_delta_at_core": 0.025,
+      "taper": "(1-(distance/radius)^2)^2; zero value and slope at fixed boundary",
+      "mutable_welded_groups": 9,
+      "mutable_exported_vertices": 16,
+      "fixed_boundary_groups": [
+        5070,
+        5123,
+        5179,
+        5277,
+        5320,
+        5505,
+        5639,
+        6106,
+        6135,
+        6551,
+        6564,
+        6612,
+        6775
+      ],
+      "incident_unique_edges": 37,
+      "incident_triangles": 29,
+      "original_target": {
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.63,
+        "rest_length_mm": 5.82011412616529,
+        "posed_length_mm": 27.41363652452808,
+        "extension_mm": 21.593522398362786,
+        "ratio": 4.710154462656586,
+        "vertices": [
+          {
+            "vertex": 24121,
+            "rest_world_xyz_m_y_up": [
+              -0.10014361406134883,
+              1.3077297072200034,
+              -0.07760125363970645
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13643720070681106,
+              1.2227750276848572,
+              0.0517807197360702
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.38973626494407654,
+              "Spine2": 0.35449180006980896,
+              "RightShoulder": 0.18387378752231598,
+              "RightArm": 0.07189814746379852
+            }
+          },
+          {
+            "vertex": 24122,
+            "rest_world_xyz_m_y_up": [
+              -0.09956932072213447,
+              1.302102546339326,
+              -0.0789720111037015
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13352753273260412,
+              1.1961920546585678,
+              0.04574856880440551
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.41536492109298706,
+              "Spine2": 0.34855350852012634,
+              "RightShoulder": 0.16911718249320984,
+              "Spine": 0.06696439534425735
+            }
+          }
+        ]
+      },
+      "mutable_vertices": [
+        {
+          "vertex": 8122,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 8123,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 8124,
+          "rest_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41875213384628296,
+            "Spine2": 0.33386605978012085,
+            "RightShoulder": 0.1713481992483139,
+            "RightArm": 0.07603359967470169
+          }
+        },
+        {
+          "vertex": 9247,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 9431,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 9432,
+          "rest_world_xyz_m_y_up": [
+            -0.09913784894405152,
+            1.2906651244280831,
+            -0.07551902494141681
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09913784894405152,
+            1.2906651244280831,
+            -0.07551902494141681
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.451788067817688,
+            "Spine2": 0.3291154205799103,
+            "RightShoulder": 0.1399385631084442,
+            "Spine": 0.07915795594453812
+          }
+        },
+        {
+          "vertex": 9434,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 9437,
+          "rest_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.38973626494407654,
+            "Spine2": 0.35449180006980896,
+            "RightShoulder": 0.18387378752231598,
+            "RightArm": 0.07189814746379852
+          }
+        },
+        {
+          "vertex": 9451,
+          "rest_world_xyz_m_y_up": [
+            -0.0874508446351213,
+            1.2949651104469408,
+            -0.07265400062741785
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.0874508446351213,
+            1.2949651104469408,
+            -0.07265400062741785
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.45993494987487793,
+            "Spine2": 0.3336670994758606,
+            "RightShoulder": 0.12659966945648193,
+            "Spine": 0.07979828119277954
+          }
+        },
+        {
+          "vertex": 9460,
+          "rest_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3936766982078552,
+            "Spine1": 0.3350149691104889,
+            "RightShoulder": 0.20582684874534607,
+            "RightArm": 0.06548148393630981
+          }
+        },
+        {
+          "vertex": 9464,
+          "rest_world_xyz_m_y_up": [
+            -0.0811502123202504,
+            1.3039783222470263,
+            -0.08660090794366249
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.0811502123202504,
+            1.3039783222470263,
+            -0.08660090794366249
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.39129921793937683,
+            "Spine2": 0.3871411979198456,
+            "RightShoulder": 0.1581442654132843,
+            "Spine": 0.06341534107923508
+          }
+        },
+        {
+          "vertex": 24118,
+          "rest_world_xyz_m_y_up": [
+            -0.11379763245330733,
+            1.3141331753093002,
+            -0.07327450064419988
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11379763245330733,
+            1.3141331753093002,
+            -0.07327450064419988
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3528795838356018,
+            "Spine1": 0.341887891292572,
+            "RightShoulder": 0.21282994747161865,
+            "RightArm": 0.09240258485078812
+          }
+        },
+        {
+          "vertex": 24120,
+          "rest_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41875213384628296,
+            "Spine2": 0.33386605978012085,
+            "RightShoulder": 0.1713481992483139,
+            "RightArm": 0.07603359967470169
+          }
+        },
+        {
+          "vertex": 24121,
+          "rest_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.38973626494407654,
+            "Spine2": 0.35449180006980896,
+            "RightShoulder": 0.18387378752231598,
+            "RightArm": 0.07189814746379852
+          }
+        },
+        {
+          "vertex": 24122,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 24123,
+          "rest_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3936766982078552,
+            "Spine1": 0.3350149691104889,
+            "RightShoulder": 0.20582684874534607,
+            "RightArm": 0.06548148393630981
+          }
+        }
+      ],
+      "weights_only_original_four_joint_slots": true,
+      "all_outside_rows_frozen": true
+    },
+    "proof": {
+      "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "candidate_sha256": "7d0b7514a7f5399c600dcfe3324b9d3dbc9e86e98e0828a1f1bb76e25f36154e",
+      "changed_vertex_ids": [
+        8123,
+        8124,
+        9432,
+        9434,
+        9464,
+        24118,
+        24120,
+        24122
+      ],
+      "changed_weight_rows": 8,
+      "forbidden_changed_bytes": 0,
+      "only_weight_rows_changed": true,
+      "joints_all_byte_exact": true,
+      "preserved_bytes_sha256": "91fcd2211ca24e493eb8ac396b76220d968725522e2183870484f4d914c3c311",
+      "source_and_candidate_bytes": 17889448,
+      "outside_region_weight_rows_byte_exact": true,
+      "geometry_uv_textures_rest_all_animation_bytes_exact": true,
+      "line_search_factor": 1.0,
+      "float32_full_schedule_constraints_feasible": true
+    },
+    "solver_rounds": [
+      {
+        "round": 0,
+        "solver_success": true,
+        "solver_message": "Optimization terminated successfully",
+        "iterations": 5,
+        "active_edge_samples": 3722,
+        "active_face_samples": 2892,
+        "maximum_extension_over_cap_mm": -0.24999999999999645,
+        "maximum_edge_compression_floor_violation_mm": -0.23765877267894098,
+        "maximum_oriented_area_floor_violation_mm2": -1.8443047851114756
+      }
+    ],
+    "same_frame_extension_cap_mm": 0.25,
+    "maximum_same_frame_extension_increase_mm": 2.331308515479691e-05,
+    "maximum_same_frame_extension_decrease_mm": -2.1910430039184803e-05,
+    "worst_increase": {
+      "clip": "light_2",
+      "time_s": 0.33000001311302185,
+      "welded_edge_groups": [
+        6280,
+        6564
+      ],
+      "rest_length_mm": 16.74551851570356,
+      "before_length_mm": 15.638219649157975,
+      "after_length_mm": 15.63824296224313
+    },
+    "target_before_length_mm": 27.41363652452809,
+    "target_after_length_mm": 27.41364523606718,
+    "target_reduction_mm": -8.711539088324116e-06,
+    "before_edge_max_ratio": {
+      "min": 0.9999871238754492,
+      "p50": 1.023508867745521,
+      "p90": 1.2518113855583652,
+      "p95": 1.3754083283799905,
+      "p99": 1.703677292547838,
+      "p999": 2.517569190110699,
+      "max": 4.710154462656586
+    },
+    "after_edge_max_ratio": {
+      "min": 0.9999871238754492,
+      "p50": 1.023508867745521,
+      "p90": 1.2518113855583652,
+      "p95": 1.3754083283799905,
+      "p99": 1.703677292547838,
+      "p999": 2.517569190110699,
+      "max": 4.7101559594552596
+    },
+    "before_edge_max_extension_mm": {
+      "min": -0.00018372179641859554,
+      "p50": 0.32781975208811054,
+      "p90": 4.035508493538902,
+      "p95": 6.354783029950188,
+      "p99": 12.643667299411517,
+      "p999": 23.11685380976133,
+      "max": 38.61814890507607
+    },
+    "after_edge_max_extension_mm": {
+      "min": -0.00018372179641859554,
+      "p50": 0.32781975208811054,
+      "p90": 4.035508493538902,
+      "p95": 6.354783029950188,
+      "p99": 12.643667299411517,
+      "p999": 23.11685380976133,
+      "max": 38.61814890507607
+    },
+    "extension_envelope_delta_mm": {
+      "min": -2.1910430044513873e-05,
+      "p50": 0.0,
+      "p90": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "p999": 0.0,
+      "max": 1.7384709034562462e-05
+    },
+    "envelope_improved_over_point1mm_edges": 0,
+    "envelope_worsened_over_point1mm_edges": 0,
+    "triangle_diagnostics": {
+      "incident_source_triangle_count": 29,
+      "source_min_area_mm2": 18.443047851114677,
+      "candidate_min_area_mm2": 18.443047851114677,
+      "source_min_area_over_rest": 0.5058538206790993,
+      "candidate_min_area_over_rest": 0.5058538206790993,
+      "minimum_candidate_normal_cosine_against_same_pose_source": 0.9999999999943632,
+      "new_orientation_reversals": 0,
+      "area_constraint": "oriented double area >= .95 * min(source posed double area, source REST double area)",
+      "minimum_area_constraint_margin_mm2": 1.8443047851114756,
+      "worst_area_constraint": {
+        "clip": "heavy",
+        "time_s": 0.20999999344348907,
+        "source_triangle_id": 10037
+      }
+    },
+    "edge_compression_floor_margin_mm": 0.23765877267894098,
+    "maximum_weight_sum_error": 1.1920928955078125e-07,
+    "automatic_aaa_approval": false,
+    "final_art_status": "pending",
+    "candidate_numeric_gate": "rejected",
+    "runtime_adoption": "pending visual review; original runtime unchanged",
+    "limitations": [
+      "At most one output per asset; unchanged skeleton/clip times do not prove final anatomy, transitions or AAA appearance.",
+      "The small finite-sample extension allowance is explicitly reported; it is not a new art-quality threshold.",
+      "No hands, tabard or limb correction and no target-device performance claim."
+    ],
+    "tool_sha256": "1e22728490ea43df8c69e06bbc9d388b6ac64e0eaebdde1941aab05f0ba1ae38"
+  },
+  "normalized_in_memory_solve": {
+    "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "candidate_sha256": "86b264245bdb22367ad23fb8350d983ef318129024a13aa7df039c51a159161f",
+    "source_path": "/workspace/next-action-rpg/game/assets/models/production/lyra_gameplay.glb",
+    "source_geometry_positions_sha256": "be45405f9b16494e40a417487a1e7c2ebe2f9b62b4156385ae90b6bcadc6abf8",
+    "source_geometry_indices_sha256": "82c5e04afff4b0a288ed32cf81e75f6f12b5a2f60717f0da982ec38747f2cea4",
+    "sample_count": 2358,
+    "exported_key_count": 1189,
+    "clip_count": 20,
+    "clips": [
+      "charge",
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "sampling": "Every exported timestamp plus every adjacent midpoint; finite, not continuous proof",
+    "complete_mesh_comparison": "All changed/incident edges evaluated at every sample; all other vertex weight bytes and thus all other posed edges are provably identical. Original full-mesh baseline SHA/schedule/topology validated.",
+    "roi": {
+      "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "manual_specification": {
+        "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.63,
+        "anchor_y_up_m": [
+          -0.09985646739124165,
+          1.3049161267796672,
+          -0.07828663237170398
+        ]
+      },
+      "geodesic_radius_m": 0.03,
+      "maximum_weight_delta_at_core": 0.025,
+      "taper": "(1-(distance/radius)^2)^2; zero value and slope at fixed boundary",
+      "mutable_welded_groups": 9,
+      "mutable_exported_vertices": 16,
+      "fixed_boundary_groups": [
+        5070,
+        5123,
+        5179,
+        5277,
+        5320,
+        5505,
+        5639,
+        6106,
+        6135,
+        6551,
+        6564,
+        6612,
+        6775
+      ],
+      "incident_unique_edges": 37,
+      "incident_triangles": 29,
+      "original_target": {
+        "edge_index": 53059,
+        "clip": "heavy",
+        "time_s": 0.63,
+        "rest_length_mm": 5.82011412616529,
+        "posed_length_mm": 27.41363652452808,
+        "extension_mm": 21.593522398362786,
+        "ratio": 4.710154462656586,
+        "vertices": [
+          {
+            "vertex": 24121,
+            "rest_world_xyz_m_y_up": [
+              -0.10014361406134883,
+              1.3077297072200034,
+              -0.07760125363970645
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13643720070681106,
+              1.2227750276848572,
+              0.0517807197360702
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.38973626494407654,
+              "Spine2": 0.35449180006980896,
+              "RightShoulder": 0.18387378752231598,
+              "RightArm": 0.07189814746379852
+            }
+          },
+          {
+            "vertex": 24122,
+            "rest_world_xyz_m_y_up": [
+              -0.09956932072213447,
+              1.302102546339326,
+              -0.0789720111037015
+            ],
+            "posed_world_xyz_m_y_up": [
+              -0.13352753273260412,
+              1.1961920546585678,
+              0.04574856880440551
+            ],
+            "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+            "weights": {
+              "Spine1": 0.41536492109298706,
+              "Spine2": 0.34855350852012634,
+              "RightShoulder": 0.16911718249320984,
+              "Spine": 0.06696439534425735
+            }
+          }
+        ]
+      },
+      "mutable_vertices": [
+        {
+          "vertex": 8122,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 8123,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 8124,
+          "rest_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41875213384628296,
+            "Spine2": 0.33386605978012085,
+            "RightShoulder": 0.1713481992483139,
+            "RightArm": 0.07603359967470169
+          }
+        },
+        {
+          "vertex": 9247,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 9431,
+          "rest_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11429394639173439,
+            1.2949318572010304,
+            -0.07091556366180396
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.4401888847351074,
+            "Spine2": 0.3270723223686218,
+            "RightShoulder": 0.1567554771900177,
+            "Spine": 0.07598331570625305
+          }
+        },
+        {
+          "vertex": 9432,
+          "rest_world_xyz_m_y_up": [
+            -0.09913784894405152,
+            1.2906651244280831,
+            -0.07551902494141681
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09913784894405152,
+            1.2906651244280831,
+            -0.07551902494141681
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.451788067817688,
+            "Spine2": 0.3291154205799103,
+            "RightShoulder": 0.1399385631084442,
+            "Spine": 0.07915795594453812
+          }
+        },
+        {
+          "vertex": 9434,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 9437,
+          "rest_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.38973626494407654,
+            "Spine2": 0.35449180006980896,
+            "RightShoulder": 0.18387378752231598,
+            "RightArm": 0.07189814746379852
+          }
+        },
+        {
+          "vertex": 9451,
+          "rest_world_xyz_m_y_up": [
+            -0.0874508446351213,
+            1.2949651104469408,
+            -0.07265400062741785
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.0874508446351213,
+            1.2949651104469408,
+            -0.07265400062741785
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.45993494987487793,
+            "Spine2": 0.3336670994758606,
+            "RightShoulder": 0.12659966945648193,
+            "Spine": 0.07979828119277954
+          }
+        },
+        {
+          "vertex": 9460,
+          "rest_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3936766982078552,
+            "Spine1": 0.3350149691104889,
+            "RightShoulder": 0.20582684874534607,
+            "RightArm": 0.06548148393630981
+          }
+        },
+        {
+          "vertex": 9464,
+          "rest_world_xyz_m_y_up": [
+            -0.0811502123202504,
+            1.3039783222470263,
+            -0.08660090794366249
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.0811502123202504,
+            1.3039783222470263,
+            -0.08660090794366249
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.39129921793937683,
+            "Spine2": 0.3871411979198456,
+            "RightShoulder": 0.1581442654132843,
+            "Spine": 0.06341534107923508
+          }
+        },
+        {
+          "vertex": 24118,
+          "rest_world_xyz_m_y_up": [
+            -0.11379763245330733,
+            1.3141331753093002,
+            -0.07327450064419988
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11379763245330733,
+            1.3141331753093002,
+            -0.07327450064419988
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3528795838356018,
+            "Spine1": 0.341887891292572,
+            "RightShoulder": 0.21282994747161865,
+            "RightArm": 0.09240258485078812
+          }
+        },
+        {
+          "vertex": 24120,
+          "rest_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.11141317453885936,
+            1.299913499950499,
+            -0.06884086043843717
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41875213384628296,
+            "Spine2": 0.33386605978012085,
+            "RightShoulder": 0.1713481992483139,
+            "RightArm": 0.07603359967470169
+          }
+        },
+        {
+          "vertex": 24121,
+          "rest_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.10014361406134883,
+            1.3077297072200034,
+            -0.07760125363970645
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.38973626494407654,
+            "Spine2": 0.35449180006980896,
+            "RightShoulder": 0.18387378752231598,
+            "RightArm": 0.07189814746379852
+          }
+        },
+        {
+          "vertex": 24122,
+          "rest_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.09956932072213447,
+            1.302102546339326,
+            -0.0789720111037015
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine1": 0.41536492109298706,
+            "Spine2": 0.34855350852012634,
+            "RightShoulder": 0.16911718249320984,
+            "Spine": 0.06696439534425735
+          }
+        },
+        {
+          "vertex": 24123,
+          "rest_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "posed_world_xyz_m_y_up": [
+            -0.08591502520496741,
+            1.3187124632641674,
+            -0.08724299781858817
+          ],
+          "anatomical_region_estimate": "shoulder/arm or adjacent thorax",
+          "weights": {
+            "Spine2": 0.3936766982078552,
+            "Spine1": 0.3350149691104889,
+            "RightShoulder": 0.20582684874534607,
+            "RightArm": 0.06548148393630981
+          }
+        }
+      ],
+      "weights_only_original_four_joint_slots": true,
+      "all_outside_rows_frozen": true
+    },
+    "proof": {
+      "source_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "candidate_sha256": "86b264245bdb22367ad23fb8350d983ef318129024a13aa7df039c51a159161f",
+      "changed_vertex_ids": [
+        8122,
+        8123,
+        8124,
+        9247,
+        9431,
+        9432,
+        9434,
+        9437,
+        9451,
+        9460,
+        9464,
+        24118,
+        24120,
+        24121,
+        24122,
+        24123
+      ],
+      "changed_weight_rows": 16,
+      "forbidden_changed_bytes": 0,
+      "only_weight_rows_changed": true,
+      "joints_all_byte_exact": true,
+      "preserved_bytes_sha256": "cc285ca0170b932f76738b8b5b7523ab9781c47d5b2feaf1bef25e09b8bc70c2",
+      "source_and_candidate_bytes": 17889448,
+      "outside_region_weight_rows_byte_exact": true,
+      "geometry_uv_textures_rest_all_animation_bytes_exact": true,
+      "line_search_factor": 1.0,
+      "float32_full_schedule_constraints_feasible": true
+    },
+    "solver_rounds": [
+      {
+        "round": 0,
+        "solver_success": true,
+        "solver_message": "Optimization terminated successfully",
+        "iterations": 42,
+        "active_edge_samples": 3722,
+        "active_face_samples": 2892,
+        "solver_units": "dimensionless; physical mask, support, bounds and constraints unchanged",
+        "maximum_extension_over_cap_mm": 0.042351013094148016,
+        "maximum_edge_compression_floor_violation_mm": -0.24954816998685647,
+        "maximum_oriented_area_floor_violation_mm2": -2.0479674894498103
+      },
+      {
+        "round": 1,
+        "solver_success": true,
+        "solver_message": "Optimization terminated successfully",
+        "iterations": 9,
+        "active_edge_samples": 3723,
+        "active_face_samples": 2892,
+        "solver_units": "dimensionless; physical mask, support, bounds and constraints unchanged",
+        "maximum_extension_over_cap_mm": 0.016455240871653842,
+        "maximum_edge_compression_floor_violation_mm": -0.25228800880171853,
+        "maximum_oriented_area_floor_violation_mm2": -2.0479743426834673
+      },
+      {
+        "round": 2,
+        "solver_success": true,
+        "solver_message": "Optimization terminated successfully",
+        "iterations": 19,
+        "active_edge_samples": 3724,
+        "active_face_samples": 2892,
+        "solver_units": "dimensionless; physical mask, support, bounds and constraints unchanged",
+        "maximum_extension_over_cap_mm": 1.3359979789129284e-11,
+        "maximum_edge_compression_floor_violation_mm": -0.2542960243948178,
+        "maximum_oriented_area_floor_violation_mm2": -2.0477841521813573
+      }
+    ],
+    "same_frame_extension_cap_mm": 0.25,
+    "maximum_same_frame_extension_increase_mm": 0.2500051641342367,
+    "maximum_same_frame_extension_decrease_mm": -0.37420584959570036,
+    "worst_increase": {
+      "clip": "heavy",
+      "time_s": 0.5799999833106995,
+      "welded_edge_groups": [
+        5803,
+        6564
+      ],
+      "rest_length_mm": 33.97497390815242,
+      "before_length_mm": 30.49800819313274,
+      "after_length_mm": 30.748013357266977
+    },
+    "target_before_length_mm": 27.41363652452809,
+    "target_after_length_mm": 27.048404685282613,
+    "target_reduction_mm": 0.3652318392454781,
+    "before_edge_max_ratio": {
+      "min": 0.9999871238754492,
+      "p50": 1.023508867745521,
+      "p90": 1.2518113855583652,
+      "p95": 1.3754083283799905,
+      "p99": 1.703677292547838,
+      "p999": 2.517569190110699,
+      "max": 4.710154462656586
+    },
+    "after_edge_max_ratio": {
+      "min": 0.9999871238754492,
+      "p50": 1.023508867745521,
+      "p90": 1.2518113855583652,
+      "p95": 1.3754083283799905,
+      "p99": 1.703677292547838,
+      "p999": 2.517569190110699,
+      "max": 4.64740108165268
+    },
+    "before_edge_max_extension_mm": {
+      "min": -0.00018372179641859554,
+      "p50": 0.32781975208811054,
+      "p90": 4.035508493538902,
+      "p95": 6.354783029950188,
+      "p99": 12.643667299411517,
+      "p999": 23.11685380976133,
+      "max": 38.61814890507607
+    },
+    "after_edge_max_extension_mm": {
+      "min": -0.00018372179641859554,
+      "p50": 0.32781975208811054,
+      "p90": 4.035508493538902,
+      "p95": 6.354783029950188,
+      "p99": 12.643667299411517,
+      "p999": 23.11685380976133,
+      "max": 38.61814890507607
+    },
+    "extension_envelope_delta_mm": {
+      "min": -0.3652318392454674,
+      "p50": 0.0,
+      "p90": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "p999": 0.0,
+      "max": 0.2500005049948504
+    },
+    "envelope_improved_over_point1mm_edges": 7,
+    "envelope_worsened_over_point1mm_edges": 7,
+    "triangle_diagnostics": {
+      "incident_source_triangle_count": 29,
+      "source_min_area_mm2": 18.443047851114677,
+      "candidate_min_area_mm2": 18.544860387824595,
+      "source_min_area_over_rest": 0.5058538206790993,
+      "candidate_min_area_over_rest": 0.5086463233664809,
+      "minimum_candidate_normal_cosine_against_same_pose_source": 0.9992739379049924,
+      "new_orientation_reversals": 0,
+      "area_constraint": "oriented double area >= .95 * min(source posed double area, source REST double area)",
+      "minimum_area_constraint_margin_mm2": 2.0477868355684663,
+      "worst_area_constraint": {
+        "clip": "heavy",
+        "time_s": 0.20999999344348907,
+        "source_triangle_id": 10037
+      }
+    },
+    "edge_compression_floor_margin_mm": 0.2542977135670572,
+    "maximum_weight_sum_error": 1.1920928955078125e-07,
+    "automatic_aaa_approval": false,
+    "final_art_status": "pending",
+    "candidate_numeric_gate": "rejected",
+    "runtime_adoption": "pending visual review; original runtime unchanged",
+    "limitations": [
+      "At most one output per asset; unchanged skeleton/clip times do not prove final anatomy, transitions or AAA appearance.",
+      "The small finite-sample extension allowance is explicitly reported; it is not a new art-quality threshold.",
+      "No hands, tabard or limb correction and no target-device performance claim."
+    ],
+    "tool_sha256": "38cb03a2b3430d62197871fc3dc2484ac9ed0f433e4c4f01993822c78d3b3570",
+    "glb_written": false
+  },
+  "proposed_named_weight_changes": [
+    {
+      "vertex_id": 8122,
+      "rest_world_xyz_m_y_up": [
+        -0.11429394639173439,
+        1.2949318572010304,
+        -0.07091556366180396
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.4401888847351074,
+          "proposed": 0.4400845170021057,
+          "delta": -0.00010436773300170898
+        },
+        "Spine2": {
+          "source": 0.3270723223686218,
+          "proposed": 0.3276030421257019,
+          "delta": 0.0005307197570800781
+        },
+        "RightShoulder": {
+          "source": 0.1567554771900177,
+          "proposed": 0.15728619694709778,
+          "delta": 0.0005307197570800781
+        },
+        "Spine": {
+          "source": 0.07598331570625305,
+          "proposed": 0.0750262439250946,
+          "delta": -0.0009570717811584473
+        }
+      }
+    },
+    {
+      "vertex_id": 8123,
+      "rest_world_xyz_m_y_up": [
+        -0.09956932072213447,
+        1.302102546339326,
+        -0.0789720111037015
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.41536492109298706,
+          "proposed": 0.41532883048057556,
+          "delta": -3.6090612411499023e-05
+        },
+        "Spine2": {
+          "source": 0.34855350852012634,
+          "proposed": 0.35081252455711365,
+          "delta": 0.0022590160369873047
+        },
+        "RightShoulder": {
+          "source": 0.16911718249320984,
+          "proposed": 0.17137624323368073,
+          "delta": 0.0022590607404708862
+        },
+        "Spine": {
+          "source": 0.06696439534425735,
+          "proposed": 0.062482401728630066,
+          "delta": -0.004481993615627289
+        }
+      }
+    },
+    {
+      "vertex_id": 8124,
+      "rest_world_xyz_m_y_up": [
+        -0.11141317453885936,
+        1.299913499950499,
+        -0.06884086043843717
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.41875213384628296,
+          "proposed": 0.4180484116077423,
+          "delta": -0.0007037222385406494
+        },
+        "Spine2": {
+          "source": 0.33386605978012085,
+          "proposed": 0.3344406187534332,
+          "delta": 0.0005745589733123779
+        },
+        "RightShoulder": {
+          "source": 0.1713481992483139,
+          "proposed": 0.17192277312278748,
+          "delta": 0.0005745738744735718
+        },
+        "RightArm": {
+          "source": 0.07603359967470169,
+          "proposed": 0.07558819651603699,
+          "delta": -0.00044540315866470337
+        }
+      }
+    },
+    {
+      "vertex_id": 9247,
+      "rest_world_xyz_m_y_up": [
+        -0.11429394639173439,
+        1.2949318572010304,
+        -0.07091556366180396
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.4401888847351074,
+          "proposed": 0.4400845170021057,
+          "delta": -0.00010436773300170898
+        },
+        "Spine2": {
+          "source": 0.3270723223686218,
+          "proposed": 0.3276030421257019,
+          "delta": 0.0005307197570800781
+        },
+        "RightShoulder": {
+          "source": 0.1567554771900177,
+          "proposed": 0.15728619694709778,
+          "delta": 0.0005307197570800781
+        },
+        "Spine": {
+          "source": 0.07598331570625305,
+          "proposed": 0.0750262439250946,
+          "delta": -0.0009570717811584473
+        }
+      }
+    },
+    {
+      "vertex_id": 9431,
+      "rest_world_xyz_m_y_up": [
+        -0.11429394639173439,
+        1.2949318572010304,
+        -0.07091556366180396
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.4401888847351074,
+          "proposed": 0.4400845170021057,
+          "delta": -0.00010436773300170898
+        },
+        "Spine2": {
+          "source": 0.3270723223686218,
+          "proposed": 0.3276030421257019,
+          "delta": 0.0005307197570800781
+        },
+        "RightShoulder": {
+          "source": 0.1567554771900177,
+          "proposed": 0.15728619694709778,
+          "delta": 0.0005307197570800781
+        },
+        "Spine": {
+          "source": 0.07598331570625305,
+          "proposed": 0.0750262439250946,
+          "delta": -0.0009570717811584473
+        }
+      }
+    },
+    {
+      "vertex_id": 9432,
+      "rest_world_xyz_m_y_up": [
+        -0.09913784894405152,
+        1.2906651244280831,
+        -0.07551902494141681
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.451788067817688,
+          "proposed": 0.4517710506916046,
+          "delta": -1.7017126083374023e-05
+        },
+        "Spine2": {
+          "source": 0.3291154205799103,
+          "proposed": 0.3296046555042267,
+          "delta": 0.0004892349243164062
+        },
+        "RightShoulder": {
+          "source": 0.1399385631084442,
+          "proposed": 0.14042779803276062,
+          "delta": 0.0004892349243164062
+        },
+        "Spine": {
+          "source": 0.07915795594453812,
+          "proposed": 0.07819649577140808,
+          "delta": -0.0009614601731300354
+        }
+      }
+    },
+    {
+      "vertex_id": 9434,
+      "rest_world_xyz_m_y_up": [
+        -0.09956932072213447,
+        1.302102546339326,
+        -0.0789720111037015
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.41536492109298706,
+          "proposed": 0.41532883048057556,
+          "delta": -3.6090612411499023e-05
+        },
+        "Spine2": {
+          "source": 0.34855350852012634,
+          "proposed": 0.35081252455711365,
+          "delta": 0.0022590160369873047
+        },
+        "RightShoulder": {
+          "source": 0.16911718249320984,
+          "proposed": 0.17137624323368073,
+          "delta": 0.0022590607404708862
+        },
+        "Spine": {
+          "source": 0.06696439534425735,
+          "proposed": 0.062482401728630066,
+          "delta": -0.004481993615627289
+        }
+      }
+    },
+    {
+      "vertex_id": 9437,
+      "rest_world_xyz_m_y_up": [
+        -0.10014361406134883,
+        1.3077297072200034,
+        -0.07760125363970645
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.38973626494407654,
+          "proposed": 0.3918781280517578,
+          "delta": 0.0021418631076812744
+        },
+        "Spine2": {
+          "source": 0.35449180006980896,
+          "proposed": 0.3538750112056732,
+          "delta": -0.0006167888641357422
+        },
+        "RightShoulder": {
+          "source": 0.18387378752231598,
+          "proposed": 0.18325701355934143,
+          "delta": -0.0006167739629745483
+        },
+        "RightArm": {
+          "source": 0.07189814746379852,
+          "proposed": 0.07098984718322754,
+          "delta": -0.0009083002805709839
+        }
+      }
+    },
+    {
+      "vertex_id": 9451,
+      "rest_world_xyz_m_y_up": [
+        -0.0874508446351213,
+        1.2949651104469408,
+        -0.07265400062741785
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.45993494987487793,
+          "proposed": 0.4599381983280182,
+          "delta": 3.248453140258789e-06
+        },
+        "Spine2": {
+          "source": 0.3336670994758606,
+          "proposed": 0.33367154002189636,
+          "delta": 4.4405460357666016e-06
+        },
+        "RightShoulder": {
+          "source": 0.12659966945648193,
+          "proposed": 0.1266041100025177,
+          "delta": 4.4405460357666016e-06
+        },
+        "Spine": {
+          "source": 0.07979828119277954,
+          "proposed": 0.07978615164756775,
+          "delta": -1.2129545211791992e-05
+        }
+      }
+    },
+    {
+      "vertex_id": 9460,
+      "rest_world_xyz_m_y_up": [
+        -0.08591502520496741,
+        1.3187124632641674,
+        -0.08724299781858817
+      ],
+      "named_weight_changes": {
+        "Spine2": {
+          "source": 0.3936766982078552,
+          "proposed": 0.3938198983669281,
+          "delta": 0.00014320015907287598
+        },
+        "Spine1": {
+          "source": 0.3350149691104889,
+          "proposed": 0.33522629737854004,
+          "delta": 0.00021132826805114746
+        },
+        "RightShoulder": {
+          "source": 0.20582684874534607,
+          "proposed": 0.20597004890441895,
+          "delta": 0.00014320015907287598
+        },
+        "RightArm": {
+          "source": 0.06548148393630981,
+          "proposed": 0.06498375535011292,
+          "delta": -0.0004977285861968994
+        }
+      }
+    },
+    {
+      "vertex_id": 9464,
+      "rest_world_xyz_m_y_up": [
+        -0.0811502123202504,
+        1.3039783222470263,
+        -0.08660090794366249
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.39129921793937683,
+          "proposed": 0.3914397358894348,
+          "delta": 0.0001405179500579834
+        },
+        "Spine2": {
+          "source": 0.3871411979198456,
+          "proposed": 0.3877403438091278,
+          "delta": 0.0005991458892822266
+        },
+        "RightShoulder": {
+          "source": 0.1581442654132843,
+          "proposed": 0.15874342620372772,
+          "delta": 0.0005991607904434204
+        },
+        "Spine": {
+          "source": 0.06341534107923508,
+          "proposed": 0.062076494097709656,
+          "delta": -0.0013388469815254211
+        }
+      }
+    },
+    {
+      "vertex_id": 24118,
+      "rest_world_xyz_m_y_up": [
+        -0.11379763245330733,
+        1.3141331753093002,
+        -0.07327450064419988
+      ],
+      "named_weight_changes": {
+        "Spine2": {
+          "source": 0.3528795838356018,
+          "proposed": 0.35289013385772705,
+          "delta": 1.055002212524414e-05
+        },
+        "Spine1": {
+          "source": 0.341887891292572,
+          "proposed": 0.3421560525894165,
+          "delta": 0.0002681612968444824
+        },
+        "RightShoulder": {
+          "source": 0.21282994747161865,
+          "proposed": 0.2128404974937439,
+          "delta": 1.055002212524414e-05
+        },
+        "RightArm": {
+          "source": 0.09240258485078812,
+          "proposed": 0.09211331605911255,
+          "delta": -0.0002892687916755676
+        }
+      }
+    },
+    {
+      "vertex_id": 24120,
+      "rest_world_xyz_m_y_up": [
+        -0.11141317453885936,
+        1.299913499950499,
+        -0.06884086043843717
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.41875213384628296,
+          "proposed": 0.4180484116077423,
+          "delta": -0.0007037222385406494
+        },
+        "Spine2": {
+          "source": 0.33386605978012085,
+          "proposed": 0.3344406187534332,
+          "delta": 0.0005745589733123779
+        },
+        "RightShoulder": {
+          "source": 0.1713481992483139,
+          "proposed": 0.17192277312278748,
+          "delta": 0.0005745738744735718
+        },
+        "RightArm": {
+          "source": 0.07603359967470169,
+          "proposed": 0.07558819651603699,
+          "delta": -0.00044540315866470337
+        }
+      }
+    },
+    {
+      "vertex_id": 24121,
+      "rest_world_xyz_m_y_up": [
+        -0.10014361406134883,
+        1.3077297072200034,
+        -0.07760125363970645
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.38973626494407654,
+          "proposed": 0.3918781280517578,
+          "delta": 0.0021418631076812744
+        },
+        "Spine2": {
+          "source": 0.35449180006980896,
+          "proposed": 0.3538750112056732,
+          "delta": -0.0006167888641357422
+        },
+        "RightShoulder": {
+          "source": 0.18387378752231598,
+          "proposed": 0.18325701355934143,
+          "delta": -0.0006167739629745483
+        },
+        "RightArm": {
+          "source": 0.07189814746379852,
+          "proposed": 0.07098984718322754,
+          "delta": -0.0009083002805709839
+        }
+      }
+    },
+    {
+      "vertex_id": 24122,
+      "rest_world_xyz_m_y_up": [
+        -0.09956932072213447,
+        1.302102546339326,
+        -0.0789720111037015
+      ],
+      "named_weight_changes": {
+        "Spine1": {
+          "source": 0.41536492109298706,
+          "proposed": 0.41532883048057556,
+          "delta": -3.6090612411499023e-05
+        },
+        "Spine2": {
+          "source": 0.34855350852012634,
+          "proposed": 0.35081252455711365,
+          "delta": 0.0022590160369873047
+        },
+        "RightShoulder": {
+          "source": 0.16911718249320984,
+          "proposed": 0.17137624323368073,
+          "delta": 0.0022590607404708862
+        },
+        "Spine": {
+          "source": 0.06696439534425735,
+          "proposed": 0.062482401728630066,
+          "delta": -0.004481993615627289
+        }
+      }
+    },
+    {
+      "vertex_id": 24123,
+      "rest_world_xyz_m_y_up": [
+        -0.08591502520496741,
+        1.3187124632641674,
+        -0.08724299781858817
+      ],
+      "named_weight_changes": {
+        "Spine2": {
+          "source": 0.3936766982078552,
+          "proposed": 0.3938198983669281,
+          "delta": 0.00014320015907287598
+        },
+        "Spine1": {
+          "source": 0.3350149691104889,
+          "proposed": 0.33522629737854004,
+          "delta": 0.00021132826805114746
+        },
+        "RightShoulder": {
+          "source": 0.20582684874534607,
+          "proposed": 0.20597004890441895,
+          "delta": 0.00014320015907287598
+        },
+        "RightArm": {
+          "source": 0.06548148393630981,
+          "proposed": 0.06498375535011292,
+          "delta": -0.0004977285861968994
+        }
+      }
+    }
+  ],
+  "constraint_interpretation": {
+    "same_frame_extension_cap_mm": 0.25,
+    "exact_extension_cap_pass": false,
+    "actual_cap_exceedance_mm": 5.164134236679274e-06,
+    "triangle_normal_area_floor": "oriented double area >= .95 * min(original posed double area,REST double area)",
+    "no_new_orientation_reversals": true,
+    "boundary": "Outside rows fixed; a vanishing delta-bound envelope plus graph regularization is not proof of a continuously differentiable painted surface.",
+    "finite_sampling": "All exported keys and interval midpoints; unmodified edge behaviour follows from byte-identical source influences. No continuous-time or global-optimizer proof."
+  },
+  "conclusion_limits": [
+    "Initial raw-unit solver failure was corrected by numerical nondimensionalization; do not infer geometric impossibility from SLSQP failure.",
+    "These results concern one manually anchored ROI and the original four influence slots. They do not prove no safe repair exists with different artist-reviewed ownership/topology.",
+    "The source Sentinel triangles already reach roughly seven percent of REST area; the guarded proposal compresses the minimum slightly further. This is disclosed, not treated as a visual improvement.",
+    "Do not adopt either ignored raw-probe GLB or the normalized in-memory proposal. No face/hand/tabard/limb or gameplay correction was attempted."
+  ]
+}

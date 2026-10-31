@@ -1,0 +1,41 @@
+{
+  "capture_result": "passed",
+  "visual_decision": "Retain d7d as incremental integration; COLOR_0-only alternative9f rejected for negligible visible improvement. Final face/AAA approval pending.",
+  "scope": "Actual Game first room lighting/materials, fixed idle. Head local yaw/pitch fixtures and close camera reframes. No normal gameplay/timing QA, target-GPU performance or AAA approval.",
+  "source_inputs": {
+    "lyra_gameplay.glb": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+  },
+  "shots": 12,
+  "same_camera_pose_quality_pairs": 6,
+  "quality_modes": [
+    0,
+    1
+  ],
+  "capture_duration_seconds": 317.962,
+  "max_head_socket_component_error": 0,
+  "all_three_eye_material_vertex_colors_as_albedo": true,
+  "findings": [
+    "Sclera, gray-green iris rim and central dark pupil/catchlight are separately visible in Web close views. This is not a single black void or flat painted overlay.",
+    "Eyes follow the actual sampled Head bone through local yaw+/-15 and pitch+/-10 representative combinations. No offset/overscale or obvious through-eyelid geometry was seen in these views.",
+    "Actual eye model world basis scales remain approximately1. Both quality0 and1 preserve eye materials and placement.",
+    "Large dark pupil regions and heavy upper/lower lid surround give a stylized/doll-like stare in both qualities. Improve iris/pupil readability via one audited COLOR_0-only actual asset alternative before adoption.",
+    "Normal gameplay, complete animation sequence, blink/gaze behavior, Windows and final AAA approval remain untested."
+  ],
+  "errors": [],
+  "screenshots_sha256": {
+    "01-wide-front-neutral-q0.png": "788ec359b99cfece59f58e546c4b911b5df91650cfe2d5609d385dc95e2de608",
+    "01-wide-front-neutral-q1.png": "098bd9731ee3d8cff5f2f6e6d5de9382f8842f044624408a1d28eeaa4360e7cd",
+    "02-face-front-neutral-q0.png": "8a6523dcb247365ca3d323f7386eab619dfae54a2b006ae84d0c2f73bd3e2fdd",
+    "02-face-front-neutral-q1.png": "4319bb243b261bd06650e8f7b3d0519fcb77cec80cf263d743460072cd5b2396",
+    "03-face-threequarter-neutral-q0.png": "4659ff6a8de55e9e20895fb7c4265944c4a4e988334eeea700a823c85fd80722",
+    "03-face-threequarter-neutral-q1.png": "a7616398f651ad502accd66c9061665da71b82f148e246eae8125910d766477f",
+    "04-face-front-yaw15-pitch10-q0.png": "91a8a43c452beb327305a6b4ae4c233d47ae5b9818acf5981c51785fbc6f1809",
+    "04-face-front-yaw15-pitch10-q1.png": "1233219274df0c916dc9be1b3ac85470f7a021e162aae76be41c0e974964ae0d",
+    "05-face-front-yawminus15-pitchminus10-q0.png": "5d5ef94f98a12889555e7d46e863eedcc9436ff47eacdd608a7c7dc261a8ddc7",
+    "05-face-front-yawminus15-pitchminus10-q1.png": "1056b13edd47242f30f714201de706ba75a6db908b2f57e2f6a528181c49ee95",
+    "06-face-threequarter-yawminus15-pitch10-q0.png": "ae5aadf6df4210a0366863fadf7d2e1bbd8b1e2d363cc74224e78f768fbc3707",
+    "06-face-threequarter-yawminus15-pitch10-q1.png": "851e50c37918b3fe8766e293b113ebaae35418481a3be8dea6c12713cbe146fe"
+  },
+  "palette_comparison": "palette/review.json"
+}

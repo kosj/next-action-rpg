@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Eye fit uses frozen actual Web vertices and independent original Head REST anchors
+PASS Runtime body and eye geometry match the separately measured frozen input assets
+PASS Actual production hero mounts the dedicated eye scene and attachment
+PASS Eyes attach directly to the actual Head bone instead of a prototype joint or extra rotated wrapper
+PASS Eye asset stays rigid with identity local rotation/translation and no independent skin or playback
+PASS Only the three procedural eye parts use finite opaque vertex-colored PBR with the measured Web topology
+PASS Original body surface keeps albedo/normal textures; only the named 136-triangle inner lid uses its exact dedicated opaque PBR contract
+PASS Actual imported eye vertices match the independent recorded front/back/outer source samples
+PASS Actual imported nonwhite vertex colors retain the measured source samples within their byte-channel precision
+PASS Actual Skeleton REST Head matches the independent source glTF Head basis, origin and inherited scale
+RUNEFALL_EYE_REST: {"actual_head":"[X: (-1.818952, 0.0, 0.0), Y: (-0.0, 1.764642, -0.44116), Z: (-0.0, -0.44116, -1.764642), O: (-0.002966, 1.610273, 0.007067)]","expected_head":"[X: (-1.818952, 0.0, 0.0), Y: (-0.0, 1.764642, -0.44116), Z: (-0.0, -0.44116, -1.764642), O: (-0.002966, 1.610273, 0.007067)]","eye_anchor_max_error_m":0.00000129387763081468,"head_origin_error_m":0.000000119213154903264}
+PASS REST eye vertices match original source-world anchors with exactly one gameplay PI facing correction
+PASS Actual eye diameter stays near 24mm after internal normalization-scale compensation
+PASS External translation, rotation and 1.25 scale preserve independent REST anchors without double scale or orientation
+PASS External actor scale correctly changes actual eye diameter to about 31mm
+PASS All 19 actual gameplay clips keep eye vertices on the current Head pose in 57 same-frame samples
+PASS Eyes follow the final blended Head pose in the same frame as a production transition
+PASS Hitpause holds both Head and eyes without independent eye animation or a blend-clock advance
+PASS Explicit Head yaw rotates real eye vertices through the expected rigid delta
+PASS Explicit Head pitch rotates real eye vertices through the expected rigid delta
+RUNEFALL_EYE_ATTACHMENT: {"actual_pose_max_error_m":0.000000533120157797384,"actual_pose_samples":57,"body_sha256":"4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c","diameters_m":[0.0248002260923386,0.0248000547289848],"external_1_25_diameters_m":[0.0310001838952303,0.0310001280158758],"external_transform_anchor_max_error_m":0.00000186210866104375,"eyes_sha256":"d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4","import_vertex_max_error_m":0.00000129653085423342,"rest_anchor_max_error_m":0.00000129387763081468,"scope":"Attachment/units/materials only; eyelid collisions and AAA visual approval are separate."}
+PASS Clearing the character releases eye geometry and its Head socket with the old rig
+PASS Eye fixture completes
+RUNEFALL_EYES: 21 checks, 0 failures

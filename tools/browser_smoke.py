@@ -109,6 +109,7 @@ async def run(url, output=Path("build/verification")):
         art = status.get("hero_art") or {}
         assert art.get("mode") == "skeletal" and art.get("profile") == "hero", (label, art)
         assert art.get("weapon_attached") is True, (label, art)
+        assert art.get("eyes_attached") is True, (label, art)
         distance = art.get("grip_to_tip_m")
         assert isinstance(distance, (int, float)) and abs(distance - 1.19) <= 0.003, (label, art)
 

@@ -1,0 +1,570 @@
+{
+  "02-face-front-neutral-q0.png": {
+    "actual_idle_sampled_time": 0.25,
+    "camera_fov": 56,
+    "camera_transform": [
+      0.00550864264369011,
+      1.60580325126648,
+      -25.4784927368164,
+      -1,
+      0,
+      8.74227765734759e-08,
+      6.41083008900978e-09,
+      0.997307658195496,
+      0.0733313485980034,
+      -8.7187402186828e-08,
+      0.0733313485980034,
+      -0.997307658195496
+    ],
+    "case": {
+      "camera": "front",
+      "name": "face-front-neutral",
+      "pitch": 0,
+      "yaw": 0
+    },
+    "case_index": 1,
+    "eye_materials": [
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "EyeSclera",
+        "node": "EyesHeadLocal",
+        "roughness": 0.46000000834465,
+        "shading_mode": 1,
+        "surface": 0,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "GrayGreenIris",
+        "node": "EyesHeadLocal",
+        "roughness": 0.340000003576279,
+        "shading_mode": 1,
+        "surface": 1,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "Pupil",
+        "node": "EyesHeadLocal",
+        "roughness": 0.280000001192093,
+        "shading_mode": 1,
+        "surface": 2,
+        "vertex_colors_as_albedo": true
+      }
+    ],
+    "eye_model_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -0.998624801635742,
+      0.0154569493606687,
+      -0.0500862374901772,
+      0.0307286214083433,
+      0.946750342845917,
+      -0.320496916770935,
+      0.0424653291702271,
+      -0.321595221757889,
+      -0.945924639701843
+    ],
+    "eye_socket_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "eye_world_aabb_position": [
+      -0.040936067700386,
+      1.59001433849335,
+      -25.1561126708984
+    ],
+    "eye_world_aabb_size": [
+      0.0928894206881523,
+      0.0315778255462646,
+      0.0352420806884766
+    ],
+    "head_socket_max_component_error": 0,
+    "head_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "hero_art": {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000005722046,
+      "mode": "skeletal",
+      "profile": "hero",
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "hero_transform": [
+      0,
+      -0.0199999995529652,
+      -25,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "quality": 0,
+    "scope": "Fixed paused art fixture; Head local pose rotations, no gameplay/timing QA or AAA proof",
+    "stage": "changed"
+  },
+  "02-face-front-neutral-q1.png": {
+    "actual_idle_sampled_time": 0.25,
+    "camera_fov": 56,
+    "camera_transform": [
+      0.00550864264369011,
+      1.60580325126648,
+      -25.4784927368164,
+      -1,
+      0,
+      8.74227765734759e-08,
+      6.41083008900978e-09,
+      0.997307658195496,
+      0.0733313485980034,
+      -8.7187402186828e-08,
+      0.0733313485980034,
+      -0.997307658195496
+    ],
+    "case": {
+      "camera": "front",
+      "name": "face-front-neutral",
+      "pitch": 0,
+      "yaw": 0
+    },
+    "case_index": 1,
+    "eye_materials": [
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "EyeSclera",
+        "node": "EyesHeadLocal",
+        "roughness": 0.46000000834465,
+        "shading_mode": 1,
+        "surface": 0,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "GrayGreenIris",
+        "node": "EyesHeadLocal",
+        "roughness": 0.340000003576279,
+        "shading_mode": 1,
+        "surface": 1,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "Pupil",
+        "node": "EyesHeadLocal",
+        "roughness": 0.280000001192093,
+        "shading_mode": 1,
+        "surface": 2,
+        "vertex_colors_as_albedo": true
+      }
+    ],
+    "eye_model_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -0.998624801635742,
+      0.0154569493606687,
+      -0.0500862374901772,
+      0.0307286214083433,
+      0.946750342845917,
+      -0.320496916770935,
+      0.0424653291702271,
+      -0.321595221757889,
+      -0.945924639701843
+    ],
+    "eye_socket_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "eye_world_aabb_position": [
+      -0.040936067700386,
+      1.59001433849335,
+      -25.1561126708984
+    ],
+    "eye_world_aabb_size": [
+      0.0928894206881523,
+      0.0315778255462646,
+      0.0352420806884766
+    ],
+    "head_socket_max_component_error": 0,
+    "head_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "hero_art": {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000005722046,
+      "mode": "skeletal",
+      "profile": "hero",
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "hero_transform": [
+      0,
+      -0.0199999995529652,
+      -25,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "quality": 1,
+    "scope": "Fixed paused art fixture; Head local pose rotations, no gameplay/timing QA or AAA proof",
+    "stage": "changed"
+  },
+  "03-face-threequarter-neutral-q0.png": {
+    "actual_idle_sampled_time": 0.25,
+    "camera_fov": 56,
+    "camera_transform": [
+      0.265508621931076,
+      1.61580324172974,
+      -25.4284934997559,
+      -0.744570434093475,
+      0,
+      -0.667543888092041,
+      -0.0597458183765411,
+      0.995986759662628,
+      0.0666397660970688,
+      0.664864897727966,
+      0.0895009562373161,
+      -0.741582274436951
+    ],
+    "case": {
+      "camera": "threequarter",
+      "name": "face-threequarter-neutral",
+      "pitch": 0,
+      "yaw": 0
+    },
+    "case_index": 2,
+    "eye_materials": [
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "EyeSclera",
+        "node": "EyesHeadLocal",
+        "roughness": 0.46000000834465,
+        "shading_mode": 1,
+        "surface": 0,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "GrayGreenIris",
+        "node": "EyesHeadLocal",
+        "roughness": 0.340000003576279,
+        "shading_mode": 1,
+        "surface": 1,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "Pupil",
+        "node": "EyesHeadLocal",
+        "roughness": 0.280000001192093,
+        "shading_mode": 1,
+        "surface": 2,
+        "vertex_colors_as_albedo": true
+      }
+    ],
+    "eye_model_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -0.998624801635742,
+      0.0154569493606687,
+      -0.0500862374901772,
+      0.0307286214083433,
+      0.946750342845917,
+      -0.320496916770935,
+      0.0424653291702271,
+      -0.321595221757889,
+      -0.945924639701843
+    ],
+    "eye_socket_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "eye_world_aabb_position": [
+      -0.040936067700386,
+      1.59001433849335,
+      -25.1561126708984
+    ],
+    "eye_world_aabb_size": [
+      0.0928894206881523,
+      0.0315778255462646,
+      0.0352420806884766
+    ],
+    "head_socket_max_component_error": 0,
+    "head_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "hero_art": {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000005722046,
+      "mode": "skeletal",
+      "profile": "hero",
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "hero_transform": [
+      0,
+      -0.0199999995529652,
+      -25,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "quality": 0,
+    "scope": "Fixed paused art fixture; Head local pose rotations, no gameplay/timing QA or AAA proof",
+    "stage": "changed"
+  },
+  "03-face-threequarter-neutral-q1.png": {
+    "actual_idle_sampled_time": 0.25,
+    "camera_fov": 56,
+    "camera_transform": [
+      0.265508621931076,
+      1.61580324172974,
+      -25.4284934997559,
+      -0.744570434093475,
+      0,
+      -0.667543888092041,
+      -0.0597458183765411,
+      0.995986759662628,
+      0.0666397660970688,
+      0.664864897727966,
+      0.0895009562373161,
+      -0.741582274436951
+    ],
+    "case": {
+      "camera": "threequarter",
+      "name": "face-threequarter-neutral",
+      "pitch": 0,
+      "yaw": 0
+    },
+    "case_index": 2,
+    "eye_materials": [
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "EyeSclera",
+        "node": "EyesHeadLocal",
+        "roughness": 0.46000000834465,
+        "shading_mode": 1,
+        "surface": 0,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "GrayGreenIris",
+        "node": "EyesHeadLocal",
+        "roughness": 0.340000003576279,
+        "shading_mode": 1,
+        "surface": 1,
+        "vertex_colors_as_albedo": true
+      },
+      {
+        "albedo": "ffffffff",
+        "cull_mode": 0,
+        "name": "Pupil",
+        "node": "EyesHeadLocal",
+        "roughness": 0.280000001192093,
+        "shading_mode": 1,
+        "surface": 2,
+        "vertex_colors_as_albedo": true
+      }
+    ],
+    "eye_model_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -0.998624801635742,
+      0.0154569493606687,
+      -0.0500862374901772,
+      0.0307286214083433,
+      0.946750342845917,
+      -0.320496916770935,
+      0.0424653291702271,
+      -0.321595221757889,
+      -0.945924639701843
+    ],
+    "eye_socket_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "eye_world_aabb_position": [
+      -0.040936067700386,
+      1.59001433849335,
+      -25.1561126708984
+    ],
+    "eye_world_aabb_size": [
+      0.0928894206881523,
+      0.0315778255462646,
+      0.0352420806884766
+    ],
+    "head_socket_max_component_error": 0,
+    "head_world_transform": [
+      -0.00451607815921307,
+      1.54727804660797,
+      -25.0295581817627,
+      -1.81645035743713,
+      0.0281154457479715,
+      -0.0911044478416443,
+      0.0558938793838024,
+      1.72209322452545,
+      -0.582968413829803,
+      0.0772423818707466,
+      -0.58496618270874,
+      -1.7205913066864
+    ],
+    "hero_art": {
+      "blade_trail": {
+        "lifetime": 0.12,
+        "samples": 0,
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000005722046,
+      "mode": "skeletal",
+      "profile": "hero",
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true
+    },
+    "hero_transform": [
+      0,
+      -0.0199999995529652,
+      -25,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "quality": 1,
+    "scope": "Fixed paused art fixture; Head local pose rotations, no gameplay/timing QA or AAA proof",
+    "stage": "changed"
+  }
+}

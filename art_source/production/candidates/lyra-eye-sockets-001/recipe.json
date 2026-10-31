@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scope": "Zero-point local geometry derivative; commands run from repository root, new output directories only",
+  "input_glb": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+  "reference_review": "art_source/production/character_polish/rejected_eye_inlays/baseline/review.json",
+  "commands": [
+    "python tools/derive_character_eye_sockets.py --input art_source/production/candidates/lyra-gameplay-001/source.glb --reference-review art_source/production/character_polish/rejected_eye_inlays/baseline/review.json --output build/art-candidates/eye-socket-reproduction --audit-animation",
+    "python tools/derive_character_eye_sockets.py --refit-eyes-from build/art-candidates/eye-socket-reproduction/derivation.json --output build/art-candidates/eye-socket-reproduction/surface-refit"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "blender": "4.3.2 for independent reimport renders/BVH; geometry derivation uses NumPy"
+  },
+  "review_recipes_note": "review-recipes/ preserves original workspace recipes and path-specific context. Repoint their inputs to a new reproduction directory; REPRODUCTION.md is an archived original, not a claim all relative links work from this archive. Portable production skills describe the general procedure.",
+  "runtime": {
+    "body": "game/assets/models/production/lyra_gameplay.glb",
+    "eyes": "game/assets/models/production/lyra_eyes.glb",
+    "post_import": "game/import/eye_materials.gd"
+  },
+  "pending": [
+    "Final packaged normal gameplay/browser persistence",
+    "Target hardware/Windows real-device execution and final AAA acceptance"
+  ]
+}

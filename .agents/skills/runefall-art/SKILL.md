@@ -57,6 +57,28 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 - 모든 exported timestamp와 interval midpoint에서 같은 edge ID·순서·topology·시점의 원본/후보를 대조합니다. edge별 최대 extension envelope 변화와 같은 peak pose의 새 악화를 확인하고, 최악 원래 부위와 새로 악화된 부위를 같은 조명·카메라로 렌더합니다. 이번에는 다른 torso 경계가 리라+22.635mm·수호병+49.450mm 더 늘어났습니다. 손/손가락 weight 보존·정규화·불변 geometry/UV/재질/키 검증은 별도로 유지합니다.
 - 부위·의상 소유권·관절 변형을 시각적으로 확인해 수정 범위를 정합니다. 미세한 rest-edge 기준, finite sampling, 표면 용접으로 확인한 topology와 실제 garment opening/self-intersection을 구분합니다. 전체 분포가 좋아져도 새 국소 결함이 있으면 보정을 기각하고 AAA 상태를 `pending`으로 유지합니다.
 
+### 작은 고정 영역의 제약 solver
+
+- [이번 국소 실험](../../../art_source/production/character_polish/weight_review/README.md)은 원래 최악 edge의 REST anchor 주변 geodesic 영역만 바꿨습니다. 바깥 ring과 원래 네 joint 슬롯을 고정하고 경계로 사라지는 변화 bound와 graph regularization을 사용했습니다. 연속 표면의 C1 보증이나 새 influence 추가 후 export 절단으로 해석하지 않습니다. 실제 영역·손상 상한·압축/면적 guard는 보고서를 원본으로 사용합니다.
+- raw-unit SLSQP의 영 이동/line-search 오류는 기하학적 불가능성의 근거가 아닙니다. [독립 finite-difference 검사](../../../art_source/production/character_polish/weight_review/validation.json)는 해당 목표 edge·pose의 목적함수 gradient만 확인했습니다. 같은 영역·support·물리 제약을 유지한 normalized solve가 정상 종료했으므로 모든 constraint Jacobian·전역 최적성이나 다른 topology의 불가능성을 주장하지 않습니다.
+- 실제 저장 float32의 반올림 전 값을 적용합니다. normalized 결과의 목표 감소는 리라0.365232mm·수호병0.515069mm로 원래 갑옷 변형을 해결하기에 작았습니다. 리라의 새 악화0.250005164mm는0.25mm 상한을 엄밀히 넘으므로 approximate feasibility와 strict gate를 구분합니다. 수호병의 내부 numeric pass도 추가 triangle 압축과 시각 효과 부족을 숨기지 않으며 채택하지 않습니다.
+- 최종 normalized 제안은 메모리 평가만 했고 GLB·PNG를 만들거나 최종 시각 검수를 수행하지 않았습니다. 이 웨이트 실험으로 두 runtime body를 교체하지 않았다는 사실과 별도의 눈 소켓 geometry 변경은 분리합니다. [재현 도구](../../../tools/repaint_character_regions.py)의 raw/normalized 단위 선택은 물리 조건을 바꾸는 옵션이 아닙니다.
+
+## 국소 눈 구조를 수정할 때
+
+- [기존 눈 inlay](../../../art_source/production/character_polish/rejected_eye_inlays/decision.json)는 표면 clearance를 통과해도 불투명한 표면 삽입물로 보여 기각됐습니다. 선명한 동공·색 보정·양의 거리만으로 채택하지 않으며 정면 시각 gate에서 실패한 뒤 미실행 측면/머리 포즈를 승인하지 않습니다. 후속 후보는 실제 눈 내부 triangle을 절단한 개구부·안쪽 lid/socket 깊이와 뒤쪽 곡면 안구를 검토합니다.
+- 원본 body·이미지는 보존하고 파생의 의도된 눈 영역/inner rim 변경을 명시합니다. 원래 이미지/재질·노드/rest·skin/inverse bind·모든 애니메이션과 수정 밖 geometry의 보존을 확인합니다. [소켓 body 보존 감사](../../../art_source/production/candidates/lyra-eye-sockets-001/source-audit.json)는 현재 소켓 body와 **이전 안구**를 검사한 역사적 기록이며 최종 refit 안구의 source audit로 확대하지 않습니다. 원래 BIN prefix가 같다는 사실을 파생 전체 body의 byte 불변으로 표현하지 않습니다. topology의 의도된 눈 개구부·새 경계/비다양체와 skin 속성 유도도 구분합니다.
+- 별도 안구는 source Head REST-local orthonormal basis의 물리 m와 identity root를 계약으로 둡니다. 실제 Head 소켓을 수동 포즈·보간의 최종 표본 직후 같은 프레임에 갱신하고 확인된 양의 균일 import rig scale만 역수 보정해 actor scale을 유지합니다. 고정 world offset이나 추정 Blender 축 보정으로 맞추지 않습니다.
+- 같은 source/candidate 카메라의 정면·사선·측면과 실제 head pose를 확인합니다. 원본에서 보간한 skin을 따르는 rim과 별도 rigid Head 안구를 각각 검증하고 모든 exported key/midpoint의 상대 drift를 기록합니다. Head weight가 높아도 Neck 등 다른 influence가 남는 inner rim을 rigid로 표시하지 않습니다. 실제 exported weights·evaluated pose를 기준으로 판단하며 수치와 시각 검수를 나눕니다.
+- [첫 소켓의 실제 BVH 실패](../../../art_source/production/character_polish/rejected_socket_fit/bvh-pose-check.json)는 독립 glTF/Blender REST가 일치해도 실제 triangle 교차를 clearance gate에서 발견한 결과입니다. 이를 fixture 오류나 통과로 바꾸지 않습니다. [중심 재적합](../../../art_source/production/candidates/lyra-eye-sockets-001/refit.json)은 소켓 body를 고정한 채 안구만 안쪽으로 옮겨 주변 body 전체의 정적 거리와 모든 exported key/midpoint의 근접 triangle에 보수적 구면 clearance를 검사했습니다. [최종 실제 GLB BVH](../../../art_source/production/candidates/lyra-eye-sockets-001/bvh-pose-check.json)의 다섯 머리 포즈는 교차0입니다. 유한 프레임·포즈의 확인이며 연속 충돌 안전성을 증명하지 않습니다. refit 이후의 최종 재반입·native/Web 화면은 별도 판정으로 남기고, 고밀도 studio·경량 안구·최종 AAA를 함께 승인하지 않습니다.
+- source의 비백색 `COLOR_0`가 실제 imported array에 보존돼도 material의 사용 flag까지 확인합니다. 이번 Godot4.7.2의 첫 눈 primitive는 양자화된 색을 유지했지만 vertex-color albedo flag가 꺼졌고 뒤의 두 part는 켜졌으며, ActorVisual 없는 독립 씬에서도 재현됐습니다. [고정 importer source](https://github.com/godotengine/godot/blob/4.7.2-stable/modules/gltf/gltf_document.cpp#L1414)의 flag 검사와 color decode 순서를 확인한 이 판본의 문제이며 다른 버전에서도 같다고 가정하지 않습니다. [자산 전용 post-import](../../../game/import/eye_materials.gd)는 예상 세 part와 color를 검증하고 복제 material의 flag만 고칩니다. 원본 GLB·이미지·공유 재질이나 global override를 바꾸지 않습니다. 이전 중심 안구의 focused native 검사와 최종 refit 안구의 재반입·화면 검증을 구분하고, 이전 입력의 통과를 최종 입력으로 승계하지 않습니다.
+
+## 검 궤적의 구현과 시각 검수
+
+- [BladeTrail](../../../game/scripts/actors/blade_trail.gd)은 최종 손 소켓을 갱신한 뒤 실제 그립·칼끝 marker를 읽는 world-space ribbon입니다. actor 이동/회전에 과거 이력이 따라 움직이거나 임의 startup 원호를 만들지 않습니다. source marker의 물리 길이를 사용하며 `attack_reach`를 시각 크기나 접촉/피해 권한으로 사용하지 않습니다.
+- 새 표본은 권한 있는 snapshot의 `[startup, startup + active)`에만 추가합니다. presentation delta로만 age를 늘리고 같은 zero-delta hit pause에는 geometry와 age를 고정합니다. death·stagger·dodge·parry 우선 중단, 공격 변경/재시작·elapsed 역행, 명시적 seek·epoch 복귀·순간이동·비정상 입력은 이전 연결을 지웁니다. 회복의 짧은 감쇠와 bounded samples는 공격창을 늘리지 않습니다. [회귀 검사](../../../game/tests/blade_trail_regressions.gd)는 이 계약을 검사하며 외관 승인을 대신하지 않습니다.
+- [고정 Web 검수](../../../art_source/production/character_polish/blade_trail_review/README.md)는 실제 첫 방·몸체·RuneCamera와 실제60Hz marker 이력을 사용한 일시정지 fixture입니다. 같은 화면의 ribbon on/off를 비교했고 MIX는 밝은 돌 바닥에서 대비가 더 약해 기각됐습니다. ADD는 절제된 preview 기준이며 기본 거리의 edge-on 가독성·실시간 교전/UI/적 예고·다중 공격/중단·장애물 가림·품질1·Windows/목표 GPU·새 눈 후보와 결합한 최종 검수는 별도입니다. 이 정지 화면을 timing QA·목표 GPU 성능·AAA 승인으로 표시하지 않습니다.
+
 ## 버전 실험의 완료 기준
 
 프로세스 정상 종료, GLB 구조·재질·변환·메시 비교, Godot의 오류 없는 반입, 실제 씬의 시각·모션 확인을 분리해 기록합니다. 출력 파일이 존재한다고 배치 성공으로 처리하지 않습니다. 현재 보관한 LTS 실험은 구조·반입 비교를 통과했어도 배치 종료 실패가 남아 있으므로 제작 버전을 자동 교체하지 않습니다.

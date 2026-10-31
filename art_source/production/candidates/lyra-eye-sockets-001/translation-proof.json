@@ -1,0 +1,56 @@
+[
+  {
+    "variant": "high",
+    "per_eye_vertex_count": 3168,
+    "index_buffers_byte_exact": true,
+    "color_buffer_byte_exact": true,
+    "materials_json_exact": true,
+    "translations": [
+      {
+        "eye": 0,
+        "head_local_translation_m": [
+          1.481649550524625e-10,
+          -0.000531723779259306,
+          -0.0021268965398911575
+        ],
+        "maximum_float32_translation_residual_m": 8.849716598027739e-09
+      },
+      {
+        "eye": 1,
+        "head_local_translation_m": [
+          5.467992388840878e-11,
+          -0.00025467482875242376,
+          -0.0010187000393716975
+        ],
+        "maximum_float32_translation_residual_m": 8.744323451645062e-09
+      }
+    ]
+  },
+  {
+    "variant": "web",
+    "per_eye_vertex_count": 1088,
+    "index_buffers_byte_exact": true,
+    "color_buffer_byte_exact": true,
+    "materials_json_exact": true,
+    "translations": [
+      {
+        "eye": 0,
+        "head_local_translation_m": [
+          1.1127935174633475e-10,
+          -0.0005317234694409897,
+          -0.0021268962334622353
+        ],
+        "maximum_float32_translation_residual_m": 8.878678205652226e-09
+      },
+      {
+        "eye": 1,
+        "head_local_translation_m": [
+          5.135970080600065e-11,
+          -0.00025467496529659806,
+          -0.001018700237824198
+        ],
+        "maximum_float32_translation_residual_m": 8.360698164911372e-09
+      }
+    ]
+  }
+]

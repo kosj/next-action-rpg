@@ -1,5 +1,13 @@
 # 검증 결과
 
+## v0.1.5 · 눈 소켓·곡면 안구·검 잔상
+
+- [국소 개선](CHARACTER_POLISH.md): 원본 모션·리그·텍스처를 보존한 눈 소켓/안구와 실제 blade marker 기반 world ribbon을 추가했습니다. 효과가 작은 웨이트·평면 inlay·색상 후보는 기각했습니다.
+- [345 native 검사·실패0](validation/v0.1.5/README.md), 실제 source-world 눈 좌표/색상/Head 부착21집중 검사, 실제 Web12장·두 품질317.962초·오류0을 확인했습니다. 고정 art fixture와 정상 입력·저장·재시작 QA를 구분합니다.
+- 실제 주변 면 교차를 전체 표면 refit으로 수정했고, 원본 색이 배열에 있어도 사용 flag가 꺼지는 Godot4.7.2 첫 primitive 문제를 안구 전용 post-import에서 보정했습니다.
+- Web body 계획32,000 대비 실제32,288(+288)와 별도 안구3,840을 명시합니다. 큰 어두운 눈 주변·피부/머리/갑옷/손/발 접촉·Windows 실기기·목표GPU60fps·최종 AAA 승인은 남았습니다.
+- 최종 export·정상 브라우저·공개 SHA의 결과는 [판본별 검증](validation/v0.1.5/README.md)과 [Actions](https://github.com/kosj/next-action-rpg/actions/workflows/build.yml)의 해당 실행에서 확인합니다.
+
 ## v0.1.4 · 실제 스킨·동작 전환·첫 방 PBR 프리뷰
 
 - [반입 기록](CHARACTER_INTEGRATION.md)의 리라32k·53본·19상태+RESET과 일반 melee 수호병22k·53본·9상태+RESET을 runtime에 설치했습니다. 다른 적·보스는 기존 표현을 유지합니다. 모든 runtime 이동·행동 키는 프로젝트 Bpy 저작이며 stock FCurve·수치 포즈를 복사하지 않았습니다.

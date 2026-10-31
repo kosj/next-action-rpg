@@ -1,0 +1,312 @@
+{
+  "status": "refit_candidate_requires_actual_reimport_visual_and_BVH_review",
+  "runtime_adoption": "pending",
+  "aaa_approval": "pending",
+  "original_source_archive": {
+    "path": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+    "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1"
+  },
+  "unchanged_body": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/lyra-eye-sockets.glb",
+    "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "bytes": 19438644
+  },
+  "failed_reference_derivation": "build/art-candidates/character-polish/eye-sockets/socket-001/derivation.json",
+  "reason": "Original fit checked inner rim only; surrounding surface triangles intersected the globe",
+  "fit_rule": "Minimum exact distance from globe center to ALL body triangles >= radius+1.6mm in default pose",
+  "attachment_contract": {
+    "coordinate_system": "Original source glTF Head REST-local orthonormal basis; physical meters",
+    "root_transform": "identity; direct glTF writer",
+    "required_socket_basis": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_head_rest_world_matrix_y_up": [
+      [
+        1.8189517259597734,
+        4.4311743724707094e-16,
+        1.242545679687788e-07,
+        0.0029659499752276147
+      ],
+      [
+        3.013614142532767e-08,
+        1.7646423295536653,
+        -0.44116033288957396,
+        1.6102725691871016
+      ],
+      [
+        -1.205446413616261e-07,
+        0.44116035918478597,
+        1.7646424347345453,
+        -0.007067116243689964
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_head_rest_rigid_world_matrix_y_up": [
+      [
+        0.9999999999999977,
+        2.4361144693367006e-16,
+        6.831108630499034e-08,
+        0.0029659499752276147
+      ],
+      [
+        1.6567862134673314e-08,
+        0.9701425290182761,
+        -0.24253548233277186,
+        1.6102725691871016
+      ],
+      [
+        -6.627149013425312e-08,
+        0.242535509544527,
+        0.9701425358212086,
+        -0.007067116243689964
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_head_world_scale": [
+      1.8189517259597776,
+      1.8189516249116235,
+      1.818951720574551
+    ]
+  },
+  "apertures": [
+    {
+      "name": "image_left",
+      "pixel_center": [
+        216,
+        276
+      ],
+      "pixel_polygon": [
+        [
+          194,
+          274
+        ],
+        [
+          201,
+          267
+        ],
+        [
+          211,
+          264
+        ],
+        [
+          223,
+          265
+        ],
+        [
+          236,
+          270
+        ],
+        [
+          242,
+          276
+        ],
+        [
+          234,
+          283
+        ],
+        [
+          222,
+          288
+        ],
+        [
+          210,
+          287
+        ],
+        [
+          201,
+          282
+        ]
+      ],
+      "surface_center_source_world_y_up_m": [
+        -0.03449310753494501,
+        1.6779902788810432,
+        0.1136136697543435
+      ],
+      "globe_center_source_world_y_up_m": [
+        -0.03449310753494501,
+        1.6779902788810432,
+        0.0967429436362354
+      ],
+      "previous_globe_center_source_world_y_up_m": [
+        -0.03449310753494501,
+        1.6779902788810432,
+        0.09893529844102388
+      ],
+      "inward_center_adjustment_m": 0.0021923548047884794,
+      "whole_body_static_sphere_gap_m": 0.001617453607361827,
+      "limiting_body_triangle": 13916,
+      "limiting_triangle_source_world_m": [
+        [
+          -0.019271984138315434,
+          1.6749459414281227,
+          0.10926026016719073
+        ],
+        [
+          -0.026984244110464913,
+          1.6746509172696684,
+          0.11379209943348759
+        ],
+        [
+          -0.03725556149960778,
+          1.6704773697500426,
+          0.10845648346968148
+        ]
+      ]
+    },
+    {
+      "name": "image_right",
+      "pixel_center": [
+        405,
+        276
+      ],
+      "pixel_polygon": [
+        [
+          381,
+          274
+        ],
+        [
+          389,
+          269
+        ],
+        [
+          400,
+          265
+        ],
+        [
+          412,
+          266
+        ],
+        [
+          423,
+          271
+        ],
+        [
+          427,
+          276
+        ],
+        [
+          420,
+          282
+        ],
+        [
+          408,
+          286
+        ],
+        [
+          396,
+          283
+        ],
+        [
+          387,
+          279
+        ]
+      ],
+      "surface_center_source_world_y_up_m": [
+        0.033124509383924305,
+        1.6779902788810432,
+        0.11225720217166835
+      ],
+      "globe_center_source_world_y_up_m": [
+        0.033124509383924305,
+        1.6779902788810432,
+        0.09651791484249896
+      ],
+      "previous_globe_center_source_world_y_up_m": [
+        0.033124509383924305,
+        1.6779902788810432,
+        0.09756796647053932
+      ],
+      "inward_center_adjustment_m": 0.001050051628040366,
+      "whole_body_static_sphere_gap_m": 0.0016192949648146798,
+      "limiting_body_triangle": 32271,
+      "limiting_triangle_source_world_m": [
+        [
+          0.034171943004146464,
+          1.674498853684575,
+          0.11056542024133473
+        ],
+        [
+          0.0383052932689306,
+          1.6759179994946853,
+          0.10949321191756116
+        ],
+        [
+          0.03414033764091128,
+          1.674604234664994,
+          0.10968542468021572
+        ]
+      ]
+    }
+  ],
+  "high_eye": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes.glb",
+    "sha256": "87172646dbc3acba0070b574b6d8e38209b438a5a03a85498cb3b18f0fd9ac4c",
+    "bytes": 327248,
+    "vertices": 6336,
+    "triangles": 11904,
+    "radius_m": 0.012,
+    "iris_radius_m": 0.006,
+    "pupil_radius_m": 0.0024,
+    "cornea_crown_m": 0.0008,
+    "topology": {
+      "weld_tolerance_m": 1e-07,
+      "welded_vertices": 5956,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  },
+  "web_eye": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes-web.glb",
+    "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "bytes": 112488,
+    "vertices": 2176,
+    "triangles": 3840,
+    "radius_m": 0.012,
+    "iris_radius_m": 0.006,
+    "pupil_radius_m": 0.0024,
+    "cornea_crown_m": 0.0008,
+    "topology": {
+      "weld_tolerance_m": 1e-07,
+      "welded_vertices": 1924,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  },
+  "animation_surface_clearance": {
+    "samples": 2358,
+    "clips": 20,
+    "nearby_body_triangles": 484,
+    "minimum_body_triangle_gap_to_radius_plus_max_cornea_m": 0.0005513914585151009,
+    "worst_sample": {
+      "clip": "heavy",
+      "time_s": 0.2800000011920929,
+      "eye": "image_left"
+    },
+    "scope": "Every exported key and midpoint; body triangle distance to conservative12.8mm bounding sphere; finite sampling"
+  },
+  "tool_sha256": "e3af9b96462ef2f9bb2ec62afad810e775957c3f93d43d5816ee477ee793d8ef"
+}

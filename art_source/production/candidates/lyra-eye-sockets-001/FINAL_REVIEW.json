@@ -1,0 +1,307 @@
+{
+  "status": "incremental_studio_candidate_ready_for_independent_native_and_Web_checks",
+  "aaa_approval": "pending",
+  "source_archive": {
+    "path": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+    "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "bytes": 17889448
+  },
+  "historical_input_note": "derivation.json source.path is the pre-adoption runtime path; immutable A89 archive is canonical for final preservation checks",
+  "body": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/lyra-eye-sockets.glb",
+    "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "bytes": 19438644
+  },
+  "web_eye": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes-web.glb",
+    "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "bytes": 112488,
+    "vertices": 2176,
+    "triangles": 3840,
+    "radius_m": 0.012,
+    "iris_radius_m": 0.006,
+    "pupil_radius_m": 0.0024,
+    "cornea_crown_m": 0.0008,
+    "topology": {
+      "weld_tolerance_m": 1e-07,
+      "welded_vertices": 1924,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  },
+  "high_eye": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes.glb",
+    "sha256": "87172646dbc3acba0070b574b6d8e38209b438a5a03a85498cb3b18f0fd9ac4c",
+    "bytes": 327248,
+    "vertices": 6336,
+    "triangles": 11904,
+    "radius_m": 0.012,
+    "iris_radius_m": 0.006,
+    "pupil_radius_m": 0.0024,
+    "cornea_crown_m": 0.0008,
+    "topology": {
+      "weld_tolerance_m": 1e-07,
+      "welded_vertices": 5956,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  },
+  "body_triangles": 32288,
+  "body_plus_web_eyes_triangles": 36128,
+  "body_topology": {
+    "source": {
+      "weld_tolerance_m": 1e-06,
+      "welded_vertices": 15950,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    "after_cut": {
+      "weld_tolerance_m": 1e-06,
+      "welded_vertices": 16041,
+      "boundary_edges": 34,
+      "nonmanifold_edges": 0
+    },
+    "after_lid_walls": {
+      "weld_tolerance_m": 1e-06,
+      "welded_vertices": 16109,
+      "boundary_edges": 34,
+      "nonmanifold_edges": 0
+    },
+    "intentional_inner_socket_loops": [
+      {
+        "name": "image_left",
+        "outer_vertices": [
+          25825,
+          25832,
+          25823,
+          25822,
+          25816,
+          25815,
+          25804,
+          25803,
+          25801,
+          25810,
+          25809,
+          25808,
+          25820,
+          25829,
+          25828,
+          25826
+        ],
+        "inner_vertices": [
+          25966,
+          25967,
+          25968,
+          25969,
+          25970,
+          25971,
+          25972,
+          25973,
+          25974,
+          25975,
+          25976,
+          25977,
+          25978,
+          25979,
+          25980,
+          25981
+        ],
+        "outer_boundary_vertex_count": 16,
+        "depth_m": 0.0016,
+        "outer_min_source_world_m": [
+          -0.04236394125036893,
+          1.6736970968544485,
+          0.11128751279527728
+        ],
+        "outer_max_source_world_m": [
+          -0.025191213143989553,
+          1.682283460907638,
+          0.11484971431517231
+        ],
+        "globe_center_source_world_y_up_m": [
+          -0.03449310753494501,
+          1.6779902788810432,
+          0.09893529844102388
+        ]
+      },
+      {
+        "name": "image_right",
+        "outer_vertices": [
+          25844,
+          25851,
+          25859,
+          25858,
+          25856,
+          25855,
+          25863,
+          25862,
+          25850,
+          25849,
+          25847,
+          25843,
+          25842,
+          25840,
+          25834,
+          25838,
+          25837,
+          25836
+        ],
+        "inner_vertices": [
+          26018,
+          26019,
+          26020,
+          26021,
+          26022,
+          26023,
+          26024,
+          26025,
+          26026,
+          26027,
+          26028,
+          26029,
+          26030,
+          26031,
+          26032,
+          26033,
+          26034,
+          26035
+        ],
+        "outer_boundary_vertex_count": 18,
+        "depth_m": 0.0016,
+        "outer_min_source_world_m": [
+          0.024538145330734635,
+          1.6744126271922142,
+          0.11109321062008592
+        ],
+        "outer_max_source_world_m": [
+          0.040995343099348214,
+          1.6819256957387552,
+          0.11389045135545564
+        ],
+        "globe_center_source_world_y_up_m": [
+          0.033124509383924305,
+          1.6779902788810432,
+          0.09756796647053932
+        ]
+      }
+    ]
+  },
+  "preserved": {
+    "original_bin_prefix_byte_exact": true,
+    "all_animation_skin_node_image_texture_sampler_json_exact": true,
+    "original_materials_exact": true,
+    "source_bin_bytes": 17153208,
+    "new_bin_bytes": 18700808,
+    "all_original_attribute_rows_byte_exact": true,
+    "all_non_eye_triangles_retained_with_original_indices": true
+  },
+  "failed_fit": "bvh-pose-check-failed-identity.json; initial rim-only scope missed surrounding-face intersections",
+  "full_surface_fit": {
+    "samples": 2358,
+    "clips": 20,
+    "nearby_body_triangles": 484,
+    "minimum_body_triangle_gap_to_radius_plus_max_cornea_m": 0.0005513914585151009,
+    "worst_sample": {
+      "clip": "heavy",
+      "time_s": 0.2800000011920929,
+      "eye": "image_left"
+    },
+    "scope": "Every exported key and midpoint; body triangle distance to conservative12.8mm bounding sphere; finite sampling"
+  },
+  "actual_reimport_BVH": {
+    "body_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "eyes_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "checker_sha256": "388b24f1756dccfce2cc3fac5e56272853f8fd26567b255f75ca3e43115973f7",
+    "blender": "4.3.2",
+    "actual_glb_reimport": true,
+    "samples": [
+      {
+        "pose": "rest",
+        "yaw_degrees": 0,
+        "pitch_degrees": 0,
+        "bvh_broadphase_pairs": 0,
+        "noncoplanar_edge_triangle_intersection_pairs": 0,
+        "intersection_examples": []
+      },
+      {
+        "pose": "yaw_left",
+        "yaw_degrees": -15,
+        "pitch_degrees": 0,
+        "bvh_broadphase_pairs": 0,
+        "noncoplanar_edge_triangle_intersection_pairs": 0,
+        "intersection_examples": []
+      },
+      {
+        "pose": "yaw_right",
+        "yaw_degrees": 15,
+        "pitch_degrees": 0,
+        "bvh_broadphase_pairs": 0,
+        "noncoplanar_edge_triangle_intersection_pairs": 0,
+        "intersection_examples": []
+      },
+      {
+        "pose": "pitch_up",
+        "yaw_degrees": 0,
+        "pitch_degrees": -10,
+        "bvh_broadphase_pairs": 0,
+        "noncoplanar_edge_triangle_intersection_pairs": 0,
+        "intersection_examples": []
+      },
+      {
+        "pose": "pitch_down",
+        "yaw_degrees": 0,
+        "pitch_degrees": 10,
+        "bvh_broadphase_pairs": 0,
+        "noncoplanar_edge_triangle_intersection_pairs": 0,
+        "intersection_examples": []
+      }
+    ],
+    "limitations": [
+      "Five manual head poses; no continuous collision proof",
+      "BVH broadphase filtered by finite noncoplanar edge/triangle segment tests",
+      "Visual quality and full animation cornea collision require separate scope"
+    ]
+  },
+  "surface_error": {
+    "source_eye_sha256": "87172646dbc3acba0070b574b6d8e38209b438a5a03a85498cb3b18f0fd9ac4c",
+    "web_eye_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "actual_glb_reimport": true,
+    "reference_triangles": 11904,
+    "web_triangles": 3840,
+    "sample_count": 17792,
+    "visible_front_sample_count": 14976,
+    "sampled_web_to_reference_distance_max_m": 0.000722443510312587,
+    "sampled_visible_front_distance_max_m": 1.7623226085561328e-05,
+    "sampled_visible_front_mean_m": 5.324458223463848e-06,
+    "scope": "Vertices, triangle centroids and edge midpoints to reference BVH; front means source-world relative z>5.5mm",
+    "limitations": "Finite one-way sample, not continuous Hausdorff bound. Occluded back is intentionally coarser. No hardware performance approval."
+  },
+  "final_visual_review": {
+    "reviewer": "art implementation agent; root also inspected final REST/front/side",
+    "inspected": [
+      "rest/face_front.png",
+      "rest/head_three_quarter.png",
+      "close/head_three_quarter.png",
+      "close/face_side.png",
+      "yaw/face_front.png",
+      "pitch/face_front.png"
+    ],
+    "result": "Coherent physical lid occlusion/curvature and no exposed globe overlap in these studio views",
+    "limits": "Neutral studio, finite samples; not actual gameplay, continuous collision, expression rig or final AAA approval"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "blender": "4.3.2"
+  },
+  "recipe_tool_sha256": "e3af9b96462ef2f9bb2ec62afad810e775957c3f93d43d5816ee477ee793d8ef",
+  "helper_tool_sha256": {
+    "tools/derive_character_eyes.py": "f438c974e44603ea40ada53f5df01d5309a20912831ddbb787c96bea3319a736",
+    "tools/repair_character_weights.py": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+    "tools/review_character_regions.py": "0f6e93f37a967c71a133326beffce52ba1f47fdeb9a86783713f609316fd2a1f",
+    "tools/render_glb_review.py": "dad123667ee44762de050a9cf581014fa414ffe07f743bbd199c7ba79e3d9d34"
+  },
+  "paid_service_cost": 0,
+  "CPU_render_threads": 1,
+  "ongoing_renderer": false
+}

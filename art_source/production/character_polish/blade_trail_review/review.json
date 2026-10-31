@@ -1,0 +1,90 @@
+{
+  "capture_result": "passed",
+  "visual_decision": "Usable restrained preview ribbon; final combat readability and AAA approval pending",
+  "scope": "Fixed paused art fixture; real Game first room, production hero A89, actual RuneCamera wide shot, deliberately reframed detail shot. Not live gameplay, timing QA or hardware performance evidence.",
+  "duration_seconds": 160.515,
+  "compared_pairs": [
+    [
+      "01-game-trail-024.png",
+      "02-game-no-trail-024.png"
+    ],
+    [
+      "04-detail-trail-024.png",
+      "03-detail-no-trail-024.png"
+    ],
+    [
+      "05-detail-trail-018.png",
+      "06-detail-no-trail-018.png"
+    ]
+  ],
+  "identical_camera_pose_quality_within_each_pair": true,
+  "alpha": "The source uses tip alpha .34 and base alpha .035, aged over .12 seconds. Ribbon remains translucent and does not blanket the torso/floor in these poses.",
+  "tint": "The mint #8bd9cb additive ribbon appears pale mint/near-white against sunlit stone. Visible in detail, weak contrast at default gameplay distance.",
+  "depth": "Actual source material keeps depth testing enabled, disables depth writes, and casts no shadow. Observed poses do not glow through the body; this is not a dedicated world-obstacle occlusion sweep.",
+  "readability": "At .18s the detail view clearly separates blade and trailing translucent wedge. At .24s and default rear camera the broad blade/trail is more edge-on and subtle; still-image visibility alone cannot approve motion or multi-enemy readability.",
+  "recommendation": "Retain as the restrained preview baseline if desired. Before final art approval, compare real-speed attacks against bright stone/dark body and enemy telegraphs; evaluate a slightly stronger distal mint edge rather than expanding blade/active window. Do not change gameplay reach or timing to improve VFX visibility.",
+  "samples": {
+    "01-game-trail-024.png": {
+      "lifetime": 0.12,
+      "samples": 8,
+      "triangles": 14,
+      "visible": true
+    },
+    "02-game-no-trail-024.png": {
+      "lifetime": 0.12,
+      "samples": 8,
+      "triangles": 14,
+      "visible": false
+    },
+    "03-detail-no-trail-024.png": {
+      "lifetime": 0.12,
+      "samples": 8,
+      "triangles": 14,
+      "visible": false
+    },
+    "04-detail-trail-024.png": {
+      "lifetime": 0.12,
+      "samples": 8,
+      "triangles": 14,
+      "visible": true
+    },
+    "05-detail-trail-018.png": {
+      "lifetime": 0.12,
+      "samples": 4,
+      "triangles": 6,
+      "visible": true
+    },
+    "06-detail-no-trail-018.png": {
+      "lifetime": 0.12,
+      "samples": 4,
+      "triangles": 6,
+      "visible": false
+    }
+  },
+  "errors": [],
+  "original_body_sha256": {
+    "lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+  },
+  "source_commit": "2fcfbfcbc7128072e1fb0d0932f1e94954202b32",
+  "screenshots_sha256": {
+    "01-game-trail-024.png": "243e434bf8d03396299a070186ad1a32ee8fa58fabe9f62ad13f45d0dcab850a",
+    "02-game-no-trail-024.png": "d6acfdc1b5225cbbcc78b2c7a54a7a2c0ba73f9583158fce7f1d131e3c1d141b",
+    "03-detail-no-trail-024.png": "9367cd0402d74f0d6e822715e4a815ae967abea4e16c66fd1171c368c70c0dee",
+    "04-detail-trail-024.png": "bb0d04508e92058c7c46fd41503a445de518ef70c45ca29f6961971dfcaf3f58",
+    "05-detail-trail-018.png": "d079304f580908a6c89ebbb12eaaf95d4dc74d2f60e8b0d2487fe7c71a2f8beb",
+    "06-detail-no-trail-018.png": "bbe1623da27939d0be375044ff51f2ed60a220b77a7615c46dde4f7dc1874fa2"
+  },
+  "fixture_materials": {
+    "trail_tint": "8bd9cbff",
+    "depth_test_enabled": true,
+    "depth_draw_mode": 2,
+    "blend_mode": 1
+  },
+  "remaining": [
+    "Real-time combat with UI and enemy telegraphs",
+    "Multiple attacks, cancellations and hit-pause in packaged final build",
+    "Quality1 and Windows/target GPU render review",
+    "Updated eye-socket candidate integration and final full gameplay QA"
+  ]
+}

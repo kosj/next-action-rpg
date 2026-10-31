@@ -1,0 +1,10 @@
+{
+  "scope": "Independent byte-range audit for color-only palette trial; no visual adoption/AAA approval",
+  "source_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+  "candidate_sha256": "9f2c513f7efaeb54741645ebe9b2ee99c66c66c5711c1c55678b1c482fd7064c",
+  "bytes": 112488,
+  "JSON_and_headers_exact": true,
+  "non_COLOR0_RGB_changed_bytes": 0,
+  "all_geometry_material_transform_animation_and_alpha_bytes_exact": true,
+  "changed_bytes": 9443
+}

@@ -1,0 +1,483 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T07:55:40.144277+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/character-polish/eye-sockets/socket-001/lyra-eye-sockets.glb",
+    "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "bytes": 19438644,
+    "unchanged": true
+  },
+  "tool_sha256": "0f6e93f37a967c71a133326beffce52ba1f47fdeb9a86783713f609316fd2a1f",
+  "shared_renderer_sha256": "dad123667ee44762de050a9cf581014fa414ffe07f743bbd199c7ba79e3d9d34",
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "threads": 1,
+    "size": 640,
+    "samples": 8,
+    "pose": "REST",
+    "denoising": false,
+    "head_yaw_degrees": 0,
+    "head_pitch_degrees": 0,
+    "color_management": "AgX / Base Contrast",
+    "source_geometry_materials_modified": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.8834922313690186,
+      -0.2235596626996994,
+      -5.960464477539063e-08
+    ],
+    "max": [
+      0.8823148012161255,
+      0.21636655926704407,
+      1.8199992179870605
+    ],
+    "height": 1.8199992179870605
+  },
+  "landmarks_blender_z_up": {
+    "Head": [
+      0.002965949708595872,
+      0.007067060563713312,
+      1.6102724075317383
+    ],
+    "RightHand": [
+      -0.6866433620452881,
+      -0.014260935597121716,
+      1.4254287481307983
+    ]
+  },
+  "region_selection": {
+    "head": "Head.z +[-.045,.15]*height; abs(x-Head.x)<=.105*height",
+    "face": "Head.z +[-.025,.082]*height; abs(x-Head.x)<=.055*height; y<=Head.y+.012*height",
+    "right_wrist": "distance to RightHand<=.085*height"
+  },
+  "excluded_importer_bone_display_helpers": [
+    "Icosphere"
+  ],
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 32288,
+    "material_count_gltf": 2,
+    "material_names_blender": [
+      "NewEyelidInnerDepth",
+      "material_0"
+    ],
+    "skin_count_gltf": 1,
+    "armatures_blender": [
+      {
+        "name": "Armature",
+        "bones": 53
+      }
+    ],
+    "clip_count_gltf": 20,
+    "clip_names_gltf": [
+      "charge",
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "actions_blender": [
+      {
+        "name": "charge_Armature",
+        "frame_range": [
+          0.0,
+          15.59999942779541
+        ]
+      },
+      {
+        "name": "death_Armature",
+        "frame_range": [
+          0.0,
+          26.400001525878906
+        ]
+      },
+      {
+        "name": "dodge_Armature",
+        "frame_range": [
+          0.0,
+          7.679999828338623
+        ]
+      },
+      {
+        "name": "heal_Armature",
+        "frame_range": [
+          0.0,
+          8.399999618530273
+        ]
+      },
+      {
+        "name": "heavy_Armature",
+        "frame_range": [
+          0.0,
+          20.639999389648438
+        ]
+      },
+      {
+        "name": "hit_Armature",
+        "frame_range": [
+          0.0,
+          3.6000001430511475
+        ]
+      },
+      {
+        "name": "idle_Armature",
+        "frame_range": [
+          0.0,
+          38.400001525878906
+        ]
+      },
+      {
+        "name": "light_1_Armature",
+        "frame_range": [
+          0.0,
+          12.479999542236328
+        ]
+      },
+      {
+        "name": "light_2_Armature",
+        "frame_range": [
+          0.0,
+          12.479999542236328
+        ]
+      },
+      {
+        "name": "light_3_Armature",
+        "frame_range": [
+          0.0,
+          16.799999237060547
+        ]
+      },
+      {
+        "name": "parry_Armature",
+        "frame_range": [
+          0.0,
+          5.279999732971191
+        ]
+      },
+      {
+        "name": "RESET_Armature",
+        "frame_range": [
+          0.0,
+          0.23999999463558197
+        ]
+      },
+      {
+        "name": "run_Armature",
+        "frame_range": [
+          0.0,
+          9.600000381469727
+        ]
+      },
+      {
+        "name": "skill_1_Armature",
+        "frame_range": [
+          0.0,
+          18.96000099182129
+        ]
+      },
+      {
+        "name": "skill_2_Armature",
+        "frame_range": [
+          0.0,
+          18.96000099182129
+        ]
+      },
+      {
+        "name": "skill_3_Armature",
+        "frame_range": [
+          0.0,
+          18.96000099182129
+        ]
+      },
+      {
+        "name": "walk_Armature",
+        "frame_range": [
+          0.0,
+          11.519999504089355
+        ]
+      },
+      {
+        "name": "walk_back_Armature",
+        "frame_range": [
+          0.0,
+          11.519999504089355
+        ]
+      },
+      {
+        "name": "walk_left_Armature",
+        "frame_range": [
+          0.0,
+          11.519999504089355
+        ]
+      },
+      {
+        "name": "walk_right_Armature",
+        "frame_range": [
+          0.0,
+          11.519999504089355
+        ]
+      }
+    ],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "images": [
+    {
+      "name": "Image_0",
+      "pixels": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Image_1",
+      "pixels": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Image_2",
+      "pixels": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "overlay": {
+    "path": "build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes-web.glb",
+    "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "fit_path": "build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/renderer-fit-web.json",
+    "actually_reimported_glb": true,
+    "placement_matrix_blender": [
+      [
+        1.0,
+        -6.831108834148836e-08,
+        2.436114401906651e-16,
+        0.0029659499414265156
+      ],
+      [
+        6.62714896293437e-08,
+        0.9701425433158875,
+        -0.2425355166196823,
+        0.007067116443067789
+      ],
+      [
+        1.656786174919489e-08,
+        0.24253548681735992,
+        0.9701425433158875,
+        1.6102725267410278
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_gltf_rigid_head_basis_used": true,
+    "root_matrices_rest_blender": {
+      "EyesHeadLocal": [
+        [
+          1.0,
+          -6.8311081236061e-08,
+          -3.2572599047104916e-16,
+          0.0029659499414265156
+        ],
+        [
+          6.627148252391635e-08,
+          0.9701425433158875,
+          -0.24253548681735992,
+          0.007067116443067789
+        ],
+        [
+          1.656785997283805e-08,
+          0.24253548681735992,
+          0.9701425433158875,
+          1.6102725267410278
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "clearance": {
+      "method": "BVH nearest actual reimported eye vertices to actual evaluated source-body triangles",
+      "vertex_samples": 2432,
+      "nearest_distance_min_m": 0.001215327880345285,
+      "nearest_distance_max_m": 0.025043834000825882,
+      "signed_outward_min_m": -0.02383193257264793,
+      "signed_outward_max_m": 0.004223978379741311,
+      "penetrating_vertex_count": 1526,
+      "within_declared_clearance_limit": true,
+      "nonpenetrating": false
+    },
+    "pose_matrices_blender": {
+      "EyesHeadLocal": [
+        [
+          1.0,
+          -6.8311081236061e-08,
+          -3.2572599047104916e-16,
+          0.0029659499414265156
+        ],
+        [
+          6.627148252391635e-08,
+          0.9701425433158875,
+          -0.24253548681735992,
+          0.007067116443067789
+        ],
+        [
+          1.656785997283805e-08,
+          0.24253548681735992,
+          0.9701425433158875,
+          1.6102725267410278
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "lights": [
+    {
+      "name": "_NeutralKey",
+      "position": [
+        -2.7305874824523926,
+        -4.007595062255859,
+        5.0959978103637695
+      ],
+      "energy_w": 1656.1986083984375,
+      "size_m": 2.729998826980591
+    },
+    {
+      "name": "_NeutralFill",
+      "position": [
+        3.6394097805023193,
+        -2.733595371246338,
+        3.093998670578003
+      ],
+      "energy_w": 828.0993041992188,
+      "size_m": 3.639998435974121
+    },
+    {
+      "name": "_NeutralRim",
+      "position": [
+        -0.0005887150764465332,
+        3.636401891708374,
+        4.5499982833862305
+      ],
+      "energy_w": 2153.05810546875,
+      "size_m": 2.1839990615844727
+    }
+  ],
+  "views": [
+    {
+      "shot": "head_three_quarter",
+      "file": "head_three_quarter.png",
+      "region": "head",
+      "camera_position_blender": [
+        3.1675360202789307,
+        -4.506648540496826,
+        1.7986633777618408
+      ],
+      "camera_rotation_euler": [
+        1.545809268951416,
+        1.1286732437554292e-08,
+        0.6185062527656555
+      ],
+      "target_blender": [
+        0.0031854063272476196,
+        0.034285128116607666,
+        1.674229383468628
+      ],
+      "orthographic_scale_m": 0.29766061902046204,
+      "camera_reused_from_reference": true,
+      "selected_vertex_count": 3679,
+      "region_min_blender": [
+        -0.18718919157981873,
+        -0.14779630303382874,
+        1.5284594297409058
+      ],
+      "region_max_blender": [
+        0.19356000423431396,
+        0.21636655926704407,
+        1.8199992179870605
+      ],
+      "image_sha256": "5e74371a34f3604d729ef722f7bde9cedb9d544ffe6d9856e4a779a9a5a14860"
+    },
+    {
+      "shot": "face_side",
+      "file": "face_side.png",
+      "region": "face",
+      "camera_position_blender": [
+        5.452300071716309,
+        -0.38650408387184143,
+        1.7439923286437988
+      ],
+      "camera_rotation_euler": [
+        1.5558245182037354,
+        3.57247209592515e-08,
+        1.5108681917190552
+      ],
+      "target_blender": [
+        0.0027144700288772583,
+        -0.059528984129428864,
+        1.6622486114501953
+      ],
+      "orthographic_scale_m": 0.2361326813697815,
+      "camera_reused_from_reference": true,
+      "selected_vertex_count": 1112,
+      "region_min_blender": [
+        -0.09683758020401001,
+        -0.14779630303382874,
+        1.5654160976409912
+      ],
+      "region_max_blender": [
+        0.10226652026176453,
+        0.02873833104968071,
+        1.759081244468689
+      ],
+      "image_sha256": "5063ad72b23bf43ca88dc86b76c9151db0c5f560be402487966aec74674578af"
+    }
+  ],
+  "limitations": [
+    "Unchanged source in a neutral REST studio; not an actual gameplay capture or AAA approval",
+    "Spatial region bounds are source-specific camera framing, not anatomical segmentation",
+    "Texture pixels, sculpt, eye/hair geometry and deformation need human closeup inspection"
+  ],
+  "pose_fixture": {
+    "wrapper_sha256": "5150115c4a3c6a38fcc3b958f5c05e54991ec4b528457a7770f40ee828e72c5d",
+    "base_review_tool_sha256": "0f6e93f37a967c71a133326beffce52ba1f47fdeb9a86783713f609316fd2a1f",
+    "patch": "Sample imported complete RESET action before clearing playback; canonical glTF default matched independently within0.72micrometers"
+  }
+}

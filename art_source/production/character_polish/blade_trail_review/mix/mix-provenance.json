@@ -1,0 +1,9 @@
+{
+  "only_runtime_visual_delta": "BaseMaterial3D.BLEND_MODE_MIX; original ADD uses unchanged vertex alpha .34/.035, tint8bd9cb and marker history",
+  "source_fixture_sha256": "9b97e24f36392efa27b891152fa3f148676c112f6a53c29992e3e77395d0b9d9",
+  "mix_fixture_sha256": "d18a0118f2a88ed2989e4a9bcba0cfed0794dd4cacfeb623caf0626cf45cdf77",
+  "body_sha256": {
+    "lyra_gameplay.glb": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+    "sentinel_gameplay.glb": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721"
+  }
+}

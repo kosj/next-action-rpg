@@ -1,0 +1,87 @@
+{
+  "body_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "failed_eye_reference": "81331bf35a6ab831db42f5838fc043287d21f297712a06854ca227a1fc719521",
+  "mapped_pairs": [
+    {
+      "body_triangle_index": 15556,
+      "primitive": "original/clipped atlas surface",
+      "source_gltf_world_y_up_vertices_m": [
+        [
+          -0.019271984138315434,
+          1.6749459414281227,
+          0.10926026016719073
+        ],
+        [
+          -0.03725556149960778,
+          1.6704773697500426,
+          0.10845648346968148
+        ],
+        [
+          -0.0379118836915625,
+          1.6519187768658523,
+          0.11016295182599686
+        ]
+      ],
+      "nearest_eye": "image_left",
+      "centroid_relative_to_original_eye_surface_center_m": [
+        0.0030132977584497733,
+        -0.012209582866370638,
+        -0.004320437933387142
+      ]
+    },
+    {
+      "body_triangle_index": 13916,
+      "primitive": "original/clipped atlas surface",
+      "source_gltf_world_y_up_vertices_m": [
+        [
+          -0.019271984138315434,
+          1.6749459414281227,
+          0.10926026016719073
+        ],
+        [
+          -0.026984244110464913,
+          1.6746509172696684,
+          0.11379209943348759
+        ],
+        [
+          -0.03725556149960778,
+          1.6704773697500426,
+          0.10845648346968148
+        ]
+      ],
+      "nearest_eye": "image_left",
+      "centroid_relative_to_original_eye_surface_center_m": [
+        0.006655844285482295,
+        -0.004632202731765123,
+        -0.003110722064223581
+      ]
+    },
+    {
+      "body_triangle_index": 32271,
+      "primitive": "new inner-lid wall",
+      "source_gltf_world_y_up_vertices_m": [
+        [
+          0.034171943004146464,
+          1.674498853684575,
+          0.11056542024133473
+        ],
+        [
+          0.0383052932689306,
+          1.6759179994946853,
+          0.10949321191756116
+        ],
+        [
+          0.03414033764091128,
+          1.674604234664994,
+          0.10968542468021572
+        ]
+      ],
+      "nearest_eye": "image_right",
+      "centroid_relative_to_original_eye_surface_center_m": [
+        0.0024146819207384804,
+        -0.0029832495996249264,
+        -0.002342516558631158
+      ]
+    }
+  ]
+}

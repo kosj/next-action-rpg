@@ -1,0 +1,201 @@
+{
+  "scope": "Independent delta audit from historical failed-fit Web eye81331 to final refit eyed7d984. Geometry/source preservation only; no additional visual/continuous animation/collision/AAA approval.",
+  "checks": {
+    "expected_old_eye_hash": true,
+    "expected_final_eye_hash": true,
+    "unchanged_body_hash": true,
+    "unchanged_archive_hash": true,
+    "runtime_eye_bytes_match_final": true,
+    "runtime_body_bytes_match_audited_body": true,
+    "all_json_exact_except_position_minmax": true,
+    "indices_exact": true,
+    "normals_byte_exact": true,
+    "colors_byte_exact": true,
+    "all_bin_changes_inside_position_rows": true,
+    "head_attachment_contract_deep_exact": true,
+    "counts_and_welded_topology_unchanged": true,
+    "rigid_translation_residual_under_20nm": true
+  },
+  "all_delta_checks_passed": true,
+  "files": {
+    "old_web_eyes": {
+      "path": "build/art-candidates/character-polish/eye-sockets/socket-001/web-eyes/eyes-web.glb",
+      "sha256": "81331bf35a6ab831db42f5838fc043287d21f297712a06854ca227a1fc719521",
+      "bytes": 112492
+    },
+    "final_web_eyes": {
+      "path": "build/art-candidates/character-polish/eye-sockets/socket-001/surface-refit/eyes-web.glb",
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+      "bytes": 112488
+    },
+    "runtime_web_eyes": {
+      "path": "game/assets/models/production/lyra_eyes.glb",
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+      "bytes": 112488
+    },
+    "unchanged_body": {
+      "path": "build/art-candidates/character-polish/eye-sockets/socket-001/lyra-eye-sockets.glb",
+      "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+      "bytes": 19438644
+    },
+    "runtime_body": {
+      "path": "game/assets/models/production/lyra_gameplay.glb",
+      "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+      "bytes": 19438644
+    },
+    "archived_source": {
+      "path": "art_source/production/candidates/lyra-gameplay-001/source.glb",
+      "sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+      "bytes": 17889448
+    }
+  },
+  "attributes": {
+    "POSITION": {
+      "shape": [
+        2176,
+        3
+      ],
+      "row_bytes_exact": false,
+      "maximum_component_absolute_change": 0.0021269023418426514,
+      "changed_components": 4416
+    },
+    "NORMAL": {
+      "shape": [
+        2176,
+        3
+      ],
+      "row_bytes_exact": true,
+      "maximum_component_absolute_change": 0.0,
+      "changed_components": 0
+    },
+    "COLOR_0": {
+      "shape": [
+        2176,
+        4
+      ],
+      "row_bytes_exact": true,
+      "maximum_component_absolute_change": 0.0,
+      "changed_components": 0
+    }
+  },
+  "json_changed_top_level_keys": [
+    "accessors"
+  ],
+  "position_bounds": {
+    "old": {
+      "min": [
+        -0.04927675798535347,
+        0.07910331338644028,
+        0.07344529032707214
+      ],
+      "max": [
+        0.04197624698281288,
+        0.10294240713119507,
+        0.09899424016475677
+      ]
+    },
+    "new": {
+      "min": [
+        -0.04927675798535347,
+        0.07884864509105682,
+        0.07242658734321594
+      ],
+      "max": [
+        0.04197624698281288,
+        0.102410688996315,
+        0.09686734527349472
+      ]
+    }
+  },
+  "bin_delta": {
+    "old_bytes": 110080,
+    "new_bytes": 110080,
+    "changed_bytes": 12535,
+    "changed_bytes_outside_POSITION_rows": 0
+  },
+  "per_eye_translation": [
+    {
+      "eye": "image_left",
+      "vertices": 1088,
+      "index_range": [
+        0,
+        1087
+      ],
+      "expected_center_translation_world_m": [
+        0.0,
+        0.0,
+        -0.0021923548047884794
+      ],
+      "expected_center_translation_head_rigid_local_m": [
+        1.4529061981632213e-10,
+        -0.0005317238896817659,
+        -0.002126896649737306
+      ],
+      "observed_mean_translation_head_rigid_local_m": [
+        1.1127935174633475e-10,
+        -0.0005317234694409897,
+        -0.0021268962334622353
+      ],
+      "maximum_rigid_translation_residual_m": 8.850661089909936e-09,
+      "maximum_component_translation_residual_m": 5.7548016999539944e-09,
+      "maximum_translation_delta_variation_m": 8.878678205652226e-09,
+      "same_component_index_membership": true
+    },
+    {
+      "eye": "image_right",
+      "vertices": 1088,
+      "index_range": [
+        1088,
+        2175
+      ],
+      "expected_center_translation_world_m": [
+        0.0,
+        0.0,
+        -0.001050051628040366
+      ],
+      "expected_center_translation_head_rigid_local_m": [
+        6.958848610813354e-11,
+        -0.0002546748066548303,
+        -0.001018699749170269
+      ],
+      "observed_mean_translation_head_rigid_local_m": [
+        5.135970080600065e-11,
+        -0.00025467496529659806,
+        -0.001018700237824198
+      ],
+      "maximum_rigid_translation_residual_m": 7.961499639287603e-09,
+      "maximum_component_translation_residual_m": 6.5112713769463655e-09,
+      "maximum_translation_delta_variation_m": 8.360698164911372e-09,
+      "same_component_index_membership": true
+    }
+  ],
+  "topology": {
+    "old": {
+      "raw_vertices": 2176,
+      "used_vertices": 2176,
+      "triangles": 3840,
+      "welded_vertices": 1924,
+      "weld_tolerance_m": 1e-07,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_welded_triangles": 0
+    },
+    "final": {
+      "raw_vertices": 2176,
+      "used_vertices": 2176,
+      "triangles": 3840,
+      "welded_vertices": 1924,
+      "weld_tolerance_m": 1e-07,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_welded_triangles": 0
+    }
+  },
+  "link_to_previous_audit": "build/verification/character-polish/eye-source-audit.json",
+  "historical_audit_left_unchanged": true,
+  "limitations": [
+    "Five-pose BVH clearance is separately owned by the refit audit; this delta check does not extend it to continuous collision.",
+    "Body4cc9 and originalA89 hashes link the prior source-preservation audit to this final eye.",
+    "Float32 regeneration allows nanometer-scale residual around an otherwise rigid per-eye center translation."
+  ]
+}

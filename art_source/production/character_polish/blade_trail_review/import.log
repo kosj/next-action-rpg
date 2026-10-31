@@ -1,0 +1,99 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "_sock == -1" is true. Returning: FAILED
+   at: _inet_open (drivers/unix/net_socket_unix.cpp:288)
+ERROR: Condition "err != OK" is true. Returning: ERR_CANT_CREATE
+   at: listen (core/io/tcp_server.cpp:56)
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (27 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | ActorVisual[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | BladeTrail[39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | RuneEnemy[39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | RunePlayer[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | ProductionCharacterArt[39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | RuneProjectile[39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | SkeletalVisualBridge[39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | AttackData[39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | CombatStrike[39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | RuneHUD[39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | RuneCamera[39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | RuneEffect[39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | Sanctuary[39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (42 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | ambience.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | death.wav[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | dodge.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | hit.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | parry.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | rune.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | slash.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | NotoSansKR.ttf[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | floor_albedo.jpg[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | floor_arm.jpg[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | floor_normal.jpg[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ground_albedo.jpg[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | ground_arm.jpg[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | ground_normal.jpg[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | wall_albedo.jpg[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | wall_arm.jpg[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | wall_normal.jpg[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | lyra_gameplay.glb[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | lyra_gameplay_Image_0.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | lyra_gameplay_Image_1.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | lyra_gameplay_Image_2.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | pilgrim_gateway.glb[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | pilgrim_gateway_Image_0.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | pilgrim_gateway_Image_1.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | pilgrim_gateway_Image_2.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | rune_sword_web.glb[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | rune_sword_web_Image_0.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | rune_sword_web_Image_1.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | rune_sword_web_Image_2.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | sanctuary_pillar_web.glb[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | sanctuary_pillar_web_Image_0.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | sanctuary_pillar_web_Image_1.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | sanctuary_pillar_web_Image_2.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | sentinel_gameplay.glb[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | sentinel_gameplay_Image_0.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | sentinel_gameplay_Image_1.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | sentinel_gameplay_Image_2.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | boss.glb[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | hero.glb[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | keeper.glb[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | sentinel.glb[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+ERROR: Condition "_sock == -1" is true. Returning: FAILED
+   at: _inet_open (drivers/unix/net_socket_unix.cpp:288)
+ERROR: Condition "err != OK" is true. Returning: ERR_CANT_CREATE
+   at: listen (core/io/tcp_server.cpp:56)
