@@ -42,6 +42,7 @@
 | `release-assets-ci-token` | 릴리스 첨부는 해당 작업에 맞는 현재 인증 경로로 처리한다. | CLI·연결 앱·CI token 각각의 실제 권한과 만료 상태 |
 | `public-browser-ca-trust` | 클라우드의 CA 신뢰 문제와 배포 장애를 구분하고 TLS 검증을 유지한다. | 정상 trust 환경/hosted runner의 실제 결과, URL·source commit |
 | `mobile-css-viewport-and-evidence` | CSS client·canvas backing·논리 viewport를 한 번씩 변환하고 native/Web safe area와 선택 API를 구분한다. | resize/회전·DPR·버튼 hit rect·UI 넘침·fullscreen 거부·브라우저 기능. 에뮬레이션과 실제 기기 증거를 분리 |
+| `godot-window-resize-reentrant-screen-attach` | 크기 변경 signal 안의 content-scale setter 재진입을 피한다. 입력은 즉시 종료하고 화면 설정은 외부 처리 후 deferred로 모은다. | CPU/public transform이 정상이어도 최종 screen attach가 오래될 수 있다. 동일 조건 원본 raster A/B와 대상 장면 이미지 guard를 사용 |
 
 비동기 저장 관찰은 읽기 전용으로 수행합니다. 키 발견과 primary 읽기를 분리하고 관련 없는 payload를 전부 읽지 않습니다. async 결과는 실제로 await하고 그 값으로 제한된 반복을 합니다. 실패 시 단계별 저장/프레임 진단을 남기며 테스트가 저장을 쓰거나 강제 동기화하지 않습니다.
 

@@ -37,3 +37,7 @@
 회피·release 공격·짧은 스킬은 입력 응답 뒤의 snapshot에서 이미 끝날 수 있다. 실제 입력 전에 별도의 읽기 전용 관찰을 시작해 이후 frame에서 조건이 참인 snapshot을 복사하고 관찰자 자체도 유한 시간 안에 종료한다. 게임/QA 원본·저장 상태에 값을 쓰거나 이벤트 성공을 주입하지 않는다. 실제 발동과 늦은 조회를 구분하고 원래 실패·집중 검사·최종 전체 검사를 각각 보존한다.
 
 자동화 프레임워크가 focus·visibility·사용자 gesture를 강제로 에뮬레이트하는 기본값도 확인한다. 실제 focus loss 검사는 필요한 override만 해제한 뒤 브라우저의 trusted blur/focus와 document 상태를 관찰하고, foreground 복귀 후 실제 게임의 pause·입력 종료를 대조한다. background snapshot/rAF 중단을 앱 취소 실패로 오인하지 않는다. 설정 복원은 finally에서 수행하며 synthetic 이벤트나 QA 상태 쓰기로 대신하지 않는다.
+
+Window 크기 변경 signal 안에서 content-scale setter를 다시 호출하면 외부 엔진 함수가 계산해 둔 최종 screen rect를 나중에 덮을 수 있다. 정확한 엔진 소스의 signal/외부 적용 순서를 확인하고 입력 정리는 즉시, 최신 화면 설정은 coalesced deferred로 수행한다. public geometry와 offscreen texture가 정상이어도 최종 화면은 틀릴 수 있으므로, 같은 driver·품질·장면·자산의 원본 PNG A/B를 확인한다. 픽셀 guard는 해당 장면의 알려진 배경 조건으로 한정하고 어두운 모든 게임에 일반화하지 않는다.
+
+복원용 snapshot의 Node handle은 저장 후 해제될 수 있다. 다운캐스트 전에 실제 유효성을 확인하고 expired fixture를 포함해 복원이 끝까지 실행됐는지 검사한다. assertion 개수 외에 stderr·종료코드·리소스 정리 결과도 검증한다.

@@ -83,5 +83,13 @@
     "native_focus_probe": null,
     "trusted_blur_and_focus_evidence": null,
     "gameplay_after_foreground_evidence": null
+  },
+  "raster_validation": {
+    "status": "pending",
+    "target_scene_assumption": null,
+    "source_driver_quality_and_asset_comparison": null,
+    "original_images": [],
+    "numeric_geometry_only_is_insufficient": true,
+    "scope_limitations": []
   }
 }
