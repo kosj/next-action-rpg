@@ -4,10 +4,10 @@
   "checkpoint": 0,
   "dead": false,
   "encounter": 0,
-  "fps": 3,
+  "fps": 2,
   "has_save": true,
   "health": 120,
-  "hits": 4,
+  "hits": 3,
   "hud_y": 778,
   "modal": false,
   "modal_h": 0,
@@ -19,5 +19,5 @@
   "started": true,
   "ui_height": 900,
   "ui_width": 1440,
-  "z": -29.7996387481689
+  "z": -29.6184368133545
 }

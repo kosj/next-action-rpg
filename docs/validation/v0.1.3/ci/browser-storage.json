@@ -1,0 +1,202 @@
+{
+  "balanced_before_wait": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:50:47.315Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 1,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "waiting_quality_0": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:00.411Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 0,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "balanced_committed": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:00.411Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 0,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "after_settings_done": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:00.411Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 0,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "waiting_quality_1": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:38.801Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 1,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "restored_committed": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:38.801Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 1,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "before_browser_close": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:38.801Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 1,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ],
+  "after_browser_restart": [
+    {
+      "database": "/userfs",
+      "path": "/userfs/godot/app_userdata/RUNEFALL \u00b7 \ubb34\ub108\uc9c4 \uc131\uc5ed/runefall_v1.json",
+      "timestamp": "2026-10-31T02:51:38.801Z",
+      "save": {
+        "checkpoint": 0,
+        "completed": [],
+        "journey_started": true,
+        "lore": [],
+        "settings": {
+          "quality": 1,
+          "shake": true,
+          "volume": 0.7
+        },
+        "shards": 0,
+        "upgrades": [
+          0,
+          0,
+          0
+        ],
+        "version": 1
+      }
+    }
+  ]
+}
