@@ -24,6 +24,14 @@
 - native safe-area API가 Web에서도 구현됐는지 확인한다. Web은 CSS safe-area 환경 값과 실제 canvas rect를 교차해 필요한 inset만 논리 좌표로 한 번 변환한다. canvas padding을 중복 적용하지 않는다. viewport meta, 주소창 변화·회전·fullscreen 전후를 검사한다.
 - Pointer Lock·fullscreen은 실제 브라우저의 사용자 gesture/권한·실패를 다룬다. 터치 이동/look와 인라인 플레이가 선택 API에 의존하지 않게 한다. 기능 존재·요청 성공·실제 게임 동작은 각각 확인한다.
 
+## 버튼에서 시작하는 스크롤과 이벤트 전달
+
+1. 긴 설정/메뉴의 실제 Button·CheckButton 위에서 시작한 손가락 drag 경로를 유지해 재현한다. 빈 여백으로 시작점을 옮겨 QA를 통과시키거나 scroll 값을 직접 쓰지 않는다. 동일 gesture의 시작 control·좌표·move/end·실제 소유 pointer와 화면을 기록한다. native fixture·브라우저 trusted gesture·실제 휴대기기에서 관찰한 범위는 구분한다.
+2. 대상 엔진의 child control `mouse_filter`, Container의 부모 전달, Viewport의 consume/propagation 예외와 ScrollContainer의 drag 경로를 함께 읽는다. wheel만 부모로 강제 전달되는 경로가 있다면 mouse-wheel 성공이 touch drag 성공을 입증하지 않는다. 터치가 emulated MouseDown/Motion으로 부모 drag를 시작하는지도 확인한다. Button에서 이벤트가 멈춰 부모에 닿지 않으면 실제 스크롤이 시작되지 않을 수 있다.
+3. 수정은 스크롤 안에서 부모 전달이 필요한 버튼 계층에 한정해 검토한다. Slider처럼 자기 drag를 소유하는 control과 구분하고 모든 control을 일괄 PASS로 바꾸지 않는다. drag 시작/SCROLL_BEGIN 경로가 Button의 pending click을 취소하는지 확인한다. 짧은 tap은 callback이 한 번 발생하고, 스크롤 drag 후 release는 우발적인 클릭·설정 변경·메뉴 닫기를 만들지 않아야 한다.
+4. 실제 gesture 후 새 frame에서 scroll value·maximum·page 크기와 콘텐츠 이동, pointer 해제, 실제 control/callback 상태를 함께 관찰한다. 레이아웃 값이나 Done 버튼의 bounding box만으로 스크롤 성공을 판단하지 않는다. 화면 밖 완료 버튼이 화면 안으로 이동했는지 실제 화면과 hit rect를 대조한다.
+5. 설정을 바꾼 뒤 같은 실제 스크롤 경로로 완료 버튼에 도달하고 그 버튼을 눌러 설정 반영·저장을 확인한다. callback 직접 호출·빈 여백 gesture·테스트 측 상태/저장 쓰기로 대체하지 않는다. 실패 재현·수정 후 집중 검사·최종 전체 브라우저 검증을 각각 기록한다. native 검사나 export 성공만 확인했다면 수정 후 브라우저·실기기 판정은 `pending`으로 유지한다.
+
 ## 근거와 승인 범위
 
 엔진 소스는 정확한 리비전, 브라우저 지원은 조회일과 고정 compatibility-data 리비전으로 남긴다. 공개 스킬은 필요한 원칙만 선택하고 원문·참조·LICENSE/NOTICE·리비전·해시를 보존한다. 설치/스크립트 실행 권한을 스킬을 읽었다는 사실에서 추론하지 않는다. 원래 프로젝트의 계정·기기 접근·비용/업로드 권한도 이전되지 않는다. 이미 위임된 현재 작업에 새 승인 절차를 만들지는 않는다.

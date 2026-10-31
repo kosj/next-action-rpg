@@ -91,5 +91,13 @@
     "original_images": [],
     "numeric_geometry_only_is_insufficient": true,
     "scope_limitations": []
+  },
+  "scroll_ownership": {
+    "status": "pending",
+    "start_widget_and_parent_filters": null,
+    "actual_gesture_and_fresh_frames": null,
+    "before_after_scroll_value": null,
+    "drag_click_cancellation": null,
+    "final_button_and_committed_save": null
   }
 }
