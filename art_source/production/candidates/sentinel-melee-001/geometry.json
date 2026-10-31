@@ -1,0 +1,97 @@
+{
+  "source_sha256": "fac4978b2936e3f09f04e9d3736942ce1fd2ed5c0ee3dc8466859b8ad09b7c01",
+  "source_unchanged": true,
+  "bounds_blender_z_up": {
+    "min": [
+      -0.49974262714385986,
+      -0.10078097134828568,
+      -0.4998696446418762
+    ],
+    "max": [
+      0.4998205304145813,
+      0.10976763814687729,
+      0.4972888231277466
+    ],
+    "size": [
+      0.9995631575584412,
+      0.21054860949516296,
+      0.9971584677696228
+    ]
+  },
+  "mesh_topology_read_only": [
+    {
+      "object": "texture_mapping",
+      "imported_vertices": 32032,
+      "spatial_weld_distance_source_units": 1e-06,
+      "spatially_welded_vertices": 19932,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0,
+      "spatially_welded_connected_component_count": 2,
+      "component_vertex_counts_largest_10": [
+        19907,
+        25
+      ],
+      "component_bounds_largest_10": [
+        {
+          "vertices": 19907,
+          "min": [
+            -0.49974262714385986,
+            -0.10078097134828568,
+            -0.4998696446418762
+          ],
+          "max": [
+            0.4998205304145813,
+            0.10976763814687729,
+            0.4972888231277466
+          ]
+        },
+        {
+          "vertices": 25,
+          "min": [
+            0.04477345198392868,
+            0.07857397198677063,
+            0.07750829309225082
+          ],
+          "max": [
+            0.06315360963344574,
+            0.09140029549598694,
+            0.09998789429664612
+          ]
+        }
+      ],
+      "component_bounds_coordinate_space": "mesh_local"
+    }
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "sRGB"
+    },
+    {
+      "name": "Image_1",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "Non-Color"
+    },
+    {
+      "name": "Image_2",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "Non-Color"
+    }
+  ],
+  "scope": "Static source measurements and topology after in-memory spatial weld only; no rewrite, self-intersection, anatomy, rig, deformation or collision approval"
+}

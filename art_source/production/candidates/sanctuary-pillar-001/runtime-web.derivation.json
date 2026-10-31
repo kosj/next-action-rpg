@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "status": "canonical_static_candidate_not_runtime_approved",
+  "blender": "4.3.2",
+  "asset": "pillar",
+  "source": {
+    "path": "build/art-candidates/batch-2026-10-31/sanctuary_pillar_web_lod.glb",
+    "bytes": 11161352,
+    "sha256": "50b79790c4a9b909ee44011ca45fa78fe3e21beeed5cbcbb2587b745006ba50c",
+    "unchanged": true
+  },
+  "recipe": {
+    "method": "Nonuniform static vertex bake; source UV corner assignments preserved",
+    "axis_scale_xyz": [
+      6.289672374725342,
+      6.0685014724731445,
+      6.957398414611816
+    ],
+    "source_center_xy": [
+      0.001014411449432373,
+      0.0023418962955474854
+    ],
+    "source_floor_z": -0.5054606795310974,
+    "target_size_xyz_m": [
+      1.6,
+      1.6,
+      7.0
+    ],
+    "target_floor_z_m": 0.0,
+    "material_or_texel_density_approved": false
+  },
+  "source_bounds_blender_z_up": {
+    "min": [
+      -0.12617821991443634,
+      -0.12948636710643768,
+      -0.5054606795310974
+    ],
+    "max": [
+      0.1282070428133011,
+      0.13417015969753265,
+      0.5006625056266785
+    ],
+    "size": [
+      0.2543852627277374,
+      0.26365652680397034,
+      1.0061231851577759
+    ]
+  },
+  "before_export": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.7999999523162842,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        0.7999999523162842,
+        0.800000011920929,
+        7.0
+      ],
+      "size": [
+        1.5999999046325684,
+        1.600000023841858,
+        7.0
+      ]
+    },
+    "markers": {},
+    "numeric_contract_errors": {
+      "size_x_m": 9.536743172944284e-08,
+      "size_y_m": 2.3841857821338408e-08,
+      "size_z_m": 0.0,
+      "floor_z_m": 0.0,
+      "center_x_m": 0.0,
+      "center_y_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "reimported": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.7999999523162842,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        0.7999999523162842,
+        0.800000011920929,
+        7.0
+      ],
+      "size": [
+        1.5999999046325684,
+        1.600000023841858,
+        7.0
+      ]
+    },
+    "markers": {},
+    "numeric_contract_errors": {
+      "size_x_m": 9.536743172944284e-08,
+      "size_y_m": 2.3841857821338408e-08,
+      "size_z_m": 0.0,
+      "floor_z_m": 0.0,
+      "center_x_m": 0.0,
+      "center_y_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "uv_corner_data_unchanged_before_export": true,
+  "reimport_corner_correspondence": {
+    "matched_triangles": 6122,
+    "max_corner_position_error_m": 0.0,
+    "max_corner_uv_error": 0.0,
+    "position_tolerance_m": 1e-05,
+    "uv_tolerance": 1e-07,
+    "method": "Bijective triangle/corner position and UV matching after export/reimport"
+  },
+  "exported_shading": {
+    "normal_tangent_vertices": 4399,
+    "max_normal_length_error": 1.4225951305846252e-07,
+    "max_tangent_length_or_handedness_error": 6.99044917769065e-05,
+    "max_normal_tangent_dot": 0.00011524371802806854,
+    "tolerance": 0.001,
+    "normal_tangent_recalculated": true
+  },
+  "triangle_budget": {
+    "requested": 6000,
+    "source": 6122,
+    "derived": 6122,
+    "met": false,
+    "excess": 122
+  },
+  "output_sha256": "8dead5c2a8b7512923b88cce02c6775d1c85c9918d47c57ab0c56e0c870cb607",
+  "output_bytes": 11232228,
+  "structural_inspection": {
+    "path": "runtime-web.glb",
+    "bytes": 11232228,
+    "sha256": "8dead5c2a8b7512923b88cce02c6775d1c85c9918d47c57ab0c56e0c870cb607",
+    "structurally_valid": true,
+    "requirements_met": true,
+    "errors": [],
+    "counts": {
+      "nodes": 2,
+      "meshes": 1,
+      "mesh_primitives": 1,
+      "mesh_triangles": 6122,
+      "materials": 1,
+      "skins": 0,
+      "skinned_mesh_nodes": 0,
+      "animations": 0
+    },
+    "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+    "node_names": [
+      "CanonicalGeometry",
+      "PillarCanonical"
+    ],
+    "animations": [],
+    "resources": [
+      {
+        "type": "buffer",
+        "index": 0,
+        "storage": "bin_chunk",
+        "declared_bytes": 11230260
+      },
+      {
+        "type": "image",
+        "index": 0,
+        "storage": "buffer_view",
+        "bytes_available": 3772435
+      },
+      {
+        "type": "image",
+        "index": 1,
+        "storage": "buffer_view",
+        "bytes_available": 2500280
+      },
+      {
+        "type": "image",
+        "index": 2,
+        "storage": "buffer_view",
+        "bytes_available": 4709660
+      }
+    ],
+    "all_resource_bytes_available": true,
+    "warnings": [],
+    "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+  },
+  "uv_semantics": "Per-corner UVs preserved; local geometry proportions changed. Texel density/material response still need art review.",
+  "limitations": [
+    "Heuristic sword guard/grip markers are not semantic blade labels or final hand-grip approval",
+    "No actor, attack timing, damage, physics, collision, final material or FPS approval",
+    "Triangle counts are preserved, including any source budget excess",
+    "These static source edits do not approve final AAA art"
+  ],
+  "output_file": "runtime-web.glb",
+  "input_storage_note": "The generated original is retained as source.glb. The free web-Remesh intermediate is not duplicated; its bytes/SHA are recorded as the source of this derivation. Retrieve that original intermediate to reproduce this precise output.",
+  "archival_note": "Only paths/archival context were normalized while copying this completed report; the selected final GLB was copied without geometry changes."
+}

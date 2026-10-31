@@ -1,0 +1,25 @@
+{
+  "scope": "Fresh Blender 4.3.2 regressions for the stable origin translation; tolerance remains 1e-5.",
+  "legacy_three_motion": {
+    "returncode": 0,
+    "sources_unchanged": true,
+    "output_sha256": "8141e4b400504e821df1b78e9b9ab9e8da2c2e2f987a729d18130c6c06f64cae",
+    "byte_identical_to_pre_fix_baseline": true
+  },
+  "incompatible_rest_rejection": {
+    "returncode": 1,
+    "fixture_core_structure_valid": true,
+    "deliberate_difference": "LeftUpLeg inverse bind matrix X translation +0.01 in a derived test fixture; original inputs untouched.",
+    "fixture_sha256": "51252982ed51b70dc66e2f40b4787b436215c7011b507b5bcc6ba9f43b81b9fe",
+    "original_source_sha256": "a4c2fc1a3c0e578500a136dade486c88747632022f267b9ae87a0ae94e9979bc",
+    "sources_unchanged": true,
+    "output_created": false,
+    "rejection": "rest differences are not one uniform translation",
+    "log": "build/verification/art-batch/incompatible-inverse-bind-rejection.log"
+  },
+  "node_transform_only_probe": {
+    "classification": "not_an_imported_rest_mismatch",
+    "explanation": "Changing the animated node translation alone did not alter Blender imported rest, which was reconstructed from Skin inverse bind matrices. That probe is not claimed as a rejection test."
+  },
+  "status": "passed"
+}

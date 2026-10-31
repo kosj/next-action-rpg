@@ -1,0 +1,51 @@
+02:28:17 | INFO: Data are loaded, start creating Blender stuff
+02:28:17 | INFO: Blender create Mesh node 0
+02:28:17 | INFO: glTF import finished in 0.18s
+02:28:17 | INFO: Data are loaded, start creating Blender stuff
+02:28:17 | INFO: Blender create Mesh node 0
+02:28:18 | INFO: glTF import finished in 0.25s
+02:28:19 | INFO: Data are loaded, start creating Blender stuff
+02:28:19 | INFO: Blender create Mesh node 0
+02:28:19 | INFO: glTF import finished in 0.21s
+02:28:20 | INFO: Data are loaded, start creating Blender stuff
+02:28:20 | INFO: Blender create Mesh node 0
+02:28:20 | INFO: glTF import finished in 0.23s
+02:28:21 | INFO: Data are loaded, start creating Blender stuff
+02:28:21 | INFO: Blender create Mesh node 0
+02:28:21 | INFO: glTF import finished in 0.23s
+02:28:22 | INFO: Data are loaded, start creating Blender stuff
+02:28:22 | INFO: Blender create Mesh node 0
+02:28:22 | INFO: glTF import finished in 0.20s
+02:28:23 | INFO: Data are loaded, start creating Blender stuff
+02:28:23 | INFO: Blender create Mesh node 0
+02:28:23 | INFO: glTF import finished in 0.19s
+02:28:24 | INFO: Data are loaded, start creating Blender stuff
+02:28:24 | INFO: Blender create Mesh node 0
+02:28:24 | INFO: glTF import finished in 0.19s
+02:28:25 | INFO: Data are loaded, start creating Blender stuff
+02:28:25 | INFO: Blender create Mesh node 0
+02:28:25 | INFO: glTF import finished in 0.20s
+02:28:26 | INFO: Data are loaded, start creating Blender stuff
+02:28:26 | INFO: Blender create Mesh node 0
+02:28:26 | INFO: glTF import finished in 0.19s
+02:28:26 | INFO: Data are loaded, start creating Blender stuff
+02:28:26 | INFO: Blender create Mesh node 0
+02:28:27 | INFO: glTF import finished in 0.21s
+02:28:27 | INFO: Data are loaded, start creating Blender stuff
+02:28:27 | INFO: Blender create Mesh node 0
+02:28:28 | INFO: glTF import finished in 0.21s
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+02:28:29 | INFO: Starting glTF 2.0 export
+02:28:29 | INFO: Extracting primitive: Mesh_0
+02:28:29 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+02:28:29 | INFO: Primitives created: 1
+02:28:39 | INFO: Finished glTF 2.0 export in 10.230294227600098 s
+
+02:28:39 | INFO: Data are loaded, start creating Blender stuff
+02:28:39 | INFO: Blender create Mesh node Mesh_0
+02:28:40 | INFO: glTF import finished in 0.91s
+RUNEFALL_CHARACTER_CANDIDATE_OK: build/art-candidates/batch-2026-10-31/lyra-web-motion-library.glb
+RUNEFALL_CHARACTER_SOURCES_UNCHANGED: 12 files
+Blender 4.3.2
+
+Blender quit

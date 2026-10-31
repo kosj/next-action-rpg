@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "status": "canonical_static_candidate_not_runtime_approved",
+  "blender": "4.3.2",
+  "asset": "sword",
+  "source": {
+    "path": "build/art-candidates/batch-2026-10-31/lyra_runeblade_web_lod.glb",
+    "bytes": 7491188,
+    "sha256": "6060420b9933bbbb40e0fda6b2b21c1ca1ca645839d293b7beb3603dfe382bdf",
+    "unchanged": true
+  },
+  "recipe": {
+    "guard_identification": "Heuristic median Z of lower-half maximum-width crossguard-tip vertices; not semantic labels",
+    "guard_cluster_vertices": 134,
+    "source_heuristic_guard_z": -0.22273871302604675,
+    "source_heuristic_blade_length": 0.7193811535835266,
+    "source_heuristic_hilt_length": 0.2759612202644348,
+    "xy_uniform_scale": 1.3563172185475674,
+    "blade_z_scale": 1.4317861885443566,
+    "hilt_z_scale": 1.1595832185890678,
+    "grip_axis": "BBox center in the mapped hilt-middle Z[-.05,.05] band; not anatomical hand-grip approval",
+    "grip_band_source_vertex_count": 201,
+    "grip_axis_xy_translation_applied_m": [
+      0.0003349659964442253,
+      0.0004517724737524986
+    ],
+    "target_blade_above_heuristic_guard_m": 1.03,
+    "target_hilt_below_heuristic_guard_m": 0.32,
+    "target_total_length_m": 1.35,
+    "target_guard_z_m": 0.16,
+    "target_bottom_z_m": -0.16,
+    "target_tip_z_m": 1.19,
+    "mapped_guard_cluster_median_z_m": 0.1599999964237213,
+    "mapped_guard_cluster_median_error_m": 3.5762786898541066e-09,
+    "blade_tip_transverse_offset_m": [
+      0.0009009279892779887,
+      -0.0005532491486519575
+    ],
+    "semantic_blade_grip_review_approved": false
+  },
+  "source_bounds_blender_z_up": {
+    "min": [
+      -0.10166735202074051,
+      -0.027625516057014465,
+      -0.49869993329048157
+    ],
+    "max": [
+      0.10184884816408157,
+      0.027814717963337898,
+      0.49664244055747986
+    ],
+    "size": [
+      0.20351620018482208,
+      0.055440232157707214,
+      0.9953423738479614
+    ]
+  },
+  "before_export": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.1375582218170166,
+        -0.03701718896627426,
+        -0.1599999964237213
+      ],
+      "max": [
+        0.13847431540489197,
+        0.038177356123924255,
+        1.190000057220459
+      ],
+      "size": [
+        0.27603253722190857,
+        0.07519454509019852,
+        1.350000023841858
+      ]
+    },
+    "markers": {
+      "GripOrigin": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "position_error_m": 0.0
+      },
+      "Guard": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.1599999964237213,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "position_error_m": 0.0
+      },
+      "BladeTip": {
+        "blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "gltf_y_up_m": [
+          0.0009009279892779887,
+          1.190000057220459,
+          0.0005532491486519575
+        ],
+        "expected_blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "position_error_m": 0.0
+      }
+    },
+    "numeric_contract_errors": {
+      "total_length_m": 2.3841857821338408e-08,
+      "bottom_z_m": 3.5762786898541066e-09,
+      "tip_z_m": 5.7220459037665705e-08,
+      "grip_band_xy_center_m": 0.0,
+      "GripOrigin_marker_m": 0.0,
+      "Guard_marker_m": 0.0,
+      "BladeTip_marker_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "reimported": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.1375582218170166,
+        -0.03701718896627426,
+        -0.1599999964237213
+      ],
+      "max": [
+        0.13847431540489197,
+        0.038177356123924255,
+        1.190000057220459
+      ],
+      "size": [
+        0.27603253722190857,
+        0.07519454509019852,
+        1.350000023841858
+      ]
+    },
+    "markers": {
+      "GripOrigin": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "position_error_m": 0.0
+      },
+      "Guard": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.1599999964237213,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "position_error_m": 0.0
+      },
+      "BladeTip": {
+        "blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "gltf_y_up_m": [
+          0.0009009279892779887,
+          1.190000057220459,
+          0.0005532491486519575
+        ],
+        "expected_blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "position_error_m": 0.0
+      }
+    },
+    "numeric_contract_errors": {
+      "total_length_m": 2.3841857821338408e-08,
+      "bottom_z_m": 3.5762786898541066e-09,
+      "tip_z_m": 5.7220459037665705e-08,
+      "grip_band_xy_center_m": 0.0,
+      "GripOrigin_marker_m": 0.0,
+      "Guard_marker_m": 0.0,
+      "BladeTip_marker_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "uv_corner_data_unchanged_before_export": true,
+  "reimport_corner_correspondence": {
+    "matched_triangles": 4000,
+    "max_corner_position_error_m": 0.0,
+    "max_corner_uv_error": 0.0,
+    "position_tolerance_m": 1e-05,
+    "uv_tolerance": 1e-07,
+    "method": "Bijective triangle/corner position and UV matching after export/reimport"
+  },
+  "exported_shading": {
+    "normal_tangent_vertices": 2799,
+    "max_normal_length_error": 1.445966868462989e-07,
+    "max_tangent_length_or_handedness_error": 7.821925423234788e-05,
+    "max_normal_tangent_dot": 0.00013947300612926483,
+    "tolerance": 0.001,
+    "normal_tangent_recalculated": true
+  },
+  "triangle_budget": {
+    "requested": 4000,
+    "source": 4000,
+    "derived": 4000,
+    "met": true,
+    "excess": 0
+  },
+  "output_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "output_bytes": 7536756,
+  "structural_inspection": {
+    "path": "runtime-web.glb",
+    "bytes": 7536756,
+    "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "structurally_valid": true,
+    "requirements_met": true,
+    "errors": [],
+    "counts": {
+      "nodes": 5,
+      "meshes": 1,
+      "mesh_primitives": 1,
+      "mesh_triangles": 4000,
+      "materials": 1,
+      "skins": 0,
+      "skinned_mesh_nodes": 0,
+      "animations": 0
+    },
+    "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+    "node_names": [
+      "BladeTip",
+      "CanonicalGeometry",
+      "GripOrigin",
+      "Guard",
+      "RunebladeCanonical"
+    ],
+    "animations": [],
+    "resources": [
+      {
+        "type": "buffer",
+        "index": 0,
+        "storage": "bin_chunk",
+        "declared_bytes": 7534432
+      },
+      {
+        "type": "image",
+        "index": 0,
+        "storage": "buffer_view",
+        "bytes_available": 1964867
+      },
+      {
+        "type": "image",
+        "index": 1,
+        "storage": "buffer_view",
+        "bytes_available": 1832297
+      },
+      {
+        "type": "image",
+        "index": 2,
+        "storage": "buffer_view",
+        "bytes_available": 3578910
+      }
+    ],
+    "all_resource_bytes_available": true,
+    "warnings": [],
+    "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+  },
+  "uv_semantics": "Per-corner UVs preserved; local geometry proportions changed. Texel density/material response still need art review.",
+  "limitations": [
+    "Heuristic sword guard/grip markers are not semantic blade labels or final hand-grip approval",
+    "No actor, attack timing, damage, physics, collision, final material or FPS approval",
+    "Triangle counts are preserved, including any source budget excess",
+    "These static source edits do not approve final AAA art"
+  ],
+  "output_file": "runtime-web.glb",
+  "input_storage_note": "The generated original is retained as source.glb. The free web-Remesh intermediate is not duplicated; its bytes/SHA are recorded as the source of this derivation. Retrieve that original intermediate to reproduce this precise output.",
+  "archival_note": "Only paths/archival context were normalized while copying this completed report; the selected final GLB was copied without geometry changes."
+}

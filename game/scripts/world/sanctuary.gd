@@ -1,6 +1,9 @@
 class_name Sanctuary
 extends Node3D
 
+const COURTYARD_PILLAR_SCENE: PackedScene = preload("res://assets/models/production/sanctuary_pillar_web.glb")
+const COURTYARD_GATEWAY_SCENE: PackedScene = preload("res://assets/models/production/pilgrim_gateway.glb")
+
 const CENTERS: Array[Vector3] = [Vector3(0,0,-38), Vector3(10,0,-90), Vector3(-10,0,-145), Vector3(10,0,-200), Vector3(-10,0,-255), Vector3(0,0,-310), Vector3(0,0,-375)]
 const CHECKPOINTS: Array[Vector3] = [Vector3(0,0,6), Vector3(0,0,-116), Vector3(-5,0,-281)]
 const TITLES: Array[String] = ["순례자의 뜰", "침묵의 회랑", "깨진 서약", "달빛의 정원", "잿빛 제단", "마지막 문", "타락한 성역"]
@@ -152,7 +155,9 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 		ring(center + Vector3.UP * 0.035, radius, trim if radius != 3.2 else glow)
 	for side in [-1, 1]:
 		for z_offset in [-half + 3, -5, 7, half - 3]:
-			column(center + Vector3(side * (half - 2),0,z_offset), 5.5 + rng.randf_range(0,2.5))
+			# Consume the same height sample even when the first room uses a fixed
+			# canonical pillar, preserving all later rooms' seeded decoration.
+			column(center + Vector3(side * (half - 2),0,z_offset), 5.5 + rng.randf_range(0,2.5), index == 0)
 		block(center + Vector3(side * half,0.65,0), Vector3(0.65,1.3,half * 2), dark, true)
 		block(center + Vector3(side * half,1.33,0), Vector3(0.8,0.08,half * 2), trim)
 		for z_offset in [-11, 11]:
@@ -180,13 +185,23 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 			pair.append(gate)
 		gates[index] = pair
 	# Broken monumental doorway at the far side.
-	for side in [-1, 1]:
-		column(center + Vector3(side * 7.5,0,-half+2), 8.5 if index == 6 else 7.0)
-	block(center + Vector3(0,7,-half+2), Vector3(17,1.1,1.4), dark)
-	block(center + Vector3(0,7.65,-half+2), Vector3(17.5,0.18,1.65), trim)
+	if index == 0:
+		_courtyard_gateway(center + Vector3(0,0,-half+2))
+	else:
+		for side in [-1, 1]:
+			column(center + Vector3(side * 7.5,0,-half+2), 8.5 if index == 6 else 7.0)
+		block(center + Vector3(0,7,-half+2), Vector3(17,1.1,1.4), dark)
+		block(center + Vector3(0,7.65,-half+2), Vector3(17.5,0.18,1.65), trim)
 
-func column(point: Vector3, height: float) -> void:
-	block(point + Vector3.UP * 0.3, Vector3(1.6,0.6,1.6), dark, true)
+func _column_base(point: Vector3) -> MeshInstance3D:
+	return block(point + Vector3.UP * 0.3, Vector3(1.6,0.6,1.6), dark, true)
+
+func column(point: Vector3, height: float, detailed: bool = false) -> void:
+	var base := _column_base(point)
+	if detailed:
+		base.hide() # Visibility does not disable the original base collision.
+		_courtyard_pillar(point)
+		return
 	var node := MeshInstance3D.new()
 	var mesh := CylinderMesh.new()
 	mesh.top_radius = 0.46
@@ -199,6 +214,58 @@ func column(point: Vector3, height: float) -> void:
 	add_child(node)
 	block(point + Vector3.UP * (height+0.7), Vector3(1.35,0.35,1.35), trim)
 	block(point + Vector3(0,-0.01,-0.61) + Vector3.UP * 1.5, Vector3(0.045,1.8,0.035), glow)
+
+func _prop(scene: PackedScene, point: Vector3, prop_name: String) -> Node3D:
+	var visual := scene.instantiate() as Node3D
+	visual.name = prop_name
+	visual.position = point
+	add_child(visual)
+	return visual
+
+func _prop_body(parent: Node3D, body_name: String) -> StaticBody3D:
+	var body := StaticBody3D.new()
+	body.name = body_name
+	body.collision_layer = 1
+	body.collision_mask = 0
+	parent.add_child(body)
+	return body
+
+func _prop_shape(body: StaticBody3D, shape: Shape3D, point: Vector3) -> void:
+	var node := CollisionShape3D.new()
+	node.shape = shape
+	node.position = point
+	body.add_child(node)
+
+func _prop_box(body: StaticBody3D, size: Vector3, point: Vector3) -> void:
+	var shape := BoxShape3D.new()
+	shape.size = size
+	_prop_shape(body, shape, point)
+
+func _courtyard_pillar(point: Vector3) -> void:
+	var visual := _prop(COURTYARD_PILLAR_SCENE, point, "CourtyardPillar")
+	visual.set_meta("production_asset", "sanctuary_pillar")
+	var body := _prop_body(visual, "ColumnCollision")
+	# Canonical bounds: 1.6 x 7 x 1.6m. The source's shaft (Y1.2..5.8)
+	# has a measured maximum XZ radius .697867m. Collars use small boxes.
+	var shaft := CylinderShape3D.new()
+	shaft.radius = 0.70
+	shaft.height = 4.6
+	_prop_shape(body, shaft, Vector3(0,3.5,0))
+	_prop_box(body, Vector3(1.5,0.6,1.5), Vector3(0,0.9,0))
+	_prop_box(body, Vector3(1.4,1.2,1.4), Vector3(0,6.4,0))
+
+func _courtyard_gateway(point: Vector3) -> void:
+	for side in [-1, 1]:
+		var base := _column_base(point + Vector3(side * 7.5,0,0))
+		base.hide()
+	# This frame stays visible independently of the two encounter barriers.
+	# Do not put it in gates: their collision child order is gameplay-owned.
+	var visual := _prop(COURTYARD_GATEWAY_SCENE, point, "CourtyardGateway")
+	visual.set_meta("production_asset", "pilgrim_gateway")
+	var body := _prop_body(visual, "FrameCollision")
+	for side in [-1, 1]:
+		_prop_box(body, Vector3(2.5,6,1.6), Vector3(side * 7.25,3,0))
+	_prop_box(body, Vector3(17,1.8,1.6), Vector3(0,6.9,0))
 
 func brazier(point: Vector3) -> void:
 	block(point + Vector3.UP * 0.65, Vector3(0.6,1.3,0.6), dark)

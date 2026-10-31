@@ -1,0 +1,106 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T00:54:42.459149+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "../source.glb",
+    "sha256": "4a22b499d5af7a59ae1c73068713f8a3a65f7ce3238191b23978d78589a1d433",
+    "bytes": 4669348,
+    "unchanged": true,
+    "historical_local_input": "build/art-candidates/batch-2026-10-31/lyra_runeblade_mesh.glb"
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "size": 640,
+    "samples": 16,
+    "pose": "REST",
+    "denoising": false,
+    "color_management": "AgX / Base Contrast",
+    "source_rescaled": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.1015869528055191,
+      -0.026862408965826035,
+      -0.5000672936439514
+    ],
+    "max": [
+      0.10200653225183487,
+      0.028161384165287018,
+      0.4951694905757904
+    ],
+    "size": [
+      0.20359349250793457,
+      0.05502379313111305,
+      0.9952367544174194
+    ],
+    "center": [
+      0.0002097897231578827,
+      0.0006494875997304916,
+      -0.0024489015340805054
+    ]
+  },
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 8000,
+    "material_count_gltf": 1,
+    "material_names_blender": [
+      "material_0"
+    ],
+    "skin_count_gltf": 0,
+    "armatures_blender": [],
+    "clip_count_gltf": 0,
+    "clip_names_gltf": [],
+    "actions_blender": [],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "views": [
+    {
+      "name": "front",
+      "file": "front.png",
+      "camera_position_blender": [
+        0.0002097897231578827,
+        -3.980297565460205,
+        -0.0024489015340805054
+      ],
+      "ortho_scale": 1.1743793487548828,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "side",
+      "file": "side.png",
+      "camera_position_blender": [
+        3.981156826019287,
+        0.0006494875997304916,
+        -0.0024489015340805054
+      ],
+      "ortho_scale": 1.1743793487548828,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "back",
+      "file": "back.png",
+      "camera_position_blender": [
+        0.0002097897231578827,
+        3.9815964698791504,
+        -0.0024489015340805054
+      ],
+      "ortho_scale": 1.1743793487548828,
+      "lights_rotate_with_view": true
+    }
+  ],
+  "limitations": [
+    "Static rest-pose render only; animation, deformation and gameplay integration require separate review",
+    "Blender source units and transforms are preserved; camera and studio adjust to the bounds",
+    "Triangle totals are imported mesh counts, not runtime draw calls or GPU performance"
+  ],
+  "archival_scope": "Original generated static source"
+}

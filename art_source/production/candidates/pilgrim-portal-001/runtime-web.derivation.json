@@ -1,0 +1,706 @@
+{
+  "status": "geometry_prepared_candidate_requires_visual_and_runtime_review",
+  "blender": "4.3.2",
+  "source": {
+    "file": "source.glb",
+    "sha256": "000b7fdb32da8cd32b6b085e066db903c78864f9dc0fb704e0b744820aefd01b",
+    "bytes": 16041620,
+    "unchanged": true,
+    "historical_local_input": "build/art-candidates/batch-2026-10-31/pilgrim_portal_mesh.glb"
+  },
+  "source_bounds_blender_z_up": {
+    "min": [
+      -0.5008315443992615,
+      -0.5000417828559875,
+      -0.17443299293518066
+    ],
+    "max": [
+      0.5008315443992615,
+      0.5000417828559875,
+      0.17443299293518066
+    ],
+    "size": [
+      1.001663088798523,
+      1.000083565711975,
+      0.34886598587036133
+    ]
+  },
+  "source_triangles": 20000,
+  "front_crop": {
+    "fraction": 0.25,
+    "cut_y": -0.2500208914279938,
+    "cropped_bounds": {
+      "min": [
+        -0.5008315443992615,
+        -0.5000417828559875,
+        -0.17443299293518066
+      ],
+      "max": [
+        0.5002003312110901,
+        -0.2500208914279938,
+        0.16792401671409607
+      ],
+      "size": [
+        1.0010318756103516,
+        0.2500208914279938,
+        0.34235700964927673
+      ]
+    },
+    "vertices_before_spatial_weld": 15896,
+    "vertices_after_spatial_weld": 9980,
+    "new_cap_faces_before_triangulation": 1,
+    "cap_material": "SourceCutCapStone"
+  },
+  "authored_static_geometry_fit": {
+    "target_size_xyz_m": [
+      17,
+      1.6,
+      7.8
+    ],
+    "opening_width_m": 12,
+    "opening_height_m": 6,
+    "source_left_inner_x": -0.32465770840644836,
+    "source_right_inner_x": 0.322439581155777,
+    "source_lintel_underside_z": 0.02831215411424637,
+    "method": "Static vertex edit: split at X/Z break planes, piecewise X/Z fit, independent depth fit; root transform identity"
+  },
+  "opening_corner_trim": {
+    "method": "EXACT boolean difference for a12.002x4.0x6.002m cutter centered at(0,0,3m)",
+    "pre_trim_intersecting_triangles": 13,
+    "reason": "Remove original small rounded/chamfered upper-corner intrusions; preserve the stricter clear-volume test"
+  },
+  "material_policy": "Original loop UVs and PBR materials retained on original faces; new rear cut caps have a separate untextured rough limestone material and require visual review",
+  "before_export": {
+    "bounds_blender_z_up": {
+      "min": [
+        -8.5,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        8.5,
+        0.800000011920929,
+        7.800000190734863
+      ],
+      "size": [
+        17.0,
+        1.600000023841858,
+        7.800000190734863
+      ]
+    },
+    "manifold_after_1e_6m_spatial_weld": {
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0
+    },
+    "triangles": 7714,
+    "vertices": 3853,
+    "materials": 2,
+    "opening_rays": [
+      {
+        "x_m": -5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.9,
+        "clear": true
+      }
+    ],
+    "positive_control_rays": [
+      {
+        "name": "left_pier",
+        "hit": true,
+        "hit_point": [
+          -7.300000190734863,
+          -0.7599258422851562,
+          3.0
+        ]
+      },
+      {
+        "name": "right_pier",
+        "hit": true,
+        "hit_point": [
+          7.300000190734863,
+          -0.7572855949401855,
+          3.0
+        ]
+      },
+      {
+        "name": "lintel",
+        "hit": true,
+        "hit_point": [
+          0.0,
+          -0.75068199634552,
+          6.900000095367432
+        ]
+      }
+    ],
+    "opening_interior_box": {
+      "requested_width_m": 12,
+      "requested_height_m": 6,
+      "numeric_inset_m": 0.001,
+      "intersecting_triangle_count": 0,
+      "intersecting_triangles_first_20": []
+    }
+  },
+  "reimported": {
+    "bounds_blender_z_up": {
+      "min": [
+        -8.5,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        8.5,
+        0.800000011920929,
+        7.800000190734863
+      ],
+      "size": [
+        17.0,
+        1.600000023841858,
+        7.800000190734863
+      ]
+    },
+    "manifold_after_1e_6m_spatial_weld": {
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0
+    },
+    "triangles": 7714,
+    "vertices": 6388,
+    "materials": 2,
+    "opening_rays": [
+      {
+        "x_m": -5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.9,
+        "clear": true
+      }
+    ],
+    "positive_control_rays": [
+      {
+        "name": "left_pier",
+        "hit": true,
+        "hit_point": [
+          -7.300000190734863,
+          -0.7599258422851562,
+          3.0
+        ]
+      },
+      {
+        "name": "right_pier",
+        "hit": true,
+        "hit_point": [
+          7.300000190734863,
+          -0.7572855949401855,
+          3.0
+        ]
+      },
+      {
+        "name": "lintel",
+        "hit": true,
+        "hit_point": [
+          0.0,
+          -0.75068199634552,
+          6.900000095367432
+        ]
+      }
+    ],
+    "opening_interior_box": {
+      "requested_width_m": 12,
+      "requested_height_m": 6,
+      "numeric_inset_m": 0.001,
+      "intersecting_triangle_count": 0,
+      "intersecting_triangles_first_20": []
+    }
+  },
+  "output": {
+    "file": "runtime-web.glb",
+    "bytes": 15767220,
+    "sha256": "e755533934327b5242fe266931b6f6e7e150f53e1378f0814389f728f279e015"
+  },
+  "limitations": [
+    "Source geometry is deliberately changed; no original shape fidelity claim",
+    "Interior volume SAT and sparse visual-mesh rays are geometry checks, not Godot collision/navigation/capsule approval",
+    "No self-intersection, production lighting, texture-density, target hardware or final AAA quality approval"
+  ],
+  "archival_note": "Only paths/archival context were normalized while copying this completed report; the selected final GLB was copied without geometry changes."
+}

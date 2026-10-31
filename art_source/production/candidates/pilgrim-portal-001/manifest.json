@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "asset_id": "pilgrim_portal",
+  "candidate_id": "pilgrim-portal-001",
+  "created_on": "2026-10-31",
+  "provider": "VARCO official MCP",
+  "point_usage": 200,
+  "provider_license_setting": "PRIVATE",
+  "provider_task_id": "6939fd9a-7994-4ad5-bb8e-a2c2414ec003",
+  "source_reference_task_id": null,
+  "status": "canonical_static_prop_archived_and_selected_for_game_pending_final_scene_art_acceptance",
+  "source_file": "source.glb",
+  "source_bytes": 16041620,
+  "source_sha256": "000b7fdb32da8cd32b6b085e066db903c78864f9dc0fb704e0b744820aefd01b",
+  "runtime_file": "runtime-web.glb",
+  "runtime_derivation_report": "runtime-web.derivation.json",
+  "runtime_replacement": true,
+  "runtime_scope": "Static prop only; not a character skin/motion replacement or final AAA quality approval",
+  "visual_approval": false,
+  "gameplay_or_target_hardware_approval_by_archive": false,
+  "runtime_selection": {
+    "game_asset": "game/assets/models/production/pilgrim_gateway.glb",
+    "sha256": "e755533934327b5242fe266931b6f6e7e150f53e1378f0814389f728f279e015",
+    "bytes": 15767220,
+    "archive_matches_game_asset": true
+  },
+  "source_reference_id": "pilgrim_portal_wide",
+  "review_sets": {
+    "source": {
+      "available": true,
+      "directory": "source-review",
+      "asset_file": "source.glb",
+      "views": [
+        "front",
+        "side",
+        "back"
+      ],
+      "metadata": "source-review/review.json"
+    },
+    "runtime": {
+      "available": true,
+      "directory": "runtime-review",
+      "asset_file": "runtime-web.glb",
+      "views": [
+        "front",
+        "side",
+        "back"
+      ],
+      "metadata": "runtime-review/review.json"
+    }
+  },
+  "derivation_lineage": {
+    "kind": "Front section crop, closed rear caps, authored dimensional/opening fit and explicit triangulation of the original generated source",
+    "script": "../../batches/2026-10-31/derive_portal.py",
+    "source_original_retained": true,
+    "intermediate_derived_portal_not_archived": true,
+    "material_policy": "Original loop UVs and PBR materials retained on original faces; new rear cut caps have a separate untextured rough limestone material and require visual review"
+  },
+  "source_triangles": 20000,
+  "runtime_triangles": 7714,
+  "runtime_materials": 2,
+  "canonical_geometry_contract": {
+    "bounds_blender_z_up": {
+      "min": [
+        -8.5,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        8.5,
+        0.800000011920929,
+        7.800000190734863
+      ],
+      "size": [
+        17.0,
+        1.600000023841858,
+        7.800000190734863
+      ]
+    },
+    "manifold_after_1e_6m_spatial_weld": {
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0
+    },
+    "triangles": 7714,
+    "vertices": 6388,
+    "materials": 2,
+    "opening_rays": [
+      {
+        "x_m": -5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -5.9,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": -2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 0.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 2.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 4.0,
+        "z_m": 5.9,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 0.3,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 1.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 2.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 3.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 4.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.0,
+        "clear": true
+      },
+      {
+        "x_m": 5.9,
+        "z_m": 5.9,
+        "clear": true
+      }
+    ],
+    "positive_control_rays": [
+      {
+        "name": "left_pier",
+        "hit": true,
+        "hit_point": [
+          -7.300000190734863,
+          -0.7599258422851562,
+          3.0
+        ]
+      },
+      {
+        "name": "right_pier",
+        "hit": true,
+        "hit_point": [
+          7.300000190734863,
+          -0.7572855949401855,
+          3.0
+        ]
+      },
+      {
+        "name": "lintel",
+        "hit": true,
+        "hit_point": [
+          0.0,
+          -0.75068199634552,
+          6.900000095367432
+        ]
+      }
+    ],
+    "opening_interior_box": {
+      "requested_width_m": 12,
+      "requested_height_m": 6,
+      "numeric_inset_m": 0.001,
+      "intersecting_triangle_count": 0,
+      "intersecting_triangles_first_20": []
+    }
+  },
+  "web_triangle_budget": {
+    "target": 12000,
+    "measured": 7714,
+    "met": true,
+    "excess": 0
+  },
+  "local_blender_derivation_point_usage": 0,
+  "source_geometry_review": {
+    "shape_issue": "Generated original has depth almost equal to width and required front-section extraction; do not install source.glb as the thin game gate.",
+    "source_review_scope": "Original source review is retained separately from selected final runtime review."
+  },
+  "remaining_review": [
+    "The final fit has a distinct rough untextured limestone cap material on new cut surfaces; inspect rear/side appearance in production lighting.",
+    "Read-only mesh opening rays/volume checks do not independently approve actual actor capsule, navigation, scripted lock collider or gameplay.",
+    "Review actual scene materials and target-hardware frame time."
+  ],
+  "derived_files": [
+    {
+      "file": "runtime-review/back.png",
+      "bytes": 313339,
+      "sha256": "148e229e66952acf8103f6ed374dcab63b66d8077780cc3b84fe4bea8edf9b8c"
+    },
+    {
+      "file": "runtime-review/front.png",
+      "bytes": 315448,
+      "sha256": "4d3bc258b9380caf64465cf8cf7a03e2c6ac5a5eb7c0105d5837d0af7d6c2761"
+    },
+    {
+      "file": "runtime-review/review.json",
+      "bytes": 2752,
+      "sha256": "4af794c2bfbf7ebd9c55a4a422c63b8960849fc4bb2b3f111b708d8cbf514921"
+    },
+    {
+      "file": "runtime-review/side.png",
+      "bytes": 310086,
+      "sha256": "fb92e288cb0aaec109e861f2981e3e0751128d4593a701ad0532476ead28e2e2"
+    },
+    {
+      "file": "runtime-web.derivation.json",
+      "bytes": 13382,
+      "sha256": "962e9b90ccafce6a186c1544fe5a341bfa3d475481571fa3e2e02b5960419ddf"
+    },
+    {
+      "file": "runtime-web.glb",
+      "bytes": 15767220,
+      "sha256": "e755533934327b5242fe266931b6f6e7e150f53e1378f0814389f728f279e015"
+    },
+    {
+      "file": "source-review/back.png",
+      "bytes": 318462,
+      "sha256": "d4746f9e105bbc8df830698e6a472a3eb9bfc8233c5d15c30ca889810eac4c6a"
+    },
+    {
+      "file": "source-review/front.png",
+      "bytes": 316367,
+      "sha256": "a470587c95ac8c1132d5aca3854612012c8c254e5b00d293be283038d97d5425"
+    },
+    {
+      "file": "source-review/review.json",
+      "bytes": 2707,
+      "sha256": "cf360de7502b800a8ee4816852dcc1604eb08b3956d4f4ea8f76dde9c62867f7"
+    },
+    {
+      "file": "source-review/side.png",
+      "bytes": 319838,
+      "sha256": "718ace7bf678a37ccfbe5a5deb8ef202777fc3edfe87ce96b14362f80d0013da"
+    }
+  ],
+  "provider_node_id": "05364b4c-ee69-43ab-bd97-320bdcc34e9b",
+  "provider_task_recovery": "Fresh official Codex MCP get_output_downloads for the completed node; no paid rerun"
+}

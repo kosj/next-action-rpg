@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-web-001",
+  "created_on": "2026-10-31",
+  "status": "web_rig_and_source_motion_library_candidate_pending_gameplay_review",
+  "provider": "VARCO official MCP",
+  "source_file": "source.glb",
+  "source_bytes": 14110392,
+  "source_sha256": "152644f233430352815273166a14600eed7a910ea8f48147ee3019721f375ce1",
+  "runtime_replacement": false,
+  "visual_approval": false,
+  "provider_task_id": "115aaa98-e3d4-4633-96d5-1b838817242a",
+  "point_usage": 0,
+  "triangles": 32000,
+  "skins": 0,
+  "clips": 0,
+  "remaining_review": [
+    "Edit the six required combat clips against actual gameplay strike windows; candidate-prefixed stock clips are source samples only.",
+    "Review full-interval skin deformation, foot contact, loop seams, facing, weapon grip, BoneMap and transitions in the actual scene.",
+    "Review shoulders, fingers, cloth intersections and rebaked materials; no final visual or target-hardware performance approval."
+  ],
+  "counts_scope": "Top-level triangles/skins/clips describe the retained original static source.glb. Rigged and prepared derivatives have separate counts below.",
+  "rigging_status": "53-bone provider rig generated and structurally inspected; deformation quality not approved",
+  "rigged_derivative": {
+    "file": "rigged-source.glb",
+    "triangles": 32000,
+    "skins": 1,
+    "bones": 53,
+    "clips": 0,
+    "scale_and_floor": "Provider export retained unchanged; use the prepared library for measured height/floor."
+  },
+  "prepared_motion_library": {
+    "file": "motion-library.glb",
+    "preparation": "motion-library.preparation.json",
+    "validation": "motion-library-validation.json",
+    "inspection": "motion-library-inspection.json",
+    "triangles": 32000,
+    "skins": 1,
+    "bones": 53,
+    "clips": [
+      "candidate_combo_slash",
+      "candidate_cross_block",
+      "candidate_double_slash",
+      "candidate_hit_fall",
+      "candidate_left_sidestep",
+      "candidate_light_hit_back",
+      "candidate_right_sidestep",
+      "candidate_sword_slash",
+      "idle",
+      "RESET",
+      "run",
+      "walk"
+    ],
+    "locomotion_candidates": [
+      "idle",
+      "walk",
+      "run"
+    ],
+    "additional_source_candidates": [
+      "candidate_sword_slash",
+      "candidate_double_slash",
+      "candidate_combo_slash",
+      "candidate_cross_block",
+      "candidate_left_sidestep",
+      "candidate_right_sidestep",
+      "candidate_light_hit_back",
+      "candidate_hit_fall"
+    ],
+    "gameplay_contract_approved": false,
+    "gameplay_clips_still_missing": [
+      "dodge",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "hit"
+    ]
+  },
+  "raw_motion_source_status": {
+    "raw_files_archived_here": false,
+    "reason": "Full meshes repeat in each provider motion export; retained locally with hashes and archived as one prepared library instead.",
+    "source_count": 12,
+    "all_source_hashes_unchanged": true,
+    "structurally_invalid_files": [
+      "web_lyra_idle.glb",
+      "web_lyra_candidate_double_slash.glb",
+      "web_lyra_candidate_left_sidestep.glb",
+      "web_lyra_candidate_right_sidestep.glb"
+    ],
+    "findings": "raw-source-timestamp-findings.json",
+    "inspection": "raw-source-inspection.json",
+    "warning": "Invalid provider files contain duplicate terminal timestamps with differing values. Blender-imported interpretations were resampled into the valid derivative; raw motion fidelity/timing is not approved."
+  },
+  "origin_normalization": {
+    "method": "Faithful legacy Armature.data.transform is retained when its trial stays within the original guard; otherwise heads/tails translate once with roll preserved and connected bones safely detached/restored.",
+    "rest_matrix_tolerance_unchanged": 1e-05,
+    "prior_failure": "prior-motion-preparation-rejection.json",
+    "diagnosis": "origin-rest-diagnosis-before-stable-translation.json",
+    "legacy_byte_baseline_and_incompatible_rest_rejection": "stable-origin-guards-validation.json",
+    "blender_rest_height_m": 1.8200000524520874,
+    "blender_rest_floor_z_m": -3.5762786865234375e-07,
+    "max_sampled_source_target_vertex_error_m": 8.153903811280232e-07
+  },
+  "godot_import_audit": {
+    "file": "godot-audit-motion-library.json",
+    "status": "passed",
+    "engine": "4.7.2-stable (official)",
+    "cpu_skinned_rest_height_m": 1.8199856877327,
+    "cpu_skinned_rest_floor_y_m": 1.40070915222168e-05,
+    "rest_measurement_tolerance_m": 0.0001,
+    "loop_modes": "NONE for every imported clip; seamless loops are unapproved",
+    "visual_or_gameplay_approval": false
+  },
+  "derived_files": [
+    {
+      "file": "rigged-source.glb",
+      "bytes": 14744160,
+      "sha256": "94e3f7fbeabbe0a784a1c151eb94ed995e7245d26710e37fffbdb00cce9ad9d2"
+    },
+    {
+      "file": "motion-library.glb",
+      "bytes": 18279128,
+      "sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362"
+    },
+    {
+      "file": "rigged-source-inspection.json",
+      "bytes": 2763,
+      "sha256": "c5d46acdc0a432ac2167276287ba2dee06fdb5e809cb4ba37651c306ec5b0490"
+    },
+    {
+      "file": "motion-library-inspection.json",
+      "bytes": 4374,
+      "sha256": "be31bce16caf8691ece82b6078dedb86e2a28abd27c51d9a73ca4cc96790450e"
+    },
+    {
+      "file": "motion-library.preparation.json",
+      "bytes": 36320,
+      "sha256": "b549ad7a0cebaeace4bd8472b3f08309a5c0ed19392387baf0ef7b195adeea9b"
+    },
+    {
+      "file": "motion-library-validation.json",
+      "bytes": 9640,
+      "sha256": "e556beb2a1904d658f973d5e8b2b082a91899fe3c5d9e83279400497143c9617"
+    },
+    {
+      "file": "raw-source-inspection.json",
+      "bytes": 27632,
+      "sha256": "4b132eb6d7c5388d9a37501a2db27d121774019b5b495a48691a48153afeeb40"
+    },
+    {
+      "file": "raw-source-timestamp-findings.json",
+      "bytes": 46236,
+      "sha256": "e7285d9149757beb451a7a288e5d072234b682e4b52ad8e43a81477a9f43ae2a"
+    },
+    {
+      "file": "origin-rest-diagnosis-before-stable-translation.json",
+      "bytes": 17144,
+      "sha256": "29e16cc95ff20e5f7dc47380ac14137a34042f07d6067b38af0ec6c3baa94dbb"
+    },
+    {
+      "file": "prior-motion-preparation-rejection.json",
+      "bytes": 4239,
+      "sha256": "4132b2643d37973a4905d460f979f7298aa2d5971b06f035a46f957bf183ca53"
+    },
+    {
+      "file": "stable-origin-guards-validation.json",
+      "bytes": 1288,
+      "sha256": "48e4645808345492961142714a1e9fa29db42191bf0ada2a60a93b6870714249"
+    },
+    {
+      "file": "godot-audit-motion-library.gd",
+      "bytes": 8299,
+      "sha256": "967df6147a1a2d6bc14743c8f08a30ccc96dd43638f74e39037d4c42b517b08f"
+    },
+    {
+      "file": "godot-audit-motion-library.json",
+      "bytes": 12055,
+      "sha256": "69fbadfbb2a6ebdf8383e2b1b513de1c3e7beeb1f874979c83e4345163420f92"
+    },
+    {
+      "file": "godot-audit-motion-library-import.log",
+      "bytes": 1320,
+      "sha256": "00e36d9a5c80529a6e8c4347e49b9cd2f03ad90d9d9fd72caf0333763bc13828"
+    },
+    {
+      "file": "godot-audit-motion-library-runtime.log",
+      "bytes": 142,
+      "sha256": "d51df6cd216488e3134974d6719b621cc17a7b750e8a3b9eac34519825da1d09"
+    }
+  ]
+}

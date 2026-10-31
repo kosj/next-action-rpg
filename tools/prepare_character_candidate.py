@@ -7,7 +7,10 @@ blender -b --factory-startup --python tools/prepare_character_candidate.py -- \
 Only bone pose FCurves are transferred. --normalize-origin-translation permits
 an offset only after matching topology, named weights, rest linear transforms
 and a common bone/mesh translation are proved, followed by sampled pose checks.
-The result has idle, walk, run and a generated bind-pose RESET, not nine clips.
+The required inputs remain idle, walk and run. Optional source samples can be
+added with --candidate-motion candidate_sword_slash=slash.glb. Their namespaced
+clips are not gameplay states; the result does not complete the nine-clip
+gameplay contract or approve combat timing. A bind-pose RESET is generated.
 """
 import argparse
 import ast
@@ -26,6 +29,9 @@ import bpy
 from mathutils import Matrix, Vector
 
 STATES = {"idle", "walk", "run"}
+LOCOMOTION_ORDER = ("idle", "walk", "run")
+CANDIDATE_NAME = re.compile(r"candidate_([a-z][a-z0-9]*(?:_[a-z0-9]+)*)\Z")
+GAMEPLAY_STATE_NAMES = STATES | {"dodge", "light_1", "light_2", "light_3", "parry", "hit", "RESET"}
 BONE_CURVE = re.compile(r'^pose\.bones\[("(?:\\.|[^"\\])*")\]\.(location|rotation_quaternion|rotation_euler|scale)$')
 SOURCE_HASHES = {}
 
@@ -34,6 +40,8 @@ def arguments():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", type=Path, required=True)
     parser.add_argument("--motion", action="append", default=[], metavar="STATE=GLB")
+    parser.add_argument("--candidate-motion", action="append", default=[], metavar="CANDIDATE_NAME=GLB",
+                        help="Additional unapproved source clip; name must be candidate_<lower_snake_name>, not a gameplay state")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--height", type=float, default=1.82)
     parser.add_argument("--tolerance", type=float, default=0.00001)
@@ -52,9 +60,20 @@ def arguments():
         motions[state] = Path(value).resolve(strict=True)
     if set(motions) != STATES:
         parser.error("the complete idle, walk, run candidate set is required")
+    candidate_motions = {}
+    for item in args.candidate_motion:
+        name, separator, value = item.partition("=")
+        match = CANDIDATE_NAME.fullmatch(name)
+        if (not separator or match is None or not value or name in motions or name in candidate_motions
+                or match.group(1) in GAMEPLAY_STATE_NAMES or match.group(1).upper() == "RESET"):
+            parser.error("additional source clips need unique candidate_<lower_snake_name> names, excluding gameplay state names and RESET")
+        candidate_motions[name] = Path(value).resolve(strict=True)
+    motions.update(candidate_motions)
     args.base = args.base.resolve(strict=True)
     args.output = args.output.resolve()
     args.motions = motions
+    args.candidate_motions = candidate_motions
+    args.motion_order = (*LOCOMOTION_ORDER, *candidate_motions)
     return args
 
 
@@ -193,14 +212,72 @@ def origin_proof(base_rig, source_rig, base_mesh, source_mesh, tolerance, state)
         "mesh_vertices":len(a.vertices),"mesh_polygons":len(a.polygons)}
 
 
-def canonicalize_origin(rig, mesh, delta, world_delta):
-    # Transform the data as a whole so connected bones are not moved twice.
-    rig.data.transform(Matrix.Translation(-delta))
+def translate_edit_bones_once(rig, delta):
+    """Translate heads/tails without recalculating roll or moving connected heads twice."""
+    if bpy.context.mode != "OBJECT":
+        raise ValueError("Stable origin translation requires an isolated Object-mode context")
+    selected = list(bpy.context.selected_objects)
+    active = bpy.context.view_layer.objects.active
+    try:
+        bpy.ops.object.select_all(action="DESELECT")
+        rig.select_set(True)
+        bpy.context.view_layer.objects.active = rig
+        bpy.ops.object.mode_set(mode="EDIT")
+        geometry = {bone.name:(bone.head.copy(),bone.tail.copy(),bone.roll,bone.use_connect)
+                    for bone in rig.data.edit_bones}
+        for bone in rig.data.edit_bones:
+            bone.use_connect = False
+        for bone in rig.data.edit_bones:
+            head,tail,roll,_ = geometry[bone.name]
+            bone.head = head-delta
+            bone.tail = tail-delta
+            bone.roll = roll
+        # Connected endpoints began identical and received exactly the same
+        # translation. Check that before restoring the connection constraint.
+        for bone in rig.data.edit_bones:
+            if geometry[bone.name][3]:
+                if bone.parent is None or (bone.head-bone.parent.tail).length > 0.0000001:
+                    raise ValueError("Uniform translation separated a connected bone: " + bone.name)
+                bone.use_connect = True
+    finally:
+        if rig.mode == "EDIT":
+            bpy.ops.object.mode_set(mode="OBJECT")
+        bpy.ops.object.select_all(action="DESELECT")
+        for obj in selected:
+            obj.select_set(True)
+        bpy.context.view_layer.objects.active = active
+
+
+def canonicalize_origin(rig, mesh, delta, world_delta, tolerance=0.00001, canonical_rig=None):
+    expected = {bone.name:Matrix.Translation(-delta)@bone.matrix_local for bone in rig.data.bones}
+    # Armature.transform() can reconstruct a bone's roll even for a pure
+    # translation. Trial it on unused data so legacy inputs keep their exact
+    # result when it is faithful, while affected rigs avoid that reconstruction.
+    trial = rig.data.copy()
+    try:
+        trial.transform(Matrix.Translation(-delta))
+        trial_error = max(matrix_error(expected[bone.name],bone.matrix_local) for bone in trial.bones)
+        trial_alignment_error = max((matrix_error(canonical_rig.data.bones[bone.name].matrix_local,bone.matrix_local)
+                                     for bone in trial.bones),default=0.0) if canonical_rig else 0.0
+    finally:
+        bpy.data.armatures.remove(trial)
+    stable = max(trial_error,trial_alignment_error) > tolerance
+    if stable:
+        translate_edit_bones_once(rig,delta)
+    else:
+        rig.data.transform(Matrix.Translation(-delta))
+    applied_error = max(matrix_error(expected[bone.name],bone.matrix_local) for bone in rig.data.bones)
+    if applied_error > tolerance:
+        raise ValueError("Uniform origin translation changed rest transforms beyond the unchanged tolerance")
     mesh_delta = mesh.matrix_world.inverted().to_3x3() @ world_delta
     mesh.data.transform(Matrix.Translation(-mesh_delta))
     mesh.data.update()
     rig.data.update_tag()
     bpy.context.view_layer.update()
+    return {"method":"disconnected_edit_bone_translation" if stable else "armature_data_translation",
+            "trial_roundtrip_matrix_error_max":trial_error,"trial_canonical_rest_error_max":trial_alignment_error,
+            "applied_roundtrip_matrix_error_max":applied_error,"tolerance":tolerance,
+            "connected_bones_detached_and_restored":stable}
 
 
 def pose_samples(rig, mesh, action):
@@ -322,7 +399,7 @@ def main():
     original_bounds = rest_bounds(base_objects)
     reports = {}
     merged = []
-    for state in ("idle", "walk", "run"):
+    for state in args.motion_order:
         objects, actions = import_asset(args.motions[state])
         source_rig = armature(objects, state)
         source_objects, _ = without_helpers(objects,source_rig)
@@ -330,10 +407,11 @@ def main():
         copied, detail, source_action = transfer_action(actions, source_rig, base_rig, state)
         source_samples = pose_samples(source_rig,source_mesh,source_action)
         delta,world_delta,proof = origin_proof(base_rig,source_rig,base_mesh,source_mesh,args.tolerance,state)
+        origin_application = {"method":"not_required"}
         if delta.length > args.tolerance:
             if not args.normalize_origin_translation:
                 raise ValueError(state + ": proven origin translation requires explicit --normalize-origin-translation")
-            canonicalize_origin(source_rig,source_mesh,delta,world_delta)
+            origin_application = canonicalize_origin(source_rig,source_mesh,delta,world_delta,args.tolerance,base_rig)
         error = compare_rigs(base_rig, source_rig, args.tolerance, state)
         _,_,after_proof = origin_proof(base_rig,source_rig,base_mesh,source_mesh,args.tolerance,state)
         normalized_samples = pose_samples(source_rig,source_mesh,source_action)
@@ -358,8 +436,11 @@ def main():
         if copied.name != state:
             raise ValueError("Action name collision: " + state)
         merged.append(copied)
-        reports[state] = {**detail, "source":str(args.motions[state]), "rest_matrix_error_max":error,
+        reports[state] = {**detail, "source":str(args.motions[state]),
+                         "candidate_role":"additional_source_motion" if state in args.candidate_motions else "locomotion_source",
+                         "gameplay_state_mapping":None, "rest_matrix_error_max":error,
                          "origin_normalization":proof,"normalized_strict_proof":after_proof,
+                         "origin_translation_application":origin_application,
                          "origin_translation_applied_in_memory":delta.length > args.tolerance,
                          "sample_fractions":[0.0,0.5,1.0],"source_to_target_vertex_errors":pose_errors,
                          "source_to_normalized_vertex_errors":normalized_errors,"pose_validation_tolerance":0.0001}
@@ -402,8 +483,9 @@ def main():
         bpy.ops.export_scene.gltf(**flags)
         exported = glb_json(staged)
         names = [animation.get("name", "") for animation in exported.get("animations", [])]
-        if set(names) != STATES|{"RESET"} or len(names) != 4 or not exported.get("skins"):
-            raise ValueError("Exporter did not preserve exactly idle/walk/run/RESET and a skin: " + repr(names))
+        expected_names = set(args.motions)|{"RESET"}
+        if set(names) != expected_names or len(names) != len(expected_names) or not exported.get("skins"):
+            raise ValueError("Exporter did not preserve exactly the requested candidate clips/RESET and a skin: " + repr(names))
         generated_objects, _ = import_asset(staged)
         generated_rig = armature(generated_objects,"reimported candidate")
         generated_objects, _ = without_helpers(generated_objects,generated_rig)
@@ -426,11 +508,17 @@ def main():
                             "reimported_rest_m":verified_bounds["height"],"bounds":verified_bounds,"recentered_xy":False,
                             "ground_rest_feet":args.ground_rest_feet,"wrapper_translation_blender":[0.0,0.0,grounding_offset]},
                   "bones":len(base_rig.data.bones),"motions":reports,"exported_clips":names,
+                  "motion_sets":{"locomotion_candidates":list(LOCOMOTION_ORDER),
+                                 "additional_source_candidates":list(args.candidate_motions),
+                                 "gameplay_contract_approved":False},
                   "reset":"Generated identity bone pose curves, two identical keys at frames 0 and 1; not an extra motion",
                   "export_flags":{key:value for key,value in flags.items() if key!="filepath"},
                   "loop_configuration":"glTF has no standard loop flag. Inspect foot/root seams, then configure Godot idle/walk/run loop modes; RESET must not loop",
-                  "output_sha256":digest(staged), "limitations":["Only three locomotion candidates; the nine required gameplay clips are not complete",
+                  "output_sha256":digest(staged), "limitations":[
+                      ("Three locomotion candidates plus %d additional source motion candidates; the nine required gameplay clips are not complete" % len(args.candidate_motions))
+                      if args.candidate_motions else "Only three locomotion candidates; the nine required gameplay clips are not complete",
                       "Bone pose curves and matching rest transforms do not prove foot contact, seamless loops, visual quality or gameplay timing",
+                      "Additional source candidates retain imported durations; they are not retimed, edited or mapped to gameplay states",
                       "No object root-motion curves or gameplay events were added"]}
         staged_report = Path(staging)/report_path.name
         staged_report.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -448,7 +536,7 @@ if __name__ == "__main__":
     try:
         main()
     except SystemExit as error:
-        exit_code = int(error.code or 0)
+        exit_code = 0 if error.code in (None, 0) else 1
     except Exception:
         traceback.print_exc()
         exit_code = 1

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified.",
+  "files": [
+    {
+      "path": "source.glb",
+      "bytes": 15653960,
+      "sha256": "ccf37c6709c44ff75ef1cb4afdec592cc8165f109c49ffbe3e411f0b4707ea28",
+      "structurally_valid": true,
+      "requirements_met": true,
+      "errors": [],
+      "counts": {
+        "nodes": 1,
+        "meshes": 1,
+        "mesh_primitives": 1,
+        "mesh_triangles": 42000,
+        "materials": 1,
+        "skins": 0,
+        "skinned_mesh_nodes": 0,
+        "animations": 0
+      },
+      "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+      "node_names": [
+        "texture_mapping"
+      ],
+      "animations": [],
+      "resources": [
+        {
+          "type": "buffer",
+          "index": 0,
+          "storage": "bin_chunk",
+          "declared_bytes": 15652380
+        },
+        {
+          "type": "image",
+          "index": 0,
+          "storage": "buffer_view",
+          "bytes_available": 5181291
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "storage": "buffer_view",
+          "bytes_available": 3432086
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "storage": "buffer_view",
+          "bytes_available": 5683221
+        }
+      ],
+      "all_resource_bytes_available": true,
+      "warnings": [],
+      "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+    }
+  ]
+}

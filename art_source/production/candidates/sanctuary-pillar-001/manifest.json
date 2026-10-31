@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "asset_id": "sanctuary_pillar",
+  "candidate_id": "sanctuary-pillar-001",
+  "created_on": "2026-10-31",
+  "status": "canonical_static_prop_archived_and_selected_for_game_pending_final_scene_art_acceptance",
+  "provider": "VARCO official MCP",
+  "source_file": "source.glb",
+  "source_bytes": 10932584,
+  "source_sha256": "92372b69fb1442314e0eaf60b8c048003a1f046ed9c8d79291ee0c75278e38f9",
+  "runtime_replacement": true,
+  "visual_approval": false,
+  "provider_task_id": "02d34023-a679-497e-80e6-093906f73472",
+  "point_usage": 200,
+  "provider_license_setting": "PRIVATE",
+  "source_reference_task_id": null,
+  "parameters": {
+    "count": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "polygonCount": [
+      {
+        "type": "int",
+        "value": 12000
+      }
+    ],
+    "topology": [
+      {
+        "type": "string",
+        "value": "tri"
+      }
+    ],
+    "tPose": [
+      {
+        "type": "int",
+        "value": 0
+      }
+    ],
+    "useAlpha": [
+      {
+        "type": "int",
+        "value": 0
+      }
+    ],
+    "usePbrTexture": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "textureSize": [
+      {
+        "type": "int",
+        "value": 2048
+      }
+    ],
+    "generateTexture": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "license": [
+      {
+        "type": "string",
+        "value": "PRIVATE"
+      }
+    ]
+  },
+  "remaining_review": [
+    "Web geometry remains6122 triangles against a6000 target; this122-triangle excess is retained and reported.",
+    "Nonuniform static vertex fitting preserved source corner UVs but changes texel density/proportions; review material response and modular placement.",
+    "Review collision/culling and target-hardware frame time; the web Remesh file was larger than the generated original."
+  ],
+  "runtime_file": "runtime-web.glb",
+  "runtime_derivation_report": "runtime-web.derivation.json",
+  "runtime_scope": "Static prop only; not a character skin/motion replacement or final AAA quality approval",
+  "gameplay_or_target_hardware_approval_by_archive": false,
+  "runtime_selection": {
+    "game_asset": "game/assets/models/production/sanctuary_pillar_web.glb",
+    "sha256": "8dead5c2a8b7512923b88cce02c6775d1c85c9918d47c57ab0c56e0c870cb607",
+    "bytes": 11232228,
+    "archive_matches_game_asset": true
+  },
+  "source_reference_id": "sanctuary_pillar",
+  "review_sets": {
+    "source": {
+      "available": true,
+      "directory": "source-review",
+      "asset_file": "source.glb",
+      "views": [
+        "front",
+        "side",
+        "back"
+      ],
+      "metadata": "source-review/review.json"
+    },
+    "runtime": {
+      "available": true,
+      "directory": "runtime-review",
+      "asset_file": "runtime-web.glb",
+      "views": [
+        "front"
+      ],
+      "metadata": "runtime-review/review.json"
+    }
+  },
+  "derivation_lineage": {
+    "kind": "VARCO free web Remesh, then static canonical Blender vertex bake",
+    "remesh_intermediate_retained": false,
+    "intermediate_provider_task_id": null,
+    "intermediate_bytes": 11161352,
+    "intermediate_sha256": "50b79790c4a9b909ee44011ca45fa78fe3e21beeed5cbcbb2587b745006ba50c",
+    "script": "../../batches/2026-10-31/derive_props.py",
+    "uv_corner_correspondence": {
+      "matched_triangles": 6122,
+      "max_corner_position_error_m": 0.0,
+      "max_corner_uv_error": 0.0,
+      "position_tolerance_m": 1e-05,
+      "uv_tolerance": 1e-07,
+      "method": "Bijective triangle/corner position and UV matching after export/reimport"
+    },
+    "normal_tangent_check": {
+      "normal_tangent_vertices": 4399,
+      "max_normal_length_error": 1.4225951305846252e-07,
+      "max_tangent_length_or_handedness_error": 6.99044917769065e-05,
+      "max_normal_tangent_dot": 0.00011524371802806854,
+      "tolerance": 0.001,
+      "normal_tangent_recalculated": true
+    }
+  },
+  "source_triangles": 12000,
+  "runtime_triangles": 6122,
+  "runtime_materials": 1,
+  "canonical_geometry_contract": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.7999999523162842,
+        -0.800000011920929,
+        0.0
+      ],
+      "max": [
+        0.7999999523162842,
+        0.800000011920929,
+        7.0
+      ],
+      "size": [
+        1.5999999046325684,
+        1.600000023841858,
+        7.0
+      ]
+    },
+    "markers": {},
+    "numeric_contract_errors": {
+      "size_x_m": 9.536743172944284e-08,
+      "size_y_m": 2.3841857821338408e-08,
+      "size_z_m": 0.0,
+      "floor_z_m": 0.0,
+      "center_x_m": 0.0,
+      "center_y_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "web_triangle_budget": {
+    "target": 6000,
+    "measured": 6122,
+    "met": false,
+    "excess": 122
+  },
+  "local_blender_derivation_point_usage": 0,
+  "derived_files": [
+    {
+      "file": "runtime-review/front.png",
+      "bytes": 297159,
+      "sha256": "1ecb2ce26e169c7dc9c00c252f49985ab62409ce6f2cdf60f95b3cf75d3483d5"
+    },
+    {
+      "file": "runtime-review/review.json",
+      "bytes": 2237,
+      "sha256": "8a93e460edd9550c9ea4dc493f8d511f09709d4946a9e12a3b669217df6300a1"
+    },
+    {
+      "file": "runtime-web.derivation.json",
+      "bytes": 5817,
+      "sha256": "ad949ed40f2953be03de35e3e578337479c6182de5fdd4393dd4f7d38eccc924"
+    },
+    {
+      "file": "runtime-web.glb",
+      "bytes": 11232228,
+      "sha256": "8dead5c2a8b7512923b88cce02c6775d1c85c9918d47c57ab0c56e0c870cb607"
+    },
+    {
+      "file": "source-review/back.png",
+      "bytes": 298259,
+      "sha256": "48c40fff8a2b843fe2da4f18149ea9c89719fca94f833c08a182895c89a003cd"
+    },
+    {
+      "file": "source-review/front.png",
+      "bytes": 303624,
+      "sha256": "c4c9b87c4e8dc56f6f59c38664b434df33c8acdb2ffbb0a74c9feec12ca29ebc"
+    },
+    {
+      "file": "source-review/review.json",
+      "bytes": 2879,
+      "sha256": "d54440845148575510c015977edd9cdc742be8e5a85e8d66f07d6b84983cdd66"
+    },
+    {
+      "file": "source-review/side.png",
+      "bytes": 296499,
+      "sha256": "11695da228a2ae8c9b85975f364de31800c9716779ad94a99bcb984048429fc0"
+    }
+  ]
+}

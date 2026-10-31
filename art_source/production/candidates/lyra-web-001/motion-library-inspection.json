@@ -1,0 +1,180 @@
+{
+  "path": "art_source/production/candidates/lyra-web-001/motion-library.glb",
+  "bytes": 18279128,
+  "sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "structurally_valid": true,
+  "requirements_met": true,
+  "errors": [],
+  "counts": {
+    "nodes": 56,
+    "meshes": 1,
+    "mesh_primitives": 1,
+    "mesh_triangles": 32000,
+    "materials": 1,
+    "skins": 1,
+    "skinned_mesh_nodes": 1,
+    "animations": 12
+  },
+  "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+  "node_names": [
+    "Head",
+    "Neck",
+    "HandLoRA_Bip01_L_Finger02",
+    "HandLoRA_Bip01_L_Finger01",
+    "HandLoRA_Bip01_L_Finger0",
+    "HandLoRA_Bip01_L_Finger12",
+    "HandLoRA_Bip01_L_Finger11",
+    "HandLoRA_Bip01_L_Finger1",
+    "HandLoRA_Bip01_L_Finger22",
+    "HandLoRA_Bip01_L_Finger21",
+    "HandLoRA_Bip01_L_Finger2",
+    "HandLoRA_Bip01_L_Finger32",
+    "HandLoRA_Bip01_L_Finger31",
+    "HandLoRA_Bip01_L_Finger3",
+    "HandLoRA_Bip01_L_Finger42",
+    "HandLoRA_Bip01_L_Finger41",
+    "HandLoRA_Bip01_L_Finger4",
+    "LeftHand",
+    "LeftForeArm",
+    "LeftArm",
+    "LeftShoulder",
+    "HandLoRA_Bip01_R_Finger02",
+    "HandLoRA_Bip01_R_Finger01",
+    "HandLoRA_Bip01_R_Finger0",
+    "HandLoRA_Bip01_R_Finger12",
+    "HandLoRA_Bip01_R_Finger11",
+    "HandLoRA_Bip01_R_Finger1",
+    "HandLoRA_Bip01_R_Finger22",
+    "HandLoRA_Bip01_R_Finger21",
+    "HandLoRA_Bip01_R_Finger2",
+    "HandLoRA_Bip01_R_Finger32",
+    "HandLoRA_Bip01_R_Finger31",
+    "HandLoRA_Bip01_R_Finger3",
+    "HandLoRA_Bip01_R_Finger42",
+    "HandLoRA_Bip01_R_Finger41",
+    "HandLoRA_Bip01_R_Finger4",
+    "RightHand",
+    "RightForeArm",
+    "RightArm",
+    "RightShoulder",
+    "Spine2",
+    "Spine1",
+    "Spine",
+    "LeftToeBase",
+    "LeftFoot",
+    "LeftLeg",
+    "LeftUpLeg",
+    "RightToeBase",
+    "RightFoot",
+    "RightLeg",
+    "RightUpLeg",
+    "Hips",
+    "Root",
+    "texture_mapping",
+    "Armature",
+    "CandidateUniformScale"
+  ],
+  "animations": [
+    {
+      "index": 0,
+      "name": "candidate_combo_slash",
+      "channels": 159,
+      "duration_seconds": 4.699999809265137
+    },
+    {
+      "index": 1,
+      "name": "candidate_cross_block",
+      "channels": 159,
+      "duration_seconds": 5.0
+    },
+    {
+      "index": 2,
+      "name": "candidate_double_slash",
+      "channels": 159,
+      "duration_seconds": 3.700000047683716
+    },
+    {
+      "index": 3,
+      "name": "candidate_hit_fall",
+      "channels": 159,
+      "duration_seconds": 1.7333333492279053
+    },
+    {
+      "index": 4,
+      "name": "candidate_left_sidestep",
+      "channels": 159,
+      "duration_seconds": 5.933333396911621
+    },
+    {
+      "index": 5,
+      "name": "candidate_light_hit_back",
+      "channels": 159,
+      "duration_seconds": 1.6333333253860474
+    },
+    {
+      "index": 6,
+      "name": "candidate_right_sidestep",
+      "channels": 159,
+      "duration_seconds": 5.933333396911621
+    },
+    {
+      "index": 7,
+      "name": "candidate_sword_slash",
+      "channels": 159,
+      "duration_seconds": 5.0
+    },
+    {
+      "index": 8,
+      "name": "idle",
+      "channels": 159,
+      "duration_seconds": 10.166666984558105
+    },
+    {
+      "index": 9,
+      "name": "RESET",
+      "channels": 159,
+      "duration_seconds": 0.03333333507180214
+    },
+    {
+      "index": 10,
+      "name": "run",
+      "channels": 159,
+      "duration_seconds": 1.4666666984558105
+    },
+    {
+      "index": 11,
+      "name": "walk",
+      "channels": 159,
+      "duration_seconds": 4.566666603088379
+    }
+  ],
+  "resources": [
+    {
+      "type": "buffer",
+      "index": 0,
+      "storage": "bin_chunk",
+      "declared_bytes": 17830468
+    },
+    {
+      "type": "image",
+      "index": 0,
+      "storage": "buffer_view",
+      "bytes_available": 5229499
+    },
+    {
+      "type": "image",
+      "index": 1,
+      "storage": "buffer_view",
+      "bytes_available": 3112961
+    },
+    {
+      "type": "image",
+      "index": 2,
+      "storage": "buffer_view",
+      "bytes_available": 4749806
+    }
+  ],
+  "all_resource_bytes_available": true,
+  "warnings": [],
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+}

@@ -1,0 +1,84 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T01:35:00.989879+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "../runtime-web.glb",
+    "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "bytes": 7536756,
+    "unchanged": true,
+    "historical_local_input": "build/art-candidates/batch-2026-10-31/lyra_runeblade_web_lod_canonical.glb"
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "size": 640,
+    "samples": 16,
+    "pose": "REST",
+    "denoising": false,
+    "color_management": "AgX / Base Contrast",
+    "source_rescaled": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.1375582218170166,
+      -0.03701718896627426,
+      -0.1599999964237213
+    ],
+    "max": [
+      0.13847431540489197,
+      0.038177356123924255,
+      1.190000057220459
+    ],
+    "size": [
+      0.27603253722190857,
+      0.07519454509019852,
+      1.350000023841858
+    ],
+    "center": [
+      0.0004580467939376831,
+      0.000580083578824997,
+      0.51500004529953
+    ]
+  },
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 4000,
+    "material_count_gltf": 1,
+    "material_names_blender": [
+      "material_0"
+    ],
+    "skin_count_gltf": 0,
+    "armatures_blender": [],
+    "clip_count_gltf": 0,
+    "clip_names_gltf": [],
+    "actions_blender": [],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "views": [
+    {
+      "name": "front",
+      "file": "front.png",
+      "camera_position_blender": [
+        0.0004580467939376831,
+        -5.399419784545898,
+        0.51500004529953
+      ],
+      "ortho_scale": 1.593000054359436,
+      "lights_rotate_with_view": true
+    }
+  ],
+  "limitations": [
+    "Static rest-pose render only; animation, deformation and gameplay integration require separate review",
+    "Blender source units and transforms are preserved; camera and studio adjust to the bounds",
+    "Triangle totals are imported mesh counts, not runtime draw calls or GPU performance"
+  ],
+  "archival_scope": "Selected canonical static runtime artifact; not an actual gameplay screenshot"
+}

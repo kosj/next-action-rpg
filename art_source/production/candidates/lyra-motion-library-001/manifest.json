@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-motion-library-001",
+  "created_on": "2026-10-31",
+  "status": "combined_source_motion_library_requires_authoring",
+  "provider": "VARCO official MCP and Blender derivative",
+  "source_file": "source.glb",
+  "source_bytes": 20814120,
+  "source_sha256": "35091c9898d5860f5b2d3ca5528055dd44dcf7a23576254d4339d3d54797b1d6",
+  "runtime_replacement": false,
+  "visual_approval": false,
+  "point_usage": 0,
+  "bones": 53,
+  "skins": 1,
+  "clips": 12,
+  "gameplay_motion_contract_approved": false,
+  "source_structural_pass_claim": false,
+  "motion_source_tasks": {
+    "hit_fall": {
+      "task_id": "f65397eb-dba8-4d45-a386-69d40e4edd4a",
+      "sha256": "b3949835550ae8b415f9a81a30a9ba521e4f0746b11939bddd635e0df88ac849"
+    },
+    "light_hit_back": {
+      "task_id": "385ac6a8-b78b-49fa-b155-df2868aac21c",
+      "sha256": "467acbf8334b6aada802e2cbebc5d089c85cd1d61014b8722effbc93f952c235"
+    },
+    "right_sidestep": {
+      "task_id": "9d266c8c-54cd-4875-bc0c-c2e8c6d599ba",
+      "sha256": "c2c3739c885e73b3dc3f4086a31ec2889cf1cee0feb764a9305f0d19fd2fd7e2"
+    },
+    "left_sidestep": {
+      "task_id": "85714d8e-341f-493d-9a85-f0b026a1c87b",
+      "sha256": "930e5e20d132a90b85a44ae821f4440880cde95e0546a86dbe27d9ca4e27fcdc"
+    },
+    "cross_block": {
+      "task_id": "e83eaaa2-a0aa-486e-8e9b-a984a16c544c",
+      "sha256": "3c0c0ac851897e6165397e2582bcbb04ef705c7604970b5b5b4a59e6d8e3d832"
+    },
+    "combo_slash": {
+      "task_id": "716e0f07-c660-49c5-a021-27c796d2646f",
+      "sha256": "9784c36680ef9213cfe9bc54d17050d37091313908a5755d3bec0ead620bad02"
+    },
+    "double_slash": {
+      "task_id": "5688a6e1-4679-46b0-bae5-f37e7568933d",
+      "sha256": "775155e95403fe194984d6c06711463104910c14d7ffc3d4ccc61b0c19fb3abd"
+    },
+    "sword_slash": {
+      "task_id": "a4096063-ebb1-45c1-b0cd-e5f8329f24f5",
+      "sha256": "5bdca1f799255c347d42971d38fe58a38bf7bc0839a5e839a4a1bc3e77f0ccf4"
+    }
+  },
+  "source_interpretation": "Three raw stock exports contain duplicate final timestamps with differing values. Raw originals are preserved in ignored build; this derivative samples Blender import interpretation and is structurally valid. It does not prove original source fidelity or gameplay/visual quality.",
+  "remaining_review": [
+    "Edit and retime individual strikes to actual gameplay active windows",
+    "Review weapon grip, dodge direction, root/foot contact, sparse-track transitions and loop seams",
+    "This80k body is a source review library; it does not replace the default game avatar"
+  ],
+  "derived_files": [
+    {
+      "file": "godot-audit-import.log",
+      "bytes": 1320,
+      "sha256": "00e36d9a5c80529a6e8c4347e49b9cd2f03ad90d9d9fd72caf0333763bc13828"
+    },
+    {
+      "file": "godot-audit-runtime.log",
+      "bytes": 142,
+      "sha256": "d51df6cd216488e3134974d6719b621cc17a7b750e8a3b9eac34519825da1d09"
+    },
+    {
+      "file": "godot-audit.gd",
+      "bytes": 8299,
+      "sha256": "4d5e728173c698729085e45fb05fb13167f4188dca138213506e16c52282585f"
+    },
+    {
+      "file": "godot-audit.json",
+      "bytes": 12024,
+      "sha256": "1858d21c309369eca5576f44a533b48428e9ec20a40a38afe8aea30bbfa3c8da"
+    }
+  ]
+}

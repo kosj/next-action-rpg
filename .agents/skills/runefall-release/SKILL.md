@@ -12,6 +12,7 @@ description: Build, validate, and publish RUNEFALL web or Windows distributions 
 1. `python tools/knowledge.py search --tag deployment`와 `--tag toolchain`으로 이미 확인한 제약을 찾습니다.
 2. 요청 범위·작업 트리·대상 커밋과 CI 상태를 확인합니다. 저장소 공개 범위는 사용자의 최신 결정과 실제 API 상태를 따릅니다. 과거의 비공개 유지 지침을 현재 결정으로 오인하지 않습니다.
 3. 엔진의 원본은 `tools/toolchain.json`, 게임 버전의 원본은 `game/project.godot`입니다. 동일 버전 엔진·템플릿을 준비합니다. `tools/build.py`가 버전·태그 불일치를 거부하는 계약을 유지합니다.
+4. `/tmp`의 로그·도구·중간 파일이 다음 작업까지 남거나 다른 작업자와 공유된다고 가정하지 않습니다. 장시간 검사나 유료 생성 직후에는 `/workspace`의 프로젝트 작업 루트 아래에 재개용 체크포인트를 남깁니다. 대상 커밋·판본, 완료/진행 중인 task와 실제 비용, 원본·산출물 경로 및 SHA, 재실행할 단계와 남은 검사를 구분합니다. 인증 값·계정 원문·서명된 다운로드 URL은 제외하고, 공개 근거로 남길 결과는 검토한 문서·manifest·검증 기록에 옮깁니다. 재개 시 파일과 실제 서비스 상태를 확인한 뒤 이어서 실행하며, 임시 파일 소실만으로 유료 작업을 다시 생성하지 않습니다.
 
 ## 빌드와 실행
 
@@ -22,6 +23,10 @@ python tools/check_web.py
 ```
 
 웹 전용 변경이면 `--windows` 없이 실행합니다. 실제 웹 검사는 하위 URL과 동일 프로필의 브라우저 종료·재시작을 포함합니다. 실패한 산출물을 성공 빌드로 배포하지 않습니다. Windows 내보내기 성공과 Windows 실기기 실행·성능 측정을 구분합니다.
+
+설정 UI의 완료와 브라우저의 영구 저장 완료는 별도로 확인합니다. [Godot의 웹 파일 close 콜백과 main loop](https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/os_web.cpp)는 쓰기 후 dirty flag를 세우고 다음 프레임에 비동기 IndexedDB 동기화를 시작합니다. 같은 소스의 `force_fs_sync()`도 그 flag만 세우므로 정상적인 `FileAccess.close()` 뒤에 중복 호출한 것을 저장 결함 수정으로 기록하지 않습니다. 저장 실패·rename 결함과 브라우저 종료 전 미완료 커밋을 실제 파일과 엔진 소스로 구분합니다.
+
+`browser_smoke.py`는 실제 UI로 품질을 바꾼 뒤 격리된 테스트 프로필의 IndexedDB `FILE_DATA` primary를 읽기 전용으로 조회합니다. 기대한 설정·여정·체크포인트가 커밋되는지 제한 시간 안에 조건 대기한 뒤 브라우저를 완전히 종료하고 같은 프로필에서 이어하기를 다시 검증합니다. 고정 sleep, QA 상태 변조, 테스트 측 강제 동기화로 통과시키지 않습니다. UI 상태·커밋 전후 primary·재시작 상태와 실패 screenshot/state를 함께 보관하며, 진단 실행 성공과 최종 패치가 포함된 빌드의 실행 성공을 구분합니다.
 
 ## GitHub 릴리스
 

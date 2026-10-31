@@ -1,0 +1,84 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T01:34:59.092172+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "../runtime-web.glb",
+    "sha256": "8dead5c2a8b7512923b88cce02c6775d1c85c9918d47c57ab0c56e0c870cb607",
+    "bytes": 11232228,
+    "unchanged": true,
+    "historical_local_input": "build/art-candidates/batch-2026-10-31/sanctuary_pillar_web_lod_canonical.glb"
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "size": 640,
+    "samples": 16,
+    "pose": "REST",
+    "denoising": false,
+    "color_management": "AgX / Base Contrast",
+    "source_rescaled": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.7999999523162842,
+      -0.800000011920929,
+      0.0
+    ],
+    "max": [
+      0.7999999523162842,
+      0.800000011920929,
+      7.0
+    ],
+    "size": [
+      1.5999999046325684,
+      1.600000023841858,
+      7.0
+    ],
+    "center": [
+      0.0,
+      0.0,
+      3.5
+    ]
+  },
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 6122,
+    "material_count_gltf": 1,
+    "material_names_blender": [
+      "material_0"
+    ],
+    "skin_count_gltf": 0,
+    "armatures_blender": [],
+    "clip_count_gltf": 0,
+    "clip_names_gltf": [],
+    "actions_blender": [],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "views": [
+    {
+      "name": "front",
+      "file": "front.png",
+      "camera_position_blender": [
+        0.0,
+        -28.0,
+        3.5
+      ],
+      "ortho_scale": 8.260000228881836,
+      "lights_rotate_with_view": true
+    }
+  ],
+  "limitations": [
+    "Static rest-pose render only; animation, deformation and gameplay integration require separate review",
+    "Blender source units and transforms are preserved; camera and studio adjust to the bounds",
+    "Triangle totals are imported mesh counts, not runtime draw calls or GPU performance"
+  ],
+  "archival_scope": "Selected canonical static runtime artifact; not an actual gameplay screenshot"
+}

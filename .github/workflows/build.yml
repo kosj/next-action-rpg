@@ -42,9 +42,13 @@ jobs:
           python tools/knowledge.py check
           python -m unittest discover -s tools/tests -p 'test_*.py'
           python tools/check_art_production.py
-          python tools/inspect_glb.py game/assets/models/*.glb --require-embedded
+          python tools/inspect_glb.py game/assets/models/*.glb game/assets/models/production/*.glb --require-embedded
           python tools/inspect_glb.py art_source/production/candidates/*/*.glb --require-embedded
           python tools/inspect_glb.py art_source/production/candidates/lyra-001/lyra-locomotion.glb --require-skin --require-clip idle --require-clip walk --require-clip run --require-clip RESET
+          python tools/inspect_glb.py art_source/production/candidates/lyra-motion-library-001/source.glb art_source/production/candidates/lyra-web-001/motion-library.glb --require-skin \
+            --require-clip idle --require-clip walk --require-clip run --require-clip RESET \
+            --require-clip candidate_sword_slash --require-clip candidate_double_slash --require-clip candidate_combo_slash --require-clip candidate_cross_block \
+            --require-clip candidate_left_sidestep --require-clip candidate_right_sidestep --require-clip candidate_light_hit_back --require-clip candidate_hit_fall
       - name: Read pinned engine version
         id: toolchain
         run: python -c 'import json,os; v=json.load(open("tools/toolchain.json"))["godot_version"]; print("godot="+v, file=open(os.environ["GITHUB_OUTPUT"],"a"))'

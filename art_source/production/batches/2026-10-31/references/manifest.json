@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-10-31",
+  "scope": "Generated 2D source images, not 3D models or game screenshots",
+  "references": [
+    {
+      "file": "lyra_runeblade.png",
+      "bytes": 1113849,
+      "sha256": "f4a14fe1348c14bf205d44dda25a812cb7c5511423b3da400a506abd13dc0784",
+      "reference_id": "lyra_runeblade",
+      "source_task_id": null,
+      "provider": "VARCO GenerateImage",
+      "review_status": "selected_as_3d_input_pending_model_review"
+    },
+    {
+      "file": "pilgrim_portal.png",
+      "bytes": 1645252,
+      "sha256": "beaf80c62287d21da6f0f72f2b5bc843ef028a585f2867bd31d04444a16931c6",
+      "reference_id": "pilgrim_portal",
+      "source_task_id": null,
+      "provider": "VARCO GenerateImage",
+      "review_status": "rejected_narrow_proportions"
+    },
+    {
+      "file": "sanctuary_pillar.png",
+      "bytes": 1260927,
+      "sha256": "a698e05a3ad9845ddfd32f298f0da695630267c732a70f7f499381cf658214a4",
+      "reference_id": "sanctuary_pillar",
+      "source_task_id": null,
+      "provider": "VARCO GenerateImage",
+      "review_status": "selected_as_3d_input_pending_model_review"
+    },
+    {
+      "file": "pilgrim_portal_wide.png",
+      "bytes": 1846929,
+      "sha256": "c22fdf5b0213324e8696ce21af5e01b4b93be9488abf89d0613b62167706bab6",
+      "reference_id": "pilgrim_portal_wide",
+      "source_task_id": null,
+      "provider": "VARCO GenerateImage",
+      "review_status": "selected_as_3d_input_pending_model_review"
+    }
+  ]
+}

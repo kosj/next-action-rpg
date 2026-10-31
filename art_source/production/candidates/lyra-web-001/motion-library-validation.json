@@ -1,0 +1,246 @@
+{
+  "status": "prepared_derivative_passed_with_raw_source_status_separated",
+  "blender_returncode": 0,
+  "elapsed_seconds": 26.338247099,
+  "source_set": "New 32,000-triangle body only; no 80k body source mixed in",
+  "source_count": 12,
+  "source_hashes_before": {
+    "rigged-source.glb": "94e3f7fbeabbe0a784a1c151eb94ed995e7245d26710e37fffbdb00cce9ad9d2",
+    "build/art-candidates/batch-2026-10-31/web_lyra_idle.glb": "2a167af556b6a39daa28276925b7bedb0e58eea1360597c83bd7368d4e523709",
+    "build/art-candidates/batch-2026-10-31/web_lyra_walk.glb": "dd12c6653e755e36ea91ffebf49d00adfafd3b4179ec58a46ffc1659b349ea0d",
+    "build/art-candidates/batch-2026-10-31/web_lyra_run.glb": "1475ffe04383fdea46ea7f30b2b19406b39fda82186758bf509f1fe47ec0a906",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_sword_slash.glb": "a4c2fc1a3c0e578500a136dade486c88747632022f267b9ae87a0ae94e9979bc",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_double_slash.glb": "dcbe393314fb39a878697378d337516ecc4523b7ff828a343c927aab632a0d0a",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_combo_slash.glb": "a56863c73cce48b6842ce0c3a3b606cebfed7f8446c7ab15956922b4b32bc9b6",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_cross_block.glb": "8194bef262de2f65c95189b18075c35f4b4330bc3551a971613aad091a2ef86a",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_left_sidestep.glb": "545f3f3c3ce4f37fa2d690fee9552ae305fb0f55c52d34ec24508746bb5490af",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_right_sidestep.glb": "62165dae9aad0591d7468ff045310e33625bfc86076058c9d1bfbd57be515139",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_light_hit_back.glb": "886cd2ab501e69eb23ffb83c6e812b53eef170fab26db4ec47099e11e92dee9c",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_hit_fall.glb": "49b06f2b968cdfad5b22475e9ef296a48d72901ee16590e6fa06986e53d7d40d"
+  },
+  "source_hashes_after": {
+    "rigged-source.glb": "94e3f7fbeabbe0a784a1c151eb94ed995e7245d26710e37fffbdb00cce9ad9d2",
+    "build/art-candidates/batch-2026-10-31/web_lyra_idle.glb": "2a167af556b6a39daa28276925b7bedb0e58eea1360597c83bd7368d4e523709",
+    "build/art-candidates/batch-2026-10-31/web_lyra_walk.glb": "dd12c6653e755e36ea91ffebf49d00adfafd3b4179ec58a46ffc1659b349ea0d",
+    "build/art-candidates/batch-2026-10-31/web_lyra_run.glb": "1475ffe04383fdea46ea7f30b2b19406b39fda82186758bf509f1fe47ec0a906",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_sword_slash.glb": "a4c2fc1a3c0e578500a136dade486c88747632022f267b9ae87a0ae94e9979bc",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_double_slash.glb": "dcbe393314fb39a878697378d337516ecc4523b7ff828a343c927aab632a0d0a",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_combo_slash.glb": "a56863c73cce48b6842ce0c3a3b606cebfed7f8446c7ab15956922b4b32bc9b6",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_cross_block.glb": "8194bef262de2f65c95189b18075c35f4b4330bc3551a971613aad091a2ef86a",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_left_sidestep.glb": "545f3f3c3ce4f37fa2d690fee9552ae305fb0f55c52d34ec24508746bb5490af",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_right_sidestep.glb": "62165dae9aad0591d7468ff045310e33625bfc86076058c9d1bfbd57be515139",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_light_hit_back.glb": "886cd2ab501e69eb23ffb83c6e812b53eef170fab26db4ec47099e11e92dee9c",
+    "build/art-candidates/batch-2026-10-31/web_lyra_candidate_hit_fall.glb": "49b06f2b968cdfad5b22475e9ef296a48d72901ee16590e6fa06986e53d7d40d"
+  },
+  "sources_unchanged": true,
+  "source_structural_pass_claim": false,
+  "source_inspection_file": "raw-source-inspection.json",
+  "source_timestamp_findings_file": "raw-source-timestamp-findings.json",
+  "output": "motion-library.glb",
+  "process_log": "motion-library-preparation.log",
+  "output_bytes": 18279128,
+  "output_sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "derived_structure": {
+    "path": "motion-library.glb",
+    "bytes": 18279128,
+    "sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+    "structurally_valid": true,
+    "requirements_met": true,
+    "errors": [],
+    "counts": {
+      "nodes": 56,
+      "meshes": 1,
+      "mesh_primitives": 1,
+      "mesh_triangles": 32000,
+      "materials": 1,
+      "skins": 1,
+      "skinned_mesh_nodes": 1,
+      "animations": 12
+    },
+    "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+    "node_names": [
+      "Head",
+      "Neck",
+      "HandLoRA_Bip01_L_Finger02",
+      "HandLoRA_Bip01_L_Finger01",
+      "HandLoRA_Bip01_L_Finger0",
+      "HandLoRA_Bip01_L_Finger12",
+      "HandLoRA_Bip01_L_Finger11",
+      "HandLoRA_Bip01_L_Finger1",
+      "HandLoRA_Bip01_L_Finger22",
+      "HandLoRA_Bip01_L_Finger21",
+      "HandLoRA_Bip01_L_Finger2",
+      "HandLoRA_Bip01_L_Finger32",
+      "HandLoRA_Bip01_L_Finger31",
+      "HandLoRA_Bip01_L_Finger3",
+      "HandLoRA_Bip01_L_Finger42",
+      "HandLoRA_Bip01_L_Finger41",
+      "HandLoRA_Bip01_L_Finger4",
+      "LeftHand",
+      "LeftForeArm",
+      "LeftArm",
+      "LeftShoulder",
+      "HandLoRA_Bip01_R_Finger02",
+      "HandLoRA_Bip01_R_Finger01",
+      "HandLoRA_Bip01_R_Finger0",
+      "HandLoRA_Bip01_R_Finger12",
+      "HandLoRA_Bip01_R_Finger11",
+      "HandLoRA_Bip01_R_Finger1",
+      "HandLoRA_Bip01_R_Finger22",
+      "HandLoRA_Bip01_R_Finger21",
+      "HandLoRA_Bip01_R_Finger2",
+      "HandLoRA_Bip01_R_Finger32",
+      "HandLoRA_Bip01_R_Finger31",
+      "HandLoRA_Bip01_R_Finger3",
+      "HandLoRA_Bip01_R_Finger42",
+      "HandLoRA_Bip01_R_Finger41",
+      "HandLoRA_Bip01_R_Finger4",
+      "RightHand",
+      "RightForeArm",
+      "RightArm",
+      "RightShoulder",
+      "Spine2",
+      "Spine1",
+      "Spine",
+      "LeftToeBase",
+      "LeftFoot",
+      "LeftLeg",
+      "LeftUpLeg",
+      "RightToeBase",
+      "RightFoot",
+      "RightLeg",
+      "RightUpLeg",
+      "Hips",
+      "Root",
+      "texture_mapping",
+      "Armature",
+      "CandidateUniformScale"
+    ],
+    "animations": [
+      {
+        "index": 0,
+        "name": "candidate_combo_slash",
+        "channels": 159,
+        "duration_seconds": 4.699999809265137
+      },
+      {
+        "index": 1,
+        "name": "candidate_cross_block",
+        "channels": 159,
+        "duration_seconds": 5.0
+      },
+      {
+        "index": 2,
+        "name": "candidate_double_slash",
+        "channels": 159,
+        "duration_seconds": 3.700000047683716
+      },
+      {
+        "index": 3,
+        "name": "candidate_hit_fall",
+        "channels": 159,
+        "duration_seconds": 1.7333333492279053
+      },
+      {
+        "index": 4,
+        "name": "candidate_left_sidestep",
+        "channels": 159,
+        "duration_seconds": 5.933333396911621
+      },
+      {
+        "index": 5,
+        "name": "candidate_light_hit_back",
+        "channels": 159,
+        "duration_seconds": 1.6333333253860474
+      },
+      {
+        "index": 6,
+        "name": "candidate_right_sidestep",
+        "channels": 159,
+        "duration_seconds": 5.933333396911621
+      },
+      {
+        "index": 7,
+        "name": "candidate_sword_slash",
+        "channels": 159,
+        "duration_seconds": 5.0
+      },
+      {
+        "index": 8,
+        "name": "idle",
+        "channels": 159,
+        "duration_seconds": 10.166666984558105
+      },
+      {
+        "index": 9,
+        "name": "RESET",
+        "channels": 159,
+        "duration_seconds": 0.03333333507180214
+      },
+      {
+        "index": 10,
+        "name": "run",
+        "channels": 159,
+        "duration_seconds": 1.4666666984558105
+      },
+      {
+        "index": 11,
+        "name": "walk",
+        "channels": 159,
+        "duration_seconds": 4.566666603088379
+      }
+    ],
+    "resources": [
+      {
+        "type": "buffer",
+        "index": 0,
+        "storage": "bin_chunk",
+        "declared_bytes": 17830468
+      },
+      {
+        "type": "image",
+        "index": 0,
+        "storage": "buffer_view",
+        "bytes_available": 5229499
+      },
+      {
+        "type": "image",
+        "index": 1,
+        "storage": "buffer_view",
+        "bytes_available": 3112961
+      },
+      {
+        "type": "image",
+        "index": 2,
+        "storage": "buffer_view",
+        "bytes_available": 4749806
+      }
+    ],
+    "all_resource_bytes_available": true,
+    "warnings": [],
+    "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+  },
+  "height_m": 1.8200000524520874,
+  "floor_z_m": -3.5762786865234375e-07,
+  "bones": 53,
+  "exported_clips": [
+    "candidate_combo_slash",
+    "candidate_cross_block",
+    "candidate_double_slash",
+    "candidate_hit_fall",
+    "candidate_left_sidestep",
+    "candidate_light_hit_back",
+    "candidate_right_sidestep",
+    "candidate_sword_slash",
+    "idle",
+    "RESET",
+    "run",
+    "walk"
+  ],
+  "max_target_pose_error_m": 8.153903811280232e-07,
+  "pose_validation_basis": "Blender-imported interpretations sampled at 0, 0.5, 1; malformed provider terminal timestamps are not declared valid or visually/gameplay-approved.",
+  "limitations": [
+    "No combat timing, full-interval deformation, loop seam, foot contact, BoneMap or final visual/performance approval.",
+    "Candidate-prefixed source clips do not complete the required gameplay nine-state contract."
+  ]
+}

@@ -1,0 +1,1104 @@
+{
+  "status": "prepared_candidate_not_animation_or_visual_approval",
+  "blender": "4.3.2",
+  "sources": [
+    {
+      "path": "rigged-source.glb",
+      "sha256": "94e3f7fbeabbe0a784a1c151eb94ed995e7245d26710e37fffbdb00cce9ad9d2",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 0
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_idle.glb",
+      "sha256": "2a167af556b6a39daa28276925b7bedb0e58eea1360597c83bd7368d4e523709",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_walk.glb",
+      "sha256": "dd12c6653e755e36ea91ffebf49d00adfafd3b4179ec58a46ffc1659b349ea0d",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_run.glb",
+      "sha256": "1475ffe04383fdea46ea7f30b2b19406b39fda82186758bf509f1fe47ec0a906",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_sword_slash.glb",
+      "sha256": "a4c2fc1a3c0e578500a136dade486c88747632022f267b9ae87a0ae94e9979bc",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_double_slash.glb",
+      "sha256": "dcbe393314fb39a878697378d337516ecc4523b7ff828a343c927aab632a0d0a",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_combo_slash.glb",
+      "sha256": "a56863c73cce48b6842ce0c3a3b606cebfed7f8446c7ab15956922b4b32bc9b6",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_cross_block.glb",
+      "sha256": "8194bef262de2f65c95189b18075c35f4b4330bc3551a971613aad091a2ef86a",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_left_sidestep.glb",
+      "sha256": "545f3f3c3ce4f37fa2d690fee9552ae305fb0f55c52d34ec24508746bb5490af",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_right_sidestep.glb",
+      "sha256": "62165dae9aad0591d7468ff045310e33625bfc86076058c9d1bfbd57be515139",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_light_hit_back.glb",
+      "sha256": "886cd2ab501e69eb23ffb83c6e812b53eef170fab26db4ec47099e11e92dee9c",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    },
+    {
+      "path": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_hit_fall.glb",
+      "sha256": "49b06f2b968cdfad5b22475e9ef296a48d72901ee16590e6fa06986e53d7d40d",
+      "unchanged": true,
+      "skins": 1,
+      "clips": 1
+    }
+  ],
+  "base_mesh_and_materials": "retained from base; motion meshes are not exported",
+  "excluded_import_helpers": [
+    "Icosphere"
+  ],
+  "height": {
+    "source_rest_m": 1.0005762875080109,
+    "uniform_wrapper_scale": 1.8189517608225636,
+    "target_m": 1.82,
+    "reimported_rest_m": 1.8200000524520874,
+    "bounds": {
+      "min": [
+        -0.8834922909736633,
+        -0.22356005012989044,
+        -3.5762786865234375e-07
+      ],
+      "max": [
+        0.8823148012161255,
+        0.21636655926704407,
+        1.8199996948242188
+      ],
+      "height": 1.8200000524520874
+    },
+    "recentered_xy": false,
+    "ground_rest_feet": true,
+    "wrapper_translation_blender": [
+      0.0,
+      0.0,
+      0.9093246459960938
+    ]
+  },
+  "bones": 53,
+  "motions": {
+    "idle": {
+      "source_action": "Anim_0_Armature.001",
+      "source_frames": [
+        2.0,
+        307.0
+      ],
+      "duration_seconds": 10.166666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_idle.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.933906555175781e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.007946833968162537,
+          0.014000192284584045,
+          -0.006974563002586365
+        ],
+        "translation_world": [
+          -0.007946833968162537,
+          0.014000192284584045,
+          -0.006974563002586365
+        ],
+        "linear_identity_max_error": 1.5124678611755371e-06,
+        "bone_translation_residual_max": 9.460316768696174e-07,
+        "mesh_translation_residual_max": 1.3416218091077437e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.298985004425049e-06,
+        "bone_translation_residual_max": 2.284254301595242e-06,
+        "mesh_translation_residual_max": 1.5005858216015818e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1576881408691406e-05,
+        "trial_canonical_rest_error_max": 2.1636486053466797e-05,
+        "applied_roundtrip_matrix_error_max": 3.0547380447387695e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.1363316148294787e-07,
+        2.484520077784816e-07,
+        3.1363316148294787e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.4485106356672917e-07,
+        2.075491588888186e-07,
+        2.4485106356672917e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.704835913317554e-07,
+        4.519222170285704e-07,
+        5.704835913317554e-07
+      ]
+    },
+    "walk": {
+      "source_action": "Anim_0_Armature.002",
+      "source_frames": [
+        2.0,
+        139.0
+      ],
+      "duration_seconds": 4.566666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_walk.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.933906555175781e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.046647366136312485,
+          0.020970530807971954,
+          0.007974967360496521
+        ],
+        "translation_world": [
+          0.046647366136312485,
+          0.020970530807971954,
+          0.007974967360496521
+        ],
+        "linear_identity_max_error": 1.4007091522216797e-06,
+        "bone_translation_residual_max": 7.835251746142482e-07,
+        "mesh_translation_residual_max": 1.9673624525235434e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.447996616363525e-06,
+        "bone_translation_residual_max": 2.377856219018292e-06,
+        "mesh_translation_residual_max": 2.119163074095233e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1457672119140625e-05,
+        "trial_canonical_rest_error_max": 2.135336399078369e-05,
+        "applied_roundtrip_matrix_error_max": 2.652406692504883e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.673917777080292e-07,
+        3.210672948720342e-07,
+        2.6238846261710425e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        3.298722998390031e-07,
+        1.747713104745731e-07,
+        3.5640341160674333e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        4.863727448914952e-07,
+        5.840059213500239e-07,
+        4.772719560969072e-07
+      ]
+    },
+    "run": {
+      "source_action": "Anim_0_Armature.003",
+      "source_frames": [
+        2.0,
+        46.0
+      ],
+      "duration_seconds": 1.4666666666666666,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_run.glb",
+      "candidate_role": "locomotion_source",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.0249357223510742e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.09702542424201965,
+          0.03310190141201019,
+          0.10778699815273285
+        ],
+        "translation_world": [
+          0.09702542424201965,
+          0.03310190141201019,
+          0.10778699815273285
+        ],
+        "linear_identity_max_error": 2.0042061805725098e-06,
+        "bone_translation_residual_max": 1.0535131502348553e-06,
+        "mesh_translation_residual_max": 2.68866875406595e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 3.2193493098020554e-06,
+        "bone_translation_residual_max": 2.057675638796315e-06,
+        "mesh_translation_residual_max": 2.829504512512422e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1398067474365234e-05,
+        "trial_canonical_rest_error_max": 2.1517276763916016e-05,
+        "applied_roundtrip_matrix_error_max": 2.592802047729492e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.491453681546444e-07,
+        2.9876735293512675e-07,
+        3.8327064059971516e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.739545153208112e-07,
+        2.619385098106704e-07,
+        2.9839552036674004e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        6.350785821879327e-07,
+        5.434434026976451e-07,
+        6.971508065904438e-07
+      ]
+    },
+    "candidate_sword_slash": {
+      "source_action": "Anim_0_Armature.004",
+      "source_frames": [
+        2.0,
+        152.0
+      ],
+      "duration_seconds": 5.0,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_sword_slash.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.546476364135742e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.1222313642501831,
+          0.10646704584360123,
+          0.09072761237621307
+        ],
+        "translation_world": [
+          -0.1222313642501831,
+          0.10646704584360123,
+          0.09072761237621307
+        ],
+        "linear_identity_max_error": 1.4603137969970703e-06,
+        "bone_translation_residual_max": 7.928131970341642e-07,
+        "mesh_translation_residual_max": 2.1348221275053028e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 3.815395757555962e-06,
+        "bone_translation_residual_max": 2.0629249909674887e-06,
+        "mesh_translation_residual_max": 2.2724270820617676e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1457672119140625e-05,
+        "trial_canonical_rest_error_max": 2.14502215385437e-05,
+        "applied_roundtrip_matrix_error_max": 2.5331974029541016e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.7028258364226004e-07,
+        3.086375471533534e-07,
+        3.0836764107011074e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        3.580157094220508e-07,
+        2.91835542346297e-07,
+        2.691506127743191e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        4.916309814357607e-07,
+        5.613968098505492e-07,
+        5.609058637051782e-07
+      ]
+    },
+    "candidate_double_slash": {
+      "source_action": "Anim_0_Armature.005",
+      "source_frames": [
+        2.0,
+        113.0
+      ],
+      "duration_seconds": 3.7,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_double_slash.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 1.475214958190918e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.060012780129909515,
+          0.06305157393217087,
+          0.03753355145454407
+        ],
+        "translation_world": [
+          0.060012780129909515,
+          0.06305157393217087,
+          0.03753355145454407
+        ],
+        "linear_identity_max_error": 1.4454126358032227e-06,
+        "bone_translation_residual_max": 7.299763136271284e-07,
+        "mesh_translation_residual_max": 1.7834766512492037e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 1.385807991027832e-06,
+        "bone_translation_residual_max": 6.847889244408914e-07,
+        "mesh_translation_residual_max": 1.7762704586154854e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1398067474365234e-05,
+        "trial_canonical_rest_error_max": 2.1576881408691406e-05,
+        "applied_roundtrip_matrix_error_max": 4.76837158203125e-07,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.96529363723582e-07,
+        2.582032002682009e-07,
+        2.7637536810325694e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        1.8980710510696465e-07,
+        1.6858739404357614e-07,
+        2.425733297482089e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.393726082806039e-07,
+        4.6965916577786506e-07,
+        5.027134624594033e-07
+      ]
+    },
+    "candidate_combo_slash": {
+      "source_action": "Anim_0_Armature.006",
+      "source_frames": [
+        2.0,
+        143.0
+      ],
+      "duration_seconds": 4.7,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_combo_slash.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 2.041459083557129e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.011541813611984253,
+          0.06464342772960663,
+          0.07056930661201477
+        ],
+        "translation_world": [
+          -0.011541813611984253,
+          0.06464342772960663,
+          0.07056930661201477
+        ],
+        "linear_identity_max_error": 1.9669532775878906e-06,
+        "bone_translation_residual_max": 1.1301333703994933e-06,
+        "mesh_translation_residual_max": 2.686345037418596e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 1.9669532775878906e-06,
+        "bone_translation_residual_max": 1.1262863217746766e-06,
+        "mesh_translation_residual_max": 2.6845363116557105e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.16066837310791e-05,
+        "trial_canonical_rest_error_max": 2.1614134311676025e-05,
+        "applied_roundtrip_matrix_error_max": 2.980232238769531e-07,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.500980175873855e-07,
+        2.9950963321688443e-07,
+        3.240788455446295e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        1.959941750461743e-07,
+        1.5269146510898468e-07,
+        1.7120130796843852e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        6.368114055510636e-07,
+        5.447935747231721e-07,
+        5.894837867487475e-07
+      ]
+    },
+    "candidate_cross_block": {
+      "source_action": "Anim_0_Armature.007",
+      "source_frames": [
+        2.0,
+        152.0
+      ],
+      "duration_seconds": 5.0,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_cross_block.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.904104232788086e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.10975941270589828,
+          -0.012654244899749756,
+          0.09158428013324738
+        ],
+        "translation_world": [
+          0.10975941270589828,
+          -0.012654244899749756,
+          0.09158428013324738
+        ],
+        "linear_identity_max_error": 1.985812559723854e-06,
+        "bone_translation_residual_max": 1.065439945129493e-06,
+        "mesh_translation_residual_max": 1.6825779960507474e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.380941390991211e-06,
+        "bone_translation_residual_max": 2.3291316749228633e-06,
+        "mesh_translation_residual_max": 1.8143349382111313e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1457672119140625e-05,
+        "trial_canonical_rest_error_max": 2.142786979675293e-05,
+        "applied_roundtrip_matrix_error_max": 2.592802047729492e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.4027400458748785e-07,
+        2.6499359672931936e-07,
+        2.7314279645418166e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        3.2621293185635857e-07,
+        2.7837666410609194e-07,
+        3.788090890314031e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        4.3704682372429975e-07,
+        4.820105693774998e-07,
+        4.968335705663329e-07
+      ]
+    },
+    "candidate_left_sidestep": {
+      "source_action": "Anim_0_Armature.008",
+      "source_frames": [
+        2.0,
+        180.0
+      ],
+      "duration_seconds": 5.933333333333334,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_left_sidestep.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 2.86102294921875e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.015376433730125427,
+          0.016988515853881836,
+          -0.0039198994636535645
+        ],
+        "translation_world": [
+          -0.015376433730125427,
+          0.016988515853881836,
+          -0.0039198994636535645
+        ],
+        "linear_identity_max_error": 1.9073486328125e-06,
+        "bone_translation_residual_max": 1.1971666283399152e-06,
+        "mesh_translation_residual_max": 1.5141368979887348e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 2.7641654014587402e-06,
+        "bone_translation_residual_max": 1.6317301082068231e-06,
+        "mesh_translation_residual_max": 1.5141368979887348e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1666288375854492e-05,
+        "trial_canonical_rest_error_max": 2.1576881408691406e-05,
+        "applied_roundtrip_matrix_error_max": 1.7583370208740234e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.335331273913293e-07,
+        3.3914466728988416e-07,
+        3.516800320507868e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        1.5910086411284374e-07,
+        1.7943374184954607e-07,
+        1.4057727354849284e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        6.066806693611148e-07,
+        6.168877897405173e-07,
+        6.396890135449142e-07
+      ]
+    },
+    "candidate_right_sidestep": {
+      "source_action": "Anim_0_Armature.009",
+      "source_frames": [
+        2.0,
+        180.0
+      ],
+      "duration_seconds": 5.933333333333334,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_right_sidestep.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 4.26173210144043e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.012689664959907532,
+          0.014483679085969925,
+          -0.007441535592079163
+        ],
+        "translation_world": [
+          -0.012689664959907532,
+          0.014483679085969925,
+          -0.007441535592079163
+        ],
+        "linear_identity_max_error": 1.9669532775878906e-06,
+        "bone_translation_residual_max": 1.0832567740603176e-06,
+        "mesh_translation_residual_max": 1.9967695002641374e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.108995199203491e-06,
+        "bone_translation_residual_max": 2.1978376626502104e-06,
+        "mesh_translation_residual_max": 2.17762257839374e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.1576881408691406e-05,
+        "trial_canonical_rest_error_max": 2.1636486053466797e-05,
+        "applied_roundtrip_matrix_error_max": 3.505498170852661e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        2.1593834081574437e-07,
+        2.6780666046755654e-07,
+        2.164518691053085e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.0661092734131288e-07,
+        1.8035945947334475e-07,
+        1.70551585290724e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        3.927814252559011e-07,
+        4.871273966174724e-07,
+        3.937155084424359e-07
+      ]
+    },
+    "candidate_light_hit_back": {
+      "source_action": "Anim_0_Armature.010",
+      "source_frames": [
+        2.0,
+        51.0
+      ],
+      "duration_seconds": 1.6333333333333333,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_light_hit_back.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 4.0084123611450195e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          -0.011013463139533997,
+          0.08158791810274124,
+          0.01287783682346344
+        ],
+        "translation_world": [
+          -0.011013463139533997,
+          0.08158791810274124,
+          0.01287783682346344
+        ],
+        "linear_identity_max_error": 1.1664815247058868e-06,
+        "bone_translation_residual_max": 5.266676507644451e-07,
+        "mesh_translation_residual_max": 1.9880628681371114e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.313653334975243e-06,
+        "bone_translation_residual_max": 2.285947409027858e-06,
+        "mesh_translation_residual_max": 1.884864366154897e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.16066837310791e-05,
+        "trial_canonical_rest_error_max": 2.1614134311676025e-05,
+        "applied_roundtrip_matrix_error_max": 3.635883331298828e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        3.1680303253932744e-07,
+        3.0683368864616754e-07,
+        2.961547212951152e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        2.3934808975769594e-07,
+        2.457562461863554e-07,
+        2.0267770452403194e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        5.762494338713375e-07,
+        5.581156782426287e-07,
+        5.386911517756653e-07
+      ]
+    },
+    "candidate_hit_fall": {
+      "source_action": "Anim_0_Armature.011",
+      "source_frames": [
+        2.0,
+        54.0
+      ],
+      "duration_seconds": 1.7333333333333334,
+      "pose_curves": 83,
+      "loop_seam_verified": false,
+      "source": "build/art-candidates/batch-2026-10-31/web_lyra_candidate_hit_fall.glb",
+      "candidate_role": "additional_source_motion",
+      "gameplay_state_mapping": null,
+      "rest_matrix_error_max": 3.635883331298828e-06,
+      "origin_normalization": {
+        "translation_armature_local": [
+          0.11964850127696991,
+          0.1049809455871582,
+          0.08487103879451752
+        ],
+        "translation_world": [
+          0.11964850127696991,
+          0.1049809455871582,
+          0.08487103879451752
+        ],
+        "linear_identity_max_error": 1.8849968910217285e-06,
+        "bone_translation_residual_max": 9.778443536465382e-07,
+        "mesh_translation_residual_max": 1.8551796075684924e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "normalized_strict_proof": {
+        "translation_armature_local": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation_world": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "linear_identity_max_error": 4.0978193283081055e-06,
+        "bone_translation_residual_max": 2.2802855078030775e-06,
+        "mesh_translation_residual_max": 1.769414855098414e-07,
+        "named_weight_max_error": 0.0,
+        "armature_world_max_error": 0.0,
+        "mesh_world_relationship_max_error": 0.0,
+        "mesh_vertices": 25767,
+        "mesh_polygons": 32000
+      },
+      "origin_translation_application": {
+        "method": "disconnected_edit_bone_translation",
+        "trial_roundtrip_matrix_error_max": 2.136826515197754e-05,
+        "trial_canonical_rest_error_max": 2.1398067474365234e-05,
+        "applied_roundtrip_matrix_error_max": 2.5480985641479492e-06,
+        "tolerance": 1e-05,
+        "connected_bones_detached_and_restored": true
+      },
+      "origin_translation_applied_in_memory": true,
+      "sample_fractions": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "source_to_target_vertex_errors": [
+        4.482748793509997e-07,
+        2.9577960433481943e-07,
+        3.7814907850174666e-07
+      ],
+      "source_to_normalized_vertex_errors": [
+        3.042903223136386e-07,
+        2.7767785122371053e-07,
+        3.11145380404906e-07
+      ],
+      "pose_validation_tolerance": 0.0001,
+      "target_scale_vertex_errors": [
+        8.153903811280232e-07,
+        5.38008832120221e-07,
+        6.87834932194182e-07
+      ]
+    }
+  },
+  "exported_clips": [
+    "candidate_combo_slash",
+    "candidate_cross_block",
+    "candidate_double_slash",
+    "candidate_hit_fall",
+    "candidate_left_sidestep",
+    "candidate_light_hit_back",
+    "candidate_right_sidestep",
+    "candidate_sword_slash",
+    "idle",
+    "RESET",
+    "run",
+    "walk"
+  ],
+  "motion_sets": {
+    "locomotion_candidates": [
+      "idle",
+      "walk",
+      "run"
+    ],
+    "additional_source_candidates": [
+      "candidate_sword_slash",
+      "candidate_double_slash",
+      "candidate_combo_slash",
+      "candidate_cross_block",
+      "candidate_left_sidestep",
+      "candidate_right_sidestep",
+      "candidate_light_hit_back",
+      "candidate_hit_fall"
+    ],
+    "gameplay_contract_approved": false
+  },
+  "reset": "Generated identity bone pose curves, two identical keys at frames 0 and 1; not an extra motion",
+  "export_flags": {
+    "export_format": "GLB",
+    "use_selection": true,
+    "use_renderable": true,
+    "export_yup": true,
+    "export_apply": false,
+    "export_animations": true,
+    "export_animation_mode": "ACTIONS",
+    "export_anim_single_armature": true,
+    "export_force_sampling": true,
+    "export_frame_range": false,
+    "export_frame_step": 1,
+    "export_optimize_animation_size": false,
+    "export_nla_strips": false,
+    "export_extras": true
+  },
+  "loop_configuration": "glTF has no standard loop flag. Inspect foot/root seams, then configure Godot idle/walk/run loop modes; RESET must not loop",
+  "output_sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "limitations": [
+    "Three locomotion candidates plus 8 additional source motion candidates; the nine required gameplay clips are not complete",
+    "Bone pose curves and matching rest transforms do not prove foot contact, seamless loops, visual quality or gameplay timing",
+    "Additional source candidates retain imported durations; they are not retimed, edited or mapped to gameplay states",
+    "No object root-motion curves or gameplay events were added"
+  ]
+}
