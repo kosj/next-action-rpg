@@ -1,0 +1,70 @@
+{
+  "repository": "https://github.com/jame581/GodotPrompter",
+  "revision": "d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+  "retrievedOn": "2026-10-31",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GodotPrompter Contributors",
+  "original_files_unmodified": true,
+  "selection": "Original SKILL.md and only its directly linked local Markdown reference closure, plus original LICENSE",
+  "reviewed_usage_scope": [
+    "Control/Container layout",
+    "Viewport resize handling"
+  ],
+  "application_limits": [
+    "Official pinned engine source and target browser behavior override generic examples",
+    "Native safe-area and DPI recipes are not applied to Web without actual CSS/canvas/viewport conversion",
+    "Existing gameplay timing and input authority are preserved",
+    "No installer, external script or runtime assurance is included"
+  ],
+  "runtime_validation": "pending",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "upstream": "skills/responsive-ui/SKILL.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/responsive-ui/SKILL.md",
+      "bytes": 9902,
+      "sha256": "3576e7c12df58a994b462970f5cb4fba2b8cbfcc71b219a1d4e518d7ccb99778",
+      "git_blob_sha": "a15428e599c7025f04adcdc49e5c3d64e14d8865"
+    },
+    {
+      "path": "references/pixel-art-setup.md",
+      "upstream": "skills/responsive-ui/references/pixel-art-setup.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/responsive-ui/references/pixel-art-setup.md",
+      "bytes": 2422,
+      "sha256": "d84ddb84117cb0f5b40937876c6c8c5b8c9c9e9e93a6836b4f622454549705bc",
+      "git_blob_sha": "63bd1cc394578dfe0a3df870fa9c88342adc034b"
+    },
+    {
+      "path": "references/dpi-scaling.md",
+      "upstream": "skills/responsive-ui/references/dpi-scaling.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/responsive-ui/references/dpi-scaling.md",
+      "bytes": 1958,
+      "sha256": "b04121f18e11bfa283c8267ca0d5032c1b6812efd8f3fb95304583cb62263a98",
+      "git_blob_sha": "facfdff5604323c2a19219ca57ed2aa8ffb10ce5"
+    },
+    {
+      "path": "references/mobile.md",
+      "upstream": "skills/responsive-ui/references/mobile.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/responsive-ui/references/mobile.md",
+      "bytes": 4775,
+      "sha256": "a973cb414070b97b3aad06e16399aa84d45788232b28cfc4661e332cd8e42a34",
+      "git_blob_sha": "9f34f61dbe8f8aa902b1fc920c4061b712433acd"
+    },
+    {
+      "path": "references/adaptive-layouts.md",
+      "upstream": "skills/responsive-ui/references/adaptive-layouts.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/responsive-ui/references/adaptive-layouts.md",
+      "bytes": 2888,
+      "sha256": "627e85f2fcdedfe12b36ddf0e0a815cd8344a58cda016a3177d36fb95fdbcacf",
+      "git_blob_sha": "5ffb20f8df66864516314925d39ba84c9dca58c0"
+    },
+    {
+      "path": "LICENSE",
+      "upstream": "LICENSE",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/LICENSE",
+      "bytes": 1083,
+      "sha256": "075667c180b39c81507891dd1411f3861b7da6b860d9b912841ed9f949c66277",
+      "git_blob_sha": "f5058316879cd83ed9ee5eec4cb1a180479ffa38"
+    }
+  ]
+}

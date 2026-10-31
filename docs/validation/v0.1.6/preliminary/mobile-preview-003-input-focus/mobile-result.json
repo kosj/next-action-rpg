@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "focused_three_pointer_input",
+  "seconds": 159.454,
+  "errors": [],
+  "exception_type": "AssertionError",
+  "exception": ""
+}

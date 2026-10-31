@@ -29,6 +29,8 @@ python tools/build.py --test-only
 
 웹 입력·저장·UI를 바꿨으면 웹을 다시 내보낸 뒤 실제 브라우저도 검사합니다.
 
+모바일 입력은 [공식 근거](../../../docs/MOBILE_WEB_RESEARCH.md)와 고정 공개 [입력 스킬](../input-handling/SKILL.md)·[반응형 UI 스킬](../responsive-ui/SKILL.md)의 관련 부분을 읽습니다. 기존 전투 polling을 일괄 재설계하지 않으며 native safe-area/DPI 예제를 Web에 그대로 복사하지 않습니다. CSS·canvas backing·논리 viewport 변환을 한 번만 적용하고 터치 별칭만 해제합니다. 같은 frame의 짧은 탭, 실제 키와 동시 hold, 취소/메뉴/회전/포커스·복귀에서 실제 캐릭터 효과와 잔여 입력을 확인합니다. [모바일 브라우저 도구](../../../tools/check_mobile_web.py)를 한 개의 Chromium으로 실행한 뒤 기존 데스크톱 검사도 유지합니다. 에뮬레이션을 실제 Android/iOS·성능 승인으로 승계하지 않습니다.
+
 ```bash
 python tools/build.py
 python tools/check_web.py

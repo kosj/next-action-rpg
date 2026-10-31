@@ -46,9 +46,9 @@ Windows x86_64 EXE와 PCK를 ZIP으로 제공합니다. Forward+가 기본이며
 
 ## GitHub Actions
 
-- PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → 실제 Chromium·저장 재접속 검사 → ZIP·SHA-256 아티팩트 업로드.
+- PR / main: 반입 검사 → 회귀 검사 → 웹 내보내기 → 데스크톱 Chromium·저장 재접속 검사 → ZIP 업로드 → 그 ZIP을 내려받아 별도 runner에서 실제 다중 터치·세 화면 크기·모바일 재시작 저장 검사.
 - `v*` 태그 / 수동 Windows 선택: Windows 빌드 추가. 버전 태그의 ZIP·매니페스트는 GitHub Releases에도 자동 첨부합니다.
-- main의 성공 빌드: Pages 아티팩트 생성 → GitHub Pages 배포 → 실제 공개 HTTPS 주소의 실행 커밋·WebGL·입력·브라우저 재시작 저장 검사.
+- main: 데스크톱·모바일 빌드 검사가 모두 성공해야 Pages 배포를 진행합니다. 배포 후 별도 runner에서 공개 HTTPS 주소의 데스크톱 검사와 모바일 다중 터치·메뉴·브라우저 재시작 저장 검사를 병렬 실행하고 실제 커밋을 대조합니다.
 - 큰 `.blend` 원본은 실행에 필요하지 않으므로 CI에서 LFS 다운로드를 하지 않습니다.
 
 실제 GPU 성능·Windows 플레이·Edge 동작은 별도 확인 항목입니다. headless 검사와 소프트웨어 WebGL 검사가 이를 대신하지 않습니다.

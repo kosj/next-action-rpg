@@ -20,6 +20,7 @@ description: Build, validate, and publish RUNEFALL web or Windows distributions 
 python tools/knowledge.py check
 python tools/build.py --windows
 python tools/check_web.py
+python tools/check_mobile_web.py
 ```
 
 웹 전용 변경이면 `--windows` 없이 실행합니다. 실제 웹 검사는 하위 URL과 동일 프로필의 브라우저 종료·재시작을 포함합니다. 실패한 산출물을 성공 빌드로 배포하지 않습니다. Windows 내보내기 성공과 Windows 실기기 실행·성능 측정을 구분합니다.
@@ -37,7 +38,7 @@ python tools/check_web.py
 
 ## GitHub Pages
 
-main의 build 성공 → deploy 성공 → `verify_public_web` 성공을 확인합니다. 마지막 job은 배포 출력의 HTTPS 주소를 검사하고 `RUNEFALL_EXPECTED_COMMIT`으로 실제 실행 중인 빌드 번호까지 대조한 뒤 WebGL·입력·브라우저 종료/재시작 저장을 검사합니다. ZIP 다운로드 성공은 Pages 게시 성공과 별개입니다. 공개 브라우저 검사 아티팩트의 상태·오류·재접속 JSON과 실행 URL을 근거로 보관하되, 새 main의 성공을 과거 실행 기록으로 대신하지 않습니다. 예상 URL을 활성 주소로 표시하지 않습니다.
+main의 build·`verify_mobile_export` 성공 → deploy 성공 → `verify_public_web`·`verify_public_mobile` 성공을 확인합니다. 마지막 job은 배포 출력의 HTTPS 주소를 검사하고 `RUNEFALL_EXPECTED_COMMIT`으로 실제 실행 중인 빌드 번호까지 대조한 뒤 WebGL·입력·브라우저 종료/재시작 저장을 검사합니다. ZIP 다운로드 성공은 Pages 게시 성공과 별개입니다. 공개 브라우저 검사 아티팩트의 상태·오류·재접속 JSON과 실행 URL을 근거로 보관하되, 새 main의 성공을 과거 실행 기록으로 대신하지 않습니다. 예상 URL을 활성 주소로 표시하지 않습니다.
 
 공개 URL 검사에서 관리형 클라우드 브라우저만 인증서 오류가 나면 인증서 검증을 유지한 HTTPS 클라이언트 결과와 비교합니다. 이때 GitHub hosted runner의 공개 URL 검사를 사용해 배포 자체의 실행과 로컬 브라우저 신뢰 문제를 따로 확인할 수 있습니다. 프록시 CA의 브라우저 신뢰 설정을 확인하고 TLS 검증을 끄지 않습니다. HTTP 접속·배포 성공과 공개 주소의 실제 브라우저 조작 성공을 별도로 기록하고, 환경 오류를 Pages 배포 실패로 오인하지 않습니다.
 

@@ -1,0 +1,32 @@
+{
+  "status": "read_only_geometry_texture_diagnostic",
+  "source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "selected_triangles": 287,
+  "level0_atlas_pixels": [
+    2048,
+    2048
+  ],
+  "face_uv_axis_aligned_bbox_pixels": [
+    1403.5393676757812,
+    1638.6209716796875
+  ],
+  "triangle_texel_density_px_per_m": {
+    "samples": 287,
+    "min": 637.9607815460764,
+    "p10": 737.1666378502258,
+    "median": 821.3682016110818,
+    "p90": 881.170525941398,
+    "max": 909.0021211817259,
+    "mean": 812.9266072815101
+  },
+  "coincident_vertex_normal_discontinuity_degrees": {
+    "samples": 67,
+    "min": 0.0,
+    "p10": 0.0,
+    "median": 0.005719132442331194,
+    "p90": 0.012742380704720935,
+    "max": 0.03226963688901151,
+    "mean": 0.005863788140687619
+  },
+  "scope": "Selected conservative face-core; UV bounding box includes islands and is not an effective unique-pixel count; normal discontinuity only at coincident selected vertices, not proof of shader cause"
+}

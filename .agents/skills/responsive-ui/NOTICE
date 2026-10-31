@@ -1,0 +1,11 @@
+Vendored unmodified documentation from GodotPrompter.
+Upstream: https://github.com/jame581/GodotPrompter
+Revision: d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6
+Retrieved: 2026-10-31 UTC
+Copyright (c) 2026 GodotPrompter Contributors
+The original MIT copyright and permission text is retained byte-for-byte in LICENSE.
+SKILL.md and its directly linked local Markdown references are unmodified originals.
+Other related skills and executable scripts are not included.
+This NOTICE and upstream.json are local provenance records, not upstream source edits.
+Selected principles and Web-specific limits are recorded in upstream.json.
+Runtime and target-device validation remain pending.

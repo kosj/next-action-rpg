@@ -1,0 +1,9 @@
+{
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+  "dpr": 2,
+  "max_touch_points": 5,
+  "coarse": true,
+  "width": 390,
+  "height": 844,
+  "scope": "Chromium mobile/touch emulation, not Android/iOS/Safari or target hardware"
+}

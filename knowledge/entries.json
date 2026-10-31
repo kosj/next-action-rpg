@@ -1454,6 +1454,97 @@
         "docs/validation/v0.1.5/eyes-native.log",
         "https://github.com/godotengine/godot/blob/4.7.2-stable/modules/gltf/gltf_document.cpp#L1414"
       ]
+    },
+    {
+      "id": "touch-input-alias-lifecycle",
+      "kind": "decision",
+      "status": "verified",
+      "title": "터치 액션은 장치별 별칭과 손가락 소유권으로 종료한다",
+      "summary": "Godot4.7.2의 원래 터치보다 먼저 전달되는 에뮬레이션 마우스를 고려해 메뉴에서 모든 GUI손가락 해제 후 게임 입력을 활성화한다. touch_별칭만 해제해 물리 키 hold를 보존하고, pointer별 stick/look/action 소유권·버튼 refcount·process/physics edge를 유지한다. 취소·메뉴·회전·초점 손실에서 강공 release 공격과 잔여 입력을 차단한다. 실제 native이벤트 회귀를 포함한374검사0실패를 확인했으며 최종 Web/실기기 승인은 별도다.",
+      "tags": [
+        "mobile",
+        "touch",
+        "input",
+        "lifecycle",
+        "godot",
+        "web"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable official",
+        "validation": "Actual native ScreenTouch/Drag, distinct IDs17/59/83; integrated374 assertions0fail",
+        "scope": "Native regression and pinned official source; final Web and real Android/iOS validation separate"
+      },
+      "sources": [
+        "game/scripts/ui/touch_controls.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/game.gd",
+        "game/tests/mobile_input_regressions.gd",
+        "docs/MOBILE_WEB_RESEARCH.md",
+        "docs/validation/v0.1.6/native-initial.log",
+        "docs/validation/v0.1.6/mobile-input-focused.log"
+      ]
+    },
+    {
+      "id": "mobile-css-viewport-and-evidence",
+      "kind": "decision",
+      "status": "verified",
+      "title": "Web의 CSS·DPR·논리 viewport와 실제 터치 증거를 구분한다",
+      "summary": "CSS→canvas backing→논리 viewport 변환을 중복 적용하지 않고 Web safe-area는CSS env에서 읽는다. UI는CSS기준 크기로 유지하고3D render scale만DPR에맞춰 제한한다. 공개MIT 입력·반응형 스킬을 고정 출처로 읽고 native DPI/safe-area 예제를 Web에 그대로 적용하지 않았다. 모바일 검사는 genuine CDP touch와 primary IDB읽기만 사용하며 상태를 조작하지 않는다. native viewportfixture와 공식소스 검증은 실기기·Safari·성능 승인이 아니다. CompressedTexture2D 클래스명만으로 GPU압축포맷을 추정하지 않는다.",
+      "tags": [
+        "mobile",
+        "web",
+        "viewport",
+        "dpr",
+        "safe-area",
+        "qa",
+        "skills"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable official",
+        "research": "Pinned engine ed1daf0bf001b61586d9930840f2f1394092c079, MDN BCD381650773ddc196a34cbf759f31adba457e6bf46, MIT GodotPrompterd7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+        "scope": "Coordinate/source/native proof; final full Web and physical Android/iOS GPU tests tracked separately"
+      },
+      "sources": [
+        "docs/MOBILE_WEB.md",
+        "docs/MOBILE_WEB_RESEARCH.md",
+        "game/web/shell.html",
+        "game/scripts/ui/hud.gd",
+        "game/scripts/ui/touch_controls.gd",
+        "tools/mobile_browser_smoke.py",
+        "tools/check_mobile_web.py",
+        ".agents/skills/input-handling/upstream.json",
+        ".agents/skills/responsive-ui/upstream.json",
+        "docs/validation/v0.1.6/prior-web-texture-probe.log"
+      ]
+    },
+    {
+      "id": "skin-material-semantics-rejection",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "피부 metallic 수치의 수정은 의미 경계와 실제 시각 검수까지 필요하다",
+      "summary": "실제 face-core UV표본에서 skin metallic약.234~.285를 확인했지만 보수적으로 고른287삼각형에 metallicFactor0만 적용한 파생은 중립 front/side에서 다각형 경계가 드러나 runtime반영을 기각했다. 원본BIN/UV/웨이트/모션/이미지를 보존해도 새material불연속은 생긴다. 51불확실triangle은 자동확장하지 않았고 실제Game A/B 전에 중립 시각gate에서 중단했다. 다음 단계는 피부·머리카락의 의미 경계와 실제 texture/geometry detail 검수다.",
+      "tags": [
+        "art",
+        "pbr",
+        "material",
+        "face",
+        "semantics",
+        "rejection"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "source": "Runtimebody4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c unchanged",
+        "candidate": "35ea57e7fde492ce52bbf2fc921535e3ccdd1f0926729b1162d54d40a3a22f9f rejected; no paid generations",
+        "scope": "One isolated material-only neutral-render experiment; no actual Game A/B, AAA approval or texture repaint"
+      },
+      "sources": [
+        "tools/audit_character_skin_materials.py",
+        "tools/requirements-art.txt",
+        "art_source/production/character_polish/skin_material_review/decision.json",
+        "art_source/production/character_polish/skin_material_review/README.md"
+      ]
     }
   ]
 }

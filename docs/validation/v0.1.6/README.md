@@ -1,0 +1,12 @@
+# v0.1.6 모바일 조작 검증
+
+이 파일의 초기 기록은 최종 배포 승인 전의 개발 근거다. 공개 URL은 https://kosj.github.io/next-action-rpg/ 이며 현재 실행 판본은 그 빌드 번호·Actions 결과로 대조한다.
+
+- `native-initial.log`: Godot4.7.2 통합374검사·실패0, 터치 입력29검사 포함. 엔진 오류·종료 누수 없음.
+- `mobile-input-focused.log`: 실제 native InputEventScreenTouch/Drag의 장치·소유권·종료 경로 검사.
+- `prior-web-texture-probe.log`: 이전0.1.5 실제WebPCK의 Hero/Sentinel2048² map8개를 읽은 진단. CompressedTexture2D지만 실제 image format4/RGB8·compressed=false였다. 현재 최종 패키지나 모든 텍스처·실기기 승인은 아니다.
+- `preliminary/`: 동결한 개발 preview003의 실제 CDP trusted touch 검사. 최초 full 시도는 휴식·상점 후 원점 복귀 검사에서 실패했다. 이후 input-focus는 실제 이동 두 구간을 통과했으나 pointer release 직후 stale QA snapshot을 읽어 실패했다. 둘 다 실패 그대로 보존했다. 도구의 한 RPC 조건 대기·아날로그 접근·fresh empty ownership 대기를 수정한 별도 multitouch-focus가148.304초,오류0으로 통과했다. 이는 새 여정→실제 세 손가락 이동/시점/약공격과 독립 해제의 한정 검사이며 full 합격이 아니다.
+
+게임·저장 상태를 강제로 변경하거나 UI15초·IDB30초·각 이동60초 조건을 완화하지 않았다. 원점 도착 검사는 release 후 실제 위치1.2m 이내 확인을 추가했다. 실패/후속 도구 원문과 contemporaneous export/source hashes를 각 preliminary 디렉터리에 보관한다.
+
+최종 Web·Windows 내보내기, 같은 커밋의 데스크톱·full 모바일 브라우저 검사와 공개 배포 결과는 확인 후 이 기록에 추가한다. Chromium 에뮬레이션은 실제 Android Chrome·iOS Safari·Windows 실행·목표 GPU/AAA 승인을 대신하지 않는다.

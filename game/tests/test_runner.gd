@@ -208,6 +208,7 @@ func run() -> void:
 	check(await load("res://tests/skeletal_transition_regressions.gd").run(world, check) == true, "Production skeletal transitions preserve clocks, priority and same-frame sockets")
 	check(await load("res://tests/blade_trail_regressions.gd").run(world, check) == true, "Displayed blade trails preserve action windows, world-space history and lifecycle")
 	check(await load("res://tests/character_eye_regressions.gd").run(world, check) == true, "Actual eye geometry preserves source anchors, Head sockets, units and imported colors")
+	check(await load("res://tests/mobile_input_regressions.gd").run(world, check) == true, "Actual touch pointers preserve actions, ownership, viewport and device lifecycle")
 	check(await load("res://tests/audio_lifecycle_regressions.gd").run(world, check) == true, "Audio shutdown, deferred callbacks and explicit restart preserve playback lifetime")
 	ledger = null
 	second = null

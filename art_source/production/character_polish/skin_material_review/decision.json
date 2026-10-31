@@ -1,0 +1,13 @@
+{
+  "decision": "rejected_for_runtime",
+  "checked_on": "2026-10-31",
+  "reason": "Source and candidate neutral front/side show visible polygon-shaped material discontinuities inside the face. Correcting metallic values does not justify a new visible seam.",
+  "source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+  "candidate_sha256": "35ea57e7fde492ce52bbf2fc921535e3ccdd1f0926729b1162d54d40a3a22f9f",
+  "candidate_GLB_archived": false,
+  "candidate_location": "Ignored build only; exact recipe/mask/audit retained here",
+  "runtime_body_unchanged": true,
+  "actual_Game_A_B": "Not performed after neutral visual gate failed",
+  "next": "Full semantic skin/hair boundary ownership and material/texture detail work; no uncontrolled spatial/color heuristic adoption",
+  "AAA_approval": "pending"
+}

@@ -1,0 +1,180 @@
+{
+  "events": [
+    {
+      "type": "touchstart",
+      "touches": [
+        1
+      ],
+      "changed": [
+        1
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        1
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        2
+      ],
+      "changed": [
+        2
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        2
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        3
+      ],
+      "changed": [
+        3
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        3
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        4
+      ],
+      "changed": [
+        4
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        4
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        5
+      ],
+      "changed": [
+        5
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        5
+      ],
+      "changed": [
+        5
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        5,
+        6
+      ],
+      "changed": [
+        6
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        5,
+        6
+      ],
+      "changed": [
+        6
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchstart",
+      "touches": [
+        5,
+        6,
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        5,
+        6,
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [
+        5,
+        6
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [
+        5
+      ],
+      "changed": [
+        6
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        5
+      ],
+      "trusted": true
+    }
+  ],
+  "max_points": 3,
+  "trusted": true,
+  "focus": [
+    {
+      "type": "focus",
+      "focused": true,
+      "visibility": "visible"
+    }
+  ]
+}

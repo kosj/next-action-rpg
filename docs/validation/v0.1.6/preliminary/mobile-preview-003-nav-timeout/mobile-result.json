@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "rest_and_shop_taps",
+  "seconds": 336.065,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}
