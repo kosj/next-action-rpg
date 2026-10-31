@@ -1,0 +1,15 @@
+{
+  "outcome": "settings_focused_passed",
+  "phase": "settings-focus",
+  "seconds": 471.265,
+  "scope": "Settings focus: portrait quality1, landscape Button-start scroll/quality0, narrow quality1, actual primary commits and complete browser restart; focus/cancellation/combat/shop not repeated; not full approval",
+  "states": [
+    "09-portrait-settings",
+    "10-landscape-gameplay",
+    "11-landscape-settings",
+    "12-narrow-gameplay",
+    "13-narrow-settings",
+    "15-restarted-touch-controls"
+  ],
+  "errors": []
+}

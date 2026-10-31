@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "landscape_and_narrow_orientation",
+  "seconds": 1032.097,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": "Actual primary quality0 was not observed within30s wall; readonly diagnostics retained"
+}

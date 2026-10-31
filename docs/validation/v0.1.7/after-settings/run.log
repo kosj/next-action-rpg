@@ -1,0 +1,18 @@
+RUNEFALL_MOBILE_STAGE portrait_title 1.264s
+RUNEFALL_MOBILE_STAGE pause_cancel_focus_and_quality 60.612s
+RUNEFALL_MOBILE_STORAGE begin quality=1
+RUNEFALL_MOBILE_STORAGE committed quality=1 reads=1 seconds=6.339
+RUNEFALL_MOBILE_STAGE landscape_and_narrow_orientation 153.872s
+RUNEFALL_MOBILE_SCROLL begin value=0 buttons=['균형 · 기본 해상도 / 그림자']
+RUNEFALL_MOBILE_SCROLL progress seconds=31.683
+RUNEFALL_MOBILE_STORAGE begin quality=0
+RUNEFALL_MOBILE_STORAGE committed quality=0 reads=1 seconds=10.663
+RUNEFALL_MOBILE_STORAGE begin quality=1
+RUNEFALL_MOBILE_STORAGE committed quality=1 reads=2 seconds=4.899
+RUNEFALL_MOBILE_STORAGE begin quality=1
+RUNEFALL_MOBILE_STORAGE committed quality=1 reads=1 seconds=3.282
+RUNEFALL_MOBILE_STAGE complete_browser_restart 430.982s
+RUNEFALL_MOBILE_STORAGE begin quality=1
+RUNEFALL_MOBILE_STORAGE committed quality=1 reads=1 seconds=0.021
+RUNEFALL_MOBILE_STAGE completed 471.265s
+RUNEFALL_MOBILE_SETTINGS_FOCUSED_OK · settings/IDB/restart only; full workflow pending

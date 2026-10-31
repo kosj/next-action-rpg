@@ -1,5 +1,11 @@
 # 검증 결과
 
+## v0.1.7 · Web 사용자 저장소
+
+- Web의 미지원 shader binary cache가 만든 빈29디렉터리를 실제 readonly IDB에서 확인하고 한 줄의Web전용설정으로fresh33→5키·cache29→1을 확인했습니다. [공식 고정 소스와 실제 전후 원문](validation/v0.1.7/README.md)을 보관합니다.
+- 동일 export의 실제 품질1→0→1·세화면·완전브라우저재시작 집중검사가471.265초·오류0으로 통과했습니다. 품질0 actual primary는10.663초였으며 기존30초 기준을 유지했습니다. 이것은 전체 입력/전투·최종main/public승인이 아닙니다.
+- v0.1.6의PRfull성공과main/tag실패·단독재시도실패를 구분합니다. 최종Web/Windows/Pages의 실제 결과는 [PR #8](https://github.com/kosj/next-action-rpg/pull/8)에 확정한 커밋·Actions·다운로드 근거로 기록합니다. 실제기기·기존프로필정리·AAA아트는 별도입니다.
+
 ## v0.1.6 · 모바일 터치와 반응형 UI
 
 - [모바일 조작](MOBILE_WEB.md): 서로 독립된 조이스틱·look·13개 액션, 차지 hold/release, 메뉴/초점/회전의 종료 처리와 CSS safe area·DPR 대응을 추가했습니다. 작은 화면의 제목·대화·상점·설정은 스크롤과 터치 대상을 제공합니다.

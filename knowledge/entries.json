@@ -1711,6 +1711,47 @@
         "tools/check_loader_lifecycle.py",
         "game/web/shell.html"
       ]
+    },
+    {
+      "id": "web-unsupported-shader-cache-userfs-directories",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "Web에서 미지원인 셰이더 바이너리 캐시도 userfs 디렉터리를 만들 수 있다",
+      "summary": "Godot4.7.2 WebGLES3의shaderbinaryload/save는즉시return하지만enabled기본true의초기화는이름/hash디렉터리를만든다. 실제freshWeb33IDB키중29개가빈shader_cache디렉터리였고설정한줄enabled.web=false만바꾼같은export의fresh조사에서5키/상위cache1개로줄었다. 실제compile·품질·그림자·Windowscache는보존한다. 기존profile의dirs는자동삭제하지않으며키감소를30초저장·full/public승인이나전체지연원인확정으로승계하지않는다. 소프트웨어1FPS에서callback~1.12초인main/tagquality0primary30초미관측실패도보존한다. 같은설정후실제quality1→0→1/세화면/fullbrowserrestart집중검사가471.265초/errors0이고quality0primary10.663초로30초한도를충족했다. 이는전체입력/전투/finalpublic승인이아니다.",
+      "tags": [
+        "web",
+        "godot",
+        "shader",
+        "cache",
+        "indexeddb",
+        "persistence",
+        "mobile",
+        "performance",
+        "저장"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+        "backend": "WebGL2 GLES3 Compatibility; realGLES shadercompilationunchanged",
+        "source_head": "732bbef2747571f88630111457df951eb34b6985 + oneprojectsetting",
+        "before": "fresh33keys/shaderdirs29/69.872s/errors0",
+        "after": "fresh5keys/shaderdirs1/67.148s/errors0",
+        "remaining": "finalv0.1.7main/tag/fullmobile/public pending; legacyprofilecleanup/hardware/AAA separate",
+        "focused": "ActualUIquality1→0→1/primary/threeviewports/fullbrowserrestart471.265s/errors0; quality0primary10.663s"
+      },
+      "sources": [
+        "game/project.godot",
+        "docs/WEB_USERFS_CACHE.md",
+        "docs/validation/v0.1.7/README.md",
+        "docs/validation/v0.1.7/before-userfs.json",
+        "docs/validation/v0.1.7/after-userfs.json",
+        "docs/validation/v0.1.7/key-comparison.json",
+        "docs/validation/v0.1.7/official-source.json",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp#L548",
+        "https://github.com/kosj/next-action-rpg/pull/8",
+        "docs/validation/v0.1.7/after-settings/mobile-result.json",
+        "docs/validation/v0.1.7/after-settings/mobile-storage-observation.json"
+      ]
     }
   ]
 }

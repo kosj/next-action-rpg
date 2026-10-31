@@ -1,0 +1,1030 @@
+[
+  {
+    "stage": "pause_cancel_focus_and_quality",
+    "quality_expected": 1,
+    "started_at": 740578.7000000001,
+    "timeout_ms": 30000,
+    "phase": "completed",
+    "attempts": [
+      {
+        "request_id": 1,
+        "started_ms": 0.09999999997671694,
+        "completed_ms": 3207.899999999907,
+        "seconds": 3.20779999999993,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 1,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "databases_request",
+              "milliseconds": 740579.1
+            },
+            {
+              "phase": "databases_response",
+              "milliseconds": 741111
+            },
+            {
+              "phase": "open_request",
+              "milliseconds": 741111
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 741647.6
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 741647.9
+            },
+            {
+              "phase": "keys_response",
+              "milliseconds": 742716.9
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 742717
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 743786.6
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 743786.6
+            }
+          ],
+          "key_count": 34,
+          "primary_reads": 1,
+          "cached_targets": false
+        }
+      },
+      {
+        "request_id": 2,
+        "started_ms": 3740.79999999993,
+        "completed_ms": 5366.599999999977,
+        "seconds": 1.6258000000000465,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 2,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 744319.5
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 744863
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 744863.2000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 744863.2000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 745945.2000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 745945.3
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 3,
+        "started_ms": 5897,
+        "completed_ms": 7522.5,
+        "seconds": 1.6255,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 3,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 746476.5
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 747021.6
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 747021.6
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 747021.6
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 748101.1
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 748101.1
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 4,
+        "started_ms": 8062.29999999993,
+        "completed_ms": 9669.699999999953,
+        "seconds": 1.6074000000000233,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 4,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 748641
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 749185.5
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 749185.5
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 749185.5
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 750248.4
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 750248.4
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 5,
+        "started_ms": 10203.099999999977,
+        "completed_ms": 11812.79999999993,
+        "seconds": 1.6096999999999535,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 5,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 750781.8
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 751320.1
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 751320.1
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 751320.1
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 752391.5
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 752391.5
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 6,
+        "started_ms": 12341.29999999993,
+        "completed_ms": 13945,
+        "seconds": 1.6037000000000698,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 6,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 752920
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 753458.1
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 753458.2000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 753458.2000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 754523.7000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 754523.7000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 7,
+        "started_ms": 14472.399999999907,
+        "completed_ms": 16079.899999999907,
+        "seconds": 1.6075,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 7,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 755051.1
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 755589.5
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 755589.6
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 755589.6
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 756658.6
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 756658.6
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 8,
+        "started_ms": 16610.699999999953,
+        "completed_ms": 18764,
+        "seconds": 2.1533000000000464,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:08:08.968Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 0,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 8,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 757189.4
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 757732.4
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 757732.5
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 757732.5
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 759342.7000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 759342.7000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 9,
+        "started_ms": 19290.899999999907,
+        "completed_ms": 20895.199999999953,
+        "seconds": 1.6043000000000465,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 9,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 759869.6
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 760408.2000000001
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 760408.3
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 760408.3
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 761473.9
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 761473.9
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      }
+    ],
+    "pending": null,
+    "targets": [
+      {
+        "database": "/userfs",
+        "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json"
+      }
+    ],
+    "outcome": "matched",
+    "completed_ms": 20895.199999999953,
+    "python_wall_timeout": false,
+    "python_seconds": 21.46
+  },
+  {
+    "stage": "landscape_and_narrow_orientation",
+    "quality_expected": 0,
+    "started_at": 971463.7000000001,
+    "timeout_ms": 30000,
+    "phase": "reading",
+    "attempts": [
+      {
+        "request_id": 10,
+        "started_ms": 0,
+        "completed_ms": 4820.199999999953,
+        "seconds": 4.820199999999954,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 10,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 971463.7000000001
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 972675.7000000001
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 972675.7000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 972675.7000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 976283.9
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 976283.9
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 11,
+        "started_ms": 5948.300000000047,
+        "completed_ms": 9351.800000000047,
+        "seconds": 3.4035,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 11,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 977412.1
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 978548.4
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 978548.5000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 978548.5000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 980815.5000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 980815.5000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 12,
+        "started_ms": 10478.59999999986,
+        "completed_ms": 13900.5,
+        "seconds": 3.42190000000014,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 12,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 981942.2999999999
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 983093.2000000001
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 983093.2999999999
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 983093.2999999999
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 985364.2000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 985364.2000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 13,
+        "started_ms": 15033.300000000047,
+        "completed_ms": 19559.5,
+        "seconds": 4.526199999999953,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 13,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 986497.0000000001
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 987622.7000000001
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 987622.7000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 987622.7000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 991023.2000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 991023.2000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 14,
+        "started_ms": 20688.59999999986,
+        "completed_ms": 24088,
+        "seconds": 3.39940000000014,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 14,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 992152.4
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 993292.9
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 993293.0000000001
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 993293.0000000001
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 995551.7000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 995551.7000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      },
+      {
+        "request_id": 15,
+        "started_ms": 25205.899999999907,
+        "completed_ms": 28587,
+        "seconds": 3.3811000000000933,
+        "within_budget": true,
+        "saves": [
+          {
+            "database": "/userfs",
+            "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+            "timestamp": "2026-10-31T15:18:23.044Z",
+            "save": {
+              "checkpoint": 0,
+              "completed": [],
+              "journey_started": true,
+              "lore": [],
+              "settings": {
+                "quality": 1,
+                "shake": true,
+                "volume": 0.7
+              },
+              "shards": 0,
+              "upgrades": [
+                0,
+                0,
+                0
+              ],
+              "version": 1
+            }
+          }
+        ],
+        "diagnostic": {
+          "request_id": 15,
+          "phase": "completed",
+          "events": [
+            {
+              "phase": "open_request",
+              "milliseconds": 996669.6
+            },
+            {
+              "phase": "open_response",
+              "milliseconds": 997801.2000000001
+            },
+            {
+              "phase": "transaction_request",
+              "milliseconds": 997801.2999999999
+            },
+            {
+              "phase": "primary_requests",
+              "milliseconds": 997801.2999999999
+            },
+            {
+              "phase": "transaction_complete",
+              "milliseconds": 1000050.7000000001
+            },
+            {
+              "phase": "completed",
+              "milliseconds": 1000050.7000000001
+            }
+          ],
+          "key_count": 0,
+          "primary_reads": 1,
+          "cached_targets": true
+        }
+      }
+    ],
+    "pending": {
+      "request_id": 16,
+      "started_ms": 29707.300000000047
+    },
+    "targets": [
+      {
+        "database": "/userfs",
+        "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json"
+      }
+    ],
+    "python_wall_timeout": true,
+    "python_seconds": 30.936
+  }
+]

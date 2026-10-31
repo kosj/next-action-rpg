@@ -1,0 +1,8 @@
+{
+  "scope": "Same fresh readonly userfs audit after one Web-only shader-cache setting; no ZIP rebuild claim",
+  "git_head": "732bbef2747571f88630111457df951eb34b6985",
+  "git_diff": "diff --git a/game/project.godot b/game/project.godot\nindex 8749d0e..18e8d4e 100644\n--- a/game/project.godot\n+++ b/game/project.godot\n@@ -26,6 +26,7 @@ textures/default_filters/use_nearest_mipmap_filter=false\n anti_aliasing/quality/msaa_3d=1\n environment/defaults/default_clear_color=Color(0.025, 0.043, 0.055, 1)\n renderer/rendering_method.web=\"gl_compatibility\"\n+shader_compiler/shader_cache/enabled.web=false\n \n [physics]\n common/physics_ticks_per_second=60\n",
+  "engine_source_permalink": "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/gles3/rasterizer_gles3.cpp",
+  "before_source_commit_permalink": "https://github.com/kosj/next-action-rpg/tree/3085c189a987cab4fab949becb6f4a1fe1c5e44a",
+  "build_manifest_status": "STALE before ZIP manifest; current after PCK hash comes from runtime export audit"
+}

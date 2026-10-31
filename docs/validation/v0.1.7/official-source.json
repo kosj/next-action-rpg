@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-31",
+  "scope": "Private readonly official-source provenance for a candidate Web-only setting; not proof of current IndexedDB key contents, storage performance, or production acceptance.",
+  "status": "official_source_verified_runtime_effect_pending",
+  "godot": {
+    "version": "4.7.2-stable",
+    "observed_engine_short_commit": "ed1daf0bf",
+    "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "tag_resolution_verified": true,
+    "commit_url": "https://github.com/godotengine/godot/commit/ed1daf0bf001b61586d9930840f2f1394092c079"
+  },
+  "emscripten": {
+    "reference_version": "4.0.19",
+    "commit": "08e2de1031913e4ba7963b1c56f35f036a7d4d56",
+    "commit_url": "https://github.com/emscripten-core/emscripten/commit/08e2de1031913e4ba7963b1c56f35f036a7d4d56",
+    "scope": "Official pinned reference implementing the same remote-key-cursor/reconcile algorithm seen in the current generated index.js. The exact SDK version used to build the Godot template was not established."
+  },
+  "acquisition": {
+    "provider": "GitHub connector fetch_file with full pinned commit and UTF-8 encoding",
+    "hashes": "SHA-256 over exact UTF-8 source bytes. Git blob SHA-1 recomputed over 'blob <byte_count>\\0' + bytes and matched each GitHub-reported blob ID.",
+    "hash_implementation_checks": "SHA-1 and SHA-256 abc known vectors passed; all six computed Git blob IDs match GitHub."
+  },
+  "candidate": {
+    "project_setting": "rendering/shader_compiler/shader_cache/enabled.web",
+    "value": false,
+    "adoption": "pending actual readonly key audit",
+    "default_setting": "rendering/shader_compiler/shader_cache/enabled",
+    "registered_default": true,
+    "web_disabled_override_found_in_default_registration": false,
+    "absence_scope": "The full pinned servers/rendering/rendering_server.cpp default-registration source contains no shader_cache/enabled.web registration. Existing repository project.godot was read only and had no explicit shader_cache setting at initial diagnosis.",
+    "source_proven_effects": [
+      "Non-editor GLES3 initialization reads enabled and leaves shader_cache_dir empty when false; ShaderGLES3 then skips per-shader name/hash mkdir.",
+      "RasterizerGLES3 still creates the top-level user://shader_cache before the enabled check.",
+      "WEB_ENABLED already returns false from GPU-binary cache load and returns immediately from GPU-binary cache save.",
+      "Shader variant compilation follows the unchanged _compile_specialization path when binary cache load returns false. This candidate does not disable shader compilation or browser-managed WebGL caches."
+    ],
+    "not_changed": [
+      "quality0/quality1 policy",
+      "render_scale",
+      "shadows",
+      "lighting",
+      "materials",
+      "images",
+      "actual shader source/compilation",
+      "save schema or primary/backup rotation",
+      "Godot automatic FS sync behavior",
+      "QA timeout or phase"
+    ],
+    "caveats": [
+      "Existing persistent shader-cache directories are not deleted or migrated by this setting.",
+      "Actual 33 IndexedDB keys must be audited before identifying them as shader-cache directories.",
+      "Fresh-profile directory reduction and the unchanged 30-second primary commit/restart requirements need actual verification.",
+      "Engine serial cursor callbacks are asynchronous tasks; no one-cursor-per-frame scheduling guarantee is claimed.",
+      "No browser, Godot, or Blender was launched and no repository source file was changed for this provenance task."
+    ]
+  },
+  "claims": [
+    {
+      "id": "default-enabled",
+      "status": "verified",
+      "source": "servers/rendering/rendering_server.cpp",
+      "lines": [
+        3690,
+        3694
+      ],
+      "claim": "Shader cache is registered enabled=true with no web=false default registration in this source."
+    },
+    {
+      "id": "gles-cache-directories",
+      "status": "verified",
+      "sources": [
+        {
+          "path": "drivers/gles3/rasterizer_gles3.cpp",
+          "lines": [
+            336,
+            365
+          ]
+        },
+        {
+          "path": "drivers/gles3/shader_gles3.cpp",
+          "lines": [
+            774,
+            805
+          ]
+        }
+      ],
+      "claim": "The default cache base is user://; top-level shader_cache is created, then enabled controls per-shader name/hash directories."
+    },
+    {
+      "id": "web-no-binary-cache",
+      "status": "verified",
+      "source": "drivers/gles3/shader_gles3.cpp",
+      "lines": [
+        [
+          547,
+          550
+        ],
+        [
+          633,
+          637
+        ]
+      ],
+      "claim": "WebGL cannot use this Godot GPU program-binary load/save cache. Actual shader compilation is preserved."
+    },
+    {
+      "id": "automatic-async-sync",
+      "status": "verified",
+      "sources": [
+        {
+          "path": "platform/web/os_web.cpp",
+          "lines": [
+            74,
+            89
+          ]
+        },
+        {
+          "path": "platform/web/js/libs/library_godot_os.js",
+          "lines": [
+            191,
+            205
+          ]
+        }
+      ],
+      "claim": "Dirty state starts async FS.syncfs on a subsequent main loop iteration; force_fs_sync only requests dirty state."
+    },
+    {
+      "id": "remote-serial-cursor",
+      "status": "verified",
+      "source": "src/lib/libidbfs.js",
+      "lines": [
+        [
+          197,
+          224
+        ],
+        [
+          313,
+          358
+        ]
+      ],
+      "claim": "Remote timestamps are collected through openKeyCursor and cursor.continue before reconcile starts its readwrite transaction, whose oncomplete invokes the callback."
+    },
+    {
+      "id": "current-timeout-cause",
+      "status": "pending",
+      "claim": "The serial cursor plus long runtime frame tasks is consistent with the observed delay but does not identify the actual 33 keys or prove the root cause/performance improvement."
+    }
+  ],
+  "sources": [
+    {
+      "project": "godot",
+      "repository": "godotengine/godot",
+      "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "path": "drivers/gles3/rasterizer_gles3.cpp",
+      "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/rasterizer_gles3.cpp",
+      "git_blob_sha1": "a4208f4f1e465313a11f3ca71acec1458162416d",
+      "computed_git_blob_sha1": "a4208f4f1e465313a11f3ca71acec1458162416d",
+      "utf8_bytes": 20253,
+      "sha256": "7906073ee78a23816dfa0a0a21ec5879980f10f4eb5119ffa39051aba957311e",
+      "line_count": 523,
+      "excerpts": [
+        {
+          "start_line": 336,
+          "end_line": 365,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/rasterizer_gles3.cpp#L336-L365",
+          "text": "\t{\n\t\t// Setup shader cache.\n\n\t\tString shader_cache_dir = Engine::get_singleton()->get_shader_cache_path();\n\t\tif (shader_cache_dir.is_empty()) {\n\t\t\tshader_cache_dir = \"user://\";\n\t\t}\n\t\tRef<DirAccess> da = DirAccess::open(shader_cache_dir);\n\t\tif (da.is_null()) {\n\t\t\tERR_PRINT(\"Can't create shader cache folder, no shader caching will happen: \" + shader_cache_dir);\n\t\t} else {\n\t\t\tError err = da->change_dir(\"shader_cache\");\n\t\t\tif (err != OK) {\n\t\t\t\terr = da->make_dir(\"shader_cache\");\n\t\t\t}\n\t\t\tif (err != OK) {\n\t\t\t\tERR_PRINT(\"Can't create shader cache folder, no shader caching will happen: \" + shader_cache_dir);\n\t\t\t} else {\n\t\t\t\tshader_cache_dir = shader_cache_dir.path_join(\"shader_cache\");\n\n\t\t\t\tbool shader_cache_enabled = GLOBAL_GET(\"rendering/shader_compiler/shader_cache/enabled\");\n\t\t\t\tif (!Engine::get_singleton()->is_editor_hint() && !shader_cache_enabled) {\n\t\t\t\t\tshader_cache_dir = String(); //disable only if not editor\n\t\t\t\t}\n\n\t\t\t\tif (!shader_cache_dir.is_empty()) {\n\t\t\t\t\tShaderGLES3::set_shader_cache_dir(shader_cache_dir);\n\t\t\t\t}\n\t\t\t}\n\t\t}"
+        }
+      ]
+    },
+    {
+      "project": "godot",
+      "repository": "godotengine/godot",
+      "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "path": "drivers/gles3/shader_gles3.cpp",
+      "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp",
+      "git_blob_sha1": "4fe333e3cb9bbd7b71ad8cd486b98fc6c31029f8",
+      "computed_git_blob_sha1": "4fe333e3cb9bbd7b71ad8cd486b98fc6c31029f8",
+      "utf8_bytes": 28071,
+      "sha256": "17c01277dc3468a1d53081f01a6f7665f5d0f82e7882a8198e1f486ee344d5d8",
+      "line_count": 844,
+      "excerpts": [
+        {
+          "start_line": 542,
+          "end_line": 550,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp#L542-L550",
+          "text": "#ifndef WEB_ENABLED // not supported in webgl\nstatic const char *shader_file_header = \"GLSC\";\nstatic const uint32_t cache_file_version = 3;\n#endif\n\nbool ShaderGLES3::_load_from_cache(Version *p_version) {\n#ifdef WEB_ENABLED // not supported in webgl\n\treturn false;\n#else"
+        },
+        {
+          "start_line": 633,
+          "end_line": 637,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp#L633-L637",
+          "text": "void ShaderGLES3::_save_to_cache(Version *p_version) {\n#ifdef WEB_ENABLED // not supported in webgl\n\treturn;\n#else\n\tERR_FAIL_COND(!shader_cache_dir_valid);"
+        },
+        {
+          "start_line": 774,
+          "end_line": 805,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp#L774-L805",
+          "text": "\tif (shader_cache_dir != String()) {\n\t\tStringBuilder hash_build;\n\n\t\thash_build.append(\"[base_hash]\");\n\t\thash_build.append(base_sha256);\n\t\thash_build.append(\"[general_defines]\");\n\t\thash_build.append(general_defines.get_data());\n\t\tfor (int i = 0; i < variant_count; i++) {\n\t\t\thash_build.append(\"[variant_defines:\" + itos(i) + \"]\");\n\t\t\thash_build.append(variant_defines[i]);\n\t\t}\n\n\t\tbase_sha256 = hash_build.as_string().sha256_text();\n\n\t\tRef<DirAccess> d = DirAccess::open(shader_cache_dir);\n\t\tERR_FAIL_COND(d.is_null());\n\t\tif (d->change_dir(name) != OK) {\n\t\t\tError err = d->make_dir(name);\n\t\t\tERR_FAIL_COND(err != OK);\n\t\t\td->change_dir(name);\n\t\t}\n\n\t\t//erase other versions?\n\t\tif (shader_cache_cleanup_on_start) {\n\t\t}\n\t\t//\n\t\tif (d->change_dir(base_sha256) != OK) {\n\t\t\tError err = d->make_dir(base_sha256);\n\t\t\tERR_FAIL_COND(err != OK);\n\t\t}\n\t\tshader_cache_dir_valid = true;\n"
+        },
+        {
+          "start_line": 703,
+          "end_line": 719,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/drivers/gles3/shader_gles3.cpp#L703-L719",
+          "text": "void ShaderGLES3::_initialize_version(Version *p_version) {\n\tERR_FAIL_COND(p_version->variants.size() > 0);\n\tbool use_cache = shader_cache_dir_valid && !(feedback_count > 0 && GLES3::Config::get_singleton()->disable_transform_feedback_shader_cache);\n\tif (use_cache && _load_from_cache(p_version)) {\n\t\treturn;\n\t}\n\tp_version->variants.reserve(variant_count);\n\tfor (int i = 0; i < variant_count; i++) {\n\t\tp_version->variants.push_back(AHashMap<uint64_t, Version::Specialization>());\n\t\tVersion::Specialization spec;\n\t\t_compile_specialization(spec, i, p_version, specialization_default_mask);\n\t\tp_version->variants[i].insert(specialization_default_mask, spec);\n\t}\n\tif (use_cache) {\n\t\t_save_to_cache(p_version);\n\t}\n}"
+        }
+      ]
+    },
+    {
+      "project": "godot",
+      "repository": "godotengine/godot",
+      "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "path": "servers/rendering/rendering_server.cpp",
+      "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/servers/rendering/rendering_server.cpp",
+      "git_blob_sha1": "d2b235f8e34fa23a6bb165afcc05d12d7f5327d8",
+      "computed_git_blob_sha1": "d2b235f8e34fa23a6bb165afcc05d12d7f5327d8",
+      "utf8_bytes": 197506,
+      "sha256": "b108f62d9d6113061dd1261e7bef51515fbdba9080b4393245e84cecc67ad7ca",
+      "line_count": 3828,
+      "excerpts": [
+        {
+          "start_line": 3689,
+          "end_line": 3695,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/servers/rendering/rendering_server.cpp#L3689-L3695",
+          "text": "\n\tGLOBAL_DEF(\"rendering/shader_compiler/shader_cache/enabled\", true);\n\tGLOBAL_DEF(\"rendering/shader_compiler/shader_cache/compress\", true);\n\tGLOBAL_DEF(\"rendering/shader_compiler/shader_cache/use_zstd_compression\", true);\n\tGLOBAL_DEF(\"rendering/shader_compiler/shader_cache/strip_debug\", false);\n\tGLOBAL_DEF(\"rendering/shader_compiler/shader_cache/strip_debug.release\", true);\n"
+        }
+      ]
+    },
+    {
+      "project": "godot",
+      "repository": "godotengine/godot",
+      "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "path": "platform/web/os_web.cpp",
+      "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/os_web.cpp",
+      "git_blob_sha1": "b3e8784a40cbced3e814f4ea6a9c6e1e034c82b8",
+      "computed_git_blob_sha1": "b3e8784a40cbced3e814f4ea6a9c6e1e034c82b8",
+      "utf8_bytes": 9691,
+      "sha256": "1062be51a6dd115d613701b3d36840542a5b5d0fa3f6b1ecadff6e1557f9ee29",
+      "line_count": 319,
+      "excerpts": [
+        {
+          "start_line": 74,
+          "end_line": 89,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/os_web.cpp#L74-L89",
+          "text": "void OS_Web::fs_sync_callback() {\n\tget_singleton()->idb_is_syncing = false;\n}\n\nbool OS_Web::main_loop_iterate() {\n\tGodotProfileFrameMark;\n\tGodotProfileZone(\"OS_Web::main_loop_iterate\");\n\tif (is_userfs_persistent() && idb_needs_sync && !idb_is_syncing) {\n\t\tidb_is_syncing = true;\n\t\tidb_needs_sync = false;\n\t\tgodot_js_os_fs_sync(&fs_sync_callback);\n\t}\n\n\tDisplayServer::get_singleton()->process_events();\n\n\treturn Main::iteration();"
+        },
+        {
+          "start_line": 263,
+          "end_line": 266,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/os_web.cpp#L263-L266",
+          "text": "void OS_Web::force_fs_sync() {\n\tif (is_userfs_persistent()) {\n\t\tidb_needs_sync = true;\n\t}"
+        }
+      ]
+    },
+    {
+      "project": "godot",
+      "repository": "godotengine/godot",
+      "commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "path": "platform/web/js/libs/library_godot_os.js",
+      "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/js/libs/library_godot_os.js",
+      "git_blob_sha1": "0e931b794e91ac35c5ba57795de10168bb958e33",
+      "computed_git_blob_sha1": "0e931b794e91ac35c5ba57795de10168bb958e33",
+      "utf8_bytes": 14940,
+      "sha256": "211dfb5520e9dd1381e3c379b4d9486420a02d9f3f72c40b912e3b2a5e7daaa9",
+      "line_count": 488,
+      "excerpts": [
+        {
+          "start_line": 155,
+          "end_line": 170,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/js/libs/library_godot_os.js#L155-L170",
+          "text": "\t\t\tGodotFS._mount_points.forEach(function (path) {\n\t\t\t\tcreateRecursive(path);\n\t\t\t\tFS.mount(IDBFS, {}, path);\n\t\t\t});\n\t\t\treturn new Promise(function (resolve, reject) {\n\t\t\t\tFS.syncfs(true, function (err) {\n\t\t\t\t\tif (err) {\n\t\t\t\t\t\tGodotFS._mount_points = [];\n\t\t\t\t\t\tGodotFS._idbfs = false;\n\t\t\t\t\t\tGodotRuntime.print(`IndexedDB not available: ${err.message}`);\n\t\t\t\t\t} else {\n\t\t\t\t\t\tGodotFS._idbfs = true;\n\t\t\t\t\t}\n\t\t\t\t\tresolve(err);\n\t\t\t\t});\n\t\t\t});"
+        },
+        {
+          "start_line": 191,
+          "end_line": 205,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/js/libs/library_godot_os.js#L191-L205",
+          "text": "\t\tsync: function () {\n\t\t\tif (GodotFS._syncing) {\n\t\t\t\tGodotRuntime.error('Already syncing!');\n\t\t\t\treturn Promise.resolve();\n\t\t\t}\n\t\t\tGodotFS._syncing = true;\n\t\t\treturn new Promise(function (resolve, reject) {\n\t\t\t\tFS.syncfs(false, function (error) {\n\t\t\t\t\tif (error) {\n\t\t\t\t\t\tGodotRuntime.error(`Failed to save IDB file system: ${error.message}`);\n\t\t\t\t\t}\n\t\t\t\t\tGodotFS._syncing = false;\n\t\t\t\t\tresolve(error);\n\t\t\t\t});\n\t\t\t});"
+        },
+        {
+          "start_line": 292,
+          "end_line": 299,
+          "url": "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/js/libs/library_godot_os.js#L292-L299",
+          "text": "\tgodot_js_os_fs_sync__proxy: 'sync',\n\tgodot_js_os_fs_sync__sig: 'vi',\n\tgodot_js_os_fs_sync: function (callback) {\n\t\tconst func = GodotRuntime.get_func(callback);\n\t\tGodotOS._fs_sync_promise = GodotFS.sync();\n\t\tGodotOS._fs_sync_promise.then(function (err) {\n\t\t\tfunc();\n\t\t});"
+        }
+      ]
+    },
+    {
+      "project": "emscripten",
+      "repository": "emscripten-core/emscripten",
+      "commit": "08e2de1031913e4ba7963b1c56f35f036a7d4d56",
+      "path": "src/lib/libidbfs.js",
+      "url": "https://github.com/emscripten-core/emscripten/blob/08e2de1031913e4ba7963b1c56f35f036a7d4d56/src/lib/libidbfs.js",
+      "git_blob_sha1": "b33a19e9ce8c2e05a5439aa9f9cc3dd69f6cf842",
+      "computed_git_blob_sha1": "b33a19e9ce8c2e05a5439aa9f9cc3dd69f6cf842",
+      "utf8_bytes": 12702,
+      "sha256": "2bf2399127ccabdcc9a072b8f9d6a45d130448108971552edbb7ee3253b181cf",
+      "line_count": 392,
+      "excerpts": [
+        {
+          "start_line": 197,
+          "end_line": 224,
+          "url": "https://github.com/emscripten-core/emscripten/blob/08e2de1031913e4ba7963b1c56f35f036a7d4d56/src/lib/libidbfs.js#L197-L224",
+          "text": "    getRemoteSet: (mount, callback) => {\n      var entries = {};\n\n      IDBFS.getDB(mount.mountpoint, (err, db) => {\n        if (err) return callback(err);\n\n        try {\n          var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readonly');\n          transaction.onerror = (e) => {\n            callback(e.target.error);\n            e.preventDefault();\n          };\n\n          var store = transaction.objectStore(IDBFS.DB_STORE_NAME);\n          var index = store.index('timestamp');\n\n          index.openKeyCursor().onsuccess = (event) => {\n            var cursor = event.target.result;\n\n            if (!cursor) {\n              return callback(null, { type: 'remote', db, entries });\n            }\n\n            entries[cursor.primaryKey] = { 'timestamp': cursor.key };\n\n            cursor.continue();\n          };\n        } catch (e) {"
+        },
+        {
+          "start_line": 313,
+          "end_line": 358,
+          "url": "https://github.com/emscripten-core/emscripten/blob/08e2de1031913e4ba7963b1c56f35f036a7d4d56/src/lib/libidbfs.js#L313-L358",
+          "text": "    reconcile: (src, dst, callback) => {\n      var total = 0;\n\n      var create = [];\n      for (var [key, e] of Object.entries(src.entries)) {\n        var e2 = dst.entries[key];\n        if (!e2 || e['timestamp'].getTime() != e2['timestamp'].getTime()) {\n          create.push(key);\n          total++;\n        }\n      }\n\n      var remove = [];\n      for (var key of Object.keys(dst.entries)) {\n        if (!src.entries[key]) {\n          remove.push(key);\n          total++;\n        }\n      }\n\n      if (!total) {\n        return callback(null);\n      }\n\n      var errored = false;\n      var db = src.type === 'remote' ? src.db : dst.db;\n      var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readwrite');\n      var store = transaction.objectStore(IDBFS.DB_STORE_NAME);\n\n      function done(err) {\n        if (err && !errored) {\n          errored = true;\n          return callback(err);\n        }\n      };\n\n      // transaction may abort if (for example) there is a QuotaExceededError\n      transaction.onerror = transaction.onabort = (e) => {\n        done(e.target.error);\n        e.preventDefault();\n      };\n\n      transaction.oncomplete = (e) => {\n        if (!errored) {\n          callback(null);\n        }"
+        }
+      ]
+    }
+  ]
+}

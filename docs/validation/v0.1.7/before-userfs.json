@@ -1,0 +1,551 @@
+{
+  "scope": "Fresh actual Web3085 new journey; readonly browser-owned userfs metadata only. No force sync, injected game action/state or save write API.",
+  "started_utc": "2026-10-31T15:10:14.561311+00:00",
+  "engine": "4.7.2",
+  "build_manifest": {
+    "version": "0.1.6",
+    "godot": "4.7.2",
+    "commit": "3085c189",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 111694835,
+        "sha256": "f752b7508187a4a4aaef24209c9765ef5be918a638d929a9994adf6818058f91"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 139536142,
+        "sha256": "dd34f94f8c3ece0b54160d6c2010c0ec2bbfad50e4127e01c9d57842a7a44488"
+      }
+    ]
+  },
+  "export_sha256": {
+    "index.wasm": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0",
+    "index.audio.position.worklet.js": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8",
+    "index.png": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e",
+    "FONT_LICENSE.txt": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "GODOT_THIRD_PARTY.txt": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d",
+    "index.apple-touch-icon.png": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922",
+    "THIRD_PARTY_NOTICES.md": "68993eca083d28ddce7d235602bf0fb250b014d5cd11730fc2273180997c610a",
+    "index.pck": "bfcf3f521039ff261c8a23138fd5f29a0ad76c0d6f8f3dc29bb7d70ed4e42eee",
+    "index.audio.worklet.js": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3",
+    "index.icon.png": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd",
+    "index.html": "2003176a3c72679d5a02d83686a7177b0b9be5b2fcfbad9e2fe75a2c24b05386",
+    "GODOT_LICENSE.txt": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80",
+    "index.js": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+  },
+  "actual_build_id": "0.1.6 · 3085c189",
+  "actual_gameplay": {
+    "build_id": "0.1.6 · 3085c189",
+    "health": 120,
+    "quality": 0,
+    "physics_frame": 274,
+    "fs_persistent": true,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    }
+  },
+  "databases": [
+    {
+      "database": "/userfs",
+      "mode": "readonly",
+      "keys": [
+        "/userfs/godot",
+        "/userfs/godot/app_userdata",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3/f818a8f730d58a711992c8a4e0128943b6de769e22c755bf25fa9b2c91eb797a",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3/bb66bedc1351d45606a9e7a58d673d19a5dcf38d178d630d1254904a435ccd11",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3/8e0fd2a4dcaed358e6f55b4a13dac2e99da849634cb76e03fa72090229e6bf2d",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3/227703cbe4dbfc7cd2037ec10eef081d3f1f5593f23f5be9a7adb858e12a0b59",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3/b6ae124cd1d4a7e561bd528bd4a77c138ee3a3ecec10dff52834da05a584150b",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3/bf3e769fb9cccb160c1455e48ff14753cb627a350dd01a48eb0f0c360453e632",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3/451048476e1fd0d1e3d2ee406829fdfa053b6cd3cd83ca130a227981bae863d2",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3/5a972e52ef34baa6d9112f5010053a97977d72e736e5df0bdaf9397b3f4235ad",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3/f214330bd79fb762157c96bdfee38537c739e4c46a27337eee2cd92c69e5f3fd",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3/729cdac5e0043b26c3ab71ce2dd86ddffee039defeae03f3ef5a0caa17ef0345",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3/81fd88adc17955a891cb1328d77f82f2b14140dac9c8cf7d6d86f91312221718",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3/4d6fb1c1f824f2814a65e4f43bf7c7d011ecfa4b240872b642ed708dce520009",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3/d030fd8e6c7c05254b38b058d2bfe8373638ee5d4e13abfc4957c6e2b708bef8",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3",
+        "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3/b314a86ef543f95f31f3abeafa04de0fb5d0bc188a65b08a74fdd40c707e1ed3"
+      ],
+      "entries": [
+        {
+          "key": "/userfs/godot",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.320Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.320Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:55.766Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+          "mode": 33206,
+          "kind": "file",
+          "bytes": 157,
+          "timestamp": "2026-10-31T15:10:55.763Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:20.016Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.781Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3/f818a8f730d58a711992c8a4e0128943b6de769e22c755bf25fa9b2c91eb797a",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.781Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.632Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3/bb66bedc1351d45606a9e7a58d673d19a5dcf38d178d630d1254904a435ccd11",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.632Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.780Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3/8e0fd2a4dcaed358e6f55b4a13dac2e99da849634cb76e03fa72090229e6bf2d",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.780Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.693Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3/227703cbe4dbfc7cd2037ec10eef081d3f1f5593f23f5be9a7adb858e12a0b59",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.693Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.763Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3/b6ae124cd1d4a7e561bd528bd4a77c138ee3a3ecec10dff52834da05a584150b",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.763Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.773Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3/bf3e769fb9cccb160c1455e48ff14753cb627a350dd01a48eb0f0c360453e632",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.773Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.764Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3/451048476e1fd0d1e3d2ee406829fdfa053b6cd3cd83ca130a227981bae863d2",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.764Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.692Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3/5a972e52ef34baa6d9112f5010053a97977d72e736e5df0bdaf9397b3f4235ad",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.692Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.645Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3/f214330bd79fb762157c96bdfee38537c739e4c46a27337eee2cd92c69e5f3fd",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.645Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.766Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3/729cdac5e0043b26c3ab71ce2dd86ddffee039defeae03f3ef5a0caa17ef0345",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.766Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.794Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3/81fd88adc17955a891cb1328d77f82f2b14140dac9c8cf7d6d86f91312221718",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.794Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.643Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3/4d6fb1c1f824f2814a65e4f43bf7c7d011ecfa4b240872b642ed708dce520009",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:19.643Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:20.014Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3/d030fd8e6c7c05254b38b058d2bfe8373638ee5d4e13abfc4957c6e2b708bef8",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:20.014Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:20.016Z"
+        },
+        {
+          "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3/b314a86ef543f95f31f3abeafa04de0fb5d0bc188a65b08a74fdd40c707e1ed3",
+          "mode": 16893,
+          "kind": "directory",
+          "bytes": 0,
+          "timestamp": "2026-10-31T15:10:20.016Z"
+        }
+      ]
+    }
+  ],
+  "key_count": 33,
+  "shader_cache_entries": [
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:20.016Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.781Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasOcclusionShaderGLES3/f818a8f730d58a711992c8a4e0128943b6de769e22c755bf25fa9b2c91eb797a",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.781Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.632Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasSdfShaderGLES3/bb66bedc1351d45606a9e7a58d673d19a5dcf38d178d630d1254904a435ccd11",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.632Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.780Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CanvasShaderGLES3/8e0fd2a4dcaed358e6f55b4a13dac2e99da849634cb76e03fa72090229e6bf2d",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.780Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.693Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CopyShaderGLES3/227703cbe4dbfc7cd2037ec10eef081d3f1f5593f23f5be9a7adb858e12a0b59",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.693Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.763Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/CubemapFilterShaderGLES3/b6ae124cd1d4a7e561bd528bd4a77c138ee3a3ecec10dff52834da05a584150b",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.763Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.773Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/FeedShaderGLES3/bf3e769fb9cccb160c1455e48ff14753cb627a350dd01a48eb0f0c360453e632",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.773Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.764Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/GlowShaderGLES3/451048476e1fd0d1e3d2ee406829fdfa053b6cd3cd83ca130a227981bae863d2",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.764Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.692Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesCopyShaderGLES3/5a972e52ef34baa6d9112f5010053a97977d72e736e5df0bdaf9397b3f4235ad",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.692Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.645Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/ParticlesShaderGLES3/f214330bd79fb762157c96bdfee38537c739e4c46a27337eee2cd92c69e5f3fd",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.645Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.766Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/PostShaderGLES3/729cdac5e0043b26c3ab71ce2dd86ddffee039defeae03f3ef5a0caa17ef0345",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.766Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.794Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SceneShaderGLES3/81fd88adc17955a891cb1328d77f82f2b14140dac9c8cf7d6d86f91312221718",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.794Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.643Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkeletonShaderGLES3/4d6fb1c1f824f2814a65e4f43bf7c7d011ecfa4b240872b642ed708dce520009",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:19.643Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:20.014Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/SkyShaderGLES3/d030fd8e6c7c05254b38b058d2bfe8373638ee5d4e13abfc4957c6e2b708bef8",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:20.014Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:20.016Z"
+    },
+    {
+      "key": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/shader_cache/TexBlitShaderGLES3/b314a86ef543f95f31f3abeafa04de0fb5d0bc188a65b08a74fdd40c707e1ed3",
+      "mode": 16893,
+      "kind": "directory",
+      "bytes": 0,
+      "timestamp": "2026-10-31T15:10:20.016Z"
+    }
+  ],
+  "errors": [],
+  "outcome": "metadata_recorded",
+  "seconds": 69.872,
+  "finished_utc": "2026-10-31T15:11:24.433868+00:00",
+  "server_closed": true,
+  "browser_closed": true,
+  "export_unchanged": true
+}

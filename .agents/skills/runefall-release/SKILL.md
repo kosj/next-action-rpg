@@ -29,6 +29,8 @@ python tools/check_mobile_web.py
 
 `browser_smoke.py`는 실제 UI로 품질을 바꾼 뒤 격리된 테스트 프로필의 IndexedDB `FILE_DATA` primary를 읽기 전용으로 조회합니다. 기대한 설정·여정·체크포인트가 커밋되는지 제한 시간 안에 조건 대기한 뒤 브라우저를 완전히 종료하고 같은 프로필에서 이어하기를 다시 검증합니다. 고정 sleep, QA 상태 변조, 테스트 측 강제 동기화로 통과시키지 않습니다. UI 상태·커밋 전후 primary·재시작 상태와 실패 screenshot/state를 함께 보관하며, 진단 실행 성공과 최종 패치가 포함된 빌드의 실행 성공을 구분합니다.
 
+저FPS에서 IDB 관찰이 늦으면 실제 userfs 키·파일/디렉터리·backend별 cache지원 여부를 readonly로 조사합니다. [미지원 Web shader cache 사례](../../../docs/WEB_USERFS_CACHE.md)처럼 빈 캐시 디렉터리도 IDBFS의 직렬 순회 대상일 수 있습니다. 고정 엔진 소스로 지원 여부를 확인한 뒤 한정 설정 A/B를 검증하고, fresh키 감소와 기존 프로필·전체 저장/재시작·공개 주소 승인을 구분합니다. 다른 판본에서 캐시를 자동 비활성화하거나 화질·timeout·강제 sync로 결과를 대신하지 않습니다.
+
 ## GitHub 릴리스
 
 - 기존 권한과 사용자 요청 범위에서 검증한 커밋을 main에 반영합니다. 병합 API 오류가 나면 실제 PR 상태를 확인한 뒤 일반 Git 병합/푸시를 사용할 수 있습니다. 강제 푸시·보호 규칙 우회는 하지 않습니다.

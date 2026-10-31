@@ -1,0 +1,38 @@
+{
+  "scope": "One project setting changed; actual fresh Web metadata only, not full end-to-end/public approval",
+  "source_head": "732bbef2747571f88630111457df951eb34b6985",
+  "actual_both_build_id": "0.1.6 · 3085c189",
+  "project_diff": "shader_compiler/shader_cache/enabled.web=false only",
+  "before_keys": 33,
+  "after_keys": 5,
+  "before_shader_dirs": 29,
+  "after_shader_dirs": 1,
+  "changed_exports": [
+    "index.pck",
+    "index.html"
+  ],
+  "html_change": "Only fileSizes.index.pck102185192→102185256, DOM/callback/CSSunchanged",
+  "errors_before": [],
+  "errors_after": [],
+  "fresh_profile_only": true,
+  "existing_profiles_not_deleted_or_verified": true,
+  "actual_quality0_save_primary": {
+    "checkpoint": 0,
+    "completed": [],
+    "journey_started": true,
+    "lore": [],
+    "settings": {
+      "quality": 0,
+      "shake": true,
+      "volume": 0.7
+    },
+    "shards": 0,
+    "upgrades": [
+      0,
+      0,
+      0
+    ],
+    "version": 1
+  },
+  "browser_and_server_closed": true
+}
