@@ -1,0 +1,46 @@
+{
+  "scope": "Portable knowledge package structure, standalone use and integrity; no target-project runtime or art approval",
+  "checks": [
+    {
+      "name": "All46 source IDs, original hash and handbook coverage match pinned origin",
+      "status": "passed"
+    },
+    {
+      "name": "Extracted and renamed kit checks from an unrelated directory without repository dependencies",
+      "status": "passed"
+    },
+    {
+      "name": "Same-runtime standalone repack produces identical archive bytes",
+      "status": "passed"
+    },
+    {
+      "name": "Valid-CRC archive with changed payload is rejected by manifest SHA",
+      "status": "passed"
+    },
+    {
+      "name": "Internally valid old ZIP is rejected when source content changes",
+      "status": "passed"
+    },
+    {
+      "name": "Broken local documentation link is rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Symlink to material outside kit is rejected",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "bundle_version": "1.0.0",
+  "skills": 3,
+  "source_entries": 46,
+  "zip_bytes": 42234,
+  "zip_sha256": "acfc892c83a6fd59c06e77f87babb4b15ae559c7d8fa35dc9c6546d0d9f32ed6",
+  "package_script_sha256": "938af0b74d9bb456e8a6c9b3ee386a46c02da57c7bd083d012ce4f6c5126b5b3",
+  "packaging_environment": {
+    "python": "3.12.14",
+    "zlib": "1.3.2"
+  },
+  "target_project_validation": "pending",
+  "external_url_freshness_checked": false
+}

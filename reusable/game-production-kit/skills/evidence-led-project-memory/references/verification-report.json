@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "checked_on": null,
+  "source_revision": null,
+  "inputs_sha256": {},
+  "environment": {},
+  "scope": [],
+  "checks": [],
+  "process_exit_code": null,
+  "errors": [],
+  "evidence": [],
+  "unverified": ["<실행 전에는 실제 실행 성공을 주장하지 않음>"],
+  "note": "빈 errors와 checks는 성공을 의미하지 않는다. 실행 후 실제 결과와 범위를 채운다."
+}

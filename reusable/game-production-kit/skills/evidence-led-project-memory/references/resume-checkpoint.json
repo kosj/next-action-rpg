@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "recorded_at": null,
+  "source_revision": null,
+  "completed": [],
+  "in_progress": [],
+  "external_tasks": [],
+  "actual_cost": {"amount": null, "unit": null, "receipt_reference": null},
+  "artifacts": [],
+  "next_steps": [],
+  "authorization_scope_reference": null,
+  "note": "영구 작업 위치에 보관한다. 인증·OAuth 콜백·서명 URL은 넣지 않는다. 재개 시 완료 task를 먼저 조회한다."
+}

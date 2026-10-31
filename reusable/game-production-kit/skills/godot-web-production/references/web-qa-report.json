@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "checked_on": null,
+  "scope": null,
+  "tested_url": null,
+  "expected_source_revision": null,
+  "observed_build_id": null,
+  "browser": {"version": null, "renderer": null, "viewport": null, "profile_scope": "test-only"},
+  "stages": [],
+  "input_and_combat": {"verified": false, "evidence": []},
+  "durable_storage": {"verified": false, "observation_mode": "readonly", "before": null, "after": null},
+  "full_browser_restart": {"verified": false, "same_profile": null, "restored_state": null},
+  "quality_modes": [],
+  "errors": [],
+  "artifacts": [],
+  "unverified": ["target GPU performance", "Windows real-device execution", "final art quality"],
+  "note": "실행 전에는 pending을 유지한다. 빈 errors는 성공을 의미하지 않으며 verified 표시는 실제 근거를 요구한다."
+}

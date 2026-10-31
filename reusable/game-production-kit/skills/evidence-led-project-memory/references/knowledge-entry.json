@@ -1,0 +1,16 @@
+{
+  "id": "replace-with-stable-topic-id",
+  "kind": "pitfall",
+  "status": "pending",
+  "title": "<검색할 짧은 제목>",
+  "summary": "<관찰한 현상·원인·적용 조건·해결/남은 범위>",
+  "tags": ["<topic>"],
+  "checked_on": "<실제 조사 날짜 YYYY-MM-DD>",
+  "context": {
+    "project": "<목표 프로젝트>",
+    "environment": "<버전·플랫폼>",
+    "source_revision": "<검사한 코드/자산 SHA>",
+    "scope": "<확인한 범위와 아직 확인하지 않은 범위>"
+  },
+  "sources": ["<목표 저장소의 근거 경로 또는 영구 HTTPS URL>"]
+}

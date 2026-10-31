@@ -38,6 +38,12 @@ python tools/knowledge.py show web-input-after-ui
 
 외부 공개 스킬을 갱신할 때는 공식 문서와 먼저 대조하고 고정 리비전·파일 해시·라이선스·NOTICE를 함께 갱신합니다. 프로젝트 판단은 외부 원문 밖에 기록합니다.
 
+## 다른 프로젝트에 재사용할 때
+
+[재사용 묶음](../../../reusable/game-production-kit/README.md)은 프로젝트 전용 DB와 분리한 배포용 스킬·사례집·템플릿입니다. 새로운 공통 원칙은 적용 조건·실패 사례와 함께 반영하고, 이름·치수·계정/Flow ID·예산·특정 버전의 성공 수치를 대상 설정으로 복제하지 않습니다. `provenance.json`에는 원본 카탈로그의 고정 커밋·해시·항목 상태/근거를 남깁니다. 대상 프로젝트는 빈 템플릿의 `pending`에서 시작해 자신의 근거로 검증합니다.
+
+묶음 판본과 출처를 갱신한 뒤 `python reusable/game-production-kit/scripts/package.py --check`로 내부 링크·템플릿·출처 구조를 확인하고 `--output build/knowledge/game-production-kit.zip`으로 ZIP을 만듭니다. 검증 후 배포본 `reusable/game-production-kit.zip`과 `.sha256`, 해당 검증 보고서를 함께 갱신합니다. CI의 `--verify-source ZIP_PATH`는 배포 ZIP과 현재 source의 파일별 byte/SHA 일치를 검사합니다. 압축 라이브러리가 다른 환경의 ZIP 전체 byte 일치를 요구하지 않습니다. `--verify ZIP_PATH`는 ZIP 자체의 manifest와 무결성을 검사합니다. 독립 경로에 풀어 검사 스크립트를 실행하고, 새로 복사한 스킬이 현재 저장소 경로에 의존하지 않는지도 확인합니다. 구조 검사로 외부 정책의 최신성이나 새 프로젝트 성공을 승인하지 않습니다.
+
 ## 완료 기준
 
 ```bash

@@ -1295,6 +1295,38 @@
         "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/audio/audio_stream_player_internal.cpp",
         "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_server.cpp"
       ]
+    },
+    {
+      "id": "portable-production-knowledge-kit",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "프로젝트 사례와 일반 절차를 분리해 독립 스킬 묶음으로 이전한다",
+      "summary": "고정커밋f08d43b의46항목을출처로지식관리·Godot웹제작·생성형3D아트의독립스킬3종과사례집·빈템플릿을정리했다. 각스킬의로컬참조는자기폴더안에두고프로젝트명/치수/Flow/예산/인증/과거verified를대상설정으로이전하지않는다. 새프로젝트는실제조건을채우고pending에서검증한다. stdlib package.py는출처/템플릿/로컬링크를검사하고재현가능ZIP·파일별SHAmanifest를생성/검증한다. 구조검사는새프로젝트실행이나AAA승인이아니다.",
+      "tags": [
+        "knowledge",
+        "skills",
+        "reuse",
+        "documentation",
+        "pipeline"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "bundle": "game-production-kit1.0.0",
+        "source_snapshot": "f08d43bf8e9c5e0d295d39596de0bbe405ad9f53;46sourceentries",
+        "transfer_scope": "Independent procedures and empty templates; receiving project requires revalidation",
+        "validation": "Standalone extraction/renamed path/repack and7 integrity/provenance checks passed; six knowledge-tool regressions passed. Target project execution pending."
+      },
+      "sources": [
+        "reusable/game-production-kit/README.md",
+        "reusable/game-production-kit/HANDBOOK.md",
+        "reusable/game-production-kit/provenance.json",
+        "reusable/game-production-kit/scripts/package.py",
+        "reusable/game-production-kit/skills/evidence-led-project-memory/SKILL.md",
+        "reusable/game-production-kit/skills/godot-web-production/SKILL.md",
+        "reusable/game-production-kit/skills/generated-3d-game-art/SKILL.md",
+        "docs/validation/knowledge-kit/verification.json",
+        "reusable/game-production-kit.zip.sha256"
+      ]
     }
   ]
 }

@@ -16,3 +16,7 @@
 [godot-physics](godot-physics/SKILL.md), [godot-export](godot-export/SKILL.md), [godot-gdscript-headless-testing](godot-gdscript-headless-testing/SKILL.md), [godot-animation](godot-animation/SKILL.md)은 외부 원문입니다. 출처·리비전·원문 해시는 [upstream.json](upstream.json), 라이선스는 [LICENSE](LICENSE)·[NOTICE](NOTICE)를 참조합니다. 이 라이선스 파일은 보관한 외부 자료에 적용되며 프로젝트 전용 스킬에 새 라이선스를 부여하지 않습니다.
 
 프로젝트 전용 스킬은 사용자 요청과 검증 결과에 맞춰 수정합니다. 공개 원문을 프로젝트 절차처럼 수정하지 않습니다.
+
+## 다른 프로젝트용 배포 묶음
+
+[game-production-kit](../../reusable/game-production-kit/README.md)에 독립적인 지식 관리·Godot 웹 제작·생성형 3D 아트 스킬 3종, 사례집과 빈 기록 템플릿을 보관합니다. 각 스킬 폴더는 내부 참조만으로 복사해 사용할 수 있습니다. 실제 목표 프로젝트의 `.agents/skills/` 등에 설치하고 그 프로젝트의 설정과 검증 결과를 채웁니다. 현재 프로젝트의 검증 상태·권한·예산을 자동으로 이전하지 않습니다.

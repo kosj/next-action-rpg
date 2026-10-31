@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "project_name": null,
+  "project_dir": null,
+  "engine_version": null,
+  "engine_binary": null,
+  "export_templates_version": null,
+  "application_version_source": null,
+  "renderer_by_platform": {},
+  "blender_version": null,
+  "coordinate_contract": {
+    "units_per_meter": null,
+    "gameplay_forward_axis": null,
+    "asset_forward_axis": null,
+    "weapon_blade_axis": null
+  },
+  "save": {
+    "schema_version": null,
+    "primary_path": null,
+    "durable_storage_backend": null,
+    "browser_database_selector": null,
+    "browser_primary_key": null
+  },
+  "commands": {"import": null, "regression": null, "export": null, "browser_qa": null},
+  "deployment": {"host": null, "base_path": null, "public_url": null, "expected_source_revision": null},
+  "budgets": {"raw_web_bytes": null, "texture_bytes": null, "frame_time_ms": null},
+  "target_hardware": {},
+  "note": "모든 값은 목표 프로젝트에서 결정한다. null은 미설정이며 이전 프로젝트의 버전·주소·예산을 뜻하지 않는다."
+}

@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "bundle_name": "game-production-kit",
+  "bundle_version": "1.0.0",
+  "prepared_on": "2026-10-31",
+  "transfer_rule": "Source observations and verification status do not verify a receiving project; validate its own versions, inputs, permissions and outcomes.",
+  "source_catalog": {
+    "repository": "https://github.com/kosj/next-action-rpg",
+    "commit": "f08d43bf8e9c5e0d295d39596de0bbe405ad9f53",
+    "catalog_url": "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/knowledge/entries.json",
+    "catalog_sha256": "d47200eeccd9bc53fe434e2cc72161199b7727642241ba88d9ebb5aaefd19aef",
+    "entry_count": 46,
+    "entries": [
+      {
+        "id": "toolchain-version-pin",
+        "source_title": "엔진·템플릿 버전은 동일하게 고정한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "physics": "GodotPhysics3D",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/toolchain.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/build.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/project.godot",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ENGINEERING_EVIDENCE.md",
+          "https://godotengine.org/article/maintenance-release-godot-4-7-2/"
+        ]
+      },
+      {
+        "id": "combat-swept-hit-query",
+        "source_title": "베기 궤적과 원형 스킬의 안쪽 판정을 명시적으로 검사한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/core/strike.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/world/camera_rig.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/combat_regressions.gd",
+          "https://docs.godotengine.org/en/4.7/classes/class_physicsdirectspacestate3d.html"
+        ]
+      },
+      {
+        "id": "parry-and-restore-state",
+        "source_title": "패링과 체크포인트 복귀는 남은 전투 상태를 취소한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/enemy.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/combat_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ENGINEERING_EVIDENCE.md"
+        ]
+      },
+      {
+        "id": "save-validated-backup",
+        "source_title": "유효한 primary만 backup으로 회전하고 저장 실패를 롤백한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "save_schema": "v1",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/ui/hud.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/save_regressions.gd",
+          "https://docs.godotengine.org/en/4.7/classes/class_fileaccess.html"
+        ]
+      },
+      {
+        "id": "save-settings-vs-journey",
+        "source_title": "설정만 저장한 파일과 플레이 여정을 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "save_schema": "v1 with optional journey_started",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/save_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/DESIGN.md"
+        ]
+      },
+      {
+        "id": "web-input-after-ui",
+        "source_title": "이어하기·재개 버튼 클릭이 공격 입력으로 누수될 수 있다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "browser": "Chromium 154",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/test_runner.gd",
+          "https://docs.godotengine.org/en/4.7/classes/class_input.html",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        ]
+      },
+      {
+        "id": "web-persistence-test",
+        "source_title": "웹 저장은 브라우저를 완전히 종료한 뒤 같은 프로필에서 확인한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "browser": "Chromium 154",
+          "playwright": "1.62.0",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/check_web.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_web.html#using-cookies-for-data-persistence",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        ]
+      },
+      {
+        "id": "headless-integration-lifecycle",
+        "source_title": "전체 씬·autoload가 필요한 회귀 검사는 Node runner를 유지한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "godot": "4.7.2",
+          "commit": "289f99eec4389eeb63dfb3e601d4f5b0e4175097",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/test_runner.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/build.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/godot-gdscript-headless-testing/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        ]
+      },
+      {
+        "id": "pages-enablement-blocker",
+        "source_title": "해결된 과거 제약: Pages 최초 활성화 전에는 공개 웹을 게시할 수 없었다",
+        "source_status": "superseded",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "repository": "kosj/next-action-rpg (public)",
+          "release": "v0.1.1"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/DEPLOYMENT.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071830733",
+          "https://github.com/actions/configure-pages/blob/v5/action.yml",
+          "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages"
+        ]
+      },
+      {
+        "id": "pages-public-deployment",
+        "source_title": "Pages 최초 설정 후 검증된 main을 자동 배포하고 공개 실행 커밋까지 확인한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "repository": "kosj/next-action-rpg (public)",
+          "release": "v0.1.2",
+          "commit": "7162bd2568547a26512992407c8d70e43fdb00f8",
+          "run": "41123086701"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/DEPLOYMENT.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.2/public-web-verification.json",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41123086701",
+          "https://kosj.github.io/next-action-rpg/"
+        ]
+      },
+      {
+        "id": "public-browser-ca-trust",
+        "source_title": "관리형 클라우드 Chromium의 로컬 CA 신뢰 문제는 hosted 공개 검사와 구분한다",
+        "source_status": "pending",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "platform": "managed Linux cloud",
+          "browser": "Chromium",
+          "site": "https://kosj.github.io/next-action-rpg/"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.2/public-web-verification.json",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41123086701"
+        ]
+      },
+      {
+        "id": "release-assets-ci-token",
+        "source_title": "릴리스 바이너리 첨부는 태그 CI의 일회성 토큰으로 처리한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "commit": "7162bd2568547a26512992407c8d70e43fdb00f8",
+          "release": "v0.1.2"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.2/release-manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.2/release-verification.json",
+          "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.2",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41123131649"
+        ]
+      },
+      {
+        "id": "blender-lts-batch-exit",
+        "source_title": "Blender LTS는 출력 생성과 프로세스 정상 종료를 분리해 확인한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "production_blender": "4.3.2",
+          "experiment_blender": "5.2.3 LTS",
+          "godot": "4.7.2",
+          "platform": "Linux cloud"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_REVIEW.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/blender-lts/comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/blender-lts/export-process-result.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/blender-lts/godot-comparison.log"
+        ]
+      },
+      {
+        "id": "art-skeleton-contract",
+        "source_title": "이전 제약: v0.1.2 기본 캐릭터는 피벗이고 스킨은 별도 후보였다",
+        "source_status": "superseded",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "application": "v0.1.2",
+          "runtime": "prototype pivots; separate real skeletal candidate"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_PIPELINE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_REVIEW.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/godot-animation/SKILL.md",
+          "https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md"
+        ]
+      },
+      {
+        "id": "varco-generation-license",
+        "source_title": "VARCO는 생성 당시 공개 범위와 라이선스를 자산별로 기록한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "policy_date": "2026-10-12",
+          "application": "v0.1.2",
+          "candidate": "PRIVATE generation setting recorded"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_PIPELINE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_REVIEW.md",
+          "https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate"
+        ]
+      },
+      {
+        "id": "varco-official-mcp",
+        "source_title": "VARCO는 공식 원격 MCP와 Codex 연결 가이드를 제공한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "documentation": "live setup.md and 2026-07-14 official articles",
+          "cli_help_checked": "Codex 0.163.0"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VARCO_MCP.md",
+          "https://3d.varco.ai/mcp/setup.md",
+          "https://3d.varco.ai/docs/blog/2026-07-14-connect-varco-3d-to-codex-or-claude-with-one-prompt"
+        ]
+      },
+      {
+        "id": "varco-client-connection",
+        "source_title": "현재 Codex 클라이언트의 VARCO 등록·OAuth·실제 읽기 호출을 확인했다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "client": "managed cloud Codex CLI 0.163.0",
+          "state": "OAuth and read-only MCP calls verified"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VARCO_MCP.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/varco_mcp.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/tests/test_varco_mcp.py",
+          "https://3d.varco.ai/mcp/setup.md"
+        ]
+      },
+      {
+        "id": "skeletal-presentation-bridge",
+        "source_title": "스킨 표현은 실제 게임 상태의 시간만 따라가고 누락 상태는 피벗으로 복구한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "application": "v0.1.4 development",
+          "validation": "Latest305 native assertions, clean shutdown and localWeb316.961s passed; archived43 standalone model checks describe an earlier bridge revision. Exact public SHA evidence is separate in PR6/Actions"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/skeletal_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/production_character_art.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+          "https://github.com/kosj/next-action-rpg/pull/6"
+        ]
+      },
+      {
+        "id": "production-art-contract-checks",
+        "source_title": "제작 입력·참조 해시·공격 수치와 실제 모델 구조 검사는 별도 게이트다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "application": "v0.1.2",
+          "references": "3 native-generated 2D concepts, not VARCO models",
+          "motion_contract": "9 planned clips"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/inspect_glb.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/check_art_production.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/asset_specs.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/motion_contract.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/references/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_SLICE.md"
+        ]
+      },
+      {
+        "id": "varco-first-candidate",
+        "source_title": "명시적인 빈 Flow에서 리라 1건을 생성하고 완료 task로 후속 리깅·모션을 고정했다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "application": "v0.1.2",
+          "generation_status": "one source mesh, one rig, three locomotion candidates completed"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/varco_lyra_plan.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VARCO_MCP.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_SLICE.md"
+        ]
+      },
+      {
+        "id": "public-skills-provenance",
+        "source_title": "공개 스킬은 리비전·원문 해시·라이선스를 보존하고 공식 문서와 대조한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "upstream_revision": "19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9",
+          "upstream_date": "2026-10-28"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/upstream.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/LICENSE",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/NOTICE",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ENGINEERING_EVIDENCE.md",
+          "https://github.com/gamedev-skills/awesome-gamedev-agent-skills"
+        ]
+      },
+      {
+        "id": "target-hardware-validation",
+        "source_title": "Windows 실기기·게임패드·목표 프레임과 플레이 시간은 미검증이다",
+        "source_status": "pending",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "application": "v0.1.4 character preview",
+          "validated_scope": "Source and CPU/standalone gait metrics do not establish target GPU or Windows execution readiness"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/DESIGN.md",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        ]
+      },
+      {
+        "id": "skeletal-candidate-origin-normalization",
+        "source_title": "같은 VARCO 리그의 원점 차이는 공통 평행이동을 입증하고 샘플 포즈로 다시 확인한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-30",
+        "source_context": {
+          "blender": "4.3.2",
+          "application": "v0.1.2",
+          "sample_fractions": "0, 0.5, 1",
+          "vertex_tolerance_m": "1e-4"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/lyra-001/godot-import.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md"
+        ]
+      },
+      {
+        "id": "web-idbfs-async-commit",
+        "source_title": "웹 설정 메모리 상태와 IndexedDB 커밋 완료를 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "application": "v0.1.3 development",
+          "validated": "official engine source, readonly diagnostics and final local WebGL/quality/restart run",
+          "commit_wait_patch": "verified: actual primary quality0 then1 and same-profile browser restart1; errors0"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/os_web.cpp",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/js/libs/library_godot_os.js",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/unix/dir_access_unix.cpp",
+          "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/browser-storage.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/browser-persistence.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/README.md"
+        ]
+      },
+      {
+        "id": "workspace-resume-checkpoints",
+        "source_title": "비용이 큰 작업의 재개 정보는 /tmp 밖의 공유 작업 루트에 보관한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "platform": "managed cloud",
+          "scope": "resume within the shared project workspace; temporary files are not durable evidence"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-knowledge/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_BATCH_2026_10_31.md"
+        ]
+      },
+      {
+        "id": "varco-stock-duplicate-endpoints",
+        "source_title": "중복 끝 timestamp의 stock 모션은 원본 승인과 재샘플 파생 검증을 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "blender": "4.3.2",
+          "candidate": "lyra-motion-library-001 and lyra-web-001",
+          "source_structural_pass": "false",
+          "derived": "53 bones, 1 skin, 12 clips; gameplay contract not approved"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-motion-library-001/source-timestamp-findings.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-motion-library-001/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-motion-library-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-motion-library-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/raw-source-timestamp-findings.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/motion-library-validation.json"
+        ]
+      },
+      {
+        "id": "varco-remesh-measured-budgets",
+        "source_title": "Remesh 삼각형 감소·다운로드 크기·재질·리그를 각각 측정한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "candidate": "lyra-web-001",
+          "blender": "4.3.2",
+          "validation": "static structure, REST renders and material comparison; final runtime approval false"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/review-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/material-comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/review.json"
+        ]
+      },
+      {
+        "id": "generated-static-prop-axis-contract",
+        "source_title": "정적 생성 소품의 축·실측·충돌을 실제 반입 트리에서 대조한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "application": "v0.1.3 development",
+          "scope": "canonical static derivatives and imported scene contracts; final art and hardware performance not approved"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/batches/2026-10-31/derive_props.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/batches/2026-10-31/derive_portal.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/world/sanctuary.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/art_integration_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md"
+        ]
+      },
+      {
+        "id": "armature-translation-roll-precision",
+        "source_title": "리그 원점 평행 이동에서 bone roll 재계산 오차를 검사한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "blender": "4.3.2",
+          "godot": "4.7.2",
+          "rest_guard": "1e-5 unchanged",
+          "pose_samples": "start/middle/end; does not approve full source fidelity or visual quality"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_BATCH_2026_10_31.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-web-001/godot-audit-motion-library.json"
+        ]
+      },
+      {
+        "id": "browser-quality-before-combat",
+        "source_title": "웹 품질·저장 대기는 적 없는 접근 구역에서 검사한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "failure_run": "41161007423",
+          "failed_head": "d48bc5cfc6b8c214f89338a3d7e91e2dfb732eda",
+          "remedy_runtime": "verified: fresh local full tour and GitHub CI41161650156; actual safe approach followed by unchanged combat/restart coverage"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/ci-before-safe-quality/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/ci-before-safe-quality/failure-state.json",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41161007423",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/ci/browser-quality.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/ci/browser-state.json",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41161650156"
+        ]
+      },
+      {
+        "id": "v013-generated-art-validation",
+        "source_title": "v0.1.3 생성 소품과 캐릭터 후보의 검증 범위를 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "version": "0.1.3",
+          "code_head": "655b587b630aa28fb277effd80d208614bab299f",
+          "ci_run": "41161650156",
+          "ci_build": "0.1.3 · e0a04a15",
+          "scope": "validated PR code and source artifacts; main public deployment and tag release have independent workflow evidence"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/batches/2026-10-31/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_BATCH_2026_10_31.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.3/ci/browser-persistence.json",
+          "https://github.com/kosj/next-action-rpg/pull/5",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41161650156"
+        ]
+      },
+      {
+        "id": "v014-skeletal-preview",
+        "source_title": "리라와 일반 근접 수호병에 실제 스킨 프리뷰를 반입한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "version": "0.1.4 development",
+          "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+          "sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+          "scope": "Archived268 native and43 independent model checks and exports cover their recorded revision; added Lyra transition fixture27 passed; latest whole-build/browser/public acceptance and final AAA art remain separate",
+          "latest_validation": "Local integrated305 native assertions,Python41,Web/Windows export and complete localWeb316.961s passed; exact public commit evidence is recorded in PR6 and its Actions runs"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/models/production/lyra_gameplay.glb",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/models/production/sentinel_gameplay.glb",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/production_character_art.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-gameplay-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/sentinel-gameplay-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+          "https://github.com/kosj/next-action-rpg/pull/6"
+        ]
+      },
+      {
+        "id": "character-preview-final-art-review",
+        "source_title": "실제 스킨 프리뷰와 최종 변형·전환·장면 품질을 구분한다",
+        "source_status": "pending",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "application": "v0.1.4 preview",
+          "unverified": "Final same-revision face/hands, full deformation/contact/action footwork, visual quality of implemented transitions, hair/cloth, complete scene/VFX and real target GPU performance"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/deformation_review/README.md"
+        ]
+      },
+      {
+        "id": "skeletal-socket-scale-and-frame",
+        "source_title": "손 socket은 같은 프레임 포즈와 리그 scale을 함께 검증한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "hero_rig_scale": "1.8189517",
+          "sentinel_rig_scale": "1.9514694",
+          "validation": "Actual imported scene socket/world-length checks; anatomical grasp is not final approval"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/data/character_grips.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/bone_attachment_3d.cpp",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/skeleton_3d.cpp",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-gameplay-001/godot-audit.json"
+        ]
+      },
+      {
+        "id": "importer-bone-display-helpers",
+        "source_title": "Blender importer의 bone widget을 실제 메시 bounds에서 제외한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "blender": "4.3.2",
+          "candidate": "sentinel-web-001",
+          "verified_result": "1 mesh,22000tri;normalized REST height1.95000005m and floor5.96e-8m"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/render_glb_review.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/sentinel-web-001/rest-review/review.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/sentinel-web-001/review-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md"
+        ]
+      },
+      {
+        "id": "project-authored-runtime-gaits",
+        "source_title": "runtime 이동·행동 키는 프로젝트 저작과 측정 가능한 접지로 관리한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "authoring": "Blender4.3.2;100Hz analytical gait sampling",
+          "hero_reference_speed": "6.4/8.5m/s",
+          "sentinel_reference_speed": "3.6m/s",
+          "scope": "Standalone and archived authoring-stage100Hz contact/loop samples; no rendered all-frame or hardware approval"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/author_character_actions.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/character_gait.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/lyra.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/sentinel.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-gameplay-001/authoring.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/sentinel-gameplay-001/authoring.json"
+        ]
+      },
+      {
+        "id": "character-capsule-visual-floor",
+        "source_title": "스킨 발바닥0과 actor capsule bottom의 좌표를 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "application": "v0.1.4 installed preview",
+          "validation": "Independent production-model checks preserve controller/capsule/collision/health and visual sole offset"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/enemy.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/production-summary.json"
+        ]
+      },
+      {
+        "id": "headless-input-injection-boundary",
+        "source_title": "물리 신호 직후 입력 주입은 실제 just_pressed 경계를 확인한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "application": "v0.1.4 development",
+          "validated": "225 native regressions0fail; gameplay healing semantics unchanged"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/skeletal_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md"
+        ]
+      },
+      {
+        "id": "charge-held-end-pose-regression",
+        "source_title": "충전 끝의 상태 이름·손가락 변화만으로 실제 장전 포즈를 승인하지 않는다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "before_hero_sha256": "ea92de7f378dae9d828effae84a6e35bafd70b66c2895fd76b80910531afd990",
+          "after_hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+          "validation": "One old-asset failure preserved; final43 independent and268 integrated checks passed"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/production-charge-before-fix.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/candidates/lyra-gameplay-001/authoring.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md"
+        ]
+      },
+      {
+        "id": "courtyard-cc0-pbr-materials",
+        "source_title": "첫 courtyard PBR은 공식 CC0 원본·물리 크기·채널을 고정한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "provider": "Poly Haven official public API and CC0 license, checked 2026-10-31",
+          "scope": "Source provenance and hashes; isolated material/texture import; neutral studio visual review only",
+          "physical_units": "Official Public-API swagger.yml defines dimensions in millimeters; convert to meters"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/source_metadata.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/LICENSE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/sync_materials.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/THIRD_PARTY_NOTICES.md",
+          "https://polyhaven.com/license",
+          "https://github.com/Poly-Haven/Public-API/blob/master/swagger.yml"
+        ]
+      },
+      {
+        "id": "godot-texture-import-budget-and-mips",
+        "source_title": "원본 이미지 용량과 밉맵 포함 runtime 용량을 따로 측정한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 stable; isolated gl_compatibility review project",
+          "measured": "9 source JPEGs = 9,785,368 bytes; imported lossless mipmapped CTEX = 21,504,226 bytes",
+          "scope": "Texture import measurement; complete current game export and hardware residency are separate checks"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/courtyard_materials/sync_materials.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/materials/courtyard/floor_albedo.jpg.import",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/materials/courtyard/floor_normal.jpg.import",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/build.py"
+        ]
+      },
+      {
+        "id": "aaa-representative-slice-acceptance",
+        "source_title": "리라·근접 수호병·첫 방의 AAA 최종 승인은 같은 판본의 화면·동작·실기기 근거가 필요하다",
+        "source_status": "pending",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "representative_slice": "Lyra and rune sword; regular melee sentinel and sword; first sanctuary courtyard",
+          "acceptance": "Pending; final same-revision visual and hardware evidence is required",
+          "targets": "Windows1080p and Web720p at60fps/16.7ms are goals, not measured achievement; target GPU/CPU/render path must be recorded"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/asset_specs.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/motion_contract.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/references/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md"
+        ]
+      },
+      {
+        "id": "production-phase-bounded-pose-blend",
+        "source_title": "완전한 production 본 포즈는 phase 보존과 최대80ms 시각 보간으로 전환한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2; presentation step1/60s; maximum blend0.08s",
+          "bridge_sha256": "c2f0920d0f286fa0732793be47a438ebb04b2bd6b77c0f36549ed46b523e2e78",
+          "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+          "scope": "27 actual production Lyra/sparse-contract assertions; no latest whole-build, final visual/contact or target GPU approval"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md"
+        ]
+      },
+      {
+        "id": "immutable-import-tracks-and-pose-feedback",
+        "source_title": "수동 포즈 보간은 importer가 제거한 상수 본 채널까지 검증한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2",
+          "observed_before": "159 authored channels ->55 imported tracks; RootMask0, RightHandMask2; strict production opt-in rejected",
+          "correction": "Both production GLB sidecars remove_immutable_tracks=false and reimport; actual Lyra transition27 checks then passed",
+          "scope": "Complete target-channel contract; source GLB existence alone does not establish imported Animation completeness"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-import-diagnostic.log",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/models/production/lyra_gameplay.glb.import",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/assets/models/production/sentinel_gameplay.glb.import",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/transition-polish-runtime.log"
+        ]
+      },
+      {
+        "id": "weight-repair-per-edge-worsening",
+        "source_title": "웨이트 보정은 글로벌 분포 개선 뒤의 새 국소 edge 악화까지 검사한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "sampling": "Every exported timestamp and interval midpoint;20/10 clips; finite sampling is not continuous deformation proof",
+          "runtime_hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
+          "runtime_sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
+          "decision": "All automated repair candidates rejected; original runtime retained; final deformation and AAA acceptance pending"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/tools/repair_character_weights.py",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/deformation_review/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/deformation_review/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/deformation_review/lyra-review.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/art_source/production/character_actions/deformation_review/sentinel-review.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/.agents/skills/runefall-art/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/AAA_ART_QUALITY.md"
+        ]
+      },
+      {
+        "id": "audio-server-deferred-playback-shutdown",
+        "source_title": "AudioPlayer.stop 이후 실제 mixer playback 참조 해제를 확인하고 종료한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 stable; Linux WAV playback",
+          "validation": "Focused9 lifecycle assertions and integrated305 native assertions passed without shutdown errors",
+          "scope": "Actual playback lifetime and callback guard; no sound-design or target-hardware approval"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/scripts/core/audio.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/audio_lifecycle_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/game/tests/test_runner.gd",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/audio-lifecycle.json",
+          "https://github.com/kosj/next-action-rpg/blob/f08d43bf8e9c5e0d295d39596de0bbe405ad9f53/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/audio/audio_stream_player_internal.cpp",
+          "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_server.cpp"
+        ]
+      }
+    ]
+  },
+  "distribution": "Project-authored procedures and blank templates with provenance links; copied skill folders have self-contained local references."
+}

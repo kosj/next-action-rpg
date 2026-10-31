@@ -49,3 +49,17 @@ python tools/knowledge.py check
 5. `python tools/knowledge.py check` 후 같은 변경으로 커밋합니다. CI에서도 검사합니다.
 
 토큰·개인정보·서명된 임시 URL·대화 전문은 저장하지 않습니다. 외부 스킬 원문의 출처와 해시는 [.agents/skills/upstream.json](../.agents/skills/upstream.json)에 별도로 유지합니다.
+
+## 다른 프로젝트로 가져가기
+
+[재사용 지식 묶음](../reusable/game-production-kit/README.md)에 현재 축적한 내용의 일반 원칙을 스킬 3종·사례집·빈 템플릿으로 정리했습니다. 원본 46항목의 당시 상태와 근거는 고정 커밋 스냅샷으로 추적합니다. 새 프로젝트에는 필요한 스킬 폴더 전체를 복사하고 실제 버전·저장 경로·자산 축·예산 등을 채운 뒤 `pending`에서 재검증합니다. 이 프로젝트의 `verified`나 인증/실행 권한을 그대로 승계하지 않습니다.
+
+[ZIP](../reusable/game-production-kit.zip)과 [SHA-256](../reusable/game-production-kit.zip.sha256)도 함께 보관합니다. ZIP은 전체 게임 저장소를 복사하지 않고 사용할 수 있습니다.
+
+```bash
+python reusable/game-production-kit/scripts/package.py --check
+python reusable/game-production-kit/scripts/package.py --output build/knowledge/game-production-kit.zip
+python reusable/game-production-kit/scripts/package.py --verify build/knowledge/game-production-kit.zip
+```
+
+묶음 자체의 재현/검사는 Python 표준 라이브러리만 사용합니다. 게임 엔진 검사와 별개로 실행할 수 있습니다.

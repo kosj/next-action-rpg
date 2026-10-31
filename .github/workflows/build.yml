@@ -40,6 +40,8 @@ jobs:
       - name: Validate project knowledge and art production contracts
         run: |
           python tools/knowledge.py check
+          python reusable/game-production-kit/scripts/package.py --check
+          python reusable/game-production-kit/scripts/package.py --verify-source reusable/game-production-kit.zip
           python -m unittest discover -s tools/tests -p 'test_*.py'
           python tools/check_art_production.py
           python art_source/production/courtyard_materials/sync_materials.py

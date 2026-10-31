@@ -1,0 +1,141 @@
+{
+  "template_version": 1,
+  "template_notice": "새 프로젝트용 빈 양식입니다. null/pending은 미확인이며 과거 승인·비용·검수 결과를 상속하지 않습니다. 토큰·인증 코드·서명된 임시 URL은 기록하지 않습니다.",
+  "asset_id": null,
+  "status": "pending",
+  "purpose": null,
+  "target_quality": null,
+  "current_project_authority": {
+    "status": "pending",
+    "instruction_evidence": null,
+    "permitted_work_scope": null,
+    "upload_scope": null,
+    "cost_scope": null,
+    "budget_amount": null,
+    "budget_unit": null,
+    "additional_purchase_scope": null
+  },
+  "provenance": {
+    "origin_kind": null,
+    "origin_kind_options": ["generated", "licensed_stock", "project_authored", "mixed"],
+    "provider": null,
+    "creator": null,
+    "permanent_source_url": null,
+    "created_at": null,
+    "model_and_settings": null,
+    "completed_task_reference": null,
+    "downstream_execution_scope": null,
+    "license_status": "pending",
+    "license_at_creation": null,
+    "plan_and_privacy_at_creation": null,
+    "official_terms_url": null,
+    "terms_checked_on": null,
+    "attribution": null,
+    "redistribution_conditions": null
+  },
+  "execution_record_template": {
+    "status": "pending",
+    "estimate_amount": null,
+    "actual_amount": null,
+    "cost_unit": null,
+    "reused_completed_inputs": null,
+    "executed_nodes_or_scope": null,
+    "result_evidence": null
+  },
+  "executions": [],
+  "source": {
+    "path": null,
+    "sha256": null,
+    "bytes": null,
+    "immutable": null
+  },
+  "derivative": {
+    "path": null,
+    "sha256": null,
+    "bytes": null,
+    "recipe_path": null,
+    "recipe_sha256": null,
+    "tool_versions": null,
+    "reproduction_commands": [],
+    "process_exit_result": null,
+    "declared_changed_fields": [],
+    "preserved_fields_evidence": null
+  },
+  "geometry_and_rig": {
+    "status": "pending",
+    "coordinate_system": null,
+    "units": null,
+    "measured_rest_bounds_m": null,
+    "triangles": null,
+    "renderable_meshes": null,
+    "excluded_actual_custom_shape_helpers": null,
+    "joint_count": null,
+    "joint_map_evidence": null,
+    "rest_and_inverse_bind_evidence": null,
+    "allocated_influences": null,
+    "normalized_weights_evidence": null,
+    "normalization_transform": null,
+    "source_to_derivative_pose_error_m": null
+  },
+  "motion": {
+    "status": "pending",
+    "clip_provenance": [],
+    "authorship_recipe": null,
+    "duplicate_timestamp_findings": null,
+    "gameplay_timing_contract": null,
+    "actual_imported_channel_completeness": null,
+    "manual_pose_blending_enabled": null,
+    "reset_and_missing_channel_policy": null
+  },
+  "runtime_integration": {
+    "status": "pending",
+    "socket_bone": null,
+    "physical_socket_basis_and_offset_m": null,
+    "import_scale_and_actor_scale_evidence": null,
+    "same_frame_final_pose_attachment_evidence": null,
+    "marker_dimensions_m": null,
+    "sole_and_capsule_bottom_evidence": null,
+    "collision_and_gameplay_authority_unchanged_evidence": null,
+    "gameplay_rng_unchanged_evidence": null
+  },
+  "material_map_record_template": {
+    "semantic": null,
+    "path": null,
+    "sha256": null,
+    "color_space": null,
+    "channel_mapping": null,
+    "normal_y_convention": null,
+    "physical_tile_size_m": null
+  },
+  "materials": {
+    "status": "pending",
+    "maps": [],
+    "import_policy": null,
+    "mipmaps_observed": null,
+    "source_bytes": null,
+    "imported_bytes_including_mips": null,
+    "complete_build_transfer_bytes": null,
+    "runtime_resident_bytes": null
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_revision_and_input_hashes": null,
+    "all_keys_and_midpoint_deformation_evidence": null,
+    "worst_original_and_newly_worsened_edges": null,
+    "same_camera_before_after_artifacts": [],
+    "hands_face_hair_cloth_foot_contact_evidence": null,
+    "transition_and_play_camera_evidence": null,
+    "remaining_defects": [],
+    "runtime_adoption": "pending",
+    "final_art_decision": "pending"
+  },
+  "performance": {
+    "status": "pending",
+    "target_gpu_cpu_os_browser": null,
+    "engine_renderer_quality_resolution": null,
+    "target_frame_time_ms": null,
+    "measured_frame_time_distribution_ms": null,
+    "measured_loading_and_memory": null,
+    "real_target_hardware_evidence": null
+  }
+}

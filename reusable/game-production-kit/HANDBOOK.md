@@ -1,0 +1,85 @@
+# 재사용 가능한 실패 사례와 제작 원칙
+
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 원본 46항목의 ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+
+주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
+
+## 프로젝트 기억과 실험
+
+| 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
+| --- | --- | --- |
+| `toolchain-version-pin`, `blender-lts-batch-exit` | binary·템플릿 버전을 명시한다. 출력 파일 생성과 배치 정상 종료를 각각 검사한다. | 실제 실행 binary, export templates, 앱 버전, 프로세스 exit/timeout. 새 Blender가 출력했다고 바로 제작 기준을 바꾸지 않음 |
+| `public-skills-provenance` | 공개 스킬의 원문·리비전·해시·LICENSE/NOTICE를 보존하고 프로젝트 판단을 분리한다. | 현재 공식 문서, 원문 변경, 적용할 부분과 적용하지 않을 부분 |
+| `workspace-resume-checkpoints` | 비용이 큰 작업의 재개 정보를 지속되는 작업 위치에 기록한다. | 환경 교체 시 유지되는 경로, 완료 task ID·상태·원본 해시·실제 비용 |
+| `headless-integration-lifecycle` | autoload/전체 씬이 필요한 테스트는 실제 노드 수명과 종료까지 다룬다. | runner 구조, 예약 coroutine, 노드/리소스 해제, stderr |
+| `headless-input-injection-boundary` | 입력 주입 시각과 게임의 실제 just-pressed 처리 경계를 함께 확인한다. | process/physics 신호 순서, 실제 행동 발생과 입력 해제 |
+
+비용·권한·상태를 추측으로 채우지 않습니다. 외부 목록이 비거나 CLI가 실패하면 실제 도구 발견·읽기 호출·지원 API의 실패 범위를 확인합니다. 한 도구의 인증 오류가 다른 연결 경로까지 사용할 수 없다는 뜻은 아닙니다.
+
+## 전투·복귀·저장·입력
+
+| 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
+| --- | --- | --- |
+| `combat-swept-hit-query` | 베기 궤적의 연속 구간과 원형 범위 내부를 실제 물리 query로 검사한다. | 공격 거리/각도, sampling 간격, 안쪽 대상·대형 collider·한 공격의 중복 적중 |
+| `parry-and-restore-state` | 성공·실패·복귀는 관련 타이머·버퍼·예약 효과를 함께 취소한다. | 경직·무적·콤보·쿨다운·지연 이벤트·새 생명/표현 epoch |
+| `save-validated-backup` | 검증된 정상 primary만 backup으로 회전하고 실패 시 정상 상태를 보존한다. | 스키마/자료형/유한 값/범위, 쓰기·rename 실패와 롤백 |
+| `save-settings-vs-journey` | 설정 저장과 실제 플레이 여정 시작은 서로 다른 상태다. | 타이틀 이어하기 조건, 새 게임/설정만 저장/복귀 시나리오 |
+| `web-input-after-ui` | UI 클릭이 곧바로 공격으로 누수될 수 있다. 이벤트 소비와 fresh-press 경계를 둔다. | 마우스/패드/키보드별 재개 입력, 실제 공격 효과 |
+| `charge-held-end-pose-regression` | 상태명이나 손가락 변화만으로 차지/장전 동작을 승인하지 않는다. | 끝 시점의 실제 몸/무기 이동, 임계 이후 hold, 취소와 release 타이밍 |
+
+게임 코드의 초 단위를 클립 제작의 원본으로 씁니다. 클립이 부족하다고 피해 창을 임의로 늘리거나 검을 길게 만들어 접촉 문제를 숨기지 않습니다. 표현과 판정의 불일치는 실제 영상·marker·게임 데이터를 함께 보며 해결합니다.
+
+## 웹 검증과 배포
+
+| 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
+| --- | --- | --- |
+| `web-persistence-test`, `web-idbfs-async-commit` | 메모리/UI 상태와 durable commit을 분리하고 완전 종료·같은 프로필 재시작까지 검사한다. | 실제 저장 backend/primary key, 동기화 시점, 재시작 후 설정·진행 |
+| `browser-quality-before-combat` | 설정/저장 대기를 안전 구역에 배치하고 전투 검증을 별도로 유지한다. | 정상 입력으로 접근할 수 있는 구역, 검사 중 실제 HP/진행 보존 |
+| `pages-public-deployment`, `pages-enablement-blocker` | repo 공개, 호스팅 최초 활성화, 배포, 공개 URL 실행은 별개 상태다. 해결된 과거 제약을 다시 현재 제약으로 쓰지 않는다. | 현재 Pages 설정과 token scope, 실제 실패 작업, 공개 빌드 식별자 |
+| `release-assets-ci-token` | 릴리스 첨부는 해당 작업에 맞는 현재 인증 경로로 처리한다. | CLI·연결 앱·CI token 각각의 실제 권한과 만료 상태 |
+| `public-browser-ca-trust` | 클라우드의 CA 신뢰 문제와 배포 장애를 구분하고 TLS 검증을 유지한다. | 정상 trust 환경/hosted runner의 실제 결과, URL·source commit |
+
+비동기 저장 관찰은 읽기 전용으로 수행합니다. 키 발견과 primary 읽기를 분리하고 관련 없는 payload를 전부 읽지 않습니다. async 결과는 실제로 await하고 그 값으로 제한된 반복을 합니다. 실패 시 단계별 저장/프레임 진단을 남기며 테스트가 저장을 쓰거나 강제 동기화하지 않습니다.
+
+로컬 dirty export·PR용 합성 merge·main·태그는 서로 다른 source 식별자일 수 있습니다. 각각의 실제 빌드 번호를 기록하고 공개 주소가 기대한 commit을 실행하는지 확인합니다. 릴리스 파일은 실제 첨부를 다시 내려받아 bytes·SHA256·ZIP CRC·필수 실행 파일·의존 notices를 대조합니다.
+
+## 생성형 3D·Blender·애니메이션
+
+| 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
+| --- | --- | --- |
+| `varco-official-mcp`, `varco-client-connection`, `varco-first-candidate` | 도구 존재·현재 연결·OAuth·실제 도구 호출을 구분한다. 완료 task를 입력으로 고정하고 명시 scope를 사용한다. | 현재 공식 MCP 스키마, 실제 Flow/노드/task, 완료 상태와 실행 범위 |
+| `varco-generation-license` | 생성 당시 공개 범위·라이선스·원본·파생 권리와 실제 비용을 자산별로 기록한다. | 현재 정책, 입력 이미지/모션 권리, 상업 사용과 원본 재배포의 구분 |
+| `varco-stock-duplicate-endpoints` | 원본의 중복 timestamp를 보존하고 별도 파생 재샘플을 검사한다. | 엄격한 구조 검사, motion fidelity, 전체 타이밍·loop |
+| `varco-remesh-measured-budgets` | 삼각형 감소와 파일/텍스처 크기·리그·재질·프레임 비용은 별개다. | 실제 출력 수치, 이미지 재베이크, 메모리·실행 화면 |
+| `skeletal-candidate-origin-normalization`, `armature-translation-roll-precision` | 공통 원점 이동을 먼저 증명하고 rest/topology/named weights를 보존한다. 변환 API의 roll/basis 오차를 검사한다. | 같은 리그인지, 허용오차, 전체 본/메시 관계와 표본 포즈. 실패를 허용오차 확대로 통과시키지 않음 |
+| `importer-bone-display-helpers` | importer가 추가한 bone custom-shape helper와 실제 메시를 구분한다. | source 메시/삼각형, 실제 custom_shape 참조, skinned bounds. 이름/크기로 임의 제거하지 않음 |
+| `generated-static-prop-axis-contract`, `skeletal-socket-scale-and-frame` | 실제 marker로 무기 축·길이를 대조하고 수입 리그 스케일만 보정한다. 수동 pose와 같은 프레임의 socket을 검사한다. | 리그 스케일/actor 외부 스케일, 최종 modifier 순서, grip·blade tip과 해부학적 접촉 |
+| `character-capsule-visual-floor` | source 발바닥과 capsule bottom은 다른 좌표다. 필요한 시각 자식 offset만 계산한다. | 실제 collider 중심/높이·REST sole. 원래 프로젝트의 보정치를 복사하지 않음 |
+| `skeletal-presentation-bridge`, `production-art-contract-checks` | 구조·클립/본 매핑·권한 경계와 실제 시간/화면 검증을 분리한다. | bind/정규화 weights/RESET/track 대상/필수 상태, 누락 시 명시 fallback |
+| `project-authored-runtime-gaits` | stock 참고·프로젝트 저작·복제/리타겟의 provenance를 구분한다. 이동 속도와 보폭·stance를 함께 측정한다. | 저작 키·출처 권리, loop seam·reach·발 위치와 실제 이동/방향 |
+| `production-phase-bounded-pose-blend`, `immutable-import-tracks-and-pose-feedback` | 수동 local pose 보간에는 다음 target이 모든 필요한 채널을 덮어써야 한다. phase/hold/취소와 판정 시간을 보존한다. | importer의 상수 트랙 제거, 전체 본 position/rotation/scale. 이 조건이 필요한 경로에만 적용 |
+| `weight-repair-per-edge-worsening` | 글로벌 최대/p99가 개선돼도 새 국소 악화를 찾는다. 전 프레임 표본과 실제 렌더로 채택 여부를 정한다. | 모든 key/중간 포즈의 edge별 변화, 부위 소유, 손/옷/갑옷 접촉과 같은 카메라 전후 |
+
+원래 사례의 리깅·모션이 다른 자산에서도 맞는다고 가정하지 않습니다. source SHA·rest·named weight·모션 키를 대조하고 각 자산의 실제 골격과 의상 소유 영역을 확인합니다. 거부한 수선도 원인·근거·재현 절차를 보존하며 성공한 파생으로 표시하지 않습니다.
+
+## 재질·환경·품질·성능
+
+| 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
+| --- | --- | --- |
+| `courtyard-cc0-pbr-materials`, `godot-texture-import-budget-and-mips` | 색/데이터 채널·물리적 반복 크기·밉맵을 실제로 확인한다. 원본 JPEG와 runtime import/메모리는 다르다. | 공식 자산/작가/라이선스, sRGB albedo·linear normal/ARM, normal 방향·packed 채널·단위·실제 mips |
+| `v013-generated-art-validation`, `v014-skeletal-preview` | 각 판본의 구조·실행 성공은 그 코드/자산의 범위에서 보존한다. | 실제 code/asset SHA·검사 범위·당시 화면, 현재 판본과의 차이 |
+| `art-skeleton-contract`, `character-preview-final-art-review` | 과거 피벗/스킨 상태나 일부 pose 통과를 현재 최종 아트 승인으로 일반화하지 않는다. | 실제 runtime 종류, 전체 변형·전환·얼굴/손·머리/천·접촉 |
+| `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
+| `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
+
+환경 장식을 추가할 때는 공유 RNG의 호출 순서와 기존 충돌·카메라 경계를 보존합니다. 별도 시각용 RNG와 baseline 비교를 사용하고 collider 개수만 같다는 이유로 동일하다고 판단하지 않습니다. 동일 카메라의 실제 게임 화면으로 구도·표면·가독성을 검토합니다.
+
+삼각형·본/클립 개수·텍스처 해상도·자동 검사 통과는 AAA 품질 인증서가 아닙니다. 얼굴·양손·갑옷·머리/천·전체 전환·공격 발디딤과 접촉, 재질·조명·VFX, 목표 기기 성능을 실제로 확인합니다. 소프트웨어 WebGL의 FPS를 목표 GPU 결과로 사용하지 않습니다.
+
+## 새 프로젝트의 첫 적용 기록
+
+1. 해당되는 스킬과 사례 ID를 선택합니다.
+2. 원인 가설·현재 버전·적용할 조건·사용자 권한 범위를 기록합니다.
+3. 가장 작은 실제 재현/확인 절차를 실행하고 원본과 결과 SHA를 남깁니다.
+4. 결과를 `pending`/`verified`/`superseded`의 정확한 범위로 기록합니다.
+5. 반복할 절차를 해당 프로젝트의 스킬에 반영합니다. 공통 원칙이 바뀌면 이 묶음의 판본·출처도 함께 갱신합니다.
