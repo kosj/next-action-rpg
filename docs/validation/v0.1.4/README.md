@@ -16,3 +16,5 @@ Godot4.7.2·Blender4.3.2에서 실제32k리라/22k수호병을검수했습니다
 [첫 방 실제 고정 카메라 검사](courtyard/README.md)는 별도 복사 fixture의 구도·PBR·조명 자료입니다. [전체 key/midpoint 변형 검토](../../../art_source/production/character_actions/deformation_review/README.md)는 원본의 불량과 자동 수선 기각을 기록합니다. 수선된 GLB는 채택하지 않았으며 원본 runtime A89/214를 유지합니다. [AAA 기준](../../AAA_ART_QUALITY.md)의 얼굴·손·갑옷/의상·접촉·실제 목표 GPU 항목은 계속 미승인입니다.
 
 [최신 전체 로컬 Web316.961초 성공](local-web-final/README.md)은 PBR·전환·오디오/QA 수정까지 포함합니다. 앞의 local-web-initial과 구분하며 정확 공개 commit의 성공 주장은 하지 않습니다.
+
+공개 배포·태그 검증의 영구 근거는 [PR#6](https://github.com/kosj/next-action-rpg/pull/6)의 병합/검증 기록과 [해당 workflow](https://github.com/kosj/next-action-rpg/actions/workflows/build.yml)입니다. 이 폴더의 로컬/고정 장면/독립 반입 자료는 각 파일의 SHA·시점·범위로 읽고 CI나 아트 승인을 대신하지 않습니다.

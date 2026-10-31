@@ -10,7 +10,7 @@
 - 원본의 전체 저작key+midpoint 리라2,358·수호병1,608표본에서 흉갑/손목 등 [실제 변형 불량](../art_source/production/character_actions/deformation_review/README.md)을 찾았습니다. 자동 수선은 새 경계 악화22.635/49.450mm로 **모두 기각**했습니다. 원본 runtime A89/214를 유지하며 수작업 웨이트·의상 소유/메시 분리가 남습니다. 선택 렌더나 최대비율 개선만으로 합격 처리하지 않았습니다.
 - 새 전체 웹 원시합계는 **141,912,072bytes**로150,000,000bytes 예산 이내입니다. [로컬 manifest](validation/v0.1.4/art-quality-build-summary.json)의 ZIP크기/SHA와 원시크기를 구분합니다. 수호병 경량화·리깅·개발 샘플의 이번 실제 비용은 **0포인트**, 추가 구매는 없으며 이전1,250포인트 배치와 구분합니다.
 - Python 도구 **41개**와 지식 DB46항목·제작/후보11개 무결성·CC0 원본9장 검증을 통과했습니다. [재사용 가능한 readonly reader fixture](validation/v0.1.4/readonly-storage/README.md)는 실제 source를 추출해 별도 payload를 읽거나 스키마를 변경하지 않는지 검사합니다.
-- 최신 export의 [전체 로컬 Web 검사](validation/v0.1.4/local-web-final/README.md)는 **316.961초·오류0·exit0**입니다. 실제 베기/손 변화·수호병3명·전투·품질1→0→1·실제 저장·완전종료/재시작을 통과했습니다. 기존15/30초 assertion은 유지했습니다. 초기294.774초 결과와 구분하며 로컬 빌드번호 `0.1.4 · 1b8d95b9`에는 커밋 전 변경이 포함됩니다. **정확 공개 커밋의 CI·Pages 실행은 후속 확인 항목**입니다.
+- 최신 export의 [전체 로컬 Web 검사](validation/v0.1.4/local-web-final/README.md)는 **316.961초·오류0·exit0**입니다. 실제 베기/손 변화·수호병3명·전투·품질1→0→1·실제 저장·완전종료/재시작을 통과했습니다. 기존15/30초 assertion은 유지했습니다. 초기294.774초 결과와 구분하며 로컬 빌드번호 `0.1.4 · 1b8d95b9`에는 커밋 전 변경이 포함됩니다. 공개 커밋의 CI·Pages 실행은 [PR#6](https://github.com/kosj/next-action-rpg/pull/6)과 [main/tag Actions](https://github.com/kosj/next-action-rpg/actions/workflows/build.yml)에서 해당 SHA의 실제 결과로 확인합니다.
 - **AAA 최종 승인 미완료:** [검수 기준](AAA_ART_QUALITY.md)의 얼굴·손·갑옷/천·머리카락·동적 접촉·공격 발디딤·최종 표면/장면과 실제 목표 GPU60fps·Windows 실기기 실행은 남아 있습니다. 현재 두 플랫폼의 렌더 경로는 Compatibility이며 Windows Forward+는 별도 계획입니다.
 
 ## v0.1.3 · 생성 소품 반입과 배치 검수

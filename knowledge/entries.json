@@ -457,7 +457,7 @@
       "context": {
         "godot": "4.7.2",
         "application": "v0.1.4 development",
-        "validation": "Latest305 native assertions and clean shutdown passed; archived43 standalone model checks describe the earlier bridge revision; final browser/public pending"
+        "validation": "Latest305 native assertions, clean shutdown and localWeb316.961s passed; archived43 standalone model checks describe an earlier bridge revision. Exact public SHA evidence is separate in PR6/Actions"
       },
       "sources": [
         "game/scripts/actors/skeletal_visual_bridge.gd",
@@ -470,7 +470,9 @@
         "game/tests/skeletal_transition_regressions.gd",
         "docs/validation/v0.1.4/transition-polish.json",
         "docs/validation/v0.1.4/transition-polish-runtime.log",
-        "docs/validation/v0.1.4/art-quality-build-summary.json"
+        "docs/validation/v0.1.4/art-quality-build-summary.json",
+        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+        "https://github.com/kosj/next-action-rpg/pull/6"
       ]
     },
     {
@@ -857,7 +859,7 @@
         "hero_sha256": "a89ced80a24f93685b35bf52e5fedb689e25b0f7ead6188c009d4405c0dfa4a1",
         "sentinel_sha256": "214bab372dfce2552b1f97fd2fd88a160fa593cb2450c6ffbc66c1547974e721",
         "scope": "Archived268 native and43 independent model checks and exports cover their recorded revision; added Lyra transition fixture27 passed; latest whole-build/browser/public acceptance and final AAA art remain separate",
-        "latest_validation": "Local integrated305 native assertions,Python41, Web/Windows export and complete localWeb316.961s passed; exact public commit pending"
+        "latest_validation": "Local integrated305 native assertions,Python41,Web/Windows export and complete localWeb316.961s passed; exact public commit evidence is recorded in PR6 and its Actions runs"
       },
       "sources": [
         "docs/CHARACTER_INTEGRATION.md",
@@ -873,7 +875,8 @@
         "docs/validation/v0.1.4/transition-polish.json",
         "docs/validation/v0.1.4/transition-polish-runtime.log",
         "docs/validation/v0.1.4/art-quality-build-summary.json",
-        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json"
+        "docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+        "https://github.com/kosj/next-action-rpg/pull/6"
       ],
       "supersedes": [
         "art-skeleton-contract"
