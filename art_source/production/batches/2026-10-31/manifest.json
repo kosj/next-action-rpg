@@ -1147,7 +1147,63 @@
       "pillar_triangles": 6122,
       "portal_triangles": 7714
     },
-    "note": "First courtyard columns/frame and hero sword only; source characters/motions remain development candidates."
+    "note": "First courtyard columns/frame and hero sword only; source characters/motions remain development candidates.",
+    "godot_extracted_texture_imports": [
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_0.png",
+        "bytes": 7338483,
+        "sha256": "1e524fb8e4260c330c0d99549322ff1775b620d59af690c167509d18d6e8b67e",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_1.png",
+        "bytes": 3566797,
+        "sha256": "e6c0b6831595ecd32a1dbdf1790548e5473689236c697e0ca25505b4b4bd4ccf",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_2.png",
+        "bytes": 4506083,
+        "sha256": "c76189f3f9e4d6b0ef961169c18a1b0e404b41b426849a2a809640380704d8d4",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_0.png",
+        "bytes": 3578910,
+        "sha256": "ba2f867a46b38d13ed22ce6789068f0e358bdb60616d5194d593acc07f629091",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_1.png",
+        "bytes": 1832297,
+        "sha256": "2705082935a637ef989d05f11042abad13aabc16d9406f26b96133c208b9386c",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_2.png",
+        "bytes": 1964867,
+        "sha256": "c170134e96db488cfc0354fa66e9b2f016025689bec54418ac503ae4c1630fb3",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_0.png",
+        "bytes": 4709660,
+        "sha256": "dda0ab8f729ae0841a0d2e53e71d84e5d2b966514961468700a382865fd978e0",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_1.png",
+        "bytes": 2500280,
+        "sha256": "1dd2496dbf2ed173da9ea13b4265ccab5f2aca287aeb0002267f136d7f463cb5",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_2.png",
+        "bytes": 3772435,
+        "sha256": "abb2c9e3637f9f9aa7547bcd21a3e6f5aa2bb7a9f9f084e5a83431355d0429d4",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      }
+    ]
   },
   "quality_approval": {
     "aaa_final": false,

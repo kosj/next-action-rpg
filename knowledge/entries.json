@@ -600,7 +600,7 @@
       "kind": "pitfall",
       "status": "verified",
       "title": "웹 설정 메모리 상태와 IndexedDB 커밋 완료를 구분한다",
-      "summary": "Godot 4.7.2의 FileAccess 쓰기 close는 dirty flag를 세우고 다음 main loop에서 비동기 FS.syncfs를 시작한다. force_fs_sync도 같은 flag만 세워 동기 호출 내부 close→rename 뒤의 중복 요청은 커밋 완료 보장이 아니다. 실제 진단에서 최종 UI 품질1 직후 primary는0, 이후 자동 커밋과 브라우저 재시작 뒤에는1이었다. 앱 저장 코드를 수정하지 않았으며 QA는 primary의 품질0→1 실제 커밋을 읽기 전용 조건 대기하도록 보완했다. 최종 조건 대기 패치의 런타임 검증은 별도로 확인한다. Playwright1.62.0의 wait_for_function에 async predicate를 넣으면 Promise truthiness로 반복이 멈추므로, 읽기 전용 transaction을 Python에서 await하고 실제 다음 RAF 뒤 다시 조회한다.",
+      "summary": "Godot 4.7.2의 FileAccess 쓰기 close는 dirty flag를 세우고 다음 main loop에서 비동기 FS.syncfs를 시작한다. force_fs_sync도 같은 flag만 세워 동기 호출 내부 close→rename 뒤의 중복 요청은 커밋 완료 보장이 아니다. 실제 진단에서 최종 UI 품질1 직후 primary는0, 이후 자동 커밋과 브라우저 재시작 뒤에는1이었다. 앱 저장 코드를 수정하지 않았으며 QA는 primary의 품질0→1 실제 커밋을 읽기 전용 조건 대기하도록 보완했다. 최종 로컬 실행에서 품질0·1 실제 커밋과 완전 종료 후 재시작 복원·오류0을 확인했다. Playwright1.62.0의 wait_for_function에 async predicate를 넣으면 Promise truthiness로 반복이 멈추므로, 읽기 전용 transaction을 Python에서 await하고 실제 다음 RAF 뒤 다시 조회한다.",
       "tags": [
         "web",
         "save",
@@ -613,8 +613,8 @@
       "context": {
         "godot": "4.7.2",
         "application": "v0.1.3 development",
-        "validated": "official engine source and pre-wait readonly browser diagnostic",
-        "commit_wait_patch": "implemented; final runtime verification pending"
+        "validated": "official engine source, readonly diagnostics and final local WebGL/quality/restart run",
+        "commit_wait_patch": "verified: actual primary quality0 then1 and same-profile browser restart1; errors0"
       },
       "sources": [
         "tools/browser_smoke.py",
@@ -623,7 +623,10 @@
         "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/os_web.cpp",
         "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/js/libs/library_godot_os.js",
         "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/unix/dir_access_unix.cpp",
-        "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts"
+        "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts",
+        "docs/validation/v0.1.3/browser-storage.json",
+        "docs/validation/v0.1.3/browser-persistence.json",
+        "docs/validation/v0.1.3/README.md"
       ]
     },
     {
