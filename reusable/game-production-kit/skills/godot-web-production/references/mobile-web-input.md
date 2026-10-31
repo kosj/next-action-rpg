@@ -35,3 +35,5 @@
 이동을 유지한 채 매 제어 단계에서 bounding box를 새로 읽으면 이전 방향/속도가 RPC 응답 동안 계속 적용될 수 있다. 한 gesture의 geometry를 캐시하고 layout 세대가 바뀌지 않았는지 확인한다. 실제 이동 성공을 확인한 뒤 같은 pointer를 중앙으로 되돌리거나 독립 해제하여 보조 검사의 불필요한 이동을 줄인다. 최종 실제 위치·소유권·행동 효과와 합의한 시간 조건은 그대로 검사한다.
 
 회피·release 공격·짧은 스킬은 입력 응답 뒤의 snapshot에서 이미 끝날 수 있다. 실제 입력 전에 별도의 읽기 전용 관찰을 시작해 이후 frame에서 조건이 참인 snapshot을 복사하고 관찰자 자체도 유한 시간 안에 종료한다. 게임/QA 원본·저장 상태에 값을 쓰거나 이벤트 성공을 주입하지 않는다. 실제 발동과 늦은 조회를 구분하고 원래 실패·집중 검사·최종 전체 검사를 각각 보존한다.
+
+자동화 프레임워크가 focus·visibility·사용자 gesture를 강제로 에뮬레이트하는 기본값도 확인한다. 실제 focus loss 검사는 필요한 override만 해제한 뒤 브라우저의 trusted blur/focus와 document 상태를 관찰하고, foreground 복귀 후 실제 게임의 pause·입력 종료를 대조한다. background snapshot/rAF 중단을 앱 취소 실패로 오인하지 않는다. 설정 복원은 finally에서 수행하며 synthetic 이벤트나 QA 상태 쓰기로 대신하지 않는다.

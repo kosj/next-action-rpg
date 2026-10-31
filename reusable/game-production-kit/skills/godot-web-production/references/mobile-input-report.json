@@ -15,7 +15,11 @@
   },
   "test_environment": {
     "kind": null,
-    "kind_options": ["native_fixture", "desktop_touch_emulation", "real_mobile_browser"],
+    "kind_options": [
+      "native_fixture",
+      "desktop_touch_emulation",
+      "real_mobile_browser"
+    ],
     "physical_device_model": null,
     "os": null,
     "browser_version": null,
@@ -65,6 +69,19 @@
   "stages": [],
   "errors": [],
   "artifacts": [],
-  "unverified": ["physical multi-touch behavior", "real mobile browser execution", "target-device performance", "final art quality"],
-  "note": "빈 값이나 errors 배열은 통과가 아니다. native fixture·desktop touch emulation·실제 기기와 성능의 검증 범위를 나누고 대상 프로젝트의 근거로 갱신한다. 과거 권한·QA 상태는 승계하지 않는다."
+  "unverified": [
+    "physical multi-touch behavior",
+    "real mobile browser execution",
+    "target-device performance",
+    "final art quality"
+  ],
+  "note": "빈 값이나 errors 배열은 통과가 아니다. native fixture·desktop touch emulation·실제 기기와 성능의 검증 범위를 나누고 대상 프로젝트의 근거로 갱신한다. 과거 권한·QA 상태는 승계하지 않는다.",
+  "framework_overrides": {
+    "status": "pending",
+    "versions": {},
+    "overrides_checked": [],
+    "native_focus_probe": null,
+    "trusted_blur_and_focus_evidence": null,
+    "gameplay_after_foreground_evidence": null
+  }
 }
