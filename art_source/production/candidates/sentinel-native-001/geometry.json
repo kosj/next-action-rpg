@@ -1,0 +1,83 @@
+{
+  "source_sha256": "ccf37c6709c44ff75ef1cb4afdec592cc8165f109c49ffbe3e411f0b4707ea28",
+  "source_unchanged": true,
+  "bounds_blender_z_up": {
+    "min": [
+      -0.5006847977638245,
+      -0.12170330435037613,
+      -0.5000936388969421
+    ],
+    "max": [
+      0.5005714297294617,
+      0.11659800261259079,
+      0.5017167925834656
+    ],
+    "size": [
+      1.0012562274932861,
+      0.23830130696296692,
+      1.0018104314804077
+    ]
+  },
+  "mesh_topology_read_only": [
+    {
+      "object": "texture_mapping",
+      "imported_vertices": 34493,
+      "spatial_weld_distance_source_units": 1e-06,
+      "spatially_welded_vertices": 20844,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0,
+      "spatially_welded_connected_component_count": 1,
+      "component_vertex_counts_largest_10": [
+        20844
+      ],
+      "component_bounds_largest_10": [
+        {
+          "vertices": 20844,
+          "min": [
+            -0.5006847977638245,
+            -0.12170330435037613,
+            -0.5000936388969421
+          ],
+          "max": [
+            0.5005714297294617,
+            0.11659800261259079,
+            0.5017167925834656
+          ]
+        }
+      ],
+      "component_bounds_coordinate_space": "mesh_local"
+    }
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "sRGB"
+    },
+    {
+      "name": "Image_1",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "Non-Color"
+    },
+    {
+      "name": "Image_2",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "pixel_readable": true,
+      "colorspace": "Non-Color"
+    }
+  ],
+  "scope": "Static source measurements and topology after in-memory spatial weld only; no rewrite, self-intersection, anatomy, rig, deformation or collision approval"
+}

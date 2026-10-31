@@ -1,0 +1,102 @@
+{
+  "status": "reviewed_static_remesh_candidate_pending_rig_and_runtime_acceptance",
+  "checked_on": "2026-10-31",
+  "blender": "4.3.2",
+  "render_process_exit_code": 0,
+  "structural_inspection": "passed_core_embedded_GLTF_requirements",
+  "source_unchanged": true,
+  "source": {
+    "file": "build/art-candidates/batch-2026-10-31/lyra_web_remesh.glb",
+    "sha256": "152644f233430352815273166a14600eed7a910ea8f48147ee3019721f375ce1",
+    "bytes": 14110392
+  },
+  "reference_source": {
+    "file": "art_source/production/candidates/lyra-001/source.glb",
+    "sha256": "651c3f79ed7941bcf89693888e5d2ba38fbe8f408d89f8d0cb70a582a31c0925",
+    "bytes": 15904156,
+    "unchanged": true
+  },
+  "measurements": {
+    "original_triangles": 80000,
+    "remesh_triangles": 32000,
+    "triangle_reduction_percent": 60.0,
+    "download_byte_reduction_percent": 11.2785865530997,
+    "mesh_count": 1,
+    "material_count": 1,
+    "skin_count": 0,
+    "clip_count": 0,
+    "texture_count": 3,
+    "texture_dimensions_px": [
+      [
+        2048,
+        2048
+      ],
+      [
+        2048,
+        2048
+      ],
+      [
+        2048,
+        2048
+      ]
+    ],
+    "rest_bounds_blender_z_up": {
+      "min": [
+        -0.48571497201919556,
+        -0.12290625274181366,
+        -0.4999169111251831
+      ],
+      "max": [
+        0.4850676357746124,
+        0.118951216340065,
+        0.5006594061851501
+      ],
+      "size": [
+        0.9707826375961304,
+        0.24185746908187866,
+        1.0005762577056885
+      ],
+      "center": [
+        -0.00032366812229156494,
+        -0.0019775182008743286,
+        0.0003712475299835205
+      ]
+    },
+    "uniform_scale_needed_for_1_82m": 1.81895181500033
+  },
+  "material_comparison": {
+    "gltf_material_wiring_identical": true,
+    "encoded_image_bytes_identical": false,
+    "decoded_pixels_identical": false,
+    "interpretation": "Remeshing rebaked the three textures; do not describe it as preserving identical image data."
+  },
+  "rest_visual_review": {
+    "views": [
+      "front",
+      "side",
+      "back"
+    ],
+    "resolution_px": 640,
+    "comparison": "Actual previous and new Blender REST renders inspected at the same resolution and studio setup. Broad head, body, ponytail, armor and cloth silhouettes remain similar. No obvious new gross mesh cut or missing limb was visible at this scale.",
+    "remaining_issues": [
+      "Original shoulder-edge protrusions and thin armor shapes remain candidates for cleanup.",
+      "Finger topology, close face detail and cloth/armor intersections are not approved from these 640px views.",
+      "Skin deformation, foot contact, animation, BoneMap, weapon grip, Godot rendering and hardware performance require separate review."
+    ],
+    "automatic_visual_approval": false,
+    "final_runtime_approval": false
+  },
+  "rig_and_scale_warning": "The remesh has no Skin or animations and is approximately 1m high with a centered pivot. Re-rig or transfer verified weights, normalize target scale/floor, and revalidate motion compatibility; prior 53-bone animation compatibility is not implied.",
+  "evidence": {
+    "inspection_json": "/tmp/runefall-lyra-remesh-inspection.json",
+    "material_comparison_json": "/tmp/runefall-lyra-remesh-material-comparison.json",
+    "raw_source_hash_checks": "/tmp/runefall-lyra-remesh-source-hashes.json",
+    "render_review": "build/art-review/lyra-web-remesh-20261031/review.json",
+    "render_log": "/tmp/runefall-lyra-web-remesh-render.log",
+    "renders": [
+      "build/art-review/lyra-web-remesh-20261031/front.png",
+      "build/art-review/lyra-web-remesh-20261031/side.png",
+      "build/art-review/lyra-web-remesh-20261031/back.png"
+    ]
+  }
+}

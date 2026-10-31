@@ -1,0 +1,16 @@
+02:21:37 | INFO: Data are loaded, start creating Blender stuff
+02:21:37 | INFO: Blender create Mesh node 0
+02:21:37 | INFO: glTF import finished in 0.56s
+02:21:37 | INFO: Data are loaded, start creating Blender stuff
+02:21:37 | INFO: Blender create Mesh node 0
+02:21:38 | INFO: glTF import finished in 0.36s
+Traceback (most recent call last):
+  File "tools/prepare_character_candidate.py", line 477, in <module>
+    main()
+    ~~~~^^
+  File "tools/prepare_character_candidate.py", line 356, in main
+    error = compare_rigs(base_rig, source_rig, args.tolerance, state)
+  File "tools/prepare_character_candidate.py", line 157, in compare_rigs
+    raise ValueError(state + ": rest matrix differs: %s (error %.9g)" % (bone.name, error))
+ValueError: idle: rest matrix differs: LeftUpLeg (error 1.29938126e-05)
+RUNEFALL_CHARACTER_SOURCES_UNCHANGED: 12 files

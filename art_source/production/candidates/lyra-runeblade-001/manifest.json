@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_runeblade",
+  "candidate_id": "lyra-runeblade-001",
+  "created_on": "2026-10-31",
+  "status": "canonical_static_prop_archived_and_selected_for_game_pending_final_scene_art_acceptance",
+  "provider": "VARCO official MCP",
+  "source_file": "source.glb",
+  "source_bytes": 4669348,
+  "source_sha256": "4a22b499d5af7a59ae1c73068713f8a3a65f7ce3238191b23978d78589a1d433",
+  "runtime_replacement": true,
+  "visual_approval": false,
+  "provider_task_id": "c0a1109f-f15d-4e14-a4ee-00be8fbc3ca9",
+  "point_usage": 200,
+  "provider_license_setting": "PRIVATE",
+  "source_reference_task_id": null,
+  "parameters": {
+    "count": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "polygonCount": [
+      {
+        "type": "int",
+        "value": 8000
+      }
+    ],
+    "topology": [
+      {
+        "type": "string",
+        "value": "tri"
+      }
+    ],
+    "tPose": [
+      {
+        "type": "int",
+        "value": 0
+      }
+    ],
+    "useAlpha": [
+      {
+        "type": "int",
+        "value": 0
+      }
+    ],
+    "usePbrTexture": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "textureSize": [
+      {
+        "type": "int",
+        "value": 2048
+      }
+    ],
+    "generateTexture": [
+      {
+        "type": "int",
+        "value": 1
+      }
+    ],
+    "license": [
+      {
+        "type": "string",
+        "value": "PRIVATE"
+      }
+    ]
+  },
+  "remaining_review": [
+    "Heuristic guard/grip plane and markers need actual right-hand attachment and gameplay trajectory review; authored lengths do not approve semantic blade labels or anatomical grip.",
+    "Review materials, collision proxy and target-hardware frame time in the actual game.",
+    "Web Remesh reduced triangles but increased the original downloaded GLB size; no automatic download/FPS benefit is claimed."
+  ],
+  "runtime_file": "runtime-web.glb",
+  "runtime_derivation_report": "runtime-web.derivation.json",
+  "runtime_scope": "Static prop only; not a character skin/motion replacement or final AAA quality approval",
+  "gameplay_or_target_hardware_approval_by_archive": false,
+  "runtime_selection": {
+    "game_asset": "game/assets/models/production/rune_sword_web.glb",
+    "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "bytes": 7536756,
+    "archive_matches_game_asset": true
+  },
+  "source_reference_id": "lyra_runeblade",
+  "review_sets": {
+    "source": {
+      "available": true,
+      "directory": "source-review",
+      "asset_file": "source.glb",
+      "views": [
+        "front",
+        "side",
+        "back"
+      ],
+      "metadata": "source-review/review.json"
+    },
+    "runtime": {
+      "available": true,
+      "directory": "runtime-review",
+      "asset_file": "runtime-web.glb",
+      "views": [
+        "front"
+      ],
+      "metadata": "runtime-review/review.json"
+    }
+  },
+  "derivation_lineage": {
+    "kind": "VARCO free web Remesh, then static canonical Blender vertex bake",
+    "remesh_intermediate_retained": false,
+    "intermediate_provider_task_id": null,
+    "intermediate_bytes": 7491188,
+    "intermediate_sha256": "6060420b9933bbbb40e0fda6b2b21c1ca1ca645839d293b7beb3603dfe382bdf",
+    "script": "../../batches/2026-10-31/derive_props.py",
+    "uv_corner_correspondence": {
+      "matched_triangles": 4000,
+      "max_corner_position_error_m": 0.0,
+      "max_corner_uv_error": 0.0,
+      "position_tolerance_m": 1e-05,
+      "uv_tolerance": 1e-07,
+      "method": "Bijective triangle/corner position and UV matching after export/reimport"
+    },
+    "normal_tangent_check": {
+      "normal_tangent_vertices": 2799,
+      "max_normal_length_error": 1.445966868462989e-07,
+      "max_tangent_length_or_handedness_error": 7.821925423234788e-05,
+      "max_normal_tangent_dot": 0.00013947300612926483,
+      "tolerance": 0.001,
+      "normal_tangent_recalculated": true
+    }
+  },
+  "source_triangles": 8000,
+  "runtime_triangles": 4000,
+  "runtime_materials": 1,
+  "canonical_geometry_contract": {
+    "bounds_blender_z_up": {
+      "min": [
+        -0.1375582218170166,
+        -0.03701718896627426,
+        -0.1599999964237213
+      ],
+      "max": [
+        0.13847431540489197,
+        0.038177356123924255,
+        1.190000057220459
+      ],
+      "size": [
+        0.27603253722190857,
+        0.07519454509019852,
+        1.350000023841858
+      ]
+    },
+    "markers": {
+      "GripOrigin": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "position_error_m": 0.0
+      },
+      "Guard": {
+        "blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "gltf_y_up_m": [
+          0.0,
+          0.1599999964237213,
+          -0.0
+        ],
+        "expected_blender_z_up_m": [
+          0.0,
+          0.0,
+          0.1599999964237213
+        ],
+        "position_error_m": 0.0
+      },
+      "BladeTip": {
+        "blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "gltf_y_up_m": [
+          0.0009009279892779887,
+          1.190000057220459,
+          0.0005532491486519575
+        ],
+        "expected_blender_z_up_m": [
+          0.0009009279892779887,
+          -0.0005532491486519575,
+          1.190000057220459
+        ],
+        "position_error_m": 0.0
+      }
+    },
+    "numeric_contract_errors": {
+      "total_length_m": 2.3841857821338408e-08,
+      "bottom_z_m": 3.5762786898541066e-09,
+      "tip_z_m": 5.7220459037665705e-08,
+      "grip_band_xy_center_m": 0.0,
+      "GripOrigin_marker_m": 0.0,
+      "Guard_marker_m": 0.0,
+      "BladeTip_marker_m": 0.0
+    },
+    "tolerance_m": 1e-05,
+    "root_transform_identity": true
+  },
+  "web_triangle_budget": {
+    "target": 4000,
+    "measured": 4000,
+    "met": true,
+    "excess": 0
+  },
+  "local_blender_derivation_point_usage": 0,
+  "derived_files": [
+    {
+      "file": "runtime-review/front.png",
+      "bytes": 250839,
+      "sha256": "825d43ab1824e11e033778761f3a96bfb4d5ffa345135c81605a4f852b3cc4ca"
+    },
+    {
+      "file": "runtime-review/review.json",
+      "bytes": 2379,
+      "sha256": "e482579e463e8e24db6031ca8661387f4ca318414bd4b8020443386a1ca2cc58"
+    },
+    {
+      "file": "runtime-web.derivation.json",
+      "bytes": 9189,
+      "sha256": "f69cd6b9182b512e848208920e0b683fc5c565513dd6af75cdc8ddd802510a0b"
+    },
+    {
+      "file": "runtime-web.glb",
+      "bytes": 7536756,
+      "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+    },
+    {
+      "file": "source-review/back.png",
+      "bytes": 248755,
+      "sha256": "87fde3c48265c5b04e989ce10b883048065f21ab22f042227c148336f5ed48f1"
+    },
+    {
+      "file": "source-review/front.png",
+      "bytes": 249296,
+      "sha256": "52bd5d813aec3d2138a0578d793d0dd6475ff8d44f9a4f0204cf4df41e43ac43"
+    },
+    {
+      "file": "source-review/review.json",
+      "bytes": 2880,
+      "sha256": "c999aa403dd57711ed4f14fe162a57dd686d6ca2b035d76da72694fcc7d44da4"
+    },
+    {
+      "file": "source-review/side.png",
+      "bytes": 235229,
+      "sha256": "b40f1a94bf0e26e30189b561ad8df928056298db01c078486722971da5e451c5"
+    }
+  ]
+}

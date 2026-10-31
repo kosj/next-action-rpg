@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "status": "primary_source_candidate_requires_rig_and_scale",
+  "reviewed_on": "2026-10-31",
+  "blender": "4.3.2",
+  "source_sha256": "ccf37c6709c44ff75ef1cb4afdec592cc8165f109c49ffbe3e411f0b4707ea28",
+  "source_unchanged": true,
+  "core_structure_passed": true,
+  "render_process_exit_code": 0,
+  "reviewed_views": [
+    "front.png",
+    "side.png",
+    "back.png"
+  ],
+  "selection": "primary",
+  "observations": [
+    "Both source variants have no large rear/head halo, no held weapon, a near-horizontal T-pose, complete visible feet, and cloth ending above or near the knees in the reviewed static views.",
+    "Hands remain glove-like in the640px review and some fingers appear grouped; five-finger topology and articulation are not approved.",
+    "Shoulder/hip plates and cloth need weights and motion review; static views cannot prove joint clearance or cloth behavior.",
+    "Neutral studio render is a source comparison. Production dark-bronze material response, lighting and final palette are not approved.",
+    "Richer helmet, chest, knee/forearm plates, gold outlines and geometric runes match the approved concept more closely.",
+    "One spatially welded mesh component was found; this does not prove anatomy, lack of self-intersections or deformation quality."
+  ],
+  "measurements": {
+    "min": [
+      -0.5006847977638245,
+      -0.12170330435037613,
+      -0.5000936388969421
+    ],
+    "max": [
+      0.5005714297294617,
+      0.11659800261259079,
+      0.5017167925834656
+    ],
+    "size": [
+      1.0012562274932861,
+      0.23830130696296692,
+      1.0018104314804077
+    ]
+  },
+  "topology": [
+    {
+      "object": "texture_mapping",
+      "imported_vertices": 34493,
+      "spatial_weld_distance_source_units": 1e-06,
+      "spatially_welded_vertices": 20844,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0,
+      "zero_area_faces": 0,
+      "spatially_welded_connected_component_count": 1,
+      "component_vertex_counts_largest_10": [
+        20844
+      ],
+      "component_bounds_largest_10": [
+        {
+          "vertices": 20844,
+          "min": [
+            -0.5006847977638245,
+            -0.12170330435037613,
+            -0.5000936388969421
+          ],
+          "max": [
+            0.5005714297294617,
+            0.11659800261259079,
+            0.5017167925834656
+          ]
+        }
+      ],
+      "component_bounds_coordinate_space": "mesh_local"
+    }
+  ],
+  "final_visual_approval": false,
+  "runtime_replacement": false,
+  "limitations": [
+    "No rig, animation, hand grip, joint deformation, self-intersection, collision or target hardware approval",
+    "Spatial-weld topology audit is in-memory only and does not rewrite or repair the source",
+    "The source is not normalized to the target1.95m height or ground origin"
+  ]
+}

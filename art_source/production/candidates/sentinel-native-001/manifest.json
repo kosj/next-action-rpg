@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-native-001",
+  "created_on": "2026-10-31",
+  "status": "primary_source_candidate_requires_rig_and_scale",
+  "provider": "VARCO3D official MCP",
+  "provider_task_id": "1ddc7bd7-efcd-4e6b-b160-5e925f94ef84",
+  "provider_node_id": "5b06f376-e7f6-4350-9c91-e5fc3d321168",
+  "provider_license_setting": "PRIVATE",
+  "license_setting_evidence": "../../batches/2026-10-31/manifest.json",
+  "source_file": "source.glb",
+  "source_bytes": 15653960,
+  "source_sha256": "ccf37c6709c44ff75ef1cb4afdec592cc8165f109c49ffbe3e411f0b4707ea28",
+  "input_reference": "../../batches/2026-10-31/references/sentinel-runtime-native.png",
+  "input_reference_sha256": "dc5d41a9cc14433c2d6612176f9919e718e785d3b27d6035029cb660a3d69494",
+  "parameters": {
+    "count": [
+      1
+    ],
+    "polygonCount": [
+      42000
+    ],
+    "topology": [
+      "tri"
+    ],
+    "tPose": [
+      1
+    ],
+    "useAlpha": [
+      0
+    ],
+    "usePbrTexture": [
+      1
+    ],
+    "textureSize": [
+      2048
+    ],
+    "generateTexture": [
+      1
+    ],
+    "license": [
+      "PRIVATE"
+    ]
+  },
+  "measured_triangles": 42000,
+  "target_height_m": 1.95,
+  "measured_source_height": 1.0018104314804077,
+  "measured_source_floor_blender_z": -0.5000936388969421,
+  "skins": 0,
+  "clips": 0,
+  "selection": "primary",
+  "point_usage_mesh": 200,
+  "rest_pose_renders": [
+    "front.png",
+    "side.png",
+    "back.png"
+  ],
+  "review_summary": "review-summary.json",
+  "runtime_replacement": false,
+  "visual_approval": false,
+  "remaining_review": [
+    "Create and inspect a web-budget mesh; source exceeds22,000 triangle web target",
+    "Normalize actual scale/floor, create and inspect rig, weights and clips",
+    "Review fingers, shoulder/hip armor and cloth through movement and attacks",
+    "Review final dark-bronze materials, production lighting, silhouette, collision and hardware performance"
+  ]
+}

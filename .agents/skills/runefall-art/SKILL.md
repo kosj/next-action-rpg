@@ -25,6 +25,15 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 4. 각 모션의 시작·중간·끝에서 source→target evaluated vertex 오차를 다시 확인합니다. 전체 리그·메시·모션에 공통인 정적 wrapper로 키를 맞추고 `--ground-rest-feet`로 REST 바닥을 맞춥니다. 이 정적 변환을 게임 이동이나 동적 root-motion 검수 완료로 간주하지 않습니다. 원본 SHA 불변, 정상 종료, GLB 재반입 높이/바닥, skin/clip 구조를 확인합니다.
 5. 실제 결과는 `art_source/production/candidates/`에 입력 명세와 구분해 보관합니다. source/파생 GLB의 bytes·SHA를 manifest에 기록해 CI로 무결성을 확인합니다. 임시 서명 URL·인증·계정 원문은 저장하지 않습니다. 후보가 폴리곤 예산을 초과하면 리토폴로지/LOD 필요를 표시하고, 3개 locomotion+RESET을 필수 9모션 완료로 기록하지 않습니다.
 
+## 배치 생성과 검수 결과의 해석
+
+- 사용자에게 필요한 애셋의 포인트 사용이 위임되어 있으면 실제 작업 범위에서 생성합니다. 원본 설정의 과거 1회 한도를 새 위임의 전역 한도로 해석하지 않습니다. 기본 모델은 실제 노드의 기억/추천 값을 따르고, `run_flow`가 반환한 실행별 포인트를 합산합니다. 카탈로그의 action 기본값을 모델별 실제 비용으로 고정하지 않습니다. 추가 포인트 구매는 별도 요청 범위와 구분합니다.
+- 완료된 이미지도 고정 `ImageInput`, 완료 mesh/rig도 task를 참조하는 입력 노드로 재사용하고 실행 scope를 명시해 유료 upstream을 다시 실행하지 않습니다. Graph의 `output=null`만으로 실패나 재생성 필요를 판단하지 않고 status와 `get_output_downloads(nodeId=…)`를 확인합니다. 일괄 export 조회가 실패하면 생성은 반복하지 말고 노드별 export 조회를 시도합니다. 이미지의 `/api/objects/…` 상대 URI는 공식 origin에 결합해 파일만 내려받으며 MCP 엔드포인트를 직접 호출하지 않습니다.
+- stock 원본도 엄격한 GLB 검사를 거칩니다. 이번 일부 raw 파일에는 값이 서로 다른 중복 최종 timestamp가 있었습니다. 원본은 보존하고, Blender 해석을 재샘플한 검수용 파생의 구조 합격과 원본 fidelity·게임 타이밍 합격을 구분합니다. `--candidate-motion candidate_…=GLB`는 기본 idle/walk/run 계약을 유지하면서 미승인 소스 클립을 묶으며 실제 gameplay 상태로 이름을 바꾸지 않습니다.
+- Remesh는 요청 삼각형 수와 실제 수, 이미지 재베이크, 파일 크기를 각각 확인합니다. 폴리곤 감소가 파일 크기·프레임 개선을 뜻하지 않습니다. 목표를 넘긴 실측값을 반올림해 합격 처리하지 않습니다.
+- 정적 소품의 실제 치수·원점·앞뒤 형태를 확인합니다. 단일 이미지에서 생성한 문이 4면 구조가 될 수 있습니다. 이번 파생 recipe는 `art_source/production/batches/2026-10-31/derive_portal.py`와 `derive_props.py`에 보존합니다. 원본 해시를 유지하고 새 출력에서 치수·통과 공간·UV·노멀·재반입을 확인합니다. 평면 절단 캡·휴리스틱 그립은 최종 재질/접촉 승인과 분리합니다.
+- 게임 반입에서는 기존 피벗의 무기 축과 수입 모델의 축을 실제 marker로 대조합니다. 정적 장식과 잠금 장벽의 제어 트리를 분리하고, 시각물만 숨길 때 기존 충돌을 삭제하지 않습니다. source tree 밖의 runtime GLB도 CI 구조 검사에 포함하고 두 품질 모드·진행·카메라 접촉을 실제 검사합니다.
+
 ## 버전 실험의 완료 기준
 
 프로세스 정상 종료, GLB 구조·재질·변환·메시 비교, Godot의 오류 없는 반입, 실제 씬의 시각·모션 확인을 분리해 기록합니다. 출력 파일이 존재한다고 배치 성공으로 처리하지 않습니다. 현재 보관한 LTS 실험은 구조·반입 비교를 통과했어도 배치 종료 실패가 남아 있으므로 제작 버전을 자동 교체하지 않습니다.
@@ -39,3 +48,5 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 ## 완료
 
 변경한 자산의 원본·수정 이력·사용 조건과 실제 검증 범위를 기록합니다. 최종 리그·성능이 미검증이면 지식 상태를 `pending`으로 유지합니다. 반입 후 게임 검사가 필요하면 [개발 스킬](../runefall-development/SKILL.md)을 따릅니다.
+
+- 리그 원점 평행 이동은 먼저 armature 사본에서 기존 rest 허용 오차를 검사합니다. `Armature.transform()`이 roll/basis를 다시 계산해 오차를 늘리면 연결을 잠시 해제한 head/tail 단회 이동과 roll·연결 복원을 검증합니다. 원본 공통 이동·토폴로지·웨이트·재질·표본 포즈 검사는 유지하며 허용 오차를 넓혀 통과시키지 않습니다.

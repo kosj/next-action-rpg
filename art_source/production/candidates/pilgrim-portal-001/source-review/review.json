@@ -1,0 +1,106 @@
+{
+  "status": "rendered_for_human_review",
+  "automatic_visual_approval": false,
+  "generated_at_utc": "2026-10-31T01:03:15.156354+00:00",
+  "blender": "4.3.2",
+  "source": {
+    "path": "../source.glb",
+    "sha256": "000b7fdb32da8cd32b6b085e066db903c78864f9dc0fb704e0b744820aefd01b",
+    "bytes": 16041620,
+    "unchanged": true,
+    "historical_local_input": "build/art-candidates/batch-2026-10-31/pilgrim_portal_mesh.glb"
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "size": 640,
+    "samples": 16,
+    "pose": "REST",
+    "denoising": false,
+    "color_management": "AgX / Base Contrast",
+    "source_rescaled": false
+  },
+  "bounds_blender_z_up": {
+    "min": [
+      -0.5008315443992615,
+      -0.5000417828559875,
+      -0.17443299293518066
+    ],
+    "max": [
+      0.5008315443992615,
+      0.5000417828559875,
+      0.17443299293518066
+    ],
+    "size": [
+      1.001663088798523,
+      1.000083565711975,
+      0.34886598587036133
+    ],
+    "center": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "asset": {
+    "mesh_objects": 1,
+    "unique_meshes": 1,
+    "triangles_per_object_sum": 20000,
+    "material_count_gltf": 1,
+    "material_names_blender": [
+      "material_0"
+    ],
+    "skin_count_gltf": 0,
+    "armatures_blender": [],
+    "clip_count_gltf": 0,
+    "clip_names_gltf": [],
+    "actions_blender": [],
+    "images_without_resident_pixels_before_render": [
+      "Image_0",
+      "Image_1",
+      "Image_2"
+    ],
+    "image_residency_note": "Blender may load embedded images lazily during rendering; this field is not a missing-texture verdict."
+  },
+  "views": [
+    {
+      "name": "front",
+      "file": "front.png",
+      "camera_position_blender": [
+        0.0,
+        -4.006652355194092,
+        0.0
+      ],
+      "ortho_scale": 1.181962490081787,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "side",
+      "file": "side.png",
+      "camera_position_blender": [
+        4.006652355194092,
+        0.0,
+        0.0
+      ],
+      "ortho_scale": 1.1800986528396606,
+      "lights_rotate_with_view": true
+    },
+    {
+      "name": "back",
+      "file": "back.png",
+      "camera_position_blender": [
+        0.0,
+        4.006652355194092,
+        0.0
+      ],
+      "ortho_scale": 1.181962490081787,
+      "lights_rotate_with_view": true
+    }
+  ],
+  "limitations": [
+    "Static rest-pose render only; animation, deformation and gameplay integration require separate review",
+    "Blender source units and transforms are preserved; camera and studio adjust to the bounds",
+    "Triangle totals are imported mesh counts, not runtime draw calls or GPU performance"
+  ],
+  "archival_scope": "Original generated static source"
+}

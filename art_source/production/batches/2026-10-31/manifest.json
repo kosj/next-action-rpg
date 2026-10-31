@@ -1,0 +1,1222 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-31",
+  "provider": "VARCO official MCP via official Codex client",
+  "flow_id": "36eeaa83-211b-4fba-a8ad-e547e2cdb697",
+  "executions": [
+    {
+      "alias": "run1",
+      "execution_id": "0eb09678-7986-4178-b9ed-5b4ecbe1be6c",
+      "reported_points": 150,
+      "scope": "Three reference images; eight stock motions on original Lyra rig; Lyra32k Remesh"
+    },
+    {
+      "alias": "run2",
+      "execution_id": "81129ae5-a619-4bd3-9937-8293aab2d846",
+      "reported_points": 450,
+      "scope": "Sword/pillar3D; wide portal reference"
+    },
+    {
+      "alias": "run3",
+      "execution_id": "5dd4095c-072b-4bc4-a1d5-51f20816ceb0",
+      "reported_points": 200,
+      "scope": "Wide portal3D; sword/pillar web Remesh"
+    },
+    {
+      "alias": "run4",
+      "execution_id": "4c0f74f6-7c1f-456a-be2a-2e294c3710d9",
+      "reported_points": 0,
+      "scope": "Portal web12k Remesh"
+    },
+    {
+      "alias": "run5",
+      "execution_id": "7eb29a95-8ca0-4523-92ce-23b8c2435fe9",
+      "reported_points": 0,
+      "scope": "New32k Lyra humanoid-fingers Rig"
+    },
+    {
+      "alias": "run6",
+      "execution_id": "5b458897-25e6-45f7-9777-97a82aa8bd9b",
+      "reported_points": 50,
+      "scope": "VARCO-native sentinel reference"
+    },
+    {
+      "alias": "run7",
+      "execution_id": "b1192919-b991-4c06-8595-6532eb2e094d",
+      "reported_points": 200,
+      "scope": "Sentinel3D from VARCO-native reference"
+    },
+    {
+      "alias": "run8",
+      "execution_id": "939c4f00-5d1b-410c-83b7-6789775200ef",
+      "reported_points": 0,
+      "scope": "Eleven stock motion candidates on new32k Lyra rig"
+    },
+    {
+      "alias": "run9",
+      "execution_id": "fe679001-83ba-4391-bbe9-d07d196a2842",
+      "reported_points": 200,
+      "scope": "Sentinel3D from specifically approved uploaded native reference"
+    }
+  ],
+  "reported_points_total": 1250,
+  "prior_lyra_generation_points_excluded": 200,
+  "additional_points_purchased": false,
+  "cost_evidence": {
+    "basis": "Exact runStarted tool responses in this conversation; original tmp response files unavailable",
+    "note": "Run receipts were reconstructed from exact prior runStarted responses after scratch loss; graph/task metadata freshly recovered without paid reruns."
+  },
+  "references": [
+    {
+      "file": "references/lyra_runeblade.png",
+      "bytes": 1113849,
+      "sha256": "f4a14fe1348c14bf205d44dda25a812cb7c5511423b3da400a506abd13dc0784",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "references/pilgrim_portal.png",
+      "bytes": 1645252,
+      "sha256": "beaf80c62287d21da6f0f72f2b5bc843ef028a585f2867bd31d04444a16931c6",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "references/pilgrim_portal_wide.png",
+      "bytes": 1846929,
+      "sha256": "c22fdf5b0213324e8696ce21af5e01b4b93be9488abf89d0613b62167706bab6",
+      "width": 1536,
+      "height": 864
+    },
+    {
+      "file": "references/sanctuary_pillar.png",
+      "bytes": 1260927,
+      "sha256": "a698e05a3ad9845ddfd32f298f0da695630267c732a70f7f499381cf658214a4",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "file": "references/sentinel-melee-reference.png",
+      "bytes": 2255580,
+      "sha256": "4c5dbc412b4508bc066d2068d49cd653e0752c6b30c7c10d34b1fb51123435d5",
+      "width": 1152,
+      "height": 1536
+    },
+    {
+      "file": "references/sentinel-runtime-native.png",
+      "bytes": 2305248,
+      "sha256": "dc5d41a9cc14433c2d6612176f9919e718e785d3b27d6035029cb660a3d69494",
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "recovered_outputs": [
+    {
+      "nodeId": "72fb1a91-970f-43e6-8ee6-fbb87b07b768",
+      "outputIndex": 0,
+      "type": "image",
+      "taskId": null,
+      "exportType": null,
+      "error": null,
+      "node_type": "GenerateImage",
+      "position": {
+        "x": 640,
+        "y": 3200
+      }
+    },
+    {
+      "nodeId": "4d9c3711-3eff-4bf5-9e3a-57b6c18ff41e",
+      "outputIndex": 0,
+      "type": "image",
+      "taskId": null,
+      "exportType": null,
+      "error": null,
+      "node_type": "GenerateImage",
+      "position": {
+        "x": 640,
+        "y": 4300
+      }
+    },
+    {
+      "nodeId": "b3fe6ea0-f553-432a-bd3d-b242f3531c2d",
+      "outputIndex": 0,
+      "type": "image",
+      "taskId": null,
+      "exportType": null,
+      "error": null,
+      "node_type": "GenerateImage",
+      "position": {
+        "x": 640,
+        "y": 5400
+      }
+    },
+    {
+      "nodeId": "ae95374a-d179-4aec-be91-c42bdb24bdbb",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "115aaa98-e3d4-4633-96d5-1b838817242a",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Remesh",
+      "position": {
+        "x": 3600,
+        "y": 900
+      }
+    },
+    {
+      "nodeId": "8c3904ed-ae76-4efb-8517-6dcf79037cf9",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "a4096063-ebb1-45c1-b0cd-e5f8329f24f5",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 640,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "d286b7fd-da8c-4fd7-ae7c-dc04a4ac94d3",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "5688a6e1-4679-46b0-bae5-f37e7568933d",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 1060,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "e0741fe5-6a95-443f-b276-51e315a145fb",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "716e0f07-c660-49c5-a021-27c796d2646f",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 1480,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "8a8e3d61-4d4e-4667-a987-c110f6bf2df0",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "e83eaaa2-a0aa-486e-8e9b-a984a16c544c",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 1900,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "242d0446-f20d-491a-82ce-81e07c5073c5",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "85714d8e-341f-493d-9a85-f0b026a1c87b",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 2320,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "ceaf5c57-473e-4ecf-905f-f0f4f855d6c0",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "9d266c8c-54cd-4875-bc0c-c2e8c6d599ba",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 2740,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "b9e31cd7-3975-4179-836f-986de9b44cd1",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "385ac6a8-b78b-49fa-b155-df2868aac21c",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 3160,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "27cdd53a-d5fd-461b-acae-3194ce18ead2",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "f65397eb-dba8-4d45-a386-69d40e4edd4a",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 3580,
+        "y": 2400
+      }
+    },
+    {
+      "nodeId": "ce6e9ed5-b86d-4758-ba19-666a4f6b0674",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "c0a1109f-f15d-4e14-a4ee-00be8fbc3ca9",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Generate3D",
+      "position": {
+        "x": 1920,
+        "y": 3200
+      }
+    },
+    {
+      "nodeId": "1090ecab-4d6c-403e-9b95-0677234684e2",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "02d34023-a679-497e-80e6-093906f73472",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Generate3D",
+      "position": {
+        "x": 1920,
+        "y": 5400
+      }
+    },
+    {
+      "nodeId": "bd4d38c8-e988-46e6-847f-03699d3ff739",
+      "outputIndex": 0,
+      "type": "image",
+      "taskId": null,
+      "exportType": null,
+      "error": null,
+      "node_type": "GenerateImage",
+      "position": {
+        "x": 640,
+        "y": 7600
+      }
+    },
+    {
+      "nodeId": "90c178b9-4552-45c4-9018-d62914649283",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "bb9e0ba7-9730-41d8-bdc4-597a1b6a66ae",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Remesh",
+      "position": {
+        "x": 3200,
+        "y": 3200
+      }
+    },
+    {
+      "nodeId": "9237a617-4edf-476f-8868-a2cae60299f1",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "2b7147dc-e6d3-4657-a273-c5d2694005e1",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Remesh",
+      "position": {
+        "x": 3200,
+        "y": 5400
+      }
+    },
+    {
+      "nodeId": "05364b4c-ee69-43ab-bd97-320bdcc34e9b",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "6939fd9a-7994-4ad5-bb8e-a2c2414ec003",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Generate3D",
+      "position": {
+        "x": 1920,
+        "y": 7600
+      }
+    },
+    {
+      "nodeId": "c47e913b-93d3-4c3b-b187-e9ae874e98ad",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "e55aa1bf-dd43-49eb-adfe-57aef32fb200",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Remesh",
+      "position": {
+        "x": 3200,
+        "y": 7600
+      }
+    },
+    {
+      "nodeId": "28cc8089-7d4c-44a7-8124-868d52f2376b",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "ae1df44d-7c48-4751-9a45-772c6ce69c43",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Rig",
+      "position": {
+        "x": 4840,
+        "y": 900
+      }
+    },
+    {
+      "nodeId": "69fee97e-bb23-4e2c-b509-a3d298ffa28e",
+      "outputIndex": 0,
+      "type": "image",
+      "taskId": null,
+      "exportType": null,
+      "error": null,
+      "node_type": "GenerateImage",
+      "position": {
+        "x": 640,
+        "y": 8800
+      }
+    },
+    {
+      "nodeId": "ded1db65-666e-4262-8944-f15900453623",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "6397a6e7-98f6-4856-9e44-dea920809829",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Generate3D",
+      "position": {
+        "x": 1920,
+        "y": 8800
+      }
+    },
+    {
+      "nodeId": "4ea437c4-71bf-4bc6-a4e6-2c2e6d081181",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "b6872f32-869a-4282-b8f8-1f167cfea057",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 4840,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "1a3d4fe6-6813-482d-b78c-c79b3195346d",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "64bedd53-6d3b-4184-84e4-2453716af7aa",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 5260,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "e2309f99-0f33-4fd5-9895-70fcbd8edc2a",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "07934c6d-fa3c-497c-9cd7-dc341c08e7a1",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 5680,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "69d46422-7ab0-4dfb-b33b-f9200f109e9b",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "0879c866-b568-4e28-b6e5-1d511b833f65",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 6100,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "4e218783-3075-48e9-b6e3-30f4efef6671",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "9dd73b57-86e6-4f2d-bbee-20e34995e930",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 6520,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "978aca77-1af4-4a95-8bac-c46c1edf6843",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "a7694dfc-363a-4561-a510-1bda835493f0",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 6940,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "47035561-e9c9-49b8-a580-174da0b74390",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "c6107510-f772-4d05-b13f-9676314430b4",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 7360,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "b51976a9-59f7-4e45-975d-7ad6c37b49df",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "66b38130-45e7-4973-8a49-5861d21d9fe1",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 7780,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "e0453822-9824-42d4-bc2f-449b44dd8f0e",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "9f9ad33d-5cbc-4149-aa8a-f5fb92af54fd",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 8200,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "4c519bb8-d890-47d2-ba65-a1887e4cffa9",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "4da6f0e2-cadc-49f2-abf6-2aebc25c760b",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 8620,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "d6a4227a-6540-4b15-8b2e-e25e2951584b",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "46b852ed-ac6a-48f8-9275-898b4d4bafa4",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Animate",
+      "position": {
+        "x": 9040,
+        "y": 1800
+      }
+    },
+    {
+      "nodeId": "5b06f376-e7f6-4350-9c91-e5fc3d321168",
+      "outputIndex": 0,
+      "type": "3d",
+      "taskId": "1ddc7bd7-efcd-4e6b-b160-5e925f94ef84",
+      "exportType": "glb",
+      "error": null,
+      "node_type": "Generate3D",
+      "position": {
+        "x": 1920,
+        "y": 10000
+      }
+    }
+  ],
+  "node_settings": {
+    "72fb1a91-970f-43e6-8ee6-fbb87b07b768": {
+      "type": "GenerateImage",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "aspectRatio": [
+          "1:1"
+        ],
+        "model": [
+          "gpt-image-2.5-flare"
+        ]
+      }
+    },
+    "4d9c3711-3eff-4bf5-9e3a-57b6c18ff41e": {
+      "type": "GenerateImage",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "aspectRatio": [
+          "1:1"
+        ],
+        "model": [
+          "gpt-image-2.5-flare"
+        ]
+      }
+    },
+    "b3fe6ea0-f553-432a-bd3d-b242f3531c2d": {
+      "type": "GenerateImage",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "aspectRatio": [
+          "1:1"
+        ],
+        "model": [
+          "gpt-image-2.5-flare"
+        ]
+      }
+    },
+    "ae95374a-d179-4aec-be91-c42bdb24bdbb": {
+      "type": "Remesh",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          32000
+        ],
+        "topology": [
+          "tri"
+        ]
+      }
+    },
+    "8c3904ed-ae76-4efb-8517-6dcf79037cf9": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "sword_slash"
+        ]
+      }
+    },
+    "d286b7fd-da8c-4fd7-ae7c-dc04a4ac94d3": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "double_slash"
+        ]
+      }
+    },
+    "e0741fe5-6a95-443f-b276-51e315a145fb": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "combo_slash"
+        ]
+      }
+    },
+    "8a8e3d61-4d4e-4667-a987-c110f6bf2df0": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "cross_block"
+        ]
+      }
+    },
+    "242d0446-f20d-491a-82ce-81e07c5073c5": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "left_sidestep"
+        ]
+      }
+    },
+    "ceaf5c57-473e-4ecf-905f-f0f4f855d6c0": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "right_sidestep"
+        ]
+      }
+    },
+    "b9e31cd7-3975-4179-836f-986de9b44cd1": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "light_hit_back"
+        ]
+      }
+    },
+    "27cdd53a-d5fd-461b-acae-3194ce18ead2": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "hit_fall"
+        ]
+      }
+    },
+    "ce6e9ed5-b86d-4758-ba19-666a4f6b0674": {
+      "type": "Generate3D",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          8000
+        ],
+        "topology": [
+          "tri"
+        ],
+        "tPose": [
+          0
+        ],
+        "useAlpha": [
+          0
+        ],
+        "usePbrTexture": [
+          1
+        ],
+        "textureSize": [
+          2048
+        ],
+        "generateTexture": [
+          1
+        ],
+        "license": [
+          "PRIVATE"
+        ],
+        "skipInputUpscale": [
+          1
+        ]
+      }
+    },
+    "1090ecab-4d6c-403e-9b95-0677234684e2": {
+      "type": "Generate3D",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          12000
+        ],
+        "topology": [
+          "tri"
+        ],
+        "tPose": [
+          0
+        ],
+        "useAlpha": [
+          0
+        ],
+        "usePbrTexture": [
+          1
+        ],
+        "textureSize": [
+          2048
+        ],
+        "generateTexture": [
+          1
+        ],
+        "license": [
+          "PRIVATE"
+        ],
+        "skipInputUpscale": [
+          1
+        ]
+      }
+    },
+    "bd4d38c8-e988-46e6-847f-03699d3ff739": {
+      "type": "GenerateImage",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "aspectRatio": [
+          "16:9"
+        ],
+        "model": [
+          "gpt-image-2.5-flare"
+        ]
+      }
+    },
+    "90c178b9-4552-45c4-9018-d62914649283": {
+      "type": "Remesh",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          4000
+        ],
+        "topology": [
+          "tri"
+        ]
+      }
+    },
+    "9237a617-4edf-476f-8868-a2cae60299f1": {
+      "type": "Remesh",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          6000
+        ],
+        "topology": [
+          "tri"
+        ]
+      }
+    },
+    "05364b4c-ee69-43ab-bd97-320bdcc34e9b": {
+      "type": "Generate3D",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          20000
+        ],
+        "topology": [
+          "tri"
+        ],
+        "tPose": [
+          0
+        ],
+        "useAlpha": [
+          0
+        ],
+        "usePbrTexture": [
+          1
+        ],
+        "textureSize": [
+          2048
+        ],
+        "generateTexture": [
+          1
+        ],
+        "license": [
+          "PRIVATE"
+        ],
+        "skipInputUpscale": [
+          1
+        ]
+      }
+    },
+    "c47e913b-93d3-4c3b-b187-e9ae874e98ad": {
+      "type": "Remesh",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          12000
+        ],
+        "topology": [
+          "tri"
+        ]
+      }
+    },
+    "28cc8089-7d4c-44a7-8124-868d52f2376b": {
+      "type": "Rig",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "riggingMode": [
+          "humanoid-fingers"
+        ]
+      }
+    },
+    "69fee97e-bb23-4e2c-b509-a3d298ffa28e": {
+      "type": "GenerateImage",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "aspectRatio": [
+          "3:4"
+        ],
+        "model": [
+          "gpt-image-2.5-flare"
+        ]
+      }
+    },
+    "ded1db65-666e-4262-8944-f15900453623": {
+      "type": "Generate3D",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          40000
+        ],
+        "topology": [
+          "tri"
+        ],
+        "tPose": [
+          1
+        ],
+        "useAlpha": [
+          0
+        ],
+        "usePbrTexture": [
+          1
+        ],
+        "textureSize": [
+          2048
+        ],
+        "generateTexture": [
+          1
+        ],
+        "license": [
+          "PRIVATE"
+        ],
+        "skipInputUpscale": [
+          1
+        ]
+      }
+    },
+    "4ea437c4-71bf-4bc6-a4e6-2c2e6d081181": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "standing_idle_1_looping"
+        ]
+      }
+    },
+    "1a3d4fe6-6813-482d-b78c-c79b3195346d": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "jog_looping"
+        ]
+      }
+    },
+    "e2309f99-0f33-4fd5-9895-70fcbd8edc2a": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "sprint"
+        ]
+      }
+    },
+    "69d46422-7ab0-4dfb-b33b-f9200f109e9b": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "sword_slash"
+        ]
+      }
+    },
+    "4e218783-3075-48e9-b6e3-30f4efef6671": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "double_slash"
+        ]
+      }
+    },
+    "978aca77-1af4-4a95-8bac-c46c1edf6843": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "combo_slash"
+        ]
+      }
+    },
+    "47035561-e9c9-49b8-a580-174da0b74390": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "cross_block"
+        ]
+      }
+    },
+    "b51976a9-59f7-4e45-975d-7ad6c37b49df": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "left_sidestep"
+        ]
+      }
+    },
+    "e0453822-9824-42d4-bc2f-449b44dd8f0e": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "right_sidestep"
+        ]
+      }
+    },
+    "4c519bb8-d890-47d2-ba65-a1887e4cffa9": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "light_hit_back"
+        ]
+      }
+    },
+    "d6a4227a-6540-4b15-8b2e-e25e2951584b": {
+      "type": "Animate",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "inPlace": [
+          1
+        ],
+        "animation": [
+          "hit_fall"
+        ]
+      }
+    },
+    "5b06f376-e7f6-4350-9c91-e5fc3d321168": {
+      "type": "Generate3D",
+      "parameters": {
+        "count": [
+          1
+        ],
+        "polygonCount": [
+          42000
+        ],
+        "topology": [
+          "tri"
+        ],
+        "tPose": [
+          1
+        ],
+        "useAlpha": [
+          0
+        ],
+        "usePbrTexture": [
+          1
+        ],
+        "textureSize": [
+          2048
+        ],
+        "generateTexture": [
+          1
+        ],
+        "license": [
+          "PRIVATE"
+        ],
+        "skipInputUpscale": [
+          1
+        ]
+      }
+    }
+  },
+  "runtime_integration": {
+    "version": "0.1.3",
+    "assets": [
+      "game/assets/models/production/rune_sword_web.glb",
+      "game/assets/models/production/sanctuary_pillar_web.glb",
+      "game/assets/models/production/pilgrim_gateway.glb"
+    ],
+    "character_replacement": false,
+    "static_geometry": {
+      "sword_triangles": 4000,
+      "pillar_triangles": 6122,
+      "portal_triangles": 7714
+    },
+    "note": "First courtyard columns/frame and hero sword only; source characters/motions remain development candidates.",
+    "godot_extracted_texture_imports": [
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_0.png",
+        "bytes": 7338483,
+        "sha256": "1e524fb8e4260c330c0d99549322ff1775b620d59af690c167509d18d6e8b67e",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_1.png",
+        "bytes": 3566797,
+        "sha256": "e6c0b6831595ecd32a1dbdf1790548e5473689236c697e0ca25505b4b4bd4ccf",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/pilgrim_gateway_Image_2.png",
+        "bytes": 4506083,
+        "sha256": "c76189f3f9e4d6b0ef961169c18a1b0e404b41b426849a2a809640380704d8d4",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_0.png",
+        "bytes": 3578910,
+        "sha256": "ba2f867a46b38d13ed22ce6789068f0e358bdb60616d5194d593acc07f629091",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_1.png",
+        "bytes": 1832297,
+        "sha256": "2705082935a637ef989d05f11042abad13aabc16d9406f26b96133c208b9386c",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/rune_sword_web_Image_2.png",
+        "bytes": 1964867,
+        "sha256": "c170134e96db488cfc0354fa66e9b2f016025689bec54418ac503ae4c1630fb3",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_0.png",
+        "bytes": 4709660,
+        "sha256": "dda0ab8f729ae0841a0d2e53e71d84e5d2b966514961468700a382865fd978e0",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_1.png",
+        "bytes": 2500280,
+        "sha256": "1dd2496dbf2ed173da9ea13b4265ccab5f2aca287aeb0002267f136d7f463cb5",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      },
+      {
+        "file": "game/assets/models/production/sanctuary_pillar_web_Image_2.png",
+        "bytes": 3772435,
+        "sha256": "abb2c9e3637f9f9aa7547bcd21a3e6f5aa2bb7a9f9f084e5a83431355d0429d4",
+        "derived_by": "Godot embedded_image_handling=1 import from the corresponding embedded GLB"
+      }
+    ]
+  },
+  "quality_approval": {
+    "aaa_final": false,
+    "target_hardware_fps": false,
+    "gameplay_motion_mapping": false
+  },
+  "candidate_manifests": [
+    "../../candidates/lyra-motion-library-001/manifest.json",
+    "../../candidates/lyra-runeblade-001/manifest.json",
+    "../../candidates/lyra-web-001/manifest.json",
+    "../../candidates/pilgrim-portal-001/manifest.json",
+    "../../candidates/sanctuary-pillar-001/manifest.json",
+    "../../candidates/sentinel-melee-001/manifest.json",
+    "../../candidates/sentinel-native-001/manifest.json"
+  ]
+}

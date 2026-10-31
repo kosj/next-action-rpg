@@ -203,6 +203,7 @@ func run() -> void:
 	check(load("res://tests/save_regressions.gd").run(session, check) == true, "Save regression suite completes")
 	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
 	check(await load("res://tests/skeletal_regressions.gd").run(world, check) == true, "Skeletal presentation suite completes")
+	check(await load("res://tests/art_integration_regressions.gd").run(world, check) == true, "Generated static art integration suite completes")
 	ledger = null
 	second = null
 	sweep = null

@@ -1,0 +1,381 @@
+{
+  "clips": {
+    "RESET": {
+      "duration_seconds": 0.0333333350718021,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_combo_slash": {
+      "duration_seconds": 4.69999980926514,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_cross_block": {
+      "duration_seconds": 5.0,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_double_slash": {
+      "duration_seconds": 3.70000004768372,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_hit_fall": {
+      "duration_seconds": 1.73333334922791,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_left_sidestep": {
+      "duration_seconds": 5.93333339691162,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_light_hit_back": {
+      "duration_seconds": 1.63333332538605,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_right_sidestep": {
+      "duration_seconds": 5.93333339691162,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "candidate_sword_slash": {
+      "duration_seconds": 5.0,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "idle": {
+      "duration_seconds": 10.1666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "run": {
+      "duration_seconds": 1.46666669845581,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    },
+    "walk": {
+      "duration_seconds": 4.56666660308838,
+      "loop_mode": 0,
+      "loop_mode_name": "NONE",
+      "tracks": 21
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "errors": [],
+  "input_sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+  "limitations": [
+    "No visual quality, full deformation, loop-seam, foot contact, BoneMap, dynamic root-motion or hardware performance approval",
+    "REST CPU skin uses Skeleton global rest x Skin inverse bind x weighted vertex, then skeleton world transform; no rendered GPU deformation audit",
+    "The eight added stock candidates are not authored gameplay clips; raw source fidelity, timing and combat-quality approval remain pending",
+    "Some original stock exports contain conflicting duplicate timestamp inputs. Blender re-export and this Godot import do not establish source fidelity, attack-phase timing, contact or gameplay-quality approval."
+  ],
+  "manual_animation_tree_samples": {
+    "candidate_combo_slash": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0345729738473892,
+          "max_bone_rotation_change_rad": 0.721862614154816,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.17499995231628
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0497688949108124,
+          "max_bone_rotation_change_rad": 1.86278712749481,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.34999990463257
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_cross_block": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0631562471389771,
+          "max_bone_rotation_change_rad": 2.34520530700684,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.25
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0330955237150192,
+          "max_bone_rotation_change_rad": 2.21207451820374,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.5
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_double_slash": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0647397264838219,
+          "max_bone_rotation_change_rad": 1.32045304775238,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 0.925000011920929
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.103274054825306,
+          "max_bone_rotation_change_rad": 2.14919447898865,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 1.85000002384186
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_hit_fall": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0215779095888138,
+          "max_bone_rotation_change_rad": 1.24459981918335,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 0.433333337306976
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.277829706668854,
+          "max_bone_rotation_change_rad": 1.63386833667755,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 0.866666674613953
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_left_sidestep": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0210344195365906,
+          "max_bone_rotation_change_rad": 1.00259304046631,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.48333334922791
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.016284478828311,
+          "max_bone_rotation_change_rad": 0.826427102088928,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.96666669845581
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_light_hit_back": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.00421625375747681,
+          "max_bone_rotation_change_rad": 0.267793327569962,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 0.408333331346512
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.00100024044513702,
+          "max_bone_rotation_change_rad": 0.236687958240509,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 0.816666662693024
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_right_sidestep": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0152825657278299,
+          "max_bone_rotation_change_rad": 0.733757674694061,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.48333334922791
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.00768209295347333,
+          "max_bone_rotation_change_rad": 1.00861465930939,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.96666669845581
+        }
+      ],
+      "tree_active": true
+    },
+    "candidate_sword_slash": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0205006152391434,
+          "max_bone_rotation_change_rad": 2.06157946586609,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.25
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0495819970965385,
+          "max_bone_rotation_change_rad": 2.38938879966736,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.5
+        }
+      ],
+      "tree_active": true
+    },
+    "idle": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 23,
+          "max_bone_local_position_change_m": 0.0,
+          "max_bone_rotation_change_rad": 0.0297902598977089,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 2.54166674613953
+        },
+        {
+          "changed_bones": 24,
+          "max_bone_local_position_change_m": 0.0,
+          "max_bone_rotation_change_rad": 0.0601390711963177,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 5.08333349227905
+        }
+      ],
+      "tree_active": true
+    },
+    "run": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0417675077915192,
+          "max_bone_rotation_change_rad": 2.35979962348938,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 0.366666674613953
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0323262214660645,
+          "max_bone_rotation_change_rad": 1.4724999666214,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 0.733333349227905
+        }
+      ],
+      "tree_active": true
+    },
+    "walk": {
+      "baseline_time_seconds": 0.0,
+      "motion_change_required": false,
+      "samples": [
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0456164292991161,
+          "max_bone_rotation_change_rad": 1.6688951253891,
+          "sample_fraction": 0.25,
+          "sample_time_seconds": 1.14166665077209
+        },
+        {
+          "changed_bones": 25,
+          "max_bone_local_position_change_m": 0.0463252849876881,
+          "max_bone_rotation_change_rad": 1.69840788841248,
+          "sample_fraction": 0.5,
+          "sample_time_seconds": 2.28333330154419
+        }
+      ],
+      "tree_active": true
+    }
+  },
+  "meshes": [
+    {
+      "path": "CandidateUniformScale/Armature/Skeleton3D/texture_mapping",
+      "skeleton_path_resolves": true,
+      "skin_bind_count": 53,
+      "skin_present": true,
+      "surface_vertices": 25791
+    }
+  ],
+  "rest_bounds_godot_y_up": {
+    "floor_y_m": 1.40070915222168e-05,
+    "height_m": 1.8199856877327,
+    "max": [
+      0.882314741611481,
+      1.81999969482422,
+      0.22355754673481
+    ],
+    "method": "CPU linear skinning: skeleton_world * sum(weight * bone_global_rest * inverse_bind * vertex)",
+    "min": [
+      -0.883492112159729,
+      1.40070915222168e-05,
+      -0.216363295912743
+    ]
+  },
+  "scope": "Actual GLB import, CPU-skinned REST/world bounds, Skin binding presence, clips and manual AnimationTree bone sampling only",
+  "skeleton": {
+    "bones": 53,
+    "motion_scale": 1.0,
+    "path": "CandidateUniformScale/Armature/Skeleton3D"
+  },
+  "status": "passed",
+  "checked_at_utc": "2026-10-31T02:31:26.672240+00:00",
+  "source": {
+    "path": "build/art-candidates/batch-2026-10-31/lyra-web-motion-library.glb",
+    "bytes": 18279128,
+    "sha256": "5b69a37847ececfe940a5c650b3d7a2d3f90255f248b0b2e9de7c96cb000c362",
+    "unchanged": true,
+    "copied_input_sha256_matches": true
+  },
+  "process_validation": {
+    "import": {
+      "exit_code": 0,
+      "diagnostic_lines": [],
+      "log": "godot-audit-motion-library-import.log",
+      "original_workspace_log": "build/verification/art-batch/godot-audit-32k-import.log"
+    },
+    "runtime": {
+      "exit_code": 0,
+      "diagnostic_lines": [],
+      "log": "godot-audit-motion-library-runtime.log",
+      "original_workspace_log": "build/verification/art-batch/godot-audit-32k-runtime.log"
+    }
+  }
+}

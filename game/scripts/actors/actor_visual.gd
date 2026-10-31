@@ -1,6 +1,8 @@
 class_name ActorVisual
 extends Node3D
 
+const RUNE_SWORD_SCENE: PackedScene = preload("res://assets/models/production/rune_sword_web.glb")
+
 var model: Node3D
 var joints: Dictionary = {}
 var clock: float = 0.0
@@ -35,6 +37,23 @@ func setup(kind: String) -> void:
 	model.rotation.y = PI
 	add_child(model)
 	_collect(model)
+	if kind == "hero":
+		_replace_hero_sword()
+
+func _replace_hero_sword() -> void:
+	var socket := joints.get("Sword") as Node3D
+	if socket == null:
+		return
+	# Keep the existing grip transform and pivot animation. The replacement lives
+	# inside the prototype model so rig visibility and fallback include its weapon.
+	for child in socket.get_children():
+		if child is MeshInstance3D:
+			child.hide()
+	var replacement := RUNE_SWORD_SCENE.instantiate() as Node3D
+	replacement.name = "RuneSwordPreview"
+	# Canonical blade +Y -> prototype blade -Y; keep its broad face normal +Z.
+	replacement.rotation.z = PI
+	socket.add_child(replacement)
 
 func _collect(node: Node) -> void:
 	if node is Node3D:
