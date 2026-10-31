@@ -5,7 +5,7 @@
 - [모바일 조작](MOBILE_WEB.md): 서로 독립된 조이스틱·look·13개 액션, 차지 hold/release, 메뉴/초점/회전의 종료 처리와 CSS safe area·DPR 대응을 추가했습니다. 작은 화면의 제목·대화·상점·설정은 스크롤과 터치 대상을 제공합니다.
 - [Godot4.7.2 통합374검사·실패0](validation/v0.1.6/README.md), Python41검사, 실제 Web·Windows export와 ZIP CRC·크기·SHA·실행 파일·라이선스 검사가 통과했습니다. 로컬 Web 원시 용량142,138,045bytes입니다.
 - 동결 개발 preview의 세 손가락 실제 CDP 입력 집중 검사는148.304초·오류0으로 통과했습니다. 최종 빌드의 전체 모바일·데스크톱 브라우저, 배포와 공개 URL 결과는 [판본별 기록](validation/v0.1.6/README.md)에서 별도 확인합니다.
-- 최신 엔진 소스·MDN BCD와 고정 MIT 입력·반응형 공개 스킬의 [근거](MOBILE_WEB_RESEARCH.md), 재사용 묶음1.2.0·54개 출처 사례를 기록했습니다. 실제 Android/iOS·Safari·Windows 실행·목표 GPU 성능·AAA 아트는 별도 검수입니다.
+- 최신 엔진 소스·MDN BCD와 고정 MIT 입력·반응형 공개 스킬의 [근거](MOBILE_WEB_RESEARCH.md), 재사용 묶음1.2.0의 고정 출처 사례를 기록했습니다. 실제 Android/iOS·Safari·Windows 실행·목표 GPU 성능·AAA 아트는 별도 검수입니다.
 - 병행 피부 metallic 후보는 얼굴 경계가 보여 기각했습니다. [의미 경계 실패](../art_source/production/character_polish/skin_material_review/decision.json)를 보존하고 기존 몸체·안구를 유지합니다.
 
 ## v0.1.5 · 눈 소켓·곡면 안구·검 잔상
