@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "pause_cancel_focus_and_quality",
+  "seconds": 475.012,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": "Page.wait_for_function: Timeout 15000ms exceeded."
+}

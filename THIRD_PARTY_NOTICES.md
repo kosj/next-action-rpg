@@ -18,3 +18,5 @@ Permanent asset IDs, original download URLs, selected official API metadata, pub
 No license for the project's own code or original artwork has been selected by the repository owner; the third-party licenses above apply only to their respective components.
 
 Development-only Agent Skills are vendored under `.agents/skills/` from `gamedev-skills/awesome-gamedev-agent-skills`, revision `19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9`, under Apache-2.0. Their LICENSE, NOTICE and file provenance are preserved there. They are not included in the game runtime or its PCK.
+
+- **GodotPrompter input-handling and responsive-ui development skills** — MIT, Copyright 2026 GodotPrompter Contributors. Pinned source revision `d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6`; original LICENSE, NOTICE and per-file hashes are preserved in `.agents/skills/input-handling/` and `.agents/skills/responsive-ui/`. These are development documents, not runtime dependencies.

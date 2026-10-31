@@ -20,3 +20,5 @@
 ## 다른 프로젝트용 배포 묶음
 
 [game-production-kit](../../reusable/game-production-kit/README.md)에 독립적인 지식 관리·Godot 웹 제작·생성형 3D 아트 스킬 3종, 사례집과 빈 기록 템플릿을 보관합니다. 각 스킬 폴더는 내부 참조만으로 복사해 사용할 수 있습니다. 실제 목표 프로젝트의 `.agents/skills/` 등에 설치하고 그 프로젝트의 설정과 검증 결과를 채웁니다. 현재 프로젝트의 검증 상태·권한·예산을 자동으로 이전하지 않습니다.
+
+[input-handling](input-handling/SKILL.md)·[responsive-ui](responsive-ui/SKILL.md)는 별도로 보관한 MIT 공개 원문입니다. 각 폴더의 LICENSE·NOTICE·upstream.json에서 고정 출처와 파일별 무결성을 확인합니다. 기존 공통 Apache 출처와 혼용하지 않습니다. [모바일 공식 근거](../../docs/MOBILE_WEB_RESEARCH.md)에 선택 적용과 Web 차이를 기록합니다.

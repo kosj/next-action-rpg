@@ -9,6 +9,8 @@
   "browser": {"version": null, "renderer": null, "viewport": null, "profile_scope": "test-only"},
   "stages": [],
   "input_and_combat": {"verified": false, "evidence": []},
+  "mobile_input_evidence_report": null,
+  "mobile_real_device_validation": "pending",
   "durable_storage": {"verified": false, "observation_mode": "readonly", "before": null, "after": null},
   "full_browser_restart": {"verified": false, "same_profile": null, "restored_state": null},
   "quality_modes": [],

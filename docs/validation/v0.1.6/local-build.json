@@ -1,0 +1,16 @@
+{
+  "scope": "Local committed implementation export and native assertions; final desktop/mobile browsers and public deployment separate",
+  "source_commit": "31bc679b1b026ca7d42df17fa2cc7269b9fd0e0c",
+  "build_id": "0.1.6 \u00b7 31bc679b",
+  "native_checks": 374,
+  "failures": 0,
+  "warnings": 0,
+  "errors": 0,
+  "full_build_log_sha256": "36446a6c2cad9dbdeccf7b2a8609078ed534a5683101f807b57786d7cd8735e8",
+  "exports": [
+    "Web release",
+    "Windows x86_64 release"
+  ],
+  "runtime_assets_unchanged": true,
+  "paid_generation_points": 0
+}

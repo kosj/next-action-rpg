@@ -110,6 +110,10 @@
   "materials": {
     "status": "pending",
     "maps": [],
+    "uv_channel_sampling_and_effective_factor_evidence": null,
+    "semantic_region_mask_and_uncertain_boundary_evidence": null,
+    "material_boundary_visual_review_evidence": null,
+    "added_material_or_surface_cost_evidence": null,
     "import_policy": null,
     "mipmaps_observed": null,
     "source_bytes": null,
@@ -125,6 +129,8 @@
     "same_camera_before_after_artifacts": [],
     "hands_face_hair_cloth_foot_contact_evidence": null,
     "transition_and_play_camera_evidence": null,
+    "neutral_material_visual_gate": "pending",
+    "actual_game_material_comparison": "pending",
     "remaining_defects": [],
     "runtime_adoption": "pending",
     "final_art_decision": "pending"

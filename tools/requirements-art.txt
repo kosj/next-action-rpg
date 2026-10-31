@@ -3,3 +3,5 @@
 numpy==2.3.5
 # Optional constrained local skin-weight experiments, never runtime dependency.
 scipy==1.17.0
+# Read-only PNG atlas sampling for material audits; no image editing.
+pillow==12.3.0

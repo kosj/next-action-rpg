@@ -32,6 +32,9 @@ func _physics_process(delta: float) -> void:
 		camera.global_position = target + offset
 		camera.look_at(target + Vector3(1, 0.2, -2))
 		return
+	var touch_look := TouchControls.take_look_delta()
+	yaw -= touch_look.x * 0.004
+	pitch = clampf(pitch - touch_look.y * 0.004, -0.65, 0.6)
 	var look_axes := Vector2(Input.get_joy_axis(0, JOY_AXIS_RIGHT_X), Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y))
 	if look_axes.length() > 0.18:
 		yaw -= look_axes.x * delta * 2.3

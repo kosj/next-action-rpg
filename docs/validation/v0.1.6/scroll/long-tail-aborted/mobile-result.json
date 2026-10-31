@@ -1,0 +1,19 @@
+{
+  "outcome": "diagnostically_aborted_stalled_scroll",
+  "phase": "lifecycle-tail",
+  "stage": "landscape_and_narrow_orientation",
+  "seconds_from_wrapper_utc": 1047.529181,
+  "reason": "Parent-directed stop after extended offscreen Done-button scroll attempts. Existing10-attempt loop was not allowed to finish; no full/lifecycle approval.",
+  "fresh_post_scroll_state_available": false,
+  "last_saved_snapshot": "11-landscape-settings",
+  "last_saved_scroll": {
+    "value": 0,
+    "max": 441,
+    "page": 350
+  },
+  "last_saved_snapshot_note": "This is the initial settings snapshot before scroll attempts; it does not establish final scroll value.",
+  "browser_exit_code": 130,
+  "server_closed": true,
+  "export_bytes_unchanged": true,
+  "errors": []
+}

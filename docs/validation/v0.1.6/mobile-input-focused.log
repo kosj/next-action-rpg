@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Native mobile fixture starts without taking over an existing real touch gesture
+PASS Desktop physical W still drives the real player through the shared input helper
+PASS Desktop joypad X still begins the actual canonical light strike before mobile mode
+PASS Mobile aliases leave all canonical keyboard and gamepad action bindings untouched
+PASS Landscape touch targets remain at least 44 CSS pixels, inside safe margins and separate from each other and the joystick
+PASS Two real nonsequential touch pointers move the actual controller and rotate the actual camera together
+PASS Move, look and light attack coexist through actual ScreenTouch IDs 17, 59 and 83
+PASS Lifting the attack finger releases only its alias and preserves movement and camera ownership
+PASS Lifting the joystick independently stops its vector while the look finger still controls the camera
+PASS Lifting the last look pointer leaves no camera drift or captured pointer
+PASS A real touch press and release within one render frame still reaches the next physics tick as one light attack
+PASS Holding a real heavy touch advances the real player's charged-heavy clock without releasing an attack
+PASS Normal heavy-finger release starts the actual heavy strike and consumes its held clock
+PASS Releasing a competing backward touch never releases the independently held physical W action
+PASS A real heal touch applies the existing instant potion effect while joystick movement remains active
+PASS A touch lock alias reaches the real world's unhandled-input target selection
+PASS A touch interaction alias opens the real archivist dialog without a synthetic gameplay callback
+PASS A menu finger in the joystick area does not become a gameplay attack or touch alias
+PASS Resuming with an old GUI finger waits for its release instead of promoting it to gameplay
+PASS A fresh touch attack works after the menu finger lifts and the existing UI guard expires
+PASS Canceled heavy touches request a safe pause and resume with no phantom heavy release
+PASS The real touch pause button cancels a held heavy safely through pause, resume and old-finger release
+PASS Orientation changes clear ownership and charge safely while rebuilding usable portrait safe-area targets
+PASS Actual focus-loss notification clears every touch owner and asks the real game to pause
+PASS Focus-loss recovery leaves no sticky movement, camera drift or phantom heavy strike
+PASS Native mobile fixture restores original keyboard/gamepad/action state and canonical bindings
+PASS Native mobile fixture restores window, pointer emulation and TouchControls context
+PASS Native touch tests leave progress, settings and the existing save file unchanged
+RUNEFALL_MOBILE_INPUT: {"completed":true,"landscape_viewport":[960.0,540.0],"pointer_ids":[17,59,83],"portrait_viewport":[390.0,844.0],"scope":"Native event/controller/pointer/lifecycle regression, not browser CSS/touch-hardware or mobile performance approval.","source_sha256":"15e4a7f44737f28c0e0d4ec5f94a853c7a429e7850c50de5a5a4f085a5172166"}
+PASS Mobile fixture reaches its end
+PASS Focused runner drains actual sound playback
+RUNEFALL_MOBILE_FOCUSED: 30 checks, 0 failures

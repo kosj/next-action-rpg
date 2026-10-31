@@ -1,0 +1,87 @@
+{
+  "repository": "https://github.com/jame581/GodotPrompter",
+  "revision": "d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+  "retrievedOn": "2026-10-31",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 GodotPrompter Contributors",
+  "original_files_unmodified": true,
+  "selection": "Original SKILL.md and only its directly linked local Markdown reference closure, plus original LICENSE",
+  "reviewed_usage_scope": [
+    "Named action boundary",
+    "Edge versus held state",
+    "Touch pointer ownership"
+  ],
+  "application_limits": [
+    "Official pinned engine source and target browser behavior override generic examples",
+    "Native safe-area and DPI recipes are not applied to Web without actual CSS/canvas/viewport conversion",
+    "Existing gameplay timing and input authority are preserved",
+    "No installer, external script or runtime assurance is included"
+  ],
+  "runtime_validation": "pending",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "upstream": "skills/input-handling/SKILL.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/SKILL.md",
+      "bytes": 13774,
+      "sha256": "0c65cb5cdd171205a5110197b47570cf2ac86c26189d9616190e3fb1f5373e9c",
+      "git_blob_sha": "01f299df638147c950a00538c16c3557419be251"
+    },
+    {
+      "path": "references/action-rebinding.md",
+      "upstream": "skills/input-handling/references/action-rebinding.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/action-rebinding.md",
+      "bytes": 6180,
+      "sha256": "77caeccf4bd99d09e899ba7901ed873de202f708e320feb28dcf5688640f4b7f",
+      "git_blob_sha": "0be173ef1fcbcfd9cfc30e14a1f941d91d2c6339"
+    },
+    {
+      "path": "references/input-buffering.md",
+      "upstream": "skills/input-handling/references/input-buffering.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/input-buffering.md",
+      "bytes": 1614,
+      "sha256": "1c70551b2fbaca0dae44a115c9d00cdd2ab1bfd069a2997b218cc5afc1cd31ac",
+      "git_blob_sha": "d34b111252a625b8ad30fb12298ff47693c02fec"
+    },
+    {
+      "path": "references/mouse.md",
+      "upstream": "skills/input-handling/references/mouse.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/mouse.md",
+      "bytes": 4510,
+      "sha256": "61d26ce79d3492f6e9c2010a51c6b500213225c882da36c3fcee5a18dd51dfef",
+      "git_blob_sha": "faadca4282051e224437a1e2d6fe521556c3b63c"
+    },
+    {
+      "path": "references/gamepad.md",
+      "upstream": "skills/input-handling/references/gamepad.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/gamepad.md",
+      "bytes": 6598,
+      "sha256": "461c872226bf70b176ae126f02fa48638cad8bbdb7406f3d882ad859c2c490e1",
+      "git_blob_sha": "7034a9b2ee798337a0eed26809dea6e936844b2a"
+    },
+    {
+      "path": "references/touch.md",
+      "upstream": "skills/input-handling/references/touch.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/touch.md",
+      "bytes": 3212,
+      "sha256": "42f7dfb7db0df696d38c391b60d0f879aa1237a48e62a9d41e3f3fd05fb64b90",
+      "git_blob_sha": "620c9538d927ad9ba51da75d9c6641008645d34c"
+    },
+    {
+      "path": "references/event-propagation.md",
+      "upstream": "skills/input-handling/references/event-propagation.md",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/skills/input-handling/references/event-propagation.md",
+      "bytes": 1453,
+      "sha256": "647fb528776a9950b47d2c84e56fbb410491f869c0c9253448a439e6de8c93cd",
+      "git_blob_sha": "92a6017bab5c81463dda6085163e9ebd20e08069"
+    },
+    {
+      "path": "LICENSE",
+      "upstream": "LICENSE",
+      "source_url": "https://github.com/jame581/GodotPrompter/blob/d7b26cdb5fae14d4ef7b713c5bf259395e75c3c6/LICENSE",
+      "bytes": 1083,
+      "sha256": "075667c180b39c81507891dd1411f3861b7da6b860d9b912841ed9f949c66277",
+      "git_blob_sha": "f5058316879cd83ed9ee5eec4cb1a180479ffa38"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "focused_button_start_scroll",
+  "seconds": 233.834,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}

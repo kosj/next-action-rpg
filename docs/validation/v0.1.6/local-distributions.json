@@ -1,0 +1,30 @@
+{
+  "version": "0.1.6",
+  "godot": "4.7.2",
+  "expected_main_sha": "31bc679b1b026ca7d42df17fa2cc7269b9fd0e0c",
+  "manifest_commit": "31bc679b",
+  "artifacts": [
+    {
+      "file": "runefall-web.zip",
+      "bytes": 111693430,
+      "sha256": "003da06ce013bd5fca57965e785426494695bb948f9788e008410e4f898b445f",
+      "sha256_verified": true,
+      "zip_crc_ok": true,
+      "licenses_present": true,
+      "playable_files_present": true,
+      "uncompressed_bytes": 142138045
+    },
+    {
+      "file": "runefall-windows.zip",
+      "bytes": 139534761,
+      "sha256": "a4d125c565b6c88b020e9a8b6ea27b0b78e2c059820c87eb754de629157ea93e",
+      "sha256_verified": true,
+      "zip_crc_ok": true,
+      "licenses_present": true,
+      "playable_files_present": true,
+      "uncompressed_bytes": 211557960
+    }
+  ],
+  "status": "verified",
+  "scope": "Downloaded bytes and packaging; no hardware or art approval"
+}

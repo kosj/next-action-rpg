@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "three_pointer_movement_look_light",
+  "seconds": 433.972,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "Original screenshot read only; no image editing",
+  "size": [
+    1688,
+    780
+  ],
+  "row": 390,
+  "nonblack_min": 664,
+  "nonblack_max": 1023,
+  "width": 360,
+  "raster_review": "FAIL: actual output still squeezed to central360px strip despite updated logical/CSS landscape geometry"
+}

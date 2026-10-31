@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 원본 51항목의 ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.2.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -26,6 +26,8 @@
 | `save-validated-backup` | 검증된 정상 primary만 backup으로 회전하고 실패 시 정상 상태를 보존한다. | 스키마/자료형/유한 값/범위, 쓰기·rename 실패와 롤백 |
 | `save-settings-vs-journey` | 설정 저장과 실제 플레이 여정 시작은 서로 다른 상태다. | 타이틀 이어하기 조건, 새 게임/설정만 저장/복귀 시나리오 |
 | `web-input-after-ui` | UI 클릭이 곧바로 공격으로 누수될 수 있다. 이벤트 소비와 fresh-press 경계를 둔다. | 마우스/패드/키보드별 재개 입력, 실제 공격 효과 |
+| `touch-input-alias-lifecycle` | pointer 소유권과 장치별 action 해제 범위를 나누고 merged edge·GUI 전환을 검사한다. | cancel/release·초점/복귀·에뮬레이션 재진입, 동시 물리 입력·process/physics 경계. native fixture 통과와 실제 Web을 구분 |
+| `mobile-driver-feedback-and-transient-observation` | 실제 입력 전에 짧은 상태의 읽기 전용 관찰을 시작하고, 같은 gesture의 geometry를 반복 조회하며 이전 입력을 오래 유지하지 않는다. | 입력 응답 지연·미래 frame snapshot·최종 실제 위치·pointer 종료·유한 시간. driver 실패와 앱 결함, 집중/전체 통과를 구분 |
 | `charge-held-end-pose-regression` | 상태명이나 손가락 변화만으로 차지/장전 동작을 승인하지 않는다. | 끝 시점의 실제 몸/무기 이동, 임계 이후 hold, 취소와 release 타이밍 |
 
 게임 코드의 초 단위를 클립 제작의 원본으로 씁니다. 클립이 부족하다고 피해 창을 임의로 늘리거나 검을 길게 만들어 접촉 문제를 숨기지 않습니다. 표현과 판정의 불일치는 실제 영상·marker·게임 데이터를 함께 보며 해결합니다.
@@ -39,10 +41,15 @@
 | `pages-public-deployment`, `pages-enablement-blocker` | repo 공개, 호스팅 최초 활성화, 배포, 공개 URL 실행은 별개 상태다. 해결된 과거 제약을 다시 현재 제약으로 쓰지 않는다. | 현재 Pages 설정과 token scope, 실제 실패 작업, 공개 빌드 식별자 |
 | `release-assets-ci-token` | 릴리스 첨부는 해당 작업에 맞는 현재 인증 경로로 처리한다. | CLI·연결 앱·CI token 각각의 실제 권한과 만료 상태 |
 | `public-browser-ca-trust` | 클라우드의 CA 신뢰 문제와 배포 장애를 구분하고 TLS 검증을 유지한다. | 정상 trust 환경/hosted runner의 실제 결과, URL·source commit |
+| `mobile-css-viewport-and-evidence` | CSS client·canvas backing·논리 viewport를 한 번씩 변환하고 native/Web safe area와 선택 API를 구분한다. | resize/회전·DPR·버튼 hit rect·UI 넘침·fullscreen 거부·브라우저 기능. 에뮬레이션과 실제 기기 증거를 분리 |
+| `touch-scroll-button-event-propagation` | 실제 버튼 위에서 시작한 scroll gesture를 보존하고 child consume·부모 전달·drag 시작 시 pending click 취소를 함께 검사한다. | wheel/touch 경로와 Slider 소유권 구분, 새 frame의 scroll value·콘텐츠 이동·pointer 해제·callback/우발 클릭, 실제 완료 버튼을 통한 설정 저장. 수정 후 브라우저 검증은 별도 |
+| `godot-window-resize-reentrant-screen-attach` | 크기 변경 signal 안의 content-scale setter 재진입을 피한다. 입력은 즉시 종료하고 화면 설정은 외부 처리 후 deferred로 모은다. | CPU/public transform이 정상이어도 최종 screen attach가 오래될 수 있다. 동일 조건 원본 raster A/B와 대상 장면 이미지 guard를 사용 |
 
 비동기 저장 관찰은 읽기 전용으로 수행합니다. 키 발견과 primary 읽기를 분리하고 관련 없는 payload를 전부 읽지 않습니다. async 결과는 실제로 await하고 그 값으로 제한된 반복을 합니다. 실패 시 단계별 저장/프레임 진단을 남기며 테스트가 저장을 쓰거나 강제 동기화하지 않습니다.
 
 로컬 dirty export·PR용 합성 merge·main·태그는 서로 다른 source 식별자일 수 있습니다. 각각의 실제 빌드 번호를 기록하고 공개 주소가 기대한 commit을 실행하는지 확인합니다. 릴리스 파일은 실제 첨부를 다시 내려받아 bytes·SHA256·ZIP CRC·필수 실행 파일·의존 notices를 대조합니다.
+
+[모바일 Web 절차](skills/godot-web-production/references/mobile-web-input.md)는 터치 소유권·해제·GUI 활성화와 화면 좌표를 함께 확인합니다. 재사용할 것은 경계와 검수 방법이며 특정 브라우저 지원표·감도·버튼 위치가 아닙니다. 이전의 native 회귀나 desktop touch fixture 통과를 실제 휴대기기의 실행·가독성·성능 승인으로 승계하지 않습니다. 현재 권한·계정·기기 접근 범위도 대상 프로젝트에서 확인합니다.
 
 ## 생성형 3D·Blender·애니메이션
 
@@ -72,12 +79,15 @@
 | 사례/출처 ID | 재사용할 원칙 | 목표 프로젝트에서 확인할 것 |
 | --- | --- | --- |
 | `courtyard-cc0-pbr-materials`, `godot-texture-import-budget-and-mips` | 색/데이터 채널·물리적 반복 크기·밉맵을 실제로 확인한다. 원본 JPEG와 runtime import/메모리는 다르다. | 공식 자산/작가/라이선스, sRGB albedo·linear normal/ARM, normal 방향·packed 채널·단위·실제 mips |
+| `skin-material-semantics-rejection` | 피부 metallic의 실제 비정상 값을 확인해도 국소 hard material 경계가 새 seam을 만들면 기각한다. | 원본 UV/map·기본 factor·semantic mask와 불확실 경계, 동일 정면/측면의 일반 재질 비교. 구조 보존과 Game A/B·최종 채택은 별도 |
 | `v013-generated-art-validation`, `v014-skeletal-preview` | 각 판본의 구조·실행 성공은 그 코드/자산의 범위에서 보존한다. | 실제 code/asset SHA·검사 범위·당시 화면, 현재 판본과의 차이 |
 | `art-skeleton-contract`, `character-preview-final-art-review` | 과거 피벗/스킨 상태나 일부 pose 통과를 현재 최종 아트 승인으로 일반화하지 않는다. | 실제 runtime 종류, 전체 변형·전환·얼굴/손·머리/천·접촉 |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
 환경 장식을 추가할 때는 공유 RNG의 호출 순서와 기존 충돌·카메라 경계를 보존합니다. 별도 시각용 RNG와 baseline 비교를 사용하고 collider 개수만 같다는 이유로 동일하다고 판단하지 않습니다. 동일 카메라의 실제 게임 화면으로 구도·표면·가독성을 검토합니다.
+
+[국소 캐릭터 수정 절차](skills/generated-3d-game-art/references/local-character-polish.md)는 재질 수치·소유 mask·실제 경계의 시각 판정을 분리합니다. 보수적인 얼굴 내부 mask도 완전한 피부/머리 경계 분할을 뜻하지 않습니다. 중립 렌더의 seam gate에서 기각했다면 미실행 Game A/B나 실기기 검수를 통과로 적지 않습니다.
 
 삼각형·본/클립 개수·텍스처 해상도·자동 검사 통과는 AAA 품질 인증서가 아닙니다. 얼굴·양손·갑옷·머리/천·전체 전환·공격 발디딤과 접촉, 재질·조명·VFX, 목표 기기 성능을 실제로 확인합니다. 소프트웨어 WebGL의 FPS를 목표 GPU 결과로 사용하지 않습니다.
 

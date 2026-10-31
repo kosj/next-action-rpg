@@ -1,6 +1,6 @@
 ---
 name: godot-web-production
-description: Build and validate Godot Web/Windows projects with reproducible toolchains, real input and durable browser saves, exact-commit publishing and clean asynchronous shutdown. Use for game integration tests, web exports, release automation or deployment failures.
+description: Build and validate Godot Web/Windows projects with reproducible toolchains, mobile touch and responsive viewport mapping, real input and durable browser saves, exact-commit publishing and clean asynchronous shutdown. Use for game integration tests, mobile web controls, web exports, release automation or deployment failures.
 ---
 
 # Godot 웹 제작과 배포 검증
@@ -18,6 +18,14 @@ description: Build and validate Godot Web/Windows projects with reproducible too
 3. UI 재개/이어하기 클릭과 게임 공격 입력이 같은 이벤트를 공유할 수 있습니다. UI가 소비한 입력을 구분하고 필요한 release/fresh-press 경계를 사용합니다. 임의 긴 cooldown으로 입력 누수를 숨기지 않습니다.
 4. 저장은 스키마·자료형·유한 값·범위를 검증합니다. 검증된 primary만 backup으로 회전하고 실패 시 기존 정상 파일을 보존합니다. 설정 저장과 실제 여정 시작을 구분합니다. 대상 파일시스템의 실제 rename/write 실패를 검사합니다.
 5. headless fixture에서 autoload·전체 씬이 필요하면 실제 Node/SceneTree 수명을 유지합니다. 입력 주입은 process/physics 신호 경계와 `just_pressed`·실제 행동을 함께 확인합니다. fixture 오류를 게임 판정 완화로 해결하지 않습니다.
+
+## 모바일 Web 입력과 반응형 화면
+
+터치·작은 화면을 지원할 때는 [모바일 입력·좌표 절차](references/mobile-web-input.md)를 읽고 [모바일 검수 양식](references/mobile-input-report.json)을 현재 프로젝트의 근거로 채웁니다. pointer ID별 이동/look/버튼 소유권과 모든 terminal 경로, 에뮬레이션 마우스의 전달 순서·GUI 재진입, 장치별 action 해제 범위와 merged edge를 함께 검사합니다. 터치 cleanup이 실제 키/패드 hold를 지우거나 메뉴를 닫은 손가락이 공격으로 이어지지 않게 합니다. 상태 주입과 이벤트 전달 API를 구분하고 해당 엔진의 process/physics frame 규칙을 확인합니다.
+
+CSS client·canvas backing·논리 viewport·Control 로컬 좌표와 렌더 픽셀 예산을 나눠 기록합니다. 이미 변환한 이벤트에 DPR을 다시 적용하지 않습니다. runtime Window/Viewport 크기와 UI anchors/containers, native/Web safe area 차이·실제 CSS/canvas 변환, resize/회전·주소창 변화를 검수합니다. fullscreen·Pointer Lock은 실제 지원·gesture·거부를 확인하는 선택 기능으로 두고 인라인 touch 조작을 보존합니다.
+
+desktop touch emulation·native 입력 fixture·실제 Android/iOS 브라우저·목표 GPU 성능의 결과를 각각 남깁니다. 원래 프로젝트의 기기 접근 권한·계정·QA 상태는 승계하지 않습니다. 이미 위임한 현재 작업에 별도 승인 절차를 새로 만들지는 않습니다. 휴대기기를 실제로 검사하지 못했으면 해당 검증은 `pending`입니다.
 
 ## 웹에서 실제 저장을 확인하는 방법
 

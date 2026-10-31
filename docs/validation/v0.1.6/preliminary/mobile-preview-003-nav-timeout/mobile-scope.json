@@ -1,0 +1,21 @@
+{
+  "scope": "Actual emulated Chromium multitouch/UI/gameplay/persistence, not real Android/iOS/Safari or GPU performance",
+  "reader_sha256": "48e72200bc2c22d44d64cf091766837ddbc67cc9b1f8687e300b8ffcb5e9a5a5",
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "dpr": 2,
+  "ui_timeout_ms": 15000,
+  "storage_timeout_seconds": 30
+}

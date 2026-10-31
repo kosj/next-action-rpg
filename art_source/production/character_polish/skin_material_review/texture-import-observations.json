@@ -1,0 +1,71 @@
+{
+  "status": "read_only_import_policy_observation",
+  "records": [
+    {
+      "image": "Image_0",
+      "sidecar": "game/assets/models/production/lyra_gameplay_Image_0.png.import",
+      "compress_mode": 0,
+      "vram_texture": false,
+      "mipmaps_generate": true,
+      "remap_path": ".godot/imported/lyra_gameplay_Image_0.png-9079f4495022edc4e8d59f95f4891028.ctex",
+      "imported_bytes": 5402308,
+      "imported_sha256": "52778ef305e647bc4abac12ad0ea429527b4cd73a8b85907396321e13ea7c20c",
+      "container_magic_ascii": "GST2",
+      "first_header_words_raw": [
+        1,
+        2048,
+        2048,
+        226492416,
+        4294967295,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "image": "Image_1",
+      "sidecar": "game/assets/models/production/lyra_gameplay_Image_1.png.import",
+      "compress_mode": 0,
+      "vram_texture": false,
+      "mipmaps_generate": true,
+      "remap_path": ".godot/imported/lyra_gameplay_Image_1.png-9b325d41f4f0dd9192cc7d936e80f6b4.ctex",
+      "imported_bytes": 3827700,
+      "imported_sha256": "f1e5652e62ad8f7933ee0f9f88e41bd23121c42894cf2e88d7c3ea0acaecf8d0",
+      "container_magic_ascii": "GST2",
+      "first_header_words_raw": [
+        1,
+        2048,
+        2048,
+        226492416,
+        4294967295,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "image": "Image_2",
+      "sidecar": "game/assets/models/production/lyra_gameplay_Image_2.png.import",
+      "compress_mode": 0,
+      "vram_texture": false,
+      "mipmaps_generate": true,
+      "remap_path": ".godot/imported/lyra_gameplay_Image_2.png-bc89a118db39cdbc668d3ee1af7cbe1e.ctex",
+      "imported_bytes": 6984962,
+      "imported_sha256": "8050f16fb0f78c3a7e4e407a33269d54b54d4964036eb3a5b37ec812e38f3594",
+      "container_magic_ascii": "GST2",
+      "first_header_words_raw": [
+        1,
+        2048,
+        2048,
+        226492416,
+        4294967295,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Current editor/imported cache headers and sidecar policy only; no engine resource/GPU decoding or mobile compatibility claim",
+  "source_embedded_images": "2048x2048 RGB PNG; original bytes unchanged",
+  "actual_encoding_note": "No local .s3tc/.etc2 remap variants observed. All three imports request lossless(mode0) and vram_texture=false; root engine audit will resolve actual Image/GPU formats."
+}

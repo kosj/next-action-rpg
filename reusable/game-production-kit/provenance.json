@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "bundle_name": "game-production-kit",
-  "bundle_version": "1.1.0",
+  "bundle_version": "1.2.0",
   "prepared_on": "2026-10-31",
   "transfer_rule": "Source observations and verification status do not verify a receiving project; validate its own versions, inputs, permissions and outcomes.",
   "source_catalog": {
     "repository": "https://github.com/kosj/next-action-rpg",
-    "commit": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174",
-    "catalog_url": "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/knowledge/entries.json",
-    "catalog_sha256": "65e38b6d27d405b3d897c32b1c10ce2498803efb0ece71007765e0b344b34663",
-    "entry_count": 51,
+    "commit": "36c31eef74c11f51c30dab893f57eab95f4f0ec8",
+    "catalog_url": "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/knowledge/entries.json",
+    "catalog_sha256": "84ad90bfd68fb69c73d18fbad3eba93875efdd888c4a19734ec578f2b2702794",
+    "entry_count": 57,
     "entries": [
       {
         "id": "toolchain-version-pin",
@@ -22,10 +22,10 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/toolchain.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/build.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/project.godot",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ENGINEERING_EVIDENCE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/toolchain.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/build.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/project.godot",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ENGINEERING_EVIDENCE.md",
           "https://godotengine.org/article/maintenance-release-godot-4-7-2/"
         ]
       },
@@ -39,9 +39,9 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/core/strike.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/world/camera_rig.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/combat_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/core/strike.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/world/camera_rig.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/combat_regressions.gd",
           "https://docs.godotengine.org/en/4.7/classes/class_physicsdirectspacestate3d.html"
         ]
       },
@@ -55,10 +55,10 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/enemy.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/player.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/combat_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ENGINEERING_EVIDENCE.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/enemy.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/combat_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ENGINEERING_EVIDENCE.md"
         ]
       },
       {
@@ -72,10 +72,10 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/core/session.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/game.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/ui/hud.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/save_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/hud.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/save_regressions.gd",
           "https://docs.godotengine.org/en/4.7/classes/class_fileaccess.html"
         ]
       },
@@ -89,10 +89,10 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/core/session.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/game.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/save_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/DESIGN.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/save_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/DESIGN.md"
         ]
       },
       {
@@ -106,9 +106,9 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/player.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/game.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/test_runner.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/test_runner.gd",
           "https://docs.godotengine.org/en/4.7/classes/class_input.html",
           "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
         ]
@@ -124,9 +124,9 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/check_web.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/browser_smoke.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/check_web.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
           "https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_web.html#using-cookies-for-data-persistence",
           "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
         ]
@@ -135,17 +135,21 @@
         "id": "headless-integration-lifecycle",
         "source_title": "전체 씬·autoload가 필요한 회귀 검사는 Node runner를 유지한다",
         "source_status": "verified",
-        "source_checked_on": "2026-10-30",
+        "source_checked_on": "2026-10-31",
         "source_context": {
           "godot": "4.7.2",
           "commit": "289f99eec4389eeb63dfb3e601d4f5b0e4175097",
-          "release": "v0.1.1"
+          "release": "v0.1.1",
+          "latest_cleanup": "v0.1.6 Godot4.7.2 local375 checks0fail/0errors/0warnings; origin v0.1.1 evidence retained"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/test_runner.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/build.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/godot-gdscript-headless-testing/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/test_runner.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/build.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/godot-gdscript-headless-testing/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41071945291",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/mobile_input_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/native-final.json",
+          "https://github.com/kosj/next-action-rpg/actions/runs/41198316684/job/124528942798"
         ]
       },
       {
@@ -158,8 +162,8 @@
           "release": "v0.1.1"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/DEPLOYMENT.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/DEPLOYMENT.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.github/workflows/build.yml",
           "https://github.com/kosj/next-action-rpg/actions/runs/41071830733",
           "https://github.com/actions/configure-pages/blob/v5/action.yml",
           "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages"
@@ -177,10 +181,10 @@
           "run": "41123086701"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/DEPLOYMENT.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.github/workflows/build.yml",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.2/public-web-verification.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/DEPLOYMENT.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.2/public-web-verification.json",
           "https://github.com/kosj/next-action-rpg/actions/runs/41123086701",
           "https://kosj.github.io/next-action-rpg/"
         ]
@@ -196,9 +200,9 @@
           "site": "https://kosj.github.io/next-action-rpg/"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-release/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.2/public-web-verification.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.2/public-web-verification.json",
           "https://github.com/kosj/next-action-rpg/actions/runs/41123086701"
         ]
       },
@@ -212,10 +216,10 @@
           "release": "v0.1.2"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.github/workflows/build.yml",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-release/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.2/release-manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.2/release-verification.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.github/workflows/build.yml",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.2/release-manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.2/release-verification.json",
           "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.2",
           "https://github.com/kosj/next-action-rpg/actions/runs/41123131649"
         ]
@@ -232,10 +236,10 @@
           "platform": "Linux cloud"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_REVIEW.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/blender-lts/comparison.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/blender-lts/export-process-result.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/blender-lts/godot-comparison.log"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_REVIEW.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/blender-lts/comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/blender-lts/export-process-result.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/blender-lts/godot-comparison.log"
         ]
       },
       {
@@ -249,11 +253,11 @@
           "runtime": "prototype pivots; separate real skeletal candidate"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_PIPELINE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_REVIEW.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/godot-animation/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_PIPELINE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_REVIEW.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/godot-animation/SKILL.md",
           "https://docs.godotengine.org/en/4.7/tutorials/assets_pipeline/retargeting_3d_skeletons.html",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md"
         ]
       },
       {
@@ -267,8 +271,8 @@
           "candidate": "PRIVATE generation setting recorded"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_PIPELINE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_REVIEW.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_PIPELINE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_REVIEW.md",
           "https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate"
         ]
       },
@@ -282,7 +286,7 @@
           "cli_help_checked": "Codex 0.163.0"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VARCO_MCP.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VARCO_MCP.md",
           "https://3d.varco.ai/mcp/setup.md",
           "https://3d.varco.ai/docs/blog/2026-07-14-connect-varco-3d-to-codex-or-claude-with-one-prompt"
         ]
@@ -297,9 +301,9 @@
           "state": "OAuth and read-only MCP calls verified"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VARCO_MCP.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/varco_mcp.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/tests/test_varco_mcp.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VARCO_MCP.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/varco_mcp.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/tests/test_varco_mcp.py",
           "https://3d.varco.ai/mcp/setup.md"
         ]
       },
@@ -314,18 +318,18 @@
           "validation": "Latest305 native assertions, clean shutdown and localWeb316.961s passed; archived43 standalone model checks describe an earlier bridge revision. Exact public SHA evidence is separate in PR6/Actions"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/skeletal_visual_bridge.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/skeletal_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_SLICE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/production_character_art.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/production_character_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/skeletal_transition_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish-runtime.log",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/art-quality-build-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/skeletal_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/production_character_art.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
           "https://github.com/kosj/next-action-rpg/pull/6"
         ]
       },
@@ -340,12 +344,12 @@
           "motion_contract": "9 planned clips"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/inspect_glb.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/check_art_production.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/asset_specs.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/motion_contract.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/references/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_SLICE.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/inspect_glb.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/check_art_production.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/asset_specs.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/motion_contract.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/references/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_SLICE.md"
         ]
       },
       {
@@ -358,11 +362,11 @@
           "generation_status": "one source mesh, one rig, three locomotion candidates completed"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/varco_lyra_plan.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-001/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-001/preparation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VARCO_MCP.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_SLICE.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/varco_lyra_plan.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VARCO_MCP.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_SLICE.md"
         ]
       },
       {
@@ -375,10 +379,10 @@
           "upstream_date": "2026-10-28"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/upstream.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/LICENSE",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/NOTICE",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ENGINEERING_EVIDENCE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/upstream.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/LICENSE",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/NOTICE",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ENGINEERING_EVIDENCE.md",
           "https://github.com/gamedev-skills/awesome-gamedev-agent-skills"
         ]
       },
@@ -392,8 +396,8 @@
           "validated_scope": "Source and CPU/standalone gait metrics do not establish target GPU or Windows execution readiness"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/DESIGN.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/DESIGN.md",
           "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
         ]
       },
@@ -409,10 +413,10 @@
           "vertex_tolerance_m": "1e-4"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/prepare_character_candidate.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-001/preparation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/lyra-001/godot-import.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/lyra-001/godot-import.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md"
         ]
       },
       {
@@ -427,16 +431,16 @@
           "commit_wait_patch": "verified: actual primary quality0 then1 and same-profile browser restart1; errors0"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/browser_smoke.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/core/session.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/core/session.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-release/SKILL.md",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/os_web.cpp",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/js/libs/library_godot_os.js",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/unix/dir_access_unix.cpp",
           "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/browser-storage.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/browser-persistence.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/README.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/browser-storage.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/browser-persistence.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/README.md"
         ]
       },
       {
@@ -449,9 +453,9 @@
           "scope": "resume within the shared project workspace; temporary files are not durable evidence"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-release/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-knowledge/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_BATCH_2026_10_31.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-release/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-knowledge/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_BATCH_2026_10_31.md"
         ]
       },
       {
@@ -466,13 +470,13 @@
           "derived": "53 bones, 1 skin, 12 clips; gameplay contract not approved"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-motion-library-001/source-timestamp-findings.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-motion-library-001/validation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-motion-library-001/preparation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-motion-library-001/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/prepare_character_candidate.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/raw-source-timestamp-findings.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/motion-library-validation.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-motion-library-001/source-timestamp-findings.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-motion-library-001/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-motion-library-001/preparation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-motion-library-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/raw-source-timestamp-findings.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/motion-library-validation.json"
         ]
       },
       {
@@ -486,10 +490,10 @@
           "validation": "static structure, REST renders and material comparison; final runtime approval false"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/review-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/material-comparison.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/review.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/review-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/material-comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/review.json"
         ]
       },
       {
@@ -503,12 +507,12 @@
           "scope": "canonical static derivatives and imported scene contracts; final art and hardware performance not approved"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/batches/2026-10-31/derive_props.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/batches/2026-10-31/derive_portal.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/world/sanctuary.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/art_integration_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/batches/2026-10-31/derive_props.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/batches/2026-10-31/derive_portal.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/world/sanctuary.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/art_integration_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md"
         ]
       },
       {
@@ -523,9 +527,9 @@
           "pose_samples": "start/middle/end; does not approve full source fidelity or visual quality"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/prepare_character_candidate.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_BATCH_2026_10_31.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-web-001/godot-audit-motion-library.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/prepare_character_candidate.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_BATCH_2026_10_31.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-web-001/godot-audit-motion-library.json"
         ]
       },
       {
@@ -539,12 +543,12 @@
           "remedy_runtime": "verified: fresh local full tour and GitHub CI41161650156; actual safe approach followed by unchanged combat/restart coverage"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/browser_smoke.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/ci-before-safe-quality/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/ci-before-safe-quality/failure-state.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/ci-before-safe-quality/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/ci-before-safe-quality/failure-state.json",
           "https://github.com/kosj/next-action-rpg/actions/runs/41161007423",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/ci/browser-quality.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/ci/browser-state.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/ci/browser-quality.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/ci/browser-state.json",
           "https://github.com/kosj/next-action-rpg/actions/runs/41161650156"
         ]
       },
@@ -561,10 +565,10 @@
           "scope": "validated PR code and source artifacts; main public deployment and tag release have independent workflow evidence"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/batches/2026-10-31/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_BATCH_2026_10_31.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.3/ci/browser-persistence.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/batches/2026-10-31/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_BATCH_2026_10_31.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.3/ci/browser-persistence.json",
           "https://github.com/kosj/next-action-rpg/pull/5",
           "https://github.com/kosj/next-action-rpg/actions/runs/41161650156"
         ]
@@ -582,20 +586,20 @@
           "latest_validation": "Local integrated305 native assertions,Python41,Web/Windows export and complete localWeb316.961s passed; exact public commit evidence is recorded in PR6 and its Actions runs"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/models/production/lyra_gameplay.glb",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/models/production/sentinel_gameplay.glb",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/production_character_art.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/production_character_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-gameplay-001/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/sentinel-gameplay-001/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/production-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish-runtime.log",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/art-quality-build-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/models/production/lyra_gameplay.glb",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/models/production/sentinel_gameplay.glb",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/production_character_art.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-gameplay-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/sentinel-gameplay-001/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/local-web-final/character-qa-summary.json",
           "https://github.com/kosj/next-action-rpg/pull/6"
         ]
       },
@@ -609,12 +613,12 @@
           "unverified": "Final same-revision face/hands, full deformation/contact/action footwork, visual quality of implemented transitions, hair/cloth, complete scene/VFX and real target GPU performance"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_SLICE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/AAA_ART_QUALITY.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/deformation_review/README.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/deformation_review/README.md"
         ]
       },
       {
@@ -629,14 +633,14 @@
           "validation": "Actual imported scene socket/world-length checks; anatomical grasp is not final approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/data/character_grips.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/production_character_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/data/character_grips.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/bone_attachment_3d.cpp",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/3d/skeleton_3d.cpp",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/production-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-gameplay-001/godot-audit.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-gameplay-001/godot-audit.json"
         ]
       },
       {
@@ -650,10 +654,10 @@
           "verified_result": "1 mesh,22000tri;normalized REST height1.95000005m and floor5.96e-8m"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/render_glb_review.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/sentinel-web-001/rest-review/review.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/sentinel-web-001/review-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/render_glb_review.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/sentinel-web-001/rest-review/review.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/sentinel-web-001/review-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md"
         ]
       },
       {
@@ -668,13 +672,13 @@
           "scope": "Standalone and archived authoring-stage100Hz contact/loop samples; no rendered all-frame or hardware approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/author_character_actions.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/character_gait.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/lyra.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/sentinel.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-gameplay-001/authoring.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/sentinel-gameplay-001/authoring.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/author_character_actions.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/character_gait.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/lyra.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/sentinel.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-gameplay-001/authoring.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/sentinel-gameplay-001/authoring.json"
         ]
       },
       {
@@ -687,12 +691,12 @@
           "validation": "Independent production-model checks preserve controller/capsule/collision/health and visual sole offset"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/player.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/enemy.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/production_character_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/production-summary.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/enemy.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/production-summary.json"
         ]
       },
       {
@@ -706,10 +710,10 @@
           "validated": "225 native regressions0fail; gameplay healing semantics unchanged"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/skeletal_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/player.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/skeletal_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md"
         ]
       },
       {
@@ -724,11 +728,11 @@
           "validation": "One old-asset failure preserved; final43 independent and268 integrated checks passed"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/production-charge-before-fix.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/production-summary.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/production_character_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-gameplay-001/authoring.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/production-charge-before-fix.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/production-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/production_character_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-gameplay-001/authoring.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md"
         ]
       },
       {
@@ -742,12 +746,12 @@
           "physical_units": "Official Public-API swagger.yml defines dimensions in millimeters; convert to meters"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/source_metadata.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/LICENSE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/validation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/sync_materials.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/THIRD_PARTY_NOTICES.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/source_metadata.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/LICENSE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/sync_materials.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/THIRD_PARTY_NOTICES.md",
           "https://polyhaven.com/license",
           "https://github.com/Poly-Haven/Public-API/blob/master/swagger.yml"
         ]
@@ -763,13 +767,13 @@
           "scope": "Texture import measurement; complete current game export and hardware residency are separate checks"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/validation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/courtyard_materials/sync_materials.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/materials/courtyard/floor_albedo.jpg.import",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/materials/courtyard/floor_normal.jpg.import",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/AAA_ART_QUALITY.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/build.py"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/courtyard_materials/sync_materials.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/materials/courtyard/floor_albedo.jpg.import",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/materials/courtyard/floor_normal.jpg.import",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/build.py"
         ]
       },
       {
@@ -783,14 +787,14 @@
           "targets": "Windows1080p and Web720p at60fps/16.7ms are goals, not measured achievement; target GPU/CPU/render path must be recorded"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/AAA_ART_QUALITY.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/ART_SLICE.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/CHARACTER_INTEGRATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/VALIDATION.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/asset_specs.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/motion_contract.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/references/manifest.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/AAA_ART_QUALITY.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/ART_SLICE.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/CHARACTER_INTEGRATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/VALIDATION.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/asset_specs.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/motion_contract.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/references/manifest.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md"
         ]
       },
       {
@@ -805,12 +809,12 @@
           "scope": "27 actual production Lyra/sparse-contract assertions; no latest whole-build, final visual/contact or target GPU approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/skeletal_visual_bridge.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/skeletal_transition_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish-runtime.log",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish-runtime.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md"
         ]
       },
       {
@@ -825,12 +829,12 @@
           "scope": "Complete target-channel contract; source GLB existence alone does not establish imported Animation completeness"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-import-diagnostic.log",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/models/production/lyra_gameplay.glb.import",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/models/production/sentinel_gameplay.glb.import",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/skeletal_visual_bridge.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/skeletal_transition_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/transition-polish-runtime.log"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-import-diagnostic.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/models/production/lyra_gameplay.glb.import",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/models/production/sentinel_gameplay.glb.import",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/skeletal_visual_bridge.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/skeletal_transition_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/transition-polish-runtime.log"
         ]
       },
       {
@@ -845,13 +849,13 @@
           "decision": "All automated repair candidates rejected; original runtime retained; final deformation and AAA acceptance pending"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/repair_character_weights.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/deformation_review/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/deformation_review/validation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/deformation_review/lyra-review.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_actions/deformation_review/sentinel-review.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/.agents/skills/runefall-art/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/AAA_ART_QUALITY.md"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/repair_character_weights.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/deformation_review/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/deformation_review/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/deformation_review/lyra-review.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_actions/deformation_review/sentinel-review.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/runefall-art/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/AAA_ART_QUALITY.md"
         ]
       },
       {
@@ -865,11 +869,11 @@
           "scope": "Actual playback lifetime and callback guard; no sound-design or target-hardware approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/core/audio.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/audio_lifecycle_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/test_runner.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/audio-lifecycle.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.4/art-quality-build-summary.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/core/audio.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/audio_lifecycle_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/test_runner.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/audio-lifecycle.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.4/art-quality-build-summary.json",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/audio/audio_stream_player_internal.cpp",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_server.cpp"
         ]
@@ -880,21 +884,22 @@
         "source_status": "verified",
         "source_checked_on": "2026-10-31",
         "source_context": {
-          "bundle": "game-production-kit1.0.0",
-          "source_snapshot": "f08d43bf8e9c5e0d295d39596de0bbe405ad9f53;46sourceentries",
+          "bundle": "game-production-kit1.1.0",
+          "source_snapshot": "c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174;51sourceentries",
           "transfer_scope": "Independent procedures and empty templates; receiving project requires revalidation",
-          "validation": "Standalone extraction/renamed path/repack and7 integrity/provenance checks passed; six knowledge-tool regressions passed. Target project execution pending."
+          "validation": "Executable7 provenance/integrity checks passed,0failed/0skipped; ZIP52162bytes SHAf3d8869e3baabfca529c96ec01f7068dc9a77a9127e7bda063ddbf179b022ff6; targetprojectexecutionpending."
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/HANDBOOK.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/provenance.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/scripts/package.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/skills/evidence-led-project-memory/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/skills/godot-web-production/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit/skills/generated-3d-game-art/SKILL.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/knowledge-kit/verification.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/reusable/game-production-kit.zip.sha256"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/HANDBOOK.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/provenance.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/scripts/package.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/skills/evidence-led-project-memory/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/skills/godot-web-production/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit/skills/generated-3d-game-art/SKILL.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/knowledge-kit/verification.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/reusable/game-production-kit.zip.sha256",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/check_portable_knowledge.py"
         ]
       },
       {
@@ -908,12 +913,12 @@
           "scope": "Fixed local regions/support, finite sampled constraints and objective derivative; no global optimum or AAA approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/repaint_character_regions.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/requirements-art.txt",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/weight_review/README.md",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/weight_review/validation.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/weight_review/lyra-review.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/weight_review/sentinel-review.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/repaint_character_regions.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/requirements-art.txt",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/weight_review/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/weight_review/validation.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/weight_review/lyra-review.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/weight_review/sentinel-review.json"
         ]
       },
       {
@@ -927,11 +932,11 @@
           "scope": "Timing/history/lifetime and selected paused art views; no final hardware/AAA approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/blade_trail.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/scripts/actors/actor_visual.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/blade_trail_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/blade_trail_review/review.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/blade_trail_review/mix/review.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/blade_trail.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/actor_visual.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/blade_trail_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/blade_trail_review/review.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/blade_trail_review/mix/review.json"
         ]
       },
       {
@@ -946,19 +951,19 @@
           "planned_budget": "Body32288 exceeds originalWeb32000 target by288; eyes3840 additional; measuredhardware approvalpending"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/derive_character_eye_sockets.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/derive_character_eyes.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/character_eye_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/rejected_eye_inlays/decision.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/rejected_socket_fit/bvh-pose-check.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-eye-sockets-001/refit.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-eye-sockets-001/bvh-pose-check.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-eye-sockets-001/source-audit.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/candidates/lyra-eye-sockets-001/refit-delta-audit.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.5/character-eyes.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/tools/build_eye_fixture.py",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.5/eye-fixture-tool.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/art_source/production/character_polish/rejected_eye_palette/decision.json"
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/derive_character_eye_sockets.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/derive_character_eyes.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/character_eye_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/rejected_eye_inlays/decision.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/rejected_socket_fit/bvh-pose-check.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-eye-sockets-001/refit.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-eye-sockets-001/bvh-pose-check.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-eye-sockets-001/source-audit.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/candidates/lyra-eye-sockets-001/refit-delta-audit.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.5/character-eyes.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/build_eye_fixture.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.5/eye-fixture-tool.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/rejected_eye_palette/decision.json"
         ]
       },
       {
@@ -972,13 +977,137 @@
           "scope": "This generatedeye asset only; no universal bug or AAA/hardware approval"
         },
         "evidence_urls": [
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/import/eye_materials.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/assets/models/production/lyra_eyes.glb.import",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/game/tests/character_eye_regressions.gd",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.5/eye-colors-before-import-fix.log",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.5/character-eyes.json",
-          "https://github.com/kosj/next-action-rpg/blob/c6be1dce6cc6d5a6c41e3728d377a0a0bc5ee174/docs/validation/v0.1.5/eyes-native.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/import/eye_materials.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/assets/models/production/lyra_eyes.glb.import",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/character_eye_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.5/eye-colors-before-import-fix.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.5/character-eyes.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.5/eyes-native.log",
           "https://github.com/godotengine/godot/blob/4.7.2-stable/modules/gltf/gltf_document.cpp#L1414"
+        ]
+      },
+      {
+        "id": "touch-input-alias-lifecycle",
+        "source_title": "터치 액션은 장치별 별칭과 손가락 소유권으로 종료한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 stable official",
+          "validation": "Actual native ScreenTouch/Drag, distinct IDs17/59/83; integrated374 assertions0fail",
+          "scope": "Native regression and pinned official source; final Web and real Android/iOS validation separate"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/touch_controls.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/actors/player.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/game.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/tests/mobile_input_regressions.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/MOBILE_WEB_RESEARCH.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/native-initial.log",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/mobile-input-focused.log"
+        ]
+      },
+      {
+        "id": "mobile-css-viewport-and-evidence",
+        "source_title": "Web의 CSS·DPR·논리 viewport와 실제 터치 증거를 구분한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 stable official",
+          "research": "Pinned engine ed1daf0bf001b61586d9930840f2f1394092c079, MDN BCD381650773ddc196a34cbf759f31adba457e6bf46, MIT GodotPrompterd7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+          "scope": "Coordinate/source/native proof; final full Web and physical Android/iOS GPU tests tracked separately"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/MOBILE_WEB.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/MOBILE_WEB_RESEARCH.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/web/shell.html",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/hud.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/touch_controls.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/mobile_browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/check_mobile_web.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/input-handling/upstream.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/.agents/skills/responsive-ui/upstream.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/prior-web-texture-probe.log"
+        ]
+      },
+      {
+        "id": "skin-material-semantics-rejection",
+        "source_title": "피부 metallic 수치의 수정은 의미 경계와 실제 시각 검수까지 필요하다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "source": "Runtimebody4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c unchanged",
+          "candidate": "35ea57e7fde492ce52bbf2fc921535e3ccdd1f0926729b1162d54d40a3a22f9f rejected; no paid generations",
+          "scope": "One isolated material-only neutral-render experiment; no actual Game A/B, AAA approval or texture repaint"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/audit_character_skin_materials.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/requirements-art.txt",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/skin_material_review/decision.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/art_source/production/character_polish/skin_material_review/README.md"
+        ]
+      },
+      {
+        "id": "mobile-driver-feedback-and-transient-observation",
+        "source_title": "터치 자동 조작의 피드백 지연과 짧은 상태의 관찰 시점을 분리한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "source": "Game0.1.6 implementation31bc679b unchanged; PR0ee9b86/temporarymerge d364a87e; actualCDPtrustedtouch",
+          "validation": "Verified failure reproduction and post-action/feedback latency evidence. Revised driver full validation separate; not gameplay-state mutation or real-device approval",
+          "CI": "https://github.com/kosj/next-action-rpg/actions/runs/41195933000/job/124523618477"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/driver-failures/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/driver-failures/local-nav/mobile-result.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/driver-failures/local-transient/mobile-result.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/driver-failures/ci-41195933000/mobile-result.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/mobile_browser_smoke.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/check_mobile_web.py",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/driver-failures/framework-focus/native-tab-focus-probe.json"
+        ]
+      },
+      {
+        "id": "godot-window-resize-reentrant-screen-attach",
+        "source_title": "Window size_changed 안의 content scale 재진입은 정상 좌표와 잘못된 최종 raster를 만들 수 있다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+          "official_source_blobs": "window.cppbc56ddbd7b17cd8ec6355eeb76337849dec81b12; viewport.cpp54f9f2c4461ebc293dec9bccdbab3031c1c03f32",
+          "evidence": "Bad126.958s quality0 360px; fixed112.238s quality0 1688px, same double driver and SHA source inputs exceptTouchControls; initialquality1 also360px. No AAA/realdevice/performance approval",
+          "scope": "Actual finite Web raster A/B; final full browser, single-driver and published URL recorded separately"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/rotation/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/rotation/before/mobile-rotation-metrics.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/rotation/after-double/ab-comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/touch_controls.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/hud.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/mobile_browser_smoke.py",
+          "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/window.cpp#L1428",
+          "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/viewport.cpp#L1188"
+        ]
+      },
+      {
+        "id": "touch-scroll-button-event-propagation",
+        "source_title": "모바일 ScrollContainer의 자식 Button은 실제 drag를 부모로 전달해야 한다",
+        "source_status": "verified",
+        "source_checked_on": "2026-10-31",
+        "source_context": {
+          "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+          "evidence": "C10ecc2394 beforefrozen; afterdirtyscroll-after export. SameQA/Touch/art source hashes; onlyHUD changed. Native375/errors0; finiteButton-start/Done/primarysubset, not fullmobile/restart/hardware approval",
+          "remaining": "FinalcommittedfullWeb/publicworkflow tracked inPR8; actualAndroid/iOS/Safari/performance separate"
+        },
+        "evidence_urls": [
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/scroll/README.md",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/scroll/before/mobile-scroll-gestures.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/scroll/after/scroll-ab-comparison.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/docs/validation/v0.1.6/native-after-scroll.json",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/game/scripts/ui/hud.gd",
+          "https://github.com/kosj/next-action-rpg/blob/36c31eef74c11f51c30dab893f57eab95f4f0ec8/tools/mobile_browser_smoke.py",
+          "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/button.cpp#L878",
+          "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/scroll_container.cpp#L237",
+          "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/base_button.cpp#L180"
         ]
       }
     ]
