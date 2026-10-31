@@ -183,24 +183,28 @@
       "kind": "decision",
       "status": "verified",
       "title": "전체 씬·autoload가 필요한 회귀 검사는 Node runner를 유지한다",
-      "summary": "공개 스킬의 간단한 SceneTree runner 예제는 현재 통합 검사를 그대로 대체하지 못한다. Node 씬 runner에서 물리 프레임·autoload를 사용하고 suite 완료 반환값·종료 코드·실패 수·45초 watchdog을 확인한다. v0.1.1 태그 CI는 131 checks, 0 failures와 브라우저 검사를 통과했다.",
+      "summary": "공개 스킬의 간단한 SceneTree runner 예제는 현재 통합 검사를 그대로 대체하지 못한다. Node 씬 runner에서 물리 프레임·autoload를 사용하고 suite 완료 반환값·종료 코드·실패 수·45초 watchdog을 확인한다. v0.1.1 태그 CI는 131 checks, 0 failures와 브라우저 검사를 통과했다. v0.1.6CI는374/0이어도freed Controlcast의ScriptError로실패했다. 캐스트전유효성검사와실제expiredUI복원fixture로375/0/오류0·복원완료를검증했다. assertion개수만으로종료를승인하지않는다.",
       "tags": [
         "testing",
         "godot",
         "skills",
         "회귀"
       ],
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "context": {
         "godot": "4.7.2",
         "commit": "289f99eec4389eeb63dfb3e601d4f5b0e4175097",
-        "release": "v0.1.1"
+        "release": "v0.1.1",
+        "latest_cleanup": "v0.1.6 Godot4.7.2 local375 checks0fail/0errors/0warnings; origin v0.1.1 evidence retained"
       },
       "sources": [
         "game/tests/test_runner.gd",
         "tools/build.py",
         ".agents/skills/godot-gdscript-headless-testing/SKILL.md",
-        "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        "https://github.com/kosj/next-action-rpg/actions/runs/41071945291",
+        "game/tests/mobile_input_regressions.gd",
+        "docs/validation/v0.1.6/native-final.json",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41198316684/job/124528942798"
       ]
     },
     {
@@ -1577,6 +1581,40 @@
         "tools/mobile_browser_smoke.py",
         "tools/check_mobile_web.py",
         "docs/validation/v0.1.6/driver-failures/framework-focus/native-tab-focus-probe.json"
+      ]
+    },
+    {
+      "id": "godot-window-resize-reentrant-screen-attach",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "Window size_changed 안의 content scale 재진입은 정상 좌표와 잘못된 최종 raster를 만들 수 있다",
+      "summary": "Godot4.7.2 Window는cached attach rect계산→Viewport._set_size→동기size_changed→cachedrect 화면부착순서다. 콜백의동기content_scale_size변경은nested계산후outeroldrect로덮였다. 실제390x844→844x390/DPR2에서DOM/window/content/final/stretch가모두정상인데최종raster는360x780/x664였다. 같은double driver·fresh·품질0에서controller만deferred/coalesced설정으로바꾸자360→1688pxfullwidth로수정됨을112.238초/errors0 실제PNG로확인했다. 입력cancel은즉시,최신CSS/content설정은outercallback후적용한다. Getter-only native검사는이최종screen-attach오류를잡지못하므로고정daylightfixture의실제PNGspan을확인한다.",
+      "tags": [
+        "mobile",
+        "web",
+        "viewport",
+        "resize",
+        "godot",
+        "reentrancy",
+        "raster",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+        "official_source_blobs": "window.cppbc56ddbd7b17cd8ec6355eeb76337849dec81b12; viewport.cpp54f9f2c4461ebc293dec9bccdbab3031c1c03f32",
+        "evidence": "Bad126.958s quality0 360px; fixed112.238s quality0 1688px, same double driver and SHA source inputs exceptTouchControls; initialquality1 also360px. No AAA/realdevice/performance approval",
+        "scope": "Actual finite Web raster A/B; final full browser, single-driver and published URL recorded separately"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/rotation/README.md",
+        "docs/validation/v0.1.6/rotation/before/mobile-rotation-metrics.json",
+        "docs/validation/v0.1.6/rotation/after-double/ab-comparison.json",
+        "game/scripts/ui/touch_controls.gd",
+        "game/scripts/ui/hud.gd",
+        "tools/mobile_browser_smoke.py",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/window.cpp#L1428",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/viewport.cpp#L1188"
       ]
     }
   ]

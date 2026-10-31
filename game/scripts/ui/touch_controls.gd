@@ -60,6 +60,7 @@ var _override_restore_window_size := Vector2i.ZERO
 var _base_content_size := Vector2i.ZERO
 var _base_content_mode: int = 0
 var _applying_metrics: bool = false
+var _viewport_sync_pending: bool = false
 var _layout_generation: int = 0
 var _poll_time: float = 0.0
 var _web_cancel_serial: int = 0
@@ -460,8 +461,18 @@ func set_viewport_override(size_css: Vector2 = Vector2.ZERO, margins_css: Vector
 	_sync_viewport()
 
 func _on_viewport_resized() -> void:
-	if not _applying_metrics:
-		_sync_viewport()
+	if _applying_metrics or _viewport_sync_pending:
+		return
+	_viewport_sync_pending = true
+	_cancel_with_pause("viewport_changed")
+	# Window emits size_changed inside _update_viewport_size, before attaching
+	# its cached screen rect. A nested content-scale setter would be overwritten
+	# by that outer rect. Read the latest CSS metrics after it has returned.
+	call_deferred("_apply_deferred_viewport")
+
+func _apply_deferred_viewport() -> void:
+	_sync_viewport()
+	_viewport_sync_pending = false
 
 func _sync_viewport(metrics: Dictionary = {}) -> void:
 	if _surface == null or _applying_metrics:
@@ -489,7 +500,7 @@ func _sync_viewport(metrics: Dictionary = {}) -> void:
 	if not changed and not needs_scale:
 		return
 	var had_layout := _viewport_css != Vector2.ZERO
-	if had_layout:
+	if had_layout and not _viewport_sync_pending:
 		_cancel_with_pause("viewport_changed")
 	_viewport_css = size_css
 	safe_margins = margins

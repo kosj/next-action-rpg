@@ -24,6 +24,7 @@ import tempfile
 import time
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
+from PIL import Image
 from playwright.async_api import async_playwright
 
 
@@ -34,6 +35,31 @@ LANDSCAPE = {"width": 844, "height": 390}
 NARROW = {"width": 360, "height": 640}
 ACTIONS = {"light", "heavy", "dodge", "parry", "heal", "skill_1", "skill_2", "skill_3",
            "interact", "lock_on", "target_next", "pause", "sprint"}
+FIRST_ROOM_RASTERS = {"03-portrait-gameplay", "10-landscape-gameplay", "12-narrow-gameplay",
+                      "15-restarted-touch-controls", "rotation-portrait", "rotation-landscape"}
+
+
+def first_room_raster_report(path):
+    """Read original pixels to detect black renderRect bars in this daylight room.
+
+    This fixture's sky/floor background reaches both edges. It is deliberately
+    limited to named first-room screenshots, not dark scenes or general art QA.
+    A 98% span tolerates small edge rounding while rejecting the360px/1688px
+    resize regression even when all reported transforms and hit rects agree.
+    """
+    with Image.open(path) as png:
+        rows=[]
+        for fraction in [.25,.5,.75]:
+            y=min(png.height-1,int(png.height*fraction))
+            xs=[x for x in range(png.width) if png.getpixel((x,y))[:3] != (0,0,0)]
+            span=max(xs)-min(xs)+1 if xs else 0
+            rows.append({"y":y,"nonblack_min":min(xs) if xs else None,
+                         "nonblack_max":max(xs) if xs else None,"span":span,
+                         "fraction":span/png.width})
+        return {"scope":"Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+                "png":path.name,"sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
+                "size":[png.width,png.height],"minimum_span_fraction":.98,"rows":rows,
+                "passes":all(row["fraction"]>=.98 for row in rows)}
 
 
 def readonly_storage_reader():
@@ -109,8 +135,9 @@ class Touches:
 
 
 class MobileRun:
-    def __init__(self, output):
+    def __init__(self, output, rotation_driver="playwright"):
         self.output = output
+        self.rotation_driver = rotation_driver
         self.started = time.monotonic()
         self.stage = "initial_load"
         self.progress, self.errors, self.states = [], [], {}
@@ -118,6 +145,7 @@ class MobileRun:
         self.storage_trace, self.save_targets = [], []
         self.navigation = []
         self.action_observations = []
+        self.rasters = []
         self.read_serial = 0
         self.reader = readonly_storage_reader()
         self.page = self.client = self.touch = None
@@ -314,7 +342,13 @@ class MobileRun:
                              "ui": status.get("ui"), "touch": touch, "buttons_css": targets,
                              "render_scale": status.get("render_scale"), "dpr": status.get("dpr")})
         self.write("mobile-layout.json", self.layouts)
-        return await self.record(label, screenshot=True, status=status)
+        await self.record(label, screenshot=True, status=status)
+        if label in FIRST_ROOM_RASTERS:
+            report=first_room_raster_report(self.output/(label+".png"))
+            self.rasters.append({"stage":label,**report})
+            self.write("mobile-raster.json",self.rasters)
+            assert report["passes"],("Daylight first-room raster has black renderRect bars",report)
+        return status
 
     async def tap_button(self, prefix):
         # Move the real ScrollContainer with a finger if a target is clipped.
@@ -484,11 +518,29 @@ class MobileRun:
 
     async def resize(self, size, angle=0):
         await self.page.set_viewport_size(size)
-        await self.client.send("Emulation.setDeviceMetricsOverride", {
-            **size, "deviceScaleFactor": 2, "mobile": True,
-            "screenWidth": size["width"], "screenHeight": size["height"],
-            "screenOrientation": {"type": "landscapePrimary" if angle else "portraitPrimary", "angle": angle}})
+        if self.rotation_driver == "double":
+            await self.client.send("Emulation.setDeviceMetricsOverride", {
+                **size, "deviceScaleFactor": 2, "mobile": True,
+                "screenWidth": size["width"], "screenHeight": size["height"],
+                "screenOrientation": {"type": "landscapePrimary" if angle else "portraitPrimary", "angle": angle}})
         await self.wait("Math.abs(s.ui_width-a.width)<1 && Math.abs(s.ui_height-a.height)<1", size)
+
+    async def browser_metrics(self):
+        return await self.page.evaluate("""() => {
+          const canvas=document.querySelector('canvas'), rect=canvas.getBoundingClientRect();
+          const style=getComputedStyle(canvas), viewport=visualViewport;
+          return {sampled_at:performance.now(),qa:structuredClone(window.__RUNEFALL_STATE),
+            dom:{canvas:{bitmap:[canvas.width,canvas.height],client:[canvas.clientWidth,canvas.clientHeight],
+              rect:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},
+              style:{width:style.width,height:style.height,transform:style.transform,
+                objectFit:style.objectFit,display:style.display}},
+              inner:[innerWidth,innerHeight],outer:[outerWidth,outerHeight],dpr:devicePixelRatio,
+              screen:{width:screen.width,height:screen.height,availWidth:screen.availWidth,
+                availHeight:screen.availHeight,angle:screen.orientation.angle,type:screen.orientation.type},
+              visual_viewport:viewport?{width:viewport.width,height:viewport.height,scale:viewport.scale,
+                offsetLeft:viewport.offsetLeft,offsetTop:viewport.offsetTop}:null,
+              focused:document.hasFocus(),visibility:document.visibilityState}};
+        }""")
 
     async def cancelled(self, reason, change):
         await self.idle()
@@ -546,8 +598,10 @@ class MobileRun:
         await self.idle()
 
 
-async def run(url, output=Path("build/verification/mobile"), phase="full"):
-    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail"], phase
+async def run(url, output=Path("build/verification/mobile"), phase="full", rotation_driver="playwright"):
+    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"], phase
+    assert rotation_driver in ["double","playwright"], rotation_driver
+    assert phase == "rotation-focus" or rotation_driver == "playwright", "Diagnostic driver selection is rotation-focus only"
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     for name in ["mobile-progress.json", "mobile-errors.json", "mobile-states.json", "mobile-layout.json",
@@ -555,7 +609,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                  "mobile-failure-state.json", "mobile-failure-diagnostic.json", "mobile-failure.png",
                  "mobile-failure-touch-observation.json", "mobile-touch-observation.json",
                  "mobile-dispatched-touch-events.json", "mobile-browser.json", "mobile-environment.json",
-                 "mobile-navigation.json","mobile-action-observations.json"]:
+                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json"]:
         (output/name).unlink(missing_ok=True)
     for name in ["01-portrait-title", "02-portrait-prologue", "03-portrait-gameplay", "04-rest-menu",
                  "05-shop-menu", "06-three-pointer-light", "07-heavy-held", "08-skill-one",
@@ -563,7 +617,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                  "12-narrow-gameplay", "13-narrow-settings", "14-touch-combat-paused",
                  "15-restarted-touch-controls"]:
         (output/(name+".png")).unlink(missing_ok=True)
-    qa = MobileRun(output)
+    qa = MobileRun(output,rotation_driver)
     # A prior success must never survive a failed rerun in this output folder.
     qa.write("mobile-result.json", {"outcome": "running", "scope": "Unverified current run"})
     parts = urlsplit(url)
@@ -578,6 +632,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
         options["executable_path"] = executable
     qa.write("mobile-scope.json", {"scope": "Actual emulated Chromium multitouch/UI/gameplay/persistence, not real Android/iOS/Safari or GPU performance",
                                    "phase": phase,
+                                   "rotation_driver":rotation_driver,
                                    "reader_sha256": hashlib.sha256(qa.reader.encode()).hexdigest(),
                                    "viewports": [PORTRAIT, LANDSCAPE, NARROW], "dpr": 2,
                                    "ui_timeout_ms": UI_TIMEOUT, "storage_timeout_seconds": STORAGE_TIMEOUT})
@@ -601,6 +656,26 @@ async def run(url, output=Path("build/verification/mobile"), phase="full"):
                     await qa.stable()
                     if phase == "full":
                         await qa.layout("03-portrait-gameplay")
+                    elif phase == "rotation-focus":
+                        qa.mark("focused_rotation")
+                        await qa.layout("rotation-portrait")
+                        metrics={"rotation_driver":rotation_driver,"before":await qa.browser_metrics()}
+                        qa.write("mobile-rotation-metrics.json",metrics)
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("rotation-landscape")
+                        metrics["after"]=await qa.browser_metrics()
+                        qa.write("mobile-rotation-metrics.json",metrics)
+                        assert not qa.errors,qa.errors
+                        qa.mark("rotation_recorded")
+                        qa.write("mobile-result.json",{"outcome":"rotation_recorded","phase":phase,
+                            "rotation_driver":rotation_driver,"seconds":round(time.monotonic()-qa.started,3),
+                            "scope":"Fresh journey and one actual portrait-to-landscape resize; diagnostic only, manual raster review required; not full approval",
+                            "errors":qa.errors})
+                        print("RUNEFALL_MOBILE_ROTATION_RECORDED · diagnostic only; raster review required",flush=True)
+                        return
                     elif phase in ["input-focus","multitouch-focus"]:
                         if phase == "input-focus":
                             qa.mark("focused_navigation")
@@ -800,6 +875,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url")
     parser.add_argument("--output", type=Path, default=Path("build/verification/mobile"))
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"],default="full")
+    parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright")
     arguments = parser.parse_args()
-    asyncio.run(run(arguments.url, arguments.output,arguments.phase))
+    asyncio.run(run(arguments.url, arguments.output,arguments.phase,arguments.rotation_driver))

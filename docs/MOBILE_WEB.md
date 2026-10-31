@@ -30,7 +30,7 @@ UI 논리 크기는 canvas의 실제 CSS client 크기다. DPR을 터치 좌표�
 
 ## 검증 범위
 
-- [실제 native 입력 fixture](../game/tests/mobile_input_regressions.gd)는 서로 다른 ID17/59/83, 이동·look·공격, 독립 해제, 충전, 키보드 경합, 대화/고정, 메뉴·회전·초점 복귀와 상태 복원을 검사한다. 기존345에29개가 추가된 통합374검사·실패0을 확인했다.
+- [실제 native 입력 fixture](../game/tests/mobile_input_regressions.gd)는 서로 다른 ID17/59/83, 이동·look·공격, 독립 해제, 충전, 키보드 경합, 대화/고정, 메뉴·회전·초점 복귀와 상태 복원을 검사한다. 기존345에터치·종료복원30개가 추가된 [통합375검사·실패0](validation/v0.1.6/native-final.json)을 확인했다.
 - [모바일 브라우저 검사](../tools/mobile_browser_smoke.py)는 CDP의 실제 trusted touch 이벤트를 사용한다. 클릭/키보드로 대체하거나 게임 상태·저장을 강제로 수정하지 않는다. 390×844/DPR2·844×390·360×640, 동시 손가락, 실제 저장과 브라우저 완전 재시작을 검사하는 절차다. 실행 결과는 [판본 기록](validation/v0.1.6/README.md)과 [PR #8](https://github.com/kosj/next-action-rpg/pull/8)의 해당 빌드·공개 URL 근거로 확인한다.
 - 최초 preview는 제목·프롤로그·휴식·실제 이동/상점을 통과했지만 QA 조향의 feedback/RPC 지연으로 navigation 단계가 실패했다. 전체 통과로 기록하지 않으며 실제 원인과 재실행을 구분한다. 기존15초 UI·30초 IDB 한도는 유지한다.
 - Chromium의 모바일 에뮬레이션, 실제 Android/iPhone, Windows 실행, AAA 아트·목표 GPU 성능은 각각 다른 검증 범위다.
@@ -42,3 +42,5 @@ python tools/check_web.py
 ```
 
 소프트웨어 GPU 검사는 브라우저 한 개씩 실행한다. 고정 sleep·강제 파일 동기화·QA 상태 쓰기로 검사를 통과시키지 않는다. 같은 입력 기기·viewport·export를 기록하고 실패 화면·실제 pointer trace·저장 관찰을 보관한다.
+
+[회전 후 최종 screen-attach 재진입 오류](validation/v0.1.6/rotation/README.md)는 즉시 입력 정리와 deferred content 설정으로 수정했다. 동일조건 원본 PNG에서360px strip→1688px 전체폭으로 복구됐고, 단일 공식 Playwright 회전 경로에서도 확인했다. 숫자 좌표뿐 아니라 해당 daylight 장면의 실제 raster를 검사한다.

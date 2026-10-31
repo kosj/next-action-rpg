@@ -445,6 +445,10 @@ static func _restore(world: Node3D, context: Dictionary) -> void:
 	for property in MODAL_FIELDS:
 		ui.set(property,context.modal[property])
 	for state in context.controls:
+		# Timed HUD labels may expire while real physics/input is exercised.
+		# Casting a freed Object raises before a post-cast validity check runs.
+		if not is_instance_valid(state.node):
+			continue
 		var control := state.node as Control
 		if not is_instance_valid(control):
 			continue
@@ -485,7 +489,14 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(neutral, "Native mobile fixture starts without taking over an existing real touch gesture")
 	if not neutral:
 		return false
+	# Deterministic coverage for a transient HUD control expiring after the
+	# snapshot, rather than depending on CI timing of a floating damage label.
+	var transient := Control.new()
+	transient.name = "NativeFixtureTransientUI"
+	transient.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	(world.get("ui") as RuneHUD).root.add_child(transient)
 	var context := _snapshot(world)
+	transient.free()
 	var completed: bool = await _exercise(world,context,check)
 	# Even a runtime error in the inner exercise returns its default false here;
 	# restore shared input/window/autoload/UI state before reporting completion.
@@ -496,6 +507,9 @@ static func run(world: Node3D, check: Callable) -> bool:
 		actions_restored = actions_restored and is_equal_approx(Input.get_action_strength(action),float(context.actions[action]))
 	check.call(actions_restored and Input.is_physical_key_pressed(KEY_W) == context.physical_w and Input.is_joy_button_pressed(0,JOY_BUTTON_X) == context.joy_x and _input_map() == context.input_map, "Native mobile fixture restores original keyboard/gamepad/action state and canonical bindings")
 	check.call(after.available == context.touch.available and after.desired_gameplay_active == context.touch.desired_gameplay_active and after.active_pointers.is_empty() and after.observed_touch_indices.is_empty() and world.get_window().size == context.window_size and world.get_window().content_scale_size == context.content_scale_size and world.get_window().content_scale_mode == context.content_scale_mode and Input.mouse_mode == context.mouse_mode and Input.emulate_mouse_from_touch == context.emulate_mouse, "Native mobile fixture restores window, pointer emulation and TouchControls context")
+	var player := world.get("player") as RunePlayer
+	var rig := world.get("rig") as RuneCamera
+	check.call(world.is_physics_processing() == context.world_physics and player.is_physics_processing() == context.player_physics and rig.is_physics_processing() == context.camera_physics and world.get_tree().paused == context.paused and player.active == context.player.active, "Restoration continues past expired HUD controls and restores controller processing and pause state")
 	var saved_sha := FileAccess.get_sha256(Session.save_path) if FileAccess.file_exists(Session.save_path) else ""
 	check.call(Session.snapshot() == context.session and saved_sha == context.save_sha, "Native touch tests leave progress, settings and the existing save file unchanged")
 	print("RUNEFALL_MOBILE_INPUT: ",JSON.stringify({"completed":completed,"pointer_ids":[17,59,83],"landscape_viewport":context.metrics.get("landscape",{}).get("viewport",[]),"portrait_viewport":context.metrics.get("portrait",{}).get("viewport",[]),"source_sha256":FileAccess.get_sha256("res://scripts/ui/touch_controls.gd"),"scope":"Native event/controller/pointer/lifecycle regression, not browser CSS/touch-hardware or mobile performance approval."}))

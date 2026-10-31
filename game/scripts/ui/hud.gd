@@ -582,6 +582,25 @@ func _qa_interaction_targets() -> Array[Dictionary]:
 		targets.append({"kind":"lore","index":index,"x":point.x,"z":point.z})
 	return targets
 
+func _qa_viewport_geometry() -> Dictionary:
+	var window := get_window()
+	var viewport := get_viewport()
+	var texture := viewport.get_texture()
+	var texture_size := texture.get_size() if texture != null else Vector2.ZERO
+	var final := viewport.get_final_transform()
+	var stretch := viewport.get_stretch_transform()
+	var visible := viewport.get_visible_rect()
+	var display_size := DisplayServer.window_get_size()
+	return {"window_size":[window.size.x,window.size.y],
+		"display_size":[display_size.x,display_size.y],
+		"content_scale_size":[window.content_scale_size.x,window.content_scale_size.y],
+		"content_scale_mode":window.content_scale_mode,"content_scale_aspect":window.content_scale_aspect,
+		"content_scale_factor":window.content_scale_factor,
+		"texture_size":[texture_size.x,texture_size.y],
+		"visible_rect":[visible.position.x,visible.position.y,visible.size.x,visible.size.y],
+		"final_transform":[final.x.x,final.x.y,final.y.x,final.y.y,final.origin.x,final.origin.y],
+		"stretch_transform":[stretch.x.x,stretch.x.y,stretch.y.x,stretch.y.y,stretch.origin.x,stretch.origin.y]}
+
 func _process(delta: float) -> void:
 	toast_time = maxf(0, toast_time - delta)
 	toast_label.modulate.a = minf(1, toast_time)
@@ -620,6 +639,7 @@ func _process(delta: float) -> void:
 				art.merge({"kind":enemy.kind,"elite":enemy.elite,"boss":enemy.is_boss,"dead":enemy.dead}, true)
 				enemy_art.append(art)
 		var status := {"build_id":Session.build_id, "started":world.started, "paused":get_tree().paused,
+			"viewport_geometry":_qa_viewport_geometry(),
 			"physics_frame":Engine.get_physics_frames(), "dpr":float(JavaScriptBridge.eval("window.devicePixelRatio || 1")),
 			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
 			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,

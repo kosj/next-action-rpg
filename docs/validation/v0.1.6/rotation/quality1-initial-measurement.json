@@ -1,0 +1,53 @@
+{
+  "source": "10-landscape-gameplay.png",
+  "operation": "Read original pixel rows only; no image rewriting/editing",
+  "image_size": [
+    1688,
+    780
+  ],
+  "rows": [
+    {
+      "row": 0,
+      "nonblack_x_min": 664,
+      "nonblack_x_max": 1023,
+      "nonblack_width": 360
+    },
+    {
+      "row": 100,
+      "nonblack_x_min": 664,
+      "nonblack_x_max": 1023,
+      "nonblack_width": 360
+    },
+    {
+      "row": 390,
+      "nonblack_x_min": 664,
+      "nonblack_x_max": 1023,
+      "nonblack_width": 360
+    },
+    {
+      "row": 700,
+      "nonblack_x_min": 664,
+      "nonblack_x_max": 1023,
+      "nonblack_width": 360
+    },
+    {
+      "row": 779,
+      "nonblack_x_min": 664,
+      "nonblack_x_max": 1023,
+      "nonblack_width": 360
+    }
+  ],
+  "old_logical": [
+    390,
+    844
+  ],
+  "new_physical": [
+    1688,
+    780
+  ],
+  "old_aspect_keep_fit": [
+    360.4265402843602,
+    780
+  ],
+  "center_offset_x": 663.7867298578199
+}

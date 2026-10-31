@@ -21,7 +21,9 @@ def main():
     parser.add_argument("--output", type=Path, default=root / "build/verification/mobile")
     parser.add_argument("--web-dir", type=Path, default=root / "build/web",
                         help="Actual export directory; preliminary previews are separate from build/web")
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"],default="full")
+    parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright",
+                        help="Rotation-focus diagnostic only: compare existing duplicate CDP override with Playwright's native mobile rotation")
     args = parser.parse_args()
     web = args.web_dir.resolve()
     if not (web / "index.html").is_file():
@@ -34,6 +36,7 @@ def main():
               "game/assets/models/production/lyra_eyes.glb"]
     context = {"scope": "Actual mobile test export bytes and contemporaneous source hashes; dirty previews are not a committed-source or final-release approval",
                "phase":args.phase,
+               "rotation_driver":args.rotation_driver,
                "started_utc": datetime.now(timezone.utc).isoformat(),
                "source_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(),
                "source_tree_dirty": bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=root)),
@@ -48,7 +51,7 @@ def main():
     thread.start()
     completed = False
     try:
-        asyncio.run(run(f"http://127.0.0.1:{server.server_port}/{quote(web.name)}/", args.output,args.phase))
+        asyncio.run(run(f"http://127.0.0.1:{server.server_port}/{quote(web.name)}/", args.output,args.phase,args.rotation_driver))
         completed = True
     finally:
         server.shutdown()
