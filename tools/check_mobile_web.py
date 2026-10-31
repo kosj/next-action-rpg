@@ -21,7 +21,7 @@ def main():
     parser.add_argument("--output", type=Path, default=root / "build/verification/mobile")
     parser.add_argument("--web-dir", type=Path, default=root / "build/web",
                         help="Actual export directory; preliminary previews are separate from build/web")
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus","scroll-focus"],default="full")
     parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright",
                         help="Rotation-focus diagnostic only: compare existing duplicate CDP override with Playwright's native mobile rotation")
     args = parser.parse_args()

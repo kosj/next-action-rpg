@@ -1616,6 +1616,39 @@
         "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/window.cpp#L1428",
         "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/viewport.cpp#L1188"
       ]
+    },
+    {
+      "id": "touch-scroll-button-event-propagation",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "모바일 ScrollContainer의 자식 Button은 실제 drag를 부모로 전달해야 한다",
+      "summary": "Godot4.7.2에서Container는PASS지만Button은STOP이고force_pass_scroll_events는wheel만예외여서Button-starttouchdrag가부모에막혔다. 실제x422,y293품질Button→y107.5의4trustedmoves후freshframe1341에서도Scroll0/max441/page350를233.834초실패로재현했다. 모바일helperButton/directCheckButton만PASS로바꾼동일HUD-onlyA/B가261.750초/errors0에서0→91·실제Done·idle/HP120/Rune35/pointers0·quality0primary를확인했다. Slider소유권/에뮬레이션/입력경로/한도는보존했고 SCROLL_BEGIN이pending click을취소한다. QA를빈여백으로우회하지않고freshscrollprogress15초와좌표캐시로무진행을일찍검출한다.",
+      "tags": [
+        "mobile",
+        "ui",
+        "scroll",
+        "button",
+        "touch",
+        "event-propagation",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+        "evidence": "C10ecc2394 beforefrozen; afterdirtyscroll-after export. SameQA/Touch/art source hashes; onlyHUD changed. Native375/errors0; finiteButton-start/Done/primarysubset, not fullmobile/restart/hardware approval",
+        "remaining": "FinalcommittedfullWeb/publicworkflow tracked inPR8; actualAndroid/iOS/Safari/performance separate"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/scroll/README.md",
+        "docs/validation/v0.1.6/scroll/before/mobile-scroll-gestures.json",
+        "docs/validation/v0.1.6/scroll/after/scroll-ab-comparison.json",
+        "docs/validation/v0.1.6/native-after-scroll.json",
+        "game/scripts/ui/hud.gd",
+        "tools/mobile_browser_smoke.py",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/button.cpp#L878",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/scroll_container.cpp#L237",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/base_button.cpp#L180"
+      ]
     }
   ]
 }

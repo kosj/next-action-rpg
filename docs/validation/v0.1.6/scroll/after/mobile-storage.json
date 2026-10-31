@@ -1,0 +1,31 @@
+[
+  {
+    "stage": "focused_button_start_scroll",
+    "quality_expected": 0,
+    "rows": [
+      {
+        "database": "/userfs",
+        "path": "/userfs/godot/app_userdata/RUNEFALL · 무너진 성역/runefall_v1.json",
+        "timestamp": "2026-10-31T12:41:33.936Z",
+        "save": {
+          "checkpoint": 0,
+          "completed": [],
+          "journey_started": true,
+          "lore": [],
+          "settings": {
+            "quality": 0,
+            "shake": true,
+            "volume": 0.7
+          },
+          "shards": 0,
+          "upgrades": [
+            0,
+            0,
+            0
+          ],
+          "version": 1
+        }
+      }
+    ]
+  }
+]

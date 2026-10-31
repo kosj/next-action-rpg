@@ -12,3 +12,5 @@
 구현 `31bc679b`의 Web·Windows 내보내기·파일 검사는 [local-build.json](local-build.json)·[local-distributions.json](local-distributions.json)에 보관한다. 같은 실행 커밋의 전체 모바일·데스크톱 및 공개 URL 결과는 PR #8의 확정된 실행 URL·artifact와 별도로 대조한다. Chromium 에뮬레이션은 실제 Android Chrome·iOS Safari·Windows 실행·목표 GPU/AAA 승인을 대신하지 않는다.
 
 최종 resize 수정과 freed-UI 복원 가드는 [375 native·오류0](native-final.json)·[원본 native log](native-final.log)·[Python41](python-final.log)에서 확인했다. [실제 화면 회전 A/B·raster guard](rotation/README.md)는 별도 진단이며 최종 빌드 전체·공개 주소 검증은 PR #8의 확정 실행으로 대조한다.
+
+이후 실제 Button-start 스크롤 실패를 [동일 경로 A/B](scroll/README.md)로 수정했고 [native375·오류0](native-after-scroll.json)을 확인했다. 전체 최신 실행 판정은 PR #8의 실제 커밋·CI와 대조한다.

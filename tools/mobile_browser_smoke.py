@@ -36,7 +36,8 @@ NARROW = {"width": 360, "height": 640}
 ACTIONS = {"light", "heavy", "dodge", "parry", "heal", "skill_1", "skill_2", "skill_3",
            "interact", "lock_on", "target_next", "pause", "sprint"}
 FIRST_ROOM_RASTERS = {"03-portrait-gameplay", "10-landscape-gameplay", "12-narrow-gameplay",
-                      "15-restarted-touch-controls", "rotation-portrait", "rotation-landscape"}
+                      "15-restarted-touch-controls", "rotation-portrait", "rotation-landscape",
+                      "scroll-gameplay-after"}
 
 
 def first_room_raster_report(path):
@@ -146,6 +147,7 @@ class MobileRun:
         self.navigation = []
         self.action_observations = []
         self.rasters = []
+        self.scroll_gestures = []
         self.read_serial = 0
         self.reader = readonly_storage_reader()
         self.page = self.client = self.touch = None
@@ -367,16 +369,54 @@ class MobileRun:
             assert scrolls, ("No scrollable route to button", prefix, status)
             scroll = scrolls[-1]
             downward = button["y"] + button["h"] / 2 > scroll["y"] + scroll["h"] / 2
-            x = scroll["x"] + scroll["w"] / 2
-            first, last = (.78, .25) if downward else (.25, .78)
-            pointer = await self.touch.start(*await self.css((x, scroll["y"] + scroll["h"] * first), status))
-            for fraction in [.25, .5, .75, 1]:
-                y = scroll["y"] + scroll["h"] * (first + (last - first) * fraction)
-                await self.touch.move(pointer, *await self.css((x, y), status))
-                await self.page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
-            await self.touch.end(pointer)
-            await self.next_state(status)
+            await self.swipe_scroll(status,scroll,downward)
         raise AssertionError(("Button still clipped after bounded real scrolls", prefix))
+
+    async def swipe_scroll(self,status,scroll,downward):
+        # Keep the original real Button-start path. Cache geometry once before
+        # holding a pointer; do not bypass a child by searching for blank space.
+        box,sx,sy=await self.canvas(status)
+        x=scroll["x"]+scroll["w"]/2
+        first,last=(.78,.25) if downward else (.25,.78)
+        start=(x,scroll["y"]+scroll["h"]*first)
+        end=(x,scroll["y"]+scroll["h"]*last)
+        def css_point(point):
+            return box["x"]+point[0]*sx,box["y"]+point[1]*sy
+        started=time.monotonic()
+        row={"stage":self.stage,"name":scroll["name"],"before_value":scroll["value"],
+             "before_frame":status["physics_frame"],"start":list(start),"end":list(end),
+             "downward":downward,"start_buttons":[b["text"] for b in status["buttons"]
+                 if contains([b["x"],b["y"],b["w"],b["h"]],start)],"moves":[]}
+        self.scroll_gestures.append(row)
+        self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        print(f"RUNEFALL_MOBILE_SCROLL begin value={scroll['value']} buttons={row['start_buttons']}",flush=True)
+        pointer=await self.touch.start(*css_point(start))
+        try:
+            for fraction in [.25,.5,.75,1]:
+                y=start[1]+(end[1]-start[1])*fraction
+                await self.touch.move(pointer,*css_point((x,y)))
+                async with asyncio.timeout(UI_TIMEOUT/1000):
+                    await self.page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
+                row["moves"].append({"fraction":fraction,"seconds":round(time.monotonic()-started,3)})
+                self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        finally:
+            await self.touch.end(pointer)
+        try:
+            after=await self.wait("s.physics_frame>a.frame && s.ui.scrolls.some(r=>r.name===a.name && (r.value-a.value)*a.direction>.5)",
+                {"frame":status["physics_frame"],"name":scroll["name"],"value":scroll["value"],"direction":1 if downward else -1})
+        except TimeoutError:
+            # A diagnostic read does not extend the15s success deadline.
+            async with asyncio.timeout(10):
+                after=await self.state()
+            row.update({"outcome":"zero_progress_timeout","seconds":round(time.monotonic()-started,3),
+                        "after_scrolls":after["ui"]["scrolls"],"after_frame":after["physics_frame"]})
+            self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+            await self.record("scroll-zero-progress",status=after)
+            raise
+        row.update({"outcome":"progress_observed","seconds":round(time.monotonic()-started,3),
+                    "after_scrolls":after["ui"]["scrolls"],"after_frame":after["physics_frame"]})
+        self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        print(f"RUNEFALL_MOBILE_SCROLL progress seconds={row['seconds']}",flush=True)
 
     async def input_ready(self):
         state = await self.wait("s.input_ready && !s.paused && !s.modal && s.touch.visible && !s.touch.waiting_release")
@@ -599,7 +639,7 @@ class MobileRun:
 
 
 async def run(url, output=Path("build/verification/mobile"), phase="full", rotation_driver="playwright"):
-    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"], phase
+    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus","scroll-focus"], phase
     assert rotation_driver in ["double","playwright"], rotation_driver
     assert phase == "rotation-focus" or rotation_driver == "playwright", "Diagnostic driver selection is rotation-focus only"
     output = Path(output)
@@ -609,13 +649,14 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                  "mobile-failure-state.json", "mobile-failure-diagnostic.json", "mobile-failure.png",
                  "mobile-failure-touch-observation.json", "mobile-touch-observation.json",
                  "mobile-dispatched-touch-events.json", "mobile-browser.json", "mobile-environment.json",
-                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json"]:
+                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json","mobile-scroll-gestures.json"]:
         (output/name).unlink(missing_ok=True)
     for name in ["01-portrait-title", "02-portrait-prologue", "03-portrait-gameplay", "04-rest-menu",
                  "05-shop-menu", "06-three-pointer-light", "07-heavy-held", "08-skill-one",
                  "09-portrait-settings", "10-landscape-gameplay", "11-landscape-settings",
                  "12-narrow-gameplay", "13-narrow-settings", "14-touch-combat-paused",
-                 "15-restarted-touch-controls"]:
+                 "15-restarted-touch-controls","rotation-portrait","rotation-landscape",
+                 "scroll-landscape-settings","scroll-gameplay-after"]:
         (output/(name+".png")).unlink(missing_ok=True)
     qa = MobileRun(output,rotation_driver)
     # A prior success must never survive a failed rerun in this output folder.
@@ -656,6 +697,31 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                     await qa.stable()
                     if phase == "full":
                         await qa.layout("03-portrait-gameplay")
+                    elif phase == "scroll-focus":
+                        qa.mark("focused_button_start_scroll")
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.touch_action("pause")
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("환경 설정")
+                        await qa.wait("s.buttons.some(b=>b.text.startsWith('균형 · 기본'))")
+                        await qa.layout("scroll-landscape-settings")
+                        await qa.tap_button("균형 · 기본")
+                        await qa.wait("s.quality===0")
+                        await qa.tap_button("완료")
+                        await qa.stable()
+                        assert any(row["start_buttons"] and row.get("outcome")=="progress_observed" for row in qa.scroll_gestures),qa.scroll_gestures
+                        await qa.commit(0)
+                        await qa.layout("scroll-gameplay-after")
+                        assert not qa.errors,qa.errors
+                        qa.mark("scroll_focused_completed")
+                        qa.write("mobile-result.json",{"outcome":"scroll_focused_passed","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Fresh journey and actual Button-start landscape swipe, observed scroll progress, Done tap and quality0 primary only; not full mobile/lifecycle approval"})
+                        print("RUNEFALL_MOBILE_SCROLL_FOCUSED_OK · Button-start swipe only; full workflow pending",flush=True)
+                        return
                     elif phase == "rotation-focus":
                         qa.mark("focused_rotation")
                         await qa.layout("rotation-portrait")
@@ -875,7 +941,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url")
     parser.add_argument("--output", type=Path, default=Path("build/verification/mobile"))
-    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus"],default="full")
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","rotation-focus","scroll-focus"],default="full")
     parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright")
     arguments = parser.parse_args()
     asyncio.run(run(arguments.url, arguments.output,arguments.phase,arguments.rotation_driver))

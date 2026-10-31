@@ -1,0 +1,13 @@
+{
+  "scope": "Actual native after mobile Button/CheckButton propagation fix; full browser/public/hardware approval separate",
+  "native_checks": 375,
+  "failures": 0,
+  "errors": 0,
+  "warnings": 0,
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "source_sha256": {
+    "game/scripts/ui/hud.gd": "e6778c367c81e426796db6b16add641ff1fe36a0ff631252fa74f07c5f0d4c24",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "game/tests/mobile_input_regressions.gd": "14c3ddec08678b312f11e530d17dcf24adcb91461648bbf001027758e7a4cb4c"
+  }
+}

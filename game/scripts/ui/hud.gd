@@ -118,6 +118,9 @@ func button(text: String, callback: Callable, parent: Node) -> Button:
 	node.custom_minimum_size = Vector2(0, 48)
 	if TouchControls.available:
 		node.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		# Let ScrollContainer see button-start drags. SCROLL_BEGIN cancels
+		# BaseButton's pending click once the gesture becomes a scroll.
+		node.mouse_filter = Control.MOUSE_FILTER_PASS
 	node.pressed.connect(callback)
 	parent.add_child(node)
 	return node
@@ -474,6 +477,7 @@ func show_settings() -> void:
 	shake.button_pressed = Session.shake
 	if TouchControls.available:
 		shake.custom_minimum_size.y = 48
+		shake.mouse_filter = Control.MOUSE_FILTER_PASS
 	shake.toggled.connect(func(value: bool): Session.shake = value)
 	column.add_child(shake)
 	column.move_child(shake, 4)

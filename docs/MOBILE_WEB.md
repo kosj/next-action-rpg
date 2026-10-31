@@ -44,3 +44,5 @@ python tools/check_web.py
 소프트웨어 GPU 검사는 브라우저 한 개씩 실행한다. 고정 sleep·강제 파일 동기화·QA 상태 쓰기로 검사를 통과시키지 않는다. 같은 입력 기기·viewport·export를 기록하고 실패 화면·실제 pointer trace·저장 관찰을 보관한다.
 
 [회전 후 최종 screen-attach 재진입 오류](validation/v0.1.6/rotation/README.md)는 즉시 입력 정리와 deferred content 설정으로 수정했다. 동일조건 원본 PNG에서360px strip→1688px 전체폭으로 복구됐고, 단일 공식 Playwright 회전 경로에서도 확인했다. 숫자 좌표뿐 아니라 해당 daylight 장면의 실제 raster를 검사한다.
+
+[가로 설정의 Button-start 스크롤](validation/v0.1.6/scroll/README.md)은 모바일 Button/CheckButton의 부모 이벤트 전달로 수정했다. 실제 같은 드래그의0→91·Done·게임복귀·primary값을 확인했으며 Slider 처리는 유지했다. 최종 native375는 [수정후 근거](validation/v0.1.6/native-after-scroll.json)를 참조한다.
