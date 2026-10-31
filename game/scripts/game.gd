@@ -44,6 +44,8 @@ func _ready() -> void:
 	ui = RuneHUD.new()
 	ui.world = self
 	add_child(ui)
+	TouchControls.request_pause.connect(_on_touch_focus_lost)
+	TouchControls.layout_changed.connect(apply_quality)
 	apply_quality()
 	# A complete headless scene load can be exercised without starting gameplay.
 	if "--smoke" in OS.get_cmdline_user_args():
@@ -86,16 +88,22 @@ func start_game(fresh: bool) -> bool:
 	set_paused(false)
 	ui.announce("무너진 성역", "CHAPTER I  ·  THE LAST VOW")
 	if fresh:
-		ui.show_dialog("마지막 서약", "PROLOGUE", "검사 리라, 너는 한때 이 성역의 순례자였다.\n\n사라진 동료들을 찾아 돌아왔지만, 문을 지키는 것은\n타락한 수호자와 꺼지지 않는 룬의 잔향뿐이다.\n\n일곱 봉인을 정화하고 성역의 심장에 도달하라.\n길가의 기록은 이곳에 남은 진실을 알려 줄 것이다.\n\n거점의 기록관과 대장장이에게 E로 말을 걸 수 있습니다.", [{"text":"성역으로 향한다", "call":ui.close_modal}])
+		ui.show_dialog("마지막 서약", "PROLOGUE", "검사 리라, 너는 한때 이 성역의 순례자였다.\n\n사라진 동료들을 찾아 돌아왔지만, 문을 지키는 것은\n타락한 수호자와 꺼지지 않는 룬의 잔향뿐이다.\n\n일곱 봉인을 정화하고 성역의 심장에 도달하라.\n길가의 기록은 이곳에 남은 진실을 알려 줄 것이다.\n\n거점의 기록관과 대장장이에게 상호작용으로 말을 걸 수 있습니다.", [{"text":"성역으로 향한다", "call":ui.close_modal}])
 	return true
 
 func set_paused(value: bool) -> void:
 	get_tree().paused = value
+	TouchControls.set_gameplay_active(started and not value and not player.dead)
 	if not value and started and is_instance_valid(player):
 		player.discard_ui_actions()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if value or not started else Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if value or not started or TouchControls.available else Input.MOUSE_MODE_CAPTURED
+
+func _on_touch_focus_lost() -> void:
+	if started and not get_tree().paused and not player.dead:
+		ui.show_pause()
 
 func return_to_title() -> void:
+	TouchControls.set_gameplay_active(false)
 	started = false
 	player.active = false
 	reset_encounter()
@@ -119,6 +127,7 @@ func reset_encounter() -> void:
 			child.queue_free()
 
 func _physics_process(delta: float) -> void:
+	TouchControls.set_gameplay_active(started and not player.dead)
 	if not started or player.dead:
 		return
 	play_seconds += delta
@@ -160,17 +169,21 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not started or get_tree().paused or player.dead:
 		return
-	if event is InputEventMouseButton and event.pressed and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		get_viewport().set_input_as_handled()
-	if event.is_action_pressed("lock_on") and lock_cooldown <= 0:
+	if event is InputEventMouseButton and event.pressed and event.device != InputEvent.DEVICE_ID_EMULATION and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		# A physical mouse still works on a touch-capable laptop. Touch-emulated
+		# mouse events never request pointer lock on a phone.
+		var can_capture: bool = not OS.has_feature("web") or bool(JavaScriptBridge.eval("typeof document.getElementById('canvas').requestPointerLock === 'function'"))
+		if can_capture:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			get_viewport().set_input_as_handled()
+	if TouchControls.event_pressed(event, "lock_on") and lock_cooldown <= 0:
 		player.locked_target = null if is_instance_valid(player.locked_target) else nearest_enemy(player.global_position, 24)
 		lock_cooldown = 0.25
-	if event.is_action_pressed("target_next"):
+	if TouchControls.event_pressed(event, "target_next"):
 		var next := nearest_enemy(player.global_position, 24, player.locked_target)
 		if next != null:
 			player.locked_target = next
-	if event.is_action_pressed("interact") and interaction_kind != "":
+	if TouchControls.event_pressed(event, "interact") and interaction_kind != "":
 		interact()
 
 func nearest_enemy(point: Vector3, radius: float, exclude: Node3D = null) -> RuneEnemy:
@@ -224,7 +237,7 @@ func begin_encounter(index: int) -> void:
 	elif index == 2:
 		ui.toast("방패는 우클릭 강공격 또는 룬 스킬로 무너뜨리세요.")
 	elif index == 6:
-		ui.toast("수호자의 원형 충격파는 패링할 수 없습니다. SPACE로 회피하세요.")
+		ui.toast("수호자의 원형 충격파는 패링할 수 없습니다. 회피로 피하세요.")
 
 func _on_enemy_defeated(_enemy: RuneEnemy) -> void:
 	for enemy in active_enemies:
@@ -250,6 +263,9 @@ func chapter_complete() -> void:
 		return
 	ui.show_dialog("서약은 빛으로 남는다", "CHAPTER I · COMPLETE", "아스테르의 검이 멈추고, 성역에 처음으로 새벽이 스며든다.\n\n그가 지키던 것은 어둠이 아니라, 그 안에 갇힌 사람들의 이름이었다.\n리라는 룬검에 새로운 이름을 새긴다.\n\"이제 내가 문을 지킬게.\"\n\n첫 챕터를 완료했습니다. 성역을 자유롭게 탐험할 수 있습니다.\n플레이 시간 %.1f분 · 발견한 기록 %d / 3" % [play_seconds/60.0,Session.lore_found.size()], [{"text":"성역에 머무르기", "call":ui.close_modal}, {"text":"타이틀로", "call":func(): ui.close_modal(); return_to_title(); ui.show_title()}])
 
+func _interaction_hint() -> String:
+	return "상호작용" if TouchControls.available else "E"
+
 func update_interaction() -> void:
 	interaction_kind = ""
 	interaction_index = -1
@@ -262,17 +278,17 @@ func update_interaction() -> void:
 				continue
 			interaction_kind = "checkpoint"
 			interaction_index = index
-			ui.interaction.text = "E  ·  룬의 안식처 — 휴식 / 강화"
+			ui.interaction.text = _interaction_hint() + "  ·  룬의 안식처 — 휴식 / 강화"
 	for index in range(2):
 		if player.global_position.distance_to(sanctuary.npc_positions[index]) < 3:
 			interaction_kind = "npc"
 			interaction_index = index
-			ui.interaction.text = "E  ·  " + ("기록관 에린" if index == 0 else "대장장이 로엔")
+			ui.interaction.text = _interaction_hint() + "  ·  " + ("기록관 에린" if index == 0 else "대장장이 로엔")
 	for index in range(3):
 		if player.global_position.distance_to(sanctuary.lore_positions[index]) < 2.8:
 			interaction_kind = "lore"
 			interaction_index = index
-			ui.interaction.text = "E  ·  성역의 기록" + (" ✓" if index in Session.lore_found else "")
+			ui.interaction.text = _interaction_hint() + "  ·  성역의 기록" + (" ✓" if index in Session.lore_found else "")
 
 func interact() -> void:
 	match interaction_kind:
@@ -359,7 +375,13 @@ func announce(title: String, subtitle: String) -> void:
 	ui.announce(title, subtitle)
 
 func apply_quality() -> void:
-	get_viewport().scaling_3d_scale = (0.8 if OS.has_feature("web") else 1.0) if Session.quality == 0 else 0.65
+	var render_scale: float = (0.8 if OS.has_feature("web") else 1.0) if Session.quality == 0 else 0.65
+	if TouchControls.available and OS.has_feature("web"):
+		var ratio := float(JavaScriptBridge.eval("Math.max(1, window.devicePixelRatio || 1)"))
+		# High-density phones retain sharp UI without rendering the whole 3D
+		# scene at two or three times its CSS resolution in each dimension.
+		render_scale = maxf(0.25, minf(render_scale, (1.0 if Session.quality == 0 else 0.8) / ratio))
+	get_viewport().scaling_3d_scale = render_scale
 	if sanctuary != null:
 		for node in sanctuary.get_children():
 			if node is DirectionalLight3D and node.light_energy > 1:

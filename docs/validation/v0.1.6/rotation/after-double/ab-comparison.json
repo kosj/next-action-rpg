@@ -1,0 +1,40 @@
+{
+  "scope": "Same double-driver fresh profile/quality0 before-vs-after deferred viewport synchronization; actual PNG review and readonly metadata, not full workflow approval",
+  "source_changes_in_recorded_inputs": [
+    "game/scripts/ui/touch_controls.gd"
+  ],
+  "same_qa_tools": true,
+  "same_art_assets": true,
+  "before_pixels": {
+    "png": "../mobile-rotation-before/rotation-landscape.png",
+    "nonblack_x": [
+      664,
+      1023
+    ],
+    "span": 360
+  },
+  "after_pixels": {
+    "png": "rotation-landscape.png",
+    "nonblack_x": [
+      0,
+      1687
+    ],
+    "span": 1688
+  },
+  "both_dom_canvas_bitmap": [
+    1688,
+    780
+  ],
+  "both_dom_css_canvas": [
+    844,
+    390
+  ],
+  "both_reported_final_transform": [
+    2,
+    0,
+    0,
+    2,
+    0,
+    0
+  ]
+}

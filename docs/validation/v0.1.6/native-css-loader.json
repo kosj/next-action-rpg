@@ -1,0 +1,14 @@
+{
+  "scope": "Actual native375 after readonly saved-primary diagnostics; CSS/loader Chrome verification separate",
+  "native_checks": 375,
+  "failures": 0,
+  "errors": 0,
+  "warnings": 0,
+  "source_sha256": {
+    "game/scripts/ui/hud.gd": "a29df0e7c9df9540c0d4573ff9e43f8aa8060883e0b1326219584a15b82cfe72",
+    "game/web/shell.html": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "tools/mobile_browser_smoke.py": "120b9e66625f65e6c937f81fe8f5d3100eeb884562b5eba783331ea8d0735ce2",
+    "tools/check_loader_lifecycle.py": "833b6f9199890e5b875cf22aa96bd908c044ef1b3a2a85b57c99a1932f97065a"
+  }
+}

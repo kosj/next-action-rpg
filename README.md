@@ -2,7 +2,7 @@
 
 Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬 검사 **리라**가 몰락한 성역의 일곱 봉인을 정화합니다. 빠른 지상 콤보와 회피, 적중으로 충전하는 룬 스킬이 전투의 중심입니다.
 
-**현재 버전: v0.1.5 캐릭터 프리뷰 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름에 리라와 일반 근접 수호병의 실제 스킨 몸체를 적용했습니다. 이동·3연격·회피·패링·피격과 강공격·차지·스킬·사망·회복 표현을 게임 시간에 맞춰 저작했습니다. 첫 전투 구역의 기둥·문틀과 검도 VARCO 생성·Blender 후처리 자산입니다. 원거리·방패·정예·보스와 나머지 환경·음향은 기존 프로토타입이며 최종 아트 검수는 진행 중입니다. 목표 플레이 시간 30~60분과 RTX 3060급60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
+**현재 버전: v0.1.6 모바일 조작 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름에 리라와 일반 근접 수호병의 실제 스킨 몸체를 적용했습니다. 이동·3연격·회피·패링·피격과 강공격·차지·스킬·사망·회복 표현을 게임 시간에 맞춰 저작했습니다. 첫 전투 구역의 기둥·문틀과 검도 VARCO 생성·Blender 후처리 자산입니다. 원거리·방패·정예·보스와 나머지 환경·음향은 기존 프로토타입이며 최종 아트 검수는 진행 중입니다. 목표 플레이 시간 30~60분과 RTX 3060급60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
 
 **최종 아트 목표는 AAA 품질입니다.** [대표 구간 승인 기준](docs/AAA_ART_QUALITY.md)에 얼굴·손·갑옷 변형·움직임·재질·조명과 실제 기기 성능의 검수 조건을 기록합니다. 현재 프리뷰는 이 최종 승인을 받지 않았습니다. 첫 전투 공간에는 출처와 물리적 반복 크기를 검증한 [CC0 PBR 재질](art_source/production/courtyard_materials/README.md)을 사용합니다.
 
@@ -10,7 +10,7 @@ Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬
 
 [눈 소켓·곡면 안구·검 잔상 개선](docs/CHARACTER_POLISH.md)을 추가했습니다. 원본 모션과 텍스처를 보존했으며, 효과가 작은 갑옷 웨이트 보정은 기각했습니다. 이번 국소 파생의 새 생성 비용은0포인트입니다.
 
-**[웹에서 플레이하기](https://kosj.github.io/next-action-rpg/)** — PC 브라우저에서 키보드·마우스로 실행합니다.
+**[웹에서 플레이하기](https://kosj.github.io/next-action-rpg/)** — 모바일은 화면 조이스틱·전투 버튼, PC는 키보드·마우스로 실행합니다.
 
 ![v0.1.4 캐릭터 프리뷰의 로컬 전투 화면](docs/screenshots/combat.png)
 
@@ -36,6 +36,8 @@ Blender가 없어도 게임을 실행할 수 있습니다. 반입한 GLB 파일�
 | 회복 / 상호작용 | R / E | 방향키 ↑ / B |
 | 일시정지 / 성능 표시 | Esc / F3 | Start / — |
 
+모바일에서는 왼쪽 조이스틱으로 이동하고, 오른쪽 빈 영역을 드래그해 시점을 바꿉니다. 화면의 공격·강공·회피·패링·룬·회복·대화 버튼을 사용하며 강공은 길게 누른 뒤 놓습니다. 우측 상단 일시정지 버튼에서 설정과 메뉴를 엽니다. 세로·가로 화면을 지원합니다. [모바일 조작과 검증 범위](docs/MOBILE_WEB.md)를 참고하세요.
+
 공격 후 회복 구간에 다음 공격을 입력하면 콤보가 이어집니다. 방패형 적은 강공격으로 무너뜨리세요. 적의 공격 전 빛나는 표식은 패링 타이밍의 단서입니다. 보스의 원형 충격파는 회피해야 합니다. 시작 거점과 길 위의 수정에서 휴식하고 강화할 수 있습니다.
 
 ## 빌드와 테스트
@@ -51,7 +53,7 @@ python -m http.server 8060 --directory build/web
 
 브라우저에서 `http://localhost:8060`으로 접속합니다. HTML 파일을 직접 열면 실행되지 않습니다. 산출물은 `build/runefall-web.zip`, `build/runefall-windows.zip`이며, 파일 크기와 SHA-256은 `build/manifest.json`에 기록됩니다. Windows ZIP은 압축을 푼 후 EXE와 PCK를 같은 폴더에 두고 실행합니다.
 
-Python 3.10 이상을 사용합니다. `python -m pip install -r tools/requirements-dev.txt`로 검증 도구를 설치합니다. Playwright와 Chromium이 있으면 `python tools/browser_smoke.py http://127.0.0.1:8060`으로 실제 웹 실행과 화면 캡처를 검증할 수 있습니다. `python tools/check_web.py`는 하위 URL에서 서빙해 검사하며 브라우저 종료·재시작 후 저장 복원까지 확인합니다. `CHROMIUM_PATH`로 브라우저 경로를 지정합니다.
+Python 3.10 이상을 사용합니다. `python -m pip install -r tools/requirements-dev.txt`로 검증 도구를 설치합니다. Playwright와 Chromium이 있으면 `python tools/browser_smoke.py http://127.0.0.1:8060`으로 실제 웹 실행과 화면 캡처를 검증할 수 있습니다. `python tools/check_web.py`는 하위 URL에서 서빙해 검사하며 브라우저 종료·재시작 후 저장 복원까지 확인합니다. `python tools/check_mobile_web.py`는 별도의 터치 프로필에서 다중 터치·반응형 메뉴·재시작 저장을 확인합니다. 두 검사는 차례로 실행합니다. `CHROMIUM_PATH`로 브라우저 경로를 지정합니다.
 
 ## 저장과 배포
 
@@ -63,7 +65,8 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 
 - [반복 작업 스킬과 지식 DB](knowledge/README.md) · [작업 시작 규칙](AGENTS.md)
 - [다른 프로젝트용 스킬 3종·사례집·기록 템플릿](reusable/game-production-kit/README.md) · [ZIP 다운로드](reusable/game-production-kit.zip)
-- [최신 자료·공개 스킬에 따른 재검증 근거](docs/ENGINEERING_EVIDENCE.md)
+- [최신 자료·공개 스킬에 따른 재검증 근거](docs/ENGINEERING_EVIDENCE.md) · [모바일 공식 근거](docs/MOBILE_WEB_RESEARCH.md)
+- [모바일 터치 조작·반응형 UI](docs/MOBILE_WEB.md)
 - [설계와 현재 구현 상태](docs/DESIGN.md)
 - [Blender·VARCO 아트 제작 가이드](docs/ART_PIPELINE.md)
 - [대표 구간 제작 명세·참조 이미지·검수 기준](docs/ART_SLICE.md)

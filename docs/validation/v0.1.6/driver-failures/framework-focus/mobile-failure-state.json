@@ -1,0 +1,406 @@
+{
+  "build_id": "0.1.6 · 31bc679b",
+  "buttons": [],
+  "camera_pitch": -0.18,
+  "camera_yaw": 0,
+  "charge_elapsed": 2.46666666666666,
+  "checkpoint": 0,
+  "dead": false,
+  "dodge_cooldown": 0,
+  "dodge_remaining": 0,
+  "dpr": 2,
+  "encounter": -1,
+  "enemy_art": [],
+  "fps": 1,
+  "has_save": true,
+  "health": 120,
+  "heavy_held": 2.46666666666666,
+  "hero_art": {
+    "blade_trail": {
+      "lifetime": 0.12,
+      "samples": 0,
+      "triangles": 0,
+      "visible": false
+    },
+    "eyes_attached": true,
+    "grip_to_tip_m": 1.19000053405762,
+    "mode": "skeletal",
+    "profile": "hero",
+    "right_hand_pose": [
+      -0.0551635771989822,
+      0.15110656619072,
+      0.159420490264893,
+      0.679487287998199,
+      -0.353718101978302,
+      -0.570161283016205,
+      0.296810895204544
+    ],
+    "sampled_time": 0.102134132757778,
+    "state": "walk",
+    "status": "Rig ready; visual quality remains subject to art review",
+    "weapon_attached": true
+  },
+  "hits": 0,
+  "hud_y": 40,
+  "input_ready": true,
+  "interaction_index": -1,
+  "interaction_kind": "",
+  "interaction_targets": [
+    {
+      "index": 0,
+      "kind": "checkpoint",
+      "x": 2,
+      "z": 6
+    },
+    {
+      "index": 1,
+      "kind": "checkpoint",
+      "x": 2,
+      "z": -116
+    },
+    {
+      "index": 2,
+      "kind": "checkpoint",
+      "x": -3,
+      "z": -281
+    },
+    {
+      "index": 0,
+      "kind": "npc",
+      "x": -4,
+      "z": 5
+    },
+    {
+      "index": 1,
+      "kind": "npc",
+      "x": 4,
+      "z": 5
+    },
+    {
+      "index": 0,
+      "kind": "lore",
+      "x": -8,
+      "z": -5
+    },
+    {
+      "index": 1,
+      "kind": "lore",
+      "x": 30,
+      "z": -145
+    },
+    {
+      "index": 2,
+      "kind": "lore",
+      "x": -35,
+      "z": -255
+    }
+  ],
+  "locked": false,
+  "locked_target": false,
+  "locked_target_id": 0,
+  "max_health": 120,
+  "modal": false,
+  "modal_h": 0,
+  "modal_w": 0,
+  "modal_x": 0,
+  "modal_y": 0,
+  "parry_cooldown": 0,
+  "parry_remaining": 0,
+  "paused": false,
+  "physics_frame": 4245,
+  "potions": 3,
+  "quality": 1,
+  "render_scale": 0.400000005960464,
+  "rune": 10,
+  "stagger": 0,
+  "started": true,
+  "touch": {
+    "action_font_size": 14,
+    "action_rects": {
+      "dodge": [
+        222,
+        784,
+        48,
+        48
+      ],
+      "heal": [
+        330,
+        676,
+        48,
+        48
+      ],
+      "heavy": [
+        276,
+        784,
+        48,
+        48
+      ],
+      "interact": [
+        330,
+        730,
+        48,
+        48
+      ],
+      "light": [
+        330,
+        784,
+        48,
+        48
+      ],
+      "lock_on": [
+        222,
+        730,
+        48,
+        48
+      ],
+      "parry": [
+        168,
+        784,
+        48,
+        48
+      ],
+      "pause": [
+        334,
+        12,
+        44,
+        44
+      ],
+      "skill_1": [
+        168,
+        676,
+        48,
+        48
+      ],
+      "skill_2": [
+        222,
+        676,
+        48,
+        48
+      ],
+      "skill_3": [
+        276,
+        676,
+        48,
+        48
+      ],
+      "sprint": [
+        168,
+        730,
+        48,
+        48
+      ],
+      "target_next": [
+        276,
+        730,
+        48,
+        48
+      ]
+    },
+    "active_pointers": [
+      {
+        "action": "",
+        "index": 23,
+        "owner": "stick",
+        "position": [
+          76,
+          755.343994140625
+        ]
+      },
+      {
+        "action": "heavy",
+        "index": 24,
+        "owner": "action",
+        "position": [
+          300,
+          808
+        ]
+      }
+    ],
+    "available": true,
+    "cancel_count": 5,
+    "desired_gameplay_active": true,
+    "emulate_mouse_from_touch": false,
+    "gameplay_active": true,
+    "helper_font_size": 10,
+    "joystick_center": [
+      76,
+      768
+    ],
+    "joystick_label_font_size": 0,
+    "joystick_radius": 56,
+    "joystick_rect": [
+      8,
+      692,
+      136,
+      152
+    ],
+    "last_cancel_reason": "gameplay_inactive",
+    "layout_generation": 1,
+    "look_delta": [
+      0,
+      0
+    ],
+    "look_rect": [
+      163.800003051758,
+      64,
+      214.199996948242,
+      600
+    ],
+    "observed_touch_indices": [
+      23,
+      24
+    ],
+    "pressed_actions": [
+      "heavy"
+    ],
+    "safe_margins": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "safe_margins_override": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "stick_vector": [
+      0,
+      -0.100000113248825
+    ],
+    "suppressed_pointer_indices": [],
+    "viewport": [
+      390,
+      844
+    ],
+    "viewport_override": [
+      0,
+      0
+    ],
+    "visible": true,
+    "waiting_release": false
+  },
+  "ui": {
+    "scrolls": [],
+    "sliders": [],
+    "texts": [
+      {
+        "alpha": 1,
+        "font_size": 16,
+        "h": 24,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "HP 120 / 120",
+        "visible_h": 24,
+        "visible_line_count": 1,
+        "visible_w": 202,
+        "visible_x": 12,
+        "visible_y": 12,
+        "w": 202,
+        "x": 12,
+        "y": 12
+      },
+      {
+        "alpha": 1,
+        "font_size": 16,
+        "h": 24,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "RUNE  10 / 100",
+        "visible_h": 24,
+        "visible_line_count": 1,
+        "visible_w": 286,
+        "visible_x": 12,
+        "visible_y": 68,
+        "w": 286,
+        "x": 12,
+        "y": 68
+      },
+      {
+        "alpha": 1,
+        "font_size": 16,
+        "h": 24,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "회복 3",
+        "visible_h": 24,
+        "visible_line_count": 1,
+        "visible_w": 84,
+        "visible_x": 214,
+        "visible_y": 12,
+        "w": 84,
+        "x": 214,
+        "y": 12
+      },
+      {
+        "alpha": 1,
+        "font_size": 16,
+        "h": 24,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "다음 봉인으로 향하세요",
+        "visible_h": 24,
+        "visible_line_count": 1,
+        "visible_w": 366,
+        "visible_x": 12,
+        "visible_y": 102,
+        "w": 366,
+        "x": 12,
+        "y": 102
+      },
+      {
+        "alpha": 1,
+        "font_size": 16,
+        "h": 24,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "성역 정화  0 / 7     룬 조각 0",
+        "visible_h": 24,
+        "visible_line_count": 1,
+        "visible_w": 366,
+        "visible_x": 12,
+        "visible_y": 130,
+        "w": 366,
+        "x": 12,
+        "y": 130
+      },
+      {
+        "alpha": 0,
+        "font_size": 22,
+        "h": 33,
+        "line_count": 1,
+        "minimum_h": 33,
+        "text": "무너진 성역",
+        "visible_h": 33,
+        "visible_line_count": 1,
+        "visible_w": 366,
+        "visible_x": 12,
+        "visible_y": 176,
+        "w": 366,
+        "x": 12,
+        "y": 176
+      },
+      {
+        "alpha": 0,
+        "font_size": 16,
+        "h": 28,
+        "line_count": 1,
+        "minimum_h": 24,
+        "text": "CHAPTER I  ·  THE LAST VOW",
+        "visible_h": 28,
+        "visible_line_count": 1,
+        "visible_w": 366,
+        "visible_x": 12,
+        "visible_y": 208,
+        "w": 366,
+        "x": 12,
+        "y": 208
+      }
+    ]
+  },
+  "ui_height": 844,
+  "ui_width": 390,
+  "x": 0,
+  "z": 1.09796762466431
+}

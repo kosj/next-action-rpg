@@ -1,0 +1,1115 @@
+"""Exercise the real Web game with Chromium touch emulation, never mouse taps.
+
+python tools/mobile_browser_smoke.py http://127.0.0.1:8060/web/ --output build/verification/mobile
+
+This is not an Android/iOS device, Safari, or hardware-performance test. CDP
+point-specific start/move/end follows the current official Puppeteer touch
+implementation, pinned for review:
+https://github.com/puppeteer/puppeteer/blob/72317747dbead16bcb53334cb8c356ccc9f01ce3/packages/puppeteer-core/src/cdp/Input.ts
+The older dispatchTouchEvent PDL comment says touchEnd has no points; the
+current implementation ends an individual handle with that point's ID. Actual
+trusted DOM touches and Godot pointer ownership are observed to verify this.
+"""
+import argparse
+import ast
+import asyncio
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import shutil
+import tempfile
+import time
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+from PIL import Image
+from playwright.async_api import async_playwright
+
+
+UI_TIMEOUT = 15000
+STORAGE_TIMEOUT = 30
+PORTRAIT = {"width": 390, "height": 844}
+LANDSCAPE = {"width": 844, "height": 390}
+NARROW = {"width": 360, "height": 640}
+ACTIONS = {"light", "heavy", "dodge", "parry", "heal", "skill_1", "skill_2", "skill_3",
+           "interact", "lock_on", "target_next", "pause", "sprint"}
+FIRST_ROOM_RASTERS = {"03-portrait-gameplay", "10-landscape-gameplay", "12-narrow-gameplay",
+                      "15-restarted-touch-controls", "rotation-portrait", "rotation-landscape",
+                      "scroll-gameplay-after","narrow-before-landscape","narrow-after",
+                      "restart-initial-portrait","restart-landscape","restart-narrow",
+                      "restart-returned-portrait","restart-restored"}
+
+
+def first_room_raster_report(path):
+    """Read original pixels to detect black renderRect bars in this daylight room.
+
+    This fixture's sky/floor background reaches both edges. It is deliberately
+    limited to named first-room screenshots, not dark scenes or general art QA.
+    A 98% span tolerates small edge rounding while rejecting the360px/1688px
+    resize regression even when all reported transforms and hit rects agree.
+    """
+    with Image.open(path) as png:
+        rows=[]
+        for fraction in [.25,.5,.75]:
+            y=min(png.height-1,int(png.height*fraction))
+            xs=[x for x in range(png.width) if png.getpixel((x,y))[:3] != (0,0,0)]
+            span=max(xs)-min(xs)+1 if xs else 0
+            rows.append({"y":y,"nonblack_min":min(xs) if xs else None,
+                         "nonblack_max":max(xs) if xs else None,"span":span,
+                         "fraction":span/png.width})
+        return {"scope":"Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+                "png":path.name,"sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
+                "size":[png.width,png.height],"minimum_span_fraction":.98,"rows":rows,
+                "passes":all(row["fraction"]>=.98 for row in rows)}
+
+
+def readonly_storage_reader():
+    """Reuse the actual desktop reader, including its key-only discovery/cache."""
+    source = Path(__file__).with_name("browser_smoke.py")
+    tree = ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
+    values = [ast.literal_eval(node.value) for node in ast.walk(tree)
+              if isinstance(node, ast.Assign)
+              and any(isinstance(target, ast.Name) and target.id == "read_persisted_saves"
+                      for target in node.targets)]
+    if len(values) != 1 or not isinstance(values[0], str):
+        raise RuntimeError("Expected one literal desktop readonly persistence reader")
+    return values[0]
+
+
+def center(rect):
+    return rect[0] + rect[2] / 2, rect[1] + rect[3] / 2
+
+
+def contains(rect, point):
+    return rect[0] <= point[0] <= rect[0] + rect[2] and rect[1] <= point[1] <= rect[1] + rect[3]
+
+
+def distance(a, b):
+    return math.hypot(a["x"] - b["x"], a["z"] - b["z"])
+
+
+class Touches:
+    """CDP emits real trusted touch events; IDs stay independent until release."""
+    def __init__(self, client, page, log):
+        self.client, self.page, self.log = client, page, log
+        self.points = {}
+        self.serial = 0
+
+    async def send(self, kind, points):
+        started = time.monotonic()
+        async with asyncio.timeout(UI_TIMEOUT / 1000):
+            await self.client.send("Input.dispatchTouchEvent", {"type": kind, "touchPoints": points})
+        self.log.append({"type": kind, "points": [dict(point) for point in points],
+                         "driver_ids_at_send": sorted(self.points),
+                         "dispatch_seconds": round(time.monotonic()-started,3)})
+
+    async def start(self, x, y):
+        self.serial += 1
+        point = {"id": self.serial, "x": x, "y": y, "radiusX": 1, "radiusY": 1, "force": .5}
+        self.points[point["id"]] = point
+        await self.send("touchStart", [point])
+        return point["id"]
+
+    async def move(self, pointer, x, y):
+        point = self.points[pointer]
+        point.update(x=x, y=y)
+        await self.send("touchMove", [point])
+
+    async def end(self, pointer):
+        point = self.points[pointer]
+        await self.send("touchEnd", [point])
+        del self.points[pointer]
+
+    async def release(self):
+        for pointer in list(self.points):
+            await self.end(pointer)
+
+    async def cancel(self):
+        await self.send("touchCancel", [])
+        self.points.clear()
+
+    async def tap(self, x, y):
+        pointer = await self.start(x, y)
+        # A real render boundary, not a fixed delay or game action injection.
+        await self.page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
+        await self.end(pointer)
+
+
+class MobileRun:
+    def __init__(self, output, rotation_driver="playwright"):
+        self.output = output
+        self.rotation_driver = rotation_driver
+        self.started = time.monotonic()
+        self.stage = "initial_load"
+        self.progress, self.errors, self.states = [], [], {}
+        self.events, self.layouts, self.storage = [], [], []
+        self.storage_trace, self.save_targets = [], []
+        self.storage_observations = []
+        self.navigation = []
+        self.action_observations = []
+        self.rasters = []
+        self.scroll_gestures = []
+        self.read_serial = 0
+        self.reader = readonly_storage_reader()
+        self.page = self.client = self.touch = None
+        self.latest = None
+
+    def write(self, name, value):
+        (self.output / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    def mark(self, name):
+        self.stage = name
+        row = {"stage": name, "elapsed_seconds": round(time.monotonic() - self.started, 3),
+               "utc": datetime.now(timezone.utc).isoformat()}
+        self.progress.append(row)
+        self.write("mobile-progress.json", self.progress)
+        print(f"RUNEFALL_MOBILE_STAGE {name} {row['elapsed_seconds']:.3f}s", flush=True)
+
+    async def state(self):
+        self.latest = await self.page.evaluate("structuredClone(window.__RUNEFALL_STATE)")
+        return self.latest
+
+    async def wait(self, expression, argument=None, timeout=UI_TIMEOUT):
+        # page.evaluate awaits this Promise and serializes the satisfying
+        # snapshot in the same round trip. wait_for_function + json_value adds
+        # another renderer round trip while a real joystick is still held.
+        # This is an awaited Promise, not a truthy async polling predicate.
+        async with asyncio.timeout(timeout / 1000):
+            self.latest = await self.page.evaluate(
+                "a => new Promise(resolve => { function poll() { const s = window.__RUNEFALL_STATE; "
+                "if (s && (" + expression + ")) resolve(structuredClone(s)); "
+                "else requestAnimationFrame(poll); } poll(); })", argument)
+            return self.latest
+
+    async def next_state(self, before):
+        return await self.wait("s.physics_frame > a", before["physics_frame"])
+
+    async def record(self, name, screenshot=False, status=None):
+        status = status or await self.state()
+        self.states[name] = status
+        self.write("mobile-states.json", self.states)
+        if screenshot:
+            await self.page.screenshot(path=str(self.output / (name + ".png")))
+        return status
+
+    async def failure(self):
+        if not self.page or self.page.is_closed():
+            return
+        try:
+            async with asyncio.timeout(10):
+                metrics=await self.browser_metrics()
+                self.latest=metrics["qa"]
+                self.write("mobile-failure-state.json",metrics["qa"])
+                self.write("mobile-failure-browser-metrics.json",metrics)
+                self.write("mobile-failure-touch-observation.json", await self.page.evaluate(
+                    "({touches:window.__RUNEFALL_MOBILE_TOUCH_OBS,read:window.__RUNEFALL_QA_IDB_READ,actions:window.__RUNEFALL_MOBILE_ACTION_OBS,storage:window.__RUNEFALL_MOBILE_COMMIT_OBS})"))
+            await self.page.screenshot(path=str(self.output / "mobile-failure.png"), timeout=15000)
+        except Exception as error:
+            self.write("mobile-failure-diagnostic.json", {"error": str(error)})
+
+    async def bind(self, context, page):
+        self.page = page
+        self.client = await context.new_cdp_session(page)
+        await self.client.send("Emulation.setTouchEmulationEnabled", {"enabled": True, "maxTouchPoints": 5})
+        self.touch = Touches(self.client, page, self.events)
+        self.save_targets.clear()
+        page.on("pageerror", lambda error: self.errors.append(f"{self.stage}: {error}"))
+        page.on("console", lambda message: self.errors.append(f"{self.stage}: {message.text}")
+                if message.type == "error" else None)
+        await page.add_init_script("""(() => {
+          const report = {events:[], max_points:0, trusted:true, focus:[]};
+          window.__RUNEFALL_MOBILE_TOUCH_OBS = report;
+          for (const type of ['touchstart','touchmove','touchend','touchcancel']) {
+            document.addEventListener(type, event => {
+              report.max_points = Math.max(report.max_points, event.touches.length);
+              report.trusted = report.trusted && event.isTrusted;
+              report.events.push({type, touches:[...event.touches].map(t=>t.identifier),
+                changed:[...event.changedTouches].map(t=>t.identifier), trusted:event.isTrusted});
+              if (report.events.length > 200) report.events.shift();
+            }, {capture:true,passive:true});
+          }
+          for (const type of ['blur','focus','visibilitychange']) {
+            window.addEventListener(type, event => report.focus.push({type, trusted:event.isTrusted, focused:document.hasFocus(),
+              visibility:document.visibilityState}), {capture:true});
+          }
+        })();""")
+
+    async def ready(self, url):
+        await self.page.goto(url, wait_until="networkidle")
+        status = await self.wait("!document.getElementById('loading') && s.touch && s.touch.available", timeout=120000)
+        required = {"physics_frame", "x", "z", "camera_yaw", "camera_pitch", "max_health", "rune", "potions",
+                    "charge_elapsed", "dodge_cooldown", "parry_cooldown", "locked", "locked_target_id",
+                    "interaction_kind", "interaction_index", "interaction_targets", "render_scale", "dpr", "ui", "touch"}
+        assert required <= set(status), ("Missing readonly mobile QA fields", sorted(required-set(status)))
+        expected = os.environ.get("RUNEFALL_EXPECTED_COMMIT")
+        if expected:
+            assert status["build_id"].rsplit(" · ", 1)[-1] == expected[:8], status
+        art = status["hero_art"]
+        assert art["mode"] == "skeletal" and art["eyes_attached"] and art["weapon_attached"], art
+        assert abs(art["grip_to_tip_m"] - 1.19) <= .003, art
+        self.write("mobile-browser.json", await self.client.send("Browser.getVersion"))
+        self.write("mobile-environment.json", await self.page.evaluate("""({
+          user_agent:navigator.userAgent, dpr:devicePixelRatio, max_touch_points:navigator.maxTouchPoints,
+          coarse:matchMedia('(pointer:coarse)').matches, width:innerWidth,height:innerHeight,
+          scope:'Chromium mobile/touch emulation, not Android/iOS/Safari or target hardware'
+        })"""))
+        assert await self.page.evaluate("devicePixelRatio === 2 && navigator.maxTouchPoints >= 3"), status
+        return status
+
+    async def canvas(self, status=None):
+        status = status or await self.state()
+        box = await self.page.locator("canvas").bounding_box()
+        assert box and status["ui_width"] > 0 and status["ui_height"] > 0
+        return box, box["width"] / status["ui_width"], box["height"] / status["ui_height"]
+
+    async def css(self, point, status=None):
+        box, sx, sy = await self.canvas(status)
+        return box["x"] + point[0] * sx, box["y"] + point[1] * sy
+
+    async def touch_action(self, action, hold=False):
+        status = await self.state()
+        assert status["touch"]["visible"] and not status["touch"]["waiting_release"], status["touch"]
+        point = center(status["touch"]["action_rects"][action])
+        x, y = await self.css(point, status)
+        if hold:
+            return await self.touch.start(x, y)
+        await self.touch.tap(x, y)
+
+    async def observe_action(self, expression, argument, gesture):
+        """Arm a readonly snapshot observer before a real touch, within15s wall."""
+        token = len(self.action_observations) + 1
+        started = time.monotonic()
+        async with asyncio.timeout(UI_TIMEOUT / 1000):
+            await self.page.evaluate(
+                "a => { const values=window.__RUNEFALL_MOBILE_ACTION_OBS ||= {}; "
+                "const row={armed_at:performance.now(),frame:window.__RUNEFALL_STATE.physics_frame}; "
+                "values[a.id]=row; const argument=a.value, timeout=a.timeout; function poll(){ "
+                "if(performance.now()-row.armed_at>=timeout){row.expired=true;return;} "
+                "const s=window.__RUNEFALL_STATE; const a=argument; "
+                "if(s && s.physics_frame>row.frame && ("+expression+")){ "
+                "row.snapshot=structuredClone(s);row.matched_at=performance.now();return;} "
+                "requestAnimationFrame(poll); } requestAnimationFrame(poll); }",
+                {"id":token,"value":argument,"timeout":UI_TIMEOUT})
+            await gesture()
+            row = await self.page.evaluate("""id => new Promise(resolve => {
+                function poll(){const row=window.__RUNEFALL_MOBILE_ACTION_OBS[id];
+                  if(row.snapshot || row.expired){delete window.__RUNEFALL_MOBILE_ACTION_OBS[id];resolve(row);}
+                  else requestAnimationFrame(poll); } poll(); })""", token)
+            assert not row.get("expired") and "snapshot" in row, row
+            assert row["matched_at"] - row["armed_at"] < UI_TIMEOUT, row
+        self.latest = row["snapshot"]
+        self.action_observations.append({"stage":self.stage,"predicate":expression,
+            "seconds":round(time.monotonic()-started,3),"matched_ms":row["matched_at"]-row["armed_at"],
+            "snapshot":row["snapshot"]})
+        self.write("mobile-action-observations.json",self.action_observations)
+        return row["snapshot"]
+
+    async def observe_tap(self, action, expression, argument=None):
+        status = await self.input_ready()
+        point = await self.css(center(status["touch"]["action_rects"][action]),status)
+        return await self.observe_action(expression,argument,lambda:self.touch.tap(*point))
+
+    async def layout(self, label):
+        status = await self.state()
+        # Container sorting is deferred by Godot. Observe a fresh emitted
+        # snapshot after the UI transition, rather than measuring birth sizes.
+        status = await self.next_state(status)
+        box, sx, sy = await self.canvas(status)
+        assert box["width"] <= (await self.page.evaluate("innerWidth")) + 1
+        assert abs(status["dpr"] - 2) < .01, status
+        expected_scale = min(.8, 1/status["dpr"]) if status["quality"] == 0 else min(.65, .8/status["dpr"])
+        assert abs(status["render_scale"] - expected_scale) < .001, (label, expected_scale, status["render_scale"])
+        targets = []
+        for button in status["buttons"]:
+            if button.get("disabled") or not button.get("on_screen", True):
+                continue
+            target = {"text": button["text"], "width_css": button["w"] * sx,
+                      "height_css": button["h"] * sy, "font_css": button.get("font_size", 0) * sy}
+            assert target["width_css"] >= 44 - .01 and target["height_css"] >= 44 - .01, (label, target)
+            targets.append(target)
+        touch = status["touch"]
+        if touch["visible"]:
+            assert ACTIONS <= set(touch["action_rects"]), touch
+            left, top, right, bottom = touch["safe_margins"]
+            for action, rect in touch["action_rects"].items():
+                assert rect[2] * sx >= 44 - .01 and rect[3] * sy >= 44 - .01, (label, action, rect, sx, sy)
+                assert rect[0] >= left - .01 and rect[1] >= top - .01
+                assert rect[0] + rect[2] <= status["ui_width"] - right + .01
+                assert rect[1] + rect[3] <= status["ui_height"] - bottom + .01
+        if status["modal"]:
+            assert status["modal_x"] >= -1 and status["modal_y"] >= -1, status
+            assert status["modal_x"] + status["modal_w"] <= status["ui_width"] + 1
+            assert status["modal_y"] + status["modal_h"] <= status["ui_height"] + 1
+        clipped = [text for text in status.get("ui", {}).get("texts", [])
+                   if text.get("alpha", 1) > .1 and text.get("visible_w", 0) > 0 and text.get("visible_h", 0) > 0
+                   and text.get("minimum_h", 0) > text["h"] + 1]
+        assert not clipped, (label, clipped)
+        self.layouts.append({"stage": label, "canvas": box, "logical_to_css": [sx, sy],
+                             "ui": status.get("ui"), "touch": touch, "buttons_css": targets,
+                             "render_scale": status.get("render_scale"), "dpr": status.get("dpr")})
+        self.write("mobile-layout.json", self.layouts)
+        await self.record(label, screenshot=True, status=status)
+        if label in FIRST_ROOM_RASTERS:
+            report=first_room_raster_report(self.output/(label+".png"))
+            self.rasters.append({"stage":label,**report})
+            self.write("mobile-raster.json",self.rasters)
+            assert report["passes"],("Daylight first-room raster has black renderRect bars",report)
+        return status
+
+    async def tap_button(self, prefix):
+        # Move the real ScrollContainer with a finger if a target is clipped.
+        for _ in range(10):
+            status = await self.state()
+            matches = [button for button in status["buttons"]
+                       if button["text"].startswith(prefix) and not button.get("disabled", False)]
+            assert matches, (prefix, status)
+            button = matches[-1]  # modal controls follow background title controls
+            if button.get("on_screen", True) and button.get("visible_h", button["h"]) >= min(44, button["h"]) - .01:
+                rect = [button.get("visible_x", button["x"]), button.get("visible_y", button["y"]),
+                        button.get("visible_w", button["w"]), button.get("visible_h", button["h"])]
+                await self.touch.tap(*await self.css(center(rect), status))
+                return
+            scrolls = [item for item in status.get("ui", {}).get("scrolls", []) if item["max"] > item["page"]]
+            assert scrolls, ("No scrollable route to button", prefix, status)
+            scroll = scrolls[-1]
+            downward = button["y"] + button["h"] / 2 > scroll["y"] + scroll["h"] / 2
+            await self.swipe_scroll(status,scroll,downward)
+        raise AssertionError(("Button still clipped after bounded real scrolls", prefix))
+
+    async def swipe_scroll(self,status,scroll,downward):
+        # Keep the original real Button-start path. Cache geometry once before
+        # holding a pointer; do not bypass a child by searching for blank space.
+        box,sx,sy=await self.canvas(status)
+        x=scroll["x"]+scroll["w"]/2
+        first,last=(.78,.25) if downward else (.25,.78)
+        start=(x,scroll["y"]+scroll["h"]*first)
+        end=(x,scroll["y"]+scroll["h"]*last)
+        def css_point(point):
+            return box["x"]+point[0]*sx,box["y"]+point[1]*sy
+        started=time.monotonic()
+        row={"stage":self.stage,"name":scroll["name"],"before_value":scroll["value"],
+             "before_frame":status["physics_frame"],"start":list(start),"end":list(end),
+             "downward":downward,"start_buttons":[b["text"] for b in status["buttons"]
+                 if contains([b["x"],b["y"],b["w"],b["h"]],start)],"moves":[]}
+        self.scroll_gestures.append(row)
+        self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        print(f"RUNEFALL_MOBILE_SCROLL begin value={scroll['value']} buttons={row['start_buttons']}",flush=True)
+        pointer=await self.touch.start(*css_point(start))
+        try:
+            for fraction in [.25,.5,.75,1]:
+                y=start[1]+(end[1]-start[1])*fraction
+                await self.touch.move(pointer,*css_point((x,y)))
+                async with asyncio.timeout(UI_TIMEOUT/1000):
+                    await self.page.evaluate("() => new Promise(resolve => requestAnimationFrame(resolve))")
+                row["moves"].append({"fraction":fraction,"seconds":round(time.monotonic()-started,3)})
+                self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        finally:
+            await self.touch.end(pointer)
+        try:
+            after=await self.wait("s.physics_frame>a.frame && s.ui.scrolls.some(r=>r.name===a.name && (r.value-a.value)*a.direction>.5)",
+                {"frame":status["physics_frame"],"name":scroll["name"],"value":scroll["value"],"direction":1 if downward else -1})
+        except TimeoutError:
+            # A diagnostic read does not extend the15s success deadline.
+            async with asyncio.timeout(10):
+                after=await self.state()
+            row.update({"outcome":"zero_progress_timeout","seconds":round(time.monotonic()-started,3),
+                        "after_scrolls":after["ui"]["scrolls"],"after_frame":after["physics_frame"]})
+            self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+            await self.record("scroll-zero-progress",status=after)
+            raise
+        row.update({"outcome":"progress_observed","seconds":round(time.monotonic()-started,3),
+                    "after_scrolls":after["ui"]["scrolls"],"after_frame":after["physics_frame"]})
+        self.write("mobile-scroll-gestures.json",self.scroll_gestures)
+        print(f"RUNEFALL_MOBILE_SCROLL progress seconds={row['seconds']}",flush=True)
+
+    async def input_ready(self):
+        state = await self.wait("s.input_ready && !s.paused && !s.modal && s.touch.visible && !s.touch.waiting_release")
+        # Menus intentionally keep GUI mouse emulation until all GUI fingers
+        # lift. Only the committed gameplay layer must disable that alias.
+        assert state["touch"]["emulate_mouse_from_touch"] is False, state["touch"]
+        return state
+
+    async def idle(self):
+        return await self.wait("s.input_ready && s.hero_art.state === 'idle' && s.touch.active_pointers.length === 0")
+
+    async def stable(self, reference=None):
+        state = await self.wait("s.input_ready && !s.paused && !s.modal && s.touch.visible && !s.touch.waiting_release && s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
+        assert state["touch"]["emulate_mouse_from_touch"] is False, state
+        assert state["hero_art"]["state"] == "idle", state
+        if reference:
+            assert distance(state, reference) < .2, ("Menu gesture moved/attacked", reference, state)
+        first = state
+        for _ in range(2):
+            state = await self.next_state(state)
+            assert state["hero_art"]["state"] == "idle", state
+            assert distance(state, first) < .15, ("Input persisted after release", first, state)
+        return state
+
+    async def read_saves(self):
+        self.read_serial += 1
+        started = time.monotonic()
+        try:
+            async with asyncio.timeout(STORAGE_TIMEOUT):
+                result = await self.page.evaluate(self.reader, {"id": self.read_serial, "targets": self.save_targets})
+        except TimeoutError:
+            self.storage_trace.append({"stage": self.stage, "outcome": "timeout",
+                                       "seconds": round(time.monotonic() - started, 3)})
+            self.write("mobile-storage-diagnostics.json", self.storage_trace)
+            raise
+        self.save_targets[:] = result["targets"]
+        self.storage_trace.append({"stage": self.stage, "seconds": round(time.monotonic() - started, 3),
+                                   "diagnostic": result["diagnostic"]})
+        self.write("mobile-storage-diagnostics.json", self.storage_trace)
+        return result["saves"]
+
+    async def commit(self, quality):
+        started=time.monotonic()
+        print(f"RUNEFALL_MOBILE_STORAGE begin quality={quality}",flush=True)
+        observation=None
+        wall_timeout=False
+        try:
+            async with asyncio.timeout(STORAGE_TIMEOUT):
+                observation=await self.page.evaluate(self.commit_script(),{
+                    "quality":quality,"timeout_ms":STORAGE_TIMEOUT*1000,
+                    "first_id":self.read_serial+1,"targets":self.save_targets,"stage":self.stage})
+        except TimeoutError:
+            wall_timeout=True
+            # Diagnostic collection cannot turn a late result into a pass.
+            async with asyncio.timeout(10):
+                observation=await self.page.evaluate("({observation:structuredClone(window.__RUNEFALL_MOBILE_COMMIT_OBS),reader:structuredClone(window.__RUNEFALL_QA_IDB_READ)})")
+            self.write("mobile-storage-timeout.json",observation)
+            observation=observation["observation"]
+        except Exception:
+            async with asyncio.timeout(10):
+                observation=await self.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_COMMIT_OBS)")
+            raise
+        finally:
+            if observation:
+                attempts=observation.get("attempts",[])
+                for attempt in attempts:
+                    self.storage.append({"stage":self.stage,"quality_expected":quality,
+                        "rows":attempt["saves"],"request_id":attempt["request_id"],
+                        "completed_ms":attempt["completed_ms"],"within_js_budget":attempt["within_budget"]})
+                    self.storage_trace.append({"stage":self.stage,"request_id":attempt["request_id"],
+                        "seconds":round(attempt["seconds"],3),"diagnostic":attempt["diagnostic"],
+                        "completed_ms":attempt["completed_ms"],"within_js_budget":attempt["within_budget"]})
+                pending=observation.get("pending")
+                self.read_serial+=len(attempts)+(1 if pending else 0)
+                self.save_targets[:]=observation.get("targets",self.save_targets)
+                self.write("mobile-storage.json",self.storage)
+                self.write("mobile-storage-diagnostics.json",self.storage_trace)
+                self.storage_observations.append({
+                    **observation,"python_wall_timeout":wall_timeout,
+                    "python_seconds":round(time.monotonic()-started,3)})
+                self.write("mobile-storage-observation.json",self.storage_observations)
+        if wall_timeout:
+            raise TimeoutError(f"Actual primary quality{quality} was not observed within30s wall; readonly diagnostics retained")
+        assert observation and observation.get("outcome")=="matched",observation
+        print(f"RUNEFALL_MOBILE_STORAGE committed quality={quality} reads={len(observation['attempts'])} seconds={time.monotonic()-started:.3f}",flush=True)
+
+    def commit_script(self):
+        # Embed the exact AST-extracted desktop reader. The browser awaits each
+        # readonly transaction and a real rAF; Python performs one round trip.
+        # Both clocks are bounded. Diagnostic globals contain copies only.
+        return r"""async options => {
+          const read=READONLY_READER_LITERAL;
+          const started=performance.now(), deadline=started+options.timeout_ms;
+          const obs=window.__RUNEFALL_MOBILE_COMMIT_OBS={
+            stage:options.stage,quality_expected:options.quality,started_at:started,
+            timeout_ms:options.timeout_ms,phase:'starting',attempts:[],pending:null,
+            targets:options.targets};
+          while(performance.now()<deadline){
+            const request_id=options.first_id+obs.attempts.length, read_started=performance.now();
+            obs.phase='reading';obs.pending={request_id,started_ms:read_started-started};
+            const result=await read({id:request_id,targets:obs.targets});
+            const completed=performance.now(), within_budget=completed<deadline;
+            obs.targets=result.targets;obs.pending=null;
+            obs.attempts.push({request_id,started_ms:read_started-started,
+              completed_ms:completed-started,seconds:(completed-read_started)/1000,
+              within_budget,saves:result.saves,diagnostic:result.diagnostic});
+            const save=result.saves.length===1?result.saves[0].save:null;
+            if(within_budget && save && save.version===1 && save.journey_started===true &&
+               save.checkpoint===0 && save.settings && save.settings.quality===options.quality){
+              obs.phase='completed';obs.outcome='matched';obs.completed_ms=completed-started;
+              return structuredClone(obs);
+            }
+            if(!within_budget)break;
+            obs.phase='animation_frame';await new Promise(resolve=>requestAnimationFrame(resolve));
+          }
+          obs.phase='completed';obs.outcome='js_deadline';
+          obs.completed_ms=performance.now()-started;return structuredClone(obs);
+        }""".replace("READONLY_READER_LITERAL",self.reader)
+
+    async def set_quality(self, index, label):
+        before = await self.idle()
+        await self.touch_action("pause")
+        await self.wait("s.paused && s.modal")
+        await self.tap_button("환경 설정")
+        await self.wait("s.buttons.some(b => b.text.startsWith('균형 · 기본'))")
+        await self.layout(label + "-settings")
+        await self.tap_button("균형 · 기본" if index == 0 else "성능 · 낮은")
+        await self.wait("s.quality === a", index)
+        await self.tap_button("완료")
+        await self.stable(before)
+        await self.commit(index)
+
+    async def stick(self, vector=(0, 0)):
+        status = await self.input_ready()
+        origin = status["touch"]["joystick_center"]
+        pointer = await self.touch.start(*await self.css(origin, status))
+        if vector != (0, 0):
+            radius = status["touch"]["joystick_radius"]
+            await self.touch.move(pointer, *await self.css((origin[0] + vector[0] * radius,
+                                                           origin[1] + vector[1] * radius), status))
+        return pointer
+
+    async def look(self):
+        status = await self.input_ready()
+        touch = status["touch"]
+        rect = touch["look_rect"]
+        blocked = [*touch["action_rects"].values(), touch["joystick_rect"]]
+        candidates = [(rect[0] + rect[2] * x, rect[1] + rect[3] * y)
+                      for y in [.25, .4, .55, .7] for x in [.35, .5, .7]]
+        point = next((point for point in candidates if not any(contains(item, point) for item in blocked)), None)
+        assert point, ("No free camera-drag region", touch)
+        return await self.touch.start(*await self.css(point, status)), point
+
+    async def navigate(self, x, z):
+        state = await self.idle()
+        box,sx,sy = await self.canvas(state)
+        generation = state["touch"]["layout_generation"]
+        origin,radius = state["touch"]["joystick_center"],state["touch"]["joystick_radius"]
+        def css_point(point):
+            return box["x"]+point[0]*sx,box["y"]+point[1]*sy
+        pointer = None
+        try:
+            async with asyncio.timeout(60):
+                while True:
+                    dx, dz = x - state["x"], z - state["z"]
+                    length = math.hypot(dx, dz)
+                    assert state["touch"]["layout_generation"] == generation, state
+                    if length < 1.0:
+                        break
+                    if pointer is None:
+                        pointer = await self.touch.start(*css_point(origin))
+                    yaw = state["camera_yaw"]
+                    local = ((dx * math.cos(yaw) - dz * math.sin(yaw)) / length,
+                             (dx * math.sin(yaw) + dz * math.cos(yaw)) / length)
+                    desired_strength = min(.8, max(.1, (length - .45) / 8))
+                    # The real stick maps (raw_radius-.14)/.86. Slow down near
+                    # the target rather than relaxing distance/time criteria.
+                    raw_radius = .14 + .86 * desired_strength
+                    self.navigation.append({"target":[x,z], "physics_frame":state["physics_frame"],
+                        "position":[state["x"],state["z"]], "distance":length,
+                        "desired_strength":desired_strength, "raw_radius":raw_radius})
+                    self.write("mobile-navigation.json", self.navigation)
+                    # Geometry is constant for this gesture. Do not keep the
+                    # previous high stick held during another bounding-box RPC.
+                    await self.touch.move(pointer,*css_point((origin[0]+local[0]*radius*raw_radius,
+                                                             origin[1]+local[1]*radius*raw_radius)))
+                    state = await self.wait("Math.hypot(s.x-a.x,s.z-a.z)>.35 || Math.hypot(s.x-a.tx,s.z-a.tz)<1.0",
+                                            {"x": state["x"], "z": state["z"], "tx": x, "tz": z})
+        finally:
+            if pointer is not None:
+                await self.touch.end(pointer)
+        stopped = await self.idle()
+        self.navigation.append({"target":[x,z], "stopped_position":[stopped["x"],stopped["z"]],
+                                "physics_frame":stopped["physics_frame"]})
+        self.write("mobile-navigation.json", self.navigation)
+        assert math.hypot(stopped["x"]-x, stopped["z"]-z) < 1.2, stopped
+
+    async def safe_spawn(self):
+        # Setup only: avoid repeated exact-origin walks while the player is
+        # safely inside the spawn platform. Core action assertions stay intact.
+        state = self.latest or await self.state()
+        if abs(state["x"]) > 7 or not -1 <= state["z"] <= 12:
+            await self.navigate(0,6)
+
+    async def resize(self, size, angle=0):
+        await self.page.set_viewport_size(size)
+        if self.rotation_driver == "double":
+            await self.client.send("Emulation.setDeviceMetricsOverride", {
+                **size, "deviceScaleFactor": 2, "mobile": True,
+                "screenWidth": size["width"], "screenHeight": size["height"],
+                "screenOrientation": {"type": "landscapePrimary" if angle else "portraitPrimary", "angle": angle}})
+        await self.wait("Math.abs(s.ui_width-a.width)<1 && Math.abs(s.ui_height-a.height)<1", size)
+
+    async def browser_metrics(self):
+        return await self.page.evaluate("""() => {
+          const canvas=document.querySelector('canvas'), rect=canvas.getBoundingClientRect();
+          const style=getComputedStyle(canvas), viewport=visualViewport;
+          return {sampled_at:performance.now(),qa:structuredClone(window.__RUNEFALL_STATE),
+            dom:{canvas:{bitmap:[canvas.width,canvas.height],client:[canvas.clientWidth,canvas.clientHeight],
+              rect:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},
+              inline_style:canvas.getAttribute('style'),
+              style:{width:style.width,height:style.height,maxWidth:style.maxWidth,maxHeight:style.maxHeight,
+                transform:style.transform,objectFit:style.objectFit,display:style.display}},
+              inner:[innerWidth,innerHeight],outer:[outerWidth,outerHeight],dpr:devicePixelRatio,
+              document:{client:[document.documentElement.clientWidth,document.documentElement.clientHeight],
+                scroll:[document.documentElement.scrollWidth,document.documentElement.scrollHeight],
+                body_client:[document.body.clientWidth,document.body.clientHeight],
+                body_scroll:[document.body.scrollWidth,document.body.scrollHeight],
+                viewport_meta:document.querySelector('meta[name=viewport]')?.content},
+              screen:{width:screen.width,height:screen.height,availWidth:screen.availWidth,
+                availHeight:screen.availHeight,angle:screen.orientation.angle,type:screen.orientation.type},
+              visual_viewport:viewport?{width:viewport.width,height:viewport.height,scale:viewport.scale,
+                offsetLeft:viewport.offsetLeft,offsetTop:viewport.offsetTop}:null,
+              focused:document.hasFocus(),visibility:document.visibilityState}};
+        }""")
+
+    async def cancelled(self, reason, change):
+        await self.idle()
+        await self.stick((0, -(.14+.86*.1)))
+        await self.touch_action("heavy", hold=True)
+        # Moving while charging deliberately presents locomotion. Verify the
+        # real held charge and nonzero stick, not a forbidden stationary pose.
+        held = await self.wait("s.charge_elapsed>.1 && s.touch.pressed_actions.includes('heavy') && s.touch.active_pointers.length>=2 && Math.hypot(...s.touch.stick_vector)>.05")
+        await self.record(reason+"-held",status=held)
+        await change()
+        cleared = await self.wait("s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
+        assert cleared["touch"]["cancel_count"] > held["touch"]["cancel_count"], (reason, held, cleared)
+        assert cleared["hero_art"]["state"] not in ["heavy", "light_1", "light_2", "light_3"], cleared
+        await self.record(reason+"-cleared",status=cleared)
+        if self.touch.points:
+            await self.touch.cancel()
+        if cleared["paused"] and cleared["modal"]:
+            await self.tap_button("계속하기")
+        await self.stable()
+        await self.record(reason)
+
+    async def multitouch_light(self):
+        before = await self.idle()
+        centered = await self.stick()
+        await self.wait("s.touch.active_pointers.some(p => p.owner==='stick')")
+        await self.touch.end(centered)
+        await self.stable(before)
+        blank_look, _ = await self.look()
+        await self.touch.end(blank_look)
+        after_blank = await self.stable(before)
+        assert abs(after_blank["camera_yaw"]-before["camera_yaw"]) < .001
+        # A deliberate quarter-strength movement gesture keeps the test in
+        # the safe spawn room while pointer/camera/action ownership is read.
+        stick = await self.stick((0, -(.14+.86*.25)))
+        look, origin = await self.look()
+        await self.touch.move(look, *await self.css((origin[0]+35,origin[1])))
+        moving = await self.wait("Math.abs(s.camera_yaw-a.yaw)>.02 && Math.hypot(s.x-a.x,s.z-a.z)>.4",
+                                 {"yaw":before["camera_yaw"],"x":before["x"],"z":before["z"]})
+        assert moving["hero_art"]["state"] in ["idle","walk","run"] and not moving["touch"]["pressed_actions"], moving
+        action = await self.touch_action("light",hold=True)
+        simultaneous = await self.wait("s.touch.active_pointers.length>=3 && s.hero_art.state.startsWith('light_')")
+        assert {p["owner"] for p in simultaneous["touch"]["active_pointers"]} >= {"stick","look","action"}
+        await self.touch.move(stick,*await self.css(simultaneous["touch"]["joystick_center"],simultaneous))
+        await self.wait("Math.hypot(...s.touch.stick_vector)<.01 && s.touch.active_pointers.some(p=>p.owner==='stick')")
+        await self.record("06-three-pointer-light",screenshot=True,status=simultaneous)
+        await self.touch.move(action,*await self.css(origin,simultaneous))
+        owned = await self.wait("s.touch.active_pointers.some(p => p.owner==='action' && p.action==='light' && Math.hypot(p.position[0]-a.x,p.position[1]-a.y)<1)",
+                                {"x":origin[0],"y":origin[1]})
+        assert any(p["owner"]=="action" and p["action"]=="light" for p in owned["touch"]["active_pointers"]), owned
+        assert abs(owned["camera_yaw"]-simultaneous["camera_yaw"]) < .001, owned
+        await self.touch.end(action)
+        await self.wait("s.touch.active_pointers.length===2 && !s.touch.pressed_actions.includes('light') && s.touch.active_pointers.some(p=>p.owner==='stick') && s.touch.active_pointers.some(p=>p.owner==='look')")
+        await self.touch.end(stick)
+        await self.touch.end(look)
+        await self.idle()
+
+
+async def run(url, output=Path("build/verification/mobile"), phase="full", rotation_driver="playwright"):
+    assert phase in ["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","settings-focus","rotation-focus","scroll-focus","narrow-focus","restart-focus"], phase
+    assert rotation_driver in ["double","playwright"], rotation_driver
+    assert phase == "rotation-focus" or rotation_driver == "playwright", "Diagnostic driver selection is rotation-focus only"
+    output = Path(output)
+    output.mkdir(parents=True, exist_ok=True)
+    for name in ["mobile-progress.json", "mobile-errors.json", "mobile-states.json", "mobile-layout.json",
+                 "mobile-storage.json", "mobile-storage-diagnostics.json", "mobile-result.json",
+                 "mobile-failure-state.json", "mobile-failure-diagnostic.json", "mobile-failure.png","mobile-failure-browser-metrics.json",
+                 "mobile-failure-touch-observation.json", "mobile-touch-observation.json",
+                 "mobile-dispatched-touch-events.json", "mobile-browser.json", "mobile-environment.json",
+                 "mobile-navigation.json","mobile-action-observations.json","mobile-rotation-metrics.json","mobile-raster.json","mobile-scroll-gestures.json",
+                 "mobile-storage-observation.json","mobile-storage-timeout.json","mobile-narrow-metrics.json",
+                 "mobile-restart-metrics.json","mobile-restarted-touch-observation.json"]:
+        (output/name).unlink(missing_ok=True)
+    for name in ["01-portrait-title", "02-portrait-prologue", "03-portrait-gameplay", "04-rest-menu",
+                 "05-shop-menu", "06-three-pointer-light", "07-heavy-held", "08-skill-one",
+                 "09-portrait-settings", "10-landscape-gameplay", "11-landscape-settings",
+                 "12-narrow-gameplay", "13-narrow-settings", "14-touch-combat-paused",
+                 "15-restarted-touch-controls","rotation-portrait","rotation-landscape",
+                 "scroll-landscape-settings","scroll-gameplay-after","narrow-before-landscape","narrow-after",
+                 "restart-initial-settings","restart-initial-portrait","restart-landscape","restart-narrow",
+                 "restart-returned-portrait","restart-restored"]:
+        (output/(name+".png")).unlink(missing_ok=True)
+    qa = MobileRun(output,rotation_driver)
+    # A prior success must never survive a failed rerun in this output folder.
+    qa.write("mobile-result.json", {"outcome": "running", "scope": "Unverified current run"})
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query)); query["qa"] = "1"
+    test_url = urlunsplit(parts._replace(query=urlencode(query)))
+    executable = os.environ.get("CHROMIUM_PATH") or shutil.which("chromium")
+    options = {"headless": True, "viewport": PORTRAIT, "device_scale_factor": 2,
+               "is_mobile": True, "has_touch": True,
+               "args": ["--no-sandbox", "--disable-dev-shm-usage", "--use-angle=swiftshader",
+                        "--enable-unsafe-swiftshader", "--autoplay-policy=no-user-gesture-required"]}
+    if executable:
+        options["executable_path"] = executable
+    qa.write("mobile-scope.json", {"scope": "Actual emulated Chromium multitouch/UI/gameplay/persistence, not real Android/iOS/Safari or GPU performance",
+                                   "phase": phase,
+                                   "rotation_driver":rotation_driver,
+                                   "reader_sha256": hashlib.sha256(qa.reader.encode()).hexdigest(),
+                                   "viewports": [PORTRAIT, LANDSCAPE, NARROW], "dpr": 2,
+                                   "ui_timeout_ms": UI_TIMEOUT, "storage_timeout_seconds": STORAGE_TIMEOUT})
+    context = None
+    try:
+        async with async_playwright() as playwright:
+            with tempfile.TemporaryDirectory(prefix=".runefall-mobile-profile-", dir=output.resolve().parent) as profile:
+                context = await playwright.chromium.launch_persistent_context(profile, **options)
+                try:
+                    page = context.pages[0]
+                    await qa.bind(context, page)
+                    qa.mark("portrait_title")
+                    await qa.ready(test_url)
+                    if phase == "full":
+                        await qa.layout("01-portrait-title")
+                    await qa.tap_button("새로운 서약")
+                    await qa.wait("s.started && s.modal")
+                    if phase == "full":
+                        await qa.layout("02-portrait-prologue")
+                    await qa.tap_button("성역으로 향한다")
+                    await qa.stable()
+                    if phase == "full":
+                        await qa.layout("03-portrait-gameplay")
+                    elif phase == "restart-focus":
+                        qa.mark("focused_restart_settings")
+                        await qa.set_quality(1,"restart-initial")
+                        await qa.layout("restart-initial-portrait")
+                        metrics={"initial":await qa.browser_metrics()}
+                        qa.write("mobile-restart-metrics.json",metrics)
+                        for label,size,angle in [("restart-landscape",LANDSCAPE,90),
+                                                 ("restart-narrow",NARROW,0),
+                                                 ("restart-returned-portrait",PORTRAIT,0)]:
+                            qa.mark(label)
+                            await qa.resize(size,angle)
+                            await qa.wait("s.paused && s.modal")
+                            await qa.tap_button("계속하기")
+                            await qa.stable()
+                            await qa.layout(label)
+                            metrics[label]=await qa.browser_metrics()
+                            qa.write("mobile-restart-metrics.json",metrics)
+                        observation=await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)")
+                        assert observation["trusted"],observation
+                        qa.write("mobile-touch-observation.json",observation)
+                        await qa.commit(1)
+                        qa.mark("complete_browser_restart")
+                        # This closes the entire Chromium process, then starts
+                        # another process with the same persistent profile.
+                        await context.close()
+                        context=await playwright.chromium.launch_persistent_context(profile,**options)
+                        await qa.bind(context,context.pages[0])
+                        await qa.ready(test_url)
+                        await qa.wait("s.has_save && s.quality===1")
+                        await qa.tap_button("여정 이어가기")
+                        restored=await qa.stable()
+                        assert restored["health"]==120 and restored["checkpoint"]==0 and abs(restored["z"]-6)<1.5,restored
+                        assert restored["touch"]["available"] and restored["touch"]["visible"],restored
+                        await qa.layout("restart-restored")
+                        await qa.commit(1)
+                        restored=await qa.state()
+                        durable=qa.storage[-1]["rows"][0]["save"]
+                        assert restored["fs_persistent"] is True,restored
+                        assert restored["save_primary"]==durable and durable["settings"]["quality"]==1,(restored,durable)
+                        await qa.record("restart-memory-durable-match",status=restored)
+                        metrics["restored"]=await qa.browser_metrics()
+                        qa.write("mobile-restart-metrics.json",metrics)
+                        qa.write("mobile-restarted-touch-observation.json",await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)"))
+                        assert not qa.errors,qa.errors
+                        qa.mark("restart_focused_completed")
+                        qa.write("mobile-result.json",{"outcome":"restart_focused_passed","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Actual quality1 UI/primary, landscape/narrow/portrait and complete same-profile Chromium restart with memory/durable equality only. No quality0 transition or full-workflow approval."})
+                        print("RUNEFALL_MOBILE_RESTART_FOCUSED_OK · quality1/viewports/full restart only; full workflow pending",flush=True)
+                        return
+                    elif phase == "narrow-focus":
+                        qa.mark("focused_landscape_to_narrow")
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("narrow-before-landscape")
+                        metrics={"before":await qa.browser_metrics()}
+                        qa.write("mobile-narrow-metrics.json",metrics)
+                        qa.mark("focused_narrow_resize")
+                        await qa.resize(NARROW)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("narrow-after")
+                        metrics["after"]=await qa.browser_metrics()
+                        qa.write("mobile-narrow-metrics.json",metrics)
+                        assert not qa.errors,qa.errors
+                        qa.mark("narrow_recorded")
+                        qa.write("mobile-result.json",{"outcome":"narrow_recorded","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Fresh actual journey; landscape-to-narrow viewport diagnostic and original rasters only; manual review required, not settings/persistence/full approval"})
+                        print("RUNEFALL_MOBILE_NARROW_RECORDED · diagnostic only; raster review required",flush=True)
+                        return
+                    elif phase == "scroll-focus":
+                        qa.mark("focused_button_start_scroll")
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.touch_action("pause")
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("환경 설정")
+                        await qa.wait("s.buttons.some(b=>b.text.startsWith('균형 · 기본'))")
+                        await qa.layout("scroll-landscape-settings")
+                        await qa.tap_button("균형 · 기본")
+                        await qa.wait("s.quality===0")
+                        await qa.tap_button("완료")
+                        await qa.stable()
+                        assert any(row["start_buttons"] and row.get("outcome")=="progress_observed" for row in qa.scroll_gestures),qa.scroll_gestures
+                        await qa.commit(0)
+                        await qa.layout("scroll-gameplay-after")
+                        assert not qa.errors,qa.errors
+                        qa.mark("scroll_focused_completed")
+                        qa.write("mobile-result.json",{"outcome":"scroll_focused_passed","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Fresh journey and actual Button-start landscape swipe, observed scroll progress, Done tap and quality0 primary only; not full mobile/lifecycle approval"})
+                        print("RUNEFALL_MOBILE_SCROLL_FOCUSED_OK · Button-start swipe only; full workflow pending",flush=True)
+                        return
+                    elif phase == "rotation-focus":
+                        qa.mark("focused_rotation")
+                        await qa.layout("rotation-portrait")
+                        metrics={"rotation_driver":rotation_driver,"before":await qa.browser_metrics()}
+                        qa.write("mobile-rotation-metrics.json",metrics)
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                        await qa.layout("rotation-landscape")
+                        metrics["after"]=await qa.browser_metrics()
+                        qa.write("mobile-rotation-metrics.json",metrics)
+                        assert not qa.errors,qa.errors
+                        qa.mark("rotation_recorded")
+                        qa.write("mobile-result.json",{"outcome":"rotation_recorded","phase":phase,
+                            "rotation_driver":rotation_driver,"seconds":round(time.monotonic()-qa.started,3),
+                            "scope":"Fresh journey and one actual portrait-to-landscape resize; diagnostic only, manual raster review required; not full approval",
+                            "errors":qa.errors})
+                        print("RUNEFALL_MOBILE_ROTATION_RECORDED · diagnostic only; raster review required",flush=True)
+                        return
+                    elif phase in ["input-focus","multitouch-focus"]:
+                        if phase == "input-focus":
+                            qa.mark("focused_navigation")
+                            await qa.navigate(5,4)
+                            await qa.navigate(0,6)
+                        qa.mark("focused_three_pointer_input")
+                        await qa.multitouch_light()
+                        observation = await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)")
+                        assert observation["max_points"] >= 3 and observation["trusted"], observation
+                        qa.write("mobile-touch-observation.json",observation)
+                        assert not qa.errors,qa.errors
+                        qa.mark("focused_completed")
+                        qa.write("mobile-result.json",{"outcome":"focused_passed","phase":phase,
+                            "seconds":round(time.monotonic()-qa.started,3),"errors":qa.errors,
+                            "scope":"Fresh journey; trusted three-pointer movement/look/light only, plus navigation round trip for input-focus. Not full mobile QA."})
+                        print("RUNEFALL_MOBILE_FOCUSED_OK · navigation/multitouch only; full workflow pending",flush=True)
+                        return
+
+                    if phase == "full":
+                        qa.mark("rest_and_shop_taps")
+                        await qa.touch_action("interact")
+                        rest = await qa.wait("s.modal")
+                        await qa.layout("04-rest-menu")
+                        await qa.tap_button("여정을 계속한다")
+                        await qa.stable(rest)
+                        target = next(t for t in (await qa.state())["interaction_targets"] if t["kind"] == "npc" and t["index"] == 1)
+                        await qa.navigate(target["x"], target["z"])
+                        await qa.wait("s.interaction_kind==='npc' && s.interaction_index===1")
+                        await qa.touch_action("interact")
+                        shop = await qa.wait("s.modal")
+                        assert any("대장장이" in text["text"] for text in shop["ui"]["texts"]), shop
+                        await qa.layout("05-shop-menu")
+                        await qa.tap_button("여정을 계속한다")
+                        await qa.stable(shop)
+                        await qa.safe_spawn()
+
+                        qa.mark("three_pointer_movement_look_light")
+                        await qa.multitouch_light()
+                        await qa.safe_spawn()
+
+                        sprint_stick = await qa.stick((.95, 0))
+                        sprint = await qa.touch_action("sprint", hold=True)
+                        await qa.record("sprint", status=await qa.wait("s.hero_art.state==='run'"))
+                        await qa.touch.end(sprint_stick); await qa.touch.end(sprint)
+                        await qa.idle()
+                        await qa.safe_spawn()
+
+                    if phase not in ["lifecycle-tail","settings-focus"]:
+                        qa.mark("hold_heavy_dodge_parry_heal_skill")
+                        heavy = await qa.touch_action("heavy", hold=True)
+                        charged = await qa.wait("s.charge_elapsed>=.65 && s.hero_art.state==='charge' && s.touch.pressed_actions.includes('heavy')")
+                        await qa.record("07-heavy-held", screenshot=True, status=charged)
+                        await qa.record("heavy-release", status=await qa.observe_action("s.hero_art.state==='heavy'",None,lambda:qa.touch.end(heavy)))
+                        await qa.idle()
+                        await qa.safe_spawn()
+                        for action_name, cost in [("skill_2", 45), ("skill_3", 80)]:
+                            gated = await qa.idle()
+                            if gated["rune"] < cost:
+                                await qa.touch_action(action_name)
+                                after_gated = await qa.stable(gated)
+                                assert abs(after_gated["rune"]-gated["rune"]) < .01
+                                await qa.record(action_name + "-resource-gated", status=after_gated)
+                        await qa.record("dodge", status=await qa.observe_tap("dodge","s.dodge_cooldown>0"))
+                        await qa.idle()
+                        await qa.record("parry", status=await qa.observe_tap("parry","s.parry_cooldown>0"))
+                        await qa.idle()
+                        heal = await qa.state()
+                        await qa.touch_action("heal")
+                        if heal["health"] < heal["max_health"] and heal["potions"] > 0:
+                            await qa.wait("s.health>a.hp && s.potions===a.potions-1", {"hp": heal["health"], "potions": heal["potions"]})
+                        else:
+                            await qa.stable(heal)
+                            after = await qa.state()
+                            assert after["potions"] == heal["potions"], after
+                        await qa.record("heal-legitimate-or-full-health-noop")
+                        await qa.safe_spawn()
+                        skill = await qa.idle()
+                        assert skill["rune"] >= 25, skill
+                        await qa.record("08-skill-one", screenshot=True, status=await qa.observe_tap("skill_1","s.hero_art.state==='skill_1' && Math.abs(s.rune-(a-25))<.01",skill["rune"]))
+                        await qa.idle()
+                        await qa.safe_spawn()
+
+                    qa.mark("pause_cancel_focus_and_quality")
+                    if phase not in ["lifecycle-tail","settings-focus"]:
+                        await qa.stick((0, -(.14+.86*.1))); await qa.touch_action("heavy", hold=True)
+                        await qa.wait("s.charge_elapsed>.1 && s.touch.pressed_actions.includes('heavy') && Math.hypot(...s.touch.stick_vector)>.05")
+                        await qa.touch_action("pause")
+                        paused = await qa.wait("s.paused && s.modal && s.touch.active_pointers.length===0")
+                        await qa.touch.release()
+                        await qa.tap_button("계속하기")
+                        await qa.stable(paused)
+                    await qa.set_quality(1, "09-portrait")
+                    if phase not in ["lifecycle-tail","settings-focus"]:
+                        await qa.cancelled("touchcancel", qa.touch.cancel)
+
+                    async def focus_loss():
+                        # Playwright initializes every Chromium page with
+                        # Emulation.setFocusEmulationEnabled(true), which keeps
+                        # document.hasFocus true across genuine tab activation.
+                        # Restore native focus behavior before switching tabs;
+                        # never dispatch synthetic blur or write Godot state.
+                        await qa.client.send("Emulation.setFocusEmulationEnabled", {"enabled": False})
+                        blank = await context.new_page()
+                        try:
+                            async with asyncio.timeout(UI_TIMEOUT / 1000):
+                                await blank.bring_to_front()
+                                await qa.page.wait_for_function("!document.hasFocus()", timeout=UI_TIMEOUT)
+                                assert await qa.page.evaluate("window.__RUNEFALL_MOBILE_TOUCH_OBS.focus.some(e=>e.type==='blur' && e.trusted && !e.focused)")
+                        finally:
+                            await qa.page.bring_to_front()
+                            await blank.close()
+                            await qa.page.wait_for_function("document.hasFocus()", timeout=UI_TIMEOUT)
+                            await qa.client.send("Emulation.setFocusEmulationEnabled", {"enabled": True})
+                        # Hidden tabs may suspend rAF and the Godot QA emitter.
+                        # Observe the same cancellation effect after the real
+                        # foreground return, without relying on background FPS.
+                        await qa.wait("s.paused && s.touch.active_pointers.length===0 && s.touch.pressed_actions.length===0")
+                    if phase != "settings-focus":
+                        await qa.cancelled("focus-loss", focus_loss)
+
+                    qa.mark("landscape_and_narrow_orientation")
+                    if phase == "settings-focus":
+                        await qa.resize(LANDSCAPE,90)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                    else:
+                        await qa.cancelled("landscape-input-clear", lambda: qa.resize(LANDSCAPE, 90))
+                    await qa.layout("10-landscape-gameplay")
+                    await qa.set_quality(0, "11-landscape")
+                    if phase == "settings-focus":
+                        await qa.resize(NARROW)
+                        await qa.wait("s.paused && s.modal")
+                        await qa.tap_button("계속하기")
+                        await qa.stable()
+                    else:
+                        await qa.cancelled("narrow-input-clear", lambda: qa.resize(NARROW))
+                    await qa.layout("12-narrow-gameplay")
+                    await qa.set_quality(1, "13-narrow")
+                    await qa.resize(PORTRAIT)
+                    if (await qa.state())["paused"]:
+                        await qa.tap_button("계속하기")
+                    await qa.stable()
+
+                    if phase == "full":
+                        qa.mark("touch_combat_lock_and_alive")
+                        await qa.navigate(0, -22)
+                        await qa.wait("s.encounter>=0 && !s.dead")
+                        await qa.touch_action("lock_on")
+                        locked = await qa.wait("s.locked")
+                        await qa.record("lock-on", status=locked)
+                        await qa.touch_action("target_next")
+                        await qa.record("target-next", status=await qa.wait("s.locked && s.locked_target_id!==a", locked["locked_target_id"]))
+                        await qa.observe_tap("light","s.hero_art.state.startsWith('light_')")
+                        await qa.idle()
+                        await qa.touch_action("pause")
+                        combat = await qa.wait("s.paused && s.modal && s.health>0 && !s.dead")
+                        await qa.record("14-touch-combat-paused", screenshot=True, status=combat)
+                        await qa.commit(1)
+                    observation = await qa.page.evaluate("structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)")
+                    assert observation["trusted"], observation
+                    if phase == "full":
+                        assert observation["max_points"] >= 3, observation
+                    else:
+                        await qa.commit(1)
+                    qa.write("mobile-touch-observation.json", observation)
+                except Exception:
+                    await qa.failure()
+                    raise
+                finally:
+                    await context.close()
+                    context = None
+                qa.mark("complete_browser_restart")
+                context = await playwright.chromium.launch_persistent_context(profile, **options)
+                try:
+                    await qa.bind(context, context.pages[0])
+                    await qa.ready(test_url)
+                    await qa.wait("s.has_save && s.quality===1")
+                    await qa.tap_button("여정 이어가기")
+                    restored = await qa.stable()
+                    assert restored["checkpoint"] == 0 and restored["health"] > 0 and abs(restored["z"] - 6) < 1.5, restored
+                    await qa.layout("15-restarted-touch-controls")
+                    await qa.commit(1)
+                except Exception:
+                    await qa.failure()
+                    raise
+                finally:
+                    await context.close()
+                    context = None
+        assert not qa.errors, qa.errors
+        qa.mark("completed")
+        qa.write("mobile-result.json", {"outcome": "passed" if phase == "full" else ("settings_focused_passed" if phase == "settings-focus" else "lifecycle_focused_passed"), "phase":phase, "seconds": round(time.monotonic() - qa.started, 3),
+                                       "scope": "Chromium full touch workflow" if phase == "full" else ("Settings focus: portrait quality1, landscape Button-start scroll/quality0, narrow quality1, actual primary commits and complete browser restart; focus/cancellation/combat/shop not repeated; not full approval" if phase == "settings-focus" else "Focused lifecycle subset recorded by phase; quality/committed saves and full browser restart included. lifecycle-tail omits already observed actions/touchcancel and covers focus/orientation/persistence only; not full approval"),
+                                       "states": list(qa.states), "errors": qa.errors})
+        print("RUNEFALL_MOBILE_OK · full workflow" if phase == "full" else ("RUNEFALL_MOBILE_SETTINGS_FOCUSED_OK · settings/IDB/restart only; full workflow pending" if phase == "settings-focus" else "RUNEFALL_MOBILE_LIFECYCLE_FOCUSED_OK · lifecycle/quality/IDB/restart only; full workflow pending"), flush=True)
+    except Exception as error:
+        await qa.failure()
+        qa.write("mobile-result.json", {"outcome": "failed", "stage": qa.stage,
+                                       "seconds": round(time.monotonic() - qa.started, 3), "errors": qa.errors,
+                                       "exception_type": type(error).__name__, "exception": str(error)})
+        raise
+    finally:
+        qa.write("mobile-errors.json", qa.errors)
+        qa.write("mobile-dispatched-touch-events.json", qa.events)
+        if context:
+            await context.close()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("url")
+    parser.add_argument("--output", type=Path, default=Path("build/verification/mobile"))
+    parser.add_argument("--phase",choices=["full","input-focus","multitouch-focus","lifecycle-focus","lifecycle-tail","settings-focus","rotation-focus","scroll-focus","narrow-focus","restart-focus"],default="full")
+    parser.add_argument("--rotation-driver",choices=["double","playwright"],default="playwright")
+    arguments = parser.parse_args()
+    asyncio.run(run(arguments.url, arguments.output,arguments.phase,arguments.rotation_driver))

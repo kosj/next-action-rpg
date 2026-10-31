@@ -29,6 +29,8 @@ python tools/build.py --test-only
 
 웹 입력·저장·UI를 바꿨으면 웹을 다시 내보낸 뒤 실제 브라우저도 검사합니다.
 
+모바일 입력은 [공식 근거](../../../docs/MOBILE_WEB_RESEARCH.md)와 고정 공개 [입력 스킬](../input-handling/SKILL.md)·[반응형 UI 스킬](../responsive-ui/SKILL.md)의 관련 부분을 읽습니다. 기존 전투 polling을 일괄 재설계하지 않으며 native safe-area/DPI 예제를 Web에 그대로 복사하지 않습니다. CSS·canvas backing·논리 viewport 변환을 한 번만 적용하고 터치 별칭만 해제합니다. 같은 frame의 짧은 탭, 실제 키와 동시 hold, 취소/메뉴/회전/포커스·복귀에서 실제 캐릭터 효과와 잔여 입력을 확인합니다. [모바일 브라우저 도구](../../../tools/check_mobile_web.py)를 한 개의 Chromium으로 실행한 뒤 기존 데스크톱 검사도 유지합니다. 에뮬레이션을 실제 Android/iOS·성능 승인으로 승계하지 않습니다.
+
 ```bash
 python tools/build.py
 python tools/check_web.py
@@ -39,3 +41,11 @@ Playwright/Chromium 준비는 루트 README를 참조합니다. QA 데이터는 
 ## 완료
 
 문제·해결 조건·검증 근거를 지식 DB에 갱신합니다. 게임 코드 검사와 별도로 `python tools/knowledge.py check`를 통과시킵니다. 배포가 작업 범위에 있으면 [릴리스 스킬](../runefall-release/SKILL.md)로 이어갑니다.
+
+자동 터치 조작에서는 [피드백·짧은 상태 실패](../../../docs/validation/v0.1.6/driver-failures/README.md)를 확인합니다. 움직이는 포인터를 유지하며 geometry RPC를 반복하지 않고 한 gesture의 좌표를 재사용하되 layout 세대를 검증합니다. 단발/회피/차지 release는 입력 전에 읽기 전용 관찰자를 arm해 미래 physics snapshot을 복사합니다. 이동량·소유권·실제 효과·영구 저장의 assertion과 유한 시간은 유지하고, 검사 도구 실패·앱 실패·집중/전체 통과를 구분합니다.
+
+Window.size_changed 안에서 content scale을 동기로 재설정하지 않습니다. [실제 screen-attach 재진입 사례](../../../docs/validation/v0.1.6/rotation/README.md)처럼 public 좌표/transform이 정상이어도 outer cached rect가 최종화면을 덮을 수 있습니다. 소유 입력은 즉시 정리하고 최신 CSS 설정은 1회 coalesced deferred로 적용합니다. 같은 driver/품질/자산의 실제 PNG A/B와 고정 장면 raster guard로 검증하며 headless getter 검사로 대체하지 않습니다.
+
+모바일 modal 스크롤은 빈 여백만 테스트하지 않습니다. [Button-start 드래그 실패/수정](../../../docs/validation/v0.1.6/scroll/README.md)처럼 실제 버튼에서 시작해 부모 ScrollContainer 전달·SCROLL_BEGIN 클릭 취소·fresh scroll값·Done과 실제 저장까지 확인합니다. wheel 전파 옵션을 touch drag 보증으로 간주하지 않고 Slider의 별도 소유권을 보존합니다. 같은 gesture geometry를 재사용하고 progress가 없으면 유한 시간에 실패시킵니다.
+
+모바일 축소에서는 [canvas CSS feedback](../../../docs/validation/v0.1.6/canvas-css/README.md)의 inline/computed/client/inner/documentScroll/visualViewport·DPR/bitmap·실제PNG를 대조합니다. 표시영역소유권만수정하고숫자clamp로가리지않습니다. [로딩callback](../../../docs/validation/v0.1.6/loader/README.md)은UI제거뒤late실행을재현하고원본callback/실제DOM으로검사합니다. 기능성공과pageerror0을별도로판정합니다.

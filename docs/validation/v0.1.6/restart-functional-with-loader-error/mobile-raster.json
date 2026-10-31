@@ -1,0 +1,177 @@
+[
+  {
+    "stage": "restart-initial-portrait",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "restart-initial-portrait.png",
+    "sha256": "759f65f29b2382ba9b6f67d46fbb0f3dfdbc852cfa8ff0bb8179b9b19d65cb9a",
+    "size": [
+      780,
+      1688
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 422,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 844,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 1266,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  },
+  {
+    "stage": "restart-landscape",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "restart-landscape.png",
+    "sha256": "6649d4e4de98a0c905f7def4fc727a78c5c88221b4ef7860e7d1340984a234bb",
+    "size": [
+      1688,
+      780
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 195,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      },
+      {
+        "y": 390,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      },
+      {
+        "y": 585,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  },
+  {
+    "stage": "restart-narrow",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "restart-narrow.png",
+    "sha256": "c0c4c85e3d907ce829c9cad76e6d604dc3861266b4f248f5484b47f07a898a6d",
+    "size": [
+      720,
+      1280
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 320,
+        "nonblack_min": 0,
+        "nonblack_max": 719,
+        "span": 720,
+        "fraction": 1.0
+      },
+      {
+        "y": 640,
+        "nonblack_min": 0,
+        "nonblack_max": 719,
+        "span": 720,
+        "fraction": 1.0
+      },
+      {
+        "y": 960,
+        "nonblack_min": 0,
+        "nonblack_max": 719,
+        "span": 720,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  },
+  {
+    "stage": "restart-returned-portrait",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "restart-returned-portrait.png",
+    "sha256": "f15c30c3dc262dc83b681fb96a0542b2e867b7288cb885bac22b15aa28c402ae",
+    "size": [
+      780,
+      1688
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 422,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 844,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 1266,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  },
+  {
+    "stage": "restart-restored",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "restart-restored.png",
+    "sha256": "89dea69add501e3e9f49ab433c74705feef77e11afba7526c8f05398ee16fe10",
+    "size": [
+      780,
+      1688
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 422,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 844,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      },
+      {
+        "y": 1266,
+        "nonblack_min": 0,
+        "nonblack_max": 779,
+        "span": 780,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  }
+]

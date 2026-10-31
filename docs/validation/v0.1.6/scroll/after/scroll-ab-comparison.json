@@ -1,0 +1,57 @@
+{
+  "scope": "Fresh-profile actual Button-start swipe app-fix A/B only; not full lifecycle/mobile/real-device approval",
+  "before_result": {
+    "outcome": "failed_zero_progress",
+    "value_after": 0,
+    "progress_deadline_ms": 15000,
+    "artifact": "../mobile-scroll-before"
+  },
+  "after_result": {
+    "outcome": "scroll_focused_passed",
+    "phase": "scroll-focus",
+    "seconds": 261.75,
+    "errors": [],
+    "scope": "Fresh journey and actual Button-start landscape swipe, observed scroll progress, Done tap and quality0 primary only; not full mobile/lifecycle approval"
+  },
+  "gesture_path_identical": true,
+  "start": [
+    422.0,
+    293.0
+  ],
+  "end": [
+    422.0,
+    107.5
+  ],
+  "start_buttons": [
+    "\uade0\ud615 \u00b7 \uae30\ubcf8 \ud574\uc0c1\ub3c4 / \uadf8\ub9bc\uc790"
+  ],
+  "move_fractions_before": [
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "move_fractions_after": [
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "after_value": 91,
+  "max_scroll": 91,
+  "changed_recorded_source_inputs": [
+    "game/scripts/ui/hud.gd"
+  ],
+  "same_qa_sources": true,
+  "after_done": {
+    "paused": false,
+    "health": 120,
+    "quality": 0,
+    "hero_state": "idle",
+    "active_pointers": [],
+    "pressed_actions": []
+  },
+  "browser_server_closed": true,
+  "export_unchanged": true,
+  "original_png_review": "Original scroll-gameplay-after.png manually inspected:1688x780 full-width normal UI/character proportions, daylight first-room only; no image editing."
+}

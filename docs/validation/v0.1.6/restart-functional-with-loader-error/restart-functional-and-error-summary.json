@@ -1,0 +1,429 @@
+{
+  "scope": "Focused quality1/three viewports/full browser restart diagnostics only; overall failed on real uncaught pageerror. Not quality0/full workflow approval.",
+  "overall_outcome": "failed",
+  "overall_reason": [
+    "complete_browser_restart: Cannot set properties of null (setting 'value')"
+  ],
+  "functional_observations": {
+    "quality1_primary_committed": true,
+    "landscape_narrow_portrait_raster_passed": true,
+    "complete_browser_context_close_new_launch_executed": true,
+    "restored_health": 120,
+    "restored_checkpoint": 0,
+    "restored_z": 6,
+    "restored_quality": 1,
+    "touch_visible": true,
+    "active_pointers": [],
+    "fs_persistent": true,
+    "memory_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 1,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "durable_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 1,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "restored_physics_frame": 144
+  },
+  "manual_original_png_review": [
+    "restart-narrow.png: normal720x1280/three-column44CSSpx controls",
+    "restart-returned-portrait.png: normal780x1688/four-column48CSSpx controls",
+    "restart-restored.png: original post-restart image reviewed; normal gameplay/touch HUD"
+  ],
+  "viewport_dom": {
+    "initial": {
+      "canvas": {
+        "bitmap": [
+          780,
+          1688
+        ],
+        "client": [
+          390,
+          844
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "inline_style": "position: absolute; top: 0px; left: 0px; width: 390px; height: 844px;",
+        "style": {
+          "width": "390px",
+          "height": "844px",
+          "maxWidth": "none",
+          "maxHeight": "none",
+          "transform": "none",
+          "objectFit": "fill",
+          "display": "block"
+        }
+      },
+      "inner": [
+        390,
+        844
+      ],
+      "outer": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "document": {
+        "client": [
+          390,
+          844
+        ],
+        "scroll": [
+          390,
+          844
+        ],
+        "body_client": [
+          390,
+          844
+        ],
+        "body_scroll": [
+          390,
+          844
+        ],
+        "viewport_meta": "width=device-width,initial-scale=1,viewport-fit=cover"
+      },
+      "screen": {
+        "width": 390,
+        "height": 844,
+        "availWidth": 390,
+        "availHeight": 844,
+        "angle": 0,
+        "type": "portrait-primary"
+      },
+      "visual_viewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "focused": true,
+      "visibility": "visible"
+    },
+    "restart-landscape": {
+      "canvas": {
+        "bitmap": [
+          1688,
+          780
+        ],
+        "client": [
+          844,
+          390
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390
+        },
+        "inline_style": "position: absolute; top: 0px; left: 0px; width: 844px; height: 390px;",
+        "style": {
+          "width": "844px",
+          "height": "390px",
+          "maxWidth": "none",
+          "maxHeight": "none",
+          "transform": "none",
+          "objectFit": "fill",
+          "display": "block"
+        }
+      },
+      "inner": [
+        844,
+        390
+      ],
+      "outer": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "document": {
+        "client": [
+          844,
+          390
+        ],
+        "scroll": [
+          844,
+          390
+        ],
+        "body_client": [
+          844,
+          390
+        ],
+        "body_scroll": [
+          844,
+          390
+        ],
+        "viewport_meta": "width=device-width,initial-scale=1,viewport-fit=cover"
+      },
+      "screen": {
+        "width": 844,
+        "height": 390,
+        "availWidth": 844,
+        "availHeight": 390,
+        "angle": 90,
+        "type": "landscape-primary"
+      },
+      "visual_viewport": {
+        "width": 844,
+        "height": 390,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "focused": true,
+      "visibility": "visible"
+    },
+    "restart-narrow": {
+      "canvas": {
+        "bitmap": [
+          720,
+          1280
+        ],
+        "client": [
+          360,
+          640
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640
+        },
+        "inline_style": "position: absolute; top: 0px; left: 0px; width: 360px; height: 640px;",
+        "style": {
+          "width": "360px",
+          "height": "640px",
+          "maxWidth": "none",
+          "maxHeight": "none",
+          "transform": "none",
+          "objectFit": "fill",
+          "display": "block"
+        }
+      },
+      "inner": [
+        360,
+        640
+      ],
+      "outer": [
+        360,
+        640
+      ],
+      "dpr": 2,
+      "document": {
+        "client": [
+          360,
+          640
+        ],
+        "scroll": [
+          360,
+          640
+        ],
+        "body_client": [
+          360,
+          640
+        ],
+        "body_scroll": [
+          360,
+          640
+        ],
+        "viewport_meta": "width=device-width,initial-scale=1,viewport-fit=cover"
+      },
+      "screen": {
+        "width": 360,
+        "height": 640,
+        "availWidth": 360,
+        "availHeight": 640,
+        "angle": 0,
+        "type": "portrait-primary"
+      },
+      "visual_viewport": {
+        "width": 360,
+        "height": 640,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "focused": true,
+      "visibility": "visible"
+    },
+    "restart-returned-portrait": {
+      "canvas": {
+        "bitmap": [
+          780,
+          1688
+        ],
+        "client": [
+          390,
+          844
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "inline_style": "position: absolute; top: 0px; left: 0px; width: 390px; height: 844px;",
+        "style": {
+          "width": "390px",
+          "height": "844px",
+          "maxWidth": "none",
+          "maxHeight": "none",
+          "transform": "none",
+          "objectFit": "fill",
+          "display": "block"
+        }
+      },
+      "inner": [
+        390,
+        844
+      ],
+      "outer": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "document": {
+        "client": [
+          390,
+          844
+        ],
+        "scroll": [
+          390,
+          844
+        ],
+        "body_client": [
+          390,
+          844
+        ],
+        "body_scroll": [
+          390,
+          844
+        ],
+        "viewport_meta": "width=device-width,initial-scale=1,viewport-fit=cover"
+      },
+      "screen": {
+        "width": 390,
+        "height": 844,
+        "availWidth": 390,
+        "availHeight": 844,
+        "angle": 0,
+        "type": "portrait-primary"
+      },
+      "visual_viewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "focused": true,
+      "visibility": "visible"
+    },
+    "restored": {
+      "canvas": {
+        "bitmap": [
+          780,
+          1688
+        ],
+        "client": [
+          390,
+          844
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "inline_style": "position: absolute; top: 0px; left: 0px; width: 390px; height: 844px;",
+        "style": {
+          "width": "390px",
+          "height": "844px",
+          "maxWidth": "none",
+          "maxHeight": "none",
+          "transform": "none",
+          "objectFit": "fill",
+          "display": "block"
+        }
+      },
+      "inner": [
+        390,
+        844
+      ],
+      "outer": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "document": {
+        "client": [
+          390,
+          844
+        ],
+        "scroll": [
+          390,
+          844
+        ],
+        "body_client": [
+          390,
+          844
+        ],
+        "body_scroll": [
+          390,
+          844
+        ],
+        "viewport_meta": "width=device-width,initial-scale=1,viewport-fit=cover"
+      },
+      "screen": {
+        "width": 390,
+        "height": 844,
+        "availWidth": 390,
+        "availHeight": 844,
+        "angle": 0,
+        "type": "portrait-primary"
+      },
+      "visual_viewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1,
+        "offsetLeft": 0,
+        "offsetTop": 0
+      },
+      "focused": true,
+      "visibility": "visible"
+    }
+  },
+  "no_source_or_app_changes_during_run": true
+}

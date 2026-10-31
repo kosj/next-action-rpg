@@ -1,0 +1,40 @@
+{
+  "scope": "Original screenshot pixel rows read only; no image editing",
+  "size": [
+    1688,
+    780
+  ],
+  "rows": [
+    {
+      "y": 0,
+      "min": 0,
+      "max": 1687,
+      "width": 1688
+    },
+    {
+      "y": 100,
+      "min": 0,
+      "max": 1687,
+      "width": 1688
+    },
+    {
+      "y": 390,
+      "min": 0,
+      "max": 1687,
+      "width": 1688
+    },
+    {
+      "y": 700,
+      "min": 0,
+      "max": 1687,
+      "width": 1688
+    },
+    {
+      "y": 779,
+      "min": 0,
+      "max": 1687,
+      "width": 1688
+    }
+  ],
+  "raster_review": "PASS for bounded first-room raster: unedited screenshot reviewed at1688x780, full width and normal character/UI proportions. Not full mobile QA or AAA art approval."
+}

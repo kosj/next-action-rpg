@@ -1,0 +1,93 @@
+{
+  "scope": "Actual hosted C12 quality0 primary observed before separate narrow viewport failure; not full mobile approval",
+  "run": "https://github.com/kosj/next-action-rpg/actions/runs/41202917146/job/124543587097",
+  "footer": "0.1.6 \u00b7 af4ca151",
+  "completed_reads": [
+    {
+      "stage": "pause_cancel_focus_and_quality",
+      "expected": 1,
+      "actual": [
+        0
+      ]
+    },
+    {
+      "stage": "pause_cancel_focus_and_quality",
+      "expected": 1,
+      "actual": [
+        0
+      ]
+    },
+    {
+      "stage": "pause_cancel_focus_and_quality",
+      "expected": 1,
+      "actual": [
+        0
+      ]
+    },
+    {
+      "stage": "pause_cancel_focus_and_quality",
+      "expected": 1,
+      "actual": [
+        0
+      ]
+    },
+    {
+      "stage": "pause_cancel_focus_and_quality",
+      "expected": 1,
+      "actual": [
+        1
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "expected": 0,
+      "actual": [
+        1
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "expected": 0,
+      "actual": [
+        1
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "expected": 0,
+      "actual": [
+        1
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "expected": 0,
+      "actual": [
+        1
+      ]
+    },
+    {
+      "stage": "landscape_and_narrow_orientation",
+      "expected": 0,
+      "actual": [
+        0
+      ]
+    }
+  ],
+  "following_failure": {
+    "outcome": "failed",
+    "stage": "landscape_and_narrow_orientation",
+    "seconds": 872.888,
+    "errors": [],
+    "exception_type": "TimeoutError",
+    "exception": ""
+  },
+  "failure_qa_size": [
+    844,
+    1501
+  ],
+  "expected_size": [
+    360,
+    640
+  ]
+}

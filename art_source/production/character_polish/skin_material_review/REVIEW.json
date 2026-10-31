@@ -1,0 +1,135 @@
+{
+  "status": "isolated_conservative_face_dielectric_trial_pending_actual_game_review",
+  "runtime_adoption": "pending",
+  "aaa_approval": "pending",
+  "source": {
+    "path": "/workspace/next-action-rpg/game/assets/models/production/lyra_gameplay.glb",
+    "sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "bytes": 19438644,
+    "unchanged": true
+  },
+  "candidate": {
+    "path": "/workspace/next-action-rpg/build/art-candidates/skin-material-review/dielectric-001/lyra-skin-dielectric.glb",
+    "sha256": "35ea57e7fde492ce52bbf2fc921535e3ccdd1f0926729b1162d54d40a3a22f9f",
+    "bytes": 19632192,
+    "triangles": 32288,
+    "surfaces": 3
+  },
+  "quantitative_regions": {
+    "forehead_core": {
+      "metallic_median": 0.23446808457374574,
+      "roughness_median": 0.5054086722579657,
+      "normal_tilt_median_degrees": 5.463926033786851
+    },
+    "nose_core": {
+      "metallic_median": 0.2401404967530046,
+      "roughness_median": 0.4980392156862745,
+      "normal_tilt_median_degrees": 10.91733565310531
+    },
+    "left_cheek_core": {
+      "metallic_median": 0.28518433581088104,
+      "roughness_median": 0.4745098039215686,
+      "normal_tilt_median_degrees": 5.014123075257898
+    },
+    "right_cheek_core": {
+      "metallic_median": 0.25870928596047776,
+      "roughness_median": 0.48627450980392156,
+      "normal_tilt_median_degrees": 4.705285376760229
+    },
+    "chin_core": {
+      "metallic_median": 0.2347238179125805,
+      "roughness_median": 0.5314764284620098,
+      "normal_tilt_median_degrees": 15.468247690794437
+    },
+    "armor_chest": {
+      "metallic_median": 0.537320006127451,
+      "roughness_median": 0.42904850970588476,
+      "normal_tilt_median_degrees": 4.509938776064671
+    },
+    "hair_crown": {
+      "metallic_median": 0.37335377412683896,
+      "roughness_median": 0.5014276774101005,
+      "normal_tilt_median_degrees": 5.394821841461297
+    }
+  },
+  "controlled_change": "Duplicate original PBR material; metallicFactor0 ONLY (plus descriptive name); roughness/normal/albedo/AO/maps unchanged",
+  "preserved": {
+    "original_BIN_prefix_byte_exact": true,
+    "original_attributes_bindings_byte_exact": true,
+    "oriented_triangle_multiset_exact": true,
+    "new_eyelid_primitive136_unchanged": true,
+    "all_animation_rest_skin_weights_UV_images_textures_unchanged": true,
+    "original_materials_exact": true
+  },
+  "ownership": {
+    "selected_triangles": 287,
+    "uncertain_unchanged": 51,
+    "polygon_mapping_error_m": 2.5222168683723743e-07,
+    "evidence": "ownership-001/",
+    "visual_read": "Selected core stays on exposed face/nose/lips/brows in front and side; no observed scalp/hair/armor selection"
+  },
+  "neutral_review": {
+    "actual_reimported_GLBS": true,
+    "same_camera_images": [
+      {
+        "variant": "reference",
+        "shot": "face_front",
+        "path": "build/art-candidates/skin-material-review/neutral-reference/face_front.png",
+        "sha256": "0df0c17eae3c602aec5200797bb238ccdc44088d562182f56cf3cc4d54666044",
+        "reference_camera_reused": true
+      },
+      {
+        "variant": "reference",
+        "shot": "head_three_quarter",
+        "path": "build/art-candidates/skin-material-review/neutral-reference/head_three_quarter.png",
+        "sha256": "02c656fc24c691b5437c89504b1dacbfc6e4715d289680535a43c70b86e22527",
+        "reference_camera_reused": true
+      },
+      {
+        "variant": "reference",
+        "shot": "face_side",
+        "path": "build/art-candidates/skin-material-review/neutral-reference/face_side.png",
+        "sha256": "58229dcac80b7d2e5e26f094c01c98e929d414bc7d448fcca2bc2f9cf2a7655a",
+        "reference_camera_reused": true
+      },
+      {
+        "variant": "candidate",
+        "shot": "face_front",
+        "path": "build/art-candidates/skin-material-review/neutral-candidate/face_front.png",
+        "sha256": "c7597f515e3c906bf76bf08febd8263c0a9cc6579ddf4899e9d18ae1f92a9039",
+        "reference_camera_reused": true
+      },
+      {
+        "variant": "candidate",
+        "shot": "head_three_quarter",
+        "path": "build/art-candidates/skin-material-review/neutral-candidate/head_three_quarter.png",
+        "sha256": "837d540ed4af505c79e3376a2dab6668167cd1d6b2c1e8fb8dd34c697468de25",
+        "reference_camera_reused": true
+      },
+      {
+        "variant": "candidate",
+        "shot": "face_side",
+        "path": "build/art-candidates/skin-material-review/neutral-candidate/face_side.png",
+        "sha256": "423bcd256deae9b483eb50aa673548dd845f338b8f10ebea8ca3ade6f13b56c8",
+        "reference_camera_reused": true
+      }
+    ],
+    "visual_read": "Central face appears less specular/more diffuse. A faint stepped material transition can be seen at conservative cheek/side boundaries and excluded nostril/lip islands. Studio appearance alone is insufficient for adoption.",
+    "next_gate": "Actual Game lighting front/threequarter quality0/1 plus boundary-readability decision; do not silently add51uncertain triangles"
+  },
+  "remaining_quality_limits": [
+    "Not a complete skin/hair semantic segmentation",
+    "Normal/roughness/maps intentionally unchanged; this does not establish cause or fix all faceting",
+    "Hair remains source geometry/material, including nonzero metallic data",
+    "No runtime/shared asset mutation and no Game/GPU/AAA approval"
+  ],
+  "CPU_render_threads": 1,
+  "renderer_running": false,
+  "references": [
+    "audit-001/material-audit.json",
+    "reviewed-face-mask.json",
+    "dielectric-001/candidate-report.json",
+    "geometry-texture-diagnostic.json",
+    "texture-import-observations.json"
+  ]
+}

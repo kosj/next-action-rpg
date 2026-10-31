@@ -1,0 +1,142 @@
+{
+  "scope": "One genuine Button-start swipe before the proposed app mouse-filter fix; focused failure, not whole lifecycle/full QA",
+  "result": "FAIL: actual GUI scroll remained0 after one real swipe and bounded15s progress wait",
+  "gesture": {
+    "stage": "focused_button_start_scroll",
+    "name": "ModalScroll",
+    "before_value": 0,
+    "before_frame": 994,
+    "start": [
+      422.0,
+      293.0
+    ],
+    "end": [
+      422.0,
+      107.5
+    ],
+    "downward": true,
+    "start_buttons": [
+      "\uade0\ud615 \u00b7 \uae30\ubcf8 \ud574\uc0c1\ub3c4 / \uadf8\ub9bc\uc790"
+    ],
+    "moves": [
+      {
+        "fraction": 0.25,
+        "seconds": 9.794
+      },
+      {
+        "fraction": 0.5,
+        "seconds": 15.855
+      },
+      {
+        "fraction": 0.75,
+        "seconds": 21.701
+      },
+      {
+        "fraction": 1,
+        "seconds": 27.419
+      }
+    ],
+    "outcome": "zero_progress_timeout",
+    "seconds": 46.314,
+    "after_scrolls": [
+      {
+        "h": 350,
+        "max": 441,
+        "name": "ModalScroll",
+        "page": 350,
+        "value": 0,
+        "w": 616,
+        "x": 114,
+        "y": 20
+      }
+    ],
+    "after_frame": 1325
+  },
+  "final_frame": 1341,
+  "final_scrolls": [
+    {
+      "h": 350,
+      "max": 441,
+      "name": "ModalScroll",
+      "page": 350,
+      "value": 0,
+      "w": 616,
+      "x": 114,
+      "y": 20
+    }
+  ],
+  "input_trusted": true,
+  "last_dom_gesture": [
+    {
+      "type": "touchstart",
+      "touches": [
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchmove",
+      "touches": [
+        7
+      ],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    },
+    {
+      "type": "touchend",
+      "touches": [],
+      "changed": [
+        7
+      ],
+      "trusted": true
+    }
+  ],
+  "post_release_ownership": {
+    "active_pointers": [],
+    "observed_touch_indices": [],
+    "pressed_actions": []
+  },
+  "qa_source_sha256": {
+    "tools/mobile_browser_smoke.py": "8a512a8ba9757ca22b74dc21132a05af700a3331dd9c30bae53c8d62a5c4e4e2",
+    "tools/check_mobile_web.py": "a6d2cec5451294b4c12a4646437c3ea8722e6d96db4bbfb58fa3b3ce5dc314de",
+    "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0"
+  },
+  "browser_server_closed": true,
+  "export_unchanged": true,
+  "manual_png_review": "Original mobile-failure.png inspected: settings remain at top scroll position, Done below viewport, normal full-width raster."
+}

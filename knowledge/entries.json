@@ -183,24 +183,28 @@
       "kind": "decision",
       "status": "verified",
       "title": "전체 씬·autoload가 필요한 회귀 검사는 Node runner를 유지한다",
-      "summary": "공개 스킬의 간단한 SceneTree runner 예제는 현재 통합 검사를 그대로 대체하지 못한다. Node 씬 runner에서 물리 프레임·autoload를 사용하고 suite 완료 반환값·종료 코드·실패 수·45초 watchdog을 확인한다. v0.1.1 태그 CI는 131 checks, 0 failures와 브라우저 검사를 통과했다.",
+      "summary": "공개 스킬의 간단한 SceneTree runner 예제는 현재 통합 검사를 그대로 대체하지 못한다. Node 씬 runner에서 물리 프레임·autoload를 사용하고 suite 완료 반환값·종료 코드·실패 수·45초 watchdog을 확인한다. v0.1.1 태그 CI는 131 checks, 0 failures와 브라우저 검사를 통과했다. v0.1.6CI는374/0이어도freed Controlcast의ScriptError로실패했다. 캐스트전유효성검사와실제expiredUI복원fixture로375/0/오류0·복원완료를검증했다. assertion개수만으로종료를승인하지않는다.",
       "tags": [
         "testing",
         "godot",
         "skills",
         "회귀"
       ],
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "context": {
         "godot": "4.7.2",
         "commit": "289f99eec4389eeb63dfb3e601d4f5b0e4175097",
-        "release": "v0.1.1"
+        "release": "v0.1.1",
+        "latest_cleanup": "v0.1.6 Godot4.7.2 local375 checks0fail/0errors/0warnings; origin v0.1.1 evidence retained"
       },
       "sources": [
         "game/tests/test_runner.gd",
         "tools/build.py",
         ".agents/skills/godot-gdscript-headless-testing/SKILL.md",
-        "https://github.com/kosj/next-action-rpg/actions/runs/41071945291"
+        "https://github.com/kosj/next-action-rpg/actions/runs/41071945291",
+        "game/tests/mobile_input_regressions.gd",
+        "docs/validation/v0.1.6/native-final.json",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41198316684/job/124528942798"
       ]
     },
     {
@@ -610,7 +614,7 @@
       "kind": "pitfall",
       "status": "verified",
       "title": "웹 설정 메모리 상태와 IndexedDB 커밋 완료를 구분한다",
-      "summary": "Godot 4.7.2의 FileAccess 쓰기 close는 dirty flag를 세우고 다음 main loop에서 비동기 FS.syncfs를 시작한다. force_fs_sync도 같은 flag만 세워 동기 호출 내부 close→rename 뒤의 중복 요청은 커밋 완료 보장이 아니다. 실제 진단에서 최종 UI 품질1 직후 primary는0, 이후 자동 커밋과 브라우저 재시작 뒤에는1이었다. 앱 저장 코드를 수정하지 않았으며 QA는 primary의 품질0→1 실제 커밋을 읽기 전용 조건 대기하도록 보완했다. 최종 로컬 실행에서 품질0·1 실제 커밋과 완전 종료 후 재시작 복원·오류0을 확인했다. Playwright1.62.0의 wait_for_function에 async predicate를 넣으면 Promise truthiness로 반복이 멈추므로, 읽기 전용 transaction을 Python에서 await하고 실제 다음 RAF 뒤 다시 조회한다.",
+      "summary": "Godot 4.7.2의 FileAccess 쓰기 close는 dirty flag를 세우고 다음 main loop에서 비동기 FS.syncfs를 시작한다. force_fs_sync도 같은 flag만 세워 동기 호출 내부 close→rename 뒤의 중복 요청은 커밋 완료 보장이 아니다. 실제 진단에서 최종 UI 품질1 직후 primary는0, 이후 자동 커밋과 브라우저 재시작 뒤에는1이었다. 앱 저장 코드를 수정하지 않았으며 QA는 primary의 품질0→1 실제 커밋을 읽기 전용 조건 대기하도록 보완했다. 최종 로컬 실행에서 품질0·1 실제 커밋과 완전 종료 후 재시작 복원·오류0을 확인했다. Playwright1.62.0의 wait_for_function에 async predicate를 넣으면 Promise truthiness로 반복이 멈추므로, 읽기 전용 transaction을 Python에서 await하고 실제 다음 RAF 뒤 다시 조회한다. 7061의local1~2FPS소프트웨어조건은UI0후30초내primary0을확인못했으나hosted같은앱은실제0을읽은뒤별도narrow결함에서실패했다. 새awaitedreadonlyloop는완료sample3→6으로늘었어도local0미관측이어서Python왕복만이원인이라고단정하지않는다. 내부33keycursor와낮은FPS지연은가설이며dirty-loss/영구실패/미완료read이후성공도증명하지않았다.",
       "tags": [
         "web",
         "save",
@@ -624,7 +628,8 @@
         "godot": "4.7.2",
         "application": "v0.1.3 development",
         "validated": "official engine source, readonly diagnostics and final local WebGL/quality/restart run",
-        "commit_wait_patch": "verified: actual primary quality0 then1 and same-profile browser restart1; errors0"
+        "commit_wait_patch": "verified: actual primary quality0 then1 and same-profile browser restart1; errors0",
+        "mobile_observation": "Local7061 fixed30s notobserved; samehostedactual0; nofswrite/sync or timeoutloosening. ReadonlyMemFS field added forfuturediagnosis."
       },
       "sources": [
         "tools/browser_smoke.py",
@@ -636,7 +641,9 @@
         "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts",
         "docs/validation/v0.1.3/browser-storage.json",
         "docs/validation/v0.1.3/browser-persistence.json",
-        "docs/validation/v0.1.3/README.md"
+        "docs/validation/v0.1.3/README.md",
+        "docs/validation/v0.1.6/storage-observation/README.md",
+        "docs/validation/v0.1.6/storage-observation/hosted-quality0-then-narrow-failure.json"
       ]
     },
     {
@@ -1453,6 +1460,256 @@
         "docs/validation/v0.1.5/character-eyes.json",
         "docs/validation/v0.1.5/eyes-native.log",
         "https://github.com/godotengine/godot/blob/4.7.2-stable/modules/gltf/gltf_document.cpp#L1414"
+      ]
+    },
+    {
+      "id": "touch-input-alias-lifecycle",
+      "kind": "decision",
+      "status": "verified",
+      "title": "터치 액션은 장치별 별칭과 손가락 소유권으로 종료한다",
+      "summary": "Godot4.7.2의 원래 터치보다 먼저 전달되는 에뮬레이션 마우스를 고려해 메뉴에서 모든 GUI손가락 해제 후 게임 입력을 활성화한다. touch_별칭만 해제해 물리 키 hold를 보존하고, pointer별 stick/look/action 소유권·버튼 refcount·process/physics edge를 유지한다. 취소·메뉴·회전·초점 손실에서 강공 release 공격과 잔여 입력을 차단한다. 실제 native이벤트 회귀를 포함한374검사0실패를 확인했으며 최종 Web/실기기 승인은 별도다.",
+      "tags": [
+        "mobile",
+        "touch",
+        "input",
+        "lifecycle",
+        "godot",
+        "web"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable official",
+        "validation": "Actual native ScreenTouch/Drag, distinct IDs17/59/83; integrated374 assertions0fail",
+        "scope": "Native regression and pinned official source; final Web and real Android/iOS validation separate"
+      },
+      "sources": [
+        "game/scripts/ui/touch_controls.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/game.gd",
+        "game/tests/mobile_input_regressions.gd",
+        "docs/MOBILE_WEB_RESEARCH.md",
+        "docs/validation/v0.1.6/native-initial.log",
+        "docs/validation/v0.1.6/mobile-input-focused.log"
+      ]
+    },
+    {
+      "id": "mobile-css-viewport-and-evidence",
+      "kind": "decision",
+      "status": "verified",
+      "title": "Web의 CSS·DPR·논리 viewport와 실제 터치 증거를 구분한다",
+      "summary": "CSS→canvas backing→논리 viewport 변환을 중복 적용하지 않고 Web safe-area는CSS env에서 읽는다. UI는CSS기준 크기로 유지하고3D render scale만DPR에맞춰 제한한다. 공개MIT 입력·반응형 스킬을 고정 출처로 읽고 native DPI/safe-area 예제를 Web에 그대로 적용하지 않았다. 모바일 검사는 genuine CDP touch와 primary IDB읽기만 사용하며 상태를 조작하지 않는다. native viewportfixture와 공식소스 검증은 실기기·Safari·성능 승인이 아니다. CompressedTexture2D 클래스명만으로 GPU압축포맷을 추정하지 않는다.",
+      "tags": [
+        "mobile",
+        "web",
+        "viewport",
+        "dpr",
+        "safe-area",
+        "qa",
+        "skills"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 stable official",
+        "research": "Pinned engine ed1daf0bf001b61586d9930840f2f1394092c079, MDN BCD381650773ddc196a34cbf759f31adba457e6bf46, MIT GodotPrompterd7b26cdb5fae14d4ef7b713c5bf259395e75c3c6",
+        "scope": "Coordinate/source/native proof; final full Web and physical Android/iOS GPU tests tracked separately"
+      },
+      "sources": [
+        "docs/MOBILE_WEB.md",
+        "docs/MOBILE_WEB_RESEARCH.md",
+        "game/web/shell.html",
+        "game/scripts/ui/hud.gd",
+        "game/scripts/ui/touch_controls.gd",
+        "tools/mobile_browser_smoke.py",
+        "tools/check_mobile_web.py",
+        ".agents/skills/input-handling/upstream.json",
+        ".agents/skills/responsive-ui/upstream.json",
+        "docs/validation/v0.1.6/prior-web-texture-probe.log"
+      ]
+    },
+    {
+      "id": "skin-material-semantics-rejection",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "피부 metallic 수치의 수정은 의미 경계와 실제 시각 검수까지 필요하다",
+      "summary": "실제 face-core UV표본에서 skin metallic약.234~.285를 확인했지만 보수적으로 고른287삼각형에 metallicFactor0만 적용한 파생은 중립 front/side에서 다각형 경계가 드러나 runtime반영을 기각했다. 원본BIN/UV/웨이트/모션/이미지를 보존해도 새material불연속은 생긴다. 51불확실triangle은 자동확장하지 않았고 실제Game A/B 전에 중립 시각gate에서 중단했다. 다음 단계는 피부·머리카락의 의미 경계와 실제 texture/geometry detail 검수다.",
+      "tags": [
+        "art",
+        "pbr",
+        "material",
+        "face",
+        "semantics",
+        "rejection"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "source": "Runtimebody4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c unchanged",
+        "candidate": "35ea57e7fde492ce52bbf2fc921535e3ccdd1f0926729b1162d54d40a3a22f9f rejected; no paid generations",
+        "scope": "One isolated material-only neutral-render experiment; no actual Game A/B, AAA approval or texture repaint"
+      },
+      "sources": [
+        "tools/audit_character_skin_materials.py",
+        "tools/requirements-art.txt",
+        "art_source/production/character_polish/skin_material_review/decision.json",
+        "art_source/production/character_polish/skin_material_review/README.md"
+      ]
+    },
+    {
+      "id": "mobile-driver-feedback-and-transient-observation",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "터치 자동 조작의 피드백 지연과 짧은 상태의 관찰 시점을 분리한다",
+      "summary": "최종앱의 local전체485.534초·CI전체433.972초가3pointer/sprint후보조원점이동의60초조건에서실패했다. CI는매steer의bounding_box RPC대기중timeout이었고끝위치는목표.726m/HP120/errors0였다. 별도lifecycle171.437초는실제약5.667m회피후cooldown을늦게읽어실패했다. 실패를게임결함이나통과로덮지않는다. 같은gesture의CSS geometry를캐시하고필요한이동확인후stickcenter/독립해제로setup이동을줄인다. 짧은상태는실입력전readonly관찰을arm하고미래physics snapshot을복사한다. 15초전체/UI·30초IDB·60초이동과최종1.2m조건은유지하며수정driver의최종통과는별도검증한다. Playwright1.62는페이지focus를기본고정해실제tab blur를가렸다. 빈페이지에서기본override만풀어trustedblur/focus를관찰했으며 Game검증은foreground복귀후실제pause/clear를요구한다.",
+      "tags": [
+        "mobile",
+        "qa",
+        "touch",
+        "feedback",
+        "timing",
+        "browser",
+        "pitfall",
+        "focus",
+        "playwright"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "source": "Game0.1.6 implementation31bc679b unchanged; PR0ee9b86/temporarymerge d364a87e; actualCDPtrustedtouch",
+        "validation": "Verified failure reproduction and post-action/feedback latency evidence. Revised driver full validation separate; not gameplay-state mutation or real-device approval",
+        "CI": "https://github.com/kosj/next-action-rpg/actions/runs/41195933000/job/124523618477"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/driver-failures/README.md",
+        "docs/validation/v0.1.6/driver-failures/local-nav/mobile-result.json",
+        "docs/validation/v0.1.6/driver-failures/local-transient/mobile-result.json",
+        "docs/validation/v0.1.6/driver-failures/ci-41195933000/mobile-result.json",
+        "tools/mobile_browser_smoke.py",
+        "tools/check_mobile_web.py",
+        "docs/validation/v0.1.6/driver-failures/framework-focus/native-tab-focus-probe.json"
+      ]
+    },
+    {
+      "id": "godot-window-resize-reentrant-screen-attach",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "Window size_changed 안의 content scale 재진입은 정상 좌표와 잘못된 최종 raster를 만들 수 있다",
+      "summary": "Godot4.7.2 Window는cached attach rect계산→Viewport._set_size→동기size_changed→cachedrect 화면부착순서다. 콜백의동기content_scale_size변경은nested계산후outeroldrect로덮였다. 실제390x844→844x390/DPR2에서DOM/window/content/final/stretch가모두정상인데최종raster는360x780/x664였다. 같은double driver·fresh·품질0에서controller만deferred/coalesced설정으로바꾸자360→1688pxfullwidth로수정됨을112.238초/errors0 실제PNG로확인했다. 입력cancel은즉시,최신CSS/content설정은outercallback후적용한다. Getter-only native검사는이최종screen-attach오류를잡지못하므로고정daylightfixture의실제PNGspan을확인한다.",
+      "tags": [
+        "mobile",
+        "web",
+        "viewport",
+        "resize",
+        "godot",
+        "reentrancy",
+        "raster",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+        "official_source_blobs": "window.cppbc56ddbd7b17cd8ec6355eeb76337849dec81b12; viewport.cpp54f9f2c4461ebc293dec9bccdbab3031c1c03f32",
+        "evidence": "Bad126.958s quality0 360px; fixed112.238s quality0 1688px, same double driver and SHA source inputs exceptTouchControls; initialquality1 also360px. No AAA/realdevice/performance approval",
+        "scope": "Actual finite Web raster A/B; final full browser, single-driver and published URL recorded separately"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/rotation/README.md",
+        "docs/validation/v0.1.6/rotation/before/mobile-rotation-metrics.json",
+        "docs/validation/v0.1.6/rotation/after-double/ab-comparison.json",
+        "game/scripts/ui/touch_controls.gd",
+        "game/scripts/ui/hud.gd",
+        "tools/mobile_browser_smoke.py",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/window.cpp#L1428",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/main/viewport.cpp#L1188"
+      ]
+    },
+    {
+      "id": "touch-scroll-button-event-propagation",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "모바일 ScrollContainer의 자식 Button은 실제 drag를 부모로 전달해야 한다",
+      "summary": "Godot4.7.2에서Container는PASS지만Button은STOP이고force_pass_scroll_events는wheel만예외여서Button-starttouchdrag가부모에막혔다. 실제x422,y293품질Button→y107.5의4trustedmoves후freshframe1341에서도Scroll0/max441/page350를233.834초실패로재현했다. 모바일helperButton/directCheckButton만PASS로바꾼동일HUD-onlyA/B가261.750초/errors0에서0→91·실제Done·idle/HP120/Rune35/pointers0·quality0primary를확인했다. Slider소유권/에뮬레이션/입력경로/한도는보존했고 SCROLL_BEGIN이pending click을취소한다. QA를빈여백으로우회하지않고freshscrollprogress15초와좌표캐시로무진행을일찍검출한다.",
+      "tags": [
+        "mobile",
+        "ui",
+        "scroll",
+        "button",
+        "touch",
+        "event-propagation",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079",
+        "evidence": "C10ecc2394 beforefrozen; afterdirtyscroll-after export. SameQA/Touch/art source hashes; onlyHUD changed. Native375/errors0; finiteButton-start/Done/primarysubset, not fullmobile/restart/hardware approval",
+        "remaining": "FinalcommittedfullWeb/publicworkflow tracked inPR8; actualAndroid/iOS/Safari/performance separate"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/scroll/README.md",
+        "docs/validation/v0.1.6/scroll/before/mobile-scroll-gestures.json",
+        "docs/validation/v0.1.6/scroll/after/scroll-ab-comparison.json",
+        "docs/validation/v0.1.6/native-after-scroll.json",
+        "game/scripts/ui/hud.gd",
+        "tools/mobile_browser_smoke.py",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/button.cpp#L878",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/scroll_container.cpp#L237",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/gui/base_button.cpp#L180"
+      ]
+    },
+    {
+      "id": "web-canvas-inline-css-viewport-feedback",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "Web canvas의 오래된 inline px가 모바일 viewport축소를 막을 수 있다",
+      "summary": "Godot4.7.2 adaptive는innerWidth/Height에서bitmap을정한뒤canvasnormalinlinepx를쓴다. 원래CSS100%에우선하는844px이360x640기기에서overflow/autozoom을만들어inner/scroll844x1501·visualscale.42654·bitmap1688x3002가됐다. 동일PCK/WASM/JS/QA의HTML-only width/height100%!important후allclient360x640·visualscale1·bitmap720x1280·logical360640·3row720px/44px버튼을152.776초/errors0진단에서확인했다. CSSclient와엔진bitmap/DPR소유를분리하며지표clamp나DPR삭제로우회하지않는다.",
+      "tags": [
+        "web",
+        "mobile",
+        "viewport",
+        "canvas",
+        "css",
+        "resize",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "godot": "4.7.2 ed1daf0bf001b61586d9930840f2f1394092c079; library_godot_display.jsblob81172591155ea563e5c0d00d5fc6ba40d7cc66fd",
+        "evidence": "Freshbefore155.660s failednarrow;CSS-onlyafter152.776s diagnostic/errors0; 8exportfilesidentical,onlyHTMLchanged",
+        "scope": "Actual mobile-emulated DOM/raster A/B; no full-settings/hardware approval. Later threeviewport/reboot functional result separated from loader pageerror."
+      },
+      "sources": [
+        "docs/validation/v0.1.6/canvas-css/README.md",
+        "docs/validation/v0.1.6/canvas-css/before/mobile-failure-browser-metrics.json",
+        "docs/validation/v0.1.6/canvas-css/after/mobile-narrow-metrics.json",
+        "docs/validation/v0.1.6/canvas-css/export-ab-manifest.json",
+        "game/web/shell.html",
+        "https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/platform/web/js/libs/library_godot_display.js#L299"
+      ]
+    },
+    {
+      "id": "web-loader-progress-after-dom-removal",
+      "kind": "pitfall",
+      "status": "verified",
+      "title": "완료된 로딩 UI에 늦게 오는 progress callback은 DOM수명을 확인한다",
+      "summary": "실제CSSafter의fullBrowserrestart기능은HP120/checkpoint0/quality1/Touch·volatileprimary==durable1을복원했지만loading.remove후onProgress의null.value접근pageerror1로전체FAIL이었다. 현DOMprogress존재가드로수정했고실제sourceHTML+stubEnginePromise+realChromeDOMfixture에서초기.5값과late완료를유지하면서beforeerror1/aftererror0을검증했다. 오류를필터링하거나기능성공을전체합격으로대체하지않으며최종actualWasm/publicreboot는별도검증한다.",
+      "tags": [
+        "web",
+        "loading",
+        "async",
+        "dom",
+        "lifecycle",
+        "qa",
+        "pitfall"
+      ],
+      "checked_on": "2026-10-31",
+      "context": {
+        "runtime": "Godot4.7.2 realrestart partial294.612s/errors1; sourcecaller afterloader removal",
+        "fixture": "Original source callback, real DOM,stubEngine only; oldnullerror and fixednoerror. Notgameplay/save/restartapproval",
+        "scope": "UIlifetimefix; final actualhosted/publicreboot required"
+      },
+      "sources": [
+        "docs/validation/v0.1.6/loader/README.md",
+        "docs/validation/v0.1.6/loader/fixture-current.json",
+        "docs/validation/v0.1.6/restart-functional-with-loader-error/restart-functional-and-error-summary.json",
+        "tools/check_loader_lifecycle.py",
+        "game/web/shell.html"
       ]
     }
   ]

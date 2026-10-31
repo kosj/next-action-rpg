@@ -11,6 +11,7 @@
 | 작업 | 프로젝트 스킬 |
 |---|---|
 | 전투·저장·입력·UI·게임 코드 | [.agents/skills/runefall-development/SKILL.md](.agents/skills/runefall-development/SKILL.md) |
+| 모바일 터치·반응형 UI | 개발 스킬과 [공식 모바일 근거](docs/MOBILE_WEB_RESEARCH.md), 고정 MIT 공개 [입력](.agents/skills/input-handling/SKILL.md)·[반응형 UI](.agents/skills/responsive-ui/SKILL.md) 스킬 |
 | 웹·Windows 빌드·릴리스·Pages | [.agents/skills/runefall-release/SKILL.md](.agents/skills/runefall-release/SKILL.md) |
 | Blender·VARCO·리그·반입 | [.agents/skills/runefall-art/SKILL.md](.agents/skills/runefall-art/SKILL.md) |
 | 지식 추가·오류 정정·스킬 갱신 | [.agents/skills/runefall-knowledge/SKILL.md](.agents/skills/runefall-knowledge/SKILL.md) |

@@ -1,0 +1,53 @@
+[
+  {
+    "stage": "focused_button_start_scroll",
+    "name": "ModalScroll",
+    "before_value": 0,
+    "before_frame": 922,
+    "start": [
+      422.0,
+      293.0
+    ],
+    "end": [
+      422.0,
+      107.5
+    ],
+    "downward": true,
+    "start_buttons": [
+      "균형 · 기본 해상도 / 그림자"
+    ],
+    "moves": [
+      {
+        "fraction": 0.25,
+        "seconds": 9.759
+      },
+      {
+        "fraction": 0.5,
+        "seconds": 16.109
+      },
+      {
+        "fraction": 0.75,
+        "seconds": 22.095
+      },
+      {
+        "fraction": 1,
+        "seconds": 28.696
+      }
+    ],
+    "outcome": "progress_observed",
+    "seconds": 33.117,
+    "after_scrolls": [
+      {
+        "h": 350,
+        "max": 441,
+        "name": "ModalScroll",
+        "page": 350,
+        "value": 91,
+        "w": 616,
+        "x": 114,
+        "y": 20
+      }
+    ],
+    "after_frame": 1178
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "narrow-before-landscape",
+    "scope": "Read original PNG only; daylight first-room full-width renderRect regression, not general art quality",
+    "png": "narrow-before-landscape.png",
+    "sha256": "077baf26e875e3e3acb80103b166600912e377cd3e4f3d87776d2242e75f4e17",
+    "size": [
+      1688,
+      780
+    ],
+    "minimum_span_fraction": 0.98,
+    "rows": [
+      {
+        "y": 195,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      },
+      {
+        "y": 390,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      },
+      {
+        "y": 585,
+        "nonblack_min": 0,
+        "nonblack_max": 1687,
+        "span": 1688,
+        "fraction": 1.0
+      }
+    ],
+    "passes": true
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "scope": "Actual mobile test export bytes and contemporaneous source hashes; dirty previews are not a committed-source or final-release approval",
+  "phase": "lifecycle-tail",
+  "rotation_driver": "playwright",
+  "started_utc": "2026-10-31T12:13:16.033155+00:00",
+  "source_head": "ecc2394b9fe3f85238b2f46b0e392c99fe961e53",
+  "source_tree_dirty": false,
+  "export_directory": "/workspace/next-action-rpg/build/web",
+  "source_sha256": {
+    "tools/mobile_browser_smoke.py": "9de8882dee9f756653257aa41fb18dccd864ab8027b7dbcc3eebe3870d30e82b",
+    "tools/check_mobile_web.py": "613713a645e0b6fc94a4105717567ba38354240f64076f50020ffd07c6e8bf51",
+    "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0",
+    "game/project.godot": "3b0a8d4333eeacb73042777377305475a55681e496463ee2645ec9c921258d8c",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "game/scripts/ui/hud.gd": "6c109ebbebe1e82df5e7cc77f4a4a0187d895c39df528f45282b311ec671b8b9",
+    "game/scripts/actors/player.gd": "db6779fff79258ec76a3d450b7d4db520487f7a2a2ba6162f17564caea48e7f2",
+    "game/scripts/game.gd": "c10ab6276683c651778b8b5282d0968fff4b56e74d8511231758d4cd341bc8d1",
+    "game/scripts/world/camera_rig.gd": "aed9480d5f959f8a1ba149ebcafdb6e977909d1cab7b2eeac8f29ccf385397ff",
+    "game/web/shell.html": "a9494fb0ac2c94ff8b9f729c57814c55493457a675584b5d36f5f0e53fc0ba00",
+    "game/assets/models/production/lyra_gameplay.glb": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+  },
+  "export_files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "FONT_LICENSE.txt": {
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded"
+    },
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_THIRD_PARTY.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 4036,
+      "sha256": "68993eca083d28ddce7d235602bf0fb250b014d5cd11730fc2273180997c610a"
+    },
+    "index.apple-touch-icon.png": {
+      "bytes": 13950,
+      "sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922"
+    },
+    "index.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "index.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 3115,
+      "sha256": "b65cad0d335c31c9f504a2e35b265889ec1ddb9493b841f3803f007f146180df"
+    },
+    "index.icon.png": {
+      "bytes": 5217,
+      "sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd"
+    },
+    "index.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "index.pck": {
+      "bytes": 102184312,
+      "sha256": "d2e1d6e36e214c323e7e60be646141adac53e571152567414935e0430dad55f2"
+    },
+    "index.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "server_closed": true,
+  "finished_utc": "2026-10-31T12:30:43.562336+00:00",
+  "export_bytes_unchanged": true
+}

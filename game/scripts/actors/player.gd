@@ -127,25 +127,25 @@ func _physics_process(delta: float) -> void:
 	combo_timeout = maxf(0.0, combo_timeout - delta)
 	if combo_timeout == 0.0:
 		combo_hits = 0
-	if Input.is_action_just_pressed("light"):
+	if TouchControls.action_just_pressed("light"):
 		input_buffer = 0.2
 		buffered_heavy = false
-	if Input.is_action_just_pressed("heavy"):
+	if TouchControls.action_just_pressed("heavy"):
 		heavy_held = 0.0
-	if Input.is_action_pressed("heavy"):
+	if TouchControls.action_pressed("heavy"):
 		heavy_held += delta
-	if Input.is_action_just_released("heavy"):
+	if TouchControls.action_just_released("heavy"):
 		input_buffer = 0.2
 		buffered_heavy = true
-	if Input.is_action_just_pressed("heal") and potions > 0 and health < max_health and strike == null:
+	if TouchControls.action_just_pressed("heal") and potions > 0 and health < max_health and strike == null:
 		potions -= 1
 		health = minf(max_health, health + max_health * 0.55)
 		presentation_heal_remaining = HEAL_PRESENTATION_DURATION
 		Audio.play_sound("rune")
 		skill_effect.emit(global_position, 1.6, Color("8deac2"))
-	var axes := Input.get_vector("left", "right", "forward", "back")
+	var axes := TouchControls.move_vector()
 	var direction := Vector3(axes.x, 0, axes.y).rotated(Vector3.UP, camera_yaw)
-	if Input.is_action_just_pressed("dodge") and dodge_cooldown <= 0.0 and stagger <= 0.0 and (strike == null or strike.data.can_cancel(strike.elapsed)):
+	if TouchControls.action_just_pressed("dodge") and dodge_cooldown <= 0.0 and stagger <= 0.0 and (strike == null or strike.data.can_cancel(strike.elapsed)):
 		strike = null
 		presentation_heal_remaining = 0.0
 		dodge_time = 0.32
@@ -153,12 +153,12 @@ func _physics_process(delta: float) -> void:
 		invulnerability = 0.29
 		dodge_direction = direction.normalized() if direction.length() > 0.1 else facing
 		Audio.play_sound("dodge")
-	if Input.is_action_just_pressed("parry") and parry_cooldown <= 0.0 and strike == null and dodge_time <= 0.0:
+	if TouchControls.action_just_pressed("parry") and parry_cooldown <= 0.0 and strike == null and dodge_time <= 0.0:
 		presentation_heal_remaining = 0.0
 		parry_time = 0.22
 		parry_cooldown = 0.65
 	for index in range(3):
-		if Input.is_action_just_pressed("skill_%d" % (index + 1)):
+		if TouchControls.action_just_pressed("skill_%d" % (index + 1)):
 			use_skill(index)
 	if hit_pause > 0.0:
 		hit_pause -= delta
@@ -172,7 +172,7 @@ func _physics_process(delta: float) -> void:
 	elif input_buffer > 0.0 and dodge_time <= 0.0 and parry_time <= 0.0 and stagger <= 0.0:
 		begin_attack(buffered_heavy, 0)
 	input_buffer = maxf(0.0, input_buffer - delta)
-	var speed := 8.5 if Input.is_action_pressed("sprint") else 6.4
+	var speed := 8.5 if TouchControls.action_pressed("sprint") else 6.4
 	if direction.length() > 0.1 and strike == null and dodge_time <= 0.0:
 		facing = direction.normalized()
 	if is_instance_valid(locked_target) and not locked_target.dead and strike == null:
@@ -247,7 +247,7 @@ func presentation_snapshot(speed: float = -1.0) -> Dictionary:
 	}
 
 func _charge_presentation_active() -> bool:
-	return heavy_held > 0.0 and Input.is_action_pressed("heavy") and strike == null and dodge_time <= 0.0 and parry_time <= 0.0 and stagger <= 0.0 and not dead
+	return heavy_held > 0.0 and TouchControls.action_pressed("heavy") and strike == null and dodge_time <= 0.0 and parry_time <= 0.0 and stagger <= 0.0 and not dead
 
 func on_hit(amount: float, point: Vector3) -> void:
 	rune = minf(max_rune, rune + 7.0 + Session.upgrades[2] * 1.5)

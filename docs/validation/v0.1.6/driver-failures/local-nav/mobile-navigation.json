@@ -1,0 +1,234 @@
+[
+  {
+    "target": [
+      4,
+      5
+    ],
+    "physics_frame": 983,
+    "position": [
+      0,
+      6
+    ],
+    "distance": 4.123105625617661,
+    "desired_strength": 0.45913820320220755,
+    "raw_radius": 0.5348588547538985
+  },
+  {
+    "target": [
+      4,
+      5
+    ],
+    "physics_frame": 1127,
+    "position": [
+      0.380099833011627,
+      5.90497589111328
+    ],
+    "distance": 3.7313078916726674,
+    "desired_strength": 0.4101634864590834,
+    "raw_radius": 0.4927405983548117
+  },
+  {
+    "target": [
+      4,
+      5
+    ],
+    "stopped_position": [
+      4.43956565856934,
+      4.8901104927063
+    ],
+    "physics_frame": 1223
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2442,
+    "position": [
+      5.43620634078979,
+      -6.04875230789185
+    ],
+    "distance": 13.218349804592565,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2602,
+    "position": [
+      4.8746976852417,
+      -4.80423021316528
+    ],
+    "distance": 11.853019363081048,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2650,
+    "position": [
+      3.19017171859741,
+      -1.07065856456757
+    ],
+    "distance": 7.757023148787908,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2730,
+    "position": [
+      0.382623583078384,
+      5.1519570350647
+    ],
+    "distance": 0.9303642709734696,
+    "desired_strength": 0.1,
+    "raw_radius": 0.22600000000000003
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2810,
+    "position": [
+      -2.1792619228363,
+      10.8300828933716
+    ],
+    "distance": 5.298951149535645,
+    "desired_strength": 0.6061188936919556,
+    "raw_radius": 0.6612622485750819
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 2874,
+    "position": [
+      -2.46002244949341,
+      11.4523115158081
+    ],
+    "distance": 5.9815893638250675,
+    "desired_strength": 0.6914486704781334,
+    "raw_radius": 0.7346458566111947
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "stopped_position": [
+      0.18238590657711,
+      5.59573125839233
+    ],
+    "physics_frame": 2986
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3274,
+    "position": [
+      13.9606704711914,
+      7.53738212585449
+    ],
+    "distance": 14.045065461082492,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3434,
+    "position": [
+      13.282112121582,
+      7.46265602111816
+    ],
+    "distance": 13.362404912529357,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3490,
+    "position": [
+      8.53215599060059,
+      6.93957328796387
+    ],
+    "distance": 8.583733675469945,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3554,
+    "position": [
+      3.1036479473114,
+      6.34178447723389
+    ],
+    "distance": 3.122410480658863,
+    "desired_strength": 0.33405131008235783,
+    "raw_radius": 0.42728412667082777
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3634,
+    "position": [
+      -3.28674674034119,
+      5.63806438446045
+    ],
+    "distance": 3.306614813512368,
+    "desired_strength": 0.35707685168904596,
+    "raw_radius": 0.4470860924525795
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3698,
+    "position": [
+      -5.55349159240723,
+      5.38843059539795
+    ],
+    "distance": 5.587064166768008,
+    "desired_strength": 0.642133020846001,
+    "raw_radius": 0.6922343979275608
+  },
+  {
+    "target": [
+      0,
+      6
+    ],
+    "physics_frame": 3778,
+    "position": [
+      -2.28295373916626,
+      5.74857902526855
+    ],
+    "distance": 2.29675646983047,
+    "desired_strength": 0.23084455872880874,
+    "raw_radius": 0.33852632050677556
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "outcome": "failed",
+  "stage": "landscape_and_narrow_orientation",
+  "seconds": 404.6,
+  "errors": [],
+  "exception_type": "TimeoutError",
+  "exception": ""
+}

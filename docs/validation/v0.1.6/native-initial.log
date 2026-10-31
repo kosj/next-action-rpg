@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RUNEFALL_CHARGE_PREPARATION: {"grip_travel_m":0.0446708202362061,"held":true,"hip_drop_m":0.0453290939331055}
+RUNEFALL_EYE_REST: {"actual_head":"[X: (-1.818952, 0.0, 0.0), Y: (-0.0, 1.764642, -0.44116), Z: (-0.0, -0.44116, -1.764642), O: (-0.002966, 1.610273, 0.007067)]","expected_head":"[X: (-1.818952, 0.0, 0.0), Y: (-0.0, 1.764642, -0.44116), Z: (-0.0, -0.44116, -1.764642), O: (-0.002966, 1.610273, 0.007067)]","eye_anchor_max_error_m":0.00000129387763081468,"head_origin_error_m":0.000000119213154903264}
+RUNEFALL_EYE_ATTACHMENT: {"actual_pose_max_error_m":0.000000533120157797384,"actual_pose_samples":57,"body_sha256":"4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c","diameters_m":[0.0248002260923386,0.0248000547289848],"external_1_25_diameters_m":[0.0310001838952303,0.0310001280158758],"external_transform_anchor_max_error_m":0.00000186210866104375,"eyes_sha256":"d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4","import_vertex_max_error_m":0.00000129653085423342,"rest_anchor_max_error_m":0.00000129387763081468,"scope":"Attachment/units/materials only; eyelid collisions and AAA visual approval are separate."}
+RUNEFALL_MOBILE_INPUT: {"completed":true,"landscape_viewport":[960.0,540.0],"pointer_ids":[17,59,83],"portrait_viewport":[390.0,844.0],"scope":"Native event/controller/pointer/lifecycle regression, not browser CSS/touch-hardware or mobile performance approval.","source_sha256":"15e4a7f44737f28c0e0d4ec5f94a853c7a429e7850c50de5a5a4f085a5172166"}
+RUNEFALL_TESTS: 374 checks, 0 failures
+
