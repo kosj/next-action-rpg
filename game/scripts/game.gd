@@ -423,5 +423,15 @@ func apply_quality() -> void:
 	get_viewport().scaling_3d_scale = render_scale
 	if sanctuary != null:
 		for node in sanctuary.get_children():
-			if node is DirectionalLight3D and node.light_energy > 1:
+			# Quality follows the light's role, independently of art-direction energy.
+			if node is DirectionalLight3D and node.name == &"SanctuaryKey":
 				node.shadow_enabled = Session.quality == 0
+	get_tree().call_group("grounding_shadows", "refresh_quality")
+
+func lighting_presentation_report() -> Dictionary:
+	# Read actual scene nodes; this report cannot apply quality or alter lights.
+	var key := sanctuary.get_node_or_null("SanctuaryKey") as DirectionalLight3D if is_instance_valid(sanctuary) else null
+	var fill := sanctuary.get_node_or_null("SanctuaryFill") as DirectionalLight3D if is_instance_valid(sanctuary) else null
+	return {"key_present":is_instance_valid(key), "fill_present":is_instance_valid(fill),
+		"key_shadow_enabled":key.shadow_enabled if is_instance_valid(key) else false,
+		"fill_shadow_enabled":fill.shadow_enabled if is_instance_valid(fill) else false}

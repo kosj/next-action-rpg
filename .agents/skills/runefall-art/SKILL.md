@@ -91,6 +91,14 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 4. 원본 JPG/PNG와 밉맵 포함 `.ctex`, 전체 PCK/Web 전송량, 상주 메모리를 따로 측정합니다. 이번 원본9,785,368 bytes가 독립 lossless+mip import에서21,504,226 bytes가 됐습니다. 소스 파일 예산만으로 Web 빌드 용량 통과를 예상하지 말고 최종 export gate를 실행합니다. 압축·LOD 변경 뒤에는 비스듬한 바닥의 반짝임·얼굴/손·재질 구분을 다시 봅니다.
 5. `python art_source/production/courtyard_materials/sync_materials.py`로 pinned 해시·용량·import 정책을 검증합니다. `--download`는 누락 원본만 공식 공개 URL에서 복구하며 기존 파일을 조용히 교체하지 않습니다. 새 원본은 새 manifest와 중립 조명·실제 게임 검토를 거칩니다.
 
+## 조명과 품질 모드를 비교할 때
+
+[첫 공간 조명 제작](../../../docs/ENVIRONMENT_LIGHTING_SLICE.md)처럼 UI label·저장 index·실제 shadow flag·render scale/DPR부터 확인합니다. `0/1`의 일반적 관례로 그림자 역전 버그를 추정하지 않습니다. 같은 source/pose/camera/UI의 q0/q1와 source 전후를 각각 비교하고, controlled scene-view의 원본 PNG를 실제 입력·Web/DPR·실기기 성능 승인으로 바꾸지 않습니다.
+
+고정 엔진의 renderer source와 해당 버전 공식 표에서 실제 tone mapper dispatch·sky/ambient/reflection 혼합·fog/postprocess 경로를 확인합니다. 오래된 Compatibility 한계나 getter 숫자만으로 지원·화면을 확정하지 않습니다. 광원의 밝기 변경과 quality shadow 권한을 분리하고 실제 모드 전환을 검사합니다. 근사 지면 ellipse는 실제 support ray·높이/normal/no-hit·깊이·모드별 중복 방지·노드/질의 수명 한도와 원본 raster를 남기며 정확한 접촉 그림자·물리/AAA 승인과 구분합니다. 구체적 값은 recipe/source와 [검증 기록](../../../docs/validation/v0.1.11/README.md)을 원본으로 사용합니다.
+
+[조명 후보 검수](../../../docs/validation/v0.1.11/lighting-review/README.md)처럼 shadow acne가 생긴 원본을 기각하고 실제 그림자 모드·단일 bias 변수·후보별 source inventory로 원인을 좁힙니다. 촬영 뒤 getter/telemetry가 바뀌어도 예전 원본이 최종 HUD source와 exact하다고 표시하지 않습니다. 촬영 입력과 후속 native/브라우저의 입력 해시를 따로 보존합니다.
+
 ## 대표 구간 최종 아트 판정
 
 - 실제 게임의 전신·얼굴·양손 근접과 플레이 카메라 영상, Web 품질0/1·Windows 같은 구도를 확보합니다. 콘셉트·스튜디오 렌더·게임 캡처와 당시 커밋/입력 해시를 구분합니다.

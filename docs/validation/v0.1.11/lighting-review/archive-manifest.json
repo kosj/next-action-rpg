@@ -1,0 +1,122 @@
+{
+  "scope": "Public immutable raw8baseline/final PNG plus rejected001 original and curated reports. No image processing; manifest excludes itself. Scene report curation preserves original raw report identity.",
+  "file_count": 23,
+  "total_bytes": 13028989,
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 4962,
+      "sha256": "ce7e29198ac769479488461093fc30ddec3647407ed78cb5272fcdd8a2d078e5"
+    },
+    {
+      "file": "baseline-001/capture-inputs.json",
+      "bytes": 38751,
+      "sha256": "85c47ba9d1567090007d167f29c6d12ba23dbc6e2721cfa6f51af30d3fdc8f44"
+    },
+    {
+      "file": "baseline-001/capture.json",
+      "bytes": 2623,
+      "sha256": "2feb3ec39088cb5912eb17cb2fe2b2c2194ffc05fd222c50117062c9bd70c5e5"
+    },
+    {
+      "file": "baseline-001/fight-q0.png",
+      "bytes": 1614056,
+      "sha256": "5f715f903bd0a7f78f859ec27dc94664e6f418c30a68384e8bd51400d3a76154"
+    },
+    {
+      "file": "baseline-001/fight-q1.png",
+      "bytes": 1220035,
+      "sha256": "48c8c5149771e86a19fc1ffe6450f07db3304a7cd51a4c82704e09f2cf56b7e2"
+    },
+    {
+      "file": "baseline-001/overview-q0.png",
+      "bytes": 1542462,
+      "sha256": "b67cf6746a48428f15d7a6d44cd16b452cf979b43f3689ae3e438e9599e32fe1"
+    },
+    {
+      "file": "baseline-001/overview-q1.png",
+      "bytes": 1191581,
+      "sha256": "597d7ffef666200f1aad3b808f74194b7154390001a1d70d95466b8dd8793c97"
+    },
+    {
+      "file": "baseline-001/runtime-inputs.json",
+      "bytes": 38751,
+      "sha256": "85c47ba9d1567090007d167f29c6d12ba23dbc6e2721cfa6f51af30d3fdc8f44"
+    },
+    {
+      "file": "baseline-001/scene-review.json",
+      "bytes": 24705,
+      "sha256": "feef460cb8621404d0e86f3e3d9cb361e32239a644845edbfcf87a95cd65ff2c"
+    },
+    {
+      "file": "baseline-001/source-inputs.json",
+      "bytes": 38460,
+      "sha256": "71ddbabffbbee6bf7faa31bb644266bc4efca44067bfc54e66f17402c9c4d5ba"
+    },
+    {
+      "file": "candidate-002/capture-inputs.json",
+      "bytes": 40228,
+      "sha256": "b5d4b61f1945c540b45c266c8082353547b45f18aff3d567a53dc4946b63173e"
+    },
+    {
+      "file": "candidate-002/capture.json",
+      "bytes": 2611,
+      "sha256": "ddda9ae02621b3ec67c0c84d2c2298d812644ab3929e733bfe2fc77dbcb667c3"
+    },
+    {
+      "file": "candidate-002/fight-q0.png",
+      "bytes": 1603764,
+      "sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9"
+    },
+    {
+      "file": "candidate-002/fight-q1.png",
+      "bytes": 1172653,
+      "sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1"
+    },
+    {
+      "file": "candidate-002/overview-q0.png",
+      "bytes": 1526052,
+      "sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2"
+    },
+    {
+      "file": "candidate-002/overview-q1.png",
+      "bytes": 1151347,
+      "sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e"
+    },
+    {
+      "file": "candidate-002/runtime-inputs.json",
+      "bytes": 40228,
+      "sha256": "b5d4b61f1945c540b45c266c8082353547b45f18aff3d567a53dc4946b63173e"
+    },
+    {
+      "file": "candidate-002/scene-review.json",
+      "bytes": 37699,
+      "sha256": "77ee9a2dad6ce17ad9d4d3029af9c47a751f5b003de63f945be07512a3f715ec"
+    },
+    {
+      "file": "candidate-002/source-inputs.json",
+      "bytes": 40228,
+      "sha256": "9eb5ef243b0442122bfc09ed4b8da991120091c6418a8767832a8e0cf2a8f0d4"
+    },
+    {
+      "file": "paired-baseline-comparison.json",
+      "bytes": 3253,
+      "sha256": "4d9edef968b1bdeeed1bc045fcaf91dd834ab048b902ac567834be90b3efae37"
+    },
+    {
+      "file": "rejected-001/first-capture-checkpoint.json",
+      "bytes": 34726,
+      "sha256": "a588d0845d350eee6140093e52a6fa60038d1afe982641fee818da97dec0781b"
+    },
+    {
+      "file": "rejected-001/original-png/fight-q0.png",
+      "bytes": 1658737,
+      "sha256": "5f1d9c882b9ea520242447529778c4c7cdb4466021ceee8815733eda02603fed"
+    },
+    {
+      "file": "rejected-001/review.json",
+      "bytes": 1077,
+      "sha256": "01c9df04a14ec87d30e89f44c34e54548b402b2666d263539d19abb7ed134547"
+    }
+  ]
+}

@@ -81,6 +81,22 @@
 - 동일 화면 ribbon on/off·blend 비교·깊이 설정·밝은 배경/edge-on/장애물 가림: 미입력.
 - 정지 fixture / 실시간 교전·중단 / 품질·플랫폼 / 목표 GPU 성능 범위 각각: pending.
 
+## 품질 모드와 조명 비교
+
+숫자가 클수록 높은 품질이라고 가정하지 않는다. UI label·저장값 의미·실제 렌더 scale/DPR·주광 shadow flag를 함께 읽고 기준표를 만든다. 기존 성능 모드 화면에 그림자가 없다는 사실을 고품질 설정의 결함으로 확정하지 않는다. 모드의 의미를 확인한 뒤 source 전후와 품질별 비교를 나눈다.
+
+- 같은 실제 장면·몸체·재질·포즈·카메라·해상도·UI에서 원본/후보 × 각 품질 모드의 원본 raster를 확보한다. source/입력 해시·renderer/adapter·실효 scale·env/light·종료 상태를 남긴다. native 화면을 Web/DPR 화면으로, controlled scene-view를 정상 입력·기기 FPS로 바꾸어 해석하지 않는다.
+- 현재 엔진 판본의 공식 지원표와 고정 renderer source를 함께 확인한다. UI에 property가 보이거나 값이 읽히는 사실은 그 renderer에서의 구현·실제 픽셀·비용·품질 채택을 모두 증명하지 않는다. 오래된 지원표로 새 판본의 tone mapper·fog·postprocess를 일괄 배제하거나, 지원된다는 이유만으로 무거운 기능을 켜지 않는다.
+- sky/ambient/reflection의 실제 혼합 경로를 확인한다. 완전한 sky contribution이 explicit ambient color/energy 항을 대체하는 구현에서는 energy 하나만으로 전체 diffuse 대비를 제어한다고 가정하지 않는다. source의 입력 구성과 shader 식·runtime 설정·같은 조건의 화면을 연결한다.
+- 광원의 품질 권한은 밝기보다 역할로 연결한다. 아트의 key intensity를 조정해도 성능 모드의 real shadow 정책이 바뀌지 않도록 실제 전환과 반환을 검사한다. 저장된 품질 index의 의미를 임의로 뒤집지 않는다.
+- 저비용 ellipse/blob가 필요한 경우 실제 support ray·normal/높이/no-hit·깊이 검사·모드별 중복 방지·노드/질의/수명 한도를 선언한다. 예측·캐시·평면/경사·ledge·teleport·정지/이동을 구분한다. 이는 근사 grounding이며 정확한 접촉 그림자·지형 IK·물리·AAA 승인과 다르다. 그림을 위해 collider·RNG·actor transform을 바꾸지 않는다.
+
+원본의 밝은 돌/머리·어두운 갑옷·발·검·적 예고·출구가 후보에서 분리되는지 UI를 켠 화면으로 판정한다. 후보만 노출/색을 후처리하거나 숫자·그림자 유무·자동 검사 수만으로 채택하지 않는다. 같은 원본 PNG·기각한 후보·새 악화와 한계를 보존한다. 목표 하드웨어·브라우저·Windows 렌더 경로와 최종 AAA 판정은 별도다.
+
+조명 변경 뒤 규칙적인 바닥 줄무늬가 생기면 실제 그림자가 있는 모드와 생략한 모드의 같은 화면을 먼저 대조한다. shadow bias나 cascade를 원인으로 추정한 단계와 단일 변수 복구 후 실제 원본에서 결함이 사라진 단계를 구분한다. 기각한 원본/환경/해시를 남기고 runtime source inventory로 수정 범위를 확인한다. 그림자가 없는 모드의 원본 해시가 그대로라는 사실은 그 모드의 새로운 품질 검수를 대신하지 않는다.
+
+촬영 뒤 관측용 getter·HUD telemetry만 추가했더라도 촬영 source와 최종 source가 정확히 같다고 기록하지 않는다. 변경된 파일의 양쪽 해시와 변경 목적을 기록하고, 조명·재질·배우 배치 source의 일치 범위와 최종 native/브라우저 검증을 나눈다. 같은 픽셀이라고 추정할 수 있는 변경과 실제 재촬영한 원본을 구분한다.
+
 ## 재질·장면·실기기
 
 | 검토 항목 | 근거/결함 | 상태 |

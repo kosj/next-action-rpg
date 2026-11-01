@@ -1,0 +1,131 @@
+{
+  "checked_at_utc": "2026-11-01T22:08:45.404376+00:00",
+  "scope": "Pinned engine source and versioned official renderer documentation retrieved after GitHub MCP reading; capability/source interpretation only, not runtime/raster/performance approval",
+  "sources": [
+    {
+      "file": "renderers.rst",
+      "url": "https://raw.githubusercontent.com/godotengine/godot-docs/4.7/tutorials/rendering/renderers.rst",
+      "bytes": 30230,
+      "sha256": "74b0168d740fdd75cd92f644f37dca748a098f660a4d037d4514a81967560d65",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    },
+    {
+      "file": "scene.glsl",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/gles3/shaders/scene.glsl",
+      "bytes": 99241,
+      "sha256": "2c77be0c85b7ab1a85ed8009c77cdb6216f1494d43083592213ad68f9e812977",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    },
+    {
+      "file": "tonemap_inc.glsl",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/gles3/shaders/tonemap_inc.glsl",
+      "bytes": 8478,
+      "sha256": "a0dea1a09f4d89739d5d3447c04929146bbf266e72532b68b7d76705216f69da",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    },
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/gles3/rasterizer_scene_gles3.cpp",
+      "bytes": 212186,
+      "sha256": "6d0719c9cd2caf685a9825028183bdf058081d7bc92d4b27ed2587f39b081221",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    },
+    {
+      "file": "environment.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/scene/resources/environment.cpp",
+      "bytes": 69080,
+      "sha256": "9283f2ef22ba189785576dff02a8df7e8b76409131d6879123446e5f6f19af59",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    },
+    {
+      "file": "light_3d.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/scene/3d/light_3d.cpp",
+      "bytes": 35750,
+      "sha256": "ea6457cf39f216bba558ec5010bf3fb5af9a6b0acbad0fdb463aaed0dda43820",
+      "http_status": 200,
+      "tls_verification": "default enabled"
+    }
+  ],
+  "findings": [
+    {
+      "file": "scene.glsl",
+      "lines": [
+        2472,
+        2489
+      ],
+      "finding": "Ambient color*ambient energy is mixed with sky cube*background energy using sky contribution; contribution1 replaces the ambient-color term."
+    },
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "lines": [
+        2410,
+        2421,
+        2988,
+        2997
+      ],
+      "finding": "GL Compatibility implements SSAO/glow postprocessing; SSAO intensity/radius are scaled in this implementation."
+    },
+    {
+      "file": "tonemap_inc.glsl",
+      "lines": [
+        172,
+        194
+      ],
+      "finding": "LINEAR/REINHARD/FILMIC/ACES/AGX tone mapper variants exist in pinned4.7.2 GLES3."
+    },
+    {
+      "file": "light_3d.cpp",
+      "lines": [
+        592,
+        620
+      ],
+      "finding": "Directional shadow default4 cascades;2 cascade enum and sky light-only enum registered."
+    },
+    {
+      "file": "environment.cpp",
+      "lines": [
+        1175,
+        1193
+      ],
+      "finding": "Some glow parameters and most advanced SSAO parameters hidden in Compatibility; basic SSAO enabled/radius/intensity exposed."
+    }
+  ],
+  "not_assumed": [
+    "No SSAO/glow enabled by lighting candidate without separate performance/quality review",
+    "No volumetric fog/SSR/PCSS support inferred",
+    "Quality0/1 index is actual HUD0balanced/1performance; no inversion bug"
+  ],
+  "additional_read_ranges": [
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "lines": [
+        1598,
+        1634
+      ],
+      "finding": "Background multiplier is packed into ambient alpha, explicit ambient color*ambient energy into RGB; shader blends these using sky contribution. This is a source interpretation, not observed candidate pixels."
+    },
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "lines": [
+        2511,
+        2532,
+        2832,
+        2833
+      ],
+      "finding": "Environment tone mapper is read into the UBO; APPLY_TONEMAPPING is enabled on the non-postprocessing path."
+    },
+    {
+      "file": "scene.glsl",
+      "lines": [
+        2793,
+        2798
+      ],
+      "finding": "The enabled path calls apply_tonemapping before linear_to_srgb; tonemap_inc.glsl dispatches AGX to tonemap_agx. This is not proof of adopted candidate pixels or performance."
+    }
+  ]
+}

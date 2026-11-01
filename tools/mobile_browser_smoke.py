@@ -24,6 +24,8 @@ import tempfile
 import time
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
+from browser_smoke import QUALITY_PRESENTATION_READY, assert_quality_presentation
+
 from PIL import Image
 from playwright.async_api import async_playwright
 
@@ -542,6 +544,12 @@ class MobileRun:
           obs.completed_ms=performance.now()-started;return structuredClone(obs);
         }""".replace("READONLY_READER_LITERAL",self.reader)
 
+    async def quality_presentation(self, index, label):
+        status = await self.wait(QUALITY_PRESENTATION_READY, index)
+        assert_quality_presentation(status, index)
+        await self.record(label + "-actual-lighting", status=status)
+        return status
+
     async def set_quality(self, index, label):
         before = await self.idle()
         await self.touch_action("pause")
@@ -553,6 +561,7 @@ class MobileRun:
         await self.wait("s.quality === a", index)
         await self.tap_button("완료")
         await self.stable(before)
+        await self.quality_presentation(index, label)
         await self.commit(index)
 
     async def stick(self, vector=(0, 0)):
@@ -1078,6 +1087,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                     await qa.tap_button("여정 이어가기")
                     restored = await qa.stable()
                     assert restored["checkpoint"] == 0 and restored["health"] > 0 and abs(restored["z"] - 6) < 1.5, restored
+                    await qa.quality_presentation(1, "restart")
                     await qa.layout("15-restarted-touch-controls")
                     await qa.commit(1)
                 except Exception:

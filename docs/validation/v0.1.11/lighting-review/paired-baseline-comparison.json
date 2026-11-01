@@ -1,0 +1,63 @@
+{
+  "scope": "Deterministic prescribed idle scene view; no real-input, combat motion, hardware performance, Web raster or AAA approval. Visual adoption belongs to reviewer.",
+  "baseline_report": "baseline-001/scene-review.json",
+  "baseline_report_sha256": "0b0084d18a62e0efa6a236c3de6478894dc46bc0f3990256e061b278312c2b56",
+  "candidate_report": "candidate-002/scene-review.json",
+  "candidate_report_sha256": "261c1fbc06b55c208a03978a58651ba25edf92bd59becfc3a8b291de432de5f9",
+  "fixture_hashes_identical": true,
+  "fixture_sha256": {
+    "tests/lighting_review_capture.gd": "db2ef75a687e620ad7044ffdf284119b81ab14a1c76b240c653083cf01d9e3d9",
+    "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+  },
+  "actual_hud_visible_both": true,
+  "renderer_both": "gl_compatibility",
+  "adapter_both": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "paired_shots": [
+    {
+      "view": "fight",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "5f715f903bd0a7f78f859ec27dc94664e6f418c30a68384e8bd51400d3a76154",
+      "candidate001_sha256": "5f1d9c882b9ea520242447529778c4c7cdb4466021ceee8815733eda02603fed",
+      "after_sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9",
+      "candidate001_raster_identical": false
+    },
+    {
+      "view": "overview",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "b67cf6746a48428f15d7a6d44cd16b452cf979b43f3689ae3e438e9599e32fe1",
+      "candidate001_sha256": "bb57351773429b391ff3acd8b6d630d6bad6be3b6d22ca310786390dbece4599",
+      "after_sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2",
+      "candidate001_raster_identical": false
+    },
+    {
+      "view": "fight",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "48c8c5149771e86a19fc1ffe6450f07db3304a7cd51a4c82704e09f2cf56b7e2",
+      "candidate001_sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+      "after_sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+      "candidate001_raster_identical": true
+    },
+    {
+      "view": "overview",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "597d7ffef666200f1aad3b808f74194b7154390001a1d70d95466b8dd8793c97",
+      "candidate001_sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+      "after_sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+      "candidate001_raster_identical": true
+    }
+  ],
+  "note": "Candidate001 preserved as rejected shadow-acne diagnostic. Only runtime source delta to002: sanctuary normal bias1.1 to2.0. Bothq1 originals are expected identical.",
+  "report_hash_scope": "baseline_report_sha256/candidate_report_sha256 refer to raw reports before public curation; curated report hashes are in archive-manifest.json."
+}

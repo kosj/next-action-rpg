@@ -1,0 +1,56 @@
+{
+  "scope": "Read-only source bytes preservation for critical original camera/combat/curve/actors/models; not native/raster/browser or performance approval",
+  "baseline": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+  "files": [
+    {
+      "path": "game/scripts/world/camera_rig.gd",
+      "sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/scripts/core/strike.gd",
+      "sha256": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/scripts/core/attack_data.gd",
+      "sha256": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/scripts/actors/player.gd",
+      "sha256": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/scripts/actors/enemy.gd",
+      "sha256": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/data/charged_heavy.tres",
+      "sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/data/charged_blade_curve.json",
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/assets/models/production/sentinel_weight_gameplay.glb",
+      "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "game/assets/models/production/rune_greatsword_geometry.glb",
+      "sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+      "unchanged_from_baseline": true
+    }
+  ]
+}

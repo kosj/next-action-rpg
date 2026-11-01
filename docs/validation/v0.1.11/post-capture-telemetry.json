@@ -1,0 +1,80 @@
+{
+  "scope": "Postcapture source boundary, not a new raster take. Root reported read-only quality/grounding telemetry additions to Game/HUD/ActorVisual; full captured runtime source is not byte-identical to final source.",
+  "state": "Source boundary checked; exact final local native508/0 and exports completed in separate native-final-checkpoint.json/local-preview-build.json. Browser/clean CI/public/release pending at this snapshot.",
+  "changed_source_role": "Read-only runtime presentation getter/HUD telemetry for actual browser assertions; no claim that the older PNG was captured from these final three source bytes.",
+  "lighting_grounding_sources_unchanged": true,
+  "files": [
+    {
+      "game_relative_file": "scripts/game.gd",
+      "capture002": {
+        "sha256": "465f452692622b0be10c973a3cb3ca5b198666a1df311a89f05801ab450f9a97",
+        "bytes": 19371
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "1bf3f102b9ffeb3636deea9a920a9716a5c54a5cf1b5872056f18424cf0946db",
+        "bytes": 19991
+      },
+      "bytes_identical": false
+    },
+    {
+      "game_relative_file": "scripts/ui/hud.gd",
+      "capture002": {
+        "sha256": "0e4113f96b80a6349f9061cd9d3bde30a248a0b35a10a22dd02453e066c1e937",
+        "bytes": 35538
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "f3e5eda85f14baf7000b1bcc2bdcc1a074c41dcfe75f1d9646173891c3e478fc",
+        "bytes": 35827
+      },
+      "bytes_identical": false
+    },
+    {
+      "game_relative_file": "scripts/actors/actor_visual.gd",
+      "capture002": {
+        "sha256": "669e45c7963e47b600c9f6155b20c1121b93154425ca065c2900d7dbc482122d",
+        "bytes": 12891
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec",
+        "bytes": 12999
+      },
+      "bytes_identical": false
+    },
+    {
+      "game_relative_file": "scripts/actors/grounding_shadow.gd",
+      "capture002": {
+        "sha256": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+        "bytes": 6677
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+        "bytes": 6677
+      },
+      "bytes_identical": true
+    },
+    {
+      "game_relative_file": "assets/shaders/grounding_shadow.gdshader",
+      "capture002": {
+        "sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+        "bytes": 453
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+        "bytes": 453
+      },
+      "bytes_identical": true
+    },
+    {
+      "game_relative_file": "scripts/world/sanctuary.gd",
+      "capture002": {
+        "sha256": "1b21d87e069ea4465ed15047333ec2517a28a212e1864b7cb5e0765b04dec96b",
+        "bytes": 15300
+      },
+      "post_capture_frozen_runtime": {
+        "sha256": "1b21d87e069ea4465ed15047333ec2517a28a212e1864b7cb5e0765b04dec96b",
+        "bytes": 15300
+      },
+      "bytes_identical": true
+    }
+  ]
+}

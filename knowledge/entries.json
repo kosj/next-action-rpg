@@ -2013,7 +2013,7 @@
       "kind": "workflow",
       "status": "pending",
       "title": "재저작 active 몸·출처 고정 칼날 곡선·loaded 접촉·무기 profile을 함께 검증한다",
-      "summary": "v0.1.10은 active 몸/팔과 출처 고정91표본 곡선·같은 atlas의 Hero-only 검을 함께 검증했다. 이전 native/CI 통과 뒤 실제 화면의 적/접촉점 겹침과 약한 섬광을 발견했고,첫 higher-view clean take도 시각 기각했다. 최종 camera/core art budget 수정은 native486/0·preview·clean actual Game capture/원본 유한 프레임으로 프로토타입 개선만 채택했다. 전체skin/연속AV/기기/AAA는 pending이며 공식0point twohand는 reference-only다.",
+      "summary": "v0.1.10은 active 몸/팔과 출처 고정91표본 곡선·같은 atlas의 Hero-only 검을 함께 검증했다. 이전 native/CI 통과 뒤 실제 화면의 적/접촉점 겹침과 약한 섬광을 발견했고,첫 higher-view clean take도 시각 기각했다. 최종 camera/core art budget 수정은 native486/0·preview·clean actual Game capture/원본 유한 프레임으로 프로토타입 개선만 채택했다. 전체skin/연속AV/기기/AAA는 pending이며 공식0point twohand는 reference-only다. 후속 v0.1.10 main/tag·공개 전체 브라우저·릴리스3파일 TLS/CRC 검증은 별도 checkpoint로 확인했고, v0.1.11·AV/실기기/AAA 승인으로 승계하지 않는다.",
       "tags": [
         "combat",
         "animation",
@@ -2058,7 +2058,8 @@
         "final_raster_decision": "Root directly accepted selected original contactPNG andbirth/+1/+2/+4: clearer targethelmet/upperbody with residualoverlap;smalllocalizedgoldwhiteglint,brief/subtle/modestprototypeimprovement only. Biggoldverticalplanes in+4 are existingenemy startupwarnings,notcontactFX. SilentMP4SHAda3df4ad4f16e7dec1b0e94ac8da31e5d899fb74b0d8608716a9bcc5484fff4d;fulltrace decodedSHA9e9301c0769f545c7932ebe973bd73cb07cf4fa380355949c0f6b08dee500430. Generation/selectedframes are notcontinuousAV/AAAapproval.",
         "old_ci_scope": "Old61445931e96cd568357991eced4629554dd37cec run41312088764 all3requiredsuccess;source53SHA matched/clean/exportunchanged/fullmobile954.339s/errors0. Still failed actualcontactreadability. Appliesonlyoldcamera,notnewcameraCI/public/AAA.",
         "final_local_web_focus": "Frozen53sourcehashes/e97camera/fc39effect actualWebfocused277.923s/errors[]/trusted2pointer/one69.3/recoil.350000406m/finalHP72/exportunchanged. Browserfrozenpair UNOBSERVED;native5pausedframes areseparateproof. Notfullworkflow/cleancommittedCI/publicrelease/AV/hardware/AAA.",
-        "script_input_comparison": "Baseline/final originaltrace inputevents directlyequal throughrelease tick334 (34events);baselineactualcontacttick362 vsfinal359. No retiming/forcedcontact. Source/capture/runtime overlays and source differences retained."
+        "script_input_comparison": "Baseline/final originaltrace inputevents directlyequal throughrelease tick334 (34events);baselineactualcontacttick362 vsfinal359. No retiming/forcedcontact. Source/capture/runtime overlays and source differences retained.",
+        "published_v010_checkpoint": "Subsequent publishedv0.1.10 atmaina07f91db392d39494cd5bb635d579b3eb3d15663/PR11:latestPR41317119978/main41319105910/tag41319205647 ALL6main+4tagrequiredsuccess. Actualpublicdesktop270.5s/errors0 andfullpublicmobile1062.493s/errors[]/footer0.1.10·a07f91db/trusted3pointer/restartCP0HP120z6q1touchvisiblepointers0/primarymax3.290s<30. Actual3releaseTLSHTTP200/APIbyteSHA+ZIPCRC/licenses/playableverified. Source/catalogcb97andkit1.4.4 immutableZIP96306B/SHA97da6ebcf2a9ce6f20d9c60e9fdfe31f36bebd05f22ca46b416085b6c78662ba/7guards+anonymousmain/tagverified. Earlierlocalpendingstatusis historical; broaderAV/hardware/AAA andnewv0.1.11 remainpending."
       },
       "sources": [
         "docs/COMBAT_MOTION_POLISH_SLICE.md",
@@ -2107,7 +2108,74 @@
         "docs/validation/v0.1.10/native-gameplay/README.md",
         "docs/validation/v0.1.10/native-gameplay/comparison.json",
         "docs/validation/v0.1.10/focused-browser/SUMMARY.json",
-        "docs/validation/v0.1.10/focused-browser/README.md"
+        "docs/validation/v0.1.10/focused-browser/README.md",
+        "docs/validation/v0.1.10/published-verification.json",
+        "https://github.com/kosj/next-action-rpg/pull/11",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41319105910",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41319205647",
+        "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.10"
+      ]
+    },
+    {
+      "id": "quality-profiles-and-observed-lighting",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "품질 숫자의 의미·renderer 지원·실제 장면을 묶어 조명과 근사 지면 표현을 검증한다",
+      "summary": "UI/runtime의 품질0균형·실제 그림자 ON/1성능·실제 그림자 OFF를 확인하고 역전 버그 초기가설을 기각했다. 고정4.7.2 source, 같은 실제 장면의 원본8장, 기각한001의 격자와 bias 단일 복구002를 연결했다. root가 q0/q1 정지 전투 화면을 조명·근사 접지 prototype 범위로 채택했고 최종 frozen native508/0·Python51·Web/Windows export를 통과했다. 촬영 뒤 telemetry source 경계와 브라우저/공개/실기기/AAA pending을 보존한 로컬 workflow 검증이다.",
+      "tags": [
+        "art",
+        "lighting",
+        "quality",
+        "renderer",
+        "GLES3",
+        "Compatibility",
+        "shadows",
+        "grounding",
+        "조명",
+        "품질",
+        "그림자",
+        "workflow"
+      ],
+      "checked_on": "2026-11-01",
+      "context": {
+        "state": "Verified bounded local workflow: renderer/quality source reads, paired actual scene raster and rejected candidate, root prototype q0/q1 fight adoption, exact-current native508/0/Python51 and Web/Windows export. Dirty baseline HEAD preview is not committed CI/public/release. Hardware/motion/continuous AV/AAA remain pending.",
+        "baseline": "Publishedv0.1.10 maina07f91db392d39494cd5bb635d579b3eb3d15663, HeroFury/curve/assets/combat/camera preserved as scope. Oldv010 actualcomparison usedquality1performance; no numericalquality inversion bug.",
+        "quality_semantics": "HUD0balanced /1performance; sourcepolicy0sunshadowsON/native3Dscale1.0/Web.8,1shadowsOFF/nativeandWeb.65. WebtouchDPR addsseparateclamp;staticLinuxnativeframe isnotWebscale/hardwareproof. Preservepersisted0/1save meaning.",
+        "source_features": "PinnedGodot4.7.2-stable GLES3 andversioned4.7officialtable exposeAgX/othertonemappers,depthheightfog,SSAO/glow paths;advancedsettingsdiffer. No blankunsupportedpostprocess assumptions fromolderversions, no SSR/volumetricfog/PCSS inferred. Featurepresence notenablement/performance/qualityapproval.",
+        "ambient_mix": "scene.glsl2472..2489 mixes ambientRGB withskyCubemap*ambientAlpha byskycontribution; rasterizer_scene_gles3.cpp1598..1634 packs backgroundmultiplier intoalpha andambientcolor*energyintoRGB. Contribution1 canreplaceambientRGB term;changingambientenergyaloneisnotfullskyattenuation. Source interpretationnotcandidatepixelmeasurement.",
+        "quality_role": "Current Game uses SanctuaryKey role and refreshes approximate grounding immediately on quality changes. Exact-current native tests pass q0→q1→q0 flag/scale restore, key below1/fill above1 and fill shadowsOFF without changing saved0/1 meanings.",
+        "grounding_scope": "Current q1-only finite soft ellipse: layer1 support ray foot+.35 to foot−1.2; normal.UP≥.65; 12mm normal offset; .21 maximum opacity fading .05..1m; capsule-radius footprint clamped .3..2m; depth test, no shadow casting/collision/light/game RNG; shared quad/shader with per-actor fade material. Invalid/dead/hidden/out-of-range/support/nonuniform/tilted cases hide. Cache .1s, forced refresh at least1/30s, physics-frame guard and8 visible WeakRef budget. These are source policies, not measured target-hardware cost or exact foot contact.",
+        "capture_scope": "Baseline001/final002 each four actual raw1280×720 PNGs:64.096s/53.105s, errors[], processes closed, source inputs unchanged. Same fixture/engine/renderer/viewport and camera/quality/scale/actor profile/position tuples. Linux Compatibility/Mesa llvmpipe; q0native1.0/key shadowON/4ellipses hidden; q1.65/OFF/4finite ellipses at opacity.21. Root viewed both fight modes and accepted bounded prototype lighting/grounding; agents additionally reviewed q0 overview. Controlled idle/HUD scene is not normal input, Web/DPR, hardware FPS, motion, AV or AAA.",
+        "remaining": "Final-source desktop/mobile browser56-source provenance/UI/restart, committed CI/public/release, actual Windows/Android/iOS/Safari/GPU, motion/continuous AV/fullAAA pending. Raster limits: neutral flat sky, dark front armor, box-like architecture; ellipse is approximate support grounding, not detailed animated foot shadow. Oldv010 publication does not approvev011.",
+        "native_first": "Historical native-first log SHA9600d7cac87480f2c3085aae90425f0e6ffe080551b0072e0cb8d7b19dd00ccb: 508 checks/0 failures, no ERROR/FAIL lines. Grounding fixture source f4b28f73… differs from later b1c9b2a8…; old report lacks actual elapsed physics-frame count. Preserve first checkpoint; do not approve newer bytes from it.",
+        "rejected_candidate": "Candidate001 q0 had dense regular floor striping; q1 did not. Preserved rejected raw fight image/report. Isolated runtime inventory delta002 restores key normal bias1.1→2.0 (Sanctuary SHA1b21d87e069ea4465ed15047333ec2517a28a212e1864b7cb5e0765b04dec96b). Grid disappeared in actual q0; bothq1 PNG hashes exactly equal001. Shadow acne was the diagnosis, not a claim of physical attribution proof for every pixel.",
+        "post_capture_boundary": "After002 capture, read-only presentation telemetry changed Game(1bf3f102…), HUD(f3e5eda8…), ActorVisual(368cbcf0…). Captured and final full runtime are not exact bytes; preserve paired old/new hashes. Sanctuary1b21d87e…, Groundingb1c9b2a8…, shaderc507fa0f… unchanged. Final-byte native/browser are separate from actual pre-telemetry raster; do not call the capture final exact HUD source.",
+        "native_final": "Frozen9-source hashes match current; groundingb1c9b2a8…/shaderc507fa0f…/Sanctuary1b21d87e…. Native508/0, build exit0/logclosed SHA84f797c044050f475b0f9292ccf074a871ac833bc4fe3d5e6e995573f862becb, Python51/0/1.512s. Actual fixture opacity.21 vs raised.0495990874, querydelta1 over sampled12physicsframes, visible7 within8cap. Native firstf4 remains historical, not final.",
+        "exports": "Dirty0.1.11·a07 preview: rawWeb146543039bytes/14files<150000000budget; WebZIP115777424 SHA2c0a8ffc3228ddfb434f06247c2b3a4d233a0ae978a481cacc64ae7d934c225b; WindowsZIP143618731 SHAa6f52ad2d9d59feda65136ffb2b35b6b162b943264e2c0da2520e5dbc52c7b97. Exports are not actual Windows execution or clean-release artifacts.",
+        "source_preservation": "Ten critical camera/strike/AttackData/player/enemy/charged-heavy/curve/HeroGLB/SentinelGLB/weaponGLB source hashes remain exactly baselinea07. This selected byte-preservation proof and native contracts do not claim every unlisted file or runtime platform is identical."
+      },
+      "sources": [
+        "docs/ENVIRONMENT_LIGHTING_SLICE.md",
+        "docs/validation/v0.1.11/README.md",
+        "docs/validation/v0.1.11/renderer-evidence.json",
+        "game/scripts/game.gd",
+        "game/scripts/world/sanctuary.gd",
+        "game/scripts/ui/hud.gd",
+        "tools/render_lighting_review.py",
+        "game/tests/lighting_review_capture.gd",
+        "reusable/game-production-kit/skills/generated-3d-game-art/references/art-review.md",
+        "docs/validation/v0.1.11/native-first-checkpoint.json",
+        "game/scripts/actors/grounding_shadow.gd",
+        "game/assets/shaders/grounding_shadow.gdshader",
+        "game/tests/grounding_shadow_regressions.gd",
+        "docs/validation/v0.1.11/paired-capture-checkpoint.json",
+        "docs/validation/v0.1.11/lighting-review/README.md",
+        "docs/validation/v0.1.11/lighting-review/archive-manifest.json",
+        "docs/validation/v0.1.11/lighting-review/rejected-001/review.json",
+        "docs/validation/v0.1.11/post-capture-telemetry.json",
+        "docs/validation/v0.1.11/native-final-checkpoint.json",
+        "docs/validation/v0.1.11/local-preview-build.json",
+        "docs/validation/v0.1.11/source-preservation.json"
       ]
     }
   ]

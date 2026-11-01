@@ -41,6 +41,8 @@ def main():
               "game/assets/models/production/sentinel_weight_gameplay.glb.import",
               "game/scripts/world/impact_effect.gd", "game/scripts/actors/actor_visual.gd",
               "game/scripts/actors/production_character_art.gd", "game/scripts/actors/skeletal_visual_bridge.gd",
+              "game/scripts/world/sanctuary.gd", "game/scripts/actors/grounding_shadow.gd",
+              "game/assets/shaders/grounding_shadow.gdshader",
               "tools/author_impact_actions.py", "tools/author_character_actions.py", "tools/author_weight_actions.py",
               "tools/author_fury_actions.py", "tools/derive_greatsword_profile.py",
               "game/assets/models/production/rune_sword_web.glb", "game/assets/models/production/rune_greatsword_geometry.glb",

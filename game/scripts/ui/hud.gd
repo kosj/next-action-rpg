@@ -486,7 +486,7 @@ func show_settings() -> void:
 		column.add_child(quality_title)
 		column.move_child(quality_title, 5)
 		for index in range(2):
-			var choice := button(["균형 · 기본 해상도 / 그림자", "성능 · 낮은 해상도 / 그림자 끄기"][index], func():
+			var choice := button(["균형 · 기본 해상도 / 그림자", "성능 · 낮은 해상도 / 간단한 그림자"][index], func():
 				Session.quality = index
 				world.apply_quality()
 				for child in column.get_children():
@@ -500,7 +500,7 @@ func show_settings() -> void:
 		return
 	var quality := OptionButton.new()
 	quality.add_item("균형 · 기본 해상도 / 그림자")
-	quality.add_item("성능 · 낮은 해상도 / 그림자 끄기")
+	quality.add_item("성능 · 낮은 해상도 / 간단한 그림자")
 	quality.selected = Session.quality
 	quality.item_selected.connect(func(index: int): Session.quality = index; world.apply_quality())
 	column.add_child(quality)
@@ -523,6 +523,11 @@ func floating_damage(amount: float, position_3d: Vector3) -> void:
 func _qa_character_art(visual: ActorVisual) -> Dictionary:
 	# Export values only. Browser QA cannot use this snapshot to drive a rig.
 	var report := visual.presentation_report()
+	var grounding: Dictionary = report.get("grounding_shadow", {})
+	for field in ["ground_point", "ground_normal"]:
+		if grounding.get(field) is Vector3:
+			var point: Vector3 = grounding[field]
+			grounding[field] = [point.x,point.y,point.z]
 	if is_instance_valid(visual.skeletal_bridge):
 		var bridge := visual.skeletal_bridge
 		report["sampled_time"] = bridge.sampled_time
@@ -661,7 +666,7 @@ func _process(delta: float) -> void:
 			"has_save":Session.has_save, "checkpoint":Session.checkpoint,
 			"ui_width":root.size.x,"ui_height":root.size.y,"buttons":buttons,
 			"quality":Session.quality,"fps":Engine.get_frames_per_second(),
-			"render_scale":get_viewport().scaling_3d_scale,
+			"render_scale":get_viewport().scaling_3d_scale, "lighting":world.lighting_presentation_report(),
 			"dead":player.dead, "health":player.health, "max_health":player.max_health,
 			"rune":player.rune,"potions":player.potions,"x":player.global_position.x,"z":player.global_position.z,
 			"camera_yaw":world.rig.yaw,"camera_pitch":world.rig.pitch,

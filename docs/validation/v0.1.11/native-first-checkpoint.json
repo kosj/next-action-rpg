@@ -1,0 +1,28 @@
+{
+  "state": "historical first native checkpoint; current source has changed and needs rerun",
+  "scope": "Native fixture/code contracts only. No candidate raster, browser, deployment, device performance or AAA approval.",
+  "summary": "RUNEFALL_TESTS: 508 checks, 0 failures",
+  "process_exit_code_reported_by_runner": 0,
+  "log": {
+    "file": "native-first.log",
+    "bytes": 58252,
+    "sha256": "9600d7cac87480f2c3085aae90425f0e6ffe080551b0072e0cb8d7b19dd00ccb",
+    "ERROR_or_FAIL_lines": []
+  },
+  "grounding_fixture_original": {
+    "grounded_opacity": 0.21,
+    "grounding_source_sha256": "f4b28f73cc4b45d04952e9413c464b35beb8f805a8b4d8ffaf861e3730c2cda9",
+    "raised_opacity": 0.0495990874166317,
+    "scope": "Native actual floor/ledge/height/quality/resource/budget fixtures; no raster, performance, physical foot shadow or AAA approval",
+    "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+    "stationary_query_delta_12_ticks": 1,
+    "visible_fixture_ellipses": 7
+  },
+  "current_grounding_source_sha256_at_checkpoint": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+  "fixture_source_matches_current": false,
+  "known_limits": [
+    "First fixture summary used stationary_query_delta_12_ticks; it did not preserve actual elapsed physics-frame count. The revised fixture records sampled_physics_frames.",
+    "Production grounding source and regression fixture changed after this run. This checkpoint does not validate the newer bytes.",
+    "Floor/ledge/height/quality/resource/query and visibility assertions are isolated native fixtures, not physical foot shadows or observed production raster."
+  ]
+}

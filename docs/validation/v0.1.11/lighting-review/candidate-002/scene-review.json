@@ -1,0 +1,1259 @@
+{
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "fixture_controls": [
+    "prescribed actor locations",
+    "idle pose seek",
+    "frozen Game and actor processing",
+    "fixed camera views",
+    "direct actual quality setting"
+  ],
+  "renderer": "gl_compatibility",
+  "scope": "Deterministic actual Game/production actors/courtyard lighting scene-view comparison in native Compatibility at1280x720. Prescribed transforms, idle pose and frozen physics are fixture controls, not real-input gameplay. Native quality0 balanced has1.0 render scale; quality1 performance.65. Web/DPR, interactive motion/AV, hardware performance and AAA remain separate.",
+  "shapes": "Actual unchanged production Hero/Sentinel, floor/walls/props and production camera in fight view",
+  "shots": [
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000124931335,
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            -24.0
+          ],
+          "profile": "hero"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999981880188,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            0.0,
+            -26.5
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.1899995803833,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            -4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000017642975,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.977432370185852,
+            0.0,
+            -0.211248561739922
+          ],
+          [
+            -0.0587395168840885,
+            0.960564076900482,
+            -0.271783649921417
+          ],
+          [
+            0.202917784452438,
+            0.278058767318726,
+            0.938886404037476
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          1.20000004768372,
+          2.99436330795288,
+          -19.5726833343506
+        ]
+      },
+      "environment": {
+        "ambient_energy": 0.379999995231628,
+        "ambient_source": 3,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_enabled": true,
+        "reflections": 2,
+        "tonemap": 4
+      },
+      "file": "fight-q0.png",
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_max_distance": 48.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "energy": 0.180000007152557,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_max_distance": 100.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9",
+      "view": "fight"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000124931335,
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            -24.0
+          ],
+          "profile": "hero"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999981880188,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            0.0,
+            -26.5
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.1899995803833,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            -4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000017642975,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.857492923736572,
+            0.0,
+            -0.51449579000473
+          ],
+          [
+            -0.166924461722374,
+            0.945905327796936,
+            -0.278207421302795
+          ],
+          [
+            0.486664295196533,
+            0.324442803859711,
+            0.811107099056244
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          9.0,
+          7.0,
+          -23.0
+        ]
+      },
+      "environment": {
+        "ambient_energy": 0.379999995231628,
+        "ambient_source": 3,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_enabled": true,
+        "reflections": 2,
+        "tonemap": 4
+      },
+      "file": "overview-q0.png",
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_max_distance": 48.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "energy": 0.180000007152557,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_max_distance": 100.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2",
+      "view": "overview"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000124931335,
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              -24.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 70,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 4,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            -24.0
+          ],
+          "profile": "hero"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999981880188,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              -26.5
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 70,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 4,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            0.0,
+            0.0,
+            -26.5
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.1899995803833,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              -4.0,
+              0.0,
+              -28.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 70,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 4,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            -4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000017642975,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              4.0,
+              0.0,
+              -28.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 70,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 4,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.977432370185852,
+            0.0,
+            -0.211248561739922
+          ],
+          [
+            -0.0587395168840885,
+            0.960564076900482,
+            -0.271783649921417
+          ],
+          [
+            0.202917784452438,
+            0.278058767318726,
+            0.938886404037476
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          1.20000004768372,
+          2.99436330795288,
+          -19.5726833343506
+        ]
+      },
+      "environment": {
+        "ambient_energy": 0.379999995231628,
+        "ambient_source": 3,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_enabled": true,
+        "reflections": 2,
+        "tonemap": 4
+      },
+      "file": "fight-q1.png",
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_max_distance": 48.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "energy": 0.180000007152557,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_max_distance": 100.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+      "view": "fight"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000124931335,
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              -24.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 91,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 7,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            -24.0
+          ],
+          "profile": "hero"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999981880188,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              -26.5
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 91,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 7,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            0.0,
+            0.0,
+            -26.5
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.1899995803833,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              -4.0,
+              0.0,
+              -28.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 91,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 7,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            -4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        },
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000017642975,
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              4.0,
+              0.0,
+              -28.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 91,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 7,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "position": [
+            4.0,
+            0.0,
+            -28.0
+          ],
+          "profile": "sentinel_melee"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.857492923736572,
+            0.0,
+            -0.51449579000473
+          ],
+          [
+            -0.166924461722374,
+            0.945905327796936,
+            -0.278207421302795
+          ],
+          [
+            0.486664295196533,
+            0.324442803859711,
+            0.811107099056244
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          9.0,
+          7.0,
+          -23.0
+        ]
+      },
+      "environment": {
+        "ambient_energy": 0.379999995231628,
+        "ambient_source": 3,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_enabled": true,
+        "reflections": 2,
+        "tonemap": 4
+      },
+      "file": "overview-q1.png",
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_max_distance": 48.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "energy": 0.180000007152557,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_max_distance": 100.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+      "view": "overview"
+    }
+  ],
+  "show_ui": true,
+  "source_context": {
+    "dirty": true,
+    "display_overrides": {
+      "capture_sha256": "63e08c4890bc74a484fd087acca7eff676c6a48350a47eff589d33b3bd1497ac",
+      "overrides": {
+        "window/size/viewport_height": "720",
+        "window/size/viewport_width": "1280",
+        "window/size/window_height_override": "720",
+        "window/size/window_width_override": "1280",
+        "window/stretch/mode": "\"disabled\""
+      },
+      "scope": "Matched isolated capture dimensions only; game code, physics, lighting and materials unmodified",
+      "source_sha256": "0165f06a12a98015492027cbf642d8e31cf1df2e83eb0d50de1f0dd37b132c84"
+    },
+    "fixture_sha256": {
+      "tests/lighting_review_capture.gd": "db2ef75a687e620ad7044ffdf284119b81ab14a1c76b240c653083cf01d9e3d9",
+      "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+    },
+    "head": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+    "kind": "independent_source_copy",
+    "runner_sha256": "6ed5123fb197d493ea4b4f3ab721eaf1f634b0d4707c0c3e33ba9fab4ac72bc7",
+    "shared_helpers_sha256": {
+      "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+      "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+    }
+  },
+  "status": "deterministic_actual_scene_captured",
+  "video_adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "viewport": [
+    1280.0,
+    720.0
+  ],
+  "curation": {
+    "raw_scene_report_sha256": "261c1fbc06b55c208a03978a58651ba25edf92bd59becfc3a8b291de432de5f9",
+    "raw_scene_report_bytes": 31828,
+    "policy": "Actual scene report subset; omitted local cache source and worktree listing only. Runtime shot data unchanged."
+  }
+}

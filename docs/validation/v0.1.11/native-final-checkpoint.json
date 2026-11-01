@@ -1,0 +1,54 @@
+{
+  "state": "exact current local native PASS; dirty0.1.11 preview, not committed CI/public/release",
+  "scope": "Final frozen source native contracts and actual physics fixtures. No Windows execution, browser raster, target-hardware FPS, motion/AV or AAA approval.",
+  "native": {
+    "checks": 508,
+    "failures": 0,
+    "full_build_exit_code": 0,
+    "log": {
+      "file": "build-final-current.log",
+      "bytes": 98958,
+      "sha256": "84f797c044050f475b0f9292ccf074a871ac833bc4fe3d5e6e995573f862becb",
+      "closed_before_hashing": true,
+      "native_summary": "RUNEFALL_TESTS: 508 checks, 0 failures",
+      "ERROR_lines": []
+    }
+  },
+  "python": {
+    "tests": 51,
+    "failures": 0,
+    "elapsed_s": 1.512,
+    "log_bytes": 150,
+    "log_sha256": "ae53abfc413c8facc4590c635120867135cc5da54cfaa33c9183caced807ddd7"
+  },
+  "runtime_source_freeze": {
+    "game/scripts/game.gd": "1bf3f102b9ffeb3636deea9a920a9716a5c54a5cf1b5872056f18424cf0946db",
+    "game/scripts/ui/hud.gd": "f3e5eda85f14baf7000b1bcc2bdcc1a074c41dcfe75f1d9646173891c3e478fc",
+    "game/scripts/actors/actor_visual.gd": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec",
+    "game/scripts/actors/grounding_shadow.gd": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+    "game/assets/shaders/grounding_shadow.gdshader": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+    "game/scripts/world/sanctuary.gd": "1b21d87e069ea4465ed15047333ec2517a28a212e1864b7cb5e0765b04dec96b",
+    "tools/browser_smoke.py": "c0dacaa9817fab8c2e1238a616246b9abdbe6869fb9c13df04eb70c0a89c1c6a",
+    "tools/mobile_browser_smoke.py": "182ca37c642688a2afc104c1ee314652fb9d7994aaa515b94877623a1e4c1f78",
+    "tools/check_mobile_web.py": "4f37ff79eda17e2dc622edd17a46d7b3eb0bd88a84a299b9dfae2beba0741571"
+  },
+  "all_frozen_source_hashes_match_current": true,
+  "grounding_fixture": {
+    "grounded_opacity": 0.21,
+    "grounding_source_sha256": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+    "raised_opacity": 0.0495990874166317,
+    "sampled_physics_frames": 12,
+    "scope": "Native actual floor/ledge/height/quality/resource/budget fixtures; no raster, performance, physical foot shadow or AAA approval",
+    "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+    "stationary_query_delta": 1,
+    "visible_fixture_ellipses": 7
+  },
+  "supersedes": "native-first-checkpoint.json for current-byte native claims only; first failure/earlier evidence remains historical.",
+  "remaining": [
+    "Committed clean CI",
+    "Actual final-source desktop/mobile browser, 56source provenance and restart",
+    "Public Pages runtime and actual release downloads",
+    "Real Windows execution, target Android/iOS/Safari/GPU",
+    "Motion/continuous AV/full AAA review"
+  ]
+}

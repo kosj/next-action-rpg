@@ -1,0 +1,47 @@
+{
+  "scope": "Exact frozen local dirty0.1.11 preview at baseline HEADa07; export/checksum result is not clean committed CI, public Pages or final release.",
+  "native": {
+    "checks": 508,
+    "failures": 0,
+    "log": "native-final-checkpoint.json"
+  },
+  "python": {
+    "tests": 51,
+    "failures": 0
+  },
+  "manifest": {
+    "version": "0.1.11",
+    "godot": "4.7.2",
+    "commit": "a07f91db",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115777424,
+        "sha256": "2c0a8ffc3228ddfb434f06247c2b3a4d233a0ae978a481cacc64ae7d934c225b"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143618731,
+        "sha256": "a6f52ad2d9d59feda65136ffb2b35b6b162b943264e2c0da2520e5dbc52c7b97"
+      }
+    ]
+  },
+  "raw_web_bytes": 146543039,
+  "raw_web_files": 14,
+  "runtime_source_unchanged": true,
+  "exit_code": 0,
+  "raw_web_budget_bytes": 150000000,
+  "raw_web_budget_pass": true,
+  "logs": {
+    "full_build": {
+      "bytes": 98958,
+      "sha256": "84f797c044050f475b0f9292ccf074a871ac833bc4fe3d5e6e995573f862becb",
+      "closed": true
+    },
+    "python": {
+      "bytes": 150,
+      "sha256": "ae53abfc413c8facc4590c635120867135cc5da54cfaa33c9183caced807ddd7"
+    }
+  },
+  "platform_scope": "Web/Windows exports completed. Actual Windows OS execution remains pending. Local browser/public/release are separate gates."
+}

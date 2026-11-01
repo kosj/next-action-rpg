@@ -1,0 +1,1237 @@
+{
+  "state": "historical candidate001; REJECTED for dense q0 floor striping",
+  "scope": "Controlled actual main scene, production actors/courtyard and native Compatibility. Frozen Game/actor/camera callbacks and prescribed idle positions are not normal-input combat, Web/DPR, hardware FPS, AV or AAA approval.",
+  "takes": {
+    "before": {
+      "raw_artifact_directory": "build/art-review/courtyard-lighting-baseline-001",
+      "elapsed_s": 64.0963704586029,
+      "processes_closed": true,
+      "display_tcp_disabled": true,
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "renderer": "gl_compatibility",
+      "video_adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "viewport": [
+        1280.0,
+        720.0
+      ],
+      "actual_HUD_visible": true,
+      "fixture_controls": [
+        "prescribed actor locations",
+        "idle pose seek",
+        "frozen Game and actor processing",
+        "fixed camera views",
+        "direct actual quality setting"
+      ],
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ],
+      "source_inputs_unchanged": true,
+      "source_context": {
+        "commit": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+        "tree": "9e9aae6d3599e7e4c5163602ffc7fdd51a767178",
+        "dirty": false,
+        "kind": "isolated_git_archive",
+        "fixture_sha256": {
+          "tests/lighting_review_capture.gd": "db2ef75a687e620ad7044ffdf284119b81ab14a1c76b240c653083cf01d9e3d9",
+          "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+        },
+        "runner_sha256": "67afc4cd7468668c2578df261166804ea50c81f778dc54131cbc800837b3dc5f",
+        "shared_helpers_sha256": {
+          "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+          "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+        }
+      },
+      "evidence_files": {
+        "scene-review.json": {
+          "sha256": "0b0084d18a62e0efa6a236c3de6478894dc46bc0f3990256e061b278312c2b56",
+          "bytes": 20179
+        },
+        "source-inputs.json": {
+          "sha256": "71ddbabffbbee6bf7faa31bb644266bc4efca44067bfc54e66f17402c9c4d5ba",
+          "bytes": 38460
+        },
+        "capture-inputs.json": {
+          "sha256": "85c47ba9d1567090007d167f29c6d12ba23dbc6e2721cfa6f51af30d3fdc8f44",
+          "bytes": 38751
+        },
+        "runtime-inputs.json": {
+          "sha256": "85c47ba9d1567090007d167f29c6d12ba23dbc6e2721cfa6f51af30d3fdc8f44",
+          "bytes": 38751
+        }
+      },
+      "source_inputs": {
+        "scripts/game.gd": {
+          "sha256": "6902824a62f37ad8663ff44319e5abbabcf76db93977416ec27ac094762900f3",
+          "bytes": 19223
+        },
+        "scripts/world/sanctuary.gd": {
+          "sha256": "50e2634210707cb6fbf5626b71cbae343b477ab9d0088f2ff05fdf872b902867",
+          "bytes": 14279
+        }
+      },
+      "shots": [
+        {
+          "file": "fight-q0.png",
+          "sha256": "5f715f903bd0a7f78f859ec27dc94664e6f418c30a68384e8bd51400d3a76154",
+          "view": "fight",
+          "quality": 0,
+          "quality_label": "balanced",
+          "render_scale": 1.0,
+          "camera": {
+            "basis": [
+              [
+                0.977432370185852,
+                0.0,
+                -0.211248561739922
+              ],
+              [
+                -0.0587395168840885,
+                0.960564076900482,
+                -0.271783649921417
+              ],
+              [
+                0.202917784452438,
+                0.278058767318726,
+                0.938886404037476
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              1.20000004768372,
+              2.99436330795288,
+              -19.5726833343506
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.720000028610229,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.509803950786591,
+              0.584313750267029,
+              0.631372570991516,
+              1.0
+            ],
+            "fog_density": 0.00300000002607703,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 2
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.941176474094391,
+                0.854901969432831,
+                1.0
+              ],
+              "energy": 1.25,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -31.9999980926514,
+                -37.9999961853027,
+                0.0
+              ],
+              "shadow_max_distance": 65.0,
+              "shadows": true
+            },
+            {
+              "color": [
+                0.694117665290833,
+                0.776470601558685,
+                0.862745106220245,
+                1.0
+              ],
+              "energy": 0.25,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1614056,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 0,
+            "visible": 0,
+            "opacity": [],
+            "reasons": [],
+            "visible_budget_used": []
+          }
+        },
+        {
+          "file": "overview-q0.png",
+          "sha256": "b67cf6746a48428f15d7a6d44cd16b452cf979b43f3689ae3e438e9599e32fe1",
+          "view": "overview",
+          "quality": 0,
+          "quality_label": "balanced",
+          "render_scale": 1.0,
+          "camera": {
+            "basis": [
+              [
+                0.857492923736572,
+                0.0,
+                -0.51449579000473
+              ],
+              [
+                -0.166924461722374,
+                0.945905327796936,
+                -0.278207421302795
+              ],
+              [
+                0.486664295196533,
+                0.324442803859711,
+                0.811107099056244
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              9.0,
+              7.0,
+              -23.0
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.720000028610229,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.509803950786591,
+              0.584313750267029,
+              0.631372570991516,
+              1.0
+            ],
+            "fog_density": 0.00300000002607703,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 2
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.941176474094391,
+                0.854901969432831,
+                1.0
+              ],
+              "energy": 1.25,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -31.9999980926514,
+                -37.9999961853027,
+                0.0
+              ],
+              "shadow_max_distance": 65.0,
+              "shadows": true
+            },
+            {
+              "color": [
+                0.694117665290833,
+                0.776470601558685,
+                0.862745106220245,
+                1.0
+              ],
+              "energy": 0.25,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1542462,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 0,
+            "visible": 0,
+            "opacity": [],
+            "reasons": [],
+            "visible_budget_used": []
+          }
+        },
+        {
+          "file": "fight-q1.png",
+          "sha256": "48c8c5149771e86a19fc1ffe6450f07db3304a7cd51a4c82704e09f2cf56b7e2",
+          "view": "fight",
+          "quality": 1,
+          "quality_label": "performance",
+          "render_scale": 0.649999976158142,
+          "camera": {
+            "basis": [
+              [
+                0.977432370185852,
+                0.0,
+                -0.211248561739922
+              ],
+              [
+                -0.0587395168840885,
+                0.960564076900482,
+                -0.271783649921417
+              ],
+              [
+                0.202917784452438,
+                0.278058767318726,
+                0.938886404037476
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              1.20000004768372,
+              2.99436330795288,
+              -19.5726833343506
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.720000028610229,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.509803950786591,
+              0.584313750267029,
+              0.631372570991516,
+              1.0
+            ],
+            "fog_density": 0.00300000002607703,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 2
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.941176474094391,
+                0.854901969432831,
+                1.0
+              ],
+              "energy": 1.25,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -31.9999980926514,
+                -37.9999961853027,
+                0.0
+              ],
+              "shadow_max_distance": 65.0,
+              "shadows": false
+            },
+            {
+              "color": [
+                0.694117665290833,
+                0.776470601558685,
+                0.862745106220245,
+                1.0
+              ],
+              "energy": 0.25,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1220035,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 0,
+            "visible": 0,
+            "opacity": [],
+            "reasons": [],
+            "visible_budget_used": []
+          }
+        },
+        {
+          "file": "overview-q1.png",
+          "sha256": "597d7ffef666200f1aad3b808f74194b7154390001a1d70d95466b8dd8793c97",
+          "view": "overview",
+          "quality": 1,
+          "quality_label": "performance",
+          "render_scale": 0.649999976158142,
+          "camera": {
+            "basis": [
+              [
+                0.857492923736572,
+                0.0,
+                -0.51449579000473
+              ],
+              [
+                -0.166924461722374,
+                0.945905327796936,
+                -0.278207421302795
+              ],
+              [
+                0.486664295196533,
+                0.324442803859711,
+                0.811107099056244
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              9.0,
+              7.0,
+              -23.0
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.720000028610229,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.509803950786591,
+              0.584313750267029,
+              0.631372570991516,
+              1.0
+            ],
+            "fog_density": 0.00300000002607703,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 2
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.941176474094391,
+                0.854901969432831,
+                1.0
+              ],
+              "energy": 1.25,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -31.9999980926514,
+                -37.9999961853027,
+                0.0
+              ],
+              "shadow_max_distance": 65.0,
+              "shadows": false
+            },
+            {
+              "color": [
+                0.694117665290833,
+                0.776470601558685,
+                0.862745106220245,
+                1.0
+              ],
+              "energy": 0.25,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1191581,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 0,
+            "visible": 0,
+            "opacity": [],
+            "reasons": [],
+            "visible_budget_used": []
+          }
+        }
+      ]
+    },
+    "after": {
+      "raw_artifact_directory": "build/art-review/courtyard-lighting-candidate-001",
+      "elapsed_s": 59.58403515815735,
+      "processes_closed": true,
+      "display_tcp_disabled": true,
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "renderer": "gl_compatibility",
+      "video_adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "viewport": [
+        1280.0,
+        720.0
+      ],
+      "actual_HUD_visible": true,
+      "fixture_controls": [
+        "prescribed actor locations",
+        "idle pose seek",
+        "frozen Game and actor processing",
+        "fixed camera views",
+        "direct actual quality setting"
+      ],
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ],
+      "source_inputs_unchanged": true,
+      "source_context": {
+        "dirty": true,
+        "kind": "independent_source_copy",
+        "fixture_sha256": {
+          "tests/lighting_review_capture.gd": "db2ef75a687e620ad7044ffdf284119b81ab14a1c76b240c653083cf01d9e3d9",
+          "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+        },
+        "runner_sha256": "6ed5123fb197d493ea4b4f3ab721eaf1f634b0d4707c0c3e33ba9fab4ac72bc7",
+        "shared_helpers_sha256": {
+          "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+          "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+        }
+      },
+      "evidence_files": {
+        "scene-review.json": {
+          "sha256": "957b5a2c7a8895f925611d6f18045504630a461d15d02a42d209ff5cb66540a7",
+          "bytes": 31798
+        },
+        "source-inputs.json": {
+          "sha256": "00c4ab0870de05e7af44cf1751fd5a127fafb90f21d69a3b51c9407da597ce92",
+          "bytes": 40228
+        },
+        "capture-inputs.json": {
+          "sha256": "e37a8f32024bda43045218b5039cfb9d48cdc26e7e03518c5ecd381ebafc1903",
+          "bytes": 40228
+        },
+        "runtime-inputs.json": {
+          "sha256": "e37a8f32024bda43045218b5039cfb9d48cdc26e7e03518c5ecd381ebafc1903",
+          "bytes": 40228
+        }
+      },
+      "source_inputs": {
+        "assets/shaders/grounding_shadow.gdshader": {
+          "sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+          "bytes": 453
+        },
+        "scripts/actors/grounding_shadow.gd": {
+          "sha256": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+          "bytes": 6677
+        },
+        "scripts/game.gd": {
+          "sha256": "465f452692622b0be10c973a3cb3ca5b198666a1df311a89f05801ab450f9a97",
+          "bytes": 19371
+        },
+        "scripts/world/sanctuary.gd": {
+          "sha256": "c8dfab524ef0ce9517ab87f5286169e258e7ebc3538b53ab9e5d261b89f4ac08",
+          "bytes": 15300
+        }
+      },
+      "shots": [
+        {
+          "file": "fight-q0.png",
+          "sha256": "5f1d9c882b9ea520242447529778c4c7cdb4466021ceee8815733eda02603fed",
+          "view": "fight",
+          "quality": 0,
+          "quality_label": "balanced",
+          "render_scale": 1.0,
+          "camera": {
+            "basis": [
+              [
+                0.977432370185852,
+                0.0,
+                -0.211248561739922
+              ],
+              [
+                -0.0587395168840885,
+                0.960564076900482,
+                -0.271783649921417
+              ],
+              [
+                0.202917784452438,
+                0.278058767318726,
+                0.938886404037476
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              1.20000004768372,
+              2.99436330795288,
+              -19.5726833343506
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.379999995231628,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.619607865810394,
+              0.674509823322296,
+              0.705882370471954,
+              1.0
+            ],
+            "fog_density": 1.0,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 4
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.894117653369904,
+                0.74117648601532,
+                1.0
+              ],
+              "energy": 1.45000004768372,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -42.0,
+                -48.0,
+                0.0
+              ],
+              "shadow_max_distance": 48.0,
+              "shadows": true
+            },
+            {
+              "color": [
+                0.717647075653076,
+                0.788235306739807,
+                0.874509811401367,
+                1.0
+              ],
+              "energy": 0.180000007152557,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1658737,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 4,
+            "visible": 0,
+            "opacity": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "reasons": [
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows"
+            ],
+            "visible_budget_used": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "file": "overview-q0.png",
+          "sha256": "bb57351773429b391ff3acd8b6d630d6bad6be3b6d22ca310786390dbece4599",
+          "view": "overview",
+          "quality": 0,
+          "quality_label": "balanced",
+          "render_scale": 1.0,
+          "camera": {
+            "basis": [
+              [
+                0.857492923736572,
+                0.0,
+                -0.51449579000473
+              ],
+              [
+                -0.166924461722374,
+                0.945905327796936,
+                -0.278207421302795
+              ],
+              [
+                0.486664295196533,
+                0.324442803859711,
+                0.811107099056244
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              9.0,
+              7.0,
+              -23.0
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.379999995231628,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.619607865810394,
+              0.674509823322296,
+              0.705882370471954,
+              1.0
+            ],
+            "fog_density": 1.0,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 4
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.894117653369904,
+                0.74117648601532,
+                1.0
+              ],
+              "energy": 1.45000004768372,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -42.0,
+                -48.0,
+                0.0
+              ],
+              "shadow_max_distance": 48.0,
+              "shadows": true
+            },
+            {
+              "color": [
+                0.717647075653076,
+                0.788235306739807,
+                0.874509811401367,
+                1.0
+              ],
+              "energy": 0.180000007152557,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1580563,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 4,
+            "visible": 0,
+            "opacity": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "reasons": [
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows",
+              "balanced_uses_light_shadows"
+            ],
+            "visible_budget_used": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "file": "fight-q1.png",
+          "sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+          "view": "fight",
+          "quality": 1,
+          "quality_label": "performance",
+          "render_scale": 0.649999976158142,
+          "camera": {
+            "basis": [
+              [
+                0.977432370185852,
+                0.0,
+                -0.211248561739922
+              ],
+              [
+                -0.0587395168840885,
+                0.960564076900482,
+                -0.271783649921417
+              ],
+              [
+                0.202917784452438,
+                0.278058767318726,
+                0.938886404037476
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              1.20000004768372,
+              2.99436330795288,
+              -19.5726833343506
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.379999995231628,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.619607865810394,
+              0.674509823322296,
+              0.705882370471954,
+              1.0
+            ],
+            "fog_density": 1.0,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 4
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.894117653369904,
+                0.74117648601532,
+                1.0
+              ],
+              "energy": 1.45000004768372,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -42.0,
+                -48.0,
+                0.0
+              ],
+              "shadow_max_distance": 48.0,
+              "shadows": false
+            },
+            {
+              "color": [
+                0.717647075653076,
+                0.788235306739807,
+                0.874509811401367,
+                1.0
+              ],
+              "energy": 0.180000007152557,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1172653,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 4,
+            "visible": 4,
+            "opacity": [
+              0.21,
+              0.21,
+              0.21,
+              0.21
+            ],
+            "reasons": [
+              "approximate_grounding",
+              "approximate_grounding",
+              "approximate_grounding",
+              "approximate_grounding"
+            ],
+            "visible_budget_used": [
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        },
+        {
+          "file": "overview-q1.png",
+          "sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+          "view": "overview",
+          "quality": 1,
+          "quality_label": "performance",
+          "render_scale": 0.649999976158142,
+          "camera": {
+            "basis": [
+              [
+                0.857492923736572,
+                0.0,
+                -0.51449579000473
+              ],
+              [
+                -0.166924461722374,
+                0.945905327796936,
+                -0.278207421302795
+              ],
+              [
+                0.486664295196533,
+                0.324442803859711,
+                0.811107099056244
+              ]
+            ],
+            "fov": 56.0,
+            "position": [
+              9.0,
+              7.0,
+              -23.0
+            ]
+          },
+          "environment": {
+            "ambient_energy": 0.379999995231628,
+            "ambient_source": 3,
+            "background_mode": 2,
+            "fog_color": [
+              0.619607865810394,
+              0.674509823322296,
+              0.705882370471954,
+              1.0
+            ],
+            "fog_density": 1.0,
+            "fog_enabled": true,
+            "reflections": 2,
+            "tonemap": 4
+          },
+          "lights": [
+            {
+              "color": [
+                1.0,
+                0.894117653369904,
+                0.74117648601532,
+                1.0
+              ],
+              "energy": 1.45000004768372,
+              "name": "SanctuaryKey",
+              "rotation_degrees": [
+                -42.0,
+                -48.0,
+                0.0
+              ],
+              "shadow_max_distance": 48.0,
+              "shadows": false
+            },
+            {
+              "color": [
+                0.717647075653076,
+                0.788235306739807,
+                0.874509811401367,
+                1.0
+              ],
+              "energy": 0.180000007152557,
+              "name": "SanctuaryFill",
+              "rotation_degrees": [
+                -24.9999980926514,
+                144.999984741211,
+                0.0
+              ],
+              "shadow_max_distance": 100.0,
+              "shadows": false
+            }
+          ],
+          "bytes": 1151347,
+          "actors": [
+            {
+              "profile": "hero",
+              "position": [
+                0.0,
+                -0.0249999761581421,
+                -24.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                0.0,
+                0.0,
+                -26.5
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                -4.0,
+                0.0,
+                -28.0
+              ]
+            },
+            {
+              "profile": "sentinel_melee",
+              "position": [
+                4.0,
+                0.0,
+                -28.0
+              ]
+            }
+          ],
+          "grounding": {
+            "reported": 4,
+            "visible": 4,
+            "opacity": [
+              0.21,
+              0.21,
+              0.21,
+              0.21
+            ],
+            "reasons": [
+              "approximate_grounding",
+              "approximate_grounding",
+              "approximate_grounding",
+              "approximate_grounding"
+            ],
+            "visible_budget_used": [
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "pair_checks": {
+    "same_fixture_sha256": true,
+    "same_viewport": true,
+    "same_engine": true,
+    "same_renderer_adapter": true,
+    "every_shot_same_camera_quality_scale_actor_profiles_positions": true
+  },
+  "limits": [
+    "q0 native scale1.0 is not Web default.8/DPR behavior.",
+    "q1 native scale.65 and real key shadows OFF are intentional; approximate ellipse is not a physically accurate foot shadow.",
+    "All captures use Mesa llvmpipe; duration does not measure target-device FPS.",
+    "Original PNG hashes and getter values are evidence, not visual adoption. Root review and final-byte native/browser/export/public tests remain separate.",
+    "Baseline runner version probe emitted a Fontconfig cache warning outside the private XDG setup. Original log is preserved; it was not a game engine error."
+  ],
+  "adoption": "Do not use001 as final. Candidate002 restores normal bias2.0 and has its own report; 001 q1 originals match002 byte-for-byte."
+}
