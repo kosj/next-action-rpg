@@ -78,44 +78,62 @@ func lighting() -> void:
 	var environment_node := WorldEnvironment.new()
 	environment_node.name = "SanctuaryEnvironment"
 	var env := Environment.new()
-	# A real sky supplies broad reflections to the imported PBR metal. Flat
-	# ambient colour made silver hair, stone and black armour equally cyan.
+	# Keep the sky as a reflection source, but separate its broad diffuse fill
+	# from the key light. Fully sky-driven ambient flattened the armour and
+	# bright masonry together, especially with performance-mode shadows off.
 	var sky_material := ProceduralSkyMaterial.new()
-	sky_material.sky_top_color = Color("344c65")
-	sky_material.sky_horizon_color = Color("b7b9af")
-	sky_material.ground_horizon_color = Color("a4aaa4")
-	sky_material.ground_bottom_color = Color("303d45")
-	sky_material.sky_curve = 0.22
-	sky_material.sky_energy_multiplier = 0.8
+	sky_material.sky_top_color = Color("28445c")
+	sky_material.sky_horizon_color = Color("c5b9a5")
+	sky_material.ground_horizon_color = Color("6b7478")
+	sky_material.ground_bottom_color = Color("1c2730")
+	sky_material.sky_curve = 0.38
+	sky_material.sky_energy_multiplier = 0.78
 	var sky := Sky.new()
 	sky.sky_material = sky_material
 	sky.radiance_size = Sky.RADIANCE_SIZE_128
 	env.sky = sky
 	env.background_mode = Environment.BG_SKY
+	env.background_energy_multiplier = 0.9
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
 	env.reflected_light_source = Environment.REFLECTION_SOURCE_SKY
-	env.ambient_light_energy = 0.72
-	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
+	# In GLES3 the sky contribution mixes over the ambient colour/energy.
+	# Explicitly mix both; energy alone does not dim a sky contribution of 1.0.
+	env.ambient_light_color = Color("a2afbd")
+	env.ambient_light_energy = 0.38
+	env.ambient_light_sky_contribution = 0.32
+	env.tonemap_mode = Environment.TONE_MAPPER_AGX
 	env.fog_enabled = true
-	env.fog_light_color = Color("8295a1")
-	env.fog_light_energy = 0.55
-	env.fog_density = 0.003
-	env.fog_sky_affect = 0.15
+	# Keep near combat clear. Depth fog separates the distant colonnades without
+	# putting the same cyan veil across the hero and the whole first courtyard.
+	env.fog_mode = Environment.FOG_MODE_DEPTH
+	env.fog_light_color = Color("9eacb4")
+	env.fog_light_energy = 0.62
+	env.fog_depth_begin = 32.0
+	env.fog_depth_end = 210.0
+	env.fog_depth_curve = 1.35
+	env.fog_sky_affect = 0.10
 	environment_node.environment = env
 	add_child(environment_node)
 	var sun := DirectionalLight3D.new()
 	sun.name = "SanctuaryKey"
-	sun.rotation_degrees = Vector3(-32, -38, 0)
-	sun.light_color = Color("fff0da")
-	sun.light_energy = 1.25
+	sun.rotation_degrees = Vector3(-42, -48, 0)
+	sun.light_color = Color("ffe4bd")
+	sun.light_energy = 1.45
 	sun.shadow_enabled = true
-	sun.directional_shadow_max_distance = 65
+	# Two cascades concentrate the balanced-mode shadow map on the playable
+	# near field. Performance mode continues to disable this light's shadows.
+	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS
+	sun.directional_shadow_max_distance = 48.0
+	sun.shadow_normal_bias = 2.0
 	add_child(sun)
 	var fill := DirectionalLight3D.new()
 	fill.name = "SanctuaryFill"
 	fill.rotation_degrees = Vector3(-25, 145, 0)
-	fill.light_color = Color("b1c6dc")
-	fill.light_energy = 0.25
+	fill.light_color = Color("b7c9df")
+	fill.light_energy = 0.18
+	fill.shadow_enabled = false
+	# This is a deliberate soft fill, not a second sun in the sky/reflections.
+	fill.sky_mode = DirectionalLight3D.SKY_MODE_LIGHT_ONLY
 	add_child(fill)
 
 func block(point: Vector3, size: Vector3, material: Material, collision: bool = false) -> MeshInstance3D:

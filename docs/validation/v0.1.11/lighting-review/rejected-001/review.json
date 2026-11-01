@@ -1,0 +1,15 @@
+{
+  "state": "rejected",
+  "review": "Root directly observed dense regular floor striping in candidate001 q0; q1 did not show it.",
+  "diagnosis": "Shadow acne was suspected after normal bias changed2.0→1.1. Candidate002 isolates restoration to2.0; actual q0 grid is gone. This source/raster diagnosis does not imply every stripe has a physical attribution proof.",
+  "preserved_original": {
+    "file": "original-png/fight-q0.png",
+    "bytes": 1658737,
+    "sha256": "5f1d9c882b9ea520242447529778c4c7cdb4466021ceee8815733eda02603fed"
+  },
+  "candidate001_sanctuary_sha256": "c8dfab524ef0ce9517ab87f5286169e258e7ebc3538b53ab9e5d261b89f4ac08",
+  "candidate002_sanctuary_sha256": "1b21d87e069ea4465ed15047333ec2517a28a212e1864b7cb5e0765b04dec96b",
+  "isolated_revision": "Directional key normal bias1.1→2.0; no other runtime source inventory difference.",
+  "q1_two_originals_byte_identical_to_final": true,
+  "scope": "Rejected raster is retained as evidence, not an approved build; full001 raw outputs remain in local build/art-review/courtyard-lighting-candidate-001."
+}

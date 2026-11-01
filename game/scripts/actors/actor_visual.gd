@@ -3,6 +3,7 @@ extends Node3D
 
 const RUNE_SWORD_SCENE: PackedScene = preload("res://assets/models/production/rune_sword_web.glb")
 const HERO_BLADE_GEOMETRY: PackedScene = preload("res://assets/models/production/rune_greatsword_geometry.glb")
+const GROUNDING_SHADOW = preload("res://scripts/actors/grounding_shadow.gd")
 
 var model: Node3D
 var joints: Dictionary = {}
@@ -20,6 +21,13 @@ var _blade_grip_marker: Node3D
 var _blade_tip_marker: Node3D
 var eye_socket: BoneAttachment3D
 var eye_model: Node3D
+var grounding_shadow: GroundingShadow
+
+func _ready() -> void:
+	if get_parent() is CharacterBody3D:
+		grounding_shadow = GROUNDING_SHADOW.new()
+		grounding_shadow.name = "PerformanceGrounding"
+		add_child(grounding_shadow)
 
 func use_production_profile(profile: String) -> Dictionary:
 	var prepared := ProductionCharacterArt.prepare(profile)
@@ -164,7 +172,8 @@ func presentation_report() -> Dictionary:
 		"state":String(skeletal_bridge.selected_state) if skeletal else "", "weapon_attached":is_instance_valid(weapon_socket),
 		"grip_to_tip_m":length, "status":rig_status,
 		"eyes_attached":is_instance_valid(eye_socket) and is_instance_valid(eye_model),
-		"blade_trail":blade_trail.presentation_report() if is_instance_valid(blade_trail) else {}}
+		"blade_trail":blade_trail.presentation_report() if is_instance_valid(blade_trail) else {},
+		"grounding_shadow":grounding_shadow.presentation_report() if is_instance_valid(grounding_shadow) else {}}
 
 func mount_rig(scene: PackedScene, aliases: Dictionary = {}, required_states: Array[StringName] = SkeletalVisualBridge.REQUIRED_STATES, facing_correction: float = PI) -> Dictionary:
 	var candidate := SkeletalVisualBridge.new()

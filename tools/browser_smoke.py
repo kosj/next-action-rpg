@@ -17,6 +17,31 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from playwright.async_api import async_playwright
 
 
+QUALITY_PRESENTATION_READY = """s.quality === a && !s.paused && s.lighting?.key_present &&
+    s.lighting?.fill_present && s.lighting.key_shadow_enabled === (a === 0) &&
+    s.lighting.fill_shadow_enabled === false && s.hero_art?.grounding_shadow &&
+    s.hero_art.grounding_shadow.visible === (a === 1) &&
+    (a === 0 || (s.hero_art.grounding_shadow.cached_ground &&
+        s.hero_art.grounding_shadow.reason === 'approximate_grounding'))"""
+
+
+def assert_quality_presentation(status, index):
+    """Observe actual light/finite grounding nodes after normal resumed physics."""
+    light = status["lighting"]
+    ground = status["hero_art"]["grounding_shadow"]
+    assert status["quality"] == index and not status["paused"], status
+    assert light["key_present"] and light["fill_present"], light
+    assert light["key_shadow_enabled"] is (index == 0), light
+    assert light["fill_shadow_enabled"] is False, light
+    assert ground["visible"] is (index == 1), ground
+    assert ground["gameplay_authority"] is False, ground
+    assert 0 <= ground["visible_budget_used"] <= ground["maximum_visible"] == 8, ground
+    if index == 1:
+        assert ground["cached_ground"] and ground["query_count"] > 0, ground
+        assert 0 < ground["opacity"] <= .210001 and ground["height_m"] < 1, ground
+    assert 0 < status["render_scale"] <= 1, status["render_scale"]
+
+
 async def run(url, output=Path("build/verification")):
     output.mkdir(parents=True, exist_ok=True)
     for name in ("01-title.png", "02-prologue.png", "03-pause.png", "04-gameplay.png",
@@ -91,6 +116,13 @@ async def run(url, output=Path("build/verification")):
             assert isinstance(build_id, str) and build_id.rsplit(" · ", 1)[-1] == expected_commit[:8], ("Published build differs from expected commit", build_id, expected_commit[:8])
         await page.bring_to_front()
         assert_hero_art(await state(page), label)
+
+    async def quality_presentation(page, index):
+        await page.wait_for_function("a => { const s = window.__RUNEFALL_STATE; return s && (" +
+                                     QUALITY_PRESENTATION_READY + "); }", arg=index, timeout=15000)
+        status = await state(page)
+        assert_quality_presentation(status, index)
+        return status
 
     async def state(page):
         return await page.evaluate("(() => { const s = window.__RUNEFALL_STATE; return s && {...s, qa_frame_probe:window.__RUNEFALL_QA_FRAME_PROBE}; })()")
@@ -327,6 +359,7 @@ async def run(url, output=Path("build/verification")):
                 assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
                 assert status["quality"] == 1 and not status["dead"] and status["health"] > 0, status
                 assert_hero_art(status, "performance")
+                status = await quality_presentation(page, 1)
                 quality_states = {"performance": status}
                 await page.screenshot(path=str(output / "07-performance-gameplay.png"))
                 mark_stage("balanced_quality_tour")
@@ -342,6 +375,8 @@ async def run(url, output=Path("build/verification")):
                 assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
                 assert status["quality"] == 0 and not status["dead"] and status["health"] > 0, status
                 assert_hero_art(status, "balanced")
+                status = await quality_presentation(page, 0)
+                assert status["render_scale"] > quality_states["performance"]["render_scale"], status
                 quality_states["balanced"] = status
                 await page.screenshot(path=str(output / "06-balanced-gameplay.png"))
                 await release_input(page)
@@ -358,6 +393,8 @@ async def run(url, output=Path("build/verification")):
                 assert status["encounter"] == -1 and -16 < status["z"] <= -8, status
                 assert not status["dead"] and status["health"] > 0, status
                 assert_hero_art(status, "restored")
+                status = await quality_presentation(page, 1)
+                assert status["render_scale"] < quality_states["balanced"]["render_scale"], status
                 quality_states["restored"] = status
                 (output / "browser-quality.json").write_text(json.dumps(quality_states, indent=2))
                 storage_states["after_settings_done"] = await persisted_saves(page)

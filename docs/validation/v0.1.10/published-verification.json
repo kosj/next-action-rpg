@@ -1,0 +1,143 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Historical published v0.1.10 checkpoint. Original source-bound dirty-preview/native/capture records remain unchanged; this does not validate v0.1.11 or AAA/hardware.",
+  "app_version": "0.1.10",
+  "main_commit": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+  "tree": "9e9aae6d3599e7e4c5163602ffc7fdd51a767178",
+  "source_catalog_commit": "cb97d983f137c87e321c0a0c21524a51333352eb",
+  "pr_url": "https://github.com/kosj/next-action-rpg/pull/11",
+  "pr_actions": "https://github.com/kosj/next-action-rpg/actions/runs/41317119978",
+  "main_actions": "https://github.com/kosj/next-action-rpg/actions/runs/41319105910",
+  "tag_actions": "https://github.com/kosj/next-action-rpg/actions/runs/41319205647",
+  "tag": {
+    "name": "v0.1.10",
+    "annotated_object": "6a09696833ad737132f36072970d47ea7c600868",
+    "peeled_commit": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+    "actual_remote_ref_verified": true
+  },
+  "all_six_main_and_four_tag_required_jobs_verified": true,
+  "main_public_desktop": {
+    "status": "success",
+    "seconds": 270.5,
+    "errors": 0,
+    "actual_footer": "0.1.10 · a07f91db",
+    "restart": "CP0/HP120/z6/q1"
+  },
+  "main_public_full_mobile": {
+    "scope": "Actual public HTTPS direct full-touch driver. 53 committed runtime hashes separately verified in main predeployment artifacts; no Android/iOS/Safari/hardware/AAA approval",
+    "run": 41319105910,
+    "main_sha": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+    "phase": "full",
+    "seconds": 1062.493,
+    "errors": [],
+    "actual_footer": "0.1.10 · a07f91db",
+    "trusted_3pointer": true,
+    "primary_qualities": [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "primary_seconds": [
+      3.29,
+      2.662,
+      0.98,
+      1.96,
+      1.335
+    ],
+    "restart": {
+      "checkpoint": 0,
+      "health": 120,
+      "z": 6,
+      "quality": 1,
+      "touch_visible": true,
+      "pointers": []
+    },
+    "artifact_bytes": 7687936,
+    "artifact_sha256": "21231b91356006a218f9fdc93977275ce5e771142659bed67f971a672a39a20c"
+  },
+  "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.10",
+  "release_three_assets": [
+    {
+      "name": "manifest.json",
+      "http_status": 200,
+      "bytes": 406,
+      "sha256": "18024a8587fc9adb7eed16ec937df465d25919d1ca14a1de385b0971adcb9b5d",
+      "api_digest_match": true,
+      "tls_verification": "default enabled",
+      "permanent_url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.10/manifest.json"
+    },
+    {
+      "name": "runefall-web.zip",
+      "http_status": 200,
+      "bytes": 115770466,
+      "sha256": "d0d77bb44009543e7134233a83494c694aae9f3feca8bf7e53d08a4f39685f26",
+      "api_digest_match": true,
+      "tls_verification": "default enabled",
+      "permanent_url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.10/runefall-web.zip"
+    },
+    {
+      "name": "runefall-windows.zip",
+      "http_status": 200,
+      "bytes": 143611823,
+      "sha256": "301a930cefa7479b190ac4e1cddd89d58b31a483b34eebc371461988d731fe5c",
+      "api_digest_match": true,
+      "tls_verification": "default enabled",
+      "permanent_url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.10/runefall-windows.zip"
+    }
+  ],
+  "actual_manifest_and_zip_verification": {
+    "version": "0.1.10",
+    "godot": "4.7.2",
+    "expected_main_sha": "a07f91db392d39494cd5bb635d579b3eb3d15663",
+    "manifest_commit": "a07f91db",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115770466,
+        "sha256": "d0d77bb44009543e7134233a83494c694aae9f3feca8bf7e53d08a4f39685f26",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 146518615
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143611823,
+        "sha256": "301a930cefa7479b190ac4e1cddd89d58b31a483b34eebc371461988d731fe5c",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 215938502
+      }
+    ],
+    "status": "verified",
+    "scope": "Downloaded bytes and packaging; no hardware or art approval"
+  },
+  "knowledge_kit": {
+    "version": "1.4.4",
+    "entries": 65,
+    "source_commit": "cb97d983f137c87e321c0a0c21524a51333352eb",
+    "catalog_sha256": "d65759c04d9b13b39174308ef39f131c9860eb0edc8db3a7a1a3a5a03bb734e3",
+    "bytes": 96306,
+    "sha256": "97da6ebcf2a9ce6f20d9c60e9fdfe31f36bebd05f22ca46b416085b6c78662ba",
+    "independent_checks": "7passed/0failed/0skipped",
+    "immutable_tag_download": {
+      "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/v0.1.10/reusable/game-production-kit.zip",
+      "http_status": 200,
+      "bytes": 96306,
+      "sha256": "97da6ebcf2a9ce6f20d9c60e9fdfe31f36bebd05f22ca46b416085b6c78662ba",
+      "zip_crc_ok": true,
+      "verified_by": "root independent anonymous default-TLS request; source same as child-verified main ZIP"
+    }
+  },
+  "scope_limits": [
+    "Windows export/package only; not Windows hardware execution",
+    "Chromium emulation is not Android/iOS/Safari performance approval",
+    "Silent scripted native logical1x is not human-input real-time or continuous audiovisual approval",
+    "Whole skin/armor/feet/AAA final approval remains pending"
+  ]
+}

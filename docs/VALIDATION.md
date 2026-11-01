@@ -1,12 +1,18 @@
 # 검증 결과
 
+## v0.1.11 · 성역 조명과 성능 모드 접지
+
+- [고정 엔진의 조명·톤매핑 근거와 품질 정책](ENVIRONMENT_LIGHTING_SLICE.md)을 대조하고, 동일 Game·카메라·배치의 품질별 전후 원본으로 석재·금속의 밝은 부분과 실제 그림자를 검수했다. 첫 후보의 바닥 격자 노이즈는 기각하고 그림자 바이어스를 복구한 최종 후보002를 한정 채택했다.
+- 품질0은 균형/실제 그림자 ON, 품질1은 성능/실제 그림자 OFF다. 성능 모드에는 실제 바닥·높이·경사·가시 개수 한도를 따르는 근사 음영을 추가했다. 수치의 의미와 저장 형식은 유지한다.
+- [판본별 원문과 검증 상태](validation/v0.1.11/README.md)를 확인한다. 최종 source로 다시 실행한 native **508개/실패0**와 Python **51개/실패0**, Web/Windows preview 내보내기와 원시Web **146,543,039B/150MB**를 확인했다. 이전 source의 첫508 통과와 별도 실행이며 Web/Windows·브라우저·배포는 각각의 근거로 판정한다. 통제된 Linux 소프트웨어 렌더 원본의 한정 채택이며 연속 AV·실기기 성능·AAA 승인은 별도다.
+
 ## v0.1.10 · 활성 베기와 실제 명중 가독성
 
 - [새 몸·팔 경로와 source 고정 칼날 곡선](COMBAT_MOTION_POLISH_SLICE.md)을 연결하고 Hero 전용 넓은 검·전투 카메라·방향성 잔상/접촉 표현을 개선했다. 실제 접촉 화면이 약했던 첫 후보는 기능 검사가 녹색이어도 기각하고 별도 진단으로 보존했다.
 - 최종 가시성 후보는 pinned Godot4.7.2 **486개/실패0**, Web/Windows preview 내보내기와 원시Web **146,517,123B/150MB**를 통과했다. 물리·피해·공격 시간·양쪽 정지와 충돌 recoil 계약은 유지하고, 접촉 core의120mm/75ms/밝기는 명시적인 아트 budget으로 조정했다. [판본별 원문](validation/v0.1.10/README.md).
 - [실제 입력의 native 전후 비교](validation/v0.1.10/native-gameplay/README.md)는 고정60Hz의600 gameplay tick과 정상 UI를 포함한 조용한 논리1배속 자료다. 새 카메라의 적/명중 구분과 작은 접촉 glint를 한정적으로 채택했으며 전체 연속 AV·청취·목표 하드웨어·AAA 승인은 아니다.
 - [실제 모바일 집중 검사](validation/v0.1.10/focused-browser/README.md)는 **277.923초/오류0**, trusted2pointer·공격당 접촉1회·피해69.3·실제 recoil0.350000406m를 확인했다. 브라우저의 짧은 snapshot과 native5프레임 직접 정지 근거를 구분한다.
-- 현재 기록은 source 지문을 고정한 dirty preview다. 최종 최신 커밋의 전체 데스크톱/모바일 CI·공개/릴리스 결과는 [PR11](https://github.com/kosj/next-action-rpg/pull/11)과 해당 Actions에서 별도로 확인한다. 이전614세대의 전체 CI 통과를 새 카메라·core 승인으로 바꾸지 않는다.
+- 원래 dirty preview 이후 v0.1.10/`a07f91db392d39494cd5bb635d579b3eb3d15663`의 main·tag CI, 공개 desktop/전체mobile, 실제 릴리스 첨부3개와 재사용 묶음1.4.4 검증을 [공개 확인 기록](validation/v0.1.10/published-verification.json)에 보존했다. [PR11](https://github.com/kosj/next-action-rpg/pull/11)의 최종 판본 근거이며, v0.1.11 또는 AAA 승인으로 승계하지 않는다.
 
 초기482검사·원시Web146,513,443B와 첫 material/반입대응/fixture타입 실패는 [이전 단계 원문](validation/v0.1.10/README.md)에 보존했다. 이를 최종486검사나 시각 채택으로 승계하지 않는다.
 
