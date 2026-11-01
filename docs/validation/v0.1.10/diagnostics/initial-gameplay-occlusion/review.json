@@ -1,0 +1,229 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Silent delivery does not establish audio-hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "functional_capture_gates_passed": true,
+  "engine_clean": false,
+  "engine_exit_error": "1 resources still in use at exit;2 ObjectDB instances leaked",
+  "cleanup_cause": "Unresolved in this take; next fixture drains Game/Audio after final recorded draw",
+  "duration": {
+    "gameplay_frames": 600,
+    "delivery_frames": 624,
+    "delivery_seconds": 10.4,
+    "fps": 60
+  },
+  "receipt": {
+    "amount": 69.3,
+    "attack_elapsed": 0.386,
+    "attack_id": "charged_heavy",
+    "attack_instance_id": 2,
+    "blocked": false,
+    "contact_blade_grip": [
+      0.174395143985748,
+      1.22470903396606,
+      -32.2959594726562
+    ],
+    "contact_blade_motion": [
+      -10.0997304916382,
+      -7.58754205703735,
+      -11.8340864181519
+    ],
+    "contact_blade_tip": [
+      0.614297688007355,
+      1.85123610496521,
+      -33.2070274353027
+    ],
+    "contact_damage_axis_base": [
+      0.297937572002411,
+      1.40066313743591,
+      -32.5518264770508
+    ],
+    "contact_damage_axis_tip": [
+      0.569937705993652,
+      1.78805685043335,
+      -33.1151542663574
+    ],
+    "contact_damage_base": [
+      0.253577589988708,
+      1.33748388290405,
+      -32.4599533081055
+    ],
+    "contact_damage_tip": [
+      0.614297688007355,
+      1.85123610496521,
+      -33.2070274353027
+    ],
+    "contact_phase": 0.255555555555556,
+    "contact_source": "hurtbox_ray",
+    "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "damage_start_fraction": 0.18,
+    "direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "health_after": 25.7,
+    "health_before": 95.0,
+    "hitstop": 0.075,
+    "killed": false,
+    "material": "metal",
+    "normal": [
+      0.87024599313736,
+      0.0925567746162415,
+      0.483844131231308
+    ],
+    "observed_tick": 359,
+    "physics_frame": 359,
+    "point": [
+      0.348098397254944,
+      1.58786129951477,
+      -32.8864593505859
+    ],
+    "poise_broken": true,
+    "reaction": "heavy_hit",
+    "reaction_duration": 0.48,
+    "requested_recoil_m": 0.35,
+    "source": "player",
+    "source_position": [
+      0.0,
+      -0.0241607539355755,
+      -31.9636211395264
+    ],
+    "strength": "charged",
+    "target_id": 129553666377,
+    "target_position": [
+      0.0,
+      0.000838571635540575,
+      -33.0799980163574
+    ],
+    "victim_pause": 0.075
+  },
+  "paired_pause_frames": 5,
+  "hero_contact_attack_elapsed": 0.386,
+  "hero_contact_sampled_time": 0.385999979163116,
+  "actual_marker_worlds_logged": false,
+  "marker_limitation": "Receipt query endpoints and camera final marker projections recorded; explicit final marker world points added to subsequent fixture only",
+  "query_inner_capsule_point_distance_m": 0.1009314852230513,
+  "actor_distance_m": 1.1081254349051557,
+  "relative_target_from_hero": [
+    0.0,
+    0.024999653396662276,
+    -1.1078433990478018
+  ],
+  "recoil_displacement_max_m": 0.3500022888185411,
+  "hero_contact_health": 104.0,
+  "hero_end_health": 56.0,
+  "camera": {
+    "basis": [
+      [
+        0.995394706726074,
+        0.0,
+        -0.0958611890673637
+      ],
+      [
+        -0.0119479950517416,
+        0.99220222234726,
+        -0.12406449764967
+      ],
+      [
+        0.0951136872172356,
+        0.124638497829437,
+        0.987632870674133
+      ]
+    ],
+    "fov": 55.3561668395996,
+    "impact": {
+      "age": 0.0166666666666667,
+      "amplitude": 0.085,
+      "duration": 0.19,
+      "enabled": true,
+      "fov": 55.3561668395996,
+      "framing": {
+        "actual_BladeTip_uv": [
+          0.557870817184448,
+          0.411780420939128
+        ],
+        "actual_GripOrigin_uv": [
+          0.515879678726196,
+          0.523025300767687
+        ],
+        "follow_distance": 5.2,
+        "free_distance": 5.2,
+        "locked": true,
+        "maximum_lock_distance": 8.6,
+        "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+        "subjects": [
+          {
+            "behind_camera": false,
+            "height_fraction": 0.320245149400499,
+            "nominal_foot_uv": [
+              0.495756959915161,
+              0.744973754882812
+            ],
+            "nominal_head_uv": [
+              0.495571947097778,
+              0.424728605482313
+            ]
+          },
+          {
+            "behind_camera": false,
+            "height_fraction": 0.286588668823242,
+            "nominal_foot_uv": [
+              0.505198907852173,
+              0.683794021606445
+            ],
+            "nominal_head_uv": [
+              0.505400133132935,
+              0.397205352783203
+            ]
+          }
+        ],
+        "viewport": [
+          1280.0,
+          720.0
+        ],
+        "wanted_distance": 5.2
+      },
+      "last_context_accepted": true
+    },
+    "pitch": -0.18,
+    "position": [
+      0.542415678501129,
+      2.06162881851196,
+      -26.7879791259766
+    ],
+    "yaw": 0.0
+  },
+  "trail": {
+    "depth_tested": true,
+    "gameplay_authority": false,
+    "layers": 2,
+    "lifetime": 0.16,
+    "samples": 4,
+    "style": "charged",
+    "triangles": 12,
+    "visible": true
+  },
+  "provenance": {
+    "hero": {
+      "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "sentinel": {
+      "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+      "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+    },
+    "curve": {
+      "interpolation": "linear_grip_tip",
+      "ok": true,
+      "path": "res://data/charged_blade_curve.json",
+      "reason": "",
+      "resource_sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+      "sample_count": 91,
+      "sample_step_s": 0.002,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    }
+  },
+  "visual_review": "Actual contact largely obscured by hero and locked target overlap from low camera; not AAA approval"
+}

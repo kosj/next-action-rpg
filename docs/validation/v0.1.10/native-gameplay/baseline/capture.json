@@ -1,0 +1,136 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Silent delivery does not establish audio-hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "scenario": {
+    "ui": "Native mouse clicks: Settings; quality1 via OptionButton and Down/Enter; Done; New Game; prologue Continue",
+    "movement": "Native W+Shift to actual first encounter, Tab lock; hold right mouse Heavy while approaching within2m",
+    "release": "Stop movement; wait for real incoming health decrease and stagger clear with Heavy>=.65; release right mouse",
+    "completion": "Observe real charged contact and both actors paused, then ordinary recovery to bounded end",
+    "prohibited": [
+      "teleport",
+      "invulnerability writes",
+      "forced damage",
+      "save injection",
+      "QA state writes",
+      "forced sync"
+    ],
+    "variance": "Matched event-driven input policy, not identical AI trajectories or fixed event timestamps"
+  },
+  "status": "scripted_native_gameplay_captured",
+  "takes": {
+    "before": {
+      "actual": {
+        "charged_contacts": 1,
+        "paired_pause_frames": 5,
+        "actual_models": {
+          "hero": {
+            "path": "res://assets/models/production/lyra_weight_gameplay.glb",
+            "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83"
+          },
+          "sentinel_melee": {
+            "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+            "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+          }
+        },
+        "actual_curve": {
+          "mode": "baseline_analytic_blade",
+          "resource_sha256": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06"
+        },
+        "contact_tick": 362,
+        "release_tick": 334,
+        "actual_build_id": "0.1.9 · development",
+        "start_health": 120.0,
+        "end_health": 56.0,
+        "frame_count": 624,
+        "gameplay_frames": 600
+      },
+      "media": {
+        "raw": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/gameplay.avi",
+          "sha256": "8e47699cfb25e959c9501728eade99defe7ceab77b645b8c4fb6499f4132a3d6",
+          "probe": {
+            "codec_name": "mjpeg",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "10.433333",
+            "nb_read_frames": "626"
+          }
+        },
+        "delivery": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/gameplay-logical1x.mp4",
+          "sha256": "9f284b3bd0dbb3c5e01c33feb87c34aefde068387d91349b499e8aa76c69cf8c",
+          "probe": {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "10.400000",
+            "nb_read_frames": "624"
+          },
+          "logical_speed": 1.0,
+          "audio": "silent, not listened/approved",
+          "frames": 624
+        },
+        "original_png_checks": [
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/original-png/01-normal-gameplay.png",
+            "sha256": "700d811c1fffc2fe8faf1b0f273b0feb0f8a24cb4db1d083f56631d231ba3e01",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              95.74454427083333,
+              106.78741970486111,
+              106.09596028645834
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/original-png/02-charge-near-real-enemy.png",
+            "sha256": "4682e699829a424573dbf521107be8ae44a5af383a76312f97e52305927fb6bd",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              133.26056315104168,
+              127.717685546875,
+              117.58699544270833
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/original-png/04-actual-confirmed-contact.png",
+            "sha256": "e91cc9f257674a1469d7b5c7d6e4ead58334fb985cb8b22b6d5eae43bd1b417e",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              133.35964518229167,
+              127.3710546875,
+              116.58241536458333
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          }
+        ]
+      },
+      "source_inputs_unchanged": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ]
+    }
+  },
+  "display_tcp_disabled": true,
+  "processes_closed": true,
+  "started_unix": 1793540653.7573261,
+  "finished_unix": 1793541133.3409321,
+  "elapsed_s": 479.58360600471497
+}

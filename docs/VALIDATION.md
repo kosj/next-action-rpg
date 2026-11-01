@@ -1,11 +1,21 @@
 # 검증 결과
 
+## v0.1.10 · 활성 베기와 실제 명중 가독성
+
+- [새 몸·팔 경로와 source 고정 칼날 곡선](COMBAT_MOTION_POLISH_SLICE.md)을 연결하고 Hero 전용 넓은 검·전투 카메라·방향성 잔상/접촉 표현을 개선했다. 실제 접촉 화면이 약했던 첫 후보는 기능 검사가 녹색이어도 기각하고 별도 진단으로 보존했다.
+- 최종 가시성 후보는 pinned Godot4.7.2 **486개/실패0**, Web/Windows preview 내보내기와 원시Web **146,517,123B/150MB**를 통과했다. 물리·피해·공격 시간·양쪽 정지와 충돌 recoil 계약은 유지하고, 접촉 core의120mm/75ms/밝기는 명시적인 아트 budget으로 조정했다. [판본별 원문](validation/v0.1.10/README.md).
+- [실제 입력의 native 전후 비교](validation/v0.1.10/native-gameplay/README.md)는 고정60Hz의600 gameplay tick과 정상 UI를 포함한 조용한 논리1배속 자료다. 새 카메라의 적/명중 구분과 작은 접촉 glint를 한정적으로 채택했으며 전체 연속 AV·청취·목표 하드웨어·AAA 승인은 아니다.
+- [실제 모바일 집중 검사](validation/v0.1.10/focused-browser/README.md)는 **277.923초/오류0**, trusted2pointer·공격당 접촉1회·피해69.3·실제 recoil0.350000406m를 확인했다. 브라우저의 짧은 snapshot과 native5프레임 직접 정지 근거를 구분한다.
+- 현재 기록은 source 지문을 고정한 dirty preview다. 최종 최신 커밋의 전체 데스크톱/모바일 CI·공개/릴리스 결과는 [PR11](https://github.com/kosj/next-action-rpg/pull/11)과 해당 Actions에서 별도로 확인한다. 이전614세대의 전체 CI 통과를 새 카메라·core 승인으로 바꾸지 않는다.
+
+초기482검사·원시Web146,513,443B와 첫 material/반입대응/fixture타입 실패는 [이전 단계 원문](validation/v0.1.10/README.md)에 보존했다. 이를 최종486검사나 시각 채택으로 승계하지 않는다.
+
 ## v0.1.9 · 강타 장전·제동과 수호병 회수
 
 - [전신 장전·디딤·제동과 실제 idle 복귀](WEIGHT_RECOVERY_SLICE.md)를 개선했습니다. 강타의 active 팔·칼날 경로는 보존하며, 추가 역회전 후보와 실제 복귀 실패를 기각·수정했습니다.
 - [로컬 검증 기록](validation/v0.1.9/README.md): native **448개·실패0**, Python **51개·실패0**, Web 원시 **146,306,891B/150MB**와 Windows 내보내기·패키지 검증이 통과했습니다. 수호병의 실제 마지막 피격 포즈→idle 오차는 **4.52mm**, 첫 idle 전환은 **0.49mm**로 기존20mm 한계 안입니다.
 - [실제 다중 터치 집중 검사](validation/v0.1.9/focused-browser/SUMMARY.json)는 같은 소스·export·기준의 두 번째 실행에서 **290.733초·오류0**으로 통과했습니다. 피해69.3·적중/효과1회·실제recoil.350000381m·마지막HP88/소유포인터0을 확인했습니다. 첫15초 준비 관찰 실패는 별도로 보존하며 원인 수정으로 표시하지 않습니다.
-- 이 자료는 dirty preview입니다. 정확 커밋 CI·전체 데스크톱/모바일 여정·공개 배포는 [GitHub Actions](https://github.com/kosj/next-action-rpg/actions)에서 각각 확인합니다. 생성한 논리1배속 비교 영상과 유한 프레임 관찰, 연속1배속 AV·실기기·AAA 승인을 구분합니다.
+- 위 로컬 기록 이후 v0.1.9/`1e524b1275c6c55d3020ea5c3122afbb8db403e9`의 [main CI](https://github.com/kosj/next-action-rpg/actions/runs/41266976799)·[tag CI](https://github.com/kosj/next-action-rpg/actions/runs/41267055177)·[공개 검사](validation/v0.1.9/published-verification.json)를 확인했다. 공개 desktop366.465초/errors0·전체mobile1240.735초/errors0,필수6job/artifact와 [v0.1.9 릴리스](https://github.com/kosj/next-action-rpg/releases/tag/v0.1.9)의3파일 TLS/HTTP200·API hash/ZIP 검증이 통과했다. [PR #10](https://github.com/kosj/next-action-rpg/pull/10)의 최종 판본 근거이며 원래 dirty-preview proof는 당시 기록으로 보존한다. 논리1x/유한 frame·연속AV·실기기·AAA 승인은 별도다.
 
 ## v0.1.8 · 완충 강타·강피격 대표 단위
 

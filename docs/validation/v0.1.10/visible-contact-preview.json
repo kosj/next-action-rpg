@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Revised readable-contact candidate local dirty614-head preview; native486/0/error0 and existing Web/Windows artifact bytes/hash checked. Final gameplay capture, clean committed CI/public release, continuous AV/hearing, target hardware and AAA remain separately scoped.",
+  "native": {
+    "checks": 486,
+    "failures": 0,
+    "log_error_markers": {
+      "SCRIPT ERROR": 0,
+      "ERROR:": 0,
+      "ObjectDB instances were leaked": 0,
+      "resources still in use": 0
+    },
+    "log": "native-visible-contact.log",
+    "feedback": "native-visible-contact.json"
+  },
+  "manifest": {
+    "version": "0.1.10",
+    "godot": "4.7.2",
+    "commit": "61445931",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115769331,
+        "sha256": "e6865e2772df7340592cb9e4ce43b6fbcdf17e16bf90fe8f8b54b10d5542d304"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143610638,
+        "sha256": "141346237dff91066b4f4b7b800ecf32974d303a6e2a8b2607344ee895e2db3f"
+      }
+    ]
+  },
+  "artifacts": {
+    "runefall-web.zip": {
+      "bytes": 115769331,
+      "sha256": "e6865e2772df7340592cb9e4ce43b6fbcdf17e16bf90fe8f8b54b10d5542d304"
+    },
+    "runefall-windows.zip": {
+      "bytes": 143610638,
+      "sha256": "141346237dff91066b4f4b7b800ecf32974d303a6e2a8b2607344ee895e2db3f"
+    }
+  },
+  "web_raw_bytes": 146517123,
+  "web_raw_files": 14,
+  "verification_scope": "Direct regular-file byte sum and existing ZIP SHA calculation; no export rerun. Native full log/report copied byte-exact."
+}

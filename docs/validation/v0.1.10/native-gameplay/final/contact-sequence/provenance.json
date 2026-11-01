@@ -1,0 +1,35 @@
+{
+  "scope": "Unscaled decoded original MovieMaker MJPEG frames, no crop/annotation/retiming; direct renderer lossless contact PNG is separate",
+  "raw_movie_sha256": "c500f15f215ffa82c2650b60de67fd237a631926dfe81ab51e99907af983e0b4",
+  "contact_movie_frame": 358,
+  "samples": [
+    {
+      "movie_frame": 358,
+      "offset_after_contact_frames": 0,
+      "physics_frame": 359,
+      "file": "contact-01.png",
+      "sha256": "84bce42a6fad7329e4cacfd7d52d8b4ab2bbd7f6939561998805fd436a5febd8"
+    },
+    {
+      "movie_frame": 359,
+      "offset_after_contact_frames": 1,
+      "physics_frame": 360,
+      "file": "contact-02.png",
+      "sha256": "8d3d17ec2aff53209c6f070e3f3964d43d4f47df126354993d2f0bdd49882421"
+    },
+    {
+      "movie_frame": 360,
+      "offset_after_contact_frames": 2,
+      "physics_frame": 361,
+      "file": "contact-03.png",
+      "sha256": "103d6d1fc20a98c24d8c55415a56363d309f76e6ca608112129b903d2c2f0528"
+    },
+    {
+      "movie_frame": 362,
+      "offset_after_contact_frames": 4,
+      "physics_frame": 363,
+      "file": "contact-04.png",
+      "sha256": "366a4ad5eff7402bc9d99093f6d174a2c70b6173ed95cfcd200ba6d611a9b844"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "scope": "Historical diagnostic archive; sha256 over each listed file, excluding this manifest.",
+  "files": {
+    "README.md": {
+      "bytes": 1688,
+      "sha256": "35e67569550dd97f81cdab4fd6187ab0b8292766811b3094aa0cd729c128fe21"
+    },
+    "capture-inputs.json": {
+      "bytes": 38583,
+      "sha256": "32a9ad3966973256107c8f44aa9328dcf25ff5abbc453e9c3280b52cc30535ef"
+    },
+    "contact.png": {
+      "bytes": 1159290,
+      "sha256": "edd9944afe2bba292436e2a653c6b9b7bc8d4fc79f23a3c21bc0a4533c92d7e2"
+    },
+    "evidence.json": {
+      "bytes": 1614,
+      "sha256": "6440136febe5643f366f61bc00ac977816058bb2fb320f34bdae1e4f222a69de"
+    },
+    "gameplay.log": {
+      "bytes": 1880,
+      "sha256": "864376da48f80cd67270f79bbe713f23129b6c8c0d2da81061114b2abc6bdaa4"
+    },
+    "review.json": {
+      "bytes": 6651,
+      "sha256": "f85999aa1a9454745b07d1f70fd33a081cf76118e659cce0c5fb10e60c47c0d4"
+    },
+    "runtime-inputs.json": {
+      "bytes": 38583,
+      "sha256": "c30de703732c3ca38fa0a42f7149ce4ef7499264622b63bf1c4f52427e38b104"
+    },
+    "source-inputs.json": {
+      "bytes": 38583,
+      "sha256": "7c9fd08f26025d7a8b78ef787578448754ab504c7ba7bf7fb8ff2bac833d687c"
+    }
+  }
+}

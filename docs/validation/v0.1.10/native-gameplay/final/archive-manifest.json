@@ -1,0 +1,81 @@
+{
+  "scope": "Final local scripted native gameplay evidence, excluding this manifest; not final release or AAA approval.",
+  "files": {
+    "README.md": {
+      "bytes": 2168,
+      "sha256": "4f0ade6741a08380862d355b3ec1e492570c6aa33eb5daed54494fa9f22b826e"
+    },
+    "capture-inputs.json": {
+      "bytes": 38583,
+      "sha256": "bb938c543ed429d8b270eb5b5c26617b62f010d2b70996238d69f3b98d18cab5"
+    },
+    "capture.json": {
+      "bytes": 6412,
+      "sha256": "3d0805a8fb7d1e283341a5ac701a6946460297cba5bb192edcc210d335f43b4d"
+    },
+    "cleanup.json": {
+      "bytes": 192,
+      "sha256": "6e1ac82d0c8a043fa46215d9213a998390256433df41a25ca51bad9c8821aa3f"
+    },
+    "contact-frame.json": {
+      "bytes": 21461,
+      "sha256": "2a5b3664ce21ba90f5e606d13812a58e59d64df88c94155ab63a027965a50f84"
+    },
+    "contact-sequence/contact-01.png": {
+      "bytes": 1448271,
+      "sha256": "84bce42a6fad7329e4cacfd7d52d8b4ab2bbd7f6939561998805fd436a5febd8"
+    },
+    "contact-sequence/contact-02.png": {
+      "bytes": 1449174,
+      "sha256": "8d3d17ec2aff53209c6f070e3f3964d43d4f47df126354993d2f0bdd49882421"
+    },
+    "contact-sequence/contact-03.png": {
+      "bytes": 1450975,
+      "sha256": "103d6d1fc20a98c24d8c55415a56363d309f76e6ca608112129b903d2c2f0528"
+    },
+    "contact-sequence/contact-04.png": {
+      "bytes": 1459001,
+      "sha256": "366a4ad5eff7402bc9d99093f6d174a2c70b6173ed95cfcd200ba6d611a9b844"
+    },
+    "contact-sequence/provenance.json": {
+      "bytes": 1173,
+      "sha256": "47b9eb5871d13b234e00a8737e9d1a0baafe68d28ab99f7e518d4baa7dc9c215"
+    },
+    "contact.png": {
+      "bytes": 1254791,
+      "sha256": "ebaf7efa5efe353389a3485bbef2f94e52a589abfeb702173dba426fb3c06ea1"
+    },
+    "frames.json.gz": {
+      "bytes": 568203,
+      "sha256": "2f02bdeb90f8683545e07a53896f8084086cc5b02759acc44946f501ab0ac7f6"
+    },
+    "gameplay-logical1x.mp4": {
+      "bytes": 7046711,
+      "sha256": "da3df4ad4f16e7dec1b0e94ac8da31e5d899fb74b0d8608716a9bcc5484fff4d"
+    },
+    "gameplay.log": {
+      "bytes": 1639,
+      "sha256": "150c7d5bb05915181c49234733af1b08c6d821624b0d315aff4ccb2ab8224da8"
+    },
+    "review.json": {
+      "bytes": 20296,
+      "sha256": "ac6e8cb34bf4316eac3ba7ea6d6852cc782da80abb3386f7d177cf7477ef05d8"
+    },
+    "runtime-inputs.json": {
+      "bytes": 38583,
+      "sha256": "69bf68aed1c78ae6df66fe54f22a8f57090f672ac6ce12988f337c798e324172"
+    },
+    "source-differences.json": {
+      "bytes": 14727,
+      "sha256": "de4a8fb4bfc451edf894b70a5e977c62a8645753374553d5b227079d11eb05d0"
+    },
+    "source-inputs.json": {
+      "bytes": 38583,
+      "sha256": "d754ed70f676f171a6b3b25be7f66af6391019ff0d5c46b3fea5f7f3ce586826"
+    },
+    "trace-gzip.json": {
+      "bytes": 438,
+      "sha256": "f5d7a787c9b88b6994e7a3980ff2c291216a0573d1669c344ec4fa86c6b0624d"
+    }
+  }
+}

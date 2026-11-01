@@ -1,0 +1,377 @@
+{
+  "scope": "Light CPU raw glTF skin at logged actual contact pose; matches logged six bone worlds. Counterfactual camera keeps actual focus/follow+impact offset and FOV56. Ray tests only hero body, excluding sword/eyes/target/world; not raster or final fit approval.",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "frames_sha256": "ad9a6e10c3f3f6266a751bd345bc3db203e6a13c26b5bfa6b085df94abddb68d",
+  "contact_tick": 359,
+  "sampled_time": 0.385999979163116,
+  "bone_error_m": {
+    "LeftFoot": 1.8764276434208913e-06,
+    "LeftHand": 2.019937388261613e-07,
+    "LeftToeBase": 7.149587534943577e-07,
+    "RightFoot": 7.675282001448213e-08,
+    "RightHand": 8.4914900996179e-07,
+    "RightToeBase": 1.272447438404593e-06
+  },
+  "actual_focus": [
+    0.0,
+    1.3508387413915568,
+    -32.42026475932553
+  ],
+  "contact_world": [
+    0.348098397254944,
+    1.58786129951477,
+    -32.8864593505859
+  ],
+  "options": [
+    {
+      "label": "current",
+      "parameters": [
+        5,
+        2.4,
+        0.85
+      ],
+      "position": [
+        0.842415690422058,
+        2.8974347114563,
+        -26.984748840332
+      ],
+      "contact_pixel": [
+        686.5505769863807,
+        322.0724043384484
+      ],
+      "head_neck_bbox_pixels": [
+        [
+          616.9192489937402,
+          335.2910489880551
+        ],
+        [
+          643.7503880479139,
+          378.31049566401293
+        ]
+      ],
+      "contact_in_head_neck_bbox": false,
+      "core_center_occlusion": {
+        "occluded": false
+      },
+      "core_perimeter_occluded": 0,
+      "core_sample_count": 13,
+      "portrait_foot_uv": [
+        0.4752928092398227,
+        0.7361318666522013
+      ],
+      "portrait_head_uv": [
+        0.4729340289511451,
+        0.4393907130012151
+      ],
+      "portrait_height_fraction": 0.2967411536509862,
+      "ratio_vs_v019": 1.1959943713141623
+    },
+    {
+      "label": "closer_wider",
+      "parameters": [
+        4.5,
+        2.4,
+        1.2
+      ],
+      "position": [
+        1.192415690422058,
+        2.986949498169212,
+        -27.47667068672606
+      ],
+      "contact_pixel": [
+        693.906080076028,
+        319.1304636071451
+      ],
+      "head_neck_bbox_pixels": [
+        [
+          610.26210962478,
+          334.9792511815073
+        ],
+        [
+          640.445637607904,
+          381.60872190784767
+        ]
+      ],
+      "contact_in_head_neck_bbox": false,
+      "core_center_occlusion": {
+        "occluded": false
+      },
+      "core_perimeter_occluded": 0,
+      "core_sample_count": 13,
+      "portrait_foot_uv": [
+        0.45996385402365453,
+        0.7497621018502265
+      ],
+      "portrait_head_uv": [
+        0.455298501701692,
+        0.4382720373982165
+      ],
+      "portrait_height_fraction": 0.31149006445200994,
+      "ratio_vs_v019": 1.255438820066916
+    },
+    {
+      "label": "wider_same_distance",
+      "parameters": [
+        5,
+        2.4,
+        1.5
+      ],
+      "position": [
+        1.492415690422058,
+        2.8974347114563,
+        -26.984748840332
+      ],
+      "contact_pixel": [
+        690.7341352547978,
+        324.2911299567253
+      ],
+      "head_neck_bbox_pixels": [
+        [
+          611.1743191857674,
+          335.2889716832945
+        ],
+        [
+          639.2178604214911,
+          376.6698110108807
+        ]
+      ],
+      "contact_in_head_neck_bbox": false,
+      "core_center_occlusion": {
+        "occluded": false
+      },
+      "core_perimeter_occluded": 0,
+      "core_sample_count": 13,
+      "portrait_foot_uv": [
+        0.4582665935873163,
+        0.7301897424631397
+      ],
+      "portrait_head_uv": [
+        0.4544773757448475,
+        0.43991283497124584
+      ],
+      "portrait_height_fraction": 0.2902769074918939,
+      "ratio_vs_v019": 1.1699406813357354
+    },
+    {
+      "label": "closer_wide15",
+      "parameters": [
+        4.5,
+        2.4,
+        1.5
+      ],
+      "position": [
+        1.492415690422058,
+        2.986949498169212,
+        -27.47667068672606
+      ],
+      "contact_pixel": [
+        695.8333994833538,
+        320.5847173990987
+      ],
+      "head_neck_bbox_pixels": [
+        [
+          607.0960013437101,
+          334.90892762466126
+        ],
+        [
+          638.113265600077,
+          380.43132301446
+        ]
+      ],
+      "contact_in_head_neck_bbox": false,
+      "core_center_occlusion": {
+        "occluded": false
+      },
+      "core_perimeter_occluded": 0,
+      "core_sample_count": 13,
+      "portrait_foot_uv": [
+        0.4513359929648275,
+        0.7459577807775375
+      ],
+      "portrait_head_uv": [
+        0.4458385290003046,
+        0.43845363775090723
+      ],
+      "portrait_height_fraction": 0.3075041430266303,
+      "ratio_vs_v019": 1.2393738438052768
+    },
+    {
+      "label": "closer_wide18",
+      "parameters": [
+        4.5,
+        2.4,
+        1.8
+      ],
+      "position": [
+        1.792415690422058,
+        2.986949498169212,
+        -27.47667068672606
+      ],
+      "contact_pixel": [
+        697.3256560769489,
+        322.11647637150037
+      ],
+      "head_neck_bbox_pixels": [
+        [
+          604.3717572053662,
+          334.8679398447917
+        ],
+        [
+          636.2143054875555,
+          379.15447263886387
+        ]
+      ],
+      "contact_in_head_neck_bbox": false,
+      "core_center_occlusion": {
+        "occluded": false
+      },
+      "core_perimeter_occluded": 0,
+      "core_sample_count": 13,
+      "portrait_foot_uv": [
+        0.4435451846841848,
+        0.7415314763049395
+      ],
+      "portrait_head_uv": [
+        0.4373974476045124,
+        0.4387094421763292
+      ],
+      "portrait_height_fraction": 0.3028220341286103,
+      "ratio_vs_v019": 1.2205029328479846
+    }
+  ],
+  "weapon_occlusion": {
+    "scope": "Exact source broadblade transformed through raw RightHand/socket and verified against final actual marker worlds. Star perimeter follows actual confirmed cut-axis projection; no pixel raster/target/world included yet.",
+    "weapon_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+    "marker_error_m": {
+      "grip": 2.6537916705726695e-07,
+      "tip": 1.0416046691679059e-06
+    },
+    "options": [
+      {
+        "label": "current",
+        "0.075": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 1,
+          "sample_count": 13
+        },
+        "0.12": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 1,
+          "sample_count": 13
+        }
+      },
+      {
+        "label": "closer_wider",
+        "0.075": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 1,
+          "sample_count": 13
+        },
+        "0.12": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 1,
+          "sample_count": 13
+        }
+      }
+    ]
+  },
+  "target_occlusion": {
+    "source_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "bone_fit_residual_m": [
+      9.412231793496263e-07,
+      1.1545401945085527e-06,
+      4.3834995911393394e-07,
+      4.984312624725866e-07,
+      1.01433916662467e-06,
+      6.652371747768037e-07
+    ],
+    "actor_rotation": [
+      [
+        0.9999999999958719,
+        3.60332627066001e-07,
+        -2.850852008780221e-06
+      ],
+      [
+        -3.6033321643727114e-07,
+        0.9999999999999138,
+        -2.0671483235964355e-07
+      ],
+      [
+        2.850851934624201e-06,
+        2.0671585964704791e-07,
+        0.9999999999959153
+      ]
+    ],
+    "actor_translation": [
+      1.7254538283578702e-07,
+      0.0008386160421879341,
+      -33.07999769601256
+    ],
+    "scope": "CPU-skinned target heavy_hit at logged sampled time, rigidfit to six actual logged targetbones; no engine-imported mesh/material raster.",
+    "options": [
+      {
+        "label": "current",
+        "0.075": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 0,
+          "sample_count": 13
+        },
+        "0.12": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 0,
+          "sample_count": 13
+        }
+      },
+      {
+        "label": "closer_wider",
+        "0.075": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 0,
+          "sample_count": 13
+        },
+        "0.12": {
+          "center": {
+            "occluded": false
+          },
+          "star_perimeter_occluded": 0,
+          "sample_count": 13
+        }
+      }
+    ]
+  },
+  "target_sword_occlusion": {
+    "marker_error_m": {
+      "grip": 5.743164067207603e-07,
+      "tip": 1.4862045764525014e-06
+    },
+    "source_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "options": [
+      {
+        "label": "current",
+        "center": {
+          "occluded": false
+        }
+      },
+      {
+        "label": "closer_wider",
+        "center": {
+          "occluded": false
+        }
+      }
+    ]
+  }
+}

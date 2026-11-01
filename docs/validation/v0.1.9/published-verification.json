@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Historical published v0.1.9 checkpoint, separate from its original dirty-preview records and from v0.1.10.",
+  "source_sha256": "1e524b1275c6c55d3020ea5c3122afbb8db403e9",
+  "pr_url": "https://github.com/kosj/next-action-rpg/pull/10",
+  "main_actions": "https://github.com/kosj/next-action-rpg/actions/runs/41266976799",
+  "tag_actions": "https://github.com/kosj/next-action-rpg/actions/runs/41267055177",
+  "public_url_at_check": "https://kosj.github.io/next-action-rpg/",
+  "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.9",
+  "all_six_jobs_and_artifacts_verified": true,
+  "public_desktop": {
+    "seconds": 366.465,
+    "errors": 0
+  },
+  "public_mobile": {
+    "seconds": 1240.735,
+    "errors": 0
+  },
+  "release_three_assets_actual_tls_http200_and_api_digest_match": true,
+  "release_verify_exit_code": 0,
+  "release_crc_licenses_playable_files": true,
+  "release_assets": {
+    "manifest": {
+      "bytes": 405,
+      "sha256": "9596ace8d6e02f8f78768042024da1d2da311dd992732e15af0bce4738d838f3"
+    },
+    "web": {
+      "bytes": 115616343,
+      "sha256": "006f809343461bb646fb181117a5b326a51ef4ae698e7a8af7978b0fffd4fb1e",
+      "uncompressed_bytes": 146308159
+    },
+    "windows": {
+      "bytes": 143457699,
+      "sha256": "adb682647538258e63fa03f5e69892addd4f585114f207408369807b7dd82575",
+      "uncompressed_bytes": 215728046
+    }
+  },
+  "not_approved": [
+    "Continuous normal-speed audiovisual quality/hearing",
+    "Target Android/iOS/Safari/Windows hardware performance",
+    "Final AAA quality"
+  ],
+  "frozen_checkpoint_sha256": "9cbe2df2020f647b5ecd9a4daa25d28d56e34acafb3450fb1c3646d0fdd4796e"
+}

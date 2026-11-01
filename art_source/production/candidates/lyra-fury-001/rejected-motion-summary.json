@@ -1,0 +1,37 @@
+{
+  "scope": "Pre-adoption authoring diagnostics. Prior published27fb/base9f/Sentinel e7e remain unchanged; no failed GLB is included here.",
+  "held_fury006": {
+    "source_sha256": "2edd552bb269e5aaf1e0bf227a82b4e3dee27183d9b7323bf5f5828347adee8d",
+    "curve_sha256": "848cb4e8f3a18ea1e722456d4cea914ed50e7a19d0a9296b3bbae2e3b20816b1",
+    "reason": "Raw arm peak reduction passed, but .725m-close capsule could receive sharp contact at active start in a raised pose. Initial inner-axis distance.427485m<sumradius.52m; early downward tip speed only.7664m/s.",
+    "decision": "Initial release shifted laterally outward and heading changed modestly; no arbitrary phase/damage delay or relaxed gate."
+  },
+  "earlier_diagnostics": [
+    {
+      "attempt": "001",
+      "glb_exists": false,
+      "diagnostic": "ValueError: Forearm twist reference approaches singularity"
+    },
+    {
+      "attempt": "002",
+      "glb_exists": false,
+      "diagnostic": "ValueError: Reach/grip exceeds1mm"
+    },
+    {
+      "attempt": "003",
+      "glb_exists": false,
+      "diagnostic": "ValueError: Adjacent joint exceeds15deg: 78.87233755957575"
+    },
+    {
+      "attempt": "004",
+      "glb_exists": false,
+      "diagnostic": "ValueError: Reach/grip exceeds1mm"
+    },
+    {
+      "attempt": "005",
+      "glb_exists": true,
+      "source_sha256": "2edd552bb269e5aaf1e0bf227a82b4e3dee27183d9b7323bf5f5828347adee8d",
+      "diagnostic": "StopIteration"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "checked_at_utc": "2026-11-01T13:20:49.172898+00:00",
+  "version": "0.1.10",
+  "source_head": "1e524b1275c6c55d3020ea5c3122afbb8db403e9",
+  "source_tree_dirty": true,
+  "scope": "Source-bound static/raw plus actual local native and preview export facts. Not full candidate adoption, visual/skin, browser, clean committed release or AAA approval.",
+  "sources": [
+    {
+      "path": "game/assets/models/production/lyra_weight_gameplay.glb",
+      "bytes": 23174144,
+      "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83"
+    },
+    {
+      "path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "bytes": 25032860,
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    {
+      "path": "game/data/charged_blade_curve.json",
+      "bytes": 23480,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
+    },
+    {
+      "path": "game/assets/models/production/rune_sword_web.glb",
+      "bytes": 7536756,
+      "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+    },
+    {
+      "path": "game/assets/models/production/rune_greatsword_geometry.glb",
+      "bytes": 160248,
+      "sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b"
+    }
+  ],
+  "curve": {
+    "source_metadata": {
+      "asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "samples": 91,
+    "step_s": 0.002,
+    "active_start_s": 0.34,
+    "active_duration_s": 0.18,
+    "coordinate_system": "actor_y_up_minus_z_forward",
+    "floor_offset_m": 0.025,
+    "static_file_source_pin_match": true,
+    "max_raw_length_error_m": 1.0372140020198373e-06,
+    "max_raw_midpoint_chord_error_m": 0.0002503868102881057
+  },
+  "robust_raw_joins": [
+    {
+      "name": "idle_to_charge0",
+      "bones": 53,
+      "max_position": {
+        "bone": "RightArm",
+        "position_m": 0.00032976082976390815,
+        "local_rotation_deg": 0.000101466247574813
+      },
+      "max_local_rotation": {
+        "bone": "RightUpLeg",
+        "position_m": 0.0003293291710602734,
+        "local_rotation_deg": 0.0005813239366930281
+      }
+    },
+    {
+      "name": "charge_end_to_attack0",
+      "bones": 53,
+      "max_position": {
+        "bone": "Root",
+        "position_m": 0.0,
+        "local_rotation_deg": 0.0
+      },
+      "max_local_rotation": {
+        "bone": "Root",
+        "position_m": 0.0,
+        "local_rotation_deg": 0.0
+      }
+    },
+    {
+      "name": "attack_end_to_idle",
+      "bones": 53,
+      "max_position": {
+        "bone": "RightArm",
+        "position_m": 0.00032976082976390815,
+        "local_rotation_deg": 0.000101466247574813
+      },
+      "max_local_rotation": {
+        "bone": "RightUpLeg",
+        "position_m": 0.0003293291710602734,
+        "local_rotation_deg": 0.0005813239366930281
+      }
+    }
+  ],
+  "skin_gate": {
+    "samples_keys_and_midpoints": 1712,
+    "regional_vertices": 11014,
+    "regional_edges": 23800,
+    "regional_triangles": 13290,
+    "old_max_absolute_extension_mm": 53.06211377161216,
+    "new_max_absolute_extension_mm": 34.082512910261244,
+    "new_collateral_edges_above1mm": 2054
+  },
+  "skin_local_worst": {
+    "edge_index_in_region": 13562,
+    "vertex_ids": [
+      15767,
+      15771
+    ],
+    "rest_length_mm": 38.167224238830116,
+    "old_envelope_extension_mm": -14.60669784125244,
+    "new_envelope_extension_mm": 17.94783949601216,
+    "worsening_mm": 32.5545373372646,
+    "new_peak": {
+      "clip": "charge",
+      "time_s": 0.29600000381469727
+    },
+    "rest_vertices_world_m": [
+      [
+        0.43393885786827935,
+        1.42378900614152,
+        -0.09207833434602099
+      ],
+      [
+        0.46888580262720053,
+        1.4084501367995577,
+        -0.09166950012012717
+      ]
+    ],
+    "weights": [
+      {
+        "LeftArm": 0.6993472576141357,
+        "LeftForeArm": 0.30065271258354187
+      },
+      {
+        "LeftForeArm": 0.7505853176116943,
+        "LeftArm": 0.24941468238830566
+      }
+    ]
+  },
+  "skin_adoption": "Selected12 matched Blender stills reviewed; no obvious new collapse/spike/rupture in selected canonical elbow/front/opposite views. Provisional007 runtime-QA candidate only;2054-edge metric retained,all-skin/intersection/2hands/continuousAV/hardware/AAA pending.",
+  "weapon": {
+    "factor": 1.8,
+    "raw_topology_UV_markers_preserved": true,
+    "texture_bytes_added": 0,
+    "assembly": "Duplicate geometry ArrayMesh and set original active PBR material on mesh surface; no instance material overrides. Hero only; Sentinel original preserved.",
+    "native_report": "native-weapon.json",
+    "native_position_tolerance_m": 0.0001,
+    "native_correspondence_error_m": 2.09415156859905e-05,
+    "hand_skin_visual_approval": "pending"
+  },
+  "native": {
+    "checks": 482,
+    "failures": 0,
+    "log": "native-runtime.log",
+    "first_failure_log": "native-first-failure.log",
+    "first_failure_scope": "Material attachment contract, naive native index/order/exact-position assumptions and feedback fixture type inference. Corrected before second run; source raw invariants not relaxed."
+  },
+  "native_contacts": {
+    "actual_close_first_contact_s": 0.358,
+    "raw_nominal_first_overlap_prediction_s": 0.354,
+    "close_root_separation_m": 0.725,
+    "early_health_time_s": 0.339,
+    "main_contact_query_s": 0.406,
+    "contact_report": "native-contact.json"
+  },
+  "preview_export": {
+    "raw_web_bytes": 146513443,
+    "budget_bytes": 150000000,
+    "manifest": {
+      "version": "0.1.10",
+      "godot": "4.7.2",
+      "commit": "1e524b12",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 115767875,
+          "sha256": "8bcf903135376adc973ce939efbfcf965d9f50d555490ab6d7029e32914ed119"
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 143609182,
+          "sha256": "d281c963b631b4d9161a8e567d9f2243bd9ac63e903498cc5078659b2ab7e7ca"
+        }
+      ]
+    },
+    "scope": "Dirty preview Web/Windows build reported passed; final clean commit/public/release and target-device performance are separate."
+  },
+  "not_verified": [
+    "Final skin/hand/arm clearance and local worsening visual decision",
+    "Continuous1x playback and actual interactive audiovisual/hearing quality",
+    "Current actual browser and full journey",
+    "Final clean committed CI/public/release",
+    "Target hardware and AAA"
+  ],
+  "evidence_files": {
+    "native-runtime.log": {
+      "path": "docs/validation/v0.1.10/native-runtime.log",
+      "bytes": 56520,
+      "sha256": "814e47e9c806543aaa97301054646b422dfa1f0220d0e1f8a050d95f03d7360a"
+    },
+    "native-first-failure.log": {
+      "path": "docs/validation/v0.1.10/native-first-failure.log",
+      "bytes": 63539,
+      "sha256": "016c524bc01a9fe6f7137374b8e363aded986c5f1ca1f1825ac1ae67a1b28b1a"
+    },
+    "native-weapon.json": {
+      "path": "docs/validation/v0.1.10/native-weapon.json",
+      "bytes": 797,
+      "sha256": "59429bf1c0e1f68354ac5f4e851f5ff0a475383f7b72b058f04f7edfe6286e0e"
+    },
+    "native-feedback.json": {
+      "path": "docs/validation/v0.1.10/native-feedback.json",
+      "bytes": 2404,
+      "sha256": "f6240e05002a2ccf670dcbc988d8df145870073e668c9e1a671e114c478cf573"
+    },
+    "native-alignment.json": {
+      "path": "docs/validation/v0.1.10/native-alignment.json",
+      "bytes": 64655,
+      "sha256": "a7cb564174a493e8a0098d783f986e8778ddb94a1d064dd79e6e8fef56e5e15a"
+    },
+    "native-contact.json": {
+      "path": "docs/validation/v0.1.10/native-contact.json",
+      "bytes": 8389,
+      "sha256": "2e6dd83facc0a6cbe719ad354b3195b8676cafab64fdcf8f2fd5044b95408c9d"
+    },
+    "native-audio.json": {
+      "path": "docs/validation/v0.1.10/native-audio.json",
+      "bytes": 2892,
+      "sha256": "beae2de9efa5e7aa3daf6f5545b02c3fdd661523fa5dc2dfae20a68ffe9c7d09"
+    },
+    "independent-raw-review.json": {
+      "path": "docs/validation/v0.1.10/independent-raw-review.json",
+      "bytes": 44216,
+      "sha256": "7292d546aa7786ed69a11fbb28a5bf6abeef26bfe4676eee6fb685908b74c6b2"
+    },
+    "skin-midpoint.json": {
+      "path": "docs/validation/v0.1.10/skin-midpoint.json",
+      "bytes": 14091,
+      "sha256": "0e038954217b4ecfecabbd2f507228ac5cf7ea0dcee1e095edd5c82d8421419b"
+    }
+  },
+  "selected_skin_review": {
+    "path": "art_source/production/candidates/lyra-fury-001/skin-review/review.json",
+    "sha256": "4a9fc1d190b4265598ebd7e918949ad9990fa3e4e84949d37424f16b2cc0a397",
+    "scope": "Selected12stills;public6representatives. Both use originalneutral sword,not newbroadbladevisual approval."
+  }
+}

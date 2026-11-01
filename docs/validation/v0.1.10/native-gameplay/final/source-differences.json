@@ -1,0 +1,450 @@
+{
+  "baseline_commit": "1e524b1275c6c55d3020ea5c3122afbb8db403e9",
+  "final_preview_context": {
+    "repository_head": "61445931e96cd568357991eced4629554dd37cec",
+    "dirty": true,
+    "kind": "independent_source_copy",
+    "source_inventory_sha256": "b67b63d0c2bea74b7da347815b1d9972079fb73eb3408d00d76d800068fc86c7"
+  },
+  "baseline_to_final_source_changes": [
+    {
+      "path": "assets/models/production/lyra_fury_gameplay.glb",
+      "before": null,
+      "after": {
+        "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+        "bytes": 25032860
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay.glb.import",
+      "before": null,
+      "after": {
+        "sha256": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3",
+        "bytes": 1336
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_0.png",
+      "before": null,
+      "after": {
+        "sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b",
+        "bytes": 4749806
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_0.png.import",
+      "before": null,
+      "after": {
+        "sha256": "09e820ddb8ed872b5da24730b469582f03c53d93037c902417b63d40ca93c449",
+        "bytes": 1073
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_1.png",
+      "before": null,
+      "after": {
+        "sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc",
+        "bytes": 3112961
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_1.png.import",
+      "before": null,
+      "after": {
+        "sha256": "ea49ac9ca948f4e9cada7e9f826ded3d1afc4826bb3e1971585e441783bd87d4",
+        "bytes": 1073
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_2.png",
+      "before": null,
+      "after": {
+        "sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67",
+        "bytes": 5229499
+      }
+    },
+    {
+      "path": "assets/models/production/lyra_fury_gameplay_Image_2.png.import",
+      "before": null,
+      "after": {
+        "sha256": "ff40c2f056a3b14befada2a0702fdc7b86fc755f9ad4e642e73d234d5dfe02da",
+        "bytes": 1073
+      }
+    },
+    {
+      "path": "assets/models/production/rune_greatsword_geometry.glb",
+      "before": null,
+      "after": {
+        "sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+        "bytes": 160248
+      }
+    },
+    {
+      "path": "assets/models/production/rune_greatsword_geometry.glb.import",
+      "before": null,
+      "after": {
+        "sha256": "28e6141b02ce7c2cb6233fb573565679642029719d4ba1c72f640bd79ac5178e",
+        "bytes": 1212
+      }
+    },
+    {
+      "path": "build_id.txt",
+      "before": null,
+      "after": {
+        "sha256": "8f8182c8e8a9618ecaa8ee43bdf80c4882b8a45624004531d14a46e41bdc8c4e",
+        "bytes": 19
+      }
+    },
+    {
+      "path": "data/charged_blade_curve.json",
+      "before": null,
+      "after": {
+        "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+        "bytes": 23480
+      }
+    },
+    {
+      "path": "data/charged_heavy.tres",
+      "before": {
+        "sha256": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06",
+        "bytes": 671
+      },
+      "after": {
+        "sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+        "bytes": 816
+      }
+    },
+    {
+      "path": "export_presets.cfg",
+      "before": {
+        "sha256": "c2f28d24c04e0f341f09300c6b97cf64657235afc29e79eef328c920a762f29e",
+        "bytes": 2151
+      },
+      "after": {
+        "sha256": "3ee51bfea5ced3bf6888f6378cb8901ac844292788b5c52c095a5188d47b8dc9",
+        "bytes": 2427
+      }
+    },
+    {
+      "path": "project.godot",
+      "before": {
+        "sha256": "986d7bd552bf481fa445fae51df9aa04e4f2e6365f8e86b34a110b780e7e2bed",
+        "bytes": 1037
+      },
+      "after": {
+        "sha256": "4fdc2ee50c6ce9b289162e42ba5258cb372838fbfab9ce92d58322c316f36424",
+        "bytes": 1038
+      }
+    },
+    {
+      "path": "scripts/actors/actor_visual.gd",
+      "before": {
+        "sha256": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+        "bytes": 11061
+      },
+      "after": {
+        "sha256": "a5bb98f944a26c183b7ce9351ded1eaf192427a2f4eb1197771d3a506ea24b31",
+        "bytes": 12592
+      }
+    },
+    {
+      "path": "scripts/actors/blade_trail.gd",
+      "before": {
+        "sha256": "99647eb9aa3c164aad68bfa7c3c26c654ea6c92f94a86c7464f00307fa15f6e6",
+        "bytes": 4307
+      },
+      "after": {
+        "sha256": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5",
+        "bytes": 6325
+      }
+    },
+    {
+      "path": "scripts/actors/enemy.gd",
+      "before": {
+        "sha256": "fe71694325f81f6a6c00888b34ac74e7aac5a83da6153df4b749ba1654a69b96",
+        "bytes": 14103
+      },
+      "after": {
+        "sha256": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4",
+        "bytes": 14315
+      }
+    },
+    {
+      "path": "scripts/actors/production_character_art.gd",
+      "before": {
+        "sha256": "ebd0031b2c0316c924a86470b639bd56337253539d89bd4958d9efa177d9f27c",
+        "bytes": 5793
+      },
+      "after": {
+        "sha256": "0223cc99aac61f5f0c690490646489855f0b34cbdf1431dc557a3e173480e26e",
+        "bytes": 5791
+      }
+    },
+    {
+      "path": "scripts/core/attack_data.gd",
+      "before": {
+        "sha256": "61b0a43204d67c28b2f0d0ced21bbbad1d0104158945eadaf41328a78bf001ac",
+        "bytes": 2932
+      },
+      "after": {
+        "sha256": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+        "bytes": 9413
+      }
+    },
+    {
+      "path": "scripts/core/strike.gd",
+      "before": {
+        "sha256": "0f8810e08a285d2231aac7f8773d3f9ad377cc67c2ac7e16a6122cdd03efd01a",
+        "bytes": 10913
+      },
+      "after": {
+        "sha256": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d",
+        "bytes": 12738
+      }
+    },
+    {
+      "path": "scripts/world/camera_rig.gd",
+      "before": {
+        "sha256": "1cb5b3c692dc30ba8bb26a313ba891f4a714380e31c1256d0012067d2a459a2f",
+        "bytes": 4416
+      },
+      "after": {
+        "sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+        "bytes": 11438
+      }
+    },
+    {
+      "path": "scripts/world/impact_effect.gd",
+      "before": {
+        "sha256": "f9027b67ff9cc8e051f83c86c3262e4236cb4f0c16e89f38f1eed86f35407be1",
+        "bytes": 10208
+      },
+      "after": {
+        "sha256": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049",
+        "bytes": 15794
+      }
+    },
+    {
+      "path": "tests/charged_blade_alignment_regressions.gd",
+      "before": {
+        "sha256": "88eb4d7f2b36bf86388d228582b58a62af15cfecc7b1db6f9240775a94f3acb7",
+        "bytes": 6066
+      },
+      "after": {
+        "sha256": "f4c04cb02bcd3cff222ef44e3132763de7368eeccb4ecedc76c6afcfd061c04d",
+        "bytes": 8908
+      }
+    },
+    {
+      "path": "tests/charged_impact_regressions.gd",
+      "before": {
+        "sha256": "c49fb0bf7db525cb5cf538bff5aa1bb05167aeddd599e42cf4eb16642fbdb461",
+        "bytes": 27616
+      },
+      "after": {
+        "sha256": "8f83c5f50e54da1caa8a20a0c1250c8bde2476f411155196404790c3a9342301",
+        "bytes": 29362
+      }
+    },
+    {
+      "path": "tests/combat_gameplay_capture.gd",
+      "before": null,
+      "after": {
+        "sha256": "9e1431be02f8655b858d2fec9cb774cc4ca15fc621b1d697e1d820ce3f4117b5",
+        "bytes": 19528
+      }
+    },
+    {
+      "path": "tests/combat_gameplay_capture.gd.uid",
+      "before": null,
+      "after": {
+        "sha256": "a52ecef88a4929491ae94ed2e80f028f27d62faa3fb1a7845478de6c253bdff2",
+        "bytes": 20
+      }
+    },
+    {
+      "path": "tests/combat_gameplay_capture.tscn",
+      "before": null,
+      "after": {
+        "sha256": "3f3b1ebeb2057ee1458e698345fe448f739524fc44f15e67182c6a2850cda285",
+        "bytes": 222
+      }
+    },
+    {
+      "path": "tests/feedback_polish_regressions.gd",
+      "before": null,
+      "after": {
+        "sha256": "554198d59c3e43774438db0ca80514ecf58832b970653d898da75be9196106e3",
+        "bytes": 14995
+      }
+    },
+    {
+      "path": "tests/feedback_polish_regressions.gd.uid",
+      "before": null,
+      "after": {
+        "sha256": "faac37f85002738adccfc30fb674617a0873782021fd553644bf7cd2882c5835",
+        "bytes": 20
+      }
+    },
+    {
+      "path": "tests/greatsword_profile_regressions.gd",
+      "before": null,
+      "after": {
+        "sha256": "525936e21a4b849af763745d59b9c7509fe20e77331f4b0055c445f549b4727b",
+        "bytes": 7390
+      }
+    },
+    {
+      "path": "tests/greatsword_profile_regressions.gd.uid",
+      "before": null,
+      "after": {
+        "sha256": "b3b06cd3dbe2f65d2064b0d6859174825a9df88e938cab25966d7e9ec17c176c",
+        "bytes": 20
+      }
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "before": {
+        "sha256": "85842a63aef150e12b729d5b46c3db48e1e241d7dbb10fa7ffb8c7296a795c17",
+        "bytes": 12719
+      },
+      "after": {
+        "sha256": "febb5c16ec9fbb9dd6f67c98ae6d15960f8d29dd01cb4239889fc84b9e2f842c",
+        "bytes": 13081
+      }
+    }
+  ],
+  "baseline_source_to_capture": [
+    {
+      "path": "project.godot",
+      "before": {
+        "sha256": "986d7bd552bf481fa445fae51df9aa04e4f2e6365f8e86b34a110b780e7e2bed",
+        "bytes": 1037
+      },
+      "after": {
+        "sha256": "382d31604e5471eedc74182f28ba879f57bf9d680026a8875f8df38257d81e35",
+        "bytes": 1033
+      }
+    },
+    {
+      "path": "tests/combat_gameplay_capture.gd",
+      "before": null,
+      "after": {
+        "sha256": "9a4cb282214ff2ae2bd5ac2d71c40a2a25627c0d045d43710f350926fe1ce9ae",
+        "bytes": 18960
+      }
+    },
+    {
+      "path": "tests/combat_gameplay_capture.tscn",
+      "before": null,
+      "after": {
+        "sha256": "3f3b1ebeb2057ee1458e698345fe448f739524fc44f15e67182c6a2850cda285",
+        "bytes": 222
+      }
+    }
+  ],
+  "final_source_to_capture": [
+    {
+      "path": "project.godot",
+      "before": {
+        "sha256": "4fdc2ee50c6ce9b289162e42ba5258cb372838fbfab9ce92d58322c316f36424",
+        "bytes": 1038
+      },
+      "after": {
+        "sha256": "4a723900952e0c977b85416a3f0fa0e65d495f34f7e2802457332ae61f58e18f",
+        "bytes": 1034
+      }
+    }
+  ],
+  "baseline_initial_import_metadata": {
+    "changes": [
+      {
+        "path": "assets/models/boss.glb.import",
+        "source_sha256": "27651c68e9d0687741211d7223d204ff592369e8e11beb0370a6e4635ff5fb5a",
+        "runtime_sha256": "9d6a839cea1f76e3a89fd5ca883fef4be3ba48d1033e92fd458a200a1e85b2d4",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/hero.glb.import",
+        "source_sha256": "cda5c37f43bae4f8705d17f4fa375e9e0056a1b84ac3869110cd1362d5983308",
+        "runtime_sha256": "d4560b2665212d4c9805983de5c15307417790c56383380b4b0182291bd8b0e3",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/keeper.glb.import",
+        "source_sha256": "b931ffcbbb210a7b7da8f4349e0d337816d4ee10532827380cc7caf0db6d16f9",
+        "runtime_sha256": "4112507658a7229d51ae04fff5b3d950a47fbf8b2fa109f1f323176cf8204b3e",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/sentinel.glb.import",
+        "source_sha256": "6aea0cd82b79dbc91f3811efaa74d1e3541b8a16735469417664f71290b34d4b",
+        "runtime_sha256": "e58d642b0e5e545f1ebd3ec34e80abee36aa04a801d15ac1669b27cb258d0f21",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      }
+    ],
+    "scope": "Only exact newly serialized Godot4.7.2 implicit defaults; source sidecars preserved separately"
+  },
+  "final_initial_import_metadata": {
+    "changes": [
+      {
+        "path": "assets/models/boss.glb.import",
+        "source_sha256": "27651c68e9d0687741211d7223d204ff592369e8e11beb0370a6e4635ff5fb5a",
+        "runtime_sha256": "9d6a839cea1f76e3a89fd5ca883fef4be3ba48d1033e92fd458a200a1e85b2d4",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/hero.glb.import",
+        "source_sha256": "cda5c37f43bae4f8705d17f4fa375e9e0056a1b84ac3869110cd1362d5983308",
+        "runtime_sha256": "d4560b2665212d4c9805983de5c15307417790c56383380b4b0182291bd8b0e3",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/keeper.glb.import",
+        "source_sha256": "b931ffcbbb210a7b7da8f4349e0d337816d4ee10532827380cc7caf0db6d16f9",
+        "runtime_sha256": "4112507658a7229d51ae04fff5b3d950a47fbf8b2fa109f1f323176cf8204b3e",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      },
+      {
+        "path": "assets/models/sentinel.glb.import",
+        "source_sha256": "6aea0cd82b79dbc91f3811efaa74d1e3541b8a16735469417664f71290b34d4b",
+        "runtime_sha256": "e58d642b0e5e545f1ebd3ec34e80abee36aa04a801d15ac1669b27cb258d0f21",
+        "only_added_implicit_default_lines": [
+          "mesh_library/use_node_names_as_mesh_names=false",
+          "array_mesh/deduplicate_surfaces=true",
+          "gltf/texture_map_mode=0"
+        ]
+      }
+    ],
+    "scope": "Only exact newly serialized Godot4.7.2 implicit defaults; source sidecars preserved separately"
+  },
+  "scope": "Actual independent source snapshots and matched display/fixture overlays; only exact pinned-engine implicit defaults normalized on initial import. All captured runtime inputs subsequently immutable."
+}

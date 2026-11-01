@@ -1,0 +1,50 @@
+{
+  "scope": "Static Hero blade-only geometric derivative; no skin/visual/gameplay/AAA approval",
+  "source_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "output_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+  "output_bytes": 160248,
+  "tool_sha256": "c095dd64300cba0dbdeb4fed8d022d3727f6fa1108c030cb98a70cc56d3816d0",
+  "factor": 1.8,
+  "changed_vertices": 1550,
+  "vertex_count": 2799,
+  "triangles": 4000,
+  "nodes_and_markers_unchanged": true,
+  "hilt_guard_apex_positions_unchanged": true,
+  "all_y_z_unchanged": true,
+  "UV_indices_topology_unchanged": true,
+  "normal_tangent_policy": "Analytic Jacobian, inverse-transpose and Gram-Schmidt; original tangent handedness retained",
+  "texture_bytes_added": 0,
+  "width_samples": [
+    {
+      "y_m": 0.35,
+      "old_width_m": 0.05726764351129532,
+      "new_width_m": 0.10308175832033158
+    },
+    {
+      "y_m": 0.55,
+      "old_width_m": 0.057154133915901184,
+      "new_width_m": 0.10287744104862213
+    },
+    {
+      "y_m": 0.75,
+      "old_width_m": 0.05419709160923958,
+      "new_width_m": 0.09755476489663124
+    },
+    {
+      "y_m": 0.95,
+      "old_width_m": 0.05288194492459297,
+      "new_width_m": 0.09518750086426735
+    }
+  ],
+  "changed_vertex_max_inner_axis_distance_m": 0.11245657660507749,
+  "whole_damage_zone_max_before_m": 0.12484857543638428,
+  "whole_damage_zone_max_after_m": 0.12484857543638428,
+  "limitations": [
+    "Existing unchanged vertices may extend outside nominal sharp capsule; do not claim full-mesh containment.",
+    "Runtime must reuse original PBR material/surface resources.",
+    "Same-camera neutral/game and hand/armor clearance review pending."
+  ],
+  "source_file": "game/assets/models/production/rune_sword_web.glb",
+  "output_file": "game/assets/models/production/rune_greatsword_geometry.glb",
+  "assembly": "ActorVisual.apply_hero_blade_profile: replace Hero instance mesh only, preserve original active surface material references and every original marker/hilt transform"
+}

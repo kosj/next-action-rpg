@@ -1,0 +1,407 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Silent delivery does not establish audio-hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "engine_errors": [],
+  "engine_warnings": [
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "source_commit": "1e524b1275c6c55d3020ea5c3122afbb8db403e9",
+  "source_tree": "ef9d6a0b32c844dec9b31b11f4e1adeaab5b7554",
+  "actual_models": {
+    "hero": {
+      "path": "res://assets/models/production/lyra_weight_gameplay.glb",
+      "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83"
+    },
+    "sentinel_melee": {
+      "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+      "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+    }
+  },
+  "curve": {
+    "mode": "baseline_analytic_blade",
+    "resource_sha256": "4f89f190ab8adfe26b8eec619b3eecacae62270ddc58ea8ad6834a96b23c7d06"
+  },
+  "input_events": [
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        375.0,
+        573.0
+      ],
+      "pressed": true,
+      "tick": 4,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "settings",
+      "tick": 4,
+      "type": "stage"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        375.0,
+        573.0
+      ],
+      "pressed": false,
+      "tick": 5,
+      "type": "native_mouse_button"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        370.0
+      ],
+      "pressed": true,
+      "tick": 7,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "quality_popup",
+      "tick": 7,
+      "type": "stage"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        370.0
+      ],
+      "pressed": false,
+      "tick": 8,
+      "type": "native_mouse_button"
+    },
+    {
+      "action": "quality_next",
+      "code": 4194322,
+      "pressed": true,
+      "tick": 10,
+      "type": "native_key"
+    },
+    {
+      "action": "quality_next",
+      "code": 4194322,
+      "pressed": false,
+      "tick": 11,
+      "type": "native_key"
+    },
+    {
+      "action": "quality_next",
+      "code": 4194322,
+      "pressed": true,
+      "tick": 11,
+      "type": "native_key"
+    },
+    {
+      "action": "quality_next",
+      "code": 4194322,
+      "pressed": false,
+      "tick": 12,
+      "type": "native_key"
+    },
+    {
+      "action": "quality_confirm",
+      "code": 4194309,
+      "pressed": true,
+      "tick": 12,
+      "type": "native_key"
+    },
+    {
+      "stage": "quality_selected",
+      "tick": 12,
+      "type": "stage"
+    },
+    {
+      "action": "quality_confirm",
+      "code": 4194309,
+      "pressed": false,
+      "tick": 13,
+      "type": "native_key"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        602.0
+      ],
+      "pressed": true,
+      "tick": 15,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "new_game",
+      "tick": 15,
+      "type": "stage"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        602.0
+      ],
+      "pressed": false,
+      "tick": 16,
+      "type": "native_mouse_button"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        375.0,
+        445.0
+      ],
+      "pressed": true,
+      "tick": 18,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "prologue",
+      "tick": 18,
+      "type": "stage"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        375.0,
+        445.0
+      ],
+      "pressed": false,
+      "tick": 19,
+      "type": "native_mouse_button"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        587.0
+      ],
+      "pressed": true,
+      "tick": 21,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "input_guard",
+      "tick": 21,
+      "type": "stage"
+    },
+    {
+      "action": "ui_click",
+      "code": 1,
+      "point": [
+        640.0,
+        587.0
+      ],
+      "pressed": false,
+      "tick": 22,
+      "type": "native_mouse_button"
+    },
+    {
+      "action": "forward",
+      "code": 87,
+      "pressed": true,
+      "tick": 25,
+      "type": "native_key"
+    },
+    {
+      "action": "sprint",
+      "code": 4194325,
+      "pressed": true,
+      "tick": 25,
+      "type": "native_key"
+    },
+    {
+      "stage": "sprint_to_encounter",
+      "tick": 25,
+      "type": "stage"
+    },
+    {
+      "action": "lock_on",
+      "code": 4194306,
+      "pressed": true,
+      "tick": 208,
+      "type": "native_key"
+    },
+    {
+      "action": "heavy",
+      "code": 2,
+      "point": [
+        640.0,
+        360.0
+      ],
+      "pressed": true,
+      "tick": 208,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "approach_while_charging",
+      "tick": 208,
+      "type": "stage"
+    },
+    {
+      "action": "lock_on",
+      "code": 4194306,
+      "pressed": false,
+      "tick": 209,
+      "type": "native_key"
+    },
+    {
+      "action": "forward",
+      "code": 87,
+      "pressed": false,
+      "tick": 292,
+      "type": "native_key"
+    },
+    {
+      "action": "sprint",
+      "code": 4194325,
+      "pressed": false,
+      "tick": 292,
+      "type": "native_key"
+    },
+    {
+      "stage": "incoming_hit_recovery",
+      "tick": 292,
+      "type": "stage"
+    },
+    {
+      "action": "heavy",
+      "code": 2,
+      "point": [
+        640.0,
+        360.0
+      ],
+      "pressed": false,
+      "tick": 334,
+      "type": "native_mouse_button"
+    },
+    {
+      "stage": "released",
+      "tick": 334,
+      "type": "stage"
+    },
+    {
+      "stage": "normal_recovery",
+      "tick": 363,
+      "type": "stage"
+    }
+  ],
+  "delivery": {
+    "sha256": "9f284b3bd0dbb3c5e01c33feb87c34aefde068387d91349b499e8aa76c69cf8c",
+    "probe": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "60/1",
+      "avg_frame_rate": "60/1",
+      "duration": "10.400000",
+      "nb_read_frames": "624"
+    },
+    "logical_speed": 1.0,
+    "audio": "silent, not listened/approved",
+    "frames": 624
+  },
+  "elapsed_wall_s": 479.58360600471497,
+  "receipt": {
+    "amount": 69.3,
+    "attack_elapsed": 0.446666666666667,
+    "attack_id": "charged_heavy",
+    "attack_instance_id": 2,
+    "blocked": false,
+    "contact_blade_grip": [
+      0.0896623283624649,
+      1.33016955852509,
+      -32.3532791137695
+    ],
+    "contact_blade_tip": [
+      0.745917141437531,
+      1.79671514034271,
+      -33.2294998168945
+    ],
+    "contact_damage_axis_base": [
+      0.273965209722519,
+      1.46119439601898,
+      -32.5993576049805
+    ],
+    "contact_damage_axis_tip": [
+      0.679740130901337,
+      1.74966847896576,
+      -33.1411399841309
+    ],
+    "contact_damage_base": [
+      0.207788199186325,
+      1.41414773464203,
+      -32.5109977722168
+    ],
+    "contact_damage_tip": [
+      0.745917141437531,
+      1.79671514034271,
+      -33.2294998168945
+    ],
+    "contact_phase": 0.592592592592592,
+    "contact_source": "hurtbox_ray",
+    "damage_start_fraction": 0.18,
+    "direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "health_after": 25.7,
+    "health_before": 95.0,
+    "hitstop": 0.075,
+    "killed": false,
+    "material": "metal",
+    "normal": [
+      0.798533082008362,
+      0.00719606876373291,
+      0.601907908916473
+    ],
+    "observed_tick": 362,
+    "physics_frame": 362,
+    "point": [
+      0.319413244724274,
+      1.55371713638306,
+      -32.8392333984375
+    ],
+    "poise_broken": true,
+    "reaction": "heavy_hit",
+    "reaction_duration": 0.48,
+    "requested_recoil_m": 0.35,
+    "source": "player",
+    "source_position": [
+      0.0,
+      -0.0241607688367367,
+      -32.1236114501953
+    ],
+    "strength": "charged",
+    "target_id": 128781914430,
+    "target_position": [
+      0.0,
+      0.000838571635540575,
+      -33.0799980163574
+    ],
+    "victim_pause": 0.075
+  },
+  "paired_pause_frames": 5,
+  "contact_hero_clock": 0.446666666666667,
+  "contact_sampled_time": 0.446666642554901,
+  "actual_drawn_marker_point_to_inner_axis_m": 0.07720817652125164,
+  "query_point_to_inner_axis_m": 0.1074247625628878,
+  "actual_drawn_blade_length_m": 1.1900014248588184,
+  "relative_target_from_hero": [
+    0.0,
+    0.024999346060212674,
+    -0.9137191772461009
+  ],
+  "hero_end_health": 56.0,
+  "processes_closed": true,
+  "visual_review": "Actual locked target/contact obscured by hero from production baseline camera; no visual/AAA approval",
+  "cleanup_scope": "Post-record Game/Audio release plus2process frames; no error at actual exit. Explicit WeakRef cleanup condition added only to subsequent fixture."
+}

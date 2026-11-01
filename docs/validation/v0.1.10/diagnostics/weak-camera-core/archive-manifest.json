@@ -1,0 +1,57 @@
+{
+  "scope": "Curated historical evidence; per-file SHA excludes this manifest.",
+  "files": {
+    "README.md": {
+      "bytes": 1620,
+      "sha256": "b50034cff4d07085761f37b1d227a92168d35a9b01f82942b39a64d2c6611a69"
+    },
+    "capture-inputs.json": {
+      "bytes": 38583,
+      "sha256": "12bf3948d27e1e78baac71bfa1d9ff73d0c553a168bd7a43b2bb74576ae7e0f7"
+    },
+    "capture.json": {
+      "bytes": 6383,
+      "sha256": "564ac45b82a5426d6e0b03bd7b9b5ff1e9cf93b3df41866061c5dbece1accee2"
+    },
+    "cleanup.json": {
+      "bytes": 192,
+      "sha256": "6e1ac82d0c8a043fa46215d9213a998390256433df41a25ca51bad9c8821aa3f"
+    },
+    "composition-check.json": {
+      "bytes": 9186,
+      "sha256": "765630174ab5ec8862075be0f5e026fab6a10293619209d828d62789ec46c87c"
+    },
+    "contact-frame.json": {
+      "bytes": 21439,
+      "sha256": "bcb6a74e149f5499cf547cc8ddd72508b325b6b5c4b62318ec8c27112a16a189"
+    },
+    "contact.png": {
+      "bytes": 1235622,
+      "sha256": "4014b6a3b94fb3f7ba102fd50558b2edbfc42d62791396dc31bf8dac416e2d08"
+    },
+    "frames.json.gz": {
+      "bytes": 582294,
+      "sha256": "7a9de445b33210fb6512013e5157c82385334ec041eee4094bdd3e9d70202dfc"
+    },
+    "gameplay.log": {
+      "bytes": 1634,
+      "sha256": "465941e957d1e26b84d5f8200613e824636e81e22ff247bb136e4614fcebc656"
+    },
+    "review.json": {
+      "bytes": 18992,
+      "sha256": "4e31ed5ffe37f9f99001520ce3755133ec617c3b86fef6932fc576ff7ce9f531"
+    },
+    "runtime-inputs.json": {
+      "bytes": 38583,
+      "sha256": "2118c7f4c8f908cb74f46616e1976ddc571cc9835588180ea1378bf05646afc9"
+    },
+    "source-inputs.json": {
+      "bytes": 38583,
+      "sha256": "3f0e8412aa6f31554fac34bd622a339788681d858e9ef53f495bb22e73fc3c5e"
+    },
+    "trace-provenance.json": {
+      "bytes": 529,
+      "sha256": "c4de19548b18e06aef25237d5ef4916d5ab67759e5f523059edb614cd17c9275"
+    }
+  }
+}

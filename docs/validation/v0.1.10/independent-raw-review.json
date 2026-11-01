@@ -1,0 +1,1255 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-01T04:30:46.406790+00:00",
+  "status": "passes_proposed_raw_numeric_gate_pending_actual_native_contact_and_skin_motion_review",
+  "baseline": {
+    "file": "game/assets/models/production/lyra_weight_gameplay.glb",
+    "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83"
+  },
+  "candidate": {
+    "file": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.glb",
+    "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "bytes": 25032860
+  },
+  "canonical_runtime_observation_at_report_time": [
+    {
+      "file": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    {
+      "file": "game/data/charged_blade_curve.json",
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
+    }
+  ],
+  "scope": "Independent raw glTF: all 53 bones at a reference 60Hz and actual key timestamps; six arm joints at 60/120Hz with axial decomposition; 1,061 arm key/midpoint samples; 181 socket/actual-weapon curve poses; raw 53-bone idle/held/recovery joins; strict byte preservation; nominal capsule preflight. No engine, Blender or browser execution, evaluated skin, actual physics contact, continuous 1x/audio, target hardware or AAA approval.",
+  "comparisons": [
+    {
+      "reference_sample_hz": 60,
+      "scope": "RawglTFreferencepose schedule, notactualengine/FPS",
+      "local": {
+        "total_deg": {
+          "baseline": {
+            "bone": "LeftHand",
+            "value": 62.120678746353555,
+            "interval_s": [
+              0.5,
+              0.5166666666666667
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": 20.614108540194408,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": 23.32373663034041,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6245415037145019
+        },
+        "axial_twist_deg": {
+          "baseline": {
+            "bone": "RightHand",
+            "value": -40.02479475650717,
+            "interval_s": [
+              0.48333333333333334,
+              0.5
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": -20.563036810070578,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": -22.967854153261463,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.42615935214689926
+        }
+      },
+      "global": {
+        "total_deg": {
+          "baseline": {
+            "bone": "RightArm",
+            "value": 58.629701581596706,
+            "interval_s": [
+              0.4666666666666667,
+              0.48333333333333334
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": 18.940287240359858,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": 20.448410399459696,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6512277932883381
+        },
+        "axial_twist_deg": {
+          "baseline": {
+            "bone": "RightForeArm",
+            "value": 49.52985572088767,
+            "interval_s": [
+              0.4666666666666667,
+              0.48333333333333334
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": -17.76580660787505,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": -19.606715882382378,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6041434888712212
+        }
+      }
+    },
+    {
+      "reference_sample_hz": 120,
+      "scope": "RawglTFreferencepose schedule, notactualengine/FPS",
+      "local": {
+        "total_deg": {
+          "baseline": {
+            "bone": "LeftHand",
+            "value": 38.621047572561295,
+            "interval_s": [
+              0.5,
+              0.5083333333333333
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": 10.528580381097415,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": 11.768941546235366,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6952713018950649
+        },
+        "axial_twist_deg": {
+          "baseline": {
+            "bone": "LeftArm",
+            "value": 22.61911724163682,
+            "interval_s": [
+              0.5,
+              0.5083333333333333
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": -10.505286546287893,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": -11.566006135543777,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.48866235529946744
+        }
+      },
+      "global": {
+        "total_deg": {
+          "baseline": {
+            "bone": "RightArm",
+            "value": 33.54545309963284,
+            "interval_s": [
+              0.4666666666666667,
+              0.475
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": 9.61035605331528,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": 10.24598608309696,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6945640873394819
+        },
+        "axial_twist_deg": {
+          "baseline": {
+            "bone": "RightForeArm",
+            "value": 27.777501065140346,
+            "interval_s": [
+              0.4666666666666667,
+              0.475
+            ]
+          },
+          "diagnostic006": {
+            "bone": "LeftForeArm",
+            "value": -9.025819696597424,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "candidate007": {
+            "bone": "LeftForeArm",
+            "value": -9.83561091440334,
+            "interval_s": [
+              0.43333333333333335,
+              0.44166666666666665
+            ]
+          },
+          "reduction_fraction_vs_baseline": 0.6459144798037056
+        }
+      }
+    }
+  ],
+  "dense_allkey_midpoint_comparison": [
+    {
+      "file": "game/assets/models/production/lyra_weight_gameplay.glb",
+      "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+      "clip": "charged_heavy",
+      "scope": "Allactualkeytimesandintervalmidpoints; sixarmjointlocal/globalrawglTFFKderivatives. Notrender/engine/continuousapproval.",
+      "samples": 1061,
+      "global_maxima": {
+        "local_rotation_deg": {
+          "bone": "LeftHand",
+          "value": 4.787107643905032,
+          "interval_s": [
+            0.5019999742507935,
+            0.5029999911785126
+          ],
+          "per_second": 4787.026610463168
+        },
+        "global_rotation_deg": {
+          "bone": "RightArm",
+          "value": 4.2182299761175255,
+          "interval_s": [
+            0.46799999475479126,
+            0.4689999967813492
+          ],
+          "per_second": 4218.221427647473
+        },
+        "global_translation_m": {
+          "bone": "RightForeArm",
+          "value": 0.017493513065161663,
+          "interval_s": [
+            0.46799999475479126,
+            0.4689999967813492
+          ],
+          "per_second": 17.493477613616015
+        }
+      }
+    },
+    {
+      "file": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "clip": "charged_heavy",
+      "scope": "Allactualkeytimesandintervalmidpoints; sixarmjointlocal/globalrawglTFFKderivatives. Notrender/engine/continuousapproval.",
+      "samples": 1061,
+      "global_maxima": {
+        "local_rotation_deg": {
+          "bone": "LeftForeArm",
+          "value": 1.4185378260230934,
+          "interval_s": [
+            0.43799999356269836,
+            0.4389999955892563
+          ],
+          "per_second": 1418.5349512798498
+        },
+        "global_rotation_deg": {
+          "bone": "LeftForeArm",
+          "value": 1.2414987697454383,
+          "interval_s": [
+            0.44099999964237213,
+            0.44200000166893005
+          ],
+          "per_second": 1241.4962537813697
+        },
+        "global_translation_m": {
+          "bone": "RightHand",
+          "value": 0.005518054223093724,
+          "interval_s": [
+            0.4270000010728836,
+            0.42800000309944153
+          ],
+          "per_second": 5.518043040459884
+        }
+      }
+    }
+  ],
+  "arm_geometric_diagnostics_reference60hz": {
+    "baseline": {
+      "Right": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.4666666666666667,
+          "shoulder_hand_m": 0.12209004129963281,
+          "elbow_flexion_deg": 153.0935205113982,
+          "elbow_plane_radial_m": 0.25190055191424,
+          "plane_normal": [
+            -0.3770558715523582,
+            0.7973467568240157,
+            -0.47123987427860503
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.4666666666666667,
+          "shoulder_hand_m": 0.12209004129963281,
+          "elbow_flexion_deg": 153.0935205113982,
+          "elbow_plane_radial_m": 0.25190055191424,
+          "plane_normal": [
+            -0.3770558715523582,
+            0.7973467568240157,
+            -0.47123987427860503
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ],
+          "deg": 53.41026134652663
+        }
+      },
+      "Left": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.7666666666666667,
+          "shoulder_hand_m": 0.15210866932524494,
+          "elbow_flexion_deg": 146.2210114624951,
+          "elbow_plane_radial_m": 0.24841054854477954,
+          "plane_normal": [
+            0.4514846407735346,
+            -0.5345713721960035,
+            -0.7144193916559616
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.7666666666666667,
+          "shoulder_hand_m": 0.15210866932524494,
+          "elbow_flexion_deg": 146.2210114624951,
+          "elbow_plane_radial_m": 0.24841054854477954,
+          "plane_normal": [
+            0.4514846407735346,
+            -0.5345713721960035,
+            -0.7144193916559616
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.5,
+            0.5166666666666667
+          ],
+          "deg": 50.84614257601973
+        }
+      }
+    },
+    "diagnostic006": {
+      "Right": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.21666666666666667,
+          "shoulder_hand_m": 0.2940404425547593,
+          "elbow_flexion_deg": 111.42658202877826,
+          "elbow_plane_radial_m": 0.21515208576774755,
+          "plane_normal": [
+            -0.3044217404391172,
+            0.7161994887394519,
+            -0.6280013505378521
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.21666666666666667,
+          "shoulder_hand_m": 0.2940404425547593,
+          "elbow_flexion_deg": 111.42658202877826,
+          "elbow_plane_radial_m": 0.21515208576774755,
+          "plane_normal": [
+            -0.3044217404391172,
+            0.7161994887394519,
+            -0.6280013505378521
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.4166666666666667,
+            0.43333333333333335
+          ],
+          "deg": 9.158551786960102
+        }
+      },
+      "Left": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.7833333333333333,
+          "shoulder_hand_m": 0.2776899735535356,
+          "elbow_flexion_deg": 115.72704621229447,
+          "elbow_plane_radial_m": 0.22047477541769933,
+          "plane_normal": [
+            -0.5570092827205013,
+            -0.7191452710797044,
+            -0.41541634301853253
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.7833333333333333,
+          "shoulder_hand_m": 0.2776899735535356,
+          "elbow_flexion_deg": 115.72704621229447,
+          "elbow_plane_radial_m": 0.22047477541769933,
+          "plane_normal": [
+            -0.5570092827205013,
+            -0.7191452710797044,
+            -0.41541634301853253
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.36666666666666664,
+            0.38333333333333336
+          ],
+          "deg": 4.9319355154252875
+        }
+      }
+    },
+    "candidate007": {
+      "Right": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.25,
+          "shoulder_hand_m": 0.29315195428747653,
+          "elbow_flexion_deg": 111.66305445101001,
+          "elbow_plane_radial_m": 0.21545299927758962,
+          "plane_normal": [
+            -0.30702122737616533,
+            0.7140939819190134,
+            -0.6291325384427998
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.25,
+          "shoulder_hand_m": 0.29315195428747653,
+          "elbow_flexion_deg": 111.66305445101001,
+          "elbow_plane_radial_m": 0.21545299927758962,
+          "plane_normal": [
+            -0.30702122737616533,
+            0.7140939819190134,
+            -0.6291325384427998
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.4166666666666667,
+            0.43333333333333335
+          ],
+          "deg": 11.603092299936772
+        }
+      },
+      "Left": {
+        "minimum_shoulder_hand_m": {
+          "time_s": 0.7833333333333333,
+          "shoulder_hand_m": 0.2776899735535356,
+          "elbow_flexion_deg": 115.72704621229447,
+          "elbow_plane_radial_m": 0.22047477541769933,
+          "plane_normal": [
+            -0.5570092827205013,
+            -0.7191452710797044,
+            -0.41541634301853253
+          ]
+        },
+        "maximum_elbow_flexion_deg": {
+          "time_s": 0.7833333333333333,
+          "shoulder_hand_m": 0.2776899735535356,
+          "elbow_flexion_deg": 115.72704621229447,
+          "elbow_plane_radial_m": 0.22047477541769933,
+          "plane_normal": [
+            -0.5570092827205013,
+            -0.7191452710797044,
+            -0.41541634301853253
+          ]
+        },
+        "maximum_elbow_plane_change_deg": {
+          "interval_s": [
+            0.38333333333333336,
+            0.4
+          ],
+          "deg": 5.537349768569513
+        }
+      }
+    }
+  },
+  "reference60hz_cumulative_arm_angular_paths": {
+    "RightArm": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 401.2705971430294,
+          "absolute_incremental_axial_path_deg": 166.31315997597298
+        },
+        "global": {
+          "total_quaternion_path_deg": 374.54598505570306,
+          "absolute_incremental_axial_path_deg": 149.11314997991335
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 98.76157294577554,
+          "absolute_incremental_axial_path_deg": 13.187469852358275
+        },
+        "global": {
+          "total_quaternion_path_deg": 193.63220926007062,
+          "absolute_incremental_axial_path_deg": 59.50922160702212
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 125.93757606684338,
+          "absolute_incremental_axial_path_deg": 20.058433453463152
+        },
+        "global": {
+          "total_quaternion_path_deg": 209.75613497934745,
+          "absolute_incremental_axial_path_deg": 69.16169060470428
+        }
+      }
+    },
+    "RightForeArm": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 286.1078788167575,
+          "absolute_incremental_axial_path_deg": 0.0003915340014144309
+        },
+        "global": {
+          "total_quaternion_path_deg": 376.33144254077644,
+          "absolute_incremental_axial_path_deg": 213.41041196625537
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 212.11155799600473,
+          "absolute_incremental_axial_path_deg": 127.69876878990215
+        },
+        "global": {
+          "total_quaternion_path_deg": 256.5783429661423,
+          "absolute_incremental_axial_path_deg": 207.42320913874576
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 216.30631388592087,
+          "absolute_incremental_axial_path_deg": 133.33636503439163
+        },
+        "global": {
+          "total_quaternion_path_deg": 271.8722903330108,
+          "absolute_incremental_axial_path_deg": 205.11505676000326
+        }
+      }
+    },
+    "RightHand": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 466.9911076002184,
+          "absolute_incremental_axial_path_deg": 259.43981046622054
+        },
+        "global": {
+          "total_quaternion_path_deg": 378.6059705802295,
+          "absolute_incremental_axial_path_deg": 273.62056930642063
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 167.8601287935921,
+          "absolute_incremental_axial_path_deg": 106.00265356494964
+        },
+        "global": {
+          "total_quaternion_path_deg": 305.8121234165227,
+          "absolute_incremental_axial_path_deg": 185.0077446088108
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 151.38763020512312,
+          "absolute_incremental_axial_path_deg": 92.09267006033055
+        },
+        "global": {
+          "total_quaternion_path_deg": 311.6026118501625,
+          "absolute_incremental_axial_path_deg": 196.7621478151708
+        }
+      }
+    },
+    "LeftArm": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 429.2082927854627,
+          "absolute_incremental_axial_path_deg": 186.83996087758882
+        },
+        "global": {
+          "total_quaternion_path_deg": 412.58351455897537,
+          "absolute_incremental_axial_path_deg": 152.43725964098172
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 84.95407426449681,
+          "absolute_incremental_axial_path_deg": 41.8691431443501
+        },
+        "global": {
+          "total_quaternion_path_deg": 170.77780915231938,
+          "absolute_incremental_axial_path_deg": 93.06389677554887
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 119.21408909114213,
+          "absolute_incremental_axial_path_deg": 43.42414810957093
+        },
+        "global": {
+          "total_quaternion_path_deg": 184.6288810435768,
+          "absolute_incremental_axial_path_deg": 91.67637241549008
+        }
+      }
+    },
+    "LeftForeArm": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 216.59858135521918,
+          "absolute_incremental_axial_path_deg": 0.0003865837496873523
+        },
+        "global": {
+          "total_quaternion_path_deg": 365.89263046153826,
+          "absolute_incremental_axial_path_deg": 114.33180839257649
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 301.21768900986154,
+          "absolute_incremental_axial_path_deg": 277.6436848903903
+        },
+        "global": {
+          "total_quaternion_path_deg": 301.9336115930562,
+          "absolute_incremental_axial_path_deg": 233.0655674546981
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 349.2829874074136,
+          "absolute_incremental_axial_path_deg": 283.9318912094297
+        },
+        "global": {
+          "total_quaternion_path_deg": 313.6875618703223,
+          "absolute_incremental_axial_path_deg": 236.9243031506826
+        }
+      }
+    },
+    "LeftHand": {
+      "baseline": {
+        "local": {
+          "total_quaternion_path_deg": 566.3705553661434,
+          "absolute_incremental_axial_path_deg": 303.43732830582053
+        },
+        "global": {
+          "total_quaternion_path_deg": 378.61048183816445,
+          "absolute_incremental_axial_path_deg": 280.7745259647558
+        }
+      },
+      "diagnostic006": {
+        "local": {
+          "total_quaternion_path_deg": 262.7791876418905,
+          "absolute_incremental_axial_path_deg": 153.2248808576248
+        },
+        "global": {
+          "total_quaternion_path_deg": 305.8103327550645,
+          "absolute_incremental_axial_path_deg": 193.53514836810643
+        }
+      },
+      "candidate007": {
+        "local": {
+          "total_quaternion_path_deg": 312.6400732795785,
+          "absolute_incremental_axial_path_deg": 173.37777043647853
+        },
+        "global": {
+          "total_quaternion_path_deg": 311.60016796241337,
+          "absolute_incremental_axial_path_deg": 204.58418038541018
+        }
+      }
+    }
+  },
+  "per_bone_peak_increases": {
+    "local_rotation_deg": {
+      "count": 1,
+      "largest_six": [
+        {
+          "bone": "LeftForeArm",
+          "old_peak": {
+            "value": 18.79967887163232,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ],
+            "per_second": 1127.9807322979395
+          },
+          "new_peak": {
+            "value": 23.32373663034041,
+            "interval_s": [
+              0.43333333333333335,
+              0.45
+            ],
+            "per_second": 1399.424197820425
+          },
+          "increase": 4.524057758708089
+        }
+      ]
+    },
+    "global_rotation_deg": {
+      "count": 0,
+      "largest_six": []
+    },
+    "global_translation_m": {
+      "count": 1,
+      "largest_six": [
+        {
+          "bone": "RightLeg",
+          "old_peak": {
+            "value": 0.02751063106118295,
+            "interval_s": [
+              0.5,
+              0.5166666666666667
+            ],
+            "per_second": 1.650637863670972
+          },
+          "new_peak": {
+            "value": 0.028442698693204076,
+            "interval_s": [
+              0.5,
+              0.5166666666666667
+            ],
+            "per_second": 1.7065619215922392
+          },
+          "increase": 0.0009320676320211246
+        }
+      ]
+    }
+  },
+  "rest_relative_twist_ranges": {
+    "scope": "Restlocal-relative quaternion axialdecompositionaboutlocalY at65rawFKreference60Hzposes;scalarbranchunwrapped. LocalhandYapproximate. Notanatomicalrange/skin/AAAapproval.",
+    "file": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.glb",
+    "joints": {
+      "RightForeArm": {
+        "minimum_unwrapped_local_y_twist_deg": -6.8962004778050354e-06,
+        "maximum_unwrapped_local_y_twist_deg": 91.56615467949156,
+        "sampled_span_deg": 91.56616157569204
+      },
+      "LeftForeArm": {
+        "minimum_unwrapped_local_y_twist_deg": -160.9507919555218,
+        "maximum_unwrapped_local_y_twist_deg": 3.938043961561027e-06,
+        "sampled_span_deg": 160.95079589356575
+      },
+      "RightHand": {
+        "minimum_unwrapped_local_y_twist_deg": 10.757712365885942,
+        "maximum_unwrapped_local_y_twist_deg": 65.55742214866694,
+        "sampled_span_deg": 54.799709782781
+      },
+      "LeftHand": {
+        "minimum_unwrapped_local_y_twist_deg": -68.42886485925273,
+        "maximum_unwrapped_local_y_twist_deg": -9.040594496897091,
+        "sampled_span_deg": 59.388270362355634
+      }
+    }
+  },
+  "curve_alignment": {
+    "scope": "Raw glTF TRS/slerp and pinned physical socket/actual sword markers versus baked curve at181active keys/midpoints. No Godot imported skin, physics collision, 1x visual or AAA approval.",
+    "model": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.glb",
+    "model_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "curve": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.blade-curve.json",
+    "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "grip_config_sha256": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+    "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "tool_sha256": "410558d0cece0fe343652c1506f3a2a540b69df159319526aaba948393630deb",
+    "samples": 181,
+    "max_grip_error_m": 3.7181528383057e-05,
+    "max_tip_error_m": 0.0002876825058562874,
+    "max_curve_length_error_m": 0.0002503868102881057,
+    "worst_tip_sample": {
+      "time_s": 0.42300000000000004,
+      "phase": 0.46111111111111114,
+      "grip_error_m": 3.474723022271438e-05,
+      "tip_error_m": 0.0002876825058562874,
+      "curve_length_error_m": 0.0002502030980573444
+    },
+    "passed": true
+  },
+  "canonical_and_greatsword_markers": {
+    "scope": "Rawactualweaponmarkercomparison only; notmeshappearance/widthcontactapproval.",
+    "assets": [
+      {
+        "file": "game/assets/models/production/rune_sword_web.glb",
+        "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+        "markers": {
+          "BladeTip": [
+            0.0009009279892779887,
+            1.190000057220459,
+            0.0005532491486519575
+          ],
+          "GripOrigin": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "file": "game/assets/models/production/rune_greatsword_geometry.glb",
+        "sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+        "markers": {
+          "BladeTip": [
+            0.0009009279892779887,
+            1.190000057220459,
+            0.0005532491486519575
+          ],
+          "GripOrigin": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "markers_exact": true
+  },
+  "raw_joins": {
+    "scope": "Independent raw glTF TRS/slerp, all 53 bone idle/held/recovery joins and active-boundary neighbors. No Godot imported, rendered or continuous-motion approval.",
+    "assets": [
+      {
+        "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+        "boundaries": [
+          {
+            "interval_s": [
+              0.338,
+              0.34
+            ],
+            "position_step_m": {
+              "bone": "RightLeg",
+              "position_step_m": 0.004258570716320761,
+              "local_rotation_step_deg": 0.7681964576032017,
+              "global_rotation_step_deg": 0.33738093012387255
+            },
+            "local_rotation_step_deg": {
+              "bone": "LeftArm",
+              "position_step_m": 0.0030542359432232068,
+              "local_rotation_step_deg": 1.2298593323242768,
+              "global_rotation_step_deg": 0.11667063987664737
+            },
+            "global_rotation_step_deg": {
+              "bone": "Spine2",
+              "position_step_m": 0.0006681950673930456,
+              "local_rotation_step_deg": 0.2597307188496248,
+              "global_rotation_step_deg": 1.1185735950264526
+            }
+          },
+          {
+            "interval_s": [
+              0.34,
+              0.342
+            ],
+            "position_step_m": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.016812053622541165,
+              "local_rotation_step_deg": 5.379509474648564,
+              "global_rotation_step_deg": 3.033827367193045
+            },
+            "local_rotation_step_deg": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.016812053622541165,
+              "local_rotation_step_deg": 5.379509474648564,
+              "global_rotation_step_deg": 3.033827367193045
+            },
+            "global_rotation_step_deg": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.016812053622541165,
+              "local_rotation_step_deg": 5.379509474648564,
+              "global_rotation_step_deg": 3.033827367193045
+            }
+          },
+          {
+            "interval_s": [
+              0.518,
+              0.52
+            ],
+            "position_step_m": {
+              "bone": "LeftToeBase",
+              "position_step_m": 0.006400038189543276,
+              "local_rotation_step_deg": 3.818191820832845e-06,
+              "global_rotation_step_deg": 5.915117333884393e-06
+            },
+            "local_rotation_step_deg": {
+              "bone": "RightForeArm",
+              "position_step_m": 0.002029158814062292,
+              "local_rotation_step_deg": 0.8411242474927622,
+              "global_rotation_step_deg": 0.44472744219143445
+            },
+            "global_rotation_step_deg": {
+              "bone": "LeftArm",
+              "position_step_m": 7.604901463188054e-11,
+              "local_rotation_step_deg": 0.6469019063780581,
+              "global_rotation_step_deg": 0.6469018990695907
+            }
+          },
+          {
+            "interval_s": [
+              0.52,
+              0.522
+            ],
+            "position_step_m": {
+              "bone": "RightToeBase",
+              "position_step_m": 0.00402038185719158,
+              "local_rotation_step_deg": 0.0,
+              "global_rotation_step_deg": 2.9624838304987086e-05
+            },
+            "local_rotation_step_deg": {
+              "bone": "RightFoot",
+              "position_step_m": 0.004020379738500891,
+              "local_rotation_step_deg": 0.4566742196390645,
+              "global_rotation_step_deg": 2.836790617393633e-05
+            },
+            "global_rotation_step_deg": {
+              "bone": "RightLeg",
+              "position_step_m": 0.0014448823985371872,
+              "local_rotation_step_deg": 0.2611730883786023,
+              "global_rotation_step_deg": 0.45664720938215175
+            }
+          }
+        ]
+      },
+      {
+        "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+        "boundaries": [
+          {
+            "interval_s": [
+              0.338,
+              0.34
+            ],
+            "position_step_m": {
+              "bone": "HandLoRA_Bip01_R_Finger11",
+              "position_step_m": 0.008296143420724935,
+              "local_rotation_step_deg": 2.4148365394514667e-06,
+              "global_rotation_step_deg": 0.8279064292880246
+            },
+            "local_rotation_step_deg": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.0017582227909002256,
+              "local_rotation_step_deg": 0.5139663885435459,
+              "global_rotation_step_deg": 0.3933096633622711
+            },
+            "global_rotation_step_deg": {
+              "bone": "LeftForeArm",
+              "position_step_m": 0.0037562043181589297,
+              "local_rotation_step_deg": 0.043602076738264765,
+              "global_rotation_step_deg": 0.855010324222248
+            }
+          },
+          {
+            "interval_s": [
+              0.34,
+              0.342
+            ],
+            "position_step_m": {
+              "bone": "HandLoRA_Bip01_R_Finger11",
+              "position_step_m": 0.00857348035436435,
+              "local_rotation_step_deg": 3.4150945850063755e-06,
+              "global_rotation_step_deg": 0.8760225612613272
+            },
+            "local_rotation_step_deg": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.00607274561899851,
+              "local_rotation_step_deg": 2.265214230410315,
+              "global_rotation_step_deg": 1.5524224010925853
+            },
+            "global_rotation_step_deg": {
+              "bone": "LeftLeg",
+              "position_step_m": 0.00607274561899851,
+              "local_rotation_step_deg": 2.265214230410315,
+              "global_rotation_step_deg": 1.5524224010925853
+            }
+          },
+          {
+            "interval_s": [
+              0.518,
+              0.52
+            ],
+            "position_step_m": {
+              "bone": "LeftFoot",
+              "position_step_m": 0.006399900439186396,
+              "local_rotation_step_deg": 0.4699007744138392,
+              "global_rotation_step_deg": 3.4363726387495736e-05
+            },
+            "local_rotation_step_deg": {
+              "bone": "RightLeg",
+              "position_step_m": 0.0038632602366573537,
+              "local_rotation_step_deg": 0.6855774779688728,
+              "global_rotation_step_deg": 0.1707847702763211
+            },
+            "global_rotation_step_deg": {
+              "bone": "LeftUpLeg",
+              "position_step_m": 5.139898746763906e-10,
+              "local_rotation_step_deg": 0.5932811942329754,
+              "global_rotation_step_deg": 0.5932811942305181
+            }
+          },
+          {
+            "interval_s": [
+              0.52,
+              0.522
+            ],
+            "position_step_m": {
+              "bone": "RightToeBase",
+              "position_step_m": 0.004021013634751895,
+              "local_rotation_step_deg": 0.0,
+              "global_rotation_step_deg": 2.9821031431209247e-05
+            },
+            "local_rotation_step_deg": {
+              "bone": "RightFoot",
+              "position_step_m": 0.004020968867360604,
+              "local_rotation_step_deg": 0.4497975858066781,
+              "global_rotation_step_deg": 2.9821031431209247e-05
+            },
+            "global_rotation_step_deg": {
+              "bone": "RightLeg",
+              "position_step_m": 0.0012878119212148499,
+              "local_rotation_step_deg": 0.2728557211062724,
+              "global_rotation_step_deg": 0.44982673509842663
+            }
+          }
+        ]
+      }
+    ],
+    "candidate_actual_idle_joins": [
+      {
+        "name": "idle_to_charge0",
+        "bones": 53,
+        "max_position": {
+          "bone": "RightArm",
+          "position_m": 0.00032976082976390815,
+          "local_rotation_deg": 0.000101466247574813
+        },
+        "max_local_rotation": {
+          "bone": "RightUpLeg",
+          "position_m": 0.0003293291710602734,
+          "local_rotation_deg": 0.0005813239366930281
+        }
+      },
+      {
+        "name": "charge_end_to_attack0",
+        "bones": 53,
+        "max_position": {
+          "bone": "Root",
+          "position_m": 0.0,
+          "local_rotation_deg": 0.0
+        },
+        "max_local_rotation": {
+          "bone": "Root",
+          "position_m": 0.0,
+          "local_rotation_deg": 0.0
+        }
+      },
+      {
+        "name": "attack_end_to_idle",
+        "bones": 53,
+        "max_position": {
+          "bone": "RightArm",
+          "position_m": 0.00032976082976390815,
+          "local_rotation_deg": 0.000101466247574813
+        },
+        "max_local_rotation": {
+          "bone": "RightUpLeg",
+          "position_m": 0.0003293291710602734,
+          "local_rotation_deg": 0.0005813239366930281
+        }
+      }
+    ]
+  },
+  "strict_preservation": {
+    "scope": "Independent strict JSON, original BIN/accessor/view prefix and retained-animation comparison; no visual-quality approval.",
+    "old_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "new_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "checks": {
+      "nodes": true,
+      "meshes": true,
+      "skins": true,
+      "materials": true,
+      "images": true,
+      "textures": true,
+      "samplers": true,
+      "scenes": true,
+      "scene": true,
+      "source_bin_prefix_exact": true,
+      "source_accessors_prefix_exact": true,
+      "source_buffer_views_prefix_exact": true,
+      "same_clip_names": true
+    },
+    "retained_animations_exact": {
+      "death": true,
+      "dodge": true,
+      "heal": true,
+      "heavy": true,
+      "hit": true,
+      "idle": true,
+      "light_1": true,
+      "light_2": true,
+      "light_3": true,
+      "parry": true,
+      "RESET": true,
+      "run": true,
+      "skill_1": true,
+      "skill_2": true,
+      "skill_3": true,
+      "walk": true,
+      "walk_back": true,
+      "walk_left": true,
+      "walk_right": true
+    },
+    "replaced": [
+      "charge",
+      "charged_heavy"
+    ],
+    "passed": true
+  },
+  "nominal_contact_preflight": {
+    "scope": "Nominal bounded-capsule geometry only, never actual physics or visual proof.",
+    "geometry": "Zero hero yaw; enemy root (0,0,-0.725); ordinary capsule total height 1.95m/radius 0.4m, inner vertical axis Y=0.4..1.55m. Sharp capsule spans fraction 0.18 to the tip, height including caps, radius 0.12m. Prescribed open lunge 3.2m/s during 0.34..0.52s. Hero root Y=0 fixture and Y=-0.025 nominal flat-floor variants are explicitly separate. Only 500Hz LUT samples were checked; this is neither a continuous first intersection nor actual native contact.",
+    "sum_radii_m": 0.52,
+    "tool_sha256": "dae218218a16d8ac1092d749345d3b01954192dde0c601725a83a78f6f067c8e",
+    "assets": [
+      {
+        "file": "build/art-candidates/combat-motion-polish/lyra-006/lyra_fury_gameplay.blade-curve.json",
+        "sha256": "848cb4e8f3a18ea1e722456d4cea914ed50e7a19d0a9296b3bbae2e3b20816b1",
+        "source_sha256": "2edd552bb269e5aaf1e0bf227a82b4e3dee27183d9b7323bf5f5828347adee8d",
+        "variants": [
+          {
+            "hero_root_y_m": 0.0,
+            "initial_inner_axis_distance_m": 0.42748524120710474,
+            "first_overlapping_lut_sample": {
+              "time_s": 0.34,
+              "inner_axis_distance_m": 0.42748524120710474,
+              "overlap": true
+            },
+            "tip_vertical_backward_difference_m_s": null,
+            "tip_vertical_central_difference_m_s": null
+          },
+          {
+            "hero_root_y_m": -0.025,
+            "initial_inner_axis_distance_m": 0.42748524120710474,
+            "first_overlapping_lut_sample": {
+              "time_s": 0.34,
+              "inner_axis_distance_m": 0.42748524120710474,
+              "overlap": true
+            },
+            "tip_vertical_backward_difference_m_s": null,
+            "tip_vertical_central_difference_m_s": null
+          }
+        ]
+      },
+      {
+        "file": "build/art-candidates/combat-motion-polish/lyra-007/lyra_fury_gameplay.blade-curve.json",
+        "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+        "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+        "variants": [
+          {
+            "hero_root_y_m": 0.0,
+            "initial_inner_axis_distance_m": 0.6146838875423886,
+            "first_overlapping_lut_sample": {
+              "time_s": 0.354,
+              "inner_axis_distance_m": 0.5194366038222401,
+              "overlap": true
+            },
+            "tip_vertical_backward_difference_m_s": -3.8412809371948207,
+            "tip_vertical_central_difference_m_s": -4.094958305358883
+          },
+          {
+            "hero_root_y_m": -0.025,
+            "initial_inner_axis_distance_m": 0.6146838875423886,
+            "first_overlapping_lut_sample": {
+              "time_s": 0.354,
+              "inner_axis_distance_m": 0.5194366038222401,
+              "overlap": true
+            },
+            "tip_vertical_backward_difference_m_s": -3.8412809371948207,
+            "tip_vertical_central_difference_m_s": -4.094958305358883
+          }
+        ]
+      }
+    ]
+  },
+  "findings": [
+    "007 materially reduces local/global total and axial arm peak derivatives versus the unchanged 27fb baseline at 60/120Hz and dense key/midpoint samples. The proposed target of at least 40 percent reduction in peak total rotation passes.",
+    "006 is diagnostic only: its sharp capsule already overlaps the nominal close enemy at phase zero. 007 moves the released hand outward: initial sharp inner-axis separation is 0.61468m, above the 0.52m sum of radii. The first overlapping 500Hz LUT sample is 0.354s, with negative vertical tip motion. This is not proof of actual native contact.",
+    "007 slightly increases rotation versus 006: LeftForeArm local 60Hz peak 20.614 to 23.324 degrees, global 18.940 to 20.448 degrees. Its local axial absolute incremental path rises from 277.644 to 283.932 degrees (+2.26 percent, forward and return combined). This does not establish a reduction in every bone or all cumulative roll.",
+    "The sampled rest-relative LeftForeArm local-Y twist scalar spans about 160.95 degrees. This coordinate diagnostic is not a physiological joint limit or quality approval. Actual forearm skin and armor at the new peak must be inspected.",
+    "Raw actual-idle/recovery joins remain within 0.330mm and 0.001 degrees; held charge to released attack zero matches exactly. Body/rest/material/geometry JSON, original BIN/accessor/view prefixes and 19 unrelated animation objects remain exact.",
+    "No independent raw numerical blocker was found for proceeding to imported native and matched-skin review. Runtime adoption and final art quality remain unapproved."
+  ],
+  "visual_review": {
+    "status": "pending007_actualskin_evidence",
+    "006_evidence": "Prior 006 Blender stills were finite, noisy 512px views. They do not approve 007 or its final runtime.",
+    "required": [
+      "Matched actual imported skin, same neutral camera/floor/light: baseline 27fb versus 007, VFX off, entire body and blade visible.",
+      "New worst LeftForeArm intervals: local 0.438–0.439s; global 0.441–0.442s. Suggested static strip: 0.4167, 0.4333, 0.4410, 0.4500, 0.4667s. Include a front or opposite three-quarter view exposing the left forearm.",
+      "Reject new collapsed gauntlet, sleeve or shoulder, arm/chest intersections, reversed elbows or wrist compensation even when marker geometry passes.",
+      "Inspect stationary held release and moving-charge upper-layer to full-body release through the actual bridge. Ground contact, terrain and collision remain separate.",
+      "Claim continuous 1x audiovisual or interactive quality only after actual viewing/listening; stills and encoded 60fps are insufficient."
+    ]
+  },
+  "methods": {
+    "public_raw_fk_tool": "tools/inspect_motion_derivatives.py",
+    "public_raw_fk_tool_sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc",
+    "private_arm_tool_sha256": "4566731afc646677253c90be0620eeb5e9fc183ccc3f1acfc511f7198f58ffa8",
+    "twist_method": "Shortest qprev^-1*qnext decomposed about the rest child longitudinal axis in the prior bone frame. This is not an absolute anatomical pose angle.",
+    "private_curve_tool_sha256": "410558d0cece0fe343652c1506f3a2a540b69df159319526aaba948393630deb",
+    "nominal_contact_tool_sha256": "dae218218a16d8ac1092d749345d3b01954192dde0c601725a83a78f6f067c8e"
+  },
+  "no_engine_blender_browser_run": true,
+  "runtime_changed_by_this_reviewer": false
+}

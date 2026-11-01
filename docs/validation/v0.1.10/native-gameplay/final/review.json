@@ -1,0 +1,701 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Silent delivery does not establish audio-hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "functional_capture_gates_passed": true,
+  "engine_clean": true,
+  "engine_errors": [],
+  "engine_warnings": [
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "cleanup": {
+    "actual_audio_weakrefs_released": true,
+    "audio_stop_report": {
+      "epoch": 1,
+      "pending_playbacks": 0,
+      "players": 0,
+      "stopped": true
+    },
+    "scope": "Post-record resource release only; not audio-hearing approval"
+  },
+  "duration": {
+    "gameplay_frames": 600,
+    "normal_ui_frames": 24,
+    "delivery_frames": 624,
+    "delivery_seconds": 10.4,
+    "fps": 60,
+    "elapsed_wall_s": 462.36731243133545
+  },
+  "actual_build_id": "0.1.10 \u00b7 61445931",
+  "source_context": {
+    "repository_head": "61445931e96cd568357991eced4629554dd37cec",
+    "dirty": true,
+    "kind": "independent_source_copy",
+    "source_inventory_sha256": "b67b63d0c2bea74b7da347815b1d9972079fb73eb3408d00d76d800068fc86c7"
+  },
+  "source_inputs": {
+    "scripts/world/camera_rig.gd": {
+      "sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+      "bytes": 11438
+    },
+    "scripts/world/impact_effect.gd": {
+      "sha256": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049",
+      "bytes": 15794
+    },
+    "scripts/actors/actor_visual.gd": {
+      "sha256": "a5bb98f944a26c183b7ce9351ded1eaf192427a2f4eb1197771d3a506ea24b31",
+      "bytes": 12592
+    },
+    "scripts/actors/enemy.gd": {
+      "sha256": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4",
+      "bytes": 14315
+    },
+    "scripts/core/strike.gd": {
+      "sha256": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d",
+      "bytes": 12738
+    },
+    "scripts/core/attack_data.gd": {
+      "sha256": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+      "bytes": 9413
+    },
+    "data/charged_heavy.tres": {
+      "sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+      "bytes": 816
+    },
+    "data/charged_blade_curve.json": {
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "bytes": 23480
+    },
+    "tests/combat_gameplay_capture.gd": {
+      "sha256": "9e1431be02f8655b858d2fec9cb774cc4ca15fc621b1d697e1d820ce3f4117b5",
+      "bytes": 19528
+    },
+    "tests/combat_gameplay_capture.tscn": {
+      "sha256": "3f3b1ebeb2057ee1458e698345fe448f739524fc44f15e67182c6a2850cda285",
+      "bytes": 222
+    },
+    "tools/render_combat_gameplay.py": {
+      "sha256": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a"
+    }
+  },
+  "actual_models": {
+    "hero": {
+      "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "sentinel_melee": {
+      "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+      "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+    }
+  },
+  "actual_curve": {
+    "interpolation": "linear_grip_tip",
+    "ok": true,
+    "path": "res://data/charged_blade_curve.json",
+    "reason": "",
+    "resource_sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+    "sample_count": 91,
+    "sample_step_s": 0.002,
+    "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+    "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+  },
+  "receipt": {
+    "amount": 69.3,
+    "attack_elapsed": 0.386,
+    "attack_id": "charged_heavy",
+    "attack_instance_id": 2,
+    "blocked": false,
+    "contact_blade_grip": [
+      0.174395143985748,
+      1.22470903396606,
+      -32.2959594726562
+    ],
+    "contact_blade_motion": [
+      -10.0997304916382,
+      -7.58754205703735,
+      -11.8340864181519
+    ],
+    "contact_blade_tip": [
+      0.614297688007355,
+      1.85123610496521,
+      -33.2070274353027
+    ],
+    "contact_damage_axis_base": [
+      0.297937572002411,
+      1.40066313743591,
+      -32.5518264770508
+    ],
+    "contact_damage_axis_tip": [
+      0.569937705993652,
+      1.78805685043335,
+      -33.1151542663574
+    ],
+    "contact_damage_base": [
+      0.253577589988708,
+      1.33748388290405,
+      -32.4599533081055
+    ],
+    "contact_damage_tip": [
+      0.614297688007355,
+      1.85123610496521,
+      -33.2070274353027
+    ],
+    "contact_phase": 0.255555555555556,
+    "contact_source": "hurtbox_ray",
+    "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "damage_start_fraction": 0.18,
+    "direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "health_after": 25.7,
+    "health_before": 95.0,
+    "hitstop": 0.075,
+    "killed": false,
+    "material": "metal",
+    "normal": [
+      0.87024599313736,
+      0.0925567746162415,
+      0.483844131231308
+    ],
+    "observed_tick": 359,
+    "physics_frame": 359,
+    "point": [
+      0.348098397254944,
+      1.58786129951477,
+      -32.8864593505859
+    ],
+    "poise_broken": true,
+    "reaction": "heavy_hit",
+    "reaction_duration": 0.48,
+    "requested_recoil_m": 0.35,
+    "source": "player",
+    "source_position": [
+      0.0,
+      -0.0241607539355755,
+      -31.9636211395264
+    ],
+    "strength": "charged",
+    "target_id": 129553666377,
+    "target_position": [
+      0.0,
+      0.000838571635540575,
+      -33.0799980163574
+    ],
+    "victim_pause": 0.075
+  },
+  "paired_pause_frames": 5,
+  "paired_physics_frames": [
+    359,
+    360,
+    361,
+    362,
+    363
+  ],
+  "hero_contact_clock": 0.386,
+  "hero_contact_sampled_time": 0.385999979163116,
+  "actual_marker_worlds_logged": true,
+  "actual_blade_grip_world": [
+    0.174395143985748,
+    1.22470879554749,
+    -32.349292755127
+  ],
+  "actual_blade_tip_world": [
+    0.614298284053802,
+    1.85123693943024,
+    -33.2603645324707
+  ],
+  "actual_blade_length_m": 1.1900017105832692,
+  "actual_damage_axis_base": [
+    0.29793762594323725,
+    1.400663079255307,
+    -32.605158327255104
+  ],
+  "actual_damage_axis_tip": [
+    0.5699383673085625,
+    1.788057721621318,
+    -33.16849188026447
+  ],
+  "point_to_actual_drawn_damage_axis_m": 0.07845546041063967,
+  "point_to_query_damage_axis_m": 0.1009314852230513,
+  "hero_contact_position": [
+    0.0,
+    -0.0241610817611217,
+    -31.9721546173096
+  ],
+  "target_contact_position": [
+    0.0,
+    0.000838571635540575,
+    -33.0799980163574
+  ],
+  "hero_visual_position": [
+    0.0,
+    0.00083889439702034,
+    -31.9721546173096
+  ],
+  "hero_capsule_bottom_world_y": 0.000838875770568848,
+  "relative_target_from_hero": [
+    0.0,
+    0.024999653396662276,
+    -1.1078433990478018
+  ],
+  "recoil_displacement_max_m": 0.3500022888185411,
+  "hero_contact_health": 104.0,
+  "hero_end_health": 56.0,
+  "trail": {
+    "depth_tested": true,
+    "gameplay_authority": false,
+    "layers": 2,
+    "lifetime": 0.16,
+    "samples": 4,
+    "style": "charged",
+    "triangles": 12,
+    "visible": true
+  },
+  "camera": {
+    "basis": [
+      [
+        0.972121059894562,
+        0.0,
+        -0.234479561448097
+      ],
+      [
+        -0.07181366533041,
+        0.951945245265961,
+        -0.297729879617691
+      ],
+      [
+        0.223211705684662,
+        0.306268334388733,
+        0.925406038761139
+      ]
+    ],
+    "fov": 55.3561668395996,
+    "impact": {
+      "age": 0.0166666666666667,
+      "amplitude": 0.085,
+      "duration": 0.19,
+      "enabled": true,
+      "fov": 55.3561668395996,
+      "framing": {
+        "actual_BladeTip_uv": [
+          0.573051595687866,
+          0.38841306898329
+        ],
+        "actual_GripOrigin_uv": [
+          0.51553807258606,
+          0.527773496839735
+        ],
+        "follow_distance": 4.5,
+        "follow_height_bias": 2.4,
+        "free_distance": 4.5,
+        "locked": true,
+        "maximum_lock_distance": 8.6,
+        "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+        "shoulder_offset": 1.2,
+        "subjects": [
+          {
+            "behind_camera": false,
+            "height_fraction": 0.315757158067491,
+            "nominal_foot_uv": [
+              0.489451122283936,
+              0.75318357679579
+            ],
+            "nominal_head_uv": [
+              0.488221883773804,
+              0.437426418728299
+            ]
+          },
+          {
+            "behind_camera": false,
+            "height_fraction": 0.289857610066732,
+            "nominal_foot_uv": [
+              0.513029527664185,
+              0.663020918104384
+            ],
+            "nominal_head_uv": [
+              0.51437840461731,
+              0.373163308037652
+            ]
+          }
+        ],
+        "viewport": [
+          1280.0,
+          720.0
+        ],
+        "wanted_distance": 4.5
+      },
+      "last_context_accepted": true
+    },
+    "pitch": -0.18,
+    "position": [
+      1.19241559505463,
+      2.98694944381714,
+      -27.4766693115234
+    ],
+    "yaw": 0.0
+  },
+  "contact_plus_frames": [
+    {
+      "offset_frames": 0,
+      "tick": 359,
+      "movie_frame": 358,
+      "point_screen_xy": [
+        694.6445020449892,
+        318.5705953571846
+      ],
+      "effect": {
+        "age": 0.0,
+        "attack_id": "charged_heavy",
+        "contact_source": "hurtbox_ray",
+        "core_axis": [
+          -0.866636216640472,
+          -0.433242648839951,
+          0.24747222661972
+        ],
+        "core_basis_source": "projected_confirmed_cut",
+        "core_duration": 0.075,
+        "core_edge_alpha": 0.18,
+        "core_plane_normal": [
+          0.149715960025787,
+          0.247331336140633,
+          0.957294285297394
+        ],
+        "core_radius": 0.12,
+        "core_side": [
+          0.475948333740234,
+          -0.866676449775696,
+          0.149482950568199
+        ],
+        "cut_axis": [
+          -0.583476901054382,
+          -0.438343942165375,
+          -0.683673322200775
+        ],
+        "cut_basis_source": "confirmed_blade_motion",
+        "cut_duration": 0.14,
+        "cut_length": 0.76,
+        "cut_plane_normal": [
+          0.697616457939148,
+          -0.701523661613464,
+          -0.145587742328644
+        ],
+        "cut_side": [
+          0.415795534849167,
+          0.561888933181763,
+          -0.715118825435638
+        ],
+        "cut_visible": true,
+        "debris_count": 6,
+        "depth_tested": true,
+        "duration": 0.62,
+        "dust_count": 2,
+        "gameplay_authority": false,
+        "ground_response": false,
+        "maximum_lifetime": 0.68,
+        "mesh_groups": 5,
+        "quality": 1,
+        "reason": "confirmed_contact",
+        "ring_geometry": false,
+        "spark_budget": 24,
+        "spark_count": 18,
+        "style": "charged",
+        "triangles": 68,
+        "valid": true,
+        "world_point": [
+          0.348098397254944,
+          1.58786129951477,
+          -32.8864593505859
+        ]
+      }
+    },
+    {
+      "offset_frames": 1,
+      "tick": 360,
+      "movie_frame": 359,
+      "point_screen_xy": [
+        695.2027080201459,
+        318.356774881803
+      ],
+      "effect": {
+        "age": 0.0166666666666667,
+        "attack_id": "charged_heavy",
+        "contact_source": "hurtbox_ray",
+        "core_axis": [
+          -0.866936802864075,
+          -0.432778835296631,
+          0.247230604290962
+        ],
+        "core_basis_source": "projected_confirmed_cut",
+        "core_duration": 0.075,
+        "core_edge_alpha": 0.18,
+        "core_plane_normal": [
+          0.149404749274254,
+          0.24757331609726,
+          0.957280397415161
+        ],
+        "core_radius": 0.12,
+        "core_side": [
+          0.475498408079147,
+          -0.866839051246643,
+          0.149971216917038
+        ],
+        "cut_axis": [
+          -0.583476901054382,
+          -0.438343942165375,
+          -0.683673322200775
+        ],
+        "cut_basis_source": "confirmed_blade_motion",
+        "cut_duration": 0.14,
+        "cut_length": 0.76,
+        "cut_plane_normal": [
+          0.697616457939148,
+          -0.701523661613464,
+          -0.145587742328644
+        ],
+        "cut_side": [
+          0.415795534849167,
+          0.561888933181763,
+          -0.715118825435638
+        ],
+        "cut_visible": true,
+        "debris_count": 6,
+        "depth_tested": true,
+        "duration": 0.62,
+        "dust_count": 2,
+        "gameplay_authority": false,
+        "ground_response": false,
+        "maximum_lifetime": 0.68,
+        "mesh_groups": 5,
+        "quality": 1,
+        "reason": "confirmed_contact",
+        "ring_geometry": false,
+        "spark_budget": 24,
+        "spark_count": 18,
+        "style": "charged",
+        "triangles": 102,
+        "valid": true,
+        "world_point": [
+          0.348098397254944,
+          1.58786129951477,
+          -32.8864593505859
+        ]
+      }
+    },
+    {
+      "offset_frames": 2,
+      "tick": 361,
+      "movie_frame": 360,
+      "point_screen_xy": [
+        695.2480561602243,
+        318.24152375232825
+      ],
+      "effect": {
+        "age": 0.0333333333333333,
+        "attack_id": "charged_heavy",
+        "contact_source": "hurtbox_ray",
+        "core_axis": [
+          -0.866772949695587,
+          -0.431458055973053,
+          0.250096827745438
+        ],
+        "core_basis_source": "projected_confirmed_cut",
+        "core_duration": 0.075,
+        "core_edge_alpha": 0.18,
+        "core_plane_normal": [
+          0.151901364326477,
+          0.249251484870911,
+          0.956451594829559
+        ],
+        "core_radius": 0.12,
+        "core_side": [
+          0.475005835294724,
+          -0.867016553878784,
+          0.150505393743515
+        ],
+        "cut_axis": [
+          -0.583476901054382,
+          -0.438343942165375,
+          -0.683673322200775
+        ],
+        "cut_basis_source": "confirmed_blade_motion",
+        "cut_duration": 0.14,
+        "cut_length": 0.76,
+        "cut_plane_normal": [
+          0.697616457939148,
+          -0.701523661613464,
+          -0.145587742328644
+        ],
+        "cut_side": [
+          0.415795534849167,
+          0.561888933181763,
+          -0.715118825435638
+        ],
+        "cut_visible": true,
+        "debris_count": 6,
+        "depth_tested": true,
+        "duration": 0.62,
+        "dust_count": 2,
+        "gameplay_authority": false,
+        "ground_response": false,
+        "maximum_lifetime": 0.68,
+        "mesh_groups": 5,
+        "quality": 1,
+        "reason": "confirmed_contact",
+        "ring_geometry": false,
+        "spark_budget": 24,
+        "spark_count": 18,
+        "style": "charged",
+        "triangles": 102,
+        "valid": true,
+        "world_point": [
+          0.348098397254944,
+          1.58786129951477,
+          -32.8864593505859
+        ]
+      }
+    },
+    {
+      "offset_frames": 4,
+      "tick": 363,
+      "movie_frame": 362,
+      "point_screen_xy": [
+        694.9871684063543,
+        318.63295538011306
+      ],
+      "effect": {
+        "age": 0.0666666666666667,
+        "attack_id": "charged_heavy",
+        "contact_source": "hurtbox_ray",
+        "core_axis": [
+          -0.868885338306427,
+          -0.427284002304077,
+          0.24993309378624
+        ],
+        "core_basis_source": "projected_confirmed_cut",
+        "core_duration": 0.075,
+        "core_edge_alpha": 0.18,
+        "core_plane_normal": [
+          0.151044085621834,
+          0.251973807811737,
+          0.955873906612396
+        ],
+        "core_radius": 0.12,
+        "core_side": [
+          0.471406251192093,
+          -0.868295788764954,
+          0.154397651553154
+        ],
+        "cut_axis": [
+          -0.583476901054382,
+          -0.438343942165375,
+          -0.683673322200775
+        ],
+        "cut_basis_source": "confirmed_blade_motion",
+        "cut_duration": 0.14,
+        "cut_length": 0.76,
+        "cut_plane_normal": [
+          0.697616457939148,
+          -0.701523661613464,
+          -0.145587742328644
+        ],
+        "cut_side": [
+          0.415795534849167,
+          0.561888933181763,
+          -0.715118825435638
+        ],
+        "cut_visible": true,
+        "debris_count": 6,
+        "depth_tested": true,
+        "duration": 0.62,
+        "dust_count": 2,
+        "gameplay_authority": false,
+        "ground_response": false,
+        "maximum_lifetime": 0.68,
+        "mesh_groups": 5,
+        "quality": 1,
+        "reason": "confirmed_contact",
+        "ring_geometry": false,
+        "spark_budget": 24,
+        "spark_count": 18,
+        "style": "charged",
+        "triangles": 102,
+        "valid": true,
+        "world_point": [
+          0.348098397254944,
+          1.58786129951477,
+          -32.8864593505859
+        ]
+      }
+    }
+  ],
+  "media": {
+    "sha256": "da3df4ad4f16e7dec1b0e94ac8da31e5d899fb74b0d8608716a9bcc5484fff4d",
+    "probe": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "60/1",
+      "avg_frame_rate": "60/1",
+      "duration": "10.400000",
+      "nb_read_frames": "624"
+    },
+    "logical_speed": 1.0,
+    "audio": "silent, not listened/approved",
+    "frames": 624
+  },
+  "movie_frame_samples": {
+    "scope": "Unscaled decoded original MovieMaker MJPEG frames, no crop/annotation/retiming; direct renderer lossless contact PNG is separate",
+    "raw_movie_sha256": "c500f15f215ffa82c2650b60de67fd237a631926dfe81ab51e99907af983e0b4",
+    "contact_movie_frame": 358,
+    "samples": [
+      {
+        "movie_frame": 358,
+        "offset_after_contact_frames": 0,
+        "physics_frame": 359,
+        "file": "contact-01.png",
+        "sha256": "84bce42a6fad7329e4cacfd7d52d8b4ab2bbd7f6939561998805fd436a5febd8"
+      },
+      {
+        "movie_frame": 359,
+        "offset_after_contact_frames": 1,
+        "physics_frame": 360,
+        "file": "contact-02.png",
+        "sha256": "8d3d17ec2aff53209c6f070e3f3964d43d4f47df126354993d2f0bdd49882421"
+      },
+      {
+        "movie_frame": 360,
+        "offset_after_contact_frames": 2,
+        "physics_frame": 361,
+        "file": "contact-03.png",
+        "sha256": "103d6d1fc20a98c24d8c55415a56363d309f76e6ca608112129b903d2c2f0528"
+      },
+      {
+        "movie_frame": 362,
+        "offset_after_contact_frames": 4,
+        "physics_frame": 363,
+        "file": "contact-04.png",
+        "sha256": "366a4ad5eff7402bc9d99093f6d174a2c70b6173ed95cfcd200ba6d611a9b844"
+      }
+    ]
+  },
+  "trace_gzip": {
+    "scope": "Lossless gzip of exact original full native gameplay trace, mtime0; includes sandbox paths but no service credentials/tokens/URLs",
+    "decoded_file": "frames.json",
+    "decoded_sha256": "9e9301c0769f545c7932ebe973bd73cb07cf4fa380355949c0f6b08dee500430",
+    "decoded_bytes": 5076567,
+    "gzip_file": "frames.json.gz",
+    "gzip_sha256": "2f02bdeb90f8683545e07a53896f8084086cc5b02759acc44946f501ab0ac7f6",
+    "gzip_bytes": 568203
+  },
+  "source_inputs_unchanged": true,
+  "processes_closed": true,
+  "visual_review": {
+    "target_readability": "Greater shoulder offset exposes target helmet/upper body more distinctly from Hero than previous views; overlap remains",
+    "flash_readability": "Birth,+1,+2,+4 original movie frames inspected. Small localized gold-white contact glint is exposed near target shoulder/blade; not a large burst. Brief/subtle effect, not a major visual leap",
+    "telegraph_note": "Large vertical gold rectangles above flanking enemies in+4 are normal production enemy startup warning planes, not contact core/sparks",
+    "decision": "Root accepted this bounded prototype visual improvement from original raster inspection and stopped further art iteration",
+    "limits": "No AAA, continuous human audiovisual/audio-hearing, real-time FPS, browser, hardware or target-device approval"
+  }
+}

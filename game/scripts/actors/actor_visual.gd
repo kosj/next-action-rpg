@@ -2,6 +2,7 @@ class_name ActorVisual
 extends Node3D
 
 const RUNE_SWORD_SCENE: PackedScene = preload("res://assets/models/production/rune_sword_web.glb")
+const HERO_BLADE_GEOMETRY: PackedScene = preload("res://assets/models/production/rune_greatsword_geometry.glb")
 
 var model: Node3D
 var joints: Dictionary = {}
@@ -64,6 +65,10 @@ func use_production_profile(profile: String) -> Dictionary:
 	rig_weapon = RUNE_SWORD_SCENE.instantiate() as Node3D
 	rig_weapon.name = "Runeblade"
 	weapon_grip.add_child(rig_weapon)
+	if profile == "hero" and not apply_hero_blade_profile(rig_weapon):
+		clear_rig()
+		rig_status = "Hero blade profile must preserve its original surface and marker frame"
+		return {"ok":false, "reason":rig_status}
 	_blade_grip_marker = rig_weapon.find_child("GripOrigin", true, false) as Node3D
 	_blade_tip_marker = rig_weapon.find_child("BladeTip", true, false) as Node3D
 	blade_trail = BladeTrail.new()
@@ -72,6 +77,26 @@ func use_production_profile(profile: String) -> Dictionary:
 	add_child(blade_trail)
 	pose(0.0, 0.0, -1.0, false, false, false, {"speed":0.0})
 	return result
+
+static func apply_hero_blade_profile(weapon: Node3D) -> bool:
+	# Geometry only: retain the original instance/markers and original imported
+	# PBR material references. No duplicate texture atlas or scaled hilt.
+	var profile := HERO_BLADE_GEOMETRY.instantiate() as Node3D
+	var original := weapon.find_child("CanonicalGeometry", true, false) as MeshInstance3D
+	var replacement := profile.find_child("CanonicalGeometry", true, false) as MeshInstance3D
+	if original == null or replacement == null or original.mesh == null or replacement.mesh == null or original.mesh.get_surface_count() != 1 or replacement.mesh.get_surface_count() != 1 or not original.transform.is_equal_approx(replacement.transform):
+		profile.free()
+		return false
+	var material := original.get_active_material(0)
+	if material == null:
+		profile.free()
+		return false
+	var geometry := replacement.mesh.duplicate() as ArrayMesh
+	geometry.surface_set_material(0, material)
+	original.mesh = geometry
+	weapon.set_meta("blade_profile", "hero_broadblade_001")
+	profile.free()
+	return true
 
 func _mount_eyes(skeleton: Skeleton3D, scene: PackedScene) -> bool:
 	eye_socket = BoneAttachment3D.new()
@@ -135,6 +160,7 @@ func presentation_report() -> Dictionary:
 		if grip != null and tip != null:
 			length = grip.global_position.distance_to(tip.global_position)
 	return {"mode":"skeletal" if skeletal else "prototype", "profile":production_profile,
+		"weapon_profile":String(rig_weapon.get_meta("blade_profile", "original")) if is_instance_valid(rig_weapon) else "",
 		"state":String(skeletal_bridge.selected_state) if skeletal else "", "weapon_attached":is_instance_valid(weapon_socket),
 		"grip_to_tip_m":length, "status":rig_status,
 		"eyes_attached":is_instance_valid(eye_socket) and is_instance_valid(eye_model),
@@ -193,6 +219,7 @@ func _replace_hero_sword() -> void:
 			child.hide()
 	var replacement := RUNE_SWORD_SCENE.instantiate() as Node3D
 	replacement.name = "RuneSwordPreview"
+	apply_hero_blade_profile(replacement)
 	# Canonical blade +Y -> prototype blade -Y; keep its broad face normal +Z.
 	replacement.rotation.z = PI
 	socket.add_child(replacement)

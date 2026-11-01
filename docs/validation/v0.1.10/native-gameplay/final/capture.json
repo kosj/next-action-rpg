@@ -1,0 +1,154 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Silent delivery does not establish audio-hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "scenario": {
+    "ui": "Native mouse clicks: Settings; quality1 via OptionButton and Down/Enter; Done; New Game; prologue Continue",
+    "movement": "Native W+Shift to actual first encounter, Tab lock; hold right mouse Heavy while approaching within2m",
+    "release": "Stop movement; wait for real incoming health decrease and stagger clear with Heavy>=.65; release right mouse",
+    "completion": "Observe real charged contact and both actors paused, then ordinary recovery to bounded end",
+    "prohibited": [
+      "teleport",
+      "invulnerability writes",
+      "forced damage",
+      "save injection",
+      "QA state writes",
+      "forced sync"
+    ],
+    "variance": "Matched event-driven input policy, not identical AI trajectories or fixed event timestamps"
+  },
+  "status": "scripted_native_gameplay_captured",
+  "takes": {
+    "after": {
+      "actual": {
+        "charged_contacts": 1,
+        "paired_pause_frames": 5,
+        "actual_models": {
+          "hero": {
+            "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+            "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+          },
+          "sentinel_melee": {
+            "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+            "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+          }
+        },
+        "actual_curve": {
+          "interpolation": "linear_grip_tip",
+          "ok": true,
+          "path": "res://data/charged_blade_curve.json",
+          "reason": "",
+          "resource_sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+          "sample_count": 91,
+          "sample_step_s": 0.002,
+          "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+          "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+          "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+        },
+        "contact_tick": 359,
+        "release_tick": 334,
+        "actual_build_id": "0.1.10 · 61445931",
+        "start_health": 120.0,
+        "end_health": 56.0,
+        "frame_count": 624,
+        "gameplay_frames": 600
+      },
+      "media": {
+        "raw": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-after-readable-contact/after/gameplay.avi",
+          "sha256": "c500f15f215ffa82c2650b60de67fd237a631926dfe81ab51e99907af983e0b4",
+          "probe": {
+            "codec_name": "mjpeg",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "10.466667",
+            "nb_read_frames": "628"
+          }
+        },
+        "delivery": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-after-readable-contact/after/gameplay-logical1x.mp4",
+          "sha256": "da3df4ad4f16e7dec1b0e94ac8da31e5d899fb74b0d8608716a9bcc5484fff4d",
+          "probe": {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "10.400000",
+            "nb_read_frames": "624"
+          },
+          "logical_speed": 1.0,
+          "audio": "silent, not listened/approved",
+          "frames": 624
+        },
+        "original_png_checks": [
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-after-readable-contact/after/original-png/01-normal-gameplay.png",
+            "sha256": "89da236c9a5fe17159e0cce27ebe7ac63c60a5d4324be26108e6e4a0ac45a219",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              90.24060763888889,
+              102.44699110243056,
+              101.22804904513889
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-after-readable-contact/after/original-png/02-charge-near-real-enemy.png",
+            "sha256": "e647460ca9d03328b6514e651084021f9b5fc689b3f6e4edd42dc8755b174bf1",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              129.41045247395834,
+              121.08603407118055,
+              108.43920789930556
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-gameplay-after-readable-contact/after/original-png/04-actual-confirmed-contact.png",
+            "sha256": "ebaf7efa5efe353389a3485bbef2f94e52a589abfeb702173dba426fb3c06ea1",
+            "size": [
+              1280,
+              720
+            ],
+            "rgb_mean": [
+              128.22971354166665,
+              119.28910590277778,
+              106.06698567708334
+            ],
+            "middle_row_nonblack_span": 1280,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          }
+        ]
+      },
+      "source_inputs_unchanged": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ],
+      "cleanup": {
+        "actual_audio_weakrefs_released": true,
+        "audio_stop_report": {
+          "epoch": 1,
+          "pending_playbacks": 0,
+          "players": 0,
+          "stopped": true
+        },
+        "scope": "Post-record resource release only; not audio-hearing approval"
+      }
+    }
+  },
+  "display_tcp_disabled": true,
+  "processes_closed": true,
+  "started_unix": 1793542306.6510246,
+  "finished_unix": 1793542769.018337,
+  "elapsed_s": 462.36731243133545
+}

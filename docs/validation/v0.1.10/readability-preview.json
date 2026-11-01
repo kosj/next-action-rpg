@@ -1,0 +1,47 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Dirty614-head local preview with new readability camera/core; native486/0 and Web/Windows export/packaging. Does not approve final source commit/CI/public release, actual raster occlusion, clean final gameplay capture, continuous AV, target hardware or AAA.",
+  "native": {
+    "checks": 486,
+    "failures": 0,
+    "log": "native-readability.log",
+    "feedback": "native-feedback-readability.json",
+    "log_error_markers": {
+      "SCRIPT ERROR": 0,
+      "ERROR:": 0,
+      "ObjectDB instances were leaked": 0,
+      "resources still in use": 0
+    }
+  },
+  "manifest": {
+    "version": "0.1.10",
+    "godot": "4.7.2",
+    "commit": "61445931",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115769167,
+        "sha256": "7768a783fa916442afd108f89d68719978d0326bf03c44991fc98dc3f81b99f8"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143610474,
+        "sha256": "fedcdc7e97420f9594702cb7fd732e9723b4a6cea28758d1812ab2e839ae9b7d"
+      }
+    ]
+  },
+  "artifacts": {
+    "runefall-web.zip": {
+      "bytes": 115769167,
+      "sha256": "7768a783fa916442afd108f89d68719978d0326bf03c44991fc98dc3f81b99f8"
+    },
+    "runefall-windows.zip": {
+      "bytes": 143610474,
+      "sha256": "fedcdc7e97420f9594702cb7fd732e9723b4a6cea28758d1812ab2e839ae9b7d"
+    }
+  },
+  "archive_scope": "Native report and full build log byte-exact; ZIPs remain outside this source archive. Artifact SHA calculated directly from existing files without engine/export rerun.",
+  "web_raw_bytes": 146516803,
+  "web_raw_bytes_scope": "Direct byte sum of all existing build/web regular files; ZIP bytes/hash independently read from files. No export rerun.",
+  "web_raw_files": 14
+}

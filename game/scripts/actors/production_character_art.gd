@@ -24,7 +24,7 @@ static var _prepared: Dictionary = {}
 
 static func definition(profile: String) -> Dictionary:
 	if profile == "hero":
-		return {"path":"res://assets/models/production/lyra_weight_gameplay.glb", "states":HERO_STATES,
+		return {"path":"res://assets/models/production/lyra_fury_gameplay.glb", "states":HERO_STATES,
 			"height":1.82, "grip_profile":"lyra", "walk_speed":6.4,
 			"eye_path":"res://assets/models/production/lyra_eyes.glb"}
 	if profile == "sentinel_melee":

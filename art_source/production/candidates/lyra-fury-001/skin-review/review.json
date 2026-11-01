@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "decision": "scoped_007_runtime_candidate_adoption",
+  "scope": "Selected twelve actual matched Blender Cycles stills and finite raw LBS audit only. No all-frame skin, intersection, continuous1x AV, input/actual gameplay, hardware or AAA approval.",
+  "source_before_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+  "source_after_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "selected_stills": [
+    {
+      "file": "charge-0296-before-left.png",
+      "sha256": "b6bf3123cd6435304e979eeddb1a5ce182d4058e8622a16ae0dcf4a788b2e991",
+      "bytes": 764934,
+      "source_job": "old-charge-left",
+      "source_file": "charge-0296.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    },
+    {
+      "file": "charge-0296-after-left.png",
+      "sha256": "fa5b5ba7f8f3d13ed1060070cb2bc481ee18a2240b2f519fecbd624c00e4ec85",
+      "bytes": 772564,
+      "source_job": "new-charge-left",
+      "source_file": "charge-0296.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    },
+    {
+      "file": "stroke-0441-before-opposite.png",
+      "sha256": "bd69edb39436cca2aaa37df345135723f72aab07a5b840f9d1adfed9fcc3128e",
+      "bytes": 707568,
+      "source_job": "old-stroke-opposite",
+      "source_file": "charged_heavy-0441.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    },
+    {
+      "file": "stroke-0441-after-opposite.png",
+      "sha256": "76d8bb2f3657720c1e748e25af79f768746f34cbb4e5a5c4499f55bf3a1ef951",
+      "bytes": 724467,
+      "source_job": "new-stroke-opposite",
+      "source_file": "charged_heavy-0441.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    },
+    {
+      "file": "stroke-0450-after-front.png",
+      "sha256": "4233e4cc5fe02cd2d847d9b012ead034ce45445f1bea1480087c5d9d14140497",
+      "bytes": 572289,
+      "source_job": "new-stroke-front",
+      "source_file": "charged_heavy-0450.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    },
+    {
+      "file": "stroke-0354-after-front.png",
+      "sha256": "6b8decb2de71aaa091b3a1cdf105f9e982ab832a3206d51a6180c3cb05683b64",
+      "bytes": 578697,
+      "source_job": "new-stroke-front",
+      "source_file": "charged_heavy-0354.png",
+      "scope": "Byte-exact original render copy; no crop, repaint or resize."
+    }
+  ],
+  "inspected_rasters": [
+    {
+      "job": "new-charge-front",
+      "file": "charge-0296.png",
+      "time_s": 0.296,
+      "sha256": "463f287f57cf11d6ba835975ca14ecaaf46b0bbc19407b5522b8e633d01b9f96"
+    },
+    {
+      "job": "new-charge-left",
+      "file": "charge-0296.png",
+      "time_s": 0.296,
+      "sha256": "fa5b5ba7f8f3d13ed1060070cb2bc481ee18a2240b2f519fecbd624c00e4ec85"
+    },
+    {
+      "job": "new-stroke-front",
+      "file": "charged_heavy-0354.png",
+      "time_s": 0.354,
+      "sha256": "6b8decb2de71aaa091b3a1cdf105f9e982ab832a3206d51a6180c3cb05683b64"
+    },
+    {
+      "job": "new-stroke-front",
+      "file": "charged_heavy-0433.png",
+      "time_s": 0.433333,
+      "sha256": "5957f1a6ce31e334f00a2bc547063eced35f83d8be6b882461f5a39b1ee7f9e3"
+    },
+    {
+      "job": "new-stroke-front",
+      "file": "charged_heavy-0441.png",
+      "time_s": 0.441,
+      "sha256": "24d8960e4aea68fb23f8184a83dd16e1bde9064f59215df978d0635431acaaee"
+    },
+    {
+      "job": "new-stroke-front",
+      "file": "charged_heavy-0450.png",
+      "time_s": 0.45,
+      "sha256": "4233e4cc5fe02cd2d847d9b012ead034ce45445f1bea1480087c5d9d14140497"
+    },
+    {
+      "job": "new-stroke-opposite",
+      "file": "charged_heavy-0441.png",
+      "time_s": 0.441,
+      "sha256": "76d8bb2f3657720c1e748e25af79f768746f34cbb4e5a5c4499f55bf3a1ef951"
+    },
+    {
+      "job": "old-charge-front",
+      "file": "charge-0296.png",
+      "time_s": 0.296,
+      "sha256": "e54fb30ca4ae160438f1f693fa0dbf4752c1c7a6a0f82a52b66ef3433948ba1d"
+    },
+    {
+      "job": "old-charge-left",
+      "file": "charge-0296.png",
+      "time_s": 0.296,
+      "sha256": "b6bf3123cd6435304e979eeddb1a5ce182d4058e8622a16ae0dcf4a788b2e991"
+    },
+    {
+      "job": "old-stroke-front",
+      "file": "charged_heavy-0433.png",
+      "time_s": 0.433333,
+      "sha256": "0a0ba21dd7ff66f61d714593c34583c1eeccb659f7f3a415a3f114a2e43cb553"
+    },
+    {
+      "job": "old-stroke-front",
+      "file": "charged_heavy-0450.png",
+      "time_s": 0.45,
+      "sha256": "1527e4b57513fc6cce0d2274b7eed34c54b83ba4b90af83a338b25d8c7d2f4eb"
+    },
+    {
+      "job": "old-stroke-opposite",
+      "file": "charged_heavy-0441.png",
+      "time_s": 0.441,
+      "sha256": "bd69edb39436cca2aaa37df345135723f72aab07a5b840f9d1adfed9fcc3128e"
+    }
+  ],
+  "render_profiles": [
+    {
+      "job": "new-charge-front",
+      "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "view": "front",
+      "clip": "charge",
+      "camera_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.06903905421495438,
+          -0.9976139664649963,
+          -6.0
+        ],
+        [
+          0.0,
+          0.9976139664649963,
+          0.06903905421495438,
+          1.7999999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "new-charge-left",
+      "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "view": "arms",
+      "clip": "charge",
+      "camera_matrix": [
+        [
+          0.8716689944267273,
+          -0.11664537340402603,
+          0.47601157426834106,
+          2.799999952316284
+        ],
+        [
+          0.4900950491428375,
+          0.20746198296546936,
+          -0.8466205596923828,
+          -5.199999809265137
+        ],
+        [
+          6.991906786879554e-08,
+          0.9712638258934021,
+          0.23800548911094666,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "new-stroke-front",
+      "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "view": "front",
+      "clip": "charged_heavy",
+      "camera_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.06903905421495438,
+          -0.9976139664649963,
+          -6.0
+        ],
+        [
+          0.0,
+          0.9976139664649963,
+          0.06903905421495438,
+          1.7999999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "new-stroke-opposite",
+      "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "view": "opposite",
+      "clip": "charged_heavy",
+      "camera_matrix": [
+        [
+          0.8716689944267273,
+          0.11664537340402603,
+          -0.47601157426834106,
+          -2.799999952316284
+        ],
+        [
+          -0.4900950491428375,
+          0.20746198296546936,
+          -0.8466205596923828,
+          -5.199999809265137
+        ],
+        [
+          -6.991906786879554e-08,
+          0.9712638258934021,
+          0.23800548911094666,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "old-charge-front",
+      "input_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+      "view": "front",
+      "clip": "charge",
+      "camera_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.06903905421495438,
+          -0.9976139664649963,
+          -6.0
+        ],
+        [
+          0.0,
+          0.9976139664649963,
+          0.06903905421495438,
+          1.7999999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "old-charge-left",
+      "input_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+      "view": "arms",
+      "clip": "charge",
+      "camera_matrix": [
+        [
+          0.8716689944267273,
+          -0.11664537340402603,
+          0.47601157426834106,
+          2.799999952316284
+        ],
+        [
+          0.4900950491428375,
+          0.20746198296546936,
+          -0.8466205596923828,
+          -5.199999809265137
+        ],
+        [
+          6.991906786879554e-08,
+          0.9712638258934021,
+          0.23800548911094666,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "old-stroke-front",
+      "input_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+      "view": "front",
+      "clip": "charged_heavy",
+      "camera_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.06903905421495438,
+          -0.9976139664649963,
+          -6.0
+        ],
+        [
+          0.0,
+          0.9976139664649963,
+          0.06903905421495438,
+          1.7999999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "job": "old-stroke-opposite",
+      "input_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+      "view": "opposite",
+      "clip": "charged_heavy",
+      "camera_matrix": [
+        [
+          0.8716689944267273,
+          0.11664537340402603,
+          -0.47601157426834106,
+          -2.799999952316284
+        ],
+        [
+          -0.4900950491428375,
+          0.20746198296546936,
+          -0.8466205596923828,
+          -5.199999809265137
+        ],
+        [
+          -6.991906786879554e-08,
+          0.9712638258934021,
+          0.23800548911094666,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "orthographic_scale": 1.5499999523162842,
+      "resolution": [
+        768,
+        768
+      ],
+      "samples": 16,
+      "renderer_file": "tools/render_fury_review.py",
+      "renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    }
+  ],
+  "observations": {
+    "charge_0296": "Two matched left-quarter/front views show more extended left inner-elbow padding/crease. No obvious new needle/spike/rupture/candy-wrapper appeared in these selected views. Old elbow appears more roundly folded/crushed.",
+    "charged_0441_0450": "Matched front/opposite views show arms/shoulders following the downward stroke more clearly; no pronounced new collapse was observed in selected left forearm/gauntlet views. Fist wrap, armor contact and complete deformation quality remain pending.",
+    "weapon_limit": "Studio comparisons use the original neutral rune_sword_web.glb input in both assets. Current broad-blade runtime visibility/impact must be verified in actual production gameplay.",
+    "ground_limit": "Neutral Blender body comparison only; not controller/capsule/terrain/real collision foot-contact approval."
+  },
+  "skin_numerical_summary": {
+    "samples_keys_and_midpoints": 1712,
+    "regional_vertices": 11014,
+    "regional_edges": 23800,
+    "regional_triangles": 13290,
+    "old_max_absolute_extension_mm": 53.06211377161216,
+    "new_max_absolute_extension_mm": 34.082512910261244,
+    "old_p99_edge_ratio": 1.7535005414040103,
+    "new_p99_edge_ratio": 1.4997892641647415,
+    "old_max_ratio": 5.906021864017053,
+    "new_max_ratio": 2.510570994138559,
+    "new_collateral_edges_above1mm": 2054,
+    "old_min_triangle_area_ratio": 0.0007885320512986026,
+    "new_min_triangle_area_ratio": 0.0007545263006576371
+  },
+  "critical_same_edge": {
+    "edge_index_in_region": 13562,
+    "vertex_ids": [
+      15767,
+      15771
+    ],
+    "rest_length_mm": 38.167224238830116,
+    "old_envelope_extension_mm": -14.60669784125244,
+    "new_envelope_extension_mm": 17.94783949601216,
+    "worsening_mm": 32.5545373372646,
+    "new_peak": {
+      "clip": "charge",
+      "time_s": 0.29600000381469727
+    },
+    "rest_vertices_world_m": [
+      [
+        0.43393885786827935,
+        1.42378900614152,
+        -0.09207833434602099
+      ],
+      [
+        0.46888580262720053,
+        1.4084501367995577,
+        -0.09166950012012717
+      ]
+    ],
+    "weights": [
+      {
+        "LeftArm": 0.6993472576141357,
+        "LeftForeArm": 0.30065271258354187
+      },
+      {
+        "LeftForeArm": 0.7505853176116943,
+        "LeftArm": 0.24941468238830566
+      }
+    ]
+  },
+  "skin_audit_limit": "Only primitive0 has the selected arm/hand/shoulder influence region. The2054 edges with>1mm envelope worsening and worst+32.55mm at charge.296 remain recorded; improved regional maxima do not approve these edges or all skin. Area ratios/intersections/anatomical garment behavior need further review.",
+  "runtime_gameplay_capture": "pending",
+  "continuous_visual_audio_acceptance": "pending",
+  "terrain": "pending",
+  "target_hardware": "pending",
+  "aaa_approval": "pending"
+}

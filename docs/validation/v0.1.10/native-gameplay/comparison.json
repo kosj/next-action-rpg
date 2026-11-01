@@ -1,0 +1,12 @@
+{
+  "scope": "Original scripted input events through release only; no retiming or forced shared contact tick. Source/capture overlays and actual outcome differences remain explicit.",
+  "baseline_release_tick": 334,
+  "final_release_tick": 334,
+  "compared_through_tick": 334,
+  "matched_input_event_count": 34,
+  "input_events_equal": true,
+  "baseline_contact_tick": 362,
+  "final_contact_tick": 359,
+  "baseline_trace_decoded_sha256": "01f6fba517c4044c05da7950f7a8c5e9df6269c0462f6ce3a49057658a80d19a",
+  "final_trace_decoded_sha256": "9e9301c0769f545c7932ebe973bd73cb07cf4fa380355949c0f6b08dee500430"
+}

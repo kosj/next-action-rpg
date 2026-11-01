@@ -1,0 +1,10 @@
+{
+  "scope": "Lossless deterministic gzip of original full scripted-gameplay trace; mtime0, level6. No frame filtering or timing adjustment.",
+  "decoded_file": "frames.json",
+  "decoded_bytes": 5076320,
+  "decoded_sha256": "ad9a6e10c3f3f6266a751bd345bc3db203e6a13c26b5bfa6b085df94abddb68d",
+  "gzip_bytes": 582294,
+  "gzip_sha256": "7a9de445b33210fb6512013e5157c82385334ec041eee4094bdd3e9d70202dfc",
+  "silent_media_sha256": "b88afea3d4b7390a216f99a25c22386bc120ccdd997402fd756df0287fbb1a6e",
+  "silent_media_archived": false
+}

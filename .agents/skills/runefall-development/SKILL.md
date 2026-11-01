@@ -23,6 +23,8 @@ description: Implement and verify RUNEFALL GDScript gameplay changes, especially
 
 ## 실행
 
+활성 동작과 물리 곡선을 함께 바꾸는 경우 [v0.1.10 제작 계약](../../../docs/COMBAT_MOTION_POLISH_SLICE.md)을 확인합니다. curve 파일 SHA·source GLB SHA·좌표계·floor offset·active 양끝/표본 순서·길이·보간 오차를 검증하고, 잘못된 pin을 이전 analytic 경로로 숨기지 않습니다. 모든 curve 경계를 보존한 세분화와 실제 해결된 actor 이동을 사용하며 첫 geometric receipt·최종 표시 시계/잔상을 다시 검사합니다. source/raw 통과·native 기능·실제 화면/skin/브라우저·최종 배포 승인은 별도입니다.
+
 `tools/toolchain.json`에 맞는 엔진과 동일한 템플릿을 사용하고 `GODOT_BIN`을 해당 실행 파일로 지정합니다. 새 환경은 `bash tools/setup_godot.sh`가 출력한 경로를 사용합니다.
 
 ```bash
