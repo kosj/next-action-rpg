@@ -1,0 +1,8 @@
+{
+  "scope": "Exact committed catalog pin via tools/pin_knowledge_bundle.py; packaging integrity is verified separately",
+  "bundle_version": "1.4.3",
+  "source_commit": "e1d8a7e8c94a99c19bbc8775433cb572cf884207",
+  "entry_count": 64,
+  "catalog_sha256": "98cccf2b81e74bf3fe50462fe06591f15e51427cc8898fb95854ffd59386146b",
+  "source_matches_worktree": true
+}
