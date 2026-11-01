@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "profile": "lyra",
+  "source_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+  "height_m": 1.82,
+  "triangles": 32288,
+  "fps": 500,
+  "motion_authorship": "New weight/recovery choreography for existing charge/charged_heavy or heavy_hit only. Published impact GLB and old author tool remain immutable; body and unrelated raw actions grafted byte-exact.",
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false
+  },
+  "guard": {
+    "grip_m": [
+      -0.05,
+      -0.35,
+      1.18
+    ],
+    "azimuth_deg": -10.0,
+    "pitch_deg": 55.0,
+    "pelvis_drop_m": 0.07,
+    "lean_deg": 5.0
+  },
+  "finger_curl_rad": [
+    0.65,
+    1.35,
+    1.4
+  ],
+  "locomotion": {
+    "walk_speed": 6.4,
+    "run_speed": 8.5
+  },
+  "quality_status": "New authored weight/recovery candidate; actual gameplay, normal-speed AV, hardware and AAA approval pending.",
+  "impact_slice": {
+    "charged_heavy": {
+      "startup": 0.34,
+      "active": 0.18,
+      "recovery": 0.54,
+      "actor_speed_m_s": [
+        0,
+        3.2,
+        0
+      ],
+      "nominal_actor_travel_m": 0.576,
+      "gameplay_arc_deg": 170,
+      "gameplay_reach_m": 1.5,
+      "two_hand_support": true,
+      "physical_blade_length_m": 1.19,
+      "physical_blade_radius_m": 0.12,
+      "physical_trajectory": "same-phase3D capsule from authoritative actor-local grip/tip; smooth(f^2) azimuth/pitch; no horizontal reach proxy",
+      "blade_damage_start_fraction": 0.18
+    }
+  },
+  "sampling_rationale": "Only new charge/charged_heavy use500Hz to keep actual nonlinear local-TRS midpoint blade FK within3mm after continuous elbow-plane IK; original unrelated clips remain byte-exact. Sample density is not visual quality approval.",
+  "weight_recovery": {
+    "goal": "Readable full-body loading, pelvis lead, compression, support-leg weight transfer and recovery; same timing and charged active blade curve.",
+    "source_file": "game/assets/models/production/lyra_impact_gameplay.glb",
+    "same_gameplay_numerics": true,
+    "terrain_or_wall_adaptation": false
+  }
+}

@@ -1,0 +1,184 @@
+{
+	"baseline_startup_hip_shift_m": 0.00000000372529029846191,
+	"baselines": {
+		"hero": {
+			"path": "res://assets/models/production/lyra_impact_gameplay.glb",
+			"sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d"
+		},
+		"sentinel_melee": {
+			"path": "res://assets/models/production/sentinel_impact_gameplay.glb",
+			"sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576"
+		}
+	},
+	"first_idle_join": {
+		"max_joint_distance_m": 0.000487623416120186,
+		"max_local_rotation_rad": 0.00284714554436505
+	},
+	"hero_path": "res://assets/models/production/lyra_weight_gameplay.glb",
+	"hero_samples": [
+		{
+			"baseline_hips_y": 0.880975842475891,
+			"body_difference": {
+				"max_joint_distance_m": 0.11407782137394,
+				"max_local_rotation_rad": 1.02196967601776
+			},
+			"hips_y": 0.810975790023804,
+			"time": 0.0
+		},
+		{
+			"baseline_hips_y": 0.880975842475891,
+			"body_difference": {
+				"max_joint_distance_m": 0.133885517716408,
+				"max_local_rotation_rad": 1.11452627182007
+			},
+			"hips_y": 0.791096031665802,
+			"time": 0.12
+		},
+		{
+			"baseline_hips_y": 0.880975842475891,
+			"body_difference": {
+				"max_joint_distance_m": 0.145502373576164,
+				"max_local_rotation_rad": 1.13298106193542
+			},
+			"hips_y": 0.777887046337128,
+			"time": 0.22
+		},
+		{
+			"baseline_hips_y": 0.876774787902832,
+			"body_difference": {
+				"max_joint_distance_m": 0.049999862909317,
+				"max_local_rotation_rad": 0.21094374358654
+			},
+			"hips_y": 0.849262416362762,
+			"time": 0.3
+		},
+		{
+			"baseline_hips_y": 0.867297828197479,
+			"body_difference": {
+				"max_joint_distance_m": 0.0499999225139618,
+				"max_local_rotation_rad": 0.14215075969696
+			},
+			"hips_y": 0.867297828197479,
+			"time": 0.34
+		},
+		{
+			"baseline_hips_y": 0.850975811481476,
+			"body_difference": {
+				"max_joint_distance_m": 0.253077685832977,
+				"max_local_rotation_rad": 0.632113635540009
+			},
+			"hips_y": 0.850975811481476,
+			"time": 0.43
+		},
+		{
+			"baseline_hips_y": 0.850975811481476,
+			"body_difference": {
+				"max_joint_distance_m": 0.268308907747269,
+				"max_local_rotation_rad": 0.454348713159561
+			},
+			"hips_y": 0.850975811481476,
+			"time": 0.52
+		},
+		{
+			"baseline_hips_y": 0.850975811481476,
+			"body_difference": {
+				"max_joint_distance_m": 0.0603999048471451,
+				"max_local_rotation_rad": 0.345849573612213
+			},
+			"hips_y": 0.79097580909729,
+			"time": 0.66
+		},
+		{
+			"baseline_hips_y": 0.897753298282623,
+			"body_difference": {
+				"max_joint_distance_m": 0.0357449799776077,
+				"max_local_rotation_rad": 0.141568973660469
+			},
+			"hips_y": 0.863268315792084,
+			"time": 0.84
+		},
+		{
+			"baseline_hips_y": 0.960178375244141,
+			"body_difference": {
+				"max_joint_distance_m": 0.000603159074671566,
+				"max_local_rotation_rad": 0.00258374214172363
+			},
+			"hips_y": 0.95974326133728,
+			"time": 1.04
+		}
+	],
+	"hero_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+	"max_sentinel_foot_change_m": 0.106959275901318,
+	"max_sentinel_hip_change_m": 0.103359691798687,
+	"near_end_guard_join": {
+		"max_joint_distance_m": 0.00451725628226995,
+		"max_local_rotation_rad": 0.0216616280376911
+	},
+	"reaction_clock_preserved": true,
+	"scope": "Actual imported choreography changes versus pinned v0.1.8 and final presentation joins. Foot changes are actor-local pose measurements, not world footplant during collision-resolved recoil; no terrain IK, normal-speed AV, target hardware or AAA approval",
+	"sentinel_path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+	"sentinel_samples": [
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.000000756674239710264,
+				"max_local_rotation_rad": 0.0
+			},
+			"hips_difference_m": 0.000000000465661287307739,
+			"time": 0.0
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.304913491010666,
+				"max_local_rotation_rad": 1.12011086940765
+			},
+			"hips_difference_m": 0.0363526567816734,
+			"time": 0.075
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.223026171326637,
+				"max_local_rotation_rad": 1.03540503978729
+			},
+			"hips_difference_m": 0.08944471180439,
+			"time": 0.16
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.176132872700691,
+				"max_local_rotation_rad": 0.810237646102905
+			},
+			"hips_difference_m": 0.103359691798687,
+			"time": 0.24
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.237912878394127,
+				"max_local_rotation_rad": 0.887231647968292
+			},
+			"hips_difference_m": 0.102364897727966,
+			"time": 0.32
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.110166653990746,
+				"max_local_rotation_rad": 0.436444222927094
+			},
+			"hips_difference_m": 0.0459400154650211,
+			"time": 0.4
+		},
+		{
+			"guard_difference": {
+				"max_joint_distance_m": 0.00451725628226995,
+				"max_local_rotation_rad": 0.0216616280376911
+			},
+			"hips_difference_m": 0.00195832806639373,
+			"time": 0.4666666667
+		}
+	],
+	"sentinel_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+	"startup_hip_shift_m": 0.0749999955296516,
+	"stationary_charge_release_join": {
+		"max_joint_distance_m": 0.00000000745058059692383,
+		"max_local_rotation_rad": 0.0009765625
+	}
+}

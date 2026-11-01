@@ -1,0 +1,138 @@
+{
+  "scope": "Silent offline neutral Godot presentation comparison at logical 1x; actual ActorVisual/SkeletalVisualBridge, prescribed open-space actor travel, no interactive combat/contact/collision/audio listening, hardware performance or AAA approval.",
+  "profiles": {
+    "hero": {
+      "scope": "Silent offline neutral Godot presentation comparison at logical 1x; actual ActorVisual/SkeletalVisualBridge, prescribed open-space actor travel, no interactive combat/contact/collision/audio listening, hardware performance or AAA approval.",
+      "raw": {
+        "codec_name": "mjpeg",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "2.716667",
+        "nb_read_frames": "163"
+      },
+      "final": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "2.700000",
+        "nb_read_frames": "162"
+      },
+      "movie": {
+        "path": "build/art-review/weight-motion/task/native-motion-003/hero-1x.mp4",
+        "bytes": 495869,
+        "sha256": "80b31f1735182e88288f576b8f5cb9d3d52c5d443a33e66a096bcea953e91481"
+      },
+      "contact_sheet": {
+        "path": "build/art-review/weight-motion/task/native-motion-003/hero-contact-sheet.png",
+        "sha256": "d9df1a2b8b93930b89e735e4839615059ee383a922cc30c3d5ec4b45b294052d",
+        "source_frames": [
+          0,
+          56,
+          60,
+          80,
+          86,
+          91,
+          107,
+          124,
+          144
+        ]
+      },
+      "raw_extra_quit_frames_removed": 1,
+      "speed_change": false,
+      "audio_in_final_movie": false
+    },
+    "sentinel_melee": {
+      "scope": "Silent offline neutral Godot presentation comparison at logical 1x; actual ActorVisual/SkeletalVisualBridge, prescribed open-space actor travel, no interactive combat/contact/collision/audio listening, hardware performance or AAA approval.",
+      "raw": {
+        "codec_name": "mjpeg",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "1.416667",
+        "nb_read_frames": "85"
+      },
+      "final": {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "1.400000",
+        "nb_read_frames": "84"
+      },
+      "movie": {
+        "path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-1x.mp4",
+        "bytes": 271948,
+        "sha256": "c18fb9b640f67095fdfcce16da01404006e155a12a9f205a2501aac040c70523"
+      },
+      "contact_sheet": {
+        "path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-contact-sheet.png",
+        "sha256": "c5d577f68ccd5c2c7c39fa73918fe27c85881b757687e171d3b929f1fb699181",
+        "source_frames": [
+          0,
+          18,
+          21,
+          27,
+          32,
+          39,
+          47,
+          52,
+          72
+        ]
+      },
+      "raw_extra_quit_frames_removed": 1,
+      "speed_change": false,
+      "audio_in_final_movie": false
+    },
+    "hero-arms": {
+      "scope": "Five actual-skin static subframe seeks, effects off; not sequential1x motion or gameplay/AAA approval",
+      "logical_speed": null,
+      "lossless_actual_raster": true,
+      "raw_png_frames": 6,
+      "stills": [
+        {
+          "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-01.png",
+          "charged_elapsed_s": 0.4667,
+          "sha256": "41aa8466d73515058d2532141c984cf25a7ca1a685fbfbe900f41ed31bc46eba"
+        },
+        {
+          "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-02.png",
+          "charged_elapsed_s": 0.475,
+          "sha256": "eb513da16f2dac96db6190aa93f574e9cc93c710f4979a6b07e27da5f938dede"
+        },
+        {
+          "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-03.png",
+          "charged_elapsed_s": 0.478,
+          "sha256": "d4c4a2ea22e469561d9ac68cf9757d0d354d4be4ba3406276ce7dd4049f6fe7c"
+        },
+        {
+          "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-04.png",
+          "charged_elapsed_s": 0.48,
+          "sha256": "109c1cb5d80f2e7a29ecccb59df7a9e9ab1273d9310a4769229bc71224f433e8"
+        },
+        {
+          "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-05.png",
+          "charged_elapsed_s": 0.4833,
+          "sha256": "9639e3b50f38a218a2e8ade560ed2ea3bc4f0eae0370be4df0d646205a93588a"
+        }
+      ],
+      "static_strip": {
+        "path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-static-strip.png",
+        "sha256": "764803fdf8abc3b436f00b3602d71d4cf9bf4a5ddfcba633ea1d62a28b5fcc10"
+      }
+    }
+  },
+  "display_tcp_disabled": true,
+  "display_server": {
+    "path": "/usr/lib/xorg/Xorg",
+    "sha256": "f27e5a6a276b15877bf3ad67fd8ed30b745bc5bf0be646cd06b1f9006b540dd7"
+  },
+  "godot_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+  "official_reference": "https://docs.godotengine.org/en/stable/tutorials/animation/creating_movies.html",
+  "reference_check": "Installed pinned Godot --help confirms write-movie forces fixed-fps and supports quit-after. Online reference returned403 in this environment; no claim that its current text was retrieved."
+}

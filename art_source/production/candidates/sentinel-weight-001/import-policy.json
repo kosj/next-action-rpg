@@ -1,0 +1,36 @@
+{
+  "scope": "Configured new import policies before first engine import; newUIDs may be assigned by Godot. Actual imported key counts/decoded image formats and export/performance pending.",
+  "animation_import": {
+    "file": "game/assets/models/production/sentinel_weight_gameplay.glb.import",
+    "fps": 100,
+    "optimizer/enabled": false,
+    "compression/enabled": false,
+    "post_import_script": null,
+    "post_import_sha256": null
+  },
+  "textures": [
+    {
+      "source_png": "game/assets/models/production/sentinel_impact_gameplay_Image_0.png",
+      "new_png": "game/assets/models/production/sentinel_weight_gameplay_Image_0.png",
+      "bytes_equal": true,
+      "sha256": "56aee7e0703e215c73b010b672a8bbe1cf9689486c11b599462659b4442981ee",
+      "params_equal": true
+    },
+    {
+      "source_png": "game/assets/models/production/sentinel_impact_gameplay_Image_1.png",
+      "new_png": "game/assets/models/production/sentinel_weight_gameplay_Image_1.png",
+      "bytes_equal": true,
+      "sha256": "414e127ef50845459c2ac7a77c05becf6715c1a4ac304a2d4759eb0a9b1ecc3e",
+      "params_equal": true
+    },
+    {
+      "source_png": "game/assets/models/production/sentinel_impact_gameplay_Image_2.png",
+      "new_png": "game/assets/models/production/sentinel_weight_gameplay_Image_2.png",
+      "bytes_equal": true,
+      "sha256": "3ed10a0304fb22033f0144cb5b23d40ff6b47917f961a7c5d5b5bf63173716b5",
+      "params_equal": true
+    }
+  ],
+  "runtime_validation": "pending",
+  "aaa_approval": "pending"
+}

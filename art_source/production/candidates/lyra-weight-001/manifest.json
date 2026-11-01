@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-weight-001",
+  "status": "local_native_functional_verified_visual_pending",
+  "source_file": "source.glb",
+  "source_bytes": 23174144,
+  "source_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+  "source_parent": "game/assets/models/production/lyra_impact_gameplay.glb",
+  "source_parent_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+  "runtime_installation": {
+    "file": "game/assets/models/production/lyra_weight_gameplay.glb",
+    "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "scope": "Raw candidate installed unchanged and actual local native448/0 integration verified. Focused browser, clean committed CI, public/release, continuous1x AV, terrain, target hardware and AAA approval pending."
+  },
+  "provenance_files": [
+    {
+      "file": "art_source/production/character_actions/lyra-weight.json",
+      "sha256": "96f0d71343b9abcd9c132492836b92b64a4518618a8ed96bab1696a022721f93"
+    },
+    {
+      "file": "tools/author_weight_actions.py",
+      "sha256": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/audit_impact_curve.py",
+      "sha256": "b3debad4f9316a2e5694b60e65106cd3c10e5d393c10ed1ced73c1b234e239d4"
+    },
+    {
+      "file": "tools/render_impact_review.py",
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "charge",
+    "charged_heavy",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "source_bytes": 21315424,
+    "output_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "output_bytes": 23174144,
+    "retained_animation_names": [
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [
+      "charge",
+      "charged_heavy"
+    ],
+    "authored_animation_names": [
+      "charge",
+      "charged_heavy"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 10177731,
+      "sha256": "827e2408f8ed1b5013c5ecb85bd4c62f1d985afb9d6be623eefc04a94acaeaa1"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 71988,
+      "sha256": "62d9422da4970956c402159b1a8200228e5736cff201a22182999cd86b12636e"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 5127,
+      "sha256": "69e5a5bfa7caa4fbd67d85aef2069b666f6c21a540fca338c8e0d91e98625e04"
+    },
+    {
+      "file": "rejected-motion-summary.json",
+      "bytes": 4571,
+      "sha256": "9d8e3feacccf75a8837a13e137b7b21ba59fdf11019ed2df99535d3e88ada92d"
+    }
+  ],
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "New loading/braking/recovery choreography only. Body/rest/skin/materials and unrelated raw animation JSON/BIN remain preserved. Raw preservation is not imported or visual/performance approval.",
+  "rejected_history": "rejected-motion-summary.json",
+  "review": {
+    "scope": "Actual reimported GLB with runtime sword/socket, fixed neutral Blender4.3.2 studio; no actual Godot runtime/normal-speed AV/hardware/AAA approval.",
+    "file": "studio-review/review.json",
+    "sha256": "b85fe2c734d04b717e039e7c37db5734ac0c85cea1ba6b4183484c6947f1a857",
+    "rendered_glb_sha256_matches_candidate": true,
+    "contact_sheet": "studio-review/contact-sheet.png",
+    "contact_sheet_sha256": "9268fa0e11c41908d50a3f2952d4e3243924da4ab31cd38b57e6d625d5d6ae58"
+  },
+  "local_native_verification": {
+    "status": "local_native_functional_verified_visual_pending",
+    "checks": 448,
+    "failures": 0,
+    "exit_code": 0,
+    "source_asset": "game/assets/models/production/lyra_weight_gameplay.glb",
+    "source_asset_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+    "source_tree_dirty": true,
+    "scope": "Actual local dirty-preview native integration and imported pose/clock/guard checks only. Finite motion capture and listed raster review are separately scoped; no continuous normal-speed AV, target hardware or AAA approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-runtime.log",
+        "sha256": "7789d8042bf76afb9995c7e723d697837aba022ae5662ff341ae069dafb3f095"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-recovery.json",
+        "sha256": "1ef7f902c35eea59b398c3e3619b76eee067997dea320b2966b5ba99688e2944"
+      },
+      {
+        "file": "docs/validation/v0.1.9/local-preview.json",
+        "sha256": "c19e5c48d1c9455ed10ae9c3226ce5fd4f4d46babfc8f282b20c149ad8a119f1"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ],
+    "focused_browser": "pending",
+    "clean_committed_ci": "pending",
+    "public_pages": "pending",
+    "release": "pending",
+    "continuous_normal_speed_av": "pending",
+    "terrain_or_resolved_foot_contact": "pending",
+    "target_hardware": "pending",
+    "aaa_approval": "pending",
+    "native_pose_metrics": {
+      "startup_hip_shift_m": 0.0749999955296516,
+      "baseline_startup_hip_shift_m": 3.72529029846191e-09,
+      "stationary_charge_release_join": {
+        "max_joint_distance_m": 7.45058059692383e-09,
+        "max_local_rotation_rad": 0.0009765625
+      }
+    }
+  },
+  "finite_motion_review": {
+    "status": "finite_capture_and_listed_raster_review_only",
+    "batch": "native-motion-003",
+    "scope": "Actual media generation/encoding/timing/matched-camera/nominal owner placement and listed raster inspection only. Silent offline1x videos are available for human playback. The model inspected still rasters, not continuous video playback or audio. No interactive contact/collision, target-device performance, continuous1x visual/AV or AAA approval.",
+    "source_freeze_verified_during_capture": true,
+    "nominal_owner_y_m": -0.025,
+    "continuous_video_playback_review": "pending",
+    "audio": "silent_no_audio_review",
+    "interactive_collision": "not_exercised_by_capture_fixture",
+    "inherited_issue": "Forearm/gauntlet orientation rolls sharply over charged0.4667..0.4833s in both before and after. This slice does not remove that inherited counterrotation; no wrist deformation/continuous-motion approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ]
+  }
+}

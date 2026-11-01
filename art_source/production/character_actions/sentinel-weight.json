@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "profile": "sentinel",
+  "source_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+  "height_m": 1.95,
+  "triangles": 22000,
+  "fps": 100,
+  "motion_authorship": "New weight/recovery choreography for existing charge/charged_heavy or heavy_hit only. Published impact GLB and old author tool remain immutable; body and unrelated raw actions grafted byte-exact.",
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false
+  },
+  "guard": {
+    "grip_m": [
+      -0.05,
+      -0.35,
+      1.18
+    ],
+    "azimuth_deg": -10.0,
+    "pitch_deg": 55.0,
+    "pelvis_drop_m": 0.07,
+    "lean_deg": 5.0
+  },
+  "finger_curl_rad": [
+    0.2,
+    1.1,
+    1.4
+  ],
+  "locomotion": {
+    "walk_speed": 3.6,
+    "run_speed": 3.6
+  },
+  "quality_status": "New authored weight/recovery candidate; actual gameplay, normal-speed AV, hardware and AAA approval pending.",
+  "impact_slice": {
+    "heavy_hit": {
+      "duration_s": 0.48,
+      "elapsed_snapshot": "hit_elapsed",
+      "duration_snapshot": "hit_duration",
+      "reaction_snapshot": "heavy_hit"
+    }
+  },
+  "weight_recovery": {
+    "goal": "Readable full-body loading, pelvis lead, compression, support-leg weight transfer and recovery; same timing and charged active blade curve.",
+    "source_file": "game/assets/models/production/sentinel_impact_gameplay.glb",
+    "same_gameplay_numerics": true,
+    "terrain_or_wall_adaptation": false,
+    "foot_policy": "Local heel-lift/stagger-step and stance widening only; no inferred world-recoil compensation. Resolved collision recoil may truncate or point sideways. Actual world contact, direction-specific reaction and terrain adaptation pending."
+  }
+}

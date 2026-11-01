@@ -1,0 +1,729 @@
+{
+	"backend": "gl_compatibility",
+	"camera": [
+		{
+			"basis_columns": [
+				[
+					-0.855396509170532,
+					0.0,
+					-0.517973780632019
+				],
+				[
+					-0.105086848139763,
+					0.979203462600708,
+					0.173543393611908
+				],
+				[
+					0.507201731204987,
+					0.202880635857582,
+					-0.837607204914093
+				]
+			],
+			"orthographic_size": 1.25,
+			"position_m": [
+				3.5,
+				2.69999980926514,
+				-6.38000011444092
+			],
+			"variant": "before"
+		},
+		{
+			"basis_columns": [
+				[
+					-0.855396509170532,
+					0.0,
+					-0.517973780632019
+				],
+				[
+					-0.105086848139763,
+					0.979203462600708,
+					0.173543393611908
+				],
+				[
+					0.507201731204987,
+					0.202880635857582,
+					-0.837607204914093
+				]
+			],
+			"orthographic_size": 1.25,
+			"position_m": [
+				3.5,
+				2.69999980926514,
+				-6.38000011444092
+			],
+			"variant": "after"
+		}
+	],
+	"engine_time_scale": 1.0,
+	"engine_version": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"fixture_motion": "Prescribed open-space actor travel: charged lunge0.576m during active0.34..0.52; sentinel0.35m recoil in0.24s. No physics resolution or gameplay motor. No contact/VFX/audio is generated.",
+	"fps": 60,
+	"frames": [
+		{
+			"frame": 0,
+			"logical_time_s": 1.4667,
+			"panels": [
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.405440002679825
+					],
+					"grip_m": [
+						-0.0069064199924469,
+						1.26230776309967,
+						-0.616576910018921
+					],
+					"left_foot_m": [
+						-0.190000474452972,
+						0.124407172203064,
+						-0.519998729228973
+					],
+					"right_foot_m": [
+						0.190000340342522,
+						0.199540913105011,
+						-0.0314841270446777
+					],
+					"sampled_time_s": 0.466699974806803,
+					"state": "charged_heavy",
+					"tip_m": [
+						0.0172777008265257,
+						1.32860946655273,
+						-1.804483294487
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.405440002679825
+					],
+					"grip_m": [
+						-0.0069064199924469,
+						1.26230776309967,
+						-0.616576910018921
+					],
+					"left_foot_m": [
+						-0.24000072479248,
+						0.124407231807709,
+						-0.519998371601105
+					],
+					"right_foot_m": [
+						0.218243807554245,
+						0.214155554771423,
+						-0.306709349155426
+					],
+					"sampled_time_s": 0.466699974806803,
+					"state": "charged_heavy",
+					"tip_m": [
+						0.0172777008265257,
+						1.32860946655273,
+						-1.804483294487
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 1,
+			"logical_time_s": 1.475,
+			"panels": [
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.432000011205673
+					],
+					"grip_m": [
+						-0.0529501065611839,
+						1.2304060459137,
+						-0.629137575626373
+					],
+					"left_foot_m": [
+						-0.190000623464584,
+						0.124406278133392,
+						-0.519998669624329
+					],
+					"right_foot_m": [
+						0.190000295639038,
+						0.208668112754822,
+						-0.0539310574531555
+					],
+					"sampled_time_s": 0.474999974358757,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.375337809324265,
+						1.09911751747131,
+						-1.76708793640137
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.432000011205673
+					],
+					"grip_m": [
+						-0.0529502332210541,
+						1.2304060459137,
+						-0.629137516021729
+					],
+					"left_foot_m": [
+						-0.24000084400177,
+						0.124406695365906,
+						-0.519998550415039
+					],
+					"right_foot_m": [
+						0.219969630241394,
+						0.20496654510498,
+						-0.331556022167206
+					],
+					"sampled_time_s": 0.474999974358757,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.375337809324265,
+						1.09911775588989,
+						-1.76708805561066
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 2,
+			"logical_time_s": 1.478,
+			"panels": [
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.441599994897842
+					],
+					"grip_m": [
+						-0.0699443817138672,
+						1.2182993888855,
+						-0.633356213569641
+					],
+					"left_foot_m": [
+						-0.189999788999557,
+						0.124414324760437,
+						-0.519999742507935
+					],
+					"right_foot_m": [
+						0.190000012516975,
+						0.211742103099823,
+						-0.0622883141040802
+					],
+					"sampled_time_s": 0.477999974196812,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.511224925518036,
+						1.01466131210327,
+						-1.71959066390991
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.441599994897842
+					],
+					"grip_m": [
+						-0.0699444115161896,
+						1.21829950809479,
+						-0.633356034755707
+					],
+					"left_foot_m": [
+						-0.23999984562397,
+						0.124414503574371,
+						-0.51999968290329
+					],
+					"right_foot_m": [
+						0.220573455095291,
+						0.201380550861359,
+						-0.340258330106735
+					],
+					"sampled_time_s": 0.477999974196812,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.511224985122681,
+						1.01466107368469,
+						-1.71959042549133
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 3,
+			"logical_time_s": 1.48,
+			"panels": [
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.448000013828278
+					],
+					"grip_m": [
+						-0.0813442319631577,
+						1.210369348526,
+						-0.636286497116089
+					],
+					"left_foot_m": [
+						-0.189999788999557,
+						0.124414563179016,
+						-0.519999623298645
+					],
+					"right_foot_m": [
+						0.190000012516975,
+						0.213705956935883,
+						-0.0679305195808411
+					],
+					"sampled_time_s": 0.479999974088849,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.597076594829559,
+						0.958740472793579,
+						-1.67878484725952
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.448000013828278
+					],
+					"grip_m": [
+						-0.0813442319631577,
+						1.210369348526,
+						-0.636286497116089
+					],
+					"left_foot_m": [
+						-0.23999984562397,
+						0.124414443969727,
+						-0.519999504089355
+					],
+					"right_foot_m": [
+						0.220969542860985,
+						0.198918282985687,
+						-0.345960319042206
+					],
+					"sampled_time_s": 0.479999974088849,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.597076594829559,
+						0.958740472793579,
+						-1.67878484725952
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 4,
+			"logical_time_s": 1.4833,
+			"panels": [
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.458559989929199
+					],
+					"grip_m": [
+						-0.100206285715103,
+						1.19747650623322,
+						-0.641286790370941
+					],
+					"left_foot_m": [
+						-0.190000519156456,
+						0.124407351016998,
+						-0.519999027252197
+					],
+					"right_foot_m": [
+						0.190000236034393,
+						0.216784715652466,
+						-0.0773531496524811
+					],
+					"sampled_time_s": 0.48329997391071,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.726885557174683,
+						0.867877602577209,
+						-1.59770655632019
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "charged_heavy",
+					"fixture_actor_translation_m": [
+						0.0,
+						-0.0249999761581421,
+						-0.458559989929199
+					],
+					"grip_m": [
+						-0.100206285715103,
+						1.19747650623322,
+						-0.641286790370941
+					],
+					"left_foot_m": [
+						-0.240000694990158,
+						0.124407649040222,
+						-0.519999146461487
+					],
+					"right_foot_m": [
+						0.22161066532135,
+						0.194754183292389,
+						-0.355185240507126
+					],
+					"sampled_time_s": 0.48329997391071,
+					"state": "charged_heavy",
+					"tip_m": [
+						-0.726885557174683,
+						0.867877602577209,
+						-1.59770655632019
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		}
+	],
+	"inputs": {
+		"after": "res://assets/models/production/lyra_weight_gameplay.glb",
+		"before": "res://assets/models/production/lyra_impact_gameplay.glb",
+		"fps": 60.0,
+		"frames": 5.0,
+		"logical_speed": null,
+		"mode": "arm_strip",
+		"profile": "hero",
+		"review_times_s": [
+			0.4667,
+			0.475,
+			0.478,
+			0.48,
+			0.4833
+		],
+		"scope": "Actual imported-skin static subframe bridge seeks, effects off; not1x motion, gameplay or AAA approval",
+		"snapshot": "/workspace/next-action-rpg/build/art-review/weight-motion/task/native-motion-003/hero-arms-frames.json",
+		"source_inputs": [
+			{
+				"bytes": 21315424.0,
+				"sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay.glb"
+			},
+			{
+				"bytes": 23174144.0,
+				"sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay.glb"
+			},
+			{
+				"bytes": 7536756.0,
+				"sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+				"source_path": "game/assets/models/production/rune_sword_web.glb"
+			},
+			{
+				"bytes": 112488.0,
+				"sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+				"source_path": "game/assets/models/production/lyra_eyes.glb"
+			},
+			{
+				"bytes": 11061.0,
+				"sha256": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+				"source_path": "game/scripts/actors/actor_visual.gd"
+			},
+			{
+				"bytes": 25125.0,
+				"sha256": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+				"source_path": "game/scripts/actors/skeletal_visual_bridge.gd"
+			},
+			{
+				"bytes": 5793.0,
+				"sha256": "ebd0031b2c0316c924a86470b639bd56337253539d89bd4958d9efa177d9f27c",
+				"source_path": "game/scripts/actors/production_character_art.gd"
+			},
+			{
+				"bytes": 386.0,
+				"sha256": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+				"source_path": "game/data/character_grips.json"
+			},
+			{
+				"bytes": 1209.0,
+				"sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+				"source_path": "game/import/impact_animation_sampling.gd"
+			},
+			{
+				"bytes": 1577.0,
+				"sha256": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b",
+				"source_path": "game/import/eye_materials.gd"
+			},
+			{
+				"bytes": 14553.0,
+				"sha256": "c88b87d791181ab89ef2b50f79452896afb3bf9dcab181873b235c7ac6eed98c",
+				"source_path": "game/tests/weight_motion_review.gd"
+			},
+			{
+				"bytes": 194.0,
+				"sha256": "6cfe7e8a57e55df32d8d282bda2f023861b24eeebcb51907bfeec6345bf2da58",
+				"source_path": "game/tests/weight_motion_review.tscn"
+			},
+			{
+				"bytes": 18739.0,
+				"sha256": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996",
+				"source_path": "tools/render_weight_review.py"
+			},
+			{
+				"bytes": 1341.0,
+				"sha256": "9431e8a5cad39ce74e9d1b8479a3a8e9acc599aac78461745ac9b44ed7059040",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay.glb.import"
+			},
+			{
+				"bytes": 4074000.0,
+				"sha256": "bc853ba772887acc9c5e7a4ef9f5ddb109561a11d4c1372cb3168a4c2d1e1a5a",
+				"source_path": "game/.godot/imported/lyra_impact_gameplay.glb-c0400906746f2f8c8e1c0211f4267401.scn"
+			},
+			{
+				"bytes": 4749806.0,
+				"sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_0.png"
+			},
+			{
+				"bytes": 1079.0,
+				"sha256": "b9f577375dc7f3bbdbe07717f4d3fbabb4010cc0bca56ece904ce1758286c7b9",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_0.png.import"
+			},
+			{
+				"bytes": 3112961.0,
+				"sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_1.png"
+			},
+			{
+				"bytes": 1079.0,
+				"sha256": "50d22b70a0adcd0f71962232d22ef80f22414384cdc17d7c58c64190df10aad6",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_1.png.import"
+			},
+			{
+				"bytes": 5229499.0,
+				"sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_2.png"
+			},
+			{
+				"bytes": 1079.0,
+				"sha256": "8edff2306be95bb66eb9d597ef77ccf86e4c24bef902bd1c7e76dba7664ba736",
+				"source_path": "game/assets/models/production/lyra_impact_gameplay_Image_2.png.import"
+			},
+			{
+				"bytes": 1341.0,
+				"sha256": "44d05d508c591da874106a1face18811c8b123052799461f9e9c9e7eb33fb5dd",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay.glb.import"
+			},
+			{
+				"bytes": 4094363.0,
+				"sha256": "b341057d2600fbc9e1c328dbd35f476df6fb4076bb75bb2d260bcd7502e13dad",
+				"source_path": "game/.godot/imported/lyra_weight_gameplay.glb-4f7485f7bfdc1b3015c105dfdcf1358a.scn"
+			},
+			{
+				"bytes": 4749806.0,
+				"sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_0.png"
+			},
+			{
+				"bytes": 1078.0,
+				"sha256": "b5734b687c357a455577d678362b5a550a6337c37b46687b58f0c0d0ec5d9a83",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_0.png.import"
+			},
+			{
+				"bytes": 3112961.0,
+				"sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_1.png"
+			},
+			{
+				"bytes": 1079.0,
+				"sha256": "3c64e067d67d6fbf885de7b9eeccdfcb470040ba69d92855902b51c569da75d0",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_1.png.import"
+			},
+			{
+				"bytes": 5229499.0,
+				"sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_2.png"
+			},
+			{
+				"bytes": 1079.0,
+				"sha256": "d37054d391aa9f3921d7ebb37cf5ac317f15183bdb9623d82a5c9326a3f97175",
+				"source_path": "game/assets/models/production/lyra_weight_gameplay_Image_2.png.import"
+			},
+			{
+				"bytes": 1181.0,
+				"sha256": "f3e4c553909d4d3897aad6e201eee972fcefdbbe05acd20c97e0de0ebbd6a043",
+				"source_path": "game/assets/models/production/rune_sword_web.glb.import"
+			},
+			{
+				"bytes": 162552.0,
+				"sha256": "4ddced7173167b5df55da7d895db2817bf69a69cdb6629f58091c40890fd024b",
+				"source_path": "game/.godot/imported/rune_sword_web.glb-055ef7ed3df3ed6fb5b0d646d96ab622.scn"
+			},
+			{
+				"bytes": 3578910.0,
+				"sha256": "ba2f867a46b38d13ed22ce6789068f0e358bdb60616d5194d593acc07f629091",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_0.png"
+			},
+			{
+				"bytes": 1060.0,
+				"sha256": "1b644ffb4b98af2f1f949a27b8766eb55c94d38a88229fec11768a95c94b0567",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_0.png.import"
+			},
+			{
+				"bytes": 1832297.0,
+				"sha256": "2705082935a637ef989d05f11042abad13aabc16d9406f26b96133c208b9386c",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_1.png"
+			},
+			{
+				"bytes": 1061.0,
+				"sha256": "655b9a1db2e4b710a27b74104ab789173bd6307cbc916cdeeb4af3bbfa6f827d",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_1.png.import"
+			},
+			{
+				"bytes": 1964867.0,
+				"sha256": "c170134e96db488cfc0354fa66e9b2f016025689bec54418ac503ae4c1630fb3",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_2.png"
+			},
+			{
+				"bytes": 1061.0,
+				"sha256": "0bccb0a42ac040eb42ddd1c024cdd96d45f589fd12ec85f2891e4426ad677c31",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_2.png.import"
+			},
+			{
+				"bytes": 1196.0,
+				"sha256": "1c247ea8c1989750e33e1b54c3db690651a12066dda43847e2ecf7dc4e36aedf",
+				"source_path": "game/assets/models/production/lyra_eyes.glb.import"
+			},
+			{
+				"bytes": 97380.0,
+				"sha256": "8ad5d9610abaf4982601b1bb217ff4b6982bc852f00f8e35126752e82989d6cb",
+				"source_path": "game/.godot/imported/lyra_eyes.glb-5ff354b9918e9e97766460090dabed60.scn"
+			}
+		]
+	},
+	"logical_speed": null,
+	"pose_clock": "Explicit zero-delta seek at each listed subframe, static audit only",
+	"preparation": "Source clips are duplicated only to apply ProductionCharacterArt cycle flags; actual mesh/rest/skin/key data remains loaded from each original PackedScene. Real bridge complete-channel guard, transition polish, actual physical sword and Head eyes are used.",
+	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+	"sampling_mode": "Five explicit zero-delta subframe poses, not 1x motion",
+	"scope": "Actual imported GLBs through ActorVisual.pose and SkeletalVisualBridge. Neutral offline matched-camera comparison only, not interactive combat, contact/collision acceptance, audio listening, target GPU performance or AAA approval."
+}

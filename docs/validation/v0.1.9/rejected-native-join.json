@@ -1,0 +1,36 @@
+{
+  "scope": "Failed imported presentation join before Sentinel002 guard fix; not final approval",
+  "app_version": "0.1.9",
+  "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+  "source_tree_dirty": true,
+  "suite": {
+    "checks": 448,
+    "failures": 2,
+    "exit_code": 1
+  },
+  "fixture_sha256": "d992f88de6473bc13cf6f5207ddbf4ebb6cd1773e0459ef1b2a6185bd25d9103",
+  "hero_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+  "sentinel_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+  "baseline_mounts": {
+    "hero": true,
+    "sentinel_melee": true
+  },
+  "reaction_clock_preserved": true,
+  "near_end_guard_join": {
+    "max_joint_distance_m": 0.110023505985737,
+    "max_local_rotation_rad": 1.58058941364288
+  },
+  "first_idle_join": {
+    "max_joint_distance_m": 0.0205504167824984,
+    "max_local_rotation_rad": 0.177360057830811
+  },
+  "max_joint_distance_limit_m": 0.02,
+  "reason": "New manual guard used an arm IK frame differing from the original idle clip. Raw marker precision and manual-to-manual endpoints did not establish actual imported idle recovery. Fix must change Sentinel authoring; criteria unchanged.",
+  "not_verified": [
+    "Corrected Sentinel002 native suite",
+    "final export/browser/CI/public/release",
+    "normal-speed audiovisual acceptance",
+    "target hardware",
+    "AAA"
+  ]
+}

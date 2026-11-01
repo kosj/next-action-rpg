@@ -1,0 +1,799 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-01",
+  "scope": "Read-only actual raw glTF TRS/slerp hierarchical FK. A reference60Hz schedule is not an imported engine run, real-time FPS, evaluated skin/intersection, normal-speed audiovisual or AAA approval.",
+  "method": {
+    "tool": "tools/inspect_motion_derivatives.py",
+    "tool_sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc",
+    "helper": "tools/append_character_animations.py",
+    "helper_sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a",
+    "optional_dependencies": "tools/requirements-art.txt",
+    "dependency_versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "quaternion_distance": "2*acos(abs(dot(q0,q1))/(length(q0)*length(q1))); q and -q describe the same orientation.",
+    "global_position": "Hierarchical exported-node TRS matrices, including original wrapper scale; no gameplay root displacement is added.",
+    "commands": [
+      [
+        "python",
+        "tools/inspect_motion_derivatives.py",
+        "game/assets/models/production/lyra_impact_gameplay.glb",
+        "game/assets/models/production/lyra_weight_gameplay.glb",
+        "--output",
+        "build/verification/heavy-weight/raw-motion-public-tool.json",
+        "--interval",
+        ".34",
+        ".52",
+        "--times",
+        ".338",
+        ".340",
+        ".342",
+        ".518",
+        ".520",
+        ".522"
+      ],
+      [
+        "python",
+        "tools/inspect_motion_derivatives.py",
+        "game/assets/models/production/sentinel_impact_gameplay.glb",
+        "game/assets/models/production/sentinel_weight_gameplay.glb",
+        "--clip",
+        "heavy_hit",
+        "--output",
+        "build/verification/heavy-weight/sentinel-final-raw-motion-public-tool.json",
+        "--times",
+        "0",
+        ".4666666666666667",
+        ".48"
+      ]
+    ],
+    "threading": "Measurements were rerun with OPENBLAS_NUM_THREADS=1 and OMP_NUM_THREADS=1.",
+    "held_inputs": "Cases002/004 were recomputed with this same tool SHA before making this compact summary; their full local logs/GLBs/pose arrays are not public review artifacts."
+  },
+  "baseline": {
+    "file": "game/assets/models/production/lyra_impact_gameplay.glb",
+    "sha256": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+    "clip": "charged_heavy",
+    "bone_count": 53,
+    "raw_key_count_in_interval": 91,
+    "raw_key_interval_s": [
+      0.34,
+      0.52
+    ],
+    "reference_sample_hz": 60.0,
+    "reference_sample_count": 65,
+    "full_clip_reference_peaks": {
+      "local_rotation_deg": {
+        "bone": "LeftHand",
+        "value": 62.12065630583957,
+        "interval_s": [
+          0.5,
+          0.5166666666666667
+        ]
+      },
+      "global_rotation_deg": {
+        "bone": "RightArm",
+        "value": 58.629701581596706,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      }
+    },
+    "right_arm_reference_summary": {
+      "hand_local_rotation_deg": {
+        "value": 45.599063095542085,
+        "interval_s": [
+          0.48333333333333334,
+          0.5
+        ]
+      },
+      "hand_global_rotation_deg": {
+        "value": 39.4451038660692,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "forearm_global_rotation_deg": {
+        "value": 53.41893232574726,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "upper_arm_global_rotation_deg": {
+        "value": 58.629701581596706,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "elbow_global_step_m": {
+        "value": 0.24536661625451972,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      }
+    },
+    "right_arm_raw_key_summary": {
+      "hand_local_rotation_deg": {
+        "value": 5.6687212126425015,
+        "interval_s": [
+          0.4860000014305115,
+          0.4880000054836273
+        ]
+      },
+      "hand_global_rotation_deg": {
+        "value": 4.825926768254,
+        "interval_s": [
+          0.4779999852180481,
+          0.47999998927116394
+        ]
+      },
+      "elbow_global_step_m": {
+        "value": 0.03491727773281496,
+        "interval_s": [
+          0.46799999475479126,
+          0.4699999988079071
+        ]
+      }
+    }
+  },
+  "selected_007": {
+    "file": "game/assets/models/production/lyra_weight_gameplay.glb",
+    "sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "clip": "charged_heavy",
+    "bone_count": 53,
+    "raw_key_count_in_interval": 91,
+    "raw_key_interval_s": [
+      0.34,
+      0.52
+    ],
+    "reference_sample_hz": 60.0,
+    "reference_sample_count": 65,
+    "full_clip_reference_peaks": {
+      "local_rotation_deg": {
+        "bone": "LeftHand",
+        "value": 62.120678746353555,
+        "interval_s": [
+          0.5,
+          0.5166666666666667
+        ]
+      },
+      "global_rotation_deg": {
+        "bone": "RightArm",
+        "value": 58.629701581596706,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      }
+    },
+    "right_arm_reference_summary": {
+      "hand_local_rotation_deg": {
+        "value": 45.5990569164056,
+        "interval_s": [
+          0.48333333333333334,
+          0.5
+        ]
+      },
+      "hand_global_rotation_deg": {
+        "value": 39.4451038660692,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "forearm_global_rotation_deg": {
+        "value": 53.41893232574726,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "upper_arm_global_rotation_deg": {
+        "value": 58.629701581596706,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      },
+      "elbow_global_step_m": {
+        "value": 0.24536661625451972,
+        "interval_s": [
+          0.4666666666666667,
+          0.48333333333333334
+        ]
+      }
+    },
+    "right_arm_raw_key_summary": {
+      "hand_local_rotation_deg": {
+        "value": 5.6687212126425015,
+        "interval_s": [
+          0.4860000014305115,
+          0.4880000054836273
+        ]
+      },
+      "hand_global_rotation_deg": {
+        "value": 4.825917926512397,
+        "interval_s": [
+          0.4779999852180481,
+          0.47999998927116394
+        ]
+      },
+      "elbow_global_step_m": {
+        "value": 0.03491727773281496,
+        "interval_s": [
+          0.46799999475479126,
+          0.4699999988079071
+        ]
+      }
+    }
+  },
+  "active_upper_body_entry_exit_samples": {
+    "bones": [
+      "Hips",
+      "Spine2",
+      "RightArm",
+      "RightForeArm",
+      "RightHand",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand"
+    ],
+    "times_s": [
+      0.34,
+      0.342,
+      0.518,
+      0.52
+    ],
+    "max_difference_vs_baseline": {
+      "position_m": 2.764999460117735e-07,
+      "local_rotation_deg": 3.9124823603063984e-05,
+      "global_rotation_deg": 3.9826504483037906e-05
+    },
+    "scope": "Finite samples at the active entry/exit only; not a proof of every intermediate skin pose."
+  },
+  "active_boundaries": [
+    {
+      "interval_s": [
+        0.338,
+        0.34
+      ],
+      "baseline_local_max_deg": {
+        "bone": "LeftArm",
+        "value": 1.233947021504477
+      },
+      "selected_local_max_deg": {
+        "bone": "LeftArm",
+        "value": 1.2298593323242768
+      },
+      "baseline_global_max_deg": {
+        "bone": "Spine2",
+        "value": 1.125374391446253
+      },
+      "selected_global_max_deg": {
+        "bone": "Spine2",
+        "value": 1.1185735950264526
+      }
+    },
+    {
+      "interval_s": [
+        0.34,
+        0.342
+      ],
+      "baseline_local_max_deg": {
+        "bone": "LeftArm",
+        "value": 1.2783236183745879
+      },
+      "selected_local_max_deg": {
+        "bone": "LeftArm",
+        "value": 1.2783236104688533
+      },
+      "baseline_global_max_deg": {
+        "bone": "Spine2",
+        "value": 1.15369564539801
+      },
+      "selected_global_max_deg": {
+        "bone": "Spine2",
+        "value": 1.1536956331859622
+      }
+    },
+    {
+      "interval_s": [
+        0.518,
+        0.52
+      ],
+      "baseline_local_max_deg": {
+        "bone": "RightForeArm",
+        "value": 0.8411372913367349
+      },
+      "selected_local_max_deg": {
+        "bone": "RightForeArm",
+        "value": 0.8411242474927622
+      },
+      "baseline_global_max_deg": {
+        "bone": "LeftArm",
+        "value": 0.6468961863604124
+      },
+      "selected_global_max_deg": {
+        "bone": "LeftArm",
+        "value": 0.6469018990695907
+      }
+    },
+    {
+      "interval_s": [
+        0.52,
+        0.522
+      ],
+      "baseline_local_max_deg": {
+        "bone": "LeftHand",
+        "value": 0.017082398202109793
+      },
+      "selected_local_max_deg": {
+        "bone": "LeftHand",
+        "value": 0.014929533327182375
+      },
+      "baseline_global_max_deg": {
+        "bone": "LeftForeArm",
+        "value": 0.014858277893800833
+      },
+      "selected_global_max_deg": {
+        "bone": "LeftForeArm",
+        "value": 0.012537501321190086
+      }
+    }
+  ],
+  "held_regressions": [
+    {
+      "sha256": "f735f92f29a91dcedf0d58e7b8820890074581afa52c89aeade0f06e94240541",
+      "clip": "charged_heavy",
+      "bone_count": 53,
+      "raw_key_count_in_interval": 91,
+      "raw_key_interval_s": [
+        0.34,
+        0.52
+      ],
+      "reference_sample_hz": 60.0,
+      "reference_sample_count": 65,
+      "full_clip_reference_peaks": {
+        "local_rotation_deg": {
+          "bone": "RightHand",
+          "value": 116.9306218064006,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "global_rotation_deg": {
+          "bone": "RightForeArm",
+          "value": 78.28193086815,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        }
+      },
+      "case": "002",
+      "status": "held_not_adopted",
+      "reason": "Small final blade errors did not exclude increased arm/hand counter-rotation; no visual acceptance.",
+      "source_distribution": "Historical held GLB is not redistributed here; exact candidate bytes matching this SHA are required to rerun its figures.",
+      "right_arm_reference_summary": {
+        "hand_local_rotation_deg": {
+          "value": 116.9306218064006,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "hand_global_rotation_deg": {
+          "value": 39.47337398194818,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "forearm_global_rotation_deg": {
+          "value": 78.28193086815,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "upper_arm_global_rotation_deg": {
+          "value": 72.21656396929565,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "elbow_global_step_m": {
+          "value": 0.24827363261450816,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        }
+      },
+      "right_arm_raw_key_summary": {
+        "hand_local_rotation_deg": {
+          "value": 17.14781784409522,
+          "interval_s": [
+            0.4779999852180481,
+            0.47999998927116394
+          ]
+        },
+        "hand_global_rotation_deg": {
+          "value": 4.825908844119236,
+          "interval_s": [
+            0.4779999852180481,
+            0.47999998927116394
+          ]
+        },
+        "elbow_global_step_m": {
+          "value": 0.05158021460620953,
+          "interval_s": [
+            0.47999998927116394,
+            0.4819999933242798
+          ]
+        }
+      }
+    },
+    {
+      "sha256": "bbb729a56c49add89a2ffa9a52a0f5420cc15727280da3434f6aabe4247be262",
+      "clip": "charged_heavy",
+      "bone_count": 53,
+      "raw_key_count_in_interval": 91,
+      "raw_key_interval_s": [
+        0.34,
+        0.52
+      ],
+      "reference_sample_hz": 60.0,
+      "reference_sample_count": 65,
+      "full_clip_reference_peaks": {
+        "local_rotation_deg": {
+          "bone": "RightHand",
+          "value": 109.43326196362746,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "global_rotation_deg": {
+          "bone": "RightForeArm",
+          "value": 77.69552587926952,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        }
+      },
+      "case": "004",
+      "status": "held_not_adopted",
+      "reason": "Small final blade errors did not exclude increased arm/hand counter-rotation; no visual acceptance.",
+      "source_distribution": "Historical held GLB is not redistributed here; exact candidate bytes matching this SHA are required to rerun its figures.",
+      "right_arm_reference_summary": {
+        "hand_local_rotation_deg": {
+          "value": 109.43326196362746,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "hand_global_rotation_deg": {
+          "value": 39.43089960128474,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "forearm_global_rotation_deg": {
+          "value": 77.69552587926952,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "upper_arm_global_rotation_deg": {
+          "value": 76.87623183200036,
+          "interval_s": [
+            0.4666666666666667,
+            0.48333333333333334
+          ]
+        },
+        "elbow_global_step_m": {
+          "value": 0.11720221376640622,
+          "interval_s": [
+            0.48333333333333334,
+            0.5
+          ]
+        }
+      },
+      "right_arm_raw_key_summary": {
+        "hand_local_rotation_deg": {
+          "value": 16.811881903297515,
+          "interval_s": [
+            0.4779999852180481,
+            0.47999998927116394
+          ]
+        },
+        "hand_global_rotation_deg": {
+          "value": 4.825914923216267,
+          "interval_s": [
+            0.4779999852180481,
+            0.47999998927116394
+          ]
+        },
+        "elbow_global_step_m": {
+          "value": 0.017426039495024494,
+          "interval_s": [
+            0.48399999737739563,
+            0.4860000014305115
+          ]
+        }
+      }
+    }
+  ],
+  "interpretation": {
+    "selected_scope": "007 intentionally returns to the old active upper-body/pole path while retaining new loading/stance/braking/recovery. Only the aggregate53-bone maximum and active upper-arm/hand regression peaks match the old clip. Individual hips/leg peaks increase and are disclosed above; this does not approve the old or new motion as AAA.",
+    "held_finding": "The wrist global target can remain aligned while local wrist and parent forearm rotate quickly in opposite directions. An endpoint/marker-only gate cannot approve the intervening body appearance.",
+    "remaining": "Actual imported engine continuity/skin silhouettes, same-view logical1x review, collision-constrained feet and gameplay, audio listening and target-device performance are separate evidence."
+  },
+  "per_bone_peak_increases": {
+    "scope": "These are intentional or potentially material changes that the overall maximum would hide. Increased motion is not automatically improved or defective; evaluated skin and 1x visual review remain separate. Top-three examples are not an exhaustive per-bone review; the reproducible full tool output contains every joint.",
+    "metrics": {
+      "local_rotation_deg": {
+        "increase_count_above_roundoff": 8,
+        "roundoff_filter": 0.0001,
+        "largest_three_examples": [
+          {
+            "bone": "LeftLeg",
+            "baseline_value": 13.158579508145309,
+            "selected_value": 16.616917573737183,
+            "increase": 3.4583380655918745,
+            "baseline_interval_s": [
+              0.35,
+              0.36666666666666664
+            ],
+            "selected_interval_s": [
+              0.3333333333333333,
+              0.35
+            ]
+          },
+          {
+            "bone": "LeftUpLeg",
+            "baseline_value": 6.389660130656274,
+            "selected_value": 8.42441237199387,
+            "increase": 2.0347522413375962,
+            "baseline_interval_s": [
+              0.3333333333333333,
+              0.35
+            ],
+            "selected_interval_s": [
+              0.3333333333333333,
+              0.35
+            ]
+          },
+          {
+            "bone": "RightLeg",
+            "baseline_value": 5.258387093256556,
+            "selected_value": 7.037315534832709,
+            "increase": 1.778928441576153,
+            "baseline_interval_s": [
+              0.5166666666666667,
+              0.5333333333333333
+            ],
+            "selected_interval_s": [
+              0.26666666666666666,
+              0.2833333333333333
+            ]
+          }
+        ]
+      },
+      "global_rotation_deg": {
+        "increase_count_above_roundoff": 6,
+        "roundoff_filter": 0.0001,
+        "largest_three_examples": [
+          {
+            "bone": "LeftUpLeg",
+            "baseline_value": 6.206557880840112,
+            "selected_value": 8.373105605701664,
+            "increase": 2.1665477248615517,
+            "baseline_interval_s": [
+              0.3333333333333333,
+              0.35
+            ],
+            "selected_interval_s": [
+              0.26666666666666666,
+              0.2833333333333333
+            ]
+          },
+          {
+            "bone": "LeftLeg",
+            "baseline_value": 9.731646315356574,
+            "selected_value": 10.344058251411422,
+            "increase": 0.6124119360548477,
+            "baseline_interval_s": [
+              0.35,
+              0.36666666666666664
+            ],
+            "selected_interval_s": [
+              0.3333333333333333,
+              0.35
+            ]
+          },
+          {
+            "bone": "RightLeg",
+            "baseline_value": 4.593785794707764,
+            "selected_value": 5.089829847554214,
+            "increase": 0.49604405284645026,
+            "baseline_interval_s": [
+              0.35,
+              0.36666666666666664
+            ],
+            "selected_interval_s": [
+              0.35,
+              0.36666666666666664
+            ]
+          }
+        ]
+      },
+      "global_translation_m": {
+        "increase_count_above_roundoff": 12,
+        "roundoff_filter": 1e-05,
+        "largest_three_examples": [
+          {
+            "bone": "RightUpLeg",
+            "baseline_value": 0.007438213927039503,
+            "selected_value": 0.033270450438020405,
+            "increase": 0.0258322365109809,
+            "baseline_interval_s": [
+              0.3333333333333333,
+              0.35
+            ],
+            "selected_interval_s": [
+              0.26666666666666666,
+              0.2833333333333333
+            ]
+          },
+          {
+            "bone": "Hips",
+            "baseline_value": 0.0068704977089069095,
+            "selected_value": 0.030357922967104323,
+            "increase": 0.023487425258197414,
+            "baseline_interval_s": [
+              0.85,
+              0.8666666666666667
+            ],
+            "selected_interval_s": [
+              0.26666666666666666,
+              0.2833333333333333
+            ]
+          },
+          {
+            "bone": "Spine",
+            "baseline_value": 0.00690522058301577,
+            "selected_value": 0.030327384022485877,
+            "increase": 0.023422163439470105,
+            "baseline_interval_s": [
+              0.85,
+              0.8666666666666667
+            ],
+            "selected_interval_s": [
+              0.26666666666666666,
+              0.2833333333333333
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "final_sentinel_heavy_hit": {
+    "file": "game/assets/models/production/sentinel_weight_gameplay.glb",
+    "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "bytes": 17533004,
+    "clip": "heavy_hit",
+    "duration_s": 0.47999998927116394,
+    "bone_count": 53,
+    "baseline_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+    "tool_sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc",
+    "reference_sample_hz": 60.0,
+    "reference_sample_count": 30,
+    "reference_full_clip_peaks": {
+      "local_rotation_deg": {
+        "bone": "RightForeArm",
+        "value": 23.50957067789677,
+        "interval_s": [
+          0.03333333333333333,
+          0.05
+        ]
+      },
+      "global_rotation_deg": {
+        "bone": "LeftArm",
+        "value": 14.199528645042458,
+        "interval_s": [
+          0.03333333333333333,
+          0.05
+        ]
+      },
+      "global_translation_m": {
+        "bone": "RightArm",
+        "value": 0.10614020294653798,
+        "interval_s": [
+          0.03333333333333333,
+          0.05
+        ]
+      }
+    },
+    "actual_idle0_join": {
+      "method": "The same public GLB reader evaluates GLB(path,clip='idle').pose(0), then compares all53 positions/local/global rotations to GLB(path,clip='heavy_hit').pose(t). Constant wrapper transforms remain included; no synthesized guard recipe or gameplay root is substituted.",
+      "samples": [
+        {
+          "heavy_hit_time_s": 0.0,
+          "idle_reference_time_s": 0.0,
+          "bone_count": 53,
+          "maxima": {
+            "position_m": {
+              "bone": "RightLeg",
+              "value": 7.595909222932863e-07
+            },
+            "local_rotation_deg": {
+              "bone": "RightFoot",
+              "value": 0.0002092424857100843
+            },
+            "global_rotation_deg": {
+              "bone": "LeftToeBase",
+              "value": 0.00028617596044105715
+            }
+          }
+        },
+        {
+          "heavy_hit_time_s": 0.4666666666666667,
+          "idle_reference_time_s": 0.0,
+          "bone_count": 53,
+          "maxima": {
+            "position_m": {
+              "bone": "Head",
+              "value": 0.00451723859891611
+            },
+            "local_rotation_deg": {
+              "bone": "RightLeg",
+              "value": 1.2417901181284567
+            },
+            "global_rotation_deg": {
+              "bone": "RightLeg",
+              "value": 0.8680492943462991
+            }
+          }
+        },
+        {
+          "heavy_hit_time_s": 0.48,
+          "idle_reference_time_s": 0.0,
+          "bone_count": 53,
+          "maxima": {
+            "position_m": {
+              "bone": "RightLeg",
+              "value": 7.595909222932863e-07
+            },
+            "local_rotation_deg": {
+              "bone": "RightFoot",
+              "value": 0.0002092424857100843
+            },
+            "global_rotation_deg": {
+              "bone": "LeftToeBase",
+              "value": 0.00028617596044105715
+            }
+          }
+        }
+      ]
+    },
+    "historical_cli_scope": {
+      "prior_tested_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+      "statement": "The earlier --clip heavy_hit sanity invocation used the previous candidate bytes while the runtime filename was the same. It is historical only, never evidence for this final e7e2 input. The current heavy_hit CLI and actual-idle comparison were rerun against the final SHA above."
+    },
+    "interpretation": "Raw endpoint/near-end pose continuity only. This is separate from actual imported-engine, skin/intersection, collision-constrained feet, normal-speed visual/audio and AAA approval. Native-motion-002 comparisons are historical inputs/fixture placement; a corrected fresh capture must identify its own final assets."
+  }
+}

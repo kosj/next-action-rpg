@@ -1,0 +1,83 @@
+{
+  "scope": "Rejected/held authoring attempts before runtime adoption. Previous published v0.1.8 sources and accepted-path numerics remain unchanged. No failed GLB media is included.",
+  "attempts": [
+    {
+      "attempt": "lyra-001",
+      "decision": "rejected_before_adoption",
+      "reason": "Initial full-body guard comparison treated antipodal quaternion representations as360deg; diagnostic math error, not evidence of a physical snap. Shortest normalized abs(dot) comparison fixed without relaxing thresholds.",
+      "glb_exists": false,
+      "actual_gate_error": "ValueError: Full-body clip join differs: {'charge_hold_to_release': (0.0, 0.0), 'recovery_to_guard': (0.0, 360.00001001791264)}"
+    },
+    {
+      "attempt": "lyra-002",
+      "decision": "rejected_before_adoption",
+      "reason": "Held/rejected: new body coupling forced excessive opposing arm/wrist twist despite exact visible blade markers.",
+      "glb_exists": true,
+      "source_bytes": 23174144,
+      "source_sha256": "f735f92f29a91dcedf0d58e7b8820890074581afa52c89aeade0f06e94240541",
+      "independent_motion_audit": {
+        "right_hand_local_step_deg_at_2ms": 17.14781784409522,
+        "right_hand_local_step_deg_at_60hz": 116.931,
+        "right_forearm_world_step_deg_at_60hz": 78.282,
+        "right_upperarm_world_step_deg_at_60hz": 72.217,
+        "right_elbow_peak_speed_m_s": 25.853827010296428,
+        "comparison_old_max_right_hand_local_step_deg_at_60hz": 45.599
+      }
+    },
+    {
+      "attempt": "lyra-003",
+      "decision": "rejected_before_adoption",
+      "reason": "Same body candidate re-emitted under updated source provenance; held/rejected for excessive arm/wrist twist.",
+      "glb_exists": true,
+      "source_bytes": 23174144,
+      "source_sha256": "f735f92f29a91dcedf0d58e7b8820890074581afa52c89aeade0f06e94240541",
+      "independent_motion_audit": {
+        "right_hand_local_step_deg_at_2ms": 17.14781784409522,
+        "right_hand_local_step_deg_at_60hz": 116.931,
+        "right_forearm_world_step_deg_at_60hz": 78.282,
+        "right_upperarm_world_step_deg_at_60hz": 72.217,
+        "right_elbow_peak_speed_m_s": 25.853827010296428,
+        "comparison_old_max_right_hand_local_step_deg_at_60hz": 45.599
+      }
+    },
+    {
+      "attempt": "lyra-004",
+      "decision": "rejected_before_adoption",
+      "reason": "Lowered loading pole reduced elbow positional speed but not opposing forearm/wrist orientation; not adopted.",
+      "glb_exists": true,
+      "source_bytes": 23174144,
+      "source_sha256": "bbb729a56c49add89a2ffa9a52a0f5420cc15727280da3434f6aabe4247be262",
+      "independent_motion_audit": {
+        "right_hand_local_step_deg_at_2ms": 16.81188190329769,
+        "right_hand_local_step_deg_at_60hz": 109.433,
+        "right_forearm_world_step_deg_at_60hz": 77.696,
+        "right_upperarm_world_step_deg_at_60hz": 76.876,
+        "right_elbow_peak_speed_m_s": 8.731976017652881,
+        "right_elbow_max_displacement_m_at_60hz": 0.11720220856373949
+      }
+    },
+    {
+      "attempt": "lyra-005",
+      "decision": "rejected_before_adoption",
+      "reason": "Backward hip trial moved shoulder closer to the fixed hand path; actual45deg adjacent-joint gate rejected it.",
+      "glb_exists": false,
+      "actual_gate_error": "ValueError: Joint discontinuity over45deg: {'bone': 'RightHand', 'interval_s': [0.476, 0.478]}"
+    },
+    {
+      "attempt": "lyra-006",
+      "decision": "rejected_before_adoption",
+      "reason": "Moderated body trial still violated adjacent-joint continuity gate; not adopted.",
+      "glb_exists": false,
+      "actual_gate_error": "ValueError: Joint discontinuity over45deg: {'bone': 'RightHand', 'interval_s': [0.462, 0.464]}"
+    },
+    {
+      "attempt": "sentinel-001",
+      "decision": "rejected_before_adoption",
+      "reason": "Rejected before adoption: time-assumed world recoil compensation ignored blocked/sideways resolved movement;35cm physical motion was also scaled by1.95/1.82 to37.5cm. Replaced with local stagger/heel-step only; actual runtime contact pending.",
+      "glb_exists": true,
+      "source_bytes": 17410020,
+      "source_sha256": "e9d1c7e205e65599e7bf55fde9f03d61ec6b4ef427b03220ad218e6784f9e742"
+    }
+  ],
+  "current_candidate_policy": "Lyra007 preserves the exact v0.1.8 active torso/shoulder path and pole. Deeper load, pre-active lead, stance/catch and post-active compression/recovery are new. Sentinel003 uses local stagger/braking only, no inferred world recoil. Actual runtime/normal-speed visual/target hardware/AAA approval pending."
+}

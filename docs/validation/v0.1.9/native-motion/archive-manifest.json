@@ -1,0 +1,135 @@
+{
+  "scope": "File integrity for this finite offline review archive; no semantic quality approval",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 5861,
+      "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+    },
+    {
+      "file": "capture.json",
+      "bytes": 5456,
+      "sha256": "2c346d6a684a493a558dcdf45ecb7c9642a2e765bf917c07e08cac56f8cd1252"
+    },
+    {
+      "file": "fixture-parse.log",
+      "bytes": 73,
+      "sha256": "6d1c065383a27c36804949b6ffa4b09714470b112e5dacc0bd5aeb7b9c147c4e"
+    },
+    {
+      "file": "fixture-project.json",
+      "bytes": 657,
+      "sha256": "a29bec31359beee21d3cb351d951f31443b77f39e502874178d268397fff6d14"
+    },
+    {
+      "file": "fixture-source/render_weight_review.py",
+      "bytes": 18739,
+      "sha256": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+    },
+    {
+      "file": "fixture-source/weight_motion_review.gd",
+      "bytes": 14553,
+      "sha256": "c88b87d791181ab89ef2b50f79452896afb3bf9dcab181873b235c7ac6eed98c"
+    },
+    {
+      "file": "fixture-source/weight_motion_review.tscn",
+      "bytes": 194,
+      "sha256": "6cfe7e8a57e55df32d8d282bda2f023861b24eeebcb51907bfeec6345bf2da58"
+    },
+    {
+      "file": "hero-1x.mp4",
+      "bytes": 495869,
+      "sha256": "80b31f1735182e88288f576b8f5cb9d3d52c5d443a33e66a096bcea953e91481"
+    },
+    {
+      "file": "hero-arms-01.png",
+      "bytes": 305191,
+      "sha256": "41aa8466d73515058d2532141c984cf25a7ca1a685fbfbe900f41ed31bc46eba"
+    },
+    {
+      "file": "hero-arms-02.png",
+      "bytes": 309930,
+      "sha256": "eb513da16f2dac96db6190aa93f574e9cc93c710f4979a6b07e27da5f938dede"
+    },
+    {
+      "file": "hero-arms-03.png",
+      "bytes": 308613,
+      "sha256": "d4c4a2ea22e469561d9ac68cf9757d0d354d4be4ba3406276ce7dd4049f6fe7c"
+    },
+    {
+      "file": "hero-arms-04.png",
+      "bytes": 309094,
+      "sha256": "109c1cb5d80f2e7a29ecccb59df7a9e9ab1273d9310a4769229bc71224f433e8"
+    },
+    {
+      "file": "hero-arms-05.png",
+      "bytes": 310706,
+      "sha256": "9639e3b50f38a218a2e8ade560ed2ea3bc4f0eae0370be4df0d646205a93588a"
+    },
+    {
+      "file": "hero-arms-frames.json",
+      "bytes": 19565,
+      "sha256": "f1ead9a72afa0a56df1dfdf064f63edc7548ca350ad812623b5bdb0981a4af2c"
+    },
+    {
+      "file": "hero-arms-godot.log",
+      "bytes": 1183,
+      "sha256": "b9d1385c798661c28b5e75430fa3c1b83140f09c389b679c5dc3dba4f5a6877b"
+    },
+    {
+      "file": "hero-arms-static-strip.png",
+      "bytes": 491961,
+      "sha256": "764803fdf8abc3b436f00b3602d71d4cf9bf4a5ddfcba633ea1d62a28b5fcc10"
+    },
+    {
+      "file": "hero-contact-sheet.png",
+      "bytes": 438384,
+      "sha256": "d9df1a2b8b93930b89e735e4839615059ee383a922cc30c3d5ec4b45b294052d"
+    },
+    {
+      "file": "hero-frames.json",
+      "bytes": 306162,
+      "sha256": "3bb25c1c0ac7a0927fe6036dd475d7b4e81538a35987ec4d05b8dd4fdad33e48"
+    },
+    {
+      "file": "hero-godot.log",
+      "bytes": 1165,
+      "sha256": "ef2ee5325589fc40f8e36aeb2a6d523f26a02f52f4fad77c880300cf763ac815"
+    },
+    {
+      "file": "hero-raw-tail.framemd5",
+      "bytes": 375,
+      "sha256": "d80a3bdd343522adb11e177c7a836325480f05e909f7e5477bf7683a9bf26635"
+    },
+    {
+      "file": "sentinel_melee-1x.mp4",
+      "bytes": 271948,
+      "sha256": "c18fb9b640f67095fdfcce16da01404006e155a12a9f205a2501aac040c70523"
+    },
+    {
+      "file": "sentinel_melee-contact-sheet.png",
+      "bytes": 472253,
+      "sha256": "c5d577f68ccd5c2c7c39fa73918fe27c85881b757687e171d3b929f1fb699181"
+    },
+    {
+      "file": "sentinel_melee-frames.json",
+      "bytes": 159974,
+      "sha256": "5f50e3571c47ab1d7a390087cc8bdcbb0dedcf48551e9a643f3ce3680304f463"
+    },
+    {
+      "file": "sentinel_melee-godot.log",
+      "bytes": 1183,
+      "sha256": "c0af55b4c8782f16d896148c4dfcaff38dc25ba1009218d886aef0788498c5c3"
+    },
+    {
+      "file": "sentinel_melee-raw-tail.framemd5",
+      "bytes": 375,
+      "sha256": "a14b3edec9b75f13a8b7c6dd52dfc130ffbb32a5722137c2fd94b4ea884df2ec"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 10622,
+      "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+    }
+  ]
+}

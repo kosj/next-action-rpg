@@ -1,0 +1,109 @@
+{
+  "scope": "Local dirty-preview native integration and exported packages; final committed CI/full browser/public/release and audiovisual/hardware/AAA approval separate",
+  "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+  "source_tree_dirty": true,
+  "version": "0.1.9",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "native": {
+    "checks": 448,
+    "failures": 0,
+    "exit_code": 0,
+    "runtime_log": "native-runtime.log",
+    "recovery_proof": "native-recovery.json",
+    "contact_proof": "native-contact.json"
+  },
+  "source_sha256": {
+    "game/project.godot": "986d7bd552bf481fa445fae51df9aa04e4f2e6365f8e86b34a110b780e7e2bed",
+    "game/export_presets.cfg": "c2f28d24c04e0f341f09300c6b97cf64657235afc29e79eef328c920a762f29e",
+    "game/scripts/actors/production_character_art.gd": "ebd0031b2c0316c924a86470b639bd56337253539d89bd4958d9efa177d9f27c",
+    "game/tests/test_runner.gd": "85842a63aef150e12b729d5b46c3db48e1e241d7dbb10fa7ffb8c7296a795c17",
+    "game/tests/weight_recovery_regressions.gd": "d992f88de6473bc13cf6f5207ddbf4ebb6cd1773e0459ef1b2a6185bd25d9103",
+    "game/tests/charged_blade_alignment_regressions.gd": "88eb4d7f2b36bf86388d228582b58a62af15cfecc7b1db6f9240775a94f3acb7",
+    "game/tests/charged_impact_regressions.gd": "c49fb0bf7db525cb5cf538bff5aa1bb05167aeddd599e42cf4eb16642fbdb461",
+    "game/assets/models/production/lyra_weight_gameplay.glb": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "game/assets/models/production/sentinel_weight_gameplay.glb": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "tools/author_weight_actions.py": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4",
+    "tools/author_sentinel_recovery.py": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086",
+    "tools/inspect_motion_derivatives.py": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc",
+    "art_source/production/character_actions/lyra-weight.json": "96f0d71343b9abcd9c132492836b92b64a4518618a8ed96bab1696a022721f93",
+    "art_source/production/character_actions/sentinel-weight.json": "e6c39bee6c15155d7508f8f90dda75ced77785bf2e3bf58a8008e04f9275536d",
+    "art_source/production/character_actions/sentinel-weight-recovery.json": "6bcf3d9bce9cf0ff558f719c8c75d20b21d843f81e59ef271650fbb028b413ef"
+  },
+  "web_raw_bytes": 146306891,
+  "web_budget_bytes": 150000000,
+  "export_manifest": {
+    "version": "0.1.9",
+    "godot": "4.7.2",
+    "commit": "a98ef075",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115614322,
+        "sha256": "12dece1a374b6235a8a600c8ee8b8d7157916308993637e23863d8457641f1d7"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143455629,
+        "sha256": "85d611ca7b663a190970c97bd18eabe5f652b8cae06116c7f20195d22a72c1a9"
+      }
+    ]
+  },
+  "local_package_verification": {
+    "version": "0.1.9",
+    "godot": "4.7.2",
+    "expected_main_sha": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+    "manifest_commit": "a98ef075",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115614322,
+        "sha256": "12dece1a374b6235a8a600c8ee8b8d7157916308993637e23863d8457641f1d7",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 146306891
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143455629,
+        "sha256": "85d611ca7b663a190970c97bd18eabe5f652b8cae06116c7f20195d22a72c1a9",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 215726750
+      }
+    ],
+    "status": "verified",
+    "scope": "Downloaded bytes and packaging; no hardware or art approval"
+  },
+  "native_previous_attempts": [
+    {
+      "checks": 443,
+      "failures": 2,
+      "cause": "Comparison fixture lacked runtime loop flags; fixed fixture preparation only."
+    },
+    {
+      "checks": 448,
+      "failures": 2,
+      "cause": "Actual Sentinel idle arm-branch join11cm; fixed candidate002 without relaxing20mm threshold.",
+      "evidence": "rejected-native-join.json"
+    }
+  ],
+  "not_verified": [
+    "final clean committed CI",
+    "full desktop/mobile browser journey on this revision",
+    "public Pages and release on this revision",
+    "continuous normal-speed audiovisual acceptance",
+    "actual target hardware",
+    "AAA quality"
+  ],
+  "python": {
+    "checks": 51,
+    "failures": 0,
+    "exit_code": 0,
+    "elapsed_s": 1.659,
+    "log": "python-tests.log"
+  }
+}

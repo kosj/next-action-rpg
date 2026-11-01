@@ -15,7 +15,9 @@ static func _write_contact_proof(report: Dictionary) -> void:
 	report["source_hashes"] = {
 		"fixture":FileAccess.get_sha256("res://tests/charged_impact_regressions.gd"),
 		"charged_attack":FileAccess.get_sha256("res://data/charged_heavy.tres"),
-		"hero_body":FileAccess.get_sha256("res://assets/models/production/lyra_impact_gameplay.glb"),
+		"hero_body":FileAccess.get_sha256(ProductionCharacterArt.definition("hero").path),
+		"hero_body_path":String(ProductionCharacterArt.definition("hero").path),
+		"hero_impact_reference_body":FileAccess.get_sha256("res://assets/models/production/lyra_impact_gameplay.glb"),
 		"hero_reference_body":FileAccess.get_sha256("res://assets/models/production/lyra_gameplay.glb"),
 	}
 	var path := ProjectSettings.globalize_path("res://").path_join("../build/verification/charged-impact/contact.json").simplify_path()

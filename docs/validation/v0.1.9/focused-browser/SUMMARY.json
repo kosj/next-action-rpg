@@ -1,0 +1,111 @@
+{
+  "scope": "Local dirty-preview actual mobile Chromium/CDP charged-heavy focused journey only. Not final clean committed-source CI/full journey/public deployment/normal-speed audiovisual/real-device/AAA approval.",
+  "result": "charged_heavy_focused_passed",
+  "seconds": 290.733,
+  "errors": [],
+  "runtime_source": {
+    "head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+    "dirty": true,
+    "build_id": "0.1.9 · a98ef075",
+    "hero_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "sentinel_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "wrapper_sha256": "49da6ce6d6c95937cbbe959dcda67298215e9db519e7051681020205eae79d03",
+    "focused_driver_sha256": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "full_source_hashes": "export-context.json"
+  },
+  "unchanged_bounds": {
+    "ui_ms": 15000,
+    "storage_seconds": 30,
+    "navigation_seconds": 60,
+    "navigation_final_distance_m": 1.2,
+    "maximum_recoil_m": 0.355,
+    "scope": "Focused test executes relevant UI/navigation/contact/recoil gates; storage/full journey is separate."
+  },
+  "controlled_repeat": {
+    "first_attempt": "../browser-first-failure.json",
+    "first_attempt_result": "Failed129.577s at15s initial charge readiness; later failure diagnostic had correctcharge.8/statecharge. This failure remains valid.",
+    "attempt2_export_files_identical_to_first": true,
+    "attempt2_source_hashes_identical_to_first": true,
+    "interpretation": "Unchanged controlled repeat passed. No root-cause fix or deterministic performance guarantee established; no readiness sleep, timeout/quality/game/input-rule relaxation."
+  },
+  "actual_input": {
+    "trusted": true,
+    "max_simultaneous_points": 2,
+    "setup": "Actual incoming enemy damage, centered still-owned joystick, stagger cleared and charged Heavy held before actual release. No QA state mutation/forcedsync."
+  },
+  "observed": {
+    "whiff_counts": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    },
+    "confirmed_impacts": 1,
+    "actual_effect_spawns": 1,
+    "once_per_attack_target": true,
+    "charged_attack_instances": 1,
+    "damage": 69.3,
+    "target_hp_before_after": [
+      95,
+      25.7
+    ],
+    "reaction_state": "heavy_hit",
+    "reported_reaction_duration_s": 0.48,
+    "reported_both_hitstop_s": [
+      0.075,
+      0.075
+    ],
+    "requested_recoil_m": 0.35,
+    "actual_resolved_horizontal_recoil_m": 0.3500003814752263,
+    "physical_checks": [
+      {
+        "point_to_blade_segment_m": 0.11153102927062704,
+        "blade_grip_to_tip_m": 1.1899997067096517,
+        "query_sample_time_s": 0.4322222222222221,
+        "packet_attack_elapsed_s": 0.432222222222222,
+        "point_to_damage_segment_m": 0.1115310292706261,
+        "full_blade_projection_fraction": 0.26368371735337864,
+        "expected_damage_base": [
+          0.28913402378559094,
+          1.4847808122634862,
+          -24.473859062194812
+        ],
+        "sharp_damage_length_m": 0.9757997595019139,
+        "expected_damage_axis_base": [
+          0.37181334891897866,
+          1.5515339036180646,
+          -24.52960988272774
+        ],
+        "expected_damage_axis_tip": [
+          0.8787752451600392,
+          1.9608414749906315,
+          -24.871455218895772
+        ],
+        "point_to_damage_inner_axis_m": 0.11338430189225225
+      }
+    ],
+    "trusted_release_to_matching_snapshot_seconds": 6.1115,
+    "final_paused": true,
+    "final_health": 88,
+    "final_active_pointers": []
+  },
+  "browser_frozen_pair": {
+    "observed": false,
+    "reason": "copied snapshot outside charged attacker hitstop"
+  },
+  "freeze_scope": "Browser copied a frame outside the brief attacker hitstop; positive frozen roots/skeletons/clocks/trail evidence is the separate native-contact.json, not inferred from requested.075 values.",
+  "original_png_review": "Whiff/final paused original PNGs are evidence of their captured states. Final paused PNG manually reviewed: HP88/readable pause menu. These later stills do not demonstrate the short impact frame or normal-speed motion quality.",
+  "final_recheck": {
+    "utc": "2026-11-01T02:17:01.807883+00:00",
+    "source_hash_differences": [],
+    "export_hash_differences": [],
+    "export_bytes_unchanged": true,
+    "raw_web_bytes": 146306891,
+    "chromium_processes_closed": true,
+    "server_closed": true
+  }
+}

@@ -46,6 +46,10 @@ python tools/knowledge.py show web-input-after-ui
 
 고정 출처 Git object가 있는 제작 저장소에서는 `python tools/check_portable_knowledge.py --report docs/validation/knowledge-kit/verification.json`으로 출처·독립 rename/extract·동일 환경 repack·변조/오래된 ZIP/깨진 링크/외부 symlink 거부를 재현합니다. 필요한 원본이 없는 얕은 checkout에서 검사를 건너뛰거나 `passed`를 쓰지 않습니다. source snapshot을 먼저 커밋하고 묶음이 그 커밋을 참조하게 하여 자기 자신의 미래 SHA를 만들지 않습니다.
 
+### 출처 고정을 반복할 때
+
+원본 카탈로그와 근거 파일을 먼저 커밋한 뒤 `python tools/pin_knowledge_bundle.py --commit FULL_SOURCE_COMMIT_SHA --version NEXT_BUNDLE_VERSION`으로 고정할 Git object·항목 수·카탈로그 해시를 dry-run 확인합니다. 전체40자리 SHA와 실제 다음 묶음 판본으로 인수를 바꿉니다. 출력과 `catalog_matches_worktree`를 확인한 뒤 같은 명령에 `--write`를 붙이면 provenance만 갱신합니다. README/HANDBOOK 판본·변경 내용과 ZIP은 별도로 갱신하고 위 독립 검증을 실행합니다. 이 도구는 URL을 조회하거나 검증 상태를 승격하지 않으며, 미커밋 카탈로그를 미래 커밋으로 고정하지 않습니다.
+
 ## 완료 기준
 
 ```bash

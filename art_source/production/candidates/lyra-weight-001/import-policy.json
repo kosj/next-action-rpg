@@ -1,0 +1,106 @@
+{
+  "scope": "Recorded import policy with separately pinned actual local-native448/0 integration evidence. This does not approve all decoded formats, focused browser, continuous AV, target-device performance, final deployment or AAA visual quality.",
+  "animation_import": {
+    "file": "game/assets/models/production/lyra_weight_gameplay.glb.import",
+    "fps": 500,
+    "optimizer/enabled": false,
+    "compression/enabled": false,
+    "post_import_script": "game/import/impact_animation_sampling.gd",
+    "post_import_sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03"
+  },
+  "textures": [
+    {
+      "source_png": "game/assets/models/production/lyra_impact_gameplay_Image_0.png",
+      "new_png": "game/assets/models/production/lyra_weight_gameplay_Image_0.png",
+      "bytes_equal": true,
+      "sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b",
+      "params_equal": true
+    },
+    {
+      "source_png": "game/assets/models/production/lyra_impact_gameplay_Image_1.png",
+      "new_png": "game/assets/models/production/lyra_weight_gameplay_Image_1.png",
+      "bytes_equal": true,
+      "sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc",
+      "params_equal": true
+    },
+    {
+      "source_png": "game/assets/models/production/lyra_impact_gameplay_Image_2.png",
+      "new_png": "game/assets/models/production/lyra_weight_gameplay_Image_2.png",
+      "bytes_equal": true,
+      "sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67",
+      "params_equal": true
+    }
+  ],
+  "runtime_validation": "local_native_functional_verified_visual_pending",
+  "aaa_approval": "pending",
+  "local_native_verification": {
+    "status": "local_native_functional_verified_visual_pending",
+    "checks": 448,
+    "failures": 0,
+    "exit_code": 0,
+    "source_asset": "game/assets/models/production/lyra_weight_gameplay.glb",
+    "source_asset_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+    "source_tree_dirty": true,
+    "scope": "Actual local dirty-preview native integration and imported pose/clock/guard checks only. Finite motion capture and listed raster review are separately scoped; no continuous normal-speed AV, target hardware or AAA approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-runtime.log",
+        "sha256": "7789d8042bf76afb9995c7e723d697837aba022ae5662ff341ae069dafb3f095"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-recovery.json",
+        "sha256": "1ef7f902c35eea59b398c3e3619b76eee067997dea320b2966b5ba99688e2944"
+      },
+      {
+        "file": "docs/validation/v0.1.9/local-preview.json",
+        "sha256": "c19e5c48d1c9455ed10ae9c3226ce5fd4f4d46babfc8f282b20c149ad8a119f1"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ],
+    "focused_browser": "pending",
+    "clean_committed_ci": "pending",
+    "public_pages": "pending",
+    "release": "pending",
+    "continuous_normal_speed_av": "pending",
+    "terrain_or_resolved_foot_contact": "pending",
+    "target_hardware": "pending",
+    "aaa_approval": "pending",
+    "native_pose_metrics": {
+      "startup_hip_shift_m": 0.0749999955296516,
+      "baseline_startup_hip_shift_m": 3.72529029846191e-09,
+      "stationary_charge_release_join": {
+        "max_joint_distance_m": 7.45058059692383e-09,
+        "max_local_rotation_rad": 0.0009765625
+      }
+    }
+  },
+  "finite_motion_review": {
+    "status": "finite_capture_and_listed_raster_review_only",
+    "batch": "native-motion-003",
+    "scope": "Actual media generation/encoding/timing/matched-camera/nominal owner placement and listed raster inspection only. Silent offline1x videos are available for human playback. The model inspected still rasters, not continuous video playback or audio. No interactive contact/collision, target-device performance, continuous1x visual/AV or AAA approval.",
+    "source_freeze_verified_during_capture": true,
+    "nominal_owner_y_m": -0.025,
+    "continuous_video_playback_review": "pending",
+    "audio": "silent_no_audio_review",
+    "interactive_collision": "not_exercised_by_capture_fixture",
+    "inherited_issue": "Forearm/gauntlet orientation rolls sharply over charged0.4667..0.4833s in both before and after. This slice does not remove that inherited counterrotation; no wrist deformation/continuous-motion approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ]
+  }
+}
