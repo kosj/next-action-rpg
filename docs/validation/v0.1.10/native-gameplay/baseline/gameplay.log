@@ -1,0 +1,26 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+Movie Maker mode enabled, recording movie in 1280×720 @ 60 FPS...
+COMBAT_CAPTURE_STAGE title build=0.1.9 · development
+COMBAT_CAPTURE_STAGE settings tick=4
+COMBAT_CAPTURE_STAGE quality_popup tick=7
+COMBAT_CAPTURE_STAGE quality_selected tick=12
+COMBAT_CAPTURE_STAGE new_game tick=15
+COMBAT_CAPTURE_STAGE prologue tick=18
+COMBAT_CAPTURE_STAGE input_guard tick=21
+COMBAT_CAPTURE_STAGE sprint_to_encounter tick=25
+COMBAT_CAPTURE_STAGE approach_while_charging tick=208
+COMBAT_CAPTURE_STAGE incoming_hit_recovery tick=292
+COMBAT_CAPTURE_STAGE released tick=334
+COMBAT_CAPTURE_STAGE normal_recovery tick=363
+COMBAT_CAPTURE_RESULT scripted_native_gameplay_captured ticks=624 charged_contacts=1 paired_pause_frames=5
+--------------------------------------------------------------------------------
+Done recording movie at path: /workspace/next-action-rpg/build/art-review/combat-gameplay-before-019/before/gameplay.avi
+626 frames at 60 FPS (movie length: 00:00:10:26), recorded in 00:07:33 (2% of real-time speed).
+CPU render time: 394.65 seconds (average: 630.43 ms/frame)
+GPU render time: 392.74 seconds (average: 627.38 ms/frame)
+Encoding time: 11.79 seconds (average: 18.84 ms/frame)
+--------------------------------------------------------------------------------

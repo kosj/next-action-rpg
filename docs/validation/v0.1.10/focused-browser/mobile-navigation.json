@@ -1,0 +1,223 @@
+[
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 586,
+    "position": [
+      0,
+      5.42400026321411
+    ],
+    "distance": 22.42400026321411,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 621,
+    "position": [
+      0,
+      4.74133443832397
+    ],
+    "distance": 21.74133443832397,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 637,
+    "position": [
+      0,
+      3.37601828575134
+    ],
+    "distance": 20.37601828575134,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 653,
+    "position": [
+      0,
+      2.01068592071533
+    ],
+    "distance": 19.01068592071533,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 669,
+    "position": [
+      0,
+      0.645353853702545
+    ],
+    "distance": 17.645353853702545,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 685,
+    "position": [
+      0,
+      -0.719978749752045
+    ],
+    "distance": 16.280021250247955,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 701,
+    "position": [
+      0,
+      -2.08531188964844
+    ],
+    "distance": 14.914688110351559,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 717,
+    "position": [
+      0,
+      -3.45064163208008
+    ],
+    "distance": 13.54935836791992,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 733,
+    "position": [
+      0,
+      -4.81597375869751
+    ],
+    "distance": 12.18402624130249,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 749,
+    "position": [
+      0,
+      -6.18130731582642
+    ],
+    "distance": 10.81869268417358,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 765,
+    "position": [
+      0,
+      -7.54664087295532
+    ],
+    "distance": 9.453359127044681,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 781,
+    "position": [
+      0,
+      -8.91196918487549
+    ],
+    "distance": 8.08803081512451,
+    "desired_strength": 0.8,
+    "raw_radius": 0.8280000000000001
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 797,
+    "position": [
+      0,
+      -10.2772989273071
+    ],
+    "distance": 6.7227010726928995,
+    "desired_strength": 0.7840876340866124,
+    "raw_radius": 0.8143153653144867
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 829,
+    "position": [
+      -1.48070427030689e-07,
+      -12.9943933486938
+    ],
+    "distance": 4.005606651306203,
+    "desired_strength": 0.44445083141327535,
+    "raw_radius": 0.5222277150154169
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "physics_frame": 861,
+    "position": [
+      -1.48070427030689e-07,
+      -15.3809213638306
+    ],
+    "distance": 1.6190786361694065,
+    "desired_strength": 0.14613482952117582,
+    "raw_radius": 0.2656759533882112
+  },
+  {
+    "target": [
+      0,
+      -17
+    ],
+    "stopped_position": [
+      -1.48070427030689e-07,
+      -16.5135536193848
+    ],
+    "physics_frame": 909
+  }
+]

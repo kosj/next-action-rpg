@@ -1,0 +1,125 @@
+{
+  "scope": "Actual mobile test export bytes and contemporaneous source hashes; dirty previews are not a committed-source or final-release approval",
+  "phase": "charged-heavy-focus",
+  "rotation_driver": "playwright",
+  "started_utc": "2026-11-01T14:23:22.045640+00:00",
+  "source_head": "61445931e96cd568357991eced4629554dd37cec",
+  "source_tree_dirty": true,
+  "export_directory": "/workspace/next-action-rpg/build/web",
+  "source_sha256": {
+    "tools/mobile_browser_smoke.py": "b4e3b465bb333575d9735fbdcb1efd24505532847fd97d00512a8592fc12f0ad",
+    "tools/check_mobile_web.py": "1a57199ba1c5eab4e3d0c4983055db539ade22010ba8f71292574e754eb2e492",
+    "tools/browser_smoke.py": "5e2205a308eaa8cf8ff0f56e415a0b70726714e7eb407aefded5af5811e26bf0",
+    "game/project.godot": "4fdc2ee50c6ce9b289162e42ba5258cb372838fbfab9ce92d58322c316f36424",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "game/scripts/ui/hud.gd": "b17fb0460414e40a2eb453fe01c79e99f164054060c519eb270f82917f810115",
+    "game/scripts/actors/player.gd": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+    "game/scripts/game.gd": "6902824a62f37ad8663ff44319e5abbabcf76db93977416ec27ac094762900f3",
+    "game/scripts/world/camera_rig.gd": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+    "game/web/shell.html": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+    "game/assets/models/production/lyra_fury_gameplay.glb": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "game/assets/models/production/sentinel_weight_gameplay.glb": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "game/scripts/core/strike.gd": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d",
+    "game/scripts/core/attack_data.gd": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+    "game/scripts/actors/enemy.gd": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4",
+    "game/data/charged_heavy.tres": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+    "game/data/charged_blade_curve.json": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "game/data/heavy.tres": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb",
+    "game/scripts/core/audio.gd": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
+    "game/import/impact_animation_sampling.gd": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+    "game/assets/models/production/lyra_fury_gameplay.glb.import": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3",
+    "game/assets/models/production/sentinel_weight_gameplay.glb.import": "d682ecf3aeaab3b9d2941a3387f2780440f53720aa32c6d13e681814ef1a56e5",
+    "game/scripts/world/impact_effect.gd": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049",
+    "game/scripts/actors/actor_visual.gd": "a5bb98f944a26c183b7ce9351ded1eaf192427a2f4eb1197771d3a506ea24b31",
+    "game/scripts/actors/production_character_art.gd": "0223cc99aac61f5f0c690490646489855f0b34cbdf1431dc557a3e173480e26e",
+    "game/scripts/actors/skeletal_visual_bridge.gd": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+    "tools/author_impact_actions.py": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5",
+    "tools/author_character_actions.py": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40",
+    "tools/author_weight_actions.py": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4",
+    "tools/author_fury_actions.py": "2450a983ec4904010b2f474243b5f5d0651107864956284dc17b0c909955f106",
+    "tools/derive_greatsword_profile.py": "c095dd64300cba0dbdeb4fed8d022d3727f6fa1108c030cb98a70cc56d3816d0",
+    "game/assets/models/production/rune_sword_web.glb": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "game/assets/models/production/rune_greatsword_geometry.glb": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+    "game/assets/models/production/rune_greatsword_geometry.glb.import": "28e6141b02ce7c2cb6233fb573565679642029719d4ba1c72f640bd79ac5178e",
+    "game/scripts/actors/blade_trail.gd": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5",
+    "art_source/production/character_actions/lyra-fury.json": "99cb571883a179df9ce32744e0940d6e654648ed7cb8ecc4d05cafea09ddf286",
+    "tools/author_sentinel_recovery.py": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086",
+    "art_source/production/character_actions/lyra-weight.json": "96f0d71343b9abcd9c132492836b92b64a4518618a8ed96bab1696a022721f93",
+    "art_source/production/character_actions/sentinel-weight.json": "e6c39bee6c15155d7508f8f90dda75ced77785bf2e3bf58a8008e04f9275536d",
+    "art_source/production/character_actions/sentinel-weight-recovery.json": "6bcf3d9bce9cf0ff558f719c8c75d20b21d843f81e59ef271650fbb028b413ef",
+    "tools/generate_impact_audio.py": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+    "tools/render_impact_review.py": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378",
+    "game/assets/audio/impact/body_thump.wav": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+    "game/assets/audio/impact/charge_sub.wav": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+    "game/assets/audio/impact/contact_tick.wav": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+    "game/assets/audio/impact/debris_tail.wav": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+    "game/assets/audio/impact/metal_block.wav": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+    "game/assets/audio/impact/metal_heavy.wav": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+    "game/assets/audio/impact/metal_light.wav": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+    "game/assets/audio/impact/swing_charged.wav": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+    "game/assets/audio/impact/swing_heavy.wav": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf"
+  },
+  "export_files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "FONT_LICENSE.txt": {
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded"
+    },
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_THIRD_PARTY.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 4298,
+      "sha256": "43869fd6e07ea7fbcd4496424a667eab8d2642bb6595a7c41db336bc07560325"
+    },
+    "index.apple-touch-icon.png": {
+      "bytes": 13950,
+      "sha256": "b41be0bf3629003432380d5a0e782ae7abe22d924aff8fae32b8c4604d2fe922"
+    },
+    "index.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "index.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 3171,
+      "sha256": "e312d64c88949dd707f148ad4d70988e820d0969e9beba6ce980677bfc607a13"
+    },
+    "index.icon.png": {
+      "bytes": 5217,
+      "sha256": "a0d5fc6481970f99d81f852c95b5c969c6dba80c9b14e9fc2969d311c7aa13dd"
+    },
+    "index.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "index.pck": {
+      "bytes": 106558560,
+      "sha256": "67b692bb230c28d8dba4ebd004aeaf7fba05459d5517812cbd3f539089a96291"
+    },
+    "index.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "server_closed": true,
+  "finished_utc": "2026-11-01T14:28:02.790891+00:00",
+  "export_bytes_unchanged": true
+}

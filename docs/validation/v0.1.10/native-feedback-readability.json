@@ -1,0 +1,122 @@
+{
+	"charged_trail": {
+		"depth_tested": true,
+		"gameplay_authority": false,
+		"layers": 2,
+		"lifetime": 0.16,
+		"samples": 3,
+		"style": "charged",
+		"triangles": 8,
+		"visible": true
+	},
+	"cut_aabb": "(0.76, 0.126, 0.00001)",
+	"edge_on_core": {
+		"finite": true,
+		"radius_from_core_center_m": 0.0750000029802322,
+		"triangle_area_pixels": 27.0555808544159,
+		"vertices": 36
+	},
+	"far_lock": {
+		"actual_BladeTip_uv": [
+			0.488876812274639,
+			0.436205136267495
+		],
+		"actual_GripOrigin_uv": [
+			0.427800965920473,
+			0.592930002800096
+		],
+		"follow_distance": 5.72000717163086,
+		"follow_height_bias": 2.4,
+		"free_distance": 5.0,
+		"locked": true,
+		"maximum_lock_distance": 8.6,
+		"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+		"shoulder_offset": 0.85,
+		"subjects": [
+			{
+				"behind_camera": false,
+				"height_fraction": 0.278809172282287,
+				"nominal_foot_uv": [
+					0.397931886330629,
+					0.784764872908027
+				],
+				"nominal_head_uv": [
+					0.392786661783854,
+					0.50595570062574
+				]
+			},
+			{
+				"behind_camera": false,
+				"height_fraction": 0.142141477756591,
+				"nominal_foot_uv": [
+					0.558398007123898,
+					0.552429741592769
+				],
+				"nominal_head_uv": [
+					0.559838319436098,
+					0.410288263836178
+				]
+			}
+		],
+		"viewport": [
+			390.0,
+			844.0
+		],
+		"wanted_distance": 5.72000717163086
+	},
+	"near_target_head_separation": {
+		"current_pixels": 38.8568725585938,
+		"previous_pixels": 22.5411071777344,
+		"ratio": 1.72382271430641
+	},
+	"portrait": {
+		"actual_BladeTip_uv": [
+			0.617099938025841,
+			0.331736704749519
+		],
+		"actual_GripOrigin_uv": [
+			0.539559310521835,
+			0.510405120126444
+		],
+		"follow_distance": 5.0,
+		"follow_height_bias": 2.4,
+		"free_distance": 5.0,
+		"locked": false,
+		"maximum_lock_distance": 8.6,
+		"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+		"shoulder_offset": 0.85,
+		"subjects": [
+			{
+				"behind_camera": false,
+				"height_fraction": 0.298203490921671,
+				"nominal_foot_uv": [
+					0.5,
+					0.715282205156805
+				],
+				"nominal_head_uv": [
+					0.5,
+					0.417078714235134
+				]
+			}
+		],
+		"viewport": [
+			390.0,
+			844.0
+		],
+		"wanted_distance": 5.0
+	},
+	"portrait_height_ratio_vs_v019": 1.20078836574486,
+	"rotated_cut_aabb": "(0.126, 0.76, 0.00001)",
+	"scope": "Native actual projection, skin-marker ribbon, emitted mesh/material, bounded lifecycle and physics-ray presentation fixtures only; no real-input/continuousAV/targetGPU/AAA approval",
+	"source_sha256": {
+		"camera": "95a5602a1857b228457464b2cb8d645b6a89e321d4065fef5695b1f60708c2d7",
+		"effect": "6c8b3fb71c85416670f1ad36ef091056224aa015da160f32bf1edfb8b6e8b08b",
+		"trail": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5"
+	},
+	"view_parallel_core": {
+		"finite": true,
+		"radius_from_core_center_m": 0.0750000029802322,
+		"triangle_area_pixels": 27.0555808544159,
+		"vertices": 36
+	}
+}

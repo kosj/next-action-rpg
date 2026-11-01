@@ -1,0 +1,4576 @@
+{
+  "charged-heavy-whiff-pose": {
+    "attack": {
+      "attack_active": 0.18,
+      "attack_arc": 170,
+      "attack_duration": 1.06,
+      "attack_elapsed": 0.116666666666667,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 1,
+      "attack_reach": 1.5,
+      "attack_startup": 0.34,
+      "charge_active": false,
+      "charge_duration": 0.65,
+      "charge_elapsed": 0,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [],
+    "camera_pitch": -0.18,
+    "camera_yaw": 0,
+    "charge_elapsed": 0,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": -1,
+    "enemy_art": [],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 120,
+    "heavy_held": 0,
+    "hero_art": {
+      "blade_grip_world": [
+        0.30614897608757,
+        1.29870700836182,
+        5.81709718704224
+      ],
+      "blade_tip_world": [
+        0.801040053367615,
+        2.32503700256348,
+        5.47383117675781
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 0,
+        "lifetime": 0.16,
+        "samples": 0,
+        "style": "charged",
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000089168549,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.152026429772377,
+        0.270273625850677,
+        0.0606857165694237,
+        0.837652266025543,
+        -0.49385267496109,
+        -0.219446539878845,
+        0.0793190598487854
+      ],
+      "sampled_time": 0.116666660368817,
+      "state": "charged_heavy",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 0,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 4.06666666666666,
+        "amplitude": 0,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 56,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.884169514973958,
+            0.301521301269531
+          ],
+          "actual_GripOrigin_uv": [
+            0.640272717598157,
+            0.503003920424041
+          ],
+          "follow_distance": 4.5,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": false,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.312525527737152,
+              "nominal_foot_uv": [
+                0.5,
+                0.72427324774141
+              ],
+              "nominal_head_uv": [
+                0.5,
+                0.411747720004258
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 4.5
+        },
+        "last_context_accepted": false
+      },
+      "count": 0,
+      "effects": [],
+      "history": [],
+      "spawn_count": 0
+    },
+    "input_ready": true,
+    "interaction_index": 0,
+    "interaction_kind": "checkpoint",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": false,
+    "locked_target": false,
+    "locked_target_id": 0,
+    "max_health": 120,
+    "modal": false,
+    "modal_h": 0,
+    "modal_w": 0,
+    "modal_x": 0,
+    "modal_y": 0,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": false,
+    "physics_frame": 410,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 35,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [],
+      "available": true,
+      "cancel_count": 1,
+      "desired_gameplay_active": true,
+      "emulate_mouse_from_touch": false,
+      "gameplay_active": true,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [],
+      "pressed_actions": [],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": true,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 120 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  35 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "다음 봉인으로 향하세요",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 36,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "상호작용  ·  룬의 안식처 — 휴식 / 강화",
+          "visible_h": 36,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 596,
+          "w": 366,
+          "x": 12,
+          "y": 596
+        },
+        {
+          "alpha": 0,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "무너진 성역",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "CHAPTER I  ·  THE LAST VOW",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": 0,
+    "z": 6
+  },
+  "charged-heavy-whiff-no-burst": {
+    "attack": {
+      "attack_active": 0,
+      "attack_arc": 0,
+      "attack_duration": 0,
+      "attack_elapsed": 0,
+      "attack_id": "",
+      "attack_instance_id": 0,
+      "attack_reach": 0,
+      "attack_startup": 0,
+      "charge_active": false,
+      "charge_duration": 0.65,
+      "charge_elapsed": 0,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [],
+    "camera_pitch": -0.18,
+    "camera_yaw": 0,
+    "charge_elapsed": 0,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": -1,
+    "enemy_art": [],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 120,
+    "heavy_held": 0,
+    "hero_art": {
+      "blade_grip_world": [
+        0.0499998107552528,
+        1.17943203449249,
+        5.07400035858154
+      ],
+      "blade_tip_world": [
+        0.169333130121231,
+        2.15454053878784,
+        4.40241622924805
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 0,
+        "lifetime": 0.16,
+        "samples": 0,
+        "style": "charged",
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000101089478,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551647022366524,
+        0.204745247960091,
+        0.159420236945152,
+        0.67948979139328,
+        -0.353719919919968,
+        -0.570159554481506,
+        0.296806275844574
+      ],
+      "sampled_time": 0.933333309491471,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 0,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 5.66666666666665,
+        "amplitude": 0,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 56,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.659710223858173,
+            0.315789209157935
+          ],
+          "actual_GripOrigin_uv": [
+            0.554341829740084,
+            0.509172159348619
+          ],
+          "follow_distance": 4.5,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": false,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.312525455420616,
+              "nominal_foot_uv": [
+                0.500000195625501,
+                0.724273103108338
+              ],
+              "nominal_head_uv": [
+                0.500000195625501,
+                0.411747647687722
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 4.5
+        },
+        "last_context_accepted": false
+      },
+      "count": 0,
+      "effects": [],
+      "history": [],
+      "spawn_count": 0
+    },
+    "input_ready": true,
+    "interaction_index": 0,
+    "interaction_kind": "checkpoint",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": false,
+    "locked_target": false,
+    "locked_target_id": 0,
+    "max_health": 120,
+    "modal": false,
+    "modal_h": 0,
+    "modal_w": 0,
+    "modal_x": 0,
+    "modal_y": 0,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": false,
+    "physics_frame": 506,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 35,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [],
+      "available": true,
+      "cancel_count": 1,
+      "desired_gameplay_active": true,
+      "emulate_mouse_from_touch": false,
+      "gameplay_active": true,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [],
+      "pressed_actions": [],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": true,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 120 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  35 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "다음 봉인으로 향하세요",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 36,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "상호작용  ·  룬의 안식처 — 휴식 / 강화",
+          "visible_h": 36,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 596,
+          "w": 366,
+          "x": 12,
+          "y": 596
+        },
+        {
+          "alpha": 0,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "무너진 성역",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "CHAPTER I  ·  THE LAST VOW",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": 0,
+    "z": 5.42400026321411
+  },
+  "charged-heavy-locked-approach": {
+    "attack": {
+      "attack_active": 0,
+      "attack_arc": 0,
+      "attack_duration": 0,
+      "attack_elapsed": 0,
+      "attack_id": "",
+      "attack_instance_id": 0,
+      "attack_reach": 0,
+      "attack_startup": 0,
+      "charge_active": true,
+      "charge_duration": 0.65,
+      "charge_elapsed": 4.83333333333332,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [],
+    "camera_pitch": -0.18,
+    "camera_yaw": -5.16313938062934e-09,
+    "charge_elapsed": 4.83333333333332,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": 0,
+    "enemy_art": [
+      {
+        "blade_grip_world": [
+          -0.0535714998841286,
+          1.23783946037292,
+          -29.4049911499023
+        ],
+        "blade_tip_world": [
+          -0.172905057668686,
+          2.21294736862183,
+          -28.7334079742432
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.18999993801117,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 138193932458,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.055091418325901,
+          0.190193310379982,
+          0.159208387136459,
+          0.679489731788635,
+          -0.353719770908356,
+          -0.570159673690796,
+          0.296806335449219
+        ],
+        "sampled_time": 0.183333308608443,
+        "stagger": 0,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -5.19338030358085e-08,
+        "z": -29.7799911499023
+      },
+      {
+        "blade_grip_world": [
+          3.16740322113037,
+          1.23728919029236,
+          -35.6479873657227
+        ],
+        "blade_tip_world": [
+          2.89549112319946,
+          2.21239709854126,
+          -35.0224227905273
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000113010406,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 141784256819,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550914481282234,
+          0.190193310379982,
+          0.159208357334137,
+          0.679489731788635,
+          -0.353719830513,
+          -0.570159614086151,
+          0.296806305646896
+        ],
+        "sampled_time": 0.183333262249276,
+        "stagger": 0,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 3.30652809143066,
+        "z": -36.0003204345703
+      },
+      {
+        "blade_grip_world": [
+          -3.2716236114502,
+          1.23769724369049,
+          -35.6231231689453
+        ],
+        "blade_tip_world": [
+          -3.23186326026917,
+          2.21280527114868,
+          -34.9421806335449
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.18999969959259,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 143478755724,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550914257764816,
+          0.190193295478821,
+          0.159208387136459,
+          0.679489731788635,
+          -0.353719860315323,
+          -0.570159614086151,
+          0.296806305646896
+        ],
+        "sampled_time": 0.183333260041696,
+        "stagger": 0,
+        "state": "walk",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -3.30653071403503,
+        "z": -36.000316619873
+      }
+    ],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 120,
+    "heavy_held": 4.83333333333332,
+    "hero_art": {
+      "blade_grip_world": [
+        0.290186405181885,
+        1.29534029960632,
+        -22.3447914123535
+      ],
+      "blade_tip_world": [
+        0.800002157688141,
+        2.28940415382385,
+        -22.7547035217285
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 0,
+        "lifetime": 0.16,
+        "samples": 0,
+        "style": "charged",
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000124931335,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.149826049804688,
+        0.269481480121613,
+        0.0728307887911797,
+        0.839193820953369,
+        -0.466514348983765,
+        -0.261127144098282,
+        0.0996532663702965
+      ],
+      "sampled_time": 0.649999976158142,
+      "state": "charge",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 0,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 18.3166666666669,
+        "amplitude": 0,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 56,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.750380217723357,
+            0.371854628431854
+          ],
+          "actual_GripOrigin_uv": [
+            0.446879186385717,
+            0.639176282837493
+          ],
+          "follow_distance": 5.57476260193127,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": true,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.478200758802947,
+              "nominal_foot_uv": [
+                0.268041444436098,
+                0.985602790145512
+              ],
+              "nominal_head_uv": [
+                0.250378867907402,
+                0.507402031342565
+              ]
+            },
+            {
+              "behind_camera": false,
+              "height_fraction": 0.166634582230265,
+              "nominal_foot_uv": [
+                0.583675990960537,
+                0.566603637984579
+              ],
+              "nominal_head_uv": [
+                0.585757368038862,
+                0.399969055754314
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 5.57476260193127
+        },
+        "last_context_accepted": false
+      },
+      "count": 0,
+      "effects": [],
+      "history": [],
+      "spawn_count": 0
+    },
+    "input_ready": true,
+    "interaction_index": -1,
+    "interaction_kind": "",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": true,
+    "locked_target": true,
+    "locked_target_id": 138193932458,
+    "max_health": 120,
+    "modal": false,
+    "modal_h": 0,
+    "modal_w": 0,
+    "modal_x": 0,
+    "modal_y": 0,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": false,
+    "physics_frame": 1265,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 35,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [
+        {
+          "action": "heavy",
+          "index": 5,
+          "owner": "action",
+          "position": [
+            300,
+            808
+          ]
+        },
+        {
+          "action": "lock_on",
+          "index": 7,
+          "owner": "action",
+          "position": [
+            246,
+            754
+          ]
+        }
+      ],
+      "available": true,
+      "cancel_count": 1,
+      "desired_gameplay_active": true,
+      "emulate_mouse_from_touch": false,
+      "gameplay_active": true,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [
+        5,
+        7
+      ],
+      "pressed_actions": [
+        "heavy",
+        "lock_on"
+      ],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": true,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 120 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  35 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "봉인의 수호자를 물리치세요 · 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 35,
+          "h": 52,
+          "line_count": 1,
+          "minimum_h": 52,
+          "text": "◇",
+          "visible_h": 52,
+          "visible_line_count": 1,
+          "visible_w": 35,
+          "visible_x": 213.565185546875,
+          "visible_y": 340.831451416016,
+          "w": 35,
+          "x": 213.565185546875,
+          "y": 340.831451416016
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 51,
+          "line_count": 2,
+          "minimum_h": 51,
+          "text": "공격 버튼을 연결해 콤보 · 회피 버튼 회피 · 고정 버튼 적 고정",
+          "visible_h": 51,
+          "visible_line_count": 2,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 554,
+          "w": 366,
+          "x": 12,
+          "y": 554
+        },
+        {
+          "alpha": 1,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "순례자의 뜰",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "SEAL 01  /  07",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": -1.00859722351743e-07,
+    "z": -22.1395931243896
+  },
+  "charged-heavy-real-incoming-hit-recovery": {
+    "attack": {
+      "attack_active": 0,
+      "attack_arc": 0,
+      "attack_duration": 0,
+      "attack_elapsed": 0,
+      "attack_id": "",
+      "attack_instance_id": 0,
+      "attack_reach": 0,
+      "attack_startup": 0,
+      "charge_active": true,
+      "charge_duration": 0.65,
+      "charge_elapsed": 8.56666666666667,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [],
+    "camera_pitch": -0.18,
+    "camera_yaw": -2.6619505164126e-07,
+    "charge_elapsed": 8.56666666666667,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": 0,
+    "enemy_art": [
+      {
+        "blade_grip_world": [
+          -0.0535707324743271,
+          1.26326811313629,
+          -24.6366596221924
+        ],
+        "blade_tip_world": [
+          -0.172904193401337,
+          2.23837614059448,
+          -23.9650764465332
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000005722046,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 138193932458,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550913959741592,
+          0.203224182128906,
+          0.159208357334137,
+          0.67948967218399,
+          -0.353719681501389,
+          -0.570159733295441,
+          0.296806365251541
+        ],
+        "sampled_time": 1.06666666666667,
+        "stagger": 0,
+        "state": "idle",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 6.5796371018223e-07,
+        "z": -25.0116596221924
+      },
+      {
+        "blade_grip_world": [
+          1.08586692810059,
+          1.21750497817993,
+          -26.0069141387939
+        ],
+        "blade_tip_world": [
+          2.11064910888672,
+          1.51114988327026,
+          -25.4780521392822
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000041484833,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 141784256819,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          0.127690047025681,
+          0.184196144342422,
+          0.12613445520401,
+          -0.0960622131824493,
+          0.012015619315207,
+          0.987607002258301,
+          -0.123531624674797
+        ],
+        "sampled_time": 1.1,
+        "stagger": 0,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 0.912812292575836,
+        "z": -26.2414150238037
+      },
+      {
+        "blade_grip_world": [
+          -0.641260266304016,
+          1.21750509738922,
+          -26.135570526123
+        ],
+        "blade_tip_world": [
+          0.507578730583191,
+          1.51115012168884,
+          -26.2357845306396
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000053405762,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 143478755724,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          0.127690047025681,
+          0.184196144342422,
+          0.12613445520401,
+          -0.0960622131824493,
+          0.012015619315207,
+          0.987607002258301,
+          -0.123531624674797
+        ],
+        "sampled_time": 1.1,
+        "stagger": 0,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -0.912810087203979,
+        "z": -26.2413959503174
+      }
+    ],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 104,
+    "heavy_held": 8.56666666666667,
+    "hero_art": {
+      "blade_grip_world": [
+        0.290186494588852,
+        1.29534029960632,
+        -23.8033027648926
+      ],
+      "blade_tip_world": [
+        0.800002455711365,
+        2.28940415382385,
+        -24.2132148742676
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 0,
+        "lifetime": 0.16,
+        "samples": 0,
+        "style": "charged",
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000136852264,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.149826049804688,
+        0.269481480121613,
+        0.0728307887911797,
+        0.839193820953369,
+        -0.466514348983765,
+        -0.261127144098282,
+        0.0996532663702965
+      ],
+      "sampled_time": 0.649999976158142,
+      "state": "charge",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 0,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 22.05,
+        "amplitude": 0,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 56,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.815301357171474,
+            0.343072321742632
+          ],
+          "actual_GripOrigin_uv": [
+            0.573576120229868,
+            0.537897191341454
+          ],
+          "follow_distance": 4.5,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": true,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.315055340952218,
+              "nominal_foot_uv": [
+                0.442677346254006,
+                0.76342129820331
+              ],
+              "nominal_head_uv": [
+                0.436044233273237,
+                0.448365957251092
+              ]
+            },
+            {
+              "behind_camera": false,
+              "height_fraction": 0.276794216644142,
+              "nominal_foot_uv": [
+                0.554510458921775,
+                0.651887504975378
+              ],
+              "nominal_head_uv": [
+                0.55983405480018,
+                0.375093288331235
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 4.5
+        },
+        "last_context_accepted": false
+      },
+      "count": 0,
+      "effects": [],
+      "history": [],
+      "spawn_count": 0
+    },
+    "input_ready": true,
+    "interaction_index": -1,
+    "interaction_kind": "",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": true,
+    "locked_target": true,
+    "locked_target_id": 138193932458,
+    "max_health": 120,
+    "modal": false,
+    "modal_h": 0,
+    "modal_w": 0,
+    "modal_x": 0,
+    "modal_y": 0,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": false,
+    "physics_frame": 1489,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 35,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [
+        {
+          "action": "heavy",
+          "index": 5,
+          "owner": "action",
+          "position": [
+            300,
+            808
+          ]
+        },
+        {
+          "action": "",
+          "index": 8,
+          "owner": "stick",
+          "position": [
+            76,
+            768
+          ]
+        }
+      ],
+      "available": true,
+      "cancel_count": 1,
+      "desired_gameplay_active": true,
+      "emulate_mouse_from_touch": false,
+      "gameplay_active": true,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [
+        5,
+        8
+      ],
+      "pressed_actions": [
+        "heavy"
+      ],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": true,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 104 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  35 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "봉인의 수호자를 물리치세요 · 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 35,
+          "h": 52,
+          "line_count": 1,
+          "minimum_h": 52,
+          "text": "◇",
+          "visible_h": 52,
+          "visible_line_count": 1,
+          "visible_w": 35.0000305175781,
+          "visible_x": 201.165451049805,
+          "visible_y": 347.719787597656,
+          "w": 35.0000305175781,
+          "x": 201.165451049805,
+          "y": 347.719787597656
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 51,
+          "line_count": 2,
+          "minimum_h": 51,
+          "text": "공격 버튼을 연결해 콤보 · 회피 버튼 회피 · 고정 버튼 적 고정",
+          "visible_h": 51,
+          "visible_line_count": 2,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 554,
+          "w": 366,
+          "x": 12,
+          "y": 554
+        },
+        {
+          "alpha": 0,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "순례자의 뜰",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "SEAL 01  /  07",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": -9.15205404794506e-08,
+    "z": -23.5981044769287
+  },
+  "charged-heavy-contact": {
+    "attack": {
+      "attack_active": 0.18,
+      "attack_arc": 170,
+      "attack_duration": 1.06,
+      "attack_elapsed": 0.428666666666667,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 5,
+      "attack_reach": 1.5,
+      "attack_startup": 0.34,
+      "charge_active": false,
+      "charge_duration": 0.65,
+      "charge_elapsed": 0,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [],
+    "camera_pitch": -0.18,
+    "camera_yaw": -0.000153610257422405,
+    "charge_elapsed": 0,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": 0,
+    "enemy_art": [
+      {
+        "blade_grip_world": [
+          -0.0271870419383049,
+          1.1803925037384,
+          -24.2482872009277
+        ],
+        "blade_tip_world": [
+          -0.604470133781433,
+          1.63842666149139,
+          -23.3139152526855
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.1900007724762,
+        "health": 25.7,
+        "hit_pause": 0,
+        "hit_reaction": "heavy_hit",
+        "id": 138193932458,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          3.69993795175105e-05,
+          0.000582561187911779,
+          -0.0988140106201172
+        ],
+        "recoil_requested_m": 0.35,
+        "right_hand_pose": [
+          -0.0457962900400162,
+          0.166758343577385,
+          0.105402439832687,
+          0.856141328811646,
+          -0.170681059360504,
+          -0.478109568357468,
+          0.0964431166648865
+        ],
+        "sampled_time": 0.0666666651765505,
+        "stagger": 0.413333333333333,
+        "state": "heavy_hit",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 0.000316882127663121,
+        "z": -24.4765548706055
+      },
+      {
+        "blade_grip_world": [
+          0.630451083183289,
+          1.24807703495026,
+          -25.3166809082031
+        ],
+        "blade_tip_world": [
+          0.27890807390213,
+          2.22318696975708,
+          -24.7321472167969
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000065326691,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 141784256819,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550907552242279,
+          0.195439517498016,
+          0.159208565950394,
+          0.679488182067871,
+          -0.353719055652618,
+          -0.570160508155823,
+          0.296809077262878
+        ],
+        "sampled_time": 0.257984960520709,
+        "stagger": 0,
+        "state": "walk_back",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 0.814546644687653,
+        "z": -25.6477470397949
+      },
+      {
+        "blade_grip_world": [
+          -0.774816811084747,
+          1.24523425102234,
+          -25.248291015625
+        ],
+        "blade_tip_world": [
+          -0.631441414356232,
+          2.22025656700134,
+          -24.5813007354736
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000041484833,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 143478755724,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.0550909787416458,
+          0.193986266851425,
+          0.159225136041641,
+          0.679506838321686,
+          -0.353671848773956,
+          -0.570184469223022,
+          0.296776622533798
+        ],
+        "sampled_time": 0.274075186362973,
+        "stagger": 0,
+        "state": "walk_back",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -0.866961181163788,
+        "z": -25.6157379150391
+      }
+    ],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 104,
+    "heavy_held": 0,
+    "hero_art": {
+      "blade_grip_world": [
+        -0.0230013430118561,
+        1.17912340164185,
+        -24.0695896148682
+      ],
+      "blade_tip_world": [
+        -0.236618921160698,
+        1.18410205841064,
+        -25.2402496337891
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 2,
+        "lifetime": 0.16,
+        "samples": 6,
+        "style": "charged",
+        "triangles": 20,
+        "visible": true
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.19000089168549,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0132382214069366,
+        0.203769102692604,
+        0.244234144687653,
+        -0.640194058418274,
+        0.00929618440568447,
+        0.768138468265533,
+        0.00533745903521776
+      ],
+      "sampled_time": 0.428666643526569,
+      "state": "charged_heavy",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 1,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 0.166666666666667,
+        "amplitude": 0.085,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 55.8528175354004,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.522239880684095,
+            0.46502233568526
+          ],
+          "actual_GripOrigin_uv": [
+            0.497327481783353,
+            0.525098900094417
+          ],
+          "follow_distance": 4.5,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": true,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.312709898745279,
+              "nominal_foot_uv": [
+                0.470547015850361,
+                0.743613509770253
+              ],
+              "nominal_head_uv": [
+                0.466984127729367,
+                0.430903611024974
+              ]
+            },
+            {
+              "behind_camera": false,
+              "height_fraction": 0.300565240507442,
+              "nominal_foot_uv": [
+                0.538579422388321,
+                0.676870698612448
+              ],
+              "nominal_head_uv": [
+                0.542952121832432,
+                0.376305458105006
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 4.5
+        },
+        "last_context_accepted": true
+      },
+      "count": 1,
+      "effects": [
+        {
+          "age": 0.123266666666667,
+          "attack_id": "charged_heavy",
+          "contact_source": "hurtbox_ray",
+          "core_axis": "(-0.98363, 0.122041, 0.132582)",
+          "core_basis_source": "projected_confirmed_cut",
+          "core_duration": 0.075,
+          "core_edge_alpha": 0.18,
+          "core_plane_normal": "(0.162989, 0.288754, 0.943428)",
+          "core_radius": 0.12,
+          "core_side": "(-0.076853, -0.949593, 0.303919)",
+          "cut_axis": "(-0.508731, -0.224808, -0.831056)",
+          "cut_basis_source": "confirmed_blade_motion",
+          "cut_duration": 0.14,
+          "cut_length": 0.76,
+          "cut_plane_normal": "(0.699656, -0.670452, -0.246931)",
+          "cut_side": "(0.501671, 0.707075, -0.498368)",
+          "cut_visible": true,
+          "debris_count": 3,
+          "depth_tested": true,
+          "duration": 0.62,
+          "dust_count": 1,
+          "gameplay_authority": false,
+          "ground_response": false,
+          "maximum_lifetime": 0.68,
+          "mesh_groups": 5,
+          "quality": 0,
+          "reason": "confirmed_contact",
+          "ring_geometry": false,
+          "spark_budget": 10,
+          "spark_count": 10,
+          "style": "charged",
+          "triangles": 47,
+          "valid": true,
+          "world_point": "(0.346669, 1.474413, -24.1777)"
+        }
+      ],
+      "history": [
+        {
+          "amount": 69.3,
+          "attack_elapsed": 0.362,
+          "attack_id": "charged_heavy",
+          "attack_instance_id": 5,
+          "attacker_pause": 0.075,
+          "blocked": false,
+          "contact_blade_grip": [
+            0.276680141687393,
+            1.24114561080933,
+            -23.9480895996094
+          ],
+          "contact_blade_motion": [
+            -4.46229028701782,
+            -1.9718850851059,
+            -7.28954648971558
+          ],
+          "contact_blade_tip": [
+            0.850146353244781,
+            2.07175040245056,
+            -24.5784339904785
+          ],
+          "contact_damage_axis_base": [
+            0.437732547521591,
+            1.47441291809082,
+            -24.1251163482666
+          ],
+          "contact_damage_axis_tip": [
+            0.792317867279053,
+            1.98799204826355,
+            -24.5148696899414
+          ],
+          "contact_damage_base": [
+            0.379904061555862,
+            1.39065444469452,
+            -24.0615520477295
+          ],
+          "contact_damage_tip": [
+            0.850146353244781,
+            2.07175040245056,
+            -24.5784339904785
+          ],
+          "contact_phase": 0.122222222222222,
+          "contact_source": "hurtbox_ray",
+          "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+          "curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+          "damage_start_fraction": 0.18,
+          "direction": [
+            0.000374456285499036,
+            0,
+            -0.999999940395355
+          ],
+          "health_after": 25.7,
+          "health_before": 95,
+          "hitstop": 0.075,
+          "killed": false,
+          "material": "metal",
+          "normal": [
+            0.865972995758057,
+            0,
+            0.500090897083282
+          ],
+          "physics_frame": 1528,
+          "point": [
+            0.346668988466263,
+            1.47441291809082,
+            -24.1777038574219
+          ],
+          "poise_broken": true,
+          "reaction": "heavy_hit",
+          "reaction_duration": 0.48,
+          "requested_recoil_m": 0.35,
+          "sequence": 1,
+          "source": "player",
+          "source_position": [
+            -7.45537533930474e-08,
+            -0.0241613946855068,
+            -23.6301040649414
+          ],
+          "strength": "charged",
+          "target_id": 138193932458,
+          "target_position": [
+            0.00027988274814561,
+            0.000255359744187444,
+            -24.3777408599854
+          ],
+          "victim_pause": 0.075
+        }
+      ],
+      "spawn_count": 1
+    },
+    "input_ready": true,
+    "interaction_index": -1,
+    "interaction_kind": "",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": true,
+    "locked_target": true,
+    "locked_target_id": 138193932458,
+    "max_health": 120,
+    "modal": false,
+    "modal_h": 0,
+    "modal_w": 0,
+    "modal_x": 0,
+    "modal_y": 0,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": false,
+    "physics_frame": 1537,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 42,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [
+        {
+          "action": "",
+          "index": 8,
+          "owner": "stick",
+          "position": [
+            76,
+            768
+          ]
+        }
+      ],
+      "available": true,
+      "cancel_count": 1,
+      "desired_gameplay_active": true,
+      "emulate_mouse_from_touch": false,
+      "gameplay_active": true,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [
+        8
+      ],
+      "pressed_actions": [],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": true,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 104 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  42 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "봉인의 수호자를 물리치세요 · 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 35,
+          "h": 52,
+          "line_count": 1,
+          "minimum_h": 52,
+          "text": "◇",
+          "visible_h": 52,
+          "visible_line_count": 1,
+          "visible_w": 35.0000305175781,
+          "visible_x": 190.770034790039,
+          "visible_y": 358.336547851562,
+          "w": 35.0000305175781,
+          "x": 190.770034790039,
+          "y": 358.336547851562
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 51,
+          "line_count": 2,
+          "minimum_h": 51,
+          "text": "공격 버튼을 연결해 콤보 · 회피 버튼 회피 · 고정 버튼 적 고정",
+          "visible_h": 51,
+          "visible_line_count": 2,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 554,
+          "w": 366,
+          "x": 12,
+          "y": 554
+        },
+        {
+          "alpha": 0,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "순례자의 뜰",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "SEAL 01  /  07",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        },
+        {
+          "alpha": 0.84591668844223,
+          "font_size": 31,
+          "h": 45,
+          "line_count": 1,
+          "minimum_h": 45,
+          "text": "69",
+          "visible_h": 45,
+          "visible_line_count": 1,
+          "visible_w": 34.9999847412109,
+          "visible_x": 252.201126098633,
+          "visible_y": 385.311645507812,
+          "w": 35,
+          "x": 252.201126098633,
+          "y": 385.311645507812
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": -4.30606021950553e-08,
+    "z": -23.6895008087158
+  },
+  "charged-heavy-contact-paused": {
+    "attack": {
+      "attack_active": 0,
+      "attack_arc": 0,
+      "attack_duration": 0,
+      "attack_elapsed": 0,
+      "attack_id": "",
+      "attack_instance_id": 0,
+      "attack_reach": 0,
+      "attack_startup": 0,
+      "charge_active": false,
+      "charge_duration": 0.65,
+      "charge_elapsed": 0,
+      "dead": false,
+      "death_elapsed": 0,
+      "dodge_duration": 0.32,
+      "dodge_elapsed": 0.32,
+      "dodge_local_x": 0,
+      "dodge_local_z": 0,
+      "dodge_remaining": 0,
+      "heal_duration": 0.35,
+      "heal_elapsed": 0.35,
+      "heal_remaining": 0,
+      "hit_duration": 0.15,
+      "hit_elapsed": 0.15,
+      "move_local_x": 0,
+      "move_local_z": 0,
+      "parry_duration": 0.22,
+      "parry_elapsed": 0.22,
+      "parry_remaining": 0,
+      "presentation_epoch": 1,
+      "speed": 0,
+      "stagger": 0
+    },
+    "build_id": "0.1.10 · 61445931",
+    "buttons": [
+      {
+        "disabled": false,
+        "font_size": 16,
+        "h": 48,
+        "kind": "Button",
+        "on_screen": true,
+        "text": "계속하기",
+        "visible_h": 48,
+        "visible_w": 342,
+        "visible_x": 24,
+        "visible_y": 318,
+        "w": 342,
+        "x": 24,
+        "y": 318
+      },
+      {
+        "disabled": false,
+        "font_size": 16,
+        "h": 48,
+        "kind": "Button",
+        "on_screen": true,
+        "text": "환경 설정",
+        "visible_h": 48,
+        "visible_w": 342,
+        "visible_x": 24,
+        "visible_y": 378,
+        "w": 342,
+        "x": 24,
+        "y": 378
+      },
+      {
+        "disabled": false,
+        "font_size": 16,
+        "h": 48,
+        "kind": "Button",
+        "on_screen": true,
+        "text": "조작 안내",
+        "visible_h": 48,
+        "visible_w": 342,
+        "visible_x": 24,
+        "visible_y": 438,
+        "w": 342,
+        "x": 24,
+        "y": 438
+      },
+      {
+        "disabled": false,
+        "font_size": 16,
+        "h": 48,
+        "kind": "Button",
+        "on_screen": true,
+        "text": "타이틀로",
+        "visible_h": 48,
+        "visible_w": 342,
+        "visible_x": 24,
+        "visible_y": 498,
+        "w": 342,
+        "x": 24,
+        "y": 498
+      }
+    ],
+    "camera_pitch": -0.18,
+    "camera_yaw": 0.199797473567827,
+    "charge_elapsed": 0,
+    "checkpoint": 0,
+    "dead": false,
+    "dodge_cooldown": 0,
+    "dodge_remaining": 0,
+    "dpr": 2,
+    "encounter": 0,
+    "enemy_art": [
+      {
+        "blade_grip_world": [
+          -0.171290710568428,
+          1.26670694351196,
+          -24.1868877410889
+        ],
+        "blade_tip_world": [
+          -0.0976855680346489,
+          2.24181532859802,
+          -23.508768081665
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000005722046,
+        "health": 25.7,
+        "hit_pause": 0,
+        "hit_reaction": "heavy_hit",
+        "id": 138193932458,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0.000131051201606169,
+          0.000582846347242594,
+          -0.350000381469727
+        ],
+        "recoil_requested_m": 0.35,
+        "right_hand_pose": [
+          -0.0550914108753204,
+          0.204951405525208,
+          0.159208491444588,
+          0.679489612579346,
+          -0.353720009326935,
+          -0.570159614086151,
+          0.296806335449219
+        ],
+        "sampled_time": 0.199999976158141,
+        "stagger": 0,
+        "state": "idle",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -0.224929347634315,
+        "z": -24.5618782043457
+      },
+      {
+        "blade_grip_world": [
+          1.09601259231567,
+          1.22757077217102,
+          -25.0008373260498
+        ],
+        "blade_tip_world": [
+          1.70326173305511,
+          1.69182765483856,
+          -24.0887985229492
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000029563904,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 141784256819,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          0.0733097344636917,
+          0.191035971045494,
+          0.166466116905212,
+          -0.202872902154922,
+          0.0411704033613205,
+          0.95880800485611,
+          -0.194511786103249
+        ],
+        "sampled_time": 1.16666666666667,
+        "stagger": 0,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": 1.10277223587036,
+        "z": -25.3056926727295
+      },
+      {
+        "blade_grip_world": [
+          -1.29955804347992,
+          1.23526191711426,
+          -25.2758598327637
+        ],
+        "blade_tip_world": [
+          -1.8837947845459,
+          1.82105278968811,
+          -24.4205131530762
+        ],
+        "blade_trail": {
+          "depth_tested": true,
+          "gameplay_authority": false,
+          "layers": 0,
+          "lifetime": 0.12,
+          "samples": 0,
+          "style": "light",
+          "triangles": 0,
+          "visible": false
+        },
+        "boss": false,
+        "dead": false,
+        "elite": false,
+        "eyes_attached": false,
+        "grip_to_tip_m": 1.19000065326691,
+        "health": 95,
+        "hit_pause": 0,
+        "hit_reaction": "hit",
+        "id": 143478755724,
+        "kind": "melee",
+        "mode": "skeletal",
+        "profile": "sentinel_melee",
+        "recoil_displacement": [
+          0,
+          0,
+          0
+        ],
+        "recoil_requested_m": 0,
+        "right_hand_pose": [
+          -0.100783094763756,
+          0.195298939943314,
+          0.109172806143761,
+          0.952639281749725,
+          -0.250470787286758,
+          -0.166783019900322,
+          0.0438890159130096
+        ],
+        "sampled_time": 0.333333333333333,
+        "stagger": 0,
+        "state": "enemy_attack",
+        "status": "Rig ready; visual quality remains subject to art review",
+        "weapon_attached": true,
+        "weapon_profile": "original",
+        "x": -1.31728613376617,
+        "z": -25.6011009216309
+      }
+    ],
+    "fps": 1,
+    "fs_persistent": true,
+    "has_save": true,
+    "health": 72,
+    "heavy_held": 0,
+    "hero_art": {
+      "blade_grip_world": [
+        -0.0553680323064327,
+        1.18300354480743,
+        -24.1830615997314
+      ],
+      "blade_tip_world": [
+        -0.139254957437515,
+        2.15811204910278,
+        -24.8599872589111
+      ],
+      "blade_trail": {
+        "depth_tested": true,
+        "gameplay_authority": false,
+        "layers": 0,
+        "lifetime": 0.16,
+        "samples": 0,
+        "style": "charged",
+        "triangles": 0,
+        "visible": false
+      },
+      "eyes_attached": true,
+      "grip_to_tip_m": 1.1900007724762,
+      "mode": "skeletal",
+      "profile": "hero",
+      "right_hand_pose": [
+        -0.0551646575331688,
+        0.206301033496857,
+        0.159420236945152,
+        0.679489612579346,
+        -0.353719919919968,
+        -0.570159614086151,
+        0.296806395053864
+      ],
+      "sampled_time": 0.499999904632549,
+      "state": "idle",
+      "status": "Rig ready; visual quality remains subject to art review",
+      "weapon_attached": true,
+      "weapon_profile": "hero_broadblade_001"
+    },
+    "hit_pause": 0,
+    "hits": 1,
+    "hud_y": 40,
+    "impact": {
+      "camera": {
+        "age": 2.43333333333333,
+        "amplitude": 0.085,
+        "duration": 0.19,
+        "enabled": true,
+        "fov": 56,
+        "framing": {
+          "actual_BladeTip_uv": [
+            0.59132573054387,
+            0.335327401545375
+          ],
+          "actual_GripOrigin_uv": [
+            0.518049073830629,
+            0.52845073537239
+          ],
+          "follow_distance": 4.5,
+          "follow_height_bias": 2.4,
+          "free_distance": 4.5,
+          "locked": true,
+          "maximum_lock_distance": 8.6,
+          "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+          "shoulder_offset": 1.2,
+          "subjects": [
+            {
+              "behind_camera": false,
+              "height_fraction": 0.313779496468639,
+              "nominal_foot_uv": [
+                0.481930385491787,
+                0.746410713376592
+              ],
+              "nominal_head_uv": [
+                0.479721343211639,
+                0.432631216907953
+              ]
+            },
+            {
+              "behind_camera": false,
+              "height_fraction": 0.30174877293302,
+              "nominal_foot_uv": [
+                0.516331286308093,
+                0.679546410438574
+              ],
+              "nominal_head_uv": [
+                0.518202522473458,
+                0.377797637505554
+              ]
+            }
+          ],
+          "viewport": [
+            390,
+            844
+          ],
+          "wanted_distance": 4.5
+        },
+        "last_context_accepted": true
+      },
+      "count": 1,
+      "effects": [],
+      "history": [
+        {
+          "amount": 69.3,
+          "attack_elapsed": 0.362,
+          "attack_id": "charged_heavy",
+          "attack_instance_id": 5,
+          "attacker_pause": 0.075,
+          "blocked": false,
+          "contact_blade_grip": [
+            0.276680141687393,
+            1.24114561080933,
+            -23.9480895996094
+          ],
+          "contact_blade_motion": [
+            -4.46229028701782,
+            -1.9718850851059,
+            -7.28954648971558
+          ],
+          "contact_blade_tip": [
+            0.850146353244781,
+            2.07175040245056,
+            -24.5784339904785
+          ],
+          "contact_damage_axis_base": [
+            0.437732547521591,
+            1.47441291809082,
+            -24.1251163482666
+          ],
+          "contact_damage_axis_tip": [
+            0.792317867279053,
+            1.98799204826355,
+            -24.5148696899414
+          ],
+          "contact_damage_base": [
+            0.379904061555862,
+            1.39065444469452,
+            -24.0615520477295
+          ],
+          "contact_damage_tip": [
+            0.850146353244781,
+            2.07175040245056,
+            -24.5784339904785
+          ],
+          "contact_phase": 0.122222222222222,
+          "contact_source": "hurtbox_ray",
+          "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+          "curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+          "damage_start_fraction": 0.18,
+          "direction": [
+            0.000374456285499036,
+            0,
+            -0.999999940395355
+          ],
+          "health_after": 25.7,
+          "health_before": 95,
+          "hitstop": 0.075,
+          "killed": false,
+          "material": "metal",
+          "normal": [
+            0.865972995758057,
+            0,
+            0.500090897083282
+          ],
+          "physics_frame": 1528,
+          "point": [
+            0.346668988466263,
+            1.47441291809082,
+            -24.1777038574219
+          ],
+          "poise_broken": true,
+          "reaction": "heavy_hit",
+          "reaction_duration": 0.48,
+          "requested_recoil_m": 0.35,
+          "sequence": 1,
+          "source": "player",
+          "source_position": [
+            -7.45537533930474e-08,
+            -0.0241613946855068,
+            -23.6301040649414
+          ],
+          "strength": "charged",
+          "target_id": 138193932458,
+          "target_position": [
+            0.00027988274814561,
+            0.000255359744187444,
+            -24.3777408599854
+          ],
+          "victim_pause": 0.075
+        }
+      ],
+      "spawn_count": 1
+    },
+    "input_ready": false,
+    "interaction_index": -1,
+    "interaction_kind": "",
+    "interaction_targets": [
+      {
+        "index": 0,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": 6
+      },
+      {
+        "index": 1,
+        "kind": "checkpoint",
+        "x": 2,
+        "z": -116
+      },
+      {
+        "index": 2,
+        "kind": "checkpoint",
+        "x": -3,
+        "z": -281
+      },
+      {
+        "index": 0,
+        "kind": "npc",
+        "x": -4,
+        "z": 5
+      },
+      {
+        "index": 1,
+        "kind": "npc",
+        "x": 4,
+        "z": 5
+      },
+      {
+        "index": 0,
+        "kind": "lore",
+        "x": -8,
+        "z": -5
+      },
+      {
+        "index": 1,
+        "kind": "lore",
+        "x": 30,
+        "z": -145
+      },
+      {
+        "index": 2,
+        "kind": "lore",
+        "x": -35,
+        "z": -255
+      }
+    ],
+    "locked": true,
+    "locked_target": true,
+    "locked_target_id": 138193932458,
+    "max_health": 120,
+    "modal": true,
+    "modal_h": 620,
+    "modal_w": 366,
+    "modal_x": 12,
+    "modal_y": 112,
+    "parry_cooldown": 0,
+    "parry_remaining": 0,
+    "paused": true,
+    "physics_frame": 1713,
+    "potions": 3,
+    "quality": 0,
+    "render_scale": 0.5,
+    "rune": 42,
+    "save_primary": {
+      "checkpoint": 0,
+      "completed": [],
+      "journey_started": true,
+      "lore": [],
+      "settings": {
+        "quality": 0,
+        "shake": true,
+        "volume": 0.7
+      },
+      "shards": 0,
+      "upgrades": [
+        0,
+        0,
+        0
+      ],
+      "version": 1
+    },
+    "save_primary_mtime": 1793543032,
+    "stagger": 0,
+    "started": true,
+    "touch": {
+      "action_font_size": 14,
+      "action_rects": {
+        "dodge": [
+          222,
+          784,
+          48,
+          48
+        ],
+        "heal": [
+          330,
+          676,
+          48,
+          48
+        ],
+        "heavy": [
+          276,
+          784,
+          48,
+          48
+        ],
+        "interact": [
+          330,
+          730,
+          48,
+          48
+        ],
+        "light": [
+          330,
+          784,
+          48,
+          48
+        ],
+        "lock_on": [
+          222,
+          730,
+          48,
+          48
+        ],
+        "parry": [
+          168,
+          784,
+          48,
+          48
+        ],
+        "pause": [
+          334,
+          12,
+          44,
+          44
+        ],
+        "skill_1": [
+          168,
+          676,
+          48,
+          48
+        ],
+        "skill_2": [
+          222,
+          676,
+          48,
+          48
+        ],
+        "skill_3": [
+          276,
+          676,
+          48,
+          48
+        ],
+        "sprint": [
+          168,
+          730,
+          48,
+          48
+        ],
+        "target_next": [
+          276,
+          730,
+          48,
+          48
+        ]
+      },
+      "active_pointers": [],
+      "available": true,
+      "cancel_count": 2,
+      "desired_gameplay_active": false,
+      "emulate_mouse_from_touch": true,
+      "gameplay_active": false,
+      "helper_font_size": 10,
+      "joystick_center": [
+        76,
+        768
+      ],
+      "joystick_label_font_size": 0,
+      "joystick_radius": 56,
+      "joystick_rect": [
+        8,
+        692,
+        136,
+        152
+      ],
+      "last_cancel_reason": "gameplay_inactive",
+      "layout_generation": 1,
+      "look_delta": [
+        0,
+        0
+      ],
+      "look_rect": [
+        163.800003051758,
+        64,
+        214.199996948242,
+        600
+      ],
+      "observed_touch_indices": [],
+      "pressed_actions": [],
+      "safe_margins": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "safe_margins_override": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stick_vector": [
+        0,
+        0
+      ],
+      "suppressed_pointer_indices": [
+        9
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "viewport_override": [
+        0,
+        0
+      ],
+      "visible": false,
+      "waiting_release": false
+    },
+    "ui": {
+      "scrolls": [
+        {
+          "h": 604,
+          "max": 426,
+          "name": "ModalScroll",
+          "page": 426,
+          "value": 0,
+          "w": 342,
+          "x": 24,
+          "y": 120
+        }
+      ],
+      "sliders": [],
+      "texts": [
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "HP 72 / 120",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 202,
+          "visible_x": 12,
+          "visible_y": 12,
+          "w": 202,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "RUNE  42 / 100",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 286,
+          "visible_x": 12,
+          "visible_y": 68,
+          "w": 286,
+          "x": 12,
+          "y": 68
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "회복 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 84,
+          "visible_x": 214,
+          "visible_y": 12,
+          "w": 84,
+          "x": 214,
+          "y": 12
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "봉인의 수호자를 물리치세요 · 3",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 102,
+          "w": 366,
+          "x": 12,
+          "y": 102
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "성역 정화  0 / 7     룬 조각 0",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 130,
+          "w": 366,
+          "x": 12,
+          "y": 130
+        },
+        {
+          "alpha": 1,
+          "font_size": 35,
+          "h": 52,
+          "line_count": 1,
+          "minimum_h": 52,
+          "text": "◇",
+          "visible_h": 52,
+          "visible_line_count": 1,
+          "visible_w": 35.0000305175781,
+          "visible_x": 185.916107177734,
+          "visible_y": 354.679168701172,
+          "w": 35.0000305175781,
+          "x": 185.916107177734,
+          "y": 354.679168701172
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 51,
+          "line_count": 2,
+          "minimum_h": 51,
+          "text": "공격 버튼을 연결해 콤보 · 회피 버튼 회피 · 고정 버튼 적 고정",
+          "visible_h": 51,
+          "visible_line_count": 2,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 554,
+          "w": 366,
+          "x": 12,
+          "y": 554
+        },
+        {
+          "alpha": 0,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "순례자의 뜰",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 176,
+          "w": 366,
+          "x": 12,
+          "y": 176
+        },
+        {
+          "alpha": 0,
+          "font_size": 16,
+          "h": 28,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "SEAL 01  /  07",
+          "visible_h": 28,
+          "visible_line_count": 1,
+          "visible_w": 366,
+          "visible_x": 12,
+          "visible_y": 208,
+          "w": 366,
+          "x": 12,
+          "y": 208
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 24,
+          "line_count": 1,
+          "minimum_h": 24,
+          "text": "PAUSED",
+          "visible_h": 24,
+          "visible_line_count": 1,
+          "visible_w": 342,
+          "visible_x": 24,
+          "visible_y": 120,
+          "w": 342,
+          "x": 24,
+          "y": 120
+        },
+        {
+          "alpha": 1,
+          "font_size": 22,
+          "h": 33,
+          "line_count": 1,
+          "minimum_h": 33,
+          "text": "잠시 멈춘 여정",
+          "visible_h": 33,
+          "visible_line_count": 1,
+          "visible_w": 342,
+          "visible_x": 24,
+          "visible_y": 156,
+          "w": 342,
+          "x": 24,
+          "y": 156
+        },
+        {
+          "alpha": 1,
+          "font_size": 16,
+          "h": 105,
+          "line_count": 4,
+          "minimum_h": 105,
+          "text": "체크포인트에서 체력과 회복약을 보충할 수 있습니다.\n진행은 체크포인트·강화·전투 완료 시 자동 저장됩니다.",
+          "visible_h": 105,
+          "visible_line_count": 4,
+          "visible_w": 342,
+          "visible_x": 24,
+          "visible_y": 201,
+          "w": 342,
+          "x": 24,
+          "y": 201
+        }
+      ]
+    },
+    "ui_height": 844,
+    "ui_width": 390,
+    "viewport_geometry": {
+      "content_scale_aspect": 1,
+      "content_scale_factor": 1,
+      "content_scale_mode": 1,
+      "content_scale_size": [
+        390,
+        844
+      ],
+      "display_size": [
+        780,
+        1688
+      ],
+      "final_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "stretch_transform": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "texture_size": [
+        1560,
+        3376
+      ],
+      "visible_rect": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "window_size": [
+        780,
+        1688
+      ]
+    },
+    "x": 3.34867813478468e-08,
+    "z": -23.833869934082
+  }
+}

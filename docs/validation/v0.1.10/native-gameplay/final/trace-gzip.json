@@ -1,0 +1,9 @@
+{
+  "scope": "Lossless gzip of exact original full native gameplay trace, mtime0; includes sandbox paths but no service credentials/tokens/URLs",
+  "decoded_file": "frames.json",
+  "decoded_sha256": "9e9301c0769f545c7932ebe973bd73cb07cf4fa380355949c0f6b08dee500430",
+  "decoded_bytes": 5076567,
+  "gzip_file": "frames.json.gz",
+  "gzip_sha256": "2f02bdeb90f8683545e07a53896f8084086cc5b02759acc44946f501ab0ac7f6",
+  "gzip_bytes": 568203
+}

@@ -1,6 +1,6 @@
 # v0.1.10 활성 동작·칼날 곡선·표현 제작 단위
 
-2026-11-01 UTC. **로컬 native482개/실패0·Web/Windows preview 확인,skin/최종 시각·브라우저·공개/AAA 승인 pending**. 실제 앱 버전은0.1.10이며 시작점은 `1e524b1275c6c55d3020ea5c3122afbb8db403e9`의 v0.1.9다. [현재 source/native 기록](validation/v0.1.10/README.md)은 dirty 구현의 한정된 검증이다. 이전 [무게/회수 자료](WEIGHT_RECOVERY_SLICE.md)를 새 판본의 근거로 바꾸지 않는다.
+2026-11-01 UTC. **최종 카메라/core의 native486개/실패0·preview와 정상 종료한 실제 Game capture를 확인하고, 유한 원본 프레임의 프로토타입 화면 개선을 채택했다.** 큰 시각 도약·전체 skin·연속1x AV/청취·실기기·AAA 승인은 아니다. 실제 앱 버전은0.1.10이며 시작점은 `1e524b1275c6c55d3020ea5c3122afbb8db403e9`의 v0.1.9다. [현재 기록](validation/v0.1.10/README.md)은 각 source와 관찰 범위를 구분한다. 이전 [무게/회수 자료](WEIGHT_RECOVERY_SLICE.md)를 새 판본의 근거로 바꾸지 않는다.
 
 사용자는 v0.1.9의 개선이 충분하지 않다고 평가했다. 이번 범위는 기존 active 팔 경로를 보존하는 데서 나아가 **준비→몸통이 이끄는 하강 베기→받기/회수**를 다시 저작하고, 그 실제 source와 피해용 칼날 곡선을 연결하는 것이다. 넓어진 Hero 검과 제한된 카메라·잔상·접촉 표현도 함께 검수하지만, 기능·수치 변화나 효과 개수로 AAA 품질을 승인하지 않는다. 현재 [검증 기록](validation/v0.1.10/README.md)은 확인 범위와 미실행 gate를 분리한다.
 
@@ -58,8 +58,24 @@ Fury는 흉부가 이끄는 하강 경로·해부학적 elbow swivel·축 twist 
 
 [공식 zero-point two_hand_attack 참고 후보](validation/v0.1.10/varco-reference.json)는 한 번 생성한 provider-stock 비교 자료다. 새 mesh/rig를 재실행하거나 production clip으로 바꾸지 않았다. 31.9초 unnamed/21channel clip과53joint·공통 원점 이동의 정적 호환성만 확인했으며 retiming·원점 정규화·양손 그립·연기·권리·실제 runtime 채택은 별도다. 원본 미디어·account/task/flow 식별자·서명 URL을 저장소에 넣지 않는다. zero-point 성공이 최종 모션 품질이나 재사용 권한을 자동 승인하지 않는다.
 
-카메라의 거리/lock-pair framing·복귀,실제 world marker의 charged 두 잔상 layer와 확정 packet의 blade-motion impact는 [native fixture](validation/v0.1.10/native-feedback.json) 범위에서 확인했다. portrait 명목 body 높이 비율은.318912,이전 대비1.284176배이고 회전시 cut AABB 방향·depth·수명/중단 계약을 검사했다. 이는 투영/mesh API/수명 증거이며 실제 게임 UI가림·evaluated skin·타격감/음향·GPU 승인이나 최종 가독성은 아니다.
+이전 카메라의 거리/lock-pair framing·복귀,실제 world marker의 charged 두 잔상 layer와 확정 packet의 blade-motion impact는 [native fixture](validation/v0.1.10/native-feedback.json) 범위에서 확인했다. portrait 명목 body 높이 비율은.318912,이전 대비1.284176배이고 회전시 cut AABB 방향·depth·수명/중단 계약을 검사했다. 이는 해당 source의 투영/mesh API/수명 증거이며 실제 게임 UI가림·evaluated skin·타격감/음향·GPU 승인이나 최종 가독성은 아니다.
+
+## 실제 접촉 화면의 가림 실패와 새 gate
+
+[최초 실제 교전 진단](validation/v0.1.10/diagnostics/initial-gameplay-occlusion/README.md)의 PNG에서는 낮은 시선에서 주인공과 적/접촉점이 겹쳤다. nominal projection과 cut AABB 방향 검사는 가독성을 승인하지 못했다. attempt4는624틱/10.4초·69.3 피해1회·pause5표본을 기록했지만 ObjectDB2/resource1 종료 오류와 명시적 최종 marker world 좌표 누락이 있어 clean capture가 아니다. [이전614 CI](validation/v0.1.10/diagnostics/old-camera-ci.json)는 필수3job/전체 mobile954.339초·errors0으로 통과했어도 이 시각 결함의 해결 근거가 아니다.
+
+첫 higher-view 후보 camera `95a5602a…`/impact `6c8b3fb7…`는 [native486/0](validation/v0.1.10/native-readability.log)·[head 분리1.723823배/core 면적27.0556px²](validation/v0.1.10/native-feedback-readability.json)·[당시 preview](validation/v0.1.10/readability-preview.json)를 통과했다. [실제 clean take](validation/v0.1.10/diagnostics/weak-camera-core/README.md)에서도 core가 약하게 보여 시각 채택하지 않았다. [source-bound composition 감사](validation/v0.1.10/diagnostics/weak-camera-core/composition-check.json)의 유한 ray 표본에서 중심은 검토한 Hero/검/target에 가려지지 않았고 broadblade가 외곽12개 중1개만 가렸다. 약한 섬광을 몸/무기에 묻혔다는 확정 원인으로 설명하지 않는다.
+
+그 결과 art budget을 명시적으로 수정했다. 최종 camera는 `e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476`,impact는 `fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049`다. free 거리4.5m/높이 bias2.4m/어깨1.2m·FOV56,charged core 반경120mm/75ms/outer alpha.18로 조정했다. 이전75mm/52ms/.06과 구분하며 기능 threshold를 완화한 것으로 쓰지 않는다. 같은 확정 접촉점·normal9mm offset/depth·기존5group/전체수명·피해 권한·곡선/자산은 유지한다. core만 실제 cut axis를 view plane에 투영하고 view-parallel일 때 camera-right fallback을 쓰며 물리 ribbon/spark는 packet plane을 따른다.
+
+[최종 native486/0](validation/v0.1.10/native-visible-contact.log)·[feedback](validation/v0.1.10/native-visible-contact.json)은 portrait nominal 높이의 v0.1.9 대비1.258460배와 가까운 head 분리44.9399px/이전22.5411px=1.993686배를 기록했다. edge-on/view-parallel core는36vertex·면적78.2599px²·반경.119999997m,재사용/75ms 소멸과 기존 wall/depth/shake/lock gate를 통과했다. 이 수치와 실제 raster의 가독성 판정은 별도다.
+
+[baseline](validation/v0.1.10/native-gameplay/baseline/README.md)과 [최종 actual Game take](validation/v0.1.10/native-gameplay/final/README.md)는 같은 script 입력 일정의 비교 자료다. 최종 take는462.367초에600 gameplay+24 UI 틱/624frame/논리60Hz·10.4초를 출력했다. 실제69.3 피해1회·양쪽 pause5표본·종료HP56,drawn blade1.1900017m·접촉점→실제 날 안쪽축.0784555m·recoil.3500023m를 기록했고 오류0·audio WeakRefs 해제/pending playback0/player0·source불변·프로세스 종료를 확인했다. baseline의 로그상 오류0과 최종 WeakRef 관찰은 다른 scope다.
+
+원본 접촉 PNG와 birth/+1/+2/+4 프레임을 확인해 적의 투구/상체가 더 구분되고 어깨/칼날 부근에 작은 금백색 섬광이 보이는 범위에서 **프로토타입 개선으로 채택**했다. 효과는 짧고 작으며 겹침도 남는다. +4의 큰 금색 세로 사각형은 주변 적의 기본 startup 경고이며 impact로 세지 않는다. 생성한 무음 논리1x MP4·전체 trace gzip·입력/파일 해시는 보존하지만 연속1x AV 시청/청취·실시간 FPS·목표 기기·AAA 승인은 부여하지 않는다.
 
 ## 완료 gate
 
-[두 번째 native 로그](validation/v0.1.10/native-runtime.log)는482개/실패0이다. [첫 실패](validation/v0.1.10/native-first-failure.log)는 material override 계약·native index/order/정확좌표를 잘못 가정한 fixture·feedback Variant추론 parse 오류를 보존한다. material 부착 방식을 수정하고 raw보존/native양자화의 triangle 대응을 분리했으며 fixture 타입을 고쳤다. source raw 보존 기준이나 접촉 기준을 완화한 것으로 설명하지 않는다. 현재 imported Grip/Tip 최대오차.066516mm/.303980mm와 명목발.015378mm를 확인했고,main contact.406초의 양쪽 시계·root/skeleton·5개 잔상표본/16tri가3physics frame 유지됐다. preview Web146,513,443B/150MB,WebZIP115,767,875B·WindowsZIP143,609,182B는 로컬 dirty 출력이다. skin 국소 검수·최종 시각·실제 브라우저·clean CI/공개/릴리스·연속1x AV/청취·목표 하드웨어·AAA는 pending이다. [v0.1.9 proof](validation/v0.1.9/README.md)는 당시 판본으로 보존한다.
+[최종 preview](validation/v0.1.10/visible-contact-preview.json)는 dirty `61445931` 기반으로 native486/0/error0·Web원시146,517,123B/150MB·WebZIP115,769,331B/WindowsZIP143,610,638B와 실제 ZIP SHA를 확인했다. [로컬 trusted 다중터치 집중 검사](validation/v0.1.10/focused-browser/SUMMARY.json)는277.923초/errors0·69.3 한 번·recoil.350000406m로 통과했다. 브라우저 frozen pair는 관찰하지 못했으므로 native5표본과 구분한다. clean committed CI·새 source의 full 여정·공개/릴리스는 이 로컬 기록 작성 시점에 별도 pending이며 이후 결과는 해당 PR/Actions에서 확인한다. 전체 skin/관통·양손·연속1x AV/청취·목표 하드웨어·AAA도 별도다.
+
+초기 [native482/0](validation/v0.1.10/native-runtime.log)와 [첫 실패](validation/v0.1.10/native-first-failure.log)는 이전 source 기록으로 보존한다. material 부착·native triangle 대응·fixture 타입을 고쳤고 raw 보존/접촉 기준을 넓히지 않았다. [native marker](validation/v0.1.10/native-alignment.json)의 Grip/Tip.066516/.303980mm·명목발.015378mm와 [접촉.406초의 양쪽 시계/잔상 정지](validation/v0.1.10/native-contact.json)는 해당 body/curve의 유한 기능 증거다. source별 native/CI 통과를 새 카메라나 최종 시각 승인으로 소급하지 않는다. [v0.1.9 proof](validation/v0.1.9/README.md)는 당시 판본으로 유지한다.

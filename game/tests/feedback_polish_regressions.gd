@@ -21,6 +21,24 @@ static func _wall(parent: Node3D, point: Vector3, size: Vector3) -> StaticBody3D
 	body.position = point
 	return body
 
+static func _core_projection(effect: RuneImpactEffect, camera: Camera3D) -> Dictionary:
+	# Inspect rendered vertices, rather than certifying the basis report alone.
+	var mesh: ArrayMesh = effect._meshes.core
+	var vertices: PackedVector3Array = mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]
+	var area: float = 0.0
+	var radius: float = 0.0
+	var finite: bool = true
+	var center: Vector3 = effect._normal*0.009
+	for index in range(0,vertices.size(),3):
+		var a: Vector2 = camera.unproject_position(effect.global_transform*vertices[index])
+		var b: Vector2 = camera.unproject_position(effect.global_transform*vertices[index+1])
+		var c: Vector2 = camera.unproject_position(effect.global_transform*vertices[index+2])
+		finite = finite and a.is_finite() and b.is_finite() and c.is_finite()
+		area += absf((b-a).cross(c-a))*0.5
+	for vertex: Vector3 in vertices:
+		radius = maxf(radius,vertex.distance_to(center))
+	return {"triangle_area_pixels":area,"radius_from_core_center_m":radius,"finite":finite,"vertices":vertices.size()}
+
 static func run(world: Node3D, check: Callable) -> bool:
 	var viewport: SubViewport = SubViewport.new()
 	viewport.size = Vector2i(390,844)
@@ -61,6 +79,15 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var ratio: float = float(portrait.subjects[0].height_fraction)/old_height
 	check.call(ratio>1.20 and ratio<1.45 and float(portrait.subjects[0].nominal_foot_uv[1])<0.80 and float(portrait.subjects[0].nominal_head_uv[1])>0.05,
 		"Actual portrait projection enlarges nominal hero by20–45% while reserving the bottom20% for actions")
+	# Same nominal close opponent/root points, two actual Camera3D projections.
+	# Screen separation alone is not a claim that evaluated skin no longer occludes.
+	baseline.global_position = sole+Vector3.UP*1.4+Vector3(0.55,1.6+sin(-0.18)*5.2,5.2*cos(-0.18))
+	baseline.look_at(sole+Vector3.UP*1.35)
+	var near_target_head: Vector3 = sole+Vector3(0,1.95,-0.73)
+	var previous_separation: float = absf(baseline.unproject_position(top).y-baseline.unproject_position(near_target_head).y)
+	var new_separation: float = absf(rig.camera.unproject_position(top).y-rig.camera.unproject_position(near_target_head).y)
+	var separation_ratio: float = new_separation/previous_separation
+	check.call(previous_separation>1.0 and separation_ratio>=1.5,"Higher combat view increases actual close-target head projection separation by at least50% versus the shallow draft")
 	baseline.free()
 	hero.locked_target = enemy
 	rig.snap()
@@ -119,6 +146,29 @@ static func run(world: Node3D, check: Callable) -> bool:
 		var material: StandardMaterial3D = instance.material_override
 		depth_tested = depth_tested and not material.no_depth_test and material.depth_draw_mode==BaseMaterial3D.DEPTH_DRAW_DISABLED
 	check.call(depth_tested,"Every actual contact material tests depth and avoids writing a transparent screen-covering depth layer")
+	var view: Vector3 = (rig.camera.global_position-Vector3(contact.point)).normalized()
+	var screen_axis: Vector3 = (rig.camera.global_basis.x-view*rig.camera.global_basis.x.dot(view)).normalized()
+	var edge_packet: Dictionary = contact.duplicate(true)
+	edge_packet.contact_blade_grip = Vector3(contact.point)-view*0.4
+	edge_packet.contact_blade_tip = Vector3(contact.point)+view*0.79
+	edge_packet.contact_blade_motion = screen_axis*4.0
+	var edge_effect: RuneImpactEffect = RuneImpactEffect.new()
+	stage.add_child(edge_effect)
+	edge_effect.setup(edge_packet,1)
+	var projected: Dictionary = _core_projection(edge_effect,rig.camera)
+	var core_id: int = edge_effect._meshes.core.get_instance_id()
+	check.call(absf(edge_effect._cut_plane_normal.dot(view))<0.0001 and projected.finite and projected.triangle_area_pixels>1.0 and projected.radius_from_core_center_m<=0.120001 and projected.vertices==36 and edge_effect._core_basis_source=="projected_confirmed_cut" and is_equal_approx(edge_effect._core_edge_alpha,0.18),
+		"Actual revised charged core retains finite nonzero projected area within120mm when the unchanged physical blade plane is edge-on")
+	edge_packet.contact_blade_grip = Vector3(contact.point)-screen_axis*0.4
+	edge_packet.contact_blade_tip = Vector3(contact.point)+screen_axis*0.79
+	edge_packet.contact_blade_motion = view*4.0
+	edge_effect.setup(edge_packet,0)
+	var parallel: Dictionary = _core_projection(edge_effect,rig.camera)
+	check.call(parallel.finite and parallel.triangle_area_pixels>1.0 and edge_effect._core_basis_source=="view_plane_fallback" and edge_effect._meshes.core.get_instance_id()==core_id,
+		"A view-parallel cut uses a visible camera-right core fallback and reuses the same mesh")
+	edge_effect._process(0.075)
+	check.call(edge_effect._meshes.core.get_surface_count()==0 and not edge_effect._visuals.core.visible and edge_effect.presentation_report().cut_visible,
+		"The camera-facing charged core stops within75ms while the separate physical directional cut can continue")
 	var rejected: RuneImpactEffect = RuneImpactEffect.new()
 	stage.add_child(rejected)
 	rejected.setup(unconfirmed,1)
@@ -152,12 +202,14 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(trail.mesh.surface_get_arrays(1)==frozen,"Zero-delta hitstop preserves the complete charged edge geometry and colors")
 	effect._process(RuneImpactEffect.MAX_LIFETIME)
 	rotated._process(RuneImpactEffect.MAX_LIFETIME)
-	check.call(effect.is_queued_for_deletion() and rotated.is_queued_for_deletion(),"Both contact quality modes release within the existing bounded lifetime")
+	edge_effect._process(RuneImpactEffect.MAX_LIFETIME)
+	check.call(effect.is_queued_for_deletion() and rotated.is_queued_for_deletion() and edge_effect.is_queued_for_deletion(),"Both contact quality modes release within the existing bounded lifetime")
 	Session.shake = true
 	rig.snap()
 	# Nominal ray misses this side post, but the positive-X kick enters it.
 	# Only the second query can keep the final kicked camera outside the post.
-	var post: StaticBody3D = _wall(stage,Vector3(0.585,2.0,5.3),Vector3(0.05,2.0,1.0))
+	var nominal: Vector3 = rig.camera.global_position
+	var post: StaticBody3D = _wall(stage,Vector3(nominal.x+0.035,nominal.y,nominal.z+0.18),Vector3(0.05,2.0,1.0))
 	await world.get_tree().physics_frame
 	await world.get_tree().physics_frame
 	var side_hit: Dictionary = contact.duplicate(true)
@@ -166,13 +218,15 @@ static func run(world: Node3D, check: Callable) -> bool:
 	rig.apply_impact(side_hit)
 	rig._physics_process(0.04)
 	var post_box: AABB = AABB(post.position-Vector3(0.025,1.0,0.5),Vector3(0.05,2.0,1.0))
-	check.call(not post_box.has_point(rig.camera.global_position) and rig.camera.global_position.x<0.50,"Final impact displacement is rechecked against a side obstacle missed by the unshaken follow ray")
+	check.call(not post_box.has_point(rig.camera.global_position) and rig.camera.global_position.x<nominal.x-0.05,"Final impact displacement is rechecked against a side obstacle missed by the unshaken follow ray")
 	var path: String = ProjectSettings.globalize_path("res://../build/verification/combat-feedback/native.json").simplify_path()
 	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
 	var file: FileAccess = FileAccess.open(path,FileAccess.WRITE)
 	if file!=null:
 		file.store_string(JSON.stringify({"scope":"Native actual projection, skin-marker ribbon, emitted mesh/material, bounded lifecycle and physics-ray presentation fixtures only; no real-input/continuousAV/targetGPU/AAA approval",
 			"portrait":portrait,"portrait_height_ratio_vs_v019":ratio,"far_lock":locked,
+			"near_target_head_separation":{"previous_pixels":previous_separation,"current_pixels":new_separation,"ratio":separation_ratio},
+			"edge_on_core":projected,"view_parallel_core":parallel,
 			"cut_aabb":cut_bounds,"rotated_cut_aabb":rotated_bounds,"charged_trail":trail.presentation_report(),
 			"source_sha256":{"effect":FileAccess.get_sha256("res://scripts/world/impact_effect.gd"),"trail":FileAccess.get_sha256("res://scripts/actors/blade_trail.gd"),"camera":FileAccess.get_sha256("res://scripts/world/camera_rig.gd")}},"\t")+"\n")
 	Session.shake = saved_shake

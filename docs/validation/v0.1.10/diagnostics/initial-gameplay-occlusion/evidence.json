@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Historical old-camera scripted native MovieMaker attempt4; selected actual raster inspected. Functional capture is not clean shutdown, human play, continuous AV, browser, hardware or AAA approval.",
+  "reported_source_head": "74d3a140bfa18840289f877b4d63a42eec571ac9",
+  "source_head_scope": "Tracked source snapshot reported by capture owner; capture harness was untracked. The build-label string in the log is not source identity. Actual per-file digests are retained in the three input manifests.",
+  "camera_source_sha256": "4d538d485e7bcf8676c1b4bd36598bea7b83c823d1724a672d0ad5e2cd8ad774",
+  "impact_source_sha256": "160f474dfed6013b93032f4c406ea98bd47bbf95bc9a13798d205ae4097ee460",
+  "source_to_capture_changed_paths": [
+    "project.godot"
+  ],
+  "capture_to_runtime_changed_paths": [
+    "assets/models/boss.glb.import",
+    "assets/models/hero.glb.import",
+    "assets/models/keeper.glb.import",
+    "assets/models/sentinel.glb.import"
+  ],
+  "manifest_comparison_scope": "Path/hash changes only; no claim that source/capture/runtime dictionaries are identical.",
+  "actual_marker_worlds_logged": false,
+  "visual_decision": "Hero obscures the locked victim/contact in the selected actual confirmed-contact raster. Physical impact-plane/AABB tests did not establish visible feedback. New camera/core changes require their own source-bound projection, raster and clean-exit evidence.",
+  "file_fidelity": "review/log/PNG/input manifests copied byte-exact from the preserved attempt4 output; original raw AVI and silent delivery remain outside this archive."
+}

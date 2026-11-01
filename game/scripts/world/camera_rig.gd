@@ -2,8 +2,10 @@ class_name RuneCamera
 extends Node3D
 
 const BASE_FOV := 56.0
-const FREE_DISTANCE := 5.2
+const FREE_DISTANCE := 4.5
 const MAX_LOCK_DISTANCE := 8.6
+const FOLLOW_HEIGHT := 2.4
+const SHOULDER_OFFSET := 1.2
 const IMPACT_DURATION := 0.19
 const HERO_HEIGHT := 1.82
 var camera: Camera3D
@@ -87,7 +89,10 @@ func _focus_point() -> Vector3:
 	return point
 
 func _offset(distance: float) -> Vector3:
-	return Vector3(0.55,1.6+sin(pitch)*distance,distance*cos(pitch)).rotated(Vector3.UP,yaw)
+	# A higher view separates overlapping combatants and the contact plane.
+	# FOV stays fixed; the closer follow balances hero size with the higher,
+	# wider shoulder view. Confirmed attacks do not drive the follow distance.
+	return Vector3(SHOULDER_OFFSET,FOLLOW_HEIGHT+sin(pitch)*distance,distance*cos(pitch)).rotated(Vector3.UP,yaw)
 
 func _frame_subjects() -> Array[Dictionary]:
 	var hero_scale := player.global_basis.get_scale().y*(player.visual.scale.y if is_instance_valid(player.visual) else 1.0)
@@ -151,6 +156,7 @@ func framing_report() -> Dictionary:
 			"behind_camera":camera.is_position_behind(foot) or camera.is_position_behind(head)})
 	var result := {"scope":"Nominal production body/root projection, not evaluated mesh or UI collision approval",
 		"free_distance":FREE_DISTANCE,"follow_distance":_framing_distance,"wanted_distance":_wanted_distance,
+		"follow_height_bias":FOLLOW_HEIGHT,"shoulder_offset":SHOULDER_OFFSET,
 		"maximum_lock_distance":MAX_LOCK_DISTANCE,"locked":_lock_target()!=null,
 		"viewport":[size.x,size.y],"subjects":bounds}
 	if is_instance_valid(player.visual) and is_instance_valid(player.visual.rig_weapon):

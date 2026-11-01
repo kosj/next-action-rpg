@@ -2013,7 +2013,7 @@
       "kind": "workflow",
       "status": "pending",
       "title": "재저작 active 몸·출처 고정 칼날 곡선·loaded 접촉·무기 profile을 함께 검증한다",
-      "summary": "v0.1.10은 active 몸/팔을 다시 저작하고 같은 source에서91표본 물리 곡선을 고정했다.006은팔peak감소에도준비날의early겹침으로보류했고007은기하를바꿔actualclose첫receipt.358초를확인했다. Hero-only1.8배폭geometry는기존atlas/PBR·마커를공유하고 raw정확보존/native양자화대응을분리했다. native482/0·preview출력은확인했지만2054edge국소악화와누적twist·실제skin/시각·브라우저·연속AV·기기·AAA는전체승인이아니다. 공식0pointtwohand후보는reference-only다.",
+      "summary": "v0.1.10은 active 몸/팔과 출처 고정91표본 곡선·같은 atlas의 Hero-only 검을 함께 검증했다. 이전 native/CI 통과 뒤 실제 화면의 적/접촉점 겹침과 약한 섬광을 발견했고,첫 higher-view clean take도 시각 기각했다. 최종 camera/core art budget 수정은 native486/0·preview·clean actual Game capture/원본 유한 프레임으로 프로토타입 개선만 채택했다. 전체skin/연속AV/기기/AAA는 pending이며 공식0point twohand는 reference-only다.",
       "tags": [
         "combat",
         "animation",
@@ -2025,11 +2025,14 @@
         "VARCO",
         "workflow",
         "전투",
-        "판정"
+        "판정",
+        "projection",
+        "visibility",
+        "가독성"
       ],
       "checked_on": "2026-11-01",
       "context": {
-        "state": "Work in progress; bounded static/raw/native482/0 anddirtypreview export facts confirmed. 007 is at most provisional runtime-QA selection after selected-still review; fullskin/continuousAV/browser/hardware/AAA adoption pending.",
+        "state": "Pending overall quality: bounded final native486/0/preview and clean scripted Game capture confirmed; root accepted modest prototype raster improvement in selected original contact/birth+1/+2/+4 frames. LocaltrustedWebfocus277.923s/errors0 also passed. Fullskin/continuousAV/hearing/fullbrowserjourney/finalcleanCI/public/hardware/AAA remain separate. All earlier functional successes and visual failures retained by source.",
         "baseline": "Publishedv0.1.9 source1e524b1275c6c55d3020ea5c3122afbb8db403e9;body/rest/skin/images/materials/BINprefix/19unrelatedclips preserved;charge/charged_heavy reauthored. Older v019 proofs remain separate.",
         "candidate_and_curve": "HeroFury00725032860B SHA f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb;curve601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e.91uniformsamples/.002s/.34..52s,actorYup-minusZforward/flooroffset.025once;staticresourcepin/sourcechain matched.",
         "curve_precision": "Raw lengthmaxerror1.0372140020198373e-6m/midpointchord.0002503868102881057m. Actualnative91keys+90midpoints×2scales markermaxgrip.066516mm/tip.303980mm;nominalfoot.015378mm. Finite marker precision isnot continuousskin/contact/terrainquality.",
@@ -2041,9 +2044,21 @@
         "weapon_derivative": "Hero-onlygeometry160248B/SHA4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b,factor1.8,1550/2799verticeschanged,4000triangles;hilt/guard/apex/markers/YZ/UV/index/topology preserved,Jacobianinverse-transpose+GramSchmidtTBN,0Bnewatlas. Sentineloriginalunchanged.",
         "native_material_and_geometry": "DuplicategeometryArrayMesh andsetoriginalactivePBR onmeshsurface,noinstancematerialoverride. Nativeoriginalmaterialref/trianglecorrespondence/framevalid;positionerror20.9415micrometers<100micrometercalibratedgate;UVerror2.1263e-5normalized. Rawbyteexactinvariants separatefromnativecompressed/reorderedattributes. Wholeoldcapsuleenvelope.124849m unchanged;notfullmeshcontainment.",
         "provider_reference": "OfficialVARCOstocktwo_hand_attack listed/run0points,onegeneration/no upstreammeshorrigrerun;15151356B/SHA4c5a4f5c2ea39cd4febd1fef81d98fa5683940264fdd633b0a8e46b3bc151334,53joints/31.9sunnamed21channels/commonorigintranslation. Referenceonly,notFuryprojectauthorship/runtime/semantic/rights/AAAapproval;privateidentifiers/media/URLs omitted.",
-        "native_and_preview": "Secondnative482/0 afterfirstfailedmaterialattachmentcontract/importorder-exactnessfixture/feedbacktypeinference. PreviewWebraw146513443<150000000B;WebZIP115767875B/Windows143609182B. Dirtysource notfinalcleanCI/publicrelease.",
-        "not_approved": "Fullskin/allposeclearance,continuous1x/actualgameplayAV/directhearing,actualbrowser/fulljourney,currentcleancommittedCI/public/release,targethardware/AAA. NativeAPI/nominalprojection/source-preservedmetrics do not approve these.",
-        "selected_skin_review": "Selected12matchedBlender stills/public6representatives: noobviousnewcollapse/spike/rupture atcanonicalleftelbow/front/opposite;provisional007runtime-QA adoption only. Numeric2054-edge risk retained;fistwrap/armorcontact/fullskin/continuousAV/hardware/AAA pending. Originalneutral swordusedboth,so broadbladeactualvisibility is separate."
+        "native_and_preview": "OLD-camera secondnative482/0 afterfirstfailedmaterialattachmentcontract/importorder-exactnessfixture/feedbacktypeinference. PreviewWebraw146513443<150000000B;WebZIP115767875B/Windows143609182B. Source74d3a140bfa18840289f877b4d63a42eec571ac9 and bundle6144593 predate the new camera/core and cannot validate them or finalpublicrelease.",
+        "not_approved": "Fullskin/allposeclearance,continuous1x/actualgameplayAV/directhearing,targethardware/AAA. At this local record time finalcleancommittedCI/newsourcebrowserfulljourney/publicrelease still separatepending;later PR/Actions may record those without rewriting this frozenlocalproof. Nominalprojection/meshAPI and selectedrasters do not approve broaderquality.",
+        "selected_skin_review": "Selected12matchedBlender stills/public6representatives: noobviousnewcollapse/spike/rupture atcanonicalleftelbow/front/opposite;provisional007runtime-QA adoption only. Numeric2054-edge risk retained;fistwrap/armorcontact/fullskin/continuousAV/hardware/AAA pending. Originalneutral swordusedboth,so broadbladeactualvisibility is separate.",
+        "camera_visibility_failure": "Oldlowcamera actual attempt4 raster had Hero/target/contact overlap despite nominalprojection/AABB success. Firsthigher-view95a clean take still had weak flash. Source-bound CPU rawskin/rays tied to exact weaktrace showed testedcorecenter NOToccluded by Hero/body/broadblade/target;only1/12starperimeter blockedbybroadblade. Do not infer buriedcore asestablishedcause;finite raysarenotfullrasterapproval.",
+        "capture_attempt4": "Historicaloldcamera4d538d485e7bcf8676c1b4bd36598bea7b83c823d1724a672d0ad5e2cd8ad774/impact160f474dfed6013b93032f4c406ea98bd47bbf95bc9a13798d205ae4097ee460. 600gameplay+24UI ticks=624logical60Hz/10.4s;one69.3receipt tick359/t.386/phase.255556,5pairedpauseframes/trail4samples12tri,endHP56. functional_capture_gates_passed=true butengine_clean=false:2ObjectDB/1resourceexiterrors. Explicitfinalmarkerworldpoints notlogged;queryvectors/markerUV are not that proof. Three inputmanifests preserve actualsource/capture/runtime diffs.",
+        "weak_camera_source": "Frozen source: camera95a5602a1857b228457464b2cb8d645b6a89e321d4065fef5695b1f60708c2d7/impact6c8b3fb71c85416670f1ad36ef091056224aa015da160f32bf1edfb8b6e8b08b/fixture5a6049806d0f7ee86d0d3dd084acdc872955938a853af03fcd48f82926e683a4. Free5m/heightbias2.4/shoulder.85/FOV56;briefcore projectsactualcutaxis intoviewplane/fallbackcameraright,retainsnormal9mm/depth/75mmradius/52ms/5groups andphysicalpacketplane ribbon/sparks. Newnative486/0 verifies finite nominalprojection/coremesh/radius/expiry/reuse;actualraster/clean gameplay capture pending. Actual clean take later rejected for weak/subtle flash; superseded by final e97/fc39 candidate.",
+        "weak_camera_native_readability": "Actual486checks/0failures/noSCRIPTERROR/error/leakmarkers,dirty614head. Nominalportraitheight.29820349/ratio1.2007883657 vs v019;neartargethead38.8568726px vsoldshallow22.5411072px/ratio1.7238227. Edge-on+viewparallelfallback core36vertices/27.05558085pixel2/radius.075000003m;52msexpiry/reuse andexistingdirectionaldepth/wall/shake/lock gates passed. Nativefixtureprojection isnot evaluatedskin/actualcontact/UIocclusionapproval.",
+        "weak_preview": "Dirty614head newcamera/core preview:rawWeb146516803B<150000000;WebZIP115769167B/SHA7768a783fa916442afd108f89d68719978d0326bf03c44991fc98dc3f81b99f8;Windows143610474B/SHAfedcdc7e97420f9594702cb7fd732e9723b4a6cea28758d1812ab2e839ae9b7d. ExistingZIPbytes/SHA read directly;notfinalcleancommittedCI/publicrelease.",
+        "final_camera_source": "camerae97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476/effectfc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049/fixture554198d59c3e43774438db0ca80514ecf58832b970653d898da75be9196106e3. Free4.5m/height2.4m/shoulder1.2m/FOV56;explicitartbudgetrevision core75→120mm/52→75ms/outeralpha.06→.18. Sameconfirmedpoint/normal9mm/depth/5groups/wholelifetime/gameplay/curve/assets retained;physicalribbon/sparks packetplane,briefcoreprojectedcutaxis withviewparallelfallback.",
+        "final_native_and_preview": "Actual486checks/0failures/error-leakmarkers0;nominalportraitratio1.258459651vs v019,nearhead44.9398804px/22.5411072px=1.99368558. Edge-on/viewparallelcore36vertices/78.2598739pixel2/radius.119999997m;reuse/75msexpiry/existinggatespassed. Dirty614head rawWeb146517123B<150000000;WebZIP115769331B/SHAe6865e2772df7340592cb9e4ce43b6fbcdf17e16bf90fe8f8b54b10d5542d304;Windows143610638B/SHA141346237dff91066b4f4b7b800ecf32974d303a6e2a8b2607344ee895e2db3f. Existingfilebytes/SHA directlychecked;notfinalcleanrelease.",
+        "final_scripted_gameplay": "Actual462.367s/624deliveryframes/60Hz/10.4s=600gameplay+24UI;one69.3HP95→25.7/fivepairedpauseframes/endHeroHP56. Drawnblade1.1900017m/pointtoactualsharpinneraxis.0784555m/recoil.3500023m. Functional=true/engineclean=true/errors[]/audioWeakRefsreleased/pendingplaybacks0/players0/sourceunchanged/processesclosed. Dirty614independentsourcecopy;not humanplay/browser/audiohearing/performanceproof.",
+        "final_raster_decision": "Root directly accepted selected original contactPNG andbirth/+1/+2/+4: clearer targethelmet/upperbody with residualoverlap;smalllocalizedgoldwhiteglint,brief/subtle/modestprototypeimprovement only. Biggoldverticalplanes in+4 are existingenemy startupwarnings,notcontactFX. SilentMP4SHAda3df4ad4f16e7dec1b0e94ac8da31e5d899fb74b0d8608716a9bcc5484fff4d;fulltrace decodedSHA9e9301c0769f545c7932ebe973bd73cb07cf4fa380355949c0f6b08dee500430. Generation/selectedframes are notcontinuousAV/AAAapproval.",
+        "old_ci_scope": "Old61445931e96cd568357991eced4629554dd37cec run41312088764 all3requiredsuccess;source53SHA matched/clean/exportunchanged/fullmobile954.339s/errors0. Still failed actualcontactreadability. Appliesonlyoldcamera,notnewcameraCI/public/AAA.",
+        "final_local_web_focus": "Frozen53sourcehashes/e97camera/fc39effect actualWebfocused277.923s/errors[]/trusted2pointer/one69.3/recoil.350000406m/finalHP72/exportunchanged. Browserfrozenpair UNOBSERVED;native5pausedframes areseparateproof. Notfullworkflow/cleancommittedCI/publicrelease/AV/hardware/AAA.",
+        "script_input_comparison": "Baseline/final originaltrace inputevents directlyequal throughrelease tick334 (34events);baselineactualcontacttick362 vsfinal359. No retiming/forcedcontact. Source/capture/runtime overlays and source differences retained."
       },
       "sources": [
         "docs/COMBAT_MOTION_POLISH_SLICE.md",
@@ -2068,7 +2083,31 @@
         "game/scripts/actors/actor_visual.gd",
         "reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md",
         "art_source/production/candidates/lyra-fury-001/skin-review/README.md",
-        "art_source/production/candidates/lyra-fury-001/skin-review/review.json"
+        "art_source/production/candidates/lyra-fury-001/skin-review/review.json",
+        "docs/validation/v0.1.10/diagnostics/initial-gameplay-occlusion/README.md",
+        "docs/validation/v0.1.10/diagnostics/initial-gameplay-occlusion/review.json",
+        "docs/validation/v0.1.10/diagnostics/initial-gameplay-occlusion/evidence.json",
+        "docs/validation/v0.1.10/diagnostics/initial-gameplay-occlusion/archive-manifest.json",
+        "game/scripts/world/camera_rig.gd",
+        "game/scripts/world/impact_effect.gd",
+        "game/tests/feedback_polish_regressions.gd",
+        "docs/validation/v0.1.10/native-feedback-readability.json",
+        "docs/validation/v0.1.10/native-readability.log",
+        "docs/validation/v0.1.10/readability-preview.json",
+        "docs/validation/v0.1.10/native-visible-contact.json",
+        "docs/validation/v0.1.10/native-visible-contact.log",
+        "docs/validation/v0.1.10/visible-contact-preview.json",
+        "docs/validation/v0.1.10/native-gameplay/baseline/README.md",
+        "docs/validation/v0.1.10/native-gameplay/final/README.md",
+        "docs/validation/v0.1.10/native-gameplay/final/review.json",
+        "docs/validation/v0.1.10/native-gameplay/final/archive-manifest.json",
+        "docs/validation/v0.1.10/diagnostics/weak-camera-core/README.md",
+        "docs/validation/v0.1.10/diagnostics/weak-camera-core/composition-check.json",
+        "docs/validation/v0.1.10/diagnostics/old-camera-ci.json",
+        "docs/validation/v0.1.10/native-gameplay/README.md",
+        "docs/validation/v0.1.10/native-gameplay/comparison.json",
+        "docs/validation/v0.1.10/focused-browser/SUMMARY.json",
+        "docs/validation/v0.1.10/focused-browser/README.md"
       ]
     }
   ]

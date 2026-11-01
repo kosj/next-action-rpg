@@ -1,0 +1,49 @@
+{
+  "scope": "Curated historical evidence; per-file SHA excludes this manifest.",
+  "files": {
+    "README.md": {
+      "bytes": 1321,
+      "sha256": "2f947d906ae0fb6faa6ae6da478dc403de282774e2df9333f74ec5e1e0ee5e71"
+    },
+    "capture-inputs.json": {
+      "bytes": 35852,
+      "sha256": "eedb923c4c9cca046d541d485d348587808c18408b62a9a12da7bacf439ddc6c"
+    },
+    "capture.json": {
+      "bytes": 5614,
+      "sha256": "13d0385fc365e0be1f89e7bec4d2194ee06be1d1cdb8494e2e23ceb77da70ed4"
+    },
+    "contact.png": {
+      "bytes": 1172300,
+      "sha256": "e91cc9f257674a1469d7b5c7d6e4ead58334fb985cb8b22b6d5eae43bd1b417e"
+    },
+    "frames.json.gz": {
+      "bytes": 478891,
+      "sha256": "d5011c84e8cddbbd274bfc90df645511b75036bc2302a46ce2ca95076faaa522"
+    },
+    "gameplay-logical1x.mp4": {
+      "bytes": 5927834,
+      "sha256": "9f284b3bd0dbb3c5e01c33feb87c34aefde068387d91349b499e8aa76c69cf8c"
+    },
+    "gameplay.log": {
+      "bytes": 1630,
+      "sha256": "e61ab4b7bf0d57d96d58c073038320e297e1cfd55ba8c1ed16dd412fa8e69113"
+    },
+    "review.json": {
+      "bytes": 9011,
+      "sha256": "4212aa959cdb84bfc4eb08fd9cd75dac6e4cb6972c9c32502062542b5af630a7"
+    },
+    "runtime-inputs.json": {
+      "bytes": 35852,
+      "sha256": "3b2cdc142aff55f03f1a69452d194c9d8753ad45cf7003432f9101d28327d1d7"
+    },
+    "source-inputs.json": {
+      "bytes": 35560,
+      "sha256": "33c3bda69d43d56b9e9aac285125f500dbb6549cfc19dd1c7c6eb7b82e23794b"
+    },
+    "trace-provenance.json": {
+      "bytes": 528,
+      "sha256": "5642bb6b6d8c146e11f45fb2554335f4806fab37a6cc5a7c8e19daac5f48096b"
+    }
+  }
+}

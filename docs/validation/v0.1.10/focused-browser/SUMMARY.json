@@ -1,0 +1,78 @@
+{
+  "scope": "Frozen e97cbf03/fc39d672 actual Web export, genuine mobile touch focused preview; not clean committed CI, full workflow, public release, continuous AV, hardware or AAA approval",
+  "source_head_at_start": "61445931e96cd568357991eced4629554dd37cec",
+  "source_dirty": true,
+  "camera_sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+  "effect_sha256": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049",
+  "recorded_source_hash_count": 53,
+  "export_unchanged": true,
+  "result": {
+    "outcome": "charged_heavy_focused_passed",
+    "seconds": 277.923,
+    "errors": [],
+    "scope": "Actual charged whiff/no burst, first encounter charged contact, once per strike-target,69.3 damage/heavy_hit/.075 both-hitstop/collision recoil only; not full workflow or AAA audiovisual approval"
+  },
+  "confirmed_contact_count": 1,
+  "recoil_horizontal_m": 0.3500004060045815,
+  "trusted_touch": true,
+  "max_touch_points": 2,
+  "final_health": 72,
+  "frozen_browser_snapshot_observed": false,
+  "files": [
+    {
+      "file": "charged-heavy-result.json",
+      "bytes": 296,
+      "sha256": "457b0d986d67f3d5a115039c6cc9db39a476894f992ddc0543cd56a1fd0fcad2"
+    },
+    {
+      "file": "charged-heavy-proof.json",
+      "bytes": 52524,
+      "sha256": "80ca316f3de410ae327ac39864cb6538310f012579e4e06ca9a7b6d5ad61609d"
+    },
+    {
+      "file": "charged-heavy-errors.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "file": "charged-heavy-dispatched-inputs.json",
+      "bytes": 9817,
+      "sha256": "2bf9a91d6233751abec5adfa33d72d02c665512697fb43366d22c317afd558a1"
+    },
+    {
+      "file": "charged-heavy-release-timeline.json",
+      "bytes": 42514,
+      "sha256": "060a2ca6f14419ef61005d1d7ec75825df91eac8bf8da76ad225d827d27b820b"
+    },
+    {
+      "file": "mobile-export-context.json",
+      "bytes": 8557,
+      "sha256": "b1085cbd0b34d5464b77033b9e33f7bdf437266186f9022a8e7dca8e7c3cd6d8"
+    },
+    {
+      "file": "mobile-action-observations.json",
+      "bytes": 37070,
+      "sha256": "097bc3d543dcaf47fb7b05d3d2a4952ec99d007b5c5abb256a6832b3acc90a52"
+    },
+    {
+      "file": "mobile-navigation.json",
+      "bytes": 3793,
+      "sha256": "5768ac0ce8bcdc277410bb3c23f702c9434908bd19ab60905f04d03fc8af9f6c"
+    },
+    {
+      "file": "mobile-states.json",
+      "bytes": 103688,
+      "sha256": "628b1338e12708c007261d4d22f06cc1d327d15bfd1e450e8725b062de78bdc4"
+    },
+    {
+      "file": "charged-heavy-whiff-no-burst.png",
+      "bytes": 898489,
+      "sha256": "2257303f704094f08cd5e1fb8f8c6c371e87c12414ac05b4df6f47de622f64e8"
+    },
+    {
+      "file": "charged-heavy-contact-paused.png",
+      "bytes": 277191,
+      "sha256": "1771461db94ce172afd21ae70457d57bd732c3b455bd98083f8dcbb6d3cdb1e6"
+    }
+  ]
+}

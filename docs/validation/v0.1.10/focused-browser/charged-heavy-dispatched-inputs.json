@@ -1,0 +1,623 @@
+[
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 1,
+        "x": 195.0,
+        "y": 236.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      1
+    ],
+    "dispatch_seconds": 1.894
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 1,
+        "x": 195.0,
+        "y": 236.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      1
+    ],
+    "dispatch_seconds": 3.068
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 2,
+        "x": 195.0,
+        "y": 504.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      2
+    ],
+    "dispatch_seconds": 2.278
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 2,
+        "x": 195.0,
+        "y": 504.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      2
+    ],
+    "dispatch_seconds": 2.503
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 3,
+        "x": 300.0,
+        "y": 808.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      3
+    ],
+    "dispatch_seconds": 2.238
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 3,
+        "x": 300.0,
+        "y": 808.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      3
+    ],
+    "dispatch_seconds": 2.035
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 768.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 2.035
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 2.044
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.002
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.002
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.002
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.003
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.004
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.003
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.005
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.006
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.002
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.007
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 721.632,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 0.002
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.0,
+        "y": 722.3983395423887,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 2.819
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.00000108105546,
+        "y": 738.7552479591367,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 3.009
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.00000136063194,
+        "y": 753.1221466102602,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 2.163
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 4,
+        "x": 76.00000136063194,
+        "y": 753.1221466102602,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      4
+    ],
+    "dispatch_seconds": 2.081
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 5,
+        "x": 300.0,
+        "y": 808.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5
+    ],
+    "dispatch_seconds": 3.079
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 6,
+        "x": 76.0,
+        "y": 768.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      6
+    ],
+    "dispatch_seconds": 1.757
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 6,
+        "x": 76.0,
+        "y": 714.8,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      6
+    ],
+    "dispatch_seconds": 1.772
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 6,
+        "x": 76.0,
+        "y": 714.8,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      6
+    ],
+    "dispatch_seconds": 2.103
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 7,
+        "x": 246.0,
+        "y": 754.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      7
+    ],
+    "dispatch_seconds": 3.398
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 7,
+        "x": 246.0,
+        "y": 754.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      7
+    ],
+    "dispatch_seconds": 2.334
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 8,
+        "x": 76.0,
+        "y": 768.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      8
+    ],
+    "dispatch_seconds": 3.993
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 8,
+        "x": 76.0,
+        "y": 748.4,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      8
+    ],
+    "dispatch_seconds": 2.507
+  },
+  {
+    "type": "touchMove",
+    "points": [
+      {
+        "id": 8,
+        "x": 76.0,
+        "y": 768.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      8
+    ],
+    "dispatch_seconds": 3.194
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 5,
+        "x": 300.0,
+        "y": 808.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      5,
+      8
+    ],
+    "dispatch_seconds": 2.785
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 8,
+        "x": 76.0,
+        "y": 768.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      8
+    ],
+    "dispatch_seconds": 2.702
+  },
+  {
+    "type": "touchStart",
+    "points": [
+      {
+        "id": 9,
+        "x": 356.0,
+        "y": 34.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      9
+    ],
+    "dispatch_seconds": 4.378
+  },
+  {
+    "type": "touchEnd",
+    "points": [
+      {
+        "id": 9,
+        "x": 356.0,
+        "y": 34.0,
+        "radiusX": 1,
+        "radiusY": 1,
+        "force": 0.5
+      }
+    ],
+    "driver_ids_at_send": [
+      9
+    ],
+    "dispatch_seconds": 4.235
+  }
+]
