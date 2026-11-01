@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-weight-002",
+  "status": "local_native_functional_verified_visual_pending",
+  "source_file": "source.glb",
+  "source_bytes": 17533004,
+  "source_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+  "source_parent": "art_source/production/candidates/sentinel-weight-001/source.glb",
+  "source_parent_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+  "runtime_installation": {
+    "file": "game/assets/models/production/sentinel_weight_gameplay.glb",
+    "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "scope": "Raw candidate installed unchanged and actual local native448/0 integration verified. Focused browser, clean committed CI, public/release, continuous1x AV, terrain, target hardware and AAA approval pending."
+  },
+  "provenance_files": [
+    {
+      "file": "tools/author_sentinel_recovery.py",
+      "sha256": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086"
+    },
+    {
+      "file": "tools/author_weight_actions.py",
+      "sha256": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/render_impact_review.py",
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    },
+    {
+      "file": "art_source/production/character_actions/sentinel-weight-recovery.json",
+      "sha256": "6bcf3d9bce9cf0ff558f719c8c75d20b21d843f81e59ef271650fbb028b413ef"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "death",
+    "enemy_attack",
+    "heavy_hit",
+    "hit",
+    "idle",
+    "run",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+    "source_bytes": 17410020,
+    "output_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "output_bytes": 17533004,
+    "retained_animation_names": [
+      "death",
+      "enemy_attack",
+      "hit",
+      "idle",
+      "RESET",
+      "run",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [
+      "heavy_hit"
+    ],
+    "authored_animation_names": [
+      "heavy_hit"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 596750,
+      "sha256": "a1216dde87c00b3f236d8aad9829cb3e437f2798fffb0370ce9d577c0649e2af"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 19654,
+      "sha256": "b403db10e9165f8a6ca9fdccf26423127700a2c175c6f00dd34099f137f0f293"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 5221,
+      "sha256": "658adb8e4ae38bc77641c0345cafc7f99042d12aace8518c1a3f9d0fce75ae10"
+    },
+    {
+      "file": "rejected-motion-summary.json",
+      "bytes": 1142,
+      "sha256": "5ab0e1e06e679ec3e7fad9ebe2b3b6823479898f71b0b535562b957ee29d8481"
+    }
+  ],
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "Original idle limb branch restored for new heavy_hit; existing weight choreography retained; body/rest/skin/materials/unrelated raw clips and frozen hero/base author preserved.",
+  "review": {
+    "scope": "Actual reimported new GLB with runtime sword/socket, neutral Blender4.3.2; no actual Godot runtime/normal-speed AV/hardware/AAA approval.",
+    "file": "studio-review/review.json",
+    "sha256": "331cadf177e57328ba79c75cab646437a809d80b47459f6a36ac8085b42264df",
+    "rendered_glb_sha256_matches_candidate": true,
+    "contact_sheet": "studio-review/contact-sheet.png",
+    "contact_sheet_sha256": "bda018d4ffd4b343ac7570366b92b33ecd02e5463485e169f1a1f4d0f7bd59cb"
+  },
+  "local_native_verification": {
+    "status": "local_native_functional_verified_visual_pending",
+    "checks": 448,
+    "failures": 0,
+    "exit_code": 0,
+    "source_asset": "game/assets/models/production/sentinel_weight_gameplay.glb",
+    "source_asset_sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+    "source_tree_dirty": true,
+    "scope": "Actual local dirty-preview native integration and imported pose/clock/guard checks only. Finite motion capture and listed raster review are separately scoped; no continuous normal-speed AV, target hardware or AAA approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-runtime.log",
+        "sha256": "7789d8042bf76afb9995c7e723d697837aba022ae5662ff341ae069dafb3f095"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-recovery.json",
+        "sha256": "1ef7f902c35eea59b398c3e3619b76eee067997dea320b2966b5ba99688e2944"
+      },
+      {
+        "file": "docs/validation/v0.1.9/local-preview.json",
+        "sha256": "c19e5c48d1c9455ed10ae9c3226ce5fd4f4d46babfc8f282b20c149ad8a119f1"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ],
+    "focused_browser": "pending",
+    "clean_committed_ci": "pending",
+    "public_pages": "pending",
+    "release": "pending",
+    "continuous_normal_speed_av": "pending",
+    "terrain_or_resolved_foot_contact": "pending",
+    "target_hardware": "pending",
+    "aaa_approval": "pending",
+    "native_pose_metrics": {
+      "near_end_guard_join": {
+        "max_joint_distance_m": 0.00451725628226995,
+        "max_local_rotation_rad": 0.0216616280376911
+      },
+      "first_idle_join": {
+        "max_joint_distance_m": 0.000487623416120186,
+        "max_local_rotation_rad": 0.00284714554436505
+      },
+      "reaction_clock_preserved": true
+    }
+  },
+  "finite_motion_review": {
+    "status": "finite_capture_and_listed_raster_review_only",
+    "batch": "native-motion-003",
+    "scope": "Actual media generation/encoding/timing/matched-camera/nominal owner placement and listed raster inspection only. Silent offline1x videos are available for human playback. The model inspected still rasters, not continuous video playback or audio. No interactive contact/collision, target-device performance, continuous1x visual/AV or AAA approval.",
+    "source_freeze_verified_during_capture": true,
+    "nominal_owner_y_m": 0.0,
+    "continuous_video_playback_review": "pending",
+    "audio": "silent_no_audio_review",
+    "interactive_collision": "not_exercised_by_capture_fixture",
+    "inherited_issue": "Forearm/gauntlet orientation rolls sharply over charged0.4667..0.4833s in both before and after. This slice does not remove that inherited counterrotation; no wrist deformation/continuous-motion approval.",
+    "evidence": [
+      {
+        "file": "docs/validation/v0.1.9/native-motion/README.md",
+        "sha256": "18170b30c30baa4bbea15f9af79b1ad40143bfe9a5daa44f37ab30c99bc1d9c5"
+      },
+      {
+        "file": "docs/validation/v0.1.9/native-motion/verification.json",
+        "sha256": "ea9d49a3c3696a3ad252ca2f6018ec4021fef0df9d477147884555677376c6ba"
+      }
+    ]
+  }
+}

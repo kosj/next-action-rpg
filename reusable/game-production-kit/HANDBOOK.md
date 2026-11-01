@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.1**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.3**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -86,7 +86,9 @@
 | `v013-generated-art-validation`, `v014-skeletal-preview` | 각 판본의 구조·실행 성공은 그 코드/자산의 범위에서 보존한다. | 실제 code/asset SHA·검사 범위·당시 화면, 현재 판본과의 차이 |
 | `art-skeleton-contract`, `character-preview-final-art-review` | 과거 피벗/스킨 상태나 일부 pose 통과를 현재 최종 아트 승인으로 일반화하지 않는다. | 실제 runtime 종류, 전체 변형·전환·얼굴/손·머리/천·접촉 |
 | `combat-quality-function-versus-heavy-impact` | [전투 기능과 타격감](skills/godot-web-production/references/combat-quality-review.md)을 나누고 dense key/기존 blend의 존재와 동작의 의미·접촉 표현을 별도로 검수한다. | 사용자/코드/정지 화면/정상1배속 영상·음향/기기 근거 구분, 참고 대상 동일성·관찰 범위, 약/강/차지의 명중·빗나감·방어·처치와 공통 접촉 피드백. 미관찰 영상의 타이밍·AAA 달성률을 만들지 않음 |
+| `combat-reference-source-versus-provider-summary` | [참고 영상의 실제 미디어와 제공자 요약·preview](skills/godot-web-production/references/combat-quality-review.md)를 대조하고 원본 판본·편집 cut·직접 시각/청각·제공자 보고를 구분한다. | 공식 ID·실측 길이/해시·preview와 원본 해상도, 같은 shot의 접촉 전후, 기존 부유 대상·편집의 인과 한계, 오디오 존재와 직접 청취 구분. 공개 조사/계정 권한·기능 가격/승인 예산·정상 TLS 경로를 확인하고 비공개 식별자/서명 URL/raw 자산을 공개하지 않음. 현재 게임/새 프로젝트의 AV·기기·AAA 승인은 별도 |
 | `charged-impact-confirmed-contact-clock` | 확정 접촉과 최종 표시 포즈의 시계·원본과 반입 곡선의 key/midpoint·양쪽 hitstop을 함께 비교한다. | 실제 actor frame/바닥 offset, IK pole과 관절 연속성, 씬 전체 재표본화·선택 보존·배포 바이트, 날 구간/반구 중심축·접촉 투영, query와 멈춘 검/잔상의 동일 시점, 충돌 복구를 포함한 실제 밀려남 예산, JS 안전 식별자와 실제 입력 관찰. 정상1배속 AV·실기기·AAA는 별도 |
+| `motion-markers-versus-bone-derivatives` | [마커 정합과 본의 시간 변화](skills/godot-web-production/references/combat-quality-review.md)를 별도 검사하고 source/current·local/global·전체/본별 peak를 구분한다. | 조밀한 key와 일정 시간 표본의 손목 counter-rotation·관절/발 변화, 의도한 하체 변경과 기존 팔 경로 보존, 실제 원본 idle·half-open 복귀와 owner/ground 기준, 실제 충돌 root를 모르는 오프라인 발 보정의 한계. 고정-step movie의 논리1x 몸 동작과 interactive 전투/음향·기기 성능·AAA 승인은 별도 |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 

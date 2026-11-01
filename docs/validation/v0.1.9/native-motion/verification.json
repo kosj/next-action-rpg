@@ -1,0 +1,232 @@
+{
+  "checked_on": "2026-11-01",
+  "adoption_status": "Current curated batch003 with finalSentinel e7e2b5bd and corrected nominal static-floor owner placement. The finite evidence and explicit pending approvals below apply; historical002 is not promoted.",
+  "scope": "Actual media generation/encoding/timing/matched-camera/nominal owner placement and listed raster inspection only. Silent offline1x videos are available for human playback. The model inspected still rasters, not continuous video playback or audio. No interactive contact/collision, target-device performance, continuous1x visual/AV or AAA approval.",
+  "run_source": "build/art-review/weight-motion/task/native-motion-003",
+  "source_manifest": {
+    "file": "capture.json",
+    "sha256": "2c346d6a684a493a558dcdf45ecb7c9642a2e765bf917c07e08cac56f8cd1252"
+  },
+  "source_freeze_verified_during_capture": true,
+  "all_frozen_input_hashes_rechecked_before_archive": true,
+  "source_hash_policy": "render_weight_review.py verified every frozen input after each complete profile while root held all other heavy jobs; original per-frame JSON includes source paths and GLB/import/cache/texture/tool/fixture SHA-256.",
+  "verification": {
+    "hero": {
+      "logical_frames": 162,
+      "fps": 60,
+      "duration_s": 2.7,
+      "matched_camera": true,
+      "forward_step_verified": true,
+      "nominal_owner_y_m": -0.025,
+      "raw_final_pair_frame_numbers": [
+        161,
+        162
+      ],
+      "raw_final_pair_decoded_bytes": 1382400,
+      "raw_final_pair_decoded_md5": [
+        "e559d9bd139a348c91fa08cc0973eee1",
+        "e559d9bd139a348c91fa08cc0973eee1"
+      ],
+      "raw_trimmed_frame_is_identical_to_previous_decoded_frame": true
+    },
+    "sentinel_melee": {
+      "logical_frames": 84,
+      "fps": 60,
+      "duration_s": 1.4,
+      "matched_camera": true,
+      "forward_step_verified": true,
+      "nominal_owner_y_m": 0.0,
+      "raw_final_pair_frame_numbers": [
+        83,
+        84
+      ],
+      "raw_final_pair_decoded_bytes": 1382400,
+      "raw_final_pair_decoded_md5": [
+        "217f25e3aad16a35fb59a9d604da401a",
+        "217f25e3aad16a35fb59a9d604da401a"
+      ],
+      "raw_trimmed_frame_is_identical_to_previous_decoded_frame": true
+    },
+    "hero-arms": {
+      "static_actual_raster_times_s": [
+        0.4667,
+        0.475,
+        0.478,
+        0.48,
+        0.4833
+      ],
+      "lossless_png_copies_verified": true,
+      "matched_camera": true,
+      "nominal_owner_y_m": -0.025,
+      "first_five_source_pngs_byteexact": true,
+      "raw_last_pair_decoded_rgb_sha256": [
+        "f130e78e17a889a57ab543a94ae913557606e83c45258671adcee2b9dd7fe3ee",
+        "f130e78e17a889a57ab543a94ae913557606e83c45258671adcee2b9dd7fe3ee"
+      ],
+      "logical_speed": null,
+      "continuous_motion_approval": false
+    }
+  },
+  "raster_observations": {
+    "inspected": [
+      "hero-contact-sheet.png",
+      "sentinel_melee-contact-sheet.png",
+      "hero-arms-static-strip.png",
+      "hero-arms-03.png"
+    ],
+    "visible_change": "New hero load silhouette/lower leg stance and finalSentinel recoil/recovery differ at listed semantic samples. Full body and weapon stay in frame.",
+    "remaining_issue": "Forearm/gauntlet orientation rolls sharply over charged0.4667..0.4833s in both before and after. This slice does not remove that inherited counterrotation; no wrist deformation/continuous-motion approval.",
+    "lighting_limit": "Floor renders high-key nearwhite under frozen neutral fixture lighting; matched comparison is motion-only, no material/lighting approval.",
+    "ground_placement_scope": "OwnerY=-visual.ground_offset_y observed in all frame snapshots (Heroapproximately-.025m,Sentinel0); source runtimeoffset untouched. This fixes prior static placement mismatch; it is not all-vertex boot-contact, terrainIK or resolved collision approval."
+  },
+  "historical_diagnostics": {
+    "compile001": "Ignored native-motion-001/fixture-parse.log retains first check-only Audio singleton compile failure; fixed by actual root-node autoload resolution before all subsequent batches.",
+    "batch002": "Ignored native-motion-002 preserves full media/proof and byteexact old fixture-source snapshot under public-diagnostic. Body-relative historical evidence only: ownerY0+visualoffset+.025 couldfloatHero25mm; firstSentinel1efa sourceguardjoin later rejected. No batch002 media is mixed into this curated batch003."
+  },
+  "archived_fixture_source": [
+    {
+      "source_path": "tools/render_weight_review.py",
+      "file": "fixture-source/render_weight_review.py",
+      "sha256": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+    },
+    {
+      "source_path": "game/tests/weight_motion_review.gd",
+      "file": "fixture-source/weight_motion_review.gd",
+      "sha256": "c88b87d791181ab89ef2b50f79452896afb3bf9dcab181873b235c7ac6eed98c"
+    },
+    {
+      "source_path": "game/tests/weight_motion_review.tscn",
+      "file": "fixture-source/weight_motion_review.tscn",
+      "sha256": "6cfe7e8a57e55df32d8d282bda2f023861b24eeebcb51907bfeec6345bf2da58"
+    }
+  ],
+  "files": [
+    {
+      "file": "hero-1x.mp4",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-1x.mp4",
+      "bytes": 495869,
+      "sha256": "80b31f1735182e88288f576b8f5cb9d3d52c5d443a33e66a096bcea953e91481"
+    },
+    {
+      "file": "sentinel_melee-1x.mp4",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-1x.mp4",
+      "bytes": 271948,
+      "sha256": "c18fb9b640f67095fdfcce16da01404006e155a12a9f205a2501aac040c70523"
+    },
+    {
+      "file": "hero-contact-sheet.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-contact-sheet.png",
+      "bytes": 438384,
+      "sha256": "d9df1a2b8b93930b89e735e4839615059ee383a922cc30c3d5ec4b45b294052d"
+    },
+    {
+      "file": "sentinel_melee-contact-sheet.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-contact-sheet.png",
+      "bytes": 472253,
+      "sha256": "c5d577f68ccd5c2c7c39fa73918fe27c85881b757687e171d3b929f1fb699181"
+    },
+    {
+      "file": "hero-arms-static-strip.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-static-strip.png",
+      "bytes": 491961,
+      "sha256": "764803fdf8abc3b436f00b3602d71d4cf9bf4a5ddfcba633ea1d62a28b5fcc10"
+    },
+    {
+      "file": "hero-frames.json",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-frames.json",
+      "bytes": 306162,
+      "sha256": "3bb25c1c0ac7a0927fe6036dd475d7b4e81538a35987ec4d05b8dd4fdad33e48"
+    },
+    {
+      "file": "sentinel_melee-frames.json",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-frames.json",
+      "bytes": 159974,
+      "sha256": "5f50e3571c47ab1d7a390087cc8bdcbb0dedcf48551e9a643f3ce3680304f463"
+    },
+    {
+      "file": "hero-arms-frames.json",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-frames.json",
+      "bytes": 19565,
+      "sha256": "f1ead9a72afa0a56df1dfdf064f63edc7548ca350ad812623b5bdb0981a4af2c"
+    },
+    {
+      "file": "capture.json",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/capture.json",
+      "bytes": 5456,
+      "sha256": "2c346d6a684a493a558dcdf45ecb7c9642a2e765bf917c07e08cac56f8cd1252"
+    },
+    {
+      "file": "fixture-project.json",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/fixture-project.json",
+      "bytes": 657,
+      "sha256": "a29bec31359beee21d3cb351d951f31443b77f39e502874178d268397fff6d14"
+    },
+    {
+      "file": "fixture-parse.log",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/fixture-parse.log",
+      "bytes": 73,
+      "sha256": "6d1c065383a27c36804949b6ffa4b09714470b112e5dacc0bd5aeb7b9c147c4e"
+    },
+    {
+      "file": "hero-godot.log",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-godot.log",
+      "bytes": 1165,
+      "sha256": "ef2ee5325589fc40f8e36aeb2a6d523f26a02f52f4fad77c880300cf763ac815"
+    },
+    {
+      "file": "sentinel_melee-godot.log",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-godot.log",
+      "bytes": 1183,
+      "sha256": "c0af55b4c8782f16d896148c4dfcaff38dc25ba1009218d886aef0788498c5c3"
+    },
+    {
+      "file": "hero-arms-godot.log",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-godot.log",
+      "bytes": 1183,
+      "sha256": "b9d1385c798661c28b5e75430fa3c1b83140f09c389b679c5dc3dba4f5a6877b"
+    },
+    {
+      "file": "hero-raw-tail.framemd5",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-raw-tail.framemd5",
+      "bytes": 375,
+      "sha256": "d80a3bdd343522adb11e177c7a836325480f05e909f7e5477bf7683a9bf26635"
+    },
+    {
+      "file": "sentinel_melee-raw-tail.framemd5",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/sentinel_melee-raw-tail.framemd5",
+      "bytes": 375,
+      "sha256": "a14b3edec9b75f13a8b7c6dd52dfc130ffbb32a5722137c2fd94b4ea884df2ec"
+    },
+    {
+      "file": "hero-arms-01.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-01.png",
+      "bytes": 305191,
+      "sha256": "41aa8466d73515058d2532141c984cf25a7ca1a685fbfbe900f41ed31bc46eba"
+    },
+    {
+      "file": "hero-arms-02.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-02.png",
+      "bytes": 309930,
+      "sha256": "eb513da16f2dac96db6190aa93f574e9cc93c710f4979a6b07e27da5f938dede"
+    },
+    {
+      "file": "hero-arms-03.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-03.png",
+      "bytes": 308613,
+      "sha256": "d4c4a2ea22e469561d9ac68cf9757d0d354d4be4ba3406276ce7dd4049f6fe7c"
+    },
+    {
+      "file": "hero-arms-04.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-04.png",
+      "bytes": 309094,
+      "sha256": "109c1cb5d80f2e7a29ecccb59df7a9e9ab1273d9310a4769229bc71224f433e8"
+    },
+    {
+      "file": "hero-arms-05.png",
+      "source_path": "build/art-review/weight-motion/task/native-motion-003/hero-arms-05.png",
+      "bytes": 310706,
+      "sha256": "9639e3b50f38a218a2e8ade560ed2ea3bc4f0eae0370be4df0d646205a93588a"
+    }
+  ],
+  "raw_large_files": "Original AVI and six raw arm PNGs remain in ignored run; decoded tail proof retained here. No raw AVI is needed in gameplay export."
+}

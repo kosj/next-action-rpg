@@ -1,0 +1,37 @@
+{
+  "scope": "Exact selected runtime evidence copies and compact summary; no edited PNGs.",
+  "files": {
+    "SUMMARY.json": {
+      "bytes": 4451,
+      "sha256": "b8d39fe9d68cea1926a1a1c7858f6c17eab7e8f16dc2daf8963ac3dfc99affde"
+    },
+    "contact-paused.png": {
+      "bytes": 247984,
+      "sha256": "3e8adf6cb5ceb16c0a0fdc0d9a9dbafec5973ff257b41afc91eac1b9835e1060"
+    },
+    "export-context.json": {
+      "bytes": 7598,
+      "sha256": "ae82620a62e99e468ec2df499fbcc45efa16904effd67ea912d5ca83ea831af5"
+    },
+    "proof.json": {
+      "bytes": 46572,
+      "sha256": "2d2783deca7927dcb5d27fb11f96ab77c9a535677d26c2ded4f9e01d0cb2dbd9"
+    },
+    "release-timeline.json": {
+      "bytes": 37114,
+      "sha256": "9167c58a6864199879ac59b4ff1ae7ea23903c2abdfba2f0825125f51f8056a4"
+    },
+    "result.json": {
+      "bytes": 296,
+      "sha256": "32129a57cefa4229a5e9cc4275110b514ce3745af7eaf9f77e13beb4c76a223a"
+    },
+    "run.log": {
+      "bytes": 332,
+      "sha256": "20f61e2e9a852b8e674207183811bc3813a6601c8ff2f98a0439780cd3c9a6e8"
+    },
+    "whiff-no-burst.png": {
+      "bytes": 764505,
+      "sha256": "51d4223408741e8e7392d1acb61e359c8bcf39e4bae78fff3863734f584bd691"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "build/art-candidates/heavy-weight-recovery/sentinel-003/sentinel_weight_gameplay.glb",
+  "input_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+  "weapon": "game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "clip": "heavy_hit",
+  "imported_action": "heavy_hit_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8339322209358215,
+      -0.15282638370990753,
+      0.53028404712677,
+      4.5
+    ],
+    [
+      0.551866888999939,
+      0.2309376746416092,
+      -0.8013181090354919,
+      -7.0
+    ],
+    [
+      -3.19237969392816e-09,
+      0.9608911871910095,
+      0.276926189661026,
+      3.5999999046325684
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 3.5,
+  "shots": [
+    {
+      "time_s": 0.0,
+      "file": "heavy_hit-0000.png",
+      "sha256": "dec3bfbc2a7035846e6ad3e951b62b054892452d61d328d6bc7ba4a210e8e449",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.05357144773006439,
+        -0.375,
+        1.2642860412597656
+      ],
+      "actual_weapon_tip_m": [
+        -0.17290440201759338,
+        -1.0465826988220215,
+        2.239394187927246
+      ]
+    },
+    {
+      "time_s": 0.08,
+      "file": "heavy_hit-0080.png",
+      "sha256": "6c3f2e23523726b0b1269a552735fffb9c7d6952024d86032e55eee9a34565ed",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.027675865218043327,
+        -0.22737354040145874,
+        1.1750106811523438
+      ],
+      "actual_weapon_tip_m": [
+        -0.6130159497261047,
+        -1.1624131202697754,
+        1.621305227279663
+      ]
+    },
+    {
+      "time_s": 0.16,
+      "file": "heavy_hit-0160.png",
+      "sha256": "aff1821224204a30437fd5a7710bcf72f675a249719af738ad05dab54f8cc8fb",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.042261719703674316,
+        -0.2738688886165619,
+        1.1353206634521484
+      ],
+      "actual_weapon_tip_m": [
+        -0.5843443274497986,
+        -1.2043333053588867,
+        1.6417624950408936
+      ]
+    },
+    {
+      "time_s": 0.24,
+      "file": "heavy_hit-0240.png",
+      "sha256": "8f7994a00d8223d78abb58a977791dfcc89e87647b56b047159c196016841e1e",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.05625014752149582,
+        -0.34285715222358704,
+        1.1571428775787354
+      ],
+      "actual_weapon_tip_m": [
+        -0.41003522276878357,
+        -1.2042440176010132,
+        1.8980538845062256
+      ]
+    },
+    {
+      "time_s": 0.32,
+      "file": "heavy_hit-0320.png",
+      "sha256": "3f64d5cba314f40cf75a56de27cdfa7821deb95da19576cc2f2a6e9acca1390b",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.06650082767009735,
+        -0.4018789529800415,
+        1.1939140558242798
+      ],
+      "actual_weapon_tip_m": [
+        -0.2300972044467926,
+        -1.1183663606643677,
+        2.1298537254333496
+      ]
+    },
+    {
+      "time_s": 0.48,
+      "file": "heavy_hit-0480.png",
+      "sha256": "8176d72caaf86da8614bc7460c6467fde199edbc5921266d843daf50a06c6e4c",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.05357144773006439,
+        -0.375,
+        1.2642860412597656
+      ],
+      "actual_weapon_tip_m": [
+        -0.17290440201759338,
+        -1.0465826988220215,
+        2.239394187927246
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7579 @@
+{
+	"backend": "gl_compatibility",
+	"camera": [
+		{
+			"basis_columns": [
+				[
+					-0.855396509170532,
+					0.0,
+					-0.517973780632019
+				],
+				[
+					-0.105086848139763,
+					0.979203462600708,
+					0.173543393611908
+				],
+				[
+					0.507201731204987,
+					0.202880635857582,
+					-0.837607204914093
+				]
+			],
+			"orthographic_size": 3.65000009536743,
+			"position_m": [
+				3.5,
+				2.44999980926514,
+				-6.0
+			],
+			"variant": "before"
+		},
+		{
+			"basis_columns": [
+				[
+					-0.855396509170532,
+					0.0,
+					-0.517973780632019
+				],
+				[
+					-0.105086848139763,
+					0.979203462600708,
+					0.173543393611908
+				],
+				[
+					0.507201731204987,
+					0.202880635857582,
+					-0.837607204914093
+				]
+			],
+			"orthographic_size": 3.65000009536743,
+			"position_m": [
+				3.5,
+				2.44999980926514,
+				-6.0
+			],
+			"variant": "after"
+		}
+	],
+	"engine_time_scale": 1.0,
+	"engine_version": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"fixture_motion": "Prescribed open-space actor travel: charged lunge0.576m during active0.34..0.52; sentinel0.35m recoil in0.24s. No physics resolution or gameplay motor. No contact/VFX/audio is generated.",
+	"fps": 60,
+	"frames": [
+		{
+			"frame": 0,
+			"logical_time_s": 0.0,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713583230972,
+						1.26442563533783,
+						-0.374999791383743
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819355010986,
+						-0.117857061326504
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.0166666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903761267662,
+						2.23953366279602,
+						-1.04658317565918
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713583230972,
+						1.26442563533783,
+						-0.374999791383743
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819355010986,
+						-0.117857061326504
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.0166666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903761267662,
+						2.23953366279602,
+						-1.04658317565918
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 1,
+			"logical_time_s": 0.0166666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713583230972,
+						1.26456534862518,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						-0.117857038974762
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.107143066823483
+					],
+					"sampled_time_s": 0.0333333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903835773468,
+						2.23967361450195,
+						-1.04658341407776
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713583230972,
+						1.26456534862518,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						-0.117857038974762
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.107143066823483
+					],
+					"sampled_time_s": 0.0333333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903835773468,
+						2.23967361450195,
+						-1.04658341407776
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 2,
+			"logical_time_s": 0.0333333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713955760002,
+						1.26470351219177,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819474220276,
+						-0.117857106029987
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.107143133878708
+					],
+					"sampled_time_s": 0.05,
+					"state": "idle",
+					"tip_m": [
+						0.172904118895531,
+						2.23981165885925,
+						-1.0465841293335
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713955760002,
+						1.26470351219177,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819474220276,
+						-0.117857106029987
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.107143133878708
+					],
+					"sampled_time_s": 0.05,
+					"state": "idle",
+					"tip_m": [
+						0.172904118895531,
+						2.23981165885925,
+						-1.0465841293335
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 3,
+			"logical_time_s": 0.05,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712391138077,
+						1.2648401260376,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169818997383118,
+						-0.117856867611408
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819176197052,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.0666666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904461622238,
+						2.23994851112366,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712391138077,
+						1.2648401260376,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169818997383118,
+						-0.117856867611408
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819176197052,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.0666666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904461622238,
+						2.23994851112366,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 4,
+			"logical_time_s": 0.0666666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712130367756,
+						1.26497423648834,
+						-0.374999850988388
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819056987762,
+						-0.11785688996315
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818878173828,
+						0.107142932713032
+					],
+					"sampled_time_s": 0.0833333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903999686241,
+						2.24008250236511,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712130367756,
+						1.26497423648834,
+						-0.374999850988388
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819056987762,
+						-0.11785688996315
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818878173828,
+						0.107142932713032
+					],
+					"sampled_time_s": 0.0833333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903999686241,
+						2.24008250236511,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 5,
+			"logical_time_s": 0.0833333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535709448158741,
+						1.26510560512543,
+						-0.374999761581421
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819295406342,
+						-0.11785701662302
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.107142932713032
+					],
+					"sampled_time_s": 0.1,
+					"state": "idle",
+					"tip_m": [
+						0.172903805971146,
+						2.24021315574646,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535709448158741,
+						1.26510560512543,
+						-0.374999761581421
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819295406342,
+						-0.11785701662302
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.107142932713032
+					],
+					"sampled_time_s": 0.1,
+					"state": "idle",
+					"tip_m": [
+						0.172903805971146,
+						2.24021315574646,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 6,
+			"logical_time_s": 0.1,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712875425816,
+						1.26523327827454,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						-0.117856845259666
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.107143007218838
+					],
+					"sampled_time_s": 0.116666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24034142494202,
+						-1.04658377170563
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712875425816,
+						1.26523327827454,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						-0.117856845259666
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.107143007218838
+					],
+					"sampled_time_s": 0.116666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24034142494202,
+						-1.04658377170563
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 7,
+			"logical_time_s": 0.116666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712540149689,
+						1.2653568983078,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819116592407,
+						-0.117856919765472
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.107142947614193
+					],
+					"sampled_time_s": 0.133333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904074192047,
+						2.24046516418457,
+						-1.04658389091492
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712540149689,
+						1.2653568983078,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819116592407,
+						-0.117856919765472
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.107142947614193
+					],
+					"sampled_time_s": 0.133333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904074192047,
+						2.24046516418457,
+						-1.04658389091492
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 8,
+			"logical_time_s": 0.133333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713396966457,
+						1.26547634601593,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						-0.117856815457344
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.107143200933933
+					],
+					"sampled_time_s": 0.15,
+					"state": "idle",
+					"tip_m": [
+						0.172904655337334,
+						2.24058437347412,
+						-1.04658401012421
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535713396966457,
+						1.26547634601593,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						-0.117856815457344
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.107143200933933
+					],
+					"sampled_time_s": 0.15,
+					"state": "idle",
+					"tip_m": [
+						0.172904655337334,
+						2.24058437347412,
+						-1.04658401012421
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 9,
+			"logical_time_s": 0.15,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535710677504539,
+						1.26559007167816,
+						-0.374999821186066
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819295406342,
+						-0.117856957018375
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.166666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903820872307,
+						2.24069809913635,
+						-1.04658329486847
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535710677504539,
+						1.26559007167816,
+						-0.374999821186066
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819295406342,
+						-0.117856957018375
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.166666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903820872307,
+						2.24069809913635,
+						-1.04658329486847
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 10,
+			"logical_time_s": 0.166666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535711348056793,
+						1.26569855213165,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						-0.117856934666634
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818758964539,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.183333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903895378113,
+						2.24080681800842,
+						-1.04658329486847
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535711348056793,
+						1.26569855213165,
+						-0.37499988079071
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						-0.117856934666634
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818758964539,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.183333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903895378113,
+						2.24080681800842,
+						-1.04658329486847
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 11,
+			"logical_time_s": 0.183333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712167620659,
+						1.26580083370209,
+						-0.375000029802322
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819295406342,
+						-0.117856942117214
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818460941315,
+						0.107142992317677
+					],
+					"sampled_time_s": 0.2,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24090909957886,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712167620659,
+						1.26580083370209,
+						-0.375000029802322
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819295406342,
+						-0.117856942117214
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818460941315,
+						0.107142992317677
+					],
+					"sampled_time_s": 0.2,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24090909957886,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 12,
+			"logical_time_s": 0.2,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.053571131080389,
+						1.26589643955231,
+						-0.374999642372131
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						-0.117856845259666
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818937778473,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.216666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903597354889,
+						2.24100494384766,
+						-1.0465829372406
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.053571131080389,
+						1.26589643955231,
+						-0.374999642372131
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						-0.117856845259666
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818937778473,
+						0.107142940163612
+					],
+					"sampled_time_s": 0.216666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903597354889,
+						2.24100494384766,
+						-1.0465829372406
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 13,
+			"logical_time_s": 0.216666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535711199045181,
+						1.26598536968231,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						-0.117856919765472
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169819116592407,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.233333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.2410933971405,
+						-1.04658389091492
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535711199045181,
+						1.26598536968231,
+						-0.374999940395355
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						-0.117856919765472
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169819116592407,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.233333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.2410933971405,
+						-1.04658389091492
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 14,
+			"logical_time_s": 0.233333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.053571280092001,
+						1.26606738567352,
+						-0.374999731779099
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819355010986,
+						-0.11785726994276
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.107143066823483
+					],
+					"sampled_time_s": 0.25,
+					"state": "idle",
+					"tip_m": [
+						0.172904431819916,
+						2.24117517471313,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.053571280092001,
+						1.26606738567352,
+						-0.374999731779099
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819355010986,
+						-0.11785726994276
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.107143066823483
+					],
+					"sampled_time_s": 0.25,
+					"state": "idle",
+					"tip_m": [
+						0.172904431819916,
+						2.24117517471313,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 15,
+			"logical_time_s": 0.25,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535714142024517,
+						1.26614117622375,
+						-0.375000029802322
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819176197052,
+						-0.117856793105602
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.266666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904670238495,
+						2.24124932289124,
+						-1.04658377170563
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535714142024517,
+						1.26614117622375,
+						-0.375000029802322
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819176197052,
+						-0.117856793105602
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.10714291036129
+					],
+					"sampled_time_s": 0.266666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904670238495,
+						2.24124932289124,
+						-1.04658377170563
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 16,
+			"logical_time_s": 0.266666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712912678719,
+						1.26620709896088,
+						-0.374999791383743
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819414615631,
+						-0.117856860160828
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818997383118,
+						0.10714303702116
+					],
+					"sampled_time_s": 0.283333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903895378113,
+						2.24131512641907,
+						-1.04658353328705
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712912678719,
+						1.26620709896088,
+						-0.374999791383743
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819414615631,
+						-0.117856860160828
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818997383118,
+						0.10714303702116
+					],
+					"sampled_time_s": 0.283333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903895378113,
+						2.24131512641907,
+						-1.04658353328705
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 17,
+			"logical_time_s": 0.283333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.26626563072205,
+						-0.374999910593033
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						-0.117856986820698
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169818937778473,
+						0.107142962515354
+					],
+					"sampled_time_s": 0.3,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24137401580811,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.26626563072205,
+						-0.374999910593033
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						-0.117856986820698
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169818937778473,
+						0.107142962515354
+					],
+					"sampled_time_s": 0.3,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24137401580811,
+						-1.04658365249634
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 18,
+			"logical_time_s": 0.3,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.0535712167620659,
+						1.26428604125977,
+						-0.375
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819533824921,
+						-0.117857076227665
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.10714303702116
+					],
+					"sampled_time_s": 0.0,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.172904372215271,
+						2.23939418792725,
+						-1.04658341407776
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0
+					],
+					"grip_m": [
+						0.053571455180645,
+						1.2642856836319,
+						-0.375000059604645
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819474220276,
+						-0.117857031524181
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169818818569183,
+						0.107143141329288
+					],
+					"sampled_time_s": 0.0,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.17290472984314,
+						2.23939347267151,
+						-1.0465841293335
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 19,
+			"logical_time_s": 0.316666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0243055559694767
+					],
+					"grip_m": [
+						0.0501360930502415,
+						1.25850331783295,
+						-0.336464643478394
+					],
+					"left_foot_m": [
+						-0.203569561243057,
+						0.169759452342987,
+						-0.0935526788234711
+					],
+					"right_foot_m": [
+						0.203590109944344,
+						0.169767081737518,
+						0.131452485918999
+					],
+					"sampled_time_s": 0.0166666662941376,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.21927447617054,
+						2.18387413024902,
+						-1.06528663635254
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0243055559694767
+					],
+					"grip_m": [
+						0.0496142581105232,
+						1.25133740901947,
+						-0.328262597322464
+					],
+					"left_foot_m": [
+						-0.20358020067215,
+						0.169743776321411,
+						-0.0935677140951157
+					],
+					"right_foot_m": [
+						0.203584402799606,
+						0.169730067253113,
+						0.131440043449402
+					],
+					"sampled_time_s": 0.0166666662941376,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.23809152841568,
+						2.16381549835205,
+						-1.06850647926331
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 20,
+			"logical_time_s": 0.333333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0486111119389534
+					],
+					"grip_m": [
+						0.0426871776580811,
+						1.24619424343109,
+						-0.28172379732132
+					],
+					"left_foot_m": [
+						-0.203569337725639,
+						0.169705331325531,
+						-0.0692435875535011
+					],
+					"right_foot_m": [
+						0.203611105680466,
+						0.169722199440002,
+						0.155761808156967
+					],
+					"sampled_time_s": 0.0333333325882753,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.321703046560287,
+						2.04989814758301,
+						-1.1137763261795
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0486111119389534
+					],
+					"grip_m": [
+						0.0417215451598167,
+						1.22443306446075,
+						-0.257373780012131
+					],
+					"left_foot_m": [
+						-0.203594774007797,
+						0.169692039489746,
+						-0.0692778527736664
+					],
+					"right_foot_m": [
+						0.203664645552635,
+						0.170212149620056,
+						0.155906334519386
+					],
+					"sampled_time_s": 0.0333333325882753,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.378702193498611,
+						1.984459400177,
+						-1.10878729820251
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 21,
+			"logical_time_s": 0.35,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0729166641831398
+					],
+					"grip_m": [
+						0.0337297469377518,
+						1.23253965377808,
+						-0.222717925906181
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819295406342,
+						-0.0449403449892998
+					],
+					"right_foot_m": [
+						0.203571289777756,
+						0.169818818569183,
+						0.180059656500816
+					],
+					"sampled_time_s": 0.0499999988824129,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.440846920013428,
+						1.87674343585968,
+						-1.13669729232788
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0729166641831398
+					],
+					"grip_m": [
+						0.032095693051815,
+						1.19556438922882,
+						-0.181820899248123
+					],
+					"left_foot_m": [
+						-0.203571498394012,
+						0.169819593429565,
+						-0.0449401959776878
+					],
+					"right_foot_m": [
+						0.204372689127922,
+						0.176447927951813,
+						0.182120233774185
+					],
+					"sampled_time_s": 0.0499999988824129,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.527757465839386,
+						1.76380217075348,
+						-1.10243260860443
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 22,
+			"logical_time_s": 0.366666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0972222238779068
+					],
+					"grip_m": [
+						0.0280124768614769,
+						1.22324669361115,
+						-0.175327643752098
+					],
+					"left_foot_m": [
+						-0.203572273254395,
+						0.16980105638504,
+						-0.0206330120563507
+					],
+					"right_foot_m": [
+						0.203578323125839,
+						0.169803738594055,
+						0.204366743564606
+					],
+					"sampled_time_s": 0.0666666651765505,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.518439531326294,
+						1.75080871582031,
+						-1.12256646156311
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.0972222238779068
+					],
+					"grip_m": [
+						0.0275034010410309,
+						1.17955458164215,
+						-0.131044924259186
+					],
+					"left_foot_m": [
+						-0.203835308551788,
+						0.169808149337769,
+						-0.0210550352931023
+					],
+					"right_foot_m": [
+						0.206185311079025,
+						0.190957367420197,
+						0.211038216948509
+					],
+					"sampled_time_s": 0.0666666651765505,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.604784369468689,
+						1.63758873939514,
+						-1.06541752815247
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 23,
+			"logical_time_s": 0.383333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.121527776122093
+					],
+					"grip_m": [
+						0.026785634458065,
+						1.22142863273621,
+						-0.146329268813133
+					],
+					"left_foot_m": [
+						-0.20357158780098,
+						0.169819235801697,
+						0.00367090106010437
+					],
+					"right_foot_m": [
+						0.203571304678917,
+						0.169818937778473,
+						0.228670746088028
+					],
+					"sampled_time_s": 0.0833333314706882,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533799290657043,
+						1.72484600543976,
+						-1.09796440601349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.121527776122093
+					],
+					"grip_m": [
+						0.0280867032706738,
+						1.17381632328033,
+						-0.107058025896549
+					],
+					"left_foot_m": [
+						-0.205616354942322,
+						0.169802725315094,
+						0.00039953738451004
+					],
+					"right_foot_m": [
+						0.208753779530525,
+						0.21012556552887,
+						0.241959095001221
+					],
+					"sampled_time_s": 0.0833333314706882,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.613760411739349,
+						1.62053370475769,
+						-1.04168725013733
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 24,
+			"logical_time_s": 0.4,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.14583332836628
+					],
+					"grip_m": [
+						0.0267855823040009,
+						1.22142863273621,
+						-0.12202362716198
+					],
+					"left_foot_m": [
+						-0.20357158780098,
+						0.169819235801697,
+						0.0279764533042908
+					],
+					"right_foot_m": [
+						0.203571289777756,
+						0.169818937778473,
+						0.252976298332214
+					],
+					"sampled_time_s": 0.0999999977648258,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533799171447754,
+						1.72484600543976,
+						-1.07365882396698
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.14583332836628
+					],
+					"grip_m": [
+						0.0299718044698238,
+						1.16582679748535,
+						-0.0876629054546356
+					],
+					"left_foot_m": [
+						-0.208881810307503,
+						0.169819295406342,
+						0.0194799304008484
+					],
+					"right_foot_m": [
+						0.211877644062042,
+						0.230603218078613,
+						0.27433517575264
+					],
+					"sampled_time_s": 0.0999999977648258,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.615311443805695,
+						1.61212205886841,
+						-1.0227028131485
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 25,
+			"logical_time_s": 0.416666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.170138895511627
+					],
+					"grip_m": [
+						0.0267856121063232,
+						1.22142863273621,
+						-0.097718134522438
+					],
+					"left_foot_m": [
+						-0.20357158780098,
+						0.169819235801697,
+						0.0522820204496384
+					],
+					"right_foot_m": [
+						0.203571304678917,
+						0.169818937778473,
+						0.277281850576401
+					],
+					"sampled_time_s": 0.116666664058963,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533799231052399,
+						1.72484612464905,
+						-1.04935336112976
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.170138895511627
+					],
+					"grip_m": [
+						0.032785139977932,
+						1.15586793422699,
+						-0.0710673406720161
+					],
+					"left_foot_m": [
+						-0.213205888867378,
+						0.169784307479858,
+						0.0368685722351074
+					],
+					"right_foot_m": [
+						0.215599179267883,
+						0.247576594352722,
+						0.308182179927826
+					],
+					"sampled_time_s": 0.116666664058963,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.617478013038635,
+						1.60444009304047,
+						-1.00542223453522
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 26,
+			"logical_time_s": 0.433333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.194444447755814
+					],
+					"grip_m": [
+						0.0267856121063232,
+						1.22142863273621,
+						-0.0734125822782516
+					],
+					"left_foot_m": [
+						-0.20357158780098,
+						0.169819235801697,
+						0.0765875726938248
+					],
+					"right_foot_m": [
+						0.203571304678917,
+						0.169818937778473,
+						0.301587402820587
+					],
+					"sampled_time_s": 0.133333330353101,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533799231052399,
+						1.72484612464905,
+						-1.02504777908325
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.194444447755814
+					],
+					"grip_m": [
+						0.0361879356205463,
+						1.14629352092743,
+						-0.0573663376271725
+					],
+					"left_foot_m": [
+						-0.217915311455727,
+						0.169789433479309,
+						0.0536391139030457
+					],
+					"right_foot_m": [
+						0.219504818320274,
+						0.258179843425751,
+						0.342577219009399
+					],
+					"sampled_time_s": 0.133333330353101,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.611814320087433,
+						1.60769319534302,
+						-0.991104185581207
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 27,
+			"logical_time_s": 0.45,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.21875
+					],
+					"grip_m": [
+						0.0267855823040009,
+						1.22142863273621,
+						-0.0491070114076138
+					],
+					"left_foot_m": [
+						-0.20357158780098,
+						0.169819235801697,
+						0.100893095135689
+					],
+					"right_foot_m": [
+						0.203571304678917,
+						0.169818937778473,
+						0.325892955064774
+					],
+					"sampled_time_s": 0.149999996647239,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533799171447754,
+						1.72484612464905,
+						-1.00074231624603
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.21875
+					],
+					"grip_m": [
+						0.0398784428834915,
+						1.13848996162415,
+						-0.0461706556379795
+					],
+					"left_foot_m": [
+						-0.222547858953476,
+						0.169819593429565,
+						0.0705307126045227
+					],
+					"right_foot_m": [
+						0.223543360829353,
+						0.260466039180756,
+						0.377249509096146
+					],
+					"sampled_time_s": 0.149999996647239,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.596835374832153,
+						1.62453746795654,
+						-0.978724777698517
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 28,
+			"logical_time_s": 0.466666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.243055552244186
+					],
+					"grip_m": [
+						0.0268368348479271,
+						1.22151064872742,
+						-0.0250063184648752
+					],
+					"left_foot_m": [
+						-0.203571543097496,
+						0.169819533824921,
+						0.125198751688004
+					],
+					"right_foot_m": [
+						0.203571319580078,
+						0.169818937778473,
+						0.350198566913605
+					],
+					"sampled_time_s": 0.166666662941376,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.533126711845398,
+						1.72599840164185,
+						-0.976459741592407
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.243055552244186
+					],
+					"grip_m": [
+						0.0438950210809708,
+						1.13413178920746,
+						-0.0371266789734364
+					],
+					"left_foot_m": [
+						-0.226477414369583,
+						0.169806718826294,
+						0.088550478219986
+					],
+					"right_foot_m": [
+						0.22753132879734,
+						0.252779841423035,
+						0.411852300167084
+					],
+					"sampled_time_s": 0.166666662941376,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.574704647064209,
+						1.65644407272339,
+						-0.965313851833344
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 29,
+			"logical_time_s": 0.483333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.267361104488373
+					],
+					"grip_m": [
+						0.0272084772586823,
+						1.22210192680359,
+						-0.00218245387077332
+					],
+					"left_foot_m": [
+						-0.203571483492851,
+						0.169818997383118,
+						0.149503976106644
+					],
+					"right_foot_m": [
+						0.203571453690529,
+						0.169818580150604,
+						0.374504029750824
+					],
+					"sampled_time_s": 0.183333329235514,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.528260946273804,
+						1.73431086540222,
+						-0.952281832695007
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.267361104488373
+					],
+					"grip_m": [
+						0.0474117510020733,
+						1.13362908363342,
+						-0.0278936941176653
+					],
+					"left_foot_m": [
+						-0.229237258434296,
+						0.169816017150879,
+						0.108439266681671
+					],
+					"right_foot_m": [
+						0.231326565146446,
+						0.237893283367157,
+						0.445878565311432
+					],
+					"sampled_time_s": 0.183333329235514,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.544975876808167,
+						1.6994194984436,
+						-0.9489865899086
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 30,
+			"logical_time_s": 0.5,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.291666656732559
+					],
+					"grip_m": [
+						0.0279366448521614,
+						1.2232700586319,
+						0.0192059017717838
+					],
+					"left_foot_m": [
+						-0.203571498394012,
+						0.169819295406342,
+						0.173809707164764
+					],
+					"right_foot_m": [
+						0.203571334481239,
+						0.169818937778473,
+						0.398809671401978
+					],
+					"sampled_time_s": 0.199999995529652,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.518638014793396,
+						1.75063538551331,
+						-0.927999675273895
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.291666656732559
+					],
+					"grip_m": [
+						0.0502637960016727,
+						1.13798666000366,
+						-0.0176673829555511
+					],
+					"left_foot_m": [
+						-0.230357185006142,
+						0.169819414615631,
+						0.130952700972557
+					],
+					"right_foot_m": [
+						0.234746903181076,
+						0.218461871147156,
+						0.478975117206573
+					],
+					"sampled_time_s": 0.199999995529652,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.509574174880981,
+						1.75273561477661,
+						-0.927183032035828
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 31,
+			"logical_time_s": 0.516666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.315972208976746
+					],
+					"grip_m": [
+						0.0290254354476929,
+						1.22499990463257,
+						0.0391745865345001
+					],
+					"left_foot_m": [
+						-0.203571528196335,
+						0.169817686080933,
+						0.198115229606628
+					],
+					"right_foot_m": [
+						0.203571856021881,
+						0.169817686080933,
+						0.423115372657776
+					],
+					"sampled_time_s": 0.216666661823789,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.504259347915649,
+						1.77470088005066,
+						-0.903206706047058
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.315972208976746
+					],
+					"grip_m": [
+						0.0526808276772499,
+						1.1457417011261,
+						-0.00693628937005997
+					],
+					"left_foot_m": [
+						-0.230359047651291,
+						0.169814705848694,
+						0.155256241559982
+					],
+					"right_foot_m": [
+						0.237574130296707,
+						0.198237180709839,
+						0.510506212711334
+					],
+					"sampled_time_s": 0.216666661823789,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.469356060028076,
+						1.81279873847961,
+						-0.899974822998047
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 32,
+			"logical_time_s": 0.533333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.340277791023254
+					],
+					"grip_m": [
+						0.0303795859217644,
+						1.22715997695923,
+						0.0580744445323944
+					],
+					"left_foot_m": [
+						-0.203571528196335,
+						0.16981703042984,
+						0.222421139478683
+					],
+					"right_foot_m": [
+						0.203572273254395,
+						0.169816613197327,
+						0.447420954704285
+					],
+					"sampled_time_s": 0.233333328117927,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.486201673746109,
+						1.80442309379578,
+						-0.877390623092651
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.340277791023254
+					],
+					"grip_m": [
+						0.0552085228264332,
+						1.15385174751282,
+						0.00318159162998199
+					],
+					"left_foot_m": [
+						-0.230359137058258,
+						0.169814229011536,
+						0.179562002420425
+					],
+					"right_foot_m": [
+						0.239656284451485,
+						0.18162077665329,
+						0.5401771068573
+					],
+					"sampled_time_s": 0.233333328117927,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.427088260650635,
+						1.8738009929657,
+						-0.868299841880798
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 33,
+			"logical_time_s": 0.55,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0319501236081123,
+						1.22969186306,
+						0.0614848285913467
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819295406342,
+						0.232142925262451
+					],
+					"right_foot_m": [
+						0.203571289777756,
+						0.169818818569183,
+						0.457142770290375
+					],
+					"sampled_time_s": 0.249999994412065,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.464961975812912,
+						1.83872425556183,
+						-0.864626288414001
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.057792104780674,
+						1.16207802295685,
+						-0.00149364769458771
+					],
+					"left_foot_m": [
+						-0.230357110500336,
+						0.169819295406342,
+						0.189286202192307
+					],
+					"right_foot_m": [
+						0.240864843130112,
+						0.17150741815567,
+						0.553040266036987
+					],
+					"sampled_time_s": 0.249999994412065,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.384193956851959,
+						1.93363618850708,
+						-0.846633076667786
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 34,
+			"logical_time_s": 0.566666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0337497442960739,
+						1.23254215717316,
+						0.0543330758810043
+					],
+					"left_foot_m": [
+						-0.203571498394012,
+						0.169815421104431,
+						0.232143595814705
+					],
+					"right_foot_m": [
+						0.20357283949852,
+						0.169815301895142,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.266666660706202,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.440732538700104,
+						1.87687134742737,
+						-0.859617352485657
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0602902695536613,
+						1.17013072967529,
+						-0.0155785270035267
+					],
+					"left_foot_m": [
+						-0.23035891354084,
+						0.169814050197601,
+						0.189284011721611
+					],
+					"right_foot_m": [
+						0.241075664758682,
+						0.169810831546783,
+						0.553570747375488
+					],
+					"sampled_time_s": 0.266666660706202,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.341960489749908,
+						1.98973751068115,
+						-0.831058144569397
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 35,
+			"logical_time_s": 0.583333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0356749668717384,
+						1.23561751842499,
+						0.0466405302286148
+					],
+					"left_foot_m": [
+						-0.203571423888206,
+						0.16981428861618,
+						0.232143312692642
+					],
+					"right_foot_m": [
+						0.203573182225227,
+						0.169814646244049,
+						0.457143366336823
+					],
+					"sampled_time_s": 0.28333332700034,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.414522647857666,
+						1.91712856292725,
+						-0.852313697338104
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0626737251877785,
+						1.17775321006775,
+						-0.028916597366333
+					],
+					"left_foot_m": [
+						-0.230358451604843,
+						0.169814944267273,
+						0.189284294843674
+					],
+					"right_foot_m": [
+						0.241075098514557,
+						0.169811844825745,
+						0.553571105003357
+					],
+					"sampled_time_s": 0.28333332700034,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.302315294742584,
+						2.04064893722534,
+						-0.812550187110901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 36,
+			"logical_time_s": 0.6,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0376806035637856,
+						1.23885989189148,
+						0.0385640673339367
+					],
+					"left_foot_m": [
+						-0.203571423888206,
+						0.169819295406342,
+						0.23214291036129
+					],
+					"right_foot_m": [
+						0.203571304678917,
+						0.169818937778473,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.299999993294477,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.386919587850571,
+						1.95845675468445,
+						-0.842522323131561
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.064863458275795,
+						1.18470621109009,
+						-0.0410932786762714
+					],
+					"left_foot_m": [
+						-0.230357140302658,
+						0.169819414615631,
+						0.189286142587662
+					],
+					"right_foot_m": [
+						0.240770593285561,
+						0.171124935150146,
+						0.55279803276062
+					],
+					"sampled_time_s": 0.299999993294477,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.266430675983429,
+						2.0850977897644,
+						-0.792602717876434
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 37,
+			"logical_time_s": 0.616666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0397778004407883,
+						1.24217855930328,
+						0.0302364304661751
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169813275337219,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203573480248451,
+						0.169813513755798,
+						0.45714345574379
+					],
+					"sampled_time_s": 0.316666659588615,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.358370721340179,
+						1.99983763694763,
+						-0.830317437648773
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.066289097070694,
+						1.19227457046509,
+						-0.0503186695277691
+					],
+					"left_foot_m": [
+						-0.229667454957962,
+						0.169811367988586,
+						0.190391093492508
+					],
+					"right_foot_m": [
+						0.239014565944672,
+						0.178791284561157,
+						0.548273921012878
+					],
+					"sampled_time_s": 0.316666659588615,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.235801830887794,
+						2.12277126312256,
+						-0.772496700286865
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 38,
+			"logical_time_s": 0.633333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.041864488273859,
+						1.24551701545715,
+						0.0218908116221428
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.16981303691864,
+						0.232143372297287
+					],
+					"right_foot_m": [
+						0.203573539853096,
+						0.169813513755798,
+						0.457143247127533
+					],
+					"sampled_time_s": 0.333333325882753,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.329801470041275,
+						2.04010391235352,
+						-0.815859615802765
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0667155086994171,
+						1.20118951797485,
+						-0.0557363070547581
+					],
+					"left_foot_m": [
+						-0.227910906076431,
+						0.169802904129028,
+						0.193202957510948
+					],
+					"right_foot_m": [
+						0.236072227358818,
+						0.190629184246063,
+						0.540714144706726
+					],
+					"sampled_time_s": 0.333333325882753,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.211040049791336,
+						2.15452694892883,
+						-0.753173172473907
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 39,
+			"logical_time_s": 0.65,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0439014136791229,
+						1.24881315231323,
+						0.0136813782155514
+					],
+					"left_foot_m": [
+						-0.203571423888206,
+						0.1698197722435,
+						0.232143193483353
+					],
+					"right_foot_m": [
+						0.203571230173111,
+						0.169818997383118,
+						0.45714282989502
+					],
+					"sampled_time_s": 0.34999999217689,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.30181410908699,
+						2.07845401763916,
+						-0.799508154392242
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0661603808403015,
+						1.21068143844604,
+						-0.0572474896907806
+					],
+					"left_foot_m": [
+						-0.225304991006851,
+						0.169819414615631,
+						0.197369888424873
+					],
+					"right_foot_m": [
+						0.232214376330376,
+						0.203609883785248,
+						0.53079628944397
+					],
+					"sampled_time_s": 0.34999999217689,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.193139299750328,
+						2.17920422554016,
+						-0.736910700798035
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 40,
+			"logical_time_s": 0.666666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0458816364407539,
+						1.2519496679306,
+						0.00581414252519608
+					],
+					"left_foot_m": [
+						-0.203571259975433,
+						0.169813632965088,
+						0.232143059372902
+					],
+					"right_foot_m": [
+						0.203573316335678,
+						0.169813752174377,
+						0.457143306732178
+					],
+					"sampled_time_s": 0.366666658471028,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.275077104568481,
+						2.11384963989258,
+						-0.782029211521149
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0646414533257484,
+						1.21984350681305,
+						-0.0543852746486664
+					],
+					"left_foot_m": [
+						-0.222043603658676,
+						0.169792413711548,
+						0.202590391039848
+					],
+					"right_foot_m": [
+						0.227664321660995,
+						0.213473975658417,
+						0.519112706184387
+					],
+					"sampled_time_s": 0.366666658471028,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.18476502597332,
+						2.19439125061035,
+						-0.726640343666077
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 41,
+			"logical_time_s": 0.683333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.047720480710268,
+						1.25489723682404,
+						-0.00155046582221985
+					],
+					"left_foot_m": [
+						-0.203571289777756,
+						0.169814169406891,
+						0.232142880558968
+					],
+					"right_foot_m": [
+						0.20357309281826,
+						0.169814348220825,
+						0.457143366336823
+					],
+					"sampled_time_s": 0.383333324765166,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.25025600194931,
+						2.14582967758179,
+						-0.763994216918945
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0625272393226624,
+						1.22859370708466,
+						-0.0488664582371712
+					],
+					"left_foot_m": [
+						-0.218448951840401,
+						0.169785678386688,
+						0.208341747522354
+					],
+					"right_foot_m": [
+						0.222822308540344,
+						0.217666208744049,
+						0.506659269332886
+					],
+					"sampled_time_s": 0.383333324765166,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.182026147842407,
+						2.20370101928711,
+						-0.720421850681305
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 42,
+			"logical_time_s": 0.7,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0493863448500633,
+						1.25758922100067,
+						-0.00825875625014305
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.1698197722435,
+						0.232142895460129
+					],
+					"right_foot_m": [
+						0.203571349382401,
+						0.169818937778473,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.399999991059303,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.22785484790802,
+						2.17393326759338,
+						-0.746203899383545
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0602733120322227,
+						1.23747766017914,
+						-0.0428717881441116
+					],
+					"left_foot_m": [
+						-0.214741468429565,
+						0.169819533824921,
+						0.214271560311317
+					],
+					"right_foot_m": [
+						0.2179174721241,
+						0.215127527713776,
+						0.494032859802246
+					],
+					"sampled_time_s": 0.399999991059303,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.179605811834335,
+						2.21258521080017,
+						-0.714455664157867
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 43,
+			"logical_time_s": 0.716666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0508362203836441,
+						1.25989294052124,
+						-0.0140308067202568
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169815897941589,
+						0.232143118977547
+					],
+					"right_foot_m": [
+						0.203572452068329,
+						0.169815719127655,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.416666657353441,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.208716362714767,
+						2.19724321365356,
+						-0.729955732822418
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0581779554486275,
+						1.24597883224487,
+						-0.0372768491506577
+					],
+					"left_foot_m": [
+						-0.211204573512077,
+						0.169782757759094,
+						0.219932109117508
+					],
+					"right_foot_m": [
+						0.213345214724541,
+						0.205747961997986,
+						0.482269823551178
+					],
+					"sampled_time_s": 0.416666657353441,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.177653685212135,
+						2.22109603881836,
+						-0.708821654319763
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 44,
+			"logical_time_s": 0.733333333333333,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0520202405750751,
+						1.26179480552673,
+						-0.0187798738479614
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169817328453064,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571960330009,
+						0.169817090034485,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.433333323647578,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.193122908473015,
+						2.21585202217102,
+						-0.715892851352692
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0562883764505386,
+						1.25350224971771,
+						-0.0322429090738297
+					],
+					"left_foot_m": [
+						-0.208068534731865,
+						0.169790983200073,
+						0.224948972463608
+					],
+					"right_foot_m": [
+						0.209311187267303,
+						0.193190932273865,
+						0.471889823675156
+					],
+					"sampled_time_s": 0.433333323647578,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.175719276070595,
+						2.22862148284912,
+						-0.703793168067932
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 45,
+			"logical_time_s": 0.75,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0529092326760292,
+						1.26322662830353,
+						-0.0223515331745148
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819533824921,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571349382401,
+						0.169818699359894,
+						0.45714282989502
+					],
+					"sampled_time_s": 0.449999989941716,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.181486576795578,
+						2.22949075698853,
+						-0.704921841621399
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0547616705298424,
+						1.2595237493515,
+						-0.0281743705272675
+					],
+					"left_foot_m": [
+						-0.20555554330349,
+						0.169819414615631,
+						0.228968799114227
+					],
+					"right_foot_m": [
+						0.206080839037895,
+						0.180740714073181,
+						0.463595867156982
+					],
+					"sampled_time_s": 0.449999989941716,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.174095034599304,
+						2.23463201522827,
+						-0.699758172035217
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 46,
+			"logical_time_s": 0.766666666666667,
+			"panels": [
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0534204356372356,
+						1.26404285430908,
+						-0.0243940502405167
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232143118977547
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.466666656235854,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.174862906336784,
+						2.23714208602905,
+						-0.698508143424988
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "heavy_hit",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0538541376590729,
+						1.26316952705383,
+						-0.0257542058825493
+					],
+					"left_foot_m": [
+						-0.204037308692932,
+						0.169813692569733,
+						0.23139788210392
+					],
+					"right_foot_m": [
+						0.204163923859596,
+						0.172358453273773,
+						0.458663165569305
+					],
+					"sampled_time_s": 0.466666656235854,
+					"state": "heavy_hit",
+					"tip_m": [
+						0.17320454120636,
+						2.2382800579071,
+						-0.697330892086029
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 47,
+			"logical_time_s": 0.783333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0633498430252075,
+						1.25288987159729,
+						-0.0364935994148254
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169818580150604,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571528196335,
+						0.169818103313446,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.316666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.19015197455883,
+						2.21646404266357,
+						-0.723185777664185
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0166666666666667,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0538232550024986,
+						1.2635213136673,
+						-0.0256710052490234
+					],
+					"left_foot_m": [
+						-0.203985124826431,
+						0.169814050197601,
+						0.231481403112411
+					],
+					"right_foot_m": [
+						0.204098030924797,
+						0.17207145690918,
+						0.458494037389755
+					],
+					"sampled_time_s": 0.316666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.173170357942581,
+						2.2386314868927,
+						-0.697248756885529
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0166666666666667,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 48,
+			"logical_time_s": 0.8,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0790768563747406,
+						1.24063420295715,
+						-0.0549142733216286
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169818162918091,
+						0.232142865657806
+					],
+					"right_foot_m": [
+						0.203571692109108,
+						0.169817686080933,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.333333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.218601703643799,
+						2.19694781303406,
+						-0.749247252941132
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0333333333333333,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0537497103214264,
+						1.26436567306519,
+						-0.0254741162061691
+					],
+					"left_foot_m": [
+						-0.203862130641937,
+						0.169815599918365,
+						0.231678128242493
+					],
+					"right_foot_m": [
+						0.203942313790321,
+						0.171397745609283,
+						0.458094358444214
+					],
+					"sampled_time_s": 0.333333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.173090264201164,
+						2.23947548866272,
+						-0.697054207324982
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0333333333333333,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 49,
+			"logical_time_s": 0.816666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0777690038084984,
+						1.24668383598328,
+						-0.0552565306425095
+					],
+					"left_foot_m": [
+						-0.203571438789368,
+						0.169818162918091,
+						0.23214291036129
+					],
+					"right_foot_m": [
+						0.203571707010269,
+						0.169817805290222,
+						0.457143127918243
+					],
+					"sampled_time_s": 0.35,
+					"state": "idle",
+					"tip_m": [
+						0.219771087169647,
+						2.21139645576477,
+						-0.73736035823822
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.05,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0536626577377319,
+						1.26536738872528,
+						-0.0252418518066406
+					],
+					"left_foot_m": [
+						-0.20371887087822,
+						0.169817090034485,
+						0.231907308101654
+					],
+					"right_foot_m": [
+						0.203760072588921,
+						0.170617341995239,
+						0.457626789808273
+					],
+					"sampled_time_s": 0.35,
+					"state": "idle",
+					"tip_m": [
+						0.17299810051918,
+						2.24047660827637,
+						-0.696823477745056
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.05,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 50,
+			"logical_time_s": 0.833333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0609422139823437,
+						1.26112163066864,
+						-0.0352766588330269
+					],
+					"left_foot_m": [
+						-0.203571438789368,
+						0.169818699359894,
+						0.232143193483353
+					],
+					"right_foot_m": [
+						0.203571557998657,
+						0.16981840133667,
+						0.457143068313599
+					],
+					"sampled_time_s": 0.366666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.188400834798813,
+						2.23447561264038,
+						-0.707911252975464
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0666666666666667,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.053592823445797,
+						1.26616930961609,
+						-0.0250567868351936
+					],
+					"left_foot_m": [
+						-0.203605934977531,
+						0.169818580150604,
+						0.232088044285774
+					],
+					"right_foot_m": [
+						0.203615710139275,
+						0.170005440711975,
+						0.457256436347961
+					],
+					"sampled_time_s": 0.366666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172926396131516,
+						2.24127745628357,
+						-0.696640133857727
+					],
+					"transition": {
+						"active": true,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.08,
+						"elapsed": 0.0666666666666667,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 51,
+			"logical_time_s": 0.85,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.2664235830307,
+						-0.0249999314546585
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819116592407,
+						0.23214316368103
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.383333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904208302498,
+						2.24153184890747,
+						-0.696583807468414
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.2664235830307,
+						-0.0249999314546585
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819116592407,
+						0.23214316368103
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.383333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904208302498,
+						2.24153184890747,
+						-0.696583807468414
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 52,
+			"logical_time_s": 0.866666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712689161301,
+						1.26642870903015,
+						-0.0249997228384018
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819295406342,
+						0.232143104076385
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.4,
+					"state": "idle",
+					"tip_m": [
+						0.172904551029205,
+						2.24153661727905,
+						-0.696583092212677
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712689161301,
+						1.26642870903015,
+						-0.0249997228384018
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819295406342,
+						0.232143104076385
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.4,
+					"state": "idle",
+					"tip_m": [
+						0.172904551029205,
+						2.24153661727905,
+						-0.696583092212677
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 53,
+			"logical_time_s": 0.883333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.053571030497551,
+						1.2664235830307,
+						-0.0249999463558197
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						0.232143148779869
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.416666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904178500175,
+						2.24153208732605,
+						-0.696584105491638
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.053571030497551,
+						1.2664235830307,
+						-0.0249999463558197
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						0.232143148779869
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.416666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904178500175,
+						2.24153208732605,
+						-0.696584105491638
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 54,
+			"logical_time_s": 0.9,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711422562599,
+						1.26641011238098,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819056987762,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818937778473,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.433333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904491424561,
+						2.24151802062988,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711422562599,
+						1.26641011238098,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819056987762,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818937778473,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.433333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904491424561,
+						2.24151802062988,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 55,
+			"logical_time_s": 0.916666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712875425816,
+						1.26638746261597,
+						-0.0249998196959496
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819056987762,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571498394012,
+						0.169819056987762,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.45,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24149584770203,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712875425816,
+						1.26638746261597,
+						-0.0249998196959496
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819056987762,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571498394012,
+						0.169819056987762,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.45,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24149584770203,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 56,
+			"logical_time_s": 0.933333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712465643883,
+						1.26635527610779,
+						-0.0249999836087227
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571453690529,
+						0.169818699359894,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.466666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904282808304,
+						2.24146318435669,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712465643883,
+						1.26635527610779,
+						-0.0249999836087227
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571453690529,
+						0.169818699359894,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.466666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904282808304,
+						2.24146318435669,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 57,
+			"logical_time_s": 0.95,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713359713554,
+						1.26631462574005,
+						-0.0249997675418854
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.457143068313599
+					],
+					"sampled_time_s": 0.483333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903954982758,
+						2.24142289161682,
+						-0.696583151817322
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713359713554,
+						1.26631462574005,
+						-0.0249997675418854
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.457143068313599
+					],
+					"sampled_time_s": 0.483333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903954982758,
+						2.24142289161682,
+						-0.696583151817322
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 58,
+			"logical_time_s": 0.966666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.26626563072205,
+						-0.0249999091029167
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.5,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24137401580811,
+						-0.696583688259125
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535710975527763,
+						1.26626563072205,
+						-0.0249999091029167
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819056987762,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.5,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24137401580811,
+						-0.696583688259125
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 59,
+			"logical_time_s": 0.983333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713061690331,
+						1.26620721817017,
+						-0.0249998494982719
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819355010986,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818997383118,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.516666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903671860695,
+						2.24131536483765,
+						-0.696583449840546
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713061690331,
+						1.26620721817017,
+						-0.0249998494982719
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819355010986,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818997383118,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.516666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903671860695,
+						2.24131536483765,
+						-0.696583449840546
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 60,
+			"logical_time_s": 1.0,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713844001293,
+						1.26614105701447,
+						-0.0250000059604645
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819176197052,
+						0.232143253087997
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.533333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904565930367,
+						2.24124908447266,
+						-0.696583867073059
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713844001293,
+						1.26614105701447,
+						-0.0250000059604645
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819176197052,
+						0.232143253087997
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.533333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172904565930367,
+						2.24124908447266,
+						-0.696583867073059
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 61,
+			"logical_time_s": 1.01666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712912678719,
+						1.26606738567352,
+						-0.0249997451901436
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819355010986,
+						0.232142716646194
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.457143068313599
+					],
+					"sampled_time_s": 0.55,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24117517471313,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712912678719,
+						1.26606738567352,
+						-0.0249997451901436
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819355010986,
+						0.232142716646194
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.457143068313599
+					],
+					"sampled_time_s": 0.55,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24117517471313,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 62,
+			"logical_time_s": 1.03333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26598536968231,
+						-0.0249999910593033
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143074274063
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819116592407,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.566666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904223203659,
+						2.24109315872192,
+						-0.696584224700928
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26598536968231,
+						-0.0249999910593033
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143074274063
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819116592407,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.566666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904223203659,
+						2.24109315872192,
+						-0.696584224700928
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 63,
+			"logical_time_s": 1.05,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711273550987,
+						1.26589643955231,
+						-0.0249997228384018
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819295406342,
+						0.232143104076385
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.583333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903656959534,
+						2.24100518226624,
+						-0.696583271026611
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711273550987,
+						1.26589643955231,
+						-0.0249997228384018
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819295406342,
+						0.232143104076385
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.583333333333333,
+					"state": "idle",
+					"tip_m": [
+						0.172903656959534,
+						2.24100518226624,
+						-0.696583271026611
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 64,
+			"logical_time_s": 1.06666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712689161301,
+						1.26580083370209,
+						-0.0250000432133675
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818460941315,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.6,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24090909957886,
+						-0.696583569049835
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712689161301,
+						1.26580083370209,
+						-0.0250000432133675
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818460941315,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.6,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.24090909957886,
+						-0.696583569049835
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 65,
+			"logical_time_s": 1.08333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711459815502,
+						1.26569855213165,
+						-0.0249997973442078
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818758964539,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.616666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904044389725,
+						2.24080657958984,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711459815502,
+						1.26569855213165,
+						-0.0249997973442078
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818758964539,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.616666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904044389725,
+						2.24080657958984,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 66,
+			"logical_time_s": 1.1,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26559007167816,
+						-0.0249998047947884
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.633333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24069809913635,
+						-0.696583330631256
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26559007167816,
+						-0.0249998047947884
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.633333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904014587402,
+						2.24069809913635,
+						-0.696583330631256
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 67,
+			"logical_time_s": 1.11666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713396966457,
+						1.26547634601593,
+						-0.0249998867511749
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.65,
+					"state": "idle",
+					"tip_m": [
+						0.172904655337334,
+						2.24058437347412,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713396966457,
+						1.26547634601593,
+						-0.0249998867511749
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819176197052,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818818569183,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.65,
+					"state": "idle",
+					"tip_m": [
+						0.172904655337334,
+						2.24058437347412,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 68,
+			"logical_time_s": 1.13333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712614655495,
+						1.2653568983078,
+						-0.0249999240040779
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.666666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904267907143,
+						2.24046516418457,
+						-0.696583926677704
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712614655495,
+						1.2653568983078,
+						-0.0249999240040779
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169819056987762,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.666666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904267907143,
+						2.24046516418457,
+						-0.696583926677704
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 69,
+			"logical_time_s": 1.15,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712949931622,
+						1.26523327827454,
+						-0.0249999538064003
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232143059372902
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.683333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24034142494202,
+						-0.696583867073059
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712949931622,
+						1.26523327827454,
+						-0.0249999538064003
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232143059372902
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.683333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904506325722,
+						2.24034142494202,
+						-0.696583867073059
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 70,
+			"logical_time_s": 1.16666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535709746181965,
+						1.26510560512543,
+						-0.0249997824430466
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819295406342,
+						0.232142984867096
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.700000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.24021339416504,
+						-0.696583569049835
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535709746181965,
+						1.26510560512543,
+						-0.0249997824430466
+					],
+					"left_foot_m": [
+						-0.20357146859169,
+						0.169819295406342,
+						0.232142984867096
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.457142919301987
+					],
+					"sampled_time_s": 0.700000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.24021339416504,
+						-0.696583569049835
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 71,
+			"logical_time_s": 1.18333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712167620659,
+						1.26497423648834,
+						-0.0249998420476913
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818818569183,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.716666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904074192047,
+						2.24008250236511,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712167620659,
+						1.26497423648834,
+						-0.0249998420476913
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						0.232143014669418
+					],
+					"right_foot_m": [
+						0.203571364283562,
+						0.169818818569183,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.716666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172904074192047,
+						2.24008250236511,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 72,
+			"logical_time_s": 1.2,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712279379368,
+						1.2648401260376,
+						-0.0249999687075615
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169818997383118,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819176197052,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.733333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904416918755,
+						2.23994874954224,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712279379368,
+						1.2648401260376,
+						-0.0249999687075615
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169818997383118,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819176197052,
+						0.457142889499664
+					],
+					"sampled_time_s": 0.733333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904416918755,
+						2.23994874954224,
+						-0.69658374786377
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 73,
+			"logical_time_s": 1.21666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713955760002,
+						1.26470351219177,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819414615631,
+						0.232142895460129
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.750000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.23981165885925,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713955760002,
+						1.26470351219177,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571334481239,
+						0.169819414615631,
+						0.232142895460129
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169819056987762,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.750000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.23981165885925,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 74,
+			"logical_time_s": 1.23333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535714104771614,
+						1.26456534862518,
+						-0.0249998345971107
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232142955064774
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.766666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.23967361450195,
+						-0.696583449840546
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535714104771614,
+						1.26456534862518,
+						-0.0249998345971107
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819176197052,
+						0.232142955064774
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818818569183,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.766666666666667,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.23967361450195,
+						-0.696583449840546
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 75,
+			"logical_time_s": 1.25,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712987184525,
+						1.26442563533783,
+						-0.0249997973442078
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819295406342,
+						0.232142895460129
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.783333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172903805971146,
+						2.23953366279602,
+						-0.696583271026611
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535712987184525,
+						1.26442563533783,
+						-0.0249997973442078
+					],
+					"left_foot_m": [
+						-0.203571349382401,
+						0.169819295406342,
+						0.232142895460129
+					],
+					"right_foot_m": [
+						0.203571379184723,
+						0.169819056987762,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.783333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172903805971146,
+						2.23953366279602,
+						-0.696583271026611
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 76,
+			"logical_time_s": 1.26666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713322460651,
+						1.26428592205048,
+						-0.0249999240040779
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819474220276,
+						0.232143253087997
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.800000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.17290373146534,
+						2.23939371109009,
+						-0.69658350944519
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713322460651,
+						1.26428592205048,
+						-0.0249999240040779
+					],
+					"left_foot_m": [
+						-0.203571319580078,
+						0.169819474220276,
+						0.232143253087997
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.800000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.17290373146534,
+						2.23939371109009,
+						-0.69658350944519
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 77,
+			"logical_time_s": 1.28333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711944103241,
+						1.26414549350739,
+						-0.0249997898936272
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.816666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.23925352096558,
+						-0.696583330631256
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711944103241,
+						1.26414549350739,
+						-0.0249997898936272
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571438789368,
+						0.169818818569183,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.816666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172903880476952,
+						2.23925352096558,
+						-0.696583330631256
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 78,
+			"logical_time_s": 1.3,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711944103241,
+						1.26400601863861,
+						-0.0249999985098839
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818878173828,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.833333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.2391140460968,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711944103241,
+						1.26400601863861,
+						-0.0249999985098839
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818878173828,
+						0.457142949104309
+					],
+					"sampled_time_s": 0.833333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172904193401337,
+						2.2391140460968,
+						-0.696583986282349
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 79,
+			"logical_time_s": 1.31666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713732242584,
+						1.26386761665344,
+						-0.0249998494982719
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.850000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172904416918755,
+						2.23897552490234,
+						-0.69658362865448
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535713732242584,
+						1.26386761665344,
+						-0.0249998494982719
+					],
+					"left_foot_m": [
+						-0.203571394085884,
+						0.169819295406342,
+						0.232143133878708
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818699359894,
+						0.457143038511276
+					],
+					"sampled_time_s": 0.850000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172904416918755,
+						2.23897552490234,
+						-0.69658362865448
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 80,
+			"logical_time_s": 1.33333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26373112201691,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169818997383118,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818997383118,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.866666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172903776168823,
+						2.2388391494751,
+						-0.696584045886993
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711124539375,
+						1.26373112201691,
+						-0.0249998793005943
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169818997383118,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571408987045,
+						0.169818997383118,
+						0.457142978906631
+					],
+					"sampled_time_s": 0.866666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172903776168823,
+						2.2388391494751,
+						-0.696584045886993
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 81,
+			"logical_time_s": 1.35,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711795091629,
+						1.26359677314758,
+						-0.0249997898936272
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.883333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172903969883919,
+						2.23870539665222,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711795091629,
+						1.26359677314758,
+						-0.0249997898936272
+					],
+					"left_foot_m": [
+						-0.203571379184723,
+						0.169819176197052,
+						0.232143044471741
+					],
+					"right_foot_m": [
+						0.203571423888206,
+						0.169818937778473,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.883333333333334,
+					"state": "idle",
+					"tip_m": [
+						0.172903969883919,
+						2.23870539665222,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 82,
+			"logical_time_s": 1.36666666666667,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711273550987,
+						1.26346552371979,
+						-0.024999812245369
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						0.232143059372902
+					],
+					"right_foot_m": [
+						0.20357146859169,
+						0.169818937778473,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.900000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172903418540955,
+						2.23857378959656,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711273550987,
+						1.26346552371979,
+						-0.024999812245369
+					],
+					"left_foot_m": [
+						-0.203571364283562,
+						0.169819295406342,
+						0.232143059372902
+					],
+					"right_foot_m": [
+						0.20357146859169,
+						0.169818937778473,
+						0.457143187522888
+					],
+					"sampled_time_s": 0.900000000000001,
+					"state": "idle",
+					"tip_m": [
+						0.172903418540955,
+						2.23857378959656,
+						-0.696583390235901
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		},
+		{
+			"frame": 83,
+			"logical_time_s": 1.38333333333333,
+			"panels": [
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711422562599,
+						1.26333796977997,
+						-0.0249998569488525
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819056987762,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818699359894,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.916666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172904148697853,
+						2.23844623565674,
+						-0.69658362865448
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "before"
+				},
+				{
+					"clip": "idle",
+					"fixture_actor_translation_m": [
+						0.0,
+						0.0,
+						0.349999994039536
+					],
+					"grip_m": [
+						0.0535711422562599,
+						1.26333796977997,
+						-0.0249998569488525
+					],
+					"left_foot_m": [
+						-0.203571408987045,
+						0.169819056987762,
+						0.232143178582191
+					],
+					"right_foot_m": [
+						0.203571394085884,
+						0.169818699359894,
+						0.457143008708954
+					],
+					"sampled_time_s": 0.916666666666668,
+					"state": "idle",
+					"tip_m": [
+						0.172904148697853,
+						2.23844623565674,
+						-0.69658362865448
+					],
+					"transition": {
+						"active": false,
+						"charge_sampled_time": 0.0,
+						"charge_upper_body": false,
+						"duration": 0.0,
+						"elapsed": 0.0,
+						"enabled": true,
+						"gait_phase": 0.0
+					},
+					"variant": "after"
+				}
+			],
+			"received_delta_s": 0.0166666666666667
+		}
+	],
+	"inputs": {
+		"after": "res://assets/models/production/sentinel_weight_gameplay.glb",
+		"before": "res://assets/models/production/sentinel_impact_gameplay.glb",
+		"fps": 60.0,
+		"frames": 84.0,
+		"logical_speed": 1.0,
+		"profile": "sentinel_melee",
+		"scope": "Silent offline neutral Godot presentation comparison at logical 1x; actual ActorVisual/SkeletalVisualBridge, prescribed open-space actor travel, no interactive combat/contact/collision/audio listening, hardware performance or AAA approval.",
+		"snapshot": "/workspace/next-action-rpg/build/art-review/weight-motion/task/native-motion-003/sentinel_melee-frames.json",
+		"source_inputs": [
+			{
+				"bytes": 17287040.0,
+				"sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay.glb"
+			},
+			{
+				"bytes": 17533004.0,
+				"sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay.glb"
+			},
+			{
+				"bytes": 7536756.0,
+				"sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+				"source_path": "game/assets/models/production/rune_sword_web.glb"
+			},
+			{
+				"bytes": 11061.0,
+				"sha256": "17fab0e5a1383fa7ce368db777725f934dbaa048fd47e8d524e14af8d74e5337",
+				"source_path": "game/scripts/actors/actor_visual.gd"
+			},
+			{
+				"bytes": 25125.0,
+				"sha256": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+				"source_path": "game/scripts/actors/skeletal_visual_bridge.gd"
+			},
+			{
+				"bytes": 5793.0,
+				"sha256": "ebd0031b2c0316c924a86470b639bd56337253539d89bd4958d9efa177d9f27c",
+				"source_path": "game/scripts/actors/production_character_art.gd"
+			},
+			{
+				"bytes": 386.0,
+				"sha256": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+				"source_path": "game/data/character_grips.json"
+			},
+			{
+				"bytes": 1209.0,
+				"sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+				"source_path": "game/import/impact_animation_sampling.gd"
+			},
+			{
+				"bytes": 1577.0,
+				"sha256": "51575aaa81228fde1305e1a8073f07afb8099faf22c21f651cda3164cc42987b",
+				"source_path": "game/import/eye_materials.gd"
+			},
+			{
+				"bytes": 14553.0,
+				"sha256": "c88b87d791181ab89ef2b50f79452896afb3bf9dcab181873b235c7ac6eed98c",
+				"source_path": "game/tests/weight_motion_review.gd"
+			},
+			{
+				"bytes": 194.0,
+				"sha256": "6cfe7e8a57e55df32d8d282bda2f023861b24eeebcb51907bfeec6345bf2da58",
+				"source_path": "game/tests/weight_motion_review.tscn"
+			},
+			{
+				"bytes": 18739.0,
+				"sha256": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996",
+				"source_path": "tools/render_weight_review.py"
+			},
+			{
+				"bytes": 1313.0,
+				"sha256": "4f05816f9fdf1567e0ac31db17b1fb84279833f402bac4817a8f74f11053495a",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay.glb.import"
+			},
+			{
+				"bytes": 2010927.0,
+				"sha256": "0652f70660f3d9603d95f185cfb6e70ee13854409b997f3a8216300699debcf5",
+				"source_path": "game/.godot/imported/sentinel_impact_gameplay.glb-48236b42768ae1c045a541f3d596175f.scn"
+			},
+			{
+				"bytes": 5033655.0,
+				"sha256": "56aee7e0703e215c73b010b672a8bbe1cf9689486c11b599462659b4442981ee",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_0.png"
+			},
+			{
+				"bytes": 1091.0,
+				"sha256": "7de8cbcfbb467822f73f9c0e46e7ad7054f19020ccfd8fa5106ce4be6d043979",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_0.png.import"
+			},
+			{
+				"bytes": 3315728.0,
+				"sha256": "414e127ef50845459c2ac7a77c05becf6715c1a4ac304a2d4759eb0a9b1ecc3e",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_1.png"
+			},
+			{
+				"bytes": 1090.0,
+				"sha256": "34c227460e01c9c89360cd1612e1267bf17842852b35f0234a53b49e067f5056",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_1.png.import"
+			},
+			{
+				"bytes": 5576080.0,
+				"sha256": "3ed10a0304fb22033f0144cb5b23d40ff6b47917f961a7c5d5b5bf63173716b5",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_2.png"
+			},
+			{
+				"bytes": 1090.0,
+				"sha256": "ae94c4a9f2311857fc20759e65cb696c82f1f24ecee15a6bcb14b3dfc57ab9b9",
+				"source_path": "game/assets/models/production/sentinel_impact_gameplay_Image_2.png.import"
+			},
+			{
+				"bytes": 1313.0,
+				"sha256": "d682ecf3aeaab3b9d2941a3387f2780440f53720aa32c6d13e681814ef1a56e5",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay.glb.import"
+			},
+			{
+				"bytes": 2018117.0,
+				"sha256": "5e65eb1c2a1d2d0ff33d4ba1745d688f52c82a886f785b6ceb201dc301ceec86",
+				"source_path": "game/.godot/imported/sentinel_weight_gameplay.glb-cd8c66d27bf2b47016df01f553a4b2ea.scn"
+			},
+			{
+				"bytes": 5033655.0,
+				"sha256": "56aee7e0703e215c73b010b672a8bbe1cf9689486c11b599462659b4442981ee",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_0.png"
+			},
+			{
+				"bytes": 1090.0,
+				"sha256": "20b37bd793fd854a502e1372f3771384ac07736472d7466cf1a27d893dc7541f",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_0.png.import"
+			},
+			{
+				"bytes": 3315728.0,
+				"sha256": "414e127ef50845459c2ac7a77c05becf6715c1a4ac304a2d4759eb0a9b1ecc3e",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_1.png"
+			},
+			{
+				"bytes": 1091.0,
+				"sha256": "9258dc80711206841ede0f589844c8a6b0efdaa5be60af7eda66e7cff12831a3",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_1.png.import"
+			},
+			{
+				"bytes": 5576080.0,
+				"sha256": "3ed10a0304fb22033f0144cb5b23d40ff6b47917f961a7c5d5b5bf63173716b5",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_2.png"
+			},
+			{
+				"bytes": 1091.0,
+				"sha256": "c00b5ddbd4559e5a09dd6cd8e13f324dd64a8544d20e3e819ec41348d688550a",
+				"source_path": "game/assets/models/production/sentinel_weight_gameplay_Image_2.png.import"
+			},
+			{
+				"bytes": 1181.0,
+				"sha256": "f3e4c553909d4d3897aad6e201eee972fcefdbbe05acd20c97e0de0ebbd6a043",
+				"source_path": "game/assets/models/production/rune_sword_web.glb.import"
+			},
+			{
+				"bytes": 162552.0,
+				"sha256": "4ddced7173167b5df55da7d895db2817bf69a69cdb6629f58091c40890fd024b",
+				"source_path": "game/.godot/imported/rune_sword_web.glb-055ef7ed3df3ed6fb5b0d646d96ab622.scn"
+			},
+			{
+				"bytes": 3578910.0,
+				"sha256": "ba2f867a46b38d13ed22ce6789068f0e358bdb60616d5194d593acc07f629091",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_0.png"
+			},
+			{
+				"bytes": 1060.0,
+				"sha256": "1b644ffb4b98af2f1f949a27b8766eb55c94d38a88229fec11768a95c94b0567",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_0.png.import"
+			},
+			{
+				"bytes": 1832297.0,
+				"sha256": "2705082935a637ef989d05f11042abad13aabc16d9406f26b96133c208b9386c",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_1.png"
+			},
+			{
+				"bytes": 1061.0,
+				"sha256": "655b9a1db2e4b710a27b74104ab789173bd6307cbc916cdeeb4af3bbfa6f827d",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_1.png.import"
+			},
+			{
+				"bytes": 1964867.0,
+				"sha256": "c170134e96db488cfc0354fa66e9b2f016025689bec54418ac503ae4c1630fb3",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_2.png"
+			},
+			{
+				"bytes": 1061.0,
+				"sha256": "0bccb0a42ac040eb42ddd1c024cdd96d45f589fd12ec85f2891e4426ad677c31",
+				"source_path": "game/assets/models/production/rune_sword_web_Image_2.png.import"
+			}
+		]
+	},
+	"logical_speed": 1.0,
+	"pose_clock": "Strictly forward60Hz, no seek during playback",
+	"preparation": "Source clips are duplicated only to apply ProductionCharacterArt cycle flags; actual mesh/rest/skin/key data remains loaded from each original PackedScene. Real bridge complete-channel guard, transition polish, actual physical sword and Head eyes are used.",
+	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+	"sampling_mode": "Forward fixed60Hz MovieMaker, logical1x",
+	"scope": "Actual imported GLBs through ActorVisual.pose and SkeletalVisualBridge. Neutral offline matched-camera comparison only, not interactive combat, contact/collision acceptance, audio listening, target GPU performance or AAA approval."
+}

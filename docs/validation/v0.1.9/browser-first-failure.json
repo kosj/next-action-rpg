@@ -1,0 +1,67 @@
+{
+  "scope": "Failed strict local charged-heavy readiness observation. A later diagnostic is not within-deadline success and does not establish a gameplay-semantics bug.",
+  "outcome": "failed",
+  "classification": "strict_observation_timeout",
+  "result": {
+    "outcome": "failed",
+    "stage": "charged_heavy_whiff",
+    "seconds": 129.577,
+    "errors": [],
+    "exception_type": "TimeoutError",
+    "exception": ""
+  },
+  "success_deadline_ms": 15000,
+  "build_id": "0.1.9 \u00b7 a98ef075",
+  "source_head": "a98ef0758d9b4f722b74fbe899504aefcb032641",
+  "source_tree_dirty": true,
+  "export_unchanged": true,
+  "raw_web_bytes": 146306891,
+  "source_sha256": {
+    "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "tools/mobile_browser_smoke.py": "b4e3b465bb333575d9735fbdcb1efd24505532847fd97d00512a8592fc12f0ad",
+    "tools/check_mobile_web.py": "49da6ce6d6c95937cbbe959dcda67298215e9db519e7051681020205eae79d03",
+    "game/project.godot": "986d7bd552bf481fa445fae51df9aa04e4f2e6365f8e86b34a110b780e7e2bed",
+    "game/assets/models/production/lyra_weight_gameplay.glb": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "game/assets/models/production/sentinel_weight_gameplay.glb": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+  },
+  "later_diagnostic": {
+    "physics_frame": 392,
+    "fps": 1,
+    "health": 120,
+    "position_xz": [
+      0,
+      6
+    ],
+    "charge_elapsed": 0.800000000000001,
+    "charge_active": true,
+    "state": "charge",
+    "pressed_actions": [
+      "heavy"
+    ],
+    "last_dispatched_input": {
+      "type": "touchStart",
+      "points": [
+        {
+          "id": 3,
+          "x": 300.0,
+          "y": 808.0,
+          "radiusX": 1,
+          "radiusY": 1,
+          "force": 0.5
+        }
+      ],
+      "driver_ids_at_send": [
+        3
+      ],
+      "dispatch_seconds": 3.198
+    },
+    "screenshot": "browser-first-failure.png",
+    "screenshot_sha256": "f780aedc871a80027199c0637947f146a4071d8dc6f700c535fef81bca9fa67c"
+  },
+  "uncertainty": "No retained per-rAF startup observer timeline; exact first satisfying charge snapshot relative to deadline cannot be established. Later charge.8/statecharge does not override the failed15s success deadline.",
+  "server_closed": true,
+  "chromium_closed": true,
+  "protocol_changed": false,
+  "application_changed": false,
+  "no_contact_approval": true
+}

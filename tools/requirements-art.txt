@@ -1,7 +1,8 @@
 # Optional CPU skin-weight auditing; Blender scripts use Blender's own Python.
 # NumPy 2.3 requires Python >= 3.11.
 numpy==2.3.5
-# Optional constrained local skin-weight experiments, never runtime dependency.
+# Optional constrained skin experiments and read-only glTF motion/FK audits.
+# NumPy/SciPy are art-tool dependencies, never game runtime packages.
 scipy==1.17.0
 # Read-only PNG atlas sampling for material audits; no image editing.
 pillow==12.3.0

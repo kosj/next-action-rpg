@@ -1,0 +1,14 @@
+{
+  "scope": "Offline project settings only, no existing source edits",
+  "source_project_sha256": "986d7bd552bf481fa445fae51df9aa04e4f2e6365f8e86b34a110b780e7e2bed",
+  "fixture_project_sha256": "48db8d5137b449232fdcf5157f812b1c15d789b37eff47e0876d61a2772c080c",
+  "overrides": {
+    "config/name": "\"RUNEFALL Offline Weight Review\"",
+    "window/size/viewport_width": "1280",
+    "window/size/viewport_height": "720",
+    "window/size/window_width_override": "1280",
+    "window/size/window_height_override": "720",
+    "window/stretch/mode": "\"disabled\""
+  },
+  "import_policy": "Normal runtime only, no editor/import of source symlink directories"
+}

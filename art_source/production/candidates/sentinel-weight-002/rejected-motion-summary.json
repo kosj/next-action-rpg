@@ -1,0 +1,16 @@
+{
+  "scope": "Original weighted Sentinel retained as rejected guard-join candidate; no tolerance/runtime blend changes.",
+  "rejected_candidate": "art_source/production/candidates/sentinel-weight-001/manifest.json",
+  "rejected_source_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+  "reason": {
+    "scope": "Actual source-idle guard join was not tested by the original manual endpoint self-comparison. Source GLB/report/studio preserved unchanged.",
+    "native_checks": 448,
+    "failures": 2,
+    "near_end_max_joint_distance_m": 0.110023505985737,
+    "near_end_max_local_rotation_rad": 1.58058941364288,
+    "first_idle_max_joint_distance_m": 0.0205504167824984,
+    "original_limits_unchanged": true
+  },
+  "root_cause": "WeightAuthor continuous elbow-plane limb solver differed from original idle Author/PoseRig.limb branch. Original author endpoint check compared only its own manual guard, not the retained source idle.",
+  "fix": "Sentinel-only wrapper rebinds limb solver to original PoseRig.limb; frozen base author and hero unchanged. New actual-source-idle53-bone endpoint/near-end gate added."
+}

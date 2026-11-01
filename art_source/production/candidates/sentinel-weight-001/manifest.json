@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "asset_id": "sentinel_melee",
+  "candidate_id": "sentinel-weight-001",
+  "status": "rejected_runtime_guard_join_superseded_by_guard_aligned_candidate",
+  "source_file": "source.glb",
+  "source_bytes": 17410020,
+  "source_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+  "source_parent": "game/assets/models/production/sentinel_impact_gameplay.glb",
+  "source_parent_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+  "provenance_files": [
+    {
+      "file": "art_source/production/character_actions/sentinel-weight.json",
+      "sha256": "e6c39bee6c15155d7508f8f90dda75ced77785bf2e3bf58a8008e04f9275536d"
+    },
+    {
+      "file": "tools/author_weight_actions.py",
+      "sha256": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/audit_impact_curve.py",
+      "sha256": "b3debad4f9316a2e5694b60e65106cd3c10e5d393c10ed1ced73c1b234e239d4"
+    },
+    {
+      "file": "tools/render_impact_review.py",
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "death",
+    "enemy_attack",
+    "heavy_hit",
+    "hit",
+    "idle",
+    "run",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "6180967f4220651f5a9a343109e07bfab5831252c875170d008d17072d09c576",
+    "source_bytes": 17287040,
+    "output_sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+    "output_bytes": 17410020,
+    "retained_animation_names": [
+      "death",
+      "enemy_attack",
+      "hit",
+      "idle",
+      "RESET",
+      "run",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [
+      "heavy_hit"
+    ],
+    "authored_animation_names": [
+      "heavy_hit"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 595842,
+      "sha256": "62634f3e7fa0b0943843ba3ff2552363c480bf0937b7e7e603cf761ca54c8101"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 15426,
+      "sha256": "80e741f0827a26748014c72aefb3918ca27d9d22d5477f7f1107c24ffe4f7117"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 1514,
+      "sha256": "f4f74eeac2240bb21d117f20f7bf368ece42da752dcca5a655ab892bc4afc5f4"
+    },
+    {
+      "file": "rejected-motion-summary.json",
+      "bytes": 4571,
+      "sha256": "9d8e3feacccf75a8837a13e137b7b21ba59fdf11019ed2df99535d3e88ada92d"
+    }
+  ],
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "New loading/braking/recovery choreography only. Body/rest/skin/materials and unrelated raw animation JSON/BIN remain preserved. Raw preservation is not imported or visual/performance approval.",
+  "rejected_history": "rejected-motion-summary.json",
+  "review": {
+    "scope": "Actual reimported GLB with runtime sword/socket, fixed neutral Blender4.3.2 studio; no actual Godot runtime/normal-speed AV/hardware/AAA approval.",
+    "file": "studio-review/review.json",
+    "sha256": "5e2615fee28e18de0b2c81c2870a9d22f186572cb386d30bf5813fded189ca3f",
+    "rendered_glb_sha256_matches_candidate": true,
+    "contact_sheet": "studio-review/contact-sheet.png",
+    "contact_sheet_sha256": "14b7e2d0a2e69608db455d6d12648045b13bb71e0b0857d54960c35f55bbdf59"
+  },
+  "historical_runtime_installation": {
+    "file": "game/assets/models/production/sentinel_weight_gameplay.glb",
+    "sha256": "1efa1e1c92caeecc614ec3d48ee297c0fea58871cdc1fc0376510462e6f8a1df",
+    "scope": "Raw candidate installed for pending native/browser/visual verification. Old published impact source preserved unchanged."
+  },
+  "superseded_by": "art_source/production/candidates/sentinel-weight-002/manifest.json",
+  "rejection": {
+    "scope": "Actual source-idle guard join was not tested by the original manual endpoint self-comparison. Source GLB/report/studio preserved unchanged.",
+    "native_checks": 448,
+    "failures": 2,
+    "near_end_max_joint_distance_m": 0.110023505985737,
+    "near_end_max_local_rotation_rad": 1.58058941364288,
+    "first_idle_max_joint_distance_m": 0.0205504167824984,
+    "original_limits_unchanged": true
+  }
+}
