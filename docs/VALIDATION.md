@@ -1,11 +1,5 @@
 # 검증 결과
 
-## v0.1.10 · 활성 동작·곡선·Hero broadblade — 로컬 진행 중
-
-- [제작 계약](COMBAT_MOTION_POLISH_SLICE.md)·[현재 source/native 기록](validation/v0.1.10/README.md): 독립 active 몸/팔 재저작과 source-pinned 물리곡선,Hero-only geometry/PBR atlas공유·카메라/잔상/impact를 통합했다. **두 번째 native482개/실패0**과 preview Web146,513,443B/150MB·Web/Windows 패키지를 확인했다. 첫 material/반입대응/fixture타입 실패는 보존했다.
-- close .725m의 실제 첫contact는.358초이며 raw예측.354초와 구분한다. native Grip/Tip오차.0665/.3040mm는기능정합 범위다. 전체 skin 최대값은 좋아졌어도2054edge가1mm이상 새로 악화됐고,선택 포즈의 국소 검수만으로 전체 변형을 승인하지 않는다. 현재007은 runtime QA용 잠정 후보이며 전체skin·시각/연속1x AV·청취·실기기·AAA 승인은 pending이다.
-- 이 자료는0.1.10 dirty preview다. 실제 브라우저/full여정·최종 clean커밋 CI·공개/릴리스는 새 근거가 필요하며 이전0.1.9 배포 결과를 승계하지 않는다.
-
 ## v0.1.10 · 활성 베기와 실제 명중 가독성
 
 - [새 몸·팔 경로와 source 고정 칼날 곡선](COMBAT_MOTION_POLISH_SLICE.md)을 연결하고 Hero 전용 넓은 검·전투 카메라·방향성 잔상/접촉 표현을 개선했다. 실제 접촉 화면이 약했던 첫 후보는 기능 검사가 녹색이어도 기각하고 별도 진단으로 보존했다.
@@ -13,6 +7,8 @@
 - [실제 입력의 native 전후 비교](validation/v0.1.10/native-gameplay/README.md)는 고정60Hz의600 gameplay tick과 정상 UI를 포함한 조용한 논리1배속 자료다. 새 카메라의 적/명중 구분과 작은 접촉 glint를 한정적으로 채택했으며 전체 연속 AV·청취·목표 하드웨어·AAA 승인은 아니다.
 - [실제 모바일 집중 검사](validation/v0.1.10/focused-browser/README.md)는 **277.923초/오류0**, trusted2pointer·공격당 접촉1회·피해69.3·실제 recoil0.350000406m를 확인했다. 브라우저의 짧은 snapshot과 native5프레임 직접 정지 근거를 구분한다.
 - 현재 기록은 source 지문을 고정한 dirty preview다. 최종 최신 커밋의 전체 데스크톱/모바일 CI·공개/릴리스 결과는 [PR11](https://github.com/kosj/next-action-rpg/pull/11)과 해당 Actions에서 별도로 확인한다. 이전614세대의 전체 CI 통과를 새 카메라·core 승인으로 바꾸지 않는다.
+
+초기482검사·원시Web146,513,443B와 첫 material/반입대응/fixture타입 실패는 [이전 단계 원문](validation/v0.1.10/README.md)에 보존했다. 이를 최종486검사나 시각 채택으로 승계하지 않는다.
 
 ## v0.1.9 · 강타 장전·제동과 수호병 회수
 
