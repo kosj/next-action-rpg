@@ -1876,6 +1876,47 @@
         "docs/validation/v0.1.8/native-runtime.log",
         "docs/validation/v0.1.8/rejected-contact-summary.json"
       ]
+    },
+    {
+      "id": "combat-reference-source-versus-provider-summary",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "참고 전투 영상의 실제 미디어와 제공자 요약·미리보기의 근거를 분리한다",
+      "summary": "공식 버서커 영상의 허용된 공개 import와 정상 TLS 다운로드로 판본을 확보하고 실제 metadata·overview/고해상도 프레임·선택 시퀀스를 제공자 요약과 대조했다. 검색의49초·저품질preview·제공자의 거친 접촉 시각을 원본 근거로 기각했다. AAC 존재는 확인했지만 직접 청취는 없어 음향 정체/동기화는 provider-only다. 편집 cut·기존 부유 적을 새 launch/지형 파괴로 단정하지 않으며 이 workflow 검증을 현재 게임 AV·하드웨어·AAA 승인으로 승계하지 않는다.",
+      "tags": [
+        "combat",
+        "reference",
+        "video",
+        "evidence",
+        "audio",
+        "art",
+        "workflow",
+        "전투",
+        "영상",
+        "근거"
+      ],
+      "checked_on": "2026-11-01",
+      "context": {
+        "scope": "Verified acquisition/provenance and actual-source-versus-provider evidence workflow for the official published reference; not target-game audiovisual or AAA acceptance.",
+        "reference": "Official [제우스: 오만의 신] 클래스 소개 | 버서커; YouTube9CmiYo06gOQ, official class page embeds the same ID. Public research identity is not channel-owner/private-analytics authority.",
+        "acquisition": "Authorized vidIQ public-video import followed normal verified HTTPS download through inherited proxy. Initial normal YouTube CONNECT403 remained a failed path; no alternate proxy/direct routing/private API/client spoofing. Approved function scope/prices/budget were checked; private account/cost details omitted.",
+        "published_rendition": "44400704bytes; SHA256 a285ce7097d79566a748d84e7b479f6a517899930534413bbdb895c12a1a65b7; H2641920x1080 encoded60fps. Encoded FPS is not engine performance or input-latency evidence.",
+        "duration_correction": "Actual video stream65.550000s; container/audio65.619592s; provider66s rounded. Secondary49s listing was unverified/wrong for this acquired rendition.",
+        "preview_limit": "256x144 approximately15fps trim is a separate low-quality derivative, not source upload resolution/FPS. Use actual published-rendition frames for visible detail.",
+        "direct_visual_scope": "Reviewers compared published-rendition overview samples, high-resolution stills across0–52s and selected denser sequences. This is sampled manual visual evidence, not every-frame/live-input/unedited-action timing approval.",
+        "provider_corrections": "Coarse27s preparation/28s contact is not accepted as exact timing.33–39s contains multiple cuts and already-floating targets; do not infer one continuous leap, all enemies newly airborne or terrain fracture from dark shapes.",
+        "audio_limit": "AAC44.1kHz stereo stream verified. Independent auditory input was unsupported/unavailable, so sound identity/mix/synchrony remain provider-reported only; stream existence does not establish that it was heard.",
+        "comparison_target": "RUNEFALLv0.1.8 commit aa720be0ae907a7a4ae37d80e52706bfd86c921a; existing source/GLB and published functional evidence only. No newly captured normal-speed current-game AV, target hardware or AAA approval.",
+        "privacy_and_rights": "Public evidence keeps permanent source URL, metadata/hash and bounded observations only. Raw media/stills/private provider outputs remain outside repo; no account/job IDs, signed URLs, private balance/cost information or copied reference assets.",
+        "receiving_project": "Recheck provider availability/pricing, user authorization, source identity/media and own-game evidence from pending; source-case success conveys no account access, budget, copyright permission, performance or quality approval."
+      },
+      "sources": [
+        "docs/COMBAT_QUALITY_REVIEW.md",
+        "docs/validation/zeus-reference-2026-11-01/evidence.json",
+        "reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md",
+        "https://www.youtube.com/watch?v=9CmiYo06gOQ",
+        "https://zeus.com2us.com/gameinfo/class"
+      ]
     }
   ]
 }

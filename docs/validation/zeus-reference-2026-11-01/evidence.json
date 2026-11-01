@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-01",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=9CmiYo06gOQ",
+    "video_id": "9CmiYo06gOQ",
+    "title": "[제우스: 오만의 신] 클래스 소개 | 버서커",
+    "official_channel_id": "UCm9icYWvuMDJAEBg7_69jqA",
+    "official_class_page": "https://zeus.com2us.com/gameinfo/class",
+    "provider_metadata_duration_seconds": 66
+  },
+  "retrieval": {
+    "method": "Authorized vidIQ public-video import; downloaded returned media over verified HTTPS with the inherited proxy.",
+    "http_status": 200,
+    "published_rendition_sha256": "a285ce7097d79566a748d84e7b479f6a517899930534413bbdb895c12a1a65b7",
+    "private_source_bytes": 44400704,
+    "media_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "60/1",
+          "duration": "65.550000"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "avg_frame_rate": "0/0",
+          "duration": "65.619592"
+        }
+      ],
+      "format": {
+        "duration": "65.619592",
+        "size": "44400704",
+        "bit_rate": "5413103"
+      }
+    },
+    "no_media_redistribution": true
+  },
+  "evidence_levels": {
+    "direct_images": "Full published-rendition overview samples every2s, high-resolution stills and selected denser sequences; manual visual review.",
+    "provider_report": "vidIQ scene/audio analysis is secondary evidence and is not independently verified simply by a successful job.",
+    "audio": "AAC track exists; independent auditory perception not available in this model. Sound identity/mix/synchrony remain provider-reported only.",
+    "sampling_limits": "No live input latency, engine physics timing, exact gameplay hitstop, unedited action duration, or target-device FPS can be inferred from this edited promotional video."
+  },
+  "rejected_evidence": {
+    "secondary_49_second_duration": "Unverified search listing; replaced by actual published rendition65.619592s and rounded provider metadata66s.",
+    "preview": "256x144 approx15fps trim is a low-quality derivative, not original upload quality/FPS.",
+    "coarse_provider_timeline": "The claimed27s preparation/28s impact and continuous33-37 leap sequence are not accepted as exact action timing. Visible effects/cuts contradict treating each range as one uninterrupted action.",
+    "debris_and_airborne": "Dark shapes include winged/crystal enemies and some enemies already float; do not identify all as ground debris or newly launched targets."
+  },
+  "comparison_target": {
+    "version": "0.1.8",
+    "commit": "aa720be0ae907a7a4ae37d80e52706bfd86c921a",
+    "source_scope": "Implementation, existing native/public browser evidence and prior art records; no newly captured normal-speed target-device gameplay comparison."
+  },
+  "not_included": [
+    "Raw video/audio/stills or private provider outputs",
+    "Account identities, private analytics, job IDs or signed media URLs",
+    "Formal AAA approval or copied reference game assets"
+  ],
+  "manual_review_samples": [
+    {
+      "published_seconds": [
+        0,
+        64
+      ],
+      "method": "Overview frames every2s, including intro/combat/outro; sampled manual visual review."
+    },
+    {
+      "published_seconds": [
+        18.4,
+        20.6
+      ],
+      "method": "Crop sequences approximately every1/6s from the full rendition; body and sword silhouette comparison."
+    },
+    {
+      "published_seconds": [
+        29,
+        31.2
+      ],
+      "method": "Crop sequences approximately every1/6s; shot transition prevents treating the whole range as one attack."
+    },
+    {
+      "published_seconds": [
+        33,
+        39
+      ],
+      "method": "Independent reviewer sequence approximately every.25s; multiple scene cuts and existing airborne enemies distinguished."
+    },
+    {
+      "published_seconds": [
+        19.5,
+        29.5,
+        35
+      ],
+      "method": "High-resolution single images cross-checked against source-rendition scenes."
+    }
+  ]
+}
