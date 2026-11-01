@@ -66,4 +66,4 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 
 판본1.4.3은 표시용 손·검 정합과 본의 local/global 회전·속도를 따로 검사하는 절차, 실제 idle와 반열린 마지막 프레임의 복귀 비교, 충돌 root와 시각 발 보정의 경계, 정확한 actor/visual 바닥 배치와 오프라인 논리1배속 자료의 검증 범위를 보완합니다. 새64번째 사례는 실패 후보와 수정한 로컬 기능·표본 근거를 보존하며 전체 AV·실기기·AAA 승인을 부여하지 않습니다.
 
-판본1.4.4는 재저작한 active 동작과 게임용 칼날 곡선의 출처·좌표·표본·pin을 함께 검증하고, 준비 자세의 이른 겹침 예측과 실제 접촉을 구분하는 절차를 보완합니다. 무기 profile의 같은 atlas/PBR 재사용·raw 보존과 native 반입 양자화/triangle 대응, 전체 팔 수치와 새 국소 피부 악화, zero-point provider 참고 후보와 실제 채택의 경계를 기록합니다.65번째 원본 사례는 pending이며 묶음 무결성·기능 검증을 새 프로젝트의 실행·시각·실기기·AAA 승인으로 승계하지 않습니다.
+판본1.4.4는 재저작한 active 동작과 게임용 칼날 곡선의 출처·좌표·표본·pin을 함께 검증하고, 준비 자세의 이른 겹침 예측과 실제 접촉을 구분하는 절차를 보완합니다. 무기 profile의 같은 atlas/PBR 재사용·raw 보존과 native 반입 양자화/triangle 대응, 전체 팔 수치와 새 국소 피부 악화, zero-point provider 참고 후보와 실제 채택의 경계를 기록합니다.nominal 투영/물리 AABB·CI 성공과 실제 raster 가독성·정상 종료를 나누고, 약한 core의 원인 감사·명시적 art budget 변경·제한된 프로토타입 채택 범위를 보존합니다.65번째 원본 사례는 pending이며 묶음 무결성·기능 검증을 새 프로젝트의 실행·시각·실기기·AAA 승인으로 승계하지 않습니다.
