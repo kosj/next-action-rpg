@@ -1,0 +1,376 @@
+{
+	"after_three_physics_frames": {
+		"actor_roots_unchanged": true,
+		"attack_clock_unchanged": true,
+		"attack_elapsed": 0.406,
+		"complete_skeletons_unchanged": true,
+		"trail_ages_s": [
+			0.0560000000000001,
+			0.0393333333333334,
+			0.0226666666666667,
+			0.00600000000000006,
+			0.0
+		],
+		"trail_mesh_unchanged": true,
+		"trail_samples": 5,
+		"trail_samples_and_ages_unchanged": true,
+		"trail_visible": true,
+		"victim_clock_unchanged": true,
+		"victim_hit_elapsed": 0.0
+	},
+	"attack_id": "charged_heavy",
+	"attack_instance_id": 17,
+	"contact_observed": true,
+	"contact_phase": 0.366666666666667,
+	"contact_source": "hurtbox_ray",
+	"curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+	"curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+	"damage_start_fraction": 0.18,
+	"drawn_contact_limit_m": 0.125,
+	"engine": "4.7.2-stable (official)",
+	"event_attack_elapsed": 0.406,
+	"final_authoritative_elapsed": 0.406,
+	"final_drawn_grip_world": [
+		240.078491210938,
+		9.20489883422852,
+		241.396362304688
+	],
+	"final_drawn_point_to_segment_m": 0.059905644506216,
+	"final_drawn_sampled_time": 0.405999978083485,
+	"final_drawn_tip_world": [
+		240.266540527344,
+		9.56647109985352,
+		240.2783203125
+	],
+	"normal_world": [
+		0.486655324697495,
+		0.0,
+		0.873594105243683
+	],
+	"open_floor_recoil_resolved_m": 0.3499755859375,
+	"overlap_recoil_regression": {
+		"capsule_radii_sum_m": 0.76,
+		"initial_horizontal_separation_m": 0.7449951171875,
+		"requested_m": 0.35,
+		"resolved_displacement": [
+			0.0,
+			0.000837326049804688,
+			-0.349990844726562
+		],
+		"resolved_horizontal_m": 0.349990844726562,
+		"resolved_path_m": 0.349990844726562,
+		"source_root_unchanged": true,
+		"trace": [
+			{
+				"displacement": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"physics_frame": 399,
+				"remaining_s": 0.24,
+				"resolved_path_m": 0.0
+			},
+			{
+				"displacement": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"physics_frame": 400,
+				"remaining_s": 0.24,
+				"resolved_path_m": 0.0
+			},
+			{
+				"displacement": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"physics_frame": 401,
+				"remaining_s": 0.24,
+				"resolved_path_m": 0.0
+			},
+			{
+				"displacement": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"physics_frame": 402,
+				"remaining_s": 0.24,
+				"resolved_path_m": 0.0
+			},
+			{
+				"displacement": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"physics_frame": 403,
+				"remaining_s": 0.24,
+				"resolved_path_m": 0.0
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000837326049804688,
+					-0.0399932861328125
+				],
+				"physics_frame": 404,
+				"remaining_s": 0.223333333333333,
+				"resolved_path_m": 0.0399932861328125
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.064300537109375
+				],
+				"physics_frame": 405,
+				"remaining_s": 0.206666666666667,
+				"resolved_path_m": 0.064300537109375
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.0886077880859375
+				],
+				"physics_frame": 406,
+				"remaining_s": 0.19,
+				"resolved_path_m": 0.0886077880859375
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.1129150390625
+				],
+				"physics_frame": 407,
+				"remaining_s": 0.173333333333333,
+				"resolved_path_m": 0.1129150390625
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.137222290039062
+				],
+				"physics_frame": 408,
+				"remaining_s": 0.156666666666667,
+				"resolved_path_m": 0.137222290039062
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.161529541015625
+				],
+				"physics_frame": 409,
+				"remaining_s": 0.14,
+				"resolved_path_m": 0.161529541015625
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.185836791992188
+				],
+				"physics_frame": 410,
+				"remaining_s": 0.123333333333333,
+				"resolved_path_m": 0.185836791992188
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.21014404296875
+				],
+				"physics_frame": 411,
+				"remaining_s": 0.106666666666667,
+				"resolved_path_m": 0.21014404296875
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.234451293945312
+				],
+				"physics_frame": 412,
+				"remaining_s": 0.09,
+				"resolved_path_m": 0.234451293945312
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000837326049804688,
+					-0.258758544921875
+				],
+				"physics_frame": 413,
+				"remaining_s": 0.0733333333333334,
+				"resolved_path_m": 0.258758544921875
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.283065795898438
+				],
+				"physics_frame": 414,
+				"remaining_s": 0.0566666666666667,
+				"resolved_path_m": 0.283065795898438
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.307373046875
+				],
+				"physics_frame": 415,
+				"remaining_s": 0.04,
+				"resolved_path_m": 0.307373046875
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000836372375488281,
+					-0.331680297851562
+				],
+				"physics_frame": 416,
+				"remaining_s": 0.0233333333333334,
+				"resolved_path_m": 0.331680297851562
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000837326049804688,
+					-0.349990844726562
+				],
+				"physics_frame": 417,
+				"remaining_s": 0.0066666666666667,
+				"resolved_path_m": 0.349990844726562
+			},
+			{
+				"displacement": [
+					0.0,
+					0.000837326049804688,
+					-0.349990844726562
+				],
+				"physics_frame": 418,
+				"remaining_s": 0.0,
+				"resolved_path_m": 0.349990844726562
+			}
+		]
+	},
+	"point_projection_on_full_blade": 0.967088651283737,
+	"point_world": [
+		240.19465637207,
+		9.53001022338867,
+		240.34944152832
+	],
+	"query_blade_grip_world": [
+		240.078491210938,
+		9.20489883422852,
+		241.449676513672
+	],
+	"query_blade_tip_world": [
+		240.266525268555,
+		9.56647109985352,
+		240.331634521484
+	],
+	"query_contact_time": 0.406,
+	"query_damage_axis_base_world": [
+		240.131301879883,
+		9.30644226074219,
+		241.135681152344
+	],
+	"query_damage_axis_tip_world": [
+		240.24755859375,
+		9.53001022338867,
+		240.444381713867
+	],
+	"query_damage_base_world": [
+		240.112335205078,
+		9.26998138427734,
+		241.248428344727
+	],
+	"query_damage_tip_world": [
+		240.266525268555,
+		9.56647109985352,
+		240.331634521484
+	],
+	"query_point_to_damage_axis_m": 0.108684331178665,
+	"query_point_to_segment_m": 0.0726402401924133,
+	"raised_hilt_regression": {
+		"damage_axis_base_world": [
+			240.454986572266,
+			9.52606391906738,
+			241.517868041992
+		],
+		"damage_axis_tip_world": [
+			240.816375732422,
+			10.0525379180908,
+			241.152328491211
+		],
+		"damage_base_world": [
+			240.396041870117,
+			9.4402027130127,
+			241.577484130859
+		],
+		"damage_start_fraction": 0.18,
+		"damage_tip_world": [
+			240.87532043457,
+			10.1383991241455,
+			241.092712402344
+		],
+		"early_health": 95.0,
+		"early_time_s": 0.339,
+		"events": 1,
+		"final_health": 25.7,
+		"first_contact_time": 0.358,
+		"full_grip_world": [
+			240.290832519531,
+			9.28693962097168,
+			241.683898925781
+		],
+		"full_tip_world": [
+			240.87532043457,
+			10.1383991241455,
+			241.092712402344
+		],
+		"isolated_actual_hilt_hits": 0,
+		"point_projection_on_full_blade": 0.261452055816221,
+		"point_to_damage_axis_m": 0.115747794508934,
+		"point_world": [
+			240.352874755859,
+			9.52606391906738,
+			241.463363647461
+		],
+		"root_separation_m": 0.725
+	},
+	"schema_version": 1,
+	"scope": "Actual native charged contact clocks, final displayed weapon markers and frozen trail; no normal-speed art, audio or target-hardware approval.",
+	"source_hashes": {
+		"charged_attack": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+		"fixture": "8f83c5f50e54da1caa8a20a0c1250c8bde2476f411155196404790c3a9342301",
+		"hero_body": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+		"hero_body_path": "res://assets/models/production/lyra_fury_gameplay.glb",
+		"hero_impact_reference_body": "0aa78c46c0453f8286785ee937ef9388324dc4312bb076f5179934f08e44d57d",
+		"hero_reference_body": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+		"physical_curve": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
+	},
+	"trail_before_stop": {
+		"ages_s": [
+			0.0560000000000001,
+			0.0393333333333334,
+			0.0226666666666667,
+			0.00600000000000006,
+			0.0
+		],
+		"samples": 5,
+		"triangles": 16,
+		"visible": true
+	},
+	"wall_recoil_resolved_m": 0.198501586914062
+}

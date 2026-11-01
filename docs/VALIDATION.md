@@ -1,11 +1,17 @@
 # 검증 결과
 
+## v0.1.10 · 활성 동작·곡선·Hero broadblade — 로컬 진행 중
+
+- [제작 계약](COMBAT_MOTION_POLISH_SLICE.md)·[현재 source/native 기록](validation/v0.1.10/README.md): 독립 active 몸/팔 재저작과 source-pinned 물리곡선,Hero-only geometry/PBR atlas공유·카메라/잔상/impact를 통합했다. **두 번째 native482개/실패0**과 preview Web146,513,443B/150MB·Web/Windows 패키지를 확인했다. 첫 material/반입대응/fixture타입 실패는 보존했다.
+- close .725m의 실제 첫contact는.358초이며 raw예측.354초와 구분한다. native Grip/Tip오차.0665/.3040mm는기능정합 범위다. 전체 skin 최대값은 좋아졌어도2054edge가1mm이상 새로 악화됐고,선택 포즈의 국소 검수만으로 전체 변형을 승인하지 않는다. 현재007은 runtime QA용 잠정 후보이며 전체skin·시각/연속1x AV·청취·실기기·AAA 승인은 pending이다.
+- 이 자료는0.1.10 dirty preview다. 실제 브라우저/full여정·최종 clean커밋 CI·공개/릴리스는 새 근거가 필요하며 이전0.1.9 배포 결과를 승계하지 않는다.
+
 ## v0.1.9 · 강타 장전·제동과 수호병 회수
 
 - [전신 장전·디딤·제동과 실제 idle 복귀](WEIGHT_RECOVERY_SLICE.md)를 개선했습니다. 강타의 active 팔·칼날 경로는 보존하며, 추가 역회전 후보와 실제 복귀 실패를 기각·수정했습니다.
 - [로컬 검증 기록](validation/v0.1.9/README.md): native **448개·실패0**, Python **51개·실패0**, Web 원시 **146,306,891B/150MB**와 Windows 내보내기·패키지 검증이 통과했습니다. 수호병의 실제 마지막 피격 포즈→idle 오차는 **4.52mm**, 첫 idle 전환은 **0.49mm**로 기존20mm 한계 안입니다.
 - [실제 다중 터치 집중 검사](validation/v0.1.9/focused-browser/SUMMARY.json)는 같은 소스·export·기준의 두 번째 실행에서 **290.733초·오류0**으로 통과했습니다. 피해69.3·적중/효과1회·실제recoil.350000381m·마지막HP88/소유포인터0을 확인했습니다. 첫15초 준비 관찰 실패는 별도로 보존하며 원인 수정으로 표시하지 않습니다.
-- 이 자료는 dirty preview입니다. 정확 커밋 CI·전체 데스크톱/모바일 여정·공개 배포는 [GitHub Actions](https://github.com/kosj/next-action-rpg/actions)에서 각각 확인합니다. 생성한 논리1배속 비교 영상과 유한 프레임 관찰, 연속1배속 AV·실기기·AAA 승인을 구분합니다.
+- 위 로컬 기록 이후 v0.1.9/`1e524b1275c6c55d3020ea5c3122afbb8db403e9`의 [main CI](https://github.com/kosj/next-action-rpg/actions/runs/41266976799)·[tag CI](https://github.com/kosj/next-action-rpg/actions/runs/41267055177)·[공개 검사](validation/v0.1.9/published-verification.json)를 확인했다. 공개 desktop366.465초/errors0·전체mobile1240.735초/errors0,필수6job/artifact와 [v0.1.9 릴리스](https://github.com/kosj/next-action-rpg/releases/tag/v0.1.9)의3파일 TLS/HTTP200·API hash/ZIP 검증이 통과했다. [PR #10](https://github.com/kosj/next-action-rpg/pull/10)의 최종 판본 근거이며 원래 dirty-preview proof는 당시 기록으로 보존한다. 논리1x/유한 frame·연속AV·실기기·AAA 승인은 별도다.
 
 ## v0.1.8 · 완충 강타·강피격 대표 단위
 

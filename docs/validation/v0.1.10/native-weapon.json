@@ -1,0 +1,14 @@
+{
+	"correspondence_error_m": 0.0000209415156859905,
+	"geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+	"longitudinal_error_m": 0.0000205483447643928,
+	"new_central_width_m": 0.102877780795097,
+	"normal_tangent_frames_valid": true,
+	"old_central_width_m": 0.0571541339159012,
+	"original_material_resource_reused": true,
+	"protected_position_error_m": 0.0000208368110179435,
+	"scope": "Actual imported Hero-only geometry/PBR/marker contract; raw GLB coordinates unchanged outside the blade; native attributes quantized/reordered; no hand clearance, visual quality, triangle contact or AAA approval",
+	"source_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+	"triangle_multiset_unchanged": true,
+	"uv_error": 0.0000212631784961559
+}

@@ -289,6 +289,8 @@ func _resolved_impact(context: Dictionary, origin: Vector3, amount: float, block
 		"source_position":Vector3(context.get("source_position",origin)), "target_position":global_position,
 		"contact_phase":float(context.get("contact_phase",-1.0)), "attack_elapsed":float(context.get("attack_elapsed",0.0)),
 		"contact_blade_grip":Vector3(context.get("contact_blade_grip",Vector3.ZERO)), "contact_blade_tip":Vector3(context.get("contact_blade_tip",Vector3.ZERO)),
+		"contact_blade_motion":Vector3(context.get("contact_blade_motion",Vector3.ZERO)),
+		"curve_sha256":String(context.get("curve_sha256", "")), "curve_source_sha256":String(context.get("curve_source_sha256", "")),
 		"damage_start_fraction":float(context.get("damage_start_fraction",0.0)),
 		"contact_damage_base":Vector3(context.get("contact_damage_base",Vector3.ZERO)), "contact_damage_tip":Vector3(context.get("contact_damage_tip",Vector3.ZERO)),
 		"contact_damage_axis_base":Vector3(context.get("contact_damage_axis_base",Vector3.ZERO)), "contact_damage_axis_tip":Vector3(context.get("contact_damage_axis_tip",Vector3.ZERO)),

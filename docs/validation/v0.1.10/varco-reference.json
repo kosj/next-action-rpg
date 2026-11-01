@@ -1,0 +1,40 @@
+{
+  "checked_on": "2026-11-01",
+  "scope": "Sanitized official-provider catalog/run and raw-structure reference metadata only. No media or private service identifiers are published.",
+  "provider": "VARCO official Animate catalog",
+  "public_motion_name": "two_hand_attack",
+  "provider_stock": true,
+  "project_authored": false,
+  "listed_and_run_points": 0,
+  "generation_runs": 1,
+  "upstream_mesh_or_rig_runs": 0,
+  "raw_source": {
+    "bytes": 15151356,
+    "sha256": "4c5a4f5c2ea39cd4febd1fef81d98fa5683940264fdd633b0a8e46b3bc151334",
+    "meshes": 1,
+    "skins": 1,
+    "joint_count": 53,
+    "animation_count": 1,
+    "animation_name": null,
+    "sampler_count": 21,
+    "channel_count": 21,
+    "duration_s": 31.900000505149364,
+    "all_timestamps_strictly_increasing": true
+  },
+  "origin_translation": {
+    "origin_delta_m": [
+      -1.5035271644592285e-05,
+      0.007482662796974182,
+      -0.047907181084156036
+    ],
+    "joint_order_exact": true,
+    "vertex_count": 25767,
+    "all_vertices_common_translation_max_error_m": 1.4901161193847656e-08,
+    "indices_exact": true,
+    "inverse_bind_predicted_max_component_error": 1.4775257906052275e-08,
+    "same_rig_up_to_common_export_translation": true
+  },
+  "preparation": "Explicit common-origin normalization and retained source/bind checks required; do not widen rig tolerances or directly swap the unnamed sparse clip into production.",
+  "adoption": "Reference only; current Fury is independently authored. No semantic/timing/two-hand/skin/normal-speed/hardware/AAA approval.",
+  "publication_scope": "Raw candidate media, private account/flow/node/task/execution identifiers and signed URLs omitted. No new output publication or independent rights clearance is established by zero-point generation."
+}

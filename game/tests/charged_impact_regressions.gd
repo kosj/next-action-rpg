@@ -15,6 +15,7 @@ static func _write_contact_proof(report: Dictionary) -> void:
 	report["source_hashes"] = {
 		"fixture":FileAccess.get_sha256("res://tests/charged_impact_regressions.gd"),
 		"charged_attack":FileAccess.get_sha256("res://data/charged_heavy.tres"),
+		"physical_curve":FileAccess.get_sha256(RunePlayer.CHARGED_HEAVY.blade_curve_path),
 		"hero_body":FileAccess.get_sha256(ProductionCharacterArt.definition("hero").path),
 		"hero_body_path":String(ProductionCharacterArt.definition("hero").path),
 		"hero_impact_reference_body":FileAccess.get_sha256("res://assets/models/production/lyra_impact_gameplay.glb"),
@@ -174,10 +175,15 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(absf(miss_travel-0.576) < 0.008, "A charged miss resolves nominal 0.576m active-only travel through the real player motor")
 	check.call(events.is_empty() and amounts.is_empty(), "A charged miss emits neither confirmed impact nor damage events")
 	_ready_player(player,start)
-	var swept_probe := _probe(fixture,start+Vector3(-.1,1.26,-1.05))
+	# Place the positive hurtbox using the independently imported displayed
+	# weapon, not an old fixed arc or the physics LUT under test.
+	player.visual.pose(0.0,0.0,-1.0,false,false,false,{"speed":0.0,"attack_id":"charged_heavy","attack_elapsed":.46,"attack_duration":1.06,"attack_startup":.34,"attack_active":.18})
+	var probe_grip := player.visual.rig_weapon.find_child("GripOrigin",true,false) as Node3D
+	var probe_tip := player.visual.rig_weapon.find_child("BladeTip",true,false) as Node3D
+	var swept_probe := _probe(fixture,probe_grip.global_position.lerp(probe_tip.global_position,.65))
 	var distant_probe := _probe(fixture,start+Vector3(0,1.1,-2.8))
-	var overhead_probe := _probe(fixture,start+Vector3(0,3,-.5))
-	var rear_probe := _probe(fixture,start+Vector3(0,1.2,.8))
+	var overhead_probe := _probe(fixture,start+Vector3(0,4,-.5))
+	var rear_probe := _probe(fixture,start+Vector3(0,1.2,3.0))
 	await _tick(tree)
 	await _tick(tree)
 	var full_step := CombatStrike.new(player,RunePlayer.CHARGED_HEAVY,1.65)
@@ -189,22 +195,34 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(distant_probe.hits == 0 and overhead_probe.hits == 0 and rear_probe.hits == 0, "Charged contact excludes the old extended proxy range, overhead and rear volumes")
 	for probe in [swept_probe,distant_probe,overhead_probe,rear_probe]:
 		probe.queue_free()
-	# Reproduce the clean-browser hilt-only contact: target roots were only
-	# 0.725m apart while the blade was still raised at t<=0.38. This is not a
-	# speculative empty swing; it uses the real enemy's full capsule hurtbox.
+	# Isolate the hilt from this animation's actual first active pose. A new
+	# legitimate diagonal cut may arrive earlier than the old t=.38 trajectory;
+	# the invariant is a sharp-only damage region, not the old fixed azimuth.
+	_ready_player(player,start)
+	player.visual.pose(0.0,0.0,-1.0,false,false,false,{"speed":0.0,"attack_id":"charged_heavy","attack_elapsed":.34,"attack_duration":1.06,"attack_startup":.34,"attack_active":.18})
+	var hilt_grip := player.visual.rig_weapon.find_child("GripOrigin",true,false) as Node3D
+	var hilt_tip := player.visual.rig_weapon.find_child("BladeTip",true,false) as Node3D
+	var hilt_only := _probe(fixture,hilt_grip.global_position-hilt_grip.global_position.direction_to(hilt_tip.global_position)*.10)
+	await _tick(tree)
+	await _tick(tree)
+	var hilt_only_swing := CombatStrike.new(player,RunePlayer.CHARGED_HEAVY,1.65)
+	hilt_only_swing.step(.340001,Vector3.FORWARD,4)
+	check.call(hilt_only.hits == 0,"A hurtbox behind the actual displayed active grip cannot be damaged by a hilt capsule extension")
+	var isolated_hilt_hits := hilt_only.hits
+	hilt_only.queue_free()
 	_ready_player(player,start)
 	var hilt_enemy := _enemy(fixture,world,Vector3(0,0,1.275))
 	await _tick(tree)
 	await _tick(tree)
 	var hilt_swing := CombatStrike.new(player,RunePlayer.CHARGED_HEAVY,1.65)
 	player.strike = hilt_swing
-	hilt_swing.step(.38,Vector3.FORWARD,4)
+	hilt_swing.step(.339,Vector3.FORWARD,4)
 	var early_hilt_health := hilt_enemy.health
-	check.call(is_equal_approx(early_hilt_health,95) and events.is_empty(), "A close enemy touching the raised hilt receives no charged damage through t=0.38")
-	hilt_swing.step(.14,Vector3.FORWARD,4)
+	check.call(is_equal_approx(early_hilt_health,95) and events.is_empty(), "A close enemy receives no speculative damage before the active blade window")
+	hilt_swing.step(.181,Vector3.FORWARD,4)
 	hilt_swing.step(.4,Vector3.FORWARD,4)
-	check.call(events.size() == 1 and amounts.size() == 1 and absf(hilt_enemy.health-25.7) < .001 and float(events[0].attack_elapsed) > .38, "The later actual blade cut deals 69.3 exactly once after the raised-hilt interval")
-	var hilt_proof: Dictionary = {"root_separation_m":.725,"early_time_s":.38,"early_health":early_hilt_health,"final_health":hilt_enemy.health,"events":events.size()}
+	check.call(events.size() == 1 and amounts.size() == 1 and absf(hilt_enemy.health-25.7) < .001 and float(events[0].attack_elapsed) >= .34, "The actual sharp blade cut deals 69.3 exactly once against a close capsule hurtbox")
+	var hilt_proof: Dictionary = {"root_separation_m":.725,"early_time_s":.339,"early_health":early_hilt_health,"final_health":hilt_enemy.health,"events":events.size(),"isolated_actual_hilt_hits":isolated_hilt_hits}
 	if not events.is_empty():
 		var close_impact: Dictionary = events[0]
 		var full_grip: Vector3 = close_impact.contact_blade_grip
@@ -240,7 +258,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(events.size() == 1 and amounts.size() == 1 and absf(enemy.health-25.7) < 0.001, "A charged sweep confirms exactly one 69.3 damage hit against the 95HP melee target")
 	if not events.is_empty():
 		var impact: Dictionary = events[0]
-		check.call(impact.attack_id == "charged_heavy" and impact.strength == "charged" and impact.source == "player" and int(impact.attack_instance_id) > 0 and int(impact.attack_instance_id) <= CombatStrike.MAX_SAFE_ATTACK_SERIAL and int(impact.attack_instance_id) == player.strike.attack_instance_id, "Confirmed context identifies the real charged strike with a positive JS-safe serial and no object references")
+		check.call(impact.attack_id == "charged_heavy" and impact.strength == "charged" and impact.source == "player" and int(impact.attack_instance_id) > 0 and int(impact.attack_instance_id) <= CombatStrike.MAX_SAFE_ATTACK_SERIAL and int(impact.attack_instance_id) == player.strike.attack_instance_id and String(impact.curve_sha256) == RunePlayer.CHARGED_HEAVY.blade_curve_sha256, "Confirmed context identifies the real charged strike and pinned physical curve with a positive JS-safe serial and no object references")
 		var blade_nearest := Geometry3D.get_closest_point_to_segment(impact.point,impact.contact_blade_grip,impact.contact_blade_tip)
 		var sharp_nearest := Geometry3D.get_closest_point_to_segment(impact.point,impact.contact_damage_axis_base,impact.contact_damage_axis_tip)
 		var contact_grip: Vector3 = impact.contact_blade_grip
@@ -254,6 +272,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 		contact_proof = {
 			"contact_observed":true, "attack_id":String(impact.attack_id), "attack_instance_id":int(impact.attack_instance_id),
 			"contact_source":String(impact.contact_source), "contact_phase":float(impact.contact_phase),
+			"curve_sha256":String(impact.curve_sha256), "curve_source_sha256":String(impact.curve_source_sha256),
 			"query_contact_time":contact_time, "event_attack_elapsed":float(impact.attack_elapsed),
 			"final_authoritative_elapsed":player.strike.elapsed, "final_drawn_sampled_time":player.visual.skeletal_bridge.sampled_time,
 			"point_world":_xyz(impact.point), "normal_world":_xyz(impact.normal),

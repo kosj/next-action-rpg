@@ -1,0 +1,101 @@
+{
+	"charged_trail": {
+		"depth_tested": true,
+		"gameplay_authority": false,
+		"layers": 2,
+		"lifetime": 0.16,
+		"samples": 3,
+		"style": "charged",
+		"triangles": 8,
+		"visible": true
+	},
+	"cut_aabb": "(0.76, 0.126, 0.00001)",
+	"far_lock": {
+		"actual_BladeTip_uv": [
+			0.511570544120593,
+			0.408562502024863
+		],
+		"actual_GripOrigin_uv": [
+			0.460352540627504,
+			0.553215424596416
+		],
+		"follow_distance": 5.92000717163086,
+		"free_distance": 5.2,
+		"locked": true,
+		"maximum_lock_distance": 8.6,
+		"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+		"subjects": [
+			{
+				"behind_camera": false,
+				"height_fraction": 0.287310414969639,
+				"nominal_foot_uv": [
+					0.434224329239283,
+					0.744968287752703
+				],
+				"nominal_head_uv": [
+					0.432882338303786,
+					0.457657872783064
+				]
+			},
+			{
+				"behind_camera": false,
+				"height_fraction": 0.142091904771271,
+				"nominal_foot_uv": [
+					0.537056399614383,
+					0.579645202058186
+				],
+				"nominal_head_uv": [
+					0.537425975310497,
+					0.437553297286915
+				]
+			}
+		],
+		"viewport": [
+			390.0,
+			844.0
+		],
+		"wanted_distance": 5.92000717163086
+	},
+	"portrait": {
+		"actual_BladeTip_uv": [
+			0.593024659768129,
+			0.355081097209623
+		],
+		"actual_GripOrigin_uv": [
+			0.531898811535958,
+			0.520406026975804
+		],
+		"follow_distance": 5.2,
+		"free_distance": 5.2,
+		"locked": false,
+		"maximum_lock_distance": 8.6,
+		"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+		"subjects": [
+			{
+				"behind_camera": false,
+				"height_fraction": 0.318912054125167,
+				"nominal_foot_uv": [
+					0.5,
+					0.733593981412915
+				],
+				"nominal_head_uv": [
+					0.5,
+					0.414681927287748
+				]
+			}
+		],
+		"viewport": [
+			390.0,
+			844.0
+		],
+		"wanted_distance": 5.2
+	},
+	"portrait_height_ratio_vs_v019": 1.28417639614381,
+	"rotated_cut_aabb": "(0.126, 0.76, 0.00001)",
+	"scope": "Native actual projection, skin-marker ribbon, emitted mesh/material, bounded lifecycle and physics-ray presentation fixtures only; no real-input/continuousAV/targetGPU/AAA approval",
+	"source_sha256": {
+		"camera": "4d538d485e7bcf8676c1b4bd36598bea7b83c823d1724a672d0ad5e2cd8ad774",
+		"effect": "160f474dfed6013b93032f4c406ea98bd47bbf95bc9a13798d205ae4097ee460",
+		"trail": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5"
+	}
+}

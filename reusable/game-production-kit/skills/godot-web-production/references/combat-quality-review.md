@@ -46,6 +46,20 @@
 
 ## 실제 접촉과 결과의 비교 행렬
 
+### 재저작 source와 물리 곡선
+
+active 몸/무기 경로를 바꿨다면 이전 경로에 마커만 억지로 맞추지 않는다. 별도 출력에서 body/rest/skin·관련 없는 clip을 보존하고 실제 source로부터 게임용 Grip/Tip 곡선을 만든다. 파일 digest와 실제 source digest·좌표·단위·floor 보정·active timing/양끝·유한 값·정렬된 표본·길이/보간 오차를 묶어 검사한다. metadata에 SHA 문자열이 있다는 사실과 실제 실행한 모델의 동일성을 구분한다. 잘못된 baked 경로를 옛 경로로 조용히 대체하지 않는다.
+
+물리 query는 원래 곡선 경계와 실제 endpoint 이동을 보존하며 큰 delta와 해결된 actor 이동을 함께 다룬다. active 시작의 높은 준비 자세가 가까운 대상과 이미 겹친다면 설계한 베기의 의미와 맞는지 확인한다. release 위치/heading과 몸·팔의 도달 조건을 같이 검토하고 임의 phase gate·피해 지연·허용오차 완화로 가리지 않는다. 정적 capsule 기하의 첫 겹침 예측과 실제 controller/engine의 첫 receipt는 각각 기록한다.
+
+peak 감소는 누적 axial 회전·각 본·피부 변형의 통과가 아니다. 같은 quaternion 정규화/shortest 방법과 표본 스케줄을 사용하고 전체 최대·분포와 같은 edge의 새로운 악화·면적 압축을 나눈다. 최악 부위가 바뀌거나 전반 수치가 좋아져도 새 국소 skin 결함은 같은 포즈·카메라에서 검수하기 전 채택하지 않는다.
+
+### 같은 atlas를 쓰는 무기 profile 파생
+
+기존 무기의 폭/profile을 바꿀 때는 hilt/guard/apex·장착 마커·길이·UV/index/topology의 보존 범위와 normal/tangent의 변환을 명시한다. profile별 mesh만 교체하고 원래 effective PBR surface/atlas를 재사용한다면 실제 imported surface·override 우선순위·다른 actor의 불변을 확인한다. 원본 raw vertex의 정확 보존을 native importer의 index 순서·압축된 vertex의 byte 동일성으로 요구하지 않는다. 실제 triangle/UV 대응과 baseline 반입 오차로 정한 물리 단위 오차를 기록하며 무관한 threshold 확대와 구분한다.
+
+바뀐 vertex만 물리 capsule 안에 들어간다는 결과를 전체 메시의 containment로 확대하지 않는다. 기존 미변경 경계의 초과량도 보존하고 실제 장착·양손/피부·갑옷 간섭·전투 contact·화면을 다시 확인한다. geometry 용량 감소나 atlas 추가가 없다는 사실은 시각 품질/성능 승인이 아니다. provider-stock의 zero-cost 실행도 reference·정규화/retiming·실제 채택·권리 확인과 분리하며 사설 식별자·서명 URL을 공개하지 않는다.
+
 씬 전체의 반입 표본율이 모든 기존 transform clip을 다시 bake하는지도 확인한다. 일부 새 동작만 높은 정밀도가 필요하다면 원본 clip의 표본 시각·끝점·채널을 보존하며 불필요한 재표본을 줄이고, 새 동작의 중간 시각 오차와 실제 반입 키 수를 다시 검사한다. 선택적 반입 처리는 원본 데이터의 표본율을 먼저 검증한 뒤 적용하며 다른 프로젝트에 같은 주파수나 필터를 복사하지 않는다. 용량 초과를 예산 확대·새 동작의 정밀도 저하로 숨기지 않고 실제 배포 바이트로 확인한다.
 
 | 공격 | 명중 | 빗나감 | 막힘/방어 | 처치 |

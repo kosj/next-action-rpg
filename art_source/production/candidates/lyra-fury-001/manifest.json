@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-fury-001",
+  "status": "scoped_007_runtime_candidate_selected_actual_gameplay_pending",
+  "source_file": "source.glb",
+  "source_bytes": 25032860,
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "source_parent": "game/assets/models/production/lyra_weight_gameplay.glb",
+  "source_parent_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+  "runtime_installation": {
+    "file": "game/assets/models/production/lyra_fury_gameplay.glb",
+    "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "scope": "New candidate bytes staged, actual imported/collision/visual/export validation pending; prior published source preserved unchanged."
+  },
+  "provenance_files": [
+    {
+      "file": "tools/author_fury_actions.py",
+      "sha256": "2450a983ec4904010b2f474243b5f5d0651107864956284dc17b0c909955f106"
+    },
+    {
+      "file": "tools/render_fury_review.py",
+      "sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    },
+    {
+      "file": "tools/author_weight_actions.py",
+      "sha256": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4"
+    },
+    {
+      "file": "tools/author_character_actions.py",
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    {
+      "file": "tools/author_sentinel_recovery.py",
+      "sha256": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/inspect_motion_derivatives.py",
+      "sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc"
+    },
+    {
+      "file": "art_source/production/character_actions/lyra-fury.json",
+      "sha256": "99cb571883a179df9ce32744e0940d6e654648ed7cb8ecc4d05cafea09ddf286"
+    },
+    {
+      "file": "game/assets/models/production/rune_sword_web.glb",
+      "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "charge",
+    "charged_heavy",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "body_and_old_actions": {
+    "body_json_exact": [
+      "nodes",
+      "meshes",
+      "skins",
+      "materials",
+      "images",
+      "textures",
+      "samplers",
+      "scenes",
+      "scene"
+    ],
+    "original_bin_prefix_exact": true,
+    "source_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+    "source_bytes": 23174144,
+    "output_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "output_bytes": 25032860,
+    "retained_animation_names": [
+      "death",
+      "dodge",
+      "heal",
+      "heavy",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "replaced_animation_names": [
+      "charge",
+      "charged_heavy"
+    ],
+    "authored_animation_names": [
+      "charge",
+      "charged_heavy"
+    ],
+    "rest_basis_tolerance": 1e-05,
+    "source_unchanged": true
+  },
+  "derived_files": [
+    {
+      "file": "authoring.json",
+      "bytes": 8624550,
+      "sha256": "d30525f543ed7f6c4752e468229fc8c8805faa26f17ab596497d2548485fb598"
+    },
+    {
+      "file": "blade-curve.json",
+      "bytes": 23480,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
+    },
+    {
+      "file": "raw-motion-audit.json",
+      "bytes": 999614,
+      "sha256": "b72589f128e18f10a348c21c05382351fc881e2df4cff4a7715d7cb883a2b70f"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 32343,
+      "sha256": "4802ea03ec32746595d32014f1539efed11089ee0be8a4b5f590b011d523d028"
+    },
+    {
+      "file": "import-policy.json",
+      "bytes": 1334,
+      "sha256": "1211f53228881afffebffebdef3fc2308d81db0b3ddbb7959aa896cd6d7e3056"
+    },
+    {
+      "file": "rejected-motion-summary.json",
+      "bytes": 1459,
+      "sha256": "93dadde8c4c8c935922e3d7b52cdbfc9214539fff7d4b700cce6bf851a127b70"
+    },
+    {
+      "file": "skin-review/README.md",
+      "bytes": 2650,
+      "sha256": "ad7e5bb221b8d1c36968b1c4c923e3d11b881777d18a9bc1f4cc1306a0728644"
+    },
+    {
+      "file": "skin-review/charge-0296-after-left.png",
+      "bytes": 772564,
+      "sha256": "fa5b5ba7f8f3d13ed1060070cb2bc481ee18a2240b2f519fecbd624c00e4ec85"
+    },
+    {
+      "file": "skin-review/charge-0296-before-left.png",
+      "bytes": 764934,
+      "sha256": "b6bf3123cd6435304e979eeddb1a5ce182d4058e8622a16ae0dcf4a788b2e991"
+    },
+    {
+      "file": "skin-review/review.json",
+      "bytes": 15207,
+      "sha256": "4a9fc1d190b4265598ebd7e918949ad9990fa3e4e84949d37424f16b2cc0a397"
+    },
+    {
+      "file": "skin-review/skin-lbs-audit.json",
+      "bytes": 14091,
+      "sha256": "0e038954217b4ecfecabbd2f507228ac5cf7ea0dcee1e095edd5c82d8421419b"
+    },
+    {
+      "file": "skin-review/skin_lbs_audit.py",
+      "bytes": 6212,
+      "sha256": "2262ca9936f6f98250b23bb2cce3483c3657770c1f5b07550a5c228d2b8f1e8a"
+    },
+    {
+      "file": "skin-review/stroke-0354-after-front.png",
+      "bytes": 578697,
+      "sha256": "6b8decb2de71aaa091b3a1cdf105f9e982ab832a3206d51a6180c3cb05683b64"
+    },
+    {
+      "file": "skin-review/stroke-0441-after-opposite.png",
+      "bytes": 724467,
+      "sha256": "76d8bb2f3657720c1e748e25af79f768746f34cbb4e5a5c4499f55bf3a1ef951"
+    },
+    {
+      "file": "skin-review/stroke-0441-before-opposite.png",
+      "bytes": 707568,
+      "sha256": "bd69edb39436cca2aaa37df345135723f72aab07a5b840f9d1adfed9fcc3128e"
+    },
+    {
+      "file": "skin-review/stroke-0450-after-front.png",
+      "bytes": 572289,
+      "sha256": "4233e4cc5fe02cd2d847d9b012ead034ce45445f1bea1480087c5d9d14140497"
+    }
+  ],
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "Reauthored charge+charged_heavy using chest-led descending trajectory/anatomical swivel/distributed twist; body/rest/skin/materials and unrelated raw clips preserved byte-exact. Existing Sentinel unchanged.",
+  "authoring_revision": "lyra-007",
+  "rejected_history": "rejected-motion-summary.json",
+  "finite_studio_review": {
+    "scope": "Actual candidate-only Blender4.3.2 Cycles skin/gauntlet seven stills, one matched-camera quarter view. Previous-source same-camera front/opposite-quarter and full key/midpoint skin envelope review remain pending; no continuous1x/interactive/hardware/AAA approval.",
+    "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "file": "studio-review/arms/review.json",
+    "sha256": "339bda9b6c3bbab1700611510c49fd49dca6108b14febae886585bebade75c12",
+    "shots": [
+      {
+        "file": "studio-review/arms/charged_heavy-0354.png",
+        "time_s": 0.354,
+        "sha256": "4b2138b5d00d1f1acc5219e02c965ac81883dce6ae8cbd98944a95f00a662437"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0417.png",
+        "time_s": 0.416667,
+        "sha256": "3b9d9feb5b961d06d5c6a16477f57127cc3d3e64ec59f6f5fc1006653aca8588"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0433.png",
+        "time_s": 0.433333,
+        "sha256": "8ca7bbe97ce51b24be6a41b203c15f0674a43ff7714fb0432e791c0942c3a779"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0450.png",
+        "time_s": 0.45,
+        "sha256": "95e4246c55d091629e2cef0c2825f69cb152e072a098cfc592538a451317516e"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0467.png",
+        "time_s": 0.466667,
+        "sha256": "2d8ee5a9ecd73a75a752fc57c38a1d24b5595f37aa3f7e9f95e355f4172518b4"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0500.png",
+        "time_s": 0.5,
+        "sha256": "773d487197e272f95692883b6db3814751fe5cc17732f272a2d6ce58ec52787e"
+      },
+      {
+        "file": "studio-review/arms/charged_heavy-0517.png",
+        "time_s": 0.516667,
+        "sha256": "28a061a174bc1b8fdac5cfdddbb346ea5e8c2039ba66080e301010fe110568ef"
+      }
+    ]
+  },
+  "finite_skin_decision": {
+    "status": "scoped_candidate_for_actual_runtime_gameplay_verification",
+    "report": "skin-review/review.json",
+    "sha256": "4a9fc1d190b4265598ebd7e918949ad9990fa3e4e84949d37424f16b2cc0a397",
+    "raw_lbs_report": "skin-review/skin-lbs-audit.json",
+    "raw_lbs_sha256": "0e038954217b4ecfecabbd2f507228ac5cf7ea0dcee1e095edd5c82d8421419b",
+    "scope": "Selected twelve actual matched Blender Cycles stills and finite raw LBS audit only. No all-frame skin, intersection, continuous1x AV, input/actual gameplay, hardware or AAA approval.",
+    "same_edge_worsening_retained": true,
+    "all_skin_approval": false,
+    "continuous_av": "pending",
+    "aaa_approval": "pending"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "profile": "lyra",
+  "source_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
+  "height_m": 1.82,
+  "triangles": 32288,
+  "fps": 500,
+  "motion_authorship": "New chest-led diagonal stroke, shoulder-relative elbow plane and distributed axial twist. Actual exported markers drive a sourcebound runtime LUT; old170deg path is not imposed.",
+  "weapon_socket": {
+    "bone": "RightHand",
+    "offset_m": [
+      0.055,
+      0.1,
+      -0.06
+    ],
+    "basis_columns": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "right_grasp_blade_axis_m": 0.055,
+    "left_grasp_blade_axis_m": -0.065,
+    "weapon_length_m": 1.35,
+    "blade_tip_from_grip_m": 1.19,
+    "anatomical_approval": false
+  },
+  "guard": {
+    "grip_m": [
+      -0.05,
+      -0.35,
+      1.18
+    ],
+    "azimuth_deg": -10.0,
+    "pitch_deg": 55.0,
+    "pelvis_drop_m": 0.07,
+    "lean_deg": 5.0
+  },
+  "finger_curl_rad": [
+    0.65,
+    1.35,
+    1.4
+  ],
+  "locomotion": {
+    "walk_speed": 6.4,
+    "run_speed": 8.5
+  },
+  "quality_status": "Authored prototype awaiting raw/skin/native/same-camera/1x/hardware/AAA review",
+  "sampling_rationale": "Only new charge/charged_heavy use500Hz to keep actual nonlinear local-TRS midpoint blade FK within3mm after continuous elbow-plane IK; original unrelated clips remain byte-exact. Sample density is not visual quality approval.",
+  "weapon_source": {
+    "file": "game/assets/models/production/rune_sword_web.glb",
+    "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+  },
+  "fury_contract": {
+    "startup_s": 0.34,
+    "active_s": 0.18,
+    "recovery_s": 0.54,
+    "nominal_root_travel_m": 0.576,
+    "display_length_m": 1.19,
+    "blade_radius_m": 0.12,
+    "sharp_start_fraction": 0.18,
+    "trajectory": "Actual exported500Hz Grip/Tip LUT, actorYup/-Zforward, +.025floor offset included.",
+    "forearm_twist_fraction": 0.85,
+    "upperarm_twist_fraction": 0.3,
+    "anatomical_pole_chest_relative_m": [
+      -0.46,
+      -0.16,
+      -0.36
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "scope": "Recorded configured policy before native import; new UIDs may be assigned by Godot. Actual imported sampling/geometry/collision/export and visual acceptance pending.",
+  "animation_import": {
+    "file": "game/assets/models/production/lyra_fury_gameplay.glb.import",
+    "fps": 500,
+    "optimizer/enabled": false,
+    "compression/enabled": false,
+    "post_import_file": "game/import/impact_animation_sampling.gd",
+    "post_import_sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03"
+  },
+  "textures": [
+    {
+      "file": "game/assets/models/production/lyra_fury_gameplay_Image_0.png",
+      "sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b",
+      "source_png_bytes_equal": true,
+      "params_equal": true
+    },
+    {
+      "file": "game/assets/models/production/lyra_fury_gameplay_Image_1.png",
+      "sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc",
+      "source_png_bytes_equal": true,
+      "params_equal": true
+    },
+    {
+      "file": "game/assets/models/production/lyra_fury_gameplay_Image_2.png",
+      "sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67",
+      "source_png_bytes_equal": true,
+      "params_equal": true
+    }
+  ],
+  "runtime_validation": "pending",
+  "aaa_approval": "pending"
+}

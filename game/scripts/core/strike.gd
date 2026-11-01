@@ -13,6 +13,8 @@ var previous_origin: Vector3
 var started: bool = false
 var multiplier: float = 1.0
 var presentation_id: StringName
+var curve_failure_reported: bool = false
+var _query_actor_motion: Vector3 = Vector3.ZERO
 
 func _init(actor: CharacterBody3D, attack: AttackData, power: float = 1.0, visual_id: StringName = &"") -> void:
 	# RefCounted ObjectIDs carry an engine ownership bit and are not suitable
@@ -38,6 +40,9 @@ func step(delta: float, forward: Vector3, mask: int) -> void:
 	elapsed += delta
 	var old_origin := previous_origin
 	previous_origin = source.global_position
+	# Observed, collision-resolved actor travel used by this query interval;
+	# never substitute the requested lunge velocity when a wall stopped it.
+	_query_actor_motion = (source.global_position-old_origin)/delta if delta > 0.0 else Vector3.ZERO
 	if elapsed < data.startup or old_time >= data.startup + data.active:
 		return
 	if delta <= 0.0 or data.active <= 0.0:
@@ -88,14 +93,25 @@ func _step_physical_blade(old_time: float, delta: float, old_origin: Vector3, fo
 	var last_time := minf(elapsed, data.startup + data.active)
 	var first := clampf((first_time-data.startup)/data.active, 0.0, 1.0)
 	var last := clampf((last_time-data.startup)/data.active, 0.0, 1.0)
-	# Bound angular and grip travel at the maximum derivative of smooth(f*f)
-	# (2.231); sample spacing remains below the capsule radius, even for a tick
-	# that crosses the entire active window. No expanded reach proxy is used.
+	# Baked paths retain every key and subdivide actual endpoint travel. The
+	# original analytic path remains available only for resources without a LUT.
+	# Neither path expands the authored weapon into the old reach proxy.
 	var scale_m := source.global_basis.get_scale().abs()
 	var max_scale := maxf(scale_m.x, maxf(scale_m.y, scale_m.z))
-	var distance_bound := (deg_to_rad(data.arc + absf(data.blade_pitch_end-data.blade_pitch_start))*data.blade_length + data.blade_grip_start.distance_to(data.blade_grip_end))*2.24*(last-first)*max_scale
-	distance_bound += old_origin.distance_to(source.global_position)
-	var samples := maxi(1, ceili(distance_bound / maxf(0.025, data.blade_radius*0.75)))
+	var phases := PackedFloat64Array()
+	if not data.blade_curve_path.is_empty():
+		phases = data.blade_sweep_phases(first,last,old_origin.distance_to(source.global_position),max_scale)
+		if phases.is_empty():
+			if not curve_failure_reported:
+				push_error("Physical blade curve rejected: %s" % data.blade_curve_report().reason)
+				curve_failure_reported = true
+			return
+	else:
+		var distance_bound := (deg_to_rad(data.arc + absf(data.blade_pitch_end-data.blade_pitch_start))*data.blade_length + data.blade_grip_start.distance_to(data.blade_grip_end))*2.24*(last-first)*max_scale
+		distance_bound += old_origin.distance_to(source.global_position)
+		var samples := maxi(1,ceili(distance_bound/maxf(.025,data.blade_radius*.75)))
+		for index in range(samples+1):
+			phases.append(lerpf(first,last,float(index)/samples))
 	var yaw := atan2(-forward.x, -forward.z)
 	var query := PhysicsShapeQueryParameters3D.new()
 	query.collision_mask = mask
@@ -103,11 +119,10 @@ func _step_physical_blade(old_time: float, delta: float, old_origin: Vector3, fo
 	var blade := CapsuleShape3D.new()
 	blade.radius = data.blade_radius * max_scale
 	query.shape = blade
-	for index in range(samples+1):
-		var fraction := float(index)/samples
-		var time := lerpf(first_time,last_time,fraction)
+	for phase: float in phases:
+		var time := data.startup+data.active*phase
 		var origin := old_origin.lerp(source.global_position,clampf((time-old_time)/delta,0.0,1.0))
-		var points := data.blade_points(lerpf(first,last,fraction))
+		var points := data.blade_points(phase)
 		var grip := origin + (points[0]*scale_m).rotated(Vector3.UP,yaw)
 		var tip := origin + (points[1]*scale_m).rotated(Vector3.UP,yaw)
 		var axis := tip-grip
@@ -119,7 +134,7 @@ func _step_physical_blade(old_time: float, delta: float, old_origin: Vector3, fo
 		query.transform = Transform3D(Basis(Quaternion(Vector3.UP,direction)),(damage_base+tip)*0.5)
 		var damage_axis_base := damage_base+direction*blade.radius
 		var damage_axis_tip := tip-direction*blade.radius
-		if _confirm_overlaps(query,forward,[grip,tip],lerpf(first,last,fraction),time,[damage_base,tip,damage_axis_base,damage_axis_tip]):
+		if _confirm_overlaps(query,forward,[grip,tip],phase,time,[damage_base,tip,damage_axis_base,damage_axis_tip]):
 			# Freeze at the first accepted geometric sample. Other targets in this
 			# same query share that instant; future arc samples resume after stop.
 			return
@@ -184,6 +199,19 @@ func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Arra
 	var strength := data.impact_strength
 	if strength.is_empty():
 		strength = "skill" if String(presentation_id).begins_with("skill_") else ("heavy" if presentation_id == &"heavy" else "light")
+	var curve: Dictionary = data.blade_curve_report() if not data.blade_curve_path.is_empty() else {}
+	var blade_motion := Vector3.ZERO
+	if bool(curve.get("ok",false)) and blade_points_world.size() == 2 and contact_phase >= 0.0:
+		var half_sample := .5/maxf(1.0,float(curve.sample_count)-1.0)
+		var before_phase := maxf(0.0,contact_phase-half_sample)
+		var after_phase := minf(1.0,contact_phase+half_sample)
+		var before := data.blade_points(before_phase)
+		var after := data.blade_points(after_phase)
+		var seconds := data.active*(after_phase-before_phase)
+		var blade_axis := blade_points_world[1]-blade_points_world[0]
+		var projection := clampf((point-blade_points_world[0]).dot(blade_axis)/maxf(blade_axis.length_squared(),.000001),0.0,1.0)
+		var local_motion := ((after[0]-before[0]).lerp(after[1]-before[1],projection))/seconds
+		blade_motion = (local_motion*source.global_basis.get_scale().abs()).rotated(Vector3.UP,atan2(-forward.x,-forward.z))+_query_actor_motion
 	return {
 		"attack_id":String(presentation_id), "strength":strength,
 		"attack_instance_id":attack_instance_id, "source":"player" if (source.collision_layer & 2) != 0 else "enemy",
@@ -191,6 +219,8 @@ func _contact_context(target: Node3D, forward: Vector3, blade_points_world: Arra
 		"source_position":source.global_position, "target_position":target.global_position,
 		"contact_source":contact_source, "material":"metal", "target_id":target.get_instance_id(),
 		"contact_phase":contact_phase, "attack_elapsed":elapsed,
+		"curve_sha256":String(curve.get("sha256","")), "curve_source_sha256":String(curve.get("source_sha256","")),
+		"contact_blade_motion":blade_motion,
 		"contact_blade_grip":blade_points_world[0] if blade_points_world.size() == 2 else Vector3.ZERO,
 		"contact_blade_tip":blade_points_world[1] if blade_points_world.size() == 2 else Vector3.ZERO,
 		"damage_start_fraction":data.blade_damage_start_fraction if damage_segment_world.size() == 4 else 0.0,

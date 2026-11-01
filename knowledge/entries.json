@@ -1923,7 +1923,7 @@
       "kind": "workflow",
       "status": "verified",
       "title": "검 마커 정합과 본의 local/global 시간 변화를 별도 검사한다",
-      "summary": "마커 정합에도109–117도 손목 counter-rotation이 생겨 raw local/global 미분과 실제 idle 복귀를 별도 검사했다. Sentinel001실패를002로 수정해native448/0·20mmgate를 지켰고 패키지·수정003 무음캡처/유한raster·집중브라우저290.733초/errors0을 확인했다. 첫129.577초 readiness실패는 원인미확정이며 동일source/export 반복통과를수정효과로쓰지않는다. 기존팔roll·전체여정/최종CI·공개·연속1x/청취·실기기·AAA는미승인이다.",
+      "summary": "마커 정합에도109–117도 손목 counter-rotation이 생겨 raw local/global 미분과 실제 idle 복귀를 별도 검사했다. Sentinel001실패를002로 수정해native448/0·20mmgate를 지켰고 패키지·수정003 무음캡처/유한raster·집중브라우저290.733초/errors0을 확인했다. 첫129.577초 readiness실패는 원인미확정이며 동일source/export 반복통과를수정효과로쓰지않는다. 기존팔roll·전체여정/최종CI·공개·연속1x/청취·실기기·AAA는미승인이다. 후속 v0.1.9 main/tag CI·공개 전체 브라우저·릴리스3파일 TLS 검증은 별도 공개 checkpoint에 확인했으며 AV·실기기·AAA 승인은 아니다.",
       "tags": [
         "combat",
         "animation",
@@ -1953,7 +1953,7 @@
         "root_and_layer_limits": "Rejected time-assumed Sentinel.35m worldrecoil compensation: collision/wall/direction may truncate or redirect motion and actor-ratio conversion could produce.375m. Currentassumedworldcompensation0,localbraceonly. Movingcharge remains Spine upperlayer preserving Hips/legs, so deeper fullbody loading applies stationary only.",
         "offline_capture_limit": "Fresh003publicnative-motion usesHero27fbed/Sentinele7e2 andownerY=-visual.ground_offset_y:Heroapproximately-.025m over162motionframes+5staticarmposes,Sentinel0 over84frames. Sourcefreeze/recheckedinputhashes verified. Nominalplane only,not allvertexfootplant/terrain/collision. Old002 remains privatehistoricalbody-relative diagnostic,neverfinalfootproof.",
         "contracts": "Existing charge threshold/timing/damage/poise/blade/activepath/hitstop/recoil/inputs preserved by contract; new runtime regressions and final build/export/browser evidence still required.",
-        "not_verified": "Fullcurrentdesktop/mobilejourney,finalcleancommittedCI/public/release,continuous1xplayback/interactivegameplayAV/directaudiohearing/mix,allvertexworldfootcontact/terrainIK,targethardware/AAA. Localfocused/native/package/file-stillgatesdo notapprovethese; focuspassdoesnotdiagnosefirsttimeoutcause.",
+        "not_verified": "Normal continuous1xvisual/audio-hearing/mix,targethardware/AAA andterrain/allvertexfootcontact remain pending. Historical localpreview pendingCI/public status was later resolved for publishedv0.1.9 only; no adoption of future revision evidence.",
         "residual_priority": "Fresh003rasters shownewload/lowerstance/catch/brake/recovery changes. Bothold/new forearm/gauntlet roll sharply atcharged.4667–.4833s;v019doesnotfixallawkwardwristmotion. Actualskin/arms/2hands remain nextqualitypriority. High-key neutralfloor isnotmaterial/lightingapproval. Overallpeaks/markerpass do not approvenaturalness.",
         "offline_capture_artifacts": "Fresh003silent1280x720encoded60:Hero162frames/2.7s MP4SHA80b31f1735182e88288f576b8f5cb9d3d52c5d443a33e66a096bcea953e91481;Sentinel84frames/1.4s SHAc18fb9b640f67095fdfcce16da01404006e155a12a9f205a2501aac040c70523. RawlastpairpixelMD5equal verified before removingonlyduplicatequitframe;nospeedchange. Finite9-framefullbodyeach+5losslessstaticarmrasters observed;notcontinuous1xwatching/hearing.",
         "native_guard_failure": "Frozen rejected-native-join.json actual448checks/2failures/exit1,fixture d992f88de6473bc13cf6f5207ddbf4ebb6cd1773e0459ef1b2a6185bd25d9103,Hero27fbed/Sentinel1efa: nearend maxjointdistance.110023505985737m/localrotation1.58058941364288rad; firstidle.0205504167824984m/.177360057830811rad; distancegate.02m unchanged. Manualguard armIK frame differed from originalrawidle; needs Sentinelauthoring fix, not relaxedcriteria.",
@@ -1964,7 +1964,8 @@
         "focused_browser_positive": "Publicfocused-browser/SUMMARY:actualtrustedCDPmax2touch,second290.733s/errors[],whiffcontact/spawn0,69.3damage HP95→25.7,confirmed/effect1,heavy_hit.48,bothreportedpause.075,projection.26368371735337864/inneraxis.11338430189225225m,recoil.3500003814752263m<=.355,finalactualpauseHP88/pointers0. Readonlyreceipts,no stateinjection.",
         "focused_browser_first_failure": "Preserved129.577s strictcharge-ready15s observationtimeout. Latercharge.8/skeletalcharge/HP120/errors0 doesnot prove withindeadlinereadiness; exactfirstsatisfyingstartup snapshot unavailable,causeunresolved. No gamebug/environmentcause/fixclaim.",
         "controlled_repeat": "Attempt2retains same45sourcehashes and allsameexportfiles asattempt1;noapp/driver/quality/assertion/deadlinechange. Exportunchanged/source differences={} verified;originalfailure notrewritten. Trustedrelease→readonlymatch6.1115s<15s is observerresponse,not measuredattackduration/inputlatency.",
-        "browser_freeze_scope": "Browserfrozenpair observed=false,snapshot outsidecharged attackerhitstop. Nativepositive clocks/roots/skeleton/trail freeze remainsseparate; reported.075pauserequests do not establish directlyobservedbrowserpair."
+        "browser_freeze_scope": "Browserfrozenpair observed=false,snapshot outsidecharged attackerhitstop. Nativepositive clocks/roots/skeleton/trail freeze remainsseparate; reported.075pauserequests do not establish directlyobservedbrowserpair.",
+        "published_v019_checkpoint": "Subsequent publishedv0.1.9 at1e524b1275c6c55d3020ea5c3122afbb8db403e9:PR10,mainActions41266976799/tag41267055177;allsixjobs/artifacts verified,publicdesktop366.465s/errors0 andfullmobile1240.735s/errors0;threeactualreleaseTLSHTTP200/APIhash+ZIP checks verified. Originaldirty-preview proof remains historical; this doesnot approvev0.1.10 or AV/hardware/AAA."
       },
       "sources": [
         "docs/WEIGHT_RECOVERY_SLICE.md",
@@ -1999,7 +2000,75 @@
         "docs/validation/v0.1.9/focused-browser/release-timeline.json",
         "docs/validation/v0.1.9/focused-browser/export-context.json",
         "docs/validation/v0.1.9/focused-browser/archive-manifest.json",
-        "docs/validation/v0.1.9/browser-first-failure.json"
+        "docs/validation/v0.1.9/browser-first-failure.json",
+        "docs/validation/v0.1.9/published-verification.json",
+        "https://github.com/kosj/next-action-rpg/pull/10",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41266976799",
+        "https://github.com/kosj/next-action-rpg/actions/runs/41267055177",
+        "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.9"
+      ]
+    },
+    {
+      "id": "active-body-curve-and-loaded-contact",
+      "kind": "workflow",
+      "status": "pending",
+      "title": "재저작 active 몸·출처 고정 칼날 곡선·loaded 접촉·무기 profile을 함께 검증한다",
+      "summary": "v0.1.10은 active 몸/팔을 다시 저작하고 같은 source에서91표본 물리 곡선을 고정했다.006은팔peak감소에도준비날의early겹침으로보류했고007은기하를바꿔actualclose첫receipt.358초를확인했다. Hero-only1.8배폭geometry는기존atlas/PBR·마커를공유하고 raw정확보존/native양자화대응을분리했다. native482/0·preview출력은확인했지만2054edge국소악화와누적twist·실제skin/시각·브라우저·연속AV·기기·AAA는전체승인이아니다. 공식0pointtwohand후보는reference-only다.",
+      "tags": [
+        "combat",
+        "animation",
+        "curve",
+        "provenance",
+        "geometry",
+        "pbr",
+        "skin",
+        "VARCO",
+        "workflow",
+        "전투",
+        "판정"
+      ],
+      "checked_on": "2026-11-01",
+      "context": {
+        "state": "Work in progress; bounded static/raw/native482/0 anddirtypreview export facts confirmed. 007 is at most provisional runtime-QA selection after selected-still review; fullskin/continuousAV/browser/hardware/AAA adoption pending.",
+        "baseline": "Publishedv0.1.9 source1e524b1275c6c55d3020ea5c3122afbb8db403e9;body/rest/skin/images/materials/BINprefix/19unrelatedclips preserved;charge/charged_heavy reauthored. Older v019 proofs remain separate.",
+        "candidate_and_curve": "HeroFury00725032860B SHA f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb;curve601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e.91uniformsamples/.002s/.34..52s,actorYup-minusZforward/flooroffset.025once;staticresourcepin/sourcechain matched.",
+        "curve_precision": "Raw lengthmaxerror1.0372140020198373e-6m/midpointchord.0002503868102881057m. Actualnative91keys+90midpoints×2scales markermaxgrip.066516mm/tip.303980mm;nominalfoot.015378mm. Finite marker precision isnot continuousskin/contact/terrainquality.",
+        "raw_method_scope": "All53bones atmatched65reference60Hz samples:wholemaxlocal62.120679→23.323737deg/global58.629702→20.448410deg. Engineeringpeakreduction isnotAAA%. LeftForeArmabsoluteaxialpath~283.93deg roundtrip/restrelativeYspan~160.95deg;not everybone/cumulativeroll reduced.",
+        "robust_joins": "Independent normalizedquaternionabs(dot) shortest rawTRS/slerp:53boneidle/recoverymaxposition.329761mm/maxlocalrotation.000581324deg;held→releaseexact0. Authorfloatanglemethod is distinct;do notmix numbers acrossmethods.",
+        "skin_risk": "RawLBS1712key/midpoints,23800regionaledges:globalmaxextension53.062→34.083mm but2054sameedgesenvelopesworsen>1mm. Worstleftelbowcharge.296old-14.607→new+17.948mm/envelopechange+32.555mm. Numericalriskretained;selected12stillsprovisionallyreviewedwithoutobviousnewcollapse/spike,notfullskin/AV/AAA clearance.",
+        "loaded_contact": "0062edd/848cbheld:initialsharpaxisdistance.427485m<sumradii.52m atrootsep.725m/lowearlydownspeed.7664mps.007releasehand/headingshift givesrawdistance.614684m>.52m/predictedfirstLUT.354s/down4.095mps. No arbitraryphasegate/damage-delay/thresholdrelaxation.",
+        "actual_native_contact": "007close regression:HP95at.339s,firstactualhit.358s/69.3once,hiltisolatedhits0,projection.261452/axisdistance.115748m. Maindefaultquery.406s andactualdisplay.405999978s;bothclocks/roots/skeleton/trail5samples16tri unchanged3physicsframes. Raw .354prediction andactual .358receipt remain distinct.",
+        "weapon_derivative": "Hero-onlygeometry160248B/SHA4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b,factor1.8,1550/2799verticeschanged,4000triangles;hilt/guard/apex/markers/YZ/UV/index/topology preserved,Jacobianinverse-transpose+GramSchmidtTBN,0Bnewatlas. Sentineloriginalunchanged.",
+        "native_material_and_geometry": "DuplicategeometryArrayMesh andsetoriginalactivePBR onmeshsurface,noinstancematerialoverride. Nativeoriginalmaterialref/trianglecorrespondence/framevalid;positionerror20.9415micrometers<100micrometercalibratedgate;UVerror2.1263e-5normalized. Rawbyteexactinvariants separatefromnativecompressed/reorderedattributes. Wholeoldcapsuleenvelope.124849m unchanged;notfullmeshcontainment.",
+        "provider_reference": "OfficialVARCOstocktwo_hand_attack listed/run0points,onegeneration/no upstreammeshorrigrerun;15151356B/SHA4c5a4f5c2ea39cd4febd1fef81d98fa5683940264fdd633b0a8e46b3bc151334,53joints/31.9sunnamed21channels/commonorigintranslation. Referenceonly,notFuryprojectauthorship/runtime/semantic/rights/AAAapproval;privateidentifiers/media/URLs omitted.",
+        "native_and_preview": "Secondnative482/0 afterfirstfailedmaterialattachmentcontract/importorder-exactnessfixture/feedbacktypeinference. PreviewWebraw146513443<150000000B;WebZIP115767875B/Windows143609182B. Dirtysource notfinalcleanCI/publicrelease.",
+        "not_approved": "Fullskin/allposeclearance,continuous1x/actualgameplayAV/directhearing,actualbrowser/fulljourney,currentcleancommittedCI/public/release,targethardware/AAA. NativeAPI/nominalprojection/source-preservedmetrics do not approve these.",
+        "selected_skin_review": "Selected12matchedBlender stills/public6representatives: noobviousnewcollapse/spike/rupture atcanonicalleftelbow/front/opposite;provisional007runtime-QA adoption only. Numeric2054-edge risk retained;fistwrap/armorcontact/fullskin/continuousAV/hardware/AAA pending. Originalneutral swordusedboth,so broadbladeactualvisibility is separate."
+      },
+      "sources": [
+        "docs/COMBAT_MOTION_POLISH_SLICE.md",
+        "docs/validation/v0.1.10/README.md",
+        "docs/validation/v0.1.10/source-review.json",
+        "docs/validation/v0.1.10/independent-raw-review.json",
+        "docs/validation/v0.1.10/skin-midpoint.json",
+        "docs/validation/v0.1.10/native-runtime.log",
+        "docs/validation/v0.1.10/native-first-failure.log",
+        "docs/validation/v0.1.10/native-alignment.json",
+        "docs/validation/v0.1.10/native-contact.json",
+        "docs/validation/v0.1.10/native-weapon.json",
+        "docs/validation/v0.1.10/native-feedback.json",
+        "docs/validation/v0.1.10/varco-reference.json",
+        "art_source/production/candidates/lyra-fury-001/manifest.json",
+        "art_source/production/candidates/lyra-fury-001/semantic-review.json",
+        "art_source/production/candidates/lyra-fury-001/rejected-motion-summary.json",
+        "art_source/production/weapon_profiles/hero-broadblade-001/derivation.json",
+        "game/data/charged_blade_curve.json",
+        "game/scripts/core/attack_data.gd",
+        "game/scripts/core/strike.gd",
+        "game/scripts/actors/actor_visual.gd",
+        "reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md",
+        "art_source/production/candidates/lyra-fury-001/skin-review/README.md",
+        "art_source/production/candidates/lyra-fury-001/skin-review/review.json"
       ]
     }
   ]
