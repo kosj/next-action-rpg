@@ -429,9 +429,78 @@ func apply_quality() -> void:
 	get_tree().call_group("grounding_shadows", "refresh_quality")
 
 func lighting_presentation_report() -> Dictionary:
-	# Read actual scene nodes; this report cannot apply quality or alter lights.
+	# Actual resource observations only: no quality, input, physics or RNG writes.
 	var key := sanctuary.get_node_or_null("SanctuaryKey") as DirectionalLight3D if is_instance_valid(sanctuary) else null
 	var fill := sanctuary.get_node_or_null("SanctuaryFill") as DirectionalLight3D if is_instance_valid(sanctuary) else null
+	var atmosphere := {"sky":{}, "floors":[], "backdrop":{}}
+	var environment_node := sanctuary.get_node_or_null("SanctuaryEnvironment") as WorldEnvironment if is_instance_valid(sanctuary) else null
+	if environment_node != null and environment_node.environment != null:
+		var env := environment_node.environment
+		var sky := env.sky
+		if sky != null and sky.sky_material is ShaderMaterial:
+			var material := sky.sky_material as ShaderMaterial
+			var direction = material.get_shader_parameter("sun_direction")
+			var sun: Vector3 = direction if direction is Vector3 else Vector3.ZERO
+			var toward_sun: Vector3 = key.global_transform.basis.z.normalized() if key != null else Vector3.ZERO
+			atmosphere["sky"] = {"shader_material":true, "profile":String(material.get_meta("sky_profile", "")),
+				"shader_path":material.shader.resource_path if material.shader != null else "",
+				"shader_sha256":material.shader.code.sha256_text() if material.shader != null else "",
+				"uses_time":material.shader.code.contains("TIME") if material.shader != null else false,
+				"quality_process":sky.process_mode == Sky.PROCESS_MODE_QUALITY,
+				"radiance_128":sky.radiance_size == Sky.RADIANCE_SIZE_128,
+				"sun_direction":[sun.x,sun.y,sun.z], "key_alignment":sun.dot(toward_sun),
+				"background_energy":env.background_energy_multiplier}
+	if is_instance_valid(sanctuary):
+		for label in ["LandingFlagstone", "CourtyardApproachFlagstone", "CourtyardFlagstone"]:
+			var node := sanctuary.get_node_or_null(NodePath(label)) as MeshInstance3D
+			if node == null or not node.mesh is PlaneMesh or not node.material_override is StandardMaterial3D:
+				continue
+			var plane := node.mesh as PlaneMesh
+			var material := node.material_override as StandardMaterial3D
+			var point := node.global_position
+			var collision_nodes := 0
+			for child in node.find_children("*", "", true, false):
+				if child is CollisionObject3D or child is CollisionShape3D:
+					collision_nodes += 1
+			atmosphere["floors"].append({"name":label, "visible":node.is_visible_in_tree(),
+				"size":[plane.size.x,plane.size.y], "position":[point.x,point.y,point.z],
+				"uv_scale":[material.uv1_scale.x,material.uv1_scale.y,material.uv1_scale.z],
+				"tile_meters":float(node.get_meta("physical_tile_meters",0.0)),
+				"visual_only":bool(node.get_meta("visual_only_floor",false)), "collision_nodes":collision_nodes,
+				"albedo_texture":material.albedo_texture.resource_path if material.albedo_texture != null else "",
+				"normal_texture":material.normal_texture.resource_path if material.normal_texture != null else "",
+				"roughness_texture":material.roughness_texture.resource_path if material.roughness_texture != null else "",
+				"normal_enabled":material.normal_enabled, "ao_enabled":material.ao_enabled,
+				"metallic":material.metallic, "roughness":material.roughness})
+		var backdrop := sanctuary.get_node_or_null("SanctuaryBackdrop") as Node3D
+		if backdrop != null:
+			# Full transformed triangle clearance is a separate native/capture
+			# inspection. HUD snapshots use small cached mesh-length getters.
+			var meshes := 0
+			var surfaces := 0
+			var triangles := 0
+			var forbidden_nodes := 0
+			var all_visible := true
+			var all_unshadowed := true
+			for child in backdrop.find_children("*", "", true, false):
+				if child is CollisionObject3D or child is CollisionShape3D or child is Light3D or child is NavigationRegion3D:
+					forbidden_nodes += 1
+				if not child is MeshInstance3D:
+					continue
+				var node := child as MeshInstance3D
+				var mesh := node.mesh as ArrayMesh
+				if mesh == null:
+					continue
+				meshes += 1
+				surfaces += mesh.get_surface_count()
+				all_visible = all_visible and node.is_visible_in_tree()
+				all_unshadowed = all_unshadowed and node.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+				for surface in range(mesh.get_surface_count()):
+					var indices := mesh.surface_get_array_index_len(surface)
+					triangles += (indices if indices > 0 else mesh.surface_get_array_len(surface)) / 3
+			atmosphere["backdrop"] = {"profile":String(backdrop.get_meta("presentation_profile", "")),
+				"mesh_nodes":meshes, "surfaces":surfaces, "triangles":triangles,
+				"forbidden_nodes":forbidden_nodes, "all_visible":all_visible, "all_unshadowed":all_unshadowed}
 	return {"key_present":is_instance_valid(key), "fill_present":is_instance_valid(fill),
 		"key_shadow_enabled":key.shadow_enabled if is_instance_valid(key) else false,
-		"fill_shadow_enabled":fill.shadow_enabled if is_instance_valid(fill) else false}
+		"fill_shadow_enabled":fill.shadow_enabled if is_instance_valid(fill) else false, "atmosphere":atmosphere}

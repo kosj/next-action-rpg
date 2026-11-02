@@ -1,0 +1,124 @@
+--- candidate001/assets/shaders/sanctuary_sky.gdshader
++++ candidate002/assets/shaders/sanctuary_sky.gdshader
+@@ -3,16 +3,16 @@
+ 
+ // Authored static atmosphere. Noise runs only while the radiance cube is baked;
+ // the visible background samples that cube. No clock or camera-position input.
+-uniform vec3 zenith_color : source_color = vec3(0.14, 0.29, 0.42);
+-uniform vec3 horizon_color : source_color = vec3(0.43, 0.57, 0.65);
++uniform vec3 zenith_color : source_color = vec3(0.10, 0.27, 0.50);
++uniform vec3 horizon_color : source_color = vec3(0.22, 0.43, 0.66);
+ uniform vec3 horizon_warmth : source_color = vec3(0.69, 0.66, 0.58);
+ uniform vec3 cloud_light : source_color = vec3(0.80, 0.79, 0.73);
+-uniform vec3 cloud_shadow : source_color = vec3(0.30, 0.40, 0.49);
++uniform vec3 cloud_shadow : source_color = vec3(0.24, 0.37, 0.51);
+ uniform vec3 ground_color : source_color = vec3(0.10, 0.15, 0.18);
+ // Set once from SanctuaryKey's actual local +Z, the direction toward the sun.
+ uniform vec3 sun_direction = vec3(-0.552, 0.669, 0.497);
+ uniform float sky_energy : hint_range(0.1, 2.0) = 0.90;
+-uniform float cloud_coverage : hint_range(0.0, 1.0) = 0.54;
++uniform float cloud_coverage : hint_range(0.0, 1.0) = 0.42;
+ 
+ float hash_sky(vec2 p) {
+ 	vec3 q = fract(vec3(p.x, p.y, p.x) * 0.1031);
+@@ -42,14 +42,14 @@
+ 	// The blue transition starts immediately above a narrow warm horizon.
+ 	vec3 clear_sky = mix(horizon_color, zenith_color, pow(height, 0.42));
+ 	float horizon_band = pow(1.0 - height, 18.0);
+-	clear_sky = mix(clear_sky, horizon_warmth, horizon_band * (0.28 + 0.42 * pow(sunward, 4.0)));
++	clear_sky = mix(clear_sky, horizon_warmth, horizon_band * (0.10 + 0.56 * pow(sunward, 4.0)));
+ 	clear_sky += vec3(0.25, 0.19, 0.10) * pow(sunward, 32.0);
+ 	// A continuous projected dome avoids a longitude seam. Broad low clouds
+ 	// remain readable in the low fight camera; higher wisps break their outline.
+ 	vec2 p = direction.xz / (height + 0.38);
+ 	float lower_field = cloud_field(p * 2.1 + vec2(6.3, -2.4));
+ 	float higher_field = cloud_field(p * vec2(4.2, 1.8) + vec2(-8.1, 5.7));
+-	float lower_cloud = smoothstep(0.48, 0.72, lower_field + cloud_coverage * 0.12);
++	float lower_cloud = smoothstep(0.54, 0.72, lower_field + cloud_coverage * 0.12);
+ 	float higher_cloud = smoothstep(0.57, 0.78, higher_field) * 0.42;
+ 	float cloud_band = smoothstep(0.015, 0.09, height) * (1.0 - smoothstep(0.65, 0.95, height));
+ 	float clouds = max(lower_cloud, higher_cloud) * cloud_band;
+--- candidate001/scripts/world/sanctuary.gd
++++ candidate002/scripts/world/sanctuary.gd
+@@ -90,7 +90,7 @@
+ 	# bright masonry together, especially with performance-mode shadows off.
+ 	var sky_material := ShaderMaterial.new()
+ 	sky_material.shader = preload("res://assets/shaders/sanctuary_sky.gdshader")
+-	sky_material.set_meta("sky_profile", "sanctuary_static_clouds_001")
++	sky_material.set_meta("sky_profile", "sanctuary_static_clouds_002")
+ 	var sky := Sky.new()
+ 	sky.sky_material = sky_material
+ 	sky.radiance_size = Sky.RADIANCE_SIZE_128
+--- candidate001/scripts/world/sanctuary_backdrop.gd
++++ candidate002/scripts/world/sanctuary_backdrop.gd
+@@ -4,6 +4,7 @@
+ ## Its silhouette is a candidate for actual-camera review, not AAA approval.
+ 
+ const LIMESTONE: StandardMaterial3D = preload("res://assets/materials/courtyard/wall_limestone.tres")
++const FLOOR_STONE: StandardMaterial3D = preload("res://assets/materials/courtyard/floor_stone.tres")
+ const PROFILE_ID := "sanctuary_atmosphere_v012"
+ const SIDE_CLEARANCE := 46.0
+ const FAR_CLEARANCE := -465.0
+@@ -27,28 +28,31 @@
+ func _ready() -> void:
+ 	name = "SanctuaryBackdrop"
+ 	_cliff_faces()
+-	_finish("LayeredValleyCliffs", _material(Color("8c9290"),3.8,0.46))
++	_finish("LayeredValleyCliffs", _material(Color("536a78"),6.8,0.60,true))
+ 	_strata_shelves()
+-	_finish("ErodedStrataShelves", _material(Color("92968b"),3.0,0.40))
++	_finish("ErodedStrataShelves", _material(Color("64747a"),6.0,0.52,true))
+ 	_ruined_terraces()
+ 	_finish("RuinedSanctuaryTerraces", _material(Color("b8b3a0"),2.0,0.65))
+ 	_broken_cornices()
+ 	_finish("FracturedTerraceCrowns", _material(Color("a7aa98"),2.0,0.55))
+ 	_far_ridge()
+-	_finish("FarValleyRidge", _material(Color("87949c"),5.0,0.28))
++	_finish("FarValleyRidge", _material(Color("566c7c"),9.0,0.35,true))
+ 	set_meta("mesh_only",true)
+ 	set_meta("presentation_profile",PROFILE_ID)
+ 	set_meta("determinism","fixed authored profiles; no RNG")
+ 
+-func _material(tint: Color, tile_meters: float, normal_strength: float) -> StandardMaterial3D:
+-	# Preserve the existing CC0 albedo / OpenGL normal / ARM source resources.
+-	# World triplanar mapping keeps meter-scale stone across sloping cliff faces.
+-	var material := LIMESTONE.duplicate() as StandardMaterial3D
++func _material(tint: Color, tile_meters: float, normal_strength: float, geology: bool = false) -> StandardMaterial3D:
++	# Existing irregular flagstone gives geology fractured rock detail; the
++	# straight masonry bond is reserved for the constructed sanctuary ruins.
++	# Neither CC0 albedo / OpenGL normal / ARM source resource is modified.
++	var source: StandardMaterial3D = FLOOR_STONE if geology else LIMESTONE
++	var material := source.duplicate() as StandardMaterial3D
+ 	material.albedo_color = tint
+ 	material.uv1_triplanar = true
+ 	material.uv1_world_triplanar = true
+ 	material.uv1_scale = Vector3.ONE / tile_meters
+ 	material.normal_scale = normal_strength
++	material.set_meta("backdrop_source_material",source.resource_path)
+ 	return material
+ 
+ func _finish(label: String, material: StandardMaterial3D) -> void:
+@@ -289,10 +293,12 @@
+ 		surfaces += mesh.get_surface_count()
+ 		meshes.append({"name":str(node.name),"vertices":item_vertices,"triangles":item_triangles,
+ 			"surfaces":mesh.get_surface_count(),"world_aabb":{"position":bounds.position,"size":bounds.size},
++			"source_material":node.material_override.get_meta("backdrop_source_material",""),
+ 			"cast_shadows":node.cast_shadow!=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF})
+ 	return {"profile":PROFILE_ID,"mesh_only":no_collision_or_lights,"no_collision_or_lights":no_collision_or_lights,
+ 		"protected_view_clear":protected_clear,"side_clearance_meters":SIDE_CLEARANCE,"far_z_clearance":FAR_CLEARANCE,
+ 		"mesh_nodes":meshes.size(),"surfaces":surfaces,"vertices":vertices,"triangles":triangles,"meshes":meshes,
+ 		"within_geometry_budget":surfaces<=BATCH_LIMIT and triangles<=TRIANGLE_LIMIT,
+ 		"source_material":"res://assets/materials/courtyard/wall_limestone.tres",
++		"geology_source_material":"res://assets/materials/courtyard/floor_stone.tres",
+ 		"determinism":"fixed authored profiles; no RNG","visual_acceptance":"pending actual-camera review"}
+--- candidate001/tests/atmosphere_regressions.gd
++++ candidate002/tests/atmosphere_regressions.gd
+@@ -52,7 +52,7 @@
+ 	var sky := environment.environment.sky
+ 	var sky_material := sky.sky_material as ShaderMaterial
+ 	var key := sanctuary.get_node("SanctuaryKey") as DirectionalLight3D
+-	check.call(sky_material != null and sky_material.get_meta("sky_profile","")=="sanctuary_static_clouds_001" and sky.process_mode==Sky.PROCESS_MODE_QUALITY,"Actual atmosphere selects the static cached sky profile instead of per-frame sky processing")
++	check.call(sky_material != null and sky_material.get_meta("sky_profile","")=="sanctuary_static_clouds_002" and sky.process_mode==Sky.PROCESS_MODE_QUALITY,"Actual atmosphere selects the static cached sky profile instead of per-frame sky processing")
+ 	if sky_material == null:
+ 		return false
+ 	var sun: Vector3 = sky_material.get_shader_parameter("sun_direction")

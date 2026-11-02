@@ -1,0 +1,153 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "Final exact candidate002 native523/0, Python51/0 and local full build exit0; dirty preview, not clean CI/public/release",
+  "scope": "Final frozen002sky/backdrop/floor/quality contracts. Actual raster adoption and source boundaries separate; not actual Windows execution/hardware FPS/motion/continuous AV/AAA.",
+  "native": {
+    "checks": 523,
+    "failures": 0,
+    "build_exit_code": 0,
+    "log": {
+      "file": "build-final-current.log",
+      "bytes": 99363,
+      "sha256": "802a3d0ff39f38085b5cbf1fe0b2ed554d401b79824a1f5497a568889ccd3b94",
+      "closed_before_hashing": true,
+      "summary": "RUNEFALL_TESTS: 523 checks, 0 failures",
+      "ERROR_lines": []
+    }
+  },
+  "python": {
+    "tests": 51,
+    "failures": 0,
+    "elapsed_seconds": 1.522
+  },
+  "frozen_source_count": 66,
+  "all_current_sources_match_recorded_freeze": true,
+  "source_freeze": {
+    "tools/mobile_browser_smoke.py": "182ca37c642688a2afc104c1ee314652fb9d7994aaa515b94877623a1e4c1f78",
+    "tools/check_mobile_web.py": "2e894d5eef6bf5f17491b9dad177ca9b44b706b074662ee7387113125449b949",
+    "tools/browser_smoke.py": "b78c64e2f79536f9f2b28a141c42ebe7118dead7054786bc1f6689d4fc73aefa",
+    "game/project.godot": "4c0c688acf5519788334e24d7f8d4dcfd78aca41a8e4fffc74355dc3ec665946",
+    "game/scripts/ui/touch_controls.gd": "9192bc5ed38d859ffff2a6b5ddcc83b36f6266e1742b5d2a2c7449accb409aaf",
+    "game/scripts/ui/hud.gd": "f3e5eda85f14baf7000b1bcc2bdcc1a074c41dcfe75f1d9646173891c3e478fc",
+    "game/scripts/actors/player.gd": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+    "game/scripts/game.gd": "051f5cf59889b6ffcc3499837807bf3d7af73602869b1f492064f33c0a03def5",
+    "game/scripts/world/camera_rig.gd": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+    "game/web/shell.html": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1",
+    "game/assets/models/production/lyra_fury_gameplay.glb": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "game/assets/models/production/lyra_eyes.glb": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "game/assets/models/production/sentinel_weight_gameplay.glb": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619",
+    "tools/charged_heavy_browser_smoke.py": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8",
+    "game/scripts/core/strike.gd": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d",
+    "game/scripts/core/attack_data.gd": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+    "game/scripts/actors/enemy.gd": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4",
+    "game/data/charged_heavy.tres": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+    "game/data/charged_blade_curve.json": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "game/data/heavy.tres": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb",
+    "game/scripts/core/audio.gd": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031",
+    "game/import/impact_animation_sampling.gd": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03",
+    "game/assets/models/production/lyra_fury_gameplay.glb.import": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3",
+    "game/assets/models/production/sentinel_weight_gameplay.glb.import": "d682ecf3aeaab3b9d2941a3387f2780440f53720aa32c6d13e681814ef1a56e5",
+    "game/scripts/world/impact_effect.gd": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049",
+    "game/scripts/actors/actor_visual.gd": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec",
+    "game/scripts/actors/production_character_art.gd": "0223cc99aac61f5f0c690490646489855f0b34cbdf1431dc557a3e173480e26e",
+    "game/scripts/actors/skeletal_visual_bridge.gd": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152",
+    "game/scripts/world/sanctuary.gd": "98c70d00d60940e095ac349521ac8764d31c7c6037e543f57c0cded8daa8153e",
+    "game/scripts/actors/grounding_shadow.gd": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79",
+    "game/assets/shaders/grounding_shadow.gdshader": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+    "game/assets/shaders/sanctuary_sky.gdshader": "55672c49b6d887762739474256ea489b7c0c2db50d91cbd604928f24e9aabcf3",
+    "game/scripts/world/sanctuary_backdrop.gd": "43c3e4de69732e790c6a2d15dd3686677b4d44d4f4e80b85b0aacf5b30349cab",
+    "game/assets/materials/courtyard/floor_stone.tres": "3dad005107be7549c534e33c4ab600318270a373f17efd4c07f4f2b18528ea74",
+    "game/assets/materials/courtyard/wall_limestone.tres": "5e637a911deab929fce614afc982269ccabcf68a17e8c9cdee3e3aa0d60bd26b",
+    "game/assets/materials/courtyard/floor_albedo.jpg": "aa12137fff1728bbbfe98b30480e33a34cba3b5c096575702c1d66939214e14a",
+    "game/assets/materials/courtyard/floor_normal.jpg": "f2f1c3e8d52c1e3a49ef59695743872f2adaa57bc0d3f64b129ce988966162c1",
+    "game/assets/materials/courtyard/floor_arm.jpg": "66674e9eac9ac60e2124890f63fde95b967f9e1c6f5ee3b07df77cdb9e024457",
+    "game/assets/materials/courtyard/wall_albedo.jpg": "0a43c8bc80581408f9c700ad98d2de64280e694148e37626d6648fdddf47a777",
+    "game/assets/materials/courtyard/wall_normal.jpg": "14eb23e29a347b97394c65a6f1fe2c7c107da55b18fb95b912c7280c5a43b72d",
+    "game/assets/materials/courtyard/wall_arm.jpg": "ec4642059b7dd9baf3f89830b9968710f69601874516ffdc2922b822163a90dc",
+    "tools/author_impact_actions.py": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5",
+    "tools/author_character_actions.py": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40",
+    "tools/author_weight_actions.py": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4",
+    "tools/author_fury_actions.py": "2450a983ec4904010b2f474243b5f5d0651107864956284dc17b0c909955f106",
+    "tools/derive_greatsword_profile.py": "c095dd64300cba0dbdeb4fed8d022d3727f6fa1108c030cb98a70cc56d3816d0",
+    "game/assets/models/production/rune_sword_web.glb": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+    "game/assets/models/production/rune_greatsword_geometry.glb": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+    "game/assets/models/production/rune_greatsword_geometry.glb.import": "28e6141b02ce7c2cb6233fb573565679642029719d4ba1c72f640bd79ac5178e",
+    "game/scripts/actors/blade_trail.gd": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5",
+    "art_source/production/character_actions/lyra-fury.json": "99cb571883a179df9ce32744e0940d6e654648ed7cb8ecc4d05cafea09ddf286",
+    "tools/author_sentinel_recovery.py": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086",
+    "art_source/production/character_actions/lyra-weight.json": "96f0d71343b9abcd9c132492836b92b64a4518618a8ed96bab1696a022721f93",
+    "art_source/production/character_actions/sentinel-weight.json": "e6c39bee6c15155d7508f8f90dda75ced77785bf2e3bf58a8008e04f9275536d",
+    "art_source/production/character_actions/sentinel-weight-recovery.json": "6bcf3d9bce9cf0ff558f719c8c75d20b21d843f81e59ef271650fbb028b413ef",
+    "tools/generate_impact_audio.py": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+    "tools/render_impact_review.py": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378",
+    "game/assets/audio/impact/body_thump.wav": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+    "game/assets/audio/impact/charge_sub.wav": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+    "game/assets/audio/impact/contact_tick.wav": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+    "game/assets/audio/impact/debris_tail.wav": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+    "game/assets/audio/impact/metal_block.wav": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+    "game/assets/audio/impact/metal_heavy.wav": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+    "game/assets/audio/impact/metal_light.wav": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+    "game/assets/audio/impact/swing_charged.wav": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+    "game/assets/audio/impact/swing_heavy.wav": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf"
+  },
+  "atmosphere_fixture": {
+    "backdrop_meshes": 5,
+    "legacy_hidden_count": 45,
+    "safe_geometry": true,
+    "scope": "Actual native sky/floor/backdrop contracts; no raster, hardware performance, AV or AAA approval",
+    "stored_vertices": 6306,
+    "sun_direction": [
+      -0.552264273166656,
+      0.669130623340607,
+      0.497260928153992
+    ],
+    "support_rays": [
+      {
+        "height": 4.4703483581543e-08,
+        "supported": true,
+        "z": 6.0
+      },
+      {
+        "height": 0.0,
+        "supported": true,
+        "z": -12.9
+      },
+      {
+        "height": -8.94069671630859e-08,
+        "supported": true,
+        "z": -13.1
+      },
+      {
+        "height": -8.94069671630859e-08,
+        "supported": true,
+        "z": -16.5
+      },
+      {
+        "height": -8.94069671630859e-08,
+        "supported": true,
+        "z": -17.9
+      },
+      {
+        "height": 0.0,
+        "supported": true,
+        "z": -18.1
+      },
+      {
+        "height": 0.0,
+        "supported": true,
+        "z": -24.0
+      }
+    ],
+    "triangles": 2102
+  },
+  "historical_proofs": [
+    "native-first-failure.json",
+    "native-corrected-checkpoint.json"
+  ],
+  "remaining": [
+    "Actual local/clean CI desktop/mobile browser66-source quality/sky/PBR/backdrop/input/storage/restart",
+    "Public Pages and actual release downloads",
+    "Actual Windows/Android/iOS/Safari/GPU execution",
+    "Motion/continuous AV/fullAAA"
+  ]
+}

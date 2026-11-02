@@ -4,6 +4,7 @@ extends Node3D
 const COURTYARD_PILLAR_SCENE: PackedScene = preload("res://assets/models/production/sanctuary_pillar_web.glb")
 const COURTYARD_GATEWAY_SCENE: PackedScene = preload("res://assets/models/production/pilgrim_gateway.glb")
 const COURTYARD_ART = preload("res://scripts/world/courtyard_art.gd")
+const SANCTUARY_BACKDROP = preload("res://scripts/world/sanctuary_backdrop.gd")
 const COURTYARD_FLOOR: StandardMaterial3D = preload("res://assets/materials/courtyard/floor_stone.tres")
 const COURTYARD_WALL: StandardMaterial3D = preload("res://assets/materials/courtyard/wall_limestone.tres")
 
@@ -55,12 +56,18 @@ func _ready() -> void:
 		var tablet := block(point + Vector3(0,1.2,0), Vector3(0.6,0.15,0.8), trim)
 		tablet.rotation.x = -0.2
 		ring(point + Vector3.UP * 0.03, 1.6, glow)
-	# Distant silhouettes give the sanctuary scale without expensive geometry.
+	# Preserve the original seeded draws: visual-only replacement of the old
+	# scattered boxes must not change any subsequent use of this generator.
 	for index in range(45):
 		var z := rng.randf_range(-450, 60)
 		var x := rng.randf_range(65, 140) * (-1 if index % 2 else 1)
 		var height := rng.randf_range(18, 55)
-		block(Vector3(x, height * 0.5 - 12, z), Vector3(rng.randf_range(3,8), height, 4), dark)
+		var legacy := block(Vector3(x, height * 0.5 - 12, z), Vector3(rng.randf_range(3,8), height, 4), dark)
+		legacy.hide()
+		legacy.set_meta("legacy_skyline_block", true)
+	var backdrop := SANCTUARY_BACKDROP.new() as Node3D
+	backdrop.name = "SanctuaryBackdrop"
+	add_child(backdrop)
 
 func mat(color: Color, metal: float = 0, emissive: bool = false) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()
@@ -81,16 +88,14 @@ func lighting() -> void:
 	# Keep the sky as a reflection source, but separate its broad diffuse fill
 	# from the key light. Fully sky-driven ambient flattened the armour and
 	# bright masonry together, especially with performance-mode shadows off.
-	var sky_material := ProceduralSkyMaterial.new()
-	sky_material.sky_top_color = Color("28445c")
-	sky_material.sky_horizon_color = Color("c5b9a5")
-	sky_material.ground_horizon_color = Color("6b7478")
-	sky_material.ground_bottom_color = Color("1c2730")
-	sky_material.sky_curve = 0.38
-	sky_material.sky_energy_multiplier = 0.78
+	var sky_material := ShaderMaterial.new()
+	sky_material.shader = preload("res://assets/shaders/sanctuary_sky.gdshader")
+	sky_material.set_meta("sky_profile", "sanctuary_static_clouds_002")
 	var sky := Sky.new()
 	sky.sky_material = sky_material
 	sky.radiance_size = Sky.RADIANCE_SIZE_128
+	# Static uniforms are set once; the background reuses the radiance cube.
+	sky.process_mode = Sky.PROCESS_MODE_QUALITY
 	env.sky = sky
 	env.background_mode = Environment.BG_SKY
 	env.background_energy_multiplier = 0.9
@@ -126,11 +131,14 @@ func lighting() -> void:
 	sun.directional_shadow_max_distance = 48.0
 	sun.shadow_normal_bias = 2.0
 	add_child(sun)
+	# +Z points toward a directional light's source; derive it from the actual
+	# key transform so the warm sky sector cannot drift from the lit masonry.
+	sky_material.set_shader_parameter("sun_direction", sun.global_transform.basis.z.normalized())
 	var fill := DirectionalLight3D.new()
 	fill.name = "SanctuaryFill"
 	fill.rotation_degrees = Vector3(-25, 145, 0)
 	fill.light_color = Color("b7c9df")
-	fill.light_energy = 0.18
+	fill.light_energy = 0.30
 	fill.shadow_enabled = false
 	# This is a deliberate soft fill, not a second sun in the sky/reflections.
 	fill.sky_mode = DirectionalLight3D.SKY_MODE_LIGHT_ONLY
@@ -170,6 +178,7 @@ func ring(point: Vector3, radius: float, material: Material) -> MeshInstance3D:
 	return node
 
 func build_road(start: Vector3, end: Vector3, width: float = 12.0) -> void:
+	var first_approach := width >= 10.0 and start.is_equal_approx(Vector3(0,0,5)) and end.is_equal_approx(CENTERS[0])
 	var direction := (end - start).normalized()
 	start += direction * 18.0
 	if width >= 10:
@@ -179,6 +188,18 @@ func build_road(start: Vector3, end: Vector3, width: float = 12.0) -> void:
 	var angle := atan2(end.x - start.x, end.z - start.z)
 	var road := block(middle + Vector3(0,-0.35,0), Vector3(width,0.7,distance), stone, true)
 	road.rotation.y = angle
+	if first_approach:
+		# The original box still owns its unchanged physics transform. A separate
+		# non-colliding plane supplies the visible skin above its original top.
+		road.hide()
+		var approach := MeshInstance3D.new()
+		add_child(approach)
+		# The collider overlaps the courtyard by two metres. Clip only the new
+		# visible plane to the 20m room edge, avoiding coplanar floor surfaces.
+		var visible_end := CENTERS[0] - direction * 20.0
+		var visible_center := (start + visible_end) * .5
+		_flagstone_skin(approach, visible_center + Vector3.UP * .005, Vector2(width,start.distance_to(visible_end)), "CourtyardApproachFlagstone")
+		approach.rotation.y = angle
 	for side in [-1, 1]:
 		var offset := Vector3(side * (width * 0.5 - 0.12),0,0).rotated(Vector3.UP, angle)
 		var rail := block(middle + offset + Vector3.UP * 0.35, Vector3(0.22,0.7,distance), dark, true)
@@ -186,22 +207,27 @@ func build_road(start: Vector3, end: Vector3, width: float = 12.0) -> void:
 		var line := block(middle + offset + Vector3.UP * 0.73, Vector3(0.05,0.04,distance), trim)
 		line.rotation.y = angle
 
+func _flagstone_skin(node: MeshInstance3D, point: Vector3, size: Vector2, label: String) -> void:
+	var mesh := PlaneMesh.new()
+	mesh.size = size
+	node.mesh = mesh
+	node.position = point
+	node.name = label
+	var material := COURTYARD_FLOOR.duplicate() as StandardMaterial3D
+	material.uv1_scale = Vector3(size.x/1.8, size.y/1.8, 1.0)
+	node.material_override = material
+	node.set_meta("physical_tile_meters", 1.8)
+	node.set_meta("visual_only_floor", true)
+
 func build_room(center: Vector3, half: float, index: int) -> void:
 	block(center + Vector3(0,-2.0,0), Vector3(half * 2,4,half * 2), dark, true)
 	var floor_visual := block(center + Vector3(0,-0.12,0), Vector3(half * 2,0.25,half * 2), stone)
 	var courtyard_wall: StandardMaterial3D
-	if index == 0:
+	if index in [-1, 0]:
 		# A plane has an unambiguous 0..1 UV range, unlike the BoxMesh atlas.
 		# This changes only the non-colliding skin above the original foundation.
-		var floor_mesh := PlaneMesh.new()
-		floor_mesh.size = Vector2(half * 2, half * 2)
-		floor_visual.mesh = floor_mesh
-		floor_visual.position = center + Vector3.UP * 0.005
-		floor_visual.name = "CourtyardFlagstone"
-		var floor_material := COURTYARD_FLOOR.duplicate() as StandardMaterial3D
-		floor_material.uv1_scale = Vector3.ONE * (half * 2 / 1.8)
-		floor_visual.material_override = floor_material
-		floor_visual.set_meta("physical_tile_meters", 1.8)
+		_flagstone_skin(floor_visual, center + Vector3.UP * .005, Vector2.ONE * half * 2, "LandingFlagstone" if index == -1 else "CourtyardFlagstone")
+	if index == 0:
 		courtyard_wall = COURTYARD_WALL.duplicate() as StandardMaterial3D
 		courtyard_wall.uv1_triplanar = true
 		courtyard_wall.uv1_world_triplanar = true

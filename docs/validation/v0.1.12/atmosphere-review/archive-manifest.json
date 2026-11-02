@@ -1,0 +1,188 @@
+{
+  "checked_on": "2026-11-02",
+  "scope": "Public baseline6/final0026/unprocessed rejected001root-viewedq0 originals3 plus source/runtime/capture reports. Rejected001 all6hashes/publicreports and localfullraw pointer retained. Manifest excludes itself; raw scene report identities preserved in curated subsets.",
+  "file_count": 36,
+  "total_bytes": 21780195,
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 5190,
+      "sha256": "d90180eba41b9b37d4889d99588d0f7e19419c0327c411743099d8312fcafa72"
+    },
+    {
+      "file": "backdrop-construction-source-comparison.json",
+      "bytes": 1170,
+      "sha256": "4e2b1a0e9dc1d2c3bf20903d7b13a506d9911a3f08bc1d45fe404052dcb44048"
+    },
+    {
+      "file": "baseline-001/capture-inputs.json",
+      "bytes": 40106,
+      "sha256": "a1b1d48fec409fdafaccd141d87f894a5e2fb11a60ca9e188b25e26d6c1d20e1"
+    },
+    {
+      "file": "baseline-001/capture.json",
+      "bytes": 3368,
+      "sha256": "24842dc28248d4ae3737b757f0af52288cf58d628b30f41fb329d5fa0984a6ee"
+    },
+    {
+      "file": "baseline-001/fight-q0.png",
+      "bytes": 1603764,
+      "sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9"
+    },
+    {
+      "file": "baseline-001/fight-q1.png",
+      "bytes": 1172653,
+      "sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1"
+    },
+    {
+      "file": "baseline-001/landing-q0.png",
+      "bytes": 1091303,
+      "sha256": "0c990090887d22c3e91a39bba4f9ba3ac345216eec919d3ccd2dec08aa3f0c01"
+    },
+    {
+      "file": "baseline-001/landing-q1.png",
+      "bytes": 841815,
+      "sha256": "5d355e9fc6f6d187619cdf9800ed7f6ea5ce9348c9ebeb0a7b29ab0e87411ca1"
+    },
+    {
+      "file": "baseline-001/overview-q0.png",
+      "bytes": 1526052,
+      "sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2"
+    },
+    {
+      "file": "baseline-001/overview-q1.png",
+      "bytes": 1151347,
+      "sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e"
+    },
+    {
+      "file": "baseline-001/runtime-inputs.json",
+      "bytes": 40106,
+      "sha256": "a1b1d48fec409fdafaccd141d87f894a5e2fb11a60ca9e188b25e26d6c1d20e1"
+    },
+    {
+      "file": "baseline-001/scene-review.json",
+      "bytes": 146334,
+      "sha256": "256bc13ada9f9e752438a81fbaaf51311be83c384f7ac59decc169b6b4f12219"
+    },
+    {
+      "file": "baseline-001/source-inputs.json",
+      "bytes": 40105,
+      "sha256": "e71f0244a7d6072fb4b81e0024d6398a3830738bc418cc04ed987964812614eb"
+    },
+    {
+      "file": "candidate-002/capture-inputs.json",
+      "bytes": 41120,
+      "sha256": "e056010b466adffbec7cf4e4f5a3bbda4a5921458db42edbbb5d0ed1e9e93c9e"
+    },
+    {
+      "file": "candidate-002/capture.json",
+      "bytes": 3380,
+      "sha256": "dddb57ec692e51ca0f32590d4debc0e2f4b9b7fadd55ed4fcbe33a26ec4e1c64"
+    },
+    {
+      "file": "candidate-002/fight-q0.png",
+      "bytes": 1711200,
+      "sha256": "16298aae3add874169119a5d7cef441d7e7d4342fb4995db89608577534d6126"
+    },
+    {
+      "file": "candidate-002/fight-q1.png",
+      "bytes": 1206923,
+      "sha256": "a1fe71515ceb9a62b146e365e7ffa4b8a277c5bd0d4c70bcc083e06f872e8b19"
+    },
+    {
+      "file": "candidate-002/landing-q0.png",
+      "bytes": 1610052,
+      "sha256": "9c3971ba721221673af694b2a3e0daa3b1752e64d740833e068c5d7b5f9fccf9"
+    },
+    {
+      "file": "candidate-002/landing-q1.png",
+      "bytes": 1147418,
+      "sha256": "4f44380d11aba4131e6bfed60c7c3897e698fc04fcb30f1398bb8a327a78a99f"
+    },
+    {
+      "file": "candidate-002/overview-q0.png",
+      "bytes": 1653829,
+      "sha256": "5d326f2c493855de11d9dd9a9e707ea7b9effd002459435c5a907715c333ad58"
+    },
+    {
+      "file": "candidate-002/overview-q1.png",
+      "bytes": 1180673,
+      "sha256": "e8736f42bfa981143cd9acac032b67ac7501c1af25c04289bff5d07c1aa03bd8"
+    },
+    {
+      "file": "candidate-002/runtime-inputs.json",
+      "bytes": 41120,
+      "sha256": "e056010b466adffbec7cf4e4f5a3bbda4a5921458db42edbbb5d0ed1e9e93c9e"
+    },
+    {
+      "file": "candidate-002/scene-review.json",
+      "bytes": 151282,
+      "sha256": "e9bb57749b7cee91a635566bb62c653c97c4d87edb1695658cb59f14ff581ebc"
+    },
+    {
+      "file": "candidate-002/source-inputs.json",
+      "bytes": 41120,
+      "sha256": "1b9a126b393d4008bae0fd7fceb49bd63fbb974d1bd4d02c9dc261bfa672ffcd"
+    },
+    {
+      "file": "paired-baseline-comparison.json",
+      "bytes": 7069,
+      "sha256": "f04cca559ddcce5b6faa2dc9f1f390953b3036b0599d353379ce5469b6879502"
+    },
+    {
+      "file": "rejected-001/capture-inputs.json",
+      "bytes": 41120,
+      "sha256": "888e6ea93d617b18a54254c097c9f87145ead83acf3b1c17994543ba4ca70cd9"
+    },
+    {
+      "file": "rejected-001/capture.json",
+      "bytes": 3383,
+      "sha256": "651d472593727b30c20d9c84a8ebf495eb9d42f490a63935dec533811d1b6075"
+    },
+    {
+      "file": "rejected-001/fight-q0.png",
+      "bytes": 1714647,
+      "sha256": "9f8ea628b432fec6b7521bd50eae615198203edd744aea036a14f8fa7eb4b434"
+    },
+    {
+      "file": "rejected-001/landing-q0.png",
+      "bytes": 1628152,
+      "sha256": "72da79c84c68d4887c531e01bbc9aade2aa60ee2242c2a8e87c311bb0d4180ca"
+    },
+    {
+      "file": "rejected-001/overview-q0.png",
+      "bytes": 1688625,
+      "sha256": "c2fdd8e29cd0caa88533de02d6cc334791afd7d4a80a995eca064af6b187eeb4"
+    },
+    {
+      "file": "rejected-001/paired-baseline-comparison.json",
+      "bytes": 3663,
+      "sha256": "ba918cac8bcbde61e91aa5fd460a229ec479b275366afeadea6e44257ba3c907"
+    },
+    {
+      "file": "rejected-001/review.json",
+      "bytes": 1510,
+      "sha256": "4338f3b9c5097843635edfb167d5749eefaf6840417767fe09cbd9af5ad650e6"
+    },
+    {
+      "file": "rejected-001/runtime-inputs.json",
+      "bytes": 41120,
+      "sha256": "888e6ea93d617b18a54254c097c9f87145ead83acf3b1c17994543ba4ca70cd9"
+    },
+    {
+      "file": "rejected-001/scene-review.json",
+      "bytes": 150780,
+      "sha256": "3404692d36792190ee2ae9ee0ed6e2c3629892e668ba453deeb32fd6047fc525"
+    },
+    {
+      "file": "rejected-001/source-inputs.json",
+      "bytes": 41120,
+      "sha256": "383afaa141e7aee941b96f8e2dfc260671875906ae677ae96199af1340345ab8"
+    },
+    {
+      "file": "source-delta-from-001.patch",
+      "bytes": 7576,
+      "sha256": "82a85fe0322ab2c6be55f04f813156f7a907afa19b78e922dca76324b274ef0f"
+    }
+  ]
+}

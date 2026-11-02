@@ -1,0 +1,41 @@
+{
+  "scope": "Exact002dirty0.1.12·ce120726 preview; not final committed/release approval",
+  "native": {
+    "checks": 523,
+    "failures": 0,
+    "log": "native-final-checkpoint.json",
+    "log_sha256": "802a3d0ff39f38085b5cbf1fe0b2ed554d401b79824a1f5497a568889ccd3b94",
+    "source_scope": "Current002sky55672/backdrop43c3/Sanctuary98c70/Game051f, all66hashes unchanged"
+  },
+  "python": {
+    "tests": 51,
+    "failures": 0,
+    "elapsed_seconds": 1.522
+  },
+  "manifest": {
+    "version": "0.1.12",
+    "godot": "4.7.2",
+    "commit": "ce120726",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 115794155,
+        "sha256": "391bc99523170440cd1f4401024e7e746081bbbb4f841c6d95f12231ab9d38f5"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 143635462,
+        "sha256": "7c218d721dae4d7b830c806178567d7874f3bb9d74910fc2a3e3097fe6f38db3"
+      }
+    ]
+  },
+  "raw_web_bytes": 146599311,
+  "raw_web_files": 14,
+  "source_count": 66,
+  "all_frozen_sources_unchanged": true,
+  "build_exit_code": 0,
+  "checked_on": "2026-11-02",
+  "raw_web_budget_bytes": 150000000,
+  "raw_web_budget_pass": true,
+  "platform_scope": "Actual Web/Windows export bytes; exported Windows ZIP is not actual Windows OS execution. Dirty0.1.12·ce120 preview is not final committed/release artifact."
+}

@@ -7,6 +7,7 @@ They do not establish actual input, motion/AV, Web export, hardware or AAA quali
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -20,13 +21,20 @@ from render_combat_gameplay import (archive_baseline, git, initial_import_metada
 from render_weight_review import run_logged, start_xorg, stop_process
 
 ROOT = Path(__file__).resolve().parents[1]
-BASELINE = "a07f91db392d39494cd5bb635d579b3eb3d15663"
 FIXTURES = ("tests/lighting_review_capture.gd", "tests/lighting_review_capture.tscn")
 SCOPE = ("Deterministic actual Game/production actors/courtyard lighting scene-view "
          "comparison in native Compatibility at1280x720. Prescribed transforms, idle "
          "pose and frozen physics are fixture controls, not real-input gameplay. "
          "Native quality0 balanced has1.0 render scale; quality1 performance.65. "
          "Web/DPR, interactive motion/AV, hardware performance and AAA remain separate.")
+
+
+def project_version(project: Path) -> str:
+    match = re.search(r'^config/version="([^"\n]+)"$',
+                      (project / "project.godot").read_text(), re.MULTILINE)
+    if not match:
+        raise RuntimeError("Source project has no explicit application version")
+    return match.group(1)
 
 
 def prepare(args: argparse.Namespace, label: str) -> dict:
@@ -42,6 +50,14 @@ def prepare(args: argparse.Namespace, label: str) -> dict:
                         ignore=shutil.ignore_patterns(".godot", "__pycache__"), symlinks=False)
         context = {"kind": "independent_source_copy", "head": git("rev-parse", "HEAD"),
                    "worktree_status": git("status", "--short"), "dirty": bool(git("status", "--porcelain"))}
+    context.update({"requested_baseline_ref": args.baseline_ref,
+                    "baseline_commit": git("rev-parse", args.baseline_ref + "^{commit}"),
+                    "application_version": project_version(project)})
+    baseline_version = re.search(r'^config/version="([^"\n]+)"$',
+                                git("show", args.baseline_ref + ":game/project.godot"), re.MULTILINE)
+    if not baseline_version:
+        raise RuntimeError("Baseline project has no explicit application version")
+    context["baseline_application_version"] = baseline_version.group(1)
     original = inventory(project)
     for name in original:
         if name.endswith(".glb.import"):
@@ -79,6 +95,12 @@ def prepare(args: argparse.Namespace, label: str) -> dict:
 def validate_report(report: dict, take: dict) -> dict:
     if report.get("status") != "deterministic_actual_scene_captured" or report.get("renderer") != "gl_compatibility":
         raise RuntimeError("Actual scene/Compatibility renderer report incomplete")
+    if report.get("application_version") != take["context"]["application_version"]:
+        raise RuntimeError("Actual application version disagrees with frozen source context")
+    collision = report.get("sanctuary_static_collision", {})
+    rows = collision.get("canonical_rows", [])
+    if not rows or rows != sorted(rows) or collision.get("shape_count") != len(rows) or collision.get("sha256") != hashlib.sha256("\n".join(rows).encode()).hexdigest():
+        raise RuntimeError("Actual Sanctuary static shape multiset fingerprint is incomplete")
     expected = {(view, q) for view in take["config"]["views"] for q in take["config"]["qualities"]}
     actual = {(row["view"], row["quality"]) for row in report["shots"]}
     if actual != expected or len(report["shots"]) != len(expected):
@@ -180,12 +202,13 @@ def capture(args: argparse.Namespace, takes: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--capture", action="store_true", help="Explicitly launch heavy render work after lane coordination")
-    parser.add_argument("--baseline-ref", default=BASELINE)
+    parser.add_argument("--baseline-ref", required=True,
+                        help="Explicit comparison baseline; resolve and record its exact commit in every take")
     parser.add_argument("--candidate-project", type=Path, default=ROOT / "game")
     parser.add_argument("--import-cache-from", type=Path)
     parser.add_argument("--take", choices=["both", "before", "after"], default="both")
     parser.add_argument("--qualities", type=int, nargs="+", choices=[0,1], default=[0,1])
-    parser.add_argument("--views", nargs="+", choices=["fight", "overview"], default=["fight", "overview"])
+    parser.add_argument("--views", nargs="+", choices=["landing", "fight", "overview"], default=["landing", "fight", "overview"])
     parser.add_argument("--hide-ui", dest="show_ui", action="store_false", default=True,
                         help="Hide controlled static actualHUD; default retains HUD for gameplay-camera readability")
     parser.add_argument("--output", type=Path, required=True)

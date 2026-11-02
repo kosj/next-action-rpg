@@ -1,6 +1,6 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.4.5** · 정리일 **2026-11-01**.
+버전 **1.4.6** · 정리일 **2026-11-02**.
 
 기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
@@ -69,3 +69,5 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 판본1.4.4는 재저작한 active 동작과 게임용 칼날 곡선의 출처·좌표·표본·pin을 함께 검증하고, 준비 자세의 이른 겹침 예측과 실제 접촉을 구분하는 절차를 보완합니다. 무기 profile의 같은 atlas/PBR 재사용·raw 보존과 native 반입 양자화/triangle 대응, 전체 팔 수치와 새 국소 피부 악화, zero-point provider 참고 후보와 실제 채택의 경계를 기록합니다.nominal 투영/물리 AABB·CI 성공과 실제 raster 가독성·정상 종료를 나누고, 약한 core의 원인 감사·명시적 art budget 변경·제한된 프로토타입 채택 범위를 보존합니다.65번째 원본 사례는 pending이며 묶음 무결성·기능 검증을 새 프로젝트의 실행·시각·실기기·AAA 승인으로 승계하지 않습니다.
 
 판본1.4.5는 [품질 모드와 조명 비교](skills/generated-3d-game-art/references/art-review.md#품질-모드와-조명-비교)를 보완합니다. UI·저장 index·실제 scale/DPR·shadow flag로 품질의 의미를 먼저 확인하고, 현재 엔진의 renderer source·지원표와 같은 실제 장면의 원본 raster를 연결합니다. sky/ambient 혼합과 광원 역할, 기각한 shadow-acne 후보의 단일 변수 복구, 유한 근사 grounding의 지면·깊이·수명·질의 한도를 기록합니다.66번째 사례의 원본·수정·판정 범위는 출처 스냅샷에서 추적하며, 제한된 정지 화면 채택을 새 프로젝트의 모션·AV·실기기·AAA 승인으로 이전하지 않습니다.
+
+판본1.4.6은 [분위기·원경·시각 바닥과 충돌 권한](skills/generated-3d-game-art/references/art-review.md#분위기원경시각-바닥과-충돌-권한)을 정리합니다. 실제 카메라의 horizon·전면 재질·원경 실루엣·진입 바닥을 같은 source/품질 원본으로 비교하고, 비충돌 시각 mesh와 실제 support surface를 분리합니다. unindexed ArrayMesh의 null index를 잘못 가정한 검수기 실패, 실행은 통과했지만 재질이 벽돌 커튼처럼 보여 기각한 후보, source construction/실제 메트릭과 미수집 vertex payload 해시의 경계를 보존합니다.67번째 원본 사례의 제한적 native/raster 채택과 후속 공개 상태는 출처 스냅샷을 따르며, 이전 공개 검증을 새 제작이나 다른 프로젝트의 AAA/실기기 승인으로 승계하지 않습니다.

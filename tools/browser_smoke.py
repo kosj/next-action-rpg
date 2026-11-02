@@ -7,6 +7,8 @@ import argparse
 import asyncio
 from datetime import datetime, timezone
 import json
+import hashlib
+import math
 import os
 from pathlib import Path
 import shutil
@@ -25,9 +27,43 @@ QUALITY_PRESENTATION_READY = """s.quality === a && !s.paused && s.lighting?.key_
         s.hero_art.grounding_shadow.reason === 'approximate_grounding'))"""
 
 
+
+def assert_atmosphere_presentation(light):
+    """Bind actual Web resources to the new static atmosphere, not art approval."""
+    report = light["atmosphere"]
+    sky = report["sky"]
+    source = Path(__file__).resolve().parents[1] / "game/assets/shaders/sanctuary_sky.gdshader"
+    assert sky["shader_material"] and sky["profile"] == "sanctuary_static_clouds_002", sky
+    assert sky["shader_path"] == "res://assets/shaders/sanctuary_sky.gdshader", sky
+    assert sky["shader_sha256"] == hashlib.sha256(source.read_bytes()).hexdigest(), sky
+    assert not sky["uses_time"] and sky["quality_process"] and sky["radiance_128"], sky
+    sun = sky["sun_direction"]
+    assert len(sun) == 3 and all(math.isfinite(x) for x in sun), sky
+    assert math.isclose(sum(x*x for x in sun), 1, abs_tol=1e-5) and sky["key_alignment"] > .9999, sky
+    assert math.isfinite(sky["background_energy"]) and 0 < sky["background_energy"] <= 2, sky
+    floors = {floor["name"]: floor for floor in report["floors"]}
+    assert set(floors) == {"LandingFlagstone", "CourtyardApproachFlagstone", "CourtyardFlagstone"}, floors
+    for floor in floors.values():
+        assert floor["visible"] and floor["visual_only"] and floor["collision_nodes"] == 0, floor
+        assert floor["normal_enabled"] and floor["ao_enabled"], floor
+        assert all(math.isfinite(x) for field in ["size", "position", "uv_scale"] for x in floor[field]), floor
+        assert math.isclose(floor["tile_meters"], 1.8, abs_tol=1e-6), floor
+        for size, uv in zip(floor["size"], floor["uv_scale"]):
+            assert size > 0 and uv > 0 and math.isclose(size/uv, 1.8, abs_tol=1e-5), floor
+        for field, name in [("albedo_texture", "floor_albedo.jpg"), ("normal_texture", "floor_normal.jpg"),
+                            ("roughness_texture", "floor_arm.jpg")]:
+            assert floor[field] == "res://assets/materials/courtyard/" + name, floor
+        assert math.isfinite(floor["metallic"]) and math.isfinite(floor["roughness"]), floor
+    backdrop = report["backdrop"]
+    assert backdrop["profile"] == "sanctuary_atmosphere_v012", backdrop
+    assert 0 < backdrop["mesh_nodes"] <= 6 and 0 < backdrop["surfaces"] <= 6, backdrop
+    assert 0 < backdrop["triangles"] <= 24000 and backdrop["forbidden_nodes"] == 0, backdrop
+    assert backdrop["all_visible"] and backdrop["all_unshadowed"], backdrop
+
 def assert_quality_presentation(status, index):
     """Observe actual light/finite grounding nodes after normal resumed physics."""
     light = status["lighting"]
+    assert_atmosphere_presentation(light)
     ground = status["hero_art"]["grounding_shadow"]
     assert status["quality"] == index and not status["paused"], status
     assert light["key_present"] and light["fill_present"], light

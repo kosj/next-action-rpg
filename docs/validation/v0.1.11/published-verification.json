@@ -1,0 +1,383 @@
+{
+  "status": "complete",
+  "scope": "v0.1.11 scoped courtyard prototype lighting iteration published and verified; all required current PR/main/tag/public/release/portable-knowledge gates passed. Not AAA/hardware/continuousAV approval.",
+  "completed_at": "2026-11-01T23:40:02.858422+00:00",
+  "version": "0.1.11",
+  "main_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+  "source_catalog_commit": "c5d9f821c043e38b4f62553dfb63c9104e2bc5b3",
+  "source_catalog_sha256": "c62ca1dc9d6abc91013611e9754b82c0275658133510a5ffe9799d0b5ce3482a",
+  "source_pin_is_ancestor": true,
+  "root_visual_adoption": "candidate002 native + original actualWeb q0/q1 scoped prototype accepted; not AAA/hardware/continuousAV",
+  "pr": {
+    "number": 12,
+    "url": "https://github.com/kosj/next-action-rpg/pull/12",
+    "run_id": 41357546501,
+    "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41357546501",
+    "status": "merged",
+    "required_gates": {
+      "build": "success",
+      "verify_charged_impact": "success",
+      "verify_mobile_export": "success"
+    },
+    "final_description": {
+      "status": "updated",
+      "url": "https://github.com/kosj/next-action-rpg/pull/12",
+      "scope": "Completed main/tag/public/release actual verification and limitations; no source commit or extra CI",
+      "updated_at": "2026-11-01T23:40:50.985038+00:00"
+    }
+  },
+  "main": {
+    "commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+    "run_id": 41360121222,
+    "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41360121222",
+    "status": "success",
+    "required_jobs": 6,
+    "required_gates": {
+      "build": "success",
+      "verify_mobile_export": "success",
+      "verify_charged_impact": "success",
+      "deploy": "success",
+      "verify_public_web": "success",
+      "verify_public_mobile": "success"
+    }
+  },
+  "tag": {
+    "name": "v0.1.11",
+    "object": "bd3f4266c6e7ee89bc132c995fa0aa346d29d1ad",
+    "target_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+    "run_id": 41360191032,
+    "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41360191032",
+    "status": "success",
+    "required_jobs": 4,
+    "required_gates": {
+      "build": "success",
+      "verify_mobile_export": "success",
+      "verify_charged_impact": "success",
+      "release": "success"
+    }
+  },
+  "public": {
+    "status": "passed",
+    "url": "https://kosj.github.io/next-action-rpg/",
+    "tested_url": "https://kosj.github.io/next-action-rpg/?build=ce1207269922d50edfc725a5aba728d32f8989f3",
+    "runtime_identity_confirmed": true,
+    "desktop": {
+      "status": "passed",
+      "run_id": 41360121222,
+      "job_id": 125013024367,
+      "artifact_sha256": "cd6be51b1f6fc8b89709528de20947d65b8beb88c6999cdbe3471076c75ffcd2",
+      "footer": "0.1.11 · ce120726",
+      "elapsed_seconds": 276.878,
+      "errors": [],
+      "quality_actual": [
+        1,
+        0,
+        1
+      ],
+      "actual_lights_and_grounding": true,
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "tls_verification": "GitHubhosted Chromium HTTPS verification enabled"
+    },
+    "mobile": {
+      "status": "passed",
+      "run_id": 41360121222,
+      "job_id": 125013024441,
+      "artifact_sha256": "73ee23381586177bea8307db607e3e7e9eb9beec9164aecd1e2731ada48df870",
+      "elapsed_seconds": 1010.102,
+      "errors": [],
+      "footer": "0.1.11 · ce120726",
+      "quality_actual": [
+        {
+          "stage": "09-portrait-actual-lighting",
+          "quality": 1,
+          "render_scale": 0.400000005960464,
+          "key_shadow_enabled": false,
+          "ellipse_visible": true
+        },
+        {
+          "stage": "11-landscape-actual-lighting",
+          "quality": 0,
+          "render_scale": 0.5,
+          "key_shadow_enabled": true,
+          "ellipse_visible": false
+        },
+        {
+          "stage": "13-narrow-actual-lighting",
+          "quality": 1,
+          "render_scale": 0.400000005960464,
+          "key_shadow_enabled": false,
+          "ellipse_visible": true
+        },
+        {
+          "stage": "restart-actual-lighting",
+          "quality": 1,
+          "render_scale": 0.400000005960464,
+          "key_shadow_enabled": false,
+          "ellipse_visible": true
+        }
+      ],
+      "trusted_touch": true,
+      "maximum_actual_touch_points": 3,
+      "source_identity_scope": "Direct public runtime footer confirms main ce120;56sourcehashes separatelyverified in main/tag exportwrapper proofs, no directpublic wrapperhashreport",
+      "storage": [
+        {
+          "quality": 1,
+          "seconds": 2.939,
+          "outcome": "matched"
+        },
+        {
+          "quality": 0,
+          "seconds": 4.006,
+          "outcome": "matched"
+        },
+        {
+          "quality": 1,
+          "seconds": 2.005,
+          "outcome": "matched"
+        },
+        {
+          "quality": 1,
+          "seconds": 2.792,
+          "outcome": "matched"
+        },
+        {
+          "quality": 1,
+          "seconds": 3.144,
+          "outcome": "matched"
+        }
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "first_room_rasters_all_pass": true
+    },
+    "scoped_visual_review": {
+      "scope": "Root directly viewed actual public-site desktop q0/q1 original screenshots after deployment; bounded prototype lighting/grounding adoption, not target hardware/AAA/continuous AV approval",
+      "commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+      "public_runtime_identity": "Separate downloaded browser proof confirms0.1.11·ce120726; an image by itself is not identity proof",
+      "decision": "ACCEPT scoped prototype lighting/grounding",
+      "observed": [
+        "q0 actual actor+architecture shadows and readable textures",
+        "q1 lower-resolution image with subtle grounding",
+        "no candidate001 fine shadow-acne grid"
+      ],
+      "remaining": [
+        "gray neutral horizon",
+        "dark front armor",
+        "unreplaced blockout architecture",
+        "actor deformation/continuous motion and hardware AAA quality"
+      ],
+      "originals": [
+        {
+          "path": "ci/public-desktop/06-balanced-gameplay.png",
+          "bytes": 589018,
+          "sha256": "a4035ffee863cc575c5750ad732ea782f771dbcf74d7b3bb22bb03c46a46816f"
+        },
+        {
+          "path": "ci/public-desktop/07-performance-gameplay.png",
+          "bytes": 479465,
+          "sha256": "b0001a0f05b140b34fc53cf3a186dcfa492c9de5462d290a172f2bb207572aa0"
+        }
+      ]
+    }
+  },
+  "actual_release_files": {
+    "status": "verified",
+    "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.11",
+    "actual_default_tls_downloads": {
+      "status": "downloaded_verified_api",
+      "checked_at": "2026-11-01T23:33:32.647509+00:00",
+      "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.11",
+      "assets": [
+        {
+          "name": "manifest.json",
+          "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/manifest.json",
+          "http_status": 200,
+          "anonymous": true,
+          "default_tls_validation": true,
+          "bytes": 406,
+          "sha256": "33a533586b644a63559301a89707e584b2a86c709f6ee0c3a642bc752e29cd89",
+          "api_digest_matches": true
+        },
+        {
+          "name": "runefall-web.zip",
+          "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/runefall-web.zip",
+          "http_status": 200,
+          "anonymous": true,
+          "default_tls_validation": true,
+          "bytes": 115777728,
+          "sha256": "44a0b42fe627510bfa382c1f5fc21eaf0af4febbec4fe330e70ac74dee082d05",
+          "api_digest_matches": true
+        },
+        {
+          "name": "runefall-windows.zip",
+          "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/runefall-windows.zip",
+          "http_status": 200,
+          "anonymous": true,
+          "default_tls_validation": true,
+          "bytes": 143619083,
+          "sha256": "7071dd948c54920a8dade202efbd13731f3590bdc6b83f36f092238da0948d88",
+          "api_digest_matches": true
+        }
+      ]
+    },
+    "packaging_verification": {
+      "version": "0.1.11",
+      "godot": "4.7.2",
+      "expected_main_sha": "ce1207269922d50edfc725a5aba728d32f8989f3",
+      "manifest_commit": "ce120726",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 115777728,
+          "sha256": "44a0b42fe627510bfa382c1f5fc21eaf0af4febbec4fe330e70ac74dee082d05",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 146544531
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 143619083,
+          "sha256": "7071dd948c54920a8dade202efbd13731f3590bdc6b83f36f092238da0948d88",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 215964418
+        }
+      ],
+      "status": "verified",
+      "scope": "Downloaded bytes and packaging; no hardware or art approval"
+    },
+    "manifest": {
+      "version": "0.1.11",
+      "godot": "4.7.2",
+      "commit": "ce120726",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 115777728,
+          "sha256": "44a0b42fe627510bfa382c1f5fc21eaf0af4febbec4fe330e70ac74dee082d05"
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 143619083,
+          "sha256": "7071dd948c54920a8dade202efbd13731f3590bdc6b83f36f092238da0948d88"
+        }
+      ]
+    }
+  },
+  "kit": {
+    "version": "1.4.5",
+    "bytes": 101639,
+    "sha256": "48eb706117620aa6e5bc349b7d9ae5d737ac0a2f905d5933414f78cd678389ac",
+    "catalog_sha256": "c62ca1dc9d6abc91013611e9754b82c0275658133510a5ffe9799d0b5ce3482a",
+    "entries": 66,
+    "guards": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "anonymous_source_catalog": {
+    "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/c5d9f821c043e38b4f62553dfb63c9104e2bc5b3/knowledge/entries.json",
+    "status": 200,
+    "bytes": 149944,
+    "sha256": "c62ca1dc9d6abc91013611e9754b82c0275658133510a5ffe9799d0b5ce3482a",
+    "default_tls_validation": true,
+    "anonymous": true,
+    "checked_at": "2026-11-01T22:31:51.700537+00:00"
+  },
+  "anonymous_main_tag_kit": {
+    "checked_at": "2026-11-01T23:04:16.435810+00:00",
+    "scope": "Actual anonymous main/tag portable ZIP bytes and provenance only; not public game runtime/AAA approval",
+    "expected_main_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+    "results": [
+      {
+        "ref": "main",
+        "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/main/reusable/game-production-kit.zip",
+        "http_status": 200,
+        "anonymous": true,
+        "default_tls_verification": true,
+        "bytes": 101639,
+        "sha256": "48eb706117620aa6e5bc349b7d9ae5d737ac0a2f905d5933414f78cd678389ac",
+        "zip_crc": "passed",
+        "bundle_version": "1.4.5",
+        "entry_count": 66,
+        "pinned_source_commit": "c5d9f821c043e38b4f62553dfb63c9104e2bc5b3"
+      },
+      {
+        "ref": "v0.1.11",
+        "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/v0.1.11/reusable/game-production-kit.zip",
+        "http_status": 200,
+        "anonymous": true,
+        "default_tls_verification": true,
+        "bytes": 101639,
+        "sha256": "48eb706117620aa6e5bc349b7d9ae5d737ac0a2f905d5933414f78cd678389ac",
+        "zip_crc": "passed",
+        "bundle_version": "1.4.5",
+        "entry_count": 66,
+        "pinned_source_commit": "c5d9f821c043e38b4f62553dfb63c9104e2bc5b3"
+      }
+    ]
+  },
+  "final_remote_identity": {
+    "main_run": {
+      "id": 41360121222,
+      "head": "ce1207269922d50edfc725a5aba728d32f8989f3",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kosj/next-action-rpg/actions/runs/41360121222"
+    },
+    "tag_run": {
+      "id": 41360191032,
+      "head": "ce1207269922d50edfc725a5aba728d32f8989f3",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kosj/next-action-rpg/actions/runs/41360191032"
+    },
+    "main": {
+      "commit": "ce1207269922d50edfc725a5aba728d32f8989f3"
+    },
+    "tag": {
+      "ref": "refs/tags/v0.1.11",
+      "object": {
+        "sha": "bd3f4266c6e7ee89bc132c995fa0aa346d29d1ad",
+        "type": "tag",
+        "url": "https://api.github.com/repos/kosj/next-action-rpg/git/tags/bd3f4266c6e7ee89bc132c995fa0aa346d29d1ad"
+      }
+    }
+  },
+  "worktree_clean_at_completion": true,
+  "remaining_publication_work": [],
+  "pending_broader_product_quality": [
+    "AAA production-quality art and remaining blockout replacement",
+    "Continuous audiovisual/normal-speed experiential review",
+    "Windows/Android/iOS/Safari actual device execution and hardware performance"
+  ],
+  "links": {
+    "play": "https://kosj.github.io/next-action-rpg/",
+    "release": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.11",
+    "windows": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/runefall-windows.zip",
+    "web_zip": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/runefall-web.zip",
+    "manifest": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.11/manifest.json",
+    "portable_kit": "https://raw.githubusercontent.com/kosj/next-action-rpg/v0.1.11/reusable/game-production-kit.zip",
+    "pr": "https://github.com/kosj/next-action-rpg/pull/12"
+  },
+  "limits": [
+    "This checkpoint verifies v0.1.11 only; it does not verify v0.1.12 atmosphere/backdrop/floor changes.",
+    "Public runtime footer and actual quality/grounding are observed; direct public wrapper56-source hash report is not claimed. Main/tag export wrapper proofs separately verified56 source hashes.",
+    "Chromium touch emulation and exported Windows ZIP are not actual Android/iOS/Safari/Windows execution or target hardware performance.",
+    "Scoped static/prototype visual adoption is not continuous motion/AV or AAA art approval."
+  ]
+}

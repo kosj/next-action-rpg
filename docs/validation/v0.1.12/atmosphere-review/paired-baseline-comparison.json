@@ -1,0 +1,199 @@
+{
+  "scope": "Deterministic prescribed idle scene view; no real-input, observed spawn physics, combat motion, Web raster, hardware performance or AAA approval. Visual adoption belongs to reviewer.",
+  "baseline_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+  "baseline_version": "0.1.11",
+  "candidate_version": "0.1.12",
+  "baseline_report_sha256": "ebfa7f662f600bfb7c9d686e1ae3ecd764a6888cb47f42e0b4d4f9047d0249dd",
+  "candidate001_report_sha256": "2ceb05a9470cb0144de40fa40464291edf08ef10aeee8dedf0e174c3a7370301",
+  "candidate002_report_sha256": "2d54444e1e4f469d861d4c47f92db1d712852c903639631eba2db4495de10730",
+  "fixture_hashes_identical": true,
+  "fixture_sha256": {
+    "tests/lighting_review_capture.gd": "d779316e999c460dbc7b0f49a38a5ea7112ed40f07fba3039215eda94345f9d9",
+    "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+  },
+  "actual_hud_visible_all": true,
+  "static_collision_multiset_identical_all": true,
+  "static_collision_sha256": "14f43d2008cb82be6af976585a4d435aa6d59c83b9031f172f0c7da8adf228b1",
+  "static_bodies": 160,
+  "static_shapes": 178,
+  "sanctuary_rng_state_identical_all": true,
+  "sanctuary_rng_state": -5312476258823052333,
+  "backdrop_actual_counts_bounds_shadow_flags_identical_001_002": true,
+  "backdrop_geometry_metrics": {
+    "mesh_nodes": 5,
+    "surfaces": 5,
+    "vertices": 6306,
+    "triangles": 2102,
+    "meshes": [
+      {
+        "name": "LayeredValleyCliffs",
+        "vertices": 840,
+        "triangles": 280,
+        "surfaces": 1,
+        "world_aabb": {
+          "position": [
+            -148.404266357422,
+            -55.0,
+            -216.0
+          ],
+          "size": [
+            296.001678466797,
+            117.0,
+            268.0
+          ]
+        },
+        "cast_shadows": false
+      },
+      {
+        "name": "ErodedStrataShelves",
+        "vertices": 432,
+        "triangles": 144,
+        "surfaces": 1,
+        "world_aabb": {
+          "position": [
+            -86.644401550293,
+            -15.4760150909424,
+            -188.0
+          ],
+          "size": [
+            173.239288330078,
+            58.4415283203125,
+            213.0
+          ]
+        },
+        "cast_shadows": false
+      },
+      {
+        "name": "RuinedSanctuaryTerraces",
+        "vertices": 4044,
+        "triangles": 1348,
+        "surfaces": 1,
+        "world_aabb": {
+          "position": [
+            -66.75,
+            -1.0,
+            -143.399993896484
+          ],
+          "size": [
+            133.5,
+            38.0998268127441,
+            82.7999954223633
+          ]
+        },
+        "cast_shadows": false
+      },
+      {
+        "name": "FracturedTerraceCrowns",
+        "vertices": 792,
+        "triangles": 264,
+        "surfaces": 1,
+        "world_aabb": {
+          "position": [
+            -70.0999984741211,
+            3.0,
+            -145.0
+          ],
+          "size": [
+            140.199996948242,
+            32.4500007629395,
+            108.0
+          ]
+        },
+        "cast_shadows": false
+      },
+      {
+        "name": "FarValleyRidge",
+        "vertices": 198,
+        "triangles": 66,
+        "surfaces": 1,
+        "world_aabb": {
+          "position": [
+            -220.0,
+            -52.0,
+            -540.908325195312
+          ],
+          "size": [
+            440.0,
+            155.0,
+            75.9083251953125
+          ]
+        },
+        "cast_shadows": false
+      }
+    ]
+  },
+  "exact_vertex_payload_hash": "not recorded by existing001 fixture; unchanged construction-function source hashes and actual counts/bounds recorded separately",
+  "entry_floor_parameters_identical_001_002": true,
+  "renderer_all": "gl_compatibility",
+  "adapter_all": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "source_delta_patch": "source-delta-from-001.patch",
+  "construction_source_comparison": "backdrop-construction-source-comparison.json",
+  "paired_shots": [
+    {
+      "view": "landing",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "0c990090887d22c3e91a39bba4f9ba3ac345216eec919d3ccd2dec08aa3f0c01",
+      "candidate001_sha256": "72da79c84c68d4887c531e01bbc9aade2aa60ee2242c2a8e87c311bb0d4180ca",
+      "after_sha256": "9c3971ba721221673af694b2a3e0daa3b1752e64d740833e068c5d7b5f9fccf9"
+    },
+    {
+      "view": "fight",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9",
+      "candidate001_sha256": "9f8ea628b432fec6b7521bd50eae615198203edd744aea036a14f8fa7eb4b434",
+      "after_sha256": "16298aae3add874169119a5d7cef441d7e7d4342fb4995db89608577534d6126"
+    },
+    {
+      "view": "overview",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2",
+      "candidate001_sha256": "c2fdd8e29cd0caa88533de02d6cc334791afd7d4a80a995eca064af6b187eeb4",
+      "after_sha256": "5d326f2c493855de11d9dd9a9e707ea7b9effd002459435c5a907715c333ad58"
+    },
+    {
+      "view": "landing",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "5d355e9fc6f6d187619cdf9800ed7f6ea5ce9348c9ebeb0a7b29ab0e87411ca1",
+      "candidate001_sha256": "27e35f2dd0eb4345df925ffda9fdd7963871a650ba363223c6aae3de799ecf83",
+      "after_sha256": "4f44380d11aba4131e6bfed60c7c3897e698fc04fcb30f1398bb8a327a78a99f"
+    },
+    {
+      "view": "fight",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+      "candidate001_sha256": "dfa7000df044a580229290b498c61830609330bb9e6d21ade0636d81a5aa5489",
+      "after_sha256": "a1fe71515ceb9a62b146e365e7ffa4b8a277c5bd0d4c70bcc083e06f872e8b19"
+    },
+    {
+      "view": "overview",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+      "candidate001_sha256": "02525c39158db2b2dfbc24e84b8a0140455cc2ae029509e0ca5ed228c4a7e1be",
+      "after_sha256": "e8736f42bfa981143cd9acac032b67ac7501c1af25c04289bff5d07c1aa03bd8"
+    }
+  ],
+  "public_reports": {
+    "baseline": "baseline-001/scene-review.json",
+    "rejected001": "rejected-001/scene-review.json",
+    "candidate002": "candidate-002/scene-review.json"
+  },
+  "report_hash_scope": "Raw source report hashes before public curation; public curated hashes in archive-manifest.json."
+}

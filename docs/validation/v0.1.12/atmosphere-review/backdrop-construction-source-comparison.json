@@ -1,0 +1,20 @@
+{
+  "scope": "Frozen source construction-function byte comparison, not an independent native vertex-buffer hash. Actual mesh statistics and bounds compared separately.",
+  "changed_functions": [
+    "_material",
+    "_ready",
+    "presentation_report"
+  ],
+  "unchanged_functions_sha256": {
+    "_broken_cornices": "712afe1c128f1b3822c9ccbbf93196a0bc057729ecb9aa3a25fb60513d6ff61c",
+    "_cliff_faces": "1ec4f2d51ff908bebe7828c2a881a214306455fe966d9cfb75507986c33f28f6",
+    "_extrude_x": "3260f643818e7c85bc7b3c8b11cf17d17714814ed0b672e11d19268871011d10",
+    "_far_ridge": "aad56e77eef508e515ddd734410b358c1e8bd955f8b11390185ea7a41c8a6844",
+    "_finish": "2f6f4ae10b484e263baff51734d13cdefbc032c6928698d060bcb6f83bce6060",
+    "_quad": "2b145d22e07a804125a9ceb70a6abda3d8d40be80dac078ecb5a0958a7dca99e",
+    "_ruined_terraces": "a0e83af72689e231435b43746e30ac101356f4b65d63eb98be0c37ef88a2a6d7",
+    "_strata_shelves": "b0e86a3278d8499deb222a11e87582a261574487ac467c8237be78ee6ee71bfa",
+    "_stratum_point": "4adb10a64dcc23b6e8da928eabb15e4ec0d262ff47bcb73441e8de1ab68a233a",
+    "_triangle": "b8c7a9c6df72669be00265ff70600ff4f8ca8d2705e0339e39cc6de0ca46e69d"
+  }
+}

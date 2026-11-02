@@ -1,0 +1,85 @@
+{
+  "scope": "Deterministic actual Game/production actors/courtyard lighting scene-view comparison in native Compatibility at1280x720. Prescribed transforms, idle pose and frozen physics are fixture controls, not real-input gameplay. Native quality0 balanced has1.0 render scale; quality1 performance.65. Web/DPR, interactive motion/AV, hardware performance and AAA remain separate.",
+  "status": "deterministic_actual_scene_captured",
+  "takes": {
+    "after": {
+      "actual": {
+        "shots": 6,
+        "original_rasters": [
+          {
+            "file": "landing-q0.png",
+            "sha256": "72da79c84c68d4887c531e01bbc9aade2aa60ee2242c2a8e87c311bb0d4180ca",
+            "rgb_means": [
+              123.9311056857639,
+              108.86833767361111,
+              89.85128472222222
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "fight-q0.png",
+            "sha256": "9f8ea628b432fec6b7521bd50eae615198203edd744aea036a14f8fa7eb4b434",
+            "rgb_means": [
+              132.33901692708332,
+              114.05141384548611,
+              93.60643988715277
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "overview-q0.png",
+            "sha256": "c2fdd8e29cd0caa88533de02d6cc334791afd7d4a80a995eca064af6b187eeb4",
+            "rgb_means": [
+              119.30690538194445,
+              104.66447048611111,
+              87.18915256076389
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "landing-q1.png",
+            "sha256": "27e35f2dd0eb4345df925ffda9fdd7963871a650ba363223c6aae3de799ecf83",
+            "rgb_means": [
+              105.69461263020834,
+              92.65494900173611,
+              77.23360568576389
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "fight-q1.png",
+            "sha256": "dfa7000df044a580229290b498c61830609330bb9e6d21ade0636d81a5aa5489",
+            "rgb_means": [
+              110.73955837673611,
+              94.94069444444445,
+              78.73057183159722
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "overview-q1.png",
+            "sha256": "02525c39158db2b2dfbc24e84b8a0140455cc2ae029509e0ca5ed228c4a7e1be",
+            "rgb_means": [
+              102.06113172743055,
+              89.41145182291666,
+              75.39356879340278
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          }
+        ],
+        "renderer": "gl_compatibility",
+        "quality_policy_observed": "0 balanced/shadowsON/native1.0;1 performance/shadowsOFF/native.65"
+      },
+      "source_inputs_unchanged": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ]
+    }
+  },
+  "started_unix": 1793577216.1968877,
+  "processes_closed": true,
+  "display_tcp_disabled": true,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "elapsed_s": 64.35294985771179
+}

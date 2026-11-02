@@ -1,0 +1,194 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "Candidate002 bounded native prototype atmosphere ACCEPT; exact-final local523/0/Python51/WebWindows export complete; browser/cleanCI/public/release pending",
+  "baseline_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+  "public_evidence_directory": "atmosphere-review",
+  "scope": "Controlled actual main/production actors/HUD, prescribed idle positions and frozen Game/actor/camera callbacks. Nominal grounded checkpoint landing is not observed normal spawn physics. Not Web/DPR raster, gameplay FPS, motion/AV or AAA approval.",
+  "adoption": {
+    "root_direct_views": [
+      "landing-q0",
+      "fight-q0",
+      "overview-q0",
+      "fight-q1"
+    ],
+    "decision": "bounded prototype ACCEPT",
+    "observed": [
+      "Readable blue clear sky/cloud separation",
+      "Dark irregular geology no longer reads as pale brick curtain",
+      "Entry PBR, limestone/gold detail, HUD/rings and actor silhouettes maintained"
+    ],
+    "remaining": [
+      "Soft cloud edges at128 radiance",
+      "Repetitive limestone fins",
+      "Flat cliff geometry",
+      "Primitive NPC/crystal",
+      "Dark platform voids",
+      "Target hardware/performance/motion/continuous AV/full AAA"
+    ]
+  },
+  "pair_checks": {
+    "same_fixture": true,
+    "same_six_cameras_actor_art_quality_scale": true,
+    "canonical_static_collision_rows_identical_all": true,
+    "static_body_count": 160,
+    "static_shape_count": 178,
+    "static_collision_sha256": "14f43d2008cb82be6af976585a4d435aa6d59c83b9031f172f0c7da8adf228b1",
+    "sanctuary_rng_state_identical_all": true,
+    "sanctuary_rng_state": -5312476258823052333,
+    "backdrop_actual_counts_aabb_shadow_flags_identical_001_002": true,
+    "entry_floor_parameters_identical_001_002": true,
+    "construction_source_functions_unchanged": 10,
+    "exact_vertex_payload_hash": "Not recorded by001 fixture; no independent measured vertex-buffer hash equality claimed."
+  },
+  "takes": {
+    "baseline-001": {
+      "application_version": "0.1.11",
+      "elapsed_s": 71.29314398765564,
+      "processes_closed": true,
+      "display_tcp_disabled": true,
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "renderer": "gl_compatibility",
+      "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "viewport": [
+        1280.0,
+        720.0
+      ],
+      "actual_HUD_visible": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ],
+      "source_inputs_unchanged": true,
+      "raw_scene_report": {
+        "raw_scene_report_sha256": "ebfa7f662f600bfb7c9d686e1ae3ecd764a6888cb47f42e0b4d4f9047d0249dd",
+        "raw_scene_report_bytes": 130364,
+        "policy": "Runtime shots, physics canonical rows and presentation preserved; omitted local cache path/worktree listing only."
+      },
+      "originals": [
+        {
+          "file": "landing-q0.png",
+          "sha256": "0c990090887d22c3e91a39bba4f9ba3ac345216eec919d3ccd2dec08aa3f0c01",
+          "view": "landing",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1091303
+        },
+        {
+          "file": "fight-q0.png",
+          "sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9",
+          "view": "fight",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1603764
+        },
+        {
+          "file": "overview-q0.png",
+          "sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2",
+          "view": "overview",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1526052
+        },
+        {
+          "file": "landing-q1.png",
+          "sha256": "5d355e9fc6f6d187619cdf9800ed7f6ea5ce9348c9ebeb0a7b29ab0e87411ca1",
+          "view": "landing",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 841815
+        },
+        {
+          "file": "fight-q1.png",
+          "sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+          "view": "fight",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 1172653
+        },
+        {
+          "file": "overview-q1.png",
+          "sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+          "view": "overview",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 1151347
+        }
+      ]
+    },
+    "candidate-002": {
+      "application_version": "0.1.12",
+      "elapsed_s": 124.04633212089539,
+      "processes_closed": true,
+      "display_tcp_disabled": true,
+      "engine": "4.7.2.stable.official.ed1daf0bf",
+      "renderer": "gl_compatibility",
+      "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "viewport": [
+        1280.0,
+        720.0
+      ],
+      "actual_HUD_visible": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ],
+      "source_inputs_unchanged": true,
+      "raw_scene_report": {
+        "raw_scene_report_sha256": "2d54444e1e4f469d861d4c47f92db1d712852c903639631eba2db4495de10730",
+        "raw_scene_report_bytes": 135213,
+        "policy": "Runtime shots, physics canonical rows and presentation preserved; omitted local cache path/worktree listing only."
+      },
+      "originals": [
+        {
+          "file": "landing-q0.png",
+          "sha256": "9c3971ba721221673af694b2a3e0daa3b1752e64d740833e068c5d7b5f9fccf9",
+          "view": "landing",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1610052
+        },
+        {
+          "file": "fight-q0.png",
+          "sha256": "16298aae3add874169119a5d7cef441d7e7d4342fb4995db89608577534d6126",
+          "view": "fight",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1711200
+        },
+        {
+          "file": "overview-q0.png",
+          "sha256": "5d326f2c493855de11d9dd9a9e707ea7b9effd002459435c5a907715c333ad58",
+          "view": "overview",
+          "quality": 0,
+          "render_scale": 1.0,
+          "bytes": 1653829
+        },
+        {
+          "file": "landing-q1.png",
+          "sha256": "4f44380d11aba4131e6bfed60c7c3897e698fc04fcb30f1398bb8a327a78a99f",
+          "view": "landing",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 1147418
+        },
+        {
+          "file": "fight-q1.png",
+          "sha256": "a1fe71515ceb9a62b146e365e7ffa4b8a277c5bd0d4c70bcc083e06f872e8b19",
+          "view": "fight",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 1206923
+        },
+        {
+          "file": "overview-q1.png",
+          "sha256": "e8736f42bfa981143cd9acac032b67ac7501c1af25c04289bff5d07c1aa03bd8",
+          "view": "overview",
+          "quality": 1,
+          "render_scale": 0.649999976158142,
+          "bytes": 1180673
+        }
+      ]
+    }
+  },
+  "final_local_contracts": "native-final-checkpoint.json and local-preview-build.json are separate exact002 current-source native/build proofs; old001523/0 does not approve002."
+}

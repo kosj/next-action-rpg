@@ -1,0 +1,73 @@
+{
+  "checked_at_utc": "2026-11-01T23:43:46.455476+00:00",
+  "method": "GitHub MCP fetch; UTF-8 text archived through apply_patch",
+  "scope": "Official shader behavior/call-path proof; not new shader compile, raster or hardware performance proof",
+  "sources": [
+    {
+      "file": "sky_shader.rst",
+      "url": "https://raw.githubusercontent.com/godotengine/godot-docs/4.7/tutorials/shaders/shader_reference/sky_shader.rst",
+      "bytes": 15319,
+      "sha256": "204f48c75e149a320b8b9421ed195d66ead4cd7d5ce978eee2c33775e42ad7e3"
+    },
+    {
+      "file": "sky.glsl",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/gles3/shaders/sky.glsl",
+      "bytes": 7439,
+      "sha256": "c730ba29e262768134143d346fa25f2499fc143c8a78eae8277233f1d7ea20f3"
+    },
+    {
+      "file": "sky_material.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/scene/resources/3d/sky_material.cpp",
+      "bytes": 35935,
+      "sha256": "fea858bf8ddad54b679872ca689fb3f515323da76f470dc2e14d412bab902533"
+    },
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/gles3/rasterizer_scene_gles3.cpp",
+      "bytes": 212186,
+      "sha256": "6d0719c9cd2caf685a9825028183bdf058081d7bc92d4b27ed2587f39b081221"
+    }
+  ],
+  "findings": [
+    {
+      "file": "sky_shader.rst",
+      "lines": [
+        43,
+        102
+      ],
+      "finding": "Static cubemap background sampling recipe; no TIME/POSITION/uniform changes avoids needless sky radiance updates. Process mode only controls cubemap, not normal fragment execution."
+    },
+    {
+      "file": "sky.glsl",
+      "lines": [
+        103,
+        107,
+        185,
+        201,
+        243,
+        250
+      ],
+      "finding": "Pinned GLES3 has actual cubemap boolean, derives world view direction, executes user sky code and applies tone-mapping color path."
+    },
+    {
+      "file": "sky_material.cpp",
+      "lines": [
+        61,
+        65,
+        327,
+        328
+      ],
+      "finding": "ProceduralSky horizon weight pow(1-EYEDIR.y,.6/curve); larger curve expands neutral horizon band at low camera."
+    },
+    {
+      "file": "rasterizer_scene_gles3.cpp",
+      "lines": [
+        739,
+        748,
+        1739,
+        1745
+      ],
+      "finding": "Sky and directional light shading derive direction toward source from light transform basis times local+Z. Static sky uniform is derived from actual SanctuaryKey local transform+Z; parent/root Sanctuary is identity."
+    }
+  ]
+}

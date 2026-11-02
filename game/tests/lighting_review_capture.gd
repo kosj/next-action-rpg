@@ -71,7 +71,12 @@ func _run() -> void:
 	for quality: int in config.get("qualities",[0,1]):
 		Session.quality = quality
 		world.call("apply_quality")
-		for view: String in config.get("views",["fight","overview"]):
+		for view: String in config.get("views",["landing","fight","overview"]):
+			# This is nominal grounded checkpoint staging, not start_game() or
+			# observed physics settling. Production snap() supplies its camera.
+			player.position = Sanctuary.CHECKPOINTS[0] if view == "landing" else Vector3(0,0,-24)
+			player.position.y = -player.visual.ground_offset_y
+			player.locked_target = null if view == "landing" else actors[0]
 			rig.snap()
 			if view == "overview":
 				rig.camera.global_position = Vector3(9.0,7.0,-23.0)
@@ -89,11 +94,13 @@ func _run() -> void:
 			shots.append(_report(view,quality,output_name,path))
 			print("LIGHTING_REVIEW_SHOT ",output_name)
 	var result := {"status":"deterministic_actual_scene_captured","scope":config.scope,
-		"engine":Engine.get_version_info(),"source_context":config.source_context,
+		"engine":Engine.get_version_info(),"application_version":ProjectSettings.get_setting("application/config/version"),"source_context":config.source_context,
 		"renderer":RenderingServer.get_current_rendering_method(),"video_adapter":RenderingServer.get_video_adapter_name(),
 		"viewport":_json(get_viewport().get_visible_rect().size),"show_ui":bool(config.get("show_ui",false)),
-		"fixture_controls":["prescribed actor locations","idle pose seek","frozen Game and actor processing","fixed camera views","direct actual quality setting"],
-		"shapes":"Actual unchanged production Hero/Sentinel, floor/walls/props and production camera in fight view",
+		"sanctuary_static_collision":_static_collision_report(),"sanctuary_rng_state":(world.get("sanctuary") as Sanctuary).rng.state,
+		"sanctuary_presentation":_sanctuary_presentation_report(),
+		"fixture_controls":["prescribed actor locations per view","nominal grounded checkpoint landing, not observed spawn physics","idle pose seek","frozen Game and actor processing","fixed camera views","direct actual quality setting"],
+		"shapes":"Actual production Hero/Sentinel, floor/walls/props and production camera snap in landing/fight views",
 		"shots":shots}
 	var file := FileAccess.open(String(config.result_path),FileAccess.WRITE)
 	if file == null:
@@ -118,6 +125,57 @@ func _run() -> void:
 	print("LIGHTING_REVIEW_COMPLETE shots=",shots.size()," audio_released=",released)
 	get_tree().quit(0 if released else 1)
 
+func _sanctuary_presentation_report() -> Dictionary:
+	var sanctuary := world.get("sanctuary") as Sanctuary
+	var surfaces: Array[Dictionary] = []
+	var backdrop: Dictionary = {}
+	for child in sanctuary.get_children():
+		var source := child.get_script() as Script
+		if source != null and source.resource_path.ends_with("/scripts/world/sanctuary_backdrop.gd") and child.has_method("presentation_report"):
+			backdrop = _json(child.call("presentation_report"))
+	for node in sanctuary.find_children("*","MeshInstance3D",true,false):
+		if not node.has_meta("physical_tile_meters") and not String(node.name).contains("Flagstone"):
+			continue
+		var mesh := node as MeshInstance3D
+		var material := mesh.material_override as StandardMaterial3D
+		if material == null:
+			continue
+		surfaces.append({"name":String(mesh.name),"global_transform":_json(mesh.global_transform),
+			"physical_tile_meters":mesh.get_meta("physical_tile_meters",null),"uv1_scale":_json(material.uv1_scale),
+			"roughness":material.roughness,"metallic":material.metallic,"normal_enabled":material.normal_enabled,
+			"albedo_texture":material.albedo_texture.resource_path if material.albedo_texture != null else "",
+			"normal_texture":material.normal_texture.resource_path if material.normal_texture != null else ""})
+	return {"textured_floor_surfaces":surfaces,"backdrop":backdrop}
+
+func _static_collision_report() -> Dictionary:
+	# Ignore Node auto-names/RIDs and presentation-only geometry. Preserve a
+	# sorted multiset (including duplicate rows) of actual Sanctuary static shapes.
+	var sanctuary := world.get("sanctuary") as Sanctuary
+	var rows: Array[String] = []
+	var body_count := 0
+	for node in sanctuary.find_children("*","StaticBody3D",true,false):
+		var body := node as StaticBody3D
+		body_count += 1
+		for owner_id in body.get_shape_owners():
+			for index in range(body.shape_owner_get_shape_count(owner_id)):
+				var shape := body.shape_owner_get_shape(owner_id,index)
+				var parameter_names: Array[String] = []
+				for property in shape.get_property_list():
+					var property_name := String(property.name)
+					if (int(property.usage) & PROPERTY_USAGE_STORAGE) != 0 and property_name != "script" and not property_name.begins_with("resource_"):
+						parameter_names.append(property_name)
+				parameter_names.sort()
+				var parameters := {}
+				for property_name in parameter_names:
+					parameters[property_name] = _json(shape.get(property_name))
+				rows.append(JSON.stringify({"shape_class":shape.get_class(),"parameters":parameters,
+					"global_transform":_json(body.global_transform*body.shape_owner_get_transform(owner_id)),
+					"collision_layer":body.collision_layer,"collision_mask":body.collision_mask,
+					"disabled":body.is_shape_owner_disabled(owner_id)}))
+	rows.sort()
+	return {"scope":"Actual static Sanctuary shape multiset; excludes actor dynamics and nonphysical art; ignores names/RIDs",
+		"body_count":body_count,"shape_count":rows.size(),"canonical_rows":rows,"sha256":"\n".join(rows).sha256_text()}
+
 func _actor_report(profile: String,actor: CharacterBody3D,visual: ActorVisual) -> Dictionary:
 	var report := {"profile":profile,"position":_json(actor.position),"art":_json(visual.presentation_report())}
 	var grounding := visual.get_node_or_null("PerformanceGrounding")
@@ -132,16 +190,22 @@ func _report(view: String,quality: int,output_name: String,path: String) -> Dict
 	for node in sanctuary.get_children():
 		if node is DirectionalLight3D:
 			lights.append({"name":node.name,"rotation_degrees":_json(node.rotation_degrees),"color":_json(node.light_color),
-				"energy":node.light_energy,"shadows":node.shadow_enabled,"shadow_max_distance":node.directional_shadow_max_distance})
+				"energy":node.light_energy,"shadows":node.shadow_enabled,"shadow_max_distance":node.directional_shadow_max_distance,
+				"shadow_normal_bias":node.shadow_normal_bias,"shadow_bias":node.shadow_bias,"directional_shadow_mode":node.directional_shadow_mode})
 		if node is WorldEnvironment:
 			var e: Environment = node.environment
 			environment = {"background_mode":e.background_mode,"ambient_source":e.ambient_light_source,
-				"ambient_energy":e.ambient_light_energy,"reflections":e.reflected_light_source,"tonemap":e.tonemap_mode,
-				"fog_enabled":e.fog_enabled,"fog_density":e.fog_density,"fog_color":_json(e.fog_light_color)}
+				"background_energy":e.background_energy_multiplier,"ambient_energy":e.ambient_light_energy,
+				"ambient_color":_json(e.ambient_light_color),"ambient_sky_contribution":e.ambient_light_sky_contribution,
+				"reflections":e.reflected_light_source,"tonemap":e.tonemap_mode,
+				"fog_enabled":e.fog_enabled,"fog_density":e.fog_density,"fog_color":_json(e.fog_light_color),
+				"fog_mode":e.fog_mode,"fog_depth_begin":e.fog_depth_begin,"fog_depth_end":e.fog_depth_end,"fog_depth_curve":e.fog_depth_curve,
+				"sky_material_class":e.sky.sky_material.get_class() if e.sky != null and e.sky.sky_material != null else "none"}
 	var actor_records: Array[Dictionary] = [_actor_report("hero",player,player.visual)]
 	for actor in actors:
 		actor_records.append(_actor_report("sentinel_melee",actor,actor.visual))
 	return {"view":view,"quality":quality,"quality_label":"balanced" if quality == 0 else "performance",
+		"camera_control":"production_snap_unlocked_nominal_grounded_checkpoint" if view == "landing" else ("production_snap_locked" if view == "fight" else "fixture_overview_override"),
 		"render_scale":get_viewport().scaling_3d_scale,"native_scale_note":"Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
 		"file":output_name,"sha256":FileAccess.get_sha256(path),"camera":{"position":_json(rig.camera.global_position),"basis":_json(rig.camera.global_basis),"fov":rig.camera.fov},
 		"lights":lights,"environment":environment,"actors":actor_records}
@@ -155,6 +219,15 @@ func _json(value: Variant) -> Variant:
 		return [value.r,value.g,value.b,value.a]
 	if value is Basis:
 		return [_json(value.x),_json(value.y),_json(value.z)]
+	if value is Transform3D:
+		return {"basis":_json(value.basis),"origin":_json(value.origin)}
+	if value is AABB:
+		return {"position":_json(value.position),"size":_json(value.size)}
+	if value is PackedVector3Array or value is PackedVector2Array:
+		var coordinates: Array = []
+		for point in value:
+			coordinates.append(_json(point))
+		return coordinates
 	if value is Dictionary:
 		var result := {}
 		for key in value:
