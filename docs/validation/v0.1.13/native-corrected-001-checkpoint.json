@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "Corrected actual native001 PASS580/0/exit0; not final repaired/compressed source or visual approval",
+  "scope": "PinnedGodot4.7.2 contracts on Erin/Roen001 and corrected presenter. Distinct from first parser failure, eventual geometry002/compression, final export/browser/public/AAA.",
+  "checks": 580,
+  "failures": 0,
+  "exit_code_reported_by_runner": 0,
+  "log": {
+    "file": "native-corrected-001.log",
+    "closed": true,
+    "bytes": 56451,
+    "sha256": "45173460709eb7738bcb0d8664669937625cd69d900af47cd8103c1546956d9e",
+    "summary": "RUNEFALL_TESTS: 580 checks, 0 failures",
+    "ERROR_lines": []
+  },
+  "remaining": [
+    "Erin geometry/visual acceptance",
+    "Compression candidate pixel/mip/freshimport verification and adoption",
+    "Final frozen-source native/fullbuild",
+    "Actual paired hub raster/browser/public verification"
+  ]
+}

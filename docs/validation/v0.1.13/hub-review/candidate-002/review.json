@@ -1,0 +1,15 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "scoped_prototype_adopted",
+  "scope": "Two static NPC q1 approximate grounding and hub human-role/relic presentation only. Not AAA/full garment/full skin/continuous AV/hardware approval.",
+  "root_observation": "Root viewed all four new q1 original PNGs, plus the four q0 originals previously viewed whose final PNG hashes are identical. Approximate contact ellipses reduce floating boots.",
+  "remaining": [
+    "Erin ragged dark hem/slits/teal tip",
+    "Approximate soft ellipse is not per-foot or light-derived shadow",
+    "Actual browser, clean CI, public/release pending at this source snapshot"
+  ],
+  "capture_elapsed_s": 99.947558,
+  "q0": "Both static NPC patches hidden/opacity0; key real shadows on. All four raw PNGs byte-identical to pre-grounding001.",
+  "q1": "Both patches visible, cached support queries1 each, pendingfalse, UP normal and opacity.21, floor supports[-4,0,5]/[4,0,5]. Independent static NPC2 budget, Hero/Enemy8 unchanged.",
+  "raw_scene_report_sha256": "272d1fc746d1127e2a58198ad97d63a332377f34db3325e8b887c1b9ad80b634"
+}

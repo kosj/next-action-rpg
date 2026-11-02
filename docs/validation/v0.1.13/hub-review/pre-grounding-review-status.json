@@ -1,0 +1,163 @@
+{
+  "scope": "Review annotation only; original capture/report/raster bytes retained unchanged. Technical capture completion is distinct from visual adoption.",
+  "phase": "pre_npc_grounding",
+  "technical_status": "deterministic_actual_scene_captured",
+  "elapsed_s": 165.03309559822083,
+  "visual_status": "partial; candidate q1 NPC grounding issue requires correction",
+  "root_observation": "Root viewed all8 after originals and confirmed NPCs read as floating in q1. New human-role bodies/relic improve primitives, while Erin lower-robe strips/slits and face/finger/motion/hardware/AAA remain separately limited.",
+  "q1_grounding_issue_status": "rejected_for_correction",
+  "baseline_eight_reusable": true,
+  "next_candidate": "after-only new source using same fixture and original baseline, pending new native/export and explicit root heavy-lane grant",
+  "original_report_sha256": {
+    "capture.json": "a14beb74500dcdfe9ce9e630c53462402ef402bf0f776ec112a29a07ce17ea68",
+    "paired-comparison.json": "7af0de5c67e8ac46cad513875fabe51ac9f0cf01f00dbb2866e0a539cbf7341d",
+    "before/scene-review.json": "a1644f6288df8f81cc05c951ed2fa884ef6e2bbeb76e2ab81e8226ecf217f431",
+    "after/scene-review.json": "843afaeedc4a6f6ab4ac70ffb224cb42d7d4d0f0aee94da2d4bb7097f4432cbe"
+  },
+  "case_ids_preserved": [
+    {
+      "case_id": "before/hubwide-q0",
+      "take": "before",
+      "view": "hubwide",
+      "quality": 0,
+      "original_png": "before/original-png/hubwide-q0.png",
+      "sha256": "a04ee2a1f6a4228b281512afb2c461cc2f402d2fd410e89fa5cebb49d85ed647",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/erin-q0",
+      "take": "before",
+      "view": "erin",
+      "quality": 0,
+      "original_png": "before/original-png/erin-q0.png",
+      "sha256": "731883dcf3969ad3194732649511e983ff529aec3c50f41d77b5ee918fb9edc4",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/roen-q0",
+      "take": "before",
+      "view": "roen",
+      "quality": 0,
+      "original_png": "before/original-png/roen-q0.png",
+      "sha256": "19a6451ea429943d90557f5779690d6186dc241a47622d76fa45f99533509312",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/checkpoint-q0",
+      "take": "before",
+      "view": "checkpoint",
+      "quality": 0,
+      "original_png": "before/original-png/checkpoint-q0.png",
+      "sha256": "53c43f21c8c67b68730066d395ef8e70fdad26ae2108a8d6a4468a0d1bc481cf",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/hubwide-q1",
+      "take": "before",
+      "view": "hubwide",
+      "quality": 1,
+      "original_png": "before/original-png/hubwide-q1.png",
+      "sha256": "193eaba13a392a53264622a0605eebbcff327620e90dab4b56ac49364b446357",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/erin-q1",
+      "take": "before",
+      "view": "erin",
+      "quality": 1,
+      "original_png": "before/original-png/erin-q1.png",
+      "sha256": "05e4e57827ba40cbd152c4d9809945dae955b96f3886a7f117d020a7cd5f50eb",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/roen-q1",
+      "take": "before",
+      "view": "roen",
+      "quality": 1,
+      "original_png": "before/original-png/roen-q1.png",
+      "sha256": "bfcceeb3504208f34e7feebffbc1898411456dd2b2545a10e6c603094752a39e",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "before/checkpoint-q1",
+      "take": "before",
+      "view": "checkpoint",
+      "quality": 1,
+      "original_png": "before/original-png/checkpoint-q1.png",
+      "sha256": "c2ceec7b66fd4a45f7b57c32c85b9f1c669bdd7d15b463879b4b0de7bdb36dd1",
+      "phase": "published_prototype_baseline"
+    },
+    {
+      "case_id": "after/hubwide-q0",
+      "take": "after",
+      "view": "hubwide",
+      "quality": 0,
+      "original_png": "after/original-png/hubwide-q0.png",
+      "sha256": "264ac88e5649be5312e3d31f47e3e041c5ad6a69eccde3d2e01a57a1922b3a8d",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/erin-q0",
+      "take": "after",
+      "view": "erin",
+      "quality": 0,
+      "original_png": "after/original-png/erin-q0.png",
+      "sha256": "923758ea4adf4d72d8cf2798be07b126ff04b658a6eaa87c1959e65a88565187",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/roen-q0",
+      "take": "after",
+      "view": "roen",
+      "quality": 0,
+      "original_png": "after/original-png/roen-q0.png",
+      "sha256": "ac0837de9512ecfc506e0e22303ee1c28327b51eed345c999044be8cce3b3cb9",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/checkpoint-q0",
+      "take": "after",
+      "view": "checkpoint",
+      "quality": 0,
+      "original_png": "after/original-png/checkpoint-q0.png",
+      "sha256": "1e6cd73cc36198583973ab652d2bddefda1fd2aca2a211fcd94d2d20cf7864b7",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/hubwide-q1",
+      "take": "after",
+      "view": "hubwide",
+      "quality": 1,
+      "original_png": "after/original-png/hubwide-q1.png",
+      "sha256": "c068f821e6f292d410f4691e722e8e22180ebb04770d16a58c6d7eaf4fe5663b",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/erin-q1",
+      "take": "after",
+      "view": "erin",
+      "quality": 1,
+      "original_png": "after/original-png/erin-q1.png",
+      "sha256": "166a4e8cef2097d9051beb83f54ec6cebab3b5b7e808ee4655eb4e98696127f9",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/roen-q1",
+      "take": "after",
+      "view": "roen",
+      "quality": 1,
+      "original_png": "after/original-png/roen-q1.png",
+      "sha256": "71173c9c70435b2860da26825fdae6b734c75a6f44dca2eded3155152e4817ad",
+      "phase": "pre_npc_grounding"
+    },
+    {
+      "case_id": "after/checkpoint-q1",
+      "take": "after",
+      "view": "checkpoint",
+      "quality": 1,
+      "original_png": "after/original-png/checkpoint-q1.png",
+      "sha256": "fd6743cb720baf9bbc2f7f83a79c9e3dee4c0aa7f49546140d61fc10658e69cb",
+      "phase": "pre_npc_grounding"
+    }
+  ]
+}

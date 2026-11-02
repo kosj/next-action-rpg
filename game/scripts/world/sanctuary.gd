@@ -5,6 +5,8 @@ const COURTYARD_PILLAR_SCENE: PackedScene = preload("res://assets/models/product
 const COURTYARD_GATEWAY_SCENE: PackedScene = preload("res://assets/models/production/pilgrim_gateway.glb")
 const COURTYARD_ART = preload("res://scripts/world/courtyard_art.gd")
 const SANCTUARY_BACKDROP = preload("res://scripts/world/sanctuary_backdrop.gd")
+const CHECKPOINT_RELIC = preload("res://scripts/world/checkpoint_relic.gd")
+const HUB_NPC = preload("res://scripts/world/hub_npc.gd")
 const COURTYARD_FLOOR: StandardMaterial3D = preload("res://assets/materials/courtyard/floor_stone.tres")
 const COURTYARD_WALL: StandardMaterial3D = preload("res://assets/materials/courtyard/wall_limestone.tres")
 
@@ -41,12 +43,14 @@ func _ready() -> void:
 		block(point + Vector3(0,-0.2,0), Vector3(10,0.4,10), stone, true)
 		checkpoint(point, index)
 	for index in range(npc_positions.size()):
-		var visual := ActorVisual.new()
-		add_child(visual)
+		var visual := HUB_NPC.new()
+		visual.configure("erin" if index == 0 else "roen")
 		visual.position = npc_positions[index]
-		visual.setup("keeper" if index == 0 else "sentinel")
-		visual.rotation.y = -0.7 if index == 0 else 0.7
 		visual.set_meta("npc", index)
+		add_child(visual)
+		# The normalized art faces -Z. Welcome the player at the existing spawn;
+		# this static visual facing does not own interaction or actor movement.
+		visual.look_at(CHECKPOINTS[0], Vector3.UP)
 	for index in range(lore_positions.size()):
 		var point := lore_positions[index]
 		if index > 0:
@@ -368,12 +372,10 @@ func brazier(point: Vector3) -> void:
 	add_child(light)
 
 func checkpoint(point: Vector3, index: int) -> void:
-	var root := Node3D.new()
+	var root := CHECKPOINT_RELIC.new()
 	root.position = point + Vector3(2,0,0)
 	add_child(root)
-	var crystal := block(root.position + Vector3.UP * 1.4, Vector3(0.5,1.5,0.5), glow)
-	crystal.rotation_degrees = Vector3(0,45,25)
-	crystals.append(crystal)
+	crystals.append(root.get_crystal_pivot())
 	ring(root.position + Vector3.UP * 0.05, 2.0, glow)
 	root.set_meta("checkpoint", index)
 

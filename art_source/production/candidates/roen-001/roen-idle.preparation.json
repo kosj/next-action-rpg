@@ -1,0 +1,1733 @@
+{
+  "schema_version": 1,
+  "status": "normalized_idle_candidate_pending_visual_and_runtime_review",
+  "source": {
+    "file": "art_source/production/candidates/roen-001/idle-canonical.glb",
+    "sha256": "478c350cdec13bb31cd640973cdd03ba0b7ea0f6323504c49897fe6471732089"
+  },
+  "source_unchanged": true,
+  "output_file": "art_source/production/candidates/roen-001/roen-idle.glb",
+  "output_bytes": 5387148,
+  "output_sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049",
+  "recipe_file": "art_source/production/hub_npcs/roen.json",
+  "recipe_sha256": "374d15e4cecefba95dfdd99a92127dfa8d5263bcfce8576056ad9e4fc04b9d8c",
+  "tool_file": "art_source/production/hub_npcs/prepare_idle_npc.py",
+  "tool_sha256": "098b628344b9fac86d2b8b974c3406e829d7012ac01ce16659d3a7985d85bfdd",
+  "base_utility_file": "tools/prepare_character_candidate.py",
+  "base_utility_sha256": "15568bdea1ab515cdb39b98c5c6587a982d5a05ccf121e298228389687d4ac2d",
+  "blender": "4.3.2",
+  "bones": 53,
+  "clips": [
+    "idle",
+    "RESET"
+  ],
+  "idle_duration_s": 10.166666666666666,
+  "time_base": {
+    "source_start_s": 0.06666666666666667,
+    "source_end_s": 10.233333333333333,
+    "common_time_translation_s": -0.06666666666666667,
+    "duration_preserved": true,
+    "retiming": false
+  },
+  "normalization": {
+    "uniform_scale": 1.8277189425489577,
+    "source_rest_bounds": {
+      "min": [
+        -0.5066323280334473,
+        -0.1094350814819336,
+        -1.4070805320898216e-07
+      ],
+      "max": [
+        0.48735955357551575,
+        0.14884157478809357,
+        0.9957765936851501
+      ],
+      "height": 0.9957767343932034
+    },
+    "target_height_m": 1.82,
+    "normalized_rest_bounds": {
+      "min": [
+        -0.9083690047264099,
+        -0.23602868616580963,
+        0.0
+      ],
+      "max": [
+        0.9083688259124756,
+        0.23602871596813202,
+        1.820000171661377
+      ],
+      "height": 1.820000171661377
+    },
+    "forward": "minus_z_after_wrapper_pi",
+    "source_forward": "plus_z",
+    "reimported_rest_bounds": {
+      "min": [
+        -0.9083691835403442,
+        -0.2360287755727768,
+        -3.5598588965513045e-07
+      ],
+      "max": [
+        0.9083690643310547,
+        0.23602858185768127,
+        1.8199994564056396
+      ],
+      "height": 1.8199998123915293
+    },
+    "root_wrapper_matrix_blender": [
+      [
+        -1.82771897315979,
+        -2.759778965355508e-07,
+        0.0,
+        -0.017612604424357414
+      ],
+      [
+        2.759778965355508e-07,
+        -1.82771897315979,
+        0.0,
+        0.03601199761033058
+      ],
+      [
+        0.0,
+        0.0,
+        1.82771897315979,
+        2.5717477569742186e-07
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "normalized_source_to_reimported_idle_pose_checks": [
+    {
+      "fraction": 0.0,
+      "bidirectional_nearest_vertex_max_error_m": 5.200126452109544e-06
+    },
+    {
+      "fraction": 0.25,
+      "bidirectional_nearest_vertex_max_error_m": 5.008674634154886e-06
+    },
+    {
+      "fraction": 0.5,
+      "bidirectional_nearest_vertex_max_error_m": 4.940111466567032e-06
+    },
+    {
+      "fraction": 0.75,
+      "bidirectional_nearest_vertex_max_error_m": 4.718659056379693e-06
+    },
+    {
+      "fraction": 1.0,
+      "bidirectional_nearest_vertex_max_error_m": 5.200126452109544e-06
+    }
+  ],
+  "textures": [
+    {
+      "image_name": "Image_2",
+      "source_size": [
+        2048,
+        2048
+      ],
+      "derived_size": [
+        1024,
+        1024
+      ],
+      "operation": "linear non-color downsample; normalize tangent RGB vectors; lossless PNG"
+    }
+  ],
+  "idle_seam": {
+    "joint_position_max_m": 0.0,
+    "joint_angle_shortest_max_rad": 0.0
+  },
+  "sole_measurement": {
+    "method": "Actual evaluated mesh vertices in the lowest 25mm rest band, split by rest X sign; 121 finite poses. This is not a foot IK or contact solver.",
+    "region_vertex_counts": {
+      "left": 117,
+      "right": 115
+    },
+    "samples": [
+      {
+        "time_s": 0.0,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0,
+            "lowest_m": 0.009226263500750065
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0,
+            "lowest_m": 1.5504302552926674e-07
+          }
+        }
+      },
+      {
+        "time_s": 0.08472222222222221,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0007100272172748121,
+            "lowest_m": 0.009282499551773071
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0005311476381899907,
+            "lowest_m": -0.00021378883684519678
+          }
+        }
+      },
+      {
+        "time_s": 0.16944444444444443,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0015411104115986812,
+            "lowest_m": 0.009450620040297508
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0010066711710682737,
+            "lowest_m": -0.00023252659593708813
+          }
+        }
+      },
+      {
+        "time_s": 0.25416666666666665,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00200043208109161,
+            "lowest_m": 0.00949463713914156
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00100555178671588,
+            "lowest_m": -0.0002709434775169939
+          }
+        }
+      },
+      {
+        "time_s": 0.33888888888888885,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00250809384523331,
+            "lowest_m": 0.009343051351606846
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00044898669505889836,
+            "lowest_m": -0.0002510243793949485
+          }
+        }
+      },
+      {
+        "time_s": 0.42361111111111105,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.003225106602492567,
+            "lowest_m": 0.009360495954751968
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0009432584216806706,
+            "lowest_m": -0.0001197884776047431
+          }
+        }
+      },
+      {
+        "time_s": 0.5083333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.003958488385675866,
+            "lowest_m": 0.009405692107975483
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0025849441070748464,
+            "lowest_m": 0.00017965328879654408
+          }
+        }
+      },
+      {
+        "time_s": 0.5930555555555554,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004735423432477961,
+            "lowest_m": 0.009222731925547123
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.003405440434787838,
+            "lowest_m": 0.00030822353437542915
+          }
+        }
+      },
+      {
+        "time_s": 0.6777777777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005972893438955106,
+            "lowest_m": 0.009037679061293602
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0028258002281283437,
+            "lowest_m": 0.0002599594590719789
+          }
+        }
+      },
+      {
+        "time_s": 0.7625,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006747571405499687,
+            "lowest_m": 0.009023001417517662
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0030138883681639934,
+            "lowest_m": 0.0003829669440165162
+          }
+        }
+      },
+      {
+        "time_s": 0.8472222222222221,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007523386205210101,
+            "lowest_m": 0.00890350341796875
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0030077629272662752,
+            "lowest_m": 0.0003512473776936531
+          }
+        }
+      },
+      {
+        "time_s": 0.9319444444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00854008922357536,
+            "lowest_m": 0.008815002627670765
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0026292963845101955,
+            "lowest_m": 0.00018436837126500905
+          }
+        }
+      },
+      {
+        "time_s": 1.0166666666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007806551690206964,
+            "lowest_m": 0.009081521071493626
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002693480383019577,
+            "lowest_m": 0.00012081178283551708
+          }
+        }
+      },
+      {
+        "time_s": 1.1013888888888888,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007765539541853387,
+            "lowest_m": 0.009153008460998535
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002032634923157449,
+            "lowest_m": -0.0001204914806294255
+          }
+        }
+      },
+      {
+        "time_s": 1.186111111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008429192891450039,
+            "lowest_m": 0.009212329052388668
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0018565289484705101,
+            "lowest_m": -0.00040459478623233736
+          }
+        }
+      },
+      {
+        "time_s": 1.2708333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008856604844735936,
+            "lowest_m": 0.009286557324230671
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0027455429953355437,
+            "lowest_m": -0.0005843109101988375
+          }
+        }
+      },
+      {
+        "time_s": 1.3555555555555554,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008751326247212653,
+            "lowest_m": 0.009436426684260368
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0037719304969735133,
+            "lowest_m": -0.0007559841615147889
+          }
+        }
+      },
+      {
+        "time_s": 1.4402777777777775,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008579903009846158,
+            "lowest_m": 0.009589861147105694
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0040926127311530095,
+            "lowest_m": -0.0008396939374506474
+          }
+        }
+      },
+      {
+        "time_s": 1.525,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00864757660329638,
+            "lowest_m": 0.009673923254013062
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004396311328418459,
+            "lowest_m": -0.001068963436409831
+          }
+        }
+      },
+      {
+        "time_s": 1.609722222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008899464980615984,
+            "lowest_m": 0.009825748391449451
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0048938748013617125,
+            "lowest_m": -0.0013141290983185172
+          }
+        }
+      },
+      {
+        "time_s": 1.6944444444444442,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00918693712920837,
+            "lowest_m": 0.010026129893958569
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0059326272675339796,
+            "lowest_m": -0.0016359590226784348
+          }
+        }
+      },
+      {
+        "time_s": 1.7791666666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009223611376087593,
+            "lowest_m": 0.010496572591364384
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00509670560968408,
+            "lowest_m": -0.0013819666346535087
+          }
+        }
+      },
+      {
+        "time_s": 1.8638888888888887,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009196447129573715,
+            "lowest_m": 0.010608887299895287
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.003942169407494323,
+            "lowest_m": -0.0010023174108937383
+          }
+        }
+      },
+      {
+        "time_s": 1.9486111111111108,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008866101087888557,
+            "lowest_m": 0.01009303517639637
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0034755012106597164,
+            "lowest_m": -0.0005068167229183018
+          }
+        }
+      },
+      {
+        "time_s": 2.033333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00857919039499733,
+            "lowest_m": 0.009650234133005142
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0038027525388804866,
+            "lowest_m": -3.342672425787896e-05
+          }
+        }
+      },
+      {
+        "time_s": 2.1180555555555554,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009246011596029736,
+            "lowest_m": 0.009519578889012337
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00627254007610589,
+            "lowest_m": 4.040516432723962e-05
+          }
+        }
+      },
+      {
+        "time_s": 2.2027777777777775,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009779618871773898,
+            "lowest_m": 0.009338830597698689
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008562778930318796,
+            "lowest_m": -0.00012516060087364167
+          }
+        }
+      },
+      {
+        "time_s": 2.2875,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010354916124032639,
+            "lowest_m": 0.009571113623678684
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01071955292190626,
+            "lowest_m": -0.0002404128754278645
+          }
+        }
+      },
+      {
+        "time_s": 2.372222222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01122120931195983,
+            "lowest_m": 0.009486314840614796
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01219346853153756,
+            "lowest_m": -0.00046453249524347484
+          }
+        }
+      },
+      {
+        "time_s": 2.4569444444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011675813315662304,
+            "lowest_m": 0.009359118528664112
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.013884419727827597,
+            "lowest_m": -0.00044714371324516833
+          }
+        }
+      },
+      {
+        "time_s": 2.5416666666666665,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010675982257211924,
+            "lowest_m": 0.008960305713117123
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.013847937394921002,
+            "lowest_m": -0.00020341225899755955
+          }
+        }
+      },
+      {
+        "time_s": 2.6263888888888887,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009646522719148525,
+            "lowest_m": 0.008623343892395496
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.013444740759948764,
+            "lowest_m": -1.5265148249454796e-05
+          }
+        }
+      },
+      {
+        "time_s": 2.711111111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00866087571906469,
+            "lowest_m": 0.008423890918493271
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.012904894612984602,
+            "lowest_m": 6.930674862815067e-05
+          }
+        }
+      },
+      {
+        "time_s": 2.7958333333333334,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007367103217281741,
+            "lowest_m": 0.008563979528844357
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01300474072940022,
+            "lowest_m": 0.00013222840789239854
+          }
+        }
+      },
+      {
+        "time_s": 2.880555555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00604659163318864,
+            "lowest_m": 0.008828818798065186
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011921820653780068,
+            "lowest_m": 0.00012632180005311966
+          }
+        }
+      },
+      {
+        "time_s": 2.9652777777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005163560368288227,
+            "lowest_m": 0.008907764218747616
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011309891709940699,
+            "lowest_m": 0.00025178212672472
+          }
+        }
+      },
+      {
+        "time_s": 3.05,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005298976047640739,
+            "lowest_m": 0.009195549413561821
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01136853391482945,
+            "lowest_m": 0.0006492550601251423
+          }
+        }
+      },
+      {
+        "time_s": 3.134722222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00561649542683946,
+            "lowest_m": 0.00935693271458149
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010650890581480296,
+            "lowest_m": 0.0010517587652429938
+          }
+        }
+      },
+      {
+        "time_s": 3.219444444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005629352290012184,
+            "lowest_m": 0.009493011049926281
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00827346976679698,
+            "lowest_m": 0.0009119140449911356
+          }
+        }
+      },
+      {
+        "time_s": 3.3041666666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00536420113076202,
+            "lowest_m": 0.009444779716432095
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006195738165744547,
+            "lowest_m": 0.0006865212344564497
+          }
+        }
+      },
+      {
+        "time_s": 3.3888888888888884,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005462385859173787,
+            "lowest_m": 0.009298840537667274
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005983771921068283,
+            "lowest_m": 0.0007263696170412004
+          }
+        }
+      },
+      {
+        "time_s": 3.473611111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006454902953916843,
+            "lowest_m": 0.009106536395847797
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006774795112656686,
+            "lowest_m": 0.0007331264787353575
+          }
+        }
+      },
+      {
+        "time_s": 3.558333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007163729049872447,
+            "lowest_m": 0.009213579818606377
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007170524543639972,
+            "lowest_m": 0.0007492777658626437
+          }
+        }
+      },
+      {
+        "time_s": 3.6430555555555553,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007226305386776485,
+            "lowest_m": 0.009219198487699032
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00731743574576323,
+            "lowest_m": 0.0006044685724191368
+          }
+        }
+      },
+      {
+        "time_s": 3.7277777777777774,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007103387080187821,
+            "lowest_m": 0.009237769059836864
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007506773724473213,
+            "lowest_m": 0.00042930414201691747
+          }
+        }
+      },
+      {
+        "time_s": 3.8125,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0071520740569242305,
+            "lowest_m": 0.009362445212900639
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007385797627116256,
+            "lowest_m": 0.00020674034021794796
+          }
+        }
+      },
+      {
+        "time_s": 3.8972222222222217,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0066176177171276135,
+            "lowest_m": 0.009336423128843307
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007172076059843149,
+            "lowest_m": 8.629040530649945e-05
+          }
+        }
+      },
+      {
+        "time_s": 3.9819444444444443,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006548816673505933,
+            "lowest_m": 0.009406205266714096
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007427078018375137,
+            "lowest_m": 0.00027666823007166386
+          }
+        }
+      },
+      {
+        "time_s": 4.066666666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006705627062970863,
+            "lowest_m": 0.009381436742842197
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007655185592605234,
+            "lowest_m": 0.0004148184380028397
+          }
+        }
+      },
+      {
+        "time_s": 4.151388888888889,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00636358849393471,
+            "lowest_m": 0.009363513439893723
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007682248558895585,
+            "lowest_m": 0.0005240312893874943
+          }
+        }
+      },
+      {
+        "time_s": 4.236111111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005983835670962348,
+            "lowest_m": 0.009447513148188591
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007658729404865882,
+            "lowest_m": 0.0007094004540704191
+          }
+        }
+      },
+      {
+        "time_s": 4.320833333333334,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004934233251372582,
+            "lowest_m": 0.009335171431303024
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007339812492940416,
+            "lowest_m": 0.0008414389449171722
+          }
+        }
+      },
+      {
+        "time_s": 4.405555555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0040554229693030575,
+            "lowest_m": 0.009413305670022964
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0069782625040844285,
+            "lowest_m": 0.0008951073978096247
+          }
+        }
+      },
+      {
+        "time_s": 4.490277777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002875030797615438,
+            "lowest_m": 0.009435326792299747
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0059873299554111265,
+            "lowest_m": 0.0007186280563473701
+          }
+        }
+      },
+      {
+        "time_s": 4.575,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0023545816851970533,
+            "lowest_m": 0.009577629156410694
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005091827804011459,
+            "lowest_m": 0.000622824183665216
+          }
+        }
+      },
+      {
+        "time_s": 4.659722222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0017939133026527994,
+            "lowest_m": 0.009695734828710556
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004000953803458788,
+            "lowest_m": 0.0005084178992547095
+          }
+        }
+      },
+      {
+        "time_s": 4.744444444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0010159653748811387,
+            "lowest_m": 0.009444847702980042
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002841234205521923,
+            "lowest_m": 0.0003404069575481117
+          }
+        }
+      },
+      {
+        "time_s": 4.829166666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002162004699011854,
+            "lowest_m": 0.009327803738415241
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0032327666459446625,
+            "lowest_m": 9.001906437333673e-05
+          }
+        }
+      },
+      {
+        "time_s": 4.913888888888889,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0039174017857668535,
+            "lowest_m": 0.009068363346159458
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004917964976573863,
+            "lowest_m": -0.00015052502567414194
+          }
+        }
+      },
+      {
+        "time_s": 4.998611111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005315663988028295,
+            "lowest_m": 0.00899374671280384
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006573513643882111,
+            "lowest_m": -0.0003419846179895103
+          }
+        }
+      },
+      {
+        "time_s": 5.083333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006932670367461634,
+            "lowest_m": 0.008803078904747963
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0092863957850864,
+            "lowest_m": -0.0006638698396272957
+          }
+        }
+      },
+      {
+        "time_s": 5.168055555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007833957329998106,
+            "lowest_m": 0.00878838263452053
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010794481019861243,
+            "lowest_m": -0.0006996244774200022
+          }
+        }
+      },
+      {
+        "time_s": 5.252777777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009279721013835451,
+            "lowest_m": 0.008455278351902962
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01263226001039576,
+            "lowest_m": -0.0008371431613340974
+          }
+        }
+      },
+      {
+        "time_s": 5.3375,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01075354341859866,
+            "lowest_m": 0.008336302824318409
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.014445169089792145,
+            "lowest_m": -0.0010089577408507466
+          }
+        }
+      },
+      {
+        "time_s": 5.422222222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.012236935506770939,
+            "lowest_m": 0.008355595171451569
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.016426028361646063,
+            "lowest_m": -0.0013397964648902416
+          }
+        }
+      },
+      {
+        "time_s": 5.506944444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.013641217854277698,
+            "lowest_m": 0.008297068998217583
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01760914289707398,
+            "lowest_m": -0.0012968024238944054
+          }
+        }
+      },
+      {
+        "time_s": 5.591666666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.015120746141635073,
+            "lowest_m": 0.008208082057535648
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01822264264214288,
+            "lowest_m": -0.0014389902353286743
+          }
+        }
+      },
+      {
+        "time_s": 5.676388888888889,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01601732916692134,
+            "lowest_m": 0.008348286151885986
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.019215697417668456,
+            "lowest_m": -0.0018193151336163282
+          }
+        }
+      },
+      {
+        "time_s": 5.76111111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.016093140003386148,
+            "lowest_m": 0.008415816351771355
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.019819075912725217,
+            "lowest_m": -0.002060950268059969
+          }
+        }
+      },
+      {
+        "time_s": 5.845833333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.015945379830745524,
+            "lowest_m": 0.008397674188017845
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.020286731256777612,
+            "lowest_m": -0.002255799015983939
+          }
+        }
+      },
+      {
+        "time_s": 5.930555555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01625540262784709,
+            "lowest_m": 0.008128950372338295
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01991426792489017,
+            "lowest_m": -0.0022631031461060047
+          }
+        }
+      },
+      {
+        "time_s": 6.0152777777777775,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.017299446664180384,
+            "lowest_m": 0.007725814823061228
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0193152686083922,
+            "lowest_m": -0.00221417099237442
+          }
+        }
+      },
+      {
+        "time_s": 6.1,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01884438364853585,
+            "lowest_m": 0.007301838602870703
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.018523734095158968,
+            "lowest_m": -0.0020349968690425158
+          }
+        }
+      },
+      {
+        "time_s": 6.184722222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.019717667583883998,
+            "lowest_m": 0.006887208204716444
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01718797000559353,
+            "lowest_m": -0.0018579601310193539
+          }
+        }
+      },
+      {
+        "time_s": 6.269444444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.019429364776837977,
+            "lowest_m": 0.006659801583737135
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.014722904749013346,
+            "lowest_m": -0.0014032985782250762
+          }
+        }
+      },
+      {
+        "time_s": 6.354166666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.019152569662328086,
+            "lowest_m": 0.006481400225311518
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.012715232546383199,
+            "lowest_m": -0.0011117822723463178
+          }
+        }
+      },
+      {
+        "time_s": 6.438888888888888,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.017630698867930915,
+            "lowest_m": 0.0067527685314416885
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010995312430023062,
+            "lowest_m": -0.0009622681536711752
+          }
+        }
+      },
+      {
+        "time_s": 6.52361111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.016010767157223493,
+            "lowest_m": 0.007082555443048477
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009507816106939125,
+            "lowest_m": -0.0007212389609776437
+          }
+        }
+      },
+      {
+        "time_s": 6.608333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01507605179727776,
+            "lowest_m": 0.007176763843744993
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008347182393372964,
+            "lowest_m": -0.0006170339183881879
+          }
+        }
+      },
+      {
+        "time_s": 6.6930555555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.014307295251491542,
+            "lowest_m": 0.007176632527261972
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006729537521772145,
+            "lowest_m": -0.00035479533835314214
+          }
+        }
+      },
+      {
+        "time_s": 6.777777777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.012352291369701233,
+            "lowest_m": 0.0076542263850569725
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0054864311501727665,
+            "lowest_m": -0.0002483587304595858
+          }
+        }
+      },
+      {
+        "time_s": 6.8625,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01042215592158168,
+            "lowest_m": 0.008077076636254787
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004274577839330218,
+            "lowest_m": -7.816298602847382e-05
+          }
+        }
+      },
+      {
+        "time_s": 6.947222222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.008552562004713177,
+            "lowest_m": 0.008368625305593014
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0035818030067779876,
+            "lowest_m": 0.00017902858962770551
+          }
+        }
+      },
+      {
+        "time_s": 7.031944444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006733694363551954,
+            "lowest_m": 0.008825362659990788
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0030655612041571656,
+            "lowest_m": 0.0002490109473001212
+          }
+        }
+      },
+      {
+        "time_s": 7.116666666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0040546684216199985,
+            "lowest_m": 0.009477604180574417
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0024832744197145753,
+            "lowest_m": 0.00037580751813948154
+          }
+        }
+      },
+      {
+        "time_s": 7.201388888888888,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0030263721299920877,
+            "lowest_m": 0.009552356787025928
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0028229561221823573,
+            "lowest_m": 0.0006413176888599992
+          }
+        }
+      },
+      {
+        "time_s": 7.2861111111111105,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002429756632481448,
+            "lowest_m": 0.009402421303093433
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004971415626839391,
+            "lowest_m": 0.0011193228419870138
+          }
+        }
+      },
+      {
+        "time_s": 7.370833333333334,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00294046897071894,
+            "lowest_m": 0.009201017208397388
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006257586165231442,
+            "lowest_m": 0.0014764763182029128
+          }
+        }
+      },
+      {
+        "time_s": 7.455555555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00402687983837041,
+            "lowest_m": 0.008873838931322098
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007130365182338742,
+            "lowest_m": 0.001539368531666696
+          }
+        }
+      },
+      {
+        "time_s": 7.540277777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004759451631007846,
+            "lowest_m": 0.008699013851583004
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00861710709425803,
+            "lowest_m": 0.0017013410106301308
+          }
+        }
+      },
+      {
+        "time_s": 7.625,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005618336275611876,
+            "lowest_m": 0.00862515065819025
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009494883842081851,
+            "lowest_m": 0.001666432828642428
+          }
+        }
+      },
+      {
+        "time_s": 7.709722222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006290201215244098,
+            "lowest_m": 0.008538985624909401
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010276516863246278,
+            "lowest_m": 0.0015489642973989248
+          }
+        }
+      },
+      {
+        "time_s": 7.794444444444443,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006814823399182081,
+            "lowest_m": 0.008409571833908558
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010777280411938638,
+            "lowest_m": 0.0015481982845813036
+          }
+        }
+      },
+      {
+        "time_s": 7.879166666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005976896630212168,
+            "lowest_m": 0.008621315471827984
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01109834566459374,
+            "lowest_m": 0.0015159952454268932
+          }
+        }
+      },
+      {
+        "time_s": 7.963888888888889,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00597918332340035,
+            "lowest_m": 0.008700710721313953
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011564951049804767,
+            "lowest_m": 0.0016371733509004116
+          }
+        }
+      },
+      {
+        "time_s": 8.04861111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006258220438133604,
+            "lowest_m": 0.00886312872171402
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01194578628414497,
+            "lowest_m": 0.001830464811064303
+          }
+        }
+      },
+      {
+        "time_s": 8.133333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007044070715369117,
+            "lowest_m": 0.008828824386000633
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.012472604354708124,
+            "lowest_m": 0.0020003763493150473
+          }
+        }
+      },
+      {
+        "time_s": 8.218055555555555,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006788061401797832,
+            "lowest_m": 0.009197316132485867
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011784682524629391,
+            "lowest_m": 0.0019197717774659395
+          }
+        }
+      },
+      {
+        "time_s": 8.302777777777777,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006661574998168912,
+            "lowest_m": 0.009242408908903599
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011319194611238568,
+            "lowest_m": 0.001983690308406949
+          }
+        }
+      },
+      {
+        "time_s": 8.3875,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006555507798604401,
+            "lowest_m": 0.009171659126877785
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011255736614298318,
+            "lowest_m": 0.0022350854706019163
+          }
+        }
+      },
+      {
+        "time_s": 8.472222222222221,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006507622588201766,
+            "lowest_m": 0.008968008682131767
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010947717260010002,
+            "lowest_m": 0.0023116953670978546
+          }
+        }
+      },
+      {
+        "time_s": 8.556944444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0063813448573294155,
+            "lowest_m": 0.009036492556333542
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011081484744210383,
+            "lowest_m": 0.002436812734231353
+          }
+        }
+      },
+      {
+        "time_s": 8.641666666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0063136122266189915,
+            "lowest_m": 0.008988000452518463
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011065027071908543,
+            "lowest_m": 0.0024456658866256475
+          }
+        }
+      },
+      {
+        "time_s": 8.726388888888888,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00678348417178337,
+            "lowest_m": 0.008710420690476894
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010433594625962503,
+            "lowest_m": 0.002330910647287965
+          }
+        }
+      },
+      {
+        "time_s": 8.81111111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0073648186706544985,
+            "lowest_m": 0.008499138057231903
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01029911517950495,
+            "lowest_m": 0.0023078755475580692
+          }
+        }
+      },
+      {
+        "time_s": 8.895833333333334,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.007038978366177833,
+            "lowest_m": 0.008606687188148499
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.010589331399987953,
+            "lowest_m": 0.002345756161957979
+          }
+        }
+      },
+      {
+        "time_s": 8.980555555555554,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.006176959644805179,
+            "lowest_m": 0.008876990526914597
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011898794478400669,
+            "lowest_m": 0.0026097558438777924
+          }
+        }
+      },
+      {
+        "time_s": 9.065277777777776,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0055720873915541015,
+            "lowest_m": 0.009192205965518951
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.013649096501095704,
+            "lowest_m": 0.0028667214792221785
+          }
+        }
+      },
+      {
+        "time_s": 9.15,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005545370185999595,
+            "lowest_m": 0.00942445918917656
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01529082342034737,
+            "lowest_m": 0.003095960011705756
+          }
+        }
+      },
+      {
+        "time_s": 9.23472222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.00580745824753436,
+            "lowest_m": 0.009499328210949898
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.016489797346564538,
+            "lowest_m": 0.0033403015695512295
+          }
+        }
+      },
+      {
+        "time_s": 9.319444444444445,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005728498277424376,
+            "lowest_m": 0.009407945908606052
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.016556392576789383,
+            "lowest_m": 0.0034006398636847734
+          }
+        }
+      },
+      {
+        "time_s": 9.404166666666667,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0054426947733096104,
+            "lowest_m": 0.009173411875963211
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.015714163700654295,
+            "lowest_m": 0.0032522904220968485
+          }
+        }
+      },
+      {
+        "time_s": 9.488888888888887,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005314285862432957,
+            "lowest_m": 0.009146183729171753
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.01404781670248957,
+            "lowest_m": 0.00291419611312449
+          }
+        }
+      },
+      {
+        "time_s": 9.573611111111111,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.005049939904698755,
+            "lowest_m": 0.009065182879567146
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.011802912101801602,
+            "lowest_m": 0.002497484441846609
+          }
+        }
+      },
+      {
+        "time_s": 9.658333333333333,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004732823375397453,
+            "lowest_m": 0.009029733948409557
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.009249082588180003,
+            "lowest_m": 0.002054848475381732
+          }
+        }
+      },
+      {
+        "time_s": 9.743055555555554,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.004249100220755269,
+            "lowest_m": 0.008981485851109028
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0065729719121049674,
+            "lowest_m": 0.0014766614185646176
+          }
+        }
+      },
+      {
+        "time_s": 9.827777777777778,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0034850038518081552,
+            "lowest_m": 0.008884066715836525
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0042408301195307856,
+            "lowest_m": 0.0009394930093549192
+          }
+        }
+      },
+      {
+        "time_s": 9.9125,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0025855495878712885,
+            "lowest_m": 0.008626680821180344
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002574554666288479,
+            "lowest_m": 0.0004960829392075539
+          }
+        }
+      },
+      {
+        "time_s": 9.997222222222222,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.002117162290586821,
+            "lowest_m": 0.008613892830908298
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0016817700263848264,
+            "lowest_m": 0.00017346070671919733
+          }
+        }
+      },
+      {
+        "time_s": 10.081944444444444,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0012526580825086757,
+            "lowest_m": 0.008862465620040894
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.001011520114884336,
+            "lowest_m": 5.80858722969424e-05
+          }
+        }
+      },
+      {
+        "time_s": 10.166666666666666,
+        "soles": {
+          "left": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0,
+            "lowest_m": 0.009226263500750065
+          },
+          "right": {
+            "max_horizontal_displacement_from_idle_start_m": 0.0,
+            "lowest_m": 1.5504302552926674e-07
+          }
+        }
+      }
+    ]
+  },
+  "excluded_helpers": [
+    "Icosphere"
+  ],
+  "limitations": [
+    "121 finite idle samples are not continuous deformation approval",
+    "REST height/floor is separate from actual animated sole heights/drift",
+    "No AAA, hardware, performance or actual-game visual approval"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "FAILED first actual pinned import before test runner; no native checks approved",
+  "exit_code_reported_by_runner": 1,
+  "tests_executed": "No test runner reached; do not assign a passed check count.",
+  "log": {
+    "file": "native-first.log",
+    "closed": true,
+    "bytes": 4473,
+    "sha256": "4e45b2686d815cbdd9781e2bbb3624bc77ce354379336916cd9d7ae17472ae7f",
+    "error_excerpt": [
+      "SCRIPT ERROR: Parse Error: Cannot infer the type of \"vertices\" variable because the value doesn't have a set type.",
+      "          at: GDScript::reload (res://scripts/world/hub_npc.gd:149)",
+      "SCRIPT ERROR: Parse Error: Cannot infer the type of \"indices\" variable because the value doesn't have a set type.",
+      "          at: GDScript::reload (res://scripts/world/hub_npc.gd:150)",
+      "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+      "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+      "ERROR: Failed to load script \"res://scripts/game.gd\" with error \"Parse error\"."
+    ]
+  },
+  "diagnosis": "HubNPC local variable type inference for mesh vertex/index counts at lines149/150 failed on actual GDScript import. Cascading dependent script errors are not a gameplay regression verdict.",
+  "correction": "Explicit int annotations added to those count variables; source-only correction, fresh actual import/native pending.",
+  "corrected_hub_npc_source_sha256": "e667e32cfbb40b0a77e87ebac12af73f8b3e8261027996ad9d886ed1c829ae52",
+  "failed_source_sha256_scope": "Not asserted from the corrected worktree; the closed failed log is the historical evidence.",
+  "scope": "Pinned engine import/parser failure before native tests. Separate from Python67, canonical5, isolated font rendering, NPC visual or full Web/Windows/browser/AAA approval."
+}

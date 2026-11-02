@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "roen",
+  "purpose": "Provider stock idle normalization for original project NPC; not original motion authorship",
+  "source_idle": {
+    "file": "art_source/production/candidates/roen-001/idle-canonical.glb",
+    "sha256": "478c350cdec13bb31cd640973cdd03ba0b7ea0f6323504c49897fe6471732089"
+  },
+  "height_m": 1.82,
+  "texture_limit": 1024,
+  "output_file": "art_source/production/candidates/roen-001/roen-idle.glb",
+  "runtime_file": "game/assets/models/production/roen_idle_gameplay.glb",
+  "facing": "minus_z_after_wrapper_pi",
+  "animation_key": "standing_idle_1_looping",
+  "in_place": true,
+  "license": "PRIVATE",
+  "status": "preparation_pending_visual_and_runtime_review"
+}

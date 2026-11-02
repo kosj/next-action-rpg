@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-11-02",
+  "provider": "VARCO 3D official MCP via official Codex app-server",
+  "status": "two_original_models_rig_and_provider_stock_idle_completed_candidate_review_pending",
+  "flow_id": "36eeaa83-211b-4fba-a8ad-e547e2cdb697",
+  "baseline_preservation": {
+    "nodes": 67,
+    "edges": 46,
+    "unchanged_fields": [
+      "type",
+      "label",
+      "position",
+      "intrinsic"
+    ],
+    "all_existing_edges_preserved": true,
+    "final_nodes": 79,
+    "final_edges": 52
+  },
+  "roles": {
+    "erin": {
+      "new_node_ids": {
+        "image": "c1449634-4dc1-409f-ab7c-17ddf3482d1e",
+        "generate": "33bef454-5972-49a7-aee7-e1d27aeea284",
+        "mesh_input": "7863084b-0115-41b6-a3be-8d5f7a1b96d9",
+        "rig": "811e33ea-5e1a-447b-8ef8-946e46a3f4f2",
+        "rig_input": "22a338a1-f30c-4aba-bcd1-b3718deb2c61",
+        "idle": "fbc8bc42-7478-4666-8935-2274c85c04a9"
+      },
+      "completed_task_ids": {
+        "mesh": "27f6c00d-fef5-4572-af5d-b536a37e0d1d",
+        "rig": "ecb3526e-afa0-4c76-bd0e-d3012f3d785e",
+        "idle": "222d614a-ad79-4803-a36a-61cd20f0b53e"
+      },
+      "terminal_statuses": {
+        "generate": "success",
+        "rig": "success",
+        "idle": "success"
+      }
+    },
+    "roen": {
+      "new_node_ids": {
+        "image": "30dce174-edc1-4b9c-9c4d-a64c1ed9d5a8",
+        "generate": "d3ad7827-e50e-4d1b-96e7-8a8da55a74b5",
+        "mesh_input": "3bfe6ba9-20f0-477b-afe4-151c7b697344",
+        "rig": "16e25e48-7c97-47f2-aaba-602a3e390a36",
+        "rig_input": "c02b5d69-9c3e-4fa4-b614-ca92390acf03",
+        "idle": "c9fa26e5-6866-47b3-967d-29b8a69047eb"
+      },
+      "completed_task_ids": {
+        "mesh": "890aa6a4-8722-4e95-8e09-bdf69fbac54e",
+        "rig": "1cc86373-a4c3-4cf4-9693-3414138a7047",
+        "idle": "69750efb-ba3a-4e2a-9794-966064542f9f"
+      },
+      "terminal_statuses": {
+        "generate": "success",
+        "rig": "success",
+        "idle": "success"
+      }
+    }
+  },
+  "generation_settings": {
+    "count": 1,
+    "polygonCount": 16000,
+    "topology": "tri",
+    "tPose": 1,
+    "useAlpha": 0,
+    "usePbrTexture": 1,
+    "textureSize": 1024,
+    "generateTexture": 1,
+    "license": "PRIVATE",
+    "server_readback_matched": true
+  },
+  "rig_settings": {
+    "count": 1,
+    "riggingMode": "humanoid-fingers",
+    "completed_mesh_task_pinned_via": "3DInput"
+  },
+  "idle_settings": {
+    "count": 1,
+    "animation": "standing_idle_1_looping",
+    "inPlace": 1,
+    "completed_rig_task_pinned_via": "Rigged3DInput",
+    "motion_authorship": "VARCO provider stock idle retargeted to original owned character; not project-authored motion"
+  },
+  "runs": [
+    {
+      "phase": "mesh",
+      "scope": [
+        "33bef454-5972-49a7-aee7-e1d27aeea284",
+        "d3ad7827-e50e-4d1b-96e7-8a8da55a74b5"
+      ],
+      "kind": "runStarted",
+      "executionId": "2d45d60e-2d02-40b1-8ed7-22c56c10bd7e",
+      "points": 400
+    },
+    {
+      "phase": "rig",
+      "scope": [
+        "811e33ea-5e1a-447b-8ef8-946e46a3f4f2",
+        "16e25e48-7c97-47f2-aaba-602a3e390a36"
+      ],
+      "kind": "runStarted",
+      "executionId": "78afa9d7-56ff-4e2b-962e-a72e506639a1",
+      "points": 0
+    },
+    {
+      "phase": "idle",
+      "scope": [
+        "fbc8bc42-7478-4666-8935-2274c85c04a9",
+        "c9fa26e5-6866-47b3-967d-29b8a69047eb"
+      ],
+      "kind": "runStarted",
+      "executionId": "50651e1c-1ddd-4116-b4eb-a74acf829de6",
+      "points": 0
+    }
+  ],
+  "points": {
+    "run_flow_reported_total": 400,
+    "mesh_reported": 400,
+    "rig_reported": 0,
+    "idle_reported": 0,
+    "mesh_repeats": 0,
+    "paid_upstream_repeats": 0,
+    "remesh_runs": 0,
+    "extra_purchases": 0,
+    "account_balance_or_final_debit": "not exposed by current MCP; not independently asserted"
+  },
+  "license": {
+    "mesh_setting": "PRIVATE",
+    "downstream_nodes_expose_license_field": false,
+    "basis": [
+      {
+        "url": "https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate",
+        "retrieved_on": "2026-11-02",
+        "sha256": "b54efed2d5fa44732ff6d292608ec8701ba3807ee050828dd46f8de044f935f7",
+        "excerpt": "You may use your asset commercially."
+      }
+    ],
+    "additional_scope_review": "docs/validation/v0.1.13/rights-evidence/review.json",
+    "boundary": "Separate standalone stock-library redistribution terms were not independently inspected; terms site returned HTTP403. Candidate is owned-model animated output, not a redistributed stock animation library."
+  },
+  "catalog_provenance": {
+    "official_helper_catalog_sha256": "179dafd4891a9d61d59cbada443c248eba36e76121e75bc9d80a0b6a44671dc5",
+    "node_catalog_payload_sha256": "cb3a52e14c3d0a0dd98a1e9c4282eec372b3aed06afc8d0b3b437c2a3716d863",
+    "pricing_payload_sha256": "24a8ff3ab6e853c06aa0625d91cace46fd4b6076ce3dfeba2c35026b606bd1d6",
+    "animation_catalog_payload_sha256": "e337482dc3ceec1b0af4f98a82a6b107edbd41d983f89134f1cbef002ecd4b49",
+    "raw_responses": "Private task archive only; no account dumps or temporary download/upload URLs in this record"
+  },
+  "references": [
+    {
+      "file": "art_source/production/references/erin-front-concept.png",
+      "bytes": 2094022,
+      "sha256": "c855d504c530936c64171129ef74fea2a5cbf37bb1f19624dd2be798c6233dd5"
+    },
+    {
+      "file": "art_source/production/references/roen-front-concept.png",
+      "bytes": 2134185,
+      "sha256": "e1c64bccae607872b542a3e3a9940782035a9dd97bb2898b4cf60ab58cb078a6"
+    }
+  ],
+  "limitations": [
+    "Generated reference depiction is not 3D quality approval",
+    "Finite structural, skin and timestamp checks do not approve face, hands, cloth, actual gameplay, hardware or AAA quality"
+  ]
+}

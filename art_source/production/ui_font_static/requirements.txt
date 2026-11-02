@@ -1,0 +1,2 @@
+# Authoring/auditing dependency, never a Godot runtime dependency.
+fonttools==4.61.1

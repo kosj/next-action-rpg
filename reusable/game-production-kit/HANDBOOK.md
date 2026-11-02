@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.6**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.7**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -92,6 +92,7 @@
 | `active-body-curve-and-loaded-contact` | [재저작 source·물리 곡선·무기 profile](skills/godot-web-production/references/combat-quality-review.md)을 묶어 검증하고 loaded pose의 이른 접촉을 실제 기하/receipt로 확인한다. | source/pin·좌표/길이/표본·큰 delta, 예측/실측 분리, 팔 peak와 누적 twist·새 국소 skin 악화, raw 보존/native triangle 대응·PBR atlas 공유, reference-only provider 후보. nominal projection/물리 AABB와 실제 raster의 몸/UI 가림·edge-on core를 별도 확인하고 기능 capture/정상 종료를 분리. 약한 core의 원인과 source-bound ray/실제 raster를 구분하고 명시적 art budget 수정·작은 프로토타입 채택 범위를 보존. 이전 source의 native/CI 통과를 새 카메라·최종 skin/시각·브라우저·기기·AAA로 승계하지 않음 |
 | `quality-profiles-and-observed-lighting` | [품질의 실제 의미·고정 renderer 경로·같은 장면의 조명](skills/generated-3d-game-art/references/art-review.md#품질-모드와-조명-비교)을 연결한다. | UI/저장 index·runtime scale/DPR/shadow, source×mode paired raster, sky/ambient/reflection 혼합과 실제 dispatch, role-based 품질 권한, 기각한 shadow acne와 단일 변수 복구, support-ray 근사 grounding의 깊이·수명·캐시/질의 한도·중복 방지. source 고정 정지 화면의 제한된 채택과 자동 검사·실기기/모션/AAA를 구분 |
 | `atmosphere-visual-skin-and-collision-authority` | [하늘·원경·바닥의 시각 완성도와 충돌 권한](skills/generated-3d-game-art/references/art-review.md#분위기원경시각-바닥과-충돌-권한)을 함께 기록한다. | 실제 horizon band/갑옷 전면·원경 실루엣·진입/연결 바닥, source×구도×품질 원본, 시각 node/표면/재질/그림자 budget과 camera 가림, floor skin 깊이·타일 m·실제 support ray. 이전 공개 검증·geometry 수·정지 화면을 새 구현이나 AAA/실기기 승인으로 승계하지 않음 |
+| `generated-npc-budget-and-relic-role-authority` | [생성 NPC/guard의 공유 자산과 relic의 역할](skills/generated-3d-game-art/references/art-review.md#생성-npc공유-리그와-기능-오브젝트)을 실제 export 여유와 연결한다. | 최신 provider 도구·비용/권리·raw/rig/idle 파생, source/import/PCK/ZIP/GPU 차이와 이미 제외된 dependency, NPC/Enemy playback 독립성, 표시 pivot과 checkpoint/heal/save 권한·정상 입력. 생성/preview·구조 수치·재사용을 AAA/실기기 승인으로 승계하지 않음 |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -108,3 +109,7 @@
 3. 가장 작은 실제 재현/확인 절차를 실행하고 원본과 결과 SHA를 남깁니다.
 4. 결과를 `pending`/`verified`/`superseded`의 정확한 범위로 기록합니다.
 5. 반복할 절차를 해당 프로젝트의 스킬에 반영합니다. 공통 원칙이 바뀌면 이 묶음의 판본·출처도 함께 갱신합니다.
+
+이번 판본의 NPC 사례는 정적 인물의 근사 접지를 기존 actor budget과 분리하고, 수정 전 부유 원본·수정 후 모드별 원본과 새 native/export를 함께 보존합니다. 정지 pose의 개선을 animated foot shadow·연속 AV·하드웨어/AAA 승인으로 이전하지 않습니다.
+
+실제 desktop Web의 quality 전환·live idle·저장·완전 재시작도 별도 근거로 남기고, 읽기 검증 전후 source/export byte 불변을 대조합니다. page 오류 배열과 HTTP client 종료 진단을 섞지 않으며 desktop 화면을 mobile의 다른 글꼴 크기/입력·clean 공개판 승인으로 이전하지 않습니다.

@@ -1,0 +1,3708 @@
+{
+  "animation_controls": [],
+  "application_version": "0.1.12",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "fixture_controls": [
+    "nominal grounded checkpoint Hero",
+    "production NPC/checkpoint transforms unchanged by fixture",
+    "NPC cameras derive only from role position and checkpoint direction, independent of actual body yaw",
+    "production idle paused at zero",
+    "Sanctuary cosmetic rotation frozen",
+    "production hubwide camera and prescribed closeup cameras",
+    "direct actual quality setting"
+  ],
+  "renderer": "gl_compatibility",
+  "sanctuary_rng_state": -5312476258823052333,
+  "sanctuary_static_collision": {
+    "body_count": 160,
+    "canonical_rows": [
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.899999976158142,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.899999976158142,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.899999976158142,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.899999976158142,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,3.5,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,3.5,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,3.5,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,3.5,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,6.40000009536743,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,6.40000009536743,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,6.40000009536743,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,6.40000009536743,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-7.25,3.0,-56.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[2.5,6.0,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,6.90000009536743,-56.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[17.0,1.79999995231628,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.899999976158142,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.899999976158142,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.899999976158142,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.899999976158142,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.5,0.600000023841858,1.5]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,3.5,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,3.5,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,3.5,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,3.5,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"height\":4.59999990463257,\"margin\":0.0399999991059303,\"radius\":0.699999988079071},\"shape_class\":\"CylinderShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,6.40000009536743,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,6.40000009536743,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,6.40000009536743,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,6.40000009536743,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.39999997615814,1.20000004768372,1.39999997615814]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":0,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[7.25,3.0,-56.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[2.5,6.0,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,-1.0],[0.0,1.0,0.0],[1.0,0.0,-0.0000000437113882867379]],\"origin\":[19.0,-0.349999994039536,-145.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[5.0,0.699999988079071,22.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,-1.0],[0.0,1.0,0.0],[1.0,0.0,-0.0000000437113882867379]],\"origin\":[19.0,0.349999994039536,-142.619995117188]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,-1.0],[0.0,1.0,0.0],[1.0,0.0,-0.0000000437113882867379]],\"origin\":[19.0,0.349999994039536,-147.380004882812]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,1.0],[0.0,1.0,0.0],[-1.0,0.0,-0.0000000437113882867379]],\"origin\":[-31.5,-0.349999994039536,-255.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[5.0,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,1.0],[0.0,1.0,0.0],[-1.0,0.0,-0.0000000437113882867379]],\"origin\":[-31.5,0.349999994039536,-252.619995117188]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.0000000437113882867379,0.0,1.0],[0.0,1.0,0.0],[-1.0,0.0,-0.0000000437113882867379]],\"origin\":[-31.5,0.349999994039536,-257.380004882812]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,-0.341743290424347],[0.0,1.0,0.0],[0.341743290424347,0.0,-0.939793348312378]],\"origin\":[-5.52598476409912,0.349999994039536,-174.50944519043]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,-0.341743290424347],[0.0,1.0,0.0],[0.341743290424347,0.0,-0.939793348312378]],\"origin\":[0.0,-0.349999994039536,-172.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,-0.341743290424347],[0.0,1.0,0.0],[0.341743290424347,0.0,-0.939793348312378]],\"origin\":[5.52598476409912,0.349999994039536,-170.49055480957]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[-5.52598476409912,0.349999994039536,-115.490547180176]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234909057617]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[-5.52598476409912,0.349999994039536,-225.49055480957]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[0.0,-0.349999994039536,-117.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,22.5234909057617]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[0.0,-0.349999994039536,-227.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[5.52598476409912,0.349999994039536,-119.509452819824]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234909057617]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.939793348312378,0.0,0.341743290424347],[0.0,1.0,0.0],[-0.341743290424347,0.0,-0.939793348312378]],\"origin\":[5.52598476409912,0.349999994039536,-229.50944519043]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,22.5234832763672]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.982006430625916,0.0,-0.18884739279747],[0.0,1.0,0.0],[0.18884739279747,0.0,-0.982006430625916]],\"origin\":[-0.774198055267334,0.349999994039536,-65.1104202270508]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,16.9528064727783]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.982006430625916,0.0,-0.18884739279747],[0.0,1.0,0.0],[0.18884739279747,0.0,-0.982006430625916]],\"origin\":[10.7741985321045,0.349999994039536,-62.889575958252]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,16.9528064727783]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.982006430625916,0.0,-0.18884739279747],[0.0,1.0,0.0],[0.18884739279747,0.0,-0.982006430625916]],\"origin\":[5.0,-0.349999994039536,-64.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,16.9528064727783]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.983869910240173,0.0,-0.178885295987129],[0.0,1.0,0.0],[0.178885295987129,0.0,-0.983869910240173]],\"origin\":[-10.7851552963257,0.349999994039536,-283.551849365234]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,19.901704788208]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.983869910240173,0.0,-0.178885295987129],[0.0,1.0,0.0],[0.178885295987129,0.0,-0.983869910240173]],\"origin\":[-5.0,-0.349999994039536,-282.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,19.901704788208]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-0.983869910240173,0.0,-0.178885295987129],[0.0,1.0,0.0],[0.178885295987129,0.0,-0.983869910240173]],\"origin\":[0.785155296325684,0.349999994039536,-281.448150634766]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,19.901704788208]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[-5.88000011444092,0.349999994039536,-16.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[-5.88000011444092,0.349999994039536,-342.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,29.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[0.0,-0.349999994039536,-16.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[0.0,-0.349999994039536,-342.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[12.0,0.699999988079071,29.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[5.88000011444092,0.349999994039536,-16.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[-1.0,0.0,0.0000000874227765734759],[0.0,1.0,0.0],[-0.0000000874227765734759,0.0,-1.0]],\"origin\":[5.88000011444092,0.349999994039536,-342.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.219999998807907,0.699999988079071,29.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,-2.0,-145.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,-2.0,-255.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,0.649999976158142,-200.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,0.649999976158142,-90.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-16.0,0.300000011920929,-10.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-16.0,0.300000011920929,0.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-16.0,0.300000011920929,12.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-16.0,0.300000011920929,20.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-17.5,0.300000011920929,-163.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-17.5,0.300000011920929,-273.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-293.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-303.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-315.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-327.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.300000011920929,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-18.0,0.649999976158142,5.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,36.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-2.5,0.300000011920929,-163.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-2.5,0.300000011920929,-273.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-20.0,0.649999976158142,-310.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-20.0,0.649999976158142,-38.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-21.0,0.300000011920929,-355.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-21.0,0.300000011920929,-368.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-21.0,0.300000011920929,-380.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-21.0,0.300000011920929,-395.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-23.0,0.649999976158142,-375.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,46.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-128.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-138.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-150.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-162.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-238.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-248.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-260.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-28.0,0.300000011920929,-272.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-30.0,0.649999976158142,-145.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-30.0,0.649999976158142,-255.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-35.0,-0.300000011920929,-255.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[7.0,0.600000023841858,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-5.0,-0.200000002980232,-281.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[10.0,0.400000005960464,10.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-7.5,0.300000011920929,-11.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-7.5,0.300000011920929,-328.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-7.5,0.300000011920929,-396.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-7.5,0.300000011920929,-56.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,-0.300000011920929,-5.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[7.0,0.600000023841858,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-107.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-183.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-193.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-205.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-217.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-73.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-83.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-8.0,0.300000011920929,-95.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-0.200000002980232,-116.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[10.0,0.400000005960464,10.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-0.200000002980232,6.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[10.0,0.400000005960464,10.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-2.0,-310.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-2.0,-375.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[46.0,4.0,46.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-2.0,-38.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,-2.0,5.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[36.0,4.0,36.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,-2.0,-200.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,-2.0,-90.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,0.649999976158142,-145.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,0.649999976158142,-255.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[16.0,0.300000011920929,-10.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[16.0,0.300000011920929,0.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[16.0,0.300000011920929,12.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[16.0,0.300000011920929,20.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[17.5,0.300000011920929,-108.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[17.5,0.300000011920929,-218.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-21.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-293.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-303.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-31.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-315.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-327.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-43.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.300000011920929,-55.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[18.0,0.649999976158142,5.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,36.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[2.5,0.300000011920929,-108.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[2.5,0.300000011920929,-218.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[20.0,0.649999976158142,-310.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[20.0,0.649999976158142,-38.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[21.0,0.300000011920929,-355.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[21.0,0.300000011920929,-368.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[21.0,0.300000011920929,-380.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[21.0,0.300000011920929,-395.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[23.0,0.649999976158142,-375.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,46.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-107.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-183.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-193.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-205.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-217.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-73.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-83.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[28.0,0.300000011920929,-95.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[30.0,-0.300000011920929,-145.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[7.0,0.600000023841858,7.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[30.0,0.649999976158142,-200.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[30.0,0.649999976158142,-90.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[0.649999976158142,1.29999995231628,40.0]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[7.5,0.300000011920929,-11.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[7.5,0.300000011920929,-328.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[7.5,0.300000011920929,-396.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[7.5,0.300000011920929,-56.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-128.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-138.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-150.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-162.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-238.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-248.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-260.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":false,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[8.0,0.300000011920929,-272.0]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[1.60000002384186,0.600000023841858,1.60000002384186]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,2.0,-125.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,2.0,-164.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,2.0,-235.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[-10.0,2.0,-274.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-18.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-290.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-329.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-352.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[46.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-397.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[46.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[0.0,2.0,-57.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,2.0,-109.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,2.0,-180.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,2.0,-219.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}",
+      "{\"collision_layer\":1,\"collision_mask\":1,\"disabled\":true,\"global_transform\":{\"basis\":[[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]],\"origin\":[10.0,2.0,-70.5]},\"parameters\":{\"custom_solver_bias\":0.0,\"margin\":0.0399999991059303,\"size\":[40.0,4.0,0.300000011920929]},\"shape_class\":\"BoxShape3D\"}"
+    ],
+    "scope": "Actual static Sanctuary shape multiset; excludes actor dynamics and nonphysical art; ignores names/RIDs",
+    "sha256": "14f43d2008cb82be6af976585a4d435aa6d59c83b9031f172f0c7da8adf228b1",
+    "shape_count": 178
+  },
+  "scope": "Deterministic actual Game/hub characters/checkpoint scene-view comparison in native Compatibility at1280x720. Prescribed transforms, idle pose and frozen physics are fixture controls, not real-input gameplay. NPC full-body framing is not detailed face/finger or motion acceptance. Native quality0 balanced has1.0 render scale; quality1 performance.65. Web/DPR, interactive motion/AV, hardware performance and AAA remain separate.",
+  "shots": [
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": -1,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.0,
+              "query_count": 0,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": false,
+              "visible_budget_used": 0
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.965174615383148,
+            0.0,
+            -0.261606514453888
+          ],
+          [
+            -0.0882799476385117,
+            0.941342294216156,
+            -0.325701236724854
+          ],
+          [
+            0.246261283755302,
+            0.337453186511993,
+            0.908559739589691
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          1.20000004768372,
+          2.99436688423157,
+          10.4272966384888
+        ]
+      },
+      "camera_control": "production_snap_nominal_grounded_checkpoint",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "hubwide-q0.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "a04ee2a1f6a4228b281512afb2c461cc2f402d2fd410e89fa5cebb49d85ed647",
+      "view": "hubwide"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": -1,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.0,
+              "query_count": 0,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": false,
+              "visible_budget_used": 0
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.56541508436203,
+            0.0,
+            -0.82480651140213
+          ],
+          [
+            -0.136838912963867,
+            0.986141860485077,
+            -0.093804769217968
+          ],
+          [
+            0.813376247882843,
+            0.165904253721237,
+            0.557579457759857
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          -0.568120956420898,
+          1.64999997615814,
+          7.35259580612183
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "erin-q0.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "731883dcf3969ad3194732649511e983ff529aec3c50f41d77b5ee918fb9edc4",
+      "view": "erin"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": -1,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.0,
+              "query_count": 0,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": false,
+              "visible_budget_used": 0
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            -0.110751338303089,
+            0.0,
+            0.993848145008087
+          ],
+          [
+            0.164883643388748,
+            0.986141860485077,
+            0.0183741189539433
+          ],
+          [
+            -0.980075299739838,
+            0.165904268622398,
+            -0.109216541051865
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          -0.135232448577881,
+          1.64999997615814,
+          4.53918266296387
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "roen-q0.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "19a6451ea429943d90557f5779690d6186dc241a47622d76fa45f99533509312",
+      "view": "roen"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": -1,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.0,
+              "query_count": 0,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": false,
+              "visible_budget_used": 0
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": false,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": -1,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.0,
+            "query_count": 0,
+            "reason": "balanced_uses_light_shadows",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": false,
+            "visible_budget_used": 0
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.743294179439545,
+            0.0,
+            -0.668964743614197
+          ],
+          [
+            -0.206877708435059,
+            0.950980603694916,
+            -0.229864120483398
+          ],
+          [
+            0.636172473430634,
+            0.30925053358078,
+            0.706858336925507
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          5.59999990463257,
+          2.90000009536743,
+          10.0
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "checkpoint-q0.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": true
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 0,
+      "quality_label": "balanced",
+      "render_scale": 1.0,
+      "sha256": "53c43f21c8c67b68730066d395ef8e70fdad26ae2108a8d6a4468a0d1bc481cf",
+      "view": "checkpoint"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                6.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": 118,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 4,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 1
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              6.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 118,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 4,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 1
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.965174615383148,
+            0.0,
+            -0.261606514453888
+          ],
+          [
+            -0.0882799476385117,
+            0.941342294216156,
+            -0.325701236724854
+          ],
+          [
+            0.246261283755302,
+            0.337453186511993,
+            0.908559739589691
+          ]
+        ],
+        "fov": 56.0,
+        "position": [
+          1.20000004768372,
+          2.99436688423157,
+          10.4272966384888
+        ]
+      },
+      "camera_control": "production_snap_nominal_grounded_checkpoint",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "hubwide-q1.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "193eaba13a392a53264622a0605eebbcff327620e90dab4b56ac49364b446357",
+      "view": "hubwide"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                6.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": 139,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 7,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 1
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              6.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 139,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 7,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 1
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.56541508436203,
+            0.0,
+            -0.82480651140213
+          ],
+          [
+            -0.136838912963867,
+            0.986141860485077,
+            -0.093804769217968
+          ],
+          [
+            0.813376247882843,
+            0.165904253721237,
+            0.557579457759857
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          -0.568120956420898,
+          1.64999997615814,
+          7.35259580612183
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "erin-q1.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "05e4e57827ba40cbd152c4d9809945dae955b96f3886a7f117d020a7cd5f50eb",
+      "view": "erin"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                6.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": 167,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 11,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 1
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              6.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 167,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 11,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 1
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            -0.110751338303089,
+            0.0,
+            0.993848145008087
+          ],
+          [
+            0.164883643388748,
+            0.986141860485077,
+            0.0183741189539433
+          ],
+          [
+            -0.980075299739838,
+            0.165904268622398,
+            -0.109216541051865
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          -0.135232448577881,
+          1.64999997615814,
+          4.53918266296387
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "roen-q1.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "bfcceeb3504208f34e7feebffbc1898411456dd2b2545a10e6c603094752a39e",
+      "view": "roen"
+    },
+    {
+      "actors": [
+        {
+          "art": {
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "eyes_attached": true,
+            "grip_to_tip_m": 1.19000065326691,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "ground_point": [
+                0.0,
+                0.0,
+                6.0
+              ],
+              "height_m": 0.0,
+              "last_query_physics_frame": 188,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 14,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 1
+            },
+            "mode": "skeletal",
+            "profile": "hero",
+            "state": "idle",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "weapon_attached": true,
+            "weapon_profile": "hero_broadblade_001"
+          },
+          "grounding": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "ground_point": [
+              0.0,
+              0.0,
+              6.0
+            ],
+            "height_m": 0.0,
+            "last_query_physics_frame": 188,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 14,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 1
+          },
+          "position": [
+            0.0,
+            -0.0249999761581421,
+            6.0
+          ],
+          "profile": "hero"
+        }
+      ],
+      "camera": {
+        "basis": [
+          [
+            0.743294179439545,
+            0.0,
+            -0.668964743614197
+          ],
+          [
+            -0.206877708435059,
+            0.950980603694916,
+            -0.229864120483398
+          ],
+          [
+            0.636172473430634,
+            0.30925053358078,
+            0.706858336925507
+          ]
+        ],
+        "fov": 38.0,
+        "position": [
+          5.59999990463257,
+          2.90000009536743,
+          10.0
+        ]
+      },
+      "camera_control": "fixture_closeup_override",
+      "checkpoint_presentations": [
+        {
+          "checkpoint_index": 0,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              6.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              6.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 1,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              2.0,
+              1.39999997615814,
+              -116.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              2.0,
+              0.0,
+              -116.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        },
+        {
+          "checkpoint_index": 2,
+          "crystal_global_transform": {
+            "basis": [
+              [
+                0.640856325626373,
+                0.422618269920349,
+                -0.640856325626373
+              ],
+              [
+                -0.298836231231689,
+                0.906307756900787,
+                0.298836231231689
+              ],
+              [
+                0.70710676908493,
+                0.0,
+                0.70710676908493
+              ]
+            ],
+            "origin": [
+              -3.0,
+              1.39999997615814,
+              -281.0
+            ]
+          },
+          "global_transform": {
+            "basis": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "origin": [
+              -3.0,
+              0.0,
+              -281.0
+            ]
+          },
+          "presentation": {
+            "scope": "Actual baseline emissive primitive; no relic-module report available"
+          }
+        }
+      ],
+      "environment": {
+        "ambient_color": [
+          0.635294139385223,
+          0.686274528503418,
+          0.74117648601532,
+          1.0
+        ],
+        "ambient_energy": 0.379999995231628,
+        "ambient_sky_contribution": 0.319999992847443,
+        "ambient_source": 3,
+        "background_energy": 0.899999976158142,
+        "background_mode": 2,
+        "fog_color": [
+          0.619607865810394,
+          0.674509823322296,
+          0.705882370471954,
+          1.0
+        ],
+        "fog_density": 1.0,
+        "fog_depth_begin": 32.0,
+        "fog_depth_curve": 1.35000002384186,
+        "fog_depth_end": 210.0,
+        "fog_enabled": true,
+        "fog_mode": 1,
+        "reflections": 2,
+        "sky_material_class": "ShaderMaterial",
+        "tonemap": 4
+      },
+      "file": "checkpoint-q1.png",
+      "hub_presentations": [
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                -0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              -4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 0,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        },
+        {
+          "global_transform": {
+            "basis": [
+              [
+                0.764842212200165,
+                0.0,
+                -0.644217669963837
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.644217669963837,
+                0.0,
+                0.764842212200165
+              ]
+            ],
+            "origin": [
+              4.0,
+              0.0,
+              5.0
+            ]
+          },
+          "npc_index": 1,
+          "presentation": {
+            "blade_trail": {},
+            "eyes_attached": false,
+            "grip_to_tip_m": 0.0,
+            "grounding_shadow": {},
+            "mode": "prototype",
+            "profile": "",
+            "state": "",
+            "status": "Prototype pivot visual",
+            "weapon_attached": false,
+            "weapon_profile": ""
+          },
+          "script": "res://scripts/actors/actor_visual.gd"
+        }
+      ],
+      "lights": [
+        {
+          "color": [
+            1.0,
+            0.894117653369904,
+            0.74117648601532,
+            1.0
+          ],
+          "directional_shadow_mode": 1,
+          "energy": 1.45000004768372,
+          "name": "SanctuaryKey",
+          "rotation_degrees": [
+            -42.0,
+            -48.0,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 48.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        },
+        {
+          "color": [
+            0.717647075653076,
+            0.788235306739807,
+            0.874509811401367,
+            1.0
+          ],
+          "directional_shadow_mode": 2,
+          "energy": 0.300000011920929,
+          "name": "SanctuaryFill",
+          "rotation_degrees": [
+            -24.9999980926514,
+            144.999984741211,
+            0.0
+          ],
+          "shadow_bias": 0.100000001490116,
+          "shadow_max_distance": 100.0,
+          "shadow_normal_bias": 2.0,
+          "shadows": false
+        }
+      ],
+      "native_scale_note": "Actual native apply_quality: balanced1.0/performance.65; web balanced starts.8 and DPR is a separate browser check",
+      "quality": 1,
+      "quality_label": "performance",
+      "render_scale": 0.649999976158142,
+      "sha256": "c2ceec7b66fd4a45f7b57c32c85b9f1c669bdd7d15b463879b4b0de7bdb36dd1",
+      "view": "checkpoint"
+    }
+  ],
+  "show_ui": true,
+  "source_context": {
+    "application_version": "0.1.12",
+    "baseline_application_version": "0.1.12",
+    "baseline_commit": "cb038edf487f9a0ad7c7ed1c7c7606e6df5b3578",
+    "commit": "cb038edf487f9a0ad7c7ed1c7c7606e6df5b3578",
+    "dirty": false,
+    "display_overrides": {
+      "capture_sha256": "595e05a76b612600aa8bcb2508e813318d16452ec1a53081f3651bc3c7fea11d",
+      "overrides": {
+        "window/size/viewport_height": "720",
+        "window/size/viewport_width": "1280",
+        "window/size/window_height_override": "720",
+        "window/size/window_width_override": "1280",
+        "window/stretch/mode": "\"disabled\""
+      },
+      "scope": "Matched isolated capture dimensions only; game code, physics, lighting and materials unmodified",
+      "source_sha256": "4c0c688acf5519788334e24d7f8d4dcfd78aca41a8e4fffc74355dc3ec665946"
+    },
+    "fixture_sha256": {
+      "tests/hub_art_review_capture.gd": "82e1da10e30771c06aca2b2cf9cdf7781a6043a915617d2c1b4cdf450ba28a83",
+      "tests/hub_art_review_capture.tscn": "4427327e864eea60726aff9c2906eceee5ef600aebc5e44bdc06f8221f4af953",
+      "tests/lighting_review_capture.gd": "d779316e999c460dbc7b0f49a38a5ea7112ed40f07fba3039215eda94345f9d9"
+    },
+    "kind": "isolated_git_archive",
+    "requested_baseline_ref": "cb038edf487f9a0ad7c7ed1c7c7606e6df5b3578",
+    "runner_sha256": "2dd716a04f5e61233c5e8212716b15eca43b79b28210868e3b984fd44ab23041",
+    "shared_helpers_sha256": {
+      "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+      "render_lighting_review.py": "bbcd938a8bba761785c2d711cb7c2e7cf04f3a675a9c552103790d0e56d57d91",
+      "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+    },
+    "tree": "54bb5fb10059b8c6155f8d596142dd369a931d68"
+  },
+  "status": "deterministic_actual_scene_captured",
+  "video_adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "viewport": [
+    1280.0,
+    720.0
+  ],
+  "curation": {
+    "raw_scene_report_sha256": "a1644f6288df8f81cc05c951ed2fa884ef6e2bbeb76e2ab81e8226ecf217f431",
+    "raw_scene_report_bytes": 135935,
+    "scope": "Public subset keeps actual controls/poses/runtime/collision and rawPNG hashes; omits local derived-cache path and worktree listing only."
+  }
+}

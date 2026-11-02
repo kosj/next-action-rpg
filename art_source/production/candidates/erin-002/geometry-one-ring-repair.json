@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "status": "bounded_geometry_candidate_pending_actual_raster_review",
+  "source_file": "art_source/production/candidates/erin-001/erin-idle.glb",
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "output_sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8",
+  "source_unchanged": true,
+  "changed_position_rows": [
+    2253,
+    2255,
+    2260,
+    2446,
+    2269,
+    2455,
+    2280,
+    2468,
+    2304,
+    2955,
+    2983,
+    2307,
+    2308,
+    2312,
+    2971,
+    2320,
+    2970,
+    2498,
+    2964,
+    2976,
+    2963,
+    2996,
+    2972,
+    2997,
+    3004
+  ],
+  "changed_normal_rows": [
+    2247,
+    2249,
+    2250,
+    2253,
+    2254,
+    2365,
+    2255,
+    2256,
+    2368,
+    2257,
+    2258,
+    2287,
+    2432,
+    2454,
+    2260,
+    2446,
+    2261,
+    2266,
+    2269,
+    2455,
+    2280,
+    2468,
+    2283,
+    2292,
+    13194,
+    2290,
+    2938,
+    2297,
+    2301,
+    2302,
+    2306,
+    2474,
+    2304,
+    2955,
+    2983,
+    2307,
+    2308,
+    2310,
+    2312,
+    2971,
+    2316,
+    2992,
+    2320,
+    2970,
+    2328,
+    2998,
+    2438,
+    2442,
+    2444,
+    2459,
+    2475,
+    2479,
+    2975,
+    3332,
+    2947,
+    2496,
+    3330,
+    3797,
+    2987,
+    2497,
+    2988,
+    3334,
+    2977,
+    2498,
+    2964,
+    2976,
+    2945,
+    2967,
+    3329,
+    3596,
+    2959,
+    2984,
+    3340,
+    2963,
+    2996,
+    2969,
+    3331,
+    3796,
+    2972,
+    2978,
+    3335,
+    2982,
+    3333,
+    2989,
+    3336,
+    2990,
+    2997,
+    3003,
+    3352,
+    3004,
+    3009,
+    3010,
+    3011,
+    3018
+  ],
+  "normal_one_ring_physical_groups": 51,
+  "normal_smoothing_groups": 78,
+  "normal_policy": "Recompute affected physical one-ring normals by original coincident-normal groups; retain distinct source hard/smoothing normals, keep unrelated NORMAL bytes exact. No source TANGENT attribute; Godot must generate tangents from new positions/normals and byte-identical UVs.",
+  "selected_physical_groups": 15,
+  "max_vertex_displacement_m": 0.016492851357739438,
+  "position_row_count": 13674,
+  "triangles": 16000,
+  "patches": [
+    {
+      "id": "upper_small_front_cavity",
+      "center_xz_m": [
+        0.207,
+        0.51
+      ],
+      "radii_xz_m": [
+        0.026,
+        0.038
+      ],
+      "actual_anchor_unique_vertices": 11,
+      "selected_unique_vertices": 8,
+      "source_region_bounds": {
+        "min": [
+          0.18474887450128766,
+          0.0830608776316284,
+          0.47705221859391655
+        ],
+        "max": [
+          0.21933828560981064,
+          0.13073751262318203,
+          0.5362469447005821
+        ]
+      },
+      "anchor_ring_bounds": {
+        "min": [
+          0.16554834101806185,
+          0.09428143678052885,
+          0.45667546620012517
+        ],
+        "max": [
+          0.21007598271909034,
+          0.13799802453312923,
+          0.5738007273516074
+        ]
+      },
+      "anchor_y_plane_coefficients_x_z_constant": [
+        -0.9251610700410228,
+        -0.021565836434443597,
+        0.30748283729993253
+      ],
+      "measured_before_plane_depth_max_m": 0.018049651326911345,
+      "changes": [
+        {
+          "group": 1566,
+          "source_point_m": [
+            0.21933828560981064,
+            0.08815197317756016,
+            0.4997821461470823
+          ],
+          "plane_target_y_m": 0.0937813742675335,
+          "blend": 0.4935069688068362,
+          "displacement_y_m": 0.002778148668110643
+        },
+        {
+          "group": 1568,
+          "source_point_m": [
+            0.21873985521555336,
+            0.0830608776316284,
+            0.5362469447005821
+          ],
+          "plane_target_y_m": 0.0935486248902099,
+          "blend": 0.10178589996330083,
+          "displacement_y_m": 0.00106750479330236
+        },
+        {
+          "group": 1572,
+          "source_point_m": [
+            0.20792372737206763,
+            0.0900344083207721,
+            0.47705221859391655
+          ],
+          "plane_target_y_m": 0.1048318690805877,
+          "blend": 0.06099293240492706,
+          "displacement_y_m": 0.0009025405238879933
+        },
+        {
+          "group": 1581,
+          "source_point_m": [
+            0.20205896429291095,
+            0.09157074073861134,
+            0.5066048632526133
+          ],
+          "plane_target_y_m": 0.10962039206552268,
+          "blend": 0.91374902811276,
+          "displacement_y_m": 0.01649285135773943
+        },
+        {
+          "group": 1592,
+          "source_point_m": [
+            0.19941730437534264,
+            0.09408335248564945,
+            0.5244318611720903
+          ],
+          "plane_target_y_m": 0.11167989886029608,
+          "blend": 0.5939901942248853,
+          "displacement_y_m": 0.010452175998763557
+        },
+        {
+          "group": 1613,
+          "source_point_m": [
+            0.1935786532113505,
+            0.12188997431527823,
+            0.5057993068275752
+          ],
+          "plane_target_y_m": 0.117483418238121,
+          "blend": 0.5202904707612979,
+          "displacement_y_m": -0.0022926891358201937
+        },
+        {
+          "group": 1614,
+          "source_point_m": [
+            0.19587223464272255,
+            0.1134999673396091,
+            0.5319482578175685
+          ],
+          "plane_target_y_m": 0.11479756198686414,
+          "blend": 0.23350006773496637,
+          "displacement_y_m": 0.0003029884380265817
+        },
+        {
+          "group": 1626,
+          "source_point_m": [
+            0.18474887450128766,
+            0.13073751262318203,
+            0.4964663694170622
+          ],
+          "plane_target_y_m": 0.1258536583593962,
+          "blend": 0.019808707659375747,
+          "displacement_y_m": -9.674284136232961e-05
+        }
+      ]
+    },
+    {
+      "id": "lower_small_front_cavity",
+      "center_xz_m": [
+        0.173,
+        0.43
+      ],
+      "radii_xz_m": [
+        0.027,
+        0.046
+      ],
+      "actual_anchor_unique_vertices": 23,
+      "selected_unique_vertices": 7,
+      "source_region_bounds": {
+        "min": [
+          0.1658290124186135,
+          0.12837592353247274,
+          0.38961219199782854
+        ],
+        "max": [
+          0.18915996634996182,
+          0.13769453785547775,
+          0.4737536224799919
+        ]
+      },
+      "anchor_ring_bounds": {
+        "min": [
+          0.1304329623273657,
+          0.09793464935191738,
+          0.3602671967683516
+        ],
+        "max": [
+          0.21690608411646284,
+          0.14574826427940024,
+          0.5083973365665989
+        ]
+      },
+      "anchor_y_plane_coefficients_x_z_constant": [
+        -0.49376213742545366,
+        -0.008435430597687144,
+        0.21966883535616372
+      ],
+      "measured_before_plane_depth_max_m": 0.006179582165676739,
+      "changes": [
+        {
+          "group": 1611,
+          "source_point_m": [
+            0.18649987010339367,
+            0.12919897673699582,
+            0.4263605775737623
+          ],
+          "plane_target_y_m": 0.12398572580262933,
+          "blend": 0.5531568811879386,
+          "displacement_y_m": -0.002883745627704274
+        },
+        {
+          "group": 1618,
+          "source_point_m": [
+            0.18915996634996182,
+            0.12837592353247274,
+            0.46601747791873344
+          ],
+          "plane_target_y_m": 0.122337747963587,
+          "blend": 0.0008240257201234749,
+          "displacement_y_m": -4.975611971383042e-06
+        },
+        {
+          "group": 1745,
+          "source_point_m": [
+            0.1830930861559158,
+            0.128459996408582,
+            0.3949433498451658
+          ],
+          "plane_target_y_m": 0.125932884570359,
+          "blend": 0.07809902436053118,
+          "displacement_y_m": -0.00019736496901516398
+        },
+        {
+          "group": 2105,
+          "source_point_m": [
+            0.18037176687210338,
+            0.13194052349908428,
+            0.40095866136019354
+          ],
+          "plane_target_y_m": 0.12722582725374287,
+          "blend": 0.2775957565501633,
+          "displacement_y_m": -0.0013087796711297613
+        },
+        {
+          "group": 2108,
+          "source_point_m": [
+            0.17450722145403502,
+            0.13568704305768628,
+            0.4737536224799919
+          ],
+          "plane_target_y_m": 0.12950746089200954,
+          "blend": 0.008494864712397012,
+          "displacement_y_m": -5.249471447656524e-05
+        },
+        {
+          "group": 2118,
+          "source_point_m": [
+            0.1686830217221764,
+            0.13689549868223044,
+            0.38961219199782854
+          ],
+          "plane_target_y_m": 0.13309299939762725,
+          "blend": 0.04143631931249701,
+          "displacement_y_m": -0.00015756157454235918
+        },
+        {
+          "group": 2123,
+          "source_point_m": [
+            0.1658290124186135,
+            0.13769453785547775,
+            0.4157868092744544
+          ],
+          "plane_target_y_m": 0.13428140696412857,
+          "blend": 0.6955404729990737,
+          "displacement_y_m": -0.0023739706745767556
+        }
+      ]
+    }
+  ],
+  "byte_proof": {
+    "same_file_size": true,
+    "json_chunk_byte_exact": true,
+    "all_bytes_outside_declared_position_and_normal_rows_exact": true,
+    "topology_UV_skin_rest_animation_images_materials_byte_exact": true
+  },
+  "limitations": [
+    "Two finite front-robe patches only; no full retopology/cloth/hands/face/AAA approval",
+    "Whole NPC budget and actual-game acceptance still pending"
+  ],
+  "recipe_file": "art_source/production/hub_npcs/erin-robe-repair.json",
+  "recipe_sha256": "437e5e1283ea10ffc9357ed5c23d79f3efbc43fe3ec7a80957726934b865a59a",
+  "tool_file": "art_source/production/hub_npcs/repair_robe_concavities.py",
+  "tool_sha256": "e8dc0a272419a376830262d25971f565ad29fa9ddf9fe685a14b261090d1ad87"
+}

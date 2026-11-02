@@ -1,6 +1,7 @@
 """Use VARCO through the official Codex app-server client, never direct HTTP.
 
 python tools/varco_mcp.py catalog > build/varco-catalog.json
+python tools/varco_mcp.py --sqlite-home build/codex-sqlite catalog > build/varco-catalog.json
 python tools/varco_mcp.py call get_node_catalog --arguments build/varco-arguments.json \
     > build/varco-result.json
 
@@ -15,6 +16,8 @@ directory, never in knowledge records or source control. Notifications and backe
 error bodies are not logged, so their credentials/OAuth URLs are not printed.
 Argument validation checks only the discovered tool name, object shape and root
 required fields. The official server validates the remaining JSON Schema rules.
+--sqlite-home changes only the official client's runtime database location. It
+does not relocate authentication, grant filesystem permission, or perform login.
 """
 import argparse
 import asyncio
@@ -216,9 +219,18 @@ def reject_json_constant(_):
     raise ValueError("Nonfinite JSON constant")
 
 
+def official_command(sqlite_home):
+    # JSON encodes the TOML basic-string value, and exec receives separate argv
+    # elements. Never route a caller-provided path through a shell or repoint
+    # CODEX_HOME/authentication to solve a runtime-cache permission problem.
+    return ("codex", "app-server", "--stdio", "-c",
+            "sqlite_home=" + json.dumps(str(sqlite_home.resolve()), ensure_ascii=False))
+
+
 def main(argv=None, *, app_server_command=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--timeout", type=positive_timeout, default=120.0, help="Seconds per official client request (default: 120)")
+    parser.add_argument("--sqlite-home", type=Path, help="Optional official Codex runtime database directory; authentication stays in its normal location")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("catalog", help="Show discovered VARCO tool schemas and authentication status")
     call = commands.add_parser("call", help="Call an explicitly named discovered tool in an ephemeral thread")
@@ -226,6 +238,8 @@ def main(argv=None, *, app_server_command=None):
     call.add_argument("--arguments", required=True, type=Path, help="JSON object file; keep private arguments/results in gitignored storage")
     args = parser.parse_args(argv)
     try:
+        if app_server_command is None and args.sqlite_home is not None:
+            app_server_command = official_command(args.sqlite_home)
         arguments = None
         if args.command == "call":
             try:

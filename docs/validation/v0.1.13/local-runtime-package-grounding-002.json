@@ -1,0 +1,916 @@
+{
+  "schema": 1,
+  "passed": true,
+  "checks": {
+    "raw_web_within_unchanged_150M_cap": true,
+    "original_variable_font_source_remap_and_fontdata_absent": true,
+    "static_fontdata_exactly_once": true,
+    "static_font_import_remaps_to_that_single_fontdata": true,
+    "all_directory_payload_md5_verified": true
+  },
+  "raw_web": {
+    "bytes": 149705279,
+    "cap_bytes": 150000000,
+    "remaining_bytes": 294721,
+    "files": [
+      {
+        "path": ".nojekyll",
+        "bytes": 0
+      },
+      {
+        "path": "FONT_LICENSE.txt",
+        "bytes": 4387
+      },
+      {
+        "path": "GODOT_LICENSE.txt",
+        "bytes": 1149
+      },
+      {
+        "path": "GODOT_THIRD_PARTY.txt",
+        "bytes": 100108
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "bytes": 5622
+      },
+      {
+        "path": "index.apple-touch-icon.png",
+        "bytes": 13924
+      },
+      {
+        "path": "index.audio.position.worklet.js",
+        "bytes": 2973
+      },
+      {
+        "path": "index.audio.worklet.js",
+        "bytes": 7298
+      },
+      {
+        "path": "index.html",
+        "bytes": 3171
+      },
+      {
+        "path": "index.icon.png",
+        "bytes": 5215
+      },
+      {
+        "path": "index.js",
+        "bytes": 279815
+      },
+      {
+        "path": "index.pck",
+        "bytes": 109745420
+      },
+      {
+        "path": "index.png",
+        "bytes": 21443
+      },
+      {
+        "path": "index.wasm",
+        "bytes": 39514754
+      }
+    ]
+  },
+  "pck": {
+    "path": "build/web/index.pck",
+    "bytes": 109745420,
+    "sha256": "744c4571fc8b7eba80c32135276a2e36eb43bfd72fb7197c69804c43b73adb2e",
+    "header": {
+      "format": 4,
+      "engine": [
+        4,
+        7,
+        2
+      ],
+      "flags": 2,
+      "file_base": 112,
+      "directory_offset": 109726624
+    },
+    "directory_files": 201,
+    "by_extension": {
+      ".bin": {
+        "count": 1,
+        "bytes": 4984
+      },
+      ".binary": {
+        "count": 1,
+        "bytes": 1331
+      },
+      ".cfg": {
+        "count": 1,
+        "bytes": 2634
+      },
+      ".ctex": {
+        "count": 31,
+        "bytes": 95790972
+      },
+      ".fontdata": {
+        "count": 1,
+        "bytes": 3864201
+      },
+      ".gdc": {
+        "count": 24,
+        "bytes": 823960
+      },
+      ".gdshader": {
+        "count": 4,
+        "bytes": 6397
+      },
+      ".import": {
+        "count": 61,
+        "bytes": 12853
+      },
+      ".json": {
+        "count": 2,
+        "bytes": 23866
+      },
+      ".remap": {
+        "count": 34,
+        "bytes": 2267
+      },
+      ".res": {
+        "count": 9,
+        "bytes": 13684
+      },
+      ".sample": {
+        "count": 16,
+        "bytes": 278144
+      },
+      ".scn": {
+        "count": 14,
+        "bytes": 8899415
+      },
+      ".svg": {
+        "count": 1,
+        "bytes": 336
+      },
+      ".txt": {
+        "count": 1,
+        "bytes": 19
+      }
+    }
+  },
+  "fonts": {
+    "forbidden_original_entries": [],
+    "static_imported_files": [
+      {
+        "path": ".godot/imported/runefall_kr430.ttf-09f604ddce4fb4304de2a95ee214ba6f.fontdata",
+        "bytes": 3864201,
+        "md5": "e3a0ed3fe0709bdbe5760240905f2f80"
+      }
+    ],
+    "static_import_remap": [
+      {
+        "path": ".godot/imported/runefall_kr430.ttf-09f604ddce4fb4304de2a95ee214ba6f.fontdata",
+        "bytes": 3864201,
+        "md5": "e3a0ed3fe0709bdbe5760240905f2f80"
+      }
+    ]
+  },
+  "asset_groups": [
+    {
+      "source_prefix": "assets/models/production/erin_idle_gameplay",
+      "import_records": [
+        {
+          "source_import": "assets/models/production/erin_idle_gameplay.glb.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/erin_idle_gameplay.glb-ec87bd15d9c93bb5abead031a6859383.scn",
+              "bytes": 592867,
+              "md5": "11ab45fc5cd5d710f434b87c295857ac"
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/erin_idle_gameplay_0-normal.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/erin_idle_gameplay_0-normal.png-76ce7915d32190c5d8e7952372ae07db.ctex",
+              "bytes": 1972542,
+              "md5": "cd028180a66b00f840c5bca62f703f59",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 1378344,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 429480,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 122232,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 32190,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 7700,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 1788,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 438,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 136,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 66,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 40,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/erin_idle_gameplay_Image_0.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/erin_idle_gameplay_Image_0.png-73b961daa3809e44369d81854ce0b4cb.ctex",
+              "bytes": 1418812,
+              "md5": "70ad4908ea86857e670bee0560f664fb",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 978032,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 316818,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 88904,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 24962,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 7086,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 2038,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 542,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 176,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 82,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 44,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/erin_idle_gameplay_Image_1.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/erin_idle_gameplay_Image_1.png-cc89175390550fd2e6bb3bcf0d92d221.ctex",
+              "bytes": 1002606,
+              "md5": "05b7e32781fa5e328c9d7b1d5d885a43",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 663986,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 235420,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 72624,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 21740,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 6318,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 1690,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 446,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 142,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 64,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 48,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        }
+      ],
+      "unique_imported_files": 4,
+      "unique_imported_bytes": 4986827,
+      "imported_scene_bytes": 592867,
+      "imported_texture_bytes": 4393960,
+      "association_scope": "Exact packed .import remaps for caller-selected source prefix; not a recursive SCN dependency closure"
+    },
+    {
+      "source_prefix": "assets/models/production/roen_idle_gameplay",
+      "import_records": [
+        {
+          "source_import": "assets/models/production/roen_idle_gameplay.glb.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/roen_idle_gameplay.glb-9d2e80695450dc8c752dbbfa54f34f78.scn",
+              "bytes": 571835,
+              "md5": "3b7032814f4ce24b77a1ed50d2fc7b85"
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/roen_idle_gameplay_0-normal.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/roen_idle_gameplay_0-normal.png-94be4f07efff367070c32a3d7e716cab.ctex",
+              "bytes": 1836012,
+              "md5": "962a7202e051f2772339d6dc2343ef9b",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 1278272,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 401432,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 116192,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 30330,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 7306,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 1708,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 416,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 128,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 62,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 38,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/roen_idle_gameplay_Image_0.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/roen_idle_gameplay_Image_0.png-0b5008d686c8ebbefe631b1f6fbbb506.ctex",
+              "bytes": 1336340,
+              "md5": "eb8e73d53f041c09de073a1b062d5bcd",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 916146,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 300052,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 85962,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 24482,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 6848,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 1890,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 522,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 180,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 76,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 54,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        },
+        {
+          "source_import": "assets/models/production/roen_idle_gameplay_Image_1.png.import",
+          "imported_files": [
+            {
+              "path": ".godot/imported/roen_idle_gameplay_Image_1.png-2e1283ef548208634cd528dc99412ed8.ctex",
+              "bytes": 949818,
+              "md5": "9b59c7f2657cf2b4abbddfb31fa43e0f",
+              "texture": {
+                "version": 1,
+                "display_size": [
+                  1024,
+                  1024
+                ],
+                "image_size": [
+                  1024,
+                  1024
+                ],
+                "format_flags": 226492416,
+                "data_encoding": "webp",
+                "image_format_enum": 4,
+                "additional_mipmap_count": 10,
+                "total_mip_levels": 11,
+                "payload_chunks": [
+                  {
+                    "level": 0,
+                    "bytes": 632318,
+                    "header_implied_size": [
+                      1024,
+                      1024
+                    ]
+                  },
+                  {
+                    "level": 1,
+                    "bytes": 219820,
+                    "header_implied_size": [
+                      512,
+                      512
+                    ]
+                  },
+                  {
+                    "level": 2,
+                    "bytes": 68644,
+                    "header_implied_size": [
+                      256,
+                      256
+                    ]
+                  },
+                  {
+                    "level": 3,
+                    "bytes": 20640,
+                    "header_implied_size": [
+                      128,
+                      128
+                    ]
+                  },
+                  {
+                    "level": 4,
+                    "bytes": 5880,
+                    "header_implied_size": [
+                      64,
+                      64
+                    ]
+                  },
+                  {
+                    "level": 5,
+                    "bytes": 1700,
+                    "header_implied_size": [
+                      32,
+                      32
+                    ]
+                  },
+                  {
+                    "level": 6,
+                    "bytes": 452,
+                    "header_implied_size": [
+                      16,
+                      16
+                    ]
+                  },
+                  {
+                    "level": 7,
+                    "bytes": 130,
+                    "header_implied_size": [
+                      8,
+                      8
+                    ]
+                  },
+                  {
+                    "level": 8,
+                    "bytes": 62,
+                    "header_implied_size": [
+                      4,
+                      4
+                    ]
+                  },
+                  {
+                    "level": 9,
+                    "bytes": 44,
+                    "header_implied_size": [
+                      2,
+                      2
+                    ]
+                  },
+                  {
+                    "level": 10,
+                    "bytes": 32,
+                    "header_implied_size": [
+                      1,
+                      1
+                    ]
+                  }
+                ],
+                "all_encoded_mip_chunk_extents_checked": true
+              }
+            }
+          ]
+        }
+      ],
+      "unique_imported_files": 4,
+      "unique_imported_bytes": 4694005,
+      "imported_scene_bytes": 571835,
+      "imported_texture_bytes": 4122170,
+      "association_scope": "Exact packed .import remaps for caller-selected source prefix; not a recursive SCN dependency closure"
+    }
+  ],
+  "scope": "Bounded standalone PCKv4/GST2 header+chunk/presence audit. No engine, pixel decode, visual/device approval, recursive compressed-SCN dependency analysis or GPU memory estimate.",
+  "touch_font_scope": "The isolated raster experiment covers12/16/18/24/36px only; actualTouch14/10px needs separate real-game UI review."
+}

@@ -1,0 +1,58 @@
+{
+  "scope": "Independent source/static analytic geometry review only; no Godot/Blender/raster/native validation",
+  "prior_source_sha256": "2382dd4308b02cfcfc408a575c317da4da52a5e1f6862cf68cdf589e702d75e4",
+  "candidate_source_sha256": "eacb7c38ecefed7479cc7f7ef563cb01b8795255a0dda05a24d888e0928cb5c0",
+  "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+  "findings": [
+    {
+      "defect": "Bronze upper-rim profile orientation was opposite the lathe outward normal rule",
+      "method": "Signed cross-section area by shoelace formula, independently evaluated in radius/height coordinates",
+      "before_signed_areas": {
+        "plinth": 0.28115,
+        "collar": 0.0013500000000000179,
+        "rim": -0.003975000000000006
+      },
+      "rim_after_signed_area": 0.003975000000000006,
+      "correction": "Reverse only upper-rim traversal; identical geometric point set, normals/front-face orientation corrected"
+    },
+    {
+      "defect": "Claw segment end/begin radial half-thickness mismatch left 10mm unjoined side edges",
+      "joint_half_depth_gap_before_meters": 0.01,
+      "joint_half_depth_gap_after_meters": 0.0,
+      "maximum_analytic_vertex_displacement_meters": 0.0075,
+      "correction": "Continuous depth=.035-index*.0025, sharing each adjacent cross-section; same segment/face counts"
+    }
+  ],
+  "geometry_budget": {
+    "analytic_expected_per_relic_triangles": 2068,
+    "expected_surfaces": 5,
+    "scene_relics": 3,
+    "native_actual_counts": "pending; arithmetic is not runtime mesh evidence"
+  },
+  "preserved_policy": [
+    "Static meshes recessed0.30m; buried foundation minimumY-.30 is intentional",
+    "CrystalPivot localY1.35 and crystal height1.76 unchanged",
+    "No collision/light/particle/timer/RNG/process/gameplay authority additions",
+    "Sanctuary retains rotation and original checkpoint origin+2mX/ring interaction center",
+    "Existing floor-stone PBR and shader unchanged"
+  ],
+  "remaining": [
+    "Actual import/shader compilation and native mesh arrays/counts/winding",
+    "Actual default-camera/mobile quality0/1 raster and alpha/core overlap",
+    "Actual interactive checkpoint/save/heal/rotation path",
+    "Target hardware and AAA visual approval"
+  ],
+  "tangent_source_review": {
+    "source": "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/resources/material.cpp#L1357",
+    "lines": "1357-1389",
+    "finding": "BaseMaterial3D shader generation replaces TANGENT/BINORMAL for UV triplanar; current stone material sets UV1 world triplanar. Generic stored face tangents are not a UV-derivative tangent-generation recipe. Crystal/bronze have no tangent-space normal map.",
+    "boundary": "Switching to ordinary UV normal mapping requires proper UV tangents and new actual-render checks; source interpretation is not native/raster proof."
+  },
+  "interaction_source_review": {
+    "art_center": "Sanctuary.CHECKPOINTS[index] + Vector3(2,0,0), matching original ring/interaction center",
+    "interaction_distance_meters": 3.5,
+    "ring_radius_meters": 2.0,
+    "existing_overlap": "At first art center(2,0,6), Roen(4,0,5) is sqrt(5)<3m away. Existing Game NPC iteration overwrites checkpoint priority there; art does not change it. Spawn(0,0,6) or point(1,0,7) avoids both NPC prompt regions.",
+    "authority": "Game retains unlock/save/heal/restore; Sanctuary rotates returned CrystalPivot .45rad/s. Module creates meshes/materials and one pivot only."
+  }
+}

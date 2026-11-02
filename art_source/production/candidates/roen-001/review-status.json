@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "finite_studio_review_recorded_actual_game_and_final_adoption_pending",
+  "scope": "REST-front, idle0 and idle0.5 three-quarter studio images of the exact normalized derivative",
+  "source_sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049",
+  "views": [
+    "review/rest-front.png",
+    "review/idle-quarter-start.png",
+    "review/idle-quarter-mid.png"
+  ],
+  "observations": [
+    "Distinct leather-apron blacksmith silhouette and visible adult face/hands/boots",
+    "No final face/hands skin, cloth simulation or AAA approval from these three finite views"
+  ],
+  "known_issue": null,
+  "animated_soles": {
+    "left": {
+      "horizontal_drift_max_m": 0.019717667583883998,
+      "lowest_height_m": 0.006481400225311518,
+      "highest_min_height_m": 0.010608887299895287
+    },
+    "right": {
+      "horizontal_drift_max_m": 0.020286731256777612,
+      "lowest_height_m": -0.0022631031461060047,
+      "highest_min_height_m": 0.0034006398636847734
+    }
+  },
+  "limits": [
+    "121 finite lowest-rest-band samples are not continuous contact or terrain approval",
+    "Provider stock idle is not project-authored acting",
+    "Actual in-game q0/q1 closeups, budget, native, browser and hardware validation pending"
+  ]
+}

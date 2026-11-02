@@ -44,6 +44,14 @@ def main():
               "game/scripts/world/sanctuary.gd", "game/scripts/actors/grounding_shadow.gd",
               "game/assets/shaders/grounding_shadow.gdshader",
               "game/assets/shaders/sanctuary_sky.gdshader", "game/scripts/world/sanctuary_backdrop.gd",
+              "game/scripts/world/hub_npc.gd", "game/scripts/world/checkpoint_relic.gd",
+              "game/scripts/world/hub_grounding_shadow.gd",
+              "game/assets/shaders/checkpoint_crystal.gdshader",
+              "game/assets/models/production/erin_idle_gameplay.glb",
+              "game/assets/models/production/erin_idle_gameplay.glb.import",
+              "game/assets/models/production/roen_idle_gameplay.glb",
+              "game/assets/models/production/roen_idle_gameplay.glb.import",
+              "game/assets/fonts/runefall_kr430.ttf", "game/assets/fonts/runefall_kr430.ttf.import",
               "game/assets/materials/courtyard/floor_stone.tres", "game/assets/materials/courtyard/wall_limestone.tres",
               "game/assets/materials/courtyard/floor_albedo.jpg", "game/assets/materials/courtyard/floor_normal.jpg",
               "game/assets/materials/courtyard/floor_arm.jpg", "game/assets/materials/courtyard/wall_albedo.jpg",
@@ -58,6 +66,14 @@ def main():
               "art_source/production/character_actions/sentinel-weight.json",
               "art_source/production/character_actions/sentinel-weight-recovery.json",
               "tools/generate_impact_audio.py", "tools/render_impact_review.py"]
+    # Godot's GLTF importer extracts these actual runtime atlases. Embedded GLB
+    # bytes alone do not bind the external PNGs/settings used by the export.
+    for role in ("erin", "roen"):
+        atlases = sorted((root/"game/assets/models/production").glob(f"{role}_idle_gameplay_*.png"))
+        if len(atlases) != 3:
+            raise SystemExit(f"Expected the three imported {role} runtime atlases, found {len(atlases)}")
+        for atlas in atlases:
+            inputs.extend((str(atlas.relative_to(root)), str(atlas.relative_to(root))+".import"))
     inputs.extend(str(path.relative_to(root)) for path in sorted((root/"game/assets/audio/impact").glob("*.wav")))
     context = {"scope": "Actual mobile test export bytes and contemporaneous source hashes; dirty previews are not a committed-source or final-release approval",
                "phase":args.phase,

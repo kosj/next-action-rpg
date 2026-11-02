@@ -215,6 +215,7 @@ func run() -> void:
 	check(await load("res://tests/feedback_polish_regressions.gd").run(world, check) == true, "Combat framing and confirmed contact feedback preserve projection, depth and lifecycle contracts")
 	check(load("res://tests/lighting_quality_regressions.gd").run(world, check) == true, "Lighting quality follows named roles while preserving balanced/performance resolution and shadow semantics")
 	check(await load("res://tests/atmosphere_regressions.gd").run(world, check) == true, "Static atmosphere and visual stone skins preserve real support, light alignment and bounded non-gameplay geometry")
+	check(await load("res://tests/hub_presentation_regressions.gd").run(world, check) == true, "Hub NPC idle ownership and checkpoint relic presentation preserve story roles, pause and interaction authority")
 	check(await load("res://tests/grounding_shadow_regressions.gd").run(world, check) == true, "Performance grounding uses bounded supported-floor presentation without gameplay or real-light shadow authority")
 	check(await load("res://tests/character_eye_regressions.gd").run(world, check) == true, "Actual eye geometry preserves source anchors, Head sockets, units and imported colors")
 	check(await load("res://tests/mobile_input_regressions.gd").run(world, check) == true, "Actual touch pointers preserve actions, ownership, viewport and device lifecycle")

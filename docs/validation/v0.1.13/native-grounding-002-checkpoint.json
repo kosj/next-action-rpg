@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-11-02",
+  "phase": "Post NPC-grounding candidate002 native/export; actualafter8/rootvisualselection/browser remainseparate",
+  "state": "Actual current native601/0/exit0/noERROR and Web/Windows export+PCKbudget PASS. Dirty0.1.13·cb038edf preview, not cleanrelease.",
+  "native": {
+    "checks": 601,
+    "failures": 0,
+    "exit_code": 0,
+    "log": {
+      "file": "native-export-grounding-002.log",
+      "closed": true,
+      "bytes": 105409,
+      "sha256": "8bf9d3c07f191aa0c1d3290c35bc3ba8d86d4b929fa77535ebdd71428182219e",
+      "summary": "RUNEFALL_TESTS: 601 checks, 0 failures",
+      "ERROR_lines": []
+    }
+  },
+  "reported_source_roster": 88,
+  "selected_source_files_at_read": {
+    "game/scripts/world/hub_grounding_shadow.gd": {
+      "bytes": 5550,
+      "sha256": "50c1be38456691a9d3fe06f980d3023ec7eb320aa697532b5666e9bf3953f3d6"
+    },
+    "game/scripts/world/hub_npc.gd": {
+      "bytes": 8469,
+      "sha256": "9c07128087122a567b8f3b0c35d92f87f47d5765820d715c125608d052814850"
+    }
+  },
+  "source_scope": "Selected source map above and separately curated actual88 source/export freeze are independent snapshots; no future clean Git source or CI result inferred.",
+  "postexport_package": "local-runtime-package-grounding-002.json",
+  "prior_tools_scope": "Last tools80/0skip is separate fromcanonical5; no new combined85 or postgroundingtools result inferred.",
+  "remaining": [
+    "Current source embedded/external/CTEX finalreadback",
+    "Actual desktop/mobile88-source quality/hub/interaction/persistence/restart/touch10/14",
+    "CleanCI/public/release",
+    "Targethardware/motion/continuousAV/AAA"
+  ],
+  "source_freeze": "local-runtime-source-freeze.json",
+  "visual_followup": "Actual candidate002 eight originals completed99.947558s and root scoped prototype adopted; see hub-review/candidate-002/review.json. Browser/public/AAA pending.",
+  "desktop_followup": "Actual local desktop506.152s passed;88source/14Web/2ZIP/manifest unchanged aftercomparison. See local-desktop/summary.json; fullmobile/cleanCI/public/AAA pending."
+}

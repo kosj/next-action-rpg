@@ -1,0 +1,19 @@
+{
+  "source_sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+  "source_bytes": 10414588,
+  "candidate_bytes": 6224172,
+  "candidate_sha256": "038bb3e475466a2ffec9b78acc4d0d6ca10b558a02214e371fe7f7993eb609b3",
+  "source_unchanged": true,
+  "glyph_order_exact": true,
+  "best_cmap_exact": true,
+  "candidate_glyphs": 24964,
+  "candidate_codepoints": 23174,
+  "remaining_variable_tables": [],
+  "source_GSUB_GPOS_retained": true,
+  "preliminary_glyphs_drawn": 201,
+  "rounded_outline_mismatches": 2,
+  "maximum_unrounded_outline_delta_font_units": 0.5059814453125,
+  "maximum_unrounded_advance_delta_font_units": 0.491485595703125,
+  "elapsed_seconds": 13.175497119984357,
+  "scope": "Static-file preflight only; full glyph/layout audit and actual Godot raster/import/export pending"
+}

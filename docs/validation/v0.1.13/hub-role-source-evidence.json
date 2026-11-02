@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-11-02",
+  "scope": "Existing narrative/interaction role source and current art brief; no provider cost/result/rig/raster approval.",
+  "baseline": "cb038edf487f9a0ad7c7ed1c7c7606e6df5b3578",
+  "source": {
+    "file": "game/scripts/game.gd",
+    "sha256_at_read": "051f5cf59889b6ffcc3499837807bf3d7af73602869b1f492064f33c0a03def5",
+    "observed": [
+      "NPC0 interaction label is 기록관 에린 and dialog subtitle ERIN · THE ARCHIVIST.",
+      "NPC1 interaction label is 대장장이 로엔 and action is the rune-upgrade shop."
+    ]
+  },
+  "current_art_brief": {
+    "npc0": "Adult woman archivistErin, ash ivory/teal robes, face/hands/boots visible, no held prop, idle only.",
+    "npc1": "Sturdy adult male smithRoen, leather apron/workclothes, no helmet or knight armor, no held prop, idle only.",
+    "source": "Current project art direction; clothing/age/gender brief is not inferred solely from the code labels."
+  },
+  "discarded_before_generation": "Generic elderly Keeper and armored guard reuse proposal did not match the actual story roles. No paid generation was made for that rejected proposal.",
+  "remaining": [
+    "Current provider capability/cost/usage terms",
+    "Actual generated/rigged assets and imported/export budget",
+    "Native/raster/function/browser/public/AAA verification"
+  ]
+}

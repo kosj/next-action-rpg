@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "status": "verified_static_derivation_engine_raster_pending",
+  "passed": true,
+  "fonttools_version": "4.61.1",
+  "source": {
+    "path": "game/assets/fonts/NotoSansKR.ttf",
+    "bytes": 10414588,
+    "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+  },
+  "derived": {
+    "path": "game/assets/fonts/runefall_kr430.ttf",
+    "bytes": 6224172,
+    "sha256": "038bb3e475466a2ffec9b78acc4d0d6ca10b558a02214e371fe7f7993eb609b3"
+  },
+  "raw_ttf_bytes_saved": 4190416,
+  "weight": 430.0,
+  "family": "RunefallKR430",
+  "reserved_font_names": [
+    "Source"
+  ],
+  "checks": {
+    "official_complete_static_instance_byte_exact": true,
+    "glyph_order_exact": true,
+    "all_cmap_subtables_exact": true,
+    "GSUB_script_language_feature_coverage_exact": true,
+    "GPOS_script_language_feature_coverage_exact": true,
+    "no_remaining_variable_tables": true,
+    "source_file_unchanged": true,
+    "copyright_and_license_name_records_exact": true
+  },
+  "glyph_count": 24964,
+  "best_cmap_codepoints": 23174,
+  "layout_tables": {
+    "GSUB": {
+      "source_lookup_count": 45,
+      "derived_lookup_count": 45,
+      "note": "Official instancing may resolve variable positioning and renumber lookups; script/language/feature coverage is checked separately from lookup indices."
+    },
+    "GPOS": {
+      "source_lookup_count": 13,
+      "derived_lookup_count": 10,
+      "note": "Official instancing may resolve variable positioning and renumber lookups; script/language/feature coverage is checked separately from lookup indices."
+    }
+  },
+  "source_at_weight_outline_audit": {
+    "glyphs_drawn": 24964,
+    "drawing_operation_mismatch_count": 0,
+    "first_drawing_operation_mismatches": [],
+    "maximum_unrounded_coordinate_delta_font_units": 0.5059814453125,
+    "maximum_unrounded_advance_delta_font_units": 0.49462890625,
+    "glyphs_different_from_naive_otRound": 35,
+    "scope": "All glyphs, decomposed contours. Variable floating coordinates vs official fixed-point/integer static outlines; raw coordinates need not be exact."
+  },
+  "source_at_weight_shaping_audit": {
+    "status": "complete",
+    "harfbuzz_version": "10.2.0",
+    "best_cmap_characters_individually_shaped": 23174,
+    "additional_multilingual_ligature_probes": 7,
+    "comparisons": 23181,
+    "different_results": 0,
+    "first_different_results": [],
+    "maximum_position_delta_font_units": 0,
+    "scope": "Glyph IDs, UTF8 clusters, advances and offsets at UPEM scale. Default shaping features; not every script/language/feature combination or pixels."
+  },
+  "pending": [
+    "Godot same-driver original FontVariation430 vs derived raster A/B",
+    "Actual Godot import and Web/Windows export byte measurements",
+    "Runtime UI/browser regressions after integration"
+  ],
+  "scope": "Complete official static instancing and naming only. No glyph/character subsetting, contour simplification or overlap removal. Raw TTF bytes are not PCK/export bytes.",
+  "license": {
+    "path": "art_source/production/ui_font_static/OFL.txt",
+    "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded",
+    "license": "SIL Open Font License 1.1; original copyright and reserved name notice retained"
+  }
+}

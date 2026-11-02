@@ -5,7 +5,6 @@ const GOLD := Color("c6ab78")
 const MINT := Color("87d5c9")
 const INK := Color("0d1a22")
 const WHITE := Color("eee8d9")
-const WEIGHT_AXIS := 0x77676874 # OpenType 'wght', exported font defaults to weight 100.
 var world: Node3D
 var root: Control
 var menu: Control
@@ -59,10 +58,7 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
 	var theme := Theme.new()
-	var font := FontVariation.new()
-	font.base_font = preload("res://assets/fonts/NotoSansKR.ttf")
-	font.variation_opentype = {WEIGHT_AXIS: 430.0}
-	theme.default_font = font
+	theme.default_font = preload("res://assets/fonts/runefall_kr430.ttf")
 	theme.default_font_size = 16
 	theme.set_color("font_color", "Label", WHITE)
 	theme.set_color("font_color", "Button", WHITE)

@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "ok": true,
+  "errors": [],
+  "status": "finite_raw_skin_normal_UV_structural_checks_passed_visual_pending",
+  "gate_revision": "Correct physical target TBN against immutable UV basis; explicitly correct pre-existing source normals opposite geometry. Record old-sign changes rather than resurrecting invalid source normals; reject any new normal/face negative across the full normal one-ring/boundary.",
+  "source_file": "art_source/production/candidates/erin-001/erin-idle.glb",
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "target_file": "art_source/production/candidates/erin-002/erin-idle-one-ring.glb",
+  "target_sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8",
+  "position_rows_changed": 25,
+  "normal_rows_changed": 94,
+  "position_rows_total": 13674,
+  "affected_triangles": 182,
+  "foot_region_vertex_count": 222,
+  "foot_rows_unchanged": true,
+  "actual_rest_changed_vertex_bounds": {
+    "min": [
+      0.1658290124186135,
+      0.0830608776316284,
+      0.38961219199782854
+    ],
+    "max": [
+      0.21933828560981064,
+      0.13769453785547775,
+      0.5362469447005821
+    ]
+  },
+  "source_TANGENT_attribute_present": false,
+  "target_TANGENT_attribute_present": false,
+  "TBN_scope": "Raw per-triangle geometric UV frame and skinned normals only. Tangents are absent in both GLBs; actual Godot importer tangent generation and raster remain pending.",
+  "frames": [
+    {
+      "pose": "REST",
+      "time_s": null,
+      "maximum_vertex_delta_m": 0.016492849338610702,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3118416081600664e-06,
+      "affected_triangle_min_area_m2_after": 1.143931262834176e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.44814227858487354,
+          "target_normal_face_cos": 0.9860027271629371
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.81771487593847,
+          "target_normal_face_cos": 0.990223244903144
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.3382805858500565,
+          "target_normal_face_cos": 0.804934229354785
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.3814837171904501,
+          "target_normal_face_cos": 0.9861501276433354
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8643233563026765,
+          "target_normal_face_cos": 0.9989979510088997
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.7941663298906515,
+          "target_normal_face_cos": 0.9999239344577424
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.4553977708492464,
+          "target_normal_face_cos": 0.9863932992971898
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.33038934730290626,
+          "target_normal_face_cos": 0.948175873105235
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 3.608224830031759e-16,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 0.0,
+      "maximum_vertex_delta_m": 0.01648508736560966,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.316295671044162e-06,
+      "affected_triangle_min_area_m2_after": 1.1502099136221958e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.454165277228177,
+          "target_normal_face_cos": 0.9850501212459241
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.8195231401320062,
+          "target_normal_face_cos": 0.9891271721453266
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.34285646110099266,
+          "target_normal_face_cos": 0.8071234022237219
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.39338585192943964,
+          "target_normal_face_cos": 0.9897402775861593
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8596356141188938,
+          "target_normal_face_cos": 0.9989245462319336
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.8079513481069623,
+          "target_normal_face_cos": 0.9998963261326628
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.46809356474319475,
+          "target_normal_face_cos": 0.9909819764597076
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.33101203157687686,
+          "target_normal_face_cos": 0.9451117724754541
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 3.46077333457373e-16,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 2.5416667461395264,
+      "maximum_vertex_delta_m": 0.01648509260154634,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3162831664797753e-06,
+      "affected_triangle_min_area_m2_after": 1.1502005063885217e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.45417994682201557,
+          "target_normal_face_cos": 0.9850498910654835
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.8195196730290909,
+          "target_normal_face_cos": 0.9891287866433455
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.3428620549957552,
+          "target_normal_face_cos": 0.8071261449905255
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.3934025235446666,
+          "target_normal_face_cos": 0.9897443934378446
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8596430978345443,
+          "target_normal_face_cos": 0.9989247061202704
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.8079571659066332,
+          "target_normal_face_cos": 0.999896449945664
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.4681068102055565,
+          "target_normal_face_cos": 0.9909823951782948
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.3310103128487523,
+          "target_normal_face_cos": 0.9451061484957136
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 2.3592239273284576e-16,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 5.083333492279053,
+      "maximum_vertex_delta_m": 0.016482665939867035,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3171836647099973e-06,
+      "affected_triangle_min_area_m2_after": 1.1511421647204377e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.45436184379602457,
+          "target_normal_face_cos": 0.9849747283114398
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.8198674435621855,
+          "target_normal_face_cos": 0.9889496170010781
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.34304528861847305,
+          "target_normal_face_cos": 0.8072088443301049
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.3937307843198276,
+          "target_normal_face_cos": 0.989837212881974
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8588935742198425,
+          "target_normal_face_cos": 0.9989049895631461
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.8089490290420961,
+          "target_normal_face_cos": 0.999865683244887
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.46875792293753976,
+          "target_normal_face_cos": 0.9913381391697385
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.3311776528005047,
+          "target_normal_face_cos": 0.9450929944905206
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 1.1882855810441129e-15,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 7.625000238418579,
+      "maximum_vertex_delta_m": 0.01648331073018234,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3169759586021918e-06,
+      "affected_triangle_min_area_m2_after": 1.150922112111454e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.4542927450950314,
+          "target_normal_face_cos": 0.9849926844458573
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.8197862065294336,
+          "target_normal_face_cos": 0.9889915930047325
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.3429955957234805,
+          "target_normal_face_cos": 0.8071864939020954
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.3936420165273522,
+          "target_normal_face_cos": 0.9898122798956915
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8590662527056325,
+          "target_normal_face_cos": 0.9989097127408889
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.8087026314885855,
+          "target_normal_face_cos": 0.9998735013573257
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.4685863082324852,
+          "target_normal_face_cos": 0.9912520225638785
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.33113645671070907,
+          "target_normal_face_cos": 0.9451000514208177
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 5.134781488891349e-16,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 10.166666984558105,
+      "maximum_vertex_delta_m": 0.01648508736560966,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.316295671044162e-06,
+      "affected_triangle_min_area_m2_after": 1.1502099136221958e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_changes": 8,
+      "handedness_consistent_with_UV_and_actual_normal": true,
+      "source_normal_face_negative_triangles": [
+        2806,
+        3043,
+        3076,
+        3641,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686,
+        15393
+      ],
+      "target_normal_face_negative_triangles": [
+        2806,
+        3076
+      ],
+      "new_normal_face_negatives": [],
+      "corrected_source_orientations": [
+        {
+          "triangle": 3043,
+          "source_normal_face_cos": -0.454165277228177,
+          "target_normal_face_cos": 0.9850501212459241
+        },
+        {
+          "triangle": 3641,
+          "source_normal_face_cos": -0.8195231401320062,
+          "target_normal_face_cos": 0.9891271721453266
+        },
+        {
+          "triangle": 3666,
+          "source_normal_face_cos": -0.34285646110099266,
+          "target_normal_face_cos": 0.8071234022237219
+        },
+        {
+          "triangle": 3667,
+          "source_normal_face_cos": -0.39338585192943964,
+          "target_normal_face_cos": 0.9897402775861593
+        },
+        {
+          "triangle": 3668,
+          "source_normal_face_cos": -0.8596356141188938,
+          "target_normal_face_cos": 0.9989245462319336
+        },
+        {
+          "triangle": 3685,
+          "source_normal_face_cos": -0.8079513481069623,
+          "target_normal_face_cos": 0.9998963261326628
+        },
+        {
+          "triangle": 3686,
+          "source_normal_face_cos": -0.46809356474319475,
+          "target_normal_face_cos": 0.9909819764597076
+        },
+        {
+          "triangle": 15393,
+          "source_normal_face_cos": -0.33101203157687686,
+          "target_normal_face_cos": 0.9451117724754541
+        }
+      ],
+      "target_TBN_orthogonal_dot_max_abs": 3.46077333457373e-16,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    }
+  ],
+  "limitations": [
+    "Six finite REST/idle raw-skin poses do not approve continuous cloth deformation, actual imported renderer TBN, visuals, contact, hardware or AAA"
+  ],
+  "tool_file": "art_source/production/hub_npcs/audit_robe_repair.py",
+  "tool_sha256": "41f117e90c96df800169073697d46e828912bae3c5223ec1afa94190c30ede6d"
+}

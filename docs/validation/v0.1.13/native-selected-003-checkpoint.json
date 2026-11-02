@@ -1,0 +1,64 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "Selected003 current local native580/0/fullWebWindows build exit0; dirty preview, not clean committed/public/release",
+  "scope": "Actual current622 presenter, selected801Erin/Roen001, compression6/100 and notice-corrected local build. ActualGame raster/browser/touch10/14/interaction, target hardware/AV/AAA are separate.",
+  "native": {
+    "checks": 580,
+    "failures": 0,
+    "exit_code": 0,
+    "log": {
+      "file": "native-export-selected-003.log",
+      "closed": true,
+      "bytes": 108821,
+      "sha256": "867880f39d96bb2c76af4ce075e958edd336aba57e0dff4ae0873129a987c892",
+      "summary": "RUNEFALL_TESTS: 580 checks, 0 failures",
+      "ERROR_lines": []
+    }
+  },
+  "python_tools": {
+    "tests": 80,
+    "failures": 0,
+    "skips_reported_by_runner": 0,
+    "elapsed_s": 1.771,
+    "log_bytes": 691,
+    "log_sha256": "7fd2ebdcb4aa3cf4119ca1de8efa9905a1a03ce6c37591d3875895b91a2b984a",
+    "scope": "Unified tools suite only; five canonical tests are separate, not an85-test result. Test stdout follows the unittest OK summary."
+  },
+  "selected_runtime_files_at_read": {
+    "game/scripts/world/hub_npc.gd": {
+      "bytes": 8174,
+      "sha256": "622fee2f7c7e21ecb325a6082b64d66ed7fecc2dfdea9b8df1e94f6935865a0b"
+    },
+    "game/assets/models/production/erin_idle_gameplay.glb": {
+      "bytes": 8903772,
+      "sha256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63"
+    },
+    "game/assets/models/production/roen_idle_gameplay.glb": {
+      "bytes": 5387148,
+      "sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049"
+    },
+    "game/scripts/world/checkpoint_relic.gd": {
+      "bytes": 11964,
+      "sha256": "eacb7c38ecefed7479cc7f7ef563cb01b8795255a0dda05a24d888e0928cb5c0"
+    },
+    "game/assets/shaders/checkpoint_crystal.gdshader": {
+      "bytes": 2037,
+      "sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05"
+    },
+    "game/project.godot": {
+      "bytes": 1145,
+      "sha256": "03e60420e59714f2bd0f468e16235da06dba5e44b8b56a5550ec8ad84db2662f"
+    }
+  },
+  "source_snapshot_scope": "Selected runtime files checked; not an all87 build-time source freeze. Do not infer whole-game unchanged from this map.",
+  "postexport_audit": "local-runtime-package.json",
+  "notice_font_license_copies_byte_exact": true,
+  "remaining": [
+    "003 embedded/extractedPNG/decodedCTEX binding readback",
+    "Actual baseline/candidate hub rasters androotselection",
+    "Actual desktop/mobile87-source quality/interactions/storage/restart andtouch10/14",
+    "CleanCI/public Pages/release",
+    "Target hardware/motion/continuousAV/fullAAA"
+  ],
+  "phase": "PRE-NPC-grounding selected003. Native580/package149687995 do not validate latergrounding script/roster/native/export."
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "finite_studio_review_recorded_actual_game_and_final_adoption_pending",
+  "scope": "REST-front, idle0 and idle0.5 three-quarter studio images of the exact normalized derivative",
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "views": [
+    "review/rest-front.png",
+    "review/idle-quarter-start.png",
+    "review/idle-quarter-mid.png"
+  ],
+  "observations": [
+    "Distinct archivist robe and visible adult face/hands/boots",
+    "No final face/hands skin, cloth simulation or AAA approval from these three finite views"
+  ],
+  "known_issue": {
+    "status": "visible_defect_pending_root_decision",
+    "description": "Two dark lower-front robe cavities/creases remain under texture-free clay and flat geometric shading; welded diagnostic topology has no open boundary, so automatic hole filling is not justified. No cosmetic repair or paid regeneration applied.",
+    "diagnostic_views": [
+      "review-diagnostic/idle-no-normal.png",
+      "review-diagnostic/idle-clay.png",
+      "review-flat-diagnostic/idle-flat-clay.png"
+    ]
+  },
+  "animated_soles": {
+    "left": {
+      "horizontal_drift_max_m": 0.017163058538630555,
+      "lowest_height_m": 0.007567016873508692,
+      "highest_min_height_m": 0.009761628694832325
+    },
+    "right": {
+      "horizontal_drift_max_m": 0.01819340770559688,
+      "lowest_height_m": -0.0016253015492111444,
+      "highest_min_height_m": 0.0024708753917366266
+    }
+  },
+  "limits": [
+    "121 finite lowest-rest-band samples are not continuous contact or terrain approval",
+    "Provider stock idle is not project-authored acting",
+    "Actual in-game q0/q1 closeups, budget, native, browser and hardware validation pending"
+  ]
+}

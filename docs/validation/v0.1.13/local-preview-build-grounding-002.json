@@ -1,0 +1,117 @@
+{
+  "checked_on": "2026-11-02",
+  "phase": "POST-grounding localcandidate002 dirtypreview, notcleanCI/public/release",
+  "build_exit_code": 0,
+  "manifest": {
+    "version": "0.1.13",
+    "godot": "4.7.2",
+    "commit": "cb038edf",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119076424,
+        "sha256": "f6961054bf8b392e34c7b9d55adf9d48a53efedc3b5888fe6ca7cd807a7abd7e"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146917780,
+        "sha256": "9df1537db0e2f9853825f4c109279c2d2cee982d77049cf68aad254401f0705f"
+      }
+    ]
+  },
+  "raw_web": {
+    "bytes": 149705279,
+    "files": 14,
+    "cap_bytes": 150000000,
+    "remaining_bytes": 294721
+  },
+  "pck": {
+    "path": "build/web/index.pck",
+    "bytes": 109745420,
+    "sha256": "744c4571fc8b7eba80c32135276a2e36eb43bfd72fb7197c69804c43b73adb2e",
+    "header": {
+      "format": 4,
+      "engine": [
+        4,
+        7,
+        2
+      ],
+      "flags": 2,
+      "file_base": 112,
+      "directory_offset": 109726624
+    },
+    "directory_files": 201,
+    "by_extension": {
+      ".bin": {
+        "count": 1,
+        "bytes": 4984
+      },
+      ".binary": {
+        "count": 1,
+        "bytes": 1331
+      },
+      ".cfg": {
+        "count": 1,
+        "bytes": 2634
+      },
+      ".ctex": {
+        "count": 31,
+        "bytes": 95790972
+      },
+      ".fontdata": {
+        "count": 1,
+        "bytes": 3864201
+      },
+      ".gdc": {
+        "count": 24,
+        "bytes": 823960
+      },
+      ".gdshader": {
+        "count": 4,
+        "bytes": 6397
+      },
+      ".import": {
+        "count": 61,
+        "bytes": 12853
+      },
+      ".json": {
+        "count": 2,
+        "bytes": 23866
+      },
+      ".remap": {
+        "count": 34,
+        "bytes": 2267
+      },
+      ".res": {
+        "count": 9,
+        "bytes": 13684
+      },
+      ".sample": {
+        "count": 16,
+        "bytes": 278144
+      },
+      ".scn": {
+        "count": 14,
+        "bytes": 8899415
+      },
+      ".svg": {
+        "count": 1,
+        "bytes": 336
+      },
+      ".txt": {
+        "count": 1,
+        "bytes": 19
+      }
+    }
+  },
+  "checks": {
+    "raw_web_within_unchanged_150M_cap": true,
+    "original_variable_font_source_remap_and_fontdata_absent": true,
+    "static_fontdata_exactly_once": true,
+    "static_font_import_remaps_to_that_single_fontdata": true,
+    "all_directory_payload_md5_verified": true
+  },
+  "native_checkpoint": "native-grounding-002-checkpoint.json",
+  "notice_copy_byte_exact": true,
+  "texture_scope": "PCKpayloadMD5 andimporttextureheader/mipmetadata areactual; source001compression scopedproof isnot003newpaint fullmipdecode."
+}

@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "roen-001",
+  "character": "대장장이 로엔 / Roen the Blacksmith",
+  "status": "normalized_idle_candidate_pending_actual_game_visual_adoption",
+  "source_file": "roen-idle.glb",
+  "source_bytes": 5387148,
+  "source_sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049",
+  "selected_source_role": "Normalized derivative selected for runtime review; original provider outputs preserved separately below",
+  "expected_clips": [
+    "idle",
+    "RESET"
+  ],
+  "runtime_installation": {
+    "file": "game/assets/models/production/roen_idle_gameplay.glb",
+    "bytes": 5387148,
+    "sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049"
+  },
+  "provider_sources": {
+    "mesh": {
+      "file": "source.glb",
+      "bytes": 7152192,
+      "sha256": "8121ec026c409db75c2dc878d8402e19de11595902f80bd416ce5ced3bd1c754"
+    },
+    "rig": {
+      "file": "rig-source.glb",
+      "bytes": 7468024,
+      "sha256": "26597bbdbecb8034d64783e1895f7fe645a98265b314c63b7176d8a99305e1bc"
+    },
+    "idle_raw_known_invalid": {
+      "file": "source/idle-source.glb",
+      "bytes": 7591860,
+      "sha256": "9a4bf6d564ca42881e29f3863e22a36b0c941338ec00983af04caa91623058b3"
+    },
+    "idle_canonical": {
+      "file": "idle-canonical.glb",
+      "bytes": 7712424,
+      "sha256": "478c350cdec13bb31cd640973cdd03ba0b7ea0f6323504c49897fe6471732089"
+    }
+  },
+  "generation": {
+    "license": "PRIVATE",
+    "reported_points_per_mesh": 200,
+    "shared_two_model_reported_points": 400,
+    "rig_reported_points": 0,
+    "stock_idle_reported_points": 0,
+    "provider_run": "art_source/production/hub_npcs/provider-run.json",
+    "point_scope": "Shared 400 points is counted once across both NPC manifests, not 400 per NPC"
+  },
+  "reference": {
+    "file": "art_source/production/references/roen-front-concept.png",
+    "bytes": 2134185,
+    "sha256": "e1c64bccae607872b542a3e3a9940782035a9dd97bb2898b4cf60ab58cb078a6"
+  },
+  "profile": {
+    "rest_height_m": 1.82,
+    "rest_floor_m": -3.5598588965513045e-07,
+    "forward": "minus_z_after_wrapper_pi",
+    "presenter_extra_yaw_pi": false,
+    "idle_name": "idle",
+    "idle_duration_s": 10.166666666666666,
+    "bones": 53,
+    "triangles": 16000,
+    "textures": [
+      {
+        "index": 0,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 1701219
+      },
+      {
+        "index": 1,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 842364
+      },
+      {
+        "index": 2,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 1352151
+      }
+    ]
+  },
+  "source_defect": {
+    "raw_stock_idle_strictly_valid": false,
+    "expected_failure_report": "source/raw-idle-strict-failure.json",
+    "pattern": "All 21 LINEAR sampler channels have one duplicated final timestamp; final row exactly equals first loop pose",
+    "canonicalization": "Keep provider final loop closure, remove only its earlier equal-time duplicate; raw bytes unchanged",
+    "historical_initial_raw_location": "idle-source.glb; moved under source/ so raw defect is preserved outside strict valid-candidate glob",
+    "canonical_report": "idle-canonicalization.json",
+    "current_strict_validation_report": "idle-canonical-validation.json"
+  },
+  "verification": {
+    "strict_embedded_skin_idle_RESET": true,
+    "source_to_reimported_pose_max_error_m": 5.200126452109544e-06,
+    "loop_bone_endpoint": {
+      "joint_position_max_m": 0.0,
+      "joint_angle_shortest_max_rad": 0.0
+    },
+    "animated_soles": {
+      "left": {
+        "horizontal_drift_max_m": 0.019717667583883998,
+        "lowest_height_m": 0.006481400225311518,
+        "highest_min_height_m": 0.010608887299895287
+      },
+      "right": {
+        "horizontal_drift_max_m": 0.020286731256777612,
+        "lowest_height_m": -0.0022631031461060047,
+        "highest_min_height_m": 0.0034006398636847734
+      }
+    },
+    "finite_studio_review": "review-status.json",
+    "native_game": "pending",
+    "actual_game_raster": "pending",
+    "web_budget": "pending",
+    "focused_browser": "pending",
+    "hardware": "pending",
+    "AAA": "pending"
+  },
+  "derived_files": [
+    {
+      "file": "source.glb",
+      "bytes": 7152192,
+      "sha256": "8121ec026c409db75c2dc878d8402e19de11595902f80bd416ce5ced3bd1c754"
+    },
+    {
+      "file": "rig-source.glb",
+      "bytes": 7468024,
+      "sha256": "26597bbdbecb8034d64783e1895f7fe645a98265b314c63b7176d8a99305e1bc"
+    },
+    {
+      "file": "source/idle-source.glb",
+      "bytes": 7591860,
+      "sha256": "9a4bf6d564ca42881e29f3863e22a36b0c941338ec00983af04caa91623058b3"
+    },
+    {
+      "file": "idle-canonical.glb",
+      "bytes": 7712424,
+      "sha256": "478c350cdec13bb31cd640973cdd03ba0b7ea0f6323504c49897fe6471732089"
+    },
+    {
+      "file": "idle-canonicalization.json",
+      "bytes": 8857,
+      "sha256": "9f2c5f66bd5023b493b16102558cbaedc08f1c4fb2151d1ce4ffb22dd7ad5fb5"
+    },
+    {
+      "file": "idle-canonical-validation.json",
+      "bytes": 9001,
+      "sha256": "6f3e5e7f66d78560489ec0fe33de935ff32ecc5b2ceb205727eb5887c8f43543"
+    },
+    {
+      "file": "roen-idle.preparation.json",
+      "bytes": 53282,
+      "sha256": "bee3042520a38f7358dce158b99bad4c3843846cfe9cbcac514f919afb1353b9"
+    },
+    {
+      "file": "source-inspection.json",
+      "bytes": 1898,
+      "sha256": "cee081ebe4873d6bcd71d1ee8ee939f93ea87effbb171ce93b3c88127bd47c87"
+    },
+    {
+      "file": "rig-inspection.json",
+      "bytes": 3466,
+      "sha256": "42f536b77e67f524f77f28a08b667f3767012b43ddf04568f22f449660db4f74"
+    },
+    {
+      "file": "idle-inspection.json",
+      "bytes": 561,
+      "sha256": "fbd8948baf4809d70e8341040db8e9126cdfda67adc3256320b2d817edf41c4e"
+    },
+    {
+      "file": "source/raw-idle-strict-failure.json",
+      "bytes": 541,
+      "sha256": "a90e91140b3fb7d10be5ea29b4965fb0a9370b84a174fa8186ce44db3bc7a8ce"
+    },
+    {
+      "file": "runtime-inspection.json",
+      "bytes": 3786,
+      "sha256": "e267980a42bf3ee5410bf6315cb5a0a5d786afeaeebd5732253c138dadbd4ad2"
+    },
+    {
+      "file": "review-status.json",
+      "bytes": 1288,
+      "sha256": "69e12a4dad1790d6664ae78ca3273c555687073006fed9edcb79560d914b5239"
+    },
+    {
+      "file": "review/review.json",
+      "bytes": 1710,
+      "sha256": "36e448f2d7c8cf4cbca24d8b19b96ba4cf9e4323f960ad3626a62ba26f73cfca"
+    },
+    {
+      "file": "review/rest-front.png",
+      "bytes": 366699,
+      "sha256": "0aecd3001fe7685eb901f8e57157cc5c6889ded1aba136b339e9e1cc36444b18"
+    },
+    {
+      "file": "review/idle-quarter-start.png",
+      "bytes": 358330,
+      "sha256": "a8c3afecb526909cf2138ad3818d6463edf7ffb24764130e5c4f2ccc93ada054"
+    },
+    {
+      "file": "review/idle-quarter-mid.png",
+      "bytes": 358928,
+      "sha256": "d0b1b81901678cad818ded02932c9a27d1d863083f42179c68118712fa468870"
+    }
+  ],
+  "provenance_files": [
+    {
+      "file": "art_source/production/hub_npcs/provider-run.json",
+      "bytes": 5736,
+      "sha256": "f506d738cb114146ef74173c86a9494a8da40ddf551aed427a9b5725cf6330fc"
+    },
+    {
+      "file": "art_source/production/hub_npcs/prepare_idle_npc.py",
+      "bytes": 13837,
+      "sha256": "098b628344b9fac86d2b8b974c3406e829d7012ac01ce16659d3a7985d85bfdd"
+    },
+    {
+      "file": "art_source/production/hub_npcs/canonicalize_idle_times.py",
+      "bytes": 8868,
+      "sha256": "163901e4a578bda105c0e4434a8047ba365b7c400c17052508db75f06bfebaa4"
+    },
+    {
+      "file": "art_source/production/hub_npcs/render_idle_review.py",
+      "bytes": 3713,
+      "sha256": "00b622bbee5301a0807f9bd18a0b8fee8432286dbac7872e9780b6e9da5d39f6"
+    },
+    {
+      "file": "art_source/production/hub_npcs/roen.json",
+      "bytes": 716,
+      "sha256": "374d15e4cecefba95dfdd99a92127dfa8d5263bcfce8576056ad9e4fc04b9d8c"
+    },
+    {
+      "file": "tools/prepare_character_candidate.py",
+      "bytes": 31930,
+      "sha256": "15568bdea1ab515cdb39b98c5c6587a982d5a05ccf121e298228389687d4ac2d"
+    },
+    {
+      "file": "art_source/production/references/hub-npc-reference-manifest.json",
+      "bytes": 1416,
+      "sha256": "08f8d268541e071e80838996f175c4debc3872c71bff1b35f4903ba51e69c3e2"
+    },
+    {
+      "file": "art_source/production/references/roen-front-concept.png",
+      "bytes": 2134185,
+      "sha256": "e1c64bccae607872b542a3e3a9940782035a9dd97bb2898b4cf60ab58cb078a6"
+    }
+  ],
+  "limitations": [
+    "Reference-image quality does not establish 3D quality",
+    "Provider stock idle is retargeted, not project-authored",
+    "No full cloth/hair/face/hands/foot-contact/terrain/AAA quality approval"
+  ],
+  "historical_validation": [
+    {
+      "file": "docs/validation/v0.1.13/native-corrected-001-checkpoint.json",
+      "bytes": 901,
+      "sha256": "75b0dd297f7536fe001fc8a98b71d78d118291853d36f3d516888aba3e5de69d",
+      "checks": 580,
+      "failures": 0,
+      "exit_code": 0,
+      "scope": "Historical corrected actual native001 checkpoint only; no002/003 repair, final compression, visual, browser, publication or AAA approval"
+    }
+  ]
+}

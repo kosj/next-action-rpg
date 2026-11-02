@@ -1,2 +1,4 @@
 playwright==1.62.0
 pillow==12.3.0
+# Complete static-font derivation and synthetic regression tests.
+fonttools==4.61.1

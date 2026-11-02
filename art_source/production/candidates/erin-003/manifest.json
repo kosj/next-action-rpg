@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "id": "erin-003",
+  "status": "provisional_runtime_integrated_studio_reviewed_actual_game_visual_pending",
+  "source_file": "erin-idle.glb",
+  "source_bytes": 8903772,
+  "source_sha256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63",
+  "expected_clips": [
+    "idle",
+    "RESET"
+  ],
+  "runtime_status": "Root-approved provisional003 copied to fixedErin runtime path; actual imported-game q0/q1 review pending",
+  "provider_provenance": "art_source/production/hub_npcs/provider-run.json",
+  "source_parent": {
+    "file": "art_source/production/candidates/erin-002/erin-idle-one-ring.glb",
+    "bytes": 5611732,
+    "sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8"
+  },
+  "scope": "Further correct two identified source wrong-normal faces and prepare bounded Blender cloth-only UV clone retouch. All generated source and earlier candidates stay unchanged.",
+  "verification": {
+    "normal_only_raw_skin_finite": "verified REST plus5idleposes against002; 13NORMALrows/6source-smoothinggroups/22adjacentfaces; no POSITION edits or newnegativefaces; two inherited negatives corrected",
+    "normal_rotation_max_deg": 162.64324406468174,
+    "note": "Some final faces remain near grazing; unit/orthogonal/positive structural checks do not establish visual quality",
+    "UV_mask": "prepared exact polygon pixels; protected face/hand UV overlap0",
+    "paint": {
+      "status": "verified_narrow_pixel_payload_scope",
+      "report": "embedded-pixel-audit.json",
+      "allowed_pixels": 383,
+      "albedo_changed_pixels": 378,
+      "normal_changed_pixels": 369,
+      "outside_mask_changed_RGBA8_pixels": 0,
+      "ORM_complete_encoded_PNG": "byte_exact",
+      "face_hand_UV_overlap": 0,
+      "scope": "Blender adjacent-cloth clone; unchanged1k dimensions, original3 image indices/names, body/skin/UV/clips/material payload exact. No global atlas synthesis."
+    },
+    "actual_raster": {
+      "status": "root_accepted_for_provisional_integration_only",
+      "report": "visual-review.json",
+      "limitations": "Small blue tip/tails/slits remain; three finite studio views, not actual-game, continuous cloth or AAA acceptance"
+    },
+    "actual_game": "pending",
+    "web_budget": "pending_final003_export",
+    "AAA": "pending",
+    "combined_001_to_003_raw_geometry_normal": {
+      "status": "verified_narrow_finite_scope",
+      "report": "combined-finite-frame-audit.json",
+      "position_rows": 25,
+      "normal_rows": 98,
+      "one_ring_boundary_faces": 186,
+      "source_negative_faces": 11,
+      "target_negative_faces": 0,
+      "new_negative_faces": 0,
+      "foot_rows_changed": 0,
+      "samples": "REST+5idleposes; actual raster/import/continuous/AAA pending"
+    },
+    "native": {
+      "status": "root_reported_selected003_actual_pass",
+      "checks": 580,
+      "failures": 0,
+      "build_exit_code": 0,
+      "source_SHA256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63",
+      "scope": "Actual selected003 native contracts and Web/Windows build reported complete by root; actual-game raster/final publication/AAA remain pending; curated final native evidence is owned by root"
+    },
+    "postimport_external_images": {
+      "status": "verified_narrow_source_and_header_scope",
+      "report": "postimport-image-audit.json",
+      "roles": 2,
+      "source_PNGs": 6,
+      "embedded_external_bytes_and_pixels": "exact",
+      "generator_MD5_matches_decoded_RGB8": true,
+      "scene_and_PNG_import_source_MD5s": "match actual files",
+      "mipmaps": "All6 CTEX headers/chunks have11levels each; full decoded final-package mip proof is separate"
+    },
+    "exports": {
+      "status": "root_reported_Web_and_Windows_exit0",
+      "actual_package_budget": "await corresponding final package report; no budget widening"
+    }
+  },
+  "derived_files": [
+    {
+      "file": "normal-source.glb",
+      "bytes": 5611732,
+      "sha256": "9e2554debc31931618fb1c37aeec3409ebd8c8e153e8a41554bd630644c9ab83"
+    },
+    {
+      "file": "local-normal-repair.json",
+      "bytes": 1880,
+      "sha256": "bec03bf32ea08b0916453e45099f9e67c7318ad19ba636c5bec79be0d4e93b1e"
+    },
+    {
+      "file": "finite-normal-audit.json",
+      "bytes": 9470,
+      "sha256": "68e4ad3220e3196ef0d71e4b81fb3a6ccd57996bc4ef185ab5e8792629c24660"
+    },
+    {
+      "file": "normal-source-inspection.json",
+      "bytes": 3793,
+      "sha256": "c8b066a15d6728099331918bc9fd4979890d8ce7db5dafe10b0373a8429bf0c0"
+    },
+    {
+      "file": "paint-mask.json",
+      "bytes": 43700,
+      "sha256": "424c71ea441f12bb7d98529ca08f7f604361b4b990fc1a23d7b1d9a020afc937"
+    },
+    {
+      "file": "combined-row-proof.json",
+      "bytes": 1757,
+      "sha256": "b71578e083c9d2c24935815f0acb9f877e64655c7b59f848179fc16d739fd8bc"
+    },
+    {
+      "file": "combined-finite-frame-audit.json",
+      "bytes": 18173,
+      "sha256": "11a98f5adb541260bf8447be11d78b60d789fde2ad20537d84b8630ddf191cf2"
+    },
+    {
+      "file": "channel-diagnosis/paint-report.json",
+      "bytes": 15551,
+      "sha256": "bc6c0f2c9a78bbfdc3495ac667963650bb2e587d49ef41733c016f7e80732fd6"
+    },
+    {
+      "file": "material-paint/paint-report.json",
+      "bytes": 54932,
+      "sha256": "ffa4730939de9f6825b883cdae80adc788ba446d64b0fa356932634bbe9c0be4"
+    },
+    {
+      "file": "material-paint/albedo-clone.png",
+      "bytes": 1504830,
+      "sha256": "07f5669cf90b01d0bff3314b87d9885168b64c19b1b228c971f896c9cf1b03e1"
+    },
+    {
+      "file": "material-paint/normal-clone.png",
+      "bytes": 1787090,
+      "sha256": "0e8ea3d20720086b8342fae096ba38019ec7710164a5ae6fed597f30081476a9"
+    },
+    {
+      "file": "embedded-pixel-audit.json",
+      "bytes": 3085,
+      "sha256": "0de201649fda9cccdfb6c21b290806a8731472d57a456554cd2dfa4eb122b833"
+    },
+    {
+      "file": "inspection.json",
+      "bytes": 3789,
+      "sha256": "f10c73dfc6f54cf28654f184fbe81e262a5123798423e39ca0f418fa2307e7b9"
+    },
+    {
+      "file": "visual-review.json",
+      "bytes": 1128,
+      "sha256": "0aa6653480593dcfe37f1484d3eb2876b5cbe8b65e24a04bbb9701f4381ee588"
+    },
+    {
+      "file": "comparison/comparison.json",
+      "bytes": 4013,
+      "sha256": "dd8265989496f93ca52023e9f3a218cf5df4dcb12140993d86ce15ca17492701"
+    },
+    {
+      "file": "comparison/candidate-close-idle-mid.png",
+      "bytes": 675013,
+      "sha256": "207bc5b2d4dc52f3e7a48f7d4b32949e9649a07451e5a77c108a72287c51aac7"
+    },
+    {
+      "file": "comparison/candidate-close-idle0.png",
+      "bytes": 674426,
+      "sha256": "95ea9781bbcb6e524bf4c68e641895ad1826cba0b7d07a3402fa4a7105c1a4f9"
+    },
+    {
+      "file": "comparison/candidate-full-idle0.png",
+      "bytes": 354129,
+      "sha256": "4096d273ebd0d6bccd0f60465a7dd66f86a8bbfb750100992b34ce423bc5775f"
+    },
+    {
+      "file": "comparison/original-close-idle-mid.png",
+      "bytes": 678226,
+      "sha256": "643ce6fb05f07c3d6c311b212e9d0952cc2ab5131c2230bad7acd4a3b017a358"
+    },
+    {
+      "file": "comparison/original-close-idle0.png",
+      "bytes": 677582,
+      "sha256": "36340cbc76573c2684a4bff910690035c49e23592ea26247803322ae677877a3"
+    },
+    {
+      "file": "comparison/original-full-idle0.png",
+      "bytes": 354344,
+      "sha256": "c2bd874a3463851900ad5a8ca713e2acc47022fe800607a15ae21562e07184ea"
+    },
+    {
+      "file": "postimport-image-audit.json",
+      "bytes": 25269,
+      "sha256": "a9c760d48a31bc8bddfa36a98c2881e1e2cf15c2ff3e4fe64377f55b4d98a4a8"
+    }
+  ],
+  "provenance_files": [
+    {
+      "file": "art_source/production/candidates/erin-002/erin-idle-one-ring.glb",
+      "bytes": 5611732,
+      "sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8"
+    },
+    {
+      "file": "art_source/production/hub_npcs/correct_local_normals.py",
+      "bytes": 5798,
+      "sha256": "2af28fe6cff34c863c07d501b5dfa4434124b5fde2810ebdf9a1432d1ac5b771"
+    },
+    {
+      "file": "art_source/production/hub_npcs/audit_robe_repair.py",
+      "bytes": 10382,
+      "sha256": "8bb0ac4ea7a3a3be267a9889a26f8df4dd8af3b60e4b7ee0cc6119342bf60d31"
+    },
+    {
+      "file": "art_source/production/hub_npcs/prepare_robe_paint_mask.py",
+      "bytes": 4039,
+      "sha256": "a2aed8284ec85310064bb6f9bcd4b0cb27770861599d39fdbfc79c315d9f80d4"
+    },
+    {
+      "file": "art_source/production/hub_npcs/clone_robe_texture.py",
+      "bytes": 9509,
+      "sha256": "c5c5523496dc33aaffe8186bb62ce4014671ee8f214ca3b81b7e914b7bc9bc2c"
+    },
+    {
+      "file": "art_source/production/hub_npcs/provider-run.json",
+      "bytes": 5736,
+      "sha256": "f506d738cb114146ef74173c86a9494a8da40ddf551aed427a9b5725cf6330fc"
+    },
+    {
+      "file": "art_source/production/hub_npcs/render_robe_comparison.py",
+      "bytes": 4443,
+      "sha256": "064f385311123826490a8cfdbfd6f70473150647135424893f912c6bbc4d7e3e"
+    },
+    {
+      "file": "art_source/production/hub_npcs/audit_robe_pixels.py",
+      "bytes": 5353,
+      "sha256": "7e8da51c2f74db31c75329dc6bf5cbf7caa4bcce47d6d65aba0e78194c1eac8f"
+    }
+  ],
+  "limitations": [
+    "Provisional NPC prototype; small blue tip, dark tails and deep garment slits remain",
+    "No final native/imported-game/q0q1/browser/package/hardware/continuous-cloth/AAA approval until corresponding actual gates complete",
+    "Unchanged raw provider sources and historical001/002 are preserved separately"
+  ],
+  "runtime_installation": {
+    "file": "game/assets/models/production/erin_idle_gameplay.glb",
+    "bytes": 8903772,
+    "sha256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63"
+  },
+  "profile": {
+    "rest_height_m": 1.7,
+    "rest_floor_m": -2.770138962659985e-07,
+    "forward": "minus_z_after_wrapper_pi",
+    "presenter_extra_yaw_pi": false,
+    "idle_name": "idle",
+    "idle_duration_s": 10.166666666666666,
+    "bones": 53,
+    "triangles": 16000,
+    "textures": [
+      {
+        "index": 0,
+        "name": "0-normal",
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "bit_depth": 8,
+        "color_type": 2,
+        "encoded_bytes": 1787090,
+        "sha256": "0e8ea3d20720086b8342fae096ba38019ec7710164a5ae6fed597f30081476a9"
+      },
+      {
+        "index": 1,
+        "name": "Image_1",
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "bit_depth": 8,
+        "color_type": 2,
+        "encoded_bytes": 868384,
+        "sha256": "af5254d385972a80c1111ddcc910988130daabdbcdf9f611c8796a80b7ab6e45"
+      },
+      {
+        "index": 2,
+        "name": "Image_0",
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "bit_depth": 8,
+        "color_type": 2,
+        "encoded_bytes": 1504830,
+        "sha256": "07f5669cf90b01d0bff3314b87d9885168b64c19b1b228c971f896c9cf1b03e1"
+      }
+    ],
+    "images_names_indices": [
+      {
+        "index": 0,
+        "name": "0-normal"
+      },
+      {
+        "index": 1,
+        "name": "Image_1"
+      },
+      {
+        "index": 2,
+        "name": "Image_0"
+      }
+    ]
+  },
+  "channel_decision": {
+    "diagnosis": "channel-diagnosis/paint-report.json",
+    "applied": [
+      "gray_front_cloth albedo.RGB",
+      "gray_front_cloth normal.RGB normalized only within mask"
+    ],
+    "excluded": [
+      "AO.R: actualROI and neighbor both near1, no artifact basis",
+      "EntireORM: unchanged original encoded PNG, including roughnessG/metallicB",
+      "tiny-tail image clone: proposed donor was dark/different cloth chart; rejected"
+    ],
+    "source_clone_provenance": "Adjacent original ivory weave within owned model atlas; no new generated model/image or purchases",
+    "normal_quantization": {
+      "length_min": 0.9955765294105272,
+      "length_max": 1.0048020036369751,
+      "maximum_abs_length_error": 0.0048020036369751384,
+      "zero_vectors": 0,
+      "normalization_scope": "Blender normalized only painted mask RGB before8bit PNG quantization; outside pixels were never normalized"
+    }
+  }
+}

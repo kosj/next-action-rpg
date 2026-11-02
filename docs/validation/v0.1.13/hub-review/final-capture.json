@@ -1,0 +1,771 @@
+{
+  "scope": "Deterministic actual Game/hub characters/checkpoint scene-view comparison in native Compatibility at1280x720. Prescribed transforms, idle pose and frozen physics are fixture controls, not real-input gameplay. NPC full-body framing is not detailed face/finger or motion acceptance. Native quality0 balanced has1.0 render scale; quality1 performance.65. Web/DPR, interactive motion/AV, hardware performance and AAA remain separate.",
+  "status": "deterministic_actual_scene_captured",
+  "takes": {
+    "after": {
+      "actual": {
+        "shots": 8,
+        "original_rasters": [
+          {
+            "file": "hubwide-q0.png",
+            "sha256": "264ac88e5649be5312e3d31f47e3e041c5ad6a69eccde3d2e01a57a1922b3a8d",
+            "rgb_means": [
+              119.23402452256944,
+              104.30282877604166,
+              86.88037326388888
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "erin-q0.png",
+            "sha256": "923758ea4adf4d72d8cf2798be07b126ff04b658a6eaa87c1959e65a88565187",
+            "rgb_means": [
+              98.71438042534722,
+              86.04383680555556,
+              71.93319986979166
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "roen-q0.png",
+            "sha256": "ac0837de9512ecfc506e0e22303ee1c28327b51eed345c999044be8cce3b3cb9",
+            "rgb_means": [
+              102.05367730034722,
+              92.87506293402778,
+              77.51777777777778
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "checkpoint-q0.png",
+            "sha256": "1e6cd73cc36198583973ab652d2bddefda1fd2aca2a211fcd94d2d20cf7864b7",
+            "rgb_means": [
+              113.0183572048611,
+              95.91521484375,
+              77.53325412326389
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "hubwide-q1.png",
+            "sha256": "568fad46cab1e44fa8a53aa6a3a2057925936d3667018185881060565a0df59f",
+            "rgb_means": [
+              100.74250108506945,
+              87.596728515625,
+              73.36472330729167
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "erin-q1.png",
+            "sha256": "f150bc7d282ceb5c0770633d567bb335805147a8660061c4c42f5c6b97601fb5",
+            "rgb_means": [
+              85.66901150173611,
+              74.06419596354166,
+              62.03250108506944
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "roen-q1.png",
+            "sha256": "28fc3f82211c8ddaeb41eec462ff26d8d8ff6279ba082d192298a5f34e56697d",
+            "rgb_means": [
+              87.46080729166667,
+              79.89182074652778,
+              66.23046006944445
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          },
+          {
+            "file": "checkpoint-q1.png",
+            "sha256": "9afee015ce772bd358a1fff57a58acdf376fb23daf4a9020f39cb3a36df77881",
+            "rgb_means": [
+              97.27593315972223,
+              82.07021592881945,
+              66.19366319444444
+            ],
+            "scope": "Raw dimension/hash/nonblack sanity, not visual-quality approval"
+          }
+        ],
+        "renderer": "gl_compatibility",
+        "quality_policy_observed": "0 balanced/shadowsON/native1.0;1 performance/shadowsOFF/native.65"
+      },
+      "source_inputs_unchanged": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ]
+    }
+  },
+  "started_unix": 1793597690.367979,
+  "processes_closed": true,
+  "display_tcp_disabled": true,
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "paired_comparison": {
+    "scope": "Matched actual cameras/origins/quality/static collision/RNG; NPC presentation basis may intentionally change, without fixture model rotation",
+    "shots": 8,
+    "npc_presentation_basis_comparison": [
+      {
+        "view": "hubwide",
+        "quality": 0,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "hubwide",
+        "quality": 0,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "erin",
+        "quality": 0,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "erin",
+        "quality": 0,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "roen",
+        "quality": 0,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "roen",
+        "quality": 0,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "checkpoint",
+        "quality": 0,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "checkpoint",
+        "quality": 0,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "hubwide",
+        "quality": 1,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "hubwide",
+        "quality": 1,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "erin",
+        "quality": 1,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "erin",
+        "quality": 1,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "roen",
+        "quality": 1,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "roen",
+        "quality": 1,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "checkpoint",
+        "quality": 1,
+        "npc_index": 0,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      },
+      {
+        "view": "checkpoint",
+        "quality": 1,
+        "npc_index": 1,
+        "origin_identical": true,
+        "presentation_basis_changed": true,
+        "before_basis": [
+          [
+            0.764842212200165,
+            0.0,
+            -0.644217669963837
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.644217669963837,
+            0.0,
+            0.764842212200165
+          ]
+        ],
+        "after_basis": [
+          [
+            -0.242535665631294,
+            0.0,
+            -0.970142483711243
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.970142483711243,
+            0.0,
+            -0.242535665631294
+          ]
+        ]
+      }
+    ],
+    "before_report": "/workspace/next-action-rpg/build/art-review/hub-art-paired-001/before/scene-review.json",
+    "before_report_sha256": "a1644f6288df8f81cc05c951ed2fa884ef6e2bbeb76e2ab81e8226ecf217f431",
+    "after_report": "/workspace/next-action-rpg/build/art-review/hub-art-candidate-002/after/scene-review.json",
+    "after_report_sha256": "272d1fc746d1127e2a58198ad97d63a332377f34db3325e8b887c1b9ad80b634"
+  },
+  "elapsed_s": 99.94755816459656
+}

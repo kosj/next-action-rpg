@@ -1,0 +1,504 @@
+{
+  "scope": "Exact current88 runtime source bytes +actual14Web export +twoZIP manifest before root localdesktop ends. Dirty cb038 preview, not clean Git source/CI/public approval. Git source/catalog/bundle commits remain future root-owned.",
+  "observed_at": "2026-11-02T05:42:18.823525+00:00",
+  "source_head": "cb038edf487f9a0ad7c7ed1c7c7606e6df5b3578",
+  "source_tree_dirty": true,
+  "reviewed_runtime_source_fingerprint_sha256": "8083f246602eb40708e5e3d4b2bee5c750194bcfa6051b348beb9c6b692f1783",
+  "fingerprint_scope": "Canonical selected88source map, NOT a Git tree hash",
+  "source_count": 88,
+  "source_files": {
+    "tools/mobile_browser_smoke.py": {
+      "bytes": 70022,
+      "sha256": "182ca37c642688a2afc104c1ee314652fb9d7994aaa515b94877623a1e4c1f78"
+    },
+    "tools/check_mobile_web.py": {
+      "bytes": 8384,
+      "sha256": "4373cd1983a893ff3ad50b7246dd7bb32c93c95a90a8928405d7c6f356bbc9d8"
+    },
+    "tools/browser_smoke.py": {
+      "bytes": 36574,
+      "sha256": "d99174781235b713cdb25b8d1df599ec779ddd1607bc8cdb669b17f2e9a34f9c"
+    },
+    "game/project.godot": {
+      "bytes": 1145,
+      "sha256": "03e60420e59714f2bd0f468e16235da06dba5e44b8b56a5550ec8ad84db2662f"
+    },
+    "game/scripts/ui/touch_controls.gd": {
+      "bytes": 23924,
+      "sha256": "5298e8029e904ff1f55c493579d2681de93ac733780e9b0bff0493d8675d9379"
+    },
+    "game/scripts/ui/hud.gd": {
+      "bytes": 35638,
+      "sha256": "09f4324de1c374e5aacb2ed9d56f67e8a47fea95a05e17ebb15d9bbf0940e5a5"
+    },
+    "game/scripts/actors/player.gd": {
+      "bytes": 13784,
+      "sha256": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37"
+    },
+    "game/scripts/game.gd": {
+      "bytes": 26555,
+      "sha256": "08bc5ea21bf6f0016bd1f80f1d2d88cf5b9837955d9b6ea1589aa6848aeeacd9"
+    },
+    "game/scripts/world/camera_rig.gd": {
+      "bytes": 11438,
+      "sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476"
+    },
+    "game/web/shell.html": {
+      "bytes": 2801,
+      "sha256": "bfff40f89996377ef7e1765828aa3c135c16368dff02954e4a749844094014d1"
+    },
+    "game/assets/models/production/lyra_fury_gameplay.glb": {
+      "bytes": 25032860,
+      "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "game/assets/models/production/lyra_eyes.glb": {
+      "bytes": 112488,
+      "sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4"
+    },
+    "game/assets/models/production/sentinel_weight_gameplay.glb": {
+      "bytes": 17533004,
+      "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+    },
+    "tools/charged_heavy_browser_smoke.py": {
+      "bytes": 22934,
+      "sha256": "d48fd3d32f92be984f4235168312e0217acdb8571e2a15f2f6758baad31906d8"
+    },
+    "game/scripts/core/strike.gd": {
+      "bytes": 12738,
+      "sha256": "8754bc85571ea03f90ceb93fc925be5c24ea8df17af44a2e9c7ceaae856a0e2d"
+    },
+    "game/scripts/core/attack_data.gd": {
+      "bytes": 9413,
+      "sha256": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce"
+    },
+    "game/scripts/actors/enemy.gd": {
+      "bytes": 14315,
+      "sha256": "99792767e312ed25db89264890fc2cebc4295f22289edd5adbde07296fe4fab4"
+    },
+    "game/data/charged_heavy.tres": {
+      "bytes": 816,
+      "sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f"
+    },
+    "game/data/charged_blade_curve.json": {
+      "bytes": 23480,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
+    },
+    "game/data/heavy.tres": {
+      "bytes": 312,
+      "sha256": "c5bc54117c7a9215ddc99f28f265a986c83da951394ed52e3cefa2c6788fe7fb"
+    },
+    "game/scripts/core/audio.gd": {
+      "bytes": 8714,
+      "sha256": "7b346ec6048cf58c182cde05a282929f45f2c181a2084cbb43b9a42a1a741031"
+    },
+    "game/import/impact_animation_sampling.gd": {
+      "bytes": 1209,
+      "sha256": "f8554258d11431f6b56a9111873f605ae7a212eb3b98a1114e464375ac3cbd03"
+    },
+    "game/assets/models/production/lyra_fury_gameplay.glb.import": {
+      "bytes": 1336,
+      "sha256": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3"
+    },
+    "game/assets/models/production/sentinel_weight_gameplay.glb.import": {
+      "bytes": 1313,
+      "sha256": "d682ecf3aeaab3b9d2941a3387f2780440f53720aa32c6d13e681814ef1a56e5"
+    },
+    "game/scripts/world/impact_effect.gd": {
+      "bytes": 15794,
+      "sha256": "fc39d672b17809a432acb2522b50cf6fefca90415115440d8c88f851ab111049"
+    },
+    "game/scripts/actors/actor_visual.gd": {
+      "bytes": 12999,
+      "sha256": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec"
+    },
+    "game/scripts/actors/production_character_art.gd": {
+      "bytes": 5791,
+      "sha256": "0223cc99aac61f5f0c690490646489855f0b34cbdf1431dc557a3e173480e26e"
+    },
+    "game/scripts/actors/skeletal_visual_bridge.gd": {
+      "bytes": 25125,
+      "sha256": "1f5e48addbe36dad3db48bfcc1f916230006a9a98a62c80283588707ac0dc152"
+    },
+    "game/scripts/world/sanctuary.gd": {
+      "bytes": 16988,
+      "sha256": "060ffc8d07434ab6dfbbb20f8e1b56924065c7276f6869dece9dce326c85fbdd"
+    },
+    "game/scripts/actors/grounding_shadow.gd": {
+      "bytes": 6677,
+      "sha256": "b1c9b2a8251e7d862c27c8996b4e08d1feecbc26f27d8fcad6550f7385ebfa79"
+    },
+    "game/assets/shaders/grounding_shadow.gdshader": {
+      "bytes": 453,
+      "sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58"
+    },
+    "game/assets/shaders/sanctuary_sky.gdshader": {
+      "bytes": 3257,
+      "sha256": "55672c49b6d887762739474256ea489b7c0c2db50d91cbd604928f24e9aabcf3"
+    },
+    "game/scripts/world/sanctuary_backdrop.gd": {
+      "bytes": 14393,
+      "sha256": "43c3e4de69732e790c6a2d15dd3686677b4d44d4f4e80b85b0aacf5b30349cab"
+    },
+    "game/scripts/world/hub_npc.gd": {
+      "bytes": 8469,
+      "sha256": "9c07128087122a567b8f3b0c35d92f87f47d5765820d715c125608d052814850"
+    },
+    "game/scripts/world/checkpoint_relic.gd": {
+      "bytes": 11964,
+      "sha256": "eacb7c38ecefed7479cc7f7ef563cb01b8795255a0dda05a24d888e0928cb5c0"
+    },
+    "game/scripts/world/hub_grounding_shadow.gd": {
+      "bytes": 5550,
+      "sha256": "50c1be38456691a9d3fe06f980d3023ec7eb320aa697532b5666e9bf3953f3d6"
+    },
+    "game/assets/shaders/checkpoint_crystal.gdshader": {
+      "bytes": 2037,
+      "sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05"
+    },
+    "game/assets/models/production/erin_idle_gameplay.glb": {
+      "bytes": 8903772,
+      "sha256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63"
+    },
+    "game/assets/models/production/erin_idle_gameplay.glb.import": {
+      "bytes": 1194,
+      "sha256": "c3da6e128c188a38a7521975b4dd8701a18ce6956573b9edfae7d3e1abe7eaf2"
+    },
+    "game/assets/models/production/roen_idle_gameplay.glb": {
+      "bytes": 5387148,
+      "sha256": "76e50dcfa1cc693478f0040dea98401d37346abd7b21ba2dbcf314966b00a049"
+    },
+    "game/assets/models/production/roen_idle_gameplay.glb.import": {
+      "bytes": 1194,
+      "sha256": "57ee02096f82827616f0292f32c701483f2ac51f9088dfbe8e3db9afcf1f72de"
+    },
+    "game/assets/fonts/runefall_kr430.ttf": {
+      "bytes": 6224172,
+      "sha256": "038bb3e475466a2ffec9b78acc4d0d6ca10b558a02214e371fe7f7993eb609b3"
+    },
+    "game/assets/fonts/runefall_kr430.ttf.import": {
+      "bytes": 780,
+      "sha256": "ad36b55c3761f353e9039f7651ae1209affc7526034753fb642e35b6e00c20db"
+    },
+    "game/assets/materials/courtyard/floor_stone.tres": {
+      "bytes": 780,
+      "sha256": "3dad005107be7549c534e33c4ab600318270a373f17efd4c07f4f2b18528ea74"
+    },
+    "game/assets/materials/courtyard/wall_limestone.tres": {
+      "bytes": 770,
+      "sha256": "5e637a911deab929fce614afc982269ccabcf68a17e8c9cdee3e3aa0d60bd26b"
+    },
+    "game/assets/materials/courtyard/floor_albedo.jpg": {
+      "bytes": 3021140,
+      "sha256": "aa12137fff1728bbbfe98b30480e33a34cba3b5c096575702c1d66939214e14a"
+    },
+    "game/assets/materials/courtyard/floor_normal.jpg": {
+      "bytes": 1063115,
+      "sha256": "f2f1c3e8d52c1e3a49ef59695743872f2adaa57bc0d3f64b129ce988966162c1"
+    },
+    "game/assets/materials/courtyard/floor_arm.jpg": {
+      "bytes": 645382,
+      "sha256": "66674e9eac9ac60e2124890f63fde95b967f9e1c6f5ee3b07df77cdb9e024457"
+    },
+    "game/assets/materials/courtyard/wall_albedo.jpg": {
+      "bytes": 910262,
+      "sha256": "0a43c8bc80581408f9c700ad98d2de64280e694148e37626d6648fdddf47a777"
+    },
+    "game/assets/materials/courtyard/wall_normal.jpg": {
+      "bytes": 826220,
+      "sha256": "14eb23e29a347b97394c65a6f1fe2c7c107da55b18fb95b912c7280c5a43b72d"
+    },
+    "game/assets/materials/courtyard/wall_arm.jpg": {
+      "bytes": 683632,
+      "sha256": "ec4642059b7dd9baf3f89830b9968710f69601874516ffdc2922b822163a90dc"
+    },
+    "tools/author_impact_actions.py": {
+      "bytes": 17442,
+      "sha256": "e188f6a4eeaaec169cd293300562cbe175871c87b514b77fcc3633d25aadeae5"
+    },
+    "tools/author_character_actions.py": {
+      "bytes": 28247,
+      "sha256": "59f1ac4f216bd227826c248812109ceefa14e544122b877599e06167d43ecc40"
+    },
+    "tools/author_weight_actions.py": {
+      "bytes": 28914,
+      "sha256": "9f42783aaeb6abf034a20d819430757e6a7528ac2e470be462b1ca91c54212a4"
+    },
+    "tools/author_fury_actions.py": {
+      "bytes": 17761,
+      "sha256": "2450a983ec4904010b2f474243b5f5d0651107864956284dc17b0c909955f106"
+    },
+    "tools/derive_greatsword_profile.py": {
+      "bytes": 8153,
+      "sha256": "c095dd64300cba0dbdeb4fed8d022d3727f6fa1108c030cb98a70cc56d3816d0"
+    },
+    "game/assets/models/production/rune_sword_web.glb": {
+      "bytes": 7536756,
+      "sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448"
+    },
+    "game/assets/models/production/rune_greatsword_geometry.glb": {
+      "bytes": 160248,
+      "sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b"
+    },
+    "game/assets/models/production/rune_greatsword_geometry.glb.import": {
+      "bytes": 1212,
+      "sha256": "28e6141b02ce7c2cb6233fb573565679642029719d4ba1c72f640bd79ac5178e"
+    },
+    "game/scripts/actors/blade_trail.gd": {
+      "bytes": 6325,
+      "sha256": "cd59bd31e839c7b318b1c8d4a211dc4b7504f058a4fed889b61ca9b44e675ff5"
+    },
+    "art_source/production/character_actions/lyra-fury.json": {
+      "bytes": 2167,
+      "sha256": "99cb571883a179df9ce32744e0940d6e654648ed7cb8ecc4d05cafea09ddf286"
+    },
+    "tools/author_sentinel_recovery.py": {
+      "bytes": 4734,
+      "sha256": "81bdca3b3438425162c4824eef871a02385a66f88eacf62109db0583ed97b086"
+    },
+    "art_source/production/character_actions/lyra-weight.json": {
+      "bytes": 2488,
+      "sha256": "96f0d71343b9abcd9c132492836b92b64a4518618a8ed96bab1696a022721f93"
+    },
+    "art_source/production/character_actions/sentinel-weight.json": {
+      "bytes": 2103,
+      "sha256": "e6c39bee6c15155d7508f8f90dda75ced77785bf2e3bf58a8008e04f9275536d"
+    },
+    "art_source/production/character_actions/sentinel-weight-recovery.json": {
+      "bytes": 2215,
+      "sha256": "6bcf3d9bce9cf0ff558f719c8c75d20b21d843f81e59ef271650fbb028b413ef"
+    },
+    "tools/generate_impact_audio.py": {
+      "bytes": 7025,
+      "sha256": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300"
+    },
+    "tools/render_impact_review.py": {
+      "bytes": 6314,
+      "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
+    },
+    "game/assets/models/production/erin_idle_gameplay_0-normal.png": {
+      "bytes": 1787090,
+      "sha256": "0e8ea3d20720086b8342fae096ba38019ec7710164a5ae6fed597f30081476a9"
+    },
+    "game/assets/models/production/erin_idle_gameplay_0-normal.png.import": {
+      "bytes": 1075,
+      "sha256": "4cc1896fb804c1f4715a99be18990cb5e4b817f1ee259f933a43716858244aad"
+    },
+    "game/assets/models/production/erin_idle_gameplay_Image_0.png": {
+      "bytes": 1504830,
+      "sha256": "07f5669cf90b01d0bff3314b87d9885168b64c19b1b228c971f896c9cf1b03e1"
+    },
+    "game/assets/models/production/erin_idle_gameplay_Image_0.png.import": {
+      "bytes": 1073,
+      "sha256": "9f56f7387ecb65bd1cb00a911b577d19df9aedbff0f6e353636262b7189e20d0"
+    },
+    "game/assets/models/production/erin_idle_gameplay_Image_1.png": {
+      "bytes": 868384,
+      "sha256": "af5254d385972a80c1111ddcc910988130daabdbcdf9f611c8796a80b7ab6e45"
+    },
+    "game/assets/models/production/erin_idle_gameplay_Image_1.png.import": {
+      "bytes": 1073,
+      "sha256": "6b420a7dc92ef284dac48b7bb3cc7cbd43698da7b944426e48db632ebfc597c7"
+    },
+    "game/assets/models/production/roen_idle_gameplay_0-normal.png": {
+      "bytes": 1701219,
+      "sha256": "62fe13a3149b91e2b43494ff399f243a07569e01d3aaef7e30333f3843a4161e"
+    },
+    "game/assets/models/production/roen_idle_gameplay_0-normal.png.import": {
+      "bytes": 1076,
+      "sha256": "fa34b68077cbb57b4916be13a840f7a9b7ceab3b81aad592efe8d70ed6a2a9cb"
+    },
+    "game/assets/models/production/roen_idle_gameplay_Image_0.png": {
+      "bytes": 1352151,
+      "sha256": "a7d51f54371de701826966b0747408d9cd1d6d9aa6550f7a48e6df1dc514ad75"
+    },
+    "game/assets/models/production/roen_idle_gameplay_Image_0.png.import": {
+      "bytes": 1073,
+      "sha256": "cdff209333ee7a852bba14b1d0025f95a59a46f8455573a6154433f42aa7f9d0"
+    },
+    "game/assets/models/production/roen_idle_gameplay_Image_1.png": {
+      "bytes": 842364,
+      "sha256": "bcca3a478d5024921f50f27da5195b12ec16b77e1cd13ceab285faccee7e9002"
+    },
+    "game/assets/models/production/roen_idle_gameplay_Image_1.png.import": {
+      "bytes": 1073,
+      "sha256": "e455b518114eeb5c0044dd176738e50245172a66daf5698db8c7f88069af881f"
+    },
+    "game/assets/audio/impact/body_thump.wav": {
+      "bytes": 31796,
+      "sha256": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c"
+    },
+    "game/assets/audio/impact/charge_sub.wav": {
+      "bytes": 56492,
+      "sha256": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1"
+    },
+    "game/assets/audio/impact/contact_tick.wav": {
+      "bytes": 11508,
+      "sha256": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad"
+    },
+    "game/assets/audio/impact/debris_tail.wav": {
+      "bytes": 74132,
+      "sha256": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48"
+    },
+    "game/assets/audio/impact/metal_block.wav": {
+      "bytes": 51200,
+      "sha256": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706"
+    },
+    "game/assets/audio/impact/metal_heavy.wav": {
+      "bytes": 58256,
+      "sha256": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899"
+    },
+    "game/assets/audio/impact/metal_light.wav": {
+      "bytes": 38852,
+      "sha256": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85"
+    },
+    "game/assets/audio/impact/swing_charged.wav": {
+      "bytes": 104120,
+      "sha256": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070"
+    },
+    "game/assets/audio/impact/swing_heavy.wav": {
+      "bytes": 79424,
+      "sha256": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf"
+    }
+  },
+  "export_files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "FONT_LICENSE.txt": {
+      "bytes": 4387,
+      "sha256": "babcfe66c8a098b2fa279bc724a3a342f8124f77ce18941fbcc1bbb39823cded"
+    },
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_THIRD_PARTY.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 5622,
+      "sha256": "619d7431c87a61796a3a517aaa9fed020e20ea31df7230727799861f53c9760b"
+    },
+    "index.apple-touch-icon.png": {
+      "bytes": 13924,
+      "sha256": "8d9d0843eada10bcc4c20c4e6902530f7b9c7a1a58b79bc387acccf31e5726ff"
+    },
+    "index.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "index.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 3171,
+      "sha256": "6d7fe8a4c583f37589768de1ea2dd7b22317b7e9122e1719be5b5de837fdcf27"
+    },
+    "index.icon.png": {
+      "bytes": 5215,
+      "sha256": "a5bb45d651520feb14673be8b122b33398dbdbcaf6ea2bd715a526456b7eba97"
+    },
+    "index.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "index.pck": {
+      "bytes": 109745420,
+      "sha256": "744c4571fc8b7eba80c32135276a2e36eb43bfd72fb7197c69804c43b73adb2e"
+    },
+    "index.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "index.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "raw_web_bytes": 149705279,
+  "manifest": {
+    "version": "0.1.13",
+    "godot": "4.7.2",
+    "commit": "cb038edf",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119076424,
+        "sha256": "f6961054bf8b392e34c7b9d55adf9d48a53efedc3b5888fe6ca7cd807a7abd7e"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146917780,
+        "sha256": "9df1537db0e2f9853825f4c109279c2d2cee982d77049cf68aad254401f0705f"
+      }
+    ]
+  },
+  "manifest_file": {
+    "bytes": 406,
+    "sha256": "debd65df7acf69dd787fb25196bece02f4639947fe48d7b227982fb5d3997d37"
+  },
+  "artifact_files": {
+    "runefall-web.zip": {
+      "bytes": 119076424,
+      "sha256": "f6961054bf8b392e34c7b9d55adf9d48a53efedc3b5888fe6ca7cd807a7abd7e"
+    },
+    "runefall-windows.zip": {
+      "bytes": 146917780,
+      "sha256": "9df1537db0e2f9853825f4c109279c2d2cee982d77049cf68aad254401f0705f"
+    }
+  },
+  "runtime_package_audit": {
+    "path": "/workspace/next-action-rpg/build/verification/v0.1.13/runtime-package-grounding-002.json",
+    "file": {
+      "bytes": 26152,
+      "sha256": "f70ddd9f7714d33419d881b20e7485484119d464f073d5ad25bc330947e2f24e"
+    },
+    "passed": true
+  },
+  "native": {
+    "checks": 601,
+    "failures": 0,
+    "log": "/workspace/.runefall-task/hub-character-relic-polish/native-export-grounding-002.log",
+    "file": {
+      "bytes": 105409,
+      "sha256": "8bf9d3c07f191aa0c1d3290c35bc3ba8d86d4b929fa77535ebdd71428182219e"
+    },
+    "scope": "Exact post-grounding selected003 native+export generation"
+  },
+  "expected_runtime_contracts": {
+    "roles": {
+      "erin": "res://assets/models/production/erin_idle_gameplay.glb",
+      "roen": "res://assets/models/production/roen_idle_gameplay.glb"
+    },
+    "idle": {
+      "clip": "idle",
+      "bones_per_model": 53,
+      "per_instance_looped_resources": true
+    },
+    "font": "res://assets/fonts/runefall_kr430.ttf",
+    "relic_profile": "checkpoint_relic_v013",
+    "relic_shader": "res://assets/shaders/checkpoint_crystal.gdshader",
+    "hub_grounding": {
+      "source": "game/scripts/world/hub_grounding_shadow.gd",
+      "shader": "res://assets/shaders/grounding_shadow.gdshader",
+      "static_root_only": true,
+      "maximum_per_sanctuary": 2,
+      "actor8_budget_separate": true,
+      "q0": "hidden immediately",
+      "q1": "one layer1 support query after registration per toggle, cached thereafter",
+      "opacity": 0.21,
+      "normal_up_dot_min": 0.65,
+      "normal_offset_m": 0.012,
+      "no_animated_foot_or_physical_shadow_claim": true
+    }
+  },
+  "visual_scope": "Root directly adopted same-fixture q1 ground contact prototype only; q0 bytes unchanged. Erin hem/tip/slit/fullskin/AV/hardware/AAA pending.",
+  "curation": {
+    "raw_sha256": "439068df21c508d71793f0762d50e83af45fe120c7eb457be215809d72402933",
+    "raw_bytes": 23900,
+    "scope": "Read-only subset of actual88 runtime/export freeze; omits session worktree listing, absolute export directory and import cache marker. No browser result inferred."
+  }
+}

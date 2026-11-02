@@ -1,0 +1,59 @@
+{
+  "checked_on": "2026-11-02",
+  "method": "Per-source official reference review; archived docs bytes checked locally, pinned engine code range cited in the relic static audit.",
+  "scope": "Spatial shader properties/render-mode/transparency behavior only. Not new relic shader compile, sorting, raster, performance or AAA approval.",
+  "sources": [
+    {
+      "file": "spatial_shader.rst",
+      "url": "https://github.com/godotengine/godot-docs/blob/4.7/tutorials/shaders/shader_reference/spatial_shader.rst",
+      "bytes": 68157,
+      "sha256": "fca41f1c6f3de882943fe5bedc950bf2cd9db56c026a36ab76b7065728da1bda",
+      "read_ranges": [
+        [
+          19,
+          29
+        ],
+        [
+          46,
+          70
+        ],
+        [
+          379,
+          386
+        ],
+        [
+          466,
+          467
+        ],
+        [
+          488,
+          490
+        ],
+        [
+          524,
+          540
+        ],
+        [
+          638,
+          648
+        ]
+      ]
+    },
+    {
+      "file": "scene/resources/material.cpp",
+      "url": "https://github.com/godotengine/godot/blob/4.7.2-stable/scene/resources/material.cpp#L1357",
+      "read_ranges": [
+        [
+          1357,
+          1389
+        ]
+      ],
+      "revision_scope": "Pinned4.7.2-stable source range; raw source SHA not archived in this ledger.",
+      "finding": "BaseMaterial3D world-triplanar path regenerates TANGENT/BINORMAL; this material mode does not depend on a stored ordinary UV tangent frame. Ordinary UV normal-map changes need appropriate tangents."
+    }
+  ],
+  "findings": [
+    "ALPHA writes route material into transparent pipeline; transparency introduces sorting and renderer shadow/screen/depth limitations.",
+    "VIEW/COLOR, SPECULAR/ROUGHNESS and EMISSION meanings are relevant to the source shader. Actual visible depth/sorting/occlusion/cost remain camera/runtime gates."
+  ]
+}
