@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "sample_hz": 100,
+  "clips": {
+    "light_1": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_2": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_3": {
+      "startup": 0.18,
+      "active": 0.22,
+      "recovery": 0.3
+    }
+  },
+  "scope": "OnlyLeftArm/ForeArm/Hand TRS in3light clips; exact100Hz worldhandkeytargets. Original body/right hand/feet/otherclips/BIN retained. Oldworldfixedpole and rejected projective-pole branch are not reused.",
+  "status": "candidate_only_pending_raw_skin_native_visual_review",
+  "pole_policy": "Chest-local parallel transport; smooth finite holonomy correction exactly returns authored end pole"
+}

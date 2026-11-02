@@ -1,5 +1,7 @@
 # v0.1.13 허브 인물·룬 성소 검증
 
+[공개 v0.1.13 완료 checkpoint](published-verification.json): PR14/main/tag gates, 실제 공개 desktop/full mobile와 릴리스3파일·묶음1.4.7 다운로드를 확인했다. 첫 공개 mobile timeout과 원인 미확정의 단1회 동일조건 재실행, 별도 optional local narrow 실패는 보존했다. 아래 pending 표시는 당시 source snapshot 기록이며 새 v0.1.14 검증이나 AAA·실기기·연속 AV 승인으로 승계하지 않는다.
+
 2026-11-02 UTC. 공개 v0.1.12/`cb038edf`에서 시작했다. 기록관 Erin·대장장이 Roen, provider idle, 새 relic와 두 static NPC의 성능 모드 접지를 **프로토타입 범위에서 채택**했다. 최종 입력의 native601/0·Web/Windows export·실제 raw Web149,705,279B를 확인했다. 실제 local Web desktop506.152초도 통과했다. full mobile·clean CI·Pages·릴리스는 이 source snapshot에서 pending이다. AAA·전체 의상/skin·연속 AV·목표 하드웨어는 승인하지 않았다.
 
 | gate | 실제 근거와 범위 | 상태 |

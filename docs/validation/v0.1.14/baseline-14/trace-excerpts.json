@@ -1,0 +1,3287 @@
+{
+  "scope": "Exact selected rows from original full frames JSON, not resampled. Four tick rows419/421/570/864 preserve camera/hero/audio/impact context. Full original frames are retained privately and hash-bound; omitted rows are not implied inspected.",
+  "original": {
+    "file": "before/frames.json",
+    "bytes": 7908304,
+    "sha256": "32680e1017b4c2dc52408c18bd4870b3085ef746f8015706543eb4329f12d95f"
+  },
+  "provenance": {
+    "build_id": "0.1.13 · development",
+    "curve": {
+      "interpolation": "linear_grip_tip",
+      "ok": true,
+      "path": "res://data/charged_blade_curve.json",
+      "reason": "",
+      "resource_sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+      "sample_count": 91,
+      "sample_step_s": 0.002,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "engine": {
+      "build": "official",
+      "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "hex": 263938,
+      "major": 4,
+      "minor": 7,
+      "patch": 2,
+      "status": "stable",
+      "string": "4.7.2-stable (official)",
+      "timestamp": 0
+    },
+    "engine_audio_mix_rate": 48000.0,
+    "engine_time_scale": 1.0,
+    "floor_policy": "Unmodified production CharacterBody/CollisionShape; no fixture position or25mm visual bias",
+    "initial_has_save": false,
+    "models": {
+      "hero": {
+        "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+        "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      "sentinel_melee": {
+        "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+        "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+      }
+    },
+    "physics_ticks_per_second": 60,
+    "renderer": "gl_compatibility",
+    "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Engine-mixed PCM is preserved, but numerical audio checks do not establish direct hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+    "source_context": {
+      "application_version": "0.1.13",
+      "baseline_commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+      "commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+      "dirty": false,
+      "display": {
+        "capture_sha256": "9f27bf5db4045baec6e10b50d1f651459569be1564378fb0a8cfdab2316e80a5",
+        "logical_viewport": [
+          1440.0,
+          900.0
+        ],
+        "overrides": {
+          "window/size/window_height_override": "600",
+          "window/size/window_width_override": "960"
+        },
+        "physical_capture_size": [
+          960.0,
+          600.0
+        ],
+        "scope": "Only physical window dimensions overridden; source logical viewport/stretch preserved; native pointers use actual final transform",
+        "source_aspect_preserved": true,
+        "source_sha256": "03e60420e59714f2bd0f468e16235da06dba5e44b8b56a5550ec8ad84db2662f"
+      },
+      "fixture_sha256": {
+        "tests/combat_continuity_capture.gd": "371058d2ea58fa6346c254adb9923ad1532847b3128d8e6dea4f476a09401528",
+        "tests/combat_continuity_capture.tscn": "129e243bdc7866ce2325cfc96d26d7105e4882efcfcc0696080a1be0b8c26ea5"
+      },
+      "helper_sha256": {
+        "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+        "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+      },
+      "kind": "isolated_git_archive",
+      "label": "before",
+      "logical_viewport": [
+        1440.0,
+        900.0
+      ],
+      "physical_capture_size": [
+        960.0,
+        600.0
+      ],
+      "reused_derived_import_cache": {
+        "policy": "Copy only; normal pinned editor import still runs and validates source/dependency hashes before capture",
+        "source": "/workspace/next-action-rpg/game/.godot"
+      },
+      "runner_sha256": "6e97052114085fca5e9f45b149a22bf5a87f92ac8e2b654c876ef33559123fdc",
+      "source_inventory_sha256": "22f8a249d5c605b9412674ed263eba86fa212d91e67d378991e235d61d40c5ed",
+      "tree": "d26b33217d79c273033ad6a7e7ff9be78f8de4df"
+    },
+    "user_data_dir": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/user-data/godot/app_userdata/RUNEFALL · 무너진 성역"
+  },
+  "observed_coverage": {
+    "heal_input_attempts": 1,
+    "light_active_samples": {
+      "light_1": 11,
+      "light_2": 11,
+      "light_3": 14
+    },
+    "maximum_locomotion_displacement_m": 42.1314849853516,
+    "observed_potion_consumptions": 0,
+    "observed_successful_parries": 0,
+    "safe_charged_whiff": true,
+    "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+    "whiff_attack_instance_id": 4
+  },
+  "receipt": [
+    {
+      "amount": 69.3,
+      "attack_elapsed": 0.384,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 6,
+      "audio_observation_scope": "Read after ordinary Game callbacks; Audio report has no serial. Receipt serial remains authoritative; no playback injected or hearing approval.",
+      "audio_presentation_at_receipt": {
+        "effect_player_budget": 32,
+        "effect_players": 6,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "blocked": false,
+          "contact_source": "hurtbox_ray",
+          "density_headroom_db": -3.43820026016113,
+          "epoch": 0,
+          "killed": false,
+          "layers": [
+            {
+              "key": "contact_tick",
+              "volume_db": -20.4382002601611
+            },
+            {
+              "key": "metal_heavy",
+              "volume_db": -16.4382002601611
+            },
+            {
+              "key": "body_thump",
+              "volume_db": -18.4382002601611
+            },
+            {
+              "key": "charge_sub",
+              "volume_db": -21.4382002601611
+            },
+            {
+              "key": "debris_tail",
+              "volume_db": -26.4382002601611
+            }
+          ],
+          "point": [
+            0.342834532260895,
+            1.5865318775177,
+            -32.8770484924316
+          ],
+          "poise_broken": true,
+          "strength": "charged",
+          "style": "charged"
+        },
+        "stopped": false
+      },
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "blocked": false,
+      "contact_blade_grip": [
+        0.183747544884682,
+        1.22644305229187,
+        -32.3096885681152
+      ],
+      "contact_blade_motion": [
+        -9.44780254364014,
+        -7.04646873474121,
+        -11.7446489334106
+      ],
+      "contact_blade_tip": [
+        0.641125917434692,
+        1.87509250640869,
+        -33.196346282959
+      ],
+      "contact_damage_axis_base": [
+        0.312197804450989,
+        1.40860986709595,
+        -32.5586967468262
+      ],
+      "contact_damage_axis_tip": [
+        0.59500378370285,
+        1.80968260765076,
+        -33.1069374084473
+      ],
+      "contact_damage_base": [
+        0.266075670719147,
+        1.34319996833801,
+        -32.4692878723145
+      ],
+      "contact_damage_tip": [
+        0.641125917434692,
+        1.87509250640869,
+        -33.196346282959
+      ],
+      "contact_phase": 0.244444444444444,
+      "contact_source": "hurtbox_ray",
+      "curve_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "curve_source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+      "damage_start_fraction": 0.18,
+      "direction": [
+        -7.25910751953052e-07,
+        0.0,
+        -1.0
+      ],
+      "health_after": 25.7,
+      "health_before": 95.0,
+      "hitstop": 0.075,
+      "killed": false,
+      "material": "metal",
+      "normal": [
+        0.857078433036804,
+        0.0892332047224045,
+        0.507399260997772
+      ],
+      "observed_tick": 570,
+      "physics_frame": 570,
+      "point": [
+        0.342834532260895,
+        1.5865318775177,
+        -32.8770484924316
+      ],
+      "poise_broken": true,
+      "reaction": "heavy_hit",
+      "reaction_duration": 0.48,
+      "requested_recoil_m": 0.35,
+      "source": "player",
+      "source_position": [
+        3.90069590139319e-06,
+        -0.0241607744246721,
+        -31.9867153167725
+      ],
+      "strength": "charged",
+      "target_id": 153847075003,
+      "target_position": [
+        3.10706195705279e-06,
+        0.000838596897665411,
+        -33.0800094604492
+      ],
+      "victim_pause": 0.075
+    }
+  ],
+  "selected_trace_rows": [
+    {
+      "active_encounter": 0,
+      "audio_presentation": {
+        "effect_player_budget": 32,
+        "effect_players": 0,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {},
+        "stopped": false
+      },
+      "camera": {
+        "basis": [
+          [
+            0.266696602106094,
+            0.0,
+            -0.963780581951141
+          ],
+          [
+            -0.794733941555023,
+            0.565715491771698,
+            -0.219918146729469
+          ],
+          [
+            0.545225560665131,
+            0.824600517749786,
+            0.150874391198158
+          ]
+        ],
+        "fov": 56.0,
+        "impact": {
+          "age": 7.61666666666664,
+          "amplitude": 0.0,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              9.16379665798611,
+              -4.51041937934028
+            ],
+            "actual_GripOrigin_uv": [
+              1.22974700927734,
+              0.457865600585938
+            ],
+            "follow_distance": 4.5,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": false,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 2.11865546332465,
+                "nominal_foot_uv": [
+                  0.755786980523004,
+                  0.821799723307292
+                ],
+                "nominal_head_uv": [
+                  2.4318362765842,
+                  -1.29685574001736
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 4.5
+          },
+          "last_context_accepted": false
+        },
+        "pitch": -0.18,
+        "position": [
+          0.271921157836914,
+          1.76138174533844,
+          -18.9499988555908
+        ],
+        "yaw": 0.0
+      },
+      "checkpoint": 0,
+      "delta": 0.0166666666666667,
+      "enemies": [
+        {
+          "art": {
+            "blade_grip_world": [
+              0.21802906692028,
+              1.35439252853394,
+              -38.2497749328613
+            ],
+            "blade_tip_world": [
+              0.629509568214417,
+              2.32941627502441,
+              -38.7939376831055
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                -0.115487769246101,
+                0.261965453624725,
+                -38.1462631225586
+              ],
+              "LeftHand": [
+                0.0898406133055687,
+                1.3588240146637,
+                -38.1864433288574
+              ],
+              "LeftToeBase": [
+                -0.0972937792539597,
+                0.101689040660858,
+                -38.2997245788574
+              ],
+              "RightFoot": [
+                0.111093394458294,
+                0.269686460494995,
+                -37.7288703918457
+              ],
+              "RightHand": [
+                0.236904352903366,
+                1.46411490440369,
+                -38.1679840087891
+              ],
+              "RightToeBase": [
+                0.224433287978172,
+                0.109388649463654,
+                -37.8338813781738
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000029563904,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(0.0, 0.0, -37.94)",
+              "height_m": 0.09333336353302,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.208729055618078,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0166666662251508,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              3.33427934151587e-08,
+              0.0933333337306976,
+              -37.939998626709
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.09333336353302,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 153847075003,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            3.33427934151587e-08,
+            0.0933333337306976,
+            -37.939998626709
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 7.21198034625559e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            2.00056729227072e-06,
+            -0.400000005960464,
+            3.59999990463257
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              5.07253074645996,
+              1.35439252853394,
+              -44.3035125732422
+            ],
+            "blade_tip_world": [
+              4.8949670791626,
+              2.32941651344299,
+              -44.9622230529785
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                4.94979906082153,
+                0.261965453624725,
+                -43.9765815734863
+              ],
+              "LeftHand": [
+                5.04395961761475,
+                1.3588240146637,
+                -44.1634178161621
+              ],
+              "LeftToeBase": [
+                4.83972835540771,
+                0.101689040660858,
+                -44.0850486755371
+              ],
+              "RightFoot": [
+                5.41845464706421,
+                0.269686460494995,
+                -43.8996429443359
+              ],
+              "RightHand": [
+                5.14871454238892,
+                1.46411490440369,
+                -44.2682723999023
+              ],
+              "RightToeBase": [
+                5.40499353408813,
+                0.109388649463654,
+                -44.0535659790039
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000005722046,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(5.183553, 0.0, -43.94134)",
+              "height_m": 0.09333336353302,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.208729055618078,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0166666651213611,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              5.18355321884155,
+              0.0933333337306976,
+              -43.9413375854492
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.09333336353302,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 158930571663,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            5.18355321884155,
+            0.0933333337306976,
+            -43.9413375854492
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": -1.19209289550781e-07,
+            "move_local_z": -1.0,
+            "speed": 3.59999966621399,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            -0.755944967269897,
+            -0.400000005960464,
+            3.51973652839661
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              -4.97546291351318,
+              1.35439252853394,
+              -44.2578735351562
+            ],
+            "blade_tip_world": [
+              -4.58145523071289,
+              2.32941627502441,
+              -44.8148155212402
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                -5.3055272102356,
+                0.261965453624725,
+                -44.1438369750977
+              ],
+              "LeftHand": [
+                -5.1015772819519,
+                1.3588240146637,
+                -44.1905059814453
+              ],
+              "LeftToeBase": [
+                -5.29221153259277,
+                0.101689040660858,
+                -44.297794342041
+              ],
+              "RightFoot": [
+                -5.06581687927246,
+                0.269686460494995,
+                -43.7338409423828
+              ],
+              "RightHand": [
+                -4.95400190353394,
+                1.46411490440369,
+                -44.1767234802246
+              ],
+              "RightToeBase": [
+                -4.95586585998535,
+                0.109388649463654,
+                -43.8423957824707
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999910354614,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(-5.183553, 0.0, -43.94134)",
+              "height_m": 0.09333336353302,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.208729055618078,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0166666662251508,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              -5.18355321884155,
+              0.0933333337306976,
+              -43.9413375854492
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.09333336353302,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 160692179435,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            -5.18355321884155,
+            0.0933333337306976,
+            -43.9413375854492
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 4.4703483581543e-08,
+            "move_local_z": -0.999999940395355,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            0.755947768688202,
+            -0.400000005960464,
+            3.51973605155945
+          ]
+        }
+      ],
+      "gameplay_frame": 394,
+      "held_inputs": {
+        "forward": true,
+        "heavy": true,
+        "left": false,
+        "right": false,
+        "sprint": true
+      },
+      "hero": {
+        "art": {
+          "blade_grip_world": [
+            0.0500094443559647,
+            1.05105495452881,
+            -20.1563720703125
+          ],
+          "blade_tip_world": [
+            0.169342637062073,
+            2.02616310119629,
+            -20.8279552459717
+          ],
+          "blade_trail": {
+            "depth_tested": true,
+            "gameplay_authority": false,
+            "layers": 0,
+            "lifetime": 0.16,
+            "samples": 0,
+            "style": "charged",
+            "triangles": 0,
+            "visible": false
+          },
+          "bone_world_positions": {
+            "LeftFoot": [
+              -0.133050471544266,
+              0.248855888843536,
+              -19.9372177124023
+            ],
+            "LeftHand": [
+              -0.0297765545547009,
+              1.05516719818115,
+              -20.0494041442871
+            ],
+            "LeftToeBase": [
+              -0.147279679775238,
+              0.13510674238205,
+              -20.1078414916992
+            ],
+            "RightFoot": [
+              0.12712174654007,
+              0.123373627662659,
+              -19.6522521972656
+            ],
+            "RightHand": [
+              0.100351706147194,
+              1.15346586704254,
+              -20.0963497161865
+            ],
+            "RightToeBase": [
+              0.134234130382538,
+              0.00962376594543457,
+              -19.8228759765625
+            ]
+          },
+          "eyes_attached": true,
+          "grip_to_tip_m": 1.19000005722046,
+          "ground_offset_y": 0.0249999761581421,
+          "grounding_shadow": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": "(0.0, 1.0, 0.0)",
+            "ground_point": "(0.00001, 0.0, -19.38137)",
+            "height_m": 0.000101089477539062,
+            "last_query_physics_frame": 416,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 61,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "mode": "skeletal",
+          "profile": "hero",
+          "sampled_time": 0.272222231204313,
+          "state": "run",
+          "status": "Rig ready; visual quality remains subject to art review",
+          "visual_global_position": [
+            1.01104378700256e-05,
+            0.000101096928119659,
+            -19.8063716888428
+          ],
+          "weapon_attached": true,
+          "weapon_profile": "hero_broadblade_001"
+        },
+        "capsule_bottom_world_y": 0.000101089477539062,
+        "dead": false,
+        "health": 120.0,
+        "hit_pause": 0.0,
+        "id": 100914958118,
+        "invulnerability": 0.0,
+        "locked_target_id": 0,
+        "on_floor": true,
+        "position": [
+          1.01104378700256e-05,
+          -0.0248988792300224,
+          -19.8063716888428
+        ],
+        "presentation": {
+          "attack_active": 0.0,
+          "attack_arc": 0.0,
+          "attack_duration": 0.0,
+          "attack_elapsed": 0.0,
+          "attack_id": "",
+          "attack_instance_id": 0,
+          "attack_reach": 0.0,
+          "attack_startup": 0.0,
+          "charge_active": false,
+          "charge_duration": 0.65,
+          "charge_elapsed": 0.0,
+          "dead": false,
+          "death_elapsed": 0.0,
+          "dodge_duration": 0.32,
+          "dodge_elapsed": 0.32,
+          "dodge_local_x": 0.0,
+          "dodge_local_z": 0.0,
+          "dodge_remaining": 0.0,
+          "heal_duration": 0.35,
+          "heal_elapsed": 0.35,
+          "heal_remaining": 0.0,
+          "hit_duration": 0.15,
+          "hit_elapsed": 0.15,
+          "move_local_x": 0.0,
+          "move_local_z": -1.0,
+          "parry_duration": 0.22,
+          "parry_elapsed": 0.22,
+          "parry_remaining": 0.0,
+          "presentation_epoch": 1,
+          "speed": 8.5,
+          "stagger": 0.0
+        },
+        "stagger": 0.0,
+        "velocity": [
+          0.0,
+          0.0,
+          -8.5
+        ]
+      },
+      "impact": {
+        "camera": {
+          "age": 7.61666666666664,
+          "amplitude": 0.0,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              9.16379665798611,
+              -4.51041937934028
+            ],
+            "actual_GripOrigin_uv": [
+              1.22974700927734,
+              0.457865600585938
+            ],
+            "follow_distance": 4.5,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": false,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 2.11865546332465,
+                "nominal_foot_uv": [
+                  0.755786980523004,
+                  0.821799723307292
+                ],
+                "nominal_head_uv": [
+                  2.4318362765842,
+                  -1.29685574001736
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 4.5
+          },
+          "last_context_accepted": false
+        },
+        "count": 0,
+        "effects": [],
+        "spawn_count": 0
+      },
+      "movie_frame": 418,
+      "paused": false,
+      "physics_frame": 419,
+      "process_frame": 418,
+      "quality": 1,
+      "render_scale": 0.649999976158142,
+      "stage": "approach_while_charging",
+      "tick": 419
+    },
+    {
+      "active_encounter": 0,
+      "audio_presentation": {
+        "effect_player_budget": 32,
+        "effect_players": 0,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {},
+        "stopped": false
+      },
+      "camera": {
+        "basis": [
+          [
+            0.992107391357422,
+            0.0,
+            -0.125391095876694
+          ],
+          [
+            -0.0223589055240154,
+            0.983973801136017,
+            -0.17690597474575
+          ],
+          [
+            0.123381555080414,
+            0.178313344717026,
+            0.976207673549652
+          ]
+        ],
+        "fov": 56.0,
+        "impact": {
+          "age": 7.64999999999998,
+          "amplitude": 0.0,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.526919979519314,
+              0.232907884385851
+            ],
+            "actual_GripOrigin_uv": [
+              0.464346143934462,
+              0.781934882269965
+            ],
+            "follow_distance": 4.59333333333333,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 1.16932050916884,
+                "nominal_foot_uv": [
+                  0.425426695081923,
+                  1.51747829861111
+                ],
+                "nominal_head_uv": [
+                  0.404523679945204,
+                  0.348157789442274
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.099390869140625,
+                "nominal_foot_uv": [
+                  0.563689295450846,
+                  0.42033928765191
+                ],
+                "nominal_head_uv": [
+                  0.564890755547418,
+                  0.320948418511285
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 6.5
+          },
+          "last_context_accepted": false
+        },
+        "pitch": -0.18,
+        "position": [
+          0.333638966083527,
+          1.84333348274231,
+          -18.9499988555908
+        ],
+        "yaw": 5.38881741207276e-08
+      },
+      "checkpoint": 0,
+      "delta": 0.0166666666666667,
+      "enemies": [
+        {
+          "art": {
+            "blade_grip_world": [
+              0.369992524385452,
+              1.30009472370148,
+              -37.9012718200684
+            ],
+            "blade_tip_world": [
+              1.04111123085022,
+              2.27500772476196,
+              -38.0247421264648
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                0.0530740767717361,
+                0.228529870510101,
+                -38.0130844116211
+              ],
+              "LeftHand": [
+                0.232663437724113,
+                1.30458199977875,
+                -37.9410552978516
+              ],
+              "LeftToeBase": [
+                0.169954523444176,
+                0.0682784914970398,
+                -38.1142158508301
+              ],
+              "RightFoot": [
+                -0.137936070561409,
+                0.307233035564423,
+                -37.6032600402832
+              ],
+              "RightHand": [
+                0.328712284564972,
+                1.4098174571991,
+                -37.8281860351562
+              ],
+              "RightToeBase": [
+                0.0166106708347797,
+                0.146970450878143,
+                -37.6038780212402
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000029563904,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(0.0, 0.0, -37.94)",
+              "height_m": 0.059999942779541,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.209930684563601,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0499999986754523,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              9.96888616100478e-08,
+              0.0599999986588955,
+              -37.819995880127
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.059999942779541,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 153847075003,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            9.96888616100478e-08,
+            0.0599999986588955,
+            -37.819995880127
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 8.21538037598657e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            1.9644448912004e-06,
+            -1.20000004768372,
+            3.59999990463257
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              4.84189891815186,
+              1.30009472370148,
+              -44.0326042175293
+            ],
+            "blade_tip_world": [
+              4.2854471206665,
+              2.27500772476196,
+              -44.4275817871094
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                4.98272705078125,
+                0.228529870510101,
+                -43.7274703979492
+              ],
+              "LeftHand": [
+                4.90913677215576,
+                1.30458199977875,
+                -43.9064254760742
+              ],
+              "LeftToeBase": [
+                4.82873773574829,
+                0.0682784914970398,
+                -43.7407379150391
+              ],
+              "RightFoot": [
+                5.40967893600464,
+                0.307233035564423,
+                -43.8763046264648
+              ],
+              "RightHand": [
+                4.92307186126709,
+                1.4098174571991,
+                -44.0539741516113
+              ],
+              "RightToeBase": [
+                5.30147504806519,
+                0.146970450878143,
+                -43.9866561889648
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000053405762,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(5.183553, 0.0, -43.94134)",
+              "height_m": 0.059999942779541,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.209930684563601,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0499999964678729,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              5.15814113616943,
+              0.0599999949336052,
+              -43.8240585327148
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.059999942779541,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 158930571663,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            5.15814113616943,
+            0.0599999949336052,
+            -43.8240585327148
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 1.49011611938477e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            -0.764533758163452,
+            -1.20000004768372,
+            3.51788115501404
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              -4.79606628417969,
+              1.30009472370148,
+              -43.9354248046875
+            ],
+            "blade_tip_world": [
+              -4.1373438835144,
+              2.27500772476196,
+              -44.1135520935059
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                -5.12109136581421,
+                0.228529810905457,
+                -44.0208511352539
+              ],
+              "LeftHand": [
+                -4.93619728088379,
+                1.30458199977875,
+                -43.9638023376465
+              ],
+              "LeftToeBase": [
+                -5.01290464401245,
+                0.068278431892395,
+                -44.131233215332
+              ],
+              "RightFoot": [
+                -5.27782583236694,
+                0.307233035564423,
+                -43.5967330932617
+              ],
+              "RightHand": [
+                -4.83120965957642,
+                1.4098174571991,
+                -43.8591957092285
+              ],
+              "RightToeBase": [
+                -5.12385129928589,
+                0.146970450878143,
+                -43.610034942627
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.18999993801117,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(-5.183553, 0.0, -43.94134)",
+              "height_m": 0.059999942779541,
+              "last_query_physics_frame": 419,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.209930684563601,
+              "query_count": 1,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0499999975716626,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              -5.15814113616943,
+              0.0599999949336052,
+              -43.8240585327148
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.059999942779541,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 160692179435,
+          "kind": "melee",
+          "on_floor": false,
+          "position": [
+            -5.15814113616943,
+            0.0599999949336052,
+            -43.8240585327148
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": -5.96046447753906e-08,
+            "move_local_z": -1.00000011920929,
+            "speed": 3.59999966621399,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            0.764536440372467,
+            -1.20000004768372,
+            3.5178804397583
+          ]
+        }
+      ],
+      "gameplay_frame": 396,
+      "held_inputs": {
+        "forward": true,
+        "heavy": true,
+        "left": false,
+        "right": false,
+        "sprint": true
+      },
+      "hero": {
+        "art": {
+          "blade_grip_world": [
+            0.0461679138243198,
+            1.07400012016296,
+            -20.4381408691406
+          ],
+          "blade_tip_world": [
+            0.15779522061348,
+            2.05438232421875,
+            -21.1033420562744
+          ],
+          "blade_trail": {
+            "depth_tested": true,
+            "gameplay_authority": false,
+            "layers": 0,
+            "lifetime": 0.16,
+            "samples": 0,
+            "style": "charged",
+            "triangles": 0,
+            "visible": false
+          },
+          "bone_world_positions": {
+            "LeftFoot": [
+              -0.133092075586319,
+              0.218921780586243,
+              -20.4938259124756
+            ],
+            "LeftHand": [
+              -0.0317624434828758,
+              1.07761800289154,
+              -20.3305034637451
+            ],
+            "LeftToeBase": [
+              -0.147303804755211,
+              0.105171740055084,
+              -20.6644477844238
+            ],
+            "RightFoot": [
+              0.127450421452522,
+              0.120191693305969,
+              -19.649772644043
+            ],
+            "RightHand": [
+              0.0971849709749222,
+              1.17594254016876,
+              -20.3778915405273
+            ],
+            "RightToeBase": [
+              0.134529620409012,
+              0.00643914937973022,
+              -19.8203964233398
+            ]
+          },
+          "eyes_attached": true,
+          "grip_to_tip_m": 1.19000101089478,
+          "ground_offset_y": 0.0249999761581421,
+          "grounding_shadow": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": "(0.0, 1.0, 0.0)",
+            "ground_point": "(0.00001, 0.0, -19.38137)",
+            "height_m": 0.00083845853805542,
+            "last_query_physics_frame": 416,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 61,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "mode": "skeletal",
+          "profile": "hero",
+          "sampled_time": 0.305555564537646,
+          "state": "run",
+          "status": "Rig ready; visual quality remains subject to art review",
+          "visual_global_position": [
+            9.77472427621251e-06,
+            0.000838451087474823,
+            -20.0897331237793
+          ],
+          "weapon_attached": true,
+          "weapon_profile": "hero_broadblade_001"
+        },
+        "capsule_bottom_world_y": 0.00083845853805542,
+        "dead": false,
+        "health": 120.0,
+        "hit_pause": 0.0,
+        "id": 100914958118,
+        "invulnerability": 0.0,
+        "locked_target_id": 153847075003,
+        "on_floor": true,
+        "position": [
+          9.77472427621251e-06,
+          -0.0241615250706673,
+          -20.0897331237793
+        ],
+        "presentation": {
+          "attack_active": 0.0,
+          "attack_arc": 0.0,
+          "attack_duration": 0.0,
+          "attack_elapsed": 0.0,
+          "attack_id": "",
+          "attack_instance_id": 0,
+          "attack_reach": 0.0,
+          "attack_startup": 0.0,
+          "charge_active": true,
+          "charge_duration": 0.65,
+          "charge_elapsed": 0.0333333333333333,
+          "dead": false,
+          "death_elapsed": 0.0,
+          "dodge_duration": 0.32,
+          "dodge_elapsed": 0.32,
+          "dodge_local_x": 0.0,
+          "dodge_local_z": 0.0,
+          "dodge_remaining": 0.0,
+          "heal_duration": 0.35,
+          "heal_elapsed": 0.35,
+          "heal_remaining": 0.0,
+          "hit_duration": 0.15,
+          "hit_elapsed": 0.15,
+          "move_local_x": 5.32084413862322e-07,
+          "move_local_z": -1.0,
+          "parry_duration": 0.22,
+          "parry_elapsed": 0.22,
+          "parry_remaining": 0.0,
+          "presentation_epoch": 1,
+          "speed": 8.5,
+          "stagger": 0.0
+        },
+        "stagger": 0.0,
+        "velocity": [
+          -2.38037728195195e-07,
+          0.0,
+          -8.5
+        ]
+      },
+      "impact": {
+        "camera": {
+          "age": 7.64999999999998,
+          "amplitude": 0.0,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.526919979519314,
+              0.232907884385851
+            ],
+            "actual_GripOrigin_uv": [
+              0.464346143934462,
+              0.781934882269965
+            ],
+            "follow_distance": 4.59333333333333,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 1.16932050916884,
+                "nominal_foot_uv": [
+                  0.425426695081923,
+                  1.51747829861111
+                ],
+                "nominal_head_uv": [
+                  0.404523679945204,
+                  0.348157789442274
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.099390869140625,
+                "nominal_foot_uv": [
+                  0.563689295450846,
+                  0.42033928765191
+                ],
+                "nominal_head_uv": [
+                  0.564890755547418,
+                  0.320948418511285
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 6.5
+          },
+          "last_context_accepted": false
+        },
+        "count": 0,
+        "effects": [],
+        "spawn_count": 0
+      },
+      "movie_frame": 420,
+      "paused": false,
+      "physics_frame": 421,
+      "process_frame": 420,
+      "quality": 1,
+      "render_scale": 0.649999976158142,
+      "stage": "approach_while_charging",
+      "tick": 421
+    },
+    {
+      "active_encounter": 0,
+      "audio_presentation": {
+        "effect_player_budget": 32,
+        "effect_players": 6,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "blocked": false,
+          "contact_source": "hurtbox_ray",
+          "density_headroom_db": -3.43820026016113,
+          "epoch": 0,
+          "killed": false,
+          "layers": [
+            {
+              "key": "contact_tick",
+              "volume_db": -20.4382002601611
+            },
+            {
+              "key": "metal_heavy",
+              "volume_db": -16.4382002601611
+            },
+            {
+              "key": "body_thump",
+              "volume_db": -18.4382002601611
+            },
+            {
+              "key": "charge_sub",
+              "volume_db": -21.4382002601611
+            },
+            {
+              "key": "debris_tail",
+              "volume_db": -26.4382002601611
+            }
+          ],
+          "point": [
+            0.342834532260895,
+            1.5865318775177,
+            -32.8770484924316
+          ],
+          "poise_broken": true,
+          "strength": "charged",
+          "style": "charged"
+        },
+        "stopped": false
+      },
+      "camera": {
+        "basis": [
+          [
+            0.972008287906647,
+            0.0,
+            -0.234946683049202
+          ],
+          [
+            -0.0720838829874992,
+            0.951770961284637,
+            -0.298221409320831
+          ],
+          [
+            0.223615422844887,
+            0.306809514760971,
+            0.925129234790802
+          ]
+        ],
+        "fov": 55.3561668395996,
+        "impact": {
+          "age": 0.0166666666666667,
+          "amplitude": 0.085,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 55.3561668395996,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.583954662746853,
+              0.385233662923177
+            ],
+            "actual_GripOrigin_uv": [
+              0.518361579047309,
+              0.527576836480035
+            ],
+            "follow_distance": 4.5,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 0.315975850423177,
+                "nominal_foot_uv": [
+                  0.488365766737196,
+                  0.753128119574653
+                ],
+                "nominal_head_uv": [
+                  0.487006251017253,
+                  0.437152269151476
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.290718112521701,
+                "nominal_foot_uv": [
+                  0.514283074273003,
+                  0.663987698025174
+                ],
+                "nominal_head_uv": [
+                  0.515769704182943,
+                  0.373269585503472
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 4.5
+          },
+          "last_context_accepted": true
+        },
+        "pitch": -0.18,
+        "position": [
+          1.19255888462067,
+          2.98707342147827,
+          -27.4986572265625
+        ],
+        "yaw": 7.21515995581179e-07
+      },
+      "checkpoint": 0,
+      "delta": 0.0166666666666667,
+      "enemies": [
+        {
+          "art": {
+            "blade_grip_world": [
+              -0.0535678416490555,
+              1.26512432098389,
+              -32.7050094604492
+            ],
+            "blade_tip_world": [
+              -0.172900214791298,
+              2.24023199081421,
+              -32.0334243774414
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                0.203574731945992,
+                0.170658051967621,
+                -32.9621543884277
+              ],
+              "LeftHand": [
+                0.031918179243803,
+                1.26953065395355,
+                -32.8196182250977
+              ],
+              "LeftToeBase": [
+                0.256999105215073,
+                0.0103853344917297,
+                -32.8171424865723
+              ],
+              "RightFoot": [
+                -0.203568398952484,
+                0.170657396316528,
+                -33.1871528625488
+              ],
+              "RightHand": [
+                -0.107505865395069,
+                1.37485039234161,
+                -32.7693176269531
+              ],
+              "RightToeBase": [
+                -0.256992489099503,
+                0.0103845000267029,
+                -33.0421447753906
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000065326691,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(0.000003, 0.0, -33.08001)",
+              "height_m": 0.000838577747344971,
+              "last_query_physics_frame": 566,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 22,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.0,
+            "state": "heavy_hit",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              3.10706195705279e-06,
+              0.000838596897665411,
+              -33.0800094604492
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000838577747344971,
+          "dead": false,
+          "elite": false,
+          "health": 25.7,
+          "hit_pause": 0.075,
+          "hit_reaction": "heavy_hit",
+          "id": 153847075003,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            3.10706195705279e-06,
+            0.000838596897665411,
+            -33.0800094604492
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.48,
+            "hit_elapsed": 0.0,
+            "hit_pause": 0.075,
+            "hit_reaction": "heavy_hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 0.0,
+            "move_local_z": 0.0,
+            "speed": 0.0,
+            "stagger": 0.48
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.35,
+          "stagger": 0.48,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              1.6563047170639,
+              1.2258003950119,
+              -35.2451934814453
+            ],
+            "blade_tip_world": [
+              1.24331736564636,
+              2.20090842247009,
+              -34.7023239135742
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                2.05418395996094,
+                0.308249354362488,
+                -35.588695526123
+              ],
+              "LeftHand": [
+                1.78470945358276,
+                1.23020708560944,
+                -35.3080825805664
+              ],
+              "LeftToeBase": [
+                2.03545641899109,
+                0.147976577281952,
+                -35.4352951049805
+              ],
+              "RightFoot": [
+                1.7562141418457,
+                0.170312345027924,
+                -35.6183242797852
+              ],
+              "RightHand": [
+                1.63770771026611,
+                1.33552646636963,
+                -35.3270416259766
+              ],
+              "RightToeBase": [
+                1.64243805408478,
+                0.0100393295288086,
+                -35.513744354248
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000065326691,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(1.986036, 0.0, -35.7672)",
+              "height_m": 0.000669956207275391,
+              "last_query_physics_frame": 566,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 22,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.433333279909911,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              1.87529027462006,
+              0.000669977278448641,
+              -35.5542869567871
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000669956207275391,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 158930571663,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            1.87529027462006,
+            0.000669977278448641,
+            -35.5542869567871
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": -5.96046447753906e-08,
+            "move_local_z": -1.0,
+            "speed": 3.60000014305115,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            -1.67580509185791,
+            0.0,
+            3.18616986274719
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              -1.75159502029419,
+              1.22593808174133,
+              -35.1962089538574
+            ],
+            "blade_tip_world": [
+              -1.55090498924255,
+              2.20104598999023,
+              -34.5442962646484
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                -1.79903519153595,
+                0.308387041091919,
+                -35.7197074890137
+              ],
+              "LeftHand": [
+                -1.7279167175293,
+                1.23034477233887,
+                -35.3372116088867
+              ],
+              "LeftToeBase": [
+                -1.68525779247284,
+                0.148114323616028,
+                -35.6151313781738
+              ],
+              "RightFoot": [
+                -1.99668860435486,
+                0.17044985294342,
+                -35.4947700500488
+              ],
+              "RightHand": [
+                -1.82895636558533,
+                1.33566415309906,
+                -35.2287712097168
+              ],
+              "RightToeBase": [
+                -1.97795903682709,
+                0.0101767778396606,
+                -35.3413734436035
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000089168549,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(-1.986021, 0.0, -35.76717)",
+              "height_m": 0.000807642936706543,
+              "last_query_physics_frame": 566,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 22,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.43333328432507,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              -1.87527525424957,
+              0.000807622098363936,
+              -35.554256439209
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000807642936706543,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 160692179435,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            -1.87527525424957,
+            0.000807622098363936,
+            -35.554256439209
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": -2.98023223876953e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999966621399,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            1.67581117153168,
+            0.0,
+            3.18616628646851
+          ]
+        }
+      ],
+      "gameplay_frame": 545,
+      "held_inputs": {
+        "forward": false,
+        "heavy": false,
+        "left": false,
+        "right": false,
+        "sprint": false
+      },
+      "hero": {
+        "art": {
+          "blade_grip_world": [
+            0.183747515082359,
+            1.22644281387329,
+            -32.3630218505859
+          ],
+          "blade_tip_world": [
+            0.641126334667206,
+            1.87509310245514,
+            -33.2496795654297
+          ],
+          "blade_trail": {
+            "depth_tested": true,
+            "gameplay_authority": false,
+            "layers": 2,
+            "lifetime": 0.16,
+            "samples": 4,
+            "style": "charged",
+            "triangles": 12,
+            "visible": true
+          },
+          "bone_world_positions": {
+            "LeftFoot": [
+              -0.2399962246418,
+              0.12525337934494,
+              -32.368049621582
+            ],
+            "LeftHand": [
+              0.0712672397494316,
+              1.26736307144165,
+              -32.3038749694824
+            ],
+            "LeftToeBase": [
+              -0.254211276769638,
+              0.0115035772323608,
+              -32.5386695861816
+            ],
+            "RightFoot": [
+              0.19983147084713,
+              0.204629361629486,
+              -31.8895683288574
+            ],
+            "RightHand": [
+              0.219018548727036,
+              1.34628319740295,
+              -32.3310966491699
+            ],
+            "RightToeBase": [
+              0.206934586167336,
+              0.0908793807029724,
+              -32.060188293457
+            ]
+          },
+          "eyes_attached": true,
+          "grip_to_tip_m": 1.1900018453598,
+          "ground_offset_y": 0.0249999761581421,
+          "grounding_shadow": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": "(0.0, 1.0, 0.0)",
+            "ground_point": "(0.000004, 0.0, -31.98885)",
+            "height_m": 0.000838935375213623,
+            "last_query_physics_frame": 570,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 85,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "mode": "skeletal",
+          "profile": "hero",
+          "sampled_time": 0.383999979271079,
+          "state": "charged_heavy",
+          "status": "Rig ready; visual quality remains subject to art review",
+          "visual_global_position": [
+            3.89914748666342e-06,
+            0.000838929787278175,
+            -31.9888496398926
+          ],
+          "weapon_attached": true,
+          "weapon_profile": "hero_broadblade_001"
+        },
+        "capsule_bottom_world_y": 0.000838935375213623,
+        "dead": false,
+        "health": 104.0,
+        "hit_pause": 0.075,
+        "id": 100914958118,
+        "invulnerability": 0.0999999999999995,
+        "locked_target_id": 153847075003,
+        "on_floor": true,
+        "position": [
+          3.89914748666342e-06,
+          -0.0241610463708639,
+          -31.9888496398926
+        ],
+        "presentation": {
+          "attack_active": 0.18,
+          "attack_arc": 170.0,
+          "attack_duration": 1.06,
+          "attack_elapsed": 0.384,
+          "attack_id": "charged_heavy",
+          "attack_instance_id": 6,
+          "attack_reach": 1.5,
+          "attack_startup": 0.34,
+          "charge_active": false,
+          "charge_duration": 0.65,
+          "charge_elapsed": 0.0,
+          "dead": false,
+          "death_elapsed": 0.0,
+          "dodge_duration": 0.32,
+          "dodge_elapsed": 0.32,
+          "dodge_local_x": 0.0,
+          "dodge_local_z": 0.0,
+          "dodge_remaining": 0.0,
+          "heal_duration": 0.35,
+          "heal_elapsed": 0.35,
+          "heal_remaining": 0.0,
+          "hit_duration": 0.15,
+          "hit_elapsed": 0.15,
+          "move_local_x": 0.0,
+          "move_local_z": -1.0,
+          "parry_duration": 0.22,
+          "parry_elapsed": 0.22,
+          "parry_remaining": 0.0,
+          "presentation_epoch": 1,
+          "speed": 0.128000006079674,
+          "stagger": 0.0
+        },
+        "stagger": 0.0,
+        "velocity": [
+          -9.29161458884664e-08,
+          0.0,
+          -0.128000006079674
+        ]
+      },
+      "impact": {
+        "camera": {
+          "age": 0.0166666666666667,
+          "amplitude": 0.085,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 55.3561668395996,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.583954662746853,
+              0.385233662923177
+            ],
+            "actual_GripOrigin_uv": [
+              0.518361579047309,
+              0.527576836480035
+            ],
+            "follow_distance": 4.5,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 0.315975850423177,
+                "nominal_foot_uv": [
+                  0.488365766737196,
+                  0.753128119574653
+                ],
+                "nominal_head_uv": [
+                  0.487006251017253,
+                  0.437152269151476
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.290718112521701,
+                "nominal_foot_uv": [
+                  0.514283074273003,
+                  0.663987698025174
+                ],
+                "nominal_head_uv": [
+                  0.515769704182943,
+                  0.373269585503472
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 4.5
+          },
+          "last_context_accepted": true
+        },
+        "count": 1,
+        "effects": [
+          {
+            "age": 0.0,
+            "attack_id": "charged_heavy",
+            "contact_source": "hurtbox_ray",
+            "core_axis": [
+              -0.874977827072144,
+              -0.416495323181152,
+              0.246871292591095
+            ],
+            "core_basis_source": "projected_confirmed_cut",
+            "core_duration": 0.075,
+            "core_edge_alpha": 0.18,
+            "core_plane_normal": [
+              0.151440352201462,
+              0.248876422643661,
+              0.956622302532196
+            ],
+            "core_radius": 0.12,
+            "core_side": [
+              0.459869176149368,
+              -0.874409675598145,
+              0.154687166213989
+            ],
+            "cut_axis": [
+              -0.567816734313965,
+              -0.423495590686798,
+              -0.705858111381531
+            ],
+            "cut_basis_source": "confirmed_blade_motion",
+            "cut_duration": 0.14,
+            "cut_length": 0.76,
+            "cut_plane_normal": [
+              0.702370405197144,
+              -0.696431219577789,
+              -0.147171407938004
+            ],
+            "cut_side": [
+              0.429255187511444,
+              0.579340219497681,
+              -0.692896068096161
+            ],
+            "cut_visible": true,
+            "debris_count": 6,
+            "depth_tested": true,
+            "duration": 0.62,
+            "dust_count": 2,
+            "gameplay_authority": false,
+            "ground_response": false,
+            "maximum_lifetime": 0.68,
+            "mesh_groups": 5,
+            "quality": 1,
+            "reason": "confirmed_contact",
+            "ring_geometry": false,
+            "spark_budget": 24,
+            "spark_count": 18,
+            "style": "charged",
+            "triangles": 68,
+            "valid": true,
+            "world_point": [
+              0.342834532260895,
+              1.5865318775177,
+              -32.8770484924316
+            ]
+          }
+        ],
+        "spawn_count": 1
+      },
+      "movie_frame": 569,
+      "paused": false,
+      "physics_frame": 570,
+      "process_frame": 569,
+      "quality": 1,
+      "render_scale": 0.649999976158142,
+      "stage": "released",
+      "tick": 570
+    },
+    {
+      "active_encounter": 0,
+      "audio_presentation": {
+        "effect_player_budget": 32,
+        "effect_players": 0,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "blocked": false,
+          "contact_source": "hurtbox_ray",
+          "density_headroom_db": -3.43820026016113,
+          "epoch": 0,
+          "killed": false,
+          "layers": [
+            {
+              "key": "contact_tick",
+              "volume_db": -20.4382002601611
+            },
+            {
+              "key": "metal_heavy",
+              "volume_db": -16.4382002601611
+            },
+            {
+              "key": "body_thump",
+              "volume_db": -18.4382002601611
+            },
+            {
+              "key": "charge_sub",
+              "volume_db": -21.4382002601611
+            },
+            {
+              "key": "debris_tail",
+              "volume_db": -26.4382002601611
+            }
+          ],
+          "point": [
+            0.342834532260895,
+            1.5865318775177,
+            -32.8770484924316
+          ],
+          "poise_broken": true,
+          "strength": "charged",
+          "style": "charged"
+        },
+        "stopped": false
+      },
+      "camera": {
+        "basis": [
+          [
+            0.964652717113495,
+            0.0,
+            -0.263524621725082
+          ],
+          [
+            -0.0388965345919132,
+            0.989046990871429,
+            -0.142383843660355
+          ],
+          [
+            0.260638207197189,
+            0.147601142525673,
+            0.954086780548096
+          ]
+        ],
+        "fov": 56.0,
+        "impact": {
+          "age": 4.91666666666665,
+          "amplitude": 0.085,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.74852786593967,
+              0.357939012315538
+            ],
+            "actual_GripOrigin_uv": [
+              0.765833621554905,
+              0.747401665581597
+            ],
+            "follow_distance": 5.44169249999833,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 0.772083977593316,
+                "nominal_foot_uv": [
+                  0.770289018419054,
+                  1.25810234917535
+                ],
+                "nominal_head_uv": [
+                  0.80793694390191,
+                  0.486018371582031
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.239525790744358,
+                "nominal_foot_uv": [
+                  0.491439225938585,
+                  0.615346069335937
+                ],
+                "nominal_head_uv": [
+                  0.491107728746202,
+                  0.37582027859158
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 5.44169249999833
+          },
+          "last_context_accepted": true
+        },
+        "pitch": -0.18,
+        "position": [
+          3.20274567604065,
+          2.07714509963989,
+          -18.9500026702881
+        ],
+        "yaw": 0.0150344611500367
+      },
+      "checkpoint": 0,
+      "delta": 0.0166666666666667,
+      "enemies": [
+        {
+          "art": {
+            "blade_grip_world": [
+              1.1731653213501,
+              1.24998664855957,
+              -25.7770957946777
+            ],
+            "blade_tip_world": [
+              1.24822342395782,
+              2.22509479522705,
+              -25.0991344451904
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                1.10929477214813,
+                0.238852202892303,
+                -26.6921234130859
+              ],
+              "LeftHand": [
+                1.22283017635345,
+                1.2543933391571,
+                -25.9111709594727
+              ],
+              "LeftToeBase": [
+                1.20147311687469,
+                0.0785792469978333,
+                -26.5680866241455
+              ],
+              "RightFoot": [
+                1.1012772321701,
+                0.219046294689178,
+                -25.7323093414307
+              ],
+              "RightHand": [
+                1.10327017307281,
+                1.3597127199173,
+                -25.8235683441162
+              ],
+              "RightToeBase": [
+                1.09095060825348,
+                0.0587731599807739,
+                -25.5781173706055
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000053405762,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(1.034365, 0.0, -26.39744)",
+              "height_m": 0.000837981700897217,
+              "last_query_physics_frame": 860,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 64,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.248848153485191,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              1.11872327327728,
+              0.000837973726447672,
+              -26.151969909668
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000837981700897217,
+          "dead": false,
+          "elite": false,
+          "health": 25.7,
+          "hit_pause": 0.0,
+          "hit_reaction": "heavy_hit",
+          "id": 153847075003,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            1.11872327327728,
+            0.000837973726447672,
+            -26.151969909668
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.48,
+            "hit_elapsed": 0.48,
+            "hit_pause": 0.0,
+            "hit_reaction": "heavy_hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 0.0,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            -2.54055294135469e-07,
+            3.50060872733593e-07,
+            -0.349998474121094
+          ],
+          "recoil_requested_m": 0.35,
+          "stagger": 0.0,
+          "velocity": [
+            1.61464524269104,
+            0.0,
+            3.21759533882141
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              2.63716864585876,
+              1.24908697605133,
+              -31.5817432403564
+            ],
+            "blade_tip_world": [
+              2.51466155052185,
+              2.22419500350952,
+              -30.9107303619385
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                2.83833789825439,
+                0.232793986797333,
+                -32.4688110351562
+              ],
+              "LeftHand": [
+                2.72319531440735,
+                1.253493309021,
+                -31.6959457397461
+              ],
+              "LeftToeBase": [
+                2.89107608795166,
+                0.0725210905075073,
+                -32.3235473632812
+              ],
+              "RightFoot": [
+                2.5555100440979,
+                0.225859880447388,
+                -31.570384979248
+              ],
+              "RightHand": [
+                2.58353543281555,
+                1.35881304740906,
+                -31.6463069915771
+              ],
+              "RightToeBase": [
+                2.50140070915222,
+                0.0655869245529175,
+                -31.4256286621094
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.1900007724762,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(2.674439, 0.0, -32.19579)",
+              "height_m": 0.000838577747344971,
+              "last_query_physics_frame": 860,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 64,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.240740681136096,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              2.69251251220703,
+              0.000838598469272256,
+              -31.956485748291
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000838577747344971,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 158930571663,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            2.69251251220703,
+            0.000838598469272256,
+            -31.956485748291
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": -9.68575477600098e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            0.322884619235992,
+            0.0,
+            3.58549094200134
+          ]
+        },
+        {
+          "art": {
+            "blade_grip_world": [
+              1.87802910804749,
+              1.24804878234863,
+              -27.0576229095459
+            ],
+            "blade_tip_world": [
+              1.83900213241577,
+              2.22315692901611,
+              -26.376636505127
+            ],
+            "blade_trail": {
+              "depth_tested": true,
+              "gameplay_authority": false,
+              "layers": 0,
+              "lifetime": 0.12,
+              "samples": 0,
+              "style": "light",
+              "triangles": 0,
+              "visible": false
+            },
+            "bone_world_positions": {
+              "LeftFoot": [
+                2.07563710212708,
+                0.178506135940552,
+                -27.0640316009521
+              ],
+              "LeftHand": [
+                1.94935274124146,
+                1.25245523452759,
+                -27.1815433502197
+              ],
+              "LeftToeBase": [
+                2.14584493637085,
+                0.0182332396507263,
+                -26.926362991333
+              ],
+              "RightFoot": [
+                1.69513404369354,
+                0.231851637363434,
+                -27.9025459289551
+              ],
+              "RightHand": [
+                1.81686043739319,
+                1.35777485370636,
+                -27.1150989532471
+              ],
+              "RightToeBase": [
+                1.65924596786499,
+                0.0715785026550293,
+                -27.752233505249
+              ]
+            },
+            "eyes_attached": false,
+            "grip_to_tip_m": 1.19000065326691,
+            "ground_offset_y": 0.0,
+            "grounding_shadow": {
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": "(0.0, 1.0, 0.0)",
+              "ground_point": "(1.827423, 0.0, -27.66882)",
+              "height_m": 0.000838577747344971,
+              "last_query_physics_frame": 860,
+              "maximum_visible": 8,
+              "minimum_forced_interval_s": 0.0333333333333333,
+              "normal_query_interval_s": 0.1,
+              "opacity": 0.21,
+              "query_count": 64,
+              "reason": "approximate_grounding",
+              "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+              "visible": true,
+              "visible_budget_used": 4
+            },
+            "mode": "skeletal",
+            "profile": "sentinel_melee",
+            "sampled_time": 0.662619645948763,
+            "state": "walk",
+            "status": "Rig ready; visual quality remains subject to art review",
+            "visual_global_position": [
+              1.88685071468353,
+              0.000838591600768268,
+              -27.4363288879395
+            ],
+            "weapon_attached": true,
+            "weapon_profile": "original"
+          },
+          "boss": false,
+          "capsule_bottom_world_y": 0.000838577747344971,
+          "dead": false,
+          "elite": false,
+          "health": 95.0,
+          "hit_pause": 0.0,
+          "hit_reaction": "hit",
+          "id": 160692179435,
+          "kind": "melee",
+          "on_floor": true,
+          "position": [
+            1.88685071468353,
+            0.000838591600768268,
+            -27.4363288879395
+          ],
+          "presentation": {
+            "attack_active": 0.0,
+            "attack_arc": 0.0,
+            "attack_duration": 1.15,
+            "attack_elapsed": 1.15,
+            "attack_id": "",
+            "attack_reach": 0.0,
+            "attack_startup": 0.0,
+            "dead": false,
+            "death_elapsed": 0.0,
+            "hit_duration": 0.28,
+            "hit_elapsed": 0.28,
+            "hit_pause": 0.0,
+            "hit_reaction": "hit",
+            "locomotion_reference_speed": 3.6,
+            "move_local_x": 8.94069671630859e-08,
+            "move_local_z": -1.0,
+            "speed": 3.59999990463257,
+            "stagger": 0.0
+          },
+          "recoil_displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "recoil_requested_m": 0.0,
+          "stagger": 0.0,
+          "velocity": [
+            0.971494019031525,
+            0.0,
+            3.46643877029419
+          ]
+        }
+      ],
+      "gameplay_frame": 839,
+      "held_inputs": {
+        "forward": false,
+        "heavy": false,
+        "left": false,
+        "right": true,
+        "sprint": false
+      },
+      "hero": {
+        "art": {
+          "blade_grip_world": [
+            3.64478445053101,
+            1.10751903057098,
+            -21.4128074645996
+          ],
+          "blade_tip_world": [
+            3.61177539825439,
+            2.08239388465881,
+            -22.0944442749023
+          ],
+          "blade_trail": {
+            "depth_tested": true,
+            "gameplay_authority": false,
+            "layers": 0,
+            "lifetime": 0.16,
+            "samples": 0,
+            "style": "charged",
+            "triangles": 0,
+            "visible": false
+          },
+          "bone_world_positions": {
+            "LeftFoot": [
+              3.12500524520874,
+              0.192041456699371,
+              -20.9943981170654
+            ],
+            "LeftHand": [
+              3.59080982208252,
+              1.11170959472656,
+              -21.2908363342285
+            ],
+            "LeftToeBase": [
+              3.15884447097778,
+              0.0800402164459229,
+              -21.1634082794189
+            ],
+            "RightFoot": [
+              4.19007158279419,
+              0.119083881378174,
+              -21.1040325164795
+            ],
+            "RightHand": [
+              3.70719170570374,
+              1.20995402336121,
+              -21.3655071258545
+            ],
+            "RightToeBase": [
+              4.24629783630371,
+              0.00724935531616211,
+              -21.2666149139404
+            ]
+          },
+          "eyes_attached": true,
+          "grip_to_tip_m": 1.18999969959259,
+          "ground_offset_y": 0.0249999761581421,
+          "grounding_shadow": {
+            "cached_ground": true,
+            "gameplay_authority": false,
+            "ground_normal": "(0.0, 1.0, 0.0)",
+            "ground_point": "(2.974222, 0.0, -21.15391)",
+            "height_m": 0.000838577747344971,
+            "last_query_physics_frame": 859,
+            "maximum_visible": 8,
+            "minimum_forced_interval_s": 0.0333333333333333,
+            "normal_query_interval_s": 0.1,
+            "opacity": 0.21,
+            "query_count": 136,
+            "reason": "approximate_grounding",
+            "scope": "Finite performance-mode grounding ellipse; not physical light/foot shadow or AAA approval",
+            "visible": true,
+            "visible_budget_used": 4
+          },
+          "mode": "skeletal",
+          "profile": "hero",
+          "sampled_time": 0.236666720807556,
+          "state": "walk_right",
+          "status": "Rig ready; visual quality remains subject to art review",
+          "visual_global_position": [
+            3.67373394966125,
+            0.000838601961731911,
+            -21.0604553222656
+          ],
+          "weapon_attached": true,
+          "weapon_profile": "hero_broadblade_001"
+        },
+        "capsule_bottom_world_y": 0.000838577747344971,
+        "dead": false,
+        "health": 88.0,
+        "hit_pause": 0.0,
+        "id": 100914958118,
+        "invulnerability": 0.0,
+        "locked_target_id": 153847075003,
+        "on_floor": true,
+        "position": [
+          3.67373394966125,
+          -0.0241613741964102,
+          -21.0604553222656
+        ],
+        "presentation": {
+          "attack_active": 0.0,
+          "attack_arc": 0.0,
+          "attack_duration": 0.0,
+          "attack_elapsed": 0.0,
+          "attack_id": "",
+          "attack_instance_id": 0,
+          "attack_reach": 0.0,
+          "attack_startup": 0.0,
+          "charge_active": false,
+          "charge_duration": 0.65,
+          "charge_elapsed": 0.0,
+          "dead": false,
+          "death_elapsed": 0.0,
+          "dodge_duration": 0.32,
+          "dodge_elapsed": 0.32,
+          "dodge_local_x": 0.756036460399628,
+          "dodge_local_z": 0.654529571533203,
+          "dodge_remaining": 0.0,
+          "heal_duration": 0.35,
+          "heal_elapsed": 0.35,
+          "heal_remaining": 0.0,
+          "hit_duration": 0.15,
+          "hit_elapsed": 0.15,
+          "move_local_x": 0.897324740886688,
+          "move_local_z": 0.441371202468872,
+          "parry_duration": 0.22,
+          "parry_elapsed": 0.22,
+          "parry_remaining": 0.0,
+          "presentation_epoch": 1,
+          "speed": 6.40000009536743,
+          "stagger": 0.0
+        },
+        "stagger": 0.0,
+        "velocity": [
+          6.39976072311401,
+          0.0,
+          0.0553799271583557
+        ]
+      },
+      "impact": {
+        "camera": {
+          "age": 4.91666666666665,
+          "amplitude": 0.085,
+          "duration": 0.19,
+          "enabled": true,
+          "fov": 56.0,
+          "framing": {
+            "actual_BladeTip_uv": [
+              0.74852786593967,
+              0.357939012315538
+            ],
+            "actual_GripOrigin_uv": [
+              0.765833621554905,
+              0.747401665581597
+            ],
+            "follow_distance": 5.44169249999833,
+            "follow_height_bias": 2.4,
+            "free_distance": 4.5,
+            "locked": true,
+            "maximum_lock_distance": 8.6,
+            "scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+            "shoulder_offset": 1.2,
+            "subjects": [
+              {
+                "behind_camera": false,
+                "height_fraction": 0.772083977593316,
+                "nominal_foot_uv": [
+                  0.770289018419054,
+                  1.25810234917535
+                ],
+                "nominal_head_uv": [
+                  0.80793694390191,
+                  0.486018371582031
+                ]
+              },
+              {
+                "behind_camera": false,
+                "height_fraction": 0.239525790744358,
+                "nominal_foot_uv": [
+                  0.491439225938585,
+                  0.615346069335937
+                ],
+                "nominal_head_uv": [
+                  0.491107728746202,
+                  0.37582027859158
+                ]
+              }
+            ],
+            "viewport": [
+              1440.0,
+              900.0
+            ],
+            "wanted_distance": 5.44169249999833
+          },
+          "last_context_accepted": true
+        },
+        "count": 1,
+        "effects": [],
+        "spawn_count": 1
+      },
+      "movie_frame": 863,
+      "paused": false,
+      "physics_frame": 864,
+      "process_frame": 863,
+      "quality": 1,
+      "render_scale": 0.649999976158142,
+      "stage": "normal_recovery",
+      "tick": 864
+    }
+  ]
+}

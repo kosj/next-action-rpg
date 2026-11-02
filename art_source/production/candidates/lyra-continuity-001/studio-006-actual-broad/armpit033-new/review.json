@@ -1,0 +1,59 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+  "input_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "weapon": "/workspace/next-action-rpg/game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "view": "opposite",
+  "clip": "light_2",
+  "imported_action": "light_2_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      -0.41635841131210327,
+      0.08071435987949371,
+      0.9056107401847839,
+      3.2643165588378906
+    ],
+    [
+      0.9092005491256714,
+      0.03696234151721001,
+      0.4147144854068756,
+      1.5165108442306519
+    ],
+    [
+      -7.744800001319163e-08,
+      0.9960516691207886,
+      -0.08877512067556381,
+      0.9022396206855774
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 0.6000000238418579,
+  "shots": [
+    {
+      "time_s": 0.33000001311302185,
+      "file": "light_2-0330.png",
+      "sha256": "f54a65055e8ac673d2fd7f868d833e7665f8332abec93329f897346741ccc14e",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        0.2964806854724884,
+        -0.053462106734514236,
+        1.1230424642562866
+      ],
+      "actual_weapon_tip_m": [
+        1.4850162267684937,
+        -0.04538268968462944,
+        1.1815022230148315
+      ]
+    }
+  ]
+}

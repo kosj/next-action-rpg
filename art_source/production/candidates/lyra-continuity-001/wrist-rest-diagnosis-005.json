@@ -1,0 +1,23 @@
+{
+  "scope": "Read-only source actual static/bind local wrist vs idle weapon-grasp local wrist; no rest pose edits or generated006 asset.",
+  "source_hand_node_rotation_xyzw": [
+    -1.57160684466362e-08,
+    -3.247987478971481e-08,
+    -2.6178895495831966e-08,
+    1
+  ],
+  "idle_grasp_hand_local_rotation_xyzw": [
+    0.39155893422670046,
+    -0.1929255669990085,
+    0.3040159557660154,
+    0.8467795611993937
+  ],
+  "idle_grasp_vs_bind_local_rotation_degrees": 64.27379086795915,
+  "relative_rotation_vector_degrees": [
+    47.31133399230368,
+    -23.310829915552876,
+    36.733677695746806
+  ],
+  "max_worldJoint_times_inverseBind_variation_from_common_rest_transform": 9.564787913826957e-06,
+  "interpretation": "Idle wrist is a weapon-grasp pose, not a neutral free wrist. Static local wrist may be blended only in free-phase under creative scope, preserving actual start/end grasp."
+}

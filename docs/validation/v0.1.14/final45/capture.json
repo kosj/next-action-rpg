@@ -1,0 +1,588 @@
+{
+  "scope": "Scripted native MovieMaker gameplay at logical1x/60Hz using actual Game, RunePlayer/RuneEnemy physics, production camera, real confirmed damage and VFX. Native GUI/key/mouse events are script-generated, not human play or browser QA. Engine-mixed PCM is preserved, but numerical audio checks do not establish direct hearing, real-time FPS, hardware performance, animation naturalness or AAA approval.",
+  "scenario": {
+    "ui": "Native mouse clicks: Settings; quality1 via OptionButton and Down/Enter; Done; New Game; prologue Continue",
+    "movement": "Continuity: safe W/A/D locomotion, ordinary3-light chain and charged whiff, heal attempt; real first encounter with W+Shift/Tab/heavy. Contact scenario omits prelude.",
+    "release": "Stop movement; wait for real incoming health decrease and stagger clear with Heavy>=.65; release right mouse",
+    "completion": "Observe real charged contact and both actors paused, then normal recovery, optional healing/defensive movement to bounded end. Observed coverage is recorded separately from attempted inputs.",
+    "prohibited": [
+      "teleport",
+      "invulnerability writes",
+      "forced damage",
+      "save injection",
+      "QA state writes",
+      "forced sync"
+    ],
+    "variance": "Matched event-driven input policy, not identical AI trajectories or fixed event timestamps"
+  },
+  "status": "scripted_native_gameplay_captured",
+  "takes": {
+    "after": {
+      "actual": {
+        "charged_contacts": 1,
+        "paired_pause_frames": 5,
+        "actual_models": {
+          "hero": {
+            "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+            "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+          },
+          "sentinel_melee": {
+            "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+            "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+          }
+        },
+        "actual_curve": {
+          "interpolation": "linear_grip_tip",
+          "ok": true,
+          "path": "res://data/charged_blade_curve.json",
+          "reason": "",
+          "resource_sha256": "c6c4d22cb7514520e26f550d87d7e27bf7df04a7c9bf1ef33cadbaed9cc18469",
+          "sample_count": 91,
+          "sample_step_s": 0.002,
+          "sha256": "8946d0a499c50a0df8e26576a23221d54ef56d3099f1c2e01cbb25aa4e8f21e2",
+          "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+          "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+        },
+        "contact_tick": 2248,
+        "release_tick": 2224,
+        "actual_build_id": "0.1.14 · ff1171a1",
+        "start_health": 120.0,
+        "end_health": 88.0,
+        "frame_count": 2724,
+        "gameplay_frames": 2700,
+        "observed_coverage": {
+          "heal_input_attempts": 1,
+          "light_active_samples": {
+            "light_1": 143,
+            "light_2": 143,
+            "light_3": 182
+          },
+          "maximum_locomotion_displacement_m": 42.3626556396484,
+          "observed_potion_consumptions": 0,
+          "observed_successful_parries": 0,
+          "safe_charged_whiff": true,
+          "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+          "whiff_attack_instance_id": 4
+        },
+        "scenario_name": "continuity"
+      },
+      "media": {
+        "raw": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/gameplay.avi",
+          "sha256": "ea1705103741707bc9fce518d7f44f7c31fde06fd3e5085851b3c520b5964b4b",
+          "video_probe": {
+            "codec_name": "mjpeg",
+            "width": 960,
+            "height": 600,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "45.466667",
+            "nb_read_frames": "2728"
+          },
+          "av_probe": {
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "mjpeg",
+                "codec_long_name": "Motion JPEG",
+                "profile": "Baseline",
+                "codec_type": "video",
+                "codec_tag_string": "MJPG",
+                "codec_tag": "0x47504a4d",
+                "width": 960,
+                "height": 600,
+                "coded_width": 960,
+                "coded_height": 600,
+                "closed_captions": 0,
+                "film_grain": 0,
+                "has_b_frames": 0,
+                "sample_aspect_ratio": "1:1",
+                "display_aspect_ratio": "8:5",
+                "pix_fmt": "yuvj420p",
+                "level": -99,
+                "color_range": "pc",
+                "color_space": "bt470bg",
+                "chroma_location": "center",
+                "refs": 1,
+                "r_frame_rate": "60/1",
+                "avg_frame_rate": "60/1",
+                "time_base": "1/60",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "duration_ts": 2728,
+                "duration": "45.466667",
+                "bit_rate": "33155978",
+                "bits_per_raw_sample": "8",
+                "nb_frames": "2728",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              },
+              {
+                "index": 1,
+                "codec_name": "pcm_s16le",
+                "codec_long_name": "PCM signed 16-bit little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[1][0][0][0]",
+                "codec_tag": "0x0001",
+                "sample_fmt": "s16",
+                "sample_rate": "48000",
+                "channels": 2,
+                "bits_per_sample": 16,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/48000",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "bit_rate": "1536000",
+                "nb_frames": "2182400",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              }
+            ],
+            "format": {
+              "filename": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/gameplay.avi",
+              "nb_streams": 2,
+              "nb_programs": 0,
+              "nb_stream_groups": 0,
+              "format_name": "avi",
+              "format_long_name": "AVI (Audio Video Interleaved)",
+              "start_time": "0.000000",
+              "duration": "45.466667",
+              "size": "197228284",
+              "bit_rate": "34702923",
+              "probe_score": 100
+            }
+          },
+          "engine_PCM": {
+            "scope": "Decoded engine PCM/sample counts/peak/RMS only; not direct hearing or perceptual sync approval",
+            "sha256": "729d1956144d848a221b8b7b4c6759bd9e11f4c8ee395343b173921ea7cfed81",
+            "bytes": 8729600,
+            "sample_frames": 2182400,
+            "sample_rate": 48000,
+            "channels": 2,
+            "seconds": 45.46666666666667,
+            "channel_metrics": [
+              {
+                "channel": 0,
+                "nonzero_samples": 2144544,
+                "absolute_peak_int16": 5506,
+                "rms_normalized": 0.014463513476482797,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              },
+              {
+                "channel": 1,
+                "nonzero_samples": 2144558,
+                "absolute_peak_int16": 5255,
+                "rms_normalized": 0.01442793258243213,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              }
+            ]
+          }
+        },
+        "lossless_audio": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/engine-mix-logical1x.wav",
+          "sha256": "31817f9cb3907e1aae7eb4e8e28bc3b31c6edde88b328159c4356228e5d8e266",
+          "engine_PCM_prefix_exact": true,
+          "decoded": {
+            "scope": "Decoded engine PCM/sample counts/peak/RMS only; not direct hearing or perceptual sync approval",
+            "sha256": "5976f0000669d86c5b5968dabba5f698c5bafe3ebbc74d7536648db98b99e73d",
+            "bytes": 8716800,
+            "sample_frames": 2179200,
+            "sample_rate": 48000,
+            "channels": 2,
+            "seconds": 45.4,
+            "channel_metrics": [
+              {
+                "channel": 0,
+                "nonzero_samples": 2144544,
+                "absolute_peak_int16": 5506,
+                "rms_normalized": 0.014474128900646872,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              },
+              {
+                "channel": 1,
+                "nonzero_samples": 2144558,
+                "absolute_peak_int16": 5255,
+                "rms_normalized": 0.014438521892175038,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              }
+            ]
+          }
+        },
+        "delivery": {
+          "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/gameplay-logical1x-av.mp4",
+          "sha256": "ac63d57023d39eb444c2117bb6f6699f300ab1743c1c75d95dcdc78d528014b9",
+          "video_probe": {
+            "codec_name": "h264",
+            "width": 960,
+            "height": 600,
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "45.400000",
+            "nb_read_frames": "2724"
+          },
+          "av_probe": {
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "h264",
+                "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+                "profile": "High",
+                "codec_type": "video",
+                "codec_tag_string": "avc1",
+                "codec_tag": "0x31637661",
+                "width": 960,
+                "height": 600,
+                "coded_width": 960,
+                "coded_height": 600,
+                "closed_captions": 0,
+                "film_grain": 0,
+                "has_b_frames": 2,
+                "sample_aspect_ratio": "1:1",
+                "display_aspect_ratio": "8:5",
+                "pix_fmt": "yuvj420p",
+                "level": 32,
+                "color_range": "pc",
+                "color_space": "bt470bg",
+                "chroma_location": "center",
+                "field_order": "progressive",
+                "refs": 1,
+                "is_avc": "true",
+                "nal_length_size": "4",
+                "id": "0x1",
+                "r_frame_rate": "60/1",
+                "avg_frame_rate": "60/1",
+                "time_base": "1/15360",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "duration_ts": 697344,
+                "duration": "45.400000",
+                "bit_rate": "4501009",
+                "bits_per_raw_sample": "8",
+                "nb_frames": "2724",
+                "extradata_size": 51,
+                "disposition": {
+                  "default": 1,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                },
+                "tags": {
+                  "language": "und",
+                  "handler_name": "VideoHandler",
+                  "vendor_id": "[0][0][0][0]",
+                  "encoder": "Lavc61.19.101 libx264"
+                }
+              },
+              {
+                "index": 1,
+                "codec_name": "aac",
+                "codec_long_name": "AAC (Advanced Audio Coding)",
+                "profile": "LC",
+                "codec_type": "audio",
+                "codec_tag_string": "mp4a",
+                "codec_tag": "0x6134706d",
+                "sample_fmt": "fltp",
+                "sample_rate": "48000",
+                "channels": 2,
+                "channel_layout": "stereo",
+                "bits_per_sample": 0,
+                "initial_padding": 0,
+                "id": "0x2",
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/48000",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "duration_ts": 2179200,
+                "duration": "45.400000",
+                "bit_rate": "190186",
+                "nb_frames": "2130",
+                "extradata_size": 5,
+                "disposition": {
+                  "default": 1,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                },
+                "tags": {
+                  "language": "und",
+                  "handler_name": "SoundHandler",
+                  "vendor_id": "[0][0][0][0]"
+                }
+              }
+            ],
+            "format": {
+              "filename": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/gameplay-logical1x-av.mp4",
+              "nb_streams": 2,
+              "nb_programs": 0,
+              "nb_stream_groups": 0,
+              "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+              "format_long_name": "QuickTime / MOV",
+              "start_time": "0.000000",
+              "duration": "45.400000",
+              "size": "26696765",
+              "bit_rate": "4704275",
+              "probe_score": 100,
+              "tags": {
+                "major_brand": "isom",
+                "minor_version": "512",
+                "compatible_brands": "isomiso2avc1mp41",
+                "encoder": "Lavf61.7.103"
+              }
+            }
+          },
+          "audio_decoded": {
+            "scope": "Decoded engine PCM/sample counts/peak/RMS only; not direct hearing or perceptual sync approval",
+            "sha256": "1b5c36e184149e8a277f82d0cefddaa2f3517f3c51727f4ab27cd271bccab757",
+            "bytes": 8720384,
+            "sample_frames": 2180096,
+            "sample_rate": 48000,
+            "channels": 2,
+            "seconds": 45.41866666666667,
+            "channel_metrics": [
+              {
+                "channel": 0,
+                "nonzero_samples": 2145087,
+                "absolute_peak_int16": 5579,
+                "rms_normalized": 0.014282567103465947,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              },
+              {
+                "channel": 1,
+                "nonzero_samples": 2145113,
+                "absolute_peak_int16": 5671,
+                "rms_normalized": 0.01425053846578143,
+                "clipped_samples": 0,
+                "first_nonzero_frame": 17996,
+                "last_nonzero_frame": 2179056
+              }
+            ]
+          },
+          "audio_codec": "AAC lossy delivery; exact original PCM retained in AVI/WAV",
+          "logical_speed": 1.0,
+          "video_frames": 2724,
+          "seconds": 45.4,
+          "audio_seconds": 45.4,
+          "no_speed_or_time_interpolation": true,
+          "no_added_audio": true,
+          "direct_hearing_approval": false
+        },
+        "sync": {
+          "sample_frames_per_video_frame": 800,
+          "raw_counts_exact": true,
+          "trimmed_video_frames": 4,
+          "trimmed_audio_sample_frames": 3200,
+          "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+        },
+        "original_png_checks": [
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/01-normal-gameplay.png",
+            "sha256": "c823f916bd8ffec5cf743a5f917d9a285171458ec207d74ac7800045647ed966",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              100.77132465277778,
+              87.74611284722222,
+              73.50386979166667
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/08-light_1-first-active.png",
+            "sha256": "212f7c0f0d393bdd5c5f81da0584f37260cb27bcca10b39a254dd9779e7e7c7a",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              103.08901388888889,
+              88.41955902777778,
+              73.85998090277778
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/08-light_2-first-active.png",
+            "sha256": "1ce5678dcdbf72f9fc74be118bc28f07e8f2d396bbac24fa030cfde3402d372b",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              102.9284548611111,
+              88.23743402777778,
+              73.68250347222222
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/08-light_3-first-active.png",
+            "sha256": "56a8e44b1ab08a1708719ab9cc8ca77b62d30f88b7c601e27c8276af005bb757",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              102.53053645833333,
+              87.74147048611111,
+              73.204671875
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/02-charge-near-real-enemy.png",
+            "sha256": "1c00273026e3d8c055db4c5ca461b319b66a4a2d8e13ca8b621b28af6940650c",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              105.9368923611111,
+              93.27168402777778,
+              78.80249652777778
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          },
+          {
+            "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/original-png/04-actual-confirmed-contact.png",
+            "sha256": "e01de754584be224886bbec39d661b178e87a8b0bd4a8b68be13d2a2299a9741",
+            "size": [
+              960,
+              600
+            ],
+            "rgb_mean": [
+              104.7620173611111,
+              91.386078125,
+              76.33198958333334
+            ],
+            "middle_row_nonblack_span": 960,
+            "scope": "Bounded daylight first-encounter raster sanity, not visual-quality approval"
+          }
+        ]
+      },
+      "source_inputs_unchanged": true,
+      "engine_errors": [],
+      "engine_warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.",
+        "WARNING: Current available space on disk is low (3.13 GiB). MovieWriter will fail during movie recording if the disk runs out of available space."
+      ],
+      "cleanup": {
+        "actual_audio_weakrefs_released": true,
+        "audio_stop_report": {
+          "epoch": 1,
+          "pending_playbacks": 0,
+          "players": 0,
+          "stopped": true
+        },
+        "scope": "Post-record resource release only; not audio-hearing approval"
+      }
+    }
+  },
+  "display_tcp_disabled": true,
+  "processes_closed": true,
+  "started_unix": 1793622413.4416928,
+  "writer_contract_sources": {
+    "fixed_dummy_driver": "https://github.com/godotengine/godot/blob/4.7.2-stable/main/main.cpp#L2829",
+    "per_frame_engine_mix": "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/movie_writer/movie_writer.cpp#L244",
+    "actual_audio_server_process": "https://github.com/godotengine/godot/blob/4.7.2-stable/servers/audio/audio_driver_dummy.cpp#L113",
+    "AVI_PCM_write": "https://github.com/godotengine/godot/blob/4.7.2-stable/modules/jpg/movie_writer_mjpeg.cpp#L180"
+  },
+  "raster_profile": {
+    "backend": "Mesa llvmpipe software",
+    "requested_LP_NUM_THREADS": 3,
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "scope": "Requested software raster worker limit, not observed worker count or hardware/FPS evidence; compare takes with the same requested profile"
+  },
+  "engine_version": "4.7.2.stable.official.ed1daf0bf",
+  "engine_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+  "finished_unix": 1793623463.56482,
+  "elapsed_s": 1050.1231272220612
+}

@@ -1,0 +1,519 @@
+{
+  "scope": "Read-only actual raw glTF LBS at every source/candidate light_1/light_2/light_3 key and midpoint, arm/hand/shoulder regions. Finite sampling is not continuous collision, skin intersection, visual, hardware or AAA approval.",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "candidate_sha256": "adb5185cef253c0dfec40d9b0bb088e4f2824d184648b5b67a92d83a87c9125d",
+  "audit_script_sha256": "e26b355e3d3e70371e98e390964d1c1dcea5dad692e69a980791a7ac50442648",
+  "skin_helper_sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+  "primitives": [
+    {
+      "primitive": 0,
+      "samples_keys_and_midpoints": 351,
+      "regional_vertices": 11014,
+      "regional_edges": 23800,
+      "regional_triangles": 13290,
+      "scope": "Edges with at least one arm/hand/shoulder-influenced vertex and adjacent triangles; no skin intersection/anatomical/visual approval.",
+      "old_max_absolute_extension_mm": 36.863086688515615,
+      "new_max_absolute_extension_mm": 36.863086688515615,
+      "old_p99_edge_ratio": 1.6179242325351864,
+      "new_p99_edge_ratio": 1.5418725435945224,
+      "old_max_ratio": 3.81617311242653,
+      "new_max_ratio": 3.81617311242653,
+      "new_collateral_edges_above1mm": 163,
+      "old_min_triangle_area_ratio": 0.0013225943669194775,
+      "new_min_triangle_area_ratio": 0.0008109241490646788,
+      "largest_same_edge_envelope_worsening": [
+        {
+          "edge_index_in_region": 14053,
+          "vertex_ids": [
+            16005,
+            16018
+          ],
+          "rest_length_mm": 29.497144380077266,
+          "old_envelope_extension_mm": 2.6747567159972374,
+          "new_envelope_extension_mm": 9.379890867213549,
+          "worsening_mm": 6.705134151216312,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10000000149011612
+          },
+          "rest_vertices_world_m": [
+            [
+              0.18000864197545866,
+              1.3800177954269832,
+              -0.008752931523367927
+            ],
+            [
+              0.19393656587263425,
+              1.3921468607822656,
+              -0.03175250186937436
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.3770941495895386,
+              "LeftShoulder": 0.3132462501525879,
+              "Spine2": 0.18621981143951416,
+              "Spine1": 0.1234397441148758
+            },
+            {
+              "LeftArm": 0.5612989664077759,
+              "LeftShoulder": 0.27871817350387573,
+              "Spine2": 0.09813081473112106,
+              "Spine1": 0.06185207515954971
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 23329,
+          "vertex_ids": [
+            25421,
+            25427
+          ],
+          "rest_length_mm": 23.67533586833516,
+          "old_envelope_extension_mm": 5.163926257577032,
+          "new_envelope_extension_mm": 10.717053971241377,
+          "worsening_mm": 5.553127713664344,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.20040675929794988,
+              1.3888263669859378,
+              -0.0385534872855654
+            ],
+            [
+              0.21267842059314043,
+              1.3969226043134448,
+              -0.0571109331947222
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.6519997715950012,
+              "LeftShoulder": 0.22694073617458344,
+              "Spine2": 0.07792818546295166,
+              "Spine1": 0.043131306767463684
+            },
+            {
+              "LeftArm": 0.8000146746635437,
+              "LeftShoulder": 0.16356554627418518,
+              "Spine2": 0.035005390644073486,
+              "Spine1": 0.0014143098378553987
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 23166,
+          "vertex_ids": [
+            25351,
+            25352
+          ],
+          "rest_length_mm": 16.610849683424494,
+          "old_envelope_extension_mm": 2.891121600141867,
+          "new_envelope_extension_mm": 8.394819877065464,
+          "worsening_mm": 5.503698276923597,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.19422564539882162,
+              1.4086318033300749,
+              -0.08365898437447448
+            ],
+            [
+              0.18036706776608932,
+              1.4018538012752484,
+              -0.07750115672605627
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.6738567352294922,
+              "LeftShoulder": 0.2761535346508026,
+              "Spine2": 0.04792157560586929,
+              "Spine1": 0.00206814706325531
+            },
+            {
+              "LeftArm": 0.5136370062828064,
+              "LeftShoulder": 0.37393444776535034,
+              "Spine2": 0.0808582678437233,
+              "Spine1": 0.031570274382829666
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 23310,
+          "vertex_ids": [
+            25414,
+            25416
+          ],
+          "rest_length_mm": 16.610849683424494,
+          "old_envelope_extension_mm": 2.891121600141867,
+          "new_envelope_extension_mm": 8.394819877065464,
+          "worsening_mm": 5.503698276923597,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.19422564539882162,
+              1.4086318033300749,
+              -0.08365898437447448
+            ],
+            [
+              0.18036706776608932,
+              1.4018538012752484,
+              -0.07750115672605627
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.6738567352294922,
+              "LeftShoulder": 0.2761535346508026,
+              "Spine2": 0.04792157560586929,
+              "Spine1": 0.00206814706325531
+            },
+            {
+              "LeftArm": 0.5136370062828064,
+              "LeftShoulder": 0.37393444776535034,
+              "Spine2": 0.0808582678437233,
+              "Spine1": 0.031570274382829666
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 23335,
+          "vertex_ids": [
+            25422,
+            25428
+          ],
+          "rest_length_mm": 23.652494893598732,
+          "old_envelope_extension_mm": 3.6024949791918157,
+          "new_envelope_extension_mm": 8.782653783741988,
+          "worsening_mm": 5.180158804550174,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10000000149011612
+          },
+          "rest_vertices_world_m": [
+            [
+              0.204025803633232,
+              1.3929055866416673,
+              -0.02008362093433419
+            ],
+            [
+              0.21650504032943835,
+              1.3923070373753497,
+              -0.040167218842765876
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.6867365837097168,
+              "LeftShoulder": 0.2013365924358368,
+              "Spine2": 0.07469208538532257,
+              "Spine1": 0.03723473846912384
+            },
+            {
+              "LeftArm": 0.8101292848587036,
+              "LeftShoulder": 0.1476193070411682,
+              "Spine2": 0.03902798891067505,
+              "Spine1": 0.0032234133686870337
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 23325,
+          "vertex_ids": [
+            25419,
+            25429
+          ],
+          "rest_length_mm": 19.99440670355159,
+          "old_envelope_extension_mm": 1.7414598149226683,
+          "new_envelope_extension_mm": 6.8837869914000756,
+          "worsening_mm": 5.142327176477408,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.197168924569354,
+              1.3972758059996992,
+              -0.07463626124083343
+            ],
+            [
+              0.2150661699079077,
+              1.405956904685603,
+              -0.07666195478237561
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.6849609613418579,
+              "LeftShoulder": 0.24661532044410706,
+              "Spine2": 0.05851946398615837,
+              "Spine1": 0.009904248639941216
+            },
+            {
+              "LeftArm": 0.828464150428772,
+              "LeftShoulder": 0.16198983788490295,
+              "Spine2": 0.00954603124409914
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14329,
+          "vertex_ids": [
+            16542,
+            16547
+          ],
+          "rest_length_mm": 17.64990989254939,
+          "old_envelope_extension_mm": 4.330940422756995,
+          "new_envelope_extension_mm": 9.457732158207259,
+          "worsening_mm": 5.126791735450265,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.1828144455490209,
+              1.3793008333299541,
+              -0.04072024564686875
+            ],
+            [
+              0.19205644456354246,
+              1.39130159816026,
+              -0.04978040110460741
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.4325336217880249,
+              "LeftShoulder": 0.3324379622936249,
+              "Spine2": 0.14299888908863068,
+              "Spine1": 0.09202953428030014
+            },
+            {
+              "LeftArm": 0.5876748561859131,
+              "LeftShoulder": 0.2658711373806,
+              "Spine2": 0.09086860716342926,
+              "Spine1": 0.05558537691831589
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14293,
+          "vertex_ids": [
+            16522,
+            16543
+          ],
+          "rest_length_mm": 27.246265118500908,
+          "old_envelope_extension_mm": -1.1435917549526762,
+          "new_envelope_extension_mm": 3.206866795795821,
+          "worsening_mm": 4.350458550748497,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.2800000011920929
+          },
+          "rest_vertices_world_m": [
+            [
+              0.16553161240400696,
+              1.389256099063682,
+              -0.07728435389223764
+            ],
+            [
+              0.1899774626603597,
+              1.3989434113558927,
+              -0.07014885470123491
+            ]
+          ],
+          "weights": [
+            {
+              "LeftShoulder": 0.44150251150131226,
+              "LeftArm": 0.3574092984199524,
+              "Spine2": 0.13042457401752472,
+              "Spine1": 0.07066360116004944
+            },
+            {
+              "LeftArm": 0.6074635982513428,
+              "LeftShoulder": 0.29293331503868103,
+              "Spine2": 0.07334278523921967,
+              "Spine1": 0.026260288432240486
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14063,
+          "vertex_ids": [
+            16008,
+            16022
+          ],
+          "rest_length_mm": 22.561456268457036,
+          "old_envelope_extension_mm": 4.961648624379325,
+          "new_envelope_extension_mm": 9.291982154911691,
+          "worsening_mm": 4.330333530532367,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10000000149011612
+          },
+          "rest_vertices_world_m": [
+            [
+              0.1873020341331532,
+              1.3972108203645752,
+              0.006721362692727101
+            ],
+            [
+              0.19576071733734735,
+              1.3984098491591699,
+              -0.014160024171040248
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.4328937828540802,
+              "LeftShoulder": 0.3387446999549866,
+              "Spine2": 0.1438465565443039,
+              "Spine1": 0.08451496064662933
+            },
+            {
+              "LeftArm": 0.5922922492027283,
+              "LeftShoulder": 0.24811531603336334,
+              "Spine2": 0.09862962365150452,
+              "Spine1": 0.060962822288274765
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14291,
+          "vertex_ids": [
+            16522,
+            16537
+          ],
+          "rest_length_mm": 19.463808473173884,
+          "old_envelope_extension_mm": 2.1148560205947393,
+          "new_envelope_extension_mm": 5.683680639543658,
+          "worsening_mm": 3.568824618948918,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.16553161240400696,
+              1.389256099063682,
+              -0.07728435389223764
+            ],
+            [
+              0.18036706776608932,
+              1.4018538012752484,
+              -0.07750115672605627
+            ]
+          ],
+          "weights": [
+            {
+              "LeftShoulder": 0.44150251150131226,
+              "LeftArm": 0.3574092984199524,
+              "Spine2": 0.13042457401752472,
+              "Spine1": 0.07066360116004944
+            },
+            {
+              "LeftArm": 0.5136370062828064,
+              "LeftShoulder": 0.37393444776535034,
+              "Spine2": 0.0808582678437233,
+              "Spine1": 0.031570274382829666
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14033,
+          "vertex_ids": [
+            15996,
+            16005
+          ],
+          "rest_length_mm": 31.5875502083008,
+          "old_envelope_extension_mm": 1.6189898559558145,
+          "new_envelope_extension_mm": 5.1622474092817425,
+          "worsening_mm": 3.543257553325928,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.17500001192092896
+          },
+          "rest_vertices_world_m": [
+            [
+              0.17038048127610042,
+              1.3756565745354266,
+              0.02101368739857729
+            ],
+            [
+              0.18000864197545866,
+              1.3800177954269832,
+              -0.008752931523367927
+            ]
+          ],
+          "weights": [
+            {
+              "LeftShoulder": 0.3041718304157257,
+              "Spine2": 0.2677249610424042,
+              "LeftArm": 0.25936445593833923,
+              "Spine1": 0.16873875260353088
+            },
+            {
+              "LeftArm": 0.3770941495895386,
+              "LeftShoulder": 0.3132462501525879,
+              "Spine2": 0.18621981143951416,
+              "Spine1": 0.1234397441148758
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14326,
+          "vertex_ids": [
+            16541,
+            16543
+          ],
+          "rest_length_mm": 21.562093895634597,
+          "old_envelope_extension_mm": 5.492273866140162,
+          "new_envelope_extension_mm": 9.021005750497608,
+          "worsening_mm": 3.528731884357445,
+          "new_peak": {
+            "clip": "light_2",
+            "time_s": 0.10999999940395355
+          },
+          "rest_vertices_world_m": [
+            [
+              0.1818077039720846,
+              1.3843692502261227,
+              -0.056519006444448794
+            ],
+            [
+              0.1899774626603597,
+              1.3989434113558927,
+              -0.07014885470123491
+            ]
+          ],
+          "weights": [
+            {
+              "LeftArm": 0.45642808079719543,
+              "LeftShoulder": 0.34990784525871277,
+              "Spine2": 0.12126453220844269,
+              "Spine1": 0.07239954173564911
+            },
+            {
+              "LeftArm": 0.6074635982513428,
+              "LeftShoulder": 0.29293331503868103,
+              "Spine2": 0.07334278523921967,
+              "Spine1": 0.026260288432240486
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

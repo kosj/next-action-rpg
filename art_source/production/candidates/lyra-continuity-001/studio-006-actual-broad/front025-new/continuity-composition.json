@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scope": "Actual base root/markers/PBR material plus actual runtime Hero broadblade mesh replacement in neutral Blender studio. Finite stills and raw marker calibration only; not actual Game camera, gameplay, continuous AV, hardware or AAA approval.",
+  "helper_sha256": "c85d9dbf2b4a1e16cdaa08150089a48aef5de3e9991d6bb17ace0b1ddc3c3fc8",
+  "borrowed_renderer_sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12",
+  "raw_fk_helper_sha256": "fc73a40251ba3eae4ff986fccdffbbbf2c67f3398d8346fbf14d24022c3bd137",
+  "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "weapon_base_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "actual_weapon_geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+  "runtime_grip_sha256": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+  "runtime_composition_reference": "game/scripts/actors/actor_visual.gd:apply_hero_blade_profile",
+  "runtime_composition_source_sha256": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec",
+  "composition": {
+    "composed": true,
+    "material_names": [
+      "material_0.001"
+    ],
+    "material_reference_preserved": true,
+    "mesh_vertices": 2799,
+    "mesh_polygons": 4000
+  },
+  "studio_coordinate_system": "Blender point=[source_glTF_x,-source_glTF_z,source_glTF_y]; pre-gameplay-PI/floor studio, distances/relative composition unchanged",
+  "camera_override": null,
+  "aim_override": null,
+  "ortho_override_m": null,
+  "captured_camera_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.06903905421495438,
+      -0.9976139664649963,
+      -6.0
+    ],
+    [
+      0.0,
+      0.9976139664649963,
+      0.06903905421495438,
+      1.7999999523162842
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "raw_marker_limit_m": 0.003,
+  "maximum_grip_error_m": 1.914088812271525e-07,
+  "maximum_tip_error_m": 9.098254157587139e-07,
+  "raw_marker_samples": [
+    {
+      "time_s": 0.25,
+      "grip_expected_blender_m": [
+        0.1616823524236679,
+        -0.3103400766849518,
+        1.119999885559082
+      ],
+      "grip_actual_blender_m": [
+        0.1616823673248291,
+        -0.31033992767333984,
+        1.1200000047683716
+      ],
+      "grip_error_m": 1.914088812271525e-07,
+      "tip_expected_blender_m": [
+        0.7717090249061584,
+        -1.3320878744125366,
+        1.1205533742904663
+      ],
+      "tip_actual_blender_m": [
+        0.7717089653015137,
+        -1.3320870399475098,
+        1.1205530166625977
+      ],
+      "tip_error_m": 9.098254157587139e-07
+    }
+  ],
+  "original_base_report": "review.json",
+  "shots": [
+    {
+      "time_s": 0.25,
+      "file": "light_2-0250.png",
+      "sha256": "90b34b46a00586c79a7342bfab76c14f7b2ba30cddf897d968f760cb8a7f6141",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        0.1616823673248291,
+        -0.31033992767333984,
+        1.1200000047683716
+      ],
+      "actual_weapon_tip_m": [
+        0.7717089653015137,
+        -1.3320870399475098,
+        1.1205530166625977
+      ]
+    }
+  ],
+  "raw_markers_passed": true
+}

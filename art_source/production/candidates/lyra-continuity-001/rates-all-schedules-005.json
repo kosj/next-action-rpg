@@ -1,0 +1,204 @@
+{
+  "scope": "Independent decoded raw glTF all53bone actual angular speed at60/120Hz and every original source key+midpoint. Criterion unchanged2700deg/s. Not engine/visual/skin/AV/AAA approval.",
+  "limit_degrees_per_second": 2700,
+  "reports": [
+    {
+      "clip": "light_1",
+      "all_bones": 53,
+      "schedules": {
+        "60": {
+          "local": {
+            "deg_s": 1005.6711402645284,
+            "angle_deg": 16.76118567107547,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3333333333333333,
+              0.35
+            ]
+          },
+          "global": {
+            "deg_s": 1115.7464601929205,
+            "angle_deg": 18.595774336548672,
+            "bone": "RightArm",
+            "interval_s": [
+              0.38333333333333336,
+              0.4
+            ]
+          }
+        },
+        "120": {
+          "local": {
+            "deg_s": 1050.9886115707209,
+            "angle_deg": 8.758238429755977,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3416666666666667,
+              0.35
+            ]
+          },
+          "global": {
+            "deg_s": 1144.4980400417721,
+            "angle_deg": 9.537483667014733,
+            "bone": "RightArm",
+            "interval_s": [
+              0.38333333333333336,
+              0.39166666666666666
+            ]
+          }
+        },
+        "key_midpoint": {
+          "local": {
+            "deg_s": 1050.988654522332,
+            "angle_deg": 5.254938261107226,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3449999988079071,
+              0.3499999940395355
+            ]
+          },
+          "global": {
+            "deg_s": 1158.8762094445403,
+            "angle_deg": 5.794375521270317,
+            "bone": "RightArm",
+            "interval_s": [
+              0.3799999952316284,
+              0.38499999046325684
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clip": "light_2",
+      "all_bones": 53,
+      "schedules": {
+        "60": {
+          "local": {
+            "deg_s": 1304.9202162127528,
+            "angle_deg": 21.748670270212543,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3333333333333333,
+              0.35
+            ]
+          },
+          "global": {
+            "deg_s": 1330.2786044745235,
+            "angle_deg": 22.171310074575388,
+            "bone": "RightArm",
+            "interval_s": [
+              0.38333333333333336,
+              0.4
+            ]
+          }
+        },
+        "120": {
+          "local": {
+            "deg_s": 1338.9396135838779,
+            "angle_deg": 11.157830113198942,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3416666666666667,
+              0.35
+            ]
+          },
+          "global": {
+            "deg_s": 1352.6115133996043,
+            "angle_deg": 11.271762611663329,
+            "bone": "RightArm",
+            "interval_s": [
+              0.38333333333333336,
+              0.39166666666666666
+            ]
+          }
+        },
+        "key_midpoint": {
+          "local": {
+            "deg_s": 1338.9397088851995,
+            "angle_deg": 6.69469215986394,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.3449999988079071,
+              0.3499999940395355
+            ]
+          },
+          "global": {
+            "deg_s": 1363.7259694400157,
+            "angle_deg": 6.81862334444792,
+            "bone": "RightArm",
+            "interval_s": [
+              0.3799999952316284,
+              0.38499999046325684
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clip": "light_3",
+      "all_bones": 53,
+      "schedules": {
+        "60": {
+          "local": {
+            "deg_s": 774.5086951479557,
+            "angle_deg": 12.908478252465924,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.45,
+              0.4666666666666667
+            ]
+          },
+          "global": {
+            "deg_s": 853.9280009907537,
+            "angle_deg": 14.23213334984594,
+            "bone": "RightArm",
+            "interval_s": [
+              0.5,
+              0.5166666666666667
+            ]
+          }
+        },
+        "120": {
+          "local": {
+            "deg_s": 783.3477510337615,
+            "angle_deg": 6.527897925281366,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.4583333333333333,
+              0.4666666666666667
+            ]
+          },
+          "global": {
+            "deg_s": 862.9094039728229,
+            "angle_deg": 7.1909116997735945,
+            "bone": "RightArm",
+            "interval_s": [
+              0.5083333333333333,
+              0.5166666666666667
+            ]
+          }
+        },
+        "key_midpoint": {
+          "local": {
+            "deg_s": 788.7615518041808,
+            "angle_deg": 3.9438039979127355,
+            "bone": "RightForeArm",
+            "interval_s": [
+              0.4650000035762787,
+              0.4699999988079071
+            ]
+          },
+          "global": {
+            "deg_s": 867.5799962172896,
+            "angle_deg": 4.337895844142649,
+            "bone": "RightArm",
+            "interval_s": [
+              0.5099999904632568,
+              0.5149999856948853
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

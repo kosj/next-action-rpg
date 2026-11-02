@@ -57,10 +57,11 @@ def main():
               "game/assets/materials/courtyard/floor_arm.jpg", "game/assets/materials/courtyard/wall_albedo.jpg",
               "game/assets/materials/courtyard/wall_normal.jpg", "game/assets/materials/courtyard/wall_arm.jpg",
               "tools/author_impact_actions.py", "tools/author_character_actions.py", "tools/author_weight_actions.py",
-              "tools/author_fury_actions.py", "tools/derive_greatsword_profile.py",
+              "tools/author_fury_actions.py", "tools/author_continuity_actions.py", "tools/derive_greatsword_profile.py",
               "game/assets/models/production/rune_sword_web.glb", "game/assets/models/production/rune_greatsword_geometry.glb",
               "game/assets/models/production/rune_greatsword_geometry.glb.import", "game/scripts/actors/blade_trail.gd",
               "art_source/production/character_actions/lyra-fury.json",
+              "art_source/production/character_actions/lyra-continuity-neutral.json",
               "tools/author_sentinel_recovery.py",
               "art_source/production/character_actions/lyra-weight.json",
               "art_source/production/character_actions/sentinel-weight.json",
@@ -68,10 +69,10 @@ def main():
               "tools/generate_impact_audio.py", "tools/render_impact_review.py"]
     # Godot's GLTF importer extracts these actual runtime atlases. Embedded GLB
     # bytes alone do not bind the external PNGs/settings used by the export.
-    for role in ("erin", "roen"):
-        atlases = sorted((root/"game/assets/models/production").glob(f"{role}_idle_gameplay_*.png"))
+    for stem in ("lyra_fury_gameplay", "erin_idle_gameplay", "roen_idle_gameplay"):
+        atlases = sorted((root/"game/assets/models/production").glob(f"{stem}_*.png"))
         if len(atlases) != 3:
-            raise SystemExit(f"Expected the three imported {role} runtime atlases, found {len(atlases)}")
+            raise SystemExit(f"Expected the three imported {stem} runtime atlases, found {len(atlases)}")
         for atlas in atlases:
             inputs.extend((str(atlas.relative_to(root)), str(atlas.relative_to(root))+".import"))
     inputs.extend(str(path.relative_to(root)) for path in sorted((root/"game/assets/audio/impact").glob("*.wav")))

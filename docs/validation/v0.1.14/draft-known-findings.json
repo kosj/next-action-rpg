@@ -1,0 +1,553 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "scoped_model_camera_native_export_actual_final45_verified_pending_public_and_fullquality",
+  "baseline": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+  "scope": "Model006 andcamera7b8c actualnative692/export/final45boundedreadabilityprototype accepted. Olda519rejectedhistoryretained; late288rowrootvarianceexplicit. No browser/CI/public/continuouswatch/directhearing/fullskin/hardware/AAA approval.",
+  "candidate004": {
+    "file": "art_source/production/candidates/lyra-continuity-001/source-004.glb",
+    "bytes": 25059960,
+    "sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+    "authoring_preservation": {
+      "source_BIN_prefix_exact": true,
+      "static_payload_declarations_exact": true,
+      "unrelated_clips_exact": true,
+      "unchanged_bone_channels_in_three_clips_exact": true,
+      "changed_bones": [
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand"
+      ],
+      "changed_clips": [
+        "light_1",
+        "light_2",
+        "light_3"
+      ],
+      "new_BIN_bytes": 21948
+    },
+    "left_hand_policy": "Original100Hz worldkeytargets exact; old parent/child midpoint excursion is intentionally replaced by continuous target interpolation and must be measured separately.",
+    "raw_rate_bound_deg_per_second": 2700,
+    "per_clip": [
+      {
+        "clip": "light_1",
+        "raw_53_bone_60_120_key_mid_max_deg_per_second": 2594.186612353879,
+        "key_hand_target_preservation": {
+          "LeftHand": {
+            "world_position_max_error_m": 4.0835576797678964e-07,
+            "world_rotation_max_error_deg": 2.4979263396122898e-05
+          },
+          "RightHand": {
+            "world_position_max_error_m": 0.0,
+            "world_rotation_max_error_deg": 0.0
+          }
+        },
+        "protected_body_midpoint_world_error_max_m": 0.0,
+        "actual_idle_joins": {
+          "start": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          },
+          "end": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          }
+        },
+        "scope": "Finite raw FK/preserved source targets, not engine/skin/continuous visual approval."
+      },
+      {
+        "clip": "light_2",
+        "raw_53_bone_60_120_key_mid_max_deg_per_second": 2585.1281987235675,
+        "key_hand_target_preservation": {
+          "LeftHand": {
+            "world_position_max_error_m": 4.5577533644939634e-07,
+            "world_rotation_max_error_deg": 6.269280289849891e-05
+          },
+          "RightHand": {
+            "world_position_max_error_m": 0.0,
+            "world_rotation_max_error_deg": 0.0
+          }
+        },
+        "protected_body_midpoint_world_error_max_m": 0.0,
+        "actual_idle_joins": {
+          "start": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          },
+          "end": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          }
+        },
+        "scope": "Finite raw FK/preserved source targets, not engine/skin/continuous visual approval."
+      },
+      {
+        "clip": "light_3",
+        "raw_53_bone_60_120_key_mid_max_deg_per_second": 1914.7718270989856,
+        "key_hand_target_preservation": {
+          "LeftHand": {
+            "world_position_max_error_m": 3.7935888873826303e-07,
+            "world_rotation_max_error_deg": 2.2198114802541473e-05
+          },
+          "RightHand": {
+            "world_position_max_error_m": 0.0,
+            "world_rotation_max_error_deg": 0.0
+          }
+        },
+        "protected_body_midpoint_world_error_max_m": 0.0,
+        "actual_idle_joins": {
+          "start": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          },
+          "end": {
+            "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+            "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+          }
+        },
+        "scope": "Finite raw FK/preserved source targets, not engine/skin/continuous visual approval."
+      }
+    ],
+    "skin": {
+      "samples_keys_and_midpoints": 351,
+      "regional_vertices": 11014,
+      "regional_edges": 23800,
+      "regional_triangles": 13290,
+      "old_p99_edge_ratio": 1.6179242325351864,
+      "new_p99_edge_ratio": 1.552054726448676,
+      "new_collateral_edges_above1mm": 345,
+      "old_max_absolute_extension_mm": 36.863086688515615,
+      "new_max_absolute_extension_mm": 36.863086688515615,
+      "old_min_triangle_area_ratio": 0.0013225943669194775,
+      "new_min_triangle_area_ratio": 0.0007717897058685791
+    },
+    "worst_same_edge_worsening": {
+      "edge_index_in_region": 14293,
+      "vertex_ids": [
+        16522,
+        16543
+      ],
+      "rest_length_mm": 27.246265118500908,
+      "old_envelope_extension_mm": -1.1435917549526762,
+      "new_envelope_extension_mm": 13.70788493425551,
+      "worsening_mm": 14.851476689208186,
+      "new_peak": {
+        "clip": "light_2",
+        "time_s": 0.25
+      },
+      "rest_vertices_world_m": [
+        [
+          0.16553161240400696,
+          1.389256099063682,
+          -0.07728435389223764
+        ],
+        [
+          0.1899774626603597,
+          1.3989434113558927,
+          -0.07014885470123491
+        ]
+      ],
+      "weights": [
+        {
+          "LeftShoulder": 0.44150251150131226,
+          "LeftArm": 0.3574092984199524,
+          "Spine2": 0.13042457401752472,
+          "Spine1": 0.07066360116004944
+        },
+        {
+          "LeftArm": 0.6074635982513428,
+          "LeftShoulder": 0.29293331503868103,
+          "Spine2": 0.07334278523921967,
+          "Spine1": 0.026260288432240486
+        }
+      ]
+    },
+    "status": "root_rejected_for_visible_chickenwing_pose_after_raw_rate_pass",
+    "review": "rejected-visible-pose-004.md: high elbow/hanging forearm/raised pauldron/strained armpit read worse in matched originals."
+  },
+  "observer": {
+    "status": "isolated_real_browser_test_double_passed_not_game",
+    "ui_timeout_ms": 15000,
+    "browser_started": true,
+    "browser_closed": true,
+    "helper_sha256": "ad3c870f3b5f8ba75a956e1fb091e568273b3fc9d564c80498bfdfd6d905b46e",
+    "matched_terminal_retained_until_host_ack": true,
+    "expired_evidence_retained": true,
+    "matched_but_withheld_reply_still_fails_deadline": true,
+    "host_attempts": [
+      {
+        "token": 1,
+        "stage": "isolated_observer_test_double",
+        "predicate": "s.ready",
+        "timeout_ms": 15000,
+        "outcome": "matched",
+        "host_phases": [
+          {
+            "phase": "arm_request",
+            "seconds": 2.2e-05
+          },
+          {
+            "phase": "arm_response",
+            "seconds": 0.005262
+          },
+          {
+            "phase": "gesture_request",
+            "seconds": 0.0056
+          },
+          {
+            "phase": "gesture_response",
+            "seconds": 0.02182
+          },
+          {
+            "phase": "result_request",
+            "seconds": 0.022082
+          },
+          {
+            "phase": "result_response",
+            "seconds": 0.04992
+          },
+          {
+            "phase": "validated",
+            "seconds": 0.050801
+          }
+        ]
+      },
+      {
+        "token": 2,
+        "stage": "isolated_observer_test_double",
+        "predicate": "false",
+        "timeout_ms": 15000,
+        "outcome": "failed",
+        "host_phases": [
+          {
+            "phase": "arm_request",
+            "seconds": 7e-06
+          },
+          {
+            "phase": "arm_response",
+            "seconds": 0.006303
+          },
+          {
+            "phase": "gesture_request",
+            "seconds": 0.006518
+          },
+          {
+            "phase": "gesture_response",
+            "seconds": 0.006773
+          },
+          {
+            "phase": "result_request",
+            "seconds": 0.007209
+          },
+          {
+            "phase": "failed",
+            "seconds": 15.016196
+          }
+        ],
+        "exception_type": "TimeoutError"
+      },
+      {
+        "token": 3,
+        "stage": "isolated_observer_test_double",
+        "predicate": "s.ready",
+        "timeout_ms": 15000,
+        "outcome": "failed",
+        "host_phases": [
+          {
+            "phase": "arm_request",
+            "seconds": 6e-06
+          },
+          {
+            "phase": "arm_response",
+            "seconds": 0.003478
+          },
+          {
+            "phase": "gesture_request",
+            "seconds": 0.003741
+          },
+          {
+            "phase": "gesture_response",
+            "seconds": 0.020228
+          },
+          {
+            "phase": "result_request",
+            "seconds": 0.020556
+          },
+          {
+            "phase": "failed",
+            "seconds": 15.01768
+          }
+        ],
+        "exception_type": "TimeoutError"
+      }
+    ],
+    "scope": "about:blank test double, no Game loaded. Negative outcomes remain FAILED. Browser performance.now and host monotonic phases are separate clock domains. Not a v13 root-cause fix."
+  },
+  "historical_audio": {
+    "scope": "Historical v0.1.10 raw MovieWriter AVI retained locally. Metadata and decoded PCM numerical inspection only; no continuous video watching, direct hearing, new-baseline, real-time FPS or AAA approval.",
+    "source_sha256": "c500f15f215ffa82c2650b60de67fd237a631926dfe81ab51e99907af983e0b4",
+    "raw_bytes": 66467846,
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_PCM_sha256": "c2756c79c4a13bcc68af657f5977135d8668f40ae1648b86619399e77c487eb6",
+    "decoded_PCM_bytes": 2009600,
+    "audio_duration_seconds": 10.466666666666667,
+    "channels_observed": [
+      {
+        "channel": 0,
+        "sample_frames": 502400,
+        "nonzero_samples": 478294,
+        "absolute_peak_int16": 5741,
+        "rms_normalized": 0.011130835573377122,
+        "first_nonzero_frame": 17996,
+        "last_nonzero_frame": 499199
+      },
+      {
+        "channel": 1,
+        "sample_frames": 502400,
+        "nonzero_samples": 478303,
+        "absolute_peak_int16": 5642,
+        "rms_normalized": 0.011021249410819549,
+        "first_nonzero_frame": 17996,
+        "last_nonzero_frame": 499199
+      }
+    ],
+    "render_audio_driver": "Dummy per frozen historical runner",
+    "audio_delivery_boundary": "Existing MP4 transcode explicitly used -an; this raw AVI PCM was not retained in that MP4."
+  },
+  "official_writer": {
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/servers/movie_writer/movie_writer.cpp",
+        "bytes": 13717,
+        "sha256": "ab9b69b78f137adea4e3e24f5dec3d1c64d8beae2efa1d6c434474675259b005"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/servers/movie_writer/movie_writer_avi.cpp",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/drivers/dummy/audio_driver_dummy.cpp",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/main/main.cpp",
+        "bytes": 210345,
+        "sha256": "1831257f5c8eb0707d278f04b21b1e4b3ba863f8dca5cab36022d4b19e36b8c1"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/servers/movie_writer/movie_writer_mjpeg.cpp",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/servers/audio/audio_driver_dummy.cpp",
+        "bytes": 4717,
+        "sha256": "fd1000997903aef8ca9005f7b0008ba8652e351b6c520e8ae37d42af503a111d"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/servers/audio/audio_driver_dummy.h",
+        "bytes": 3432,
+        "sha256": "2d10c6efc01a7c4fb916cbb617fac2ec2a1f6837717d4a6c3c7f24c71cbd87e0"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/modules/jpg/movie_writer_mjpeg.cpp",
+        "bytes": 9972,
+        "sha256": "7b7821f2b353df103f828e1d39c440a0a9c91fc58e036fac3b4327d9a3eb20ad"
+      }
+    ],
+    "chain": [
+      "main.cpp2829..2832 forces nonthreadedDummy",
+      "movie_writer.cpp244..247 mix_audio then write_frame",
+      "audio_driver_dummy.cpp113..131 audio_server_process output copied",
+      "modules/jpg/movie_writer_mjpeg.cpp180..185 standardPCM header;195..222 per-frame audio block;263..264 audioframe count"
+    ],
+    "scope": "Pinned4.7.2 source contract and historical real PCM only; guessed404paths retained and corrected sources listed. No new v14 capture or direct hearing."
+  },
+  "pending": [
+    "Actualdesktop/mobile/cleanCI/public/release",
+    "Logical1xcontinuousvisual/directhearing/fullskin",
+    "targethardware/AAA"
+  ],
+  "curation": {
+    "raw-candidate-004.json": {
+      "bytes": 34392,
+      "sha256": "f14493f585fcb46bd5dfd686c0ad34e8da94c2364b25f89befb27af65dc33a4d"
+    },
+    "candidate-004-hand-joins.json": {
+      "bytes": 146210,
+      "sha256": "6d5602c9fc66ac465be334c522359bdd6500e2d45ec936a5205f355886f03d41"
+    },
+    "skin-lights-004.json": {
+      "bytes": 15174,
+      "sha256": "e8c3673e405ca43ee98429416a7c79fb52ee4f6f265c3e39874892be8a81bf58"
+    },
+    "historical-raw-avi-audio.json": {
+      "bytes": 1886,
+      "sha256": "ae415e809fe9622f542da0504e01251613d6909d2e1b07c4ae3da8a4b18e1ea5"
+    },
+    "isolated_observer_proof": {
+      "bytes": 4620,
+      "sha256": "e0d06f5bd5fe17451758dafafdd4954415cd6e488371b7fbb3188d31bce724fa"
+    }
+  },
+  "candidate005": {
+    "sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+    "status": "natural_freeleft_counterguard_reauthor_wrist_sharp_not_adopted",
+    "policy": "New creative world targets intentionally replace bad original free-left-hand key target family; RightHand/body/geometry/timing protected. Original2700deg/s and3mm bounds unchanged.",
+    "raw_all53_local_global_all_schedules_max_deg_per_second": 1363.7259694400157,
+    "source_idle_grasp_vs_bind_local_wrist_deg": 64.27379086795915,
+    "wrist_diagnosis": "Idle wrist is a weapon-grasp pose, not a neutral free wrist. Static local wrist may be blended only in free-phase under creative scope, preserving actual start/end grasp."
+  },
+  "candidate006_guarded": {
+    "file": "art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+    "bytes": 25059960,
+    "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+    "status": "root_and_independent_actual_broad_four_stills_scoped_prototype_adopted_native_export_passed",
+    "policy": "Wrist-only refinement of005 uses actual bind-neutral local orientation during free phase and preserves start/end grasp. No rest/skin edits; does not inherit005/raw004 visual acceptance.",
+    "authoring_preservation": {
+      "source_BIN_prefix_exact": true,
+      "static_payload_declarations_exact": true,
+      "unrelated_clips_exact": true,
+      "unchanged_bone_channels_in_three_clips_exact": true,
+      "changed_bones": [
+        "LeftArm",
+        "LeftForeArm",
+        "LeftHand"
+      ],
+      "changed_clips": [
+        "light_1",
+        "light_2",
+        "light_3"
+      ],
+      "new_BIN_bytes": 21948
+    },
+    "studio_weapon_scope": {
+      "status": "six006studio_stills_body_wrist_scope_only",
+      "pictured_weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+      "actual_production_blade_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+      "scope": "Six006studio stills show old slim rune_sword_web. Actual ActorVisual replaces blade with broad rune_greatsword_geometry while retaining hilt/material/markers. Body/wrist observations apply only to pictured candidate; no current broad-blade clearance/grip/contact/interference approval. New dedicated current-blade review pending.",
+      "followup": "Root+independent then reviewed actual broad blade four originals and accepted finite body/wrist/underarm prototype improvement. Old slim six stills remain limited history, no relabeling."
+    },
+    "current_source_proof": "source-adoption-and-preservation.json"
+  },
+  "actual_baseline14_002": {
+    "status": "actual_scripted_native_baseline_capture_passed_not_continuous_hearing_approval",
+    "source_head": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "actual_build_id": "0.1.13 · development",
+    "actual_models": {
+      "hero": {
+        "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+        "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      "sentinel_melee": {
+        "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+        "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+      }
+    },
+    "elapsed_wall_seconds": 870.5587000846863,
+    "physical_PNG_rawAVI_delivery": [
+      960,
+      600
+    ],
+    "logical_viewport": [
+      1440,
+      900
+    ],
+    "native_scale_values": [
+      0.649999976158142
+    ],
+    "gameplay_frames": 840,
+    "delivery_video_frames": 864,
+    "delivery_seconds": 14.4,
+    "delivery_audio_seconds": 14.4,
+    "no_speed_or_time_interpolation": true,
+    "no_added_audio": true,
+    "direct_hearing_approval": false,
+    "sample_clock_sync": {
+      "sample_frames_per_video_frame": 800,
+      "raw_counts_exact": true,
+      "trimmed_video_frames": 4,
+      "trimmed_audio_sample_frames": 3200,
+      "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+    },
+    "actual_contact": {
+      "receipt_serial": 6,
+      "contact_tick": 570,
+      "charged_contacts": 1,
+      "paired_pause_frames": 5,
+      "start_health": 120.0,
+      "end_health": 88.0,
+      "audio_report_attack_id_matches": true,
+      "audio_report_point_matches": true,
+      "scope": "Real confirmed69.3 hurtbox contact; mixed PCM window includes ambience/other voices, no isolated layer/perceived sync/hearing approval."
+    },
+    "coverage": {
+      "heal_input_attempts": 1,
+      "light_active_samples": {
+        "light_1": 11,
+        "light_2": 11,
+        "light_3": 14
+      },
+      "maximum_locomotion_displacement_m": 42.1314849853516,
+      "observed_potion_consumptions": 0,
+      "observed_successful_parries": 0,
+      "safe_charged_whiff": true,
+      "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+      "whiff_attack_instance_id": 4
+    },
+    "input_preservation": {
+      "existing_runtime_inputs_changed": [],
+      "whole_project_file_set_identical": false,
+      "generated_new_UIDs": [
+        {
+          "path": "tests/combat_continuity_capture.gd.uid",
+          "sha256": "2e67f314ac320aa1adc6ad171ee44335539e3a26a987415f010acde48abac900",
+          "bytes": 20,
+          "classification": "pinned editor generated new fixture UID"
+        }
+      ]
+    },
+    "nominal_framing": {
+      "scope": "Actual nominal production-camera body projection only; not evaluated skin/foot or full audiovisual acceptance",
+      "samples": 840,
+      "nominal_foot_y_min": 0.659699842664931,
+      "nominal_foot_y_max": 1.51747829861111,
+      "nominal_head_y_min": -1.29685574001736,
+      "nominal_head_y_max": 0.539706149631076,
+      "any_behind_camera": false,
+      "out_of_bounds_sample_count": 31,
+      "selected_raw_frame_visual_review": {
+        "frames": [
+          418,
+          420,
+          863
+        ],
+        "finding": "Entry frame418 severe right body crop;420/end863 feet below frame. Possible production camera collision/entrance clamp, cause not source proven. Separate from solved capture aspect mismatch.",
+        "provenance": "post-take-framing/provenance.json",
+        "continuous_review": false
+      }
+    },
+    "framing_scope": "31/840 nominal camera projections outside frame are a real production-camera framing issue, separate from earlier physical writer aspect mismatch. Selected actual decoded frames418/420/863 confirm crop; underlying source cause unproven. Not continuous visual review.",
+    "LP_scope": "Historical14s uses defaultLP1. NewLP3 static parameter preparation for final45 only; noLP3 run claimed.",
+    "audit_sha256": "ec7b90a5a58563876a93b9f40acd3963d0b27e6b71188bbf41f672767ae2d14f",
+    "capture_sha256": "9bc5c835d16973998ae0cc330603d2a4f943c886c6cb845744aabec881e05835",
+    "av_verification_sha256": "0c65f7c14c59ddaa63f645d180e79531364edf80b7f95db27ed190f41e57d85b",
+    "raw_AVI_sha256": "59556b2f61efe20ab1b880b5095b9f9df8a0d0cdb2226fd285b9b8540c6f8106",
+    "scope": "Logical1x scripted ordinary native inputs with actual physics/AI/camera, not human play/browser QA or realtime/hardwareFPS/AAA. Offline capture time is authoring cost.",
+    "lossless_WAV_engine_PCM_prefix_exact": true,
+    "raw_PCM": {
+      "sample_rate": 48000,
+      "channels": 2,
+      "sample_frames": 694400,
+      "bytes": 2777600,
+      "sha256": "c75d05df42fbca92ad842eac38945d7b79674179f2502b5f8f3da3fa7968d535"
+    },
+    "public_checkpoint": "baseline-14/checkpoint.json"
+  },
+  "actual_current_native": "current-camera-policy-006.json",
+  "actual_current_export": "local-preview-build-006.json",
+  "actual_baseline45": "baseline-45-checkpoint.json",
+  "actual_first_after45": "first-after45-rejected-checkpoint.json",
+  "camera_rejection": "rejected-camera-001/review.json",
+  "current_camera_policy": "current-camera-policy-006.json",
+  "staged_preflight": "staged-camera-preflight-scope.json",
+  "actual_final45": "final45/checkpoint.json"
+}

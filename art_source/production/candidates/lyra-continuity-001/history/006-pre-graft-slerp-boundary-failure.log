@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/next-action-rpg/tools/author_continuity_actions.py", line 348, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspace/next-action-rpg/tools/author_continuity_actions.py", line 334, in main
+    raw=Raw(source);authored,metrics=author(raw,recipe);a.output.parent.mkdir(parents=True,exist_ok=True);proof=graft(raw,authored,a.output)
+                                     ~~~~~~^^^^^^^^^^^^
+  File "/workspace/next-action-rpg/tools/author_continuity_actions.py", line 200, in author
+    if recipe.get('creative_free_arm'):return author_free_arm(raw,recipe)
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/workspace/next-action-rpg/tools/author_continuity_actions.py", line 165, in author_free_arm
+    wrist_relative=hand_relative_rotation.slerp(bind_hand_local_rotation,free_amount)
+ValueError: quat.slerp(): interpolation factor must be between 0.0 and 1.0
+Blender 4.3.2
+
+Blender quit

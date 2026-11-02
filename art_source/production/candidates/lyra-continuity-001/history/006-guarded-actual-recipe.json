@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "sample_hz": 100,
+  "clips": {
+    "light_1": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_2": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_3": {
+      "startup": 0.18,
+      "active": 0.22,
+      "recovery": 0.3
+    }
+  },
+  "scope": "Creative free left-arm only;006 changes only free-phase wrist from005, preserving005 new hand positions/elbow path and original right/body/feet/18clips/static payload/timing.",
+  "status": "creative_pose_candidate_pending_generation_raw_skin_native_visual_review",
+  "creative_free_arm": true,
+  "natural_counterweight": {
+    "coordinate_system": "source_gltf_scene_y_up_plus_z_forward_before_runtime_pi",
+    "load_hand_offset_from_shoulder_m": [
+      0.08,
+      -0.24,
+      0.16
+    ],
+    "release_end_hand_offset_from_shoulder_m": [
+      0.12,
+      -0.28,
+      0.1
+    ],
+    "free_elbow_pole_direction": [
+      0.8,
+      -0.7,
+      -0.9
+    ],
+    "entry_recovery_envelope": "quintic smootherstep, zero first and second envelope derivatives at endpoints",
+    "active_counterweight_envelope": "quintic smootherstep load_offset to release_end_offset",
+    "hand_orientation": "Quintic free-envelope slerp from actual source idle weapon-grasp local wrist to actual static/bind local wrist; start/end grasp exact. Preserve005 hand positions and elbow trajectory.",
+    "minimum_elbow_below_shoulder_m": 0.08,
+    "wrist_policy": "blend_actual_bind_only_when_free"
+  }
+}

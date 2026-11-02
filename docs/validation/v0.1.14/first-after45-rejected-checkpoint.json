@@ -1,0 +1,211 @@
+{
+  "paired_controls_exact": {
+    "runner_sha256": true,
+    "fixture_sha256": true,
+    "helper_sha256": true,
+    "physical_capture_size": true,
+    "logical_viewport": true,
+    "raster_profile": true
+  },
+  "trajectory_comparison": {
+    "before_rows": 2724,
+    "after_rows": 2724,
+    "matched_row_count": 2724,
+    "compared_fields": {
+      "control": [
+        "tick",
+        "gameplay_frame",
+        "delta",
+        "stage",
+        "paused",
+        "checkpoint",
+        "quality",
+        "render_scale",
+        "active_encounter",
+        "held_inputs"
+      ],
+      "hero": [
+        "position",
+        "velocity",
+        "health",
+        "dead",
+        "on_floor",
+        "capsule_bottom_world_y",
+        "hit_pause",
+        "invulnerability",
+        "stagger"
+      ],
+      "hero_presentation_timers": [
+        "attack_id",
+        "attack_instance_id",
+        "attack_active",
+        "attack_elapsed",
+        "charge_elapsed",
+        "dodge_remaining",
+        "heal_remaining",
+        "parry_remaining"
+      ],
+      "enemies": [
+        "kind",
+        "boss",
+        "elite",
+        "position",
+        "velocity",
+        "health",
+        "dead",
+        "on_floor",
+        "capsule_bottom_world_y",
+        "hit_pause",
+        "stagger",
+        "hit_reaction",
+        "recoil_displacement",
+        "recoil_requested_m"
+      ]
+    },
+    "mismatches_count": 0,
+    "first_mismatches": [],
+    "scope": "Exact observedJSON comparisons for these two45s takes only; enemy arrayauthoredorder, excludeinstanceIDs/camera/art/bones/visualpose; not generalenginedeterminismclaim"
+  },
+  "nominal_framing": {
+    "definition": "FirstHero nominalheadY<0 OR nominalfootY>1",
+    "samples": 2700,
+    "before_out_of_bounds": 57,
+    "after_out_of_bounds": 0,
+    "after_nominal_foot_y_min": 0.628482801649306,
+    "after_nominal_foot_y_max": 0.882553575303819,
+    "after_nominal_head_y_min": 0.069996206495497,
+    "after_nominal_head_y_max": 0.541965026855469,
+    "scope": "NominalHero bodycontainment only, not evaluatedskinbounds or enemyframing guarantee"
+  },
+  "bounded_static_visual_review": {
+    "entry2097": "BeforeHeroRIGHTcrop vsafterfullbody. Aftersteeptopdown/floordominant.",
+    "contact2247": "Hero/target/telegraph/HUDvisibleinboth, chargedcompositionvisuallyconsistent.",
+    "end2723": "BeforeHeromostlyLEFT/BOTTOMout vsafterfullbody. Aftersteeptopdown/floordominant/enemiesabsent.",
+    "conclusion_scope": "Bodycropfixsupported; fullcombatcameraquality/continuouswatch/hearing/AAAremainunapproved"
+  },
+  "contact": {
+    "serial": 42,
+    "amount": 69.3,
+    "tick": 2248,
+    "audio_attackID_matches": true,
+    "audio_point_matches": true,
+    "audio_serial_exists": false
+  },
+  "observed_coverage": {
+    "heal_input_attempts": 1,
+    "light_active_samples": {
+      "light_1": 143,
+      "light_2": 143,
+      "light_3": 182
+    },
+    "maximum_locomotion_displacement_m": 42.3626556396484,
+    "observed_potion_consumptions": 0,
+    "observed_successful_parries": 0,
+    "safe_charged_whiff": true,
+    "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+    "whiff_attack_instance_id": 4
+  },
+  "media": {
+    "delivery": {
+      "sha256": "7d85037f4c72a683561454ea75165c28961a5eec71170fab9d17dd54ca89efda",
+      "seconds": 45.4,
+      "audio_seconds": 45.4,
+      "video_frames": 2724,
+      "no_added_audio": true,
+      "no_speed_or_time_interpolation": true,
+      "direct_hearing_approval": false
+    },
+    "rawPCM_sample_frames": 2182400,
+    "WAV_sample_frames": 2179200,
+    "WAV_prefix_exact": true,
+    "sync": {
+      "sample_frames_per_video_frame": 800,
+      "raw_counts_exact": true,
+      "trimmed_video_frames": 4,
+      "trimmed_audio_sample_frames": 3200,
+      "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+    }
+  },
+  "receipt_comparison": {
+    "before_count": 1,
+    "after_count": 1,
+    "excluded_fields": [
+      "curve_sha256",
+      "curve_source_sha256",
+      "physics_frame",
+      "target_id"
+    ],
+    "compared_fields": [
+      "amount",
+      "attack_elapsed",
+      "attack_id",
+      "attack_instance_id",
+      "audio_observation_scope",
+      "audio_presentation_at_receipt",
+      "audio_report_matches_attack_id",
+      "audio_report_matches_point",
+      "blocked",
+      "contact_blade_grip",
+      "contact_blade_motion",
+      "contact_blade_tip",
+      "contact_damage_axis_base",
+      "contact_damage_axis_tip",
+      "contact_damage_base",
+      "contact_damage_tip",
+      "contact_phase",
+      "contact_source",
+      "damage_start_fraction",
+      "direction",
+      "health_after",
+      "health_before",
+      "hitstop",
+      "killed",
+      "material",
+      "normal",
+      "observed_tick",
+      "point",
+      "poise_broken",
+      "reaction",
+      "reaction_duration",
+      "requested_recoil_m",
+      "source",
+      "source_position",
+      "strength",
+      "target_position",
+      "victim_pause"
+    ],
+    "exact_fields_mismatched": [],
+    "scope": "Observedreceiptpayloadcomparison includingnativecontact/Audioobservations; excludesinstanceIDs/localphysicscounter and intentionallychangedsourcecurveprovenance. Notgeneralenginedeterminism."
+  },
+  "checked_on": "2026-11-02",
+  "status": "capture_pipeline_passed_camera_complete_composition_REJECTED",
+  "camera_source_sha256": "a5198c6b4515e0c17381879aa5ffd14ecc44ba1601b3982addc1fe578265f813",
+  "elapsed_wall_s": 1019.1081175804138,
+  "source_preservation": {
+    "existing_runtime_inputs_changed": [],
+    "source_files_added": [],
+    "whole_project_file_set_identical": true,
+    "initial_import_metadata": {
+      "changes": [],
+      "scope": "Only exact newly serialized Godot4.7.2 implicit defaults; source sidecars preserved separately"
+    }
+  },
+  "game_subset_freeze": {
+    "game_sources_checked": 78,
+    "mismatches": [],
+    "scope": "OriginalcurrentGame source snapshot BEFOREphysicaldisplayoverride compared to rootedgame/ subset; nonGame capture/browser/buildtools not inisolatedGamecopy"
+  },
+  "root_direct_review": "All6actual pairedrawentry/contact/end originals viewed. Entry/end now retain fullHero but steepfloor-dominant orientation excludes nearbyenemies. Contact remainsreadable. This is not accepted as completecombatreadability/AAA.",
+  "decision": "RetainHero006 adoption. Refine onlycamera treatment of actual24percentalpha energybarriers; physicalactor/weaponblocking andopaquewallauthority must remain unchanged. Newcamera implementation/native/raster pending.",
+  "originals": {
+    "post_take_paired_audit": {
+      "bytes": 13950,
+      "sha256": "be43f263725635983bf0c34b03d19bbfce090ff0e480d9049bd1043c252d8265"
+    },
+    "capture": {
+      "bytes": 23662,
+      "sha256": "85f8475571362835ff42c6b26305e3f53af1e7f71bf83340e795c6c26cc187ef"
+    }
+  },
+  "scope": "Two actual45second take comparison only; no general physics determinism/continuouswatch/directhearing/targethardware/AAA approval. Camera a519 is rejected despite nativefit/capture pipeline pass; Hero006 adoption remains valid."
+}

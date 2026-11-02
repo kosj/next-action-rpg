@@ -1,0 +1,166 @@
+{
+  "scope": "Actual baseline45-002 LP3; finalafter45 not yet complete. Scripted ordinary native inputs atlogical1x, notcontinuouswatch/hearing/targetFPS/AAA.",
+  "status": "scripted_native_gameplay_captured",
+  "source_head": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+  "elapsed_wall_s": 1072.281606912613,
+  "actual": {
+    "charged_contacts": 1,
+    "paired_pause_frames": 5,
+    "actual_models": {
+      "hero": {
+        "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+        "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      "sentinel_melee": {
+        "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+        "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+      }
+    },
+    "actual_curve": {
+      "interpolation": "linear_grip_tip",
+      "ok": true,
+      "path": "res://data/charged_blade_curve.json",
+      "reason": "",
+      "resource_sha256": "25f20f3311371ac8eda552464ee5d59bf6491963c7256d185d22bc6ac953520f",
+      "sample_count": 91,
+      "sample_step_s": 0.002,
+      "sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+      "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+    },
+    "contact_tick": 2248,
+    "release_tick": 2224,
+    "actual_build_id": "0.1.13 · development",
+    "start_health": 120.0,
+    "end_health": 88.0,
+    "frame_count": 2724,
+    "gameplay_frames": 2700,
+    "observed_coverage": {
+      "heal_input_attempts": 1,
+      "light_active_samples": {
+        "light_1": 143,
+        "light_2": 143,
+        "light_3": 182
+      },
+      "maximum_locomotion_displacement_m": 42.3626556396484,
+      "observed_potion_consumptions": 0,
+      "observed_successful_parries": 0,
+      "safe_charged_whiff": true,
+      "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+      "whiff_attack_instance_id": 4
+    },
+    "scenario_name": "continuity"
+  },
+  "physical_PNG_rawAVI_delivery": [
+    960,
+    600
+  ],
+  "logical_viewport": [
+    1440,
+    900
+  ],
+  "nominal_framing": {
+    "scope": "Actual nominal production Hero/root body projection; not evaluated skinned bounds or continuousvideo review",
+    "gameplay_samples": 2700,
+    "out_of_bounds_definition": "Hero first subject nominal_head_y<0 OR nominal_foot_y>1",
+    "out_of_bounds_sample_count": 57,
+    "nominal_foot_y_min": 0.659695434570313,
+    "nominal_foot_y_max": 2.16908026801215,
+    "nominal_head_y_min": -1.12030958387587,
+    "nominal_head_y_max": 0.540490044487847,
+    "first_bad": {
+      "tick": 2098,
+      "movie_frame": 2097,
+      "stage": "approach_while_charging",
+      "hero_position": [
+        9.92483455775073e-06,
+        -0.0248988922685385,
+        -19.8329753875732
+      ],
+      "camera_position": [
+        0.278223067522049,
+        1.76975166797638,
+        -18.9499988555908
+      ],
+      "nominal_head_uv": [
+        2.01463979085286,
+        -1.12030958387587
+      ],
+      "nominal_foot_uv": [
+        0.743370988633898,
+        0.796898396809896
+      ]
+    },
+    "last_bad": {
+      "tick": 2724,
+      "movie_frame": 2723,
+      "stage": "normal_recovery",
+      "hero_position": [
+        11.6554565429688,
+        -0.0240565966814756,
+        -19.0109405517578
+      ],
+      "camera_position": [
+        12.9161109924316,
+        1.66882383823395,
+        -19.0308723449707
+      ],
+      "nominal_head_uv": [
+        -0.368113454182943,
+        0.195251770019531
+      ],
+      "nominal_foot_uv": [
+        -0.18188042110867,
+        2.16908026801215
+      ]
+    },
+    "selected_original_visual_review": {
+      "04-actual-confirmed-contact.png": "Hero/target contact action in frame; HUD/telegraph visible. Static frame only.",
+      "05-normal-recovery-end.png": "Severe Hero body crop at left/bottom, blade extends into image. Concrete baseline readability defect. Cause not source-proven.",
+      "continuous_watch_or_hearing_approval": false
+    }
+  },
+  "raw_video_frames": 2728,
+  "raw_PCM_sample_frames": 2182400,
+  "lossless_WAV_PCM_prefix_exact": true,
+  "delivery_frames": 2724,
+  "delivery_seconds": 45.4,
+  "sample_clock_sync": {
+    "sample_frames_per_video_frame": 800,
+    "raw_counts_exact": true,
+    "trimmed_video_frames": 4,
+    "trimmed_audio_sample_frames": 3200,
+    "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+  },
+  "source_preservation": {
+    "existing_runtime_inputs_changed": [],
+    "whole_project_file_set_identical": false,
+    "new_UID": [
+      {
+        "path": "tests/combat_continuity_capture.gd.uid",
+        "sha256": "2e67f314ac320aa1adc6ad171ee44335539e3a26a987415f010acde48abac900",
+        "bytes": 20,
+        "classification": "pinned-editor generated new fixture UID"
+      }
+    ]
+  },
+  "original_proof": {
+    "capture.json": {
+      "bytes": 23687,
+      "sha256": "06936a6e2346c7592cf8e1f7333afa7ffa7dc17bf7011dc4eb58ddf2530610d1"
+    },
+    "post-take-audit.json": {
+      "bytes": 9507,
+      "sha256": "2c071078d88ae6f44716ca9a903d29765c290675ca10bf0993471a5ddc7b70f9"
+    },
+    "before/frames.json": {
+      "bytes": 18668217,
+      "sha256": "2639191433ffb108e747092cb40d42ce0630704dfc9a97e57cfa74b7ceea1134"
+    },
+    "before/av-verification.json": {
+      "bytes": 15491,
+      "sha256": "2e56503df894434a8f4849f1c61781f13c94803943330c48f358ab16cbea76a9"
+    }
+  },
+  "failure_history": "before45-001 retained12.124s local sandbox socket import failure/noMovie;002 granted additional network namespace and succeeded. No error-filter bypass."
+}

@@ -265,6 +265,7 @@ func build_room(center: Vector3, half: float, index: int) -> void:
 		var pair: Array[Node3D] = []
 		for side in [-1, 1]:
 			var gate := block(center + Vector3(0,2,side * (half - 0.5)), Vector3(half*2,4,0.3), mat(Color(0.22,0.55,0.52,0.24)), true)
+			gate.get_child(0).add_to_group("camera_transparent_barriers")
 			var gate_mat: StandardMaterial3D = gate.material_override
 			gate_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 			gate_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED

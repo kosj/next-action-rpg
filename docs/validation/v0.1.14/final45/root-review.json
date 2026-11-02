@@ -1,0 +1,38 @@
+{
+  "status": "accepted_scoped_firstroom_camera_readability_prototype",
+  "source_camera_sha256": "7b8c7c9d0043153013f90d29ef0895df723d099b8d4a32126071135de1658870",
+  "source_world_sha256": "1553ecfe9cbaf3713a04938a5389fa208641041e7f350c4689077f3f62725826",
+  "source_hero_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "runtime96_fingerprint": "38e831295a98475e8fdba2b0df7e89151aafe771a587d7b255c1911aec0a84a9",
+  "root_direct_review": "All3new actualentry/contact/end rawframes and their alreadyviewedbaseline counterparts: Hero fullbody+feet/blade+opponentcontext/forwarddepth nowretained; actualcontactscene readable. Accepted prototypeimprovement, notAAA.",
+  "actual_capture_manifest_sha256": "c540a12d41914f6520781e2d7707bd6331fef4843f8038644cd6a97dea1e0fa7",
+  "actual_paired_audit_sha256": "74052cd9afa772084ac9efb17dc52e59355c8db2c657fad747944c9c6e83689b",
+  "actual_scope": {
+    "hero_nominal_oob": [
+      0,
+      2700
+    ],
+    "engaged_foe_nominal_oob": [
+      0,
+      626
+    ],
+    "actual_evaluated_feet_toes_grip_tip_finite_inframe": "Hero6markers×2700 and engagedfoe6markers×626; notocclusion/wholemesh/UIproof"
+  },
+  "trajectory_limits": "Samecontrols/timings/health/contactpayload; distinct288lateframes actorrootsdiffer aftercontact (foes288/Hero244sectionrows), maxHero.030015m/foe.956972m. Causeunisolated, nofullphysicsidentity/determinismclaim.",
+  "visible_remaining": [
+    "Cyan24percentforcefieldwash",
+    "Chapterbanner/overlapping distantfoes",
+    "Darkoutsideplatformvoid/foregroundedge at end"
+  ],
+  "pending": [
+    "CleanCI actualdesktop/fullmobile/charged",
+    "PublicPages/main/tag/release",
+    "Continuous1xwatch/directhearing",
+    "Fullskin/animationnaturalness/targethardware/AAA"
+  ],
+  "independent_review": {
+    "file": "camera002-final-raster-review.md",
+    "sha256": "44f753d9ea87202c12760fbf48128f0c131d631fd2f69ae53889ee909dbe805f",
+    "scope": "Independent6rawPNG finite review, notcontinuouswatch/hearing."
+  }
+}

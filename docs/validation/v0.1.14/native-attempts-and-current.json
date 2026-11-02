@@ -1,0 +1,68 @@
+{
+  "scope": "Failed attempts retained as failures; final004 is separate exact native/export proof. No exit-code-only promotion.",
+  "attempts": [
+    {
+      "sha256": "e20b79afda9ba7375e3970ba2e6bbaba189b7a872782c5610aee2bdcf68f3c99",
+      "bytes": 13640,
+      "status": "failed",
+      "finding": "Integration aborted on newfixture untyped Dictionary.get inference (valid). Watchdog/resource abort aftermath retained, no completed-check pass.",
+      "log_file": "native-export-006-001.log"
+    },
+    {
+      "sha256": "f3e1a55cf6493bf867b1ece1bf4d5e24a10546b3234490c537d9cbd7bf642afe",
+      "bytes": 832,
+      "status": "failed",
+      "finding": "Standalone --check-only --script lacks project autoload Session in dependencies; process exit0 but strict stderr guard rejected. This diagnostic does not validate the project scene.",
+      "log_file": "native-parse-002.log"
+    },
+    {
+      "sha256": "d76b1809681192d938b813fb5375610f22dfa3458ebdb4b2129c304d44fc269a",
+      "bytes": 60114,
+      "status": "failed",
+      "finding": "Proper integration624checks/3failures: editor-only EditorScenePostImport could not instantiate archived baseline (1 suite completion failure+abandonedscene leaks), and actual camera zero-time followbase lift windup for landscape+portrait(2). Native conditions unchanged, no exports.",
+      "log_file": "native-export-006-003.log"
+    }
+  ],
+  "corrections": "Explicit type; independent native100Hz GLTF original-light control without EditorScenePostImport; wall-resolved un-kicked latent followbase sync without lift accumulation, unchanged bounds.",
+  "final004": {
+    "status": "passed",
+    "checks": 672,
+    "failures": 0,
+    "exit_code": 0,
+    "engine_errors": [],
+    "log_file": "native-export-006-004.log",
+    "bytes": 105303,
+    "sha256": "6bfbb5836eeb4fe713ed61137eb115f4f4087c094805cbce3f54d82217c5bfc9"
+  },
+  "camera": {
+    "status": "scoped_camera_implementation_adopted_native_verified_raster_pending",
+    "checked_utc": "2026-11-02T11:38:33.310593+00:00",
+    "camera_source_sha256": "a5198c6b4515e0c17381879aa5ffd14ecc44ba1601b3982addc1fe578265f813",
+    "fixture_source_sha256": "5b5e6e69786ccf50c29002cc1cac3598ce20624cdc25f076688c88505069b31c",
+    "native_camera_report_sha256": "5e89c9986b42767ac571780dc6ae4e14cb7ddf381bbd5c13c0308c54614906a1",
+    "baseline_camera_sha256": "e97cbf03862ec4ca22b0fd5e642ef536f197bf1987566e61c21bfac4ab217476",
+    "scope": "Actual native gate/focus lag/portrait and landscape bounds, overhang swept-volume rejection, zero-time stable follow state, free composition and existingfeedback gates passed. Before45original57/2700nominalcrop independentlyreproduced; same-take final actual45 raster still pending.",
+    "preservation": "Yaw/input, baseFOV/feedback/damage/gameplay/actorphysics/environmentcollision unchanged. Wall-resolved latent followbase now synced independently of feedback; actual post-fix camera X/Z history is not claimed bit-identical.",
+    "limits": "No continuous watch/hearing/evaluated fullskin/targethardware/AAA approval."
+  },
+  "tools_python": {
+    "tests": 80,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 2.42,
+    "log_sha256": "c7cf7ed1fdb8b7c2d900be4437af485130fbbc899137737246c86c5b8acfbace"
+  },
+  "hub_python_separate": {
+    "tests": 5,
+    "failures": 0,
+    "seconds": 0.005,
+    "log_sha256": "2d014bb427120fb1a5014d7499096989061fd0fdf40acb471c2e2667de60e71e"
+  },
+  "scope_limit": "No combined85 suite claimed. ART source checks23 reported separately. Dirty0.1.14ff1171preview, not cleanrelease.",
+  "subsequent_camera_visual_review": {
+    "status": "a519_camera_rejected_complete_combat_composition",
+    "review": "rejected-camera-001/review.json",
+    "actual45": "first-after45-rejected-checkpoint.json",
+    "scope": "Historical672/native/export/source96 belongs to a519 camera. It cannot approve the next forcefield camera candidate. Hero006 model adoption remains valid; newcamera source/native/export/after45-002 pending."
+  }
+}

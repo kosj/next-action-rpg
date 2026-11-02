@@ -1,0 +1,43 @@
+{
+  "status": "rejected_for_complete_combat_composition_despite_native_body_fit_pass",
+  "checked_utc": "2026-11-02T12:06:28.832615+00:00",
+  "camera_source_sha256": "a5198c6b4515e0c17381879aa5ffd14ecc44ba1601b3982addc1fe578265f813",
+  "source_snapshot": "camera_rig.gd.txt",
+  "actual_native": {
+    "checks": 672,
+    "failures": 0,
+    "scope": "Narrow nominal hero/solidwall/overhang/followstate checks passed; did not prove both combatants visible."
+  },
+  "capture": {
+    "status": "passed_capture_pipeline_not_camera_quality",
+    "source_manifest_sha256": "85f8475571362835ff42c6b26305e3f53af1e7f71bf83340e795c6c26cc187ef",
+    "before_nominal_hero_cropped_samples": 57,
+    "after_nominal_hero_cropped_samples": 0,
+    "gameplay_samples": 2700,
+    "actual_same_control_policy": true,
+    "logical_delivery_seconds": 45.4,
+    "mp4_bytes": 27285354,
+    "mp4_sha256": "7d85037f4c72a683561454ea75165c28961a5eec71170fab9d17dd54ca89efda"
+  },
+  "root_direct_review": "All6actual pairedrawentry/contact/end originals viewed. Entry/end now retain fullHero but steepfloor-dominant orientation excludes nearbyenemies. Contact remainsreadable. This is not accepted as completecombatreadability/AAA.",
+  "decision": "RetainHero006 adoption. Refine onlycamera treatment of actual24percentalpha energybarriers; physicalactor/weaponblocking andopaquewallauthority must remain unchanged. Newcamera implementation/native/raster pending.",
+  "images": {
+    "before-entry.png": {
+      "bytes": 972551,
+      "sha256": "fb728a2e06e6f55d64a988861ed41cb31d38a689a3595e042a77554e32147ac6"
+    },
+    "before-end.png": {
+      "bytes": 804309,
+      "sha256": "7b9d1d24f0cdd14da0b2336371a08bbfea7fb0089c4aa17dc7828284b1fd094a"
+    },
+    "after-entry.png": {
+      "bytes": 966194,
+      "sha256": "2324bf9eb56642559781476b0e9844e676e69f9d1894bb4028d8788b1e9e8000"
+    },
+    "after-end.png": {
+      "bytes": 742555,
+      "sha256": "92bc36e78e586879b27c1e2025ee96926ba2e6728c237bce52041ba1506da3c3"
+    }
+  },
+  "limitations": "Finite originalframes only; no continuous1x watching/directhearing/hardware approval. RejectedMP4/rawAVI/WAV retained locally with hashes; reference-game media not redistributed."
+}

@@ -1,0 +1,108 @@
+{
+  "status": "scoped_prototype_source_adopted_then_actual_native_export_passed",
+  "checked_utc": "2026-11-02T11:25:08.796454+00:00",
+  "old_runtime_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "new_runtime_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "new_source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "curve_before_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "curve_after_sha256": "8946d0a499c50a0df8e26576a23221d54ef56d3099f1c2e01cbb25aa4e8f21e2",
+  "inverse_metadata_substitution_restores_original_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "physical_samples_and_all_non_metadata_bytes_exact": true,
+  "resource_sha256": "c6c4d22cb7514520e26f550d87d7e27bf7df04a7c9bf1ef33cadbaed9cc18469",
+  "version": "0.1.14",
+  "limits": "Finite pose/underarm review accepts prototype improvement only; numeric local skin risk remains recorded, fullskin/continuous1xAV/directhearing/hardware/AAA pending. Native/import/export/browser/CI/public/release not yet approved.",
+  "historical_camera_at_initial_adoption": "a7fd0dcd094aa3c7e3082a686c7cdc277511634b541dfcdefe1453dace0d2ffa",
+  "current_camera_source_sha256": "a5198c6b4515e0c17381879aa5ffd14ecc44ba1601b3982addc1fe578265f813",
+  "broad_stills": {
+    "armpit033-new/light_2-0330.png": "f54a65055e8ac673d2fd7f868d833e7665f8332abec93329f897346741ccc14e",
+    "armpit033-old/light_2-0330.png": "e70a6cc7e4aa74a14feb41c11873a9724906c2eb4e57aca98064325c20030d35",
+    "front025-new/light_2-0250.png": "90b34b46a00586c79a7342bfab76c14f7b2ba30cddf897d968f760cb8a7f6141",
+    "front025-old/light_2-0250.png": "d4369564cf46781f4476f69784c93f0badd5d0e0c6c0ef625d072bf71243b76f"
+  },
+  "preserved_atlas_and_import": {
+    "game/assets/models/production/lyra_fury_gameplay.glb.import": {
+      "before": {
+        "bytes": 1336,
+        "sha256": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3"
+      },
+      "after": {
+        "bytes": 1336,
+        "sha256": "c71614cef7cf66c3a0f55ace9393593fdecbc9d3133010347be872bd5d1dd2c3"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_0.png.import": {
+      "before": {
+        "bytes": 1073,
+        "sha256": "09e820ddb8ed872b5da24730b469582f03c53d93037c902417b63d40ca93c449"
+      },
+      "after": {
+        "bytes": 1073,
+        "sha256": "09e820ddb8ed872b5da24730b469582f03c53d93037c902417b63d40ca93c449"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_2.png": {
+      "before": {
+        "bytes": 5229499,
+        "sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67"
+      },
+      "after": {
+        "bytes": 5229499,
+        "sha256": "1b5bbcb3a1bb170dd05d5a3dfffe3e9e08600c110936a41ae15dd039e4c61f67"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_2.png.import": {
+      "before": {
+        "bytes": 1073,
+        "sha256": "ff40c2f056a3b14befada2a0702fdc7b86fc755f9ad4e642e73d234d5dfe02da"
+      },
+      "after": {
+        "bytes": 1073,
+        "sha256": "ff40c2f056a3b14befada2a0702fdc7b86fc755f9ad4e642e73d234d5dfe02da"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_1.png": {
+      "before": {
+        "bytes": 3112961,
+        "sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc"
+      },
+      "after": {
+        "bytes": 3112961,
+        "sha256": "6fcadcebf6fbbf5c171fcbad881fecbd3f914c9153ec91025ed4ab0d45aba7cc"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_1.png.import": {
+      "before": {
+        "bytes": 1073,
+        "sha256": "ea49ac9ca948f4e9cada7e9f826ded3d1afc4826bb3e1971585e441783bd87d4"
+      },
+      "after": {
+        "bytes": 1073,
+        "sha256": "ea49ac9ca948f4e9cada7e9f826ded3d1afc4826bb3e1971585e441783bd87d4"
+      },
+      "unchanged": true
+    },
+    "game/assets/models/production/lyra_fury_gameplay_Image_0.png": {
+      "before": {
+        "bytes": 4749806,
+        "sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b"
+      },
+      "after": {
+        "bytes": 4749806,
+        "sha256": "2b4029b1e95263175c61dc04136485b4cfc47451c07dd3a1807939cbc564c17b"
+      },
+      "unchanged": true
+    }
+  },
+  "scope": "Root and independent actual broad-blade four-still pose/underarm prototype acceptance. Same runtime filename now14e5; oldFury manifest historical. Native/export passed later below; finalafter45/browser/continuouswatch/hearing/hardware/AAA pending.",
+  "subsequent_camera_visual_review": {
+    "status": "a519_camera_rejected_complete_combat_composition",
+    "review": "rejected-camera-001/review.json",
+    "actual45": "first-after45-rejected-checkpoint.json",
+    "scope": "Historical672/native/export/source96 belongs to a519 camera. It cannot approve the next forcefield camera candidate. Hero006 model adoption remains valid; newcamera source/native/export/after45-002 pending."
+  }
+}

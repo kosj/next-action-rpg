@@ -105,3 +105,14 @@
 | 강조의 절제 | active 구간의 검 잔상, 확정 접촉당 시작하는 camera kick/FOV·impact VFX·접촉 음향 | 준비의 대비→짧은 최고점→적 예고를 다시 볼 수 있는 회복을 함께 검수. 소리의 청취와 동일1배속 영상 동기는 별도 승인 |
 
 다음 대표 단위도 **기존 완충 강타 하나와 일반 수호병의 반응**을 중심으로 한다. 같은 거리·카메라에서 명중/빗맞힘/방어/처치를 촬영하고, 효과를 끈 몸 동작과 효과/음향을 켠 접촉을 나눠 비교한다. 벽·회전·중단에서 발과 검이 흔들리는지도 포함한다. 기능 통과 수, 효과의 개수, 높은 bake 빈도나 참고 영상의 인지도로 AAA 달성률을 만들지 않는다. 이번 기록은 분석과 다음 작업 근거이며 게임 코드나 배포판을 변경하지 않았다.
+
+
+## 2026-11-02 v0.1.14 actual45 비교
+
+사용자가 지정한 제우스 버서커의 [이미 분석한 공식 영상 원장](validation/zeus-reference-2026-11-01/evidence.json)을 같은 시각적 원칙의 근거로 사용한다. 새 provider 작업이나 영상 분석을 실행하지 않았고, 제우스의 실제 입력 timing·음향을 새로 측정하지도 않았다.
+
+[RUNEFALL의 실제 전후 logical1x AV/6원본](validation/v0.1.14/gameplay-comparison/README.md)에서는 약공격의 free left counterguard/guarded wrist와 actual broad blade·준비/복귀 pose의 읽힘을 다듬었다. 첫 방의 진입·접촉·회복 끝에서 Hero 전신·발/검과 상대 context·전방 깊이를 되찾은 것을 제한적으로 채택했다. Hero 몸만 들어오고 적이 사라졌던 [첫 camera 기각](validation/v0.1.14/rejected-camera-001/review.json)을 거쳐 양쪽 context를 확인했다.
+
+제우스 레퍼런스의 준비 대비·타격 최고점·회복 중 적 예고의 가독성과 대조할 때, 현재는 몸/검/공간 맥락의 prototype 개선이다. 전체 motion의 무게·가감속·발 지지·그립·얼굴/손·cloth/hair·연속 피격 연기는 더 검수해야 한다. 청각적 타격감·실제 AV의 지각 sync·목표 GPU도 남은 과제다. 실제 PCM 보존과 영상 제공을 전체 1배속 시청·직접 청취 완료로 표기하지 않는다. cyan forcefield wash·banner·먼 적 겹침·dark platform void가 남는다.
+
+**AAA 동등 품질은 미승인**이다. native 692검사·marker inframe·영상 60fps encoding·contact69.3을 AAA 달성률로 환산하지 않는다. 공식 홍보 영상의 전체 품질·실시간 입력 반응과 단일 프로토타입 구간도 동일시하지 않는다. [v0.1.14 원본·한계](validation/v0.1.14/final45/checkpoint.json)에 근거해 다음 연속 motion·지각 AV·실기기 검수를 진행한다.

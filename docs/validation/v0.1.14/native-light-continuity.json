@@ -1,0 +1,629 @@
+{
+  "angular_method": "Normalized abs(dot) shortest quaternion, local and actual world bone bases; velocity bound2700deg/s (45deg/60Hz)",
+  "authored_left_metadata": {
+    "asset_path": "art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+    "parent_path": "art_source/production/candidates/lyra-fury-001/source.glb",
+    "parent_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "recipe_path": "art_source/production/character_actions/lyra-continuity-neutral.json",
+    "recipe_sha256": "4817bb3d10c84fc3e4d2ec857d5d1ab72524acfb214620575d7c3376e304b4c4",
+    "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+    "tool_sha256": "fc73a40251ba3eae4ff986fccdffbbbf2c67f3398d8346fbf14d24022c3bd137"
+  },
+  "authored_left_target_path": "res://../art_source/production/candidates/lyra-continuity-001/source-006-guarded.targets.json",
+  "authored_left_target_sha256": "0f94df41666376c56ea88df75437454f1c48612700d87de603b2e5b1639f0c7a",
+  "baseline_loader": "Independent in-memory GLTF100Hz/removeImmutablefalse for original three light controls only; actual Skeleton/AnimationPlayer. Current production500Hz+100Hz posthook unchanged.",
+  "baseline_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "left_target_policy": "Intentional free-left reauthor: explicit source-sidecar actor-space key AND midpoint targets within3mm; old left positions/orientations reported only. No second PI/floor offset.",
+  "runtime_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "scope": "Actual native all53bone light continuity, authored free-left key/mid targets and original right-hand/socket contracts; no fullskin, naturalness, AV, hardware or AAA approval",
+  "clips": {
+    "light_1": {
+      "all_schedule_right_identity_old_left_diagnostic": {
+        "grip_m": 7.03654004610144e-05,
+        "left_hand_m": 0.41025584936142,
+        "left_hand_orientation_deg": 51.9558603858962,
+        "right_hand_m": 9.5367431640625e-07,
+        "right_hand_orientation_deg": 3.01612987106675e-05,
+        "samples": 147,
+        "tip_m": 6.866455078125e-05
+      },
+      "authored_free_left_targets": {
+        "finite": true,
+        "maximum_key_error_m": 2.09790196095128e-05,
+        "maximum_midpoint_error_m": 0.00106256850995123,
+        "maximum_orientation_error_deg": 0.174458308912285,
+        "maximum_target_error_m": 0.00106256850995123,
+        "midpoint_samples": 52,
+        "samples": 105,
+        "schedule_matches": true,
+        "source_key_samples": 53,
+        "worst": {
+          "actual_m": [
+            -0.041015625,
+            1.20392990112305,
+            -0.240142822265625
+          ],
+          "is_source_key": false,
+          "target_m": [
+            -0.0399836152791977,
+            1.20401632785797,
+            -0.240380600094795
+          ],
+          "time_s": 0.0249999994412064
+        }
+      },
+      "joins": {
+        "active_clip_time": 0.129999995231628,
+        "entry": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        },
+        "epoch_reset": 14001,
+        "ordinary_idle_return": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        }
+      },
+      "original_right_key_identity_old_left_diagnostic": {
+        "grip_m": 6.36680269963108e-05,
+        "left_hand_m": 0.398789763450623,
+        "left_hand_orientation_deg": 51.9558475129319,
+        "right_hand_m": 0.0,
+        "right_hand_orientation_deg": 2.22636928325681e-05,
+        "samples": 53,
+        "tip_m": 6.8405774072744e-05
+      },
+      "continuity": {
+        "120Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 5455.91148926821,
+            "maximum_global_step_deg": 45.465929077235,
+            "maximum_local_deg_s": 10453.8557002086,
+            "maximum_local_step_deg": 87.1154641684054,
+            "samples": 64,
+            "worst_global": {
+              "bone": "LeftArm",
+              "from_s": 0.108333333333333,
+              "step_deg": 45.465929077235,
+              "to_s": 0.116666666666667
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.108333333333333,
+              "step_deg": 87.1154641684054,
+              "to_s": 0.116666666666667
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1144.49771493688,
+            "maximum_global_step_deg": 9.53748095780731,
+            "maximum_local_deg_s": 1050.9888004902,
+            "maximum_local_step_deg": 8.75824000408496,
+            "samples": 64,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.383333333333333,
+              "step_deg": 9.53748095780731,
+              "to_s": 0.391666666666667
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.341666666666667,
+              "step_deg": 8.75824000408496,
+              "to_s": 0.35
+            }
+          }
+        },
+        "60Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 4673.55817558647,
+            "maximum_global_step_deg": 77.8926362597745,
+            "maximum_local_deg_s": 9121.80210745906,
+            "maximum_local_step_deg": 152.030035124318,
+            "samples": 33,
+            "worst_global": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 77.8926362597745,
+              "to_s": 0.116666666666667
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 152.030035124318,
+              "to_s": 0.116666666666667
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1115.74617089842,
+            "maximum_global_step_deg": 18.5957695149736,
+            "maximum_local_deg_s": 1005.67139672688,
+            "maximum_local_step_deg": 16.761189945448,
+            "samples": 33,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.383333333333333,
+              "step_deg": 18.5957695149736,
+              "to_s": 0.4
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.333333333333333,
+              "step_deg": 16.761189945448,
+              "to_s": 0.35
+            }
+          }
+        },
+        "all_keys_and_midpoints": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 6069.9480729345,
+            "maximum_global_step_deg": 30.3497342947245,
+            "maximum_local_deg_s": 11209.8710205885,
+            "maximum_local_step_deg": 56.0493438930714,
+            "samples": 105,
+            "worst_global": {
+              "bone": "LeftArm",
+              "from_s": 0.114999998,
+              "step_deg": 30.3497342947245,
+              "to_s": 0.119999997
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.114999998,
+              "step_deg": 56.0493438930714,
+              "to_s": 0.119999997
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1158.87367771728,
+            "maximum_global_step_deg": 5.79436317365483,
+            "maximum_local_deg_s": 1050.98906601615,
+            "maximum_local_step_deg": 5.25494007513538,
+            "samples": 105,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.379999995,
+              "step_deg": 5.79436317365483,
+              "to_s": 0.3849999905
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.340000004,
+              "step_deg": 5.25494007513538,
+              "to_s": 0.344999999
+            }
+          }
+        }
+      }
+    },
+    "light_2": {
+      "all_schedule_right_identity_old_left_diagnostic": {
+        "grip_m": 7.03654004610144e-05,
+        "left_hand_m": 0.458753287792206,
+        "left_hand_orientation_deg": 57.2399017762502,
+        "right_hand_m": 9.5367431640625e-07,
+        "right_hand_orientation_deg": 3.07358512650575e-05,
+        "samples": 147,
+        "tip_m": 6.97226569172926e-05
+      },
+      "authored_free_left_targets": {
+        "finite": true,
+        "maximum_key_error_m": 1.91063045349438e-05,
+        "maximum_midpoint_error_m": 0.0010503790108487,
+        "maximum_orientation_error_deg": 0.174505798801362,
+        "maximum_target_error_m": 0.0010503790108487,
+        "midpoint_samples": 52,
+        "samples": 105,
+        "schedule_matches": true,
+        "source_key_samples": 53,
+        "worst": {
+          "actual_m": [
+            -0.0406494140625,
+            1.20392990112305,
+            -0.240203857421875
+          ],
+          "is_source_key": false,
+          "target_m": [
+            -0.0396303758025169,
+            1.20401442050934,
+            -0.240444093942642
+          ],
+          "time_s": 0.0249999994412064
+        }
+      },
+      "joins": {
+        "active_clip_time": 0.129999995231628,
+        "entry": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        },
+        "epoch_reset": 14011,
+        "ordinary_idle_return": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        }
+      },
+      "original_right_key_identity_old_left_diagnostic": {
+        "grip_m": 6.97226569172926e-05,
+        "left_hand_m": 0.429454982280731,
+        "left_hand_orientation_deg": 57.2399060395308,
+        "right_hand_m": 0.0,
+        "right_hand_orientation_deg": 2.85727312610782e-05,
+        "samples": 53,
+        "tip_m": 6.82993268128484e-05
+      },
+      "continuity": {
+        "120Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 7739.51978490755,
+            "maximum_global_step_deg": 64.4959982075629,
+            "maximum_local_deg_s": 14932.3792167682,
+            "maximum_local_step_deg": 124.436493473068,
+            "samples": 64,
+            "worst_global": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 64.4959982075629,
+              "to_s": 0.108333333333333
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 124.436493473068,
+              "to_s": 0.108333333333333
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1352.61138519544,
+            "maximum_global_step_deg": 11.2717615432953,
+            "maximum_local_deg_s": 1338.93890939921,
+            "maximum_local_step_deg": 11.1578242449934,
+            "samples": 64,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.383333333333333,
+              "step_deg": 11.2717615432953,
+              "to_s": 0.391666666666667
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.341666666666667,
+              "step_deg": 11.1578242449934,
+              "to_s": 0.35
+            }
+          }
+        },
+        "60Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 6314.61582567551,
+            "maximum_global_step_deg": 105.243597094592,
+            "maximum_local_deg_s": 9327.0851654029,
+            "maximum_local_step_deg": 155.451419423382,
+            "samples": 33,
+            "worst_global": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 105.243597094592,
+              "to_s": 0.116666666666667
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.1,
+              "step_deg": 155.451419423382,
+              "to_s": 0.116666666666667
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1330.27723710485,
+            "maximum_global_step_deg": 22.1712872850808,
+            "maximum_local_deg_s": 1304.92006438466,
+            "maximum_local_step_deg": 21.7486677397444,
+            "samples": 33,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.383333333333333,
+              "step_deg": 22.1712872850808,
+              "to_s": 0.4
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.333333333333333,
+              "step_deg": 21.7486677397444,
+              "to_s": 0.35
+            }
+          }
+        },
+        "all_keys_and_midpoints": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 7803.42684139183,
+            "maximum_global_step_deg": 39.0171264035323,
+            "maximum_local_deg_s": 14932.3813313545,
+            "maximum_local_step_deg": 74.6618917243909,
+            "samples": 105,
+            "worst_global": {
+              "bone": "LeftForeArm",
+              "from_s": 0.100000001,
+              "step_deg": 39.0171264035323,
+              "to_s": 0.105
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.105,
+              "step_deg": 74.6618917243909,
+              "to_s": 0.109999999
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 1363.72630171506,
+            "maximum_global_step_deg": 6.8186253718069,
+            "maximum_local_deg_s": 1338.94002544388,
+            "maximum_local_step_deg": 6.69469343251924,
+            "samples": 105,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.379999995,
+              "step_deg": 6.8186253718069,
+              "to_s": 0.3849999905
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.340000004,
+              "step_deg": 6.69469343251924,
+              "to_s": 0.344999999
+            }
+          }
+        }
+      }
+    },
+    "light_3": {
+      "all_schedule_right_identity_old_left_diagnostic": {
+        "grip_m": 7.06041100784205e-05,
+        "left_hand_m": 0.4019655585289,
+        "left_hand_orientation_deg": 52.0123329823432,
+        "right_hand_m": 9.5367431640625e-07,
+        "right_hand_orientation_deg": 3.63029534028985e-05,
+        "samples": 197,
+        "tip_m": 6.97226569172926e-05
+      },
+      "authored_free_left_targets": {
+        "finite": true,
+        "maximum_key_error_m": 2.0516950826277e-05,
+        "maximum_midpoint_error_m": 0.000556430662982166,
+        "maximum_orientation_error_deg": 0.09159413351605,
+        "maximum_target_error_m": 0.000556430662982166,
+        "midpoint_samples": 70,
+        "samples": 141,
+        "schedule_matches": true,
+        "source_key_samples": 71,
+        "worst": {
+          "actual_m": [
+            -0.040924072265625,
+            1.20392513275146,
+            -0.240142822265625
+          ],
+          "is_source_key": false,
+          "target_m": [
+            -0.0403840057551861,
+            1.20397067070007,
+            -0.240268796682358
+          ],
+          "time_s": 0.034999999217689
+        }
+      },
+      "joins": {
+        "active_clip_time": 0.179999996934618,
+        "entry": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        },
+        "epoch_reset": 14021,
+        "ordinary_idle_return": {
+          "active": true,
+          "charge_sampled_time": 0.0,
+          "charge_upper_body": false,
+          "duration": 0.08,
+          "elapsed": 0.0166666666666667,
+          "enabled": true,
+          "gait_phase": 0.0
+        }
+      },
+      "original_right_key_identity_old_left_diagnostic": {
+        "grip_m": 6.34032039670274e-05,
+        "left_hand_m": 0.401376008987427,
+        "left_hand_orientation_deg": 52.0123322880782,
+        "right_hand_m": 9.5367431640625e-07,
+        "right_hand_orientation_deg": 2.810977609147e-05,
+        "samples": 71,
+        "tip_m": 6.10649512964301e-05
+      },
+      "continuity": {
+        "120Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 6104.79573009335,
+            "maximum_global_step_deg": 50.8732977507779,
+            "maximum_local_deg_s": 11261.5622054295,
+            "maximum_local_step_deg": 93.8463517119129,
+            "samples": 85,
+            "worst_global": {
+              "bone": "LeftArm",
+              "from_s": 0.15,
+              "step_deg": 50.8732977507779,
+              "to_s": 0.158333333333333
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.15,
+              "step_deg": 93.8463517119129,
+              "to_s": 0.158333333333333
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 862.910418875634,
+            "maximum_global_step_deg": 7.19092015729702,
+            "maximum_local_deg_s": 783.346710427597,
+            "maximum_local_step_deg": 6.52788925356333,
+            "samples": 85,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.508333333333333,
+              "step_deg": 7.19092015729702,
+              "to_s": 0.516666666666667
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.458333333333333,
+              "step_deg": 6.52788925356333,
+              "to_s": 0.466666666666667
+            }
+          }
+        },
+        "60Hz": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 4284.85030853474,
+            "maximum_global_step_deg": 71.4141718089122,
+            "maximum_local_deg_s": 8007.52719898668,
+            "maximum_local_step_deg": 133.458786649778,
+            "samples": 43,
+            "worst_global": {
+              "bone": "LeftArm",
+              "from_s": 0.15,
+              "step_deg": 71.4141718089122,
+              "to_s": 0.166666666666667
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.15,
+              "step_deg": 133.458786649778,
+              "to_s": 0.166666666666667
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 853.927965916138,
+            "maximum_global_step_deg": 14.232132765269,
+            "maximum_local_deg_s": 774.508221887251,
+            "maximum_local_step_deg": 12.9084703647875,
+            "samples": 43,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.5,
+              "step_deg": 14.232132765269,
+              "to_s": 0.516666666666667
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.45,
+              "step_deg": 12.9084703647875,
+              "to_s": 0.466666666666667
+            }
+          }
+        },
+        "all_keys_and_midpoints": {
+          "baseline": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 6104.83643826732,
+            "maximum_global_step_deg": 30.5241516671543,
+            "maximum_local_deg_s": 11261.5686734754,
+            "maximum_local_step_deg": 56.3077870595338,
+            "samples": 141,
+            "worst_global": {
+              "bone": "LeftArm",
+              "from_s": 0.150000006,
+              "step_deg": 30.5241516671543,
+              "to_s": 0.155000001
+            },
+            "worst_local": {
+              "bone": "LeftForeArm",
+              "from_s": 0.155000001,
+              "step_deg": 56.3077870595338,
+              "to_s": 0.159999996
+            }
+          },
+          "candidate": {
+            "bones": 53,
+            "finite": true,
+            "maximum_global_deg_s": 867.579459455059,
+            "maximum_global_step_deg": 4.3378933931677,
+            "maximum_local_deg_s": 788.762498915662,
+            "maximum_local_step_deg": 3.94380894514708,
+            "samples": 141,
+            "worst_global": {
+              "bone": "RightArm",
+              "from_s": 0.50999999,
+              "step_deg": 4.3378933931677,
+              "to_s": 0.5149999855
+            },
+            "worst_local": {
+              "bone": "RightForeArm",
+              "from_s": 0.460000008,
+              "step_deg": 3.94380894514708,
+              "to_s": 0.4650000035
+            }
+          }
+        }
+      }
+    }
+  },
+  "curation": {
+    "raw_bytes": 137226,
+    "raw_sha256": "e025610cd9c4c61a419d1d5eda46b62bb2cc92e92d1e736415fa0ec794f35f2c",
+    "scope": "Actual imported Skeleton/AnimationPlayer summary and joins, omitting repeated per-bone arrays only. Finite tests not fullskin/continuousAV/hardware approval."
+  }
+}

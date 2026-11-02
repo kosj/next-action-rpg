@@ -1,0 +1,3178 @@
+{
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "target_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+  "scope": "Existing project independent raw glTF TRS/slerp FK; every original100Hz key+interval midpoint. No engine/skin/raster/AAA approval.",
+  "reports": [
+    {
+      "clip": "light_1",
+      "keys": 53,
+      "key_hand_target_preservation": {
+        "LeftHand": {
+          "world_position_max_error_m": 4.0835576797678964e-07,
+          "world_rotation_max_error_deg": 2.4979263396122898e-05
+        },
+        "RightHand": {
+          "world_position_max_error_m": 0.0,
+          "world_rotation_max_error_deg": 0.0
+        }
+      },
+      "midpoint_target_policy": "Left freehand corrected against piecewise world key interpolation, not bad old local-IK interpolation. Right world is protected exactly.",
+      "midpoint_summary": {
+        "LeftHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0381943187566203,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.0037416072920384547,
+          "new_vs_old_world_m": 0.03798814948568014
+        },
+        "RightHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0013560154800399652,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.0013560154800399652,
+          "new_vs_old_world_m": 0.0
+        }
+      },
+      "protected_body_midpoint_world_error_max_m": 0.0,
+      "actual_idle_joins": {
+        "start": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        },
+        "end": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        }
+      },
+      "all_key_and_midpoint_adjacent_top3": {
+        "local_rotation_deg": [
+          {
+            "bone": "LeftHand",
+            "value": 12.970940019920112,
+            "interval_s": [
+              0.07999999821186066,
+              0.08500000089406967
+            ],
+            "per_second": 2594.186612353879
+          },
+          {
+            "bone": "LeftArm",
+            "value": 12.419903423249382,
+            "interval_s": [
+              0.07000000029802322,
+              0.07499999925494194
+            ],
+            "per_second": 2483.9812028487368
+          },
+          {
+            "bone": "LeftForeArm",
+            "value": 5.465109788425565,
+            "interval_s": [
+              0.09000000357627869,
+              0.0950000025331974
+            ],
+            "per_second": 1093.0221857073097
+          }
+        ],
+        "global_rotation_deg": [
+          {
+            "bone": "LeftForeArm",
+            "value": 11.857814977193106,
+            "interval_s": [
+              0.07999999821186066,
+              0.08500000089406967
+            ],
+            "per_second": 2371.5617232337745
+          },
+          {
+            "bone": "LeftArm",
+            "value": 11.11648331722214,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 2223.297127260352
+          },
+          {
+            "bone": "RightArm",
+            "value": 5.794375521270317,
+            "interval_s": [
+              0.3799999952316284,
+              0.38499999046325684
+            ],
+            "per_second": 1158.8762094445403
+          }
+        ],
+        "global_translation_m": [
+          {
+            "bone": "LeftForeArm",
+            "value": 0.047349830065190196,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 9.469967988627312
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger02",
+            "value": 0.037519114125654236,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 7.503824390550602
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger01",
+            "value": 0.03464511152420929,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 6.929023750348856
+          }
+        ]
+      },
+      "midpoints": [
+        {
+          "time_s": 0.004999999888241291,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 5.004498472280878e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.8782634568604934e-05,
+            "new_vs_old_world_m": 2.681033888495269e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.002979660240114634
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.710690948887589e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.710690948887589e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0002362717337283067
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.014999999664723873,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003337933284287287,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000263048108295176,
+            "new_vs_old_world_m": 0.00018077004911564522,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01872043674374907
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.805100533450564e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.805100533450564e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0008046425954056934
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.024999999441206455,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006128450802645196,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005127988774300161,
+            "new_vs_old_world_m": 0.0003332462942836874,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.030401638722024855
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.355757704025996e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.355757704025996e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009947882416769634
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.03499999921768904,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008089265446369391,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007657450404744328,
+            "new_vs_old_world_m": 0.00041356509335070647,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.030737468219668565
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.544375081827003e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.544375081827003e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028496291779663164
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.044999999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011283578193168194,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001169770094969127,
+            "new_vs_old_world_m": 0.00042304859258247726,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0203917530665045
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002569762295179102,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002569762295179102,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.049782299258636614
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.054999999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0019433359998062684,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0019333235263939933,
+            "new_vs_old_world_m": 0.0003669901644203006,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.014225697328192524
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006102340336341145,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006102340336341145,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07060877925746642
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.06499999947845936,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.003302690214243542,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0029798501838164447,
+            "new_vs_old_world_m": 0.0004404880797338034,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04354695078906908
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010346971431360137,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010346971431360137,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09521795293379993
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.07499999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0042998741431214535,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0034138475622336665,
+            "new_vs_old_world_m": 0.0011037848410485377,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1818890757312891
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0013373989686960473,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0013373989686960473,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.12425506095544497
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.08500000089406967,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.004709791400085458,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0037416072920384547,
+            "new_vs_old_world_m": 0.002287534812038868,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.3379939418428313
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0013560154800399652,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0013560154800399652,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1421333338939206
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.0950000025331974,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0030765055044734368,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.002812655035014346,
+            "new_vs_old_world_m": 0.0022596099246424187,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.2777112565912531
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010697614241564012,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010697614241564012,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.12573605229915058
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.10500000044703484,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.021285247033314615,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0013435372021136948,
+            "new_vs_old_world_m": 0.020301257281145558,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.13878521318958376
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005743538304924059,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005743538304924059,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07334936721149175
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.11499999836087227,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0381943187566203,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003899204152503529,
+            "new_vs_old_world_m": 0.03798814948568014,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04319578935168873
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00011494861583832932,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00011494861583832932,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017678095624071608
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1249999962747097,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00011875909765503909,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.845732575995704e-05,
+            "new_vs_old_world_m": 5.354657004488463e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004606460050449739
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003691566939467143,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003691566939467143,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006927511580286641
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.13499999791383743,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0022851299425852402,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00023489425812569235,
+            "new_vs_old_world_m": 0.002146604228442688,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01645543641649866
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008336348358712117,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008336348358712117,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012967198578887482
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.14500000327825546,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001430509842700029,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00024188914243412527,
+            "new_vs_old_world_m": 0.0012896080948235974,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01865421012336866
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008368733809376415,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008368733809376415,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009342611067404276
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1550000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000866629289474684,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00024502597516876844,
+            "new_vs_old_world_m": 0.000729703327575702,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.021183361492683957
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008386784098268839,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008386784098268839,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007665926646614166
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.16499999910593033,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000555991734587305,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000243746940041587,
+            "new_vs_old_world_m": 0.0004279303763478108,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02377604962187208
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008400146431009034,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008400146431009034,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006805342707856772
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.17500000447034836,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003908525582142351,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002378943427012595,
+            "new_vs_old_world_m": 0.0002706129304709702,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02617306544071947
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000841416913864703,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000841416913864703,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006358858889842032
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1850000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003037725431095595,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00022749933557760627,
+            "new_vs_old_world_m": 0.0001853344197037552,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0281407356196514
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008432944765375751,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008432944765375751,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006190439710433931
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.19500000029802322,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002605931701852444,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002136849663258406,
+            "new_vs_old_world_m": 0.0001383948420780108,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029506377176485556
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008460002168712235,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008460002168712235,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006297008671831764
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.20499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002421768663023686,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00019799085368945186,
+            "new_vs_old_world_m": 0.00011471521178793275,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.030158536688971355
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008499915661796055,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008499915661796055,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006766962740481903
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2149999961256981,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00023626169831348688,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00018249964703374427,
+            "new_vs_old_world_m": 0.00010531595247463932,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.030082511396355677
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008559094451211711,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008559094451211711,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007778133390715408
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.22500000149011612,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00023518753642465305,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00016867131616097128,
+            "new_vs_old_world_m": 0.00010308339433414401,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029349673928669724
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008647247269274718,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008647247269274718,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009610027923961388
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.23499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00023464973935342294,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001569938555313336,
+            "new_vs_old_world_m": 0.00010352995529982476,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028056178948957865
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008780531287784848,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008780531287784848,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012659552149085955
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.24499999731779099,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00023260054567433226,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001478343345880117,
+            "new_vs_old_world_m": 0.0001041628203301967,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.026333939060200665
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008982409364205614,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008982409364205614,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017409301096211537
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2549999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00022835553617155444,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014070832847773099,
+            "new_vs_old_world_m": 0.00010425949184189452,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02432224577875654
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009283494098685475,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009283494098685475,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.024202955712427664
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.26500000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00022196555189179097,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00013522894838213355,
+            "new_vs_old_world_m": 0.00010386521082239891,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02213025438660113
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009704842928775891,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009704842928775891,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.032595362281083694
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2750000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002138671692842578,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00013079740082698723,
+            "new_vs_old_world_m": 0.00010347519723208527,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.019867551696259107
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010216920381588889,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010216920381588889,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04025015137723874
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2849999964237213,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00020462515911828916,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00012698782472149363,
+            "new_vs_old_world_m": 0.00010349606332366283,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017622333985080313
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010695526094841575,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010695526094841575,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04205602167424028
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.29500000178813934,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001947771273953594,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00012384069806809067,
+            "new_vs_old_world_m": 0.00010377295295653628,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015452556386998257
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010989917510854602,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010989917510854602,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03106873430280798
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3050000071525574,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00011214635545890266,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.805643649467862e-05,
+            "new_vs_old_world_m": 6.363034692300104e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010982865608146576
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006618591263514289,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006618591263514289,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.014189505232573299
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3149999976158142,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.1696908227632167e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.033623825604515e-06,
+            "new_vs_old_world_m": 1.5831288495827974e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006716064614436345
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001750746357731798,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001750746357731798,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023379823495441675
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.32500000298023224,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.916108974549735e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.191228669905531e-05,
+            "new_vs_old_world_m": 4.497028151267415e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006494314643139557
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004408581162502932,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004408581162502932,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.11422302371139151
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.33500000834465027,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00010655547131628805,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.600862050778444e-05,
+            "new_vs_old_world_m": 8.482629021797674e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.011981555537681886
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005768375470600912,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005768375470600912,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.15641521775986839
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3449999988079071,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00022247817570121396,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00015594990875717968,
+            "new_vs_old_world_m": 0.00014624351609290022,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.019830288411590548
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006303498883614671,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006303498883614671,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.10459090075364083
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.35500000417232513,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003820604213669541,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002303152863335435,
+            "new_vs_old_world_m": 0.00022621551121757312,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028142018773160967
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009235183614439435,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009235183614439435,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0576864613230759
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.36500000953674316,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005643211387682967,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003257889838081292,
+            "new_vs_old_world_m": 0.0002854940161795899,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03605840865376986
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011848628515433938,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011848628515433938,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1290995127671217
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.375,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007361036360087936,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00047135021645664237,
+            "new_vs_old_world_m": 0.0002852527422921563,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04285427481346808
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0012339152110213277,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0012339152110213277,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.15925574154716327
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.38499999046325684,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008766696965337836,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00065606505242897,
+            "new_vs_old_world_m": 0.00023864041723008575,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04721270397800844
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001149489388108577,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001149489388108577,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.13842664879552466
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.39499999582767487,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009689864947955895,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008143423652799675,
+            "new_vs_old_world_m": 0.00019383647924733086,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0472254237868177
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010267150910426744,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010267150910426744,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.10482244577379445
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4050000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010045992327333197,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008836779088014134,
+            "new_vs_old_world_m": 0.00015775760772255055,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04298555771026024
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008779527436409806,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008779527436409806,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.08304468989191231
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.41499999165534973,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010148569978988768,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008848815492084062,
+            "new_vs_old_world_m": 0.00013330689000147345,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03883620110759412
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007045292215372852,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007045292215372852,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06875159243948711
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.42499999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009988787335791375,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008611240982352019,
+            "new_vs_old_world_m": 0.00018331805931058476,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.035539577547282875
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005266256074534017,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005266256074534017,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05339038718938995
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4350000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008965054270151611,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007759416462056377,
+            "new_vs_old_world_m": 0.00023509732765535982,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028167899107208717
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000367917461780392,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000367917461780392,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03609782950842267
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4449999928474426,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007064205916756484,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006166969222613759,
+            "new_vs_old_world_m": 0.0002268445910684048,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017311968304665377
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00024145602995105599,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00024145602995105599,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01941640135376825
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.45499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004890371569349235,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000432481280409885,
+            "new_vs_old_world_m": 0.00017052338057930853,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010066318168850416
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014708960052378956,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014708960052378956,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00598684904454994
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4650000035762787,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00029983294621281913,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002722385545181032,
+            "new_vs_old_world_m": 9.900910173398426e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.011294047606654367
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 7.982574297219618e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.982574297219618e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.002594059403641842
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4749999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001648862077233998,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00015672265857182146,
+            "new_vs_old_world_m": 3.799505211735243e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01273270787472453
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.857142849308354e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.857142849308354e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006154071274455765
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.48499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.623273579689849e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.478783874067979e-05,
+            "new_vs_old_world_m": 1.4856884597628215e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01110207252459465
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.288222674932493e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.288222674932493e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.005955147257387103
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4950000047683716,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.6669007246215147e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.347499389616245e-05,
+            "new_vs_old_world_m": 1.3428170000448977e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007372114302502418
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.678784383706032e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.678784383706032e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003913908852347743
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5049999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.087898918794436e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.7644033808186064e-05,
+            "new_vs_old_world_m": 9.552861182203488e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0032274780451425175
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.379688319760598e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.379688319760598e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0016639835906450753
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5149999856948853,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.803341073220567e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.1988728409446454e-06,
+            "new_vs_old_world_m": 1.4340599882794496e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00040777859633942616
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.138930312192637e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.138930312192637e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00020871928275658811
+          },
+          "protected_body_world_max_error_m": 0.0
+        }
+      ]
+    },
+    {
+      "clip": "light_2",
+      "keys": 53,
+      "key_hand_target_preservation": {
+        "LeftHand": {
+          "world_position_max_error_m": 4.5577533644939634e-07,
+          "world_rotation_max_error_deg": 6.269280289849891e-05
+        },
+        "RightHand": {
+          "world_position_max_error_m": 0.0,
+          "world_rotation_max_error_deg": 0.0
+        }
+      },
+      "midpoint_target_policy": "Left freehand corrected against piecewise world key interpolation, not bad old local-IK interpolation. Right world is protected exactly.",
+      "midpoint_summary": {
+        "LeftHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0732978987530082,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.003657049067328361,
+          "new_vs_old_world_m": 0.07262655399940239
+        },
+        "RightHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0018346943104419885,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.0018346943104419885,
+          "new_vs_old_world_m": 0.0
+        }
+      },
+      "protected_body_midpoint_world_error_max_m": 0.0,
+      "actual_idle_joins": {
+        "start": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        },
+        "end": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        }
+      },
+      "all_key_and_midpoint_adjacent_top3": {
+        "local_rotation_deg": [
+          {
+            "bone": "LeftHand",
+            "value": 12.925647927471996,
+            "interval_s": [
+              0.08500000089406967,
+              0.09000000357627869
+            ],
+            "per_second": 2585.1281987235675
+          },
+          {
+            "bone": "LeftArm",
+            "value": 9.396710416712073,
+            "interval_s": [
+              0.05999999865889549,
+              0.06499999947845936
+            ],
+            "per_second": 1879.3417752942926
+          },
+          {
+            "bone": "LeftForeArm",
+            "value": 7.795884389211241,
+            "interval_s": [
+              0.08500000089406967,
+              0.09000000357627869
+            ],
+            "per_second": 1559.1760414350413
+          }
+        ],
+        "global_rotation_deg": [
+          {
+            "bone": "LeftForeArm",
+            "value": 10.695405120477615,
+            "interval_s": [
+              0.07000000029802322,
+              0.07499999925494194
+            ],
+            "per_second": 2139.0814703426922
+          },
+          {
+            "bone": "LeftArm",
+            "value": 7.956459160151183,
+            "interval_s": [
+              0.06499999947845936,
+              0.07000000029802322
+            ],
+            "per_second": 1591.2915711972223
+          },
+          {
+            "bone": "RightArm",
+            "value": 6.81862334444792,
+            "interval_s": [
+              0.3799999952316284,
+              0.38499999046325684
+            ],
+            "per_second": 1363.7259694400157
+          }
+        ],
+        "global_translation_m": [
+          {
+            "bone": "HandLoRA_Bip01_R_Finger02",
+            "value": 0.04299018205196609,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 8.598038204083764
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger01",
+            "value": 0.039713365489691635,
+            "interval_s": [
+              0.07499999925494194,
+              0.07999999821186066
+            ],
+            "per_second": 7.942674754909403
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger12",
+            "value": 0.03938811639964975,
+            "interval_s": [
+              0.07000000029802322,
+              0.07499999925494194
+            ],
+            "per_second": 7.877624923330574
+          }
+        ]
+      },
+      "midpoints": [
+        {
+          "time_s": 0.004999999888241291,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 5.4003536140015e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.7018489417712516e-05,
+            "new_vs_old_world_m": 2.826931898910121e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0003200319009408586
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.050975644065702e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.050975644065702e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0004912248831038013
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.014999999664723873,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00035169901445330256,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00031755895948747657,
+            "new_vs_old_world_m": 0.00018508369004135888,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003466233943143072
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 7.336904874071102e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.336904874071102e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0008069674117694435
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.024999999441206455,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006182625090508498,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006042071028872261,
+            "new_vs_old_world_m": 0.0003253935302833814,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02225964869334158
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.43942010219117e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.43942010219117e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008810116527122776
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.03499999921768904,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007829258546070761,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008240316319779818,
+            "new_vs_old_world_m": 0.0003693081657042166,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05522141276448746
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.835457381923077e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.835457381923077e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029003523993066875
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.044999999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011178664135959547,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010596252940674536,
+            "new_vs_old_world_m": 0.00034837595023989767,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.10105822645056099
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00035066246041976824,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00035066246041976824,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05112734458726861
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.054999999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0021203071193985224,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0014353437746141577,
+            "new_vs_old_world_m": 0.0008635636429590249,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.16394350524758156
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0008373175941256438,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0008373175941256438,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07245964499825291
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.06499999947845936,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0039037935790933896,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001901121971450996,
+            "new_vs_old_world_m": 0.002305645784251349,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.2307966711550179
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014224620847052636,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0014224620847052636,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.10204761064485421
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.07499999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.005484955388467852,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0028085768068467545,
+            "new_vs_old_world_m": 0.003953103710362898,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.2529749399379169
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0018288433855298835,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0018288433855298835,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1452539074703334
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.08500000089406967,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.006661263518984185,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.003657049067328361,
+            "new_vs_old_world_m": 0.005679597132136052,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.21204111499365164
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0018346943104419885,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0018346943104419885,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.18206763770934573
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.0950000025331974,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0038976047393119205,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.002478316825649528,
+            "new_vs_old_world_m": 0.003752961402500758,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.14594306472857313
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014545524596121238,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0014545524596121238,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.17324690083100103
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.10500000044703484,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0732978987530082,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0012007773706613496,
+            "new_vs_old_world_m": 0.07262655399940239,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0778968706183513
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007928137947088691,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007928137947088691,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.10068833987041087
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.11499999836087227,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.05746053536451908,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00037695405887773936,
+            "new_vs_old_world_m": 0.05728222906300488,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03193416568227721
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00017838729537946377,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00017838729537946377,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015370713151928422
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1249999962747097,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009303273504534315,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.89445448205891e-05,
+            "new_vs_old_world_m": 0.0008881074285215515,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012087222781578217
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004723813197722869,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004723813197722869,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03664741205199644
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.13499999791383743,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.004194582505515104,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00018865334101788054,
+            "new_vs_old_world_m": 0.004032330944179042,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029764315372599527
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010992564644931354,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010992564644931354,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03534007676972886
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.14500000327825546,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0031342982764434495,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00019762735015754496,
+            "new_vs_old_world_m": 0.0029744907300951005,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.030061072597241847
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011091895894940508,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011091895894940508,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017896491688305812
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1550000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0018342627289568462,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00021152706218026556,
+            "new_vs_old_world_m": 0.0016868700604118368,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029586301721631385
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011142363408626955,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011142363408626955,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012217847399861204
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.16499999910593033,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001036241006581188,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00022873043067884023,
+            "new_vs_old_world_m": 0.0009121584441589189,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028263042459822835
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011168694667418463,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011168694667418463,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00987509293193634
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.17500000447034836,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006400506797354159,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00024655847194014155,
+            "new_vs_old_world_m": 0.0005400464373067869,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02614819338377696
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011188803763446105,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011188803763446105,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008779904323176773
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1850000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004490667311859091,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002624311424128866,
+            "new_vs_old_world_m": 0.00036102056038184925,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02349033057774682
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011213195964927124,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011213195964927124,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008299895239945902
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.19500000029802322,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00036034490116289953,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002730304051525742,
+            "new_vs_old_world_m": 0.00027057230410350796,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.020777395138446005
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011249434382939192,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011249434382939192,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00829317152660901
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.20499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000324815772173928,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00027616200252482604,
+            "new_vs_old_world_m": 0.00022732513094482493,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01869896660478588
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011305531496796973,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011305531496796973,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008871860007945539
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2149999961256981,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00031452389160255213,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002717013983652739,
+            "new_vs_old_world_m": 0.00021100000736542804,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017844163263542465
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011394072569096457,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011394072569096457,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010357547805814861
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.22500000149011612,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003130139843334074,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00026025669148958965,
+            "new_vs_old_world_m": 0.00020706012289901338,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.018319120153335335
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011534473339614053,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011534473339614053,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01330596156766918
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.23499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003118103826150459,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002434993993850395,
+            "new_vs_old_world_m": 0.00020581344352663212,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.019605447923059034
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0011760612631434878,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0011760612631434878,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.018543081520301378
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.24499999731779099,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003074155870858469,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00022360633764925694,
+            "new_vs_old_world_m": 0.00020244491543007484,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02109493796720769
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0012124774721368828,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0012124774721368828,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.027031187023355278
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2549999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002990800846466025,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00020246359041454422,
+            "new_vs_old_world_m": 0.00019556915976370076,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.022372903056043954
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001268586615563393,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001268586615563393,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03897427316306174
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.26500000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000287382472787993,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00018162827286430242,
+            "new_vs_old_world_m": 0.00018570108692653065,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023160277943384242
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0013439372071511878,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0013439372071511878,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05156314276253022
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2750000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002734197239728655,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001625039138778441,
+            "new_vs_old_world_m": 0.0001739401122435222,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023450812383267284
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014192898797490707,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0014192898797490707,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05613684093829647
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2849999964237213,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002583123378586764,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014577527559596598,
+            "new_vs_old_world_m": 0.00016153196972559387,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02325569714535897
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001464541127709382,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001464541127709382,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03908543213071244
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.29500000178813934,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00024307612469097196,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001318241161728705,
+            "new_vs_old_world_m": 0.00014972898192113502,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.022659934180659078
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0015378889917603527,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0015378889917603527,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.048683589613387965
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3050000071525574,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00013740743458827976,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.335243226286588e-05,
+            "new_vs_old_world_m": 0.000105312453603663,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017180553095853184
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010900765464001395,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010900765464001395,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07280018651681287
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3149999976158142,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.5596742967897935e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.832133368776871e-05,
+            "new_vs_old_world_m": 5.9855648124889914e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007353225639767938
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00034138813745906397,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00034138813745906397,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.054864223538310226
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.32500000298023224,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.818307167109904e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.680203972627651e-05,
+            "new_vs_old_world_m": 8.251432965691645e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00702531461919419
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001298967685556138,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001298967685556138,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.3104282556834536
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.33500000834465027,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00011966342120116362,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00016617041531164729,
+            "new_vs_old_world_m": 0.00015030591423746264,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01734719886213949
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001354309716048174,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001354309716048174,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.35678018905105247
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3449999988079071,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000254129949641702,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002795252348042297,
+            "new_vs_old_world_m": 0.00025142394148707967,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.029933422326025284
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010410989117735248,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010410989117735248,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.2524172757088619
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.35500000417232513,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004334000062686853,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00038761247896504445,
+            "new_vs_old_world_m": 0.000372852403576592,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04479873626013945
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001144447808661651,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001144447808661651,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09723882558576925
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.36500000953674316,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006288124154552508,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004942359879352422,
+            "new_vs_old_world_m": 0.0004573069872664627,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06204847618483927
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0015091236110851237,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0015091236110851237,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.14649658175161412
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.375,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007968019766671103,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006265045273530953,
+            "new_vs_old_world_m": 0.0004479735117158864,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.08064916693288797
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0016147570662971551,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0016147570662971551,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.21101618973320824
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.38499999046325684,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009294458726538141,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007908437264309931,
+            "new_vs_old_world_m": 0.0003560713159333519,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09700030774752215
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014994609713731815,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0014994609713731815,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1926140291536157
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.39499999582767487,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010249232442525382,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009395616270030236,
+            "new_vs_old_world_m": 0.0002264080056830586,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1039565229623368
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0013305662869066094,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0013305662869066094,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1432525162240578
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4050000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010692624525284002,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010215096558694582,
+            "new_vs_old_world_m": 0.00010674505453674289,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09398154350278917
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.001135793035908188,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001135793035908188,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.11187633223711034
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.41499999165534973,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010859793163087072,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0010523454100998483,
+            "new_vs_old_world_m": 5.440262302314594e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06868163384551661
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009069842212643731,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009069842212643731,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09423300184053736
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.42499999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010702736247378203,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001033435788318604,
+            "new_vs_old_world_m": 8.02137364578289e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.042610210653121566
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006705530573629425,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006705530573629425,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07435013204477835
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4350000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009546086512689058,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009059056911800417,
+            "new_vs_old_world_m": 0.0001320899879073281,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028368810510369134
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004614676107412692,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004614676107412692,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05109387761232123
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4449999928474426,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007410600346201596,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006843487413712867,
+            "new_vs_old_world_m": 0.00014463051546685014,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02387831854750557
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00029940925334235647,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00029940925334235647,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028583257529313736
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.45499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005008876249562713,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00044902699758073925,
+            "new_vs_old_world_m": 0.00010755540814248541,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023437087934704327
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00018251499444205257,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00018251499444205257,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010419812183591443
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4650000035762787,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00029649791235294894,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002618811165877274,
+            "new_vs_old_world_m": 5.234390846425821e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02310787321092937
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 9.981720729770547e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.981720729770547e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0014246686271809136
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4749999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001557583197494731,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014310685581588506,
+            "new_vs_old_world_m": 3.5265821985024746e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.020414240523700205
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.7431137844229765e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.7431137844229765e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0066584352326539715
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.48499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.02559228726635e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.221746028262868e-05,
+            "new_vs_old_world_m": 5.0820584068337096e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015361152113589268
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.666266666497308e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.666266666497308e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006948958063992079
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4950000047683716,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.7182620804450195e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.950282963178934e-05,
+            "new_vs_old_world_m": 4.589144962247758e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009310864269681118
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.977671998261197e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.977671998261197e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004720607989251253
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5049999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.288100731289543e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.249150637683717e-05,
+            "new_vs_old_world_m": 2.3809929094629088e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00385845919340238
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.0034759240229474e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.0034759240229474e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0020551110227102908
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5149999856948853,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.1753007650021816e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.925476405133606e-06,
+            "new_vs_old_world_m": 3.275964090657686e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00048135270562173215
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.3735920481967704e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.3735920481967704e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0002618121630654442
+          },
+          "protected_body_world_max_error_m": 0.0
+        }
+      ]
+    },
+    {
+      "clip": "light_3",
+      "keys": 71,
+      "key_hand_target_preservation": {
+        "LeftHand": {
+          "world_position_max_error_m": 3.7935888873826303e-07,
+          "world_rotation_max_error_deg": 2.2198114802541473e-05
+        },
+        "RightHand": {
+          "world_position_max_error_m": 0.0,
+          "world_rotation_max_error_deg": 0.0
+        }
+      },
+      "midpoint_target_policy": "Left freehand corrected against piecewise world key interpolation, not bad old local-IK interpolation. Right world is protected exactly.",
+      "midpoint_summary": {
+        "LeftHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0379524954512414,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.0019934222181023685,
+          "new_vs_old_world_m": 0.03776952939924462
+        },
+        "RightHand": {
+          "old_interpolated_error_vs_world_key_lerp_m": 0.0007410772168294519,
+          "new_interpolated_error_vs_world_key_lerp_m": 0.0007410772168294519,
+          "new_vs_old_world_m": 0.0
+        }
+      },
+      "protected_body_midpoint_world_error_max_m": 0.0,
+      "actual_idle_joins": {
+        "start": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        },
+        "end": {
+          "max_joint_distance_to_actual_idle0_m": 5.153480599862038e-08,
+          "max_local_rotation_to_actual_idle0_deg": 2.4148365394514667e-06
+        }
+      },
+      "all_key_and_midpoint_adjacent_top3": {
+        "local_rotation_deg": [
+          {
+            "bone": "LeftHand",
+            "value": 9.573857138232272,
+            "interval_s": [
+              0.10999999940395355,
+              0.11499999836087227
+            ],
+            "per_second": 1914.7718270989856
+          },
+          {
+            "bone": "LeftArm",
+            "value": 9.08060787232967,
+            "interval_s": [
+              0.10000000149011612,
+              0.10500000044703484
+            ],
+            "per_second": 1816.1219533384976
+          },
+          {
+            "bone": "LeftForeArm",
+            "value": 4.052898132077367,
+            "interval_s": [
+              0.12999999523162842,
+              0.13499999791383743
+            ],
+            "per_second": 810.5791915869104
+          }
+        ],
+        "global_rotation_deg": [
+          {
+            "bone": "LeftForeArm",
+            "value": 8.846752511887876,
+            "interval_s": [
+              0.10999999940395355,
+              0.11499999836087227
+            ],
+            "per_second": 1769.350871492931
+          },
+          {
+            "bone": "LeftArm",
+            "value": 8.142977845530858,
+            "interval_s": [
+              0.10500000044703484,
+              0.10999999940395355
+            ],
+            "per_second": 1628.5959088577538
+          },
+          {
+            "bone": "RightArm",
+            "value": 4.337895844142649,
+            "interval_s": [
+              0.5099999904632568,
+              0.5149999856948853
+            ],
+            "per_second": 867.5799962172896
+          }
+        ],
+        "global_translation_m": [
+          {
+            "bone": "LeftForeArm",
+            "value": 0.03488307254459746,
+            "interval_s": [
+              0.10500000044703484,
+              0.10999999940395355
+            ],
+            "per_second": 6.976615964354998
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger02",
+            "value": 0.027502813063009657,
+            "interval_s": [
+              0.10500000044703484,
+              0.10999999940395355
+            ],
+            "per_second": 5.500563760108953
+          },
+          {
+            "bone": "HandLoRA_Bip01_R_Finger01",
+            "value": 0.025432736778223688,
+            "interval_s": [
+              0.10500000044703484,
+              0.10999999940395355
+            ],
+            "per_second": 5.086548416781428
+          }
+        ]
+      },
+      "midpoints": [
+        {
+          "time_s": 0.004999999888241291,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.448707673177465e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.1285535645324534e-05,
+            "new_vs_old_world_m": 7.774221106962789e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0008760582991395837
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.311817231948684e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.311817231948684e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 8.856229877325594e-05
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.014999999664723873,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00010758414529132555,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.380628193680594e-05,
+            "new_vs_old_world_m": 5.803705282859873e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006311778976917363
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.734455599474096e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.734455599474096e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00031064222967443103
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.024999999441206455,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00022730981713580447,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001805516011899569,
+            "new_vs_old_world_m": 0.00012375467810456472,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012579089951750194
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 5.547453470452864e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 5.547453470452864e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0011010582189650286
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.03499999921768904,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00032495050827350516,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00027174222997144505,
+            "new_vs_old_world_m": 0.00017758571850640519,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.016405029197568755
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.604761604718304e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.604761604718304e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0052959028035326865
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.044999999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00039581890433524263,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003617061523294882,
+            "new_vs_old_world_m": 0.00021010748834670605,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01704321644581866
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.2079634963984644e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.2079634963984644e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01218852305479906
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.054999999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00047774276023629364,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004798883660475434,
+            "new_vs_old_world_m": 0.00022284109871543455,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01471808273270935
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 7.342096679229117e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.342096679229117e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.020277304369227006
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.06499999947845936,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006417329654115918,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006679266763484485,
+            "new_vs_old_world_m": 0.00021649006404949586,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009636444926168405
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00017090998772396638,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00017090998772396638,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.028224439608704185
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.07499999925494194,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0009687551325005083,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0009699484382520216,
+            "new_vs_old_world_m": 0.00019262014086129407,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006867833965380887
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00031392443708894223,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00031392443708894223,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03603441140279666
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.08500000089406967,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014800120386441278,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001382678126055859,
+            "new_vs_old_world_m": 0.00019093212061209387,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.013821247589302676
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004815630576947294,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004815630576947294,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.04489018930544966
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.0950000025331974,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0020061316119289125,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.001729476284160369,
+            "new_vs_old_world_m": 0.0003210925525111914,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.039239841826507076
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006350706608791803,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006350706608791803,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05568981223812762
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.10500000044703484,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.002354024793370886,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0018367978924643843,
+            "new_vs_old_world_m": 0.0006503140375590865,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1080119249643831
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000730936846387547,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000730936846387547,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06716037860104844
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.11499999836087227,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0025995889285202966,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0019934222181023685,
+            "new_vs_old_world_m": 0.0011627258886826284,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.17632160012029224
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0007410772168294519,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007410772168294519,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07508941904254861
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1249999962747097,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0021447871664336017,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0018212955595619208,
+            "new_vs_old_world_m": 0.0012904907697971137,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.17682855978918785
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006625512347918868,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006625512347918868,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07404996197884949
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.13499999791383743,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0015734979466841173,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0012622932161351719,
+            "new_vs_old_world_m": 0.0011745721880731988,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.1276371719163339
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005088403605513592,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005088403605513592,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06119855226737412
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.14500000327825546,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.009914700811578393,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0007097599780394233,
+            "new_vs_old_world_m": 0.009372220052822698,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.07403560804230626
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00030870572905697705,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00030870572905697705,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.039217429597281514
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1550000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0379524954512414,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003144324209924227,
+            "new_vs_old_world_m": 0.03776952939924462,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.03424846508665237
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001177498061375043,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001177498061375043,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.016167770142921107
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.16499999910593033,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00360203583540833,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.301175406906439e-05,
+            "new_vs_old_world_m": 0.003565837868936616,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010588627019339207
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 5.811544004867981e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 5.811544004867981e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003085340454156552
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.17500000447034836,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00025651250120835756,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.308741165239684e-05,
+            "new_vs_old_world_m": 0.00021472488397665098,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003260301209738868
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00028877970482788103,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00028877970482788103,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00504555261229987
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.1850000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0014292460029941823,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00013943166704989034,
+            "new_vs_old_world_m": 0.0013464483812041063,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009638712738521066
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004975761028013633,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004975761028013633,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00809692621263776
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.19500000029802322,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0010113606990467669,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014267782309963464,
+            "new_vs_old_world_m": 0.0009267853670611126,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010578726527359528
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004992763409054855,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004992763409054855,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006114215666345092
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.20499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006845933919739916,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014493669385068212,
+            "new_vs_old_world_m": 0.0006002529466767123,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.011663471251859526
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005003247364729088,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005003247364729088,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.005054565538953846
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2149999961256981,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00046837725519823425,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014585948622237443,
+            "new_vs_old_world_m": 0.0003866663554113436,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012828999296486177
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005010468241774033,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005010468241774033,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004442988508661594
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.22500000149011612,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00033429080502281604,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014515196915364814,
+            "new_vs_old_world_m": 0.00025669581666105316,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.014012015314282655
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005016375273710846,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005016375273710846,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004072167719205639
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.23499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00025205997254663666,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014268048968374997,
+            "new_vs_old_world_m": 0.000178309358292187,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015124534970506637
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005022716594591041,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005022716594591041,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0038477527573624647
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.24499999731779099,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00020172414621750693,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00013859788137753477,
+            "new_vs_old_world_m": 0.00012977649223451545,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01610741336672047
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005030302424696349,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005030302424696349,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003726964789752543
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2549999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00017152145598293893,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00013307582286341428,
+            "new_vs_old_world_m": 9.893589396735658e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.016897212823248815
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005040255843506413,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005040255843506413,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003698252978519025
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.26500000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00015442348582789408,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00012648043160500618,
+            "new_vs_old_world_m": 7.95042636318783e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01745081848304559
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005053598438065162,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005053598438065162,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003772500274808797
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2750000059604645,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014568294389538094,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00011932302109318667,
+            "new_vs_old_world_m": 6.80915969309954e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01776779251959335
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005071670255084931,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005071670255084931,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003978555877507653
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.2849999964237213,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014190230825863093,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00011219820282901157,
+            "new_vs_old_world_m": 6.242171332242309e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01783817703713019
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005096016358705381,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005096016358705381,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00436332964670612
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.29500000178813934,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014068238146207449,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00010583564654522822,
+            "new_vs_old_world_m": 6.0202627321711996e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0176473150816905
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005129146098161672,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005129146098161672,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004995693054907941
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3050000071525574,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001404244202693993,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00010009301580259333,
+            "new_vs_old_world_m": 5.9802414227199404e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01723231789236554
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005174452184079475,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005174452184079475,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0059681110749248666
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3149999976158142,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000140178335812741,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.479540870970248e-05,
+            "new_vs_old_world_m": 6.017066016114144e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.016633769045872767
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005236828597281648,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005236828597281648,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007398727938265351
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.32500000298023224,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00013939745503273164,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.047061153668591e-05,
+            "new_vs_old_world_m": 6.061229354526652e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015873864313725075
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005322796426439887,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005322796426439887,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009425633526127825
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.33500000834465027,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001378638530657331,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.707567594212245e-05,
+            "new_vs_old_world_m": 6.085213637204143e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01500412323829315
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005440889847052673,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005440889847052673,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012167374195381952
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.3449999988079071,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00013552066960358295,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.428941572322985e-05,
+            "new_vs_old_world_m": 6.078773292470422e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.014054476774496205
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005599392132136728,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005599392132136728,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015638426160562536
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.35500000417232513,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00013244446213139105,
+            "new_interpolated_error_vs_world_key_lerp_m": 8.182136211502438e-05,
+            "new_vs_old_world_m": 6.0609338688495464e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.013063211439605128
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005801495600205679,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005801495600205679,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.019586624794686643
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.36500000953674316,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001287608005416041,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.963375380846991e-05,
+            "new_vs_old_world_m": 6.042552900192148e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012040756753122609
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006037279141163873,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006037279141163873,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023289497280043425
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.375,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00012462435784160915,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.774907594015886e-05,
+            "new_vs_old_world_m": 6.0283453280635905e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.011005098191581592
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006274260602178006,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006274260602178006,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.025399913077511552
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.38499999046325684,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001201980149376903,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.612915095186912e-05,
+            "new_vs_old_world_m": 6.023996938163533e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009987360914241591
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006463875329687864,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006463875329687864,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.024041032648829015
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.39499999582767487,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00011561629177694619,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.468872139118271e-05,
+            "new_vs_old_world_m": 6.0414072963274516e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.009012429435806652
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006579311394867791,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006579311394867791,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.017326130598534894
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4050000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 7.888358714539369e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.970057097383113e-05,
+            "new_vs_old_world_m": 4.332313244208337e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006977058506459974
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0004661449703616861,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004661449703616861,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008385046031771563
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.41499999165534973,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.9375076450818402e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.5414588338493926e-05,
+            "new_vs_old_world_m": 1.6500394525693756e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004757850038606239
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0001791698097715363,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001791698097715363,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007068437135574665
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.42499999701976776,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 9.534909121033905e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 5.002813823662559e-06,
+            "new_vs_old_world_m": 1.1542580987902824e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003447298208313956
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00012754771425058746,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00012754771425058746,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02713265402006862
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4350000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.2136306439246695e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.8183789524813493e-05,
+            "new_vs_old_world_m": 2.56665895928443e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0036519039733322167
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00026511203828859784,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00026511203828859784,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06835337507192135
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4449999928474426,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.7366875897039706e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.932121178817001e-05,
+            "new_vs_old_world_m": 4.13022893952047e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.005680581785001274
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00033292219987954616,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00033292219987954616,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.09088309461853475
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.45499999821186066,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.71952270816384e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.650671269641556e-05,
+            "new_vs_old_world_m": 6.238038570201236e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.008627987245979254
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00033167173141429975,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00033167173141429975,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.08232256779554675
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4650000035762787,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014120346502881484,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.54544847052339e-05,
+            "new_vs_old_world_m": 9.150900866879059e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.011919755103921669
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00037458688241296745,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00037458688241296745,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05047090035418311
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4749999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00020741211278490414,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001255761462364332,
+            "new_vs_old_world_m": 0.00012469201831460632,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.015266206040790148
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000499408637867347,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000499408637867347,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.031079595467539217
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.48499999940395355,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000280384432115175,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0001610245979204433,
+            "new_vs_old_world_m": 0.00015186664766638744,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.018495488462089895
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006204835062800089,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006204835062800089,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05960254050547631
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.4950000047683716,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00035208196913334445,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00020919397124652143,
+            "new_vs_old_world_m": 0.0001623237245646445,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.021479007401233215
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006797711717448144,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006797711717448144,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.08344763221060197
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5049999952316284,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00041663879807770065,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000273805542240588,
+            "new_vs_old_world_m": 0.0001532023871729961,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.024024994754339075
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006770352036730958,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006770352036730958,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.08855437312741757
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5149999856948853,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000471336668131548,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.000348519033885978,
+            "new_vs_old_world_m": 0.00013239138786666737,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.025780667376383272
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0006407097298976686,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0006407097298976686,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0790873500378409
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5249999761581421,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005128688844611018,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00041787965806332704,
+            "new_vs_old_world_m": 0.00011232226029691386,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.026280106890444223
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005930955371705768,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005930955371705768,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.06461159025505363
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5349999964237213,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000537479661885551,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004650570802548144,
+            "new_vs_old_world_m": 9.76997965581385e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.025265531751242677
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005387182731856144,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0005387182731856144,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.05275741276000457
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5450000166893005,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005474819990876457,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004836575302361573,
+            "new_vs_old_world_m": 8.261340034991628e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.023229655093627736
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00047567982828025093,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00047567982828025093,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0451935610641862
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5550000071525574,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005519587124841631,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00048399109562917485,
+            "new_vs_old_world_m": 7.106211528284385e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.021386431572146945
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00040520466491006217,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00040520466491006217,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.039539206167022826
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5649999976158142,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005514443795392978,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004778562211551718,
+            "new_vs_old_world_m": 8.33379641222806e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.02010303704515081
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003319671484832209,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0003319671484832209,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.033631396831463614
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.574999988079071,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0005317938632965586,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0004596847885644795,
+            "new_vs_old_world_m": 0.0001104429884755862,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.01823280253611028
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0002617535629423363,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.0002617535629423363,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.026913898008055572
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5849999785423279,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00048205521117321314,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00041822100523068696,
+            "new_vs_old_world_m": 0.0001275956700935225,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.014904418278361673
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00019921752619439084,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00019921752619439084,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.019764965043147904
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.5949999988079071,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.000406513071953398,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00035470176331521173,
+            "new_vs_old_world_m": 0.0001259586089400347,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.010581196077682327
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00014670600239075787,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014670600239075787,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.012835195149787312
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6050000190734863,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.0003191735348093435,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00028063728155562043,
+            "new_vs_old_world_m": 0.00010820330106275744,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006767837576426084
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00010420811862534992,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00010420811862534992,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00673932142827755
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6150000095367432,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00023410638439574623,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00020848868254845005,
+            "new_vs_old_world_m": 8.134475618261376e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.005466035983638802
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 7.047626839737053e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 7.047626839737053e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0019377976146253025
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.625,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00016084959187163115,
+            "new_interpolated_error_vs_world_key_lerp_m": 0.00014636308686779447,
+            "new_vs_old_world_m": 5.256573738476192e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0063198392227836
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.4450203365616864e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 4.4450203365616864e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.001337138189607395
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6349999904632568,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 0.00010404191022575375,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.77071531521857e-05,
+            "new_vs_old_world_m": 2.7165682769321714e-05,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.007046258404464431
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.6076403487292567e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.6076403487292567e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003076582308032755
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6449999809265137,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.461729108100534e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.288007586867333e-05,
+            "new_vs_old_world_m": 8.081148299429619e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.006846955490010995
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.5829172100237605e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.5829172100237605e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0035365757242774454
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6550000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 4.0432531792494455e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.958758631594501e-05,
+            "new_vs_old_world_m": 3.709910321686016e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.005803426742768281
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.1953569660934058e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.1953569660934058e-05,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.003120091230654529
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6650000214576721,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.6176300237392858e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.4333591841024437e-05,
+            "new_vs_old_world_m": 8.00091747070862e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.004239354386882717
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 9.595876524606447e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 9.595876524606447e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0022626270974640825
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.675000011920929,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 1.5748335694360458e-05,
+            "new_interpolated_error_vs_world_key_lerp_m": 1.351768670319167e-05,
+            "new_vs_old_world_m": 6.969040647561938e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.002519048400589663
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.346903686109742e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.346903686109742e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0013188268900553711
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6850000023841858,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 6.75526154360282e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 5.449512904925151e-06,
+            "new_vs_old_world_m": 3.3977159802388303e-06,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.0010305426336566586
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 2.778650256276667e-06,
+            "new_interpolated_error_vs_world_key_lerp_m": 2.778650256276667e-06,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.000529163368373771
+          },
+          "protected_body_world_max_error_m": 0.0
+        },
+        {
+          "time_s": 0.6949999928474426,
+          "LeftHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 8.517272551073915e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 6.862550401932603e-07,
+            "new_vs_old_world_m": 3.963967915776271e-07,
+            "new_orientation_error_vs_world_key_slerp_deg": 0.00013025575466347425
+          },
+          "RightHand": {
+            "old_interpolated_error_vs_world_key_lerp_m": 3.50806760709597e-07,
+            "new_interpolated_error_vs_world_key_lerp_m": 3.50806760709597e-07,
+            "new_vs_old_world_m": 0.0,
+            "new_orientation_error_vs_world_key_slerp_deg": 6.407285385120707e-05
+          },
+          "protected_body_world_max_error_m": 0.0
+        }
+      ]
+    }
+  ]
+}

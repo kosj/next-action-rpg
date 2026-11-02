@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "scope": "Rejected pre-runtime authoring attempts only. No rejected candidate was installed into runtime; body/source/LUT unchanged.",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "angular_speed_bound_degrees_per_second": 2700,
+  "candidates": [
+    {
+      "revision": "001",
+      "file": "source.glb",
+      "sha256": "e0579a60157bb5132fda0165a4698d02805a39db2d6b04cf12a83c6cc81214f9",
+      "bytes": 25059960,
+      "status": "rejected",
+      "reason": "Projected plane interpolation moved the branch pop earlier; world-hand key equality alone was insufficient",
+      "raw_peak_degrees_per_second": null,
+      "actual_author_tool_snapshot": {
+        "file": "history/e0579a-author-source.py",
+        "sha256": "692d3513a418920d54412f98f65b1d1d2762fd197048f516dbd35337fa86301d"
+      },
+      "actual_recipe_snapshot": {
+        "file": "history/e0579a-recipe.json",
+        "sha256": "ccc0134fc219ad084d53722a78b4b4994812537a6994c3af99f860d1e79169a7"
+      }
+    },
+    {
+      "revision": "002",
+      "file": "source-002.glb",
+      "sha256": "adb5185cef253c0dfec40d9b0bb088e4f2824d184648b5b67a92d83a87c9125d",
+      "bytes": 25059960,
+      "status": "rejected",
+      "reason": "Raw all-key/midpoint angular-speed precheck exceeds the predeclared2700deg/s bound; finite diagnostic images are not adoption",
+      "raw_peak_degrees_per_second": 2862.3085441120106,
+      "actual_author_tool_snapshot": {
+        "file": "history/adb518-author-source.py",
+        "sha256": "b7536bf9ab97ac1d47cd9ea1229a06b9155547a7a6d96eedc0c323d3f3d4fdeb"
+      },
+      "actual_recipe_snapshot": {
+        "file": "history/adb518-recipe.json",
+        "sha256": "f94d265635a46de7d19bde21feb882ff61a322250dfb906c80f1342459384bf2"
+      }
+    },
+    {
+      "revision": "003",
+      "file": "source-003.glb",
+      "sha256": "b1cdae747c4ed6a728335438f975b65013e99da56d34bfdf5beda5fdb5ffe22e",
+      "bytes": 25059960,
+      "status": "rejected",
+      "reason": "Independent minimal-shaft orientation reduces upper-arm roll but residual wrist speed still exceeds2700deg/s; the measured swing lower bound prevents twist-only repair",
+      "raw_peak_degrees_per_second": 2776.1023367651883,
+      "actual_author_tool_snapshot": {
+        "file": "history/b1cdae-author-source.py",
+        "sha256": "067109cac19431a53460a1ca11835c03318b6cc6368d8c1f9a2ea27785fc868b"
+      },
+      "actual_recipe_snapshot": {
+        "file": "history/b1cdae-recipe.json",
+        "sha256": "e9319b1f4438547c18bd8c1d25cfa7303d8993997bef005a3ca123a0261b238c"
+      }
+    },
+    {
+      "revision": "004",
+      "file": "source-004.glb",
+      "sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+      "bytes": 25059960,
+      "status": "rejected_for_visible_pose_after_raw_rate_pass",
+      "reason": "High chicken-wing elbow, hanging forearm, raised pauldron and strained armpit fold; selected actual matched stills read worse than original lower post-flip pose.",
+      "raw_peak_degrees_per_second": 2594.186612353879,
+      "actual_author_tool_snapshot": {
+        "file": "history/9f0d00-author-source.py",
+        "sha256": "718e0b2c760612e45081f8791b0ea67deca37792df50a0b17c5e317a45d66179"
+      },
+      "actual_recipe_snapshot": {
+        "file": "history/9f0d00-recipe.json",
+        "sha256": "fe5ff527d370056ae27f28931d2445a17bb96f4babbf2cce18f3a58939dd2c43"
+      },
+      "review": "rejected-visible-pose-004.md"
+    }
+  ],
+  "twist_only_constraint": {
+    "candidate": "003",
+    "clip": "light_2",
+    "interval_s": [
+      0.08,
+      0.085
+    ],
+    "relative_forearm_axis_in_hand_frame_swing_degrees": 13.84907314188897,
+    "minimum_degrees_per_second": 2769.814628377794,
+    "scope": "Geometric lower bound with the same elbow/hand centers and world hand orientations. It motivates changing the elbow plane; it does not invalidate or loosen the bound."
+  },
+  "diagnostic_rasters": {
+    "candidate": "002",
+    "directory": "diagnostic-studio-002",
+    "count": 12,
+    "scope": "Matched neutral Blender4.3.2 Cycles640px/12sample front/opposite finite poses at.075/.100/.105. Selected originals inspected: no obvious new needle/tear in those views, but rate-failed and not runtime/continuous skin/AV/AAA approved."
+  },
+  "unsuccessful_no_asset_probes": [
+    {
+      "kind": "bend-plane pole-load bias",
+      "values_degrees": [
+        -15,
+        -10,
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "outcome": "L2 minimum2859.63deg/s; no GLB emitted"
+    },
+    {
+      "kind": "forearm hand twist fraction after minimal shaft transport",
+      "values": [
+        0,
+        0.1,
+        0.2,
+        0.3
+      ],
+      "outcome": "L2 speed2776.09 to2790.57deg/s; no GLB emitted"
+    }
+  ],
+  "limitations": [
+    "No Godot import or native gameplay verification for these candidates",
+    "No continuous skin/intersection/AV/hardware/AAA approval",
+    "001 historical projected-direction norm was mislabeled metres; exact correction is in rejected-candidate-001.json"
+  ]
+}

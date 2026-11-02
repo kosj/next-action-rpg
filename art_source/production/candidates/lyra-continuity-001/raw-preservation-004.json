@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "scope": "Independent raw-container equality checks. No Godot import, skin/raster, performance or AAA approval.",
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "candidate_file": "source-004.glb",
+  "candidate_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+  "original_BIN_prefix_bytes": 24161612,
+  "original_BIN_prefix_exact": true,
+  "static_declarations_exact": {
+    "nodes": true,
+    "meshes": true,
+    "skins": true,
+    "materials": true,
+    "images": true,
+    "textures": true,
+    "samplers": true,
+    "scenes": true,
+    "scene": true
+  },
+  "unchanged_clips_exact": [
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "parry",
+    "RESET",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right",
+    "charge",
+    "charged_heavy"
+  ],
+  "changed_clips": [
+    {
+      "clip": "light_1",
+      "changed_channels": [
+        [
+          "LeftArm",
+          "translation"
+        ],
+        [
+          "LeftArm",
+          "rotation"
+        ],
+        [
+          "LeftArm",
+          "scale"
+        ],
+        [
+          "LeftForeArm",
+          "translation"
+        ],
+        [
+          "LeftForeArm",
+          "rotation"
+        ],
+        [
+          "LeftForeArm",
+          "scale"
+        ],
+        [
+          "LeftHand",
+          "translation"
+        ],
+        [
+          "LeftHand",
+          "rotation"
+        ],
+        [
+          "LeftHand",
+          "scale"
+        ]
+      ],
+      "original_sampler_declarations_exact": true
+    },
+    {
+      "clip": "light_2",
+      "changed_channels": [
+        [
+          "LeftArm",
+          "translation"
+        ],
+        [
+          "LeftArm",
+          "rotation"
+        ],
+        [
+          "LeftArm",
+          "scale"
+        ],
+        [
+          "LeftForeArm",
+          "translation"
+        ],
+        [
+          "LeftForeArm",
+          "rotation"
+        ],
+        [
+          "LeftForeArm",
+          "scale"
+        ],
+        [
+          "LeftHand",
+          "translation"
+        ],
+        [
+          "LeftHand",
+          "rotation"
+        ],
+        [
+          "LeftHand",
+          "scale"
+        ]
+      ],
+      "original_sampler_declarations_exact": true
+    },
+    {
+      "clip": "light_3",
+      "changed_channels": [
+        [
+          "LeftArm",
+          "translation"
+        ],
+        [
+          "LeftArm",
+          "rotation"
+        ],
+        [
+          "LeftArm",
+          "scale"
+        ],
+        [
+          "LeftForeArm",
+          "translation"
+        ],
+        [
+          "LeftForeArm",
+          "rotation"
+        ],
+        [
+          "LeftForeArm",
+          "scale"
+        ],
+        [
+          "LeftHand",
+          "translation"
+        ],
+        [
+          "LeftHand",
+          "rotation"
+        ],
+        [
+          "LeftHand",
+          "scale"
+        ]
+      ],
+      "original_sampler_declarations_exact": true
+    }
+  ],
+  "body_geometry_rest_weights_maps_exact": true,
+  "charged_curve_file": "game/data/charged_blade_curve.json",
+  "charged_curve_sha256_unchanged": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "added_file_bytes": 27100
+}

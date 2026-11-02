@@ -1,0 +1,1219 @@
+{
+	"camera_source_sha256": "7b8c7c9d0043153013f90d29ef0895df723d099b8d4a32126071135de1658870",
+	"cases": [
+		{
+			"actual_projection": {
+				"fits": true,
+				"fov": 56.0,
+				"points_uv": [
+					"(0.5, 0.663877)",
+					"(0.5, 0.070031)",
+					"(0.375518, 0.497379)",
+					"(0.624482, 0.497379)"
+				],
+				"position": "(0.281309, 2.461257, -18.95)"
+			},
+			"blocked_lift": {
+				"actual_BladeTip_uv": [
+					0.770951419406467,
+					-0.891934136284722
+				],
+				"actual_GripOrigin_uv": [
+					0.571528455946181,
+					0.191956159803602
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.281309, 2.461257, -18.95)",
+					"candidate_queries": 3,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 2.34883917040151,
+					"fit": false,
+					"lift_m": 0.0,
+					"lift_sweep_blocked": true,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 2.82385363419094,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "no_clear_bounded_fit",
+					"required_lift_m": 0.6875,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.281309, 1.773757, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "483938804108",
+						"collider_path": "/root/Runefall/@SubViewport@1865/@Node3D@1866/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.31343, 1.816435, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					},
+					{
+						"collider_id": "483938804108",
+						"collider_path": "/root/Runefall/@SubViewport@1865/@Node3D@1866/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.281309, 1.773757, -18.65)",
+						"shape_index": 0,
+						"stage": "post_feedback"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 1.33293134901259,
+						"nominal_foot_uv": [
+							0.5,
+							0.822930636935764
+						],
+						"nominal_head_uv": [
+							0.499999957614475,
+							-0.510000712076823
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 4.5
+			},
+			"entry": {
+				"actual_BladeTip_uv": [
+					0.740061950683594,
+					-0.639005805121528
+				],
+				"actual_GripOrigin_uv": [
+					0.553603066338433,
+					0.273115370008681
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.281309, 2.461257, -18.95)",
+					"candidate_queries": 4,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.6875,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 2.82385363419094,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.6875,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.281309, 1.773757, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "483938804108",
+						"collider_path": "/root/Runefall/@SubViewport@1865/@Node3D@1866/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.31343, 1.816435, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					},
+					{
+						"collider_id": "483938804108",
+						"collider_path": "/root/Runefall/@SubViewport@1865/@Node3D@1866/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.281309, 1.773757, -18.65)",
+						"shape_index": 0,
+						"stage": "post_feedback"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.593846054077148,
+						"nominal_foot_uv": [
+							0.5,
+							0.663876681857639
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.0700306277804904
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 4.5
+			},
+			"focus_only_head_uv": [
+				0.499999970197678,
+				-0.510000705718994
+			],
+			"free": {
+				"actual_BladeTip_uv": [
+					0.585304853651259,
+					0.322233615451389
+				],
+				"actual_GripOrigin_uv": [
+					0.529069561428494,
+					0.514060770670573
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(0.0, 1.35, -19.80637)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(2.829344, 2.994367, -16.19586)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.312525533040365,
+						"nominal_foot_uv": [
+							0.5,
+							0.724273071289062
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.411747538248698
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 4.5
+			},
+			"locked_recovery": {
+				"actual_BladeTip_uv": [
+					0.648420333862305,
+					0.0746858978271484
+				],
+				"actual_GripOrigin_uv": [
+					0.548927646213108,
+					0.395353291829427
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(5.48158, 2.292516, -18.95)",
+					"candidate_queries": 2,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 1.0,
+					"presented_focus": "(3.673734, 0.9, -21.06046)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.0,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(5.48158, 2.292516, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "483938804108",
+						"collider_path": "/root/Runefall/@SubViewport@1865/@Node3D@1866/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(5.535216, 2.301945, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.01146965026855,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.502354787190755,
+						"nominal_foot_uv": [
+							0.5,
+							0.715476820203993
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.213122033013238
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 0.23768667432997,
+						"nominal_foot_uv": [
+							0.595370271470812,
+							0.313991529676649
+						],
+						"nominal_head_uv": [
+							0.606360371907552,
+							0.0763048553466797
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 5.01146965026855
+			},
+			"viewport": [
+				1440,
+				900
+			]
+		},
+		{
+			"actual_projection": {
+				"fits": true,
+				"fov": 56.0,
+				"points_uv": [
+					"(0.5, 0.656438)",
+					"(0.5, 0.097242)",
+					"(0.08001, 0.497512)",
+					"(0.91999, 0.497512)"
+				],
+				"position": "(0.281309, 2.515554, -18.95)"
+			},
+			"blocked_lift": {
+				"actual_BladeTip_uv": [
+					1.43818656725761,
+					-0.891934146248334
+				],
+				"actual_GripOrigin_uv": [
+					0.747671821789864,
+					0.191956163017671
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.281309, 2.515554, -18.95)",
+					"candidate_queries": 3,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 2.34883917040151,
+					"fit": false,
+					"lift_m": 0.0,
+					"lift_sweep_blocked": true,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 4.77681497780165,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "no_clear_bounded_fit",
+					"required_lift_m": 0.741796875,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.281309, 1.773757, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "493434708364",
+						"collider_path": "/root/Runefall/@SubViewport@1884/@Node3D@1885/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.31343, 1.816435, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					},
+					{
+						"collider_id": "493434708364",
+						"collider_path": "/root/Runefall/@SubViewport@1884/@Node3D@1885/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.281309, 1.773757, -18.65)",
+						"shape_index": 0,
+						"stage": "post_feedback"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 1.33293133776335,
+						"nominal_foot_uv": [
+							0.4999999608749,
+							0.822930647863596
+						],
+						"nominal_head_uv": [
+							0.4999998826247,
+							-0.510000689899752
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 4.5
+			},
+			"entry": {
+				"actual_BladeTip_uv": [
+					1.31294524363982,
+					-0.60660947103636
+				],
+				"actual_GripOrigin_uv": [
+					0.681264006785857,
+					0.279105814712307
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.281309, 2.515554, -18.95)",
+					"candidate_queries": 4,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.741796875,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 4.77681497780165,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.741796875,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.281309, 1.773757, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "493434708364",
+						"collider_path": "/root/Runefall/@SubViewport@1884/@Node3D@1885/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.31343, 1.816435, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					},
+					{
+						"collider_id": "493434708364",
+						"collider_path": "/root/Runefall/@SubViewport@1884/@Node3D@1885/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.281309, 1.773757, -18.65)",
+						"shape_index": 0,
+						"stage": "post_feedback"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.559195667646508,
+						"nominal_foot_uv": [
+							0.5,
+							0.656437878360115
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.097242210713608
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 4.5
+			},
+			"focus_only_head_uv": [
+				0.49999988079071,
+				-0.510000705718994
+			],
+			"free": {
+				"actual_BladeTip_uv": [
+					0.79537345690605,
+					0.32223362493289
+				],
+				"actual_GripOrigin_uv": [
+					0.600655267177484,
+					0.514060757171486
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(0.0, 1.35, -19.80637)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(2.829344, 2.994367, -16.19586)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.31252556389542,
+						"nominal_foot_uv": [
+							0.5,
+							0.724273103108338
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.411747539212918
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 4.5
+			},
+			"locked_recovery": {
+				"actual_BladeTip_uv": [
+					1.0139149201222,
+					0.0746859012621839
+				],
+				"actual_GripOrigin_uv": [
+					0.669415048452524,
+					0.395353272062907
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(5.48158, 2.292516, -18.95)",
+					"candidate_queries": 2,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 1.0,
+					"presented_focus": "(3.673734, 0.9, -21.06046)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.0,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(5.48158, 2.292516, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "493434708364",
+						"collider_path": "/root/Runefall/@SubViewport@1884/@Node3D@1885/RecordedEntranceGate",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(5.535216, 2.301945, -18.65)",
+						"shape_index": 0,
+						"stage": "follow"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.01146965026855,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.502354771040062,
+						"nominal_foot_uv": [
+							0.5,
+							0.715476808954754
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.213122037914692
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 0.23768667248188,
+						"nominal_foot_uv": [
+							0.830225626627604,
+							0.313991528551725
+						],
+						"nominal_head_uv": [
+							0.868279638045873,
+							0.0763048560698451
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 5.01146965026855
+			},
+			"viewport": [
+				390,
+				844
+			]
+		},
+		{
+			"actor_cast_fraction": 0.26171875,
+			"enemy_projection": {
+				"fits": true,
+				"points_uv": [
+					"(0.528166, 0.568907)",
+					"(0.52931, 0.391791)",
+					"(0.50446, 0.482111)",
+					"(0.552993, 0.482111)"
+				]
+			},
+			"hero_projection": {
+				"fits": true,
+				"fov": 56.0,
+				"points_uv": [
+					"(0.457116, 0.800071)",
+					"(0.453997, 0.499766)",
+					"(0.414147, 0.655185)",
+					"(0.497075, 0.655185)"
+				],
+				"position": "(14.39688, 2.897877, -14.7098)"
+			},
+			"kind": "temporary_energy_gate",
+			"normal_free": {
+				"actual_BladeTip_uv": [
+					0.546127743191189,
+					0.31561764187283
+				],
+				"actual_GripOrigin_uv": [
+					0.515695105658637,
+					0.509004753960503
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "502964166969",
+						"collider_path": "/root/Runefall/@SubViewport@1903/@Node3D@1904/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(0.0, 1.35, -19.80637)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(1.2, 2.994367, -15.37908)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.312525499131944,
+						"nominal_foot_uv": [
+							0.5,
+							0.724273139105903
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.411747639973958
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 4.5
+			},
+			"normal_locked": {
+				"actual_BladeTip_uv": [
+					0.521934636433919,
+					0.420694715711806
+				],
+				"actual_GripOrigin_uv": [
+					0.479187308417426,
+					0.594728800455729
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "502964166969",
+						"collider_path": "/root/Runefall/@SubViewport@1903/@Node3D@1904/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(10.98038, 1.35, -21.1522)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(14.39688, 2.897877, -14.7098)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.03904978929143,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.300305006239149,
+						"nominal_foot_uv": [
+							0.457115512424045,
+							0.800070597330729
+						],
+						"nominal_head_uv": [
+							0.453997336493598,
+							0.49976559109158
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 0.177115851508247,
+						"nominal_foot_uv": [
+							0.528165944417318,
+							0.568906589084201
+						],
+						"nominal_head_uv": [
+							0.529309802585178,
+							0.391790737575955
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 5.03904978929143
+			},
+			"opaque_negative": {
+				"actual_BladeTip_uv": [
+					10.5998202853733,
+					-4.68988009982639
+				],
+				"actual_GripOrigin_uv": [
+					0.704752900865343,
+					0.412840983072917
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(11.88256, 2.153351, -18.95)",
+					"candidate_queries": 4,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.628125,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 18.6352349756479,
+					"presented_focus": "(11.65546, 0.9, -19.01094)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.628125,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(11.88256, 1.525226, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "502964166969",
+						"collider_path": "/root/Runefall/@SubViewport@1903/@Node3D@1904/TemporaryEnergyGate/GameplayBarrier",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(11.88256, 1.525226, -18.65)",
+						"shape_index": 0,
+						"stage": "snap"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.03904978929143,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.502239240010579,
+						"nominal_foot_uv": [
+							0.5,
+							0.572254163953993
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.0700149239434136
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 2.73166103786892,
+						"nominal_foot_uv": [
+							1.43150583902995,
+							-0.375137736002604
+						],
+						"nominal_head_uv": [
+							3.85131089952257,
+							-3.10679877387153
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 5.03904978929143
+			},
+			"solid_behind_field": {
+				"actual_BladeTip_uv": [
+					0.600254525078668,
+					-0.0375821007622613
+				],
+				"actual_GripOrigin_uv": [
+					0.532712766859266,
+					0.359327833387587
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "502964166969",
+						"collider_path": "/root/Runefall/@SubViewport@1903/@Node3D@1904/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.652237, 2.266587, -17.7)",
+					"candidate_queries": 2,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 1.34456565401612,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.0,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.652237, 2.266587, -17.7)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "504524446139",
+						"collider_path": "/root/Runefall/@SubViewport@1903/@Node3D@1904/OpaqueWallBehindField",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.652237, 2.266587, -17.4)",
+						"shape_index": 0,
+						"stage": "snap"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.583043094211155,
+						"nominal_foot_uv": [
+							0.5,
+							0.734454277886285
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.15141118367513
+						]
+					}
+				],
+				"viewport": [
+					1440.0,
+					900.0
+				],
+				"wanted_distance": 4.5
+			},
+			"viewport": [
+				1440,
+				900
+			]
+		},
+		{
+			"actor_cast_fraction": 0.26171875,
+			"enemy_projection": {
+				"fits": true,
+				"points_uv": [
+					"(0.597522, 0.56891)",
+					"(0.601482, 0.3918)",
+					"(0.515443, 0.482117)",
+					"(0.683483, 0.482117)"
+				]
+			},
+			"hero_projection": {
+				"fits": true,
+				"fov": 56.0,
+				"points_uv": [
+					"(0.35152, 0.800046)",
+					"(0.340725, 0.499757)",
+					"(0.202748, 0.655168)",
+					"(0.489875, 0.655168)"
+				],
+				"position": "(14.39707, 2.897803, -14.70944)"
+			},
+			"kind": "temporary_energy_gate",
+			"normal_free": {
+				"actual_BladeTip_uv": [
+					0.659720239883814,
+					0.315617638176651
+				],
+				"actual_GripOrigin_uv": [
+					0.554345350999099,
+					0.509004746568146
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "510195147186",
+						"collider_path": "/root/Runefall/@SubViewport@1921/@Node3D@1922/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(0.0, 1.35, -19.80637)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(1.2, 2.994367, -15.37908)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.31252556389542,
+						"nominal_foot_uv": [
+							0.5000000391251,
+							0.724273175424874
+						],
+						"nominal_head_uv": [
+							0.5000000391251,
+							0.411747611529454
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 4.5
+			},
+			"normal_locked": {
+				"actual_BladeTip_uv": [
+					0.575945536295573,
+					0.420694866451607
+				],
+				"actual_GripOrigin_uv": [
+					0.427940094776643,
+					0.594716185077107
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "510195147186",
+						"collider_path": "/root/Runefall/@SubViewport@1921/@Node3D@1922/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": false,
+					"candidate_queries": 0,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": false,
+					"presented_focus": "(10.98038, 1.35, -21.1522)",
+					"reason": "unobstructed",
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(14.39707, 2.897803, -14.70944)"
+				},
+				"collision_receipts": [],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.03904978929143,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.300288557441314,
+						"nominal_foot_uv": [
+							0.351519658015325,
+							0.800045718513959
+						],
+						"nominal_head_uv": [
+							0.340725355881911,
+							0.499757161072645
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 0.177109704763403,
+						"nominal_foot_uv": [
+							0.597522442157452,
+							0.568909703837752
+						],
+						"nominal_head_uv": [
+							0.601482371794872,
+							0.391799999074348
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 5.03904978929143
+			},
+			"opaque_negative": {
+				"actual_BladeTip_uv": [
+					3.88950038812099,
+					0.105049576239563
+				],
+				"actual_GripOrigin_uv": [
+					0.952520986703726,
+					0.453719478082883
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(11.88256, 2.736163, -18.95)",
+					"candidate_queries": 4,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 1.2109375,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 18.6352349756479,
+					"presented_focus": "(11.65546, 0.9, -19.01094)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 1.2109375,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(11.88256, 1.525226, -18.95)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "510195147186",
+						"collider_path": "/root/Runefall/@SubViewport@1921/@Node3D@1922/TemporaryEnergyGate/GameplayBarrier",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(11.88256, 1.525226, -18.65)",
+						"shape_index": 0,
+						"stage": "snap"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 5.03904978929143,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": true,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.156255893797671,
+						"nominal_foot_uv": [
+							0.5,
+							0.53917813414081
+						],
+						"nominal_head_uv": [
+							0.5,
+							0.382922240343139
+						]
+					},
+					{
+						"behind_camera": false,
+						"height_fraction": 1.5076107911024,
+						"nominal_foot_uv": [
+							3.27554430839343,
+							-0.27621859509798
+						],
+						"nominal_head_uv": [
+							7.94235151241987,
+							-1.78382938620039
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 5.03904978929143
+			},
+			"solid_behind_field": {
+				"actual_BladeTip_uv": [
+					0.847137685922476,
+					-0.0375820991552272
+				],
+				"actual_GripOrigin_uv": [
+					0.613270099346454,
+					0.359327849618632
+				],
+				"camera_barrier_maximum_alpha": 0.25,
+				"camera_transparent_barriers": [
+					{
+						"collider_id": "510195147186",
+						"collider_path": "/root/Runefall/@SubViewport@1921/@Node3D@1922/TemporaryEnergyGate/GameplayBarrier"
+					}
+				],
+				"collision_fit": {
+					"active": true,
+					"candidate_position": "(0.652237, 2.266587, -17.7)",
+					"candidate_queries": 2,
+					"endpoint_clearance_radius_m": 0.150000005960464,
+					"final_fit_ratio": 1.0,
+					"fit": true,
+					"lift_m": 0.0,
+					"maximum_lift_m": 1.6,
+					"obstructed": true,
+					"original_fit_ratio": 1.34456565401612,
+					"presented_focus": "(0.0, 0.9, -19.80637)",
+					"reason": "hero_fit_restored",
+					"required_lift_m": 0.0,
+					"scope": "Bounded nominal hero framing after camera obstruction; not evaluated skin or terrain approval",
+					"unadjusted_position": "(0.652237, 2.266587, -17.7)"
+				},
+				"collision_receipts": [
+					{
+						"collider_id": "511738651021",
+						"collider_path": "/root/Runefall/@SubViewport@1921/@Node3D@1922/OpaqueWallBehindField",
+						"normal": "(0.0, 0.0, -1.0)",
+						"point": "(0.652237, 2.266587, -17.4)",
+						"shape_index": 0,
+						"stage": "snap"
+					}
+				],
+				"follow_base_sync_queries": 0,
+				"follow_distance": 4.5,
+				"follow_height_bias": 2.4,
+				"free_distance": 4.5,
+				"locked": false,
+				"maximum_lock_distance": 8.6,
+				"scope": "Nominal production body/root projection, not evaluated mesh or UI collision approval",
+				"shoulder_offset": 1.2,
+				"subjects": [
+					{
+						"behind_camera": false,
+						"height_fraction": 0.583043084890357,
+						"nominal_foot_uv": [
+							0.4999999608749,
+							0.734454258923282
+						],
+						"nominal_head_uv": [
+							0.4999999608749,
+							0.151411174032925
+						]
+					}
+				],
+				"viewport": [
+					390.0,
+					844.0
+				],
+				"wanted_distance": 4.5
+			},
+			"viewport": [
+				390,
+				844
+			]
+		}
+	],
+	"fixture_source_sha256": "2ced565f0092501e6a53250eb28162be18da275507016ca233e90eccc1dd81ba",
+	"scope": "Actual native Camera3D nominal-body projection, production ray collider receipts and near-radius clearance/path queries in isolated gate/overhang fixtures. No gameplay controller, evaluated skin, continuous AV, target hardware or AAA approval"
+}

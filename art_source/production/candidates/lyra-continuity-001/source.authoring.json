@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "first_continuity_candidate_pending_independent_raw_skin_native_raster_review",
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "output_file": "art_source/production/candidates/lyra-continuity-001/source.glb",
+  "output_sha256": "e0579a60157bb5132fda0165a4698d02805a39db2d6b04cf12a83c6cc81214f9",
+  "tool_file": "/workspace/next-action-rpg/tools/author_continuity_actions.py",
+  "tool_sha256": "692d3513a418920d54412f98f65b1d1d2762fd197048f516dbd35337fa86301d",
+  "recipe_file": "art_source/production/character_actions/lyra-continuity.json",
+  "recipe_sha256": "ccc0134fc219ad084d53722a78b4b4994812537a6994c3af99f860d1e79169a7",
+  "blender": "4.3.2",
+  "preservation": {
+    "source_BIN_prefix_exact": true,
+    "static_payload_declarations_exact": true,
+    "unrelated_clips_exact": true,
+    "unchanged_bone_channels_in_three_clips_exact": true,
+    "changed_bones": [
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand"
+    ],
+    "changed_clips": [
+      "light_1",
+      "light_2",
+      "light_3"
+    ],
+    "new_BIN_bytes": 21948
+  },
+  "clips": {
+    "light_1": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "minimum_pole_projection_margin_m": 0.09451431329459702
+    },
+    "light_2": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "minimum_pole_projection_margin_m": 0.09539065970786133
+    },
+    "light_3": {
+      "keys": 71,
+      "duration_s": 0.699999988079071,
+      "minimum_pole_projection_margin_m": 0.09612046607017267
+    }
+  },
+  "left_hand_policy": "Original100Hz worldkeytargets exact; old parent/child midpoint excursion is intentionally replaced by continuous target interpolation and must be measured separately.",
+  "limitations": [
+    "No engine, skin, visual, native alignment, hardware or AAA approval"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "source005_natural_counterguard_pose_continued_validation_wrist_refinement_pending_runtime_uninstalled",
+  "candidate_sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "scope": "Creative free LeftArm/ForeArm/Hand9TRS only. Original in-action LEFT world keys/orientations deliberately replaced; source idle/start/end grasp and other150channels/right/body/feet/18clips/staticdata unchanged.",
+  "semantic_target_table": {
+    "file": "source-005.targets.json",
+    "sha256": "07a59781f864e25f9e389e23dc35e92c3e9ade574baf36857cc588d5a9885b48",
+    "coordinate_system": "actor_y_up_minus_z_forward",
+    "raw_coordinate_system": "source_gltf_scene_y_up_plus_z_forward_before_runtime_pi",
+    "actor_position": "[-raw_x,raw_y+.025,-raw_z]",
+    "floor_offset_already_applied_m": 0.025,
+    "time_units": "source_clip_seconds",
+    "target_limit_m": 0.003,
+    "maximum_actual_target_midpoint_error_m": 0.0010511229663262255,
+    "key_count": [
+      53,
+      53,
+      71
+    ],
+    "key_and_midpoint_sample_count": 351
+  },
+  "actual_raw_continuity": {
+    "all_bones": 53,
+    "schedules": [
+      "60Hz",
+      "120Hz",
+      "all_source_keys_and_midpoints"
+    ],
+    "maximum_local_or_global_speed_degrees_per_second": 1363.7259694400157,
+    "unchanged_limit_degrees_per_second": 2700,
+    "maximum_idle_join_distance_m": 5.153480599862038e-08,
+    "maximum_idle_join_local_rotation_degrees": 2.4148365394514667e-06,
+    "protected_right_body_feet_world_error_m": 0
+  },
+  "creative_pose": {
+    "minimum_elbow_below_shoulder_m": 0.15338615690217594,
+    "deliberate_original_hand_key_deviations_m": [
+      0.39880828169829885,
+      0.4294480222146717,
+      0.4013804771592228
+    ],
+    "deliberate_original_hand_key_orientation_deviations_degrees": [
+      100.15941905795404,
+      106.08451552073251,
+      100.75598117579638
+    ],
+    "finite_four_still_verdict": "Coordinator viewed all4actual L2.13/.25 front/opposite originals: lower counterguard much more natural than004; accepted for continued validation only. Independent review flags dangling free wrist and projected blade crowding.",
+    "wrist_diagnosis": "Actual idle weapon-grasp local wrist differs64.2738degrees from actual static/bind neutral.006free-phase wrist blend is approved but not generated yet.",
+    "elbow_position_policy": "005new targets retained; not original elbow/hand path fidelity"
+  },
+  "skin_tradeoffs": {
+    "regional_edges": 23800,
+    "key_and_mid_samples": 351,
+    "new_collateral_edges_over1mm": 127,
+    "old_p99_ratio": 1.6179242325351864,
+    "new_p99_ratio": 1.5209994441928147,
+    "worst_same_edge_worsening_mm": 15.813843715750405,
+    "worst_clip": "light_2",
+    "worst_time_s": 0.33000001311302185,
+    "worst_region": "lateral thorax/armpit Spine/LeftShoulder/LeftArm blend",
+    "actual_worst_pose_raster": "pending",
+    "wrist_only_refinement_does_not_fix_this_edge": "No Hand weights on this worst edge; its005upper-arm pose remains to be reviewed"
+  },
+  "hand_weapon_clearance": {
+    "report": "hand-weapon-clearance-005.json",
+    "transform_calibration": "weapon-frame-calibration-005.json",
+    "calibration_max_grip_m": 3.71152247342367e-05,
+    "calibration_max_tip_m": 0.0002876175589323119,
+    "calibration_limit_m": 0.003,
+    "actual_runtime_broadblade_geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+    "L2_025_sampled_vertex_blade_distance_m": 0.23497579036780236,
+    "L2_025_sampled_vertex_hilt_distance_m": 0.2211023976462577,
+    "active_minimum_sampled_vertex_blade_distance_m": 0.15007527521946937,
+    "scope": "Actual finite rawLBS hand/finger+wrist-boundary vertices vs runtime broadblade triangles; conservative hand-triangle edge lower bound included. Not a continuous intersection-free claim or actualGame visual crowding approval. Expected start/end grasp contact remains reported."
+  },
+  "runtime_installation": "not_installed",
+  "native_validation": "pending",
+  "actual_gameplay_1x_av": "pending",
+  "continuous_skin_intersection": "pending",
+  "hardware_performance": "pending",
+  "aaa_approval": "pending"
+}
