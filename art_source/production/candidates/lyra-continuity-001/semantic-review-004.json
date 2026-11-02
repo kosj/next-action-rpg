@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "status": "source004_rejected_for_visible_pose_runtime_not_installed",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "candidate_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+  "authoring_policy": {
+    "changed_clips": [
+      "light_1",
+      "light_2",
+      "light_3"
+    ],
+    "changed_bones": [
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand"
+    ],
+    "sample_hz": 100,
+    "left_hand_world_original_key_target_policy": "Preserve original100Hz world position and orientation; remove original FK midpoint excursion",
+    "right_hand_and_body_feet": "all original channels retained exactly",
+    "elbow_pose": "Deliberately new chest-local transported elbow plane; L2 has45degree C1 smooth load bias, not a small or unchanged elbow path",
+    "bone_orientation": "Independent per-shaft minimum rotation with smooth endpoint axial closure",
+    "unused_twist_distribution_fraction": 0
+  },
+  "actual_raw_scope": {
+    "all_bones": 53,
+    "schedules": [
+      "60Hz",
+      "120Hz",
+      "all_original_keys_and_midpoints"
+    ],
+    "maximum_local_or_global_speed_degrees_per_second": 2594.186612353879,
+    "predeclared_limit_degrees_per_second": 2700,
+    "source_idle_joins": "Actual source idle0 all53bones at each light clip start/end, maximum5.1534806e-8m /2.4148366e-6degrees",
+    "left_world_key_position_max_error_m": 4.636552854145461e-07,
+    "right_world_key_and_midpoint_error_m": 0,
+    "protected_body_midpoint_error_m": 0,
+    "left_midpoint_errors_m": [
+      0.0037416072920384547,
+      0.003657049067328361,
+      0.0019934222181023685
+    ]
+  },
+  "skin_tradeoffs": {
+    "finite_samples": 351,
+    "regional_edges": 23800,
+    "new_collateral_edges_over_1mm": 345,
+    "worst_same_edge_envelope_worsening_mm": 14.851476689208186,
+    "worst_clip": "light_2",
+    "worst_time_s": 0.25,
+    "region": "LeftShoulder/LeftArm transition",
+    "old_p99_ratio": 1.6179242325351864,
+    "new_p99_ratio": 1.552054726448676,
+    "old_min_triangle_area_ratio": 0.0013225943669194775,
+    "new_min_triangle_area_ratio": 0.0007717897058685791,
+    "conclusion": "Global summaries do not approve new local worsening; matched actual finite raster is required"
+  },
+  "finite_studio_review": {
+    "status": "rejected_by_coordinator_and_independent_selected_still_review",
+    "scope": "Twelve matched actual GLB Blender4.3.2 Cycles640px/12sample neutral stills, same camera/material/light/time per pair. Not actual gameplay.",
+    "observation": "No obvious new gross needle or rupture in inspected selected views. Raised left elbow/pauldron and stronger armpit folds remain visible; comfortable anatomy or continuous skin is not approved.",
+    "shots": [
+      {
+        "file": "studio-004/new-light_1-opposite/light_1-0115.png",
+        "sha256": "0ea52fa225d6d99872604c6ff9e99d619df9e7ac1917a581c01a0f0594a8d247",
+        "clip": "light_1",
+        "view": "opposite",
+        "time_s": 0.115,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/new-light_2-front/light_2-0250.png",
+        "sha256": "77c65eba0c6f4ddeb368abcb895a439e15adaafa672c876a53d11bd4c22bb2cd",
+        "clip": "light_2",
+        "view": "front",
+        "time_s": 0.25,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/new-light_2-opposite/light_2-0085.png",
+        "sha256": "be112d202d11eb2dcc24c4a32d6a29bc054db656af7112f985256e121b0c2900",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.085,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/new-light_2-opposite/light_2-0105.png",
+        "sha256": "3c1cb3c58e30fdc94f3c95a57084fcd0d5e94bcea7a00e2f63319c1ea2e26eeb",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.105,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/new-light_2-opposite/light_2-0250.png",
+        "sha256": "5d61b38c562571476ddf689a43717abbba14df81c4ea67be10dd14920ecb1b86",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.25,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/new-light_3-opposite/light_3-0155.png",
+        "sha256": "5ba48ac8a29e1ea912e0037f57cc3fe3535cc476b016c8152345fab729d1774d",
+        "clip": "light_3",
+        "view": "opposite",
+        "time_s": 0.155,
+        "source_glb_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+      },
+      {
+        "file": "studio-004/old-light_1-opposite/light_1-0115.png",
+        "sha256": "9755105d6c752ef85f3138071454594128d51324ba089ab5d6548793d20963e0",
+        "clip": "light_1",
+        "view": "opposite",
+        "time_s": 0.115,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      {
+        "file": "studio-004/old-light_2-front/light_2-0250.png",
+        "sha256": "7c61bac6f1ded82431e0dc50cfe263542a2744bcdc2f05b187a6ea78443463cd",
+        "clip": "light_2",
+        "view": "front",
+        "time_s": 0.25,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      {
+        "file": "studio-004/old-light_2-opposite/light_2-0085.png",
+        "sha256": "710b80582526ad8aa4676c1a61d815e64b01013e019785441d005a1b4bf6033c",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.085,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      {
+        "file": "studio-004/old-light_2-opposite/light_2-0105.png",
+        "sha256": "737c8c0b31492b387c59d07c2b02ef9ed0051bff646daa9b43277a856c826013",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.105,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      {
+        "file": "studio-004/old-light_2-opposite/light_2-0250.png",
+        "sha256": "97f34118490c4e63d2aed79aadbc73152c55e4e580437bf8fbd8eef63412e7a4",
+        "clip": "light_2",
+        "view": "opposite",
+        "time_s": 0.25,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      },
+      {
+        "file": "studio-004/old-light_3-opposite/light_3-0155.png",
+        "sha256": "87ab2e4f4d322df02a3240c6b9a89e093f69b7781bf573a32e2d7d4ce0909a6d",
+        "clip": "light_3",
+        "view": "opposite",
+        "time_s": 0.155,
+        "source_glb_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
+      }
+    ],
+    "decision": "High elbow/hanging forearm/raised pauldron and armpit folds read worse than original lower post-flip pose. No numerical pass overrides the visible-pose rejection.",
+    "independent_review": "rejected-visible-pose-004.md"
+  },
+  "runtime_installation": "not_installed",
+  "native_validation": "pending",
+  "continuous_gameplay_1x_av": "pending",
+  "all_frame_skin_intersection": "pending",
+  "hardware_performance": "pending",
+  "aaa_approval": "pending"
+}

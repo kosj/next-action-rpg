@@ -157,3 +157,11 @@ ORM의 실제 UV 표본·linear 채널과 metallic/roughness factor를 확인합
 - [전투 품질 검수 절차](../../../reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md)를 적용합니다. 기능 검사·피해량·클립 수는 시청각 품질 승인이 아닙니다. 촘촘한 저작 키와 현재80ms bounded blend가 이미 존재하는지 확인하고, 그 존재를 동작의 의미·가감속·발디딤·차지 레이어 완성으로 해석하지 않습니다. 실제 선택 clip과 이동/차지 우선순위를 대조합니다.
 - 참고 게임·직업·무기·버전의 동일성은 사용자 확인과 공식 자료로 검증합니다. 영상 접근이 막혔으면 보지 못한 범위를 명시하고 타격 시점이나 음향을 측정했다고 쓰지 않습니다. 사용자 평가·정적 코드·정지 화면·실제1배속 영상/음향·목표 기기 측정을 별도 근거로 남깁니다.
 - 약공격/강공격/차지의 명중·빗나감·막힘·처치 조합을 실제 게임에서 비교하고 공격자·피격자·카메라·VFX·음향을 같은 확정 접촉 시점과 대조합니다. MMORPG의 대검 연출 스타일과 이 실시간 액션 RPG의 입력 반응·취소/복귀 품질을 따로 판단합니다. 임의 AAA 달성률이나 미관찰 영상의 타이밍을 만들지 않으며 미검증 품질은 `pending`입니다.
+
+## 연속 팔 chain·관측·실제 mixer AV
+
+[연속 전투 제작](../../../docs/COMBAT_CONTINUITY_SLICE.md)처럼 원래 world key target과 고칠 중간FK를 구분하고 전체 parent/child/joint·국소 skin 악화를 함께 기록합니다. matched/expired 관측 row는 host 수신 ack까지 남기며 시계/15초 gate를 혼동하지 않습니다. MovieWriter 원본 PCM·transcode audio와 contact/media 정합을 확인하고 raw/isolated test·nonzero PCM을 실제 Game·직접 청취·연속시청/AAA로 승인하지 않습니다.
+
+[막힌카메라구도](../../../docs/CAMERA_COLLISION_FRAMING_SLICE.md)는 actualgate/focuslag·nominalbody투영·최소높이의ray/sweptvolume/endpoint와 latentfollowbase/feedback을 따로 검사합니다. 같은파일명도 실제조립된 blade/hilt/marker source를 대조하고 slimstudio를 broadblade승인으로 쓰지 않습니다. native통과와 최종45원본·연속시청/청취·실기기를 구분합니다.
+
+[실제45전후원본](../../../docs/validation/v0.1.14/gameplay-comparison/README.md)처럼nominalHero/실제engagedfoeidentity·평가된발/검marker와wholemesh/depth/UI·footplant를구분합니다. body-onlymetric이좋아도적context가사라지면기각하고lateactorrootvariance는controls/contact일치와별도기록합니다. actual영상제공/PCM정합은전체시청/청취·실기기/AAA승인이아닙니다.

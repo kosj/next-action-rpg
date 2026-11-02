@@ -1,0 +1,37 @@
+{
+  "scope": "Curatedfinalactual45proof/rawsourcebindings/excerpts/limitedreviews. Not futureCI/publicapproval.",
+  "files": {
+    "av-verification.json": {
+      "bytes": 15464,
+      "sha256": "6aee6658a4e93d346f5e2dd7710e024de32abff6b98758a2d54e09ab38e3f427"
+    },
+    "camera002-final-raster-review.md": {
+      "bytes": 4165,
+      "sha256": "44f753d9ea87202c12760fbf48128f0c131d631fd2f69ae53889ee909dbe805f"
+    },
+    "capture.json": {
+      "bytes": 23655,
+      "sha256": "c540a12d41914f6520781e2d7707bd6331fef4843f8038644cd6a97dea1e0fa7"
+    },
+    "checkpoint.json": {
+      "bytes": 15459,
+      "sha256": "f3732dcbcf9c0c1cccb112ee1fcaf96ea90d31053da5372992082813330668b6"
+    },
+    "paired-audit.json": {
+      "bytes": 21517,
+      "sha256": "ce02590295f127228e52719caf3b0280d19c8d606fb79ed5ffcf76a450975d69"
+    },
+    "root-review.json": {
+      "bytes": 2013,
+      "sha256": "dca6dd6df45f1db98d39ba0a90383879e1f4cd66b7aaaa23dcf018c875fe712e"
+    },
+    "source-export-after-capture.json": {
+      "bytes": 350,
+      "sha256": "44555acfb66626d9f83c8a966d2b7a9f68b4608f387089c9ae2b89eb9e90f1c2"
+    },
+    "trace-excerpts.json": {
+      "bytes": 80046,
+      "sha256": "723e1e02966b57e1a8c36500384e3af1c87eaf602c9eb80c4d988ef7337ddc3b"
+    }
+  }
+}

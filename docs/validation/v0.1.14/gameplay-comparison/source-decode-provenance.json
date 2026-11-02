@@ -1,0 +1,79 @@
+{
+  "scope": "Full-resolution unedited decoded retainedrawMJPEGframes; no crop/scale/interpolation. Baseline3PNGs bytecopied from earlier verifieddecode, no baselineproject/cache/capture duplicated. Selectedstills are not continuouswatch/hearing/AAAapproval.",
+  "takes": {
+    "before": {
+      "sourceAVI": "build/art-review/combat-continuity-before-45-002/before/gameplay.avi",
+      "sourceAVIsha256": "38a861bc5be59da780a9a74be64cf5a78b52d86b26587684f85da73f32c2184d",
+      "decoded_frames": [
+        {
+          "event": "entry",
+          "movie_frame": 2097,
+          "physics_tick": 2098,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/before/decoded-01.png",
+          "sha256": "fb728a2e06e6f55d64a988861ed41cb31d38a689a3595e042a77554e32147ac6"
+        },
+        {
+          "event": "contact",
+          "movie_frame": 2247,
+          "physics_tick": 2248,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/before/decoded-02.png",
+          "sha256": "2cee653562fbac7998c21f3229e9baf8e0abade43eb3d9f21640bea8ec75ef55"
+        },
+        {
+          "event": "end",
+          "movie_frame": 2723,
+          "physics_tick": 2724,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/before/decoded-03.png",
+          "sha256": "7b9d1d24f0cdd14da0b2336371a08bbfea7fb0089c4aa17dc7828284b1fd094a"
+        }
+      ],
+      "native_contact_end": [
+        {
+          "path": "build/art-review/combat-continuity-before-45-002/before/original-png/04-actual-confirmed-contact.png",
+          "sha256": "f48c28075e1d24d46ac1706e81aab3c59c3b26b48c8281d9db1428040f731d95"
+        },
+        {
+          "path": "build/art-review/combat-continuity-before-45-002/before/original-png/05-normal-recovery-end.png",
+          "sha256": "139aa9c81b48123d43ec2c3c6336345880cf1dba7b838495f3f4d6b932ebd6be"
+        }
+      ]
+    },
+    "after": {
+      "sourceAVI": "build/art-review/combat-continuity-after-45-002/after/gameplay.avi",
+      "sourceAVIsha256": "ea1705103741707bc9fce518d7f44f7c31fde06fd3e5085851b3c520b5964b4b",
+      "decoded_frames": [
+        {
+          "event": "entry",
+          "movie_frame": 2097,
+          "physics_tick": 2098,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/after/decoded-01.png",
+          "sha256": "2aafcb99d9b25e6649619fcc16566deb9b33b8f2c8fe2c447a6bca63144c8085"
+        },
+        {
+          "event": "contact",
+          "movie_frame": 2247,
+          "physics_tick": 2248,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/after/decoded-02.png",
+          "sha256": "5c106d1a1ba487bd6b4456d44f702440f35a78d58cbbfaad9dcef7958d0a8939"
+        },
+        {
+          "event": "end",
+          "movie_frame": 2723,
+          "physics_tick": 2724,
+          "path": "build/art-review/combat-continuity-after-45-002/paired-original-frames/after/decoded-03.png",
+          "sha256": "7fd31340377600adf591485757d74bd31b5a4f426df40072a1663a02be891bda"
+        }
+      ],
+      "native_contact_end": [
+        {
+          "path": "build/art-review/combat-continuity-after-45-002/after/original-png/04-actual-confirmed-contact.png",
+          "sha256": "e01de754584be224886bbec39d661b178e87a8b0bd4a8b68be13d2a2299a9741"
+        },
+        {
+          "path": "build/art-review/combat-continuity-after-45-002/after/original-png/05-normal-recovery-end.png",
+          "sha256": "28d6cfc1e2c7a3e77d8c9f5485091fa5d955d7a912546378aa59cf0ca39f953e"
+        }
+      ]
+    }
+  }
+}

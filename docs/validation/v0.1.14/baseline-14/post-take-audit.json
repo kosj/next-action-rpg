@@ -1,0 +1,243 @@
+{
+  "scope": "Postclosure audit of retained successful before14-002. Existing input bytes checked separately from generated additions.",
+  "source_head": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+  "existing_runtime_inputs_changed": [],
+  "initial_import_metadata": {
+    "changes": [],
+    "scope": "Only exact newly serialized Godot4.7.2 implicit defaults; source sidecars preserved separately"
+  },
+  "source_files_added": [
+    {
+      "path": "tests/combat_continuity_capture.gd.uid",
+      "sha256": "2e67f314ac320aa1adc6ad171ee44335539e3a26a987415f010acde48abac900",
+      "bytes": 20,
+      "classification": "pinned editor generated new fixture UID"
+    }
+  ],
+  "whole_project_file_set_identical": false,
+  "actual_prelude_locomotion": {
+    "prelude_forward": {
+      "samples": 24,
+      "start": [
+        0.0,
+        0.143333345651627,
+        6.0
+      ],
+      "end": [
+        0.0,
+        -0.0240891985595226,
+        3.5466742515564
+      ],
+      "displacement_m": 2.4590318290511175
+    },
+    "prelude_left": {
+      "samples": 20,
+      "start": [
+        0.0,
+        -0.0257558580487967,
+        3.44000816345215
+      ],
+      "end": [
+        -2.02665686607361,
+        -0.0241068974137306,
+        3.44000816345215
+      ],
+      "displacement_m": 2.026657536900224
+    },
+    "prelude_right": {
+      "samples": 20,
+      "start": [
+        -2.13332343101501,
+        -0.0248022507876158,
+        3.44000816345215
+      ],
+      "end": [
+        -0.106656566262245,
+        -0.0245100371539593,
+        3.44000816345215
+      ],
+      "displacement_m": 2.026666885819081
+    }
+  },
+  "nominal_framing": {
+    "scope": "Actual nominal production-camera body projection only; not evaluated skin/foot or full audiovisual acceptance",
+    "samples": 840,
+    "nominal_foot_y_min": 0.659699842664931,
+    "nominal_foot_y_max": 1.51747829861111,
+    "nominal_head_y_min": -1.29685574001736,
+    "nominal_head_y_max": 0.539706149631076,
+    "any_behind_camera": false,
+    "out_of_bounds_sample_count": 31,
+    "selected_raw_frame_visual_review": {
+      "frames": [
+        418,
+        420,
+        863
+      ],
+      "finding": "Entry frame418 severe right body crop;420/end863 feet below frame. Possible production camera collision/entrance clamp, cause not source proven. Separate from solved capture aspect mismatch.",
+      "provenance": "post-take-framing/provenance.json",
+      "continuous_review": false
+    }
+  },
+  "audio_contact_observations": [
+    {
+      "receipt_serial": 6,
+      "observed_tick": 570,
+      "movie_frame": 569,
+      "mixer_sample_frame_at_frame_start": 455200,
+      "seconds": 9.483333333333333,
+      "report_attack_id_matches": true,
+      "report_point_matches": true,
+      "audio_snapshot": {
+        "effect_player_budget": 32,
+        "effect_players": 6,
+        "epoch": 0,
+        "last_attack": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "impact_layers": 0,
+          "phase": "attack_start_swing_only",
+          "pitch": 1.0,
+          "sound_key": "impact_swing_charged"
+        },
+        "last_impact": {
+          "accepted": true,
+          "attack_id": "charged_heavy",
+          "blocked": false,
+          "contact_source": "hurtbox_ray",
+          "density_headroom_db": -3.43820026016113,
+          "epoch": 0,
+          "killed": false,
+          "layers": [
+            {
+              "key": "contact_tick",
+              "volume_db": -20.4382002601611
+            },
+            {
+              "key": "metal_heavy",
+              "volume_db": -16.4382002601611
+            },
+            {
+              "key": "body_thump",
+              "volume_db": -18.4382002601611
+            },
+            {
+              "key": "charge_sub",
+              "volume_db": -21.4382002601611
+            },
+            {
+              "key": "debris_tail",
+              "volume_db": -26.4382002601611
+            }
+          ],
+          "point": [
+            0.342834532260895,
+            1.5865318775177,
+            -32.8770484924316
+          ],
+          "poise_broken": true,
+          "strength": "charged",
+          "style": "charged"
+        },
+        "stopped": false
+      },
+      "mixed_window_absolute_peak": 5747,
+      "scope": "Mixed output around same frame, includes ambience/other voices; not isolated-layer attribution or hearing/perceptual sync approval"
+    }
+  ],
+  "physical_PNG_rawAVI_delivery": [
+    960,
+    600
+  ],
+  "logical_viewport": [
+    1440,
+    900
+  ],
+  "native_scale_values": [
+    0.649999976158142
+  ],
+  "original_pngs": [
+    {
+      "label": "01-normal-gameplay",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/01-normal-gameplay.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "c823f916bd8ffec5cf743a5f917d9a285171458ec207d74ac7800045647ed966"
+    },
+    {
+      "label": "08-light_1-first-active",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/08-light_1-first-active.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "c251c4d91d1795492e78a620d18a5dce7f54e320c07d34c600c41356c4787299"
+    },
+    {
+      "label": "08-light_2-first-active",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/08-light_2-first-active.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "b647fa26d24f1ea24c7452d3283e676c389542dd4420c8ea3e89d3280869a68c"
+    },
+    {
+      "label": "08-light_3-first-active",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/08-light_3-first-active.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "a7fc15649bb3ab80e5c1319b92a687efb1fca3b1e9847eeb4b00ea0aad4d9fb0"
+    },
+    {
+      "label": "09-safe-charged-whiff-release",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/09-safe-charged-whiff-release.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "bd80c0fed5fe84e567f96e8d7cfd6ec77bd352cc1a89f37b50fd202a09932c58"
+    },
+    {
+      "label": "02-charge-near-real-enemy",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/02-charge-near-real-enemy.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "2b91fba3a425ab446c79393db3110ac72880cf57e1157efb1a158e84aa161a9a"
+    },
+    {
+      "label": "03-native-heavy-release",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/03-native-heavy-release.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "e04dee0ba4636e25295e927c3819c6341ea649dfcc1ab628a1fb7839eb3ee59d"
+    },
+    {
+      "label": "04-actual-confirmed-contact",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/04-actual-confirmed-contact.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "d0384ee0d2863a149cc8e4472a46445f7ba129d01fc550860534d05ae8af7070"
+    },
+    {
+      "label": "05-normal-recovery-end",
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-before-14-002/before/original-png/05-normal-recovery-end.png",
+      "pixel_size": [
+        960.0,
+        600.0
+      ],
+      "sha256": "c25db8bca8b3b4d6f54ed29b7c35e068b1c59feb8039355321d3732d3da76749"
+    }
+  ],
+  "perceptual_review": "Selected original stills viewed only. Continuous1x AV watching/direct hearing/hardware/AAA remain pending."
+}

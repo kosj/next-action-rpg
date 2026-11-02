@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "scope": "Independent raw container comparison; creative free-hand targets differ intentionally. Not runtime/visual/AAA approval.",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "candidate_sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+  "original_BIN_prefix_bytes": 24161612,
+  "original_BIN_prefix_exact": true,
+  "static_declarations_exact": [
+    "nodes",
+    "meshes",
+    "skins",
+    "materials",
+    "images",
+    "textures",
+    "samplers",
+    "scenes",
+    "scene"
+  ],
+  "unchanged_clips_exact": [
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "parry",
+    "RESET",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right",
+    "charge",
+    "charged_heavy"
+  ],
+  "changed_clips": [
+    "light_1",
+    "light_2",
+    "light_3"
+  ],
+  "changed_channels_per_clip": 9,
+  "other150_channels_per_light_exact": true,
+  "protected_right_hand_body_feet_tracks_and_payload_exact": true,
+  "charged91_samples_file_sha256_unchanged": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "clip_key_counts": [
+    53,
+    53,
+    71
+  ]
+}

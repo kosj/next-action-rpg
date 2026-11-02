@@ -3,6 +3,7 @@
 *.glb binary
 *.ttf binary
 *.wav binary
+*.mp4 binary
 .agents/skills/** -whitespace
 # Captured validation stdout is retained byte-for-byte, including its final blank line.
 docs/validation/**/*.log whitespace=-blank-at-eof

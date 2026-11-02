@@ -1,0 +1,75 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "art_source/production/candidates/lyra-continuity-001/source-005.glb",
+  "input_sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+  "weapon": "game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "view": "opposite",
+  "clip": "light_2",
+  "imported_action": "light_2_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8716689944267273,
+      0.11664537340402603,
+      -0.47601157426834106,
+      -2.799999952316284
+    ],
+    [
+      -0.4900950491428375,
+      0.20746198296546936,
+      -0.8466205596923828,
+      -5.199999809265137
+    ],
+    [
+      -6.991906786879554e-08,
+      0.9712638258934021,
+      0.23800548911094666,
+      2.799999952316284
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 1.5499999523162842,
+  "shots": [
+    {
+      "time_s": 0.13,
+      "file": "light_2-0130.png",
+      "sha256": "26a2dfe231d5e0c185d4e399bd39063b15b6eff4b6fd696aa2458f35f5b99ca3",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.3042666018009186,
+        -0.12152815610170364,
+        1.1204338073730469
+      ],
+      "actual_weapon_tip_m": [
+        -1.4539512395858765,
+        -0.42865294218063354,
+        1.1209871768951416
+      ]
+    },
+    {
+      "time_s": 0.25,
+      "file": "light_2-0250.png",
+      "sha256": "6d7f0655165935891c130fe103669cbac90bb2ae5eac651bf25c0f4f9801a1df",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        0.1616823673248291,
+        -0.31033992767333984,
+        1.1200000047683716
+      ],
+      "actual_weapon_tip_m": [
+        0.7717089653015137,
+        -1.3320870399475098,
+        1.1205530166625977
+      ]
+    }
+  ]
+}

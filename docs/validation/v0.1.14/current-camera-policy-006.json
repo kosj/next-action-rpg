@@ -1,0 +1,48 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "native_exports_actual_final45_passed_scoped_prototype_adopted",
+  "camera_source_sha256": "7b8c7c9d0043153013f90d29ef0895df723d099b8d4a32126071135de1658870",
+  "fixture_source_sha256": "2ced565f0092501e6a53250eb28162be18da275507016ca233e90eccc1dd81ba",
+  "sanctuary_source_sha256": "1553ecfe9cbaf3713a04938a5389fa208641041e7f350c4689077f3f62725826",
+  "sanctuary_delta": {
+    "only_added_line": "gate.get_child(0).add_to_group(\"camera_transparent_barriers\")",
+    "remove_that_line_restores_HEAD_bytes": true,
+    "old_sha256": "060ffc8d07434ab6dfbbb20f8e1b56924065c7276f6869dece9dce326c85fbdd",
+    "scope": "Actual old source equality excluding one added group mark; no material/visibility/shape/layer edits."
+  },
+  "policy": "Exclude ONLY explicitly tagged sameWorld StaticBody with actual single-surface MeshInstance and effective StandardMaterial3D TRANSPARENCY_ALPHA finite alpha0..0.25 from ALL camera ray/sphere/sweep queries. Actual existing forcefield alpha.24/unshaded. Actor/weapon layer1/shape/material/visibility remain unchanged.",
+  "native_new_cases": "20 added assertions: actualfactory14groups, bothportrait/landscape Hero+lockedfoe margins, actualplayercapsule cast and unfilteredray stillblocked, opaque/disabledalpha/untagged/otherWorld negatives, opaque solidwallbehind clips. Existing solidwall/overhang/windup assertions unchanged.",
+  "failed005": {
+    "status": "rejected_strict_engine_errors_despite692zeroassertionfailures",
+    "log_file": "native-export-006-005.log",
+    "bytes": 57342,
+    "sha256": "fc5b4940de8e762968978a9990e990fc65051a4272aff5a28fd0a74a69890bf1",
+    "checks": 692,
+    "assertion_failures": 0,
+    "ERROR_count": 2,
+    "finding": "Literal24%-alpha in formatted assertion label triggered unsupported format character. Source message-only correction; this attempt never native/export PASS."
+  },
+  "current006": {
+    "checks": 692,
+    "failures": 0,
+    "strict_engine_errors": [],
+    "exit_code": 0,
+    "log_file": "native-export-006-006.log",
+    "bytes": 105016,
+    "sha256": "8e8806069bd053d7b5017cad77c94f6000e4f4657f889c5896ebd412194e664f"
+  },
+  "historical_a519": "rejected-camera-001/review.json",
+  "scope_limits": [
+    "Actualfinal45limitedprojection/marker/selectedrasterreviewonly",
+    "No continuouswatch/directhearing/fullskin/targethardware/AAA",
+    "Historicala519/672/rejected45separate",
+    "Browser/cleanCI/public/releasepending"
+  ],
+  "actual_final45_followup": {
+    "status": "accepted_scoped_firstroom_combat_readability_prototype",
+    "checkpoint": "final45/checkpoint.json",
+    "paired_audit": "final45/paired-audit.json",
+    "source_export_after_capture": "final45/source-export-after-capture.json",
+    "scope": "Actualfinaltake/limitedreview passed; browser/cleanCI/public/release/continuouswatch/directhearing/fullskin/hardware/AAA pending. Latepositionsvary, nofullphysicsidentity."
+  }
+}

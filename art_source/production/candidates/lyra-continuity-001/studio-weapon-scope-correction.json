@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "scope": "Explicit scope correction only; original render_fury_review.py, old original PNGs/review.json and their hashes remain unchanged.",
+  "old_base_weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "actual_runtime_hero_geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+  "affected_original_studios": [
+    "diagnostic-studio-002",
+    "studio-004",
+    "studio-005-first",
+    "studio-006-first"
+  ],
+  "valid_scope": "Source body/wrist finite-pose review and base sword/socket only",
+  "not_valid_for": "Actual production broadblade crowding, full weapon appearance or actual Game camera approval",
+  "corrected_current_studio": "studio-006-actual-broad",
+  "new_actual_composition_helper": "tools/render_continuity_review.py",
+  "actual_rule": "Preserve base root/GripOrigin/BladeTip/Guard and original PBR material reference; replace CanonicalGeometry mesh exactly as ActorVisual.apply_hero_blade_profile"
+}

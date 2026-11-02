@@ -70,7 +70,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var original_max_keys := 0
 	for track in range(original_animation.get_track_count()):
 		original_max_keys = maxi(original_max_keys, original_animation.track_get_key_count(track))
-	check.call(original_max_keys == 53, "An unchanged 0.52s light action retains its original 100Hz samples instead of the scene-wide 500Hz expansion")
+	check.call(original_max_keys == 53, "The edited0.52s light action follows the explicit100Hz import policy instead of scene-wide500Hz expansion")
 	var max_grip_error := 0.0
 	var max_tip_error := 0.0
 	var max_blade_length_error := 0.0

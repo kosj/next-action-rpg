@@ -192,3 +192,40 @@ skinned glTF의 raw `POSITION`과 mesh-node transform만으로 실제 world 표�
 접지 없는 후보를 지우지 말고 원본·기각 이유·source delta를 보존한다. 동일 fixture에서 baseline과 수정 전/후를 비교하고, 실제 shadow 모드의 원본 byte equality와 근사 모드의 pixel 영역 변화를 각각 확인한다. pause된 idle pose의 정지 화면은 live idle/연속 AV·정상 상호작용·목표 기기 성능을 검증하지 않는다. 관측을 위한 source 변경 뒤에는 이전 native/export 숫자를 새 판본에 승계하지 않는다.
 
 실제 Web에서는 resource path/rig/live idle·quality grounding·relic shader·font 경로를 관측하고 저장/완전 재시작 후 같은 계약을 재확인한다. 읽기 검증 뒤 selected source/export byte가 불변인지 비교한다. page error와 server client-close 진단은 구분하고 desktop 검수로 다른 touch 글꼴 크기·모바일 입력·clean 공개판을 승인하지 않는다.
+
+
+## 원래 key target과 오류가 있는 중간 FK를 분리할 때
+
+원래 world key 위치/방향 보존과 기존 local parent-child 보간 보존은 다른 계약이다. 두 관절의 상쇄 회전 때문에 중간에 손이 튄다면 잘못된 midpoint를 정답으로 고정하지 않는다. 보호할 key/body/weapon/feet/channel을 명시하고, 실제 raw key·중간·균일 시간 표본의 local/global 회전과 Δt, 전체 joint chain·실제 LBS skin을 각각 검사한다. 각도/초와 frame당 각도, 무차원 방향 projection norm과 물리적 길이도 구분한다.
+
+한 관절의 roll을 줄여도 다른 wrist 속도·skin edge가 악화할 수 있다. 단순 twist로 해결할 수 없는 swing 하한이라면 전체 elbow plane/chain을 검토하되 기존 상한은 완화하지 않는다. 전체 peak/p99 개선과 같은 edge의 새 악화·압축·관통은 별도로 기록한다. 실패한 후보와 당시의 정확한 recipe/tool/source 해시를 보존한다. finite raster·raw 통과를 runtime/연속 시청/AAA 승인으로 바꾸지 않는다.
+
+## 관측 terminal과 실제 mixer PCM의 증거 경계
+
+브라우저가 matched한 시점과 host가 결과를 받는 시점은 다르다. matched/expired terminal과 제한된 cached timeline을 host 수신/검증 ack까지 보존한다. host의 absolute timeout은 그대로 적용한다. browser-match 뒤 reply를 withheld한 negative도 실제 실패와 terminal을 남기는지 검사한다. browser performance.now와 host monotonic 시계를 같은 절대축으로 직접 계산하지 않는다. isolated test double의 성공은 실제 Game이나 과거 timeout 원인의 증거가 아니다.
+
+MovieWriter의 Dummy driver라는 이름만 보고 무음으로 단정하지 않는다. 고정 source의 AudioServer mix 경로와 실제 원본 PCM의 sample rate/channel/nonzero를 대조하고 transcode가 audio를 버리는지 확인한다. 원본·PCM/WAV·AV·frame/sample count·start/duration/offset과 contact/audio report를 연결한다. nonzero PCM/peak/RMS는 청취·1배속 연속 motion·실시간 FPS·목표 기기 승인이 아니다. 실제 소리를 듣거나 보지 못했다면 해당 판정은 pending이다.
+
+수치가 통과해도 실제 pose가 높은 팔꿈치·매달린 팔·과도한 견갑/갑옷 들림으로 부자연스럽다면 기각한다. 창작 범위를 새 손 target 저작으로 바꿀 때는 원래 key 보존 계약과 구분하고, 보호할 반대손/몸/무기/타이밍과 기존 bound를 유지한다. free wrist의 neutral을 idle grasp로 추정하지 말고 actual bind-local/rest와 실제 skinned pose로 확인한다.
+
+원본 AV 캡처 성공과 production camera의 구도 결함은 동시에 참일 수 있다. physical writer aspect/viewport mismatch와 실제 nominal projection/decoded frame의 잘림을 분리한다. 알려지지 않은 camera collision/clamp 원인은 단정하지 않는다. 입력 시도와 실제 heal/parry 소비·성공, 원본 PCM과 손실 delivery를 구분하고 offline 경과 시간을 FPS로 표시하지 않는다. 이전 take의 lap/입력 parameter를 바꾼 긴 take는 별도 입력이다.
+
+## 실제 조립된 무기 profile과 막힌 카메라
+
+같은 파일 이름이어도 runtime이 blade mesh를 별도 geometry로 교체할 수 있다. body·hilt/material·blade·grip/marker의 실제 조립과 각 SHA를 대조한다. 옛 slim검 studio는 그때 보였던 body/wrist 관찰의 근거이며 새 broad blade clearance/grip/contact 승인으로 재표기하지 않는다. curve의 source metadata만 바뀌었다면 역치환 SHA로 physical sample/nonmetadata byte 보존을 확인한다. 단순한 filename으로 원본/파생 상태를 판단하지 않는다.
+
+막힌 camera의 짧은 boom·lagging focus를 실제 gate와 viewport에서 재현한다. focus 재중심만으로 nominal body가 들어오지 않으면 bounded 최소 높이를 구하되 pivot ray·이동 segment ray·near-radius swept volume·endpoint overlap을 모두 검사한다. endpoint가 비어 있어도 overhang을 가로질러 이동하지 않는다. 안전한 fit이 없으면 wall 권한과 실패 상태를 유지한다.
+
+wall-resolved un-kicked latent follow base와 framing lift/contact feedback을 분리한다. 보정·feedback을 다음 follow target에 누적하면 zero-time 반복에도 windup이 생길 수 있다. 실제 portrait/landscape·lock recovery/free composition/overhang/feedback을 각각 검사한다. actor physics/yaw/input/FOV 보존과 camera XZ history의 bit identity는 다르다. 같은 analytic XZ 의도만으로 runtime 동일을 주장하지 않으며, source/native fit과 실제 long take/decoded raster·continuous review/hardware 승인을 구분한다.
+
+몸이 화면 안에 들어오는 단일 지표를 완전한 전투 구도와 혼동하지 않는다. 실제 긴 take의 entry/contact/end에서 공격자·위협/적·진행 방향·UI와 공간 관계를 함께 본다. body crop 수치와 native가 좋아져도 바닥 위주의 topdown으로 적이 사라지면 기각한다. source·원본·통과했던 좁은 metric을 함께 보존한다. pipeline 성공이나 관측된 동일 root trajectory는 camera quality 승인이 아니다.
+
+충돌과 시각적 가림의 의미를 구분할 때 일반적인 투명도 추정만으로 geometry를 통째로 무시하지 않는다. 명시 표시·동일 world·실제 effective material의 alpha 조건처럼 좁은 정책을 두고 모든 camera query에 일관되게 적용한다. actor/weapon physical blocking·opaque geometry·shape/material/visibility는 별도로 보호한다. tagged opaque·solid wall behind·factory wiring·실제 양쪽 전투자를 새 source에서 검사한다. 승인된 계획은 구현·성공 근거가 아니다.
+
+시각적으로 반투명한 게임용 벽을 camera만 통과시킬 때는 명시 tag·같은 World·실제 single-surface·effective material의 ALPHA mode와 finite 범위를 함께 확인한다. 모든 ray/sphere/sweep의 exclude를 일치시킨다. 원래 player capsule cast/unfiltered weapon ray, opaque negative·solid wall behind를 실제로 검사한다. factory 생성 연결과 기존 material/visibility/shape/source 보존도 검증한다.
+
+staged pose preflight의 원본 PNG와 metadata guard는 별도 증거다. ViewportTexture metadata와 실제 Image/PNG dimensions가 다르면 최초 실패를 유지하고 실제 byte/size를 독립 확인한다. approximate bone fit·frozen physics·settled camera의 구도 판단을 실제 controller/transition/long take/AV로 옮기지 않는다. 새 source의 native/export가 통과해도 긴 take의 최종 구도 승인은 별도로 기다린다.
+
+마지막 실제 take에서도 nominal body·engaged target identity·평가된 foot/weapon point의 finite XY/nonbehind를 분리한다. point가 frame 안에 들어오는 것은 whole mesh/depth occlusion/UI·foot plant·모든 foe의 지속적인 가시성을 보장하지 않는다. body-only candidate가 실제로 적을 숨기면 기각하고 최종 긴 take의 입구·접촉·회복 맥락을 독립 검토한다.
+
+같은 driver/입력 policy에서도 후반 AI/collision root는 달라질 수 있다. control/timing/health/contact payload와 position trajectory 비교를 따로 기록하고 distinct row 수와 actor별 section row 수를 구분한다. 이전 기각 take의 exact trajectory를 최종 pair에 승계하지 않는다. 원인을 분리하지 못했다면 단정하지 않는다. exact 자체 AV 제공·sample clock 정합과 continuous watch/direct hearing/hardware 승인은 다른 gate다. source/native/좁은 지표/최종 실제 전투 구도를 별도 증거로 보존한다.

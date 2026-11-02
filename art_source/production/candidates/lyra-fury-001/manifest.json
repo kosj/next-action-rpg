@@ -2,17 +2,12 @@
   "schema_version": 1,
   "asset_id": "lyra_body",
   "candidate_id": "lyra-fury-001",
-  "status": "scoped_007_runtime_candidate_selected_actual_gameplay_pending",
+  "status": "historical_v0.1.13_runtime_source_superseded_by_continuity_006",
   "source_file": "source.glb",
   "source_bytes": 25032860,
   "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
   "source_parent": "game/assets/models/production/lyra_weight_gameplay.glb",
   "source_parent_sha256": "27fbed52e1e7011e66f4d0347827db7aa35cb035fbb2dd23df873de752fa1d83",
-  "runtime_installation": {
-    "file": "game/assets/models/production/lyra_fury_gameplay.glb",
-    "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
-    "scope": "New candidate bytes staged, actual imported/collision/visual/export validation pending; prior published source preserved unchanged."
-  },
   "provenance_files": [
     {
       "file": "tools/author_fury_actions.py",
@@ -264,5 +259,18 @@
     "all_skin_approval": false,
     "continuous_av": "pending",
     "aaa_approval": "pending"
+  },
+  "historical_runtime_installation": {
+    "file": "game/assets/models/production/lyra_fury_gameplay.glb",
+    "sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+    "scope": "New candidate bytes staged, actual imported/collision/visual/export validation pending; prior published source preserved unchanged."
+  },
+  "superseded_by": "art_source/production/candidates/lyra-continuity-001/manifest.json",
+  "runtime_retirement": {
+    "reason": "Scoped prototype adoption of reauthored free-left counterguard in the three light clips; archived Fury source remains immutable.",
+    "replacement_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+    "historical_published_version": "0.1.13",
+    "historical_published_main": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "published_evidence": "docs/validation/v0.1.13/published-verification.json"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "sample_hz": 100,
+  "clips": {
+    "light_1": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_2": {
+      "startup": 0.13,
+      "active": 0.17,
+      "recovery": 0.22
+    },
+    "light_3": {
+      "startup": 0.18,
+      "active": 0.22,
+      "recovery": 0.3
+    }
+  },
+  "scope": "Only LeftArm/LeftForeArm/LeftHand TRS in three light clips. Exact original100Hz world hand key targets; protected right hand/body/feet and18other clips/sourceBIN unchanged. L2 uses a C1 smooth load envelope for the selected45degree bend-plane bias; no hand target or gameplay clock changes.",
+  "status": "candidate_only_pending_raw_skin_native_visual_review",
+  "pole_policy": "Chest-local parallel transport; smooth finite holonomy correction exactly returns authored end pole",
+  "orientation_policy": "per-shaft minimum rotation with smooth endpoint closure",
+  "pole_load_bias_degrees": {
+    "light_1": 0.0,
+    "light_2": 45.0,
+    "light_3": 0.0
+  },
+  "forearm_hand_twist_fraction": 0.0
+}

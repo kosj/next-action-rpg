@@ -1,0 +1,91 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "weapon": "game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "view": "opposite",
+  "clip": "light_2",
+  "imported_action": "light_2_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8716689944267273,
+      0.11664537340402603,
+      -0.47601157426834106,
+      -2.799999952316284
+    ],
+    [
+      -0.4900950491428375,
+      0.20746198296546936,
+      -0.8466205596923828,
+      -5.199999809265137
+    ],
+    [
+      -6.991906786879554e-08,
+      0.9712638258934021,
+      0.23800548911094666,
+      2.799999952316284
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 1.5499999523162842,
+  "shots": [
+    {
+      "time_s": 0.075,
+      "file": "light_2-0075.png",
+      "sha256": "ae0931e124196f87d68327150297f5642696d4d347692db9173f6c5f2d224269",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.1971278041601181,
+        -0.2380262315273285,
+        1.1429126262664795
+      ],
+      "actual_weapon_tip_m": [
+        -1.2093836069107056,
+        -0.6910360455513,
+        1.5744460821151733
+      ]
+    },
+    {
+      "time_s": 0.1,
+      "file": "light_2-0100.png",
+      "sha256": "f496faa03d58f0424424c058eb90c23d95c5092e9f7ffe2252357f6a4b95539e",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.27644219994544983,
+        -0.12040363252162933,
+        1.1285637617111206
+      ],
+      "actual_weapon_tip_m": [
+        -1.4446512460708618,
+        -0.28625160455703735,
+        1.2831026315689087
+      ]
+    },
+    {
+      "time_s": 0.105,
+      "file": "light_2-0105.png",
+      "sha256": "9493b2711fb0230d716755eb17c1213b8141ca47deb06472e33efca3edd5055c",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.28650036454200745,
+        -0.10725469887256622,
+        1.1259928941726685
+      ],
+      "actual_weapon_tip_m": [
+        -1.4613431692123413,
+        -0.2584957778453827,
+        1.2398840188980103
+      ]
+    }
+  ]
+}

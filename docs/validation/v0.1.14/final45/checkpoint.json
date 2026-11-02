@@ -1,0 +1,520 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "accepted_scoped_firstroom_combat_readability_prototype",
+  "elapsed_wall_s": 1050.1231272220612,
+  "logical_delivery_seconds": 45.4,
+  "delivery_frames": 2724,
+  "gameplay_frames": 2700,
+  "raw_frames": 2728,
+  "quality": 1,
+  "physical_size": [
+    960,
+    600
+  ],
+  "logical_viewport": [
+    1440,
+    900
+  ],
+  "requested_LP_NUM_THREADS": 3,
+  "source_hero_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "source_camera_sha256": "7b8c7c9d0043153013f90d29ef0895df723d099b8d4a32126071135de1658870",
+  "source_world_sha256": "1553ecfe9cbaf3713a04938a5389fa208641041e7f350c4689077f3f62725826",
+  "source96_fingerprint": "38e831295a98475e8fdba2b0df7e89151aafe771a587d7b255c1911aec0a84a9",
+  "capturedGame78_matches96subset": {
+    "path": "/workspace/.runefall-task/combat-continuity-polish/runtime-source-freeze.json",
+    "game_sources_checked": 78,
+    "mismatches": [],
+    "root_reviewed_runtime_fingerprint": "38e831295a98475e8fdba2b0df7e89151aafe771a587d7b255c1911aec0a84a9",
+    "scope": "OriginalcapturedcurrentGame BEFOREphysicaldisplayoverride vsrootgame/subset of96; outsideGametools notpartisolatedcopy"
+  },
+  "existing_runtime_inputs_changed": [],
+  "source_files_added": {},
+  "initial_import_metadata": {
+    "changes": [],
+    "scope": "Only exact newly serialized Godot4.7.2 implicit defaults; source sidecars preserved separately"
+  },
+  "processes_closed": true,
+  "engine_errors": [],
+  "actual_hero_and_engaged_foe_projection": {
+    "definition": "Actualproductioncamera.framing_report nominalhead+footXYUV within0..1,finite,notbehind; index0Hero,index1actualvalidlockedfoe only. Noengagedfoe fabricated beforelock.",
+    "cases": {
+      "sole_baseline": {
+        "hero": {
+          "samples": 2700,
+          "out_of_bounds_or_nonfinite_or_behind_count": 57,
+          "out_of_bounds_ticks": [
+            2098,
+            2099,
+            2100,
+            2101,
+            2102,
+            2103,
+            2104,
+            2105,
+            2106,
+            2107,
+            2108,
+            2109,
+            2110,
+            2111,
+            2112,
+            2113,
+            2114,
+            2529,
+            2530,
+            2531,
+            2532,
+            2533,
+            2534,
+            2535,
+            2536,
+            2537,
+            2538,
+            2539,
+            2540,
+            2541,
+            2542,
+            2543,
+            2544,
+            2545,
+            2546,
+            2547,
+            2548,
+            2549,
+            2550,
+            2551,
+            2552,
+            2553,
+            2554,
+            2555,
+            2556,
+            2557,
+            2714,
+            2715,
+            2716,
+            2717,
+            2718,
+            2719,
+            2720,
+            2721,
+            2722,
+            2723,
+            2724
+          ],
+          "head_y_min": -1.12030958387587,
+          "head_y_max": 0.540490044487847,
+          "foot_y_min": 0.659695434570313,
+          "foot_y_max": 2.16908026801215
+        },
+        "engaged_locked_foe": {
+          "samples": 626,
+          "out_of_bounds_or_nonfinite_or_behind_count": 0,
+          "out_of_bounds_ticks": [],
+          "head_y_min": 0.206135626898872,
+          "head_y_max": 0.423614807128906,
+          "foot_y_min": 0.311054857042101,
+          "foot_y_max": 0.682068345811632
+        }
+      },
+      "rejected_001": {
+        "hero": {
+          "samples": 2700,
+          "out_of_bounds_or_nonfinite_or_behind_count": 0,
+          "out_of_bounds_ticks": [],
+          "head_y_min": 0.069996206495497,
+          "head_y_max": 0.541965026855469,
+          "foot_y_min": 0.628482801649306,
+          "foot_y_max": 0.882553575303819
+        },
+        "engaged_locked_foe": {
+          "samples": 626,
+          "out_of_bounds_or_nonfinite_or_behind_count": 23,
+          "out_of_bounds_ticks": [
+            2099,
+            2100,
+            2101,
+            2102,
+            2103,
+            2104,
+            2105,
+            2106,
+            2107,
+            2108,
+            2712,
+            2713,
+            2714,
+            2715,
+            2716,
+            2717,
+            2718,
+            2719,
+            2720,
+            2721,
+            2722,
+            2723,
+            2724
+          ],
+          "head_y_min": -0.812661404079861,
+          "head_y_max": 0.411819525824653,
+          "foot_y_min": -0.555966152615017,
+          "foot_y_max": 0.671014404296875
+        }
+      },
+      "final_002": {
+        "hero": {
+          "samples": 2700,
+          "out_of_bounds_or_nonfinite_or_behind_count": 0,
+          "out_of_bounds_ticks": [],
+          "head_y_min": 0.335698954264323,
+          "head_y_max": 0.553962707519531,
+          "foot_y_min": 0.635004204644097,
+          "foot_y_max": 0.862504001193576
+        },
+        "engaged_locked_foe": {
+          "samples": 626,
+          "out_of_bounds_or_nonfinite_or_behind_count": 0,
+          "out_of_bounds_ticks": [],
+          "head_y_min": 0.253330942789714,
+          "head_y_max": 0.425690544976128,
+          "foot_y_min": 0.354316101074219,
+          "foot_y_max": 0.671014404296875
+        }
+      }
+    },
+    "limits": "Nominalrootbody projections, not evaluatedskinbounds/depthocclusion or UI collision/fullcameraquality approval."
+  },
+  "actual_marker_projection_summary": {
+    "points": {
+      "hero.LeftFoot": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "hero.LeftToeBase": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "hero.RightFoot": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "hero.RightToeBase": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "hero.blade_grip_world": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "hero.blade_tip_world": {
+        "samples": 2700,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.LeftFoot": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.LeftToeBase": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.RightFoot": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.RightToeBase": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.blade_grip_world": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      },
+      "engaged_foe.blade_tip_world": {
+        "samples": 626,
+        "outside_frame_or_behind": 0,
+        "nonfinite": 0,
+        "first_outside_ticks": []
+      }
+    },
+    "scope": "Actualretained evaluatedfoot/toe bone+weaponmarker points projected through actualCamera3D. Finite/framecontainment only, not occlusion/depth/wholemesh/UIoverlap or AAAapproval."
+  },
+  "actual_engaged_foe_identity_check": {
+    "actual_locked_actor_samples": 626,
+    "all_have_second_actual_framing_subject": true,
+    "maximum_native_vs_independent_projection_UV_delta": 9.454942595521487e-08,
+    "model": "ActualretainedCamera3Dbasis/position/FOV/viewport andactualalive locktarget root +1.95m nominalheight; allfirstroom foes normalmelee",
+    "scope": "Independentnumericbinding of actualsecondnominalsubject toactuallockedactor. Noocclusion/fullskinvisibilityclaim."
+  },
+  "trajectory_comparison": {
+    "before_rows": 2724,
+    "after_rows": 2724,
+    "matched_row_count": 2724,
+    "compared_fields": {
+      "control": [
+        "tick",
+        "gameplay_frame",
+        "delta",
+        "stage",
+        "paused",
+        "checkpoint",
+        "quality",
+        "render_scale",
+        "active_encounter",
+        "held_inputs"
+      ],
+      "hero": [
+        "position",
+        "velocity",
+        "health",
+        "dead",
+        "on_floor",
+        "capsule_bottom_world_y",
+        "hit_pause",
+        "invulnerability",
+        "stagger"
+      ],
+      "hero_presentation_timers": [
+        "attack_id",
+        "attack_instance_id",
+        "attack_active",
+        "attack_elapsed",
+        "charge_elapsed",
+        "dodge_remaining",
+        "heal_remaining",
+        "parry_remaining"
+      ],
+      "enemies": [
+        "kind",
+        "boss",
+        "elite",
+        "position",
+        "velocity",
+        "health",
+        "dead",
+        "on_floor",
+        "capsule_bottom_world_y",
+        "hit_pause",
+        "stagger",
+        "hit_reaction",
+        "recoil_displacement",
+        "recoil_requested_m"
+      ]
+    },
+    "mismatches_count": 532,
+    "first_mismatches": [
+      {
+        "tick": 2437,
+        "section": "enemies"
+      },
+      {
+        "tick": 2438,
+        "section": "enemies"
+      },
+      {
+        "tick": 2439,
+        "section": "enemies"
+      },
+      {
+        "tick": 2440,
+        "section": "enemies"
+      },
+      {
+        "tick": 2441,
+        "section": "enemies"
+      },
+      {
+        "tick": 2442,
+        "section": "enemies"
+      },
+      {
+        "tick": 2443,
+        "section": "enemies"
+      },
+      {
+        "tick": 2444,
+        "section": "enemies"
+      },
+      {
+        "tick": 2445,
+        "section": "enemies"
+      },
+      {
+        "tick": 2446,
+        "section": "enemies"
+      }
+    ],
+    "scope": "Exact observedJSON comparisons for these two45s takes only; enemy arrayauthoredorder, excludeinstanceIDs/camera/art/bones/visualpose; not generalenginedeterminismclaim",
+    "observed_variance": {
+      "first_enemy_difference_tick": 2437,
+      "first_Hero_difference_tick": 2481,
+      "all_after_confirmed_contact_tick": 2248,
+      "maximum_Hero_root_delta_m": 0.03001499176029777,
+      "maximum_foe_root_delta_m_by_authored_order": [
+        0.035509386699836366,
+        0.9569718540123717,
+        0.09795440026145925
+      ],
+      "control_rows_differing": [],
+      "health_rows_differing": [],
+      "interpretation": "Sameinputpolicy/controlrows/health/contacttiming+payload; lateordinaryrecoveryAI/collision positionsvary. Productionenemy ordinary cooldown includesrandf_range. Cause notisolated. No physicsidentity/general determinism claim."
+    },
+    "distinct_rows_with_any_selected_field_difference": 288,
+    "mismatch_row_count_by_section": {
+      "foes": 288,
+      "Hero": 244
+    }
+  },
+  "receipt_comparison": {
+    "before_count": 1,
+    "after_count": 1,
+    "excluded_fields": [
+      "curve_sha256",
+      "curve_source_sha256",
+      "physics_frame",
+      "target_id"
+    ],
+    "compared_fields": [
+      "amount",
+      "attack_elapsed",
+      "attack_id",
+      "attack_instance_id",
+      "audio_observation_scope",
+      "audio_presentation_at_receipt",
+      "audio_report_matches_attack_id",
+      "audio_report_matches_point",
+      "blocked",
+      "contact_blade_grip",
+      "contact_blade_motion",
+      "contact_blade_tip",
+      "contact_damage_axis_base",
+      "contact_damage_axis_tip",
+      "contact_damage_base",
+      "contact_damage_tip",
+      "contact_phase",
+      "contact_source",
+      "damage_start_fraction",
+      "direction",
+      "health_after",
+      "health_before",
+      "hitstop",
+      "killed",
+      "material",
+      "normal",
+      "observed_tick",
+      "point",
+      "poise_broken",
+      "reaction",
+      "reaction_duration",
+      "requested_recoil_m",
+      "source",
+      "source_position",
+      "strength",
+      "target_position",
+      "victim_pause"
+    ],
+    "exact_fields_mismatched": [],
+    "scope": "Observedreceiptpayloadcomparison includingnativecontact/Audioobservations; excludesinstanceIDs/localphysicscounter and intentionallychangedsourcecurveprovenance. Notgeneralenginedeterminism."
+  },
+  "contact": {
+    "serial": 42,
+    "amount": 69.3,
+    "tick": 2248,
+    "audio_attackID_matches": true,
+    "audio_point_matches": true,
+    "audio_serial_exists": false
+  },
+  "observed_coverage": {
+    "heal_input_attempts": 1,
+    "light_active_samples": {
+      "light_1": 143,
+      "light_2": 143,
+      "light_3": 182
+    },
+    "maximum_locomotion_displacement_m": 42.3626556396484,
+    "observed_potion_consumptions": 0,
+    "observed_successful_parries": 0,
+    "safe_charged_whiff": true,
+    "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+    "whiff_attack_instance_id": 4
+  },
+  "media": {
+    "delivery": {
+      "path": "/workspace/next-action-rpg/build/art-review/combat-continuity-after-45-002/after/gameplay-logical1x-av.mp4",
+      "sha256": "ac63d57023d39eb444c2117bb6f6699f300ab1743c1c75d95dcdc78d528014b9",
+      "seconds": 45.4,
+      "audio_seconds": 45.4,
+      "video_frames": 2724,
+      "no_added_audio": true,
+      "no_speed_or_time_interpolation": true,
+      "direct_hearing_approval": false
+    },
+    "rawPCM_sample_frames": 2182400,
+    "WAV_sample_frames": 2179200,
+    "WAV_prefix_exact": true,
+    "sync": {
+      "sample_frames_per_video_frame": 800,
+      "raw_counts_exact": true,
+      "trimmed_video_frames": 4,
+      "trimmed_audio_sample_frames": 3200,
+      "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+    }
+  },
+  "root_review": "root-review.json",
+  "postcapture_source_export_comparison": "source-export-after-capture.json",
+  "visible_remaining": [
+    "Cyan24percentforcefieldwash",
+    "Chapterbanner/overlapping distantfoes",
+    "Darkoutsideplatformvoid/foregroundedge at end"
+  ],
+  "pending": [
+    "CleanCI actualdesktop/fullmobile/charged",
+    "PublicPages/main/tag/release",
+    "Continuous1xwatch/directhearing",
+    "Fullskin/animationnaturalness/targethardware/AAA"
+  ],
+  "limits": "Actual finite marker projection/selected originals notdepthocclusion/fullmesh/allfoes/UI/footplant/continuouswatch/directhearing/targethardware/AAA. Controls/timing/health/contactmatch butlatepositionsvary; nofullphysicsidentity/general determinism.",
+  "original_proof": {
+    "capture.json": {
+      "bytes": 23655,
+      "sha256": "c540a12d41914f6520781e2d7707bd6331fef4843f8038644cd6a97dea1e0fa7"
+    },
+    "post-take-paired-audit.json": {
+      "bytes": 22926,
+      "sha256": "74052cd9afa772084ac9efb17dc52e59355c8db2c657fad747944c9c6e83689b"
+    },
+    "after/av-verification.json": {
+      "bytes": 15464,
+      "sha256": "6aee6658a4e93d346f5e2dd7710e024de32abff6b98758a2d54e09ab38e3f427"
+    },
+    "after/frames.json": {
+      "bytes": 33054086,
+      "sha256": "891d374ed5099b37ad2596326631fdd9b62bd07b281861d310a682f4c7be67ac"
+    },
+    "paired-original-frames/provenance.json": {
+      "bytes": 3613,
+      "sha256": "9c9c1b772b9734d9d07ca096f1656346b4891c8109630b5ed4833d78f8761687"
+    }
+  }
+}

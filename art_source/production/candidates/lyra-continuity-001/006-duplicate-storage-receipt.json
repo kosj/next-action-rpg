@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scope": "Storage deduplication only; no source/pose data rewritten. The actual successful pre-guard run and guarded run produced identical GLB bytes.",
+  "removed_duplicate_file": "source-006.glb",
+  "duplicate_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "duplicate_bytes": 25059960,
+  "canonical_file": "source-006-guarded.glb",
+  "canonical_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "canonical_bytes": 25059960,
+  "historical_actual_authoring_report": "source-006.authoring.json",
+  "historical_actual_tool_snapshot": "history/006-retry-actual-author-source.py",
+  "historical_actual_recipe_snapshot": "history/006-retry-actual-recipe.json",
+  "historical_target_table": "source-006.targets.json",
+  "selected_guarded_actual_authoring_report": "source-006-guarded.authoring.json",
+  "selected_guarded_actual_tool_snapshot": "history/006-guarded-actual-author-source.py",
+  "selected_guarded_actual_recipe_snapshot": "history/006-guarded-actual-recipe.json",
+  "selected_guarded_target_table": "source-006-guarded.targets.json",
+  "first_pre_graft_failure": {
+    "tool_snapshot": "history/006-actual-author-source.py",
+    "recipe_snapshot": "history/006-actual-recipe.json",
+    "log": "history/006-pre-graft-slerp-boundary-failure.log",
+    "output_glb_existed": false,
+    "reason": "Unclamped quintic roundoff exceeded strict mathutils.slerp unit-factor range; failed before graft"
+  },
+  "note": "Historical report output filenames are preserved unchanged; their removed duplicate GLB resolves to the identical canonical artifact via this SHA receipt."
+}

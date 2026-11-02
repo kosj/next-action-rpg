@@ -1,0 +1,37 @@
+{
+  "scope": "Actualcurrent006/camera004 WebWindows preview exports. Dirty0.1.14·ff1171a1; notcleanCI/release/WindowsOSexecution/hardware/AAA.",
+  "manifest": {
+    "version": "0.1.14",
+    "godot": "4.7.2",
+    "commit": "ff1171a1",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119083495,
+        "sha256": "1b422e044d564a952aecb9859e753e3c78f1dbd64036cd0c9865a82daf1ee3ec"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146924851,
+        "sha256": "74fffc1e5e5a78422fcb2f29b3d62ea03aa33be6fcc962114997318a9b78fb7e"
+      }
+    ]
+  },
+  "raw_web_bytes": 149722063,
+  "cap_bytes": 150000000,
+  "remaining_bytes": 277937,
+  "native": "native-attempts-and-current.json",
+  "package": "local-runtime-package.json",
+  "source_freeze": "local-runtime-source-freeze.json",
+  "pending": [
+    "Actualafter45LP3raster/pairedreview",
+    "desktop/mobile/cleanCI/public/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ],
+  "subsequent_camera_visual_review": {
+    "status": "a519_camera_rejected_complete_combat_composition",
+    "review": "rejected-camera-001/review.json",
+    "actual45": "first-after45-rejected-checkpoint.json",
+    "scope": "Historical672/native/export/source96 belongs to a519 camera. It cannot approve the next forcefield camera candidate. Hero006 model adoption remains valid; newcamera source/native/export/after45-002 pending."
+  }
+}

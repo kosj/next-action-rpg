@@ -1,0 +1,11 @@
+{
+  "scope": "Exact v14 source96/export/ZIP/manifest byte comparison only; no new functional approval",
+  "observed_at": "2026-11-02T12:51:22.507651+00:00",
+  "source_changed": [],
+  "source_names_unchanged": true,
+  "export_changed": [],
+  "export_names_unchanged": true,
+  "artifact_changed": [],
+  "manifest_changed": false,
+  "unchanged": true
+}

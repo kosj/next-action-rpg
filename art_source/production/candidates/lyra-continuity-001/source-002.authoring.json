@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "first_continuity_candidate_pending_independent_raw_skin_native_raster_review",
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "output_file": "art_source/production/candidates/lyra-continuity-001/source-002.glb",
+  "output_sha256": "adb5185cef253c0dfec40d9b0bb088e4f2824d184648b5b67a92d83a87c9125d",
+  "tool_file": "/workspace/next-action-rpg/tools/author_continuity_actions.py",
+  "tool_sha256": "b7536bf9ab97ac1d47cd9ea1229a06b9155547a7a6d96eedc0c323d3f3d4fdeb",
+  "recipe_file": "art_source/production/character_actions/lyra-continuity.json",
+  "recipe_sha256": "f94d265635a46de7d19bde21feb882ff61a322250dfb906c80f1342459384bf2",
+  "blender": "4.3.2",
+  "preservation": {
+    "source_BIN_prefix_exact": true,
+    "static_payload_declarations_exact": true,
+    "unrelated_clips_exact": true,
+    "unchanged_bone_channels_in_three_clips_exact": true,
+    "changed_bones": [
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand"
+    ],
+    "changed_clips": [
+      "light_1",
+      "light_2",
+      "light_3"
+    ],
+    "new_BIN_bytes": 21948
+  },
+  "clips": {
+    "light_1": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -44.544895561967444,
+      "maximum_unit_direction_orthogonality_abs_dot": 1.4901161193847656e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted"
+    },
+    "light_2": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -51.39265697228018,
+      "maximum_unit_direction_orthogonality_abs_dot": 2.1606683731079102e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted"
+    },
+    "light_3": {
+      "keys": 71,
+      "duration_s": 0.699999988079071,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -45.027566178357,
+      "maximum_unit_direction_orthogonality_abs_dot": 1.5273690223693848e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted"
+    }
+  },
+  "left_hand_policy": "Original100Hz worldkeytargets exact; old parent/child midpoint excursion is intentionally replaced by continuous target interpolation and must be measured separately.",
+  "limitations": [
+    "No engine, skin, visual, native alignment, hardware or AAA approval"
+  ]
+}

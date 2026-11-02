@@ -1,0 +1,1122 @@
+{
+  "scope": "Read-only existing raw glTF TRS/slerp hierarchical FK at60/120Hz. No source edits, engine, network, skin/visual/actualFPS/AAA approval. Uses existing project math helper with single-thread numerical libraries.",
+  "source_file": "art_source/production/candidates/lyra-continuity-001/source-005.glb",
+  "source_sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+  "helper_sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc",
+  "reports": [
+    {
+      "clip": "light_1",
+      "duration_s": 0.5199999809265137,
+      "sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+      "samples": {
+        "60": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 16.76118567107547,
+                "interval_s": [
+                  0.3333333333333333,
+                  0.35
+                ],
+                "per_second": 1005.6711402645284
+              },
+              {
+                "bone": "RightHand",
+                "value": 15.610500510858575,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 936.6300306515147
+              },
+              {
+                "bone": "RightArm",
+                "value": 14.427263959259061,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 865.6358375555438
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 16.76118567107547,
+                "interval_s": [
+                  0.3333333333333333,
+                  0.35
+                ],
+                "per_second": 1005.6711402645284
+              },
+              {
+                "bone": "RightHand",
+                "value": 15.610500510858575,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 936.6300306515147
+              },
+              {
+                "bone": "RightArm",
+                "value": 14.427263959259061,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 865.6358375555438
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 18.595774336548672,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1115.7464601929205
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 17.750818821343245,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.1
+                ],
+                "per_second": 1065.0491292805941
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger1",
+                "value": 17.43040248328866,
+                "interval_s": [
+                  0.05,
+                  0.06666666666666667
+                ],
+                "per_second": 1045.8241489973198
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 18.595774336548672,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1115.7464601929205
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 17.750818821343245,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.1
+                ],
+                "per_second": 1065.0491292805941
+              },
+              {
+                "bone": "RightHand",
+                "value": 17.43039843228201,
+                "interval_s": [
+                  0.05,
+                  0.06666666666666667
+                ],
+                "per_second": 1045.823905936921
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.12195049336039096,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 7.317029601623459
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.11253908452785955,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 6.7523450716715745
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.1112843641032333,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 6.6770618461939995
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.09214737323781229,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 5.528842394268739
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.09135824067434316,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 5.48149444046059
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.08272832346112985,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 4.963699407667792
+              }
+            ]
+          }
+        },
+        "120": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 8.758238429755977,
+                "interval_s": [
+                  0.3416666666666667,
+                  0.35
+                ],
+                "per_second": 1050.9886115707209
+              },
+              {
+                "bone": "RightHand",
+                "value": 7.872732806739436,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 944.7279368087356
+              },
+              {
+                "bone": "RightArm",
+                "value": 7.452061779996334,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 894.2474135995633
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 8.758238429755977,
+                "interval_s": [
+                  0.3416666666666667,
+                  0.35
+                ],
+                "per_second": 1050.9886115707209
+              },
+              {
+                "bone": "RightHand",
+                "value": 7.872732806739436,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 944.7279368087356
+              },
+              {
+                "bone": "RightArm",
+                "value": 7.452061779996334,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 894.2474135995633
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 9.537483667014733,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 1144.4980400417721
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 8.999070267100468,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.09166666666666666
+                ],
+                "per_second": 1079.8884320520563
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger41",
+                "value": 8.778260115245088,
+                "interval_s": [
+                  0.05,
+                  0.058333333333333334
+                ],
+                "per_second": 1053.3912138294108
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 9.537483667014733,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 1144.4980400417721
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 8.999070267100468,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.09166666666666666
+                ],
+                "per_second": 1079.8884320520563
+              },
+              {
+                "bone": "RightHand",
+                "value": 8.77825818164387,
+                "interval_s": [
+                  0.05,
+                  0.058333333333333334
+                ],
+                "per_second": 1053.3909817972647
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.06127049789031738,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 7.352459746838088
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.05683702492688822,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 6.820442991226588
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.05582395493390507,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 6.69887459206861
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.047201422144043347,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 5.664170657285203
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.04705726016096012,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 5.646871219315215
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.04202270482612803,
+                "interval_s": [
+                  0.39166666666666666,
+                  0.4
+                ],
+                "per_second": 5.042724579135347
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clip": "light_2",
+      "duration_s": 0.5199999809265137,
+      "sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+      "samples": {
+        "60": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 21.748670270212543,
+                "interval_s": [
+                  0.3333333333333333,
+                  0.35
+                ],
+                "per_second": 1304.9202162127528
+              },
+              {
+                "bone": "RightHand",
+                "value": 20.172944808682914,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1210.376688520975
+              },
+              {
+                "bone": "RightArm",
+                "value": 19.39570588189249,
+                "interval_s": [
+                  0.31666666666666665,
+                  0.3333333333333333
+                ],
+                "per_second": 1163.7423529135497
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 21.748670270212543,
+                "interval_s": [
+                  0.3333333333333333,
+                  0.35
+                ],
+                "per_second": 1304.9202162127528
+              },
+              {
+                "bone": "RightHand",
+                "value": 20.172944808682914,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1210.376688520975
+              },
+              {
+                "bone": "RightArm",
+                "value": 19.39570588189249,
+                "interval_s": [
+                  0.31666666666666665,
+                  0.3333333333333333
+                ],
+                "per_second": 1163.7423529135497
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 22.171310074575388,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1330.2786044745235
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 21.04151894150115,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.1
+                ],
+                "per_second": 1262.4911364900681
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger3",
+                "value": 19.43736394701328,
+                "interval_s": [
+                  0.05,
+                  0.06666666666666667
+                ],
+                "per_second": 1166.241836820797
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 22.171310074575388,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 1330.2786044745235
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 21.04151894150115,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.1
+                ],
+                "per_second": 1262.4911364900681
+              },
+              {
+                "bone": "RightHand",
+                "value": 19.43736022175441,
+                "interval_s": [
+                  0.05,
+                  0.06666666666666667
+                ],
+                "per_second": 1166.241613305265
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.13944313365049776,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 8.366588019029868
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.12877969918149268,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 7.7267819508895625
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.12768168880508957,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 7.660901328305376
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.1124744391242224,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 6.748466347453346
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.10456374923324999,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 6.273824953995001
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.0896950242048263,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.4
+                ],
+                "per_second": 5.38170145228958
+              }
+            ]
+          }
+        },
+        "120": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 11.157830113198942,
+                "interval_s": [
+                  0.3416666666666667,
+                  0.35
+                ],
+                "per_second": 1338.9396135838779
+              },
+              {
+                "bone": "RightArm",
+                "value": 10.81956586636212,
+                "interval_s": [
+                  0.325,
+                  0.3333333333333333
+                ],
+                "per_second": 1298.347903963459
+              },
+              {
+                "bone": "RightHand",
+                "value": 10.658707762437814,
+                "interval_s": [
+                  0.325,
+                  0.3333333333333333
+                ],
+                "per_second": 1279.0449314925422
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 11.157830113198942,
+                "interval_s": [
+                  0.3416666666666667,
+                  0.35
+                ],
+                "per_second": 1338.9396135838779
+              },
+              {
+                "bone": "RightArm",
+                "value": 10.81956586636212,
+                "interval_s": [
+                  0.325,
+                  0.3333333333333333
+                ],
+                "per_second": 1298.347903963459
+              },
+              {
+                "bone": "RightHand",
+                "value": 10.658707762437814,
+                "interval_s": [
+                  0.325,
+                  0.3333333333333333
+                ],
+                "per_second": 1279.0449314925422
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 11.271762611663329,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 1352.6115133996043
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 10.589189190961408,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.09166666666666666
+                ],
+                "per_second": 1270.7027029153692
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger3",
+                "value": 9.805740309674446,
+                "interval_s": [
+                  0.05,
+                  0.058333333333333334
+                ],
+                "per_second": 1176.6888371609339
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 11.271762611663329,
+                "interval_s": [
+                  0.38333333333333336,
+                  0.39166666666666666
+                ],
+                "per_second": 1352.6115133996043
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 10.589189190961408,
+                "interval_s": [
+                  0.08333333333333333,
+                  0.09166666666666666
+                ],
+                "per_second": 1270.7027029153692
+              },
+              {
+                "bone": "RightHand",
+                "value": 9.805737692530267,
+                "interval_s": [
+                  0.05,
+                  0.058333333333333334
+                ],
+                "per_second": 1176.6885231036322
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.07002486919028804,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 8.402984302834566
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.06499354682026098,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 7.799225618431319
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.0640042085421275,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 7.680505025055302
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.05780034310124665,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 6.936041172149599
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.05379760773454038,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 6.455712928144846
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.04547436387867796,
+                "interval_s": [
+                  0.39166666666666666,
+                  0.4
+                ],
+                "per_second": 5.456923665441338
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "clip": "light_3",
+      "duration_s": 0.699999988079071,
+      "sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33",
+      "samples": {
+        "60": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 12.908478252465924,
+                "interval_s": [
+                  0.45,
+                  0.4666666666666667
+                ],
+                "per_second": 774.5086951479557
+              },
+              {
+                "bone": "RightHand",
+                "value": 11.843570910054698,
+                "interval_s": [
+                  0.5166666666666667,
+                  0.5333333333333333
+                ],
+                "per_second": 710.6142546032844
+              },
+              {
+                "bone": "RightArm",
+                "value": 11.090105740646639,
+                "interval_s": [
+                  0.5,
+                  0.5166666666666667
+                ],
+                "per_second": 665.4063444387963
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 12.908478252465924,
+                "interval_s": [
+                  0.45,
+                  0.4666666666666667
+                ],
+                "per_second": 774.5086951479557
+              },
+              {
+                "bone": "RightHand",
+                "value": 11.843570910054698,
+                "interval_s": [
+                  0.5166666666666667,
+                  0.5333333333333333
+                ],
+                "per_second": 710.6142546032844
+              },
+              {
+                "bone": "RightArm",
+                "value": 11.090105740646639,
+                "interval_s": [
+                  0.5,
+                  0.5166666666666667
+                ],
+                "per_second": 665.4063444387963
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 14.23213334984594,
+                "interval_s": [
+                  0.5,
+                  0.5166666666666667
+                ],
+                "per_second": 853.9280009907537
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 13.115016063284719,
+                "interval_s": [
+                  0.11666666666666667,
+                  0.13333333333333333
+                ],
+                "per_second": 786.9009637970833
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 12.75009065899751,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 765.0054395398507
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 14.23213334984594,
+                "interval_s": [
+                  0.5,
+                  0.5166666666666667
+                ],
+                "per_second": 853.9280009907537
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 13.115016063284719,
+                "interval_s": [
+                  0.11666666666666667,
+                  0.13333333333333333
+                ],
+                "per_second": 786.9009637970833
+              },
+              {
+                "bone": "RightHand",
+                "value": 12.75008362801314,
+                "interval_s": [
+                  0.06666666666666667,
+                  0.08333333333333333
+                ],
+                "per_second": 765.0050176807886
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.09041216500050735,
+                "interval_s": [
+                  0.1,
+                  0.11666666666666667
+                ],
+                "per_second": 5.424729900030442
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.0839034660036312,
+                "interval_s": [
+                  0.1,
+                  0.11666666666666667
+                ],
+                "per_second": 5.0342079602178735
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.0824812006367644,
+                "interval_s": [
+                  0.1,
+                  0.11666666666666667
+                ],
+                "per_second": 4.948872038205865
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.07034167398997777,
+                "interval_s": [
+                  0.1,
+                  0.11666666666666667
+                ],
+                "per_second": 4.220500439398667
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.06952444109842484,
+                "interval_s": [
+                  0.1,
+                  0.11666666666666667
+                ],
+                "per_second": 4.171466465905492
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.061728990330102484,
+                "interval_s": [
+                  0.5333333333333333,
+                  0.55
+                ],
+                "per_second": 3.7037394198061375
+              }
+            ]
+          }
+        },
+        "120": {
+          "local_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 6.527897925281366,
+                "interval_s": [
+                  0.4583333333333333,
+                  0.4666666666666667
+                ],
+                "per_second": 783.3477510337615
+              },
+              {
+                "bone": "RightHand",
+                "value": 5.985590818895615,
+                "interval_s": [
+                  0.5166666666666667,
+                  0.525
+                ],
+                "per_second": 718.2708982674764
+              },
+              {
+                "bone": "RightArm",
+                "value": 5.655759882083046,
+                "interval_s": [
+                  0.5083333333333333,
+                  0.5166666666666667
+                ],
+                "per_second": 678.691185849959
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 6.527897925281366,
+                "interval_s": [
+                  0.4583333333333333,
+                  0.4666666666666667
+                ],
+                "per_second": 783.3477510337615
+              },
+              {
+                "bone": "RightHand",
+                "value": 5.985590818895615,
+                "interval_s": [
+                  0.5166666666666667,
+                  0.525
+                ],
+                "per_second": 718.2708982674764
+              },
+              {
+                "bone": "RightArm",
+                "value": 5.655759882083046,
+                "interval_s": [
+                  0.5083333333333333,
+                  0.5166666666666667
+                ],
+                "per_second": 678.691185849959
+              }
+            ]
+          },
+          "global_rotation_deg": {
+            "all_bones_top3": [
+              {
+                "bone": "RightArm",
+                "value": 7.1909116997735945,
+                "interval_s": [
+                  0.5083333333333333,
+                  0.5166666666666667
+                ],
+                "per_second": 862.9094039728229
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 6.642340122330451,
+                "interval_s": [
+                  0.11666666666666667,
+                  0.125
+                ],
+                "per_second": 797.0808146796543
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 6.410927677705966,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 769.3113213247161
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightArm",
+                "value": 7.1909116997735945,
+                "interval_s": [
+                  0.5083333333333333,
+                  0.5166666666666667
+                ],
+                "per_second": 862.9094039728229
+              },
+              {
+                "bone": "RightForeArm",
+                "value": 6.642340122330451,
+                "interval_s": [
+                  0.11666666666666667,
+                  0.125
+                ],
+                "per_second": 797.0808146796543
+              },
+              {
+                "bone": "RightHand",
+                "value": 6.410921846958007,
+                "interval_s": [
+                  0.075,
+                  0.08333333333333333
+                ],
+                "per_second": 769.310621634961
+              }
+            ]
+          },
+          "global_translation_m": {
+            "all_bones_top3": [
+              {
+                "bone": "HandLoRA_Bip01_R_Finger02",
+                "value": 0.04579483355523622,
+                "interval_s": [
+                  0.1,
+                  0.10833333333333334
+                ],
+                "per_second": 5.4953800266283475
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger01",
+                "value": 0.04234504752526426,
+                "interval_s": [
+                  0.1,
+                  0.10833333333333334
+                ],
+                "per_second": 5.081405703031712
+              },
+              {
+                "bone": "HandLoRA_Bip01_R_Finger12",
+                "value": 0.041809673154312804,
+                "interval_s": [
+                  0.1,
+                  0.10833333333333334
+                ],
+                "per_second": 5.017160778517538
+              }
+            ],
+            "arms_top3": [
+              {
+                "bone": "RightForeArm",
+                "value": 0.0354798394534407,
+                "interval_s": [
+                  0.1,
+                  0.10833333333333334
+                ],
+                "per_second": 4.257580734412885
+              },
+              {
+                "bone": "RightHand",
+                "value": 0.03492582575753843,
+                "interval_s": [
+                  0.10833333333333334,
+                  0.11666666666666667
+                ],
+                "per_second": 4.191099090904612
+              },
+              {
+                "bone": "LeftForeArm",
+                "value": 0.03107644633674821,
+                "interval_s": [
+                  0.5333333333333333,
+                  0.5416666666666666
+                ],
+                "per_second": 3.7291735604097984
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "elapsed_s": 4.413277974002995
+}

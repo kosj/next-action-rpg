@@ -1,0 +1,813 @@
+{
+  "schema_version": 1,
+  "status": "planned_camera_from_readonly_actual_pose_visibility_not_rendered",
+  "source_candidate_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "source_baseline_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "clip": "light_2",
+  "time_s": 0.33000001311302185,
+  "edge_region_index": 13952,
+  "vertex_ids": [
+    15960,
+    15965
+  ],
+  "posed_source_gltf_endpoints_m": {
+    "old": [
+      [
+        0.09025833349919565,
+        1.2178317536013694,
+        -0.07158903614013429
+      ],
+      [
+        0.11270226375923689,
+        1.193322653944841,
+        -0.0555781092093564
+      ]
+    ],
+    "new": [
+      [
+        0.07665492464225822,
+        1.2325819323089635,
+        -0.07444306604813163
+      ],
+      [
+        0.11270226375923689,
+        1.193322653944841,
+        -0.0555781092093564
+      ]
+    ]
+  },
+  "posed_blender_endpoints_m": {
+    "old": [
+      [
+        0.09025833349919565,
+        0.07158903614013429,
+        1.2178317536013694
+      ],
+      [
+        0.11270226375923689,
+        0.0555781092093564,
+        1.193322653944841
+      ]
+    ],
+    "new": [
+      [
+        0.07665492464225822,
+        0.07444306604813163,
+        1.2325819323089635
+      ],
+      [
+        0.11270226375923689,
+        0.0555781092093564,
+        1.193322653944841
+      ]
+    ]
+  },
+  "posed_edge_lengths_m": {
+    "old": 0.03688869410366742,
+    "new": 0.056538378041954614
+  },
+  "geometric_fan_normals_source_gltf": {
+    "old": [
+      0.6941641970913219,
+      0.08527630006935306,
+      -0.7147475219425682
+    ],
+    "new": [
+      0.6792135592245653,
+      0.20699803273477352,
+      -0.7041454078593651
+    ]
+  },
+  "coordinate_conversion": "Blender studio point=[raw_x,-raw_z,raw_y]; entire studio before gameplay PI/floor, not Game camera",
+  "selected": {
+    "body_front_weight": 0.5,
+    "elevation_weight": -0.1,
+    "camera_source_gltf_m": [
+      3.2643165277352444,
+      0.9022396026352122,
+      -1.5165108440071515
+    ],
+    "camera_blender_m": [
+      3.2643165277352444,
+      1.5165108440071515,
+      0.9022396026352122
+    ],
+    "aim_source_gltf_m": [
+      0.09467859420074756,
+      1.2129522931269023,
+      -0.06501058762874401
+    ],
+    "aim_blender_m": [
+      0.09467859420074756,
+      0.06501058762874401,
+      1.2129522931269023
+    ],
+    "ortho_scale_m": 0.6,
+    "geometric_rays": {
+      "old": [
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        },
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        },
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        }
+      ],
+      "new": [
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        },
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        },
+        {
+          "blocked": false,
+          "nearest_occluder_distance_from_camera_m": null
+        }
+      ]
+    },
+    "all_edge_endpoint_midpoint_rays_clear_in_both": true
+  },
+  "candidates": [
+    {
+      "body_front_weight": 0.5,
+      "elevation_weight": 0.1,
+      "camera_source_gltf_m": [
+        3.2643165277352444,
+        1.5236649836185925,
+        -1.5165108440071515
+      ],
+      "camera_blender_m": [
+        3.2643165277352444,
+        1.5165108440071515,
+        1.5236649836185925
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.198933709686784
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.223418936580599
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2109750263912584
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": 0.5,
+      "elevation_weight": 0.25,
+      "camera_source_gltf_m": [
+        3.200711258512279,
+        1.9741463049671863,
+        -1.4873835220479514
+      ],
+      "camera_blender_m": [
+        3.200711258512279,
+        1.4873835220479514,
+        1.9741463049671863
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.1910929064936457
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2000575847862924
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.1906652435803067
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": 0.5,
+      "elevation_weight": -0.1,
+      "camera_source_gltf_m": [
+        3.2643165277352444,
+        0.9022396026352122,
+        -1.5165108440071515
+      ],
+      "camera_blender_m": [
+        3.2643165277352444,
+        1.5165108440071515,
+        0.9022396026352122
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": true
+    },
+    {
+      "body_front_weight": 0,
+      "elevation_weight": 0.1,
+      "camera_source_gltf_m": [
+        2.2831684177263556,
+        1.5612153097003985,
+        -2.7741110220187246
+      ],
+      "camera_blender_m": [
+        2.2831684177263556,
+        2.7741110220187246,
+        1.5612153097003985
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": true
+    },
+    {
+      "body_front_weight": 0,
+      "elevation_weight": 0.25,
+      "camera_source_gltf_m": [
+        2.2284149106189184,
+        2.0618269807540677,
+        -2.706332434110936
+      ],
+      "camera_blender_m": [
+        2.2284149106189184,
+        2.706332434110936,
+        2.0618269807540677
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": true
+    },
+    {
+      "body_front_weight": 0,
+      "elevation_weight": -0.1,
+      "camera_source_gltf_m": [
+        2.2831684177263556,
+        0.8646892765534061,
+        -2.7741110220187246
+      ],
+      "camera_blender_m": [
+        2.2831684177263556,
+        2.7741110220187246,
+        0.8646892765534061
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.3191151973966813
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": 1,
+      "elevation_weight": 0.1,
+      "camera_source_gltf_m": [
+        3.5648064234535126,
+        1.4587406461081425,
+        -0.4494594583310325
+      ],
+      "camera_blender_m": [
+        3.5648064234535126,
+        0.4494594583310325,
+        1.4587406461081425
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.188383267538525
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2000685811491976
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.1909299891381586
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": 1,
+      "elevation_weight": 0.25,
+      "camera_source_gltf_m": [
+        3.5207380962131722,
+        1.8196198019695746,
+        -0.4445772120637716
+      ],
+      "camera_blender_m": [
+        3.5207380962131722,
+        0.4445772120637716,
+        1.8196198019695746
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.1822318926027298
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.1816128908978523
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.180814960414917
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": 1,
+      "elevation_weight": -0.1,
+      "camera_source_gltf_m": [
+        3.5648064234535126,
+        0.9671639401456622,
+        -0.4494594583310325
+      ],
+      "camera_blender_m": [
+        3.5648064234535126,
+        0.4494594583310325,
+        0.9671639401456622
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2381259501073156
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": -0.5,
+      "elevation_weight": 0.1,
+      "camera_source_gltf_m": [
+        0.8352837928426703,
+        1.525860764082879,
+        -3.471415177302224
+      ],
+      "camera_blender_m": [
+        0.8352837928426703,
+        3.471415177302224,
+        1.525860764082879
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2079528421251187
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.245719706763343
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2319496573864583
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": -0.5,
+      "elevation_weight": 0.25,
+      "camera_source_gltf_m": [
+        0.8202176276971966,
+        1.9793096924759754,
+        -3.4021185342399956
+      ],
+      "camera_blender_m": [
+        0.8202176276971966,
+        3.4021185342399956,
+        1.9793096924759754
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.230080806484267
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.264183454275238
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.253736380239521
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    },
+    {
+      "body_front_weight": -0.5,
+      "elevation_weight": -0.1,
+      "camera_source_gltf_m": [
+        0.8352837928426703,
+        0.9000438221709256,
+        -3.471415177302224
+      ],
+      "camera_blender_m": [
+        0.8352837928426703,
+        3.471415177302224,
+        0.9000438221709256
+      ],
+      "aim_source_gltf_m": [
+        0.09467859420074756,
+        1.2129522931269023,
+        -0.06501058762874401
+      ],
+      "aim_blender_m": [
+        0.09467859420074756,
+        0.06501058762874401,
+        1.2129522931269023
+      ],
+      "ortho_scale_m": 0.6,
+      "geometric_rays": {
+        "old": [
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          },
+          {
+            "blocked": false,
+            "nearest_occluder_distance_from_camera_m": null
+          }
+        ],
+        "new": [
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.204905326579194
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2596678005433684
+          },
+          {
+            "blocked": true,
+            "nearest_occluder_distance_from_camera_m": 3.2369582269250112
+          }
+        ]
+      },
+      "all_edge_endpoint_midpoint_rays_clear_in_both": false
+    }
+  ],
+  "scope": "Static ray/triangle geometric visibility only across both original body primitives; alpha/culling/material/lighting and raster appearance still require actual Blender review. Endpoint self hits within0.1mm are ignored only for geometric ray precision; no pose/rate gate changes."
+}

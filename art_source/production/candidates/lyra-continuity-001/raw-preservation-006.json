@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "scope": "Independent raw006 vs immutable f2ed container equality. FREE Left targets deliberately differ; original in-action left hand fidelity is not claimed. No runtime/native/visual approval is derived from byte equality.",
+  "source_parent_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_parent_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "candidate_file": "source-006-guarded.glb",
+  "candidate_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "original_BIN_prefix_bytes": 24161612,
+  "original_BIN_prefix_exact": true,
+  "static_declarations_exact": [
+    "nodes",
+    "meshes",
+    "skins",
+    "materials",
+    "images",
+    "textures",
+    "samplers",
+    "scenes",
+    "scene"
+  ],
+  "unchanged_clips_exact": [
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "parry",
+    "RESET",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right",
+    "charge",
+    "charged_heavy"
+  ],
+  "changed_clips": [
+    "light_1",
+    "light_2",
+    "light_3"
+  ],
+  "changed_bones": [
+    "LeftArm",
+    "LeftForeArm",
+    "LeftHand"
+  ],
+  "changed_channels_per_clip": 9,
+  "other150_channels_per_light_exact": true,
+  "protected_right_hand_body_feet_payload_exact": true,
+  "005_positions_and_elbows_exact": "005-to-006-position-preservation.json",
+  "charged_curve_pre_adoption_file_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "charged_curve_current_source_metadata_only_sha256": "8946d0a499c50a0df8e26576a23221d54ef56d3099f1c2e01cbb25aa4e8f21e2",
+  "inverse_metadata_substitution_restores_original_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+  "charged_physical_samples_and_all_non_metadata_bytes_exact": true
+}

@@ -1,0 +1,462 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "published_v0.1.13_verified",
+  "scope": "Historical published checkpoint curated in the next iteration. Actual CI/public/download evidence for v0.1.13 only; not approval of v0.1.14, continuous AV, full skin/garment, target hardware or AAA.",
+  "source": {
+    "catalog_commit": "e15687c060643ffc15f0f4594a1e72f8c0a0570c",
+    "catalog_sha256": "822dd57a6eca82e488e4d13f12b4f49dde4b0a098306656c1356980f40950ca8",
+    "feature_commit": "48b23cbfc0e4fe5b92be24e94397b1f6f5c8b489",
+    "main_commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "tree": "d26b33217d79c273033ad6a7e7ff9be78f8de4df",
+    "tree_identical_to_tested_pr": true,
+    "pinned_source_ancestor": true,
+    "clean_at_completion": true,
+    "post_tag_source_commits": 0
+  },
+  "pr": {
+    "number": 14,
+    "url": "https://github.com/kosj/next-action-rpg/pull/14",
+    "merged": true,
+    "merge_sha": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "gates": {
+      "run_id": 41399070922,
+      "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41399070922",
+      "required_gates": [
+        "build",
+        "verify_mobile_export",
+        "verify_charged_impact"
+      ],
+      "all_success": true
+    },
+    "desktop": {
+      "status": "passed",
+      "elapsed_seconds": 230.311,
+      "footer": "0.1.13 · 047c96d0",
+      "errors": [],
+      "artifact_id": 13120739612,
+      "artifact_sha256": "54b191ca03096d056b79f9b05b44c593cf6961ed298bbcda56b85aa902052450"
+    },
+    "mobile": {
+      "status": "passed",
+      "elapsed_seconds": 682.468,
+      "footer": "0.1.13 · 047c96d0",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "trusted_touch": true,
+      "actual_maximum_touch_points": 3,
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13121661461,
+      "artifact_sha256": "aa9fc83bde8307ac4c0b8e91d73b2a5f5c736b84c5a5db86766b4c9a52aacd12"
+    },
+    "charged": {
+      "status": "passed",
+      "elapsed_seconds": 302.75,
+      "footer": "0.1.13 · 047c96d0",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "artifact_id": 13121526218,
+      "artifact_sha256": "cd7fc5afc6f7ca5887fa17eba37f580fa3ed00ba980429eb8319832fc31123e0",
+      "contact_count": 1,
+      "amount": 69.3,
+      "recoil_m": 0.3500003815013199,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      }
+    },
+    "final_description_updated_at": "2026-11-02T08:25:34Z",
+    "final_description_sha256": "651b02a72ec2eac8f771de0cb4cf4186f181ef3af2796587d57596436a7254d5"
+  },
+  "main": {
+    "gates": {
+      "run_id": 41402132570,
+      "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41402132570",
+      "required_gates": [
+        "build",
+        "verify_mobile_export",
+        "verify_charged_impact",
+        "deploy",
+        "verify_public_web",
+        "verify_public_mobile"
+      ],
+      "all_success": true,
+      "required_gate_results": {
+        "build": "success",
+        "verify_mobile_export": "success",
+        "verify_charged_impact": "success",
+        "deploy": "success",
+        "verify_public_web": "success",
+        "verify_public_mobile": "success"
+      },
+      "run_attempt": 2,
+      "gate_attempts": {
+        "build": 1,
+        "verify_mobile_export": 1,
+        "verify_charged_impact": 1,
+        "deploy": 1,
+        "verify_public_web": 1,
+        "verify_public_mobile": 2
+      }
+    },
+    "desktop": {
+      "status": "passed",
+      "elapsed_seconds": 449.507,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "artifact_id": 13123185344,
+      "artifact_sha256": "79a047ad0c6bb36b7244c284e620be6f5c3ff1d89c7ca6a5b6e5a7758ab6b1ae"
+    },
+    "mobile": {
+      "status": "passed",
+      "elapsed_seconds": 1092.041,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "trusted_touch": true,
+      "maximum_actual_touch_points": 3,
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13123372576,
+      "artifact_sha256": "6df6a885500ca7b92bcf00865d8af2820eab9ce5eeaa253f3dc0575bd3b0a84a"
+    },
+    "charged": {
+      "elapsed_seconds": 312.678,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "artifact_id": 13122981826,
+      "artifact_sha256": "9b8198bb6d289405a830a8ba87edb7b6aac81d915a5e05b54d685e276788d6cc",
+      "contact_count": 1,
+      "amount": 69.3,
+      "recoil_m": 0.3500003814716702,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      }
+    },
+    "raw_web_bytes": 149706815
+  },
+  "tag": {
+    "name": "v0.1.13",
+    "object_sha": "29781d78dcf25da0fbc8f5aefa7aef69a0f3c4cb",
+    "peeled_commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "gates": {
+      "run_id": 41404917444,
+      "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41404917444",
+      "required_gates": [
+        "build",
+        "verify_mobile_export",
+        "verify_charged_impact",
+        "release"
+      ],
+      "all_success": true,
+      "required_gate_results": {
+        "build": "success",
+        "verify_mobile_export": "success",
+        "verify_charged_impact": "success",
+        "release": "success"
+      }
+    },
+    "desktop": {
+      "elapsed_seconds": 412.848,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "artifact_id": 13123975082,
+      "artifact_sha256": "80ef10c891434bdb8ee13eeef60160076bb484d44fe5048c2e8a393fa19e3658"
+    },
+    "mobile": {
+      "status": "passed",
+      "elapsed_seconds": 1396.391,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "trusted_touch": true,
+      "maximum_actual_touch_points": 3,
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13124740748,
+      "artifact_sha256": "733e68d5f67fb81a75bcd8c465433ac367c40421326fa1e1cc2c2ddefaaaf351"
+    },
+    "charged": {
+      "status": "passed",
+      "elapsed_seconds": 228.373,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "source_count": 88,
+      "all_source_hashes_match": true,
+      "export_unchanged": true,
+      "artifact_id": 13123188710,
+      "artifact_sha256": "47d9ce228ec7f24d09e495ffc403ead66d5f26c05873fc8e79a26de739bba241",
+      "contact_count": 1,
+      "amount": 69.3,
+      "recoil_m": 0.3500004052234434,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      }
+    },
+    "cache_scope": "Actual exact MAIN cache hit and zero runtime invalidations observed; offline import authoring evidence, not gameplay FPS."
+  },
+  "public": {
+    "url": "https://kosj.github.io/next-action-rpg/?build=ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "actual_footer": "0.1.13 · ff1171a1",
+    "desktop": {
+      "status": "passed",
+      "elapsed_seconds": 314.378,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13123722885,
+      "artifact_sha256": "72af6c2a35593f55b6f696f631a0af201bc3127cf1316745b5a041850537419f",
+      "source_identity_scope": "Runtime footer/resources observed; wrapper source hashes are separate predeploy proofs when present."
+    },
+    "full_mobile": {
+      "status": "passed",
+      "elapsed_seconds": 1099.722,
+      "footer": "0.1.13 · ff1171a1",
+      "errors": [],
+      "trusted_touch": true,
+      "maximum_actual_touch_points": 3,
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13126320864,
+      "artifact_sha256": "ed68e5ad8abe2e2aef83ec5d6d583c3518281f2fee3afc1f6afb75ec1f563c73",
+      "source_identity_scope": "Runtime footer/resources observed; wrapper source hashes are separate predeploy proofs when present."
+    },
+    "root_raster_scope": "Actual public attempt2 portrait/landscape/narrow originals readable; not isolated fontA/B exactness/skin/AV/hardware/AAA approval",
+    "source_identity_scope": "Public runtime footer/resources actually observed. Wrapped88-source/export-unchanged evidence is separate predeploy CI proof, not remote source-byte verification."
+  },
+  "retained_first_public_mobile_failure": {
+    "status": "failed_current_public_mobile_attempt1",
+    "run_id": 41402132570,
+    "job_id": 125150120805,
+    "artifact_id": 13124606956,
+    "artifact_sha256": "57064d162ba4163881e44348b4c724bc2159fbb7c43f7d086cec0ced1c5957af",
+    "artifact_api_sha_and_crc_verified": true,
+    "result": {
+      "outcome": "failed",
+      "stage": "touch_combat_lock_and_alive",
+      "seconds": 1378.146,
+      "errors": [],
+      "exception_type": "TimeoutError",
+      "exception": ""
+    },
+    "ui_bound_ms": 15000,
+    "cause": "unproven",
+    "scope": "Genuine touch dispatched; final combat observer timed out. FPS1 is a diagnostic readback, not proven cause. Empty page errors does not make this attempt pass."
+  },
+  "sole_controlled_public_mobile_rerun": {
+    "status": "completed_success_same_code_cause_unproven",
+    "run_id": 41402132570,
+    "run_attempt": 2,
+    "executing_job_id": 125161047863,
+    "exact_source_commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "url": "https://kosj.github.io/next-action-rpg/?build=ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "unchanged_bounds": {
+      "UI_ms": 15000,
+      "IDB_ms": 30000,
+      "navigation_existing_bounds": "unchanged",
+      "job_minutes": 30
+    },
+    "maximum_controlled_reruns": 1,
+    "source_or_tag_or_docs_changed": false,
+    "fresh_profile": "Existing full harness fresh temporary browser profile",
+    "elapsed_seconds": 1099.722,
+    "artifact_id": 13126320864,
+    "artifact_sha256": "ed68e5ad8abe2e2aef83ec5d6d583c3518281f2fee3afc1f6afb75ec1f563c73",
+    "interpretation": "Full journey passed on this sole same-code/URL/bounds retry; no cause fix/environment explanation inferred. First failed result retained."
+  },
+  "separate_optional_local_narrow": {
+    "status": "failed_unresolved_diagnostic",
+    "scope": "Actual local preview could not dispatch first title touch; no narrow10/14 font raster approval. Cause unproven. Not a full mobile result. Latest clean PR mandatory full-mobile remains required.",
+    "interpretation": "First title touch could not dispatch in this optional local diagnostic. Cause unproven. Not a full mobile result, not erased by later clean mandatory/full public passes."
+  },
+  "release": {
+    "url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.13",
+    "checked_at": "2026-11-02T07:49:33.513153+00:00",
+    "assets": [
+      {
+        "name": "manifest.json",
+        "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.13/manifest.json",
+        "http_status": 200,
+        "anonymous": true,
+        "default_tls_validation": true,
+        "bytes": 406,
+        "sha256": "3f73de02789136bb81932c274fee102fde4ce900e04a30769b54f29a8a7c4bc2",
+        "api_digest_matches": true
+      },
+      {
+        "name": "runefall-web.zip",
+        "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.13/runefall-web.zip",
+        "http_status": 200,
+        "anonymous": true,
+        "default_tls_validation": true,
+        "bytes": 119079583,
+        "sha256": "ce3c38e3754872089e742853a3e15fdac0fb6ef810280fd4ebbe08a253d476b8",
+        "api_digest_matches": true
+      },
+      {
+        "name": "runefall-windows.zip",
+        "url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.13/runefall-windows.zip",
+        "http_status": 200,
+        "anonymous": true,
+        "default_tls_validation": true,
+        "bytes": 146920939,
+        "sha256": "e1b31fd25507eb515b8cb02f1a345a396d9623e02a56da530b8b9e0076321f0f",
+        "api_digest_matches": true
+      }
+    ],
+    "packaging": {
+      "version": "0.1.13",
+      "godot": "4.7.2",
+      "expected_main_sha": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+      "manifest_commit": "ff1171a1",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 119079583,
+          "sha256": "ce3c38e3754872089e742853a3e15fdac0fb6ef810280fd4ebbe08a253d476b8",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 149706815
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 146920939,
+          "sha256": "e1b31fd25507eb515b8cb02f1a345a396d9623e02a56da530b8b9e0076321f0f",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 219126702
+        }
+      ],
+      "status": "verified",
+      "scope": "Downloaded bytes and packaging; no hardware or art approval"
+    },
+    "pck_checks": [
+      {
+        "zip": "runefall-web.zip",
+        "member": "index.pck",
+        "header": {
+          "format": 4,
+          "engine": [
+            4,
+            7,
+            2
+          ],
+          "flags": 2,
+          "file_base": 112,
+          "directory_offset": 109728160
+        },
+        "directory_entries": 201,
+        "all_payload_md5_verified": true,
+        "footer": "0.1.13 · ff1171a1",
+        "static_fontdata_count": 1,
+        "original_variable_font_absent": true,
+        "both_named_npc_imports_present": true
+      },
+      {
+        "zip": "runefall-windows.zip",
+        "member": "Runefall.pck",
+        "header": {
+          "format": 4,
+          "engine": [
+            4,
+            7,
+            2
+          ],
+          "flags": 2,
+          "file_base": 112,
+          "directory_offset": 109728160
+        },
+        "directory_entries": 201,
+        "all_payload_md5_verified": true,
+        "footer": "0.1.13 · ff1171a1",
+        "static_fontdata_count": 1,
+        "original_variable_font_absent": true,
+        "both_named_npc_imports_present": true
+      }
+    ],
+    "scope": "Actual anonymous HTTP200/defaultTLS bytes/API digest/ZIP SHA+CRC/license/playable payloads and PCK identity. Windows OS execution/hardware/art approval separate."
+  },
+  "portable_kit": {
+    "version": "1.4.7",
+    "bytes": 125171,
+    "sha256": "9ba2c88e6ae1b9f40155899f0284e03489aa45113b2ef3c264e6af3ccfbd3613",
+    "source_commit": "e15687c060643ffc15f0f4594a1e72f8c0a0570c",
+    "catalog_bytes": 195042,
+    "catalog_sha256": "822dd57a6eca82e488e4d13f12b4f49dde4b0a098306656c1356980f40950ca8",
+    "cases": 68,
+    "skills": 3,
+    "payloads": 18,
+    "guard_passed": 7,
+    "guard_failed": 0,
+    "guard_skipped": 0,
+    "subprocesses": 15,
+    "anonymous_main": {
+      "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/ff1171a1834a99e29b3dfecac2498c84fad4a90e/reusable/game-production-kit.zip",
+      "http_status": 200,
+      "actual_bytes": 125171,
+      "sha256": "9ba2c88e6ae1b9f40155899f0284e03489aa45113b2ef3c264e6af3ccfbd3613",
+      "zip_crc_error": null
+    },
+    "anonymous_tag": {
+      "url": "https://raw.githubusercontent.com/kosj/next-action-rpg/v0.1.13/reusable/game-production-kit.zip",
+      "http_status": 200,
+      "actual_bytes": 125171,
+      "sha256": "9ba2c88e6ae1b9f40155899f0284e03489aa45113b2ef3c264e6af3ccfbd3613",
+      "zip_crc_error": null
+    },
+    "scope": "Immutable published1.4.7 source/main/tag bytes verified anonymously/defaultTLS/CRC; seven guards/15subprocesses passed earlier. No guard rerun implied by download check."
+  },
+  "remaining_quality_limits": [
+    "prototype adoption only",
+    "Erin hem/tip/slit/fullskin review pending",
+    "continuous AV and target hardware performance pending",
+    "AAA not approved"
+  ],
+  "curation": {
+    "final_evidence_bytes": 25599,
+    "final_evidence_sha256": "60dbd91729b172909204badf9d2bd6b9b677e61e46237f20309afaf65946f022",
+    "release_downloads_sha256": "ffe681e65afa496451dcd37a9628a671cfd3272db7392f6b455eb57a332acd85",
+    "controlled_rerun_sha256": "acc0e57eca89ef97735b92ee028f2ae5646bd78db6995d23030181db2ed19e49",
+    "first_public_failure_sha256": "feefd825505d6b14755f68ca669402a7581b18512f1eb5977fe0d239a9c0232e",
+    "anonymous_kit_sha256": "b78d6948e2b3dffa217c4d142ff8e36b41bdc3ebba897daae03c5ab75a3f890c",
+    "scope": "Compact factual ledger; no session paths, credentials, signed download URLs or full third-party content."
+  }
+}

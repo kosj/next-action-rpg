@@ -1,0 +1,25 @@
+{
+  "scope": "Unedited full-resolution frames decoded from retained original MJPEG AVI, not original viewport PNG or continuous watching. No crop/scale/interpolation.",
+  "source": "../before/gameplay.avi",
+  "source_sha256": "59556b2f61efe20ab1b880b5095b9f9df8a0d0cdb2226fd285b9b8540c6f8106",
+  "frames": [
+    {
+      "movie_frame": 418,
+      "physics_tick": 419,
+      "path": "build/art-review/combat-continuity-before-14-002/post-take-framing/decoded-01.png",
+      "sha256": "f879b3a92e2b98fb436355729e37644845229f572ace26186e9a9826aff30200"
+    },
+    {
+      "movie_frame": 420,
+      "physics_tick": 421,
+      "path": "build/art-review/combat-continuity-before-14-002/post-take-framing/decoded-02.png",
+      "sha256": "d104ee2aae538461a4f7cf00ee43ea0a7ac1bc50dbc696b1031db52228f2e0dc"
+    },
+    {
+      "movie_frame": 863,
+      "physics_tick": 864,
+      "path": "build/art-review/combat-continuity-before-14-002/post-take-framing/decoded-03.png",
+      "sha256": "30fc0b27c060a3873745e588bae4d034c7f93c8fcc50f2ae2302bba582c6554e"
+    }
+  ]
+}

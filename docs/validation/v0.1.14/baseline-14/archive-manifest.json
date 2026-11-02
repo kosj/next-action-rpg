@@ -1,0 +1,49 @@
+{
+  "scope": "Public compact baseline checkpoint,3exactdecodedPNGs,exactAV/capture/source-input/audit copies and exact selected trace rows; fileintegrity not perceptualapproval.",
+  "files": {
+    "README.md": {
+      "bytes": 2311,
+      "sha256": "0bd63b764b174f4ebb0847237811d77bb82f75d65b665013877309397ccaff46"
+    },
+    "av-verification.json": {
+      "bytes": 15450,
+      "sha256": "0c65f7c14c59ddaa63f645d180e79531364edf80b7f95db27ed190f41e57d85b"
+    },
+    "capture.json": {
+      "bytes": 23326,
+      "sha256": "9bc5c835d16973998ae0cc330603d2a4f943c886c6cb845744aabec881e05835"
+    },
+    "checkpoint.json": {
+      "bytes": 7642,
+      "sha256": "bd95bc07cd6a4fc356487efc0a3e28b5a87a3b684856e37f8a877b516351936c"
+    },
+    "decoded-01.png": {
+      "bytes": 955642,
+      "sha256": "f879b3a92e2b98fb436355729e37644845229f572ace26186e9a9826aff30200"
+    },
+    "decoded-02.png": {
+      "bytes": 876184,
+      "sha256": "d104ee2aae538461a4f7cf00ee43ea0a7ac1bc50dbc696b1031db52228f2e0dc"
+    },
+    "decoded-03.png": {
+      "bytes": 856210,
+      "sha256": "30fc0b27c060a3873745e588bae4d034c7f93c8fcc50f2ae2302bba582c6554e"
+    },
+    "decoded-frame-provenance.json": {
+      "bytes": 1057,
+      "sha256": "5bad2e37778bf66e73a8323fe3b07bc4adc0bf2c5599c28f8a8feb15582d3768"
+    },
+    "post-take-audit.json": {
+      "bytes": 7789,
+      "sha256": "ec7b90a5a58563876a93b9f40acd3963d0b27e6b71188bbf41f672767ae2d14f"
+    },
+    "source-inputs.json": {
+      "bytes": 46366,
+      "sha256": "59ca5dbe3449897c7d39b4d902e54e4fbdd956a1f66319638e473ddda9d7c2c0"
+    },
+    "trace-excerpts.json": {
+      "bytes": 102752,
+      "sha256": "3497d07929c2411a92614e134955fba9e639c7a8fb540208167a5622b0fd4a40"
+    }
+  }
+}

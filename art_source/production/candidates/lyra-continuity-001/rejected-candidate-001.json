@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "candidate_sha256": "e0579a60157bb5132fda0165a4698d02805a39db2d6b04cf12a83c6cc81214f9",
+  "status": "rejected_before_skin_or_raster_review",
+  "reason": "New projected-pole transition creates earlier arm/wrist pop; hand-key equality alone is insufficient",
+  "actual_light_2_local_wrist_60hz_deg": 89.5507877758532,
+  "actual_light_2_global_arm_60hz_deg": 84.35871246222726,
+  "actual_light_2_new_midpoint_freehand_error_m": 0.012218606093647486,
+  "unit_correction": {
+    "historical_field": "minimum_pole_projection_margin_m",
+    "actual_quantity": "dimensionless norm of projected direction vector",
+    "interpretation": "No physical metre clearance was measured; historical numeric values are not changed or claimed as metres"
+  },
+  "history": [
+    {
+      "file": "history/e0579a-author-source.py",
+      "sha256": "692d3513a418920d54412f98f65b1d1d2762fd197048f516dbd35337fa86301d"
+    },
+    {
+      "file": "history/e0579a-recipe.json",
+      "sha256": "ccc0134fc219ad084d53722a78b4b4994812537a6994c3af99f860d1e79169a7"
+    }
+  ]
+}

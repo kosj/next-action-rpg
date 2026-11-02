@@ -151,6 +151,9 @@ class MobileRun:
         self.storage_observations = []
         self.navigation = []
         self.action_observations = []
+        self.action_attempts = []
+        self.action_serial = 0
+        self.action_ack = None
         self.rasters = []
         self.scroll_gestures = []
         self.read_serial = 0
@@ -281,26 +284,62 @@ class MobileRun:
 
     async def observe_action(self, expression, argument, gesture):
         """Arm a readonly snapshot observer before a real touch, within15s wall."""
-        token = len(self.action_observations) + 1
+        self.action_serial += 1
+        token = self.action_serial
         started = time.monotonic()
-        async with asyncio.timeout(UI_TIMEOUT / 1000):
-            await self.page.evaluate(
-                "a => { const values=window.__RUNEFALL_MOBILE_ACTION_OBS ||= {}; "
-                "const row={armed_at:performance.now(),frame:window.__RUNEFALL_STATE.physics_frame}; "
-                "values[a.id]=row; const argument=a.value, timeout=a.timeout; function poll(){ "
-                "if(performance.now()-row.armed_at>=timeout){row.expired=true;return;} "
-                "const s=window.__RUNEFALL_STATE; const a=argument; "
-                "if(s && s.physics_frame>row.frame && ("+expression+")){ "
-                "row.snapshot=structuredClone(s);row.matched_at=performance.now();return;} "
-                "requestAnimationFrame(poll); } requestAnimationFrame(poll); }",
-                {"id":token,"value":argument,"timeout":UI_TIMEOUT})
-            await gesture()
-            row = await self.page.evaluate("""id => new Promise(resolve => {
-                function poll(){const row=window.__RUNEFALL_MOBILE_ACTION_OBS[id];
-                  if(row.snapshot || row.expired){delete window.__RUNEFALL_MOBILE_ACTION_OBS[id];resolve(row);}
-                  else requestAnimationFrame(poll); } poll(); })""", token)
-            assert not row.get("expired") and "snapshot" in row, row
-            assert row["matched_at"] - row["armed_at"] < UI_TIMEOUT, row
+        deadline = asyncio.get_running_loop().time() + UI_TIMEOUT / 1000
+        attempt = {"token":token,"stage":self.stage,"predicate":expression,
+                   "timeout_ms":UI_TIMEOUT,"outcome":"pending","host_phases":[]}
+        self.action_attempts.append(attempt)
+
+        def phase(name):
+            attempt["host_phases"].append({"phase":name,"seconds":round(time.monotonic()-started,6)})
+            self.write("mobile-action-attempts.json",self.action_attempts)
+
+        phase("arm_request")
+        try:
+            async with asyncio.timeout_at(deadline):
+                await self.page.evaluate(
+                    "a => { const values=window.__RUNEFALL_MOBILE_ACTION_OBS ||= {}; "
+                    # Acknowledge only a result already received and checked by Python.
+                    "if(a.ack!==null && values[a.ack]?.terminal==='matched') delete values[a.ack]; "
+                    "if(Object.keys(values).length>=8) throw Error('Unacknowledged action observer limit'); "
+                    "const row={armed_at:performance.now(),frame:window.__RUNEFALL_STATE.physics_frame, "
+                    "terminal:'pending',poll_count:0,timeline:[]}; values[a.id]=row; "
+                    "const argument=a.value, timeout=a.timeout; function poll(){ "
+                    "const now=performance.now(); row.poll_count++; "
+                    "if(now-row.armed_at>=timeout){row.expired=true;row.expired_at=now;row.terminal='expired';return;} "
+                    "const s=window.__RUNEFALL_STATE; const a=argument; "
+                    "if(s && s.physics_frame!==row.last_frame){row.last_frame=s.physics_frame; "
+                    "row.timeline.push({at:now,frame:s.physics_frame,health:s.health, "
+                    "hero_state:s.hero_art?.state,attack_id:s.attack?.attack_id, "
+                    "attack_instance_id:s.attack?.attack_instance_id,stagger:s.attack?.stagger, "
+                    "input_ready:s.input_ready,paused:s.paused}); "
+                    "if(row.timeline.length>64) row.timeline.shift();} "
+                    "if(s && s.physics_frame>row.frame && ("+expression+")){ "
+                    "row.snapshot=structuredClone(s);row.matched_at=now;row.terminal='matched';return;} "
+                    "requestAnimationFrame(poll); } requestAnimationFrame(poll); }",
+                    {"id":token,"value":argument,"timeout":UI_TIMEOUT,"ack":self.action_ack})
+                phase("arm_response")
+                phase("gesture_request")
+                await gesture()
+                phase("gesture_response")
+                phase("result_request")
+                row = await self.page.evaluate("""id => new Promise(resolve => {
+                    function poll(){const row=window.__RUNEFALL_MOBILE_ACTION_OBS[id];
+                      if(row.snapshot || row.expired){row.result_ready_at=performance.now();resolve(structuredClone(row));}
+                      else requestAnimationFrame(poll); } poll(); })""", token)
+                phase("result_response")
+                assert not row.get("expired") and "snapshot" in row, row
+                assert row["matched_at"] - row["armed_at"] < UI_TIMEOUT, row
+        except BaseException as error:
+            attempt["outcome"] = "failed"
+            attempt["exception_type"] = type(error).__name__
+            phase("failed")
+            raise
+        attempt["outcome"] = "matched"
+        phase("validated")
+        self.action_ack = token
         self.latest = row["snapshot"]
         self.action_observations.append({"stage":self.stage,"predicate":expression,
             "seconds":round(time.monotonic()-started,3),"matched_ms":row["matched_at"]-row["armed_at"],

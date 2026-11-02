@@ -1,0 +1,59 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "input_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "weapon": "game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "view": "opposite",
+  "clip": "light_1",
+  "imported_action": "light_1_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8716689944267273,
+      0.11664537340402603,
+      -0.47601157426834106,
+      -2.799999952316284
+    ],
+    [
+      -0.4900950491428375,
+      0.20746198296546936,
+      -0.8466205596923828,
+      -5.199999809265137
+    ],
+    [
+      -6.991906786879554e-08,
+      0.9712638258934021,
+      0.23800548911094666,
+      2.799999952316284
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 1.5499999523162842,
+  "shots": [
+    {
+      "time_s": 0.115,
+      "file": "light_1-0115.png",
+      "sha256": "9755105d6c752ef85f3138071454594128d51324ba089ab5d6548793d20963e0",
+      "virtual_actor_travel_m": 0,
+      "actual_weapon_grip_m": [
+        -0.2886539101600647,
+        -0.14852343499660492,
+        1.1227424144744873
+      ],
+      "actual_weapon_tip_m": [
+        -1.4166508913040161,
+        -0.5247487425804138,
+        1.1694002151489258
+      ]
+    }
+  ]
+}

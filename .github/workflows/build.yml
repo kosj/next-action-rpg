@@ -168,7 +168,9 @@ jobs:
       - name: Verify genuine mobile touch, responsive menus, and restart persistence
         env:
           RUNEFALL_EXPECTED_COMMIT: ${{ github.sha }}
-        run: python tools/check_mobile_web.py
+        run: |
+          python tools/check_mobile_observer.py
+          python tools/check_mobile_web.py
       - name: Upload mobile verification
         if: always()
         uses: actions/upload-artifact@v4

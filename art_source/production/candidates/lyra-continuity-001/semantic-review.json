@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "status": "source006_runtime_native_and_captured_gameplay_verified_scoped_prototype",
+  "candidate_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "source_parent_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "scope": "Creative FREE LeftArm/LeftForeArm/LeftHand9TRS in3light clips only. Original in-action left hand targets intentionally replaced;005newpositions/elbows exact, free wrist only blends actual idle-grasp→actual bind local through quintic free envelope. Source idle/start/end grasp and original right/body/feet/other150channels/18clips/static payload exact.",
+  "source_adoption_receipt": "root-adoption-006.json",
+  "coordinator_runtime_state": "Identical14e5 runtime installed, actual imported native/light targets and full692-check runner passed; actual45 firstroom captured. Browser/cleanCI/public/release remain separate pending gates at this source snapshot.",
+  "semantic_target_table": {
+    "file": "source-006-guarded.targets.json",
+    "sha256": "0f94df41666376c56ea88df75437454f1c48612700d87de603b2e5b1639f0c7a",
+    "coordinate_system": "actor_y_up_minus_z_forward",
+    "raw_coordinate_system": "source_gltf_scene_y_up_plus_z_forward_before_runtime_pi",
+    "actor_position": "[-raw_x,raw_y+.025,-raw_z]",
+    "floor_offset_already_applied_m": 0.025,
+    "time_units": "source_clip_seconds",
+    "key_count": [
+      53,
+      53,
+      71
+    ],
+    "key_and_midpoint_sample_count": 351,
+    "unchanged_position_limit_m": 0.003,
+    "maximum_actual_target_midpoint_error_m": 0.0010511229663262255,
+    "maximum_target_orientation_error_degrees": 0.1744832551343894
+  },
+  "actual_raw_continuity": {
+    "all_bones": 53,
+    "schedules": [
+      "60Hz",
+      "120Hz",
+      "all_source_keys_and_midpoints"
+    ],
+    "maximum_local_or_global_speed_degrees_per_second": 1363.7259694400157,
+    "unchanged_limit_degrees_per_second": 2700,
+    "maximum_idle_join_distance_m": 5.153480599862038e-08,
+    "protected_right_body_feet_world_error_m": 0
+  },
+  "deliberate_hand_key_changes": {
+    "position_deviation_from_original_m": [
+      0.39880828169829885,
+      0.4294480222146717,
+      0.4013804771592228
+    ],
+    "orientation_deviation_from_original_degrees": [
+      51.95586061093254,
+      57.23990079909618,
+      52.012330340863265
+    ],
+    "idle_grasp_vs_actual_bind_local_degrees": 64.27379086795915,
+    "005_to_006_position_elbow_proof": "005-to-006-position-preservation.json"
+  },
+  "finite_actual_broad_review": {
+    "status": "scoped_prototype_adoption_accepted_by_root_and_independent_still_review",
+    "report": "independent006-actual-broad-review.md",
+    "source_originals_directory": "studio-006-actual-broad",
+    "original_shots": 4,
+    "poses": [
+      "light_2 .330 exposed left armpit old/new",
+      "light_2 .250 front old/new"
+    ],
+    "scope": "Actual4fd broad geometry, base68df original PBR/root/markers, matched camera/lighting within each pair. Finite source pose/underarm improvement only; not whole-skin or gameplay/AV/AAA approval.",
+    "observation": "Lower counterguard and straighter wrist accepted. No obvious open-background hole or needle in exposed selected region; dark underarm fabric/crease/shadow remains. Front.25 free fist remains behind/under blade in projection.",
+    "maximum_actual_studio_marker_grip_error_m": 3.5981367742082994e-07,
+    "maximum_actual_studio_marker_tip_error_m": 1.360995948587805e-06,
+    "unchanged_marker_limit_m": 0.003,
+    "old_slim_studio_scope_correction": "studio-weapon-scope-correction.json"
+  },
+  "skin_tradeoffs": {
+    "key_and_mid_samples": 351,
+    "regional_edges": 23800,
+    "new_collateral_edges_over1mm": 127,
+    "old_p99_ratio": 1.6179242325351864,
+    "new_p99_ratio": 1.5209886622450646,
+    "worst_over_clip_envelope_worsening_mm": 15.813843715750405,
+    "worst_clip": "light_2",
+    "worst_time_s": 0.33000001311302185,
+    "edge_region_index": 13952,
+    "vertex_ids": [
+      15960,
+      15965
+    ],
+    "same_pose_edge_length_old_m": 0.03688869410366742,
+    "same_pose_edge_length_new_m": 0.056538378041954614,
+    "same_pose_edge_length_delta_mm": 19.649683938287193,
+    "review_scope": "Selected actual exposed closeup supports prototype art adoption but does not erase numerical local-skin risk or approve all frames."
+  },
+  "hand_weapon_clearance": {
+    "report": "hand-weapon-clearance-006.json",
+    "actual_geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+    "transform_calibration": "weapon-frame-calibration-006.json",
+    "calibration_reference_curve_snapshot_sha256": "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e",
+    "calibration_max_grip_m": 3.71152247342367e-05,
+    "calibration_max_tip_m": 0.0002876175589323119,
+    "unchanged_calibration_limit_m": 0.003,
+    "active_min_sampled_vertex_blade_distance_m": 0.18883794422148562,
+    "active_min_sampled_vertex_hilt_guard_distance_m": 0.06838558638967572,
+    "active_conservative_triangle_surface_blade_lower_bound_m": 0.14412499085871172,
+    "active_conservative_triangle_surface_hilt_guard_lower_bound_m": 0.023672633026901833,
+    "limits": "Unsigned finite actual raw LBS vertex/surface sampling with conservative triangle-edge bound. Expected grasp remains reported. Not continuous collision/intersection-free proof or actualGame2Dcrowding approval."
+  },
+  "native_validation": {
+    "status": "verified_scoped",
+    "full_runner_checks": 692,
+    "full_runner_failures": 0,
+    "strict_engine_errors": 0,
+    "light_suite_report": "docs/validation/v0.1.14/native-light-continuity.json",
+    "current_full_checkpoint": "docs/validation/v0.1.14/current-camera-policy-006.json",
+    "maximum_actual_left_target_error_m": 0.00106256850995123,
+    "unchanged_target_limit_m": 0.003
+  },
+  "web_windows_export": {
+    "status": "verified_dirty_source_preview",
+    "raw_web_bytes": 149726783,
+    "unchanged_budget_bytes": 150000000,
+    "proof": "docs/validation/v0.1.14/local-preview-build-006.json",
+    "windows_execution": "pending"
+  },
+  "actual_gameplay_continuous1x_av": {
+    "capture_status": "verified_actual_game_input_and_engine_mixed_audio_45gameplay_seconds",
+    "proof": "docs/validation/v0.1.14/final45/checkpoint.json",
+    "media": "docs/validation/v0.1.14/gameplay-comparison/media-manifest.json",
+    "visual_review": "Selected actual originalframes accepted for firstroom prototype; not wholeclip naturalness or fullskin approval",
+    "continuous_watching_and_direct_hearing": "pending"
+  },
+  "whole_skin_and_continuous_intersection": "pending",
+  "hardware_performance": "pending",
+  "aaa_approval": "pending"
+}

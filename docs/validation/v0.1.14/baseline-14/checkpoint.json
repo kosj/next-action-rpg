@@ -1,0 +1,204 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "actual_baseline_capture_passed_with_retained_camera_crop",
+  "baseline_ref": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+  "source_tree": "d26b33217d79c273033ad6a7e7ff9be78f8de4df",
+  "actual_build_id": "0.1.13 · development",
+  "source_context": {
+    "application_version": "0.1.13",
+    "baseline_commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "commit": "ff1171a1834a99e29b3dfecac2498c84fad4a90e",
+    "dirty": false,
+    "display": {
+      "capture_sha256": "9f27bf5db4045baec6e10b50d1f651459569be1564378fb0a8cfdab2316e80a5",
+      "logical_viewport": [
+        1440.0,
+        900.0
+      ],
+      "overrides": {
+        "window/size/window_height_override": "600",
+        "window/size/window_width_override": "960"
+      },
+      "physical_capture_size": [
+        960.0,
+        600.0
+      ],
+      "scope": "Only physical window dimensions overridden; source logical viewport/stretch preserved; native pointers use actual final transform",
+      "source_aspect_preserved": true,
+      "source_sha256": "03e60420e59714f2bd0f468e16235da06dba5e44b8b56a5550ec8ad84db2662f"
+    },
+    "fixture_sha256": {
+      "tests/combat_continuity_capture.gd": "371058d2ea58fa6346c254adb9923ad1532847b3128d8e6dea4f476a09401528",
+      "tests/combat_continuity_capture.tscn": "129e243bdc7866ce2325cfc96d26d7105e4882efcfcc0696080a1be0b8c26ea5"
+    },
+    "helper_sha256": {
+      "render_combat_gameplay.py": "ce7a65fdd921fd1255129833e4c8bf290c7d6211fe3f17a131a44a8ae181527a",
+      "render_weight_review.py": "67cb21de9891c651f200e346546a67d6f276008ccb839d3d5ca6fd7813518996"
+    },
+    "kind": "isolated_git_archive",
+    "label": "before",
+    "logical_viewport": [
+      1440.0,
+      900.0
+    ],
+    "physical_capture_size": [
+      960.0,
+      600.0
+    ],
+    "reused_derived_import_cache": {
+      "policy": "Copy only; normal pinned editor import still runs and validates source/dependency hashes before capture",
+      "source": "/workspace/next-action-rpg/game/.godot"
+    },
+    "runner_sha256": "6e97052114085fca5e9f45b149a22bf5a87f92ac8e2b654c876ef33559123fdc",
+    "source_inventory_sha256": "22f8a249d5c605b9412674ed263eba86fa212d91e67d378991e235d61d40c5ed",
+    "tree": "d26b33217d79c273033ad6a7e7ff9be78f8de4df"
+  },
+  "actual_LP": 1,
+  "LP_scope": "Historical defaultLP1 run, not the laterLP3 runner/preparation. Exact historical runner SHA6e970521... above.",
+  "elapsed_wall_seconds": 870.5587000846863,
+  "processes_closed": true,
+  "engine_errors": [],
+  "engine_warnings": [
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.",
+    "WARNING: Current available space on disk is low (6.76 GiB). MovieWriter will fail during movie recording if the disk runs out of available space."
+  ],
+  "cleanup": {
+    "actual_audio_weakrefs_released": true,
+    "audio_stop_report": {
+      "epoch": 1,
+      "pending_playbacks": 0,
+      "players": 0,
+      "stopped": true
+    },
+    "scope": "Post-record resource release only; not audio-hearing approval"
+  },
+  "coverage": {
+    "heal_input_attempts": 1,
+    "light_active_samples": {
+      "light_1": 11,
+      "light_2": 11,
+      "light_3": 14
+    },
+    "maximum_locomotion_displacement_m": 42.1314849853516,
+    "observed_potion_consumptions": 0,
+    "observed_successful_parries": 0,
+    "safe_charged_whiff": true,
+    "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+    "whiff_attack_instance_id": 4
+  },
+  "frame_scope": {
+    "gameplay": 840,
+    "UI": 24,
+    "delivery": 864,
+    "delivery_seconds": 14.4,
+    "raw": 868,
+    "physical": [
+      960,
+      600
+    ],
+    "source_logical": [
+      1440,
+      900
+    ],
+    "sample_rate": 48000,
+    "channels": 2,
+    "PCM_sample_frames_per_movie_frame": 800,
+    "raw_PCM_sample_frames": 694400,
+    "lossless_WAV_PCM_prefix_exact": true,
+    "no_speed_or_time_interpolation": true,
+    "no_added_audio": true,
+    "AAC_delivery_lossy": true
+  },
+  "receipt": {
+    "serial": 6,
+    "amount": 69.3,
+    "attack_id": "charged_heavy",
+    "observed_tick": 570,
+    "shared_pause_frames": 5,
+    "hero_health_before": 120.0,
+    "hero_health_end": 88.0,
+    "audio_report_matches_attack_id": true,
+    "audio_report_matches_point": true,
+    "scope": "Audio report has no receipt serial; real damage receipt is authoritative. Mixed PCM window includes ambience/other voices, not isolated-layer attribution or hearing approval."
+  },
+  "preservation": {
+    "existing_runtime_inputs_changed": [],
+    "whole_project_file_set_identical": false,
+    "generated_additions": [
+      {
+        "path": "tests/combat_continuity_capture.gd.uid",
+        "sha256": "2e67f314ac320aa1adc6ad171ee44335539e3a26a987415f010acde48abac900",
+        "bytes": 20,
+        "classification": "pinned editor generated new fixture UID"
+      }
+    ]
+  },
+  "framing": {
+    "scope": "Actual nominal production-camera body projection only; not evaluated skin/foot or full audiovisual acceptance",
+    "samples": 840,
+    "nominal_foot_y_min": 0.659699842664931,
+    "nominal_foot_y_max": 1.51747829861111,
+    "nominal_head_y_min": -1.29685574001736,
+    "nominal_head_y_max": 0.539706149631076,
+    "any_behind_camera": false,
+    "out_of_bounds_sample_count": 31,
+    "selected_raw_frame_visual_review": {
+      "frames": [
+        418,
+        420,
+        863
+      ],
+      "finding": "Entry frame418 severe right body crop;420/end863 feet below frame. Possible production camera collision/entrance clamp, cause not source proven. Separate from solved capture aspect mismatch.",
+      "provenance": "post-take-framing/provenance.json",
+      "continuous_review": false
+    }
+  },
+  "retained_originals": {
+    "capture.json": {
+      "bytes": 23326,
+      "sha256": "9bc5c835d16973998ae0cc330603d2a4f943c886c6cb845744aabec881e05835"
+    },
+    "post-take-audit.json": {
+      "bytes": 7789,
+      "sha256": "ec7b90a5a58563876a93b9f40acd3963d0b27e6b71188bbf41f672767ae2d14f"
+    },
+    "before/frames.json": {
+      "bytes": 7908304,
+      "sha256": "32680e1017b4c2dc52408c18bd4870b3085ef746f8015706543eb4329f12d95f"
+    },
+    "before/source-inputs.json": {
+      "bytes": 46366,
+      "sha256": "59ca5dbe3449897c7d39b4d902e54e4fbdd956a1f66319638e473ddda9d7c2c0"
+    },
+    "before/capture-inputs.json": {
+      "bytes": 46662,
+      "sha256": "460d1a0c9edd2ae36c7947ee1083d7b9155949af75abb165034f80fca956f8e5"
+    },
+    "before/runtime-inputs.json": {
+      "bytes": 46662,
+      "sha256": "460d1a0c9edd2ae36c7947ee1083d7b9155949af75abb165034f80fca956f8e5"
+    },
+    "before/av-verification.json": {
+      "bytes": 15450,
+      "sha256": "0c65f7c14c59ddaa63f645d180e79531364edf80b7f95db27ed190f41e57d85b"
+    },
+    "before/gameplay.avi": {
+      "bytes": 63235452,
+      "sha256": "59556b2f61efe20ab1b880b5095b9f9df8a0d0cdb2226fd285b9b8540c6f8106"
+    },
+    "before/engine-mix-logical1x.wav": {
+      "bytes": 2764878,
+      "sha256": "897a226f6b6dcff98127bf283477af9221db5384f85879ee0cb1e53d5eebff90"
+    },
+    "before/gameplay-logical1x-av.mp4": {
+      "bytes": 8539000,
+      "sha256": "5ecab15531a4301f8c9ad1b93ee6681bf79233994db80da57471a88ec84aba68"
+    }
+  },
+  "limits": [
+    "Only selected raw/decoded stills inspected; no continuous video viewing/direct hearing",
+    "Camera crop source cause unproven; separate from resolved writer aspect mismatch",
+    "Scripted native GUI/key/mouse, not human/browser input or targethardwareFPS",
+    "No006runtime adoption/camera fix/currentnative/export/AAA approval"
+  ]
+}

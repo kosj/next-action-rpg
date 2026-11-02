@@ -1,0 +1,73 @@
+{
+  "status": "FAILED_private_metadata_guard_with_separate_staged_original_visual_review",
+  "original_capture_status": "failed",
+  "scope": "PRIVATE STAGED VISUAL ONLY: retained actual45 roots and presentation clip seeks, frozen Game/actor AI/physics, production camera.snap at retained input yaw/pitch/lock target, actual closed gates and HUD/q1. Settled composition is not controller, physics, animation transition, AV, hearing or AAA proof.",
+  "failure_classification": "Privatefixture observed ViewportTexture.get_size640×400 rather than actual Image.get_size960×600. All3actualnativePNGdimensions960×600. Correctedfutureprivatefixture only; no rerender/noGamechanges.",
+  "source_camera_sha256": "7b8c7c9d0043153013f90d29ef0895df723d099b8d4a32126071135de1658870",
+  "source_sanctuary_sha256": "1553ecfe9cbaf3713a04938a5389fa208641041e7f350c4689077f3f62725826",
+  "existing_runtime_inputs_changed": [],
+  "engine_errors": [],
+  "processes_closed": true,
+  "originals": [
+    {
+      "name": "entry",
+      "native_PNG_size": [
+        960,
+        600
+      ],
+      "reported_ViewportTexture_size": [
+        640.0,
+        400.0
+      ],
+      "sha256": "edd86c12f904d4ddff9d660e1d6709fc934ae03354380acd96522f1a7cb0431a",
+      "hero_bonefit_RMS_m": 0.0,
+      "foe_bonefit_RMS_m": [
+        0.12492048042643,
+        0.124919728523743,
+        0.124919800592282
+      ]
+    },
+    {
+      "name": "contact",
+      "native_PNG_size": [
+        960,
+        600
+      ],
+      "reported_ViewportTexture_size": [
+        640.0,
+        400.0
+      ],
+      "sha256": "fa6ee7c2844a207a13744e1d71f9eb54994dd6d3208a8dadb01540c8bf7b9df5",
+      "hero_bonefit_RMS_m": 1.2962011844615e-07,
+      "foe_bonefit_RMS_m": [
+        2.95043618790766e-07,
+        2.06476546236143e-07,
+        1.08822694918546e-07
+      ]
+    },
+    {
+      "name": "end",
+      "native_PNG_size": [
+        960,
+        600
+      ],
+      "reported_ViewportTexture_size": [
+        640.0,
+        400.0
+      ],
+      "sha256": "a732c5183db8b9a7c89e27959bb3ba11a69d71974cc4b4e1b6402ba913f54e36",
+      "hero_bonefit_RMS_m": 0.026086694035172,
+      "foe_bonefit_RMS_m": [
+        6.74349576174305e-07,
+        0.113088872288938,
+        3.89335909332145e-07
+      ]
+    }
+  ],
+  "root_visual_scope": "Root viewed staged entry/contact/end: fullHero/feet/blade and three foes forward depth visible. Existing24percentcyan wash/enddarkvoid remainprototype limits. Continuedvalidation only, notactualcontroller/transition/skin/gameplay45 proof.",
+  "source_proof": {
+    "capture_sha256": "7b62e6f30a6ecb86da298b3e48bda6958d0be0e94c09cdc6779a6194022edd5f",
+    "post_capture_sha256": "63041f6dc10a42101f0a1912abc011de0f8c195d87d6f0e00299122b653340fa"
+  },
+  "limits": "Approximate bone poses disclosed; originalFAILED pipeline preserved. Actual45-002 is a separate required take, no staged images substituted."
+}

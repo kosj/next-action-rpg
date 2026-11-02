@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "asset_id": "lyra_body",
+  "candidate_id": "lyra-continuity-001",
+  "status": "source006_runtime_native_and_captured_gameplay_verified_scoped_prototype",
+  "source_file": "source-006-guarded.glb",
+  "source_bytes": 25059960,
+  "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "source_parent": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_parent_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "authoring_revision": "006-guarded",
+  "provenance_files": [
+    {
+      "file": "art_source/production/candidates/lyra-continuity-001/history/006-guarded-actual-author-source.py",
+      "sha256": "fc73a40251ba3eae4ff986fccdffbbbf2c67f3398d8346fbf14d24022c3bd137"
+    },
+    {
+      "file": "art_source/production/candidates/lyra-continuity-001/history/006-guarded-actual-recipe.json",
+      "sha256": "4817bb3d10c84fc3e4d2ec857d5d1ab72524acfb214620575d7c3376e304b4c4"
+    },
+    {
+      "file": "art_source/production/candidates/lyra-continuity-001/history/studio-actual-composition-first-helper.py",
+      "sha256": "c85d9dbf2b4a1e16cdaa08150089a48aef5de3e9991d6bb17ace0b1ddc3c3fc8"
+    },
+    {
+      "file": "tools/append_character_animations.py",
+      "sha256": "bafe44ca9fe54a2ebdd794746d668b5ab54de2eb6f93291533278f41c840f89a"
+    },
+    {
+      "file": "tools/inspect_motion_derivatives.py",
+      "sha256": "cc2c2ad48205922a4433935ea033100c7cde010427e0af83d961a947b30b60cc"
+    },
+    {
+      "file": "tools/repair_character_weights.py",
+      "sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b"
+    },
+    {
+      "file": "tools/render_fury_review.py",
+      "sha256": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12"
+    }
+  ],
+  "expected_clips": [
+    "RESET",
+    "charge",
+    "charged_heavy",
+    "death",
+    "dodge",
+    "heal",
+    "heavy",
+    "hit",
+    "idle",
+    "light_1",
+    "light_2",
+    "light_3",
+    "parry",
+    "run",
+    "skill_1",
+    "skill_2",
+    "skill_3",
+    "walk",
+    "walk_back",
+    "walk_left",
+    "walk_right"
+  ],
+  "semantic_review": "semantic-review.json",
+  "semantic_target_file": "source-006-guarded.targets.json",
+  "source_adoption_receipt": "root-adoption-006.json",
+  "finite_art_decision": "scoped_prototype_only",
+  "visual_approval": false,
+  "aaa_approval": "pending",
+  "scope": "Creative FREE LeftArm/LeftForeArm/LeftHand9TRS in3light clips only. Original in-action left hand targets intentionally replaced;005newpositions/elbows exact, free wrist only blends actual idle-grasp→actual bind local through quintic free envelope. Source idle/start/end grasp and original right/body/feet/other150channels/18clips/static payload exact.",
+  "rejected_history": "rejected-motion-summary.json",
+  "source006_duplicate_receipt": "006-duplicate-storage-receipt.json",
+  "proof_inventory_policy": "Only explicit art-proof extensions. Exclude every __pycache__/pyc/hidden/cache/temp file; repository.gitignore line7 excludes __pycache__/.",
+  "derived_files": [
+    {
+      "file": "005-to-006-position-preservation.json",
+      "bytes": 2076,
+      "sha256": "d543e4649d65d5ef0857b97386fd2ad49ff16df23b023ed432ceda994b73179b"
+    },
+    {
+      "file": "006-duplicate-storage-receipt.json",
+      "bytes": 1662,
+      "sha256": "d9e76dd6c65370103021cbcbae9ddd0bb647f899549157061799bc32f3c8a926"
+    },
+    {
+      "file": "README.md",
+      "bytes": 10621,
+      "sha256": "4912784b5ce80169d313dcc1fe1f33b5ad999a3b6049c8d692f00f465353c3b0"
+    },
+    {
+      "file": "armpit-camera-plan-006.json",
+      "bytes": 20956,
+      "sha256": "b86ca734d7c6c632a165bffb7ca27075b800e48ff1cf2226f31a8f874f126534"
+    },
+    {
+      "file": "calibrate_weapon_frame.py",
+      "bytes": 3945,
+      "sha256": "5768ccb0a66b2155c796406b0ad033e3a32b7d1a6a5875d3e74940dc181f8a60"
+    },
+    {
+      "file": "candidate-003-hand-joins.json",
+      "bytes": 146196,
+      "sha256": "8c602389d0fc46c1c288aa197d6bc00c6c37e2b6b3b52a2e36df5fc4360c3be0"
+    },
+    {
+      "file": "diagnostic-studio-002/new-front/light_2-0075.png",
+      "bytes": 446799,
+      "sha256": "90b52c4549fa2aba96e6a4eb7f58da86caca9a69b86e0f63e7640759ecde4d7c"
+    },
+    {
+      "file": "diagnostic-studio-002/new-front/light_2-0100.png",
+      "bytes": 447838,
+      "sha256": "6c0011f92ad781c0c18f3a87cf546332b6c4a6150cce460aedfeb08fbdfb950e"
+    },
+    {
+      "file": "diagnostic-studio-002/new-front/light_2-0105.png",
+      "bytes": 447211,
+      "sha256": "f815f53e540b1a3fef5868e04fa0e1f30970f8e1b0b42e942552b0c460487d55"
+    },
+    {
+      "file": "diagnostic-studio-002/new-front/review.json",
+      "bytes": 2360,
+      "sha256": "88a9c6edf05a399a046b98d60255d72e8ff1c0e17697b2c1a5d603ebb0b2e7c2"
+    },
+    {
+      "file": "diagnostic-studio-002/new-opposite/light_2-0075.png",
+      "bytes": 561428,
+      "sha256": "14806284aacf9d199ee0d14629684f0237093c20c6f5afa488df71cdb584270b"
+    },
+    {
+      "file": "diagnostic-studio-002/new-opposite/light_2-0100.png",
+      "bytes": 562744,
+      "sha256": "b41561b2278b56ccfdcab4a18e6dc19d5f3c6f397fdab0aca2cd981616aab949"
+    },
+    {
+      "file": "diagnostic-studio-002/new-opposite/light_2-0105.png",
+      "bytes": 562532,
+      "sha256": "63aecc8cd714f1a135fa37e3a8f4a3caba2af9c5e3912ba3c5de6457ce21686c"
+    },
+    {
+      "file": "diagnostic-studio-002/new-opposite/review.json",
+      "bytes": 2474,
+      "sha256": "1631a23e2f826ecec068640142a078253875542fd6196a5a2d01b289dfba19a5"
+    },
+    {
+      "file": "diagnostic-studio-002/old-front/light_2-0075.png",
+      "bytes": 446049,
+      "sha256": "7dee828578879af9fe3e38a5489fc09492978db6f16ab5b2b4a8ecc1d7dfc4e3"
+    },
+    {
+      "file": "diagnostic-studio-002/old-front/light_2-0100.png",
+      "bytes": 447477,
+      "sha256": "46d4a3e23365706719444752cb61fe71eec88c68b7d9ff311669080b97b25856"
+    },
+    {
+      "file": "diagnostic-studio-002/old-front/light_2-0105.png",
+      "bytes": 444122,
+      "sha256": "67537b8e5d99cdbf14a23baae075e02d8982b1e9f63704290a8a708ae9aff9be"
+    },
+    {
+      "file": "diagnostic-studio-002/old-front/review.json",
+      "bytes": 2350,
+      "sha256": "49ad2a83b45a5ed39ba4cc7a78e01c856034d31ab4c4ac0d57f94acc239edbe0"
+    },
+    {
+      "file": "diagnostic-studio-002/old-opposite/light_2-0075.png",
+      "bytes": 560293,
+      "sha256": "ae0931e124196f87d68327150297f5642696d4d347692db9173f6c5f2d224269"
+    },
+    {
+      "file": "diagnostic-studio-002/old-opposite/light_2-0100.png",
+      "bytes": 563206,
+      "sha256": "f496faa03d58f0424424c058eb90c23d95c5092e9f7ffe2252357f6a4b95539e"
+    },
+    {
+      "file": "diagnostic-studio-002/old-opposite/light_2-0105.png",
+      "bytes": 560281,
+      "sha256": "9493b2711fb0230d716755eb17c1213b8141ca47deb06472e33efca3edd5055c"
+    },
+    {
+      "file": "diagnostic-studio-002/old-opposite/review.json",
+      "bytes": 2464,
+      "sha256": "2a4c17515cb9ea14ec12568bfb5c42e74c109ef6d374cc48a551bd73932c6a6a"
+    },
+    {
+      "file": "elbow-displacement-004.json",
+      "bytes": 10211,
+      "sha256": "9e650cfc3352752fb1472cec37fd8d47df5c3a3c5635cbfa59f41187c6df9d8d"
+    },
+    {
+      "file": "hand-joins-002.json",
+      "bytes": 146179,
+      "sha256": "ce6ea94b0b21dfd2526a6cd5db854b4f098584ceb9abdc23eb914ed1523087e8"
+    },
+    {
+      "file": "hand-joins-004.json",
+      "bytes": 146210,
+      "sha256": "6d5602c9fc66ac465be334c522359bdd6500e2d45ec936a5205f355886f03d41"
+    },
+    {
+      "file": "hand-target-review-005.json",
+      "bytes": 231825,
+      "sha256": "e9966e74cd0917a61b6319c15241d94b6cebafc963fe612435376f2a6e932735"
+    },
+    {
+      "file": "hand-target-review-006.json",
+      "bytes": 231807,
+      "sha256": "4861397cd95d9461853d77f9f61a061ba83db3016056649f066bd4d18bb36195"
+    },
+    {
+      "file": "hand-weapon-clearance-005.json",
+      "bytes": 472753,
+      "sha256": "afeaa446f3dfc77efc12d01893f7d3c5bb64084ac1674cdeff1c178f52ca4d35"
+    },
+    {
+      "file": "hand-weapon-clearance-006.json",
+      "bytes": 473127,
+      "sha256": "c506738ae3dd80d1073baf8a504c327726deee942d498b5d6ceb43d4cf549606"
+    },
+    {
+      "file": "hand_weapon_clearance.py",
+      "bytes": 8715,
+      "sha256": "4670cc065036f3a71fefd51bedef4e97c8e0c551a1f439c2942240a4af69208b"
+    },
+    {
+      "file": "history/005-actual-author-source.py",
+      "bytes": 26172,
+      "sha256": "9162d87560699ff82a21608c74378f4ba68c73604b212a5f09e56ac5777fd548"
+    },
+    {
+      "file": "history/005-actual-recipe.json",
+      "bytes": 1696,
+      "sha256": "0df4eb7bc654747b10bedd2be0bb1d1dec2c6400870323f52febcd1f5dd0ca30"
+    },
+    {
+      "file": "history/006-actual-author-source.py",
+      "bytes": 26909,
+      "sha256": "668000db13497e156359e0b87bbd0d6d7167bcd611e4abe13529e18295f3a9d6"
+    },
+    {
+      "file": "history/006-actual-recipe.json",
+      "bytes": 1696,
+      "sha256": "4817bb3d10c84fc3e4d2ec857d5d1ab72524acfb214620575d7c3376e304b4c4"
+    },
+    {
+      "file": "history/006-guarded-actual-author-source.py",
+      "bytes": 27099,
+      "sha256": "fc73a40251ba3eae4ff986fccdffbbbf2c67f3398d8346fbf14d24022c3bd137"
+    },
+    {
+      "file": "history/006-guarded-actual-recipe.json",
+      "bytes": 1696,
+      "sha256": "4817bb3d10c84fc3e4d2ec857d5d1ab72524acfb214620575d7c3376e304b4c4"
+    },
+    {
+      "file": "history/006-pre-graft-slerp-boundary-failure.log",
+      "bytes": 1016,
+      "sha256": "5ac600de9e32f47fbedb5a174587c4343b4f044d3722dbac75940524b282662e"
+    },
+    {
+      "file": "history/006-retry-actual-author-source.py",
+      "bytes": 26927,
+      "sha256": "a4ed9530a216a8db43afc3b0e7cd1683f91133ef243c62d2366dba351984a71b"
+    },
+    {
+      "file": "history/006-retry-actual-recipe.json",
+      "bytes": 1696,
+      "sha256": "4817bb3d10c84fc3e4d2ec857d5d1ab72524acfb214620575d7c3376e304b4c4"
+    },
+    {
+      "file": "history/9f0d00-author-source.py",
+      "bytes": 16218,
+      "sha256": "718e0b2c760612e45081f8791b0ea67deca37792df50a0b17c5e317a45d66179"
+    },
+    {
+      "file": "history/9f0d00-recipe.json",
+      "bytes": 1212,
+      "sha256": "fe5ff527d370056ae27f28931d2445a17bb96f4babbf2cce18f3a58939dd2c43"
+    },
+    {
+      "file": "history/adb518-author-source.py",
+      "bytes": 12676,
+      "sha256": "b7536bf9ab97ac1d47cd9ea1229a06b9155547a7a6d96eedc0c323d3f3d4fdeb"
+    },
+    {
+      "file": "history/adb518-recipe.json",
+      "bytes": 907,
+      "sha256": "f94d265635a46de7d19bde21feb882ff61a322250dfb906c80f1342459384bf2"
+    },
+    {
+      "file": "history/b1cdae-author-source.py",
+      "bytes": 15302,
+      "sha256": "067109cac19431a53460a1ca11835c03318b6cc6368d8c1f9a2ea27785fc868b"
+    },
+    {
+      "file": "history/b1cdae-recipe.json",
+      "bytes": 990,
+      "sha256": "e9319b1f4438547c18bd8c1d25cfa7303d8993997bef005a3ca123a0261b238c"
+    },
+    {
+      "file": "history/e0579a-author-source.py",
+      "bytes": 11420,
+      "sha256": "692d3513a418920d54412f98f65b1d1d2762fd197048f516dbd35337fa86301d"
+    },
+    {
+      "file": "history/e0579a-recipe.json",
+      "bytes": 816,
+      "sha256": "ccc0134fc219ad084d53722a78b4b4994812537a6994c3af99f860d1e79169a7"
+    },
+    {
+      "file": "history/studio-actual-composition-first-helper.py",
+      "bytes": 8320,
+      "sha256": "c85d9dbf2b4a1e16cdaa08150089a48aef5de3e9991d6bb17ace0b1ddc3c3fc8"
+    },
+    {
+      "file": "independent006-actual-broad-review.md",
+      "bytes": 3430,
+      "sha256": "5017400f3031d1bec829e7d49f41174540b7dadd1477e2b8df5206dc93e08ab7"
+    },
+    {
+      "file": "independent006-review.md",
+      "bytes": 3836,
+      "sha256": "dcafae5a43400e6bb23a32aa2615f7b54fe2b4bc17ef78d672157c644eede449"
+    },
+    {
+      "file": "inspection-002.json",
+      "bytes": 6620,
+      "sha256": "52d088d4a354b952652a400385edc07894fe31e1724b87adc924b24c3c96cf3a"
+    },
+    {
+      "file": "inspection-004.json",
+      "bytes": 6620,
+      "sha256": "e1461de335833e961649e3fc3b6ea44600ac2af16b7b6d7f7304757287d3d7c0"
+    },
+    {
+      "file": "inspection-005.json",
+      "bytes": 6620,
+      "sha256": "78a0ced9fe937e7c628e9bd3f5acc02afa9deb5b7ca6b59a544f4429ff5a3a8c"
+    },
+    {
+      "file": "inspection-006.json",
+      "bytes": 6628,
+      "sha256": "fdbf6ae1152dfb6b3cf108a2f3ca32b21831b909ec58c520204b5ef7e7796c3f"
+    },
+    {
+      "file": "rates-all-schedules-005.json",
+      "bytes": 5404,
+      "sha256": "a2e9843f0ac7aaa95d3028044ca039c0db8140b8d318d56579acb77c5598b813"
+    },
+    {
+      "file": "rates-all-schedules-006.json",
+      "bytes": 5404,
+      "sha256": "a2e9843f0ac7aaa95d3028044ca039c0db8140b8d318d56579acb77c5598b813"
+    },
+    {
+      "file": "raw-candidate-003.json",
+      "bytes": 34327,
+      "sha256": "ae18c123b4f90d3451f15463c32fc29cd8d2e3824522cedff303dfa6ef2dda6d"
+    },
+    {
+      "file": "raw-motion-audit-002.json",
+      "bytes": 34321,
+      "sha256": "3655726d550e3a63a07c59e66c9b19f48639a8054a398e03b27f4b948faf89ef"
+    },
+    {
+      "file": "raw-motion-audit-004.json",
+      "bytes": 34392,
+      "sha256": "f14493f585fcb46bd5dfd686c0ad34e8da94c2364b25f89befb27af65dc33a4d"
+    },
+    {
+      "file": "raw-motion-audit-005.json",
+      "bytes": 34490,
+      "sha256": "fa6e907597b98ae65b49bdd1fe665070e8af73f39fb45dfaea6746375d503221"
+    },
+    {
+      "file": "raw-preservation-002.json",
+      "bytes": 3409,
+      "sha256": "2e485475e2d0f3b3fc489339c41c136b28b0f2da5002b8059fab07d2e8912594"
+    },
+    {
+      "file": "raw-preservation-004.json",
+      "bytes": 3409,
+      "sha256": "6b4ef3b1d04c84960b0d1e995dbb5b27d39fecb9bbf740f54b1fc8c158f97014"
+    },
+    {
+      "file": "raw-preservation-005.json",
+      "bytes": 1250,
+      "sha256": "c57e93cce665974d8f7667052422d6a036ad7d854e79b9c0cb05dd468f808f23"
+    },
+    {
+      "file": "raw-preservation-006.json",
+      "bytes": 1892,
+      "sha256": "04195058af3896bfe4c03869d42bada7d35cc483f932941475d577013f9adbbc"
+    },
+    {
+      "file": "rejected-candidate-001.json",
+      "bytes": 1071,
+      "sha256": "0ffb6454015ede05352cbebd7419cf2cfe77917461053806f0018faa07596af6"
+    },
+    {
+      "file": "rejected-motion-summary.json",
+      "bytes": 5103,
+      "sha256": "cbabb6e648cf1c3ff5a7205a15ddff36f2efd236853c5c05ed077dae029522de"
+    },
+    {
+      "file": "rejected-visible-pose-004.md",
+      "bytes": 2812,
+      "sha256": "06c2caa972e8c0fd9724891b446165580fabaf705f0f12cd8c6a80f0c4327f6a"
+    },
+    {
+      "file": "root-adoption-006.json",
+      "bytes": 2126,
+      "sha256": "98b3311458a234adecadf0f10eb891baa8ce4fce0831a3104925e080f21d34dd"
+    },
+    {
+      "file": "semantic-review-004.json",
+      "bytes": 7407,
+      "sha256": "ebccac767bf31881f4100564d7f6ebe5dbea4a93fe3abb55e020a9419e752fa5"
+    },
+    {
+      "file": "semantic-review-005.json",
+      "bytes": 4255,
+      "sha256": "e303f2addabb510a114e7d11e85c50443a36b4540d602d29bc9da27822bb0a0a"
+    },
+    {
+      "file": "semantic-review.json",
+      "bytes": 6709,
+      "sha256": "8f9a47af350a5b92f7902f6675f513c6913284a58876ca4944aaaaa3362aa9d2"
+    },
+    {
+      "file": "skin-lbs-002.json",
+      "bytes": 16214,
+      "sha256": "fd2de1adabed71f3cf42b9bf7bd57de327995d8eda66bbcb94286f4c5ac1f21b"
+    },
+    {
+      "file": "skin-lbs-004.json",
+      "bytes": 15174,
+      "sha256": "e8c3673e405ca43ee98429416a7c79fb52ee4f6f265c3e39874892be8a81bf58"
+    },
+    {
+      "file": "skin-lbs-005.json",
+      "bytes": 16243,
+      "sha256": "51ae69938173793afacd28836c79b765d571efd0a17f6cf35b232223cddcc73a"
+    },
+    {
+      "file": "skin-lbs-006.json",
+      "bytes": 16243,
+      "sha256": "c75123727e2ace87192647f8f2736893e1191dfddacfb0b8859d85d6629646cd"
+    },
+    {
+      "file": "skin_lbs_audit.py",
+      "bytes": 6226,
+      "sha256": "e26b355e3d3e70371e98e390964d1c1dcea5dad692e69a980791a7ac50442648"
+    },
+    {
+      "file": "source-002.authoring.json",
+      "bytes": 2715,
+      "sha256": "69dfac9e965990705e7e3042fe6762fe2f0052b5c3f871739d0aefed58837014"
+    },
+    {
+      "file": "source-002.glb",
+      "bytes": 25059960,
+      "sha256": "adb5185cef253c0dfec40d9b0bb088e4f2824d184648b5b67a92d83a87c9125d"
+    },
+    {
+      "file": "source-003.authoring.json",
+      "bytes": 4214,
+      "sha256": "e4e3ad27d9f76a1f79bdf185eb7c9955abd00cdb95454334be03a98d8c757671"
+    },
+    {
+      "file": "source-003.glb",
+      "bytes": 25059960,
+      "sha256": "b1cdae747c4ed6a728335438f975b65013e99da56d34bfdf5beda5fdb5ffe22e"
+    },
+    {
+      "file": "source-004.authoring.json",
+      "bytes": 4721,
+      "sha256": "edcc2b38c9d09cd7afdcd510343beaf0488b3787ea73d168e7f41b562d93a176"
+    },
+    {
+      "file": "source-004.glb",
+      "bytes": 25059960,
+      "sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0"
+    },
+    {
+      "file": "source-005.authoring.json",
+      "bytes": 436360,
+      "sha256": "ba10d6a1322b0a49ee3c4a678587b858efc328e109345c0262d5ba356b33e713"
+    },
+    {
+      "file": "source-005.glb",
+      "bytes": 25059960,
+      "sha256": "2b2732b09d417d794cee4dad94e9a58c069839b5a59c411556fb289de373ac33"
+    },
+    {
+      "file": "source-005.targets.json",
+      "bytes": 433816,
+      "sha256": "07a59781f864e25f9e389e23dc35e92c3e9ade574baf36857cc588d5a9885b48"
+    },
+    {
+      "file": "source-006-guarded.authoring.json",
+      "bytes": 436323,
+      "sha256": "1b2d47a4b0124d8783786c5521c0a2da5088031c9a8c38c650a25e78749461f3"
+    },
+    {
+      "file": "source-006-guarded.targets.json",
+      "bytes": 433632,
+      "sha256": "0f94df41666376c56ea88df75437454f1c48612700d87de603b2e5b1639f0c7a"
+    },
+    {
+      "file": "source-006.authoring.json",
+      "bytes": 436315,
+      "sha256": "fdf1e5305a172948608507064ebfd2b99bb1911d9d6368b3266115ca21884809"
+    },
+    {
+      "file": "source-006.targets.json",
+      "bytes": 433624,
+      "sha256": "46781f6bcd0b790cbf5b8cd3d41d449fa58cfe0a19dcea8ae306b7e09ca33a4f"
+    },
+    {
+      "file": "source.authoring.json",
+      "bytes": 1941,
+      "sha256": "2ee7dc175b68d6c8cbfadc7864a304db68e86802358aac8aad092f176f5a2907"
+    },
+    {
+      "file": "source.glb",
+      "bytes": 25059960,
+      "sha256": "e0579a60157bb5132fda0165a4698d02805a39db2d6b04cf12a83c6cc81214f9"
+    },
+    {
+      "file": "studio-004/new-light_1-opposite/light_1-0115.png",
+      "bytes": 564265,
+      "sha256": "0ea52fa225d6d99872604c6ff9e99d619df9e7ac1917a581c01a0f0594a8d247"
+    },
+    {
+      "file": "studio-004/new-light_1-opposite/review.json",
+      "bytes": 1597,
+      "sha256": "11b00fdbb3347ce9ee8ba7684e003ca7d030c92c419d15d960d52a3fb23ab0b6"
+    },
+    {
+      "file": "studio-004/new-light_2-front/light_2-0250.png",
+      "bytes": 444045,
+      "sha256": "77c65eba0c6f4ddeb368abcb895a439e15adaafa672c876a53d11bd4c22bb2cd"
+    },
+    {
+      "file": "studio-004/new-light_2-front/review.json",
+      "bytes": 1480,
+      "sha256": "039146d81c6eef554c327724f755f6beb94c76f2ca70ec3a2bd0c3c19778aba9"
+    },
+    {
+      "file": "studio-004/new-light_2-opposite/light_2-0085.png",
+      "bytes": 563313,
+      "sha256": "be112d202d11eb2dcc24c4a32d6a29bc054db656af7112f985256e121b0c2900"
+    },
+    {
+      "file": "studio-004/new-light_2-opposite/light_2-0105.png",
+      "bytes": 561497,
+      "sha256": "3c1cb3c58e30fdc94f3c95a57084fcd0d5e94bcea7a00e2f63319c1ea2e26eeb"
+    },
+    {
+      "file": "studio-004/new-light_2-opposite/light_2-0250.png",
+      "bytes": 562336,
+      "sha256": "5d61b38c562571476ddf689a43717abbba14df81c4ea67be10dd14920ecb1b86"
+    },
+    {
+      "file": "studio-004/new-light_2-opposite/review.json",
+      "bytes": 2474,
+      "sha256": "0d6775aa796807fb954002bc8f8c3f573b90dad653a017e8ef66806d78b26a0e"
+    },
+    {
+      "file": "studio-004/new-light_3-opposite/light_3-0155.png",
+      "bytes": 564161,
+      "sha256": "5ba48ac8a29e1ea912e0037f57cc3fe3535cc476b016c8152345fab729d1774d"
+    },
+    {
+      "file": "studio-004/new-light_3-opposite/review.json",
+      "bytes": 1596,
+      "sha256": "ff9c20eead8dcea8e5ccc6f5cf0a869c82a56b96ec7e922efee54ef73ba091dd"
+    },
+    {
+      "file": "studio-004/old-light_1-opposite/light_1-0115.png",
+      "bytes": 558391,
+      "sha256": "9755105d6c752ef85f3138071454594128d51324ba089ab5d6548793d20963e0"
+    },
+    {
+      "file": "studio-004/old-light_1-opposite/review.json",
+      "bytes": 1587,
+      "sha256": "441cbea1548fb43716dc420e1df8ed825b0f675badcd4d3d2da13aa1e9dd2f23"
+    },
+    {
+      "file": "studio-004/old-light_2-front/light_2-0250.png",
+      "bytes": 437634,
+      "sha256": "7c61bac6f1ded82431e0dc50cfe263542a2744bcdc2f05b187a6ea78443463cd"
+    },
+    {
+      "file": "studio-004/old-light_2-front/review.json",
+      "bytes": 1470,
+      "sha256": "2bb1d5aa8f7251d0651b3b34b5e4b925bb63898bdb8fe30d616f1c37bc481054"
+    },
+    {
+      "file": "studio-004/old-light_2-opposite/light_2-0085.png",
+      "bytes": 562076,
+      "sha256": "710b80582526ad8aa4676c1a61d815e64b01013e019785441d005a1b4bf6033c"
+    },
+    {
+      "file": "studio-004/old-light_2-opposite/light_2-0105.png",
+      "bytes": 560281,
+      "sha256": "737c8c0b31492b387c59d07c2b02ef9ed0051bff646daa9b43277a856c826013"
+    },
+    {
+      "file": "studio-004/old-light_2-opposite/light_2-0250.png",
+      "bytes": 557117,
+      "sha256": "97f34118490c4e63d2aed79aadbc73152c55e4e580437bf8fbd8eef63412e7a4"
+    },
+    {
+      "file": "studio-004/old-light_2-opposite/review.json",
+      "bytes": 2464,
+      "sha256": "2dff9a8038b1daaf37fe53b096b8f589ac5f4a940c8b929d402ef5de664d0713"
+    },
+    {
+      "file": "studio-004/old-light_3-opposite/light_3-0155.png",
+      "bytes": 558481,
+      "sha256": "87ab2e4f4d322df02a3240c6b9a89e093f69b7781bf573a32e2d7d4ce0909a6d"
+    },
+    {
+      "file": "studio-004/old-light_3-opposite/review.json",
+      "bytes": 1586,
+      "sha256": "0f5e58800b41b4114c8ff562399a11e4851f0875830a6115507ac1d59d696d11"
+    },
+    {
+      "file": "studio-005-first/front/light_2-0130.png",
+      "bytes": 444316,
+      "sha256": "3da81a87cce2843e0f254621b8da70932cf3b47ea7b5e3795ddaeb59980225b8"
+    },
+    {
+      "file": "studio-005-first/front/light_2-0250.png",
+      "bytes": 436074,
+      "sha256": "96077ec7c2b0afa4aa2fe347441c47dfde1d4fef3ce6ddcd87569c6e0ed00cad"
+    },
+    {
+      "file": "studio-005-first/front/review.json",
+      "bytes": 1920,
+      "sha256": "d5f145696780b8caa0810c4a9eb275396e16dd8ee6cc65493d6f7e4830bd2ea8"
+    },
+    {
+      "file": "studio-005-first/opposite/light_2-0130.png",
+      "bytes": 565105,
+      "sha256": "26a2dfe231d5e0c185d4e399bd39063b15b6eff4b6fd696aa2458f35f5b99ca3"
+    },
+    {
+      "file": "studio-005-first/opposite/light_2-0250.png",
+      "bytes": 551132,
+      "sha256": "6d7f0655165935891c130fe103669cbac90bb2ae5eac651bf25c0f4f9801a1df"
+    },
+    {
+      "file": "studio-005-first/opposite/review.json",
+      "bytes": 2034,
+      "sha256": "f842a5499be497ce93533cfcd940454f19d6eec1a1192d2143533a923a84c33d"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-new/continuity-composition.json",
+      "bytes": 3520,
+      "sha256": "ceb6d165fabf4ac349a30704dbeec3a66d38358d48a1eec54f5297ec7ca258d2"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-new/light_2-0330.png",
+      "bytes": 666889,
+      "sha256": "f54a65055e8ac673d2fd7f868d833e7665f8332abec93329f897346741ccc14e"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-new/review.json",
+      "bytes": 1646,
+      "sha256": "d5d631c3ac16068b25219e29610cddf048c94b79389fb9c7881ee8ceef7f31b8"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-old/continuity-composition.json",
+      "bytes": 3520,
+      "sha256": "bd259e00e131e74a875a17bbb7d6055c37ab3933b8fd65bf3f4626fad3965e15"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-old/light_2-0330.png",
+      "bytes": 592619,
+      "sha256": "e70a6cc7e4aa74a14feb41c11873a9724906c2eb4e57aca98064325c20030d35"
+    },
+    {
+      "file": "studio-006-actual-broad/armpit033-old/review.json",
+      "bytes": 1628,
+      "sha256": "892c6a78008801b947da1613e70373d869a2ff024fda17077738c2d6e38b8b53"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-new/continuity-composition.json",
+      "bytes": 3227,
+      "sha256": "2a7ec459a254ac07699dd9464219d4eb56de8f87914254a62683c10bb8ad8bc7"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-new/light_2-0250.png",
+      "bytes": 436565,
+      "sha256": "90b34b46a00586c79a7342bfab76c14f7b2ba30cddf897d968f760cb8a7f6141"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-new/review.json",
+      "bytes": 1515,
+      "sha256": "6be99db86038e8a6e2d2912eeeadc6ea039ec07ed653f224ba025c4a50aa1bc2"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-old/continuity-composition.json",
+      "bytes": 3227,
+      "sha256": "d2e05391e2e30052390255388585507b1cf3200b5a585c5cd7f5b5c7ed3397b0"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-old/light_2-0250.png",
+      "bytes": 438393,
+      "sha256": "d4369564cf46781f4476f69784c93f0badd5d0e0c6c0ef625d072bf71243b76f"
+    },
+    {
+      "file": "studio-006-actual-broad/front025-old/review.json",
+      "bytes": 1497,
+      "sha256": "eb4c024864ef0a0e4d8dfac62da0296a838e5a30cf0383d4bb5cba64afd5da7e"
+    },
+    {
+      "file": "studio-006-first/front/light_2-0130.png",
+      "bytes": 444521,
+      "sha256": "06b79bb34a287c2444b9db611780c55db3f0c90dee821a416f4a319db5f1c99f"
+    },
+    {
+      "file": "studio-006-first/front/light_2-0250.png",
+      "bytes": 435918,
+      "sha256": "de5c754f4450a4f33f1fc244054724921c5b44b5033f120771fce6e8b9090368"
+    },
+    {
+      "file": "studio-006-first/front/light_2-0330.png",
+      "bytes": 426283,
+      "sha256": "011a23bf006a78ea292a7e431e96cc46e3d00758cbe59479af21646e7f51e15f"
+    },
+    {
+      "file": "studio-006-first/front/review.json",
+      "bytes": 2367,
+      "sha256": "7f114db53a538c87bfecc96b11cfb9ceab49fb86debb4e9cc37635559d7710be"
+    },
+    {
+      "file": "studio-006-first/opposite/light_2-0130.png",
+      "bytes": 566049,
+      "sha256": "b04d73fbd76b8b2b14cb5fd4c65ddf070c2aee2a01f556fc1c26c0cf1fae0074"
+    },
+    {
+      "file": "studio-006-first/opposite/light_2-0250.png",
+      "bytes": 551085,
+      "sha256": "4d31d7b32c691890fc15f5898fd2e1458a5311206936f2eb8ce757041f2ffb12"
+    },
+    {
+      "file": "studio-006-first/opposite/light_2-0330.png",
+      "bytes": 544746,
+      "sha256": "a1bddd65f062bf65aee998548e1c5b4a970da2c1b35035c096aae7fe27e463f8"
+    },
+    {
+      "file": "studio-006-first/opposite/review.json",
+      "bytes": 2481,
+      "sha256": "51343319df110db191b18835b2def8dfb4cb4f238adf452a18ade99e64bb31fb"
+    },
+    {
+      "file": "studio-weapon-scope-correction.json",
+      "bytes": 1015,
+      "sha256": "da813d23749402147347768018957930c5beac131bdb741a3db9e6f5fff07c23"
+    },
+    {
+      "file": "weapon-frame-calibration-005.json",
+      "bytes": 118368,
+      "sha256": "fbce133d47365ebb6c8506308e44e0d7df7cb9b34f716b36c5ab70353d5f376c"
+    },
+    {
+      "file": "weapon-frame-calibration-006.json",
+      "bytes": 118368,
+      "sha256": "1b4ba215bd1edec38d4278e1828eddeada36b43ee73e376fa0472b7534a335ed"
+    },
+    {
+      "file": "wrist-rest-diagnosis-005.json",
+      "bytes": 893,
+      "sha256": "03f9fcf0204ebe0e3e2bebeead6e87504cc67c7529748fdb2b1d66ae5fb1686e"
+    },
+    {
+      "file": "history/006-before-native-README.md",
+      "bytes": 10379,
+      "sha256": "50ce1a938bcb2a6598a2d6f147e104492ab733cee0162d4b50c53ff838cb085f"
+    },
+    {
+      "file": "history/006-before-native-semantic-review.json",
+      "bytes": 5626,
+      "sha256": "5659a94a3c6f6501c6e82ca0c55325251659589c132a2696aec7c149e37326fe"
+    }
+  ],
+  "runtime_installation": {
+    "file": "game/assets/models/production/lyra_fury_gameplay.glb",
+    "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+    "scope": "Identical006 source bytes installed and actual native692/0 plus captured firstroom gameplay verified in scoped prototype context. Dirty preview exports are separate from committed CI/public/release; continuouswatch/directhearing/fullskin/hardware/AAA pending."
+  },
+  "verification_checkpoint": "docs/validation/v0.1.14/final45/checkpoint.json"
+}

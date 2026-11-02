@@ -1,6 +1,6 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.4.7** · 정리일 **2026-11-02**.
+버전 **1.4.8** · 정리일 **2026-11-02**.
 
 기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
@@ -73,3 +73,9 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 판본1.4.6은 [분위기·원경·시각 바닥과 충돌 권한](skills/generated-3d-game-art/references/art-review.md#분위기원경시각-바닥과-충돌-권한)을 정리합니다. 실제 카메라의 horizon·전면 재질·원경 실루엣·진입 바닥을 같은 source/품질 원본으로 비교하고, 비충돌 시각 mesh와 실제 support surface를 분리합니다. unindexed ArrayMesh의 null index를 잘못 가정한 검수기 실패, 실행은 통과했지만 재질이 벽돌 커튼처럼 보여 기각한 후보, source construction/실제 메트릭과 미수집 vertex payload 해시의 경계를 보존합니다.67번째 원본 사례의 제한적 native/raster 채택과 후속 공개 상태는 출처 스냅샷을 따르며, 이전 공개 검증을 새 제작이나 다른 프로젝트의 AAA/실기기 승인으로 승계하지 않습니다.
 
 판본1.4.7은 [생성 NPC·공유 리그와 기능 오브젝트](skills/generated-3d-game-art/references/art-review.md#생성-npc공유-리그와-기능-오브젝트)를 정리합니다. 실제 이야기 역할, 현재 도구/비용·권리·raw/파생 반입, font/PCK·외부 texture dependency와 게임 채택을 구분합니다. [원본 모션·실제 스킨 표면의 수선](skills/generated-3d-game-art/references/art-review.md#원본-모션과-실제-스킨-표면을-수선할-때)은 malformed terminal key, 잘못된 raw-position 좌표 가정, barycentric REST 매핑·one-ring normal과 유한 수치/시각 판정의 경계를 보존합니다.정적 NPC의 별도 grounding budget·실제 바닥 관측·모드별 원본 equality와 기각 후보 보존도 포함합니다. 실제 Web의 live idle/quality·저장/완전 재시작 뒤 source/export 불변을 재확인하며 desktop 검증을 mobile touch·공개/실기기 승인으로 옮기지 않습니다.68번째 원본 사례의 실행·선택/기각·공개 상태는 출처 스냅샷에서 확인하고 다른 프로젝트의 생성 권한이나 AAA/실기기 승인으로 이전하지 않습니다.
+
+판본1.4.8은 원래 world key target과 오류가 있는 중간 FK의 보존을 구분합니다. 부모/자식 회전·국소 skin 악화·관측 terminal 수명·서로 다른 시계·실제 mixer PCM과 직접 청취의 경계도 다룹니다. 원본 69번째 사례의 verified는 제한된 source/native/실제45초 관측 범위입니다. 전체 시청/청취·skin·하드웨어/AAA는 pending이며 다른 프로젝트의 성공을 승인하지 않습니다. source 고정과 ZIP은 별도 절차입니다.
+
+원본 사례 70은 막힌 camera의 실제 gate/focus lag·nominal body fit·bounded 최소 높이·overhang swept volume과 latent follow base/feedback 분리를 다룹니다. source/native 통과와 긴 take의 raster·실제 browser·하드웨어 검증을 구분합니다.
+
+원본 사례 69/70에서는 제한된 source/native/실제45초 구도 검증을 확인했습니다. browser/public·전체 시청/직접 청취/skin·목표 하드웨어/AAA는 pending입니다. body-only metric의 기각과 최종 actual pair의 late position variance를 보존하며, exact AV 배포를 지각 AV 승인으로 이전하지 않습니다. 고정 출처/ZIP은 source commit 후 별도로 관리합니다.

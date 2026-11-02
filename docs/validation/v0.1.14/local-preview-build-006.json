@@ -1,0 +1,38 @@
+{
+  "scope": "Actualcurrentcamera7b8c/source96/profile14e5 WebWindows exports. Dirty0.1.14ff1171preview, notcleanrelease/WindowsOS/hardware/AAA.",
+  "manifest": {
+    "version": "0.1.14",
+    "godot": "4.7.2",
+    "commit": "ff1171a1",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119084890,
+        "sha256": "ccc77a4a653b2c04f66fb7cec77c09288a23112cfa53f0860cacbb99cfc1bf59"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146926246,
+        "sha256": "a1a304b2d1b0d2b6e3a9ae23fd222458bd535014466b31a8f72c3d879431fc0c"
+      }
+    ]
+  },
+  "raw_web_bytes": 149726783,
+  "cap_bytes": 150000000,
+  "remaining_bytes": 273217,
+  "native": "current-camera-policy-006.json",
+  "camera_native": "native-camera-policy-006.json",
+  "package": "local-runtime-package-006.json",
+  "source_freeze": "local-runtime-source-freeze-006.json",
+  "pending": [
+    "desktop/mobile/cleanCI/public/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ],
+  "actual_final45_followup": {
+    "status": "accepted_scoped_firstroom_combat_readability_prototype",
+    "checkpoint": "final45/checkpoint.json",
+    "paired_audit": "final45/paired-audit.json",
+    "source_export_after_capture": "final45/source-export-after-capture.json",
+    "scope": "Actualfinaltake/limitedreview passed; browser/cleanCI/public/release/continuouswatch/directhearing/fullskin/hardware/AAA pending. Latepositionsvary, nofullphysicsidentity."
+  }
+}

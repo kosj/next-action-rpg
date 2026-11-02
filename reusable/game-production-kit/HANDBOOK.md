@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.7**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.8**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -113,3 +113,9 @@
 이번 판본의 NPC 사례는 정적 인물의 근사 접지를 기존 actor budget과 분리하고, 수정 전 부유 원본·수정 후 모드별 원본과 새 native/export를 함께 보존합니다. 정지 pose의 개선을 animated foot shadow·연속 AV·하드웨어/AAA 승인으로 이전하지 않습니다.
 
 실제 desktop Web의 quality 전환·live idle·저장·완전 재시작도 별도 근거로 남기고, 읽기 검증 전후 source/export byte 불변을 대조합니다. page 오류 배열과 HTTP client 종료 진단을 섞지 않으며 desktop 화면을 mobile의 다른 글꼴 크기/입력·clean 공개판 승인으로 이전하지 않습니다.
+
+판본1.4.8은 원래 world key target과 오류가 있는 중간 FK의 보존을 구분합니다. 부모/자식 회전·국소 skin 악화·관측 terminal 수명·서로 다른 시계·실제 mixer PCM과 직접 청취의 경계도 다룹니다. 원본 69번째 사례의 verified는 제한된 source/native/실제45초 관측 범위입니다. 전체 시청/청취·skin·하드웨어/AAA는 pending이며 다른 프로젝트의 성공을 승인하지 않습니다. source 고정과 ZIP은 별도 절차입니다.
+
+사례 70 camera 기록은 실제 gate/focus lag/short boom witness, endpoint와 이동 volume의 차이, latent follow base와 feedback 누적을 나눕니다. native 조건과 실패 원장을 보존하고 analytic 보존을 runtime bit 동일로 확대하지 않습니다. 실제 조립된 무기 profile은 파일명보다 source/geometry/marker SHA로 확인합니다.
+
+원본 사례 69/70에서는 제한된 source/native/실제45초 구도 검증을 확인했습니다. browser/public·전체 시청/직접 청취/skin·목표 하드웨어/AAA는 pending입니다. body-only metric의 기각과 최종 actual pair의 late position variance를 보존하며, exact AV 배포를 지각 AV 승인으로 이전하지 않습니다. 고정 출처/ZIP은 source commit 후 별도로 관리합니다.

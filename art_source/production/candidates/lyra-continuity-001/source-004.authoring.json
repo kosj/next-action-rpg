@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "status": "first_continuity_candidate_pending_independent_raw_skin_native_raster_review",
+  "source_file": "art_source/production/candidates/lyra-fury-001/source.glb",
+  "source_sha256": "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb",
+  "output_file": "art_source/production/candidates/lyra-continuity-001/source-004.glb",
+  "output_sha256": "9f0d00aca2a57d328ef45f50d903b251c36bbd0137d9c629d9e5275306e15ee0",
+  "tool_file": "/workspace/next-action-rpg/tools/author_continuity_actions.py",
+  "tool_sha256": "718e0b2c760612e45081f8791b0ea67deca37792df50a0b17c5e317a45d66179",
+  "recipe_file": "art_source/production/character_actions/lyra-continuity.json",
+  "recipe_sha256": "fe5ff527d370056ae27f28931d2445a17bb96f4babbf2cce18f3a58939dd2c43",
+  "blender": "4.3.2",
+  "preservation": {
+    "source_BIN_prefix_exact": true,
+    "static_payload_declarations_exact": true,
+    "unrelated_clips_exact": true,
+    "unchanged_bone_channels_in_three_clips_exact": true,
+    "changed_bones": [
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand"
+    ],
+    "changed_clips": [
+      "light_1",
+      "light_2",
+      "light_3"
+    ],
+    "new_BIN_bytes": 21948
+  },
+  "clips": {
+    "light_1": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -44.544895561967444,
+      "pole_load_bias_degrees": 0.0,
+      "maximum_unit_direction_orthogonality_abs_dot": 1.4901161193847656e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted",
+      "orientation_policy": "per-shaft minimum rotation with smooth endpoint closure",
+      "bone_axial_closure": {
+        "LeftArm": {
+          "closure_angle_degrees": 12.536659967020071,
+          "end_closure_nonaxial_quaternion_vector_norm": 2.544403272350011e-07
+        },
+        "LeftForeArm": {
+          "closure_angle_degrees": -54.52722665212307,
+          "end_closure_nonaxial_quaternion_vector_norm": 3.6481827818208234e-07,
+          "reference_hand_twist_range_degrees": [
+            -25.082074085683963,
+            11.678817787381416
+          ]
+        }
+      },
+      "forearm_hand_twist_fraction": 0.0
+    },
+    "light_2": {
+      "keys": 53,
+      "duration_s": 0.5199999809265137,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -51.39265697228018,
+      "pole_load_bias_degrees": 45.0,
+      "maximum_unit_direction_orthogonality_abs_dot": 1.1920928955078125e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted",
+      "orientation_policy": "per-shaft minimum rotation with smooth endpoint closure",
+      "bone_axial_closure": {
+        "LeftArm": {
+          "closure_angle_degrees": 16.078139518231563,
+          "end_closure_nonaxial_quaternion_vector_norm": 2.911928630748809e-07
+        },
+        "LeftForeArm": {
+          "closure_angle_degrees": -74.36014777636213,
+          "end_closure_nonaxial_quaternion_vector_norm": 5.2619725465774536e-08,
+          "reference_hand_twist_range_degrees": [
+            -43.392808584246595,
+            14.189581601279428
+          ]
+        }
+      },
+      "forearm_hand_twist_fraction": 0.0
+    },
+    "light_3": {
+      "keys": 71,
+      "duration_s": 0.699999988079071,
+      "pole_policy": "chest-local parallel transport with smooth explicit end-pole holonomy compensation",
+      "closure_angle_degrees": -45.027566178357,
+      "pole_load_bias_degrees": 0.0,
+      "maximum_unit_direction_orthogonality_abs_dot": 1.5273690223693848e-07,
+      "direction_norm_units": "dimensionless; no physical pole clearance asserted",
+      "orientation_policy": "per-shaft minimum rotation with smooth endpoint closure",
+      "bone_axial_closure": {
+        "LeftArm": {
+          "closure_angle_degrees": 12.280820725031658,
+          "end_closure_nonaxial_quaternion_vector_norm": 3.2657433962737195e-07
+        },
+        "LeftForeArm": {
+          "closure_angle_degrees": -54.88564641294088,
+          "end_closure_nonaxial_quaternion_vector_norm": 4.4236572343647307e-07,
+          "reference_hand_twist_range_degrees": [
+            -25.586016081455483,
+            12.259477690489629
+          ]
+        }
+      },
+      "forearm_hand_twist_fraction": 0.0
+    }
+  },
+  "left_hand_policy": "Original100Hz worldkeytargets exact; old parent/child midpoint excursion is intentionally replaced by continuous target interpolation and must be measured separately.",
+  "limitations": [
+    "No engine, skin, visual, native alignment, hardware or AAA approval"
+  ]
+}
