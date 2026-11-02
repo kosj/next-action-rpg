@@ -99,6 +99,14 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 
 [조명 후보 검수](../../../docs/validation/v0.1.11/lighting-review/README.md)처럼 shadow acne가 생긴 원본을 기각하고 실제 그림자 모드·단일 bias 변수·후보별 source inventory로 원인을 좁힙니다. 촬영 뒤 getter/telemetry가 바뀌어도 예전 원본이 최종 HUD source와 exact하다고 표시하지 않습니다. 촬영 입력과 후속 native/브라우저의 입력 해시를 따로 보존합니다.
 
+## 분위기·원경과 바닥을 마감할 때
+
+[성역 분위기 제작](../../../docs/ENVIRONMENT_ATMOSPHERE_SLICE.md)처럼 지평선·전면 재질·원경·진입 바닥을 실제 플레이 카메라에서 함께 확인합니다. 하늘의 색/curve와 sky/ambient/reflection의 source 식, runtime 설정, 보이는 horizon band를 나누어 기록합니다. 밝은 하늘·갑옷 전면·석재/금속 중 한쪽을 읽기 위해 다른 쪽의 세부를 없애지 않았는지 같은 몸체·재질·pose로 대조합니다.
+
+표시 전용 ruins/cliffs나 floor skin은 실제 collision/RID·support ray·actor transform을 새로 소유하지 않습니다. 노드/삼각형/표면·재질·그림자·가림과 깊이 겹침은 별도 비용/품질입니다. landing·fight·overview와 q0/q1의 원본을 확보하고, 원경이 공간을 풍부하게 해도 전투 예고·발·출구·UI를 가리지 않는지 봅니다. 바닥 재질의 물리 반복 크기·채널·노멀과 실제 지지면을 구분하며, 구체적 수치·채택 결과는 [해당 판본 검증](../../../docs/validation/v0.1.12/README.md)에 기록합니다. 이전 판본 공개 검증이나 source 노드 수만으로 새 공간을 승인하지 않습니다.
+
+unindexed ArrayMesh의 index는 null일 수 있으므로 정밀 report/fixture가 이를 처리하는지 확인하고, 전체 triangle 감사는 빈번한 HUD 관측과 분리합니다. native 통과와 시각 채택을 나누며, 가까운 건축 PBR을 원경 지질에 재사용한 후보가 형상/거리상 부적절하면 원본을 보존해 기각합니다. construction source/count/AABB 보존과 실제 vertex payload 해시의 수집 여부도 구분합니다. 색·재질을 수정한 뒤에는 그 새 입력의 native와 원본 raster를 별도로 확인합니다.
+
 ## 대표 구간 최종 아트 판정
 
 - 실제 게임의 전신·얼굴·양손 근접과 플레이 카메라 영상, Web 품질0/1·Windows 같은 구도를 확보합니다. 콘셉트·스튜디오 렌더·게임 캡처와 당시 커밋/입력 해시를 구분합니다.

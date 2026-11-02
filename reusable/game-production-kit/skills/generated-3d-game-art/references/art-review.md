@@ -97,6 +97,26 @@
 
 촬영 뒤 관측용 getter·HUD telemetry만 추가했더라도 촬영 source와 최종 source가 정확히 같다고 기록하지 않는다. 변경된 파일의 양쪽 해시와 변경 목적을 기록하고, 조명·재질·배우 배치 source의 일치 범위와 최종 native/브라우저 검증을 나눈다. 같은 픽셀이라고 추정할 수 있는 변경과 실제 재촬영한 원본을 구분한다.
 
+## 분위기·원경·시각 바닥과 충돌 권한
+
+공간의 첫 화면이 평평하다면 하늘/horizon band, 주인공 전면의 재질, 원경 실루엣, 진입/연결 바닥을 실제 카메라에서 함께 비교한다. source의 sky gradient나 에너지 값은 픽셀 결과가 아니다. 고정 renderer의 실제 수식·runtime 값·같은 구도의 원본을 연결하고, 하늘색을 늘리면서 밝은 돌이나 갑옷 세부를 잃는 악화도 기록한다.
+
+정적인 sky shader라면 cubemap bake와 보이는 배경 fragment를 구분한다. 공식 recipe와 고정 renderer의 실제 분기에서 계산/샘플링 경로를 확인하고, TIME·카메라 위치·변경되는 uniform에 의한 갱신 조건을 조사한다. bake 뒤 단순 샘플링을 사용해도 최초 bake/filter와 radiance 해상도·세부·메모리 비용은 남는다. source에 분기가 있다는 사실과 실제 compile/renderer/raster·시작 시간·목표 GPU 비용을 각각 검증한다.
+
+표시 전용 원경이나 PBR floor skin이 필요하면 노드·표면·vertex/triangle·재질/텍스처·그림자·AABB와 카메라 가림을 원장으로 남긴다. collision/navigation/light·processing·RNG 권한 유무를 실제 tree와 physics/source로 확인한다. 시각 전용은 비용이 없다는 뜻이 아니다. 먼 배경이 실제 동선 밖에 있어도 화면과 그림자를 가릴 수 있다.
+
+전체 transformed triangle 경계 감사와 자주 갱신하는 HUD/browser telemetry의 비용을 구분한다. 정밀 geometry 검사는 별도 fixture나 일회성 report로 수행하고, 반복 관측은 이미 확인한 mesh의 값싼 surface/index count·flag·해시처럼 제한한다. 검증용 getter가 플레이 중 매번 전체 삼각형을 순회해 새 부하를 만들지 않았는지도 확인한다. 값싼 report라는 설계 설명과 목표 GPU 성능 측정은 별개다.
+
+ArrayMesh surface가 항상 indexed라고 가정하지 않는다. 유효한 unindexed triangle mesh의 `ARRAY_INDEX`는 null일 수 있으므로 typed array에 바로 대입하지 않고 존재/형식을 먼저 확인한다. indexed는 index 수, unindexed는 vertex 수와 primitive 형식으로 triangle을 계산한다. 검수기 자체가 잘못된 가정으로 중단됐다면 실패 원본을 보존하고 검수기/report만 수정한 뒤 같은 geometry로 전체 검사를 다시 실행한다. mesh를 불필요하게 재저작하거나 실패를 통과 수치에 포함하지 않는다.
+
+바닥 skin의 시각 높이·깊이 겹침과 실제 support surface를 나누고 ray·actor transform이 보존되는지 검사한다. PBR 채널·OpenGL normal·roughness와 물리적 타일 반복 크기, 영역 사이 연결을 확인한다. 장면을 예쁘게 보이게 하려고 collider나 게임 판정을 옮기지 않는다.
+
+PBR 채널·라이선스·타일 크기가 맞아도 재질이 형상과 거리의 의미에 맞는지 실제 화면으로 본다. 가까운 건축의 규칙적인 밝은 벽돌을 큰 원경 절벽에 반복하면 거대한 벽이나 커튼처럼 읽힐 수 있다. geometry와 권한을 보존한 채 기존의 불규칙한 stone 재질·색·반복 크기만 바꾸는 후보로 원인을 좁히고 같은 카메라/품질에서 다시 검수한다. 새 텍스처가 없다는 사실이나 기존 native geometry 통과는 수정 재질의 화면·최종 source 검증을 대신하지 않는다.
+
+형상 보존 근거의 종류도 구분한다. construction 함수 source 해시, 실제 count/AABB·shadow flag, collision canonical rows와 실제 vertex-buffer payload 해시는 같은 검사가 아니다. 앞 후보가 vertex payload 해시를 수집하지 않았다면 뒤에서 측정된 해시 일치라고 소급해 쓰지 않는다. 확보한 source/메트릭·재현 조건과 수집하지 않은 증거를 명시한다.
+
+같은 source의 진입·교전·overview 구도와 각 품질 모드 원본을 확보한다. 하늘/원경을 잘 보여 주는 구도와 실제 전투 카메라의 가독성은 다른 gate다. baseline/candidate의 body/pose/camera/HUD·source/renderer/scale을 맞추고 기각 후보와 수정 이유를 보존한다. 정지 fixture·소프트웨어 raster·export 성공은 실제 입력·목표 GPU·모션/연속 AV·AAA 최종 판정과 구분한다. 가져간 프로젝트는 자신의 source·budget·camera·검증 상태를 새로 기록한다.
+
 ## 재질·장면·실기기
 
 | 검토 항목 | 근거/결함 | 상태 |

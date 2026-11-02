@@ -1,0 +1,21 @@
+{
+  "state": "historical FAILED first new native; not520approved checks",
+  "checks": 520,
+  "failures": 1,
+  "exit_code_reported_by_runner": 1,
+  "log": {
+    "file": "native-first.log",
+    "bytes": 57727,
+    "sha256": "9dd8074c6c369f9012e6d03de7a6951bc0b73b850de8d7c077c3f842ae02a4a5",
+    "native_summary": "RUNEFALL_TESTS: 520 checks, 1 failures",
+    "error_excerpt": [
+      "SCRIPT ERROR: Trying to assign value of type 'Nil' to a variable of type 'PackedInt32Array'.",
+      "ERROR: FAIL: Static atmosphere and visual stone skins preserve real support, light alignment and bounded non-gameplay geometry"
+    ]
+  },
+  "diagnosis": "Root geometry fixture tried assigning ArrayMesh.ARRAY_INDEX Nil to typed PackedInt32Array for a valid unindexed mesh. The full backdrop report contained the same unsafe assumption; source review corrected it too.",
+  "correction": "Handle null ARRAY_INDEX as empty PackedInt32Array; unindexed triangles use vertex count/3. Root test and detailed backdrop report are corrected without changing geometry/material data.",
+  "pre_native_backdrop_sha256": "70e41d83857cde623c7c5d083cb26cedd00be98175aedc506722f917923505fc",
+  "corrected_backdrop_report_source_sha256": "d2afe90098024a5895b40d48a886c027d4e1d83d03bfc97a83837c9e97b53c72",
+  "scope": "Failed fixture/diagnostic handling, not evidence that the mesh is invalid; source corrections are not a rerun PASS. Fresh complete native suite and raster remain pending."
+}

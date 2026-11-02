@@ -1,0 +1,81 @@
+{
+  "scope": "Deterministic prescribed idle scene view; no real-input, observed spawn physics, combat motion, Web raster, hardware performance or AAA approval. Visual adoption belongs to reviewer.",
+  "baseline_commit": "ce1207269922d50edfc725a5aba728d32f8989f3",
+  "baseline_version": "0.1.11",
+  "candidate_version": "0.1.12",
+  "baseline_report": "../baseline-001/scene-review.json",
+  "baseline_report_sha256": "ebfa7f662f600bfb7c9d686e1ae3ecd764a6888cb47f42e0b4d4f9047d0249dd",
+  "candidate_report": "scene-review.json",
+  "candidate_report_sha256": "2ceb05a9470cb0144de40fa40464291edf08ef10aeee8dedf0e174c3a7370301",
+  "fixture_hashes_identical": true,
+  "fixture_sha256": {
+    "tests/lighting_review_capture.gd": "d779316e999c460dbc7b0f49a38a5ea7112ed40f07fba3039215eda94345f9d9",
+    "tests/lighting_review_capture.tscn": "6750954bda8ee848963245595ca70f7a74445e4ead7efc9258ab097f24df374f"
+  },
+  "actual_hud_visible_both": true,
+  "static_collision_multiset_identical": true,
+  "static_collision_sha256": "14f43d2008cb82be6af976585a4d435aa6d59c83b9031f172f0c7da8adf228b1",
+  "static_bodies": 160,
+  "static_shapes": 178,
+  "sanctuary_rng_state_identical": true,
+  "sanctuary_rng_state": -5312476258823052333,
+  "renderer_both": "gl_compatibility",
+  "adapter_both": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "paired_shots": [
+    {
+      "view": "landing",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "0c990090887d22c3e91a39bba4f9ba3ac345216eec919d3ccd2dec08aa3f0c01",
+      "after_sha256": "72da79c84c68d4887c531e01bbc9aade2aa60ee2242c2a8e87c311bb0d4180ca"
+    },
+    {
+      "view": "fight",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "07c0561631edd9f2a14a332d059e96529b7ca592cd4101126f6d0440ba6709f9",
+      "after_sha256": "9f8ea628b432fec6b7521bd50eae615198203edd744aea036a14f8fa7eb4b434"
+    },
+    {
+      "view": "overview",
+      "quality": 0,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "fc680dfc79d0bf7dfaaa9f2942ed428b30635307b679364d3cb43f8f656f50e2",
+      "after_sha256": "c2fdd8e29cd0caa88533de02d6cc334791afd7d4a80a995eca064af6b187eeb4"
+    },
+    {
+      "view": "landing",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "5d355e9fc6f6d187619cdf9800ed7f6ea5ce9348c9ebeb0a7b29ab0e87411ca1",
+      "after_sha256": "27e35f2dd0eb4345df925ffda9fdd7963871a650ba363223c6aae3de799ecf83"
+    },
+    {
+      "view": "fight",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "c74ff459e7cafeebbad35e83b565aad1628afb16997af3db3d8b997e4bc525f1",
+      "after_sha256": "dfa7000df044a580229290b498c61830609330bb9e6d21ade0636d81a5aa5489"
+    },
+    {
+      "view": "overview",
+      "quality": 1,
+      "camera_identical": true,
+      "actor_positions_and_art_report_identical": true,
+      "actual_native_scale_identical": true,
+      "before_sha256": "7ed717d1da2087465ca2c47f81e1f1da16adb476b6a21f7984e7d7ddc074ad0e",
+      "after_sha256": "02525c39158db2b2dfbc24e84b8a0140455cc2ae029509e0ca5ed228c4a7e1be"
+    }
+  ],
+  "report_hash_scope": "Raw report hashes before public curation; public hashes in archive manifest."
+}

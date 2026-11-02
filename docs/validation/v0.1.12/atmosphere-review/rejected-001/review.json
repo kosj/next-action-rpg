@@ -1,0 +1,32 @@
+{
+  "state": "Full atmosphere001 NOT ADOPTED; native/capture execution succeeded",
+  "root_direct_views": [
+    "landing-q0",
+    "fight-q0",
+    "overview-q0"
+  ],
+  "entry_floor": "PBR entry floor accepted only as scoped visual skin; full atmosphere not adopted.",
+  "rejection_reasons": [
+    "Side-cliff albedo reads as a giant pale brick curtain competing with the nearby arcade.",
+    "Clouds exist but clear sky in fight view still reads gray/teal."
+  ],
+  "preserved": "Three root-viewed unprocessed001 q0 PNGs, source/capture/runtime inventories and actual scene/capture reports. All six original hashes remain in capture/scene reports; full six raw PNGs stay in local build/art-review/sanctuary-atmosphere-candidate-001/after/original-png. No001 original is relabeled002.",
+  "execution": {
+    "elapsed_s": 64.35294985771179,
+    "exit_code": 0,
+    "engine_errors": [],
+    "source_inputs_unchanged": true
+  },
+  "next_candidate_intent": "Isolated material changes for irregular cool/dark cliff stone and clearer blue sky while retaining clouds. Geometry/collision/gameplay preservation and actual002 adoption must be checked separately.",
+  "remaining": [
+    "Candidate002 source delta/native/raster",
+    "Full build/browser/public/release",
+    "Target hardware/motion/continuous AV/AAA"
+  ],
+  "all_six_raw_local_directory": "build/art-review/sanctuary-atmosphere-candidate-001/after/original-png",
+  "public_originals": [
+    "landing-q0.png",
+    "fight-q0.png",
+    "overview-q0.png"
+  ]
+}
