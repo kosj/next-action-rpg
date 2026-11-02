@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "id": "erin-001",
+  "character": "기록관 에린 / Erin the Archivist",
+  "status": "historical_001_runtime_superseded_by_003_original_preserved",
+  "source_file": "erin-idle.glb",
+  "source_bytes": 5611732,
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "selected_source_role": "Historical normalized001 used for native580 checkpoint; immutable original remains here, current runtime selection is003",
+  "expected_clips": [
+    "idle",
+    "RESET"
+  ],
+  "provider_sources": {
+    "mesh": {
+      "file": "source.glb",
+      "bytes": 7500104,
+      "sha256": "5567cb7f96c10b00fe828a9fb13ec310b844af7a23373110136178ee057df362"
+    },
+    "rig": {
+      "file": "rig-source.glb",
+      "bytes": 7842528,
+      "sha256": "668a70c8211db975699541998e24010d62be5a824d83823a5ad21eca343af600"
+    },
+    "idle_raw_known_invalid": {
+      "file": "source/idle-source.glb",
+      "bytes": 7967404,
+      "sha256": "89b309aaf2558d15a6b3219244719d074a18d772ddc37e2ac0d41b567dd9d6ea"
+    },
+    "idle_canonical": {
+      "file": "idle-canonical.glb",
+      "bytes": 8089012,
+      "sha256": "a6428beb821c935f9ba900ae86f17fde10ff1458267c1b9495b4b947043b5434"
+    }
+  },
+  "generation": {
+    "license": "PRIVATE",
+    "reported_points_per_mesh": 200,
+    "shared_two_model_reported_points": 400,
+    "rig_reported_points": 0,
+    "stock_idle_reported_points": 0,
+    "provider_run": "art_source/production/hub_npcs/provider-run.json",
+    "point_scope": "Shared 400 points is counted once across both NPC manifests, not 400 per NPC"
+  },
+  "reference": {
+    "file": "art_source/production/references/erin-front-concept.png",
+    "bytes": 2094022,
+    "sha256": "c855d504c530936c64171129ef74fea2a5cbf37bb1f19624dd2be798c6233dd5"
+  },
+  "profile": {
+    "rest_height_m": 1.7,
+    "rest_floor_m": -2.770138962659985e-07,
+    "forward": "minus_z_after_wrapper_pi",
+    "presenter_extra_yaw_pi": false,
+    "idle_name": "idle",
+    "idle_duration_s": 10.166666666666666,
+    "bones": 53,
+    "triangles": 16000,
+    "textures": [
+      {
+        "index": 0,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 1787449
+      },
+      {
+        "index": 1,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 868384
+      },
+      {
+        "index": 2,
+        "size": [
+          1024,
+          1024
+        ],
+        "storage": "PNG",
+        "encoded_bytes": 1404645
+      }
+    ]
+  },
+  "source_defect": {
+    "raw_stock_idle_strictly_valid": false,
+    "expected_failure_report": "source/raw-idle-strict-failure.json",
+    "pattern": "All 21 LINEAR sampler channels have one duplicated final timestamp; final row exactly equals first loop pose",
+    "canonicalization": "Keep provider final loop closure, remove only its earlier equal-time duplicate; raw bytes unchanged",
+    "historical_initial_raw_location": "idle-source.glb; moved under source/ so raw defect is preserved outside strict valid-candidate glob",
+    "canonical_report": "idle-canonicalization.json",
+    "current_strict_validation_report": "idle-canonical-validation.json"
+  },
+  "verification": {
+    "strict_embedded_skin_idle_RESET": true,
+    "source_to_reimported_pose_max_error_m": 6.596743332920596e-06,
+    "loop_bone_endpoint": {
+      "joint_position_max_m": 0.0,
+      "joint_angle_shortest_max_rad": 0.0
+    },
+    "animated_soles": {
+      "left": {
+        "horizontal_drift_max_m": 0.017163058538630555,
+        "lowest_height_m": 0.007567016873508692,
+        "highest_min_height_m": 0.009761628694832325
+      },
+      "right": {
+        "horizontal_drift_max_m": 0.01819340770559688,
+        "lowest_height_m": -0.0016253015492111444,
+        "highest_min_height_m": 0.0024708753917366266
+      }
+    },
+    "finite_studio_review": "review-status.json",
+    "native_game": "pending",
+    "actual_game_raster": "pending",
+    "web_budget": "pending",
+    "focused_browser": "pending",
+    "hardware": "pending",
+    "AAA": "pending"
+  },
+  "derived_files": [
+    {
+      "file": "source.glb",
+      "bytes": 7500104,
+      "sha256": "5567cb7f96c10b00fe828a9fb13ec310b844af7a23373110136178ee057df362"
+    },
+    {
+      "file": "rig-source.glb",
+      "bytes": 7842528,
+      "sha256": "668a70c8211db975699541998e24010d62be5a824d83823a5ad21eca343af600"
+    },
+    {
+      "file": "source/idle-source.glb",
+      "bytes": 7967404,
+      "sha256": "89b309aaf2558d15a6b3219244719d074a18d772ddc37e2ac0d41b567dd9d6ea"
+    },
+    {
+      "file": "idle-canonical.glb",
+      "bytes": 8089012,
+      "sha256": "a6428beb821c935f9ba900ae86f17fde10ff1458267c1b9495b4b947043b5434"
+    },
+    {
+      "file": "idle-canonicalization.json",
+      "bytes": 8858,
+      "sha256": "a40df5aea1c5c9be22ccaf550fed715d52fa074de93775db3b90a4902850177e"
+    },
+    {
+      "file": "idle-canonical-validation.json",
+      "bytes": 9002,
+      "sha256": "2068dc64386b2bfb66fd259fe8d96a8e09026cf592a41f98f7e4ba9f06e59a82"
+    },
+    {
+      "file": "erin-idle.preparation.json",
+      "bytes": 53276,
+      "sha256": "33787b5fdbe30e34585d424edd258c77d36a462e98cef6d7c3251444f8df2ea7"
+    },
+    {
+      "file": "source-inspection.json",
+      "bytes": 1898,
+      "sha256": "32de115340c991ee40ff17c1e3ea458cd7c5a873a9c8d5a571bb0a276bb3f685"
+    },
+    {
+      "file": "rig-inspection.json",
+      "bytes": 3466,
+      "sha256": "ac718a8ccea0d2e4e53c73d1dc628fce7dd52fd32a30eaa08d5e27a8a1213f7a"
+    },
+    {
+      "file": "idle-inspection.json",
+      "bytes": 561,
+      "sha256": "e8d54c1d279e8880ee139de6ee89ad06cc7634610d748926330c613ff2a6c5c0"
+    },
+    {
+      "file": "source/raw-idle-strict-failure.json",
+      "bytes": 541,
+      "sha256": "a235b413e74d3027b4ad016f5672795f56895635f53dffbb79d48e2b33483cb0"
+    },
+    {
+      "file": "runtime-inspection.json",
+      "bytes": 3786,
+      "sha256": "de4727fc37c9e6547734a4099b7416620a444d01a0d89d71205f9a0017884fae"
+    },
+    {
+      "file": "review-status.json",
+      "bytes": 1756,
+      "sha256": "628beb45384420530fc34f57ff86bafe167928c5557891089cd7727b1f5027c3"
+    },
+    {
+      "file": "review/review.json",
+      "bytes": 1706,
+      "sha256": "7b451096e5f70a14edcb95d506cdb34913488b88654f118c8399d5833db1f1a3"
+    },
+    {
+      "file": "review/rest-front.png",
+      "bytes": 363291,
+      "sha256": "a9c43c89f96c1c190c0e89f72d9db94770969ba3d6153bb65b2dd4a7b4377db6"
+    },
+    {
+      "file": "review/idle-quarter-start.png",
+      "bytes": 359229,
+      "sha256": "9863f409bff295f324a88d1e93c39a6813172f2d8cf6974cb8a6a54f3c1549cb"
+    },
+    {
+      "file": "review/idle-quarter-mid.png",
+      "bytes": 358685,
+      "sha256": "626b388df8b1a468cc5c15db240425917a4f708a709155fd9910cdbb01dfe209"
+    },
+    {
+      "file": "review-diagnostic/idle-no-normal.png",
+      "bytes": 352277,
+      "sha256": "89cdef5f4beabac9f11ecee541c276908bbf71b4df167d75939267a46c186035"
+    },
+    {
+      "file": "review-diagnostic/idle-clay.png",
+      "bytes": 272116,
+      "sha256": "7ed84606caf9adb72482770c6d9cb909a37bc61cd64ce8b56141956122e24a5c"
+    },
+    {
+      "file": "review-diagnostic/diagnostic.json",
+      "bytes": 665,
+      "sha256": "a332f570acd0fa31c16ec8fd9c518fcd561d37bde119db9b5974432cc0d58ba4"
+    },
+    {
+      "file": "review-diagnostic/topology-welded-diagnostic.json",
+      "bytes": 111,
+      "sha256": "69463d9f0551e7775a498e30be3d55ba8558cc9b5fcc895a0aaebd0a9054e962"
+    },
+    {
+      "file": "review-flat-diagnostic/idle-flat-clay.png",
+      "bytes": 273226,
+      "sha256": "35b30603331f478535fd9859e00ff5690e42df8600067a452c6f19441fef9867"
+    },
+    {
+      "file": "review-flat-diagnostic/diagnostic.json",
+      "bytes": 644,
+      "sha256": "b5e115a450a95334485d0f8b3818e4ede2efd5f045ff42425388590b391815d0"
+    }
+  ],
+  "provenance_files": [
+    {
+      "file": "art_source/production/hub_npcs/provider-run.json",
+      "bytes": 5736,
+      "sha256": "f506d738cb114146ef74173c86a9494a8da40ddf551aed427a9b5725cf6330fc"
+    },
+    {
+      "file": "art_source/production/hub_npcs/prepare_idle_npc.py",
+      "bytes": 13837,
+      "sha256": "098b628344b9fac86d2b8b974c3406e829d7012ac01ce16659d3a7985d85bfdd"
+    },
+    {
+      "file": "art_source/production/hub_npcs/canonicalize_idle_times.py",
+      "bytes": 8868,
+      "sha256": "163901e4a578bda105c0e4434a8047ba365b7c400c17052508db75f06bfebaa4"
+    },
+    {
+      "file": "art_source/production/hub_npcs/render_idle_review.py",
+      "bytes": 3713,
+      "sha256": "00b622bbee5301a0807f9bd18a0b8fee8432286dbac7872e9780b6e9da5d39f6"
+    },
+    {
+      "file": "art_source/production/hub_npcs/erin.json",
+      "bytes": 715,
+      "sha256": "9e06daa9f34cb33b1383d650430766e38e60d4806177dd7e7220d072ff52d63c"
+    },
+    {
+      "file": "tools/prepare_character_candidate.py",
+      "bytes": 31930,
+      "sha256": "15568bdea1ab515cdb39b98c5c6587a982d5a05ccf121e298228389687d4ac2d"
+    },
+    {
+      "file": "art_source/production/references/hub-npc-reference-manifest.json",
+      "bytes": 1416,
+      "sha256": "08f8d268541e071e80838996f175c4debc3872c71bff1b35f4903ba51e69c3e2"
+    },
+    {
+      "file": "art_source/production/references/erin-front-concept.png",
+      "bytes": 2094022,
+      "sha256": "c855d504c530936c64171129ef74fea2a5cbf37bb1f19624dd2be798c6233dd5"
+    }
+  ],
+  "limitations": [
+    "Reference-image quality does not establish 3D quality",
+    "Provider stock idle is retargeted, not project-authored",
+    "No full cloth/hair/face/hands/foot-contact/terrain/AAA quality approval"
+  ],
+  "historical_validation": [
+    {
+      "file": "docs/validation/v0.1.13/native-corrected-001-checkpoint.json",
+      "bytes": 901,
+      "sha256": "75b0dd297f7536fe001fc8a98b71d78d118291853d36f3d516888aba3e5de69d",
+      "checks": 580,
+      "failures": 0,
+      "exit_code": 0,
+      "scope": "Historical corrected actual native001 checkpoint only; no002/003 repair, final compression, visual, browser, publication or AAA approval"
+    }
+  ],
+  "historical_runtime_copy_at_001_checkpoint": {
+    "file": "game/assets/models/production/erin_idle_gameplay.glb",
+    "bytes": 5611732,
+    "sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+    "no_longer_current": true,
+    "superseded_by": "erin-003",
+    "scope": "Historical same-path runtime copy used by native001 checkpoint only; the live runtime path now contains003"
+  }
+}

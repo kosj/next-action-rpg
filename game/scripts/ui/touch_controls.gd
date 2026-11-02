@@ -10,7 +10,7 @@ const GRID_ACTIONS: Array[StringName] = [&"skill_1", &"skill_2", &"skill_3", &"h
 const LABELS := {&"light":"공격", &"heavy":"강공", &"dodge":"회피", &"parry":"패링", &"heal":"회복", &"skill_1":"룬 1", &"skill_2":"룬 2", &"skill_3":"룬 3", &"interact":"대화", &"lock_on":"조준", &"target_next":"전환", &"sprint":"질주"}
 const ACTION_FONT_SIZE: int = 14
 const HELPER_FONT_SIZE: int = 10
-const BASE_FONT: Font = preload("res://assets/fonts/NotoSansKR.ttf")
+const BASE_FONT: Font = preload("res://assets/fonts/runefall_kr430.ttf")
 const WEB_METRICS := """(function(){
  const c=document.getElementById('canvas')||document.querySelector('canvas');
  if(!window.__touchControlsBridge){
@@ -81,7 +81,7 @@ var _blocked_physics: Dictionary = {}
 var _blocked_process: Dictionary = {}
 var _normal_style: StyleBoxFlat
 var _pressed_style: StyleBoxFlat
-var _font: FontVariation
+var _font: Font
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -103,9 +103,7 @@ func _ready() -> void:
 	_surface.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_normal_style = _style(Color(0.025, 0.045, 0.065, 0.66), Color(0.72, 0.79, 0.79, 0.5))
 	_pressed_style = _style(Color(0.35, 0.29, 0.13, 0.82), Color(1.0, 0.84, 0.46, 0.95))
-	_font = FontVariation.new()
-	_font.base_font = BASE_FONT
-	_font.variation_opentype = {0x77676874:430.0}
+	_font = BASE_FONT
 	get_viewport().size_changed.connect(_on_viewport_resized)
 	get_window().focus_exited.connect(_on_focus_lost)
 	var detected: bool = OS.has_feature("android") or OS.has_feature("ios")

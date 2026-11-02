@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified.",
+  "files": [
+    {
+      "path": "/workspace/next-action-rpg/art_source/production/candidates/roen-001/idle-source.glb",
+      "structurally_valid": false,
+      "requirements_met": false,
+      "errors": [
+        "animations[0].samplers[0]: times must be nonnegative and strictly increasing"
+      ]
+    }
+  ]
+}

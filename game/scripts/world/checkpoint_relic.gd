@@ -1,0 +1,258 @@
+extends Node3D
+## Authored checkpoint presentation only. Sanctuary owns position, interaction,
+## save/heal authority and rotation. This module creates no gameplay objects.
+
+const FLOOR_STONE: StandardMaterial3D = preload("res://assets/materials/courtyard/floor_stone.tres")
+const CRYSTAL_SHADER: Shader = preload("res://assets/shaders/checkpoint_crystal.gdshader")
+const PROFILE_ID := "checkpoint_relic_v013"
+const CRYSTAL_HEIGHT := 1.76
+
+var crystal_pivot := Node3D.new()
+var _vertices := PackedVector3Array()
+var _normals := PackedVector3Array()
+var _uvs := PackedVector2Array()
+var _colors := PackedColorArray()
+var _tangents := PackedFloat32Array()
+
+func _ready() -> void:
+	name = "CheckpointRelic"
+	crystal_pivot.name = "CrystalPivot"
+	crystal_pivot.position.y = 1.35
+	add_child(crystal_pivot)
+	_altar_stone()
+	_bronze_setting()
+	_altar_inlays()
+	_crystal(false)
+	_crystal(true)
+	set_meta("presentation_profile",PROFILE_ID)
+	set_meta("mesh_only",true)
+
+func get_crystal_pivot() -> Node3D:
+	return crystal_pivot
+
+func _finish(label: String, material: Material, parent: Node3D, shadows: bool) -> void:
+	var arrays := []
+	arrays.resize(Mesh.ARRAY_MAX)
+	arrays[Mesh.ARRAY_VERTEX] = _vertices
+	arrays[Mesh.ARRAY_NORMAL] = _normals
+	arrays[Mesh.ARRAY_TEX_UV] = _uvs
+	arrays[Mesh.ARRAY_COLOR] = _colors
+	arrays[Mesh.ARRAY_TANGENT] = _tangents
+	var mesh := ArrayMesh.new()
+	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+	var node := MeshInstance3D.new()
+	node.name = label
+	node.mesh = mesh
+	node.material_override = material
+	# Recess the static setting into the existing floor. Its shallow visible
+	# stone/rim must not suggest a new raised collision obstacle on the route.
+	# The rotating crystal keeps its original independent hover height.
+	if parent==self:
+		node.position.y = -0.30
+	if not shadows:
+		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	parent.add_child(node)
+	_vertices = PackedVector3Array()
+	_normals = PackedVector3Array()
+	_uvs = PackedVector2Array()
+	_colors = PackedColorArray()
+	_tangents = PackedFloat32Array()
+
+func _triangle(a: Vector3, b: Vector3, c: Vector3, facing: Vector3, color: Color = Color.WHITE,
+	uv_a: Vector2 = Vector2.ZERO, uv_b: Vector2 = Vector2.ZERO, uv_c: Vector2 = Vector2.ZERO) -> void:
+	var normal := (b-a).cross(c-a).normalized()
+	if normal.length_squared()<0.5:
+		return
+	if normal.dot(facing)<0.0:
+		normal = -normal
+	var points: Array[Vector3] = [a,b,c]
+	var uvs: Array[Vector2] = [uv_a,uv_b,uv_c]
+	if (b-a).cross(c-a).dot(normal)>0.0:
+		points = [a,c,b]
+		uvs = [uv_a,uv_c,uv_b]
+	var tangent := Vector3.UP.cross(normal).normalized()
+	if tangent.length_squared()<0.5:
+		tangent = Vector3.RIGHT
+	for index in range(3):
+		_vertices.append(points[index])
+		_normals.append(normal)
+		_uvs.append(uvs[index])
+		_colors.append(color)
+		_tangents.append_array(PackedFloat32Array([tangent.x,tangent.y,tangent.z,1.0]))
+
+func _quad(a: Vector3, b: Vector3, c: Vector3, d: Vector3, facing: Vector3, color: Color = Color.WHITE) -> void:
+	_triangle(a,b,c,facing,color,Vector2(a.x,a.z),Vector2(b.x,b.z),Vector2(c.x,c.z))
+	_triangle(a,c,d,facing,color,Vector2(a.x,a.z),Vector2(c.x,c.z),Vector2(d.x,d.z))
+
+func _lathe(profile: Array[Vector2], segments: int, stone: bool) -> void:
+	for index in range(segments):
+		var angle_a := TAU*index/segments
+		var angle_b := TAU*(index+1)/segments
+		var dir_a := Vector3(cos(angle_a),0,sin(angle_a))
+		var dir_b := Vector3(cos(angle_b),0,sin(angle_b))
+		for ring in range(profile.size()-1):
+			var low := profile[ring]
+			var high := profile[ring+1]
+			# Shallow, fixed corner erosion keeps a grounded carved profile while
+			# avoiding a perfect smooth plastic cylinder. No randomness is used.
+			var next_station := (index+1)%segments
+			var chip_a := 1.0-0.018*maxf(0.0,sin(index*2.17+ring*0.9)) if stone else 1.0
+			var chip_b := 1.0-0.018*maxf(0.0,sin(next_station*2.17+ring*0.9)) if stone else 1.0
+			var chip_c := 1.0-0.018*maxf(0.0,sin(next_station*2.17+(ring+1)*0.9)) if stone else 1.0
+			var chip_d := 1.0-0.018*maxf(0.0,sin(index*2.17+(ring+1)*0.9)) if stone else 1.0
+			var a := dir_a*low.x*chip_a+Vector3.UP*low.y
+			var b := dir_b*low.x*chip_b+Vector3.UP*low.y
+			var c := dir_b*high.x*chip_c+Vector3.UP*high.y
+			var d := dir_a*high.x*chip_d+Vector3.UP*high.y
+			var facing := (dir_a+dir_b).normalized()*(high.y-low.y)+Vector3.UP*(low.x-high.x)
+			var color := Color.WHITE if stone else Color("8c7348").lerp(Color("37615a"),0.22+0.17*sin(index*1.83+ring))
+			_quad(a,b,c,d,facing,color)
+
+func _altar_stone() -> void:
+	# Closed, bevelled foundation authored from Y0, then recessed 0.30m by
+	# _finish(). Negative local bounds describe the buried foundation, not a
+	# floating-foot/physical-support measurement or a new collision volume.
+	var profile: Array[Vector2] = [Vector2(0,0),Vector2(0.86,0),Vector2(0.92,0.055),
+		Vector2(0.92,0.13),Vector2(0.84,0.19),Vector2(0.73,0.19),Vector2(0.69,0.28),
+		Vector2(0.69,0.34),Vector2(0.62,0.39),Vector2(0.44,0.39),Vector2(0.35,0.32),Vector2(0,0.32)]
+	_lathe(profile,48,true)
+	var stone := FLOOR_STONE.duplicate() as StandardMaterial3D
+	stone.albedo_color = Color("777c78")
+	stone.uv1_triplanar = true
+	stone.uv1_world_triplanar = true
+	stone.uv1_scale = Vector3.ONE/1.4
+	stone.normal_scale = 0.55
+	_finish("CarvedStonePlinth",stone,self,true)
+
+func _bronze_setting() -> void:
+	var profile: Array[Vector2] = [Vector2(0.70,0.22),Vector2(0.73,0.235),Vector2(0.73,0.265),
+		Vector2(0.70,0.28),Vector2(0.70,0.22)]
+	_lathe(profile,48,false)
+	var rim: Array[Vector2] = [Vector2(0.43,0.36),Vector2(0.47,0.385),Vector2(0.55,0.405),
+		Vector2(0.58,0.385),Vector2(0.55,0.36),Vector2(0.43,0.36)]
+	# The lathe's outward normal rule expects counterclockwise R/Y profiles.
+	# This crown was authored clockwise; reverse traversal, not its geometry.
+	rim.reverse()
+	_lathe(rim,48,false)
+	# Four shaped, tapering retaining claws curve around the floating stone.
+	for claw in range(4):
+		var angle := TAU*claw/4.0+PI/4.0
+		var radial := Vector3(cos(angle),0,sin(angle))
+		var tangent := Vector3(-sin(angle),0,cos(angle))
+		var path: Array[Vector2] = [Vector2(0.55,0.34),Vector2(0.63,0.43),Vector2(0.58,0.59),Vector2(0.46,0.73),Vector2(0.37,0.79)]
+		for index in range(path.size()-1):
+			var width_a := 0.075-index*0.009
+			var width_b := 0.075-(index+1)*0.009
+			var depth_a := 0.035-index*0.0025
+			var depth_b := 0.035-(index+1)*0.0025
+			var a := radial*path[index].x+Vector3.UP*path[index].y
+			var b := radial*path[index+1].x+Vector3.UP*path[index+1].y
+			var ring_a: Array[Vector3] = [a-tangent*width_a-radial*depth_a,a+tangent*width_a-radial*depth_a,
+				a+tangent*width_a+radial*depth_a,a-tangent*width_a+radial*depth_a]
+			var ring_b: Array[Vector3] = [b-tangent*width_b-radial*depth_b,b+tangent*width_b-radial*depth_b,
+				b+tangent*width_b+radial*depth_b,b-tangent*width_b+radial*depth_b]
+			for face in range(4):
+				var next := (face+1)%4
+				var outward := ((ring_a[face]+ring_a[next])*0.5-a).normalized()
+				_quad(ring_a[face],ring_a[next],ring_b[next],ring_b[face],outward,Color("aa8a50"))
+			if index==path.size()-2:
+				_quad(ring_b[0],ring_b[1],ring_b[2],ring_b[3],(b-a).normalized(),Color("c1a668"))
+	var bronze := StandardMaterial3D.new()
+	bronze.vertex_color_use_as_albedo = true
+	bronze.metallic = 0.78
+	bronze.roughness = 0.39
+	_finish("PatinatedBronzeSetting",bronze,self,true)
+
+func _stroke(a: Vector3, b: Vector3, width: float) -> void:
+	var side := (b-a).normalized().cross(Vector3.UP)*width*0.5
+	_quad(a-side,b-side,b+side,a+side,Vector3.UP)
+
+func _altar_inlays() -> void:
+	# Four broad angular inlays remain readable at default mobile distance.
+	# They sit just over the bronze setting, not in a screen-facing billboard.
+	for rune in range(4):
+		var angle := TAU*rune/4.0
+		var radial := Vector3(cos(angle),0,sin(angle))
+		var across := Vector3(-sin(angle),0,cos(angle))
+		var base := radial*0.53+Vector3.UP*0.414
+		_stroke(base-radial*0.065,base+radial*0.065,0.018)
+		_stroke(base,base+across*0.06+radial*0.045,0.016)
+		_stroke(base,base-across*0.06+radial*0.045,0.016)
+	var material := StandardMaterial3D.new()
+	material.albedo_color = Color("4bb2a3")
+	material.emission_enabled = true
+	material.emission = Color("59c4b1")
+	material.emission_energy_multiplier = 0.65
+	material.roughness = 0.48
+	_finish("InsetAltarRunes",material,self,false)
+
+func _crystal(inner: bool) -> void:
+	var heights := [-0.83,-0.49,0.46,0.77,0.93]
+	var radii := [0.0,0.26,0.34,0.18,0.0]
+	var variation := [1.0,0.94,1.08,0.91,1.03,0.96,0.89]
+	var core_scale := Vector3(0.36,0.77,0.36) if inner else Vector3.ONE
+	for face in range(7):
+		var angle_a := TAU*face/7.0
+		var angle_b := TAU*(face+1)/7.0
+		var outward := Vector3(cos((angle_a+angle_b)*0.5),0,sin((angle_a+angle_b)*0.5))
+		for band in range(4):
+			var low: float = heights[band]
+			var high: float = heights[band+1]
+			var a := Vector3(cos(angle_a)*radii[band]*variation[face],low,sin(angle_a)*radii[band]*variation[face])*core_scale
+			var b := Vector3(cos(angle_b)*radii[band]*variation[(face+1)%7],low,sin(angle_b)*radii[band]*variation[(face+1)%7])*core_scale
+			var c := Vector3(cos(angle_b)*radii[band+1]*variation[(face+1)%7],high,sin(angle_b)*radii[band+1]*variation[(face+1)%7])*core_scale
+			var d := Vector3(cos(angle_a)*radii[band+1]*variation[face],high,sin(angle_a)*radii[band+1]*variation[face])*core_scale
+			var y_a := (low+0.83)/CRYSTAL_HEIGHT
+			var y_b := (high+0.83)/CRYSTAL_HEIGHT
+			var color := Color(0.78+face*0.026,1.0,1.0,1.0)
+			_triangle(a,b,c,outward,color,Vector2(0,y_a),Vector2(1,y_a),Vector2(1,y_b))
+			_triangle(a,c,d,outward,color,Vector2(0,y_a),Vector2(1,y_b),Vector2(0,y_b))
+	if inner:
+		var material := StandardMaterial3D.new()
+		material.albedo_color = Color("b5e3cd")
+		material.emission_enabled = true
+		material.emission = Color("74c9b8")
+		material.emission_energy_multiplier = 0.9
+		material.metallic = 0.18
+		material.roughness = 0.25
+		_finish("OpaqueRuneCore",material,crystal_pivot,false)
+	else:
+		var material := ShaderMaterial.new()
+		material.shader = CRYSTAL_SHADER
+		_finish("EtchedCrystalShell",material,crystal_pivot,false)
+
+func presentation_report() -> Dictionary:
+	var triangles := 0
+	var vertices := 0
+	var surfaces := 0
+	var mesh_nodes := 0
+	var mesh_only := true
+	var bounds := AABB()
+	var started := false
+	for child in find_children("*","",true,false):
+		if child is CollisionObject3D or child is CollisionShape3D or child is Light3D or child is Timer or child is GPUParticles3D or child is CPUParticles3D or child is NavigationRegion3D:
+			mesh_only = false
+		if not child is MeshInstance3D:
+			continue
+		mesh_nodes += 1
+		var node := child as MeshInstance3D
+		for surface in range(node.mesh.get_surface_count()):
+			surfaces += 1
+			var arrays := node.mesh.surface_get_arrays(surface)
+			var points: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+			var indices := PackedInt32Array()
+			if arrays[Mesh.ARRAY_INDEX]!=null:
+				indices = arrays[Mesh.ARRAY_INDEX]
+			vertices += points.size()
+			triangles += (indices.size() if not indices.is_empty() else points.size())/3
+			for point in points:
+				var local_point := global_transform.affine_inverse()*node.global_transform*point
+				bounds = AABB(local_point,Vector3.ZERO) if not started else bounds.expand(local_point)
+				started = true
+	return {"profile":PROFILE_ID,"mesh_only":mesh_only,"mesh_nodes":mesh_nodes,"surfaces":surfaces,
+		"vertices":vertices,"triangles":triangles,"local_bounds":{"position":bounds.position,"size":bounds.size},
+		"crystal_pivot_local":crystal_pivot.position,"rotation_owner":"Sanctuary","has_process_callback":false,
+		"stone_source_material":FLOOR_STONE.resource_path,"new_texture_count":0,
+		"foundation_policy":"static meshes recessed 0.30m into existing floor; negative bounds are intentional; no collision authority",
+		"crystal_surface":"single convex transparent shell / opaque core; no screen/depth/refraction sampling",
+		"visual_acceptance":"pending actual default-camera and mobile review"}

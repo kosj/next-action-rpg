@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "status": "bounded_storage_proof_complete_with_original_local_icon_failure_retained",
+  "engine": {
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e"
+  },
+  "profile": {
+    "schema": 1,
+    "godot": "4.7.2",
+    "settings": {
+      "textures/webp_compression/compression_method": 6,
+      "textures/webp_compression/lossless_compression_factor": 100.0
+    }
+  },
+  "cold_import": {
+    "actual_CTEX_count": 46,
+    "actual_CTEX_bytes_before": 183227774,
+    "invalidated_generated_CTEX_plus_paired_MD5": 92,
+    "elapsed_guarded_import_wall_seconds": 866.8498890009942,
+    "actual_editor_exit_code": 0,
+    "engine_errors": [],
+    "original_strict_whole_game_input_gate_passed": false,
+    "original_failure": "RuntimeError: Actual cold import failed strict exit/error/source-preservation gate",
+    "changed_game_file": {
+      "status": "root_authorized_nontexture_source_delta",
+      "path": "scripts/world/hub_npc.gd",
+      "before_sha256": "e667e32cfbb40b0a77e87ebac12af73f8b3e8261027996ad9d886ed1c829ae52",
+      "after_sha256": "622fee2f7c7e21ecb325a6082b64d66ed7fecc2dfdea9b8df1e94f6935865a0b",
+      "authority": "root message during active cold import",
+      "root_declared_scope": "Retain raw Node before Node3D cast and free invalid root; actual Node3D asset behavior unchanged. No texture/import-code/sidecar/project-setting changes.",
+      "full_game_byte_invariance_claim": false,
+      "next_gate": "Preserve original strict driver outcome; after real exit0/noerrors, require exactly this authorized source delta and separately prove texture/assets/sidecars/profile unchanged before recording completed marker."
+    },
+    "all_other_game_assets_sidecars_import_hooks_project_settings_byte_unchanged": true,
+    "narrow_gate_accepted_after_actual_success": true,
+    "marker_recorded_after_complete_import_only": true,
+    "warm_guard_reason": "profile_unchanged",
+    "warm_guard_invalidated_files": [],
+    "authorized_concurrent_build_tool_change": {
+      "scope": "Explicitly authorized concurrent tool change, outside the game source/sidecar immutability inventory",
+      "authority": "root message during active cold import",
+      "before_sha256_prefix_reported_by_root": "05a3",
+      "before_full_sha256_not_captured_by_this_driver": true,
+      "after_sha256": "c963e8058a1f20e594cf69a89e9069dde94e809649e14eed1aa26e7768a1af06",
+      "authorized_delta": "Only import call timeout180→1200/comment plus focused mock test; profile helpers, encoder, source images, runtime project settings unchanged per root. Active one-off driver already uses1200.",
+      "all_tools_byte_unchanged_claim": false
+    },
+    "processes_closed": true
+  },
+  "comparison_scopes": {
+    "single_original_local31_case_test_passed": false,
+    "single_original_local31_case_test_stopped_after_icon_failure": true,
+    "bitmap_CTEX_exact_cases": 30,
+    "bitmap_exact_mip_levels": 346,
+    "bitmap_source_types": "PNG/JPEG imports; this is not an all-PNG source corpus.",
+    "local_icon_strict_completeRGBA_exact": false,
+    "local_icon_difference": {
+      "dimensions": [
+        128,
+        128
+      ],
+      "counts": {
+        "different_pixels": 80,
+        "different_alpha_pixels": 0,
+        "different_visible_RGB_pixels": 46,
+        "different_RGB_both_alpha_zero": 34,
+        "max_channel_delta": 1,
+        "max_alpha_delta": 0
+      },
+      "before_RGBA_sha256": "8d883b6661ce8d544c08aaf8014f6350748b09749e46743885270ae224a4b0cf",
+      "after_RGBA_sha256": "8eeed5fd1a27c3c02f6107d7e75c48a1208424aa88f8dd056f1f4186743849c7"
+    },
+    "same_frozen_icon_bitmap_direct_method6_factor100_reencode": {
+      "status": "complete_all_mips_RGBA_exact",
+      "elapsed_seconds": 0.236,
+      "record": {
+        "elapsed_seconds": 0.235,
+        "header_first52_bytes_exact": true,
+        "mip_levels": 1,
+        "mips": [
+          {
+            "RGBA_sha256": "8d883b6661ce8d544c08aaf8014f6350748b09749e46743885270ae224a4b0cf",
+            "complete_RGBA_bytes_exact_including_transparent_RGB": true,
+            "decoded_format": 5,
+            "decoded_format_exact": true,
+            "dimensions": [
+              128,
+              128
+            ],
+            "dimensions_exact": true,
+            "encoding_msec": 234,
+            "level": 0,
+            "new_packet_bytes": 1988,
+            "old_packet_bytes": 2316
+          }
+        ],
+        "name": "icon_frozen_bitmap",
+        "new_bytes": 2044,
+        "new_sha256": "441bc6c7bd8e94042cd67816d6889224787b486fedcea88569c8bc52575faafe",
+        "old_bytes": 2372,
+        "old_sha256": "c4a5e34966744eb878431bf032067af087588f151b602e4047f0985d9a77735a",
+        "saved_bytes": 328,
+        "source": {
+          "frozen_current": "build/verification/webp-lossless/frozen-current-001/inputs/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+          "purpose": "Same decoded bitmap only; distinguishes codec from SVG fresh import input."
+        }
+      }
+    },
+    "actual_public_v12_existing_CTEX_binding": {
+      "entries_checked": 25,
+      "payload_MD5_byte_matches_local_frozen": 24,
+      "only_payload_difference": "icon.svg",
+      "public_payload_MD5s_individually_verified": true
+    },
+    "actual_public_v12_icon_vs_new_cold": {
+      "status": "complete_all_actual_imported_mips_RGBA_exact",
+      "record": {
+        "after_bytes": 2030,
+        "after_sha256": "5c12c5dc10ce0e970e8784c943b68d47f41118005581e67c51f19130473e79bc",
+        "before_bytes": 2364,
+        "before_sha256": "2786442656cc74a1065d6b586ec0ef96d7cb01aa31180681bd560a1e11e8ab3c",
+        "first52_header_bytes_exact": true,
+        "mip_levels": 1,
+        "mips": [
+          {
+            "after_RGBA_sha256": "8eeed5fd1a27c3c02f6107d7e75c48a1208424aa88f8dd056f1f4186743849c7",
+            "before_RGBA_sha256": "8eeed5fd1a27c3c02f6107d7e75c48a1208424aa88f8dd056f1f4186743849c7",
+            "complete_RGBA_bytes_exact_including_transparent_RGB": true,
+            "decoded_format": 5,
+            "decoded_format_exact": true,
+            "dimensions": [
+              128,
+              128
+            ],
+            "dimensions_exact": true,
+            "level": 0
+          }
+        ],
+        "name": "icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+        "passed": true,
+        "saved_bytes": 334,
+        "source": {
+          "baseline_pck_entry": ".godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+        }
+      }
+    },
+    "derived_source_coverage": "24 actualpublicv0.1.12 bitmap payloads bind byte-for-byte to the local bitmap proof; the public icon is independently Godot-decoded exact;6newNPC bitmap payloads bind to their first-import frozen local baseline.",
+    "historical_local_icon_cache_cause": "Not established. It differs from the published icon; same-input codec reencoding is exact. No cache/history hypothesis is promoted to a measured cause."
+  },
+  "actual_public_release": {
+    "version": "0.1.12",
+    "manifest_commit": "cb038edf",
+    "release_url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.12",
+    "asset_url": "https://github.com/kosj/next-action-rpg/releases/download/v0.1.12/runefall-web.zip",
+    "zip_bytes": 115793867,
+    "zip_sha256": "43e8ca2eb7c058b65fd86b27ce9c5f557af0cce4e381b2653783e8a89aa36f79",
+    "verification": "Existing downloaded ZIP size/SHA matched its release manifest; index.pck was read from that cached ZIP and all25 CTEX payload MD5s verified. No redownload."
+  },
+  "storage": {
+    "frozen_local31_CTEX_bytes": 100028252,
+    "new_cold31_CTEX_bytes": 95792014,
+    "local31_CTEX_bytes_saved": 4236238,
+    "baseline_local_raw_web_bytes": 146599311,
+    "local_payload_forecast_raw_web_bytes": 149614973,
+    "local_forecast_remaining_bytes": 385027,
+    "actual_public_baseline_forecast": {
+      "baseline": "Actualcachedpublicv0.1.12 WebZIP/PCK",
+      "raw_web_bytes": 146600803,
+      "old_public_25_CTEX_bytes": 91072422,
+      "old_public_variable_fontdata_bytes": 6732809,
+      "new_baseline25_CTEX_bytes": 87274842,
+      "newNPC6_CTEX_bytes": 8517172,
+      "newNPC2_SCN_bytes": 1164685,
+      "new_static_fontdata_bytes": 3864201,
+      "forecast_from_measured_payload_deltas": 149616472,
+      "cap_bytes": 150000000,
+      "forecast_remaining_bytes": 383528,
+      "scope": "Forecastonly; finalnewsource/metadata/export/003paint not measured here."
+    },
+    "unchanged_raw_web_cap_bytes": 150000000,
+    "scope": "Measured imported payload bytes and projection only; no final new export was produced in this experiment."
+  },
+  "original_icon_PNGs": [
+    {
+      "path": "local-frozen.png",
+      "bytes": 5064,
+      "sha256": "3d754a63b18b46308151ec1c62a51db3885efbf0129a4a4638de6206b09f9bd3"
+    },
+    {
+      "path": "new-cold.png",
+      "bytes": 5063,
+      "sha256": "6d7ca9bcf6b93b92cef8c560d384b90e778477496aa0b6db72c6d4b2d1be73c8"
+    },
+    {
+      "path": "public-v0.1.12.png",
+      "bytes": 5063,
+      "sha256": "6d7ca9bcf6b93b92cef8c560d384b90e778477496aa0b6db72c6d4b2d1be73c8"
+    }
+  ],
+  "strict_pixel_criterion": "Complete decodedRGBA bytes, including RGB underalpha0, dimensions and decodedformat must match; header/mipcounts exact; no scaling, masking or tolerance.",
+  "not_reperformed": [
+    "Fulltexture reencoding probe was stopped; representative4cases and one extra completedGatewaycase retained.",
+    "No native fulltests/browser/export in this cold/decode experiment."
+  ],
+  "source_snapshot_scope": "Before root003paint/runtime changes. Newpaint needs separate embeddedGLB→externalPNG→CTEX/sourcehash evidence.",
+  "pending": [
+    "Final production native/desktop/mobile browser validation",
+    "Final rawWeb/Windows/PCK/export budget",
+    "003paint source/import relationship and adoption",
+    "Actual target hardware/AAA quality"
+  ]
+}

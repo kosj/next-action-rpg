@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified.",
+  "files": [
+    {
+      "path": "art_source/production/candidates/erin-002/erin-idle.glb",
+      "bytes": 5611732,
+      "sha256": "0646444f76e0c10877e4830334997996e1af3d8a2e9d7a25998dfc7de96a667a",
+      "structurally_valid": true,
+      "requirements_met": true,
+      "errors": [],
+      "counts": {
+        "nodes": 56,
+        "meshes": 1,
+        "mesh_primitives": 1,
+        "mesh_triangles": 16000,
+        "materials": 1,
+        "skins": 1,
+        "skinned_mesh_nodes": 1,
+        "animations": 2
+      },
+      "triangle_count_scope": "Unique mesh primitives, not scene instances/draw calls; strip/fan counts include degenerates.",
+      "node_names": [
+        "Head",
+        "Neck",
+        "HandLoRA_Bip01_L_Finger02",
+        "HandLoRA_Bip01_L_Finger01",
+        "HandLoRA_Bip01_L_Finger0",
+        "HandLoRA_Bip01_L_Finger12",
+        "HandLoRA_Bip01_L_Finger11",
+        "HandLoRA_Bip01_L_Finger1",
+        "HandLoRA_Bip01_L_Finger22",
+        "HandLoRA_Bip01_L_Finger21",
+        "HandLoRA_Bip01_L_Finger2",
+        "HandLoRA_Bip01_L_Finger32",
+        "HandLoRA_Bip01_L_Finger31",
+        "HandLoRA_Bip01_L_Finger3",
+        "HandLoRA_Bip01_L_Finger42",
+        "HandLoRA_Bip01_L_Finger41",
+        "HandLoRA_Bip01_L_Finger4",
+        "LeftHand",
+        "LeftForeArm",
+        "LeftArm",
+        "LeftShoulder",
+        "HandLoRA_Bip01_R_Finger02",
+        "HandLoRA_Bip01_R_Finger01",
+        "HandLoRA_Bip01_R_Finger0",
+        "HandLoRA_Bip01_R_Finger12",
+        "HandLoRA_Bip01_R_Finger11",
+        "HandLoRA_Bip01_R_Finger1",
+        "HandLoRA_Bip01_R_Finger22",
+        "HandLoRA_Bip01_R_Finger21",
+        "HandLoRA_Bip01_R_Finger2",
+        "HandLoRA_Bip01_R_Finger32",
+        "HandLoRA_Bip01_R_Finger31",
+        "HandLoRA_Bip01_R_Finger3",
+        "HandLoRA_Bip01_R_Finger42",
+        "HandLoRA_Bip01_R_Finger41",
+        "HandLoRA_Bip01_R_Finger4",
+        "RightHand",
+        "RightForeArm",
+        "RightArm",
+        "RightShoulder",
+        "Spine2",
+        "Spine1",
+        "Spine",
+        "LeftToeBase",
+        "LeftFoot",
+        "LeftLeg",
+        "LeftUpLeg",
+        "RightToeBase",
+        "RightFoot",
+        "RightLeg",
+        "RightUpLeg",
+        "Hips",
+        "Root",
+        "texture_mapping",
+        "Armature",
+        "NPC_Normalized_MinusZ"
+      ],
+      "animations": [
+        {
+          "index": 0,
+          "name": "idle",
+          "channels": 159,
+          "duration_seconds": 10.166666984558105
+        },
+        {
+          "index": 1,
+          "name": "RESET",
+          "channels": 159,
+          "duration_seconds": 0.03333333507180214
+        }
+      ],
+      "resources": [
+        {
+          "type": "buffer",
+          "index": 0,
+          "storage": "bin_chunk",
+          "declared_bytes": 5525116
+        },
+        {
+          "type": "image",
+          "index": 0,
+          "storage": "buffer_view",
+          "bytes_available": 1787449
+        },
+        {
+          "type": "image",
+          "index": 1,
+          "storage": "buffer_view",
+          "bytes_available": 868384
+        },
+        {
+          "type": "image",
+          "index": 2,
+          "storage": "buffer_view",
+          "bytes_available": 1404645
+        }
+      ],
+      "all_resource_bytes_available": true,
+      "warnings": [],
+      "verification_scope": "Core GLB/glTF structure and explicitly requested requirements only; extension payload schemas, appearance, deformation, animation quality, Godot import, licensing and performance are unverified."
+    }
+  ]
+}

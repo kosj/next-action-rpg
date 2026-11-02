@@ -1,0 +1,127 @@
+{
+  "checked_on": "2026-11-02",
+  "scope": "Actual local dirty0.1.13·cb038edf selected003 build; not final cleanCI/public/release artifacts.",
+  "build_exit_code": 0,
+  "manifest": {
+    "version": "0.1.13",
+    "godot": "4.7.2",
+    "commit": "cb038edf",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119073340,
+        "sha256": "f5d73a9b7c796c9638b2fcf7175f65baa35ebb9eae8a1c941304be24a9147793"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146914696,
+        "sha256": "2444329b3115940b4db6cc2c47a74decf85324015acb82b47c5062c93ae5ecc4"
+      }
+    ]
+  },
+  "raw_web": {
+    "bytes": 149687995,
+    "files": 14,
+    "cap_bytes": 150000000,
+    "remaining_bytes": 312005
+  },
+  "pck": {
+    "path": "build/web/index.pck",
+    "bytes": 109728136,
+    "sha256": "6fd142a0910166f341e3db073e4a39ec56d350f0c175fdbbe4216265ba58045e",
+    "header": {
+      "format": 4,
+      "engine": [
+        4,
+        7,
+        2
+      ],
+      "flags": 2,
+      "file_base": 112,
+      "directory_offset": 109709504
+    },
+    "directory_files": 199,
+    "by_extension": {
+      ".bin": {
+        "count": 1,
+        "bytes": 4929
+      },
+      ".binary": {
+        "count": 1,
+        "bytes": 1331
+      },
+      ".cfg": {
+        "count": 1,
+        "bytes": 2634
+      },
+      ".ctex": {
+        "count": 31,
+        "bytes": 95790972
+      },
+      ".fontdata": {
+        "count": 1,
+        "bytes": 3864201
+      },
+      ".gdc": {
+        "count": 23,
+        "bytes": 806968
+      },
+      ".gdshader": {
+        "count": 4,
+        "bytes": 6397
+      },
+      ".import": {
+        "count": 61,
+        "bytes": 12853
+      },
+      ".json": {
+        "count": 2,
+        "bytes": 23866
+      },
+      ".remap": {
+        "count": 33,
+        "bytes": 2206
+      },
+      ".res": {
+        "count": 9,
+        "bytes": 13684
+      },
+      ".sample": {
+        "count": 16,
+        "bytes": 278144
+      },
+      ".scn": {
+        "count": 14,
+        "bytes": 8899415
+      },
+      ".svg": {
+        "count": 1,
+        "bytes": 336
+      },
+      ".txt": {
+        "count": 1,
+        "bytes": 19
+      }
+    }
+  },
+  "font": {
+    "static_fontdata_count": 1,
+    "static_fontdata_bytes": 3864201,
+    "original_font_entries": 0
+  },
+  "ctex": {
+    "count": 31,
+    "bytes": 95790972
+  },
+  "checks": {
+    "raw_web_within_unchanged_150M_cap": true,
+    "original_variable_font_source_remap_and_fontdata_absent": true,
+    "static_fontdata_exactly_once": true,
+    "static_font_import_remaps_to_that_single_fontdata": true,
+    "all_directory_payload_md5_verified": true
+  },
+  "native_checkpoint": "native-selected-003-checkpoint.json",
+  "texture_binding_scope": "Import map metadata/PCK MD5 verified; selected003 embedded→externalPNG→decodedCTEX is a separate proof, not inherited from001 compression.",
+  "platform_scope": "Web/Windows exports, not actualWindowsOS execution.",
+  "phase": "PRE-NPC-grounding selected003. Native580/package149687995 do not validate latergrounding script/roster/native/export."
+}

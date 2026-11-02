@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "partial_improvement_visible_defects_remain_not_runtime_adopted",
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "candidate_sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8",
+  "evidence": "comparison/comparison.json",
+  "actually_viewed": [
+    "comparison/original-close-idle0.png",
+    "comparison/candidate-close-idle0.png",
+    "comparison/candidate-full-idle0.png",
+    "comparison/original-close-idle-mid.png",
+    "comparison/candidate-close-idle-mid.png"
+  ],
+  "observations": [
+    "Large opaque black triangular patch becomes a clearly visible gray/teal albedo triangle after bounded geometry/normal correction",
+    "Smaller black shards are substantially reduced, with thin dark tails still visible",
+    "Long adjacent robe fold/slit remains visible",
+    "No new large whole-body tear is obvious in the selected full-body candidate still"
+  ],
+  "decision": "Candidate remains held; do not label robe defect fixed or approve runtime adoption automatically. Root actual visual decision required.",
+  "limits": [
+    "Three finite matched camera/time pairs only",
+    "Does not approve continuous cloth, face/hands, actual-game rendering, hardware or AAA quality"
+  ],
+  "raw_normal_boundary_scope": {
+    "faces_checked": 182,
+    "source_negative_faces": 10,
+    "corrected_source_negative_faces": 8,
+    "inherited_remaining_negative_faces": [
+      2806,
+      3076
+    ],
+    "new_negative_faces": 0,
+    "scope": "REST plus five finite idle samples; does not establish rendered-cause identity or continuous/full-mesh normal correctness"
+  }
+}

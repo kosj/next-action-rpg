@@ -107,6 +107,16 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 
 unindexed ArrayMesh의 index는 null일 수 있으므로 정밀 report/fixture가 이를 처리하는지 확인하고, 전체 triangle 감사는 빈번한 HUD 관측과 분리합니다. native 통과와 시각 채택을 나누며, 가까운 건축 PBR을 원경 지질에 재사용한 후보가 형상/거리상 부적절하면 원본을 보존해 기각합니다. construction source/count/AABB 보존과 실제 vertex payload 해시의 수집 여부도 구분합니다. 색·재질을 수정한 뒤에는 그 새 입력의 native와 원본 raster를 별도로 확인합니다.
 
+## 허브 인물과 기능 오브젝트를 마감할 때
+
+[허브 인물·룬 성소 제작](../../../docs/HUB_CHARACTER_RELIC_SLICE.md)처럼 생성 NPC의 실제 도구/비용/권리·raw와 rig/idle 파생본·반입/표면·게임 채택을 각각 기록합니다. 남은 Web 예산은 현재 실제 export에서 확인하고 source GLB 크기와 imported texture/mipmap·PCK 증분을 구분합니다. 저장소에 있는 옛 자산이 이미 export에서 제외됐다면 삭제 예상량을 새 여유로 계산하지 않습니다.
+
+먼저 실제 대사/interaction source에서 NPC의 이야기 역할을 확인합니다. 현재 NPC0는 기록관 Erin, NPC1은 대장장이 Roen이며 genericelderKeeper/기사guard 제안은 생성 전에 폐기했습니다. 표시 자산을 재사용하더라도 원본 Enemy/clip과 표시 인스턴스·재생 상태를 분리하고, 이야기와 맞지 않는 재사용을 완료안으로 고정하지 않습니다. 얼굴·손·옷·실루엣과 실제 idle·바닥 정렬을 actual hub camera/근접에서 봅니다. 생성 성공이나 공유 source 사용만으로 AAA 품질·동작 독립성을 승인하지 않습니다.
+
+relic/altar 표시 module의 origin·pivot·빛/투명도/geometry·cosmetic과 interaction/checkpoint/heal/save의 원래 권한을 나눕니다. 장식이 옮겨져도 실제 기능 반경·지지면을 몰래 따라 옮기지 않고 정상 입력으로 접근/상호작용을 확인합니다. opaque core와 투명 shell의 실제 깊이/정렬·배우/UI 가림은 q0/q1와 실제 camera에서 검수합니다. 구체적 source·비용·예산·native/raster 결과는 [판본별 검증](../../../docs/validation/v0.1.13/README.md)을 원본으로 사용합니다.
+
+두 static NPC의 성능 모드 접지는 기존 Hero/Enemy budget과 분리하고 실제 floor read ray·q0 숨김/q1 표시·원본 비교를 확인합니다. [접지 없는 후보와 수정 후 원본](../../../docs/validation/v0.1.13/hub-review/README.md)을 함께 보존하며 ellipse를 animated foot/light shadow로 승인하지 않습니다.
+
 ## 대표 구간 최종 아트 판정
 
 - 실제 게임의 전신·얼굴·양손 근접과 플레이 카메라 영상, Web 품질0/1·Windows 같은 구도를 확보합니다. 콘셉트·스튜디오 렌더·게임 캡처와 당시 커밋/입력 해시를 구분합니다.

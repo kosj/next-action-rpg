@@ -1,0 +1,291 @@
+{
+  "scope": "After-only warm-cache capture, no baseline rerender/cold import. Inherits separately scoped baseline codec2/25 vs copied6/100 pixel proof composition, including preserved local icon failure.",
+  "warm_cache_source": "/workspace/next-action-rpg/game/.godot",
+  "source_declared_profile": {
+    "method": 6,
+    "factor": 100
+  },
+  "previous_provenance": "/workspace/next-action-rpg/build/art-review/hub-art-paired-001/warm-cache-provenance.json",
+  "previous_provenance_sha256": "12fed9e9a17b73e1b1feb9509640cbf3c500c4df48fcd65e9a29ecf53fd96398",
+  "actual_after_report_sha256": "272d1fc746d1127e2a58198ad97d63a332377f34db3325e8b887c1b9ad80b634",
+  "resolved_CTEX_count": 46,
+  "all_resolved_CTEX_exact_source_and_pre_grounding": true,
+  "resolved_CTEX": [
+    {
+      "generated": ".godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+      "sha256": "5c12c5dc10ce0e970e8784c943b68d47f41118005581e67c51f19130473e79bc",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/pilgrim_gateway_Image_0.png-0a088e5a6572f4ed027315dc1c845f01.ctex",
+      "sha256": "7c879c2b8c0966c1c8a607b6e5e1a2ff60d88057f4fff05fa7f08557cf7b8a72",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_gameplay_Image_1.png-9b325d41f4f0dd9192cc7d936e80f6b4.ctex",
+      "sha256": "261f4acb960737f6fe6d24a9a1643c57d48d47f2aa04f76645d6de60e48e3e88",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_fury_gameplay_Image_0.png-d3d34cdaca4bc1f099d61dd61301d4e1.ctex",
+      "sha256": "4452b026d03c7fe625e9e8fa2dc95fc910ec104bafbbf1915fe4cc05ae31dd6d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_weight_gameplay_Image_1.png-76e3e8377fb155ac4262663ef991715e.ctex",
+      "sha256": "42606cac0c86c2745d665145f9428474120fe52690105ffcc88d996891886ec4",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_impact_gameplay_Image_0.png-5bdf413a846e1ad3b345a54f2f47ee46.ctex",
+      "sha256": "4452b026d03c7fe625e9e8fa2dc95fc910ec104bafbbf1915fe4cc05ae31dd6d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/rune_sword_web_Image_2.png-43355593b6261712efcb1d6f9a2113c1.ctex",
+      "sha256": "dbf9625fcbdf2a9c6d3098b3459062ad243d35937d0e81e2e9c0775eee47e666",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_gameplay_Image_0.png-3adb620a0bb48e4a7bc087e4ed10a52c.ctex",
+      "sha256": "e94336a4ed1324d67478b74cc941d5170087cb3532cf1f67955a3db353c86668",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/rune_sword_web_Image_1.png-8140034ffaff4d264751e2a1912c601f.ctex",
+      "sha256": "8e4ff31a05368c77e1ed9fa17b30f1aab2171323dffd5be2bb8600d88d7cbb14",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_impact_gameplay_Image_1.png-9b79e333cee868a4dcdfc01e77c98ca0.ctex",
+      "sha256": "42606cac0c86c2745d665145f9428474120fe52690105ffcc88d996891886ec4",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_gameplay_Image_0.png-9079f4495022edc4e8d59f95f4891028.ctex",
+      "sha256": "4452b026d03c7fe625e9e8fa2dc95fc910ec104bafbbf1915fe4cc05ae31dd6d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_gameplay_Image_2.png-bc89a118db39cdbc668d3ee1af7cbe1e.ctex",
+      "sha256": "290160a16d9d4817a6c4294d0892f9c917fc9b47a89375c81196fb28c5a15a28",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/rune_sword_web_Image_0.png-21f805924d516212e1e7484319b9aa44.ctex",
+      "sha256": "4cafd308e69e6083d306c4507863e333bf9ffb3ce16bb1228feacfd529955fe7",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_gameplay_Image_1.png-01e139b92e9b8dee11d3f55d9a8f5ad7.ctex",
+      "sha256": "42606cac0c86c2745d665145f9428474120fe52690105ffcc88d996891886ec4",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_fury_gameplay_Image_2.png-7499108f87516676621878bfe53cc9d3.ctex",
+      "sha256": "290160a16d9d4817a6c4294d0892f9c917fc9b47a89375c81196fb28c5a15a28",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_impact_gameplay_Image_2.png-57606b973e9ffa9868706769e23fba57.ctex",
+      "sha256": "65b2a73dec96b6a890dd99cf3827a930120b1392724a581ff6a213b183c7fd6c",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/roen_idle_gameplay_0-normal.png-94be4f07efff367070c32a3d7e716cab.ctex",
+      "sha256": "716a569b386752188980bd03819f1e77bb0c4decb805c44e052827909fc7a741",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sanctuary_pillar_web_Image_0.png-52f1a5e428fbb70884efb65f8114426f.ctex",
+      "sha256": "416ff4a2926361e5f49dfbea4eb022f6dced2d94b872409ef097e332df1add28",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/pilgrim_gateway_Image_2.png-02b2ea78d9606bffa3cd5a054059e95e.ctex",
+      "sha256": "f9b1bf7a53c1a54026d262380dd989999d6251c1944a7b9e13b4021e31cc714f",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_impact_gameplay_Image_1.png-bbba03e1828d31da512ee24d2283b8f4.ctex",
+      "sha256": "261f4acb960737f6fe6d24a9a1643c57d48d47f2aa04f76645d6de60e48e3e88",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_fury_gameplay_Image_1.png-1af3a6a963f477a1fba43f61837e96d0.ctex",
+      "sha256": "261f4acb960737f6fe6d24a9a1643c57d48d47f2aa04f76645d6de60e48e3e88",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sanctuary_pillar_web_Image_2.png-e2395d326ccceb77bc0778b6eab6fa0e.ctex",
+      "sha256": "84326a3eabc462cbc72ce31886089e14c6d0e9bf347c2391b1b0084472e81cf3",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/roen_idle_gameplay_Image_0.png-0b5008d686c8ebbefe631b1f6fbbb506.ctex",
+      "sha256": "d414cf19c76b811bff11377ed677bfe53b9c424560772e62e3834388f1bdab45",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_weight_gameplay_Image_0.png-c16327cdc79666b0bed31ce6d8d46a00.ctex",
+      "sha256": "4452b026d03c7fe625e9e8fa2dc95fc910ec104bafbbf1915fe4cc05ae31dd6d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/roen_idle_gameplay_Image_1.png-2e1283ef548208634cd528dc99412ed8.ctex",
+      "sha256": "97754b1a32fa309864bae62680138f245cd634c9979265e4e03b5b64ce4681e6",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sanctuary_pillar_web_Image_1.png-73f1e4b287b3a06cea910886f360432a.ctex",
+      "sha256": "44fd5e16117336842df7d20a32764abe1923fd87fc85a250ddb995d659e8d30e",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_weight_gameplay_Image_2.png-b6ee6fde7445e4385c79fd8ef7e8805e.ctex",
+      "sha256": "65b2a73dec96b6a890dd99cf3827a930120b1392724a581ff6a213b183c7fd6c",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/erin_idle_gameplay_Image_1.png-cc89175390550fd2e6bb3bcf0d92d221.ctex",
+      "sha256": "bf5a319631503eb8660f1078390a8fa1bbe024f59bb87d6f395c94c795f38606",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_weight_gameplay_Image_1.png-7865347d4e5ff9704645e171311ca4b0.ctex",
+      "sha256": "261f4acb960737f6fe6d24a9a1643c57d48d47f2aa04f76645d6de60e48e3e88",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/erin_idle_gameplay_0-normal.png-76ce7915d32190c5d8e7952372ae07db.ctex",
+      "sha256": "fc0c98dc05f5d813f8847e1cd42968ecd8dc3aea5cb40771e3ca4fefb64a8578",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_weight_gameplay_Image_0.png-ab48059e2fc7b17522d105987a351f00.ctex",
+      "sha256": "e94336a4ed1324d67478b74cc941d5170087cb3532cf1f67955a3db353c86668",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/pilgrim_gateway_Image_1.png-b59850e2d969ab7c45b705df8f00a9d7.ctex",
+      "sha256": "1aa466e89ba6c2c6a3bb7cd987238d537d0ab515a6d0ae7f57a9b34ba0f7e1b6",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_impact_gameplay_Image_0.png-85123335e14263e74f9fb8d4323a6e42.ctex",
+      "sha256": "e94336a4ed1324d67478b74cc941d5170087cb3532cf1f67955a3db353c86668",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/sentinel_gameplay_Image_2.png-e94d8e9565d469be794c0f0a4231a8f0.ctex",
+      "sha256": "65b2a73dec96b6a890dd99cf3827a930120b1392724a581ff6a213b183c7fd6c",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/erin_idle_gameplay_Image_0.png-73b961daa3809e44369d81854ce0b4cb.ctex",
+      "sha256": "7d294c3d938675c357306df60afc0367fc91199dd44ae40a78cc25ee32b2cad6",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_impact_gameplay_Image_2.png-00d953bf7012ad72bc597252fb50fbaf.ctex",
+      "sha256": "290160a16d9d4817a6c4294d0892f9c917fc9b47a89375c81196fb28c5a15a28",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/lyra_weight_gameplay_Image_2.png-c9aec7610c762f5d42039401a1377492.ctex",
+      "sha256": "290160a16d9d4817a6c4294d0892f9c917fc9b47a89375c81196fb28c5a15a28",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/wall_albedo.jpg-fc52093de8b9e72f989124bf30159f43.ctex",
+      "sha256": "3bc31a6fe8ffb4e7c3ab619aa63f61467855dd4bbb96e07f29d5ada5916ac47d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/ground_arm.jpg-98421b85f34c0fbb88d59f9170262776.ctex",
+      "sha256": "446866d13963e3264e4c5e588d60a004cb5ff2df9fd25cb790fa6e9c9df2203c",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/wall_arm.jpg-a078c2b52db4376dd56f6e9cb71b89be.ctex",
+      "sha256": "98320ab835acef5aca577686b186fede2e09d171a29fe151311fadff56931d06",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/ground_albedo.jpg-220dde1bd429775cb73eac2c2c37c70d.ctex",
+      "sha256": "0147e3e36bbfac097c14b25a8494b9f305ffe159edba3e1f6abed510bb1b7988",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/floor_albedo.jpg-753e667a1864702b8b1b89956576a01b.ctex",
+      "sha256": "f3df6dd6761660f4fe4f185b1018eb38013c449bdd2651779401f96c00890afd",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/wall_normal.jpg-c68b4193e33696d0f9a5cc73daba997a.ctex",
+      "sha256": "d279cb275402476491ffc9c0b3183ee68216ebab42b86550cbb4d05f3c38fcd1",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/ground_normal.jpg-c5a91af65a87f812315f9d366de51203.ctex",
+      "sha256": "ffd90c8fdadd7e20571ea4c30872cdf90e94fa44edd71092799f43af353457f5",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/floor_arm.jpg-5b8cf3a7add667c133a6ac62d91de4ff.ctex",
+      "sha256": "a3d19506b0c7c7ec0be9984b71ddb365167a605dfddb2eb6fa4dcbd55ce9443d",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    },
+    {
+      "generated": ".godot/imported/floor_normal.jpg-a5222b761eed38cae469845dd89909e0.ctex",
+      "sha256": "7b2a35c74e2b5c0cf091051bdd8fecbb773a8b45888bf4fcddd545f58b643e49",
+      "matches_source_cache": true,
+      "matches_pre_grounding_cache": true
+    }
+  ]
+}

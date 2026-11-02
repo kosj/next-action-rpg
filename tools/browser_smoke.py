@@ -24,7 +24,10 @@ QUALITY_PRESENTATION_READY = """s.quality === a && !s.paused && s.lighting?.key_
     s.lighting.fill_shadow_enabled === false && s.hero_art?.grounding_shadow &&
     s.hero_art.grounding_shadow.visible === (a === 1) &&
     (a === 0 || (s.hero_art.grounding_shadow.cached_ground &&
-        s.hero_art.grounding_shadow.reason === 'approximate_grounding'))"""
+        s.hero_art.grounding_shadow.reason === 'approximate_grounding')) &&
+    s.lighting.hub?.npcs?.length === 2 && s.lighting.hub.npcs.every(n =>
+        n.grounding_shadow && n.grounding_shadow.visible === (a === 1) &&
+        !n.grounding_shadow.query_pending && (a === 0 || n.grounding_shadow.cached_ground))"""
 
 
 
@@ -60,10 +63,62 @@ def assert_atmosphere_presentation(light):
     assert 0 < backdrop["triangles"] <= 24000 and backdrop["forbidden_nodes"] == 0, backdrop
     assert backdrop["all_visible"] and backdrop["all_unshadowed"], backdrop
 
+def assert_hub_presentation(light):
+    """Observe real role assets/idle resources and the cosmetic checkpoint modules."""
+    report = light["hub"]
+    npcs = {item["role"]: item for item in report["npcs"]}
+    assert set(npcs) == {"erin", "roen"}, npcs
+    for index, role in enumerate(("erin", "roen")):
+        npc = npcs[role]
+        path = "res://assets/models/production/" + role + "_idle_gameplay.glb"
+        assert npc["profile"] == "hub_idle_v013" and npc["npc_index"] == index, npc
+        assert npc["asset_ready"] and npc["mode"] == "asset_idle" and not npc["failure"], npc
+        assert npc["source_path"] == npc["intended_source"] == path, npc
+        assert npc["rigged"] and npc["skinned_meshes"] > 0 and npc["skeletons"], npc
+        assert all(item["bones"] > 0 for item in npc["skeletons"]), npc
+        assert all(npc[key] > 0 for key in ("mesh_nodes", "surfaces", "vertices", "triangles")), npc
+        assert npc["materials"] and npc["geometry_scope"] == "rest_mesh_arrays_not_animated_skin_support", npc
+        assert all(math.isfinite(x) for x in npc["position"] + npc["forward"]), npc
+        assert npc["position"] == [[-4, 0, 5], [4, 0, 5]][index], npc
+        shadow = npc["grounding_shadow"]
+        performance = not light["key_shadow_enabled"]
+        assert shadow["visible"] is performance and not shadow["query_pending"], shadow
+        assert shadow["static_root_only"] and not shadow["actor_budget_shared"], shadow
+        assert shadow["maximum_visible"] == 2 and shadow["gameplay_authority"] is False, shadow
+        assert shadow["query_count"] >= 0 and math.isclose(shadow["offset_m"], .012, abs_tol=1e-6), shadow
+        shader = Path(__file__).resolve().parents[1] / "game/assets/shaders/grounding_shadow.gdshader"
+        assert shadow["shader_path"] == "res://assets/shaders/grounding_shadow.gdshader", shadow
+        assert shadow["shader_sha256"] == hashlib.sha256(shader.read_bytes()).hexdigest(), shadow
+        assert all(math.isfinite(x) for x in shadow["ground_point"] + shadow["ground_normal"]), shadow
+        if performance:
+            assert shadow["cached_ground"] and shadow["query_count"] > 0, shadow
+            assert shadow["reason"] == "static_hub_grounding" and 0 < shadow["opacity"] <= .210001, shadow
+            assert shadow["ground_normal"][1] >= .65, shadow
+        else:
+            assert shadow["opacity"] == 0 and not shadow["cached_ground"], shadow
+        idle = npc["idle"]
+        assert idle["clip"] == "idle" and idle["playing"] and idle["can_process"], npc
+        assert idle["loop"] == 1 and math.isfinite(idle["time"]) and math.isfinite(idle["length"]), npc
+        assert 0 <= idle["time"] <= idle["length"] and idle["length"] > 0, npc
+    relics = {item["index"]: item for item in report["relics"]}
+    assert set(relics) == {0, 1, 2}, relics
+    shader = Path(__file__).resolve().parents[1] / "game/assets/shaders/checkpoint_crystal.gdshader"
+    for relic in relics.values():
+        assert relic["profile"] == "checkpoint_relic_v013", relic
+        assert all(math.isclose(x, y, abs_tol=1e-6) for x, y in zip(relic["pivot"], [0, 1.35, 0])), relic
+        assert relic["mesh_nodes"] == relic["surfaces"] == 5 and relic["triangles"] == 2068, relic
+        assert relic["forbidden_nodes"] == 0, relic
+        assert relic["shader_path"] == "res://assets/shaders/checkpoint_crystal.gdshader", relic
+        assert relic["shader_sha256"] == hashlib.sha256(shader.read_bytes()).hexdigest(), relic
+    assert report["fonts"] == {"hud": "res://assets/fonts/runefall_kr430.ttf",
+                                "touch": "res://assets/fonts/runefall_kr430.ttf"}, report["fonts"]
+
+
 def assert_quality_presentation(status, index):
     """Observe actual light/finite grounding nodes after normal resumed physics."""
     light = status["lighting"]
     assert_atmosphere_presentation(light)
+    assert_hub_presentation(light)
     ground = status["hero_art"]["grounding_shadow"]
     assert status["quality"] == index and not status["paused"], status
     assert light["key_present"] and light["fill_present"], light

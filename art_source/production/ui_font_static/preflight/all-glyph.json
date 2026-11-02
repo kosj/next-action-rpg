@@ -1,0 +1,43 @@
+{
+  "glyph_count": 24964,
+  "operation_mismatches": [],
+  "rounded_different_glyphs": 35,
+  "max_outline_delta": 0.5059814453125,
+  "max_advance_delta": 0.49462890625,
+  "max_delta_glyph": "M",
+  "examples": [
+    {
+      "glyph": "M",
+      "delta": 0.5059814453125
+    },
+    {
+      "glyph": "Mu",
+      "delta": 0.5059814453125
+    },
+    {
+      "glyph": "uni041C",
+      "delta": 0.5059814453125
+    },
+    {
+      "glyph": "uni0436",
+      "delta": 0.50030517578125
+    },
+    {
+      "glyph": "uni1E3E",
+      "delta": 0.5059814453125
+    },
+    {
+      "glyph": "quotedblright",
+      "delta": 0.50030517578125
+    },
+    {
+      "glyph": "quotedblbase",
+      "delta": 0.50030517578125
+    },
+    {
+      "glyph": "universal",
+      "delta": 0.50030517578125
+    }
+  ],
+  "elapsed_seconds": 19.629542330018012
+}

@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-11-02",
+  "state": "Staged Python PASS67/0/0skip; not final frozen-source/build approval",
+  "tests": 67,
+  "failures": 0,
+  "skips_reported_by_runner": 0,
+  "elapsed_s": 1.774,
+  "log": {
+    "file": "python-tests-first.log",
+    "bytes": 166,
+    "sha256": "9029567649393ecedfb758c9afe7026b223a46c1fbbc5835889a7be6f28022e3"
+  },
+  "scope": "Unified source/protocol/font/package checks at this checkpoint. Source inputs still being revised; no native/engine, NPC visual, export/browser/public/AAA approval.",
+  "remaining": [
+    "Final source freeze and rerun after candidate fixes",
+    "Actual NPC/relic native/raster adoption",
+    "Full WebWindows package and browser/public verification"
+  ],
+  "suite_boundary": "These67 tools tests are separate from the five canonical tests run separately in CI; no integrated72-test result claimed."
+}

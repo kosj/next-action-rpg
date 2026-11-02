@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "root_provisional_runtime_integration_accepted_actual_game_review_pending",
+  "source_sha256": "801f50dff21cc071ffca61673595948c750152a85fe03764627570ec8f347c63",
+  "evidence": "comparison/comparison.json",
+  "actually_viewed_candidate_views": [
+    "comparison/candidate-full-idle0.png",
+    "comparison/candidate-close-idle0.png",
+    "comparison/candidate-close-idle-mid.png"
+  ],
+  "observations": [
+    "Large original black and gray triangles are substantially reduced by local geometry/surface NORMAL correction plus adjacent-ivory albedo/normal clone",
+    "Small pale blue tip, thin dark tails and adjacent deep slits remain visible",
+    "No new large rupture was observed in these three finite candidate views"
+  ],
+  "decision": "Root approved provisional runtime integration and actual-game q0/q1 review only; not a fully repaired garment or final visual/AAA approval.",
+  "remaining": [
+    "Actual imported-game q0/q1 face/hands/boots/robe review",
+    "Final native/export/package/browser validation",
+    "Continuous idle skin/cloth/contact, hardware and AAA quality"
+  ]
+}

@@ -427,6 +427,7 @@ func apply_quality() -> void:
 			if node is DirectionalLight3D and node.name == &"SanctuaryKey":
 				node.shadow_enabled = Session.quality == 0
 	get_tree().call_group("grounding_shadows", "refresh_quality")
+	get_tree().call_group("hub_grounding_shadows", "refresh_quality")
 
 func lighting_presentation_report() -> Dictionary:
 	# Actual resource observations only: no quality, input, physics or RNG writes.
@@ -503,4 +504,46 @@ func lighting_presentation_report() -> Dictionary:
 				"forbidden_nodes":forbidden_nodes, "all_visible":all_visible, "all_unshadowed":all_unshadowed}
 	return {"key_present":is_instance_valid(key), "fill_present":is_instance_valid(fill),
 		"key_shadow_enabled":key.shadow_enabled if is_instance_valid(key) else false,
-		"fill_shadow_enabled":fill.shadow_enabled if is_instance_valid(fill) else false, "atmosphere":atmosphere}
+		"fill_shadow_enabled":fill.shadow_enabled if is_instance_valid(fill) else false, "atmosphere":atmosphere,
+		"hub":hub_presentation_report()}
+
+func hub_presentation_report() -> Dictionary:
+	# Read-only, bounded resource getters: no per-frame vertex/skin audit.
+	var report := {"npcs":[], "relics":[], "fonts":{}}
+	if is_instance_valid(sanctuary):
+		for node in sanctuary.get_children():
+			if node.has_meta("npc") and node.has_method("presentation_report"):
+				report.npcs.append(node.presentation_report())
+			if not node.has_meta("checkpoint") or not node.has_method("get_crystal_pivot"):
+				continue
+			var pivot: Node3D = node.get_crystal_pivot()
+			var meshes := 0
+			var surfaces := 0
+			var triangles := 0
+			var forbidden := 0
+			var shader_path := ""
+			var shader_sha256 := ""
+			for child in node.find_children("*", "", true, false):
+				if child is CollisionObject3D or child is CollisionShape3D or child is Light3D or child is NavigationRegion3D:
+					forbidden += 1
+				if child is MeshInstance3D and child.mesh is ArrayMesh:
+					meshes += 1
+					for surface in range(child.mesh.get_surface_count()):
+						surfaces += 1
+						var indices: int = child.mesh.surface_get_array_index_len(surface)
+						triangles += int((indices if indices > 0 else child.mesh.surface_get_array_len(surface)) / 3)
+						var material: Material = child.get_active_material(surface)
+						if material is ShaderMaterial and material.shader != null:
+							shader_path = material.shader.resource_path
+							shader_sha256 = material.shader.code.sha256_text()
+			var point: Vector3 = node.global_position
+			report.relics.append({"index":node.get_meta("checkpoint"), "profile":node.get_meta("presentation_profile", ""),
+				"position":[point.x,point.y,point.z], "pivot":[pivot.position.x,pivot.position.y,pivot.position.z],
+				"mesh_nodes":meshes,"surfaces":surfaces,"triangles":triangles,"forbidden_nodes":forbidden,
+				"shader_path":shader_path,"shader_sha256":shader_sha256})
+	if is_instance_valid(ui) and is_instance_valid(ui.root):
+		var hud_font: Font = ui.root.get_theme_default_font()
+		report.fonts["hud"] = hud_font.resource_path if hud_font != null else ""
+	var touch_font: Font = TouchControls.get("_font")
+	report.fonts["touch"] = touch_font.resource_path if touch_font != null else ""
+	return report

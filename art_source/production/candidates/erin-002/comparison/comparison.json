@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "six_matched_studio_rasters_for_human_review",
+  "automatic_visual_approval": false,
+  "blender": "4.3.2",
+  "samples": 12,
+  "resolution": [
+    640,
+    640
+  ],
+  "sources": [
+    {
+      "role": "original",
+      "file": "art_source/production/candidates/erin-001/erin-idle.glb",
+      "sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598"
+    },
+    {
+      "role": "candidate",
+      "file": "art_source/production/candidates/erin-002/erin-idle-one-ring.glb",
+      "sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8"
+    }
+  ],
+  "views": [
+    {
+      "role": "original",
+      "file": "original-full-idle0.png",
+      "idle_fraction": 0,
+      "time_s": 0.0,
+      "camera_blender": [
+        3.705920696258545,
+        5.701416492462158,
+        0.8499997854232788
+      ],
+      "look_at_blender": [
+        2.9802322387695312e-08,
+        3.725290298461914e-08,
+        0.8499997854232788
+      ],
+      "orthographic_scale": 1.9720000553131103,
+      "image_sha256": "5fcb8c7c8637682b5b547c8ee8a839df554483fd72293c72f0cf02bc18a01a4f"
+    },
+    {
+      "role": "original",
+      "file": "original-close-idle0.png",
+      "idle_fraction": 0,
+      "time_s": 0.0,
+      "camera_blender": [
+        3.9259207248687744,
+        5.82141637802124,
+        0.5
+      ],
+      "look_at_blender": [
+        0.2199999988079071,
+        0.11999999731779099,
+        0.5
+      ],
+      "orthographic_scale": 0.43,
+      "image_sha256": "fd253008d699f8f1b0dbfd04cbecb2426b2c44fce9d23f150107b225bb5fb5d3"
+    },
+    {
+      "role": "original",
+      "file": "original-close-idle-mid.png",
+      "idle_fraction": 0.5,
+      "time_s": 5.083333333333333,
+      "camera_blender": [
+        3.9259207248687744,
+        5.82141637802124,
+        0.5
+      ],
+      "look_at_blender": [
+        0.2199999988079071,
+        0.11999999731779099,
+        0.5
+      ],
+      "orthographic_scale": 0.43,
+      "image_sha256": "c5ed1fbd4a140dcbf847c38e423e653993702f5f2dcb273213ee0b68619bef0e"
+    },
+    {
+      "role": "candidate",
+      "file": "candidate-full-idle0.png",
+      "idle_fraction": 0,
+      "time_s": 0.0,
+      "camera_blender": [
+        3.705920696258545,
+        5.701416492462158,
+        0.8499997854232788
+      ],
+      "look_at_blender": [
+        2.9802322387695312e-08,
+        3.725290298461914e-08,
+        0.8499997854232788
+      ],
+      "orthographic_scale": 1.9720000553131103,
+      "image_sha256": "28d4def821a1776eaba165e925bee9e18d84c9299372cb11dca8360ef95dddce"
+    },
+    {
+      "role": "candidate",
+      "file": "candidate-close-idle0.png",
+      "idle_fraction": 0,
+      "time_s": 0.0,
+      "camera_blender": [
+        3.9259207248687744,
+        5.82141637802124,
+        0.5
+      ],
+      "look_at_blender": [
+        0.2199999988079071,
+        0.11999999731779099,
+        0.5
+      ],
+      "orthographic_scale": 0.43,
+      "image_sha256": "218d179f705e363eb7a09d3465605e025d6f5252aa65c2fbc3c5c0cd783bbc3c"
+    },
+    {
+      "role": "candidate",
+      "file": "candidate-close-idle-mid.png",
+      "idle_fraction": 0.5,
+      "time_s": 5.083333333333333,
+      "camera_blender": [
+        3.9259207248687744,
+        5.82141637802124,
+        0.5
+      ],
+      "look_at_blender": [
+        0.2199999988079071,
+        0.11999999731779099,
+        0.5
+      ],
+      "orthographic_scale": 0.43,
+      "image_sha256": "da0f90428c6cbbf1106afe48c98e0b1f6cf748402284b986e66e635393b72ea6"
+    }
+  ],
+  "tool_file": "art_source/production/hub_npcs/render_robe_comparison.py",
+  "tool_sha256": "064f385311123826490a8cfdbfd6f70473150647135424893f912c6bbc4d7e3e",
+  "match_contract": "Identical original-derived camera bounds, materials, images, lighting, samples, seed, idle times and projection. Only bounded candidate POSITION/NORMAL bytes differ.",
+  "limitations": [
+    "Three finite pose/view pairs do not establish continuous idle, cloth/foot contact, actual game, hardware, or AAA quality"
+  ]
+}

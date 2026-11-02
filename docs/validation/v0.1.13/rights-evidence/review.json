@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-11-02T03:33:55.865833+00:00",
+  "scope": "Official public licensing/output and looping-game workflow documentation; no unrelated standalone stock-library redistribution",
+  "sources": [
+    {
+      "id": "private-license",
+      "url": "https://3d.varco.ai/docs/release-notes/2026-10-12-choose-a-license-when-you-generate",
+      "http_status": 200,
+      "bytes": 10829,
+      "sha256": "b54efed2d5fa44732ff6d292608ec8701ba3807ee050828dd46f8de044f935f7",
+      "public_evidence": "Canonical source URL, retrieval status, original byte count and SHA-256; full page is retained only in private research evidence."
+    },
+    {
+      "id": "looping-game-workflow",
+      "url": "https://3d.varco.ai/docs/release-notes/2026-10-07-looping-animations-ready-to-use",
+      "http_status": 200,
+      "bytes": 9963,
+      "sha256": "3cefac376f3ef88431cf78791577dbad6f3739d95a36bc4b296a696bd318d05f",
+      "public_evidence": "Canonical source URL, retrieval status, original byte count and SHA-256; full page is retained only in private research evidence."
+    }
+  ],
+  "exact_quotes": {
+    "private_commercial": "You may use your asset commercially."
+  },
+  "terms_access": {
+    "url": "https://terms.varco.ai/",
+    "http_status": 403,
+    "scope": "Only public terms root accessed; no credentials/logins/private MCP endpoints or response body saved"
+  },
+  "bounded_interpretation": "For the project-owned generated PRIVATE NPC model, applying the provider animation and distributing the resulting animated character GLB in the game is supported by the explicit Private commercial-use grant and Private-derived-assets persistence, alongside the official apply-to-own-rig game-idle workflow. This does not assert a separate stock-specific license was inspected, or grant redistribution of a raw standalone stock library.",
+  "stock_specific_boundary": "The public articles do not name standing_idle_1_looping or set out a separate stock-animation license. No additional restriction or extra-permission requirement was observed in these accessible sources; HTTP403 is access failure, not evidence of prohibition.",
+  "project_authority": "Root reviewed the bounded interpretation and approved proceeding on own generated-and-animated model output; generation PRIVATE metadata/asset ownership remains separately bound by the art agent manifests.",
+  "not_claimed": [
+    "Full terms text read",
+    "Every stock animation has a separately confirmed unrestricted redistribution license",
+    "Provider stock motion is project-authored animation",
+    "Private prevents the project owner publishing their game asset"
+  ],
+  "source_paraphrases": {
+    "private_derivatives": "The guide states that derivatives of an asset owned under the Private option retain that option.",
+    "license_persistence": "The asset retains the choice made at generation after later plan changes.",
+    "looping_workflow": "The motion guide describes applying a selected looping animation to a rigged humanoid and presents idle, walking and combat uses in games."
+  }
+}

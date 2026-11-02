@@ -1,0 +1,738 @@
+{
+  "status": "passed_dirty_local_preview",
+  "scope": "Actual root-run WebGL desktop readback only; not clean CI/public/mobile/hardware/AAA approval",
+  "observed_at": "2026-11-02T05:53:26.271928+00:00",
+  "log_sha256": "69dc4a069793f66f518cc3449fc9cc67e5dc0ebed43da7292684eaeefdf72f5a",
+  "elapsed_seconds": 506.152,
+  "browser_page_errors": [],
+  "nonfatal_http_client_close_connection_reset_observed": true,
+  "footer": "0.1.13 · cb038edf",
+  "quality_sequence": [
+    1,
+    0,
+    1
+  ],
+  "restart": {
+    "quality": 1,
+    "health": 120,
+    "checkpoint": 0,
+    "z": 6,
+    "input_ready": true
+  },
+  "actual_idb_quality_sequence": [
+    0,
+    1,
+    1
+  ],
+  "restart_actual_idb_unchanged": true,
+  "idb_reads": 8,
+  "maximum_idb_operation_seconds": 14.928,
+  "source88_web14_zip2_manifest_unchanged": true,
+  "evidence_sha256": {
+    "browser-errors.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "browser-progress.json": "81a93d7fca2ef2e2962018de3845fa534294a0d4885dcc9237a4ba6a731920fa",
+    "browser-quality.json": "8f5101c79ae4943a283abc71378ae7af5d650c3c82b6730918cb7afa28be6f7d",
+    "browser-persistence.json": "8f70edb62712a6ba34cbb6a28f555f2f4f4a107a052790962b1af34e589d1654",
+    "browser-storage.json": "99cc2fc96d41c9840ca748358116281780b5ed0f5668f8e3c37dd8490ba519d0",
+    "browser-storage-diagnostics.json": "5190c81df92787816e89ded285a19e2e130c782cf33f0402e1d161960d11db9c"
+  },
+  "quality_actual": {
+    "performance": {
+      "quality": 1,
+      "key_shadow": false,
+      "hub": {
+        "fonts": {
+          "hud": "res://assets/fonts/runefall_kr430.ttf",
+          "touch": "res://assets/fonts/runefall_kr430.ttf"
+        },
+        "npcs": [
+          {
+            "role": "erin",
+            "npc_index": 0,
+            "source_path": "res://assets/models/production/erin_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 5.97573333333333
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                -4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0.21,
+              "query_count": 1,
+              "query_pending": false,
+              "reason": "static_hub_grounding",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": true
+            }
+          },
+          {
+            "role": "roen",
+            "npc_index": 1,
+            "source_path": "res://assets/models/production/roen_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 5.97573333333333
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0.21,
+              "query_count": 1,
+              "query_pending": false,
+              "reason": "static_hub_grounding",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": true
+            }
+          }
+        ],
+        "relics": [
+          {
+            "forbidden_nodes": 0,
+            "index": 0,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              6
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 1,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              -116
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 2,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              -3,
+              0,
+              -281
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          }
+        ]
+      }
+    },
+    "balanced": {
+      "quality": 0,
+      "key_shadow": true,
+      "hub": {
+        "fonts": {
+          "hud": "res://assets/fonts/runefall_kr430.ttf",
+          "touch": "res://assets/fonts/runefall_kr430.ttf"
+        },
+        "npcs": [
+          {
+            "role": "erin",
+            "npc_index": 0,
+            "source_path": "res://assets/models/production/erin_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 9.31596666666667
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                -4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0,
+              "query_count": 1,
+              "query_pending": false,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": false
+            }
+          },
+          {
+            "role": "roen",
+            "npc_index": 1,
+            "source_path": "res://assets/models/production/roen_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 9.31596666666667
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": false,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0,
+              "query_count": 1,
+              "query_pending": false,
+              "reason": "balanced_uses_light_shadows",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": false
+            }
+          }
+        ],
+        "relics": [
+          {
+            "forbidden_nodes": 0,
+            "index": 0,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              6
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 1,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              -116
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 2,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              -3,
+              0,
+              -281
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          }
+        ]
+      }
+    },
+    "restored": {
+      "quality": 1,
+      "key_shadow": false,
+      "hub": {
+        "fonts": {
+          "hud": "res://assets/fonts/runefall_kr430.ttf",
+          "touch": "res://assets/fonts/runefall_kr430.ttf"
+        },
+        "npcs": [
+          {
+            "role": "erin",
+            "npc_index": 0,
+            "source_path": "res://assets/models/production/erin_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 0.657466348775229
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                -4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0.21,
+              "query_count": 2,
+              "query_pending": false,
+              "reason": "static_hub_grounding",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": true
+            }
+          },
+          {
+            "role": "roen",
+            "npc_index": 1,
+            "source_path": "res://assets/models/production/roen_idle_gameplay.glb",
+            "profile": "hub_idle_v013",
+            "asset_ready": true,
+            "rigged": true,
+            "skeletons": [
+              {
+                "bones": 53,
+                "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+              }
+            ],
+            "triangles": 16000,
+            "idle": {
+              "can_process": true,
+              "clip": "idle",
+              "length": 10.1666669845581,
+              "loop": 1,
+              "playing": true,
+              "time": 0.657466348775229
+            },
+            "grounding_shadow": {
+              "actor_budget_shared": false,
+              "cached_ground": true,
+              "gameplay_authority": false,
+              "ground_normal": [
+                0,
+                1,
+                0
+              ],
+              "ground_point": [
+                4,
+                0,
+                5
+              ],
+              "maximum_visible": 2,
+              "offset_m": 0.012,
+              "opacity": 0.21,
+              "query_count": 2,
+              "query_pending": false,
+              "reason": "static_hub_grounding",
+              "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+              "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+              "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+              "static_root_only": true,
+              "visible": true
+            }
+          }
+        ],
+        "relics": [
+          {
+            "forbidden_nodes": 0,
+            "index": 0,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              6
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 1,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              2,
+              0,
+              -116
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          },
+          {
+            "forbidden_nodes": 0,
+            "index": 2,
+            "mesh_nodes": 5,
+            "pivot": [
+              0,
+              1.35000002384186,
+              0
+            ],
+            "position": [
+              -3,
+              0,
+              -281
+            ],
+            "profile": "checkpoint_relic_v013",
+            "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+            "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+            "surfaces": 5,
+            "triangles": 2068
+          }
+        ]
+      }
+    }
+  },
+  "restart_hub": {
+    "fonts": {
+      "hud": "res://assets/fonts/runefall_kr430.ttf",
+      "touch": "res://assets/fonts/runefall_kr430.ttf"
+    },
+    "npcs": [
+      {
+        "role": "erin",
+        "npc_index": 0,
+        "source_path": "res://assets/models/production/erin_idle_gameplay.glb",
+        "profile": "hub_idle_v013",
+        "asset_ready": true,
+        "rigged": true,
+        "skeletons": [
+          {
+            "bones": 53,
+            "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+          }
+        ],
+        "triangles": 16000,
+        "idle": {
+          "can_process": true,
+          "clip": "idle",
+          "length": 10.1666669845581,
+          "loop": 1,
+          "playing": true,
+          "time": 0.873966666666666
+        },
+        "grounding_shadow": {
+          "actor_budget_shared": false,
+          "cached_ground": true,
+          "gameplay_authority": false,
+          "ground_normal": [
+            0,
+            1,
+            0
+          ],
+          "ground_point": [
+            -4,
+            0,
+            5
+          ],
+          "maximum_visible": 2,
+          "offset_m": 0.012,
+          "opacity": 0.21,
+          "query_count": 1,
+          "query_pending": false,
+          "reason": "static_hub_grounding",
+          "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+          "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+          "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+          "static_root_only": true,
+          "visible": true
+        }
+      },
+      {
+        "role": "roen",
+        "npc_index": 1,
+        "source_path": "res://assets/models/production/roen_idle_gameplay.glb",
+        "profile": "hub_idle_v013",
+        "asset_ready": true,
+        "rigged": true,
+        "skeletons": [
+          {
+            "bones": 53,
+            "path": "NPC_Normalized_MinusZ/Armature/Skeleton3D"
+          }
+        ],
+        "triangles": 16000,
+        "idle": {
+          "can_process": true,
+          "clip": "idle",
+          "length": 10.1666669845581,
+          "loop": 1,
+          "playing": true,
+          "time": 0.873966666666666
+        },
+        "grounding_shadow": {
+          "actor_budget_shared": false,
+          "cached_ground": true,
+          "gameplay_authority": false,
+          "ground_normal": [
+            0,
+            1,
+            0
+          ],
+          "ground_point": [
+            4,
+            0,
+            5
+          ],
+          "maximum_visible": 2,
+          "offset_m": 0.012,
+          "opacity": 0.21,
+          "query_count": 1,
+          "query_pending": false,
+          "reason": "static_hub_grounding",
+          "scope": "Two authored stationary NPC roots per Sanctuary; cached initial/toggle support only, not animated feet or physical light shadow",
+          "shader_path": "res://assets/shaders/grounding_shadow.gdshader",
+          "shader_sha256": "c507fa0f4b38f030325758528c53ba638008f8b12d9a605ca390cc3312b94d58",
+          "static_root_only": true,
+          "visible": true
+        }
+      }
+    ],
+    "relics": [
+      {
+        "forbidden_nodes": 0,
+        "index": 0,
+        "mesh_nodes": 5,
+        "pivot": [
+          0,
+          1.35000002384186,
+          0
+        ],
+        "position": [
+          2,
+          0,
+          6
+        ],
+        "profile": "checkpoint_relic_v013",
+        "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+        "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+        "surfaces": 5,
+        "triangles": 2068
+      },
+      {
+        "forbidden_nodes": 0,
+        "index": 1,
+        "mesh_nodes": 5,
+        "pivot": [
+          0,
+          1.35000002384186,
+          0
+        ],
+        "position": [
+          2,
+          0,
+          -116
+        ],
+        "profile": "checkpoint_relic_v013",
+        "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+        "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+        "surfaces": 5,
+        "triangles": 2068
+      },
+      {
+        "forbidden_nodes": 0,
+        "index": 2,
+        "mesh_nodes": 5,
+        "pivot": [
+          0,
+          1.35000002384186,
+          0
+        ],
+        "position": [
+          -3,
+          0,
+          -281
+        ],
+        "profile": "checkpoint_relic_v013",
+        "shader_path": "res://assets/shaders/checkpoint_crystal.gdshader",
+        "shader_sha256": "548ab2a1662e583b54c5e05356a1535a46eac302dc12b200c48a61b1849b7b05",
+        "surfaces": 5,
+        "triangles": 2068
+      }
+    ]
+  },
+  "curation": {
+    "raw_summary_bytes": 36255,
+    "raw_summary_sha256": "f2c82a4f117cd97832fee0c5a0f1d7ed553e347cc7e8a9e74751f331c18b5bc9",
+    "scope": "Compact read-only actual runtime positive proofs; omits session paths and repeated mesh REST bounds. Loghash preserves nonfatal server close diagnostic separately from page errors."
+  },
+  "root_visual_review": "Root viewed original06balanced and07performance Web PNGs; no obvious UI/3D regression in desktop views. This does not inspect mobile Touch10/14px.",
+  "pending": [
+    "Actual full mobile portrait/landscape touch10/14 UI/input",
+    "clean CI/main/tag",
+    "Pages/public/release",
+    "Windows OS execution/Android/iOS/Safari target hardware",
+    "full garment/skin/continuous AV/AAA"
+  ]
+}

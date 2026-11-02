@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "id": "erin-002",
+  "status": "local_geometry_partial_improvement_visible_defects_remain_not_runtime_adopted",
+  "source_file": "erin-idle-one-ring.glb",
+  "source_bytes": 5611732,
+  "source_sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8",
+  "expected_clips": [
+    "idle",
+    "RESET"
+  ],
+  "source_parent": {
+    "file": "art_source/production/candidates/erin-001/erin-idle.glb",
+    "bytes": 5611732,
+    "sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598"
+  },
+  "provider_provenance": "art_source/production/hub_npcs/provider-run.json",
+  "runtime_status": "001 remains installed; no automatic adoption",
+  "geometry_scope": {
+    "position_rows": 25,
+    "normal_rows": 94,
+    "affected_triangles": 67,
+    "max_position_displacement_m": 0.016492851357739438,
+    "topology_UV_skin_rest_clips_maps_unrelated_bytes": "unchanged exact",
+    "foot_region_positions_normals": "unchanged exact"
+  },
+  "verification": {
+    "strict_embedded_skin_idle_RESET": true,
+    "finite_raw_skin_TBN": {
+      "status": "verified_narrow_finite_structural_scope",
+      "report": "finite-frame-audit.json",
+      "position_rows": 25,
+      "normal_rows": 94,
+      "boundary_faces_checked": 182,
+      "new_normal_face_negatives": 0,
+      "foot_rows_changed": 0,
+      "scope": "REST plus five finite actual raw skin poses; expanded 182-face normal boundary has 10 source negatives, 8 corrected, 2 inherited negatives remaining, 0 new negatives. Initial old-sign-only reject is preserved. Not full normal, imported shader or visual approval.",
+      "source_negative_faces_in_expanded_boundary": 10,
+      "corrected_source_negative_faces": 8,
+      "inherited_remaining_negative_faces": [
+        2806,
+        3076
+      ]
+    },
+    "actual_raster": {
+      "status": "reviewed_narrow_partial_improvement_defects_remain",
+      "report": "visual-review.json",
+      "comparisons": "comparison/comparison.json",
+      "runtime_adopted": false
+    },
+    "actual_game_import": "pending",
+    "web_budget": "pending",
+    "AAA": "pending"
+  },
+  "derived_files": [
+    {
+      "file": "erin-idle.glb",
+      "bytes": 5611732,
+      "sha256": "0646444f76e0c10877e4830334997996e1af3d8a2e9d7a25998dfc7de96a667a"
+    },
+    {
+      "file": "geometry-repair.json",
+      "bytes": 8842,
+      "sha256": "758c83bb37744710bd2db50f4ae8efdbf5fbbe8d789678eba504c48a5f7455c5"
+    },
+    {
+      "file": "geometry-one-ring-repair.json",
+      "bytes": 9903,
+      "sha256": "1e71c9f99c7f17c6254506a5d4dc0b7e1d0220484d36a26ab4fc64cd31ecb89c"
+    },
+    {
+      "file": "inspection.json",
+      "bytes": 3789,
+      "sha256": "b21b8df468794e211993b1128f72e90b6454cfb50ae4406b8a113946e1b09c82"
+    },
+    {
+      "file": "one-ring-inspection.json",
+      "bytes": 3798,
+      "sha256": "d848231891091de1f0e63d73e0bd676a80139a8598ae18a68c2c4db5a9626ea7"
+    },
+    {
+      "file": "finite-skin-normal-uv-audit.json",
+      "bytes": 8205,
+      "sha256": "fb7303db1e7e7b5078005ce9dc55164c638be1067a0c62c2e6669cac07a84c21"
+    },
+    {
+      "file": "actual-rest-mask-mapping.json",
+      "bytes": 4748,
+      "sha256": "334d7ad91cfcdfbaaa9678f1b5202242b817929fa57fcc8c8b9a3b2dc0c0cc38"
+    },
+    {
+      "file": "rejected-setup-summary.json",
+      "bytes": 1553,
+      "sha256": "b22bce4ae462b9db3165f7c53df2f6582cb123a480c72eaf507695e828bcc121"
+    },
+    {
+      "file": "finite-frame-audit.json",
+      "bytes": 15372,
+      "sha256": "d51e799dd3d498298ef343d649a9371a8e2e340d5a5a9179747a4d8c3a27cb65"
+    },
+    {
+      "file": "visual-review.json",
+      "bytes": 1668,
+      "sha256": "58465ed5df3ade92194f0a0670a8ce78382361331323da4eeb4b89ca64ea1491"
+    },
+    {
+      "file": "comparison/comparison.json",
+      "bytes": 4022,
+      "sha256": "fc91ccf05850cda958b78f7f18ede230f18c5bf6159219b9771aabb3016f1e75"
+    },
+    {
+      "file": "comparison/candidate-close-idle-mid.png",
+      "bytes": 675522,
+      "sha256": "da0f90428c6cbbf1106afe48c98e0b1f6cf748402284b986e66e635393b72ea6"
+    },
+    {
+      "file": "comparison/candidate-close-idle0.png",
+      "bytes": 674887,
+      "sha256": "218d179f705e363eb7a09d3465605e025d6f5252aa65c2fbc3c5c0cd783bbc3c"
+    },
+    {
+      "file": "comparison/candidate-full-idle0.png",
+      "bytes": 354166,
+      "sha256": "28d4def821a1776eaba165e925bee9e18d84c9299372cb11dca8360ef95dddce"
+    },
+    {
+      "file": "comparison/original-close-idle-mid.png",
+      "bytes": 678228,
+      "sha256": "c5ed1fbd4a140dcbf847c38e423e653993702f5f2dcb273213ee0b68619bef0e"
+    },
+    {
+      "file": "comparison/original-close-idle0.png",
+      "bytes": 677582,
+      "sha256": "fd253008d699f8f1b0dbfd04cbecb2426b2c44fce9d23f150107b225bb5fb5d3"
+    },
+    {
+      "file": "comparison/original-full-idle0.png",
+      "bytes": 354344,
+      "sha256": "5fcb8c7c8637682b5b547c8ee8a839df554483fd72293c72f0cf02bc18a01a4f"
+    }
+  ],
+  "provenance_files": [
+    {
+      "file": "art_source/production/candidates/erin-001/erin-idle.glb",
+      "bytes": 5611732,
+      "sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598"
+    },
+    {
+      "file": "art_source/production/hub_npcs/erin-robe-repair.json",
+      "bytes": 1395,
+      "sha256": "437e5e1283ea10ffc9357ed5c23d79f3efbc43fe3ec7a80957726934b865a59a"
+    },
+    {
+      "file": "art_source/production/hub_npcs/repair_robe_concavities.py",
+      "bytes": 9920,
+      "sha256": "e8dc0a272419a376830262d25971f565ad29fa9ddf9fe685a14b261090d1ad87"
+    },
+    {
+      "file": "art_source/production/hub_npcs/audit_robe_repair.py",
+      "bytes": 10382,
+      "sha256": "8bb0ac4ea7a3a3be267a9889a26f8df4dd8af3b60e4b7ee0cc6119342bf60d31"
+    },
+    {
+      "file": "art_source/production/hub_npcs/provider-run.json",
+      "bytes": 5736,
+      "sha256": "f506d738cb114146ef74173c86a9494a8da40ddf551aed427a9b5725cf6330fc"
+    },
+    {
+      "file": "art_source/production/hub_npcs/render_robe_comparison.py",
+      "bytes": 4443,
+      "sha256": "064f385311123826490a8cfdbfd6f70473150647135424893f912c6bbc4d7e3e"
+    }
+  ],
+  "limitations": [
+    "Two local robe patches only; no general retopology or AAA approval",
+    "No runtime adoption before actual matched raster and imported-game gates"
+  ],
+  "TBN_gate_revision": {
+    "initial_evidence": "finite-skin-normal-uv-audit.json",
+    "current_evidence": "finite-frame-audit.json",
+    "reason": "Keeping the signs of six invalid source normals opposite geometry would resurrect the defect. Validate target finite unit orthogonal frame against immutable UV orientation and corrected actual normals; reject newly introduced normal/face negatives across boundary faces."
+  }
+}

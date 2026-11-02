@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "status": "bounded_font_raster_candidate_accepted_for_source_integration",
+  "scope": "Isolated actual Godot Control/TextServer font fixture; not actual Game/browser UI, target hardware performance or export approval.",
+  "decision": "Accepted for static-font reference integration with the explicitly measured 12px AV edge-case difference. No exact-all-glyph raster claim.",
+  "engine": {
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "binary_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e"
+  },
+  "renderer": "gl_compatibility",
+  "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "text_server": "ICU / HarfBuzz / Graphite (Built-in)",
+  "font_source_inputs": {
+    "game/assets/fonts/NotoSansKR.ttf": {
+      "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+      "bytes": 10414588
+    },
+    "game/assets/fonts/runefall_kr430.ttf": {
+      "sha256": "038bb3e475466a2ffec9b78acc4d0d6ca10b558a02214e371fe7f7993eb609b3",
+      "bytes": 6224172
+    },
+    "game/assets/fonts/NotoSansKR.ttf.import": {
+      "sha256": "fac19aab88c32be0afb27f0853fd16607c7830f8b825d009ef47c2722a303d45",
+      "bytes": 768
+    }
+  },
+  "fixture_source_inputs": {
+    "game/tests/ui_font_review.gd": {
+      "sha256": "f26fee74006dc1b6e18294d1fa2c4853b998edfd222332840fbfafb42e910913",
+      "bytes": 7879
+    },
+    "game/tests/ui_font_review.tscn": {
+      "sha256": "8406b3838cbb87efaac95481931f260bef6a0352e86fb82ca37eb2cfaeef98f1",
+      "bytes": 183
+    }
+  },
+  "baseline": "Original FontFile wrapped by FontVariation with wght430",
+  "candidate": "Static derived FontFile directly; no FontVariation",
+  "font_sizes": [
+    12,
+    16,
+    18,
+    24,
+    36
+  ],
+  "logical_viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      800
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "palette": {
+    "background": "0b1218",
+    "gold": "d6b87e",
+    "mint": "a2d5c5",
+    "panel": "15242c",
+    "text": "e6eade"
+  },
+  "positions": {
+    "column_xy": [
+      12,
+      12
+    ],
+    "horizontal_margin_each_side": 12,
+    "row_separation": 8
+  },
+  "all_content_inside_all_viewports": true,
+  "matched_pairs": 15,
+  "pixel_and_layout_exact_pairs": 12,
+  "strict_layout_exact_all_pairs": false,
+  "pixel_exact_all_pairs": false,
+  "actual_HUD_touch_dialog_rows_exact_in_finite_corpus": true,
+  "all_widget_rects_minimum_sizes_and_line_counts_exact": true,
+  "shaped_glyph_records_checked": 3660,
+  "fallback_or_missing_glyphs": 0,
+  "pixel_comparison": "Unedited original PNG RGB channels, opaque backgrounds; no registration/scaling/masking/tolerance.",
+  "differing_pairs": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "font_size": 12,
+      "differing_layout_fields": 28,
+      "maximum_layout_numeric_delta": 0.015625,
+      "changed_pixels": 213,
+      "total_pixels": 329160,
+      "max_channel_delta_0_255": 88,
+      "mean_absolute_channel_delta_0_255": 0.019564953214242314,
+      "difference_bbox_xyxy": [
+        19,
+        136,
+        126,
+        148
+      ]
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "font_size": 12,
+      "differing_layout_fields": 28,
+      "maximum_layout_numeric_delta": 0.015625,
+      "changed_pixels": 213,
+      "total_pixels": 288000,
+      "max_channel_delta_0_255": 88,
+      "mean_absolute_channel_delta_0_255": 0.02236111111111111,
+      "difference_bbox_xyxy": [
+        19,
+        136,
+        126,
+        148
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "font_size": 12,
+      "differing_layout_fields": 28,
+      "maximum_layout_numeric_delta": 0.015625,
+      "changed_pixels": 213,
+      "total_pixels": 329160,
+      "max_channel_delta_0_255": 88,
+      "mean_absolute_channel_delta_0_255": 0.019564953214242314,
+      "difference_bbox_xyxy": [
+        19,
+        136,
+        126,
+        148
+      ]
+    }
+  ],
+  "difference_description": "At12px only the extra AV/ligature/multilingual row differs: first shaped A advance7.125→7.109375px, propagating1/64px character-bound offsets. Other finite fixture rows and all widget bounds/wrapping match. Tiny native difference is retained, not declared pixel-exact.",
+  "actual_private_import_fontdata": {
+    "NotoSansKR.ttf": {
+      "path": "project/.godot/imported/NotoSansKR.ttf-3ae954ae8c14792ea34daf89520c1713.fontdata",
+      "bytes": 6732809,
+      "sha256": "0b0c707b1250158a622294d12c7f5c625fcd49f8f9c91123a35e7d3b4c27bdc3",
+      "header_hex": "52534343",
+      "import_sidecar_sha256": "608ecfdc10f319118be33c9d54c64b0519772c7d141bd7c6d39850d6b1aa815f"
+    },
+    "runefall_kr430.ttf": {
+      "path": "project/.godot/imported/runefall_kr430.ttf-09f604ddce4fb4304de2a95ee214ba6f.fontdata",
+      "bytes": 3864201,
+      "sha256": "6611b401fd20d4afffd80e6d71e6260a9423b7038220c825f79835f7f17871c6",
+      "header_hex": "52534343",
+      "import_sidecar_sha256": "ad36b55c3761f353e9039f7651ae1209affc7526034753fb642e35b6e00c20db"
+    }
+  },
+  "actual_private_fontdata_bytes_saved": 2868608,
+  "import_size_scope": "Two real compressed fontdata imports in the isolated project with identical import parameters; NOT final production PCK/raw Web/ZIP savings.",
+  "selected_raw_pngs": [
+    {
+      "path": "variable430-390x844-12.png",
+      "bytes": 17157,
+      "sha256": "13ae12688b2005004a95024b129efd65eb5c6956981bebc883573f959351ce16"
+    },
+    {
+      "path": "static430-390x844-12.png",
+      "bytes": 17114,
+      "sha256": "5ede99ed8e44440887e899543139ed50adc164b7fe03d4940dbe5331a82b723e"
+    }
+  ],
+  "engine_errors": [],
+  "warnings": [
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "processes_closed": true,
+  "failed_attempt_retained": "Attempt001 halted before rendering because sandbox denied editor local socket listening; errors were not ignored. Attempt002 used local-network-capable execution for the editor and TCP-disabled local Xorg.",
+  "full_local_evidence": "build/verification/ui-font-static/attempt-002 (30rawPNGs,fullshaping/Controlmetrics,capture/importlogs)",
+  "pending": [
+    "Final production import and native/UI regression tests",
+    "Final PCK/raw Web/Windows export measurements",
+    "Actual Game desktop/mobile browser UI and persistence regressions"
+  ],
+  "touch_font_scope": "Actual touch action14px/helper10px are outside the isolated12/16/18/24/36px corpus; no raster/layout equivalence claim there. Final actual Game portrait/landscape browser review is separate."
+}

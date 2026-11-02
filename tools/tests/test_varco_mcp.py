@@ -8,6 +8,7 @@ import sys
 from tempfile import TemporaryDirectory
 import time
 import unittest
+from unittest.mock import AsyncMock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import varco_mcp
@@ -155,6 +156,25 @@ class VarcoMCPTests(unittest.TestCase):
         pid = self.messages[0]["pid"]
         with self.assertRaises(ProcessLookupError):
             os.kill(pid, 0)
+
+    def test_optional_runtime_database_uses_official_argv_without_relocating_auth(self):
+        database = self.root / 'runtime "인용" 🪨 $literal\ncache'
+        command = varco_mcp.official_command(database)
+        self.assertEqual(command[:4], ("codex", "app-server", "--stdio", "-c"))
+        self.assertEqual(len(command), 5)
+        self.assertEqual(json.loads(command[4].removeprefix("sqlite_home=")), str(database.resolve()))
+        # An actual CLI parse must pass that one explicit runtime override to
+        # the official-client launcher; no server call or secret file is needed.
+        with patch.object(varco_mcp, "execute", new=AsyncMock(return_value={"ok":True})) as launch:
+            with redirect_stdout(StringIO()):
+                self.assertEqual(varco_mcp.main(["--sqlite-home", str(database), "catalog"]), 0)
+            self.assertEqual(launch.await_args.kwargs["app_server_command"], command)
+
+    def test_default_cli_retains_normal_official_client_configuration(self):
+        with patch.object(varco_mcp, "execute", new=AsyncMock(return_value={"ok":True})) as launch:
+            with redirect_stdout(StringIO()):
+                self.assertEqual(varco_mcp.main(["catalog"]), 0)
+            self.assertIsNone(launch.await_args.kwargs["app_server_command"])
 
 
 if __name__ == "__main__":

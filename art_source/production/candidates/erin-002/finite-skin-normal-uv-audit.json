@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "ok": false,
+  "errors": [
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": null,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.0630694235076137,
+        1.0124980741332896,
+        1.2362645023965078,
+        2.272526709711683,
+        1.985309861366509,
+        1.5106507229349697
+      ],
+      "target_signed_frame_values": [
+        -1.2112107255450157,
+        -2.021924154414212,
+        -1.8742332150618817,
+        -2.4747802332799,
+        -2.0311356276864316,
+        -1.7401797538306751
+      ]
+    },
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": 0.0,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.0774930744241906,
+        1.0300485220995923,
+        1.252157724970477,
+        2.257081005732253,
+        2.0549228004719517,
+        1.574890627810299
+      ],
+      "target_signed_frame_values": [
+        -1.2331423457987591,
+        -2.0380236805406255,
+        -1.8633850035409425,
+        -2.4676581023055744,
+        -2.08847296978384,
+        -1.8029347333645431
+      ]
+    },
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": 2.5416667461395264,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.0775352775910463,
+        1.030056872342656,
+        1.2522110503666877,
+        2.257047598308036,
+        2.0550392474006483,
+        1.5749990675667829
+      ],
+      "target_signed_frame_values": [
+        -1.2331918416495253,
+        -2.0380154115672515,
+        -1.863410072011978,
+        -2.4676388752033884,
+        -2.0885952226091486,
+        -1.8030869698983296
+      ]
+    },
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": 5.083333492279053,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.0775876900343198,
+        1.0313581114708976,
+        1.2511453305433662,
+        2.2569260481967532,
+        2.056016511705525,
+        1.5758291594754175
+      ],
+      "target_signed_frame_values": [
+        -1.2334184995677209,
+        -2.0398685798372727,
+        -1.8610516608399412,
+        -2.467556962075438,
+        -2.088043037976222,
+        -1.8010044055966152
+      ]
+    },
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": 7.625000238418579,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.077512227263861,
+        1.0310367718646316,
+        1.2513732409363145,
+        2.2569876661834463,
+        2.0556794287954854,
+        1.575555920475121
+      ],
+      "target_signed_frame_values": [
+        -1.2332892794737136,
+        -2.0394309866682696,
+        -1.861610116218786,
+        -2.467602802938621,
+        -2.088073724524486,
+        -1.8014230831140174
+      ]
+    },
+    {
+      "error": "Repair changed affected UV tangent handedness",
+      "time_s": 10.166666984558105,
+      "triangle_ids": [
+        3043,
+        3666,
+        3667,
+        3668,
+        3685,
+        3686
+      ],
+      "source_signed_frame_values": [
+        1.0774930744241906,
+        1.0300485220995923,
+        1.252157724970477,
+        2.257081005732253,
+        2.0549228004719517,
+        1.574890627810299
+      ],
+      "target_signed_frame_values": [
+        -1.2331423457987591,
+        -2.0380236805406255,
+        -1.8633850035409425,
+        -2.4676581023055744,
+        -2.08847296978384,
+        -1.8029347333645431
+      ]
+    }
+  ],
+  "status": "rejected_finite_raw_TBN_gate",
+  "source_file": "art_source/production/candidates/erin-001/erin-idle.glb",
+  "source_sha256": "7f1c990a18f52c7d317366586301a689b34863ae37a7db27e689238ec2b75598",
+  "target_file": "art_source/production/candidates/erin-002/erin-idle-one-ring.glb",
+  "target_sha256": "9961f307b9792c0ad783f7659319097db80aa1291cd6dbaf2dbd79751fbfc4a8",
+  "position_rows_changed": 25,
+  "normal_rows_changed": 94,
+  "position_rows_total": 13674,
+  "affected_triangles": 67,
+  "foot_region_vertex_count": 222,
+  "foot_rows_unchanged": true,
+  "actual_rest_changed_vertex_bounds": {
+    "min": [
+      0.1658290124186135,
+      0.0830608776316284,
+      0.38961219199782854
+    ],
+    "max": [
+      0.21933828560981064,
+      0.13769453785547775,
+      0.5362469447005821
+    ]
+  },
+  "source_TANGENT_attribute_present": false,
+  "target_TANGENT_attribute_present": false,
+  "TBN_scope": "Raw per-triangle geometric UV frame and skinned normals only. Tangents are absent in both GLBs; actual Godot importer tangent generation and raster remain pending.",
+  "frames": [
+    {
+      "pose": "REST",
+      "time_s": null,
+      "maximum_vertex_delta_m": 0.016492849338610702,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3118416081600664e-06,
+      "affected_triangle_min_area_m2_after": 1.143931262834176e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 0.0,
+      "maximum_vertex_delta_m": 0.01648508736560966,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.316295671044162e-06,
+      "affected_triangle_min_area_m2_after": 1.1502099136221958e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 2.5416667461395264,
+      "maximum_vertex_delta_m": 0.01648509260154634,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3162831664797753e-06,
+      "affected_triangle_min_area_m2_after": 1.1502005063885217e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 5.083333492279053,
+      "maximum_vertex_delta_m": 0.016482665939867035,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3171836647099973e-06,
+      "affected_triangle_min_area_m2_after": 1.1511421647204377e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 7.625000238418579,
+      "maximum_vertex_delta_m": 0.01648331073018234,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.3169759586021918e-06,
+      "affected_triangle_min_area_m2_after": 1.150922112111454e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "pose": "idle",
+      "time_s": 10.166666984558105,
+      "maximum_vertex_delta_m": 0.01648508736560966,
+      "foot_vertex_delta_max_m": 0.0,
+      "affected_triangle_min_area_m2_before": 1.316295671044162e-06,
+      "affected_triangle_min_area_m2_after": 1.1502099136221958e-06,
+      "new_degenerate_triangles": 0,
+      "uv_tangent_handedness_flips": 6,
+      "normal_lengths_after": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    }
+  ],
+  "limitations": [
+    "Six finite REST/idle raw-skin poses do not approve continuous cloth deformation, actual imported renderer TBN, visuals, contact, hardware or AAA"
+  ],
+  "tool_file": "art_source/production/hub_npcs/audit_robe_repair.py",
+  "tool_sha256": "0d22674f6f693f9c30ac4f044581586ffd0cacc1a14264213bb2efffb2f47c49"
+}

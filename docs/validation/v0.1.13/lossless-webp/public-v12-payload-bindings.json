@@ -1,0 +1,270 @@
+{
+  "public_release": "v0.1.12",
+  "public_webZIP_sha256": "43e8ca2eb7c058b65fd86b27ce9c5f557af0cce4e381b2653783e8a89aa36f79",
+  "compared_CTEX": 25,
+  "payload_MD5_exact_count": 24,
+  "differences": [
+    {
+      "name": "icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+      "public_pck_entry": ".godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+      "public_bytes": 2364,
+      "local_frozen_bytes": 2372,
+      "public_payload_md5_verified": true,
+      "public_md5": "ff3ceac5753fdb38f4b4acc715730069",
+      "local_frozen_md5": "af5d22998b12c1f9822a2a617d8f5151",
+      "payload_MD5_exact": false
+    }
+  ],
+  "records": [
+    {
+      "name": "floor_albedo.jpg-753e667a1864702b8b1b89956576a01b.ctex",
+      "public_pck_entry": ".godot/imported/floor_albedo.jpg-753e667a1864702b8b1b89956576a01b.ctex",
+      "public_bytes": 6327884,
+      "local_frozen_bytes": 6327884,
+      "public_payload_md5_verified": true,
+      "public_md5": "bc25759a9a8414cfcd4216e8918c0dad",
+      "local_frozen_md5": "bc25759a9a8414cfcd4216e8918c0dad",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "floor_arm.jpg-5b8cf3a7add667c133a6ac62d91de4ff.ctex",
+      "public_pck_entry": ".godot/imported/floor_arm.jpg-5b8cf3a7add667c133a6ac62d91de4ff.ctex",
+      "public_bytes": 1572532,
+      "local_frozen_bytes": 1572532,
+      "public_payload_md5_verified": true,
+      "public_md5": "9f9dada7ceb80eebf6546fa3564cde46",
+      "local_frozen_md5": "9f9dada7ceb80eebf6546fa3564cde46",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "floor_normal.jpg-a5222b761eed38cae469845dd89909e0.ctex",
+      "public_pck_entry": ".godot/imported/floor_normal.jpg-a5222b761eed38cae469845dd89909e0.ctex",
+      "public_bytes": 2441904,
+      "local_frozen_bytes": 2441904,
+      "public_payload_md5_verified": true,
+      "public_md5": "8a352f4f27e8bd0a7b6c7d1e26f8a5cc",
+      "local_frozen_md5": "8a352f4f27e8bd0a7b6c7d1e26f8a5cc",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "ground_albedo.jpg-220dde1bd429775cb73eac2c2c37c70d.ctex",
+      "public_pck_entry": ".godot/imported/ground_albedo.jpg-220dde1bd429775cb73eac2c2c37c70d.ctex",
+      "public_bytes": 1422680,
+      "local_frozen_bytes": 1422680,
+      "public_payload_md5_verified": true,
+      "public_md5": "f23190e4f9ee6ff602155d2c65994c1c",
+      "local_frozen_md5": "f23190e4f9ee6ff602155d2c65994c1c",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "ground_arm.jpg-98421b85f34c0fbb88d59f9170262776.ctex",
+      "public_pck_entry": ".godot/imported/ground_arm.jpg-98421b85f34c0fbb88d59f9170262776.ctex",
+      "public_bytes": 1843782,
+      "local_frozen_bytes": 1843782,
+      "public_payload_md5_verified": true,
+      "public_md5": "533dedd112b207c8b018ec65c3815424",
+      "local_frozen_md5": "533dedd112b207c8b018ec65c3815424",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "ground_normal.jpg-c5a91af65a87f812315f9d366de51203.ctex",
+      "public_pck_entry": ".godot/imported/ground_normal.jpg-c5a91af65a87f812315f9d366de51203.ctex",
+      "public_bytes": 2553892,
+      "local_frozen_bytes": 2553892,
+      "public_payload_md5_verified": true,
+      "public_md5": "8f5a3660b3ea9f4f73164e5389af9437",
+      "local_frozen_md5": "8f5a3660b3ea9f4f73164e5389af9437",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+      "public_pck_entry": ".godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+      "public_bytes": 2364,
+      "local_frozen_bytes": 2372,
+      "public_payload_md5_verified": true,
+      "public_md5": "ff3ceac5753fdb38f4b4acc715730069",
+      "local_frozen_md5": "af5d22998b12c1f9822a2a617d8f5151",
+      "payload_MD5_exact": false
+    },
+    {
+      "name": "lyra_fury_gameplay_Image_0.png-d3d34cdaca4bc1f099d61dd61301d4e1.ctex",
+      "public_pck_entry": ".godot/imported/lyra_fury_gameplay_Image_0.png-d3d34cdaca4bc1f099d61dd61301d4e1.ctex",
+      "public_bytes": 5402308,
+      "local_frozen_bytes": 5402308,
+      "public_payload_md5_verified": true,
+      "public_md5": "c76bb0ac26ab3a4b409f940c60d44a64",
+      "local_frozen_md5": "c76bb0ac26ab3a4b409f940c60d44a64",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "lyra_fury_gameplay_Image_1.png-1af3a6a963f477a1fba43f61837e96d0.ctex",
+      "public_pck_entry": ".godot/imported/lyra_fury_gameplay_Image_1.png-1af3a6a963f477a1fba43f61837e96d0.ctex",
+      "public_bytes": 3827700,
+      "local_frozen_bytes": 3827700,
+      "public_payload_md5_verified": true,
+      "public_md5": "afcbdb76bd32776bb8174bfd6e7abbcd",
+      "local_frozen_md5": "afcbdb76bd32776bb8174bfd6e7abbcd",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "lyra_fury_gameplay_Image_2.png-7499108f87516676621878bfe53cc9d3.ctex",
+      "public_pck_entry": ".godot/imported/lyra_fury_gameplay_Image_2.png-7499108f87516676621878bfe53cc9d3.ctex",
+      "public_bytes": 6984962,
+      "local_frozen_bytes": 6984962,
+      "public_payload_md5_verified": true,
+      "public_md5": "2120e4746b26b300205e4166de357d82",
+      "local_frozen_md5": "2120e4746b26b300205e4166de357d82",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "pilgrim_gateway_Image_0.png-0a088e5a6572f4ed027315dc1c845f01.ctex",
+      "public_pck_entry": ".godot/imported/pilgrim_gateway_Image_0.png-0a088e5a6572f4ed027315dc1c845f01.ctex",
+      "public_bytes": 7298888,
+      "local_frozen_bytes": 7298888,
+      "public_payload_md5_verified": true,
+      "public_md5": "cb948117e274db2e73f0c1ce11fcd11e",
+      "local_frozen_md5": "cb948117e274db2e73f0c1ce11fcd11e",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "pilgrim_gateway_Image_1.png-b59850e2d969ab7c45b705df8f00a9d7.ctex",
+      "public_pck_entry": ".godot/imported/pilgrim_gateway_Image_1.png-b59850e2d969ab7c45b705df8f00a9d7.ctex",
+      "public_bytes": 4082456,
+      "local_frozen_bytes": 4082456,
+      "public_payload_md5_verified": true,
+      "public_md5": "552c09e157eead5c6e54b51efe43a02e",
+      "local_frozen_md5": "552c09e157eead5c6e54b51efe43a02e",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "pilgrim_gateway_Image_2.png-02b2ea78d9606bffa3cd5a054059e95e.ctex",
+      "public_pck_entry": ".godot/imported/pilgrim_gateway_Image_2.png-02b2ea78d9606bffa3cd5a054059e95e.ctex",
+      "public_bytes": 6146298,
+      "local_frozen_bytes": 6146298,
+      "public_payload_md5_verified": true,
+      "public_md5": "ce6643ebf886a417ad8bb329b0f7a88c",
+      "local_frozen_md5": "ce6643ebf886a417ad8bb329b0f7a88c",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "rune_sword_web_Image_0.png-21f805924d516212e1e7484319b9aa44.ctex",
+      "public_pck_entry": ".godot/imported/rune_sword_web_Image_0.png-21f805924d516212e1e7484319b9aa44.ctex",
+      "public_bytes": 2391056,
+      "local_frozen_bytes": 2391056,
+      "public_payload_md5_verified": true,
+      "public_md5": "9eccacb1d4a9c36472c87aded1417114",
+      "local_frozen_md5": "9eccacb1d4a9c36472c87aded1417114",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "rune_sword_web_Image_1.png-8140034ffaff4d264751e2a1912c601f.ctex",
+      "public_pck_entry": ".godot/imported/rune_sword_web_Image_1.png-8140034ffaff4d264751e2a1912c601f.ctex",
+      "public_bytes": 1338430,
+      "local_frozen_bytes": 1338430,
+      "public_payload_md5_verified": true,
+      "public_md5": "c2e83e6039d51a3dd30eec20fca3dd5e",
+      "local_frozen_md5": "c2e83e6039d51a3dd30eec20fca3dd5e",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "rune_sword_web_Image_2.png-43355593b6261712efcb1d6f9a2113c1.ctex",
+      "public_pck_entry": ".godot/imported/rune_sword_web_Image_2.png-43355593b6261712efcb1d6f9a2113c1.ctex",
+      "public_bytes": 2163522,
+      "local_frozen_bytes": 2163522,
+      "public_payload_md5_verified": true,
+      "public_md5": "32da3cf8a98710367ce429fb96c45902",
+      "local_frozen_md5": "32da3cf8a98710367ce429fb96c45902",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sanctuary_pillar_web_Image_0.png-52f1a5e428fbb70884efb65f8114426f.ctex",
+      "public_pck_entry": ".godot/imported/sanctuary_pillar_web_Image_0.png-52f1a5e428fbb70884efb65f8114426f.ctex",
+      "public_bytes": 4946802,
+      "local_frozen_bytes": 4946802,
+      "public_payload_md5_verified": true,
+      "public_md5": "536212a5d766cfc604902e0f005a29e6",
+      "local_frozen_md5": "536212a5d766cfc604902e0f005a29e6",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sanctuary_pillar_web_Image_1.png-73f1e4b287b3a06cea910886f360432a.ctex",
+      "public_pck_entry": ".godot/imported/sanctuary_pillar_web_Image_1.png-73f1e4b287b3a06cea910886f360432a.ctex",
+      "public_bytes": 2715574,
+      "local_frozen_bytes": 2715574,
+      "public_payload_md5_verified": true,
+      "public_md5": "06b6ee243139d2e2c264adff70fc2877",
+      "local_frozen_md5": "06b6ee243139d2e2c264adff70fc2877",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sanctuary_pillar_web_Image_2.png-e2395d326ccceb77bc0778b6eab6fa0e.ctex",
+      "public_pck_entry": ".godot/imported/sanctuary_pillar_web_Image_2.png-e2395d326ccceb77bc0778b6eab6fa0e.ctex",
+      "public_bytes": 4990530,
+      "local_frozen_bytes": 4990530,
+      "public_payload_md5_verified": true,
+      "public_md5": "fe421cb679791e2cb37bacd0930e8a41",
+      "local_frozen_md5": "fe421cb679791e2cb37bacd0930e8a41",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sentinel_weight_gameplay_Image_0.png-ab48059e2fc7b17522d105987a351f00.ctex",
+      "public_pck_entry": ".godot/imported/sentinel_weight_gameplay_Image_0.png-ab48059e2fc7b17522d105987a351f00.ctex",
+      "public_bytes": 5859652,
+      "local_frozen_bytes": 5859652,
+      "public_payload_md5_verified": true,
+      "public_md5": "6cf98b4af80a8c36dcf81aa0f47ede84",
+      "local_frozen_md5": "6cf98b4af80a8c36dcf81aa0f47ede84",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sentinel_weight_gameplay_Image_1.png-76e3e8377fb155ac4262663ef991715e.ctex",
+      "public_pck_entry": ".godot/imported/sentinel_weight_gameplay_Image_1.png-76e3e8377fb155ac4262663ef991715e.ctex",
+      "public_bytes": 3963058,
+      "local_frozen_bytes": 3963058,
+      "public_payload_md5_verified": true,
+      "public_md5": "07a61bc2b706ba973981489d442f0d58",
+      "local_frozen_md5": "07a61bc2b706ba973981489d442f0d58",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "sentinel_weight_gameplay_Image_2.png-b6ee6fde7445e4385c79fd8ef7e8805e.ctex",
+      "public_pck_entry": ".godot/imported/sentinel_weight_gameplay_Image_2.png-b6ee6fde7445e4385c79fd8ef7e8805e.ctex",
+      "public_bytes": 7454596,
+      "local_frozen_bytes": 7454596,
+      "public_payload_md5_verified": true,
+      "public_md5": "b12204691e7f33501f4be617b38c5caa",
+      "local_frozen_md5": "b12204691e7f33501f4be617b38c5caa",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "wall_albedo.jpg-fc52093de8b9e72f989124bf30159f43.ctex",
+      "public_pck_entry": ".godot/imported/wall_albedo.jpg-fc52093de8b9e72f989124bf30159f43.ctex",
+      "public_bytes": 1731114,
+      "local_frozen_bytes": 1731114,
+      "public_payload_md5_verified": true,
+      "public_md5": "efd401f618fc9fd1c807d83388871ddc",
+      "local_frozen_md5": "efd401f618fc9fd1c807d83388871ddc",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "wall_arm.jpg-a078c2b52db4376dd56f6e9cb71b89be.ctex",
+      "public_pck_entry": ".godot/imported/wall_arm.jpg-a078c2b52db4376dd56f6e9cb71b89be.ctex",
+      "public_bytes": 1630556,
+      "local_frozen_bytes": 1630556,
+      "public_payload_md5_verified": true,
+      "public_md5": "c8e251f9778ae66b49b2b2af664ec651",
+      "local_frozen_md5": "c8e251f9778ae66b49b2b2af664ec651",
+      "payload_MD5_exact": true
+    },
+    {
+      "name": "wall_normal.jpg-c68b4193e33696d0f9a5cc73daba997a.ctex",
+      "public_pck_entry": ".godot/imported/wall_normal.jpg-c68b4193e33696d0f9a5cc73daba997a.ctex",
+      "public_bytes": 1979882,
+      "local_frozen_bytes": 1979882,
+      "public_payload_md5_verified": true,
+      "public_md5": "02700a0ddba562cad5d56babb0554d9b",
+      "local_frozen_md5": "02700a0ddba562cad5d56babb0554d9b",
+      "payload_MD5_exact": true
+    }
+  ]
+}
