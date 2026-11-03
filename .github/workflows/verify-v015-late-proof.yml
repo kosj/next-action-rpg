@@ -107,7 +107,7 @@ jobs:
               return report
           # Reuse the first actual release download proof, never download release binaries again.
           first=out/"first-delivery.log"
-          with first.open("wb") as dst:subprocess.run(["gh","api","repos/kosj/next-action-rpg/actions/jobs/125763628058/logs"],stdout=dst,check=True)
+          with first.open("wb") as dst:subprocess.run(["gh","api","--allow-escape-sequences","repos/kosj/next-action-rpg/actions/jobs/125763628058/logs"],stdout=dst,check=True)
           row=next(l.split("RUNEFALL_DELIVERY_PROOF ",1)[1] for l in first.read_text().splitlines() if "RUNEFALL_DELIVERY_PROOF {" in l)
           delivery=json.loads(row);assert delivery["status"]=="passed" and delivery["source_commit"]==MAIN
           web=next(x for x in delivery["packaging"]["artifacts"] if x["file"]=="runefall-web.zip")
