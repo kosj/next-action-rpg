@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "version": "0.1.15",
+  "status": "verified_published",
+  "repository": "https://github.com/kosj/next-action-rpg",
+  "main_commit": "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+  "tag": "v0.1.15",
+  "tag_object": "5bfd62b2032c10d24cc339cbf6eed2f0e69c85b7",
+  "feature_head": "02981b6cc1122322eae5317794d7cbed75887330",
+  "source_commit": "b87311f2373ad365968003b594d2c5a46757ea39",
+  "pull_request": "https://github.com/kosj/next-action-rpg/pull/16",
+  "runtime_source_count": 108,
+  "runtime_source_fingerprint_sha256": "66a2c2ebcb09f54323673a03ffb8c114ee8f937050b59a5cc6ce85fe65d9e773",
+  "native": {
+    "checks": 735,
+    "failures": 0,
+    "engine_errors": 0,
+    "actual_player_skill_casts": 3,
+    "scope": "21 added real RunePlayer skill physics checks restore own damage65/55/150, rune costs, directional/radial reach, once-only/preactive exclusion and first dash13/recovery1.95; previous714 subset failed to exercise the inherited skill profile."
+  },
+  "asset": {
+    "hero_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "charged_curve_sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+    "heavy_curve_sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36"
+  },
+  "CI": {
+    "pull_request": {
+      "run_id": 41581636337,
+      "execution_commit": "748ad983e07b0dbc22d1c96498f7b3bff0a459b9",
+      "required_successes": 3,
+      "desktop_seconds": 214.031,
+      "mobile_seconds": 734.559,
+      "charged_seconds": 238.156,
+      "source108_exact": true
+    },
+    "main": {
+      "run_id": 41583959046,
+      "required_successes": 6,
+      "jobs": [
+        {
+          "id": 125744975760,
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125750223606,
+          "name": "verify_mobile_export",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125750223647,
+          "name": "verify_charged_impact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125757929944,
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125757930867,
+          "name": "release",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "id": 125758011820,
+          "name": "verify_public_mobile",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125758011952,
+          "name": "verify_public_web",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "desktop_seconds": 328.061,
+      "mobile_seconds": 1371.174,
+      "charged_seconds": 303.04,
+      "source108_exact": true
+    },
+    "tag": {
+      "run_id": 41585711652,
+      "required_successes": 4,
+      "jobs": [
+        {
+          "id": 125750576764,
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125753291028,
+          "name": "verify_charged_impact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125753291048,
+          "name": "verify_mobile_export",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125761423930,
+          "name": "release",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 125761425111,
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "id": 125761425606,
+          "name": "verify_public_mobile",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "id": 125761426188,
+          "name": "verify_public_web",
+          "status": "completed",
+          "conclusion": "skipped"
+        }
+      ],
+      "desktop_seconds": 329.426,
+      "mobile_seconds": 1380.539,
+      "charged_seconds": 300.194,
+      "source108_exact": true
+    }
+  },
+  "public": {
+    "url": "https://kosj.github.io/next-action-rpg/",
+    "actual_test_URL": "https://kosj.github.io/next-action-rpg/?build=e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+    "footer": "0.1.15 · e7c9ee3c",
+    "actual_desktop_and_mobile_errors": [],
+    "actual_public_mobile_seconds": 1400.591,
+    "root_original_review": {
+      "status": "finite_originals_directly_viewed",
+      "source_commit": "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+      "artifact_id": 13209971930,
+      "method": "Exact original PNGs SHA/byte-bound in read-only CI, direct dataURL viewing from original-only log lines; no edits/scaling",
+      "images": [
+        {
+          "name": "03-portrait-gameplay.png",
+          "bytes": 1337664,
+          "sha256": "2edf6fdfb31692c49cb88b52dbdad209c403f4ae2a572da529bcb1a35e5a5b7e"
+        },
+        {
+          "name": "10-landscape-gameplay.png",
+          "bytes": 1208555,
+          "sha256": "2045c15434e7f512b4183818fdaedd1db2aad7fed98975b0eceb6d6bb4fa7787"
+        },
+        {
+          "name": "12-narrow-gameplay.png",
+          "bytes": 957839,
+          "sha256": "b22b11df559d4754f79b5d4115133abdc2f697a99c89e805e315cafa33e8b81f"
+        }
+      ],
+      "observed": "Hero/world rendered; Korean HUD and all touch controls readable across three viewports; no missing/magenta/full-frame raster loss in these originals.",
+      "limits": "Selected UI/asset raster only, not continuous attack AV, full skin, phone hardware or AAA approval."
+    }
+  },
+  "delivery": {
+    "run_id": 41589792440,
+    "job_id": 125763628058,
+    "verification_branch_initial_commit": "b6fb92254fc82502136d52d6239dafc8962f6e1c",
+    "actual_result": {
+      "status": "passed",
+      "source_commit": "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+      "version": "0.1.15",
+      "downloads": [
+        {
+          "name": "manifest.json",
+          "bytes": 406,
+          "sha256": "6feab2c0a447008738929275aa01769b638e0195827c86929635157b832c6658",
+          "HTTP": 200,
+          "anonymous": true,
+          "default_TLS_verified": true,
+          "matches_API": true
+        },
+        {
+          "name": "runefall-web.zip",
+          "bytes": 119129463,
+          "sha256": "4cf6d24db4ec5a68fceea1cd9dc2d5f2cdc3cf616319bf3ffd79aa1df0a502c9",
+          "HTTP": 200,
+          "anonymous": true,
+          "default_TLS_verified": true,
+          "matches_API": true
+        },
+        {
+          "name": "runefall-windows.zip",
+          "bytes": 146970819,
+          "sha256": "26a2f05e0f9915194a8e73d0a761940083fa544d93bf7f9bd978013b9d0cc2a2",
+          "HTTP": 200,
+          "anonymous": true,
+          "default_TLS_verified": true,
+          "matches_API": true
+        }
+      ],
+      "packaging": {
+        "version": "0.1.15",
+        "godot": "4.7.2",
+        "expected_main_sha": "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+        "manifest_commit": "e7c9ee3c",
+        "artifacts": [
+          {
+            "file": "runefall-web.zip",
+            "bytes": 119129463,
+            "sha256": "4cf6d24db4ec5a68fceea1cd9dc2d5f2cdc3cf616319bf3ffd79aa1df0a502c9",
+            "sha256_verified": true,
+            "zip_crc_ok": true,
+            "licenses_present": true,
+            "playable_files_present": true,
+            "uncompressed_bytes": 149792883
+          },
+          {
+            "file": "runefall-windows.zip",
+            "bytes": 146970819,
+            "sha256": "26a2f05e0f9915194a8e73d0a761940083fa544d93bf7f9bd978013b9d0cc2a2",
+            "sha256_verified": true,
+            "zip_crc_ok": true,
+            "licenses_present": true,
+            "playable_files_present": true,
+            "uncompressed_bytes": 219212770
+          }
+        ],
+        "status": "verified",
+        "scope": "Downloaded bytes and packaging; no hardware or art approval"
+      },
+      "PCK": [
+        {
+          "zip": "runefall-web.zip",
+          "all_payload_MD5": true,
+          "footer": "0.1.15 · e7c9ee3c",
+          "entries": 202,
+          "curves": [
+            {
+              "file": "heavy_blade_curve.json",
+              "samples": 111,
+              "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+              "equal_main_blob": true
+            },
+            {
+              "file": "charged_blade_curve.json",
+              "samples": 91,
+              "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+              "equal_main_blob": true
+            }
+          ]
+        },
+        {
+          "zip": "runefall-windows.zip",
+          "all_payload_MD5": true,
+          "footer": "0.1.15 · e7c9ee3c",
+          "entries": 202,
+          "curves": [
+            {
+              "file": "heavy_blade_curve.json",
+              "samples": 111,
+              "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+              "equal_main_blob": true
+            },
+            {
+              "file": "charged_blade_curve.json",
+              "samples": 91,
+              "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+              "equal_main_blob": true
+            }
+          ]
+        }
+      ],
+      "actual_late_browser_proofs": [
+        {
+          "kind": "tag-mobile",
+          "artifact_id": 13208694243,
+          "bytes": 11251505,
+          "API_SHA256": "348bc4b08d4124b512d960bc40f7313d209c7fcccda7728e776f8cecc5b2baef",
+          "ZIP_CRC": true,
+          "safe_paths": true,
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "restart": true,
+          "seconds": 1380.539,
+          "source108": true
+        },
+        {
+          "kind": "public-desktop",
+          "artifact_id": 13208399594,
+          "bytes": 4640446,
+          "API_SHA256": "e8df1ce647af23f8af3ba60ffe172cfa8b0692d4549c52d1365f4e26102d17eb",
+          "ZIP_CRC": true,
+          "safe_paths": true,
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "restart": true,
+          "seconds": null,
+          "source108": false
+        },
+        {
+          "kind": "public-mobile",
+          "artifact_id": 13209971930,
+          "bytes": 11241571,
+          "API_SHA256": "270a55eebadb3c20b4e2011c82bcb07e5975e6fad1b0248ec443fdb8c3e62d56",
+          "ZIP_CRC": true,
+          "safe_paths": true,
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "restart": true,
+          "seconds": 1400.591,
+          "source108": false
+        }
+      ],
+      "source_count": 108,
+      "screenshots": [
+        {
+          "name": "03-portrait-gameplay.png",
+          "bytes": 1337664,
+          "sha256": "2edf6fdfb31692c49cb88b52dbdad209c403f4ae2a572da529bcb1a35e5a5b7e"
+        },
+        {
+          "name": "10-landscape-gameplay.png",
+          "bytes": 1208555,
+          "sha256": "2045c15434e7f512b4183818fdaedd1db2aad7fed98975b0eceb6d6bb4fa7787"
+        },
+        {
+          "name": "12-narrow-gameplay.png",
+          "bytes": 957839,
+          "sha256": "b22b11df559d4754f79b5d4115133abdc2f697a99c89e805e315cafa33e8b81f"
+        }
+      ],
+      "limits": "Actual binary/ZIP/PCK/source/footer/errors/restart and immutable original PNG integrity only. No Windows OS execution, continuous hearing, hardware or AAA approval."
+    },
+    "release_binaries_downloaded_once": true,
+    "first_workflow_subsequently_dispatch_only_to_prevent_repeated_binary_downloads": true
+  },
+  "knowledge_kit": {
+    "version": "1.4.10",
+    "source_commit": "b87311f2373ad365968003b594d2c5a46757ea39",
+    "entry_count": 73,
+    "catalog_sha256": "d0e9731a172aef26ca3cd991e74a64b51aa92a1ee8ff81637b8ac725e053327e",
+    "zip_bytes": 144730,
+    "zip_sha256": "e0808bbbf1f6be55dbdab4eee70f899dfcbab80104338c2f91830c1dad6b8f18",
+    "portable_guards": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "anonymous_source_checks": [
+      "02981b6cc1122322eae5317794d7cbed75887330",
+      "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+      "v0.1.15"
+    ],
+    "scope": "Actual anonymous ZIP/catalog/source pin/guard report bytes and movie HEAD checks. The kit source knowledge predates this final publication record; target projects remain pending."
+  },
+  "historical_failures": {
+    "native707": "707 checks/3failed source-path and old container-prefix assumptions preserved; subsequent direct payload+mutation guards passed before skill fix.",
+    "PR72": {
+      "run_id": 41575785813,
+      "head": "a1e9abbef703f6569c5d2c37e8a59becc20320ac",
+      "failed_mobile_seconds": 1383.425,
+      "cause": "HEAVY.duplicate inherited .32/.22 physical LUT and3.2 phase motor while skill override expected .16/.35 and13 dash; fixed independent AttackData.new."
+    },
+    "strict_tooling": [
+      {
+        "run_id": 41591170198,
+        "commit": "33a52f84f00518d804ba7d407d43658cc00b5410",
+        "cause": "gh raw ANSI log data refused before assertions; output-to-file explicit option added."
+      },
+      {
+        "run_id": 41591425826,
+        "commit": "9eda5d51cea45808ece2d2f54e114e8265f67fbe",
+        "cause": "Suffix JSON resolver matched real and isolated helper filenames; replaced with exact member path."
+      }
+    ]
+  },
+  "environment": {
+    "local_runtime_disconnected_after": "2026-11-03 06:12:48 UTC",
+    "late_checks_completed_in": "Read-only isolated GitHub CI checking out exact main, with public anonymous release requests and read-only artifact API access.",
+    "local_private_final_file_and_main_checkout": "Not completed because selected local execution environment remained unavailable; remote main/tag and delivery remain verified."
+  },
+  "art_limits": {
+    "motion_review": "Root and independent finite8 studio/actual paired12rawframes accept stronger twohand overhead and blade trajectory.14s native take predates nonvisual skill-factory fix and has zero skill casts; not an identical fixed wholeGame archive.",
+    "remaining": [
+      "flat/hard fan taper and shape",
+      "same-edge shoulder skin worsening+18.438mm,1191edges>1mm worse; wrists/fingers not fully approved",
+      "continuous logical1x watching/direct hearing",
+      "phone/target GPU performance and Windows OS execution",
+      "AAA final art approval"
+    ],
+    "framing": "Attack tips/feet retained in original sampled take; unchanged later dodge tip outside left5ticks vs baseline3. No universal mesh/UI containment claim."
+  },
+  "strict_late": {
+    "run_id": 41591717332,
+    "job_id": 125769725925,
+    "commit": "0601f0ed6d58982ea324c291ef9b3c27c6bff566",
+    "actual_result": {
+      "status": "passed",
+      "source_commit": "e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416",
+      "source_count": 108,
+      "release_download_run": 41589792440,
+      "release_binaries_downloaded_again": false,
+      "release_proof_log_SHA256": "56cfdc822de93ec6356c27ae376da43139165906e883987b7da701528296e430",
+      "raw_web_bytes": 149792883,
+      "raw_web_headroom": 207117,
+      "actual_late_proofs": [
+        {
+          "kind": "tag-mobile",
+          "seconds": 1380.539,
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "trusted_touch_points": 3,
+          "matched_actions": 5,
+          "action_timeout_ms": 15000,
+          "IDB_completed_ms": [
+            4046.5,
+            8072.800000000047,
+            2318.3000000000466,
+            2560.9000000001397,
+            3316.899999999907
+          ],
+          "IDB_python_seconds": [
+            4.592,
+            9.362,
+            2.738,
+            3.415,
+            3.947
+          ],
+          "IDB_actual_qualities": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "quality": [
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 0,
+              "render_scale": 0.5,
+              "key_shadow": true,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            }
+          ],
+          "restart": {
+            "quality": 1,
+            "health": 120,
+            "checkpoint": 0,
+            "z": 6
+          },
+          "source108_exact_main": true,
+          "skill_fixture_sha256": "fedf2dfb6cc1c1f146919e2ea2e0bea412b548af211eaec87678bcfaf2fc3aed",
+          "isolated_helper": {
+            "cases": 3,
+            "timeout_ms": 15000,
+            "browser_closed": true,
+            "scope": "isolated observer only, not game/root-cause fix"
+          },
+          "artifact_id": 13208694243,
+          "bytes": 11251505,
+          "API_SHA256": "348bc4b08d4124b512d960bc40f7313d209c7fcccda7728e776f8cecc5b2baef",
+          "ZIP_CRC": true
+        },
+        {
+          "kind": "public-mobile",
+          "seconds": 1400.591,
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "trusted_touch_points": 3,
+          "matched_actions": 5,
+          "action_timeout_ms": 15000,
+          "IDB_completed_ms": [
+            3979.399999999907,
+            7994,
+            1844.7999999998137,
+            1685.6999999999534,
+            3957.3000000000466
+          ],
+          "IDB_python_seconds": [
+            4.525,
+            9.285,
+            2.251,
+            2.524,
+            4.569
+          ],
+          "IDB_actual_qualities": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "quality": [
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 0,
+              "render_scale": 0.5,
+              "key_shadow": true,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            },
+            {
+              "index": 1,
+              "render_scale": 0.400000005960464,
+              "key_shadow": false,
+              "fonts": {
+                "hud": "res://assets/fonts/runefall_kr430.ttf",
+                "touch": "res://assets/fonts/runefall_kr430.ttf"
+              }
+            }
+          ],
+          "restart": {
+            "quality": 1,
+            "health": 120,
+            "checkpoint": 0,
+            "z": 6
+          },
+          "source_scope": "actual public footer/resources; source108 verified in separate tag wrapper",
+          "isolated_helper": "absent by public-job design; separate tag helper verified",
+          "artifact_id": 13209971930,
+          "bytes": 11241571,
+          "API_SHA256": "270a55eebadb3c20b4e2011c82bcb07e5975e6fad1b0248ec443fdb8c3e62d56",
+          "ZIP_CRC": true
+        },
+        {
+          "kind": "public-desktop",
+          "errors": [],
+          "footer": "0.1.15 · e7c9ee3c",
+          "quality": [
+            1,
+            0,
+            1
+          ],
+          "hub_fonts": {
+            "hud": "res://assets/fonts/runefall_kr430.ttf",
+            "touch": "res://assets/fonts/runefall_kr430.ttf"
+          },
+          "restart": {
+            "quality": 1,
+            "health": 120,
+            "checkpoint": 0,
+            "z": 6
+          },
+          "artifact_id": 13208399594,
+          "bytes": 4640446,
+          "API_SHA256": "e8df1ce647af23f8af3ba60ffe172cfa8b0692d4549c52d1365f4e26102d17eb",
+          "ZIP_CRC": true
+        }
+      ],
+      "scope": "Exact API SHA/CRC and pinned original assertions; helper3, trusted3touch, matched15s observers, actual30s IDB, quality/hub/fonts and restart. No new game/browser run, no timeout changes, no Windows OS/hearing/hardware/AAA approval."
+    }
+  },
+  "checked_at": "2026-11-03 06:47:20 UTC",
+  "completion_pending": [],
+  "local_maintenance_pending": [
+    "Restore the unavailable local execution environment before optional local main checkout; remote main/tag/source/CI/publication verification is complete."
+  ]
+}
