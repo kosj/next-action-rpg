@@ -115,6 +115,12 @@ func _stop_directions() -> void:
 	for action: String in ["forward","back","left","right","sprint"]:
 		_set_key(action,false)
 
+func _art(visual: ActorVisual) -> Dictionary:
+	var report: Dictionary = super._art(visual)
+	if is_instance_valid(visual.skeletal_bridge):
+		report["transition"] = _json(visual.skeletal_bridge.transition_report())
+	return report
+
 func record_after_physics(delta: float) -> void:
 	var previous_size := frames.size()
 	super.record_after_physics(delta)

@@ -10,6 +10,7 @@ const HEIGHT := 0.22
 const DEPTH := 0.24
 const CURVATURE := 0.34
 const SPAWN_OFFSET := 0.6
+const ENERGY_SHADER: Shader = preload("res://assets/shaders/sword_wave.gdshader")
 var _source: CharacterBody3D
 var _attack: CombatStrike
 var _forward := Vector3.FORWARD
@@ -29,7 +30,7 @@ var _reason := "not_configured"
 var _quality := 0
 var _source_has_dead := false
 var _segments: Array[Dictionary] = []
-var _materials: Array[StandardMaterial3D] = []
+var _materials: Array[ShaderMaterial] = []
 var _triangles := 0
 var _confirmed_hits := 0
 
@@ -106,6 +107,8 @@ func _physics_process(delta: float) -> void:
 		_expire("owner_unavailable")
 		return
 	_age += delta
+	for material in _materials:
+		material.set_shader_parameter("wave_age",_age)
 	if _fading:
 		_fade += delta
 	else:
@@ -117,7 +120,7 @@ func _physics_process(delta: float) -> void:
 	if _fading:
 		var alpha := clampf(1.0-_fade/FADE_SECONDS,0.0,1.0)
 		for material in _materials:
-			material.albedo_color.a = alpha*(0.2 if material == _materials[-1] else 1.0)
+			material.set_shader_parameter("wave_fade",alpha)
 		if _fade >= FADE_SECONDS:
 			_expire(_reason if _reason in ["wall_stopped","wall_initial_overlap"] else "travel_complete")
 	# Defensive finite bound, independent of whether a strike remains equipped.
@@ -217,15 +220,16 @@ func _contact_context(target: Node3D, start: Vector3, travel: float, segment: Di
 		"wave_sweep_start_m":_travel,"wave_sweep_end_m":_travel+travel,"wave_age_s":_age,
 		"attack_elapsed":_attack.elapsed,"contact_phase":-1.0}
 
-func _material(color: Color, energy: float) -> StandardMaterial3D:
-	var material := StandardMaterial3D.new()
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	material.albedo_color = color
-	material.emission_enabled = true
-	material.emission = Color(color.r,color.g,color.b)
-	material.emission_energy_multiplier = energy
+func _material(layer: int) -> ShaderMaterial:
+	var material := ShaderMaterial.new()
+	material.shader = ENERGY_SHADER
+	material.render_priority = 1 if layer == 1 else 0
+	material.set_shader_parameter("wave_width",_width)
+	material.set_shader_parameter("curvature",CURVATURE)
+	material.set_shader_parameter("prism_depth",DEPTH)
+	material.set_shader_parameter("wave_age",_age)
+	material.set_shader_parameter("wave_fade",1.0)
+	material.set_shader_parameter("energy_layer",layer)
 	_materials.append(material)
 	return material
 
@@ -239,7 +243,7 @@ func _quad(vertices: PackedVector3Array, a: Vector3, b: Vector3, c: Vector3, d: 
 	_triangle(vertices,a,b,c)
 	_triangle(vertices,a,c,d)
 
-func _mesh(vertices: PackedVector3Array, material: StandardMaterial3D, label: String) -> void:
+func _mesh(vertices: PackedVector3Array, material: ShaderMaterial, label: String) -> void:
 	var arrays := []
 	arrays.resize(Mesh.ARRAY_MAX)
 	arrays[Mesh.ARRAY_VERTEX] = vertices
@@ -276,9 +280,9 @@ func _build_crescent() -> void:
 		_quad(core,Vector3(x0,-0.025,z0),Vector3(x1,-0.025,z1),Vector3(x1,0.025,z1),Vector3(x0,0.025,z0))
 		_quad(core,Vector3(x0,0.025,z0),Vector3(x1,0.025,z1),Vector3(x1,0.025,z1+0.09),Vector3(x0,0.025,z0+0.09))
 		_quad(trail,Vector3(x0,0,z0+DEPTH),Vector3(x1,0,z1+DEPTH),Vector3(x1,0,z1+DEPTH+0.32),Vector3(x0,0,z0+DEPTH+0.32))
-	_mesh(body,_material(Color(0.12,0.64,0.90,1.0),0.75),"SolidCrescent")
-	_mesh(core,_material(Color(0.72,0.97,1.0,1.0),1.5),"HotLeadingEdge")
-	_mesh(trail,_material(Color(0.12,0.38,0.62,0.2),0.35),"ShortWake")
+	_mesh(body,_material(0),"SolidCrescent")
+	_mesh(core,_material(1),"HotLeadingEdge")
+	_mesh(trail,_material(2),"ShortWake")
 
 func presentation_report() -> Dictionary:
 	return {"valid":_valid,"reason":_reason,"quality":_quality,"triangles":_triangles,
