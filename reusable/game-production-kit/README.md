@@ -1,6 +1,6 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.4.8** · 정리일 **2026-11-02**.
+버전 **1.4.9** · 정리일 **2026-11-03**.
 
 기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
@@ -80,4 +80,4 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 
 원본 사례 69/70에서는 제한된 source/native/실제45초 구도 검증을 확인했습니다. browser/public·전체 시청/직접 청취/skin·목표 하드웨어/AAA는 pending입니다. body-only metric의 기각과 최종 actual pair의 late position variance를 보존하며, exact AV 배포를 지각 AV 승인으로 이전하지 않습니다. 고정 출처/ZIP은 source commit 후 별도로 관리합니다.
 
-다음1.4.9 문서에서는 일반 강공격의 동작 차이·baked audio lead와 core GLB live-reference compaction을 다룹니다. source 절감·독립 native 보존·실제 Web 증감을 분리하고 runtime curve 경로 적응을 numeric sample과 따로 확인합니다. 사례71은 실제 Game의 finite 원본에서 준비/검 궤적 개선을 확인한 범위이며 사례72의 verified는 core 데이터 보존 범위입니다. 아직 출처 pin·판본/ZIP을 갱신하지 않았습니다.
+판본1.4.9에서는 일반 강공격의 동작 차이·baked audio lead와 core GLB live-reference compaction을 다룹니다. source 절감·독립 native 보존·실제 Web 증감을 분리하고 runtime curve 경로 적응을 numeric sample과 따로 확인합니다. 사례71은 실제 Game의 finite 원본에서 준비/검 궤적 개선을 확인한 범위이며 사례72의 verified는 core 데이터 보존 범위입니다. 출처는 실제 source commit과72개 항목으로 고정하고 ZIP을 독립 검증합니다.

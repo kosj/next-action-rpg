@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.8**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.9**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -128,4 +128,4 @@
 
 새 사례72의 verified는 core GLB live-reference compaction의 별도 private 검증과 독립 guard 범위다. 참조 payload와 의미를 보존한 remap을 BIN prefix 동일과 구분하고, runtime curve의 path metadata를 numeric sample과 따로 검증한다. 독립 native core payload 보존은 확인했다. 실제 전체 Web은 증가했으므로 Web 최적화 성공으로 쓰지 않으며 시각/게임 승인은 pending이다.
 
-다음1.4.9 prose 준비: source container·의미 보존·실제 native payload·최종 Web payload의 수치를 따로 유지한다. prefix를 보존할 수 없는 remap은 원본을 엄격히 고정한 독립 native 서명과 실제 byte 변형 negative로 검증한다. 작은 source가 전체 Web 절감을 뜻하지 않으며 payload 조사 없이 증가 원인을 추측하지 않는다. pin·판본 배포·ZIP은 source commit 뒤 root가 관리한다.
+판본1.4.9: source container·의미 보존·실제 native payload·최종 Web payload의 수치를 따로 유지한다. prefix를 보존할 수 없는 remap은 원본을 엄격히 고정한 독립 native 서명과 실제 byte 변형 negative로 검증한다. 작은 source가 전체 Web 절감을 뜻하지 않으며 payload 조사 없이 증가 원인을 추측하지 않는다. 출처는 실제 source commit의72항목으로 고정하며 ZIP/독립 재압축을 검증한다.
