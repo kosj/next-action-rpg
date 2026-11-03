@@ -1,0 +1,178 @@
+name: Verify v0.1.15 delivery bytes
+on:
+  push:
+    branches: ['verify/v0.1.15-delivery']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416
+          lfs: false
+          persist-credentials: false
+      - name: Verify actual public release and late browser evidence
+        run: |
+          python - <<'PY'
+          import ast, base64, hashlib, json, os, shutil, subprocess, sys, tempfile, time, urllib.request, zipfile
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          ROOT=Path.cwd()
+          MAIN="e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416"
+          EXPECTED="0.1.15 · "+MAIN[:8]
+          assert subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()==MAIN
+          out=ROOT/"delivery-proof";out.mkdir()
+          def api(path):
+              url="https://api.github.com/repos/kosj/next-action-rpg/"+path
+              req=urllib.request.Request(url,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json","User-Agent":"RUNEFALL-readonly-delivery-verification"})
+              with urllib.request.urlopen(req,timeout=60) as response:
+                  assert response.status==200
+                  return json.load(response)
+          release=api("releases/tags/v0.1.15")
+          assert release["tag_name"]=="v0.1.15" and not release["draft"]
+          assert {x["name"] for x in release["assets"]}=={"manifest.json","runefall-web.zip","runefall-windows.zip"} and len(release["assets"])==3
+          assets=out/"release";assets.mkdir()
+          def download(item):
+              name=item["name"];url=item["browser_download_url"]
+              assert url=="https://github.com/kosj/next-action-rpg/releases/download/v0.1.15/"+name
+              target=assets/name;digest=hashlib.sha256();size=0
+              # Public release binary requests deliberately carry no token.
+              with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"RUNEFALL-public-download-proof"}),timeout=60) as response,target.open("wb") as file:
+                  assert response.status==200
+                  for block in iter(lambda:response.read(1024*1024),b""):
+                      file.write(block);digest.update(block);size+=len(block)
+              assert size==item["size"] and "sha256:"+digest.hexdigest()==item["digest"]
+              return {"name":name,"bytes":size,"sha256":digest.hexdigest(),"HTTP":200,"anonymous":True,"default_TLS_verified":True,"matches_API":True}
+          with ThreadPoolExecutor(max_workers=3) as pool:
+              downloads=list(pool.map(download,release["assets"]))
+          sys.path.insert(0,str(ROOT/"tools"))
+          from verify_release import verify
+          from audit_runtime_package import Pck
+          packaging=verify(assets,MAIN,"0.1.15")
+          pcks=[]
+          for archive_name,member in [("runefall-web.zip","index.pck"),("runefall-windows.zip","Runefall.pck")]:
+              with tempfile.TemporaryDirectory() as tmp:
+                  target=Path(tmp)/member
+                  with zipfile.ZipFile(assets/archive_name) as archive:
+                      assert archive.testzip() is None
+                      with archive.open(member) as src,target.open("wb") as dst:shutil.copyfileobj(src,dst)
+                  pck=Pck(target);pck.verify_md5();assert pck.header["engine"]==[4,7,2]
+                  assert pck.payload("build_id.txt").decode().strip()==EXPECTED
+                  curves=[]
+                  for curve_name,count in [("heavy_blade_curve.json",111),("charged_blade_curve.json",91)]:
+                      raw=pck.payload("data/"+curve_name)
+                      assert raw==(ROOT/"game/data"/curve_name).read_bytes()
+                      curve=json.loads(raw);assert len(curve["samples"])==count
+                      assert curve["source_metadata"]["sha256"]=="9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+                      assert curve["source_metadata"]["asset_path"]=="game/assets/models/production/lyra_fury_gameplay.glb"
+                      assert curve["sample_step_s"]==.002 and curve["blade_length_m"]==1.19 and curve["floor_offset_m"]==.025
+                      curves.append({"file":curve_name,"samples":count,"sha256":hashlib.sha256(raw).hexdigest(),"equal_main_blob":True})
+                  for stem in ["lyra_fury_gameplay","erin_idle_gameplay","roen_idle_gameplay"]:
+                      assert any(stem+".glb-" in name and name.endswith(".scn") for name in pck.entries)
+                  assert not any("NotoSansKR.ttf" in name for name in pck.entries)
+                  assert sum("runefall_kr430.ttf-" in name and name.endswith(".fontdata") for name in pck.entries)==1
+                  pck.unchanged()
+                  pcks.append({"zip":archive_name,"all_payload_MD5":True,"footer":EXPECTED,"entries":len(pck.entries),"curves":curves})
+          # Preserve the exact previous producer roster, adding the real skill fixture (108).
+          module=ast.parse((ROOT/"tools/check_mobile_web.py").read_text())
+          inputs=next(ast.literal_eval(n.value) for n in ast.walk(module) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=="inputs" for t in n.targets))
+          for stem in ("lyra_fury_gameplay","erin_idle_gameplay","roen_idle_gameplay"):
+              pngs=sorted((ROOT/"game/assets/models/production").glob(stem+"_*.png"));assert len(pngs)==3
+              for png in pngs:inputs.extend([str(png.relative_to(ROOT)),str(png.relative_to(ROOT))+".import"])
+          inputs.extend(str(x.relative_to(ROOT)) for x in sorted((ROOT/"game/assets/audio/impact").glob("*.wav")))
+          assert len(inputs)==len(set(inputs))==108 and "game/tests/combat_regressions.gd" in inputs
+          source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in inputs}
+          # Public mobile may still be completing. This polls only the actual immutable run.
+          deadline=time.monotonic()+1200
+          while True:
+              available=api("actions/runs/41583959046/artifacts?per_page=100")["artifacts"]
+              mobile=next((x for x in available if x["name"]=="public-mobile-verification-"+MAIN+"-1" and not x["expired"]),None)
+              if mobile:break
+              assert time.monotonic()<deadline,"Public mobile artifact did not arrive"
+              time.sleep(15)
+          wanted=[("tag-mobile",13208694243),("public-desktop",13208399594),("public-mobile",mobile["id"])]
+          proofs=[];images=out/"images";images.mkdir()
+          def load_json(archive,name):
+              matches=[x for x in archive.namelist() if x==name or x.endswith("/"+name)]
+              assert len(matches)==1,(name,matches)
+              return json.loads(archive.read(matches[0]))
+          def buildids(value):
+              if isinstance(value,dict):
+                  if "build_id" in value:yield value["build_id"]
+                  for item in value.values():yield from buildids(item)
+              elif isinstance(value,list):
+                  for item in value:yield from buildids(item)
+          for label,artifact_id in wanted:
+              item=api("actions/artifacts/"+str(artifact_id));target=out/(label+".zip")
+              with target.open("wb") as dst:subprocess.run(["gh","api","repos/kosj/next-action-rpg/actions/artifacts/"+str(artifact_id)+"/zip"],stdout=dst,check=True)
+              digest=hashlib.sha256(target.read_bytes()).hexdigest()
+              assert target.stat().st_size==item["size_in_bytes"] and "sha256:"+digest==item["digest"]
+              with zipfile.ZipFile(target) as archive:
+                  assert archive.testzip() is None
+                  assert all(not Path(n).is_absolute() and ".." not in Path(n).parts for n in archive.namelist())
+                  if label=="public-desktop":
+                      assert load_json(archive,"browser-errors.json")==[]
+                      state=load_json(archive,"browser-persistence.json")
+                      assert state["build_id"]==EXPECTED and state["quality"]==1 and state["health"]==120 and state["checkpoint"]==0 and abs(state["z"]-6)<1
+                      seconds=None
+                  else:
+                      result=load_json(archive,"mobile-result.json");assert result["outcome"]=="passed"
+                      assert load_json(archive,"mobile-errors.json")==[]
+                      states=load_json(archive,"mobile-states.json");ids=list(buildids(states));assert ids and all(x==EXPECTED for x in ids)
+                      restarts=[v for k,v in states.items() if "restart" in k and isinstance(v,dict) and v.get("health")==120 and v.get("checkpoint")==0 and v.get("quality")==1 and abs(v.get("z",999)-6)<1];assert restarts
+                      seconds=result["seconds"]
+                      if label=="tag-mobile":
+                          ctx=load_json(archive,"mobile-export-context.json")
+                          assert ctx["source_head"]==MAIN and not ctx["source_tree_dirty"] and ctx["source_sha256"]==source_hashes
+                          assert ctx["server_closed"] and ctx["export_bytes_unchanged"]
+                          helper=load_json(archive,"observer-helper/observer-proof.json")
+                          # Full helper output retained alongside the source-bound result.
+                          (out/"observer-proof.json").write_text(json.dumps(helper,indent=2))
+                      else:
+                          for name in ["03-portrait-gameplay.png","10-landscape-gameplay.png","12-narrow-gameplay.png"]:
+                              match=next(n for n in archive.namelist() if n==name or n.endswith("/"+name))
+                              (images/name).write_bytes(archive.read(match))
+                  proofs.append({"kind":label,"artifact_id":artifact_id,"bytes":target.stat().st_size,"API_SHA256":digest,"ZIP_CRC":True,"safe_paths":True,"errors":[],"footer":EXPECTED,"restart":True,"seconds":seconds,"source108":label=="tag-mobile"})
+          report={"status":"passed","source_commit":MAIN,"version":"0.1.15","downloads":downloads,"packaging":packaging,"PCK":pcks,"actual_late_browser_proofs":proofs,"source_count":108,"screenshots":[{"name":x.name,"bytes":x.stat().st_size,"sha256":hashlib.sha256(x.read_bytes()).hexdigest()} for x in sorted(images.glob("*.png"))],"limits":"Actual binary/ZIP/PCK/source/footer/errors/restart and immutable original PNG integrity only. No Windows OS execution, continuous hearing, hardware or AAA approval."}
+          (out/"proof.json").write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print("RUNEFALL_DELIVERY_PROOF "+json.dumps(report,ensure_ascii=False))
+          
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v015-delivery-proof
+          path: |
+            delivery-proof/proof.json
+            delivery-proof/observer-proof.json
+            delivery-proof/images/
+  view_original:
+    needs: verify
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        image: ['03-portrait-gameplay.png', '10-landscape-gameplay.png', '12-narrow-gameplay.png']
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: v015-delivery-proof
+          path: proof
+      - name: Emit the unchanged original PNG for direct review
+        env:
+          ORIGINAL_PNG: ${{ matrix.image }}
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,os
+          from pathlib import Path
+          root=Path('proof'); report=json.loads((root/'proof.json').read_text()); name=os.environ['ORIGINAL_PNG']; raw=(root/'images'/name).read_bytes()
+          record=next(x for x in report['screenshots'] if x['name']==name)
+          assert len(raw)==record['bytes'] and hashlib.sha256(raw).hexdigest()==record['sha256']
+          print('RUNEFALL_ORIGINAL_META '+json.dumps(record))
+          print('RUNEFALL_ORIGINAL_PNG '+base64.b64encode(raw).decode())
+          PY
