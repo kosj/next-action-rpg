@@ -158,7 +158,7 @@ jobs:
               assert mixed["physical"]==proof["contact_events"] and mixed["waves"]==proof["wave_contact_events"]
               assert mixed["physical_checks"]==proof["physical_sample_checks"] and mixed["wave_checks"]==proof["wave_sample_checks"]
               assert proof["contact_snapshot"]["build_id"]==EXPECTED and proof["touch_observation"]["trusted"] and proof["touch_observation"]["max_points"]>=2
-              return {"kind":label,"footer":EXPECTED,"errors":[],"amount":69.3,"actual_physical_curve_and_frozen_pose":True,"wave_contacts":len(mixed["waves"]),"shared_ledger_unique":True}
+              return {"kind":label,"footer":EXPECTED,"errors":[],"amount":69.3,"actual_physical_curve_validated":True,"frozen_contact_check":proof["frozen_contact_check"],"wave_contacts":len(mixed["waves"]),"shared_ledger_unique":True}
           catalog={run:api("actions/runs/"+str(run)+"/artifacts?per_page=100")["artifacts"] for run in [MAIN_RUN,TAG_RUN]}
           wanted=[(MAIN_RUN,"main-desktop","web-verification-",False),(MAIN_RUN,"main-mobile","mobile-web-verification-",True),(MAIN_RUN,"main-charged","charged-impact-verification-",True),(TAG_RUN,"tag-mobile","mobile-web-verification-",True),(TAG_RUN,"tag-charged","charged-impact-verification-",True),(MAIN_RUN,"public-desktop","public-web-verification-",False),(MAIN_RUN,"public-mobile","public-mobile-verification-",False)]
           proofs=[];images=out/"images";images.mkdir()
