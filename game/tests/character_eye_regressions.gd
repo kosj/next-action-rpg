@@ -4,42 +4,240 @@ extends RefCounted
 # not eyelid collision, visual acceptance, gaze/blink or AAA quality checks.
 const FIT_PATH := "res://tests/fixtures/lyra_eye_fit.json"
 
+static func _integer(value: Variant, minimum: int = 0) -> int:
+	if not (value is int or value is float):
+		return -1
+	var number: float = float(value)
+	if not is_finite(number) or number != floor(number) or number < minimum:
+		return -1
+	return int(number)
+
+static func _extensions(value: Variant) -> bool:
+	if value is Dictionary:
+		if value.has("extensions") and not value.extensions.is_empty():
+			return true
+		for key: Variant in value:
+			if key != "extras" and _extensions(value[key]):
+				return true
+	elif value is Array:
+		for child: Variant in value:
+			if _extensions(child):
+				return true
+	return false
+
+static func _bytes_sha(bytes: PackedByteArray) -> String:
+	var context := HashingContext.new()
+	if context.start(HashingContext.HASH_SHA256) != OK or context.update(bytes) != OK:
+		return ""
+	return context.finish().hex_encode()
+
 static func _glb_parts(path: String) -> Dictionary:
 	var bytes := FileAccess.get_file_as_bytes(path)
-	if bytes.size() < 28 or bytes.decode_u32(0) != 0x46546c67:
+	if bytes.size()<28 or bytes.decode_u32(0)!=0x46546c67 or bytes.decode_u32(4)!=2 or bytes.decode_u32(8)!=bytes.size() or bytes.decode_u32(16)!=0x4e4f534a:
 		return {}
-	var json_size := bytes.decode_u32(12)
-	var bin_header := 20 + json_size
-	if bin_header + 8 > bytes.size():
+	var json_size: int = bytes.decode_u32(12)
+	var bin_header: int = 20+json_size
+	if json_size%4 != 0 or bin_header+8>bytes.size() or bytes.decode_u32(bin_header+4)!=0x004e4942:
 		return {}
-	var document: Variant = JSON.parse_string(bytes.slice(20, bin_header).get_string_from_utf8())
-	if not document is Dictionary:
+	var bin_size: int = bytes.decode_u32(bin_header)
+	if bin_size%4 != 0 or bin_header+8+bin_size!=bytes.size():
 		return {}
-	return {"document":document,"binary":bytes.slice(bin_header+8)}
+	var document: Variant = JSON.parse_string(bytes.slice(20,bin_header).get_string_from_utf8())
+	if not document is Dictionary or document.get("asset",{}).get("version","")!="2.0" or _extensions(document):
+		return {}
+	if not document.get("extensionsUsed",[]).is_empty() or not document.get("extensionsRequired",[]).is_empty():
+		return {}
+	var buffers: Array = document.get("buffers",[])
+	if buffers.size()!=1 or not buffers[0] is Dictionary or buffers[0].has("uri"):
+		return {}
+	var length: int = _integer(buffers[0].get("byteLength"),1)
+	if length<0 or length>bin_size or bin_size-length>3:
+		return {}
+	for key in ["nodes","meshes","skins","materials","images","textures","samplers","scenes","accessors","bufferViews"]:
+		if not document.get(key,[]) is Array:
+			return {}
+	return {"document":document,"binary":bytes.slice(bin_header+8,bin_header+8+length)}
+
+static func _view(parts: Dictionary, value: Variant, cache: Dictionary) -> Dictionary:
+	var views: Array = parts.document.get("bufferViews",[])
+	var index: int = _integer(value)
+	if index<0 or index>=views.size() or not views[index] is Dictionary:
+		return {}
+	if cache.has(index):
+		return cache[index]
+	var declaration: Dictionary = views[index].duplicate(true)
+	var start: int = _integer(declaration.get("byteOffset",0))
+	var length: int = _integer(declaration.get("byteLength"),1)
+	if _integer(declaration.get("buffer"))!=0 or start<0 or length<0 or start+length>parts.binary.size():
+		return {}
+	declaration.erase("buffer")
+	declaration.erase("byteOffset") # Only outer storage relocation is irrelevant.
+	var binary: PackedByteArray = parts.binary
+	var digest := _bytes_sha(binary.slice(start,start+length))
+	if digest.is_empty():
+		return {}
+	var result := {"declaration":declaration,"payload_sha256":digest}
+	cache[index] = result
+	return result
+
+static func _accessor(parts: Dictionary, value: Variant, views: Dictionary, cache: Dictionary) -> Dictionary:
+	var accessors: Array = parts.document.get("accessors",[])
+	var index: int = _integer(value)
+	if index<0 or index>=accessors.size() or not accessors[index] is Dictionary:
+		return {}
+	if cache.has(index):
+		return cache[index]
+	var declaration: Dictionary = accessors[index].duplicate(true)
+	var component: int = _integer(declaration.get("componentType"))
+	var component_bytes: int = int({5120:1,5121:1,5122:2,5123:2,5125:4,5126:4}.get(component,0))
+	var dimensions: Array = {"SCALAR":[1,1],"VEC2":[1,2],"VEC3":[1,3],"VEC4":[1,4],"MAT2":[2,2],"MAT3":[3,3],"MAT4":[4,4]}.get(declaration.get("type",""),[])
+	var count: int = _integer(declaration.get("count"),1)
+	var offset: int = _integer(declaration.get("byteOffset",0))
+	if component_bytes==0 or dimensions.size()!=2 or count<0 or offset<0 or not declaration.get("normalized",false) is bool:
+		return {}
+	if declaration.get("normalized",false) and component in [5125,5126]:
+		return {}
+	var column_bytes: int = int(dimensions[1])*component_bytes
+	if int(dimensions[0])>1:
+		column_bytes = int(ceil(float(column_bytes)/4.0))*4
+	var element_bytes: int = column_bytes*int(dimensions[0])
+	var stride: int = element_bytes
+	if declaration.has("bufferView"):
+		var snapshot := _view(parts,declaration.bufferView,views)
+		if snapshot.is_empty():
+			return {}
+		var raw_view: Dictionary = parts.document.bufferViews[int(declaration.bufferView)]
+		stride = _integer(raw_view.get("byteStride",element_bytes),element_bytes)
+		if stride<0 or stride%component_bytes!=0 or (int(raw_view.get("byteOffset",0))+offset)%component_bytes!=0 or offset+(count-1)*stride+element_bytes>int(raw_view.byteLength):
+			return {}
+		declaration.bufferView = snapshot
+	elif offset!=0:
+		return {}
+	if declaration.has("sparse"):
+		if not declaration.sparse is Dictionary:
+			return {}
+		var sparse: Dictionary = declaration.sparse
+		var sparse_count: int = _integer(sparse.get("count"),1)
+		if sparse_count<0 or sparse_count>count:
+			return {}
+		var index_start: int = -1
+		var index_bytes: int = 0
+		for piece_name: String in ["indices","values"]:
+			if not sparse.get(piece_name) is Dictionary:
+				return {}
+			var piece: Dictionary = sparse[piece_name]
+			var snapshot := _view(parts,piece.get("bufferView"),views)
+			if snapshot.is_empty() or snapshot.declaration.has("byteStride"):
+				return {}
+			var raw_view: Dictionary = parts.document.bufferViews[int(piece.bufferView)]
+			var piece_offset: int = _integer(piece.get("byteOffset",0))
+			var size: int = element_bytes
+			var alignment: int = component_bytes
+			if piece_name=="indices":
+				index_bytes = int({5121:1,5123:2,5125:4}.get(_integer(piece.get("componentType")),0))
+				if index_bytes==0:
+					return {}
+				size = index_bytes
+				alignment = index_bytes
+				index_start = int(raw_view.get("byteOffset",0))+piece_offset
+			if piece_offset<0 or (int(raw_view.get("byteOffset",0))+piece_offset)%alignment!=0 or piece_offset+sparse_count*size>int(raw_view.byteLength):
+				return {}
+			piece.bufferView = snapshot
+		var previous: int = -1
+		var binary: PackedByteArray = parts.binary
+		for row in range(sparse_count):
+			var cursor: int = index_start+row*index_bytes
+			var target: int = int(binary[cursor]) if index_bytes==1 else (binary.decode_u16(cursor) if index_bytes==2 else binary.decode_u32(cursor))
+			if target<=previous or target>=count:
+				return {}
+			previous = target
+	var result := {"declaration":declaration,"count":count,"component_type":component,"normalized":declaration.get("normalized",false),"byte_stride":stride}
+	cache[index] = result
+	return result
+
+static func _body_snapshot(parts: Dictionary) -> Dictionary:
+	if parts.is_empty():
+		return {}
+	var document: Dictionary = parts.document
+	var result := {}
+	var views := {}
+	var accessors := {}
+	for key in ["nodes","materials","textures","samplers","scenes","scene"]:
+		result[key] = document.get(key)
+	var meshes: Array = document.get("meshes",[]).duplicate(true)
+	for mesh: Dictionary in meshes:
+		for primitive: Dictionary in mesh.get("primitives",[]):
+			if not primitive.get("attributes") is Dictionary:
+				return {}
+			for attribute: Variant in primitive.attributes:
+				var value := _accessor(parts,primitive.attributes[attribute],views,accessors)
+				if value.is_empty():
+					return {}
+				primitive.attributes[attribute] = value
+			if primitive.has("indices"):
+				var value := _accessor(parts,primitive.indices,views,accessors)
+				if value.is_empty():
+					return {}
+				primitive.indices = value
+			for target: Dictionary in primitive.get("targets",[]):
+				for attribute: Variant in target:
+					var value := _accessor(parts,target[attribute],views,accessors)
+					if value.is_empty():
+						return {}
+					target[attribute] = value
+	result.meshes = meshes
+	var skins: Array = document.get("skins",[]).duplicate(true)
+	for skin: Dictionary in skins:
+		if skin.has("inverseBindMatrices"):
+			var value := _accessor(parts,skin.inverseBindMatrices,views,accessors)
+			if value.is_empty():
+				return {}
+			skin.inverseBindMatrices = value
+	result.skins = skins # Joints/skeleton plus all nodes/rest data remain exact.
+	var images: Array = document.get("images",[]).duplicate(true)
+	for image: Dictionary in images:
+		if image.has("uri") or not image.has("bufferView"):
+			return {}
+		var value := _view(parts,image.bufferView,views)
+		if value.is_empty():
+			return {}
+		image.bufferView = value
+	result.images = images
+	return result
 
 static func _frozen_body_geometry(path: String, expected_sha: String) -> bool:
-	if FileAccess.get_sha256(path) == expected_sha:
-		return true
-	# The eye fit remains pinned to the measured original. New animations may
-	# be appended only if every original geometry/rest/texture byte survives.
 	var original_path := "res://assets/models/production/lyra_gameplay.glb"
-	if FileAccess.get_sha256(original_path) != expected_sha:
+	if FileAccess.get_sha256(original_path)!=expected_sha:
 		return false
-	var original := _glb_parts(original_path)
-	var runtime := _glb_parts(path)
-	if original.is_empty() or runtime.is_empty():
-		return false
-	for key in ["nodes","meshes","skins","materials","images","textures","samplers","scenes","scene"]:
-		if original.document.get(key) != runtime.document.get(key):
-			return false
-	for key in ["accessors","bufferViews"]:
-		var frozen: Array = original.document.get(key, [])
-		var derived: Array = runtime.document.get(key, [])
-		if derived.slice(0, frozen.size()) != frozen:
-			return false
-	var original_bin: PackedByteArray = original.binary
-	var runtime_bin: PackedByteArray = runtime.binary
-	return runtime_bin.slice(0, original_bin.size()) == original_bin
+	var original := _body_snapshot(_glb_parts(original_path))
+	var runtime := _body_snapshot(_glb_parts(path))
+	var matched: bool = not original.is_empty() and original==runtime
+	print("RUNEFALL_BODY_LIVE_GEOMETRY: ",JSON.stringify({"matched":matched,"original_sha256":expected_sha,"runtime_sha256":FileAccess.get_sha256(path),"original_live_sha256":_bytes_sha(JSON.stringify(original,"",true,true).to_utf8_buffer()),"runtime_live_sha256":_bytes_sha(JSON.stringify(runtime,"",true,true).to_utf8_buffer()),"scope":"Direct native known-core live body/rest/texture bytes; animation and dead container storage excluded, not skin/visual approval"}))
+	return matched
+
+static func _body_mutations_rejected(expected_sha: String, check: Callable) -> void:
+	var path := "res://assets/models/production/lyra_gameplay.glb"
+	if FileAccess.get_sha256(path)!=expected_sha:
+		check.call(false,"Negative body controls require the immutable original file")
+		return
+	var original := _glb_parts(path)
+	var expected := _body_snapshot(original)
+	if original.is_empty() or expected.is_empty():
+		check.call(false,"Negative body controls mount the actual original live data")
+		return
+	var document: Dictionary = original.document
+	var position_accessor: Dictionary = document.accessors[int(document.meshes[0].primitives[0].attributes.POSITION)]
+	var skin_accessor: Dictionary = document.accessors[int(document.skins[0].inverseBindMatrices)]
+	var offsets := {"position":int(document.bufferViews[int(position_accessor.bufferView)].get("byteOffset",0))+int(position_accessor.get("byteOffset",0)),
+		"PNG":int(document.bufferViews[int(document.images[0].bufferView)].get("byteOffset",0)),
+		"inverse_bind":int(document.bufferViews[int(skin_accessor.bufferView)].get("byteOffset",0))+int(skin_accessor.get("byteOffset",0))}
+	for label: String in offsets:
+		var changed: Dictionary = original.duplicate(false)
+		var binary: PackedByteArray = original.binary.duplicate()
+		binary[int(offsets[label])] = binary[int(offsets[label])] ^ 1
+		changed.binary = binary
+		var actual := _body_snapshot(changed)
+		check.call(not actual.is_empty() and actual!=expected,"Independent native body preservation rejects an actual in-memory %s payload-byte change without touching files" % label)
 
 static func _v(value: Array) -> Vector3:
 	return Vector3(value[0], value[1], value[2])
@@ -231,7 +429,8 @@ static func run(world: Node3D, check: Callable) -> bool:
 	if not fixture_ok:
 		return false
 	var definition := ProductionCharacterArt.definition("hero")
-	check.call(definition.has("eye_path") and FileAccess.get_sha256(definition.get("eye_path", "")) == fixture.eye_glb_sha256 and _frozen_body_geometry(definition.path, fixture.socket_body_sha256), "Runtime eyes and every original body/rest/texture byte match the frozen eye-fit inputs through animation-only derivation")
+	check.call(definition.has("eye_path") and FileAccess.get_sha256(definition.get("eye_path", "")) == fixture.eye_glb_sha256 and _frozen_body_geometry(definition.path, fixture.socket_body_sha256), "Runtime eyes and every live original body/rest/texture byte match the frozen eye-fit inputs through animation derivation and lossless storage compaction")
+	_body_mutations_rejected(fixture.socket_body_sha256,check)
 	var holder := Node3D.new()
 	world.add_child(holder)
 	var visual := ActorVisual.new()

@@ -1,0 +1,18 @@
+{
+  "scope": "New candidate-specific fork; immutable original renderers remain unchanged",
+  "borrowed_sources": {
+    "tools/render_fury_review.py": "a5296837b4052d7800e6ebb94fe2478163391086a07a7bca71150263e60b2e12",
+    "tools/render_continuity_review.py": "c85d9dbf2b4a1e16cdaa08150089a48aef5de3e9991d6bb17ace0b1ddc3c3fc8"
+  },
+  "changes": [
+    "Exactly composed current original hilt/markers/PBR + broad CanonicalGeometry",
+    "charge/charged_heavy/heavy clip choices",
+    "Ordinaryheavy100Hz .32/.22/.32 nominalphase .704m; baseline original2m/s glide",
+    "Camera and lights translate with nominal root to keep relative framing/lighting matched",
+    "Raw composition marker checks include actual nominal world translation;3mm retained"
+  ],
+  "files": {
+    "review.py": "1476a5917fd6ec3b1c517f20f55961146641a63bed8b9d54c3cd34a2e0d6ad8c",
+    "review_base.py": "8219ca2f9579ed711db9d230a336d1cfef199a8bdfa1ee316219eacbdd665992"
+  }
+}

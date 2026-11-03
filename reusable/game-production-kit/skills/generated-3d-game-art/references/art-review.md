@@ -229,3 +229,12 @@ staged pose preflight의 원본 PNG와 metadata guard는 별도 증거다. Viewp
 마지막 실제 take에서도 nominal body·engaged target identity·평가된 foot/weapon point의 finite XY/nonbehind를 분리한다. point가 frame 안에 들어오는 것은 whole mesh/depth occlusion/UI·foot plant·모든 foe의 지속적인 가시성을 보장하지 않는다. body-only candidate가 실제로 적을 숨기면 기각하고 최종 긴 take의 입구·접촉·회복 맥락을 독립 검토한다.
 
 같은 driver/입력 policy에서도 후반 AI/collision root는 달라질 수 있다. control/timing/health/contact payload와 position trajectory 비교를 따로 기록하고 distinct row 수와 actor별 section row 수를 구분한다. 이전 기각 take의 exact trajectory를 최종 pair에 승계하지 않는다. 원인을 분리하지 못했다면 단정하지 않는다. exact 자체 AV 제공·sample clock 정합과 continuous watch/direct hearing/hardware 승인은 다른 gate다. source/native/좁은 지표/최종 실제 전투 구도를 별도 증거로 보존한다.
+
+
+## live-reference GLB 정리와 의미 보존
+
+같은 live 데이터라도 오래된 accessor/view/BIN이 남으면 container가 커질 수 있다. 지원하는 core schema의 mesh attributes/indices/morph·skin inverse bind·모든 animation sampler·sparse base/index/value·embedded image 참조를 먼저 찾고 주소를 일관되게 remap한다. 실제 참조 byte·decoded 값·image encoding·node/rest/weight/material/clip 의미는 보존한다. 알 수 없는 chunk/extension/custom 참조나 외부 resource를 추측해 잘라내지 않는다.
+
+주소 재배치 뒤 원래 BIN prefix 동일은 적절한 계약이 아니다. 독립적으로 실제 static body/skin/rest/image payload 서명을 비교하고, importer의 동작·skin·Game physics는 별도로 검증한다. source container 절감량을 그대로 Web/PCK 여유에 더하지 않는다. sampler가 현재 channel에 쓰이지 않아도 지원 계약이 전체 sampler 보존이라면 유지한다. 잘못된 range·sparse index·덮어쓰기·불일치 출력 정리를 독립 fixture로 검사하고 실패 기록을 보존한다.
+
+곡선의 authoring asset 경로가 runtime의 같은 몸체를 가리키지 못하면 path metadata만 canonical 경로로 적응할 수 있다. 역치환한 전체 SHA와 numeric sample/나머지 byte 동일을 입증한다. 이 처리는 새 geometry 곡선을 옛 곡선으로 바꾸거나 timing/marker 기준을 완화하는 방법이 아니다. 도구 검증·실제 engine payload·새 게임 입력/AV·포장 절감은 각자의 근거로 승인한다.

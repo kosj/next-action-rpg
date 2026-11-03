@@ -1,0 +1,104 @@
+{
+  "scope": "Actual raw glTF LBS at all active keys/midpoints plus exact boundaries; nominal collision-free root movement3.2m/s. Supporting front foot only; rear foot intentionally catch-steps. Not real controller collisions, dynamic foot IK, terrain, visual or AAA acceptance.",
+  "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "tool_sha256": "aebb895750f1efb18ef6ab547f28160ec01ce52e79a551c62a5d34decede1c33",
+  "reports": [
+    {
+      "primitive": 0,
+      "clip": "charged_heavy",
+      "samples": 181,
+      "front_sole_vertices": 321,
+      "selection": "Actual static skin LeftFoot/LeftToeBase summed weight>.5, restY<.04m; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.03913426781153335,
+      "worst": {
+        "time_s": 0.5199999809265137,
+        "vertex_index": 18270,
+        "anchor_raw_gltf_m": [
+          0.23586999793174918,
+          0.02404810967290575,
+          0.466824271811911
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.22820145726250812,
+          0.04934430664644608,
+          0.4379662257965471
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": false
+    },
+    {
+      "primitive": 0,
+      "clip": "heavy",
+      "samples": 45,
+      "front_sole_vertices": 321,
+      "selection": "Actual static skin LeftFoot/LeftToeBase summed weight>.5, restY<.04m; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.04237827274971535,
+      "worst": {
+        "time_s": 0.5400000214576721,
+        "vertex_index": 18270,
+        "anchor_raw_gltf_m": [
+          0.24002567500183764,
+          0.024038269052387144,
+          0.46925831494242265
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.2285262265565941,
+          0.04990155287304303,
+          0.4377183207015124
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": false
+    },
+    {
+      "primitive": 1,
+      "clip": "charged_heavy",
+      "samples": 181,
+      "front_sole_vertices": 321,
+      "selection": "Actual static skin LeftFoot/LeftToeBase summed weight>.5, restY<.04m; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.03913426781153335,
+      "worst": {
+        "time_s": 0.5199999809265137,
+        "vertex_index": 18270,
+        "anchor_raw_gltf_m": [
+          0.23586999793174918,
+          0.02404810967290575,
+          0.466824271811911
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.22820145726250812,
+          0.04934430664644608,
+          0.4379662257965471
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": false
+    },
+    {
+      "primitive": 1,
+      "clip": "heavy",
+      "samples": 45,
+      "front_sole_vertices": 321,
+      "selection": "Actual static skin LeftFoot/LeftToeBase summed weight>.5, restY<.04m; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.04237827274971535,
+      "worst": {
+        "time_s": 0.5400000214576721,
+        "vertex_index": 18270,
+        "anchor_raw_gltf_m": [
+          0.24002567500183764,
+          0.024038269052387144,
+          0.46925831494242265
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.2285262265565941,
+          0.04990155287304303,
+          0.4377183207015124
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": false
+    }
+  ],
+  "passed": false
+}

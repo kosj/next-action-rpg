@@ -97,3 +97,17 @@ sweep가 확정한 세부 시각과 physics tick 끝의 시각을 구분한다. 
 실제 Game/물리를 실행한 capture도 기능 trace·선택 raster·전체 영상 검수·정상 종료를 구분한다. receipt가 생기고 영상 파일이 출력돼도 종료 시 node/object/resource 누수나 오류가 남으면 clean capture로 표시하지 않는다. source·capture 설정·runtime 입력의 digest와 차이, query 좌표와 실제 최종 marker world 좌표의 관찰 여부를 남기고 다음 fixture의 개선을 이전 take의 증거로 소급하지 않는다.
 
 기능 확인, 표현 결함, 참고 대상에서 관찰한 특징, 미관찰/미측정 범위를 따로 적는다. 수정 제안은 특정 결함·필요한 저작/코드 범위·검수할 행렬에 연결하고, 실제1배속 영상/음향과 목표 기기에서 다시 판단한다. 다른 프로젝트는 자신의 clip·import 결과·전투 조건·하드웨어를 재검증해야 하며, 과거 검사 수·공개 참고 게임의 인지도·공식 자료 존재만으로 최종 품질을 승인하지 않는다.
+
+
+## 강공격의 차이와 기존 audio lead를 먼저 확인하기
+
+강한 동작이 약하다는 피드백을 받으면 일반 강공격과 약공격의 같은 phase 원본부터 비교한다. silhouette·양손/전신의 힘·준비/방출/회복이 비슷하다면 gain이나 effect 수만 늘려 동작 차이를 해결했다고 표시하지 않는다. 새 clip의 실제 칼날 경로·LUT와 motor 이동·contact를 연결하고, 보호할 약공격 channel의 byte 보존과 새 whole-file SHA를 따로 검증한다.
+
+whoosh를 늦추기 전에 기존 PCM의 quiet lead·envelope peak·attack-start playback을 확인한다. 이미 bake된 지연에 player/timer 지연을 더하지 않으며 presentation hitpause와 mixer clock을 구분한다. offline gain peak·원본 WAV 보존은 실제 ambience/다중 타격 mix나 직접 청취 승인과 다르다. 새 ordinary-heavy 입력을 추가한 baseline은 이전 다른 입력 policy의 영상으로 대체하지 않는다. 프로젝트 수치와 채택 결과는 원본 source/실제 게임 근거로 다시 검증한다.
+
+
+## Resource 복제와 스킬 계약의 숨은 상속
+
+새 물리 곡선·phase motor·feedback profile을 추가한 공용 공격 Resource를 다른 스킬의 출발점으로 복제하면, 기존 caller가 덮어쓰지 않은 flag·경로·pin·시간 계약도 상속된다. startup/active만 바꾸고 원래 curve가 남는다면 정상적인 fail-closed 검사가 실제 스킬 실행에서 거부할 수 있다. 특수 공격과 스킬의 독립 기본값·명시적 override를 분리하고, 가드를 약화하거나 엉뚱한 곡선을 retime해 오류를 숨기지 않는다.
+
+실제 player가 각 스킬을 physics에서 실행하도록 회귀를 만든다. 생성한 Resource의 모양만 검사하는 테스트는 충분하지 않다. native·특정 charged probe가 통과해도 전체 모바일 journey의 `qa.errors` 확인에서 회귀를 발견할 수 있다. 스킬을 cast하지 않은 짧은 모션 영상은 기존 몸체·이펙트의 제한된 근거이며 수정 후 전체 runtime 검증을 대신하지 않는다. 수정 전 성공·실제 실패·수정 후 결과를 각각의 source에 고정한다.

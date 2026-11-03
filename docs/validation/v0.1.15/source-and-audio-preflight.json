@@ -1,0 +1,195 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "pending_candidate_and_actual_game_review",
+  "baseline_commit": "87fcefdd9a7e24f575e9d1b2df2e9273da29a8ab",
+  "official_sources": [
+    {
+      "url": "https://github.com/godotengine/godot-docs/blob/4.7/tutorials/animation/animation_tree.rst",
+      "version": "Godot docs4.7 mutablebranch fetched2026-11-02, not immutablecommit",
+      "archived_connector_UTF8_bytes": 25221,
+      "sha256": "f4e3e3596b91c6efed5a053cd0e381066e2cbffc0256972839feb8bddaad2ebb",
+      "meaning_used": "AnimationTree uses AnimationPlayer animations; blend defaults/Bone Rest/RESET and root-motion retrieval are separate from gameplay motor authority."
+    },
+    {
+      "url": "https://github.com/godotengine/godot-docs/blob/4.7/tutorials/audio/audio_buses.rst",
+      "version": "Godot docs4.7 mutablebranch fetched2026-11-02, not immutablecommit",
+      "archived_connector_UTF8_bytes": 5107,
+      "sha256": "bbd16cfbe65baa6434023614cad09ec128883a43c161b3ff3fb0d94f4a33375d",
+      "meaning_used": "Master output/clipping and Web Sample-vs-Stream bus-effects limitation. Does not prove current Game has any bus effect or perceived mix success."
+    }
+  ],
+  "source_audio": {
+    "scope": "Independent readonly actual9WAV bytes equal cleanbaseline; no regeneration/adoption/native/hearing claim.",
+    "files": [
+      {
+        "file": "game/assets/audio/impact/contact_tick.wav",
+        "bytes": 11508,
+        "sha256": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+        "baseline_sha256": "59cea6164a7b3e97c1529b416101ae33425003ef54dc63c93ed2fd283474c7ad",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/metal_light.wav",
+        "bytes": 38852,
+        "sha256": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+        "baseline_sha256": "17df057d4a2036e64e7e1f137175fbba05f1bc18ad51e1573e88f98426cfdb85",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/metal_heavy.wav",
+        "bytes": 58256,
+        "sha256": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+        "baseline_sha256": "3e8d95d6fd9b284df817ac1bee44083343eb49df29cabddc5414c736f3971899",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/body_thump.wav",
+        "bytes": 31796,
+        "sha256": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+        "baseline_sha256": "eef3217a4f039714b7a19738e53753851e03101a6e511e41d6837c74e9f3d14c",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/charge_sub.wav",
+        "bytes": 56492,
+        "sha256": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+        "baseline_sha256": "aa57cf2508fe3e786dc81abe01569cfd7e25c39c4a98fb443a8360bb32f5dbe1",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/debris_tail.wav",
+        "bytes": 74132,
+        "sha256": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+        "baseline_sha256": "37493354ec3af41b6c14b7dc896fc128cd1fad43e615f6b40314384a930bdc48",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/metal_block.wav",
+        "bytes": 51200,
+        "sha256": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+        "baseline_sha256": "4ac172edb24ce428d51d5fb46e38a209530b1bacc4f8954ee17d9c5ee4e72706",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/swing_heavy.wav",
+        "bytes": 79424,
+        "sha256": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf",
+        "baseline_sha256": "bdc966747323dcda0e8b5edaa8bc316482a68c5e2455611da0771130b544dedf",
+        "unchanged": true
+      },
+      {
+        "file": "game/assets/audio/impact/swing_charged.wav",
+        "bytes": 104120,
+        "sha256": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+        "baseline_sha256": "a9edc15908b81df2c73d27309f246e3f094257e4e33bf7e087decd9cdd4b0070",
+        "unchanged": true
+      }
+    ]
+  },
+  "offline_gain_profile": {
+    "status": "gain_only_existing_pcm_unchanged",
+    "source_commit": "87fcefdd9a7e24f575e9d1b2df2e9273da29a8ab",
+    "original_wav_count": 9,
+    "all_nine_wav_sha_unchanged": true,
+    "profiles": {
+      "light": {
+        "old_peak": 0.09614326926632816,
+        "new_peak": 0.1304746993614922,
+        "new_layers": [
+          {
+            "key": "contact_tick",
+            "db": -16
+          },
+          {
+            "key": "metal_light",
+            "db": -15
+          }
+        ]
+      },
+      "heavy": {
+        "old_peak": 0.1692992800742438,
+        "new_peak": 0.23480269547145577,
+        "new_layers": [
+          {
+            "key": "contact_tick",
+            "db": -16
+          },
+          {
+            "key": "metal_heavy",
+            "db": -12
+          },
+          {
+            "key": "body_thump",
+            "db": -11
+          },
+          {
+            "key": "debris_tail",
+            "db": -24
+          }
+        ]
+      },
+      "charged": {
+        "old_peak": 0.2081800594830535,
+        "new_peak": 0.3013668889315774,
+        "new_layers": [
+          {
+            "key": "contact_tick",
+            "db": -17
+          },
+          {
+            "key": "metal_heavy",
+            "db": -10
+          },
+          {
+            "key": "body_thump",
+            "db": -11
+          },
+          {
+            "key": "charge_sub",
+            "db": -13
+          },
+          {
+            "key": "debris_tail",
+            "db": -23
+          }
+        ]
+      },
+      "blocked_metal": {
+        "old_peak": 0.12335891855538315,
+        "new_peak": 0.12335891855538315,
+        "new_layers": [
+          {
+            "key": "contact_tick",
+            "db": -22
+          },
+          {
+            "key": "metal_block",
+            "db": -13
+          },
+          {
+            "key": "debris_tail",
+            "db": -28
+          }
+        ]
+      }
+    },
+    "scope": "Offline actualPCM mix peaks/recipe only; real Game mixer and directhearing remain separate"
+  },
+  "timing_boundary": {
+    "heavy_baked_quiet_lead_s": 0.2,
+    "charged_baked_quiet_lead_s": 0.28,
+    "scope": "Existing WAV quietlead is relative to attack-start playback atpitch1. Inspect PCM/envelope/playback clock before adding any player/timer delay; no new delayed playback adopted."
+  },
+  "limits": [
+    "No selected/adopted v15 rawclip/LUT/native/export/GameAV proof yet",
+    "Baseline14 includes ordinaryheavy and is a new take, not oldv13/v14 repeatpolicy",
+    "Offline mix/profilepeak does not prove realoverlappingGamemix, perceptualsync/directhearing/hardware/AAA"
+  ],
+  "quality_source_finding": {
+    "actual_semantics": "Sessiondefault0/q0BALANCED keyshadowON Webbase.8; q1PERFORMANCE keyshadowOFF .65, separateTouchDPRcap.",
+    "baseline_effect": "Actualbaseline impact source q0countcap10 vs q1charged18, q1debris6/q0debris3 and q1dust2/q0dust1; effect budget inverted relative to real UI quality meaning. Not global index/shadow inversion.",
+    "new_approved_budget_pending_validation": "q0balanced spark/debris/dust24/8/3 vsq1performance10/3/1, trianglecaps160/80. Global8effectowners separate. New source/native/arrays/q0q1 raster evidence pending.",
+    "capture_scope": "Newbaseline14 andcandidatebothq1PERFORMANCE; do notrenamepriorv14q1images orclaimnewbudgetapproval."
+  },
+  "historical_snapshot_stage": "Nov2 pre-candidate source/audio preflight. Later actualnative714/export: native-and-preview-002.json; Nov3 completedcapturepipeline readback: actual-game-pipeline-preliminary.json. Originalpreflight limits reflect that earlierstage, notcurrentabsenceofoutputs."
+}

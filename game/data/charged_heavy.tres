@@ -24,4 +24,4 @@ blade_length = 1.19
 blade_radius = 0.12
 blade_damage_start_fraction = 0.18
 blade_curve_path = "res://data/charged_blade_curve.json"
-blade_curve_sha256 = "8946d0a499c50a0df8e26576a23221d54ef56d3099f1c2e01cbb25aa4e8f21e2"
+blade_curve_sha256 = "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6"

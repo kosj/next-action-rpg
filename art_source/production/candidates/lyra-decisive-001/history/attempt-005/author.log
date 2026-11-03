@@ -1,0 +1,47 @@
+Extensions: writing cache failed ([Errno 30] Read-only file system: '/home/agent/.config/blender/4.3/extensions').
+23:26:23 | INFO: Data are loaded, start creating Blender stuff
+23:26:23 | INFO: Blender create Mesh node Mesh_0
+23:26:26 | INFO: glTF import finished in 3.44s
+DECISIVE_GEOMETRY_READY charge 326
+DECISIVE_GEOMETRY_READY charged_heavy 531
+DECISIVE_GEOMETRY_READY heavy 87
+DECISIVE_ACTION_READY charge 326 (614.5248799440114, 'RightHand', 0.258, 0.26)
+DECISIVE_ACTION_READY charged_heavy 531 (1905.6954928649195, 'RightHand', 0.424, 0.426)
+DECISIVE_ACTION_READY heavy 87 (1578.301221705615, 'RightHand', 0.42, 0.43)
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+23:26:32 | INFO: Starting glTF 2.0 export
+23:26:32 | INFO: Extracting primitive: Mesh_0
+23:26:32 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+23:26:32 | INFO: Primitives created: 2
+23:26:34 | INFO: Finished glTF 2.0 export in 2.291794538497925 s
+
+23:26:34 | INFO: Starting glTF 2.0 export
+23:26:34 | INFO: Extracting primitive: Mesh_0
+23:26:35 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+23:26:35 | INFO: Primitives created: 2
+23:26:38 | INFO: Finished glTF 2.0 export in 3.1616756916046143 s
+
+23:26:38 | INFO: Starting glTF 2.0 export
+23:26:38 | INFO: Extracting primitive: Mesh_0
+23:26:38 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+23:26:38 | INFO: Primitives created: 2
+23:26:39 | INFO: Finished glTF 2.0 export in 0.6883256435394287 s
+
+Extensions: writing cache failed ([Errno 30] Read-only file system: '/home/agent/.config/blender/4.3/extensions').
+23:26:55 | INFO: Data are loaded, start creating Blender stuff
+23:26:55 | INFO: Blender create Mesh node Mesh_0
+23:26:56 | INFO: glTF import finished in 1.19s
+Traceback (most recent call last):
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 220, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 217, in main
+    data=extract_curve(rig,name,recipe['attacks'][name],fps,Path(recipe['weapon_source']['file']),output,recipe);path=output.with_suffix('.'+name+'-curve.json');path.write_text(json.dumps(data,indent=2)+'\n');curves[name]={'file':path.name,'sha256':sha(path)}
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 154, in extract_curve
+    action=next(x for x in bpy.data.actions if x.name==clip);rig.animation_data.action=action;start=float(action.frame_range[0]);markers=sword_markers(weapon);scale=rig.matrix_world.to_scale().x;socket=Matrix(recipe['weapon_socket']['basis_columns']).transposed().to_4x4();socket.translation=Vector(recipe['weapon_socket']['offset_m'])/scale;comp=Matrix.Diagonal((1/scale,1/scale,1/scale,1));rows=[]
+StopIteration
+
+Error: script failed, file: 'tools/author_decisive_actions.py', exiting.
+Blender 4.3.2
+
+Blender quit

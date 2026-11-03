@@ -103,7 +103,9 @@ def prepare_take(args: argparse.Namespace, label: str) -> dict:
     frozen = inventory(project)
     images = directory / "original-png"
     images.mkdir()
+    capture_policy = "continuity_plus_ordinary_heavy_v015" if args.include_heavy else "continuity_v014"
     context.update({"label": label, "display": display,"physical_capture_size":[args.width,args.height],"logical_viewport":display["logical_viewport"],
+                    "capture_policy":capture_policy,"include_heavy":args.include_heavy,
                     "raster_profile":raster_profile(args.raster_threads),
                     "baseline_commit":git("rev-parse",args.baseline_ref+"^{commit}"),
                     "application_version":re.search(r'config/version="([^"\n]+)"',(project/"project.godot").read_text()).group(1),
@@ -122,7 +124,10 @@ def prepare_take(args: argparse.Namespace, label: str) -> dict:
     # import hook, imported-source sidecar, curve, camera and weapon input hashes.
     write_json(directory / "source-inputs.json", original)
     write_json(directory / "capture-inputs.json", frozen)
-    config = {"fps": FPS, "frames": args.frames, "scope": SCOPE, "scenario": POLICY,
+    policy = dict(POLICY)
+    if args.include_heavy:
+        policy["movement"] = "Continuity: safe W/A/D, ordinary3-light chain, one ordinary right-tap heavy whiff, charged whiff, heal attempt; real first encounter/contact/recovery. No attack state writes."
+    config = {"fps": FPS, "frames": args.frames, "scope": SCOPE, "scenario": policy,"include_heavy":args.include_heavy,"capture_policy":capture_policy,
               "source_context": context, "snapshot": str(directory / "frames.json"),
               "image_directory": str(images),"scenario_name":args.scenario,"quality":args.quality,
               "physical_capture_size":[args.width,args.height],"raster_profile":raster_profile(args.raster_threads),
@@ -181,11 +186,18 @@ def validate_trace(trace: dict, expected_frames: int,quality: int=1) -> dict:
             raise RuntimeError("Actual charged-whiff instance unexpectedly contacted or was not observed")
         if coverage["heal_input_attempts"]<1 or coverage["maximum_locomotion_displacement_m"]<.5:
             raise RuntimeError("Continuity locomotion/heal-input coverage missing")
+        if trace.get("include_heavy"):
+            heavy=int(coverage.get("ordinary_heavy_attack_instance_id",0))
+            if "heavy" not in active or coverage.get("ordinary_heavy_active_samples",0)<1 or not coverage.get("ordinary_heavy_whiff") or heavy<=0:
+                raise RuntimeError("Requested ordinary heavy active-phase/whiff coverage missing")
+            if any(int(packet.get("attack_instance_id",0))==heavy for packet in trace["receipts"]):
+                raise RuntimeError("Observed safe ordinary heavy instance unexpectedly contacted")
     return {"charged_contacts": len(contacts), "paired_pause_frames": trace["paired_pause_frames"],
             "actual_models": models, "actual_curve": curve, "contact_tick": trace["contact_tick"],
             "release_tick": trace["release_tick"], "actual_build_id": trace["provenance"]["build_id"],
             "start_health": play_rows[0]["hero"]["health"], "end_health": play_rows[-1]["hero"]["health"],
             "frame_count": len(rows), "gameplay_frames": trace["gameplay_frames"],
+            "capture_policy":trace.get("capture_policy","continuity_v014"),"include_heavy":bool(trace.get("include_heavy",False)),
             "observed_coverage":trace.get("observed_coverage",{}),"scenario_name":trace.get("scenario_name")}
 
 
@@ -311,7 +323,9 @@ def encode_take(directory: Path, trace: dict, env: dict[str,str]) -> dict:
 
 def capture(args: argparse.Namespace, takes: dict[str, dict]) -> None:
     server = None
-    result = {"scope": SCOPE, "scenario": POLICY, "status": "running", "takes": {},
+    result = {"scope": SCOPE, "scenario": next(iter(takes.values()))["config"]["scenario"],
+              "capture_policy":next(iter(takes.values()))["config"]["capture_policy"],"include_heavy":args.include_heavy,
+              "status": "running", "takes": {},
               "display_tcp_disabled": True, "processes_closed": False, "started_unix": time.time(),
               "writer_contract_sources":WRITER_REFERENCES,"raster_profile":raster_profile(args.raster_threads)}
     base_env = dict(os.environ)
@@ -364,6 +378,8 @@ def capture(args: argparse.Namespace, takes: dict[str, dict]) -> None:
             engine_warnings = [line for line in engine_lines if line.startswith("WARNING:")]
             trace = json.loads((directory / "frames.json").read_text())
             cleanup = json.loads((directory / "cleanup.json").read_text())
+            if bool(trace.get("include_heavy",False))!=args.include_heavy:
+                raise RuntimeError("Actual fixture heavy policy differs from requested input policy")
             if not cleanup.get("actual_audio_weakrefs_released"):
                 raise RuntimeError("Actual audio playback WeakRefs were not released after the take")
             if args.ui_geometry_probe or args.ui_route_probe:
@@ -406,6 +422,7 @@ def main() -> None:
     parser.add_argument("--take", choices=("both", "before", "after"), default="both")
     parser.add_argument("--seconds", type=int, choices=[14,45,60], default=14)
     parser.add_argument("--scenario", choices=["continuity","contact"], default="continuity")
+    parser.add_argument("--include-heavy",action="store_true",help="Distinct v15 policy: add one native right-tap ordinary heavy whiff; default retains v14 input policy")
     parser.add_argument("--ui-geometry-probe",action="store_true",help="Read native UI geometry and exit after4ticks; no gameplay/AV approval")
     parser.add_argument("--ui-route-probe",action="store_true",help="Drive actual Settings/NewGame/prologue, then exit; no combat/AV approval")
     parser.add_argument("--quality", type=int, choices=[0,1], default=1)
@@ -424,6 +441,8 @@ def main() -> None:
     args.frames = args.seconds * FPS
     if args.ui_geometry_probe and args.ui_route_probe:
         parser.error("Choose one bounded UI diagnostic mode")
+    if args.include_heavy and args.scenario!="continuity":
+        parser.error("--include-heavy requires the full continuity scenario")
     if (args.width,args.height) not in [(960,600),(1280,800)] or not 120 <= args.wall_timeout <= 7200:
         parser.error("Use960x600 or1280x800 and120–7200s per-process wall resource limit")
     if args.output.exists() and any(args.output.iterdir()):
@@ -431,7 +450,9 @@ def main() -> None:
     args.output.mkdir(parents=True, exist_ok=True)
     labels = ("before", "after") if args.take == "both" else (args.take,)
     takes = {label: prepare_take(args, label) for label in labels}
-    manifest = {"status": "prepared_only_no_engine_or_server_launched", "scope": SCOPE, "scenario": POLICY,
+    manifest = {"status": "prepared_only_no_engine_or_server_launched", "scope": SCOPE,
+                "scenario":next(iter(takes.values()))["config"]["scenario"],"include_heavy":args.include_heavy,
+                "capture_policy":next(iter(takes.values()))["config"]["capture_policy"],
                 "takes": {label: {key: value for key, value in take.items() if key != "frozen_inputs"}
                           for label, take in takes.items()}, "runner_sha256": sha(Path(__file__)),
                 "godot": str(args.godot), "capture_requested": args.capture,"raster_profile":raster_profile(args.raster_threads),

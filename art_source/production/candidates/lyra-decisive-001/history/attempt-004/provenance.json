@@ -1,0 +1,14 @@
+{
+  "stage": "pre-run",
+  "reason": "Ordinary-heavy front plant adjusted from -.62m to validated charged -.52m to keep leg reach inside fixed skeleton",
+  "files": {
+    "recipe.json": {
+      "bytes": 2730,
+      "sha256": "0fb64a9288e6e48da43652376a1a8428ea6dcc848213c7728b18dc67ab9529b7"
+    },
+    "author_decisive_actions.py": {
+      "bytes": 22176,
+      "sha256": "a9bb34ec027adc16685fccb8d9e2fa64faaa98325a74a95ca0890a068f219f06"
+    }
+  }
+}

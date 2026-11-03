@@ -3,7 +3,7 @@
   "license_scope": "New original project audio; no third-party samples; repository owner has not selected a redistribution license.",
   "authorship": "Original deterministic oscillator, filtered-noise and inharmonic-resonator DSP authored for RUNEFALL",
   "generator": "tools/generate_impact_audio.py",
-  "generator_sha256": "4e58100d8e1800587d6a4df8a0b57cbba1de0232d4b118fbef781e98ced4a300",
+  "generator_sha256": "6d909e19c1cffe197d65d24e93795685de298d8bb7d9690c05208d41202b2ccb",
   "numpy_version": "2.3.5",
   "rng": "numpy.random.default_rng/PCG64",
   "rate_hz": 44100,
@@ -189,36 +189,36 @@
       "layers": [
         {
           "key": "contact_tick",
-          "db": -18
+          "db": -16
         },
         {
           "key": "metal_light",
-          "db": -18
+          "db": -15
         }
       ],
-      "sum_peak_at_zero_density": 0.09614326926632816,
+      "sum_peak_at_zero_density": 0.1304746993614922,
       "global_group_headroom_db": -1.5
     },
     "heavy": {
       "layers": [
         {
           "key": "contact_tick",
-          "db": -17
+          "db": -16
         },
         {
           "key": "metal_heavy",
-          "db": -15
+          "db": -12
         },
         {
           "key": "body_thump",
-          "db": -14
+          "db": -11
         },
         {
           "key": "debris_tail",
-          "db": -25
+          "db": -24
         }
       ],
-      "sum_peak_at_zero_density": 0.1692992800742438,
+      "sum_peak_at_zero_density": 0.23480269547145577,
       "global_group_headroom_db": -1.5
     },
     "charged": {
@@ -229,22 +229,22 @@
         },
         {
           "key": "metal_heavy",
-          "db": -13
+          "db": -10
         },
         {
           "key": "body_thump",
-          "db": -15
+          "db": -11
         },
         {
           "key": "charge_sub",
-          "db": -18
+          "db": -13
         },
         {
           "key": "debris_tail",
           "db": -23
         }
       ],
-      "sum_peak_at_zero_density": 0.2081800594830535,
+      "sum_peak_at_zero_density": 0.3013668889315774,
       "global_group_headroom_db": -1.5
     },
     "blocked_metal": {
@@ -309,7 +309,7 @@
         "duration": 0.42
       }
     ],
-    "sha256": "d3dab70b3e8309fc60b47d5ad34cfa59327758c95e986e0d6e395c864b3e4a81"
+    "sha256": "38f7628f97c9f424ccf84d33f35258da0a88fcb82f0fde5e9aa848fb35c7e8d1"
   },
   "scope": "Offline generation/peak verification only; actual mix/listening/Web playback and combat AV review separate"
 }

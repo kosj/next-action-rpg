@@ -39,6 +39,9 @@ var contact_tick := -1
 var contact_count := 0
 var paired_pause_frames := 0
 var charge_seen := false
+var ordinary_heavy_serial := 0
+var ordinary_heavy_active_samples := 0
+var ordinary_heavy_whiff_observed := false
 var finished := false
 var finishing := false
 var failure := ""
@@ -200,12 +203,30 @@ func _physics_process(delta: float) -> void:
 					combo_requests += 1
 			elif combo_requests==3:
 				if not whiff_observed:
-					_set_mouse(MOUSE_BUTTON_RIGHT,true,"heavy",_center())
-					_transition("prelude_charge")
+					if bool(config.get("include_heavy",false)) and not ordinary_heavy_whiff_observed:
+						_set_mouse(MOUSE_BUTTON_RIGHT,true,"heavy",_center())
+						releases.append({"at":tick+1,"kind":"mouse","code":MOUSE_BUTTON_RIGHT,"name":"heavy","point":_center()})
+						_transition("ordinary_heavy_whiff")
+					else:
+						_set_mouse(MOUSE_BUTTON_RIGHT,true,"heavy",_center())
+						_transition("prelude_charge")
 				else:
 					_transition("safe_spacing")
 			if tick-stage_start>240:
 				_fail("Ordinary3-light input chain did not complete within4logical seconds")
+		"ordinary_heavy_whiff":
+			if player.strike!=null and String(player.strike.presentation_id)=="heavy":
+				ordinary_heavy_serial = player.strike.attack_instance_id
+			elif ordinary_heavy_serial>0 and player.strike==null:
+				for receipt in receipts:
+					if int(receipt.get("attack_instance_id",0))==ordinary_heavy_serial:
+						_fail("Safe-space ordinary heavy unexpectedly produced contact")
+						return
+				ordinary_heavy_whiff_observed = true
+				_set_mouse(MOUSE_BUTTON_RIGHT,true,"heavy",_center())
+				_transition("prelude_charge")
+			if tick-stage_start>180:
+				_fail("Ordinary right-tap heavy did not complete within3logical seconds")
 		"prelude_charge":
 			if player.heavy_held>=0.72 and player.strike==null:
 				_set_mouse(MOUSE_BUTTON_RIGHT,false,"heavy",_center())
@@ -493,6 +514,10 @@ func record_after_physics(delta: float) -> void:
 		last_potions = player.potions
 		if player.strike!=null:
 			var attack_name := String(player.strike.presentation_id)
+			if bool(config.get("include_heavy",false)) and attack_name=="heavy" and player.strike.elapsed>=player.strike.data.startup and player.strike.elapsed<player.strike.data.startup+player.strike.data.active:
+				ordinary_heavy_active_samples += 1
+				if ordinary_heavy_active_samples==1:
+					pending_images.append("10-ordinary-heavy-first-active")
 			if attack_name in ["light_1","light_2","light_3"] and player.strike.elapsed>=player.strike.data.startup and player.strike.elapsed<player.strike.data.startup+player.strike.data.active:
 				light_active_samples[attack_name] = int(light_active_samples.get(attack_name,0))+1
 				if not light_images.has(attack_name):
@@ -568,6 +593,9 @@ func _validate_finish() -> void:
 		if not whiff_observed or maximum_locomotion_displacement<0.5 or heal_attempts<1:
 			_fail("Planned continuity prelude coverage was not actually observed")
 			return
+		if bool(config.get("include_heavy",false)) and (not ordinary_heavy_whiff_observed or ordinary_heavy_serial<=0 or ordinary_heavy_active_samples<1):
+			_fail("Requested ordinary right-tap heavy active-phase/whiff coverage was not actually observed")
+			return
 	if not charge_seen or release_tick < 0 or contact_count < 1:
 		_fail("Bounded normal gameplay did not produce its required charged contact")
 		return
@@ -605,7 +633,8 @@ func _write_result() -> void:
 		"gameplay_start_tick":gameplay_start,"gameplay_frames":tick-gameplay_start+1 if gameplay_start >= 0 else 0,
 		"release_tick":release_tick,"contact_tick":contact_tick,"charged_contacts":contact_count,
 		"paired_pause_frames":paired_pause_frames,"frames":frames,"input_events":events,"receipts":receipts,"images":images,
-		"scenario_name":config.get("scenario_name","continuity"),"ui_geometry":ui_geometry_snapshot,"ui_geometry_history":ui_geometry_history,"observed_coverage":{"light_active_samples":light_active_samples,
+		"scenario_name":config.get("scenario_name","continuity"),"capture_policy":config.get("capture_policy","continuity_v014"),"include_heavy":bool(config.get("include_heavy",false)),"ui_geometry":ui_geometry_snapshot,"ui_geometry_history":ui_geometry_history,"observed_coverage":{"light_active_samples":light_active_samples,
+			"ordinary_heavy_active_samples":ordinary_heavy_active_samples,"ordinary_heavy_whiff":ordinary_heavy_whiff_observed,"ordinary_heavy_attack_instance_id":ordinary_heavy_serial,
 			"safe_charged_whiff":whiff_observed,"whiff_attack_instance_id":whiff_serial,"maximum_locomotion_displacement_m":maximum_locomotion_displacement,
 			"heal_input_attempts":heal_attempts,"observed_potion_consumptions":observed_heals,"observed_successful_parries":observed_parries,
 			"scope":"Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval."},

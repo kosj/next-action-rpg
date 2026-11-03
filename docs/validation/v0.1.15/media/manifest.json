@@ -1,0 +1,41 @@
+{
+  "scope": "Unmodified delivered logical1x scripted native AV originals and full-resolution retained raw-MJPEG decoded stills; q1 performance960x600, not human gameplay or hardware framerate/continuous-hearing/AAA approval",
+  "files": [
+    {
+      "file": "before-combat-logical1x-av.mp4",
+      "bytes": 8052449,
+      "sha256": "fa17bb7941d068755cf391919f996ba0c298c1ad29183e48dc74901f7594d131",
+      "source": "build/art-review/decisive-sword-before-14-001/before/gameplay-logical1x-av.mp4"
+    },
+    {
+      "file": "before-ordinary-heavy-active.png",
+      "bytes": 848699,
+      "sha256": "0bf62233da81e4d3c2343e3e6172c1c1bddd252b67b4a11ea2814641fe77f10a",
+      "source": "build/art-review/decisive-sword-after-14-001/paired-action-frames/before/decoded-01.png"
+    },
+    {
+      "file": "before-charged-contact-plus2.png",
+      "bytes": 914671,
+      "sha256": "86b7d94aeea38ce985dcf1ddf83f0424ee09a6de4671c3f8ff0184d8888c6376",
+      "source": "build/art-review/decisive-sword-after-14-001/paired-action-frames/before/decoded-03.png"
+    },
+    {
+      "file": "after-combat-logical1x-av.mp4",
+      "bytes": 7832334,
+      "sha256": "00f4a1b9bac4d7fc3c542ddc18f3f8dc7134b74efa6e8b22384e3dcbb4ce1704",
+      "source": "build/art-review/decisive-sword-after-14-001/after/gameplay-logical1x-av.mp4"
+    },
+    {
+      "file": "after-ordinary-heavy-active.png",
+      "bytes": 864281,
+      "sha256": "bb12c7a7e72bdb1a7e25b5dd0c8c941d09d655645b3931df91a33f4cd100c186",
+      "source": "build/art-review/decisive-sword-after-14-001/paired-action-frames/after/decoded-01.png"
+    },
+    {
+      "file": "after-charged-contact-plus2.png",
+      "bytes": 924860,
+      "sha256": "f4e440a1f61381978b76208714e7c396c6d0aad68530c3fc83cad1f20132331e",
+      "source": "build/art-review/decisive-sword-after-14-001/paired-action-frames/after/decoded-03.png"
+    }
+  ]
+}

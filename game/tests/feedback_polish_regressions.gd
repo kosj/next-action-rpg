@@ -25,9 +25,11 @@ static func _core_projection(effect: RuneImpactEffect, camera: Camera3D) -> Dict
 	# Inspect rendered vertices, rather than certifying the basis report alone.
 	var mesh: ArrayMesh = effect._meshes.core
 	var vertices: PackedVector3Array = mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]
+	var colors: PackedColorArray = mesh.surface_get_arrays(0)[Mesh.ARRAY_COLOR]
 	var area: float = 0.0
 	var radius: float = 0.0
 	var finite: bool = true
+	var maximum_alpha: float = 0.0
 	var center: Vector3 = effect._normal*0.009
 	for index in range(0,vertices.size(),3):
 		var a: Vector2 = camera.unproject_position(effect.global_transform*vertices[index])
@@ -37,7 +39,9 @@ static func _core_projection(effect: RuneImpactEffect, camera: Camera3D) -> Dict
 		area += absf((b-a).cross(c-a))*0.5
 	for vertex: Vector3 in vertices:
 		radius = maxf(radius,vertex.distance_to(center))
-	return {"triangle_area_pixels":area,"radius_from_core_center_m":radius,"finite":finite,"vertices":vertices.size()}
+	for color: Color in colors:
+		maximum_alpha = maxf(maximum_alpha,color.a)
+	return {"triangle_area_pixels":area,"radius_from_core_center_m":radius,"finite":finite,"vertices":vertices.size(),"maximum_vertex_alpha":maximum_alpha}
 
 static func run(world: Node3D, check: Callable) -> bool:
 	var viewport: SubViewport = SubViewport.new()
@@ -109,8 +113,8 @@ static func run(world: Node3D, check: Callable) -> bool:
 	Session.shake = true
 	rig.apply_impact(contact)
 	rig._physics_process(0.04)
-	check.call(rig.camera.fov<56.0 and rig.camera.fov>54.0 and rig.camera.global_position.distance_to(rig._follow_position)<0.09,
-		"Confirmed charged feedback has a short limited FOV and positional impulse")
+	check.call(rig.camera.fov<56.0 and rig.camera.fov>52.5 and rig.camera.global_position.distance_to(rig._follow_position)<0.11,
+		"Confirmed charged feedback remains a brief directional kick below3.5degrees and11cm")
 	rig._physics_process(0.30)
 	check.call(is_equal_approx(rig.camera.fov,56.0),"The contact FOV returns to56 without altering the follow framing")
 	Session.shake = false
@@ -121,25 +125,30 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var effect: RuneImpactEffect = RuneImpactEffect.new()
 	stage.add_child(effect)
 	var original: Dictionary = contact.duplicate(true)
-	effect.setup(contact,1)
+	effect.setup(contact,0)
 	check.call(effect.presentation_report().cut_visible and effect.presentation_report().triangles>0,"A first-active confirmed contact already has a core/stroke without inventing earlier trail samples")
 	effect._process(0.025)
 	var cut_mesh: ImmediateMesh = effect._meshes.cut
 	var cut_bounds: Vector3 = cut_mesh.get_aabb().size
 	check.call(cut_bounds.x>cut_bounds.y*3.0 and effect.presentation_report().cut_basis_source=="confirmed_blade_motion" and contact==original,
 		"Actual contact mesh follows the confirmed horizontal blade-motion plane and leaves the packet immutable")
+	check.call(cut_bounds.x>1.10 and cut_bounds.x<1.20 and cut_bounds.y>.24 and cut_bounds.y<.32 and effect.presentation_report().triangles<=160 and effect.get_child_count()==5,
+		"The decisive charged contact emits an actual broad1.14m fan within160triangles and the existing five groups")
 	var turned: Dictionary = contact.duplicate(true)
 	turned.contact_blade_motion = Vector3.UP*4.0
 	turned.contact_blade_grip = Vector3(contact.point)-Vector3.RIGHT*0.4
 	turned.contact_blade_tip = Vector3(contact.point)+Vector3.RIGHT*0.79
 	var rotated: RuneImpactEffect = RuneImpactEffect.new()
 	stage.add_child(rotated)
-	rotated.setup(turned,0)
+	rotated.setup(turned,1)
 	rotated._process(0.025)
 	var rotated_mesh: ImmediateMesh = rotated._meshes.cut
 	var rotated_bounds: Vector3 = rotated_mesh.get_aabb().size
 	check.call(rotated_bounds.y>rotated_bounds.x*3.0 and rotated.presentation_report().spark_count<=10 and rotated.get_child_count()==5,
-		"Rotating the real packet rotates the emitted stroke; lower quality retains direction within10sparks/five mesh groups")
+		"Rotating the real packet rotates the emitted stroke; performance mode retains direction within10sparks/five mesh groups")
+	check.call(rotated.presentation_report().triangles<=80,"The performance contact stays within80triangles without removing its directional fan")
+	check.call(effect.presentation_report().spark_count==24 and effect.presentation_report().debris_count==8 and effect.presentation_report().dust_count==3 and rotated.presentation_report().spark_count==10 and rotated.presentation_report().debris_count==3 and rotated.presentation_report().dust_count==1,
+		"Actual quality0 balanced contact is richer than quality1 performance while both retain bounded directional geometry")
 	var depth_tested: bool = true
 	for child in effect.get_children():
 		var instance: MeshInstance3D = child as MeshInstance3D
@@ -154,21 +163,41 @@ static func run(world: Node3D, check: Callable) -> bool:
 	edge_packet.contact_blade_motion = screen_axis*4.0
 	var edge_effect: RuneImpactEffect = RuneImpactEffect.new()
 	stage.add_child(edge_effect)
-	edge_effect.setup(edge_packet,1)
+	edge_effect.setup(edge_packet,0)
 	var projected: Dictionary = _core_projection(edge_effect,rig.camera)
 	var core_id: int = edge_effect._meshes.core.get_instance_id()
-	check.call(absf(edge_effect._cut_plane_normal.dot(view))<0.0001 and projected.finite and projected.triangle_area_pixels>1.0 and projected.radius_from_core_center_m<=0.120001 and projected.vertices==36 and edge_effect._core_basis_source=="projected_confirmed_cut" and is_equal_approx(edge_effect._core_edge_alpha,0.18),
-		"Actual revised charged core retains finite nonzero projected area within120mm when the unchanged physical blade plane is edge-on")
+	check.call(absf(edge_effect._cut_plane_normal.dot(view))<0.0001 and projected.finite and projected.triangle_area_pixels>1.0 and projected.radius_from_core_center_m<=0.150001 and projected.vertices==36 and edge_effect._core_basis_source=="projected_confirmed_cut" and projected.maximum_vertex_alpha>.9,
+		"Actual charged flash retains a bright finite point within150mm when the physical blade plane is edge-on")
+	edge_effect._process(.015)
+	var flash: Dictionary = _core_projection(edge_effect,rig.camera)
+	edge_effect._process(.030)
+	var afterglow: Dictionary = _core_projection(edge_effect,rig.camera)
+	check.call(edge_effect.presentation_report().core_phase=="afterglow" and afterglow.maximum_vertex_alpha<flash.maximum_vertex_alpha and afterglow.maximum_vertex_alpha>0.0 and afterglow.triangle_area_pixels>1.0 and afterglow.radius_from_core_center_m<=.150001,
+		"A sharp charged flash changes into a smaller-opacity local afterglow while retaining readable real projected geometry")
+	var frozen_core: Array = edge_effect._meshes.core.surface_get_arrays(0)
+	var frozen_age: float = edge_effect.elapsed
+	edge_effect._process(0.0)
+	check.call(is_equal_approx(edge_effect.elapsed,frozen_age) and edge_effect._meshes.core.surface_get_arrays(0)==frozen_core,
+		"Zero presentation delta freezes the contact phase and mesh without advancing its clock")
 	edge_packet.contact_blade_grip = Vector3(contact.point)-screen_axis*0.4
 	edge_packet.contact_blade_tip = Vector3(contact.point)+screen_axis*0.79
 	edge_packet.contact_blade_motion = view*4.0
-	edge_effect.setup(edge_packet,0)
+	edge_effect.setup(edge_packet,1)
 	var parallel: Dictionary = _core_projection(edge_effect,rig.camera)
 	check.call(parallel.finite and parallel.triangle_area_pixels>1.0 and edge_effect._core_basis_source=="view_plane_fallback" and edge_effect._meshes.core.get_instance_id()==core_id,
 		"A view-parallel cut uses a visible camera-right core fallback and reuses the same mesh")
-	edge_effect._process(0.075)
+	edge_effect._process(0.111)
 	check.call(edge_effect._meshes.core.get_surface_count()==0 and not edge_effect._visuals.core.visible and edge_effect.presentation_report().cut_visible,
-		"The camera-facing charged core stops within75ms while the separate physical directional cut can continue")
+		"The two-phase local charged core stops within110ms while the separate directional fan can continue")
+	var blocked_packet: Dictionary = contact.duplicate(true)
+	blocked_packet.blocked = true
+	var blocked_effect: RuneImpactEffect = RuneImpactEffect.new()
+	stage.add_child(blocked_effect)
+	blocked_effect.setup(blocked_packet,0)
+	blocked_effect._process(.025)
+	var blocked_mesh: ImmediateMesh = blocked_effect._meshes.cut
+	check.call(blocked_mesh.get_aabb().size.x<.30 and blocked_effect._meshes.debris.get_surface_count()==0 and blocked_effect._meshes.dust.get_surface_count()==0 and blocked_effect.presentation_report().style=="blocked_metal",
+		"A blocked hit remains a small deflection without the penetrating charged fan, metal spall or contact cloud")
 	var rejected: RuneImpactEffect = RuneImpactEffect.new()
 	stage.add_child(rejected)
 	rejected.setup(unconfirmed,1)
@@ -196,14 +225,15 @@ static func run(world: Node3D, check: Callable) -> bool:
 		"The actual charged trail adds a separate narrow edge that ends at the displayed physical sword tip")
 	snapshot.attack_elapsed = data.startup+0.04
 	visual.pose(0.02,0.0,-1.0,false,false,false,snapshot)
-	check.call(trail.mesh.get_instance_id()==mesh_id and trail.presentation_report().triangles<=44,"Charged emission reuses its mesh resource and bounds two-layer geometry")
+	check.call(trail.mesh.get_instance_id()==mesh_id and trail.presentation_report().triangles<=120,"Charged emission reuses its mesh resource and bounds its banded fan and spine within120triangles")
 	var frozen: Array = trail.mesh.surface_get_arrays(1)
 	visual.pose(0.0,0.0,-1.0,false,false,false,snapshot)
 	check.call(trail.mesh.surface_get_arrays(1)==frozen,"Zero-delta hitstop preserves the complete charged edge geometry and colors")
 	effect._process(RuneImpactEffect.MAX_LIFETIME)
 	rotated._process(RuneImpactEffect.MAX_LIFETIME)
 	edge_effect._process(RuneImpactEffect.MAX_LIFETIME)
-	check.call(effect.is_queued_for_deletion() and rotated.is_queued_for_deletion() and edge_effect.is_queued_for_deletion(),"Both contact quality modes release within the existing bounded lifetime")
+	blocked_effect._process(RuneImpactEffect.MAX_LIFETIME)
+	check.call(effect.is_queued_for_deletion() and rotated.is_queued_for_deletion() and edge_effect.is_queued_for_deletion() and blocked_effect.is_queued_for_deletion(),"Both contact quality modes and blocked deflection release within the existing bounded lifetime")
 	Session.shake = true
 	rig.snap()
 	# Nominal ray misses this side post, but the positive-X kick enters it.

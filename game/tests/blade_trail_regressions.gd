@@ -49,6 +49,10 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var history_world_space := vertices.size()==6 and vertices[0].distance_to(old_base)<0.0001 and trail.global_transform.is_equal_approx(Transform3D.IDENTITY)
 	check.call(tip_matches, "The ribbon ends at this exact displayed blade tip with external actor scale preserved")
 	check.call(history_world_space, "Past blade samples remain in world space when the actor translates and rotates")
+	var light_spine: PackedVector3Array = trail.mesh.surface_get_arrays(1)[Mesh.ARRAY_VERTEX]
+	var light_colors: PackedColorArray = trail.mesh.surface_get_arrays(1)[Mesh.ARRAY_COLOR]
+	check.call(trail.mesh.get_surface_count()==2 and light_spine[-1].distance_to(tip.global_position)<0.0001 and light_colors[-1].a>0.8,
+		"The light slash has a bright narrow spine at the actual tip rather than an invented extended arc")
 	check.call(first==original, "Blade presentation only reads the authoritative action snapshot")
 	var frozen_mesh := trail.mesh
 	var frozen_report := trail.presentation_report()
@@ -88,13 +92,46 @@ static func run(world: Node3D, check: Callable) -> bool:
 	for index in range(60):
 		_pose(visual,_attack(data.startup+0.001+index*0.001),0.001)
 	var high_rate_geometry := trail.presentation_report()
-	check.call(trail.presentation_report().samples<=BladeTrail.MAX_SAMPLES and trail.presentation_report().triangles<24 and trail.get_child_count()==0, "High-rate presentation bounds ribbon geometry without adding physics objects")
+	check.call(trail.presentation_report().samples<=BladeTrail.MAX_SAMPLES and trail.presentation_report().triangles<64 and trail.get_child_count()==0, "High-rate light presentation stays below64triangles with two reusable layers and no physics objects")
 	_start(visual)
 	var oversized := _attack(0.19)
 	oversized["attack_reach"] = 100000.0
 	_pose(visual, oversized, 0.02)
 	var physical_vertices := _vertices(trail)
 	check.call(absf(physical_vertices[-1].distance_to(physical_vertices[-3])-grip.global_position.distance_to(tip.global_position)*0.82) < 0.0001, "Even a generous damage reach cannot stretch the visual ribbon beyond its real blade markers")
+	var charged: AttackData = load("res://data/charged_heavy.tres")
+	trail.reset()
+	var historical_blades: Array[Dictionary] = []
+	for index in range(16):
+		var charged_snapshot: Dictionary = {"speed":0.0,"presentation_epoch":92003,"attack_id":"charged_heavy",
+			"attack_elapsed":charged.startup+.001+index*.004,"attack_duration":charged.duration(),"attack_startup":charged.startup,"attack_active":charged.active}
+		_pose(visual,charged_snapshot,.004)
+		historical_blades.append({"base":grip.global_position.lerp(tip.global_position,.18),"tip":tip.global_position})
+	var contained: bool = true
+	var cool_band: bool = false
+	var warm_band: bool = false
+	for surface in range(trail.mesh.get_surface_count()):
+		var arrays: Array = trail.mesh.surface_get_arrays(surface)
+		var fan_vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+		for vertex: Vector3 in fan_vertices:
+			var nearest: float = INF
+			for sample: Dictionary in historical_blades:
+				nearest = minf(nearest,vertex.distance_to(Geometry3D.get_closest_point_to_segment(vertex,sample.base,sample.tip)))
+			contained = contained and nearest<0.0001
+		if surface==0:
+			var fan_colors: PackedColorArray = arrays[Mesh.ARRAY_COLOR]
+			for color: Color in fan_colors:
+				cool_band = cool_band or color.b>color.r+.2
+				warm_band = warm_band or color.r>color.b+.2
+	check.call(contained and cool_band and warm_band and trail.presentation_report().triangles<=120 and trail.mesh.get_surface_count()==2,
+		"The broad charged fan contains cool/warm radial bands entirely on sixteen recorded real blade segments within120triangles")
+	var charged_frozen_body: Array = trail.mesh.surface_get_arrays(0)
+	var charged_frozen_spine: Array = trail.mesh.surface_get_arrays(1)
+	var held_snapshot: Dictionary = {"speed":0.0,"presentation_epoch":92003,"attack_id":"charged_heavy",
+		"attack_elapsed":charged.startup+.061,"attack_duration":charged.duration(),"attack_startup":charged.startup,"attack_active":charged.active}
+	_pose(visual,held_snapshot,0.0)
+	check.call(trail.mesh.surface_get_arrays(0)==charged_frozen_body and trail.mesh.surface_get_arrays(1)==charged_frozen_spine,
+		"Hitstop freezes every charged fan band and hot spine vertex/color without adding future samples")
 	var output := ProjectSettings.globalize_path("res://../build/verification/character-polish/blade-trail.json").simplify_path()
 	DirAccess.make_dir_recursive_absolute(output.get_base_dir())
 	var file := FileAccess.open(output,FileAccess.WRITE)

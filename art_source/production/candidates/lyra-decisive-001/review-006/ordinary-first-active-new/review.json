@@ -1,0 +1,87 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/source-006.glb",
+  "input_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "weapon": "/workspace/next-action-rpg/game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "motion_profile": "decisive",
+  "camera_and_lights_follow_nominal_root": true,
+  "view": "full",
+  "clip": "heavy",
+  "imported_action": "heavy_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8339322209358215,
+      -0.15282638370990753,
+      0.53028404712677,
+      4.5
+    ],
+    [
+      0.551866888999939,
+      0.2309376746416092,
+      -0.8013181090354919,
+      -7.0
+    ],
+    [
+      -3.19237969392816e-09,
+      0.9608911871910095,
+      0.276926189661026,
+      3.5999999046325684
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 4.199999809265137,
+  "shots": [
+    {
+      "time_s": 0.32,
+      "file": "heavy-0320.png",
+      "sha256": "a12488d7844a39db2a1b83e71a06f5fef398f354dc99c48fb91e393b93b49252",
+      "virtual_actor_travel_m": 0.0,
+      "camera_matrix": [
+        [
+          0.8339322209358215,
+          -0.15282638370990753,
+          0.53028404712677,
+          4.5
+        ],
+        [
+          0.551866888999939,
+          0.2309376746416092,
+          -0.8013181090354919,
+          -7.0
+        ],
+        [
+          -3.19237969392816e-09,
+          0.9608911871910095,
+          0.276926189661026,
+          3.5999999046325684
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "actual_weapon_grip_m": [
+        -0.09580237418413162,
+        -0.053150616586208344,
+        1.5342518091201782
+      ],
+      "actual_weapon_tip_m": [
+        -0.433859258890152,
+        0.19293856620788574,
+        2.6483688354492188
+      ]
+    }
+  ]
+}

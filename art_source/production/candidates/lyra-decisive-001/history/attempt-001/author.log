@@ -1,0 +1,27 @@
+Extensions: writing cache failed ([Errno 30] Read-only file system: '/home/agent/.config/blender/4.3/extensions').
+23:21:21 | INFO: Data are loaded, start creating Blender stuff
+23:21:21 | INFO: Blender create Mesh node Mesh_0
+23:21:24 | INFO: glTF import finished in 2.97s
+DECISIVE_FAILURE {"action": "charge", "time_s": 0.318, "error": "Axial twist ambiguity ('charge', 0.318, 'RightForeArm')", "reach_issues": [], "arm_metrics": [{"bone": "LeftForeArm", "time_s": 0.314, "action": "charge", "axial_angle_deg": -123.74067390610095, "loading": 0.4682934554861546}, {"bone": "RightArm", "time_s": 0.316, "action": "charge", "axial_angle_deg": 111.13385187554339, "loading": 0.4740517311294831}, {"bone": "RightForeArm", "time_s": 0.316, "action": "charge", "axial_angle_deg": 70.25125734871466, "loading": 0.4740517311294831}, {"bone": "LeftArm", "time_s": 0.316, "action": "charge", "axial_angle_deg": -13.732894382593761, "loading": 0.4740517311294831}, {"bone": "LeftForeArm", "time_s": 0.316, "action": "charge", "axial_angle_deg": -125.56488814679203, "loading": 0.4740517311294831}, {"bone": "RightArm", "time_s": 0.318, "action": "charge", "axial_angle_deg": 112.16901342766897, "loading": 0.4798139363179635}]}
+Traceback (most recent call last):
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 162, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 130, in main
+    try:r=author.pose_slice(name,t,duration)
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/workspace/next-action-rpg/tools/author_decisive_actions.py", line 95, in pose_slice
+    self.feet_decisive(t,name);self.fingers();self.arms(grip,0)
+                                              ~~~~~~~~~^^^^^^^^
+  File "/workspace/next-action-rpg/tools/author_character_actions.py", line 245, in arms
+    self.pose.limb('RightArm','RightForeArm','RightHand',right.translation,Vector((-0.60,0.05,1.15))*self.ratio,right.to_quaternion())
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/next-action-rpg/tools/author_fury_actions.py", line 74, in limb
+    if denominator<.02 and self.loading>1e-6:raise ValueError('Axial twist ambiguity '+str((self.current_action,self.current_time,bone)))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Axial twist ambiguity ('charge', 0.318, 'RightForeArm')
+
+Error: script failed, file: 'tools/author_decisive_actions.py', exiting.
+Blender 4.3.2
+
+Blender quit

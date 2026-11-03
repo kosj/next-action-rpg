@@ -1,0 +1,298 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "historical_selected_source_raw_finite_review_then_actualnative002passed_Gamepending",
+  "selected_model": {
+    "file": "art_source/production/candidates/lyra-decisive-001/source-006.glb",
+    "bytes": 19648124,
+    "sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "parent_file": "art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+    "parent_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+    "parent_bytes": 25059960,
+    "new_provider_generation": false,
+    "points_spent": 0
+  },
+  "raw_clips": {
+    "charge": {
+      "duration_s": 0.6499999761581421,
+      "key_count": 326,
+      "maximum_all53_local_global_deg_s": 614.8117360279762,
+      "marker_vs_reimported_LUT": null
+    },
+    "charged_heavy": {
+      "duration_s": 1.059999942779541,
+      "key_count": 531,
+      "maximum_all53_local_global_deg_s": 1905.8792804025652,
+      "marker_vs_reimported_LUT": {
+        "samples": 360,
+        "max_grip": {
+          "time_s": 0.431,
+          "grip_error_m": 7.379601103002137e-05,
+          "tip_error_m": 0.0005941572989733185
+        },
+        "max_tip": {
+          "time_s": 0.417,
+          "grip_error_m": 7.046420010548044e-05,
+          "tip_error_m": 0.000618745725280312
+        },
+        "limit_m": 0.003,
+        "passed": true
+      }
+    },
+    "heavy": {
+      "duration_s": 0.8600000143051147,
+      "key_count": 87,
+      "maximum_all53_local_global_deg_s": 1578.3017161809287,
+      "marker_vs_reimported_LUT": {
+        "samples": 264,
+        "max_grip": {
+          "time_s": 0.437,
+          "grip_error_m": 5.2903650981281235e-05,
+          "tip_error_m": 0.0004074829865689324
+        },
+        "max_tip": {
+          "time_s": 0.423,
+          "grip_error_m": 5.045904105965618e-05,
+          "tip_error_m": 0.00042849024006291655
+        },
+        "limit_m": 0.003,
+        "passed": true
+      }
+    }
+  },
+  "raw_rate_limit_deg_s": 2700,
+  "marker_limit_m": 0.003,
+  "preservation": {
+    "static_semantic_exact": true,
+    "unchanged_clips": [
+      "death",
+      "dodge",
+      "heal",
+      "hit",
+      "idle",
+      "light_1",
+      "light_2",
+      "light_3",
+      "parry",
+      "RESET",
+      "run",
+      "skill_1",
+      "skill_2",
+      "skill_3",
+      "walk",
+      "walk_back",
+      "walk_left",
+      "walk_right"
+    ],
+    "unchanged_count": 18,
+    "light_channels_per_clip": 159,
+    "source_lineage_sha256": "bc85827024dd409b508767d463b55d4863cffc43d1595111bf8b712b1ebe5d9a",
+    "no_BIN_prefix_identity_after_compaction": true,
+    "scope": "17 othergameplay+RESET=18clips, all3light159channels semantic/livebytesexact, remappedindices/containeraddresses differ."
+  },
+  "front_sole_raw": {
+    "scope": "Actual raw glTF LBS at all active keys/midpoints plus exact boundaries; nominal collision-free root movement3.2m/s. Supporting front sole only; rear foot intentionally catch-steps. Broad ankle ROI including leg-blended upper boot is separately preserved as ankle-wide diagnostic, not silently treated as sole. Not real controller collisions, dynamic foot IK, terrain, visual or AAA acceptance.",
+    "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "tool_sha256": "ab8a5b0700176ed8e712d859ee35d8fb1fcdc08f10838e75142234902f0df3e1",
+    "reports": [
+      {
+        "primitive": 0,
+        "clip": "charged_heavy",
+        "samples": 181,
+        "front_sole_vertices": 140,
+        "selection": "Same existing character_gait._sole_samples criterion: static LeftFoot/LeftToeBase summed weight>=.98, restY<=primitiveFloor+.025m; all referenced vertices, not only32 representatives; no mesh/weight edits",
+        "maximum_nominal_active_drift_m": 0.0022244505106005035,
+        "worst": {
+          "time_s": 0.5199999809265137,
+          "vertex_index": 17712,
+          "anchor_raw_gltf_m": [
+            0.2434904940726197,
+            0.010128649897088629,
+            0.5881137549985308
+          ],
+          "nominal_world_raw_gltf_m": [
+            0.24376233356979976,
+            0.0092152371241034,
+            0.5861037897082755
+          ]
+        },
+        "limit_m": 0.01,
+        "passed": true
+      },
+      {
+        "primitive": 0,
+        "clip": "heavy",
+        "samples": 45,
+        "front_sole_vertices": 140,
+        "selection": "Same existing character_gait._sole_samples criterion: static LeftFoot/LeftToeBase summed weight>=.98, restY<=primitiveFloor+.025m; all referenced vertices, not only32 representatives; no mesh/weight edits",
+        "maximum_nominal_active_drift_m": 0.0024243997833244594,
+        "worst": {
+          "time_s": 0.5349999666213989,
+          "vertex_index": 17712,
+          "anchor_raw_gltf_m": [
+            0.24335641298421595,
+            0.01023072628279034,
+            0.5881786876491161
+          ],
+          "nominal_world_raw_gltf_m": [
+            0.24378447382874047,
+            0.009002529966443667,
+            0.5861327130570742
+          ]
+        },
+        "limit_m": 0.01,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "skin": {
+    "scope": "Read-only actual raw glTF LBS at every source/candidate charge+charged+ordinaryheavy key and midpoint, arm/hand/shoulder regions. Finite sampling is not continuous collision, skin intersection, visual, hardware or AAA approval.",
+    "sample_count": 1885,
+    "same_edges_above1mm_worse": 1191,
+    "old_max_extension_mm": 38.61814890507607,
+    "new_max_extension_mm": 45.01153740288708,
+    "worst_same_edge": {
+      "edge_index_in_region": 4285,
+      "vertex_ids": [
+        1937,
+        1947
+      ],
+      "rest_length_mm": 22.58085371902589,
+      "old_envelope_extension_mm": 10.496708762574077,
+      "new_envelope_extension_mm": 28.934229027982937,
+      "worsening_mm": 18.43752026540886,
+      "new_peak": {
+        "clip": "charged_heavy",
+        "time_s": 0.2619999945163727
+      },
+      "rest_vertices_world_m": [
+        [
+          -0.21868691357103298,
+          1.3925745684193036,
+          -0.026236160932289077
+        ],
+        [
+          -0.1963014095919089,
+          1.3947235724535514,
+          -0.024195095538566563
+        ]
+      ],
+      "weights": [
+        {
+          "RightArm": 0.8205536007881165,
+          "RightShoulder": 0.14380623400211334,
+          "Spine2": 0.03235616534948349,
+          "Spine1": 0.003284059464931488
+        },
+        {
+          "RightArm": 0.607633650302887,
+          "RightShoulder": 0.24926820397377014,
+          "Spine2": 0.08578559756278992,
+          "Spine1": 0.057312559336423874
+        }
+      ]
+    },
+    "scope_limit": "Finite LBS envelope, notcollision/intersection/fullskin/visualapproval; wider40mmankleROI includesleg-weightedupperboot andisretaineddiagnostic, notexistingsolecriterion."
+  },
+  "finite_studio": {
+    "status": "accepted_scoped_prototype_for_actual_native_game_QA",
+    "checked_at": "2026-11-02T23:39:08.967943+00:00",
+    "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "reviewer": "Root direct all8 original PNGs plus independent reviewer",
+    "observations": [
+      "Ordinary heavy visibly changes from one-hand horizontal sweep to two-hand overhead preparation",
+      "Charged windup/cut/through have larger blade height/direction contrast",
+      "No obvious new large rupture/spike/joint inversion in these finite originals; head/blade/feet remain in frames"
+    ],
+    "limits": [
+      "Arms obscure some face/shoulder; +18.44mm local skin envelope worsening retained",
+      "Through/release pose remains compact; full wrist/finger/skin/continuous motion/hearing/AAA unapproved",
+      "Ordinary pair camera tracks the source-specific nominal root travel; actor-relative comparison, not identical world camera/footplant proof"
+    ],
+    "source_review_index": "art_source/production/candidates/lyra-decisive-001/review-006/index.json"
+  },
+  "runtime_curve_path_adaptation": {
+    "checked_at": "2026-11-02T23:45:32.507473+00:00",
+    "records": [
+      {
+        "attack": "charged_heavy",
+        "candidate_curve_sha256": "cfcec2e97c6136aa33b15690f3a792ce49f70e4149571cd0427a7541ccb200ad",
+        "runtime_curve_sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+        "runtime_curve_path": "game/data/charged_blade_curve.json",
+        "old_asset_path": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/source-006.glb",
+        "new_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+        "numeric_samples_and_other_bytes_unchanged_inverse_path_exact": true
+      },
+      {
+        "attack": "heavy",
+        "candidate_curve_sha256": "cbf175e04e0906b314421cd1f57b9a16f6f7f396f6293ef1b5505b7b60c3818f",
+        "runtime_curve_sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+        "runtime_curve_path": "game/data/heavy_blade_curve.json",
+        "old_asset_path": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/source-006.glb",
+        "new_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+        "numeric_samples_and_other_bytes_unchanged_inverse_path_exact": true
+      }
+    ],
+    "reason": "Runtime source basename/address validation, no geometric/timing gate relaxation"
+  },
+  "curve_shape_observation": {
+    "charged_tip_height_start_m": 2.688,
+    "charged_tip_height_end_m": 0.157,
+    "charged_tip_path_m": 5.034,
+    "old_charged_start_m": 2.169,
+    "old_charged_end_m": 0.347,
+    "old_charged_path_m": 3.43,
+    "heavy_tip_height_start_m": 2.673,
+    "heavy_tip_height_end_m": 0.18,
+    "heavy_tip_path_m": 4.879,
+    "scope": "Finite actual raw LUT approximatevalues; no realcontroller/contact/footplant/perceivedweight approval."
+  },
+  "first_native": {
+    "log_file": "native-export-body-001.log",
+    "bytes": 67308,
+    "sha256": "74ae8ca1f20f0628e18bc314152f3c13331cfeda5cd9f9b278b948b20d0f64cd",
+    "checks": 707,
+    "failures": 3,
+    "status": "failed",
+    "findings": [
+      "Reauthoredcurve actualsource/path wholefilepin binding",
+      "Runtimecurve basename/path independentimport source binding",
+      "LegacyEyeFitguard assumed oldBINprefix despite live-data compaction"
+    ],
+    "scope": "Failed assertions are sourceaddress/pin/prefix contracts, not evidence of motion physics failure; still not a fullnativePASS. Runtimeassetpath metadata fixed withoutsamplebytechange; independent native static-payload signature implementation/rerunpending."
+  },
+  "original_reports": {
+    "source-006.raw-audit.json": {
+      "bytes": 577868,
+      "sha256": "b810d14cec2d4d41ac56515be6c15cd5ffea64e62f77c9275edac3e5ff3ec586"
+    },
+    "source-006.foot-audit.json": {
+      "bytes": 2257,
+      "sha256": "00494d7e4f72e6a14d35ce386ca34a0a8021dee1a47420d754605bc7ca0bfc58"
+    },
+    "source-006.skin-audit.json": {
+      "bytes": 15887,
+      "sha256": "a498efc9df453e953ccdac6dced23623f021eead15bc155de7c735734a646c83"
+    },
+    "source-006.lineage.json": {
+      "bytes": 3759222,
+      "sha256": "bc85827024dd409b508767d463b55d4863cffc43d1595111bf8b712b1ebe5d9a"
+    },
+    "source-006.pose-comparison.json": {
+      "bytes": 155224,
+      "sha256": "568ec0543abac6dbb11a3a88959dd375f2ef67854edd2d7076d40a86486d6728"
+    },
+    "rejected-attempts.json": {
+      "bytes": 3004,
+      "sha256": "6f54cf9d9c137d5fc1f2789ce13f46f09b3a537b10ac4233770f2de0542b8b12"
+    }
+  },
+  "remaining": [
+    "Currentnative static-payload proof/rerun",
+    "ActualGamecandidatecapture/contact/feedback/mix/visualadoption",
+    "FinalWebWindows export/rawbudget/sourcefreeze",
+    "desktop/mobile/CI/public/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ],
+  "subsequent_actual_native": "native-and-preview-002.json"
+}

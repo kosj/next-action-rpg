@@ -1,0 +1,209 @@
+{
+  "checked_on": "2026-11-03",
+  "status": "actual_CI_failure_and_fixed_native735_verified_clean_browser_CI_pending",
+  "tested_feature_commit": "a1e9abbef703f6569c5d2c37e8a59becc20320ac",
+  "CI": {
+    "run_id": 41575785813,
+    "run_url": "https://github.com/kosj/next-action-rpg/actions/runs/41575785813",
+    "build_native_checks": 714,
+    "build_native_failures": 0,
+    "desktop_seconds": 423.37,
+    "desktop_status": "passed",
+    "charged_seconds": 302.326,
+    "charged_status": "passed",
+    "full_mobile_status": "failed_at_complete_browser_restart_zero_errors_assertion",
+    "scope": "Actualfullmobilejourney/restartreached; finalassert notqa.errors fails on earlier realskill gameerrors. Nottimeout/environmentfailure orfullmobilePASS.",
+    "pr_number": 16,
+    "pr_url": "https://github.com/kosj/next-action-rpg/pull/16",
+    "run_number": 72,
+    "execution_commit": "5bbf541b275ed0842c47e1b03f29212d4ed4cf4a",
+    "full_mobile_job_id": 125725898197,
+    "full_mobile_seconds": 1383.425
+  },
+  "actual_source_cause": {
+    "caller": "RunePlayer.use_skill",
+    "pre_fix_operation": "HEAVY.duplicate()",
+    "inherited_profile": "New ordinary HEAVY physical_blade_sweep=true and heavy curve startup.32/active.22 plus phase/weapon metadata",
+    "skill_override": "Existing skill startup.16/active.35/recovery.28 overrides timing but leaves heavy curve/physical mode inherited",
+    "guard_result": "AttackData.blade_curve_validation_error rejects because curve timing/weapon contract disagrees with AttackData. Preserve fail-closed rejection; do not rewrite heavy LUT or relax validation to make skill inherit it.",
+    "source_contract_error": "Blade curve timing or weapon length disagrees with AttackData",
+    "source_binding": {
+      "game/scripts/actors/player.gd": {
+        "bytes": 13784,
+        "sha256": "6655205f04aeefd5478a437b6a81ad39e7f912ae6d32e5f32b065088012efc37",
+        "commit": "a1e9abbef703f6569c5d2c37e8a59becc20320ac"
+      },
+      "game/scripts/core/attack_data.gd": {
+        "bytes": 9413,
+        "sha256": "78df37f2c9de51974fdaa263884f04450150df8ab732f52e490a7040981b81ce",
+        "commit": "a1e9abbef703f6569c5d2c37e8a59becc20320ac"
+      },
+      "game/data/heavy.tres": {
+        "bytes": 663,
+        "sha256": "d24d253b948edacbae0115f0474308ecb5df3a58630016481bf187870fff557c",
+        "commit": "a1e9abbef703f6569c5d2c37e8a59becc20320ac"
+      }
+    },
+    "additional_phase_motor_inheritance": "phase_lunge=true causes lunge_at() to use active_lunge3.2 instead of skill1 authored lunge13; recorded active skill1 speed3.200000286 is consistent. This is separate from the observed rejection assertion."
+  },
+  "fix_direction": {
+    "operation": "Create independent AttackData.new() in use_skill, then apply existing explicit skill fields",
+    "expected_protected_contracts": "Existing skill cost/title/damage/poise/reach/arc/lunge/timing/invulnerability remain explicit skill contracts; ordinary heavy and charged source/LUT are unchanged. Resource defaults determine nonphysical skill mode independently.",
+    "regression_plan": "Actual RunePlayer invokes all three skills in physics, checks generated data and actual outcomes/lifetime; no generic Resource-only mirror test as sole proof.",
+    "status": "independent_factory_implemented_native735_verified",
+    "prohibited_shortcut": "No wholeproject PASS from the older714/desktop/charged results; no failclosed weakening or forced heavy curve adaptation to skill timing."
+  },
+  "old_evidence_boundary": {
+    "old_native714_and_PR_desktop_charged": "Pre-fix historical passes; did not cover this dynamically inherited skill contract. Full mobile provides the counterexample.",
+    "actual14_capture": {
+      "file": "build/art-review/decisive-sword-after-14-001/after/frames.json",
+      "bytes": 12184509,
+      "sha256": "34c7ebb6fe393d893c08347c7e5f91c2c92a97da7f95c4fb5f6edec7646ef7f9",
+      "rows": 864,
+      "observed_attack_ids": [
+        "",
+        "charged_heavy",
+        "heavy",
+        "light_1",
+        "light_2",
+        "light_3"
+      ],
+      "skill_attack_rows": 0,
+      "scope": "Finite heavy/charged/light/VFX observations remain scoped evidence for unchanged model/motion/feedback. No skill was cast, no new wholeGame byte identity or post-fix runtime proof."
+    },
+    "root_immutability_scope": "Root reports body9bb/LUT and the other106 of old107 runtime sources unchanged; player skill generation is the fix boundary. New tests and new tested commit/source evidence still required."
+  },
+  "pending": [
+    "New fixed-source export/source identity and CI/fullmobile",
+    "Main/public/tag/release validation",
+    "Continuouswatch/directhearing/fullskin/hardware/AAA"
+  ],
+  "actual_failure": {
+    "result": {
+      "outcome": "failed",
+      "stage": "complete_browser_restart",
+      "seconds": 1383.425,
+      "errors": [
+        "hold_heavy_dodge_parry_heal_skill: ERROR: Physical blade curve rejected: Blade curve timing or weapon length disagrees with AttackData",
+        "hold_heavy_dodge_parry_heal_skill:    at: push_error (core/variant/variant_utility.cpp:1023)"
+      ],
+      "exception_type": "AssertionError",
+      "exception": "['hold_heavy_dodge_parry_heal_skill: ERROR: Physical blade curve rejected: Blade curve timing or weapon length disagrees with AttackData', 'hold_heavy_dodge_parry_heal_skill:    at: push_error (core/variant/variant_utility.cpp:1023)']"
+    },
+    "assertion": {
+      "file": "tools/mobile_browser_smoke.py",
+      "line": 1138,
+      "operation": "assert not qa.errors, qa.errors",
+      "phase": "complete_browser_restart",
+      "earlier_game_error_stage": "hold_heavy_dodge_parry_heal_skill"
+    },
+    "skill_state": {
+      "key": "08-skill-one",
+      "build_id": "0.1.15 · 5bbf541b",
+      "attack": {
+        "attack_active": 0.35,
+        "attack_arc": 160,
+        "attack_duration": 0.79,
+        "attack_elapsed": 0.266666666666667,
+        "attack_id": "skill_1",
+        "attack_instance_id": 3,
+        "attack_reach": 4.5,
+        "attack_startup": 0.16,
+        "charge_active": false,
+        "charge_duration": 0.65,
+        "charge_elapsed": 0,
+        "dead": false,
+        "death_elapsed": 0,
+        "dodge_duration": 0.32,
+        "dodge_elapsed": 0.32,
+        "dodge_local_x": 3.72529029846191e-08,
+        "dodge_local_z": -1.00000011920929,
+        "dodge_remaining": 0,
+        "heal_duration": 0.35,
+        "heal_elapsed": 0.35,
+        "heal_remaining": 0,
+        "hit_duration": 0.15,
+        "hit_elapsed": 0.15,
+        "move_local_x": 3.72529029846191e-08,
+        "move_local_z": -1,
+        "parry_duration": 0.22,
+        "parry_elapsed": 0.22,
+        "parry_remaining": 0,
+        "presentation_epoch": 2,
+        "speed": 3.20000028610229,
+        "stagger": 0
+      },
+      "health": 120,
+      "rune": 10,
+      "hero_sampled_time": 0.266666673909763,
+      "hero_state": "skill_1"
+    },
+    "restart_observation_not_full_pass": {
+      "build_id": "0.1.15 · 5bbf541b",
+      "quality": 1,
+      "health": 120,
+      "checkpoint": 0,
+      "x": 0,
+      "y": null,
+      "z": 6
+    },
+    "clean_export_context": {
+      "source_head": "5bbf541b275ed0842c47e1b03f29212d4ed4cf4a",
+      "source_tree_dirty": false,
+      "source_count": 107,
+      "export_bytes_unchanged": true,
+      "server_closed": true
+    },
+    "scope": "Actualcodeexecution oncleanPRpseudo-merge5bb with107source andunchangedexport/serverclosed, notnewfixproof."
+  },
+  "failure_artifact": {
+    "id": 13205069764,
+    "api_bytes": 11261897,
+    "api_sha256": "c96f2d30bd0d7c6b7aceffa65fcc66f167ee00b447fba72ad629fad4f25079e0",
+    "actual_bytes": 11261897,
+    "actual_sha256": "c96f2d30bd0d7c6b7aceffa65fcc66f167ee00b447fba72ad629fad4f25079e0",
+    "zip_crc_passed": true,
+    "safe_paths": true
+  },
+  "closed_job_log": {
+    "bytes": 57781,
+    "sha256": "2aa359ef9cda125d45eff657ea78107bb287c8b3b6c990feda0ea49d0174cca9",
+    "file": "pr-mobile-failed-1-job.log"
+  },
+  "original_file_integrity": {
+    "mobile-result.json": {
+      "bytes": 639,
+      "sha256": "03eebeb13eb130d20581da6a4b69ae6fee01b5f9cc8a4d8726df1198abf3c3e2"
+    },
+    "mobile-errors.json": {
+      "bytes": 241,
+      "sha256": "0cb38fe916ef857cf72d6c6b89b064865dc0e9583fb559c06981c0906509a324"
+    },
+    "mobile-export-context.json": {
+      "bytes": 15390,
+      "sha256": "80a4c5bf85854d1c04aed897562bf2cd32e45b4f03bccbe10561b38059ecff09"
+    },
+    "mobile-states.json": {
+      "bytes": 1166072,
+      "sha256": "6860dd9478ea3329adc822d9fbac5fbeae69c58a7da7960077f8134fdfad9b36"
+    },
+    "08-skill-one.png": {
+      "bytes": 1321417,
+      "sha256": "c86ac3f6b0dfb451815c82f6eb5951578eb4be6fe9df052eb0be5da63cd905f8"
+    },
+    "15-restarted-touch-controls.png": {
+      "bytes": 1193438,
+      "sha256": "9e8ca14cda3130d39f2e9ee628f0e23a7f77895a2d457feb30d3bbb4585e2e3e"
+    },
+    "observer-helper/observer-proof.json": {
+      "bytes": 4601,
+      "sha256": "3b4ec95d41562402020481a63405cbf4850f0bd0d398b8b2e398762709d7e8ff"
+    }
+  },
+  "failure_receipt_binding": {
+    "raw_diagnosis_bytes": 7572,
+    "raw_diagnosis_sha256": "f9051f63929c9ed910320c4afa7c112192b9fb98c5f426f1b9e0f64571bf1ebe",
+    "scope": "Compactpublicreceipt withactualresult/errors/skill/restart andoriginalhashes; privateabsoluteartifactdirectories omitted, nofullstates/PNGduplication."
+  },
+  "fixed_native_report": "native-and-preview-skillfix-003.json"
+}
