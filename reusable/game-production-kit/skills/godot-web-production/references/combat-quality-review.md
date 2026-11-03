@@ -117,3 +117,7 @@ whoosh를 늦추기 전에 기존 PCM의 quiet lead·envelope peak·attack-start
 Shader compile 성공은 표시 성공이 아니다. 실제 목표 renderer의 unshaded 출력 경로를 확인하고 원본 raster로 색·깊이·fade를 검수한다. GLSL의 음수 밑 pow는 짝수 지수에서도 정의되지 않으므로 signed 제곱은 곱셈으로 표현하고 수식 수정 전후 실제 출력을 비교한다. 고정1x 인코딩·PCM 존재와 직접 연속 시청/청취를 구분한다.
 
 관측기는 해제된 actor가 남을 수 있는 배열 항목을 먼저 untyped로 받아 유효성을 확인한 뒤 typed 참조로 바꾼다. typed for 변수에 할당한 뒤의 생존 검사는 이미 늦을 수 있다. 실제 처치·deferred deletion을 지난 전체 촬영의 종료 marker·프레임/trace·source 불변·오류를 확인하고, 유한 화면의 개선을 실패한 전체 take 성공으로 바꾸지 않는다.
+
+### 같은 공격의 여러 전달 수단
+
+공격 id/serial이 같더라도 칼날·검기·파동 등은 서로 다른 피해·기하·시계 계약을 가질 수 있다. observer predicate, 최초/최종 누적 검사, frozen pose 선택, proof schema, source 목록을 함께 갱신한다. 이전 물리 검사 기준을 보존하고 새 전달 수단도 모두 검사하며, 분류 전 전체의 의도한 타격 ledger를 검증한다. 실제 혼합 receipt와 피해/원점/폭·곡면/시간/중복 변형 음성으로 새 분류가 기존 guard를 무력화하지 않는지 확인한다. 데이터 replay 성공과 새 live browser 실행은 별도 승인이다.

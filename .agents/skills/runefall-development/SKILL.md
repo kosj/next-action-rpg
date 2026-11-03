@@ -65,3 +65,5 @@ Window.size_changed 안에서 content scale을 동기로 재설정하지 않습�
 모바일 modal 스크롤은 빈 여백만 테스트하지 않습니다. [Button-start 드래그 실패/수정](../../../docs/validation/v0.1.6/scroll/README.md)처럼 실제 버튼에서 시작해 부모 ScrollContainer 전달·SCROLL_BEGIN 클릭 취소·fresh scroll값·Done과 실제 저장까지 확인합니다. wheel 전파 옵션을 touch drag 보증으로 간주하지 않고 Slider의 별도 소유권을 보존합니다. 같은 gesture geometry를 재사용하고 progress가 없으면 유한 시간에 실패시킵니다.
 
 모바일 축소에서는 [canvas CSS feedback](../../../docs/validation/v0.1.6/canvas-css/README.md)의 inline/computed/client/inner/documentScroll/visualViewport·DPR/bitmap·실제PNG를 대조합니다. 표시영역소유권만수정하고숫자clamp로가리지않습니다. [로딩callback](../../../docs/validation/v0.1.6/loader/README.md)은UI제거뒤late실행을재현하고원본callback/실제DOM으로검사합니다. 기능성공과pageerror0을별도로판정합니다.
+
+새 전달 수단이 같은 attack id/serial을 쓰면 [칼날·검기 검증 경계](../../../docs/CHARGED_WAVE_OBSERVER.md)처럼 observer predicate·최초/최종 receipt 집계·동결 포즈 선택·proof schema·source 목록을 함께 검토합니다. 기존 물리 검사를 보존하고 새 전달 수단도 모두 검사하며 전체 타격 ledger를 분류 전에 검증합니다. 실제 혼합 receipt와 기하/시계/중복 변형 음성을 사용하고 새 이벤트를 제외해 기존 검사를 통과시키지 않습니다.
