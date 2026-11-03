@@ -1,0 +1,185 @@
+name: Verify v0.1.17 delivered artifacts
+on:
+  push:
+    branches: ['verify/v0.1.17-delivery']
+    paths: ['.github/workflows/verify-v017-delivery.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 951f314359685706a1db53a8f2351a26c4512222
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned data-assertion imports only
+        run: python -m pip install --disable-pip-version-check -r tools/requirements-dev.txt
+      - name: Read actual source, browser artifacts and release bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import ast,hashlib,json,math,os,re,shutil,subprocess,sys,tempfile,time,urllib.request,zipfile
+          from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
+          ROOT=Path.cwd();MAIN="951f314359685706a1db53a8f2351a26c4512222";VERSION="0.1.17";EXPECTED=VERSION+" · "+MAIN[:8]
+          MAIN_RUN=41634233435;TAG_RUN=41636828613
+          assert subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()==MAIN
+          out=ROOT/"delivery-proof";out.mkdir()
+          def api(path):
+              request=urllib.request.Request("https://api.github.com/repos/kosj/next-action-rpg/"+path,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json","User-Agent":"RUNEFALL-readonly-delivery-proof"})
+              with urllib.request.urlopen(request,timeout=60) as response:
+                  assert response.status==200
+                  return json.load(response)
+          deadline=time.monotonic()+3000
+          while True:
+              runs=[api("actions/runs/"+str(i)) for i in [MAIN_RUN,TAG_RUN]]
+              assert all(r["head_sha"]==MAIN for r in runs)
+              for r in runs:
+                  if r["status"]=="completed":assert r["conclusion"]=="success",(r["id"],r["conclusion"])
+              if all(r["status"]=="completed" for r in runs):break
+              assert time.monotonic()<deadline,"Immutable main/tag runs did not complete within bound"
+              print("RUNEFALL_DELIVERY_WAIT "+json.dumps([{"run":r["id"],"status":r["status"]} for r in runs]),flush=True)
+              time.sleep(30)
+          job_proofs=[]
+          for run,names in [(MAIN_RUN,{"build","verify_mobile_export","verify_charged_impact","deploy","verify_public_web","verify_public_mobile"}),(TAG_RUN,{"build","verify_mobile_export","verify_charged_impact","release"})]:
+              jobs=api("actions/runs/"+str(run)+"/jobs?per_page=100")["jobs"]
+              byname={j["name"]:j for j in jobs}
+              assert names<=set(byname) and all(byname[n]["conclusion"]=="success" for n in names)
+              build=byname["build"];target=out/(str(run)+"-build.log")
+              with target.open("wb") as dst:subprocess.run(["gh","api","--allow-escape-sequences","repos/kosj/next-action-rpg/actions/jobs/"+str(build["id"])+"/logs"],stdout=dst,check=True)
+              text=target.read_text();markers=re.findall(r"RUNEFALL_TESTS: (\d+) checks, (\d+) failures",text)
+              assert markers and markers[-1]==("843","0"),markers
+              assert "RUNEFALL_PLAYER_STRIDE_WAVE" in text
+              job_proofs.append({"run":run,"jobs":[{"id":byname[n]["id"],"name":n,"conclusion":"success"} for n in sorted(names)],"native":{"checks":843,"failures":0},"build_log_sha256":hashlib.sha256(target.read_bytes()).hexdigest()})
+          freeze=json.loads((ROOT/"docs/validation/v0.1.17/runtime-source-freeze.json").read_text())
+          assert len(freeze["source_files"])==165
+          assert all((ROOT/n).stat().st_size==v["bytes"] and hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==v["sha256"] for n,v in freeze["source_files"].items())
+          kit=ROOT/"reusable/game-production-kit.zip"
+          assert hashlib.sha256(kit.read_bytes()).hexdigest()=="1e0579d9b05a71149202bfdd2eec63f803a6b90a89066a432e21c5c80c34b312"
+          subprocess.run([sys.executable,"reusable/game-production-kit/scripts/package.py","--verify-source",str(kit)],check=True)
+          release=api("releases/tags/v0.1.17");assert not release["draft"] and release["tag_name"]=="v0.1.17"
+          assert len(release["assets"])==3 and {a["name"] for a in release["assets"]}=={"manifest.json","runefall-web.zip","runefall-windows.zip"}
+          assets=out/"release";assets.mkdir()
+          def download(a):
+              url=a["browser_download_url"];assert url=="https://github.com/kosj/next-action-rpg/releases/download/v0.1.17/"+a["name"]
+              target=assets/a["name"];size=0;digest=hashlib.sha256()
+              with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"RUNEFALL-anonymous-release-proof"}),timeout=60) as response,target.open("wb") as dst:
+                  assert response.status==200
+                  for block in iter(lambda:response.read(1048576),b""):dst.write(block);size+=len(block);digest.update(block)
+              assert size==a["size"] and "sha256:"+digest.hexdigest()==a["digest"]
+              return {"name":a["name"],"bytes":size,"sha256":digest.hexdigest(),"HTTP":200,"anonymous":True,"default_TLS_verified":True,"matches_API":True}
+          with ThreadPoolExecutor(max_workers=3) as pool:downloads=list(pool.map(download,release["assets"]))
+          sys.path.insert(0,str(ROOT/"tools"))
+          from verify_release import verify
+          from audit_runtime_package import Pck
+          packaging=verify(assets,MAIN,VERSION);pcks=[]
+          for name,member in [("runefall-web.zip","index.pck"),("runefall-windows.zip","Runefall.pck")]:
+              with tempfile.TemporaryDirectory() as tmp:
+                  path=Path(tmp)/member
+                  with zipfile.ZipFile(assets/name) as z:
+                      assert z.testzip() is None
+                      with z.open(member) as src,path.open("wb") as dst:shutil.copyfileobj(src,dst)
+                  p=Pck(path);p.verify_md5();assert p.header["engine"]==[4,7,2] and p.payload("build_id.txt").decode().strip()==EXPECTED
+                  curves=[]
+                  for curve,count in [("heavy_blade_curve.json",111),("charged_blade_curve.json",91)]:
+                      raw=p.payload("data/"+curve);assert raw==(ROOT/"game/data"/curve).read_bytes()
+                      doc=json.loads(raw);assert len(doc["samples"])==count and doc["source_metadata"]["sha256"]=="9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+                      curves.append({"file":curve,"samples":count,"sha256":hashlib.sha256(raw).hexdigest(),"equal_main_blob":True})
+                  wave_paths=[n for n in p.entries if "sword_wave" in n];assert wave_paths
+                  shader="assets/shaders/sword_wave.gdshader"
+                  shader_raw_equal=shader in p.entries and p.payload(shader)==(ROOT/"game"/shader).read_bytes()
+                  assert shader_raw_equal or any("sword_wave.gdshader.remap" in n for n in wave_paths),wave_paths
+                  p.unchanged();pcks.append({"zip":name,"entries":len(p.entries),"all_payload_MD5":True,"footer":EXPECTED,"curves":curves,"wave_paths":wave_paths,"wave_shader_raw_equals_main":shader_raw_equal})
+          # Bind the producer's declared120-file subset and independent165-file source map.
+          module=ast.parse((ROOT/"tools/check_mobile_web.py").read_text())
+          inputs=next(ast.literal_eval(n.value) for n in ast.walk(module) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=="inputs" for t in n.targets))
+          for stem in ("lyra_fury_gameplay","erin_idle_gameplay","roen_idle_gameplay"):
+              pngs=sorted((ROOT/"game/assets/models/production").glob(stem+"_*.png"));assert len(pngs)==3
+              for p in pngs:inputs.extend([str(p.relative_to(ROOT)),str(p.relative_to(ROOT))+".import"])
+          inputs.extend(str(p.relative_to(ROOT)) for p in sorted((ROOT/"game/assets/audio/impact").glob("*.wav")))
+          assert len(inputs)==len(set(inputs))==120
+          source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in inputs}
+          # Exact pinned public assertion helpers, not a new game/browser run.
+          from browser_smoke import assert_quality_presentation,assert_hub_presentation
+          from charged_heavy_browser_smoke import validate_contact,validate_frozen_contact,validate_charged_events
+          def read(z,name):
+              hits=[n for n in z.namelist() if n==name];assert len(hits)==1,(name,hits)
+              return json.loads(z.read(hits[0]))
+          def helper(h):
+              assert h["passed"] and h["browser_started"] and h["browser_closed"] and h["ui_timeout_ms"]==15000
+              assert h["helper_sha256"]==source_hashes["tools/mobile_browser_smoke.py"]
+              for k in ("matched_terminal_retained_until_host_ack","expired_evidence_retained","received_previous_result_acknowledged","withheld_reply_reached_terminal","matched_but_withheld_reply_still_fails_deadline"):assert h[k] is True,k
+              a=h["host_attempts"];assert len(a)==3 and [x["outcome"] for x in a]==["matched","failed","failed"]
+              assert all(x["timeout_ms"]==15000 for x in a)
+              return {"cases":3,"timeout_ms":15000,"browser_closed":True,"scope":"isolated observer only"}
+          def mobile(z,label,wrapped):
+              r=read(z,"mobile-result.json");assert r["outcome"]=="passed" and r["phase"]=="full" and r["errors"]==[]
+              assert read(z,"mobile-errors.json")==[]
+              states=read(z,"mobile-states.json");assert states and all(v["build_id"]==EXPECTED for v in states.values())
+              s=states["15-restarted-touch-controls"];assert s["quality"]==1 and s["health"]==120 and s["checkpoint"]==0 and abs(s["z"]-6)<1
+              assert s["touch"]["visible"] and not s["touch"]["active_pointers"];assert_hub_presentation(s["lighting"])
+              q=[v for k,v in states.items() if k.endswith("actual-lighting")];assert [v["quality"] for v in q]==[1,0,1,1]
+              for v in q:assert_quality_presentation(v,v["quality"])
+              touch=read(z,"mobile-touch-observation.json");assert touch["trusted"] and touch["max_points"]>=3
+              assert all(v["passes"] for v in read(z,"mobile-raster.json"))
+              a=read(z,"mobile-action-attempts.json");assert a and all(v["outcome"]=="matched" and v["timeout_ms"]==15000 and v["host_phases"][-1]["phase"]=="validated" for v in a)
+              storage=read(z,"mobile-storage-observation.json");assert [v["quality_expected"] for v in storage]==[1,0,1,1,1]
+              for v in storage:
+                  assert v["outcome"]=="matched" and v["timeout_ms"]==30000 and 0<=v["completed_ms"]<30000 and not v["python_wall_timeout"] and v["python_seconds"]<30
+                  a=v["attempts"][-1];assert a["within_budget"] and len(a["saves"])==1
+                  row=a["saves"][0];save=row["save"];assert row["path"].endswith("/runefall_v1.json")
+                  assert save["version"]==1 and save["journey_started"] is True and save["checkpoint"]==0 and save["settings"]["quality"]==v["quality_expected"]
+              result={"kind":label,"seconds":r["seconds"],"footer":EXPECTED,"errors":[],"trusted_touch_points":touch["max_points"],"matched_actions":len(a) if isinstance(a,list) else len(read(z,"mobile-action-attempts.json")),"IDB_ms":[v["completed_ms"] for v in storage],"quality":[1,0,1,1],"restart":{k:s[k] for k in ("quality","health","checkpoint","z")}}
+              if wrapped:
+                  ctx=read(z,"mobile-export-context.json");assert ctx["source_head"]==MAIN and not ctx["source_tree_dirty"] and ctx["source_sha256"]==source_hashes and ctx["server_closed"] and ctx["export_bytes_unchanged"]
+                  result["declared_source120_exact_main"]=True;result["isolated_helper"]=helper(read(z,"observer-helper/observer-proof.json"))
+              return result
+          def desktop(z,label):
+              assert read(z,"browser-errors.json")==[]
+              s=read(z,"browser-persistence.json");assert s["build_id"]==EXPECTED and s["quality"]==1 and s["health"]==120 and s["checkpoint"]==0 and abs(s["z"]-6)<1
+              assert_hub_presentation(s["lighting"]);q=read(z,"browser-quality.json");assert set(q)=={"performance","balanced","restored"}
+              for name,index in [("performance",1),("balanced",0),("restored",1)]:assert_quality_presentation(q[name],index)
+              return {"kind":label,"footer":EXPECTED,"errors":[],"restart":True,"quality":[1,0,1]}
+          def charged(z,label):
+              r=read(z,"charged-heavy-result.json");assert r["outcome"]=="charged_heavy_focused_passed" and r["errors"]==[]
+              proof=read(z,"charged-heavy-proof.json");assert proof["whiff_baseline"]==proof["whiff_after"]==[0,0] and len(proof["contact_events"])==1
+              assert abs(proof["contact_events"][0]["amount"]-69.3)<.0001 and proof["resolved_recoil_horizontal_m"]<=.355
+              assert [validate_contact(v) for v in proof["contact_events"]]==proof["physical_sample_checks"]
+              assert validate_frozen_contact(proof["contact_snapshot"])==proof["frozen_contact_check"]
+              mixed=validate_charged_events(proof["all_charged_events"],proof["contact_snapshot"]["quality"],proof["selected_target_id"])
+              assert mixed["physical"]==proof["contact_events"] and mixed["waves"]==proof["wave_contact_events"]
+              assert mixed["physical_checks"]==proof["physical_sample_checks"] and mixed["wave_checks"]==proof["wave_sample_checks"]
+              assert proof["contact_snapshot"]["build_id"]==EXPECTED and proof["touch_observation"]["trusted"] and proof["touch_observation"]["max_points"]>=2
+              return {"kind":label,"footer":EXPECTED,"errors":[],"amount":69.3,"actual_physical_curve_and_frozen_pose":True,"wave_contacts":len(mixed["waves"]),"shared_ledger_unique":True}
+          catalog={run:api("actions/runs/"+str(run)+"/artifacts?per_page=100")["artifacts"] for run in [MAIN_RUN,TAG_RUN]}
+          wanted=[(MAIN_RUN,"main-desktop","web-verification-",False),(MAIN_RUN,"main-mobile","mobile-web-verification-",True),(MAIN_RUN,"main-charged","charged-impact-verification-",True),(TAG_RUN,"tag-mobile","mobile-web-verification-",True),(TAG_RUN,"tag-charged","charged-impact-verification-",True),(MAIN_RUN,"public-desktop","public-web-verification-",False),(MAIN_RUN,"public-mobile","public-mobile-verification-",False)]
+          proofs=[];images=out/"images";images.mkdir()
+          for run,label,prefix,wrapped in wanted:
+              candidates=[a for a in catalog[run] if not a["expired"] and (a["name"]==prefix+MAIN or a["name"].startswith(prefix+MAIN+"-"))];assert candidates,(label,[a["name"] for a in catalog[run]])
+              a=max(candidates,key=lambda a:a["created_at"]);target=out/(label+".zip")
+              with target.open("wb") as dst:subprocess.run(["gh","api","repos/kosj/next-action-rpg/actions/artifacts/"+str(a["id"])+"/zip"],stdout=dst,check=True)
+              digest=hashlib.sha256(target.read_bytes()).hexdigest();assert target.stat().st_size==a["size_in_bytes"] and "sha256:"+digest==a["digest"]
+              with zipfile.ZipFile(target) as z:
+                  assert z.testzip() is None and all(not Path(n).is_absolute() and ".." not in Path(n).parts for n in z.namelist())
+                  r=charged(z,label) if "charged" in label else (desktop(z,label) if "desktop" in label else mobile(z,label,wrapped))
+                  if label=="public-mobile":
+                      for name in ["03-portrait-gameplay.png","10-landscape-gameplay.png","12-narrow-gameplay.png"]:(images/name).write_bytes(z.read(name))
+              r.update(artifact_id=a["id"],bytes=target.stat().st_size,API_SHA256=digest,ZIP_CRC=True);proofs.append(r)
+          report={"status":"passed","source_commit":MAIN,"version":VERSION,"workflow_source":os.environ["GITHUB_SHA"],"run_checks":job_proofs,"selected_source165_exact":True,"declared_browser_producer_subset":120,"downloads":downloads,"packaging":packaging,"PCK":pcks,"browser_proofs":proofs,"screenshots":[{"name":p.name,"bytes":p.stat().st_size,"sha256":hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(images.glob("*.png"))],"scope":"Read exact immutable CI artifacts and anonymous release bytes; no game/browser rerun, timeout changes, Windows device execution, continuous hearing, hardware or AAA approval."}
+          (out/"proof.json").write_text(json.dumps(report,ensure_ascii=False,indent=2));print("RUNEFALL_V017_DELIVERY_PROOF "+json.dumps(report,ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v017-delivery-proof
+          path: |
+            delivery-proof/proof.json
+            delivery-proof/images/
