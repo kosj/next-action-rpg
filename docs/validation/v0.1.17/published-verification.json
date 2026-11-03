@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "version": "0.1.17",
-  "observed_at": "2026-11-03T12:33:16.242160+00:00",
-  "status": "publication_pending",
+  "observed_at": "2026-11-03T13:15:24.034338+00:00",
+  "status": "published_verified",
   "main_commit": "951f314359685706a1db53a8f2351a26c4512222",
   "PR": "https://github.com/kosj/next-action-rpg/pull/18",
   "source_binding": {
@@ -61,24 +61,167 @@
     "independent_checks": {
       "passed": 7,
       "failed": 0
-    }
+    },
+    "read_only_delivery_verifier_rechecked_archive_source": true
   },
   "main_run": {
     "id": 41634233435,
     "number": 83,
-    "status": "in_progress"
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/kosj/next-action-rpg/actions/runs/41634233435"
   },
   "tag": {
     "name": "v0.1.17",
-    "status": "not_created_waiting_corrected_live_charged_gate"
+    "status": "annotated_pushed_exact_main_verified",
+    "object_sha": "2ed24daf90439ca7f13b93a02af201ecc35a0139",
+    "resolved_commit": "951f314359685706a1db53a8f2351a26c4512222",
+    "run": {
+      "id": 41636828613,
+      "number": 84,
+      "status": "completed",
+      "conclusion": "success"
+    }
   },
   "pages": {
     "url": "https://kosj.github.io/next-action-rpg/",
-    "status": "new_version_pending"
+    "status": "published_public_desktop_and_mobile_verified",
+    "footer": "0.1.17 · 951f3143",
+    "public_desktop_job": 125925999198,
+    "public_mobile_job": 125925999102,
+    "browser_errors": [],
+    "touch_points": 3,
+    "quality_transitions": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "restart": {
+      "health": 120,
+      "checkpoint": 0,
+      "z": 6,
+      "quality": 1
+    }
   },
   "release": {
     "url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.17",
-    "status": "pending"
+    "status": "published_downloaded_bytes_verified",
+    "release_id": 432714558,
+    "published_at": "2026-11-03T13:10:39Z",
+    "anonymous_downloads": [
+      {
+        "name": "manifest.json",
+        "bytes": 406,
+        "sha256": "127d2a93c46904da886151b53b9f85cd3681f1ed652a71f7ce524322ba6aedf0",
+        "HTTP": 200,
+        "anonymous": true,
+        "default_TLS_verified": true,
+        "matches_API": true
+      },
+      {
+        "name": "runefall-web.zip",
+        "bytes": 119145810,
+        "sha256": "18ef4890d63d714eab419dc6fdb7c2caf439b437f15d6eecb6ca1f6db3849422",
+        "HTTP": 200,
+        "anonymous": true,
+        "default_TLS_verified": true,
+        "matches_API": true
+      },
+      {
+        "name": "runefall-windows.zip",
+        "bytes": 146987167,
+        "sha256": "bffe4ae19dbfbc63e52f4649412d5b606e8f07a7590f29818d5c284be5cda0db",
+        "HTTP": 200,
+        "anonymous": true,
+        "default_TLS_verified": true,
+        "matches_API": true
+      }
+    ],
+    "packaging": {
+      "version": "0.1.17",
+      "godot": "4.7.2",
+      "expected_main_sha": "951f314359685706a1db53a8f2351a26c4512222",
+      "manifest_commit": "951f3143",
+      "artifacts": [
+        {
+          "file": "runefall-web.zip",
+          "bytes": 119145810,
+          "sha256": "18ef4890d63d714eab419dc6fdb7c2caf439b437f15d6eecb6ca1f6db3849422",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 149852799
+        },
+        {
+          "file": "runefall-windows.zip",
+          "bytes": 146987167,
+          "sha256": "bffe4ae19dbfbc63e52f4649412d5b606e8f07a7590f29818d5c284be5cda0db",
+          "sha256_verified": true,
+          "zip_crc_ok": true,
+          "licenses_present": true,
+          "playable_files_present": true,
+          "uncompressed_bytes": 219272686
+        }
+      ],
+      "status": "verified",
+      "scope": "Downloaded bytes and packaging; no hardware or art approval"
+    },
+    "pck": [
+      {
+        "zip": "runefall-web.zip",
+        "entries": 205,
+        "all_payload_MD5": true,
+        "footer": "0.1.17 · 951f3143",
+        "curves": [
+          {
+            "file": "heavy_blade_curve.json",
+            "samples": 111,
+            "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+            "equal_main_blob": true
+          },
+          {
+            "file": "charged_blade_curve.json",
+            "samples": 91,
+            "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+            "equal_main_blob": true
+          }
+        ],
+        "wave_paths": [
+          "assets/shaders/sword_wave.gdshader",
+          "scripts/world/sword_wave.gd.remap",
+          "scripts/world/sword_wave.gdc"
+        ],
+        "wave_shader_raw_equals_main": true
+      },
+      {
+        "zip": "runefall-windows.zip",
+        "entries": 205,
+        "all_payload_MD5": true,
+        "footer": "0.1.17 · 951f3143",
+        "curves": [
+          {
+            "file": "heavy_blade_curve.json",
+            "samples": 111,
+            "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+            "equal_main_blob": true
+          },
+          {
+            "file": "charged_blade_curve.json",
+            "samples": 91,
+            "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+            "equal_main_blob": true
+          }
+        ],
+        "wave_paths": [
+          "assets/shaders/sword_wave.gdshader",
+          "scripts/world/sword_wave.gd.remap",
+          "scripts/world/sword_wave.gdc"
+        ],
+        "wave_shader_raw_equals_main": true
+      }
+    ]
   },
   "previous_candidate": {
     "version": "0.1.16",
@@ -90,5 +233,228 @@
     "Finite prototype visual adoption; direct continuous watching/hearing not established",
     "No fullskin/terrainIK/hardware/AAA approval",
     "Windows export/integrity is not actual Windows device execution"
-  ]
+  ],
+  "delivery_verifier": {
+    "run": 41639197002,
+    "number": 2,
+    "status": "completed",
+    "conclusion": "success",
+    "workflow_source": "8a8b2dde7865b6a2cd510a62fe64a6dd790507b5",
+    "url": "https://github.com/kosj/next-action-rpg/actions/runs/41639197002",
+    "proof": "delivery-proof.json",
+    "proof_sha256": "720858c1eaf5b998577d6bb8e24adcc5f5825f2f5dfdcf4ec74fe87e37c25de1",
+    "artifact_id": 13233376748,
+    "artifact_bytes": 3511722,
+    "artifact_API_sha256": "cd1fa94a42589302f65b8a39e1b92e466052f150a21ed438b1aba3b21fc01fc0",
+    "downloaded_proof_artifact_sha_and_crc_verified": true,
+    "scope": "Read-only independent artifact and anonymous release byte verification; no second game/browser run."
+  },
+  "browser_artifacts": [
+    {
+      "kind": "main-desktop",
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "restart": true,
+      "quality": [
+        1,
+        0,
+        1
+      ],
+      "artifact_id": 13229499884,
+      "bytes": 4669528,
+      "API_SHA256": "e42442362987967480f1096fe05c70d516595140f8a401e1d135e29fbc87649d",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "main-mobile",
+      "seconds": 1100.607,
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        3055.8000000000466,
+        5363.199999999953,
+        1794.3999999999069,
+        1945.3000000000466,
+        3139.399999999907
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "declared_source120_exact_main": true,
+      "isolated_helper": {
+        "cases": 3,
+        "timeout_ms": 15000,
+        "browser_closed": true,
+        "scope": "isolated observer only"
+      },
+      "artifact_id": 13231242409,
+      "bytes": 11240190,
+      "API_SHA256": "0a9747eeae323454f3e3c0859978b5fca2b6ab372dc3ca43c1892ab5b73f67ef",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "main-charged",
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "amount": 69.3,
+      "actual_physical_curve_validated": true,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      },
+      "wave_contacts": 2,
+      "shared_ledger_unique": true,
+      "artifact_id": 13229953891,
+      "bytes": 1693870,
+      "API_SHA256": "59a8b3c9c5673e4aa519a8158d97d73bc20ef90b70808810073592b0a82f7de2",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "tag-mobile",
+      "seconds": 1368.157,
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        3991.6999999999534,
+        7995.899999999907,
+        2306,
+        3345.2000000001863,
+        3268.4000000003725
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "declared_source120_exact_main": true,
+      "isolated_helper": {
+        "cases": 3,
+        "timeout_ms": 15000,
+        "browser_closed": true,
+        "scope": "isolated observer only"
+      },
+      "artifact_id": 13232528109,
+      "bytes": 11240008,
+      "API_SHA256": "6e94312aec27cfbf12dd5a432cafdf3ecbd8b2115f446990dd26cbecd34449c9",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "tag-charged",
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "amount": 69.3,
+      "actual_physical_curve_validated": true,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "copied snapshot outside charged attacker hitstop"
+      },
+      "wave_contacts": 2,
+      "shared_ledger_unique": true,
+      "artifact_id": 13230474861,
+      "bytes": 1686397,
+      "API_SHA256": "8da9c497061a854768de785877f5a74cace7ceca7640b37e962dbb96e661a0e3",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "public-desktop",
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "restart": true,
+      "quality": [
+        1,
+        0,
+        1
+      ],
+      "artifact_id": 13231973975,
+      "bytes": 4625701,
+      "API_SHA256": "a5a84127c10ae07b4e915bdad96976a9046c459f7e1e88ec83ec39cf8652a6e1",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "public-mobile",
+      "seconds": 1426.631,
+      "footer": "0.1.17 · 951f3143",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        4041.29999999993,
+        8205.59999999986,
+        1413.9000000001397,
+        3413.0999999998603,
+        3357.8000000000466
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "artifact_id": 13233755851,
+      "bytes": 11251055,
+      "API_SHA256": "6e93f93f0468ed6ebf46de7f8a25b73f0ff63779df7447f52202e0d9ac36ee77",
+      "ZIP_CRC": true
+    }
+  ],
+  "public_mobile_finite_visual_review": {
+    "original_screenshots": [
+      {
+        "name": "03-portrait-gameplay.png",
+        "bytes": 1337661,
+        "sha256": "0ed15c533d6f828105b17d2b31d044e907f592148947e371a2fc28759ac964e9"
+      },
+      {
+        "name": "10-landscape-gameplay.png",
+        "bytes": 1210609,
+        "sha256": "9c98220671c254eaae8f5eb908fdc16e29a58d9413c2c305eaa84a6db636db72"
+      },
+      {
+        "name": "12-narrow-gameplay.png",
+        "bytes": 959504,
+        "sha256": "cafd8111020baf724bfa39fe1d2fc8c649a29d04d687b82068e063e4b45c3359"
+      }
+    ],
+    "sha_and_zip_crc_verified": true,
+    "root_viewed": true,
+    "observation": "Finite portrait, landscape and narrow gameplay originals show the player/HUD and visible touch controls. Native game action video is separate evidence.",
+    "scope": "No continuous watching/hearing, actual phone hardware, terrain footplant, fullskin or AAA approval."
+  },
+  "charged_live_observation": {
+    "main_and_tag": "One physical blade contact69.3 plus two independently validated wave contacts45.045; shared attack-target pairs unique.",
+    "copied_frozen_pose_observed": false,
+    "reason": "Both live focus copied snapshots were outside charged attacker hitstop; preserve the explicit optional result, do not claim a directly observed frozen pose.",
+    "separate_native_video": "../v0.1.16/actual-game-final.json records15 paired pause frames and actual charged wave3targets. Gameplay subtrees are identical as recorded above."
+  },
+  "raw_web_budget": {
+    "bytes": 149852799,
+    "limit_bytes": 150000000,
+    "remaining_bytes": 147201,
+    "scope": "Raw web payload is within the unchanged budget with little headroom; future art additions require optimization or streamed delivery."
+  }
 }
