@@ -2680,6 +2680,53 @@
         "docs/validation/v0.1.15/runtime-source-freeze-002.json",
         "game/tests/character_eye_regressions.gd"
       ]
+    },
+    {
+      "id": "skill-attack-profile-inheritance-and-full-journey-errors",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "특수 물리 곡선을 가진 공격 Resource를 복제해 스킬 시간을 덮어쓰면 숨은 profile이 상속될 수 있다",
+      "summary": "실제 fullmobile에서 스킬이 강공격 LUT·phase motor를 상속해 판정 거부·돌진속도 변경을 일으킨 회귀를 확인했다. 독립 AttackData 생성과 실제3스킬 물리검사21개를 추가한 native735/0으로 복구를 확인했다. 새 clean CI·공개 검증은 별도다.",
+      "tags": [
+        "combat",
+        "skill",
+        "Resource",
+        "inheritance",
+        "LUT",
+        "physics",
+        "mobile",
+        "regression",
+        "CI",
+        "스킬",
+        "상속",
+        "회귀",
+        "workflow"
+      ],
+      "checked_on": "2026-11-03",
+      "context": {
+        "state": "VERIFIED actual pre-fix failure and static causal contract only. Fix/native/wholeGame validation pending; notcompletedfixapproval.",
+        "tested_source": "a1e9abbef703f6569c5d2c37e8a59becc20320ac",
+        "failure": "PR16/run41575785813(number72), head a1e9abbef703f6569c5d2c37e8a59becc20320ac/cleanpseudo5bbf541b275ed0842c47e1b03f29212d4ed4cf4a. Buildnative714/0+desktop423.370s+charged302.326sPASS; fullmobile1383.425sFAIL atcomplete_browser_restart assert notqa.errors dueearlierhold_heavy_dodge_parry_heal_skill Physicalbladecurvetimingrejected. Notenvironment/timeout/fullmobilePASS.",
+        "cause": "RunePlayer.use_skill HEAVY.duplicate inherited newordinaryphysical_blade_sweep/curve.32/.22 andotherprofile fields, thenoverrodeskillstartup.16/active.35/recovery.28. Curveguardcorrectlyrejectstimingmismatch. NoheavyLUT/validationweakening tohideerror.",
+        "fix_scope": "Root plans AttackData.new independentbase witholdexplicit skillcost/damage/poise/reach/arc/lunge/timing/invulnerability, noHEAVYmodeinheritance. ActualRunePlayer3skillsphysicsregression+newnative/export/CIpending. NotatestthatonlymirrorsResourceconstruction.",
+        "historical_proofs": "Old714/14take/PRdesktopcharged arepre-fix history. Actualafter14 trace864rows has0skillattackrows; light/heavy/charged only. Body9bb/LUT/other106sourceunchanged finite-motionVFXscopevalid, notnewwholeGamebyteproof orpostfixsourceapproval.",
+        "resource_lesson": "DuplicatingaResourceinheritsallcurrentandfuturefeatureflags/pins/phase/movement/contracts, notonlythefieldsacallermentallyintends. Explicitindependentarchetypeconstructionorcompletecontractvalidation neededwhenoverridingtiming. Preservefailclosedguard.",
+        "remaining": "Actualfixednative3skills/source/export/newCI/fullmobile; main/public/tag/release; fullAV/hardware/AAA pending. Preserveold1.4.9/72; next1.4.10/73pinonlyafterrootexistingsourcecommit.",
+        "actual_artifact": "Mobilejob125725898197/artifact13205069764 actual11261897B/API+downloadSHA c96f2d30bd0d7c6b7aceffa65fcc66f167ee00b447fba72ad629fad4f25079e0/ZIPCRCtrue. DiagnosisSHAf9051f63929c9ed910320c4afa7c112192b9fb98c5f426f1b9e0f64571bf1ebe;closedjoblogSHA2aa359ef9cda125d45eff657ea78107bb287c8b3b6c990feda0ea49d0174cca9. Publicsummarykeepsactualerrors+skillstate+originaldigestsnotfullprivatefiles.",
+        "movement_inheritance": "Actualskill1startup.16/active.35/duration.79 +activespeed3.200000286; inheritedphase_lunge=true usesheavyactive_lunge3.2ratherthanskill1authoredlunge13. Separateconfirmedresourcecontractregression, notthezero-errorsassertionitself. Clean107/exportunchanged/restartHP120CP0z6observednotfullpass.",
+        "actual_fixed_native": "Actual closed003 exit0/735checks0fail/ERROR0. RealRunePlayer3cast physics receipts restore65/55/150damage,65/65/160poise,rune75/55/20, directional/radialrange/outside0, preactive0, onehit, skillstrength/no curvefailure. Firstdash13/recovery1.95 others0. New108producerroster; cleanCI/public/release pending.",
+        "fixed_source_boundary": "Independent AttackData.new skill factory. New combat_regressions fixture plus sourcechecker binding108. Body9bb/LUT/VFX/camera/audio unchanged; old14 no skill branch, no newwholeGamebyteidentity claim."
+      },
+      "sources": [
+        "docs/DECISIVE_SWORD_SLICE.md",
+        "docs/validation/v0.1.15/skill-inheritance-failure-and-fix.json",
+        "game/scripts/actors/player.gd",
+        "game/scripts/core/attack_data.gd",
+        "game/data/heavy.tres",
+        "reusable/game-production-kit/skills/godot-web-production/references/combat-quality-review.md",
+        "docs/validation/v0.1.15/native-and-preview-skillfix-003.json",
+        "game/tests/combat_regressions.gd"
+      ]
     }
   ]
 }

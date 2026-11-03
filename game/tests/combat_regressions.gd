@@ -3,8 +3,14 @@ extends RefCounted
 class HitTarget:
 	extends StaticBody3D
 	var hits: int = 0
-	func receive_hit(_amount: float, _poise: float, _origin: Vector3, _parryable: bool = true, _context: Dictionary = {}) -> void:
+	var last_damage: float = 0.0
+	var last_poise: float = 0.0
+	var last_context: Dictionary = {}
+	func receive_hit(amount: float, poise: float, _origin: Vector3, _parryable: bool = true, context: Dictionary = {}) -> void:
 		hits += 1
+		last_damage = amount
+		last_poise = poise
+		last_context = context.duplicate(true)
 
 static func _target(parent: Node3D, point: Vector3) -> HitTarget:
 	var target := HitTarget.new()
@@ -126,7 +132,52 @@ static func run(world: Node, check: Callable) -> bool:
 	check.call(player.hit_pause == 0 and player.stagger == 0 and player.locked_target == null, "Restore clears interruption state and stale targets")
 	check.call(player.rune <= player.max_rune, "Restore clamps rune after a maximum gauge change")
 	check.call(not player.use_skill(-1) and not player.use_skill(3), "Invalid skill indices do not access outside the skill table")
+	await _actual_player_skills(world, check)
 	fixture.queue_free()
 	await tree.process_frame
 	await tree.process_frame
 	return true
+
+static func _actual_player_skills(world: Node, check: Callable) -> void:
+	# Exercise the real cast factory and live physics. The earlier generic radial
+	# fixture never used RunePlayer.use_skill and missed inherited sword settings.
+	var fixture := Node3D.new()
+	world.add_child(fixture)
+	fixture.global_position = Vector3(300, 10, 300)
+	var caster := RunePlayer.new()
+	fixture.add_child(caster)
+	caster.set_physics_process(false)
+	caster.set_process(false)
+	var front := _target(fixture, Vector3(0, 0, -3.0))
+	var rear := _target(fixture, Vector3(0, 0, 3.5))
+	var far_side := _target(fixture, Vector3(6.5, 0, 0))
+	var outside := _target(fixture, Vector3(8.0, 0, 0))
+	await world.get_tree().physics_frame
+	await world.get_tree().physics_frame
+	var receipts: Array[Dictionary] = []
+	for index in range(3):
+		for target in [front, rear, far_side, outside]:
+			target.hits = 0
+		caster.strike = null
+		caster.rune = 100.0
+		var accepted := caster.use_skill(index)
+		var cast: CombatStrike = caster.strike
+		check.call(accepted and cast != null and is_equal_approx(caster.rune, 100.0-[25.0,45.0,80.0][index]), "Actual skill %d accepts and charges its own rune cost" % (index+1))
+		if cast == null:
+			continue
+		cast.step(.159, Vector3.FORWARD, 4)
+		check.call(front.hits == 0 and rear.hits == 0, "Actual skill %d cannot damage during preparation" % (index+1))
+		cast.step(.351, Vector3.FORWARD, 4)
+		var power := 1.0+float(Session.upgrades[0])*.15
+		check.call(front.hits == 1 and is_equal_approx(front.last_damage, [65.0,55.0,150.0][index]*power) and is_equal_approx(front.last_poise, [65.0,65.0,160.0][index]*power), "Actual skill %d delivers its own damage and poise through physics" % (index+1))
+		check.call(rear.hits == (0 if index==0 else 1) and far_side.hits == (1 if index==2 else 0) and outside.hits == 0, "Actual skill %d preserves directional/radial range and exclusions" % (index+1))
+		check.call(not cast.curve_failure_reported and String(front.last_context.get("strength","")) == "skill" and String(front.last_context.get("attack_id","")) == "skill_%d" % (index+1), "Actual skill %d dispatches a skill contact without a sword-curve error" % (index+1))
+		var dash := 13.0 if index==0 else 0.0
+		check.call(is_equal_approx(cast.data.lunge_between(0.0,.16),dash) and is_equal_approx(cast.data.lunge_between(.51,.79),dash*.15), "Actual skill %d retains its preparation dash and recovery movement" % (index+1))
+		cast.step(.2, Vector3.FORWARD, 4)
+		check.call(front.hits == 1 and outside.hits == 0, "Actual skill %d registers each receiver once per cast" % (index+1))
+		receipts.append({"skill":index+1,"rune_after":caster.rune,"front_hits":front.hits,"rear_hits":rear.hits,"far_side_hits":far_side.hits,"outside_hits":outside.hits,"damage":front.last_damage,"poise":front.last_poise,"strength":front.last_context.get("strength",""),"curve_failure":cast.curve_failure_reported,"startup_lunge":cast.data.lunge_between(0.0,.16),"recovery_lunge":cast.data.lunge_between(.51,.79)})
+	print("RUNEFALL_PLAYER_SKILL_CASTS "+JSON.stringify({"actual_casts":receipts,"scope":"Real RunePlayer skill factory and physics receivers; source pose/VFX/terrain or visual approval separate"}))
+	fixture.queue_free()
+	await world.get_tree().process_frame
+	await world.get_tree().process_frame

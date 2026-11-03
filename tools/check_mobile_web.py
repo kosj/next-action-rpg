@@ -36,7 +36,7 @@ def main():
               "game/assets/models/production/lyra_eyes.glb", "game/assets/models/production/sentinel_weight_gameplay.glb",
               "tools/charged_heavy_browser_smoke.py", "game/scripts/core/strike.gd", "game/scripts/core/attack_data.gd", "game/scripts/actors/enemy.gd",
               "game/data/charged_heavy.tres", "game/data/charged_blade_curve.json", "game/data/heavy.tres",
-              "game/data/heavy_blade_curve.json", "game/scripts/core/audio.gd",
+              "game/data/heavy_blade_curve.json", "game/scripts/core/audio.gd", "game/tests/combat_regressions.gd",
               "game/import/impact_animation_sampling.gd",
               "game/assets/models/production/lyra_fury_gameplay.glb.import",
               "game/assets/models/production/sentinel_weight_gameplay.glb.import",

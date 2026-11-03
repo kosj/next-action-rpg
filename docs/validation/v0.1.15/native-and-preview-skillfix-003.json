@@ -1,0 +1,105 @@
+{
+  "checked_on": "2026-11-03",
+  "status": "actual_local_native735_export_verified_fixed_browser_CI_pending",
+  "version": "0.1.15",
+  "scope": "Dirty a1e9 preview after skill factory independence; old PR72/107 proof failed fullmobile. Actual future CI/public not yet executed.",
+  "native": {
+    "checks": 735,
+    "failures": 0,
+    "exit_code": 0,
+    "engine_errors": 0,
+    "log_bytes": 107517,
+    "log_sha256": "15a6c703e6ff6531e30f0575624af0207495935424392461c89964573dd75b1f",
+    "actual_player_skills": {
+      "actual_casts": [
+        {
+          "curve_failure": false,
+          "damage": 65.0,
+          "far_side_hits": 0,
+          "front_hits": 1,
+          "outside_hits": 0,
+          "poise": 65.0,
+          "rear_hits": 0,
+          "recovery_lunge": 1.95,
+          "rune_after": 75.0,
+          "skill": 1,
+          "startup_lunge": 13.0,
+          "strength": "skill"
+        },
+        {
+          "curve_failure": false,
+          "damage": 55.0,
+          "far_side_hits": 0,
+          "front_hits": 1,
+          "outside_hits": 0,
+          "poise": 65.0,
+          "rear_hits": 1,
+          "recovery_lunge": 0.0,
+          "rune_after": 55.0,
+          "skill": 2,
+          "startup_lunge": 0.0,
+          "strength": "skill"
+        },
+        {
+          "curve_failure": false,
+          "damage": 150.0,
+          "far_side_hits": 1,
+          "front_hits": 1,
+          "outside_hits": 0,
+          "poise": 160.0,
+          "rear_hits": 1,
+          "recovery_lunge": 0.0,
+          "rune_after": 20.0,
+          "skill": 3,
+          "startup_lunge": 0.0,
+          "strength": "skill"
+        }
+      ],
+      "scope": "Real RunePlayer skill factory and physics receivers; source pose/VFX/terrain or visual approval separate"
+    }
+  },
+  "changed_source_bindings": {
+    "game/scripts/actors/player.gd": {
+      "bytes": 13924,
+      "sha256": "5cf11405662946414f1dd18d0f898b0d84d58eed2c77001081947eadc24766a3"
+    },
+    "game/tests/combat_regressions.gd": {
+      "bytes": 9038,
+      "sha256": "fedf2dfb6cc1c1f146919e2ea2e0bea412b548af211eaec87678bcfaf2fc3aed"
+    },
+    "tools/check_mobile_web.py": {
+      "bytes": 9161,
+      "sha256": "d63371c29931d65086527a89e1085c03290df99219277e5d4d38d16b1b7d6d5e"
+    }
+  },
+  "regression_scope": "Real RunePlayer skill1/2/3 casts and physics receivers: prep no damage, directional/radial/outer exclusions, damage/poise/rune, skill contact and no curve error, legacy dash/recovery and once-only. 21 new checks.",
+  "unchanged_motion_scope": "Body9bb/charged378be/heavy3fc/LUT/timing/marker/camera/VFX/audio unchanged. Prior14 take has zero skill casts, remains finite motion/VFX evidence, not byte-identical fixed Game archive.",
+  "raw_web_bytes": 149791651,
+  "web_file_count": 14,
+  "budget_bytes": 150000000,
+  "headroom_bytes": 208349,
+  "manifest": {
+    "version": "0.1.15",
+    "godot": "4.7.2",
+    "commit": "a1e9abbe",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119129197,
+        "sha256": "11ecf17108b6c4395873879ecced2bdfcd8d8a6c4cd522ebcf291bfc60117f16"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146970553,
+        "sha256": "c4ee6002edc0097185e714f5f8d5426213f05de2b7910d7bab172c4017c079c4"
+      }
+    ]
+  },
+  "source_count": 108,
+  "source_count_reason": "Intentional new actual-player skill regression fixture bound alongside previous107; player and wrapper changed.",
+  "pending": [
+    "clean committed PC/fullmobile/charged CI",
+    "main/public/tag/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ]
+}

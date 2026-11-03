@@ -24,7 +24,7 @@ Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬
 
 [약공격의 왼팔 연속 동작](docs/COMBAT_CONTINUITY_SLICE.md)을 다시 저작하고 [반투명 장벽 뒤의 전투 카메라](docs/CAMERA_COLLISION_FRAMING_SLICE.md)를 개선했습니다.006 몸체와 최종45초 원본에서 리라·발/검·상대 맥락의 프로토타입 개선을 채택했고 native692/0·양쪽 export를 확인했습니다. [실제 전후 영상과6원본](docs/validation/v0.1.14/gameplay-comparison/README.md)을 볼 수 있습니다. 영상은 dirty v0.1.14 preview이며 후반 위치 변동과 cyan wash·banner·겹침·dark void의 한계를 기록했습니다. clean CI·브라우저·공개 검증, 전체 연속 시청·직접 청취·full skin·AAA·실기기는 아직 미승인입니다. [현재 검증 범위](docs/validation/v0.1.14/README.md)와 이전 공개판을 구분합니다.
 
-[일반 강공격·차지의 양손 머리 위 준비와 내려베기](docs/DECISIVE_SWORD_SLICE.md)를 다시 저작하고 검 잔상·접촉 표현·카메라 pulse·음향 gain을 강화했습니다. 준비 중 미끄러짐을 없애고 실제 칼날 곡선과 판정을 연결했습니다. [전후 원본 영상과 검증 범위](docs/validation/v0.1.15/README.md)에 native714/0·실제 Game의 제한된 시각 채택과 flat fan·국소 skin·연속 시청/청취·실기기/AAA의 남은 한계를 기록합니다. 공개 실행 버전은 화면 하단과 최신 Actions 결과로 확인합니다.
+[일반 강공격·차지의 양손 머리 위 준비와 내려베기](docs/DECISIVE_SWORD_SLICE.md)를 다시 저작하고 검 잔상·접촉 표현·카메라 pulse·음향 gain을 강화했습니다. 준비 중 미끄러짐을 없애고 실제 칼날 곡선과 판정을 연결했습니다. [전후 원본 영상과 검증 범위](docs/validation/v0.1.15/README.md)에 native735/0·실제 Game의 제한된 시각 채택과 flat fan·국소 skin·연속 시청/청취·실기기/AAA의 남은 한계를 기록합니다. 공개 실행 버전은 화면 하단과 최신 Actions 결과로 확인합니다.
 
 **[웹에서 플레이하기](https://kosj.github.io/next-action-rpg/)** — 모바일은 화면 조이스틱·전투 버튼, PC는 키보드·마우스로 실행합니다.
 

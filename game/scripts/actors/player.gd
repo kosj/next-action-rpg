@@ -328,7 +328,9 @@ func use_skill(index: int) -> bool:
 		return false
 	rune -= costs[index]
 	presentation_heal_remaining = 0.0
-	var data: AttackData = HEAVY.duplicate()
+	# Rune skills own their range/arc/timing and dash. A sword resource may
+	# carry a clip-specific physical curve and phase motor that cannot be reused.
+	var data := AttackData.new()
 	data.title = ["섬광 돌진", "룬 폭풍", "성역의 심판"][index]
 	data.damage = [65.0, 55.0, 150.0][index]
 	data.poise = [65.0, 65.0, 160.0][index]

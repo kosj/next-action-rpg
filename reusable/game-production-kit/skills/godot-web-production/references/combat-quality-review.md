@@ -104,3 +104,10 @@ sweep가 확정한 세부 시각과 physics tick 끝의 시각을 구분한다. 
 강한 동작이 약하다는 피드백을 받으면 일반 강공격과 약공격의 같은 phase 원본부터 비교한다. silhouette·양손/전신의 힘·준비/방출/회복이 비슷하다면 gain이나 effect 수만 늘려 동작 차이를 해결했다고 표시하지 않는다. 새 clip의 실제 칼날 경로·LUT와 motor 이동·contact를 연결하고, 보호할 약공격 channel의 byte 보존과 새 whole-file SHA를 따로 검증한다.
 
 whoosh를 늦추기 전에 기존 PCM의 quiet lead·envelope peak·attack-start playback을 확인한다. 이미 bake된 지연에 player/timer 지연을 더하지 않으며 presentation hitpause와 mixer clock을 구분한다. offline gain peak·원본 WAV 보존은 실제 ambience/다중 타격 mix나 직접 청취 승인과 다르다. 새 ordinary-heavy 입력을 추가한 baseline은 이전 다른 입력 policy의 영상으로 대체하지 않는다. 프로젝트 수치와 채택 결과는 원본 source/실제 게임 근거로 다시 검증한다.
+
+
+## Resource 복제와 스킬 계약의 숨은 상속
+
+새 물리 곡선·phase motor·feedback profile을 추가한 공용 공격 Resource를 다른 스킬의 출발점으로 복제하면, 기존 caller가 덮어쓰지 않은 flag·경로·pin·시간 계약도 상속된다. startup/active만 바꾸고 원래 curve가 남는다면 정상적인 fail-closed 검사가 실제 스킬 실행에서 거부할 수 있다. 특수 공격과 스킬의 독립 기본값·명시적 override를 분리하고, 가드를 약화하거나 엉뚱한 곡선을 retime해 오류를 숨기지 않는다.
+
+실제 player가 각 스킬을 physics에서 실행하도록 회귀를 만든다. 생성한 Resource의 모양만 검사하는 테스트는 충분하지 않다. native·특정 charged probe가 통과해도 전체 모바일 journey의 `qa.errors` 확인에서 회귀를 발견할 수 있다. 스킬을 cast하지 않은 짧은 모션 영상은 기존 몸체·이펙트의 제한된 근거이며 수정 후 전체 runtime 검증을 대신하지 않는다. 수정 전 성공·실제 실패·수정 후 결과를 각각의 source에 고정한다.

@@ -81,7 +81,21 @@ ordinary heavy는 실제 반입87 key·LUT111 sample에서 Tip .440671mm/Grip .0
 
 baseline contact610/release586과 후보 contact621/release595는 다르다. 후보의 실제 완충 접촉은1회69.3·shared pause5 frame·HP120→88이며, ordinary heavy active13 sample/일반 heavy whiff·charged whiff도 기록됐다. heal input1회/실제 소비0회·parry 성공0회는 그대로 남긴다. 입력 policy를 맞췄다는 사실과 실제 AI 궤적·접촉 시각의 동일성을 구분한다.
 
-루트는 일반 heavy 첫 active와 contact04의 실제 전후 원본을 직접 보고 overhead/fan의 차이가 명확하다고 보고했다. 이는 예비 관찰이며 독립 peer의 최종 판정이나 모든 원본 검수 완료를 뜻하지 않는다. post-take source107·receipt·실제 peak decode 감사와 최종 finite prototype 판정을 받은 뒤 상태를 갱신한다. raw PCM 보존·logical1x 영상 출력은 전체 연속 시청·직접 청취·AAA 승인이 아니다.
+루트는 일반 heavy 첫 active와 contact04의 실제 전후 원본을 직접 보고 overhead/fan의 차이가 명확하다고 보고했다. 이 예비 관찰 뒤 [실제 최종 감사](validation/v0.1.15/actual-game-final.json)와 독립 finite 원본 검토에서 제한된 준비/궤적 개선을 채택했다. 이14초 촬영은 skill 수정 전107 source 범위로 보존한다. raw PCM 보존·logical1x 영상 출력은 전체 연속 시청·직접 청취·AAA 승인이 아니다.
 
 
 실제 ordinary heavy의 root travel은2.091251→.7039995m이며 준비 중 glide는0이다. 완충 강타는 release595/contact621에69.3을1회 적용하고 양쪽pause5tick을 유지했다. 기존 접촉610과 같게 retime하지 않았다. 12개 paired raw 원본과 native 일반heavy 첫active/접촉 원본을 직접 검토했다. 당시 Hero/feet/상대는 읽히며 모든 공격 tip sample이 프레임 안이었다. 이후 unchanged dodge에서는 tip만5tick 좌측으로 벗어나 baseline3tick보다 늘었다. 전체 mesh/UI containment 승인이 아니다.
+
+
+## full mobile에서 발견한 스킬의 heavy profile 상속 회귀
+
+[실제 실패와 수정 경계](validation/v0.1.15/skill-inheritance-failure-and-fix.json)는 새 일반 heavy의 물리 곡선이 기존 스킬 생성 코드까지 흘러간 문제를 보존한다. 수정 전 `RunePlayer.use_skill()`은 `HEAVY.duplicate()`로 데이터를 만든 뒤 skill startup/active를 .16/.35초로 바꿨다. 그러나 새 heavy의 physical blade flag와 .32/.22초 curve는 그대로 상속했다. 실제 스킬을 실행하자 곡선의 시간 계약과 AttackData가 불일치해 fail-closed로 거부됐다. 이 가드를 완화하거나 heavy LUT를 스킬 시간에 맞춰 바꾸는 것이 해결책은 아니다.
+
+수정 전 CI run41575785813의 native714/0·desktop423.370초·charged302.326초는 통과했다. PR16의 run #72에서 full mobile1383.425초는 journey와 restart에 도달했지만 마지막 `assert not qa.errors`에서 실패했다. 앞선 `hold_heavy_dodge_parry_heal_skill` 단계의 실제 curve timing 오류가 남아 있었기 때문이다. timeout이나 환경 실패가 아니다. 앞선 제한된 통과를 전체 게임 승인으로 확대할 수 없음을 보여 준다. root는 `AttackData.new()`로 스킬 데이터를 독립 생성하고 기존 명시적 스킬 값을 적용했다. [새 native735/0](validation/v0.1.15/native-and-preview-skillfix-003.json)에서 실제 세 스킬의 물리 피해·범위·룬 비용·중복 방지·돌진을 확인했다. 수정 뒤 clean CI와 공개 실행은 별도 pending이다.
+
+기존14초 after trace864행에는 light/ordinary heavy/charged만 있으며 `skill_` attack 행은0이다. 따라서 기존 몸체9bb·LUT·모션/VFX의 finite 판정은 그 관측 범위에서 남지만, 스킬 수정 후 whole-Game byte 증거나 새 native/모바일 통과가 되지는 않는다. 다른106/107 runtime source의 보존 주장과 수정한 player의 새 전체 검증을 구분한다. 실패 원본과 새 수정 결과를 각각 고정한 뒤 상태를 갱신한다.
+
+실제 `08-skill-one` readback은 skill1의 startup .16/active .35/duration .79를 기록했고 active speed는3.200000286이었다. inherited `phase_lunge=true`가 원래 skill1의 lunge13보다 heavy의 active_lunge3.2를 우선시킨 별도 이동 상속 문제와도 일치한다. 이 이동 관찰을 곡선 거부 assertion의 직접 원인과 섞지 않는다. 실패 artifact는 실제11,261,897B·API/다운로드SHA/ZIP CRC를 확인했고, restart 상태를 봤다는 사실은 오류 없는 full-mobile 통과가 아니다. 수정 native735/0은 후속 근거로 통과했다. 새 전체 browser/CI·공개 검증은 별도 pending이다.
+
+
+최신 skillfix003 preview는735/0·ERROR0, Web raw149,791,651B·여유208,349B와 Windows export를 확인했다. 새 native21검사를 담은 실제 player skill fixture를 source roster에 추가해108개로 고정했다. 이전107개 중 player와 checker를 고치고 combat regression을 추가한 의도적인 계보다. body9bb/곡선·무기·VFX·camera/audio 파일 SHA는 그대로다.

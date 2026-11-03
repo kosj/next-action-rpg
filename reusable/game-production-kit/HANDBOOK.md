@@ -97,6 +97,7 @@
 | `obstructed-camera-framing-and-latent-follow-state` | 주인공과 적이 함께 읽히는지 확인하고, 명시한 저투명도 임시 장벽의 카메라 정책을 actor 충돌과 분리한다. | 같은 World·실효 재질·모든 카메라 질의, 불투명 벽과 실제 capsule 차단, 이동 volume·latent follow 상태, body-only 기각과 실제 전후 구도·후반 위치 차이 |
 | `decisive-heavy-action-and-baked-audio-timing` | 일반 강공격과 약공격의 차이를 실제 자세·칼날 곡선·이동·VFX/audio에서 확인하고 baked quiet lead를 먼저 읽는다. | 보존할 light channel, whole-file과 live payload, ordinary/charged LUT·물리 contact, 실제 Game AV와 offline gain, 실제 Web 예산. |
 | `glb-live-reference-compaction-and-curve-path-portability` | live 참조의 payload·의미를 보존한 container remap과 runtime curve의 path metadata 적응을 분리한다. | stride/sparse/skin/image/모든 sampler, 독립 native 서명·negative byte 변형, source 절감과 실제 Web 차이, 미지원 schema 거부. |
+| `skill-attack-profile-inheritance-and-full-journey-errors` | 공격 Resource 복제의 숨은 물리 곡선·flag·phase 계약과 caller의 시간 override를 함께 검증한다. | 실제 player의 모든 스킬 physics·전체 journey 오류 수집, fail-closed 유지, 스킬 없는 짧은 영상의 범위, 수정 전후 source 분리. |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -129,3 +130,5 @@
 새 사례72의 verified는 core GLB live-reference compaction의 별도 private 검증과 독립 guard 범위다. 참조 payload와 의미를 보존한 remap을 BIN prefix 동일과 구분하고, runtime curve의 path metadata를 numeric sample과 따로 검증한다. 독립 native core payload 보존은 확인했다. 실제 전체 Web은 증가했으므로 Web 최적화 성공으로 쓰지 않으며 시각/게임 승인은 pending이다.
 
 판본1.4.9: source container·의미 보존·실제 native payload·최종 Web payload의 수치를 따로 유지한다. prefix를 보존할 수 없는 remap은 원본을 엄격히 고정한 독립 native 서명과 실제 byte 변형 negative로 검증한다. 작은 source가 전체 Web 절감을 뜻하지 않으며 payload 조사 없이 증가 원인을 추측하지 않는다. 출처는 실제 source commit의72항목으로 고정하며 ZIP/독립 재압축을 검증한다.
+
+새 사례73은 실제 실패 사실만 verified이며 수정 native는 pending이다. 공용 공격을 복제한 스킬이 새 물리 곡선·flag를 숨겨 상속하지 않는지 확인한다. 부분 native/charged 통과와 짧은 모션 영상이 전체 스킬·모바일 오류 검증을 대신하지 않는다. 기존 판본과 ZIP은 보존하며 다음 판본의 고정 출처·배포는 root가 관리한다.

@@ -1,6 +1,8 @@
 # v0.1.15 대검 동작·이펙트 검증
 
-2026-11-03 UTC. 공개 v0.1.14 `87fcefdd9a7e24f575e9d1b2df2e9273da29a8ab`와 새 후보를 비교했다. 일반 강공격은 작은 수평 베기에서 양손 머리 위 준비·내려베기로 바뀌었고, 실제 칼날 경로를 따르는 더 큰 fan이 보인다. 루트와 독립 검토자가 실제 원본을 직접 보고 **제한된 prototype 개선으로 채택**했다. 연속 시청·직접 청취·전체 skin·실기기·AAA 승인은 별도다.
+2026-11-03 UTC. **최신 수정 preview는 [735검사/0실패·스킬3종 실제 물리 복구](native-and-preview-skillfix-003.json)와 [108 source 고정](runtime-source-freeze-skillfix-003.json)**이다. 수정 전 PR72의 full mobile는 [스킬 profile 상속 회귀](skill-inheritance-failure-and-fix.json)로 실패했다. 아래714/0·전후14 영상은 그 이전 범위이며 새 수정의 clean CI·모바일 통과가 아니다.
+
+공개 v0.1.14 `87fcefdd9a7e24f575e9d1b2df2e9273da29a8ab`와 새 후보를 비교했다. 일반 강공격은 작은 수평 베기에서 양손 머리 위 준비·내려베기로 바뀌었고, 실제 칼날 경로를 따르는 더 큰 fan이 보인다. 루트와 독립 검토자가 실제 원본을 직접 보고 **제한된 prototype 개선으로 채택**했다. 연속 시청·직접 청취·전체 skin·실기기·AAA 승인은 별도다.
 
 | 근거 | 확인 범위 |
 | --- | --- |
@@ -22,3 +24,5 @@ actual feet/toes/grip과 모든 공격의 blade tip sample은 프레임 안이�
 raw PCM694,400 sample frame과 전달 WAV691,200의 exact prefix/48k stereo·영상864frame/14.4초를 확인했고 clipping은0이었다. 기존 quiet lead에 player delay를 더하지 않았다. 실제 mix와 보존 검사는 직접 청취나 지각 타격감 승인과 다르다.
 
 q0는 균형/shadow ON/Web 기본.8, q1은 성능/shadow OFF/.65다. impact 내부에서 뒤집혀 있던 particle 예산만 수정했다. 현재 dirty preview raw Web149,791,667B/150MB·여유208,333B로 v14보다63,348B 늘었다. source GLB 감소를 Web 절감으로 표시하지 않는다. clean CI·브라우저·공개 runtime·릴리스는 이 source 기록 시점에 pending이며 실제 결과는 해당 PR/Actions에서 확인한다. Windows export와 Windows OS 실행도 구분한다.
+
+수정은 `use_skill()`이 강공격 Resource를 복사하는 대신 독립 `AttackData.new()`를 사용하도록 했다. 새 실제 RunePlayer 세 cast에서 범위·피해·룬 비용·중복/준비 중 피해 방지와 첫 스킬의13/1.95 돌진·회복을 확인했다. 일반heavy/charged/LUT/body/VFX/camera/audio는 바뀌지 않았다. 이전14초 trace에는 skill 행이0이므로 그 모션/VFX 관측 범위는 유지하지만 새 wholeGame byte 일치를 주장하지 않는다.

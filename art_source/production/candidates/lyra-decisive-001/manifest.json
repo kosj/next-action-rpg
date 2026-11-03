@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "native_verified_actual_game_finite_prototype_reviewed_publication_pending",
+  "status": "native735_verified_finite_motion_prototype_accepted_fixed_browser_CI_pending",
   "source_file": "source-006.glb",
   "source_bytes": 19648124,
   "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
@@ -238,19 +238,19 @@
       "limitations": "8 actor-relative matched finite stills; ordinaryheavy camera/lights follow old.64m vs new0m nominalroot at.32, so worldcamera/footcomparison not identical; loadedshoulder partlyoccluded; actualGame/continuousAV/whole-skin/AAA remainpending"
     },
     "native": {
-      "status": "verified",
-      "checks": 714,
+      "status": "verified_fixed_skill_factory",
+      "checks": 735,
       "failures": 0,
       "engine_ERRORs": 0,
-      "report": "docs/validation/v0.1.15/native-and-preview-002.json",
-      "limits": "native checks only, not visual/fullskin/AAA approval"
+      "report": "docs/validation/v0.1.15/native-and-preview-skillfix-003.json",
+      "limits": "Body9bb unchanged. Native real3skills fixed; new cleanCI/mobile/publication pending."
     },
     "actual_game_raster": {
       "status": "finite_prototype_direction_accepted_by_root_and_independent_review",
       "report": "docs/validation/v0.1.15/actual-game-final.json",
       "media_manifest": "docs/validation/v0.1.15/media/manifest.json",
       "root_review": "12 paired actual raw-MJPEG decoded frames plus ordinary firstactive/contact native originals; stronger twohand overhead and warm fan; Hero/foe/feet readable at reviewed points",
-      "scope": "Same explicit includeheavy policy and q1 PERFORMANCE960x600; not identical camera/root/contact timing; continuous watching/hearing/whole-skin/hardware/AAA remain pending",
+      "scope": "Same explicit includeheavy policy and q1 PERFORMANCE960x600; not identical camera/root/contact timing; continuous watching/hearing/whole-skin/hardware/AAA remain pending Historical pre-skill-fix14take: zero skill casts, unchanged body/LUT/VFX/camera/audio visual direction remains; not identical new wholeGame source.",
       "contact": {
         "tick": 621,
         "release_tick": 595,
@@ -263,14 +263,23 @@
     "interactive_browser": "pending",
     "exports_budget": {
       "status": "verified_local_dirty_preview",
-      "web_raw_bytes": 149791667,
+      "web_raw_bytes": 149791651,
       "budget_bytes": 150000000,
       "web_delta_from_v014_bytes": 63348,
-      "clean_committed_CI": "pending"
+      "clean_committed_CI": "pending_after_skillfix",
+      "source_roster_count": 108
     },
     "continuous_AV": "delivered14.4s_engine_PCM_integrity_verified_direct_continuous_watching_and_hearing_pending",
     "target_hardware": "pending",
-    "AAA": "pending"
+    "AAA": "pending",
+    "historical_native714": {
+      "status": "verified",
+      "checks": 714,
+      "failures": 0,
+      "engine_ERRORs": 0,
+      "report": "docs/validation/v0.1.15/native-and-preview-002.json",
+      "limits": "native checks only, not visual/fullskin/AAA approval"
+    }
   },
   "limitations": [
     "New motion/LUT changes actual path; old charged curve identity is not claimed. Normalheavy now two-handed and source clip timing only; runtime movement/query changes belong root",
@@ -694,7 +703,7 @@
   "runtime_installation": {
     "file": "game/assets/models/production/lyra_fury_gameplay.glb",
     "sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
-    "scope": "Identical selected9bb source installed; actual native714/0/ERROR0 and scripted14s Game capture completed. Finite originals reviewed by root; browser/cleanCI/publication separate pending."
+    "scope": "Identical9bb source installed; actual fixed native735/0/ERROR0. Finite14 Game motion review predates nonvisual skill-factory fix and contains no skills; clean committed fixed browser/publication separate pending."
   },
   "expected_clips": [
     "RESET",
