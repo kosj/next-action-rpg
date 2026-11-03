@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "version": "0.1.17",
+  "observed_at": "2026-11-03T12:33:16.242160+00:00",
+  "status": "publication_pending",
+  "main_commit": "951f314359685706a1db53a8f2351a26c4512222",
+  "PR": "https://github.com/kosj/next-action-rpg/pull/18",
+  "source_binding": {
+    "selected_files": 165,
+    "mismatches": [],
+    "mobile_producer_count": 120,
+    "scope": "Actual committed main Git blobs equal selected final map; producer subset separately verified in browser artifacts"
+  },
+  "gameplay_compatibility": {
+    "prior_v016_source": "9a1e9dc77a3929cd2ee07e6203e913026a59b1a8",
+    "subtrees": {
+      "game/scripts": {
+        "previous": "6186e055aef1d9b56eb87604f707df9cd23bd786",
+        "current": "6186e055aef1d9b56eb87604f707df9cd23bd786",
+        "equal": true
+      },
+      "game/assets": {
+        "previous": "c49fe0ee5e1329f3cda658e8cf6ab27705e97a25",
+        "current": "c49fe0ee5e1329f3cda658e8cf6ab27705e97a25",
+        "equal": true
+      },
+      "game/data": {
+        "previous": "262bd7fad6783a9496b495842b9a13d9dc5eafb6",
+        "current": "262bd7fad6783a9496b495842b9a13d9dc5eafb6",
+        "equal": true
+      },
+      "game/scenes": {
+        "previous": "11caff82a28206f9a4c779e2cff6cd1559362008",
+        "current": "11caff82a28206f9a4c779e2cff6cd1559362008",
+        "equal": true
+      },
+      "game/import": {
+        "previous": "0c7b5cadeec713c8bb9120b4c87dd84c20c909d2",
+        "current": "0c7b5cadeec713c8bb9120b4c87dd84c20c909d2",
+        "equal": true
+      },
+      "game/web": {
+        "previous": "4d1744a1475be5dbe214bbb805e7f52cdc92c4f3",
+        "current": "4d1744a1475be5dbe214bbb805e7f52cdc92c4f3",
+        "equal": true
+      },
+      "game/export_presets.cfg": {
+        "previous": "6d201bc9390005b44734a38043ecf2519032e6b1",
+        "current": "6d201bc9390005b44734a38043ecf2519032e6b1",
+        "equal": true
+      }
+    },
+    "scope": "Gameplay/runtime resources equal prior adopted video; project version and QA/knowledge changed. Not identical new wholepackage bytes."
+  },
+  "knowledge_kit": {
+    "version": "1.4.12",
+    "entries": 75,
+    "source_commit": "6cdf3a8f4b30ac45ca9166a2d0cc72fdba80c041",
+    "bytes": 150003,
+    "sha256": "1e0579d9b05a71149202bfdd2eec63f803a6b90a89066a432e21c5c80c34b312",
+    "independent_checks": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "main_run": {
+    "id": 41634233435,
+    "number": 83,
+    "status": "in_progress"
+  },
+  "tag": {
+    "name": "v0.1.17",
+    "status": "not_created_waiting_corrected_live_charged_gate"
+  },
+  "pages": {
+    "url": "https://kosj.github.io/next-action-rpg/",
+    "status": "new_version_pending"
+  },
+  "release": {
+    "url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.17",
+    "status": "pending"
+  },
+  "previous_candidate": {
+    "version": "0.1.16",
+    "status": "blocked_before_publication_by_old_mixed_contact_QA",
+    "tag_retained": true,
+    "failure_and_corrected_replay": "charged-observer-failure-and-fix.json"
+  },
+  "scope_limits": [
+    "Finite prototype visual adoption; direct continuous watching/hearing not established",
+    "No fullskin/terrainIK/hardware/AAA approval",
+    "Windows export/integrity is not actual Windows device execution"
+  ]
+}
