@@ -2751,8 +2751,10 @@
         "cause": "Requested motor velocity is not resolved travel; attack fullbody priority suppresses lower gait. Increasing melee reach alone creates no traveling energy wave.",
         "contracts": "Input light4.2m/s with measured horizontal move_and_slide displacement; lower Hips/legs gait and Spine descendants attack. Heavy/charged physical LUT fullbody unchanged. Wave source-leading reach4.5/7.5m; initial overlap+earliest safe wallcast then swept convex target query; shared strike ledger; late wave cannot pause unrelated action.",
         "first_failures": "native002 observed early startup wave stealing close charged blade contact; use authored forward slash release fraction .65, retain original physical strict assertions. Thinwall collision reason was overwritten by fade cleanup; retain terminal reason. Test fixtures must synchronize actual physics and not assume process delta equals physics delta.",
-        "verification": "native003797/1; native004 realPlayer input/wall/launch/latepause branch passed, existing moving-heal fixture still failed and was repaired. Final native pending. Actual1x capture running; continuous visual/hearing/hardware/AAA pending.",
-        "transfer_rule": "Receiving projects start pending and choose own gait calibration, filtered bones, motor/range/shape/damage, query budget and actual visual acceptance. No project fixed values imported as universal defaults."
+        "verification": "Final native006843checks/0fail/ERROR0 includes real Player input, actual Game reset/title/restore cancellation, wave lifecycle and existing regressions. Technical Compatibility raster confirms ALBEDO energy visibility. Final real Game take003/continuous audiovisual/hardware/AAA and publication pending at source snapshot; overall entry remains pending.",
+        "transfer_rule": "Receiving projects start pending and choose own gait calibration, filtered bones, motor/range/shape/damage, query budget and actual visual acceptance. No project fixed values imported as universal defaults.",
+        "renderer_lesson": "A shader may compile without visual output. Actual Compatibility unshaded EMISSION-only wave invisible; official scene.glsl MODE_UNSHADED outputs albedo directly. Set ALBEDO and inspect real raster before expensive whole Game capture.",
+        "lifecycle_lesson": "A projectile owned by a reused live Player must cancel on encounter reset/title/inactive/restore epoch, while respecting declared survival across stagger and strike completion. Disable queries immediately before deferred deletion."
       },
       "sources": [
         "docs/LOCOMOTION_WAVE_SLICE.md",
@@ -2762,7 +2764,10 @@
         "game/tests/player_stride_wave_regressions.gd",
         "game/tests/moving_attack_regressions.gd",
         "game/tests/sword_wave_regressions.gd",
-        "reusable/game-production-kit/skills/godot-web-production/SKILL.md"
+        "reusable/game-production-kit/skills/godot-web-production/SKILL.md",
+        "docs/validation/v0.1.16/native-and-first-visual.json",
+        "game/tests/wave_encounter_lifecycle_regressions.gd",
+        "game/tests/sword_wave_visual_review.gd"
       ]
     }
   ]

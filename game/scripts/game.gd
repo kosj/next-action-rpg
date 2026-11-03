@@ -166,7 +166,9 @@ func reset_encounter() -> void:
 	active_encounter = -1
 	boss = null
 	for child in get_children():
-		if child is RuneProjectile:
+		if child is RuneSwordWave:
+			child.cancel()
+		elif child is RuneProjectile:
 			child.queue_free()
 	for effect in get_tree().get_nodes_in_group("impact_effects"):
 		effect.queue_free()

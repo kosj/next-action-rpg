@@ -5,6 +5,8 @@ extends RefCounted
 class WaveOwner:
 	extends CharacterBody3D
 	var dead := false
+	var active := true
+	var presentation_epoch := 0
 
 class HitTarget:
 	extends StaticBody3D
@@ -202,6 +204,53 @@ static func run(world: Node3D, check: Callable) -> bool:
 	await _tick(tree)
 	await _tick(tree)
 	check.call(exit_ref.get_ref() == null,"Owner tree exit removes a wave without leaving a callback or attack reference")
+	# A menu/reset can retain the same owner object. Inactivation must cancel
+	# before the next swept query, including one large enough to reach a victim.
+	source = _owner(fixture,132.0)
+	var inactive_target := _target(fixture,Vector3(132,0,-2.0))
+	await _tick(tree)
+	await _tick(tree)
+	wave = _wave(fixture,source,_strike(source))
+	wave._physics_process(1.0/60.0)
+	var inactive_travel := float(wave.presentation_report().travel_m)
+	source.active = false
+	wave._physics_process(0.25)
+	check.call(inactive_target.hits == 0 and wave.is_queued_for_deletion() and is_equal_approx(float(wave.presentation_report().travel_m),inactive_travel),"Inactivating a retained owner cancels an already-flying wave before another damage query or movement")
+	await _tick(tree)
+	# Checkpoint restore changes the epoch while active remains true, so it is
+	# a distinct lifecycle boundary rather than strike completion or stagger.
+	source = _owner(fixture,144.0)
+	var restored_target := _target(fixture,Vector3(144,0,-2.0))
+	await _tick(tree)
+	await _tick(tree)
+	wave = _wave(fixture,source,_strike(source))
+	wave._physics_process(1.0/60.0)
+	source.presentation_epoch += 1
+	wave._physics_process(0.25)
+	check.call(restored_target.hits == 0 and wave.is_queued_for_deletion() and not bool(wave.presentation_report().valid),"Changing a live owner's restore epoch cancels its previous wave before it can damage a new encounter")
+	await _tick(tree)
+	# Generic CharacterBody fixtures need neither player lifecycle property.
+	var generic_source := CharacterBody3D.new()
+	generic_source.collision_layer = 2
+	fixture.add_child(generic_source)
+	generic_source.position = Vector3(156,0,0)
+	var generic_target := _target(fixture,Vector3(156,0,-1.5))
+	await _tick(tree)
+	await _tick(tree)
+	wave = _wave(fixture,generic_source,_strike(generic_source))
+	wave._physics_process(0.1)
+	check.call(generic_target.hits == 1,"A generic source without active, dead or presentation_epoch properties still launches and resolves an actual wave hit")
+	wave.queue_free()
+	await _tick(tree)
+	source = _owner(fixture,168.0)
+	var cancelled_target := _target(fixture,Vector3(168,0,-1.5))
+	await _tick(tree)
+	await _tick(tree)
+	wave = _wave(fixture,source,_strike(source))
+	wave.cancel()
+	wave._physics_process(0.25)
+	check.call(cancelled_target.hits == 0 and wave.is_queued_for_deletion() and String(wave.presentation_report().reason) == "encounter_reset","Public encounter cancellation disables damage immediately before deferred node deletion")
+	await _tick(tree)
 	# Same-frame cap includes fading live nodes and excludes queued deletions.
 	source = _owner(fixture,120.0)
 	for index in range(10):

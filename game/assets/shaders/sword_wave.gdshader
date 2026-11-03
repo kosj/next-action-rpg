@@ -34,7 +34,7 @@ void fragment() {
 		float front = exp(-behind*13.0);
 		float narrow_core = exp(-pow(behind/0.038, 2.0))
 			*exp(-pow(local_point.y/0.045, 2.0));
-		opacity = (0.035+front*0.15)*vertical*edge*(0.65+0.35*wisp);
+		opacity = (0.035+front*0.30)*vertical*edge*(0.65+0.35*wisp);
 		energy = mix(cyan, white, narrow_core*0.8)*1.25;
 	} else if (energy_layer == 1) {
 		// This existing thin face/ridge becomes the white leading filament.
@@ -53,7 +53,8 @@ void fragment() {
 		opacity = tail*tail*edge*(0.025+0.12*filament);
 		energy = vec3(0.045, 0.40, 0.78);
 	}
-	ALBEDO = vec3(0.0);
+	// Compatibility unshaded output consumes ALBEDO; EMISSION alone is invisible.
+	ALBEDO = energy;
 	EMISSION = energy;
 	ALPHA = clamp(opacity*wave_fade, 0.0, 0.9);
 }

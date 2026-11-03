@@ -78,3 +78,7 @@ VFX는 실제 진행 위치에 붙은 crescent여야 하며, 물리 폭·전면 
 별도 [actual Player 회귀](../game/tests/player_stride_wave_regressions.gd)는 실제 Input→RunePlayer→move_and_slide와 physics 후 recorder의 실제 변위/스냅샷 일치, 벽 정지, 저작 release 시각의 단발 wave signal, 이전 wave의 보행/새 공격 hitpause 비소유와 현재 strike의 hitpause를 검사하도록 작성했다. 문서 작성자는 이 회귀를 실행하지 않았으며 runner 연결과 통합 native 결과는 루트의 별도 근거가 필요하다. 이 회귀의 on_hit 입력은 contact context fixture이므로 실제 검기 geometry/적 접촉은 별도 검기 물리 회귀에서 증명한다.
 
 공식 자료는 API의 의미를 지지한다. 이 프로젝트의 실제 imported pose·벽/피해·타격감 성공 증거는 아니다. 최종 문서에는 새 실행 결과가 생길 때 정확한 source freeze와 기능/원본 영상/유한 검토/연속 시청 상태를 각각 연결한다.
+
+## 통합 native와 실제 raster의 현재 근거
+
+[843검사/0실패·ERROR0 및 시각 기각 이력](validation/v0.1.16/native-and-first-visual.json), [현재 선택 source 고정](validation/v0.1.16/runtime-source-freeze.json)을 별도로 남겼다. 실제 Player 이동/벽·보행 phase·상체/전신 구분·wave sweep/ledger와 별도 실제 Game의 reset/title/restore 정리를 포함한다. 첫 cyan 판과 두 번째 보이지 않는 검기는 둘 다 기각했다. Godot4.7.2 [GLES3 scene.glsl의 MODE_UNSHADED](https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/gles3/shaders/scene.glsl#L2775)는 albedo를 바로 출력하므로 EMISSION만 설정한 shader는 빛나지 않았다. ALBEDO 수정과 기술용 실제 raster 확인 뒤 세 번째 정상 Game 촬영으로 진행한다. 기술용 raster와 최종 게임 화면·연속 시청/청취·AAA를 구분한다. 이 source 기록 이후의 실제 촬영/게시 결과는 별도 전달 원장에 기록하며 과거 두 기각 take를 성공으로 쓰지 않는다.

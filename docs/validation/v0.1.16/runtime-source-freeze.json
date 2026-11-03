@@ -2,10 +2,10 @@
   "schema_version": 1,
   "version": "0.1.16",
   "scope": "Selected runtime/test/producer inputs, not entire Git tree or final deployed package; build_id is generated independently",
-  "observed_at": "2026-11-03T10:27:27.476524+00:00",
-  "base_commit": "654e91f13f916dc783e2181444b6143937dec9b4",
+  "observed_at": "2026-11-03T10:38:29.859903+00:00",
+  "base_commit": "522df0f972abe7d3638ea9786b535e3462521214",
   "source_tree_dirty": true,
-  "source_count": 160,
+  "source_count": 163,
   "source_files": {
     "art_source/production/candidates/lyra-decisive-001/recipe.json": {
       "bytes": 2730,
@@ -252,8 +252,8 @@
       "sha256": "b631efa33b64f6f3920916195a745561499e403f33cd6dd9dbee9cefcdcd50a5"
     },
     "game/assets/shaders/sword_wave.gdshader": {
-      "bytes": 2568,
-      "sha256": "c0e984c2f27aeb13e1928c0d522b0997d597ee9774b8f224cb90dec483781a36"
+      "bytes": 2645,
+      "sha256": "2e232a8dc43ff2916d47f1d9afe505cbf84d8a74c8c325bfb5c31fec594905ae"
     },
     "game/data/charged_blade_curve.json": {
       "bytes": 23548,
@@ -344,8 +344,8 @@
       "sha256": "f373779504d7c2985e554b09c487d44d75e39c62a3b2524217c138af7d1ac09b"
     },
     "game/scripts/game.gd": {
-      "bytes": 26868,
-      "sha256": "60526ce1dfc04f4802d1a6ef531f4162bd38c1af0673c772223a4e631a7956d3"
+      "bytes": 26917,
+      "sha256": "36b5ddfc9c43878208dd81c258601a6a07edb2272f40982a3550747768045666"
     },
     "game/scripts/ui/hud.gd": {
       "bytes": 35638,
@@ -392,8 +392,8 @@
       "sha256": "43c3e4de69732e790c6a2d15dd3686677b4d44d4f4e80b85b0aacf5b30349cab"
     },
     "game/scripts/world/sword_wave.gd": {
-      "bytes": 12180,
-      "sha256": "11a1a31f3a44bf02b85bd35a3fe38bea02c4f1b3a79127bf2b8fee2ab0aebb8a"
+      "bytes": 12992,
+      "sha256": "cd7f96f6bf66700bfb493935ce5726ca3152a75ecf332491a55ff375975a4b98"
     },
     "game/tests/art_integration_regressions.gd": {
       "bytes": 10125,
@@ -536,12 +536,20 @@
       "sha256": "47faf90520321327521874fadd38277d4854d3f3956a26a0c5ce88bebfbcbd1c"
     },
     "game/tests/sword_wave_regressions.gd": {
-      "bytes": 9869,
-      "sha256": "b48f42b0e650a9137095554fbc8b35b4239d4f7b4ae50e0d4c9da50f58a80a96"
+      "bytes": 12429,
+      "sha256": "5772755a725cc1c416a43f4a780874b85f383fc5cf64d9560d7b4213cf9f22a2"
+    },
+    "game/tests/sword_wave_visual_review.gd": {
+      "bytes": 1850,
+      "sha256": "94ff25a1c778c228d45c4c568d264f53bb2687469dc8565ec7e205747e564dc9"
+    },
+    "game/tests/sword_wave_visual_review.tscn": {
+      "bytes": 188,
+      "sha256": "7275c0d0a089757534c228890c5c99dd635414237f3c931b913916067dec2b1f"
     },
     "game/tests/test_runner.gd": {
-      "bytes": 14826,
-      "sha256": "98afe02451f02d35191bb096ad12c892a3120de24f8a8d531942e0267c165055"
+      "bytes": 15013,
+      "sha256": "71c967de71ffede18c2ee82b2d291ed05ec251a0765ae08ab27f539ed0bebff2"
     },
     "game/tests/ui_font_review.gd": {
       "bytes": 7879,
@@ -550,6 +558,10 @@
     "game/tests/ui_font_review.tscn": {
       "bytes": 183,
       "sha256": "8406b3838cbb87efaac95481931f260bef6a0352e86fb82ca37eb2cfaeef98f1"
+    },
+    "game/tests/wave_encounter_lifecycle_regressions.gd": {
+      "bytes": 7006,
+      "sha256": "d41150ad1d65c1ca9e738aabec08a4dc193dc76067bfcf4661ac1ea28666dcf1"
     },
     "game/tests/weight_motion_review.gd": {
       "bytes": 14553,

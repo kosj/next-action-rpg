@@ -772,6 +772,6 @@
     "scope": "Only additive traveling-wave configuration on heavy resources; original model, curves, timing and phase motor unchanged",
     "release_phase": 0.65,
     "evidence": "docs/LOCOMOTION_WAVE_SLICE.md",
-    "validation": "pending actual Player/native and gameplay capture"
+    "validation": "native006843/0ERROR0 verified; final actual Game visual and clean deployment pending"
   }
 }

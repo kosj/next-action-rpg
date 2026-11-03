@@ -29,6 +29,9 @@ var _valid := false
 var _reason := "not_configured"
 var _quality := 0
 var _source_has_dead := false
+var _source_has_active := false
+var _source_has_epoch := false
+var _source_epoch := 0
 var _segments: Array[Dictionary] = []
 var _materials: Array[ShaderMaterial] = []
 var _triangles := 0
@@ -68,6 +71,12 @@ func setup(source: CharacterBody3D, attack: CombatStrike, forward: Vector3, reac
 	for property: Dictionary in source.get_property_list():
 		if property.name == "dead":
 			_source_has_dead = true
+		elif property.name == "active":
+			_source_has_active = true
+		elif property.name == "presentation_epoch":
+			_source_has_epoch = true
+	if _source_has_epoch:
+		_source_epoch = int(source.get("presentation_epoch"))
 	_source.tree_exiting.connect(_owner_exiting)
 	_build_crescent()
 	_valid = true
@@ -88,6 +97,9 @@ func setup(source: CharacterBody3D, attack: CombatStrike, forward: Vector3, reac
 func _owner_exiting() -> void:
 	_expire("owner_exited")
 
+func cancel() -> void:
+	_expire("encounter_reset")
+
 func _exit_tree() -> void:
 	if is_instance_valid(_source) and _source.tree_exiting.is_connected(_owner_exiting):
 		_source.tree_exiting.disconnect(_owner_exiting)
@@ -105,6 +117,12 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_instance_valid(_source) or not _source.is_inside_tree() or (_source_has_dead and bool(_source.get("dead"))):
 		_expire("owner_unavailable")
+		return
+	if _source_has_active and not bool(_source.get("active")):
+		_expire("owner_inactive")
+		return
+	if _source_has_epoch and int(_source.get("presentation_epoch")) != _source_epoch:
+		_expire("owner_restored")
 		return
 	_age += delta
 	for material in _materials:
@@ -274,7 +292,14 @@ func _build_crescent() -> void:
 		var swept := ConvexPolygonShape3D.new()
 		swept.margin = 0.0
 		_segments.append({"shape":shape,"swept":swept,"points":points,"left":x0,"right":x1,"front_left":z0,"front_right":z1})
-		for face in [[0,1,2,3],[5,4,7,6],[4,0,3,7],[1,5,6,2],[3,2,6,7],[4,5,1,0]]:
+		# Adjacent physics prisms share interior caps. Only the union boundary
+		# belongs in the transparent mesh, otherwise additive caps show seams.
+		var faces := [[0,1,2,3],[5,4,7,6],[3,2,6,7],[4,5,1,0]]
+		if index == 0:
+			faces.append([4,0,3,7])
+		if index == count-1:
+			faces.append([1,5,6,2])
+		for face in faces:
 			_quad(body,points[face[0]],points[face[1]],points[face[2]],points[face[3]])
 		# Thin hot face embedded at the leading edge, with a shallow top ridge.
 		_quad(core,Vector3(x0,-0.025,z0),Vector3(x1,-0.025,z1),Vector3(x1,0.025,z1),Vector3(x0,0.025,z0))
