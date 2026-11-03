@@ -111,3 +111,9 @@ whoosh를 늦추기 전에 기존 PCM의 quiet lead·envelope peak·attack-start
 새 물리 곡선·phase motor·feedback profile을 추가한 공용 공격 Resource를 다른 스킬의 출발점으로 복제하면, 기존 caller가 덮어쓰지 않은 flag·경로·pin·시간 계약도 상속된다. startup/active만 바꾸고 원래 curve가 남는다면 정상적인 fail-closed 검사가 실제 스킬 실행에서 거부할 수 있다. 특수 공격과 스킬의 독립 기본값·명시적 override를 분리하고, 가드를 약화하거나 엉뚱한 곡선을 retime해 오류를 숨기지 않는다.
 
 실제 player가 각 스킬을 physics에서 실행하도록 회귀를 만든다. 생성한 Resource의 모양만 검사하는 테스트는 충분하지 않다. native·특정 charged probe가 통과해도 전체 모바일 journey의 `qa.errors` 확인에서 회귀를 발견할 수 있다. 스킬을 cast하지 않은 짧은 모션 영상은 기존 몸체·이펙트의 제한된 근거이며 수정 후 전체 runtime 검증을 대신하지 않는다. 수정 전 성공·실제 실패·수정 후 결과를 각각의 source에 고정한다.
+
+### 실제 raster와 관측기 수명
+
+Shader compile 성공은 표시 성공이 아니다. 실제 목표 renderer의 unshaded 출력 경로를 확인하고 원본 raster로 색·깊이·fade를 검수한다. GLSL의 음수 밑 pow는 짝수 지수에서도 정의되지 않으므로 signed 제곱은 곱셈으로 표현하고 수식 수정 전후 실제 출력을 비교한다. 고정1x 인코딩·PCM 존재와 직접 연속 시청/청취를 구분한다.
+
+관측기는 해제된 actor가 남을 수 있는 배열 항목을 먼저 untyped로 받아 유효성을 확인한 뒤 typed 참조로 바꾼다. typed for 변수에 할당한 뒤의 생존 검사는 이미 늦을 수 있다. 실제 처치·deferred deletion을 지난 전체 촬영의 종료 marker·프레임/trace·source 불변·오류를 확인하고, 유한 화면의 개선을 실패한 전체 take 성공으로 바꾸지 않는다.

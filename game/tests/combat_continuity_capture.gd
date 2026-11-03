@@ -525,8 +525,13 @@ func record_after_physics(delta: float) -> void:
 					light_images[attack_name] = true
 	var enemies: Array[Dictionary] = []
 	var victim_paused := false
-	for enemy: RuneEnemy in world.get("active_enemies"):
-		if is_instance_valid(enemy):
+	# Validate the untyped collection entry before binding a typed object: a
+	# queued corpse can already have been freed while its array slot remains.
+	for candidate in world.get("active_enemies"):
+		if not is_instance_valid(candidate):
+			continue
+		var enemy := candidate as RuneEnemy
+		if enemy != null:
 			enemies.append(_actor(enemy))
 			victim_paused = victim_paused or (enemy.hit_pause > 0.0 and enemy.hit_reaction == "heavy_hit")
 	if player.hit_pause > 0.0 and victim_paused:

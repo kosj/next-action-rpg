@@ -2,8 +2,8 @@
   "schema_version": 1,
   "version": "0.1.16",
   "scope": "Selected runtime/test/producer inputs, not entire Git tree or final deployed package; build_id is generated independently",
-  "observed_at": "2026-11-03T10:38:29.859903+00:00",
-  "base_commit": "522df0f972abe7d3638ea9786b535e3462521214",
+  "observed_at": "2026-11-03T11:11:12.411820+00:00",
+  "base_commit": "19b04b0558898779143e7ad3f827f3dabe8162ae",
   "source_tree_dirty": true,
   "source_count": 163,
   "source_files": {
@@ -252,8 +252,8 @@
       "sha256": "b631efa33b64f6f3920916195a745561499e403f33cd6dd9dbee9cefcdcd50a5"
     },
     "game/assets/shaders/sword_wave.gdshader": {
-      "bytes": 2645,
-      "sha256": "2e232a8dc43ff2916d47f1d9afe505cbf84d8a74c8c325bfb5c31fec594905ae"
+      "bytes": 2734,
+      "sha256": "d66f884993fb0c8bc3c8be68ed7fcd0b5812bbc168afcf2fcaac32b54811bb5a"
     },
     "game/data/charged_blade_curve.json": {
       "bytes": 23548,
@@ -428,8 +428,8 @@
       "sha256": "24d5aa1212b685ccddbc14e40cd20491658665ec65a37a5325b559e5d3d94b2c"
     },
     "game/tests/combat_continuity_capture.gd": {
-      "bytes": 32136,
-      "sha256": "ecb2d6ed8cbef84a1dd42a5a8cc39509405539537302aba1d29721953b1ea7cd"
+      "bytes": 32356,
+      "sha256": "a8785ff7c00e9f939789f8bf83ea4f2bdbeb397690459e2141103f069ec6b3d8"
     },
     "game/tests/combat_continuity_capture.tscn": {
       "bytes": 226,
@@ -659,5 +659,6 @@
       "bytes": 6314,
       "sha256": "c2eb20659a213fe4a5ccfdd9d5f858bf9b6db06478de85b462365773ab32b378"
     }
-  }
+  },
+  "note": "Final source after test-only observer lifetime guard and 3signed square portability fix. Original native006 input map preserved separately. New clean CI/public verification pending."
 }

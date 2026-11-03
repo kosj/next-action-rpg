@@ -1,6 +1,6 @@
 # 이동 공격과 진행하는 검기: 제작·검수 계약
 
-2026-11-03 UTC. 사용자 지적은 “이동 공격이 애니메이션 없이 밀리고, 검기 범위와 액션성이 없다”이다. 작업 기준은 `feat/stride-and-sword-waves`의 전달받은 시작점 `e7c9ee3c`다. 이 문서는 코드 읽기와 공식 자료 대조, 앞으로 실행할 실제 Game 캡처 명세를 기록한다. **검사 통과 ≠ 질감 승인**이다. 이 문서 작성자는 엔진·GPU·Blender·브라우저를 실행하지 않았다. 새 native·실제 캡처·연속 1배속 시청·직접 청취·실기기·AAA 결과는 모두 `pending`이다.
+2026-11-03 UTC. 사용자 지적은 “이동 공격이 애니메이션 없이 밀리고, 검기 범위와 액션성이 없다”이다. 작업 기준은 `feat/stride-and-sword-waves`의 전달받은 시작점 `e7c9ee3c`다. 초기 독립 분석은 코드와 공식 자료 대조로 작성했고, 후속 통합에서 native843/0과 실제 Game900tick 촬영을 확인했다. [현재 결과와 원본 영상](validation/v0.1.16/README.md)을 함께 본다. **검사 통과 ≠ 질감 승인**이다. 실제 유한 화면의 프로토타입 채택과 연속 직접 시청/청취·실기기·AAA 미승인을 구분한다.
 
 ## 관찰 범위와 이전 증거의 경계
 
@@ -82,3 +82,7 @@ VFX는 실제 진행 위치에 붙은 crescent여야 하며, 물리 폭·전면 
 ## 통합 native와 실제 raster의 현재 근거
 
 [843검사/0실패·ERROR0 및 시각 기각 이력](validation/v0.1.16/native-and-first-visual.json), [현재 선택 source 고정](validation/v0.1.16/runtime-source-freeze.json)을 별도로 남겼다. 실제 Player 이동/벽·보행 phase·상체/전신 구분·wave sweep/ledger와 별도 실제 Game의 reset/title/restore 정리를 포함한다. 첫 cyan 판과 두 번째 보이지 않는 검기는 둘 다 기각했다. Godot4.7.2 [GLES3 scene.glsl의 MODE_UNSHADED](https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/gles3/shaders/scene.glsl#L2775)는 albedo를 바로 출력하므로 EMISSION만 설정한 shader는 빛나지 않았다. ALBEDO 수정과 기술용 실제 raster 확인 뒤 세 번째 정상 Game 촬영으로 진행한다. 기술용 raster와 최종 게임 화면·연속 시청/청취·AAA를 구분한다. 이 source 기록 이후의 실제 촬영/게시 결과는 별도 전달 원장에 기록하며 과거 두 기각 take를 성공으로 쓰지 않는다.
+
+## 실제 Game 촬영 완료와 남은 범위
+
+[최종 실제 Game 원장](validation/v0.1.16/actual-game-final.json)은 일반 입력·실제AI·900gameplaytick·exit0ERROR0·source 변경0과435개의 light attack layer 관측을 기록한다. 실제 charged wave가5.335/5.800/7.009m의 서로 다른 세 적을 맞힌 것을 확인했다. 전체1x 원본과 전달 MP4, 유한 원본 표본 검토를 구분하며 AAA 승인을 하지 않는다. 이후 shader의 signedY pow3곳을 q*q로 바꿨고 실제 기술 raster003은002와PNG byte가 같다. [GLSL ES3.00 §8.2](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf#page=94)는 음수 밑 pow를 undefined로 정의하므로 exponent2.0도 예외로 가정하지 않는다.

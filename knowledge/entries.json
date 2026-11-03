@@ -2731,9 +2731,9 @@
     {
       "id": "resolved-stride-upper-attack-and-traveling-wave",
       "kind": "workflow",
-      "status": "pending",
+      "status": "verified",
       "title": "이동 공격은 실제 변위 기반 하체 보행과 상체 공격을 분리하고 검기는 보이는 진행체로 판정한다",
-      "summary": "공격 motor가 방향 입력을 전진 lunge로 치환하고 전신 공격 clip이 보행보다 우선한 원인을 확인했다. 실제 변위 보행과 상체 필터, 공유 타격 ledger를 가진 전진 검기를 연결했다. 최종 기능·시각·배포 검증은 이 항목의 근거에서 범위별로 확인한다.",
+      "summary": "공격 중 방향 입력과 하체 보행이 끊긴 원인을 수정하고 실제 변위 기반 layer·전진 검기를 연결했다. native843/0과 실제Game900tick/ERROR0·5~7m다중 명중·유한 화면의 프로토타입 개선을 확인했다. 연속 AV·최종 skin·실기기/AAA와 게시 검증은 별도다.",
       "tags": [
         "combat",
         "animation",
@@ -2751,10 +2751,11 @@
         "cause": "Requested motor velocity is not resolved travel; attack fullbody priority suppresses lower gait. Increasing melee reach alone creates no traveling energy wave.",
         "contracts": "Input light4.2m/s with measured horizontal move_and_slide displacement; lower Hips/legs gait and Spine descendants attack. Heavy/charged physical LUT fullbody unchanged. Wave source-leading reach4.5/7.5m; initial overlap+earliest safe wallcast then swept convex target query; shared strike ledger; late wave cannot pause unrelated action.",
         "first_failures": "native002 observed early startup wave stealing close charged blade contact; use authored forward slash release fraction .65, retain original physical strict assertions. Thinwall collision reason was overwritten by fade cleanup; retain terminal reason. Test fixtures must synchronize actual physics and not assume process delta equals physics delta.",
-        "verification": "Final native006843checks/0fail/ERROR0 includes real Player input, actual Game reset/title/restore cancellation, wave lifecycle and existing regressions. Technical Compatibility raster confirms ALBEDO energy visibility. Final real Game take003/continuous audiovisual/hardware/AAA and publication pending at source snapshot; overall entry remains pending.",
+        "verification": "VERIFIED bounded functionality and finite prototype observation: native006843/0ERROR0; final take005900gameplayticks/928movieframes,exit0ERROR0,sourceunchanged,435light-layer rows,6wave contacts,charged targets5.335/5.800/7.009m,eachattack-target once. Native original input map and later equivalent shader square/testobserver deltas separate. Continuous direct watching/hearing/fullskin/hardware/AAA and publication remain unapproved at source checkpoint.",
         "transfer_rule": "Receiving projects start pending and choose own gait calibration, filtered bones, motor/range/shape/damage, query budget and actual visual acceptance. No project fixed values imported as universal defaults.",
-        "renderer_lesson": "A shader may compile without visual output. Actual Compatibility unshaded EMISSION-only wave invisible; official scene.glsl MODE_UNSHADED outputs albedo directly. Set ALBEDO and inspect real raster before expensive whole Game capture.",
-        "lifecycle_lesson": "A projectile owned by a reused live Player must cancel on encounter reset/title/inactive/restore epoch, while respecting declared survival across stagger and strike completion. Disable queries immediately before deferred deletion."
+        "renderer_lesson": "A shader may compile without visual output. Actual Compatibility unshaded EMISSION-only wave invisible; official scene.glsl MODE_UNSHADED outputs albedo directly. Set ALBEDO and inspect real raster before expensive whole Game capture. GLSLES3.00 §8.2 undefined negative-basepow has no evenexponent exception; preserve signed gaussian via q*q at3sites, technicalnative raster byte-identical after correction, actual final Web path separate.",
+        "lifecycle_lesson": "A projectile owned by a reused live Player must cancel on encounter reset/title/inactive/restore epoch, while respecting declared survival across stagger and strike completion. Disable queries immediately before deferred deletion.",
+        "observer_lesson": "Capture observer must validate an untyped stale collection slot before binding RuneEnemy typed variable; otherwise actual corpse deletion throws before the intended is_instance_valid guard and prevents completion. Successful complete take exercises this terminal path."
       },
       "sources": [
         "docs/LOCOMOTION_WAVE_SLICE.md",
@@ -2767,7 +2768,9 @@
         "reusable/game-production-kit/skills/godot-web-production/SKILL.md",
         "docs/validation/v0.1.16/native-and-first-visual.json",
         "game/tests/wave_encounter_lifecycle_regressions.gd",
-        "game/tests/sword_wave_visual_review.gd"
+        "game/tests/sword_wave_visual_review.gd",
+        "docs/validation/v0.1.16/actual-game-final.json",
+        "docs/validation/v0.1.16/README.md"
       ]
     }
   ]

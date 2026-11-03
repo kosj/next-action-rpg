@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "status": "scripted_native_gameplay_captured_finite_prototype_visual_adopted",
+  "version": "0.1.16",
+  "scope": "Real main Game driven only by native input through normal UI; logical1x60Hz. Not human play, direct continuous watching/hearing, measured target hardwareFPS or AAA approval.",
+  "game_runtime_commit": "f0698ccdf5d4abbbb8ae39473545f58ff69028d1",
+  "capture_source_delta": "Inherited test-only observer validates untyped stale entries before typed RuneEnemy assignment; runtime code unchanged.",
+  "post_capture_shader_delta": "SignedY pow(x,2) replaced by x*x at3sites per official GLSLES; technicalraster003 PNG byte-identical to002. Geometry, physics, range and native appearance unchanged; final WebGL/CI remains separate.",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "quality": {
+    "index": 1,
+    "name": "performance",
+    "shadow_enabled": false,
+    "render_scale": 0.65
+  },
+  "display": [
+    960,
+    600
+  ],
+  "gameplay_frames": 900,
+  "tick_count": 924,
+  "native_exit": 0,
+  "engine_errors": 0,
+  "source_changes_during_take": [],
+  "coverage": {
+    "charged_observed": true,
+    "confirmed_wave_contacts": 6,
+    "moving_light_samples_by_held_key": {
+      "forward": 20,
+      "left": 188,
+      "right": 212
+    },
+    "normal_heavy_observed": true,
+    "scope": "Real normal-input observations only; no final art, hearing or target-hardware approval",
+    "wave_serials_observed": [
+      "3",
+      "4",
+      "6",
+      "9",
+      "17",
+      "21",
+      "24"
+    ]
+  },
+  "paired_pause_frames": 15,
+  "moving_attack_layer_rows": {
+    "light_1": 138,
+    "light_2": 129,
+    "light_3": 168
+  },
+  "gait_rows": {
+    "walk": 21,
+    "walk_left": 199,
+    "walk_right": 215
+  },
+  "max_snapshot_distance_error_m": 6.575713293321961e-09,
+  "wave_contacts": [
+    {
+      "attack_id": "light_3",
+      "attack_instance_id": 3,
+      "target_id": 133194322118,
+      "amount": 22.4,
+      "killed": false,
+      "point": [
+        -0.0854863077402115,
+        0.975838601589203,
+        -30.6136417388916
+      ],
+      "wave_travel_m": 3.46666666666667,
+      "wave_age_s": 0.216666666666667,
+      "observed_tick": 325,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 3.8507700739494726
+    },
+    {
+      "attack_id": "heavy",
+      "attack_instance_id": 4,
+      "target_id": 133194322118,
+      "amount": 29.4,
+      "killed": false,
+      "point": [
+        -0.178527101874352,
+        0.975838661193848,
+        -30.2835941314697
+      ],
+      "wave_travel_m": 2.66666666666667,
+      "wave_age_s": 0.166666666666667,
+      "observed_tick": 378,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 3.403095970363912
+    },
+    {
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 6,
+      "target_id": 133194322118,
+      "amount": 45.045,
+      "killed": true,
+      "point": [
+        2.7786545753479,
+        0.975838005542755,
+        -23.6858558654785
+      ],
+      "wave_travel_m": 4.5,
+      "wave_age_s": 0.25,
+      "observed_tick": 532,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 5.335091781459607
+    },
+    {
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 6,
+      "target_id": 138378482075,
+      "amount": 45.045,
+      "killed": false,
+      "point": [
+        3.67228531837463,
+        0.975838005542755,
+        -24.6058559417725
+      ],
+      "wave_travel_m": 5.1,
+      "wave_age_s": 0.283333333333333,
+      "observed_tick": 534,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 5.799962279326931
+    },
+    {
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 6,
+      "target_id": 140240753149,
+      "amount": 45.045,
+      "killed": false,
+      "point": [
+        2.41755151748657,
+        0.975838005542755,
+        -25.3787059783936
+      ],
+      "wave_travel_m": 6.3,
+      "wave_age_s": 0.35,
+      "observed_tick": 538,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 7.008750170214981
+    },
+    {
+      "attack_id": "light_3",
+      "attack_instance_id": 9,
+      "target_id": 140240753149,
+      "amount": 22.4,
+      "killed": false,
+      "point": [
+        2.07687902450562,
+        0.975838005542755,
+        -22.5961685180664
+      ],
+      "wave_travel_m": 2.93333333333333,
+      "wave_age_s": 0.183333333333333,
+      "observed_tick": 636,
+      "contact_source": "hurtbox_ray",
+      "source_to_target_node_horizontal_m": 3.786265713234819
+    }
+  ],
+  "max_same_attack_target_receipts": 1,
+  "inputs": {
+    "source_inventory": {
+      "bytes": 39132,
+      "sha256": "303ce8c805a0fc6e2dc08dff9ef8b5a3da05d8bc9072a65e3560f2d1dc4d1a14"
+    },
+    "trace": {
+      "bytes": 16071095,
+      "sha256": "2326ee3bdc51a568ea8945b3f25a30b0a3c263519cb6c3bf53c20ddc24a33957"
+    },
+    "config": {
+      "bytes": 939,
+      "sha256": "aa0d009f5a46ea2ee97f4cec2210e8b5207cb85902bc2a57a9b79d3407f6a5e9"
+    },
+    "engine_log": {
+      "bytes": 1978,
+      "sha256": "7acf5263b6176b2e8a026465e17232c9c1f596ebadcc5ba9b7a72e665e37f5bb"
+    },
+    "cleanup": {
+      "actual_audio_weakrefs_released": true,
+      "audio_stop_report": {
+        "epoch": 1,
+        "pending_playbacks": 0,
+        "players": 0,
+        "stopped": true
+      },
+      "scope": "Post-record resource release only; not audio-hearing approval"
+    }
+  },
+  "raw_movie": {
+    "bytes": 69321596,
+    "sha256": "e5af0c906a04ca66020a1b24e1d7188c38e79a80efb0d5c302e8bea1062ec60e",
+    "format": "MJPEG+enginePCM48kHzstereo",
+    "video_frames": 928,
+    "fps": 60,
+    "duration_s": 15.466666666666667,
+    "scope": "Contains900gameplayticks plus normalUI/cleanup; logical playback rate, not measured real-timeFPS"
+  },
+  "media": {
+    "08-light_2-first-active.png": {
+      "bytes": 741769,
+      "sha256": "6001ac08d2273bb15cd9d97e2e254a314acf8baf90ad0b2b5d7f27a5b1b427cf"
+    },
+    "stride-wave-01-live.png": {
+      "bytes": 752442,
+      "sha256": "97919bdd0f87961665c9e832e0757caf6f862659a7ba6ab1b8197c1aa940e98e"
+    },
+    "stride-wave-contact-03.png": {
+      "bytes": 654942,
+      "sha256": "22a2e9d201161e6dd4cc934cf066dfa7aa7d94bbbacd56bd64926289a2d38608"
+    },
+    "stride-03-final-ordinary-gameplay.png": {
+      "bytes": 717760,
+      "sha256": "1f8d3b53a6185458473cb6bfc749207080871286c83e9821e000e9e0d2a8eafa"
+    },
+    "moving-combat.mp4": {
+      "bytes": 6132538,
+      "sha256": "05b1ac02399e5b865f5eb4f702a7af435caed89e7e1a58806f641a7904808ab0"
+    },
+    "actual-leg-sequence.png": {
+      "bytes": 840299,
+      "sha256": "486934bcacce7938ebd7999d0d800b3fed5b088f1fcbb5fc919f26e051963758",
+      "scope": "Labelled crops from6original MJPEG frames, no pose/geometry/color retouch"
+    }
+  },
+  "visual_review": {
+    "root": "Viewed actual Game originals plus six labelled crops decoded from raw MJPEG and final charged-contact original decoded frame. Visible foot pose changes while moving light attacks and a distinct forward energy crescent. Finite observation only; no direct continuous watching/hearing.",
+    "peer": "Original8finitePNGs of earlier take003 same runtime/energy shader reviewed independently; L1/2/3 legposes distinguished and energy readable. Prototype-only adoption.",
+    "residuals": [
+      "Nearwave can still read as a short horizontal white band; crescentdepth/taper limited",
+      "Wide directional steps, recovery/hip/upperbody transitions and terrain footplant need continuous perception review",
+      "Full skin/AAA and target hardware remain unapproved"
+    ]
+  },
+  "historical_captures": {
+    "001": "Opaque cyan slab rejected and stopped beforecompletion",
+    "002": "Emission-only unshaded invisible, rejected beforecompletion",
+    "003": "Finitevisualadopted but inheritedobserver typedfreedtarget broke row recording/completion; not fullsuccess",
+    "004": "540px no-stretch native fixture made title control outsideviewport; rejected fixture, not mobile browser result",
+    "005": "Fresh960x600 +observerguard:900gameplayrows,exit0ERROR0,sourceimmutable"
+  },
+  "official_shader_contracts": [
+    "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/gles3/shaders/scene.glsl#L2775",
+    "https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf#page=94"
+  ],
+  "publication": "pending at source checkpoint",
+  "signed_square_raster_comparison": {
+    "before": "5e88b309a170ee98158112cdc7e0db02d7221dd7fb858fc63f475550e2deff71",
+    "after": "5e88b309a170ee98158112cdc7e0db02d7221dd7fb858fc63f475550e2deff71",
+    "byte_identical": true,
+    "scope": "Actual Compatibility technical fixture native image, not cross-renderer/hardware approval"
+  }
+}

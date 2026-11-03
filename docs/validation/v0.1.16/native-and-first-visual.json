@@ -75,7 +75,7 @@
     "failures": 0,
     "engine_errors": 0,
     "command": "GODOT_BIN=... python tools/build.py --test-only",
-    "source_freeze": "runtime-source-freeze.json",
+    "source_freeze": "runtime-source-freeze-native-006.json",
     "includes": "Actual separate Game reset/title/restore cancellation before further damage; inactive/epoch/bare owner fixtures; energy shader ALBEDO correction and union boundary visual mesh"
   },
   "failure_history": [
@@ -145,5 +145,8 @@
     "triangles_performance": 88,
     "geometry": "Duplicate internal rendering caps removed; identical outer hull, all physics prism points and source-leading ranges unchanged.",
     "remaining": "Fresh final actual normal-input Game take003, Web/mobile/Pages/release"
-  }
+  },
+  "current_source_freeze": "runtime-source-freeze.json",
+  "actual_game_final": "actual-game-final.json",
+  "post_native_math": "3signedY pow squares changed to multiplication per GLSLES; actual technical raster003 compiles and output PNG equals002 byte-for-byte. Geometry/physics unchanged. Clean committed CI remains separate."
 }

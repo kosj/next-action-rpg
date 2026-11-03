@@ -20,7 +20,8 @@ void fragment() {
 	float across = local_point.x * 2.0 / max(wave_width, 0.001);
 	float behind = max(0.0, local_point.z-curvature*across*across);
 	float edge = 1.0-smoothstep(0.72, 1.12, abs(across));
-	float vertical = exp(-pow(local_point.y/0.085, 2.0));
+	float vertical_y = local_point.y/0.085;
+	float vertical = exp(-(vertical_y*vertical_y));
 	float flow = sin(local_point.x*20.0+behind*49.0-wave_age*22.0
 		+sin(local_point.x*11.0+wave_age*9.0)*0.8);
 	float wisp = pow(0.5+0.5*flow, 3.0);
@@ -32,8 +33,9 @@ void fragment() {
 		// The visible volume has soft height/depth edges. Its rear face is
 		// deliberately faint, so it reads as flowing energy rather than a slab.
 		float front = exp(-behind*13.0);
+		float narrow_y = local_point.y/0.045;
 		float narrow_core = exp(-pow(behind/0.038, 2.0))
-			*exp(-pow(local_point.y/0.045, 2.0));
+			*exp(-(narrow_y*narrow_y));
 		opacity = (0.035+front*0.30)*vertical*edge*(0.65+0.35*wisp);
 		energy = mix(cyan, white, narrow_core*0.8)*1.25;
 	} else if (energy_layer == 1) {
@@ -41,7 +43,8 @@ void fragment() {
 		// Additive, non-depth-writing surfaces expose it through the volume
 		// without moving a vertex in front of the authoritative leading limit.
 		float core = exp(-pow(behind/0.043, 2.0));
-		float core_height = exp(-pow(local_point.y/0.032, 2.0));
+		float core_y = local_point.y/0.032;
+		float core_height = exp(-(core_y*core_y));
 		opacity = core*core_height*edge*(0.75+0.15*wisp);
 		energy = mix(vec3(0.32, 0.88, 1.0), white, core)*2.1;
 	} else {
