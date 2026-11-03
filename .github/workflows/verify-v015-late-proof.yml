@@ -45,7 +45,7 @@ jobs:
           assert len(inputs)==len(set(inputs))==108
           source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in inputs}
           def read_member(z,name):
-              hits=[n for n in z.namelist() if n==name or n.endswith("/"+name)]
+              hits=[n for n in z.namelist() if n==name]
               assert len(hits)==1,(name,hits)
               return json.loads(z.read(hits[0]))
           def check_helper(h):
