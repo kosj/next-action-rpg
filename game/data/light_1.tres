@@ -4,3 +4,7 @@
 script = ExtResource("1")
 title = "초승 베기"
 damage = 18.0
+phase_lunge = true
+startup_lunge = 0.0
+active_lunge = 2.6
+recovery_lunge = 0.0

@@ -2727,6 +2727,43 @@
         "docs/validation/v0.1.15/native-and-preview-skillfix-003.json",
         "game/tests/combat_regressions.gd"
       ]
+    },
+    {
+      "id": "resolved-stride-upper-attack-and-traveling-wave",
+      "kind": "workflow",
+      "status": "pending",
+      "title": "이동 공격은 실제 변위 기반 하체 보행과 상체 공격을 분리하고 검기는 보이는 진행체로 판정한다",
+      "summary": "공격 motor가 방향 입력을 전진 lunge로 치환하고 전신 공격 clip이 보행보다 우선한 원인을 확인했다. 실제 변위 보행과 상체 필터, 공유 타격 ledger를 가진 전진 검기를 연결했다. 최종 기능·시각·배포 검증은 이 항목의 근거에서 범위별로 확인한다.",
+      "tags": [
+        "combat",
+        "animation",
+        "locomotion",
+        "projectile",
+        "physics",
+        "이동",
+        "공격",
+        "검기",
+        "재사용"
+      ],
+      "checked_on": "2026-11-03",
+      "context": {
+        "source_version": "0.1.16",
+        "cause": "Requested motor velocity is not resolved travel; attack fullbody priority suppresses lower gait. Increasing melee reach alone creates no traveling energy wave.",
+        "contracts": "Input light4.2m/s with measured horizontal move_and_slide displacement; lower Hips/legs gait and Spine descendants attack. Heavy/charged physical LUT fullbody unchanged. Wave source-leading reach4.5/7.5m; initial overlap+earliest safe wallcast then swept convex target query; shared strike ledger; late wave cannot pause unrelated action.",
+        "first_failures": "native002 observed early startup wave stealing close charged blade contact; use authored forward slash release fraction .65, retain original physical strict assertions. Thinwall collision reason was overwritten by fade cleanup; retain terminal reason. Test fixtures must synchronize actual physics and not assume process delta equals physics delta.",
+        "verification": "native003797/1; native004 realPlayer input/wall/launch/latepause branch passed, existing moving-heal fixture still failed and was repaired. Final native pending. Actual1x capture running; continuous visual/hearing/hardware/AAA pending.",
+        "transfer_rule": "Receiving projects start pending and choose own gait calibration, filtered bones, motor/range/shape/damage, query budget and actual visual acceptance. No project fixed values imported as universal defaults."
+      },
+      "sources": [
+        "docs/LOCOMOTION_WAVE_SLICE.md",
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/skeletal_visual_bridge.gd",
+        "game/scripts/world/sword_wave.gd",
+        "game/tests/player_stride_wave_regressions.gd",
+        "game/tests/moving_attack_regressions.gd",
+        "game/tests/sword_wave_regressions.gd",
+        "reusable/game-production-kit/skills/godot-web-production/SKILL.md"
+      ]
     }
   ]
 }

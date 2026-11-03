@@ -6,3 +6,7 @@ title = "반월 베기"
 damage = 22.0
 arc = 150.0
 lunge = 4.5
+phase_lunge = true
+startup_lunge = 0.0
+active_lunge = 2.6
+recovery_lunge = 0.0

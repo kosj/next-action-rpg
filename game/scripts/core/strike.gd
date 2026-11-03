@@ -11,6 +11,7 @@ var elapsed: float = 0.0
 var hit_ids: Dictionary = {}
 var previous_origin: Vector3
 var started: bool = false
+var wave_emitted: bool = false
 var multiplier: float = 1.0
 var presentation_id: StringName
 var curve_failure_reported: bool = false

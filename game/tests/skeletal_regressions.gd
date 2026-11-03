@@ -156,6 +156,13 @@ static func run(world: Node3D, check: Callable) -> bool:
 	check.call(await _full_presentation_checks(world, check), "Directional and full-action skeletal presentation checks complete")
 	return true
 
+static func _fixture_motion(player: RunePlayer, velocity: Vector3, delta: float = 0.0) -> void:
+	# This fixture samples presentation directly with physics disabled. Supply
+	# resolved inputs explicitly; actual motor/collision wiring has its own suite.
+	player.velocity = velocity
+	player.resolved_velocity = Vector3(velocity.x, 0.0, velocity.z)
+	player.movement_distance = player.resolved_velocity.length() * delta
+
 static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 	var extras: Array[StringName] = [&"heavy", &"charge", &"skill_1", &"skill_2", &"skill_3", &"death", &"heal", &"walk_back", &"walk_left", &"walk_right"]
 	var states: Array[StringName] = SkeletalVisualBridge.REQUIRED_STATES.duplicate()
@@ -185,14 +192,14 @@ static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 		check.call(bridge.selected_state == &"dodge" and rig_forward.normalized().dot(direction) > 0.999, "Dodge rig faces the actual %s burst direction" % str(direction))
 		check.call(player.global_transform == actor_transform and player.facing == Vector3.FORWARD, "Directional dodge presentation cannot rotate or translate the gameplay actor")
 	player.dodge_time = 0.0
-	player.velocity = Vector3.ZERO
+	_fixture_motion(player, Vector3.ZERO)
 	player.visual.pose(0.0, 0.0, -1.0, false, false, false, player.presentation_snapshot())
 	check.call((bridge.rig.basis * Vector3.BACK).dot(Vector3.FORWARD) > 0.999, "Leaving dodge restores the normal rig facing before the next state")
 	for spec in [[Vector3.FORWARD, 6.4, &"walk"], [Vector3.BACK, 6.4, &"walk_back"], [Vector3.LEFT, 6.4, &"walk_left"], [Vector3.RIGHT, 6.4, &"walk_right"], [Vector3.FORWARD, 8.5, &"run"], [Vector3.RIGHT, 8.5, &"walk_right"], [Vector3(1,0,-1), 6.4, &"walk"], [Vector3(1,0,1), 6.4, &"walk_back"]]:
-		player.velocity = spec[0].normalized() * float(spec[1])
+		_fixture_motion(player, spec[0].normalized() * float(spec[1]), 0.1)
 		var before := player.velocity
 		player.visual.pose(0.1, float(spec[1]), -1.0, false, false, false, player.presentation_snapshot())
-		check.call(bridge.selected_state == spec[2] and player.velocity == before and player.facing == Vector3.FORWARD, "Lock-on locomotion %s selects %s without changing movement or facing" % [str(spec[0]), String(spec[2])])
+		check.call(bridge.selected_state == spec[2] and player.velocity == before and player.resolved_velocity == before and is_equal_approx(player.movement_distance, float(spec[1]) * 0.1) and player.facing == Vector3.FORWARD, "Lock-on locomotion %s selects %s without changing requested/resolved movement or facing" % [str(spec[0]), String(spec[2])])
 	bridge.reset_presentation(player.presentation_epoch)
 	bridge.present(0.1, {"speed":8.5, "move_local_x":1.0, "move_local_z":0.0})
 	check.call(bridge.selected_state == &"walk_right" and is_equal_approx(bridge.sampled_time, 0.1328125), "Side sprint scales the authored 6.4m/s directional cycle instead of playing forward run")
@@ -205,13 +212,15 @@ static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 	check.call(bridge.selected_state == &"idle" and is_finite(bridge.sampled_time), "A zero direction at rest remains a finite idle pose")
 	check.call(not bridge.present(0.1, {"speed":6.4, "move_local_x":NAN, "move_local_z":-1.0}) and not bridge.present(0.1, {"speed":0.0, "dodge_remaining":0.1, "dodge_local_x":INF}), "Non-finite motion directions fail without applying a non-finite rig transform")
 	player.facing = Vector3.RIGHT
-	player.velocity = Vector3.BACK * 6.4
+	_fixture_motion(player, Vector3.BACK * 6.4, 0.1)
 	var snapshot := player.presentation_snapshot()
 	check.call(is_equal_approx(snapshot.move_local_x, 1.0) and is_zero_approx(snapshot.move_local_z), "Movement snapshots use actual facing rather than a fixed world axis")
 	snapshot.move_local_x = -99.0
-	check.call(player.velocity == Vector3.BACK * 6.4 and player.facing == Vector3.RIGHT, "Editing direction snapshot values cannot mutate actor authority")
+	snapshot.speed = -99.0
+	snapshot.movement_distance = -99.0
+	check.call(player.velocity == Vector3.BACK * 6.4 and player.resolved_velocity == Vector3.BACK * 6.4 and is_equal_approx(player.movement_distance, 0.64) and player.facing == Vector3.RIGHT, "Editing direction, speed and distance snapshot values cannot mutate actor authority or its resolved presentation inputs")
 	player.facing = Vector3.FORWARD
-	player.velocity = Vector3.ZERO
+	_fixture_motion(player, Vector3.ZERO)
 	player.heavy_held = 0.325
 	Input.action_press("heavy")
 	player.visual.pose(0.0, 0.0, -1.0, false, false, false, player.presentation_snapshot())
@@ -219,15 +228,31 @@ static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 	player.heavy_held = 1.3
 	player.visual.pose(0.0, 0.0, -1.0, false, false, false, player.presentation_snapshot())
 	check.call(bridge.selected_state == &"charge" and is_equal_approx(bridge.sampled_time, 1.0) and is_equal_approx(player.heavy_held, 1.3), "A ready charge holds its final pose without looping or changing heavy power time")
-	player.velocity = Vector3.BACK * 6.4
+	_fixture_motion(player, Vector3.BACK * 6.4, 0.1)
 	player.visual.pose(0.1, 6.4, -1.0, false, false, false, player.presentation_snapshot())
 	check.call(bridge.selected_state == &"walk_back" and player.presentation_snapshot().charge_active, "Moving charge preserves directional footsteps while charging continues")
 	Input.action_release("heavy")
 	await world.get_tree().physics_frame
 	await world.get_tree().physics_frame
-	player.velocity = Vector3.ZERO
+	_fixture_motion(player, Vector3.ZERO)
 	player.visual.pose(0.0, 0.0, -1.0, false, false, false, player.presentation_snapshot())
 	check.call(bridge.selected_state == &"idle" and not player.presentation_snapshot().charge_active, "Released heavy input cannot leave a stale charge pose")
+	# The following checks exercise real movement, unlike the direct-pose
+	# fixtures above. Give this isolated player an unblocked collision floor.
+	var heal_floor := StaticBody3D.new()
+	heal_floor.collision_layer = 1
+	var floor_collision := CollisionShape3D.new()
+	var floor_box := BoxShape3D.new()
+	floor_box.size = Vector3(10.0, 1.0, 10.0)
+	floor_collision.shape = floor_box
+	heal_floor.add_child(floor_collision)
+	world.add_child(heal_floor)
+	heal_floor.global_position = actor_transform.origin - Vector3(0.0, 0.5, 0.0)
+	player.collision_mask = 1
+	# The production capsule bottom is 0.025m above the actor origin.
+	player.global_position = actor_transform.origin - Vector3(0.0, 0.025, 0.0)
+	await world.get_tree().physics_frame
+	await world.get_tree().physics_frame
 	player.health = player.max_health * 0.25
 	player.potions = 3
 	player.hit_pause = 0.0
@@ -238,9 +263,24 @@ static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 	await world.get_tree().process_frame
 	Input.action_press("heal")
 	Input.action_press("forward")
-	player._physics_process(1.0/60.0)
+	# move_and_slide chooses its delta from the real engine callback phase.
+	# Run this manual controller tick on the next physics boundary, after the
+	# input's physics edge becomes visible, rather than using a render delta.
+	await world.get_tree().physics_frame
+	var heal_origin := player.global_position
+	var movement_delta := player.get_physics_process_delta_time()
+	player._physics_process(movement_delta)
 	check.call(player.health > health_before and player.potions == 2 and player.velocity.z < -6.0 and player.strike == null, "Healing applies immediately and does not lock movement or start an attack")
-	check.call(bridge.selected_state == &"walk" and is_equal_approx(player.presentation_heal_remaining, 0.35), "Moving heal keeps locomotion and the existing instant potion effect")
+	var heal_displacement := player.global_position - heal_origin
+	heal_displacement.y = 0.0
+	var moving_heal_ok := bridge.selected_state == &"walk" and is_equal_approx(player.presentation_heal_remaining, 0.35)
+	moving_heal_ok = moving_heal_ok and player.is_on_floor() and heal_displacement.z < -0.05 and absf(heal_displacement.x) < 0.0001
+	moving_heal_ok = moving_heal_ok and is_equal_approx(player.movement_distance, heal_displacement.length()) and player.resolved_velocity.is_equal_approx(heal_displacement / movement_delta)
+	if not moving_heal_ok:
+		print("RUNEFALL_MOVING_HEAL_FAILURE: ", JSON.stringify({"state":bridge.selected_state, "timer":player.presentation_heal_remaining,
+			"on_floor":player.is_on_floor(), "displacement":str(heal_displacement), "distance":player.movement_distance,
+			"resolved_velocity":str(player.resolved_velocity), "physics_delta":movement_delta, "in_physics":Engine.is_in_physics_frame()}))
+	check.call(moving_heal_ok, "Moving heal keeps locomotion and the existing instant potion effect")
 	Input.action_release("heal")
 	Input.action_release("forward")
 	await world.get_tree().physics_frame
@@ -283,4 +323,5 @@ static func _full_presentation_checks(world: Node3D, check: Callable) -> bool:
 	check.call(is_equal_approx(enemy_snapshot.move_local_x, 1.0) and is_equal_approx(enemy_snapshot.locomotion_reference_speed, 3.6) and enemy.velocity == Vector3.BACK * 3.6, "Enemy snapshots expose facing-relative motion and the native walk reference without changing velocity")
 	enemy.free()
 	player.free()
+	heal_floor.free()
 	return true

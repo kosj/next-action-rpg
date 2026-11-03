@@ -6,6 +6,7 @@ signal died
 signal landed_hit(amount: float, position: Vector3)
 signal impact_confirmed(context: Dictionary)
 signal parried
+signal wave_requested(attack: CombatStrike, forward: Vector3)
 signal skill_effect(position: Vector3, radius: float, color: Color)
 
 const LIGHTS: Array[AttackData] = [preload("res://data/light_1.tres"), preload("res://data/light_2.tres"), preload("res://data/light_3.tres")]
@@ -43,6 +44,8 @@ var stagger: float = 0.0
 var presentation_death_elapsed: float = 0.0
 var presentation_heal_remaining: float = 0.0
 var presentation_epoch: int = 0
+var movement_distance: float = 0.0
+var resolved_velocity: Vector3 = Vector3.ZERO
 var world: Node3D
 
 func _ready() -> void:
@@ -98,6 +101,8 @@ func restore(point: Vector3) -> void:
 	locked_target = null
 	invulnerability = 1.0
 	velocity = Vector3.ZERO
+	resolved_velocity = Vector3.ZERO
+	movement_distance = 0.0
 	discard_ui_actions()
 
 func discard_ui_actions() -> void:
@@ -109,6 +114,8 @@ func discard_ui_actions() -> void:
 	ui_input_guard = 2
 
 func _physics_process(delta: float) -> void:
+	movement_distance = 0.0
+	resolved_velocity = Vector3.ZERO
 	if not active:
 		visual.pose(delta, 0)
 		return
@@ -167,13 +174,14 @@ func _physics_process(delta: float) -> void:
 	var strike_elapsed_before := strike.elapsed if strike != null else 0.0
 	if strike != null:
 		strike.step(delta, facing, 4)
+		_emit_sword_wave()
 		if hit_pause > 0.0:
 			# The hit was confirmed inside step(). Present that exact authoritative
 			# attack sample after resolving this tick's already-consumed movement.
 			# Hit stop freezes the following ticks, never discards phase travel.
 			var consumed_delta := clampf(strike.elapsed-strike_elapsed_before,0.0,delta)
-			var contact_lunge := strike.data.lunge_between(strike_elapsed_before,strike.elapsed) * consumed_delta / maxf(delta,0.000001)
-			_move_character(facing * contact_lunge, delta)
+			var contact_lunge := strike.data.lunge_between(strike_elapsed_before,strike.elapsed)
+			_move_character(_attack_motion(direction, contact_lunge) * consumed_delta / maxf(delta, 0.000001), delta)
 			# This is the one live sample at contact, not an editor seek. In
 			# particular the active blade ribbon must append before zero-delta stop.
 			visual.pose(consumed_delta, 0.0, -1.0, false, false, false, presentation_snapshot())
@@ -196,7 +204,7 @@ func _physics_process(delta: float) -> void:
 	var desired := direction * speed
 	if strike != null:
 		var lunge_speed := strike.data.lunge_between(strike_elapsed_before, strike.elapsed) if strike == stepped_strike else strike.data.lunge_at(strike.elapsed)
-		desired = facing * lunge_speed
+		desired = _attack_motion(direction, lunge_speed)
 	if dodge_time > 0.0:
 		desired = dodge_direction * 17.0
 	if stagger > 0.0 or parry_time > 0.0:
@@ -215,8 +223,24 @@ func _move_character(desired: Vector3, delta: float) -> void:
 	velocity.y -= 24.0 * delta
 	if is_on_floor():
 		velocity.y = -0.1
+	var before := global_position
 	move_and_slide()
+	var displacement := global_position-before
+	displacement.y = 0.0
+	movement_distance = displacement.length()
+	resolved_velocity = displacement / maxf(delta, 0.000001)
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1.0, delta * 18.0))
+
+func _attack_motion(direction: Vector3, lunge_speed: float) -> Vector3:
+	if strike != null and String(strike.presentation_id) in ["light_1", "light_2", "light_3"] and direction.length() > 0.1:
+		return direction.limit_length(1.0) * 4.2
+	return facing * lunge_speed
+
+func _emit_sword_wave() -> void:
+	if strike == null or strike.wave_emitted or strike.data.wave_range <= 0.0 or strike.elapsed < strike.data.startup + strike.data.active * strike.data.wave_release_fraction:
+		return
+	strike.wave_emitted = true
+	wave_requested.emit(strike, facing)
 
 func _buffer_attack_input(delta: float) -> void:
 	if TouchControls.action_just_pressed("light"):
@@ -255,10 +279,12 @@ func begin_attack(heavy: bool, chain: int) -> void:
 
 func presentation_snapshot(speed: float = -1.0) -> Dictionary:
 	# Fresh scalar values only: a renderer cannot mutate the strike or combat state.
-	var movement := SkeletalVisualBridge.local_direction(velocity, facing)
+	var movement := SkeletalVisualBridge.local_direction(resolved_velocity, facing)
 	var dodge_movement := SkeletalVisualBridge.local_direction(dodge_direction, facing)
 	return {
-		"speed":Vector2(velocity.x, velocity.z).length() if speed < 0.0 else speed,
+		"speed":resolved_velocity.length() if speed < 0.0 else speed,
+		"movement_distance":movement_distance,
+		"combat_locomotion":strike != null and String(strike.presentation_id) in ["light_1", "light_2", "light_3", "skill_1"],
 		"move_local_x":movement.x, "move_local_z":movement.y,
 		"dodge_local_x":dodge_movement.x, "dodge_local_z":dodge_movement.y,
 		"presentation_epoch":presentation_epoch,
@@ -284,8 +310,11 @@ func on_hit(amount: float, point: Vector3, context: Dictionary = {}) -> void:
 	rune = minf(max_rune, rune + 7.0 + Session.upgrades[2] * 1.5)
 	combo_hits += 1
 	combo_timeout = 3.0
-	hit_pause = maxf(hit_pause, float(context.get("hitstop", 0.035)))
-	hit_pause_started_frame = Engine.get_physics_frames()
+	# A launched projectile can outlive its swing. Its victim still reacts, but
+	# a late contact cannot freeze unrelated movement or the next attack.
+	if not bool(context.get("sword_wave", false)) or (strike != null and strike.attack_instance_id == int(context.get("attack_instance_id", 0))):
+		hit_pause = maxf(hit_pause, float(context.get("hitstop", 0.035)))
+		hit_pause_started_frame = Engine.get_physics_frames()
 	landed_hit.emit(amount, point)
 	if not context.is_empty():
 		impact_confirmed.emit(context.duplicate(true))

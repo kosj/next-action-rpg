@@ -25,3 +25,7 @@ blade_radius = 0.12
 blade_damage_start_fraction = 0.18
 blade_curve_path = "res://data/charged_blade_curve.json"
 blade_curve_sha256 = "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6"
+wave_range = 7.5
+wave_width = 2.4
+wave_speed = 18
+wave_damage_scale = 0.65

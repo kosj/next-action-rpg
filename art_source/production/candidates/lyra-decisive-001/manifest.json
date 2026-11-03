@@ -693,11 +693,11 @@
     },
     {
       "file": "game/data/heavy.tres",
-      "sha256": "d24d253b948edacbae0115f0474308ecb5df3a58630016481bf187870fff557c"
+      "sha256": "09a11040a9bdb891a9ce7aab4ec3d6d4b2d029c46e8dd4ed855ac19b3b14377b"
     },
     {
       "file": "game/data/charged_heavy.tres",
-      "sha256": "7aea294157978a1f70949eb7b5f2c7936006012449e5ff2a34b01d1da4d4ffd2"
+      "sha256": "026998f564bbe8064d430c319113c84c18c1068950cefa3bee0b607ffa52de33"
     }
   ],
   "runtime_installation": {
@@ -767,5 +767,11 @@
         "numeric_samples_and_other_bytes_unchanged_inverse_path_exact": true
       }
     ]
+  },
+  "runtime_extension_v016": {
+    "scope": "Only additive traveling-wave configuration on heavy resources; original model, curves, timing and phase motor unchanged",
+    "release_phase": 0.65,
+    "evidence": "docs/LOCOMOTION_WAVE_SLICE.md",
+    "validation": "pending actual Player/native and gameplay capture"
   }
 }

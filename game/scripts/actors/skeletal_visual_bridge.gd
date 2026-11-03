@@ -5,6 +5,7 @@ extends Node3D
 const REQUIRED_STATES: Array[StringName] = [&"idle", &"walk", &"run", &"dodge", &"light_1", &"light_2", &"light_3", &"parry", &"hit"]
 const LOOP_STATES: Array[StringName] = [&"idle", &"walk", &"run", &"walk_back", &"walk_left", &"walk_right", &"run_back", &"run_left", &"run_right"]
 const TRANSITION_SECONDS := 0.08
+const MOVING_ATTACK_STATES: Array[StringName] = [&"light_1", &"light_2", &"light_3", &"skill_1"]
 var animation_player: AnimationPlayer
 var animation_tree: AnimationTree
 var rig: Node3D
@@ -18,6 +19,12 @@ var _clip_node: AnimationNodeAnimation
 var _charge_clip_node: AnimationNodeAnimation
 var _charge_layer_active: bool = false
 var _charge_layer_time: float = 0.0
+var _combat_clip_node: AnimationNodeAnimation
+var _combat_attack_clip_node: AnimationNodeAnimation
+var _combat_layer_active: bool = false
+var _combat_layer_weight: float = 0.0
+var _combat_locomotion_state: StringName = &""
+var _combat_locomotion_time: float = 0.0
 var _skeleton: Skeleton3D
 var _base_rig_yaw: float = 0.0
 var _presentation_epoch: int = 0
@@ -71,7 +78,9 @@ func enable_transition_polish(enabled: bool = true) -> Dictionary:
 func transition_report() -> Dictionary:
 	return {"enabled":_transition_polish_enabled, "active":_blend_duration > 0.0,
 		"elapsed":_blend_elapsed, "duration":_blend_duration, "gait_phase":_gait_phase,
-		"charge_upper_body":_charge_layer_active,"charge_sampled_time":_charge_layer_time}
+		"charge_upper_body":_charge_layer_active,"charge_sampled_time":_charge_layer_time,
+		"combat_upper_body":_combat_layer_active, "combat_locomotion_state":_combat_locomotion_state,
+		"combat_locomotion_time":_combat_locomotion_time, "combat_layer_weight":_combat_layer_weight}
 
 func _complete_pose_error() -> String:
 	if not is_instance_valid(_skeleton) or animation_player == null:
@@ -186,6 +195,7 @@ func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: 
 	blend.add_node(&"Clip", _clip_node)
 	blend.add_node(&"Clock", seek)
 	blend.connect_node(&"Clock", 0, &"Clip")
+	var base_output: StringName = &"Clock"
 	if clips.has(&"charge") and _skeleton.find_bone("Spine") >= 0:
 		# Filter an independent charge clock onto Spine descendants only. Hips,
 		# Root and every leg/foot remain the current locomotion sample.
@@ -212,9 +222,40 @@ func mount_scene(scene: PackedScene, aliases: Dictionary = {}, required_states: 
 		blend.connect_node(&"ChargeClock", 0, &"ChargeClip")
 		blend.connect_node(&"ChargeUpper", 0, &"Clock")
 		blend.connect_node(&"ChargeUpper", 1, &"ChargeClock")
-		blend.connect_node(&"output", 0, &"ChargeUpper")
-	else:
-		blend.connect_node(&"output", 0, &"Clock")
+		base_output = &"ChargeUpper"
+	if _skeleton.find_bone("Spine") >= 0:
+		# The real directional gait owns Root/Hips/legs. Only the authored
+		# attack's Spine branch replaces the upper body; no second mixer or
+		# procedural bone motion competes with the existing playback owner.
+		_combat_clip_node = AnimationNodeAnimation.new()
+		_combat_clip_node.animation = clips[&"idle"]
+		_combat_attack_clip_node = AnimationNodeAnimation.new()
+		_combat_attack_clip_node.animation = clips[&"idle"]
+		var combat_clock := AnimationNodeTimeSeek.new()
+		var combat_attack_clock := AnimationNodeTimeSeek.new()
+		var combat_upper := AnimationNodeBlend2.new()
+		combat_upper.filter_enabled = true
+		for clip: StringName in clips.values():
+			var animation := animation_player.get_animation(clip)
+			for track in range(animation.get_track_count()):
+				var path := animation.track_get_path(track)
+				if path.get_subname_count() == 1 and _is_upper_bone(_skeleton.find_bone(path.get_subname(0))):
+					combat_upper.set_filter_path(path, true)
+		blend.add_node(&"CombatClip", _combat_clip_node)
+		blend.add_node(&"CombatClock", combat_clock)
+		blend.add_node(&"CombatAttackClip", _combat_attack_clip_node)
+		blend.add_node(&"CombatAttackClock", combat_attack_clock)
+		blend.add_node(&"CombatUpper", combat_upper)
+		var combat_output := AnimationNodeBlend2.new()
+		blend.add_node(&"CombatOutput", combat_output)
+		blend.connect_node(&"CombatClock", 0, &"CombatClip")
+		blend.connect_node(&"CombatAttackClock", 0, &"CombatAttackClip")
+		blend.connect_node(&"CombatUpper", 0, &"CombatClock")
+		blend.connect_node(&"CombatUpper", 1, &"CombatAttackClock")
+		blend.connect_node(&"CombatOutput", 0, base_output)
+		blend.connect_node(&"CombatOutput", 1, &"CombatUpper")
+		base_output = &"CombatOutput"
+	blend.connect_node(&"output", 0, base_output)
 	animation_tree.tree_root = blend
 	animation_tree.active = true
 	reset_presentation()
@@ -233,6 +274,15 @@ func reset_presentation(epoch: int = 0) -> void:
 	_clear_transition()
 	_charge_layer_active = false
 	_charge_layer_time = 0.0
+	_combat_layer_active = false
+	_combat_layer_weight = 0.0
+	_combat_locomotion_state = &""
+	_combat_locomotion_time = 0.0
+	if _combat_clip_node != null and animation_tree != null:
+		animation_tree.set("parameters/CombatUpper/blend_amount", 0.0)
+		animation_tree.set("parameters/CombatOutput/blend_amount", 0.0)
+		animation_tree.set("parameters/CombatClock/seek_request", 0.0)
+		animation_tree.set("parameters/CombatAttackClock/seek_request", 0.0)
 	if _charge_clip_node != null and animation_tree != null:
 		animation_tree.set("parameters/ChargeUpper/blend_amount", 0.0)
 		animation_tree.set("parameters/ChargeClock/seek_request", 0.0)
@@ -391,12 +441,33 @@ func _validate_tracks(player: AnimationPlayer, animation: Animation, boundary: N
 			return "Transform tracks must target visual Node3D transforms or skeleton bones: %s" % path
 	return ""
 
+func _directional_gait(direction: Vector2, running: bool = false) -> StringName:
+	# Exact diagonal ties choose forward/back, matching ordinary locomotion.
+	if absf(direction.x) > absf(direction.y):
+		return &"walk_right" if direction.x > 0.0 else &"walk_left"
+	if direction.y > 0.0:
+		return &"walk_back"
+	return &"run" if running else &"walk"
+
+func _gait_advance(delta: float, snapshot: Dictionary, speed: float, reference_speed: float) -> float:
+	# Distance is the controller's resolved horizontal displacement for this
+	# presentation tick. Zero-delta hit pause must not consume it again.
+	if delta <= 0.0:
+		return 0.0
+	if snapshot.has("movement_distance"):
+		return float(snapshot.movement_distance) / reference_speed
+	return delta * speed / reference_speed
+
 func present(delta: float, snapshot: Dictionary) -> bool:
 	if animation_tree == null:
 		return false
 	var speed := float(snapshot.get("speed", 0.0))
 	if not is_finite(speed) or not is_finite(delta):
 		last_error = "Presentation speed and delta must be finite"
+		return false
+	var movement_distance := float(snapshot.get("movement_distance", 0.0))
+	if not is_finite(movement_distance) or movement_distance < 0.0:
+		last_error = "Resolved movement distance must be finite and nonnegative"
 		return false
 	speed = maxf(0.0, speed)
 	var epoch := int(snapshot.get("presentation_epoch", _presentation_epoch))
@@ -433,7 +504,6 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		elapsed = float(snapshot.get("attack_elapsed", 0.0))
 		duration = float(snapshot.get("attack_duration", 0.0))
 	elif speed > 0.1:
-		state = &"run" if speed >= 7.4 else &"walk"
 		var direction := Vector2(float(snapshot.get("move_local_x", 0.0)), float(snapshot.get("move_local_z", -1.0)))
 		if not direction.is_finite():
 			last_error = "Locomotion direction must be finite"
@@ -441,10 +511,7 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		# Nearest cardinal axis, with exact diagonal ties choosing forward/back.
 		# Side/back sprint uses the authored directional walk cycle at its actual
 		# velocity ratio; it must never silently play the forward sprint cycle.
-		if absf(direction.x) > absf(direction.y):
-			state = &"walk_right" if direction.x > 0.0 else &"walk_left"
-		elif direction.y > 0.0:
-			state = &"walk_back"
+		state = _directional_gait(direction, speed >= 7.4)
 	elif bool(snapshot.get("charge_active", false)):
 		state = &"charge"
 		elapsed = float(snapshot.get("charge_elapsed", 0.0))
@@ -465,6 +532,33 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 	var previous_time := sampled_time
 	var state_changed := state != selected_state or next_clip != selected_clip
 	var previous_charge_time := _charge_layer_time
+	var held_attack := delta <= 0.0 and state == selected_state and duration > 0.0 and is_finite(elapsed) and is_finite(duration) and absf(clampf(elapsed / duration, 0.0, 1.0) * length - previous_time) <= 0.000001
+	var combat_allowed := _combat_clip_node != null and state in MOVING_ATTACK_STATES and bool(snapshot.get("combat_locomotion", false))
+	var combat_moving := combat_allowed and movement_distance > 0.000001
+	if not combat_allowed:
+		_combat_layer_weight = 0.0
+	elif not held_attack:
+		var target_weight := 1.0 if combat_moving else 0.0
+		var startup := float(snapshot.get("attack_startup", 0.0))
+		if not is_finite(startup):
+			last_error = "Moving attack startup must be finite"
+			return false
+		var ramp_seconds := minf(TRANSITION_SECONDS, startup - elapsed) if combat_moving and startup > elapsed else TRANSITION_SECONDS
+		_combat_layer_weight = target_weight if delta <= 0.0 else move_toward(_combat_layer_weight, target_weight, delta / ramp_seconds)
+	var combat_layer := combat_allowed and _combat_layer_weight > 0.0
+	var combat_layer_changed := combat_layer != _combat_layer_active
+	var previous_combat_time := _combat_locomotion_time
+	var previous_combat_state := _combat_locomotion_state
+	_combat_locomotion_state = &""
+	if combat_layer:
+		var direction := Vector2(float(snapshot.get("move_local_x", 0.0)), float(snapshot.get("move_local_z", -1.0)))
+		if not direction.is_finite():
+			last_error = "Moving attack direction must be finite"
+			return false
+		_combat_locomotion_state = previous_combat_state if (held_attack or not combat_moving) and not previous_combat_state.is_empty() else _directional_gait(direction)
+		if not clips.has(_combat_locomotion_state):
+			last_error = "No authored moving attack gait: %s" % _combat_locomotion_state
+			return false
 	var charge_layer := _charge_clip_node != null and state in LOOP_STATES and state != &"idle" and bool(snapshot.get("charge_active", false))
 	var charge_layer_changed := charge_layer != _charge_layer_active
 	if charge_layer:
@@ -482,7 +576,7 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		if not is_finite(reference_speed) or reference_speed <= 0.0:
 			last_error = "Locomotion reference speed must be finite and positive"
 			return false
-		var advance := maxf(delta, 0.0) * (1.0 if state == &"idle" else speed / reference_speed)
+		var advance := maxf(delta, 0.0) if state == &"idle" else _gait_advance(delta, snapshot, speed, reference_speed)
 		locomotion_clock += advance
 		if _transition_polish_enabled:
 			if state == &"idle":
@@ -502,6 +596,16 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 			last_error = "Action requires finite gameplay elapsed and duration: %s" % state
 			return false
 		sampled_time = clampf(elapsed / duration, 0.0, 1.0) * length
+	if combat_layer:
+		var gait_length := animation_player.get_animation(clips[_combat_locomotion_state]).length
+		var reference_speed := float(snapshot.get("locomotion_reference_speed", 6.4))
+		if not is_finite(reference_speed) or reference_speed <= 0.0:
+			last_error = "Moving attack reference speed must be finite and positive"
+			return false
+		var advance := _gait_advance(delta, snapshot, speed, reference_speed)
+		locomotion_clock += advance
+		_gait_phase = fposmod(_gait_phase + advance / gait_length, 1.0)
+		_combat_locomotion_time = _gait_phase * gait_length
 	if _transition_polish_enabled:
 		var attack := not String(snapshot.get("attack_id", "")).is_empty() and state == StringName(snapshot.attack_id)
 		var startup := float(snapshot.get("attack_startup", 0.0)) if attack else 0.0
@@ -512,10 +616,10 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 		var restarted := not state in LOOP_STATES and sampled_time < previous_time-0.000001
 		# Zero-delta changed samples are explicit audit/editor seeks. An unchanged
 		# zero-delta snapshot retains its exact blend weight and gait phase.
-		var exact_seek := delta <= 0.0 and (state_changed or absf(sampled_time-previous_time) > 0.000001 or charge_layer_changed or absf(_charge_layer_time-previous_charge_time) > 0.000001)
+		var exact_seek := delta <= 0.0 and (state_changed or absf(sampled_time-previous_time) > 0.000001 or charge_layer_changed or absf(_charge_layer_time-previous_charge_time) > 0.000001 or combat_layer_changed or absf(_combat_locomotion_time-previous_combat_time) > 0.000001)
 		if not _has_presented_pose or exact_seek or state in [&"hit", &"heavy_hit", &"dodge", &"parry", &"death"] or (attack and elapsed >= startup):
 			_clear_transition()
-		elif state_changed or restarted or charge_layer_changed:
+		elif state_changed or restarted or charge_layer_changed or combat_layer_changed:
 			if blend_duration > 0.0:
 				_capture_transition(blend_duration, charge_layer_changed and not state_changed and not restarted)
 			else:
@@ -523,12 +627,20 @@ func present(delta: float, snapshot: Dictionary) -> bool:
 	selected_state = state
 	selected_clip = next_clip
 	_charge_layer_active = charge_layer
+	_combat_layer_active = combat_layer
 	rig.rotation.y = _base_rig_yaw + visual_yaw
 	_clip_node.animation = selected_clip
 	animation_tree.set("parameters/Clock/seek_request", sampled_time)
 	if _charge_clip_node != null:
 		animation_tree.set("parameters/ChargeUpper/blend_amount", 1.0 if charge_layer else 0.0)
 		animation_tree.set("parameters/ChargeClock/seek_request", _charge_layer_time)
+	if _combat_clip_node != null:
+		_combat_clip_node.animation = clips[_combat_locomotion_state] if combat_layer else selected_clip
+		_combat_attack_clip_node.animation = selected_clip
+		animation_tree.set("parameters/CombatUpper/blend_amount", 1.0)
+		animation_tree.set("parameters/CombatOutput/blend_amount", _combat_layer_weight)
+		animation_tree.set("parameters/CombatClock/seek_request", _combat_locomotion_time if combat_layer else sampled_time)
+		animation_tree.set("parameters/CombatAttackClock/seek_request", sampled_time)
 	animation_tree.advance(0.0)
 	# AnimationTree remains the only playback owner and has sampled the exact
 	# gameplay target. This bounded visual blend changes no target clock, actor,

@@ -15,6 +15,11 @@ extends Resource
 @export var startup_lunge: float = 0.0
 @export var active_lunge: float = 0.0
 @export var recovery_lunge: float = 0.0
+@export_range(0.0, 1.0) var wave_release_fraction: float = 0.65
+@export var wave_range: float = 0.0
+@export var wave_width: float = 0.0
+@export var wave_speed: float = 0.0
+@export var wave_damage_scale: float = 0.0
 @export var impact_strength: String = ""
 @export var physical_blade_sweep: bool = false
 @export var blade_grip_start: Vector3 = Vector3.ZERO
