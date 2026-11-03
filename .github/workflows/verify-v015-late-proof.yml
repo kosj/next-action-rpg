@@ -1,0 +1,145 @@
+name: Verify v0.1.15 late browser evidence
+on:
+  push:
+    branches: ['verify/v0.1.15-delivery']
+    paths: ['.github/workflows/verify-v015-late-proof.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  strict_late:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416
+          lfs: false
+          persist-credentials: false
+      - name: Validate the exact original late browser records
+        run: |
+          python - <<'PY'
+          import ast,hashlib,json,math,os,re,subprocess,sys,zipfile,urllib.request
+          from pathlib import Path
+          ROOT=Path.cwd();MAIN="e7c9ee3cee76f6c3f2cfa6eaf0c4152e09b1f416";EXPECTED="0.1.15 · "+MAIN[:8]
+          assert subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()==MAIN
+          out=ROOT/"strict-late-proof";out.mkdir()
+          def api(path):
+              req=urllib.request.Request("https://api.github.com/repos/kosj/next-action-rpg/"+path,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json","User-Agent":"RUNEFALL-readonly-late-proof"})
+              with urllib.request.urlopen(req,timeout=60) as r:assert r.status==200;return json.load(r)
+          # Import the three exact pinned pure-data assertions without loading Playwright.
+          p=ROOT/"tools/browser_smoke.py";wanted={"assert_atmosphere_presentation","assert_hub_presentation","assert_quality_presentation"}
+          body=[n for n in ast.parse(p.read_text()).body if isinstance(n,ast.FunctionDef) and n.name in wanted]
+          assert {n.name for n in body}==wanted
+          ns={"__file__":str(p),"ROOT":ROOT,"Path":Path,"hashlib":hashlib,"math":math}
+          exec(compile(ast.Module(body=body,type_ignores=[]),str(p),"exec"),ns)
+          assert_hub_presentation=ns["assert_hub_presentation"];assert_quality_presentation=ns["assert_quality_presentation"]
+          module=ast.parse((ROOT/"tools/check_mobile_web.py").read_text())
+          inputs=next(ast.literal_eval(n.value) for n in ast.walk(module) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=="inputs" for t in n.targets))
+          for stem in ("lyra_fury_gameplay","erin_idle_gameplay","roen_idle_gameplay"):
+              files=sorted((ROOT/"game/assets/models/production").glob(stem+"_*.png"));assert len(files)==3
+              for f in files:inputs.extend([str(f.relative_to(ROOT)),str(f.relative_to(ROOT))+".import"])
+          inputs.extend(str(f.relative_to(ROOT)) for f in sorted((ROOT/"game/assets/audio/impact").glob("*.wav")))
+          assert len(inputs)==len(set(inputs))==108
+          source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in inputs}
+          def read_member(z,name):
+              hits=[n for n in z.namelist() if n==name or n.endswith("/"+name)]
+              assert len(hits)==1,(name,hits)
+              return json.loads(z.read(hits[0]))
+          def check_helper(h):
+              assert h["passed"] and h["browser_started"] and h["browser_closed"]
+              assert h["ui_timeout_ms"]==15000
+              assert h["helper_sha256"]==hashlib.sha256((ROOT/"tools/mobile_browser_smoke.py").read_bytes()).hexdigest()
+              for key in ("matched_terminal_retained_until_host_ack","expired_evidence_retained","received_previous_result_acknowledged","withheld_reply_reached_terminal","matched_but_withheld_reply_still_fails_deadline"):
+                  assert h[key] is True,key
+              n=h["negative_terminal"];assert n["terminal"]=="expired" and n["expired"] and "snapshot" not in n
+              assert n["poll_count"]>0 and 0<len(n["timeline"])<=64
+              w=h["matched_evidence_retained_after_host_timeout"]
+              assert w["terminal"]=="matched" and w["snapshot"]["physics_frame"]==3 and 0<len(w["timeline"])<=64
+              attempts=h["host_attempts"]
+              assert len(attempts)==3 and [a["outcome"] for a in attempts]==["matched","failed","failed"]
+              for a in attempts:
+                  assert a["timeout_ms"]==15000 and a["stage"]=="isolated_observer_test_double"
+                  assert [p["phase"] for p in a["host_phases"]][:5]==["arm_request","arm_response","gesture_request","gesture_response","result_request"]
+              assert all(a["exception_type"]=="TimeoutError" for a in attempts[1:])
+              return {"cases":3,"timeout_ms":15000,"browser_closed":True,"scope":"isolated observer only, not game/root-cause fix"}
+          def strict_mobile(z,label):
+              result=read_member(z,"mobile-result.json")
+              assert result["outcome"]=="passed" and result["phase"]=="full" and result["errors"]==[]
+              assert read_member(z,"mobile-errors.json")==[]
+              states=read_member(z,"mobile-states.json");assert states and all(s["build_id"]==EXPECTED for s in states.values())
+              restored=states["15-restarted-touch-controls"]
+              assert restored["quality"]==1 and restored["health"]==120 and restored["checkpoint"]==0 and abs(restored["z"]-6)<1
+              assert restored["touch"]["visible"] and not restored["touch"]["active_pointers"]
+              assert_hub_presentation(restored["lighting"])
+              quality=[s for k,s in states.items() if k.endswith("actual-lighting")]
+              assert [s["quality"] for s in quality]==[1,0,1,1]
+              for s in quality:assert_quality_presentation(s,s["quality"])
+              touch=read_member(z,"mobile-touch-observation.json")
+              assert touch["trusted"] and touch["max_points"]>=3
+              rasters=read_member(z,"mobile-raster.json");assert rasters and all(r["passes"] for r in rasters)
+              attempts=read_member(z,"mobile-action-attempts.json")
+              assert attempts and all(a["outcome"]=="matched" and a["timeout_ms"]==15000 and a["host_phases"][-1]["phase"]=="validated" for a in attempts)
+              storage=read_member(z,"mobile-storage-observation.json")
+              assert storage and [o["quality_expected"] for o in storage]==[1,0,1,1,1]
+              for o in storage:
+                  assert o["outcome"]=="matched" and o["timeout_ms"]==30000 and 0<=o["completed_ms"]<30000
+                  assert not o["python_wall_timeout"] and o["python_seconds"]<30
+                  a=o["attempts"][-1];assert a["within_budget"] and len(a["saves"])==1
+                  row=a["saves"][0];save=row["save"]
+                  assert row["path"].endswith("/runefall_v1.json")
+                  assert save["version"]==1 and save["journey_started"] is True and save["checkpoint"]==0 and save["settings"]["quality"]==o["quality_expected"]
+              report={"kind":label,"seconds":result["seconds"],"errors":[],"footer":restored["build_id"],"trusted_touch_points":touch["max_points"],"matched_actions":len(attempts),"action_timeout_ms":15000,"IDB_completed_ms":[o["completed_ms"] for o in storage],"IDB_python_seconds":[o["python_seconds"] for o in storage],"IDB_actual_qualities":[o["quality_expected"] for o in storage],"quality":[{"index":s["quality"],"render_scale":s["render_scale"],"key_shadow":s["lighting"]["key_shadow_enabled"],"fonts":s["lighting"]["hub"]["fonts"]} for s in quality],"restart":{k:restored[k] for k in ("quality","health","checkpoint","z")}}
+              if label=="tag-mobile":
+                  ctx=read_member(z,"mobile-export-context.json")
+                  assert "game/tests/combat_regressions.gd" in source_hashes and len(source_hashes)==108
+                  assert ctx["source_head"]==MAIN and not ctx["source_tree_dirty"] and ctx["source_sha256"]==source_hashes
+                  assert ctx["server_closed"] and ctx["export_bytes_unchanged"]
+                  report["source108_exact_main"]=True
+                  report["skill_fixture_sha256"]=source_hashes["game/tests/combat_regressions.gd"]
+                  report["isolated_helper"]=check_helper(read_member(z,"observer-helper/observer-proof.json"))
+              else:
+                  assert label=="public-mobile"
+                  report["source_scope"]="actual public footer/resources; source108 verified in separate tag wrapper"
+                  report["isolated_helper"]="absent by public-job design; separate tag helper verified"
+              return report
+          # Reuse the first actual release download proof, never download release binaries again.
+          first=out/"first-delivery.log"
+          with first.open("wb") as dst:subprocess.run(["gh","api","repos/kosj/next-action-rpg/actions/jobs/125763628058/logs"],stdout=dst,check=True)
+          row=next(l.split("RUNEFALL_DELIVERY_PROOF ",1)[1] for l in first.read_text().splitlines() if "RUNEFALL_DELIVERY_PROOF {" in l)
+          delivery=json.loads(row);assert delivery["status"]=="passed" and delivery["source_commit"]==MAIN
+          web=next(x for x in delivery["packaging"]["artifacts"] if x["file"]=="runefall-web.zip")
+          assert web["uncompressed_bytes"]<=150000000
+          assert len(delivery["downloads"])==3 and all(x["anonymous"] and x["default_TLS_verified"] and x["matches_API"] for x in delivery["downloads"])
+          proofs=[]
+          for label,artifact_id in [("tag-mobile",13208694243),("public-mobile",13209971930),("public-desktop",13208399594)]:
+              meta=api("actions/artifacts/"+str(artifact_id));target=out/(label+".zip")
+              with target.open("wb") as dst:subprocess.run(["gh","api","repos/kosj/next-action-rpg/actions/artifacts/"+str(artifact_id)+"/zip"],stdout=dst,check=True)
+              digest=hashlib.sha256(target.read_bytes()).hexdigest()
+              assert target.stat().st_size==meta["size_in_bytes"] and "sha256:"+digest==meta["digest"]
+              with zipfile.ZipFile(target) as z:
+                  assert z.testzip() is None
+                  assert all(not Path(n).is_absolute() and ".." not in Path(n).parts for n in z.namelist())
+                  if label!="public-desktop":r=strict_mobile(z,label)
+                  else:
+                      assert read_member(z,"browser-errors.json")==[]
+                      state=read_member(z,"browser-persistence.json")
+                      assert state["build_id"]==EXPECTED and state["quality"]==1 and state["health"]==120 and state["checkpoint"]==0 and abs(state["z"]-6)<1
+                      assert_hub_presentation(state["lighting"])
+                      quality=read_member(z,"browser-quality.json");assert set(quality)=={"performance","balanced","restored"}
+                      for name,index in [("performance",1),("balanced",0),("restored",1)]:assert_quality_presentation(quality[name],index)
+                      r={"kind":label,"errors":[],"footer":state["build_id"],"quality":[1,0,1],"hub_fonts":state["lighting"]["hub"]["fonts"],"restart":{k:state[k] for k in ("quality","health","checkpoint","z")}}
+                  r.update(artifact_id=artifact_id,bytes=target.stat().st_size,API_SHA256=digest,ZIP_CRC=True)
+                  proofs.append(r)
+          report={"status":"passed","source_commit":MAIN,"source_count":108,"release_download_run":41589792440,"release_binaries_downloaded_again":False,"release_proof_log_SHA256":hashlib.sha256(first.read_bytes()).hexdigest(),"raw_web_bytes":web["uncompressed_bytes"],"raw_web_headroom":150000000-web["uncompressed_bytes"],"actual_late_proofs":proofs,"scope":"Exact API SHA/CRC and pinned original assertions; helper3, trusted3touch, matched15s observers, actual30s IDB, quality/hub/fonts and restart. No new game/browser run, no timeout changes, no Windows OS/hearing/hardware/AAA approval."}
+          (out/"proof.json").write_text(json.dumps(report,ensure_ascii=False,indent=2))
+          print("RUNEFALL_STRICT_LATE_PROOF "+json.dumps(report,ensure_ascii=False))
+          
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v015-strict-late-proof
+          path: strict-late-proof/proof.json
