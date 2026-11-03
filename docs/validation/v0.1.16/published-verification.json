@@ -41,26 +41,43 @@
       "id": 41626199077,
       "number": 80,
       "url": "https://github.com/kosj/next-action-rpg/actions/runs/41626199077",
-      "status": "pending"
+      "status": "completed",
+      "conclusion": "failure"
     },
     "tag": {
       "id": 41626269271,
       "number": 81,
       "url": "https://github.com/kosj/next-action-rpg/actions/runs/41626269271",
-      "status": "pending"
+      "status": "completed",
+      "conclusion": "failure"
     }
   },
   "pages": {
     "url": "https://kosj.github.io/next-action-rpg/",
-    "status": "newversion_publication_and_actualbrowserverification_pending"
+    "status": "candidate_not_deployed_due_charged_QA_gate"
   },
   "release": {
     "url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.16",
-    "status": "workflow_validation_and_assets_pending"
+    "status": "candidate_not_released_due_charged_QA_gate"
   },
   "scope_limits": [
     "Finite prototype visual adoption; no direct continuous watching/hearing approval",
     "No terrainIK/fullskin/targethardware/AAA approval",
     "Windows export and downloaded binary integrity are separate from actual Windows device execution"
-  ]
+  ],
+  "status": "failed_candidate_not_published",
+  "failure": {
+    "kind": "observer_mixed_physical_and_wave_contracts",
+    "physical_amount": 69.3,
+    "wave_amount": 45.045,
+    "actual_same_attack_distinct_targets": true,
+    "evidence": "https://github.com/kosj/next-action-rpg/blob/951f314359685706a1db53a8f2351a26c4512222/docs/validation/v0.1.17/charged-observer-failure-and-fix.json",
+    "tag_not_moved": true
+  },
+  "successor": {
+    "version": "0.1.17",
+    "main_commit": "951f314359685706a1db53a8f2351a26c4512222",
+    "main_run": 41634233435,
+    "status": "new_corrected_live_validation_in_progress"
+  }
 }
