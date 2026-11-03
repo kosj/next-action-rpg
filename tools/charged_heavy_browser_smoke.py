@@ -46,7 +46,7 @@ CONTACT_TIMELINE_JS = """a => {
             if(row.rows.length>96)row.rows.shift();
             if(row.release_at!==undefined && !row.snapshot &&
                 s.impact.history.some(e=>e.sequence>a.count && e.source==='player' &&
-                    e.attack_id==='charged_heavy' && e.target_id===a.target) && enemy?.state==='heavy_hit'){
+                    e.attack_id==='charged_heavy' && e.sword_wave===false && e.target_id===a.target) && enemy?.state==='heavy_hit'){
                 row.snapshot=structuredClone(s);row.matched_at=now;
                 document.removeEventListener('touchend',released,true);return;
             }
@@ -141,6 +141,9 @@ def validate_sharp_contact(point,grip,tip):
 
 
 def validate_contact(event):
+    assert event.get('sword_wave') is False,event
+    assert event['curve_sha256']=='378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6',event
+    assert event['curve_source_sha256']=='9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f',event
     assert event['source']=='player' and event['attack_id']=='charged_heavy' and event['strength']=='charged',event
     assert event['attack_instance_id']>0 and event['target_id']>0,event
     assert not event['blocked'] and not event['killed'],event
@@ -173,6 +176,103 @@ def validate_contact(event):
         'query_sample_time_s':query_time,'packet_attack_elapsed_s':event['attack_elapsed'],**sharp}
 
 
+def validate_wave_contact(event, quality=None):
+    """Audit a fresh focused charged-wave receipt, never a blade sample."""
+    def number(field):
+        value=event[field]
+        assert type(value) in (int,float) and math.isfinite(value),(field,event)
+        return value
+    def vector(field):
+        value=event[field]
+        assert isinstance(value,list) and len(value)==3,(field,event)
+        assert all(type(v) in (int,float) and math.isfinite(v) for v in value),(field,event)
+        return value
+    def dot(a,b):
+        return sum(x*y for x,y in zip(a,b))
+    assert event['source']=='player' and event['attack_id']=='charged_heavy' and event['strength']=='charged',event
+    assert event['sword_wave'] is True,event
+    assert event['blocked'] is False and event['killed'] is False,event
+    assert event['material']=='metal' and event['contact_source'] in ('hurtbox_ray','hurtbox_proxy'),event
+    for field in ('attack_instance_id','target_id','sequence'):
+        value=number(field)
+        assert type(value) is int and 0<value<=2**53-1,(field,event)
+    amount=number('amount')
+    assert abs(amount-69.3*.65)<.001,event
+    before,after=number('health_before'),number('health_after')
+    assert before>after>0 and abs(before-after-amount)<.001,event
+    assert event['reaction']=='heavy_hit' and abs(number('reaction_duration')-.48)<.001,event
+    for field in ('hitstop','attacker_pause','victim_pause'):
+        assert abs(number(field)-.075)<.001,(field,event)
+    assert abs(number('requested_recoil_m')-.35)<.001,event
+    assert number('contact_phase')==-1 and number('damage_start_fraction')==0,event
+    assert event['curve_sha256']=='' and event['curve_source_sha256']=='',event
+    for field in ('contact_blade_grip','contact_blade_tip','contact_blade_motion',
+                  'contact_damage_base','contact_damage_tip',
+                  'contact_damage_axis_base','contact_damage_axis_tip'):
+        assert vector(field)==[0,0,0],(field,event)
+    elapsed=number('attack_elapsed')
+    assert .34+.18*.65-.0001<=elapsed<=1.06+1/60+.0001,event
+    forward=vector('direction')
+    assert abs(length(forward)-1)<.003 and abs(forward[1])<.00001,event
+    norm=length(forward);forward=[v/norm for v in forward]
+    right=[-forward[2],0,forward[0]]
+    assert abs(length(vector('normal'))-1)<.003,event
+    source,origin=vector('source_position'),vector('wave_origin')
+    vector('target_position')
+    expected=[v+.6*f+(1.05 if i==1 else 0) for i,(v,f) in enumerate(zip(source,forward))]
+    assert length([a-b for a,b in zip(origin,expected)])<.001,('wave launch offset',event)
+    first,last=number('wave_sweep_start_m'),number('wave_sweep_end_m')
+    travel,age=number('wave_travel_m'),number('wave_age_s')
+    assert 0<=first<=last<=7.5-.6+.00001,event
+    assert abs(travel-last)<.00001 and 0<age<=(7.5-.6)/18+.10+.05+.00001,event
+    assert last<=18*age+.00001,event
+    relative=[v-o for v,o in zip(vector('point'),origin)]
+    x,y,z=dot(relative,right),relative[1],-dot(relative,forward)
+    tolerance=.005
+    assert abs(x)<=1.2+tolerance,('wave width',x,event)
+    assert abs(y)<=.11+tolerance,('wave height',y,event)
+    assert quality is None or type(quality) is int and quality in (0,1),quality
+    counts=(8,6) if quality is None else ((8,) if quality==0 else (6,))
+    matched=[]
+    for count in counts:
+        for index in range(count):
+            left=2.4*(index/count-.5);right_edge=2.4*((index+1)/count-.5)
+            if not left-tolerance<=x<=right_edge+tolerance:continue
+            sample_x=max(left,min(right_edge,x))
+            a=.34*(2*left/2.4)**2;b=.34*(2*right_edge/2.4)**2
+            front=a+(b-a)*(sample_x-left)/(right_edge-left)
+            if front-last-tolerance<=z<=front+.24-first+tolerance:
+                matched.append(count);break
+    assert matched,('contact outside rendered crescent swept prisms',x,y,z,event)
+    return {'sequence':event['sequence'],'attack_instance_id':event['attack_instance_id'],
+        'target_id':event['target_id'],'damage':amount,'wave_local_point_m':[x,y,z],
+        'wave_sweep_start_m':first,'wave_sweep_end_m':last,'wave_age_s':age,
+        'matching_segment_counts':matched,'source_to_spawn_offset_m':.6,
+        'wave_width_m':2.4,'wave_height_m':.22,'maximum_center_travel_m':6.9}
+
+
+def validate_charged_events(events, quality, target_id=None):
+    """Audit both mechanisms together before returning their separate proofs."""
+    assert events and type(quality) is int and quality in (0,1),(quality,events)
+    for event in events:
+        assert event['source']=='player' and event['attack_id']=='charged_heavy',event
+        assert isinstance(event.get('sword_wave'),bool),event
+        for field in ('attack_instance_id','target_id'):
+            assert type(event[field]) is int and 0<event[field]<=2**53-1,(field,event)
+    serials={e['attack_instance_id'] for e in events}
+    assert len(serials)==1,('multiple charged strikes',events)
+    pairs=[(e['attack_instance_id'],e['target_id']) for e in events]
+    assert len(pairs)==len(set(pairs)),('duplicate same-strike target impact',events)
+    physical=[e for e in events if e['sword_wave'] is False]
+    waves=[e for e in events if e['sword_wave'] is True]
+    assert physical,('charged slice requires physical blade contact',events)
+    if target_id is not None:
+        assert any(e['target_id']==target_id for e in physical),('selected target requires physical blade contact',target_id,events)
+    return {'physical':physical,'waves':waves,'physical_checks':[validate_contact(e) for e in physical],
+        'wave_checks':[validate_wave_contact(e,quality) for e in waves],
+        'attack_instance_id':next(iter(serials)),'pairs':pairs}
+
+
 def validate_frozen_contact(snapshot):
     # An observer may copy a later frame after the brief hitstop. Packet
     # clocks are always checked above; this additionally audits a genuinely
@@ -183,7 +283,17 @@ def validate_frozen_contact(snapshot):
     events=[event for event in snapshot['impact']['history'] if event['source']=='player'
         and event['attack_id']=='charged_heavy' and event['attack_instance_id']==attack['attack_instance_id']]
     assert events,('frozen strike has no matching confirmed receipt',snapshot)
-    event=max(events,key=lambda item:item['sequence'])
+    physical=[e for e in events if e.get('sword_wave') is False and abs(attack['attack_elapsed']-e['attack_elapsed'])<.001]
+    if not physical:
+        waves=[e for e in events if e.get('sword_wave') is True and abs(attack['attack_elapsed']-e['attack_elapsed'])<.001]
+        assert waves,('frozen strike has no clock-matched physical or wave receipt',snapshot)
+        art=snapshot['hero_art']
+        assert art['state']=='charged_heavy' and abs(art['sampled_time']-attack['attack_elapsed'])<.001,(art,attack)
+        for event in waves:validate_wave_contact(event,snapshot['quality'])
+        return {'observed':False,'reason':'snapshot at wave contact clock, not physical blade contact clock',
+            'attack_instance_id':attack['attack_instance_id'],'gameplay_attack_elapsed_s':attack['attack_elapsed'],
+            'wave_sequences':[e['sequence'] for e in waves]}
+    event=max(physical,key=lambda item:item['sequence'])
     art=snapshot['hero_art']
     assert art['state']=='charged_heavy',art
     assert abs(attack['attack_elapsed']-event['attack_elapsed'])<.001,(attack,event)
@@ -302,7 +412,8 @@ async def run(url,output,phase='charged-heavy-focus',rotation_driver='playwright
                     victim=next(e for e in contact['enemy_art'] if e['id']==target_id)
                     assert victim['mode']=='skeletal' and victim['profile']=='sentinel_melee',victim
                     assert victim['weapon_attached'] and abs(victim['grip_to_tip_m']-1.19)<.003,victim
-                    checks=[validate_contact(event) for event in events]
+                    contact_checks=validate_charged_events(events,contact['quality'],target_id)
+                    checks=contact_checks['physical_checks']
                     frozen_contact=validate_frozen_contact(contact)
                     await qa.record('charged-heavy-contact',status=contact)
                     await qa.idle()
@@ -319,19 +430,24 @@ async def run(url,output,phase='charged-heavy-focus',rotation_driver='playwright
                     assert len({event['attack_instance_id'] for event in charged_events})==1,charged_events
                     assert final['impact']['count']-count==len(new_events),final
                     assert final['impact']['spawn_count']-spawns==len(new_events),final
-                    for event in charged_events:validate_contact(event)
+                    final_checks=validate_charged_events(charged_events,final['quality'],target_id)
+                    assert final_checks['attack_instance_id']==contact_checks['attack_instance_id'],(contact_checks,final_checks)
                     await qa.record('charged-heavy-contact-paused',screenshot=True,status=final)
                     observation=await qa.page.evaluate('structuredClone(window.__RUNEFALL_MOBILE_TOUCH_OBS)')
                     assert observation['trusted'] and observation['max_points']>=2,observation
                     assert not qa.errors,qa.errors
                     qa.write('charged-heavy-proof.json',{'scope':'Actual input/cumulative confirmed receipts and skeletal reaction; screenshots may follow the sampled short impact. No normal-speed audiovisual/AAA approval.',
                         'whiff_baseline':list(baseline),'whiff_after':[after['impact']['count'],after['impact']['spawn_count']],
-                        'contact_snapshot':contact,'contact_events':charged_events,'physical_sample_checks':checks,
+                        'contact_snapshot':contact,'contact_events':final_checks['physical'],
+                        'all_charged_events':charged_events,'wave_contact_events':final_checks['waves'],
+                        'initial_physical_sample_checks':checks,'physical_sample_checks':final_checks['physical_checks'],
+                        'wave_sample_checks':final_checks['wave_checks'],'wave_observed':bool(final_checks['waves']),
+                        'selected_target_id':target_id,'selected_attack_instance_id':final_checks['attack_instance_id'],
                         'frozen_contact_check':frozen_contact,
                         'resolved_recoil_horizontal_m':recoil,'final':final,'touch_observation':observation})
                     qa.mark('charged_heavy_completed')
                     qa.write('charged-heavy-result.json',{'outcome':'charged_heavy_focused_passed','seconds':round(time.monotonic()-qa.started,3),'errors':qa.errors,
-                        'scope':'Actual charged whiff/no burst, first encounter charged contact, once per strike-target,69.3 damage/heavy_hit/.075 both-hitstop/collision recoil only; not full workflow or AAA audiovisual approval'})
+                        'scope':'Actual charged whiff/no burst, first encounter charged contact, shared strike-target ledger,physical69.3 with exact blade curve,observed waves45.045 with swept crescent geometry,heavy_hit/.075 hitstop/collision recoil; not full workflow or AAA audiovisual approval'})
                 except Exception:
                     await save_contact_timeline(qa)
                     await qa.failure();raise

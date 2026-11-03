@@ -1,0 +1,299 @@
+{
+  "scope": "Sanitized exact confirmed contact receipts from the failed main charged focus; no browser state, identities, paths or credentials.",
+  "source_commit": "9a1e9dc77a3929cd2ee07e6203e913026a59b1a8",
+  "quality": 0,
+  "target_id": 153125654581,
+  "events": [
+    {
+      "amount": 69.3,
+      "attack_elapsed": 0.387,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 5,
+      "attacker_pause": 0.075,
+      "blocked": false,
+      "contact_blade_grip": [
+        0.0234951600432396,
+        1.54691231250763,
+        -24.8620414733887
+      ],
+      "contact_blade_motion": [
+        -0.995170533657074,
+        -5.05981969833374,
+        -11.6171445846558
+      ],
+      "contact_blade_tip": [
+        0.759899616241455,
+        2.40023469924927,
+        -25.2425899505615
+      ],
+      "contact_damage_axis_base": [
+        0.230329066514969,
+        1.78658497333527,
+        -24.9689254760742
+      ],
+      "contact_damage_axis_tip": [
+        0.68561851978302,
+        2.31416010856628,
+        -25.2042045593262
+      ],
+      "contact_damage_base": [
+        0.156047970056534,
+        1.70051038265228,
+        -24.9305400848389
+      ],
+      "contact_damage_tip": [
+        0.759899616241455,
+        2.40023469924927,
+        -25.2425899505615
+      ],
+      "contact_phase": 0.261111111111111,
+      "contact_source": "hurtbox_ray",
+      "curve_sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+      "curve_source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+      "damage_start_fraction": 0.18,
+      "direction": [
+        -2.33734772336902e-05,
+        0,
+        -1
+      ],
+      "health_after": 25.7,
+      "health_before": 95,
+      "hitstop": 0.075,
+      "killed": false,
+      "material": "metal",
+      "normal": [
+        0.45342755317688,
+        0.46574741601944,
+        0.759922921657562
+      ],
+      "point": [
+        0.181352883577347,
+        1.73627805709839,
+        -25.0510082244873
+      ],
+      "poise_broken": true,
+      "reaction": "heavy_hit",
+      "reaction_duration": 0.48,
+      "requested_recoil_m": 0.35,
+      "sequence": 1,
+      "source": "player",
+      "source_position": [
+        -2.31474963641176e-08,
+        -0.0250852927565575,
+        -24.580057144165
+      ],
+      "strength": "charged",
+      "sword_wave": false,
+      "target_id": 153125654581,
+      "target_position": [
+        -1.81357099791057e-05,
+        -2.09334248211235e-05,
+        -25.3549766540527
+      ],
+      "victim_pause": 0.075,
+      "wave_age_s": 0,
+      "wave_origin": [
+        0,
+        0,
+        0
+      ],
+      "wave_sweep_end_m": 0,
+      "wave_sweep_start_m": 0,
+      "wave_travel_m": 0
+    },
+    {
+      "amount": 45.045,
+      "attack_elapsed": 0.537,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 5,
+      "attacker_pause": 0.075,
+      "blocked": false,
+      "contact_blade_grip": [
+        0,
+        0,
+        0
+      ],
+      "contact_blade_motion": [
+        0,
+        0,
+        0
+      ],
+      "contact_blade_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_axis_base": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_axis_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_base": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_phase": -1,
+      "contact_source": "hurtbox_ray",
+      "curve_sha256": "",
+      "curve_source_sha256": "",
+      "damage_start_fraction": 0,
+      "direction": [
+        -7.23359221410647e-07,
+        0,
+        -1
+      ],
+      "health_after": 49.955,
+      "health_before": 95,
+      "hitstop": 0.075,
+      "killed": false,
+      "material": "metal",
+      "normal": [
+        0.0116063850000501,
+        0,
+        0.999932646751404
+      ],
+      "point": [
+        -0.91347348690033,
+        0.97583794593811,
+        -26.2588863372803
+      ],
+      "poise_broken": false,
+      "reaction": "heavy_hit",
+      "reaction_duration": 0.48,
+      "requested_recoil_m": 0.35,
+      "sequence": 2,
+      "source": "player",
+      "source_position": [
+        -8.66101359520144e-08,
+        -0.0251628309488297,
+        -24.6677894592285
+      ],
+      "strength": "charged",
+      "sword_wave": true,
+      "target_id": 160037867869,
+      "target_position": [
+        -0.913473784923553,
+        0.000837940722703934,
+        -26.630313873291
+      ],
+      "victim_pause": 0.075,
+      "wave_age_s": 0.0666666666666667,
+      "wave_origin": [
+        -5.20625690114684e-07,
+        1.02483713626862,
+        -25.2677898406982
+      ],
+      "wave_sweep_end_m": 1.2,
+      "wave_sweep_start_m": 0.9,
+      "wave_travel_m": 1.2
+    },
+    {
+      "amount": 45.045,
+      "attack_elapsed": 0.537,
+      "attack_id": "charged_heavy",
+      "attack_instance_id": 5,
+      "attacker_pause": 0.075,
+      "blocked": false,
+      "contact_blade_grip": [
+        0,
+        0,
+        0
+      ],
+      "contact_blade_motion": [
+        0,
+        0,
+        0
+      ],
+      "contact_blade_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_axis_base": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_axis_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_base": [
+        0,
+        0,
+        0
+      ],
+      "contact_damage_tip": [
+        0,
+        0,
+        0
+      ],
+      "contact_phase": -1,
+      "contact_source": "hurtbox_ray",
+      "curve_sha256": "",
+      "curve_source_sha256": "",
+      "damage_start_fraction": 0,
+      "direction": [
+        -7.23359221410647e-07,
+        0,
+        -1
+      ],
+      "health_after": 49.955,
+      "health_before": 95,
+      "hitstop": 0.075,
+      "killed": false,
+      "material": "metal",
+      "normal": [
+        -0.0475933775305748,
+        0,
+        0.99886679649353
+      ],
+      "point": [
+        0.899998724460602,
+        0.97583794593811,
+        -26.2564029693604
+      ],
+      "poise_broken": false,
+      "reaction": "heavy_hit",
+      "reaction_duration": 0.48,
+      "requested_recoil_m": 0.35,
+      "sequence": 3,
+      "source": "player",
+      "source_position": [
+        -8.66101359520144e-08,
+        -0.0251628309488297,
+        -24.6677894592285
+      ],
+      "strength": "charged",
+      "sword_wave": true,
+      "target_id": 158192374011,
+      "target_position": [
+        0.914386808872223,
+        0.000837945379316807,
+        -26.6273937225342
+      ],
+      "victim_pause": 0.075,
+      "wave_age_s": 0.0666666666666667,
+      "wave_origin": [
+        -5.20625690114684e-07,
+        1.02483713626862,
+        -25.2677898406982
+      ],
+      "wave_sweep_end_m": 1.2,
+      "wave_sweep_start_m": 0.9,
+      "wave_travel_m": 1.2
+    }
+  ]
+}

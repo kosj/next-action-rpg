@@ -73,7 +73,13 @@ def main():
               "art_source/production/character_actions/lyra-weight.json",
               "art_source/production/character_actions/sentinel-weight.json",
               "art_source/production/character_actions/sentinel-weight-recovery.json",
-              "tools/generate_impact_audio.py", "tools/render_impact_review.py"]
+              "tools/generate_impact_audio.py", "tools/render_impact_review.py",
+              "game/scripts/world/sword_wave.gd", "game/assets/shaders/sword_wave.gdshader",
+              "game/data/light_1.tres", "game/data/light_2.tres", "game/data/light_3.tres",
+              "game/tests/moving_attack_regressions.gd", "game/tests/sword_wave_regressions.gd",
+              "game/tests/player_stride_wave_regressions.gd", "game/tests/wave_encounter_lifecycle_regressions.gd",
+              "game/tests/test_runner.gd", "tools/tests/test_sword_wave_contact_observer.py",
+              "tools/tests/fixtures/charged_wave_contact_main_9a1e9dc.json"]
     # Godot's GLTF importer extracts these actual runtime atlases. Embedded GLB
     # bytes alone do not bind the external PNGs/settings used by the export.
     for stem in ("lyra_fury_gameplay", "erin_idle_gameplay", "roen_idle_gameplay"):

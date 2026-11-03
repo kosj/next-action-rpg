@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.11**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.4.12**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -99,6 +99,7 @@
 | `glb-live-reference-compaction-and-curve-path-portability` | live 참조의 payload·의미를 보존한 container remap과 runtime curve의 path metadata 적응을 분리한다. | stride/sparse/skin/image/모든 sampler, 독립 native 서명·negative byte 변형, source 절감과 실제 Web 차이, 미지원 schema 거부. |
 | `skill-attack-profile-inheritance-and-full-journey-errors` | 공격 Resource 복제의 숨은 물리 곡선·flag·phase 계약과 caller의 시간 override를 함께 검증한다. | 실제 player의 모든 스킬 physics·전체 journey 오류 수집, fail-closed 유지, 스킬 없는 짧은 영상의 범위, 수정 전후 source 분리. |
 | `resolved-stride-upper-attack-and-traveling-wave` | 실제 충돌 후 이동거리로 하체 보행을 진행하고 상체 공격 시간·진행체 판정을 연결한다. | 실제 Player 입력/벽 정지·상하체 본·공유 ledger·늦은 hitpause 소유권·1배속 화면을 각각 검사한다. 원본의 기능·유한 실제Game관측 verified 범위이며 새 프로젝트의 질감/AAA 승인이 아님 |
+| `mixed-delivery-contact-oracles-and-same-strike-ledger` | 같은 공격을 공유하는 서로 다른 전달 수단의 계약을 분리하고 전체 타격 ledger를 먼저 검사한다. | 실제 혼합 receipt, 이전 기하/시간 guards 보존, 새 수단별 기하·피해·원점·사거리, predicate/최종집계/freeze/proof/source 동시 검토. 실패 원인과 순수 데이터 복구·새 live 승인 구분 |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -135,3 +136,5 @@
 새 사례73의 verified는 실제 실패와 독립 스킬 생성·실제3cast native735/0 복구의 범위다. 수정 뒤 전체 모바일/공개 검증은 별도다. 공용 공격을 복제한 스킬이 새 물리 곡선·flag를 숨겨 상속하지 않는지 확인한다. 부분 native/charged 통과와 짧은 모션 영상이 전체 스킬·모바일 오류 검증을 대신하지 않는다. 이전 판본의 근거는 보존하며1.4.10은 실제73항목 source commit에 고정하고 ZIP을 독립 검증한다.
 
 이동 공격과 진행체 사례74는 실제 이동과 애니메이션·판정의 연결을 검증하는 방법입니다. 요청 속도 대신 충돌 후 변위를 쓰고, 상하체 계층과 전신 공격 예외를 구분합니다. 검기의 표시 메시·swept query·거리 기준·벽의 최초 접촉과 근접 타격 ledger를 함께 검사합니다. 실제 입력으로 움직이는 Game의 1배속 영상과 피격 기록을 따로 검토하며, 기능 검사만으로 질감·AAA 승인을 하지 않습니다. 이 원본 사례는 기능·유한 실제Game관측 범위의 verified이며 연속 시청/청취·AAA와 새 프로젝트의 성공을 승인하지 않습니다.
+
+사례75의 verified는 실제 실패와 혼합 receipt 순수 데이터 replay·음성 검사 복구 범위다. 새 투사체를 추가한 뒤 기존 공격명만으로 모든 접촉을 같은 물리 타격으로 검증하면 정상 기능을 기각할 수 있다. 반대로 새 접촉을 무시해 통과시키지 않는다. 코드·분류·시계·공유 ledger·source binding을 같이 확인하며 새 live/browser/공개와 대상 프로젝트의 승인은 별도로 남긴다.

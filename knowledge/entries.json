@@ -2772,6 +2772,43 @@
         "docs/validation/v0.1.16/actual-game-final.json",
         "docs/validation/v0.1.16/README.md"
       ]
+    },
+    {
+      "id": "mixed-delivery-contact-oracles-and-same-strike-ledger",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "같은 공격의 칼날·검기를 분류해 각각 검증하고 전체 타격 ledger는 공유한다",
+      "summary": "실제 집중 모바일 검사에서 정상적인 검기45.045가 칼날69.3 오라클로 분류되어 실패했다. 실제3receipt replay와13개 양/음성·전체 Python104검사로 분류/공유ledger/기하 검증 보완을 확인했다. 새 live CI/공개 승인은 별도다.",
+      "tags": [
+        "combat",
+        "QA",
+        "observer",
+        "projectile",
+        "ledger",
+        "regression",
+        "검기",
+        "칼날",
+        "검증",
+        "재사용"
+      ],
+      "checked_on": "2026-11-03",
+      "context": {
+        "source_version": "0.1.17",
+        "actual_failure": "v016Main80/job125893798959+Tag81/job125892214840 on9a1e9dc. Focus stage late loop applies blade69.3/curve to sameattack5 wave45.045 seq2/3; actualphysicalseq1 is69.3 and all3targetIDs distinct. Not observed runtime duplicate damage. No deployment/release success forfailed16candidate; tagretained.",
+        "fix": "Physical target contact remains required. Keep69.3/sharp/curve/marker/hitstop/recoil; additionally pin current curve/source SHA. Validate every observed wave45.045/noLUT/phase-1/sourceoffset/actual6or8segmented sweptgeometry/age/range. Checkall attack-target pairs beforepartition andsameserial. Filterinputobserver tophysicaltarget and distinguishwavefreeze frombladefreeze.",
+        "proof_schema": "contact_events remainsphysicalforcompatibility; all_charged_events/wave_contact_events andinitial/finalphysical_checks/wave_checks preserveallobservations. Never ignorewaveevents toturnoldtestgreen.",
+        "verification": "ActualMainfailedartifact1680332B SHA8711ef8b7d90572dcba81b73cf33f58863cec85e7314ee0b04ffa592380e0781 CRCverified; correcteddatareplay1blade+2wavepasses. New13positive/negative andall104Pythonpass. New livebrowser/newsourcepublicationpending.",
+        "source_binding": "Mobile producer extended108→120toinclude newwave/shader/lightmotors/runtimeintegrationtestsandactualQAcorpus. Selectedfinalsource165map separate fromproducer.",
+        "transfer_rule": "Receivingprojects chooseexplicit mechanism/contract, preserveoldmechanismguards, verifyallnewmechanisms andintendedshared/multihitledger. Reviewpredicate, firstandlateaggregators, frozenposeinterpretation, receiptschemaandsourceinventorytogether. Fixedprojectnumbersnotuniversals."
+      },
+      "sources": [
+        "docs/CHARGED_WAVE_OBSERVER.md",
+        "docs/validation/v0.1.17/charged-observer-failure-and-fix.json",
+        "tools/charged_heavy_browser_smoke.py",
+        "tools/check_mobile_web.py",
+        "tools/tests/test_sword_wave_contact_observer.py",
+        "tools/tests/fixtures/charged_wave_contact_main_9a1e9dc.json"
+      ]
     }
   ]
 }
