@@ -40,6 +40,7 @@ func _ready() -> void:
 		ui.floating_damage(amount, point))
 	player.impact_confirmed.connect(_on_impact_confirmed)
 	player.skill_effect.connect(spawn_ring)
+	player.wave_requested.connect(_spawn_sword_wave)
 	rig = RuneCamera.new()
 	rig.player = player
 	add_child(rig)
@@ -68,6 +69,11 @@ func _ready() -> void:
 			DirAccess.remove_absolute(Session.save_path + suffix)
 		Session.save_path = original_path
 		get_tree().quit()
+
+func _spawn_sword_wave(attack: CombatStrike, forward: Vector3) -> void:
+	var wave := RuneSwordWave.new()
+	add_child(wave)
+	wave.setup(player, attack, forward, attack.data.wave_range, attack.data.wave_width, attack.data.wave_speed, attack.data.wave_damage_scale)
 
 func _on_impact_confirmed(context: Dictionary) -> void:
 	rig.apply_impact(context)
@@ -160,7 +166,9 @@ func reset_encounter() -> void:
 	active_encounter = -1
 	boss = null
 	for child in get_children():
-		if child is RuneProjectile:
+		if child is RuneSwordWave:
+			child.cancel()
+		elif child is RuneProjectile:
 			child.queue_free()
 	for effect in get_tree().get_nodes_in_group("impact_effects"):
 		effect.queue_free()

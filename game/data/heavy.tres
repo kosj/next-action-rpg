@@ -21,3 +21,7 @@ blade_radius = 0.12
 blade_damage_start_fraction = 0.18
 blade_curve_path = "res://data/heavy_blade_curve.json"
 blade_curve_sha256 = "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36"
+wave_range = 4.5
+wave_width = 2.0
+wave_speed = 16
+wave_damage_scale = 0.7

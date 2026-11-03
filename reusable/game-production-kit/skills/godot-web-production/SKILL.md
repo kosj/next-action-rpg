@@ -23,6 +23,15 @@ description: Build and validate Godot Web/Windows projects with reproducible too
 
 동작·VFX·타격감의 완성도를 평가할 때는 [전투 품질 검수](references/combat-quality-review.md)를 적용합니다. 기능 검사와 클립 수, 실제 포즈·접촉·정상1배속 영상/음향과 기기 측정의 근거를 구분하고, 참고 게임의 직업·무기·판본과 관찰 범위를 확인합니다. 이미 존재하는 보간·차지·궤적을 빠뜨리지 않으며 단순한 수치 증가를 시청각 품질 승인으로 바꾸지 않습니다.
 
+### 이동 공격과 이동하는 판정의 통합
+
+- 하체 보행은 controller가 충돌을 해결한 실제 수평 이동량/방향과 같은 표시 시간 구간을 사용합니다. 요청 속도나 입력 세기를 실제 변위로 간주하지 않습니다. 콤보마다 gait를 재시작하지 않고, 양의 delta의 실제 정지와 delta0 pause를 구분합니다. 접촉까지 진행한 이동은 한 번 소비하고 정지 중 거리/phase·블렌드·소켓을 반복 갱신하지 않습니다. 거리 기반 cycle만으로 발 접지·terrain IK를 승인하지 않습니다.
+- 하체와 공격 layer의 소유권을 실제 animation track 경로·bone 자손/최종 pose로 확인합니다. root/pelvis/다리와 상체 filter, 전신 공격 예외·기존 물리 곡선을 분리하고 이동→정지 회수·방향 변경·피격/죽음/취소에서 경계 pop을 검사합니다. helper의 반환값과 실제 Player 입력/motor/snapshot/표시 bridge 연결은 별도 검증합니다.
+- 이동하는 검기/투사체는 실제 world 진행 위치와 폭 있는 물리 hull, 표시 mesh의 전면/폭/깊이를 같은 계약으로 만듭니다. 사거리의 기준점과 측정 시점을 정하고 발사 offset·중심 travel·leading edge·target hurtbox 반경을 구분합니다. 발사 후 source 이동으로 range를 늘리지 않으며 근접 reach 확대·화면 fan을 이동 판정의 대체물로 쓰지 않습니다.
+- 대상 엔진에서 overlap과 swept query의 의미를 대조합니다. `cast_motion`이 초기 overlap을 무시하거나 overlap query가 motion을 무시한다면 두 경우를 별도로 처리합니다. 실제 폭의 가장자리·얇은 벽·모서리·큰 delta를 검사하고 가장 이른 blocker 이전으로 적 query와 표시 진행을 제한합니다. 같은 시각의 blocker/target 우선순위도 명시합니다.
+- 근접과 발사파가 한 공격의 결과라면 동일한 target ledger를 사용해 양쪽 접촉 순서의 중복 피해를 막습니다. 발사파의 원래 공격 identity·중단 후 존속·pause/death/scene 수명을 고정하고, 늦은 접촉이 종료된 시계를 되감거나 다른 새 공격을 정지시키지 않는지 확인합니다. 동시 노드/질의/mesh 예산과 표시 접촉점의 실제 query 근거도 기록합니다.
+- 정상 입력의 실제 Game에서 이동 공격/연속 콤보·정지·벽·폭 가장자리/원거리 명중·피격 중단을 연결해 봅니다. 실제 본/발/무기·발사파 도달과 피해의 trace 및 원본1배속을 함께 검수합니다. 파일 생성·인코딩FPS·기능 검사와 연속 시청/청취·동작의 질감·목표 기기·AAA 승인을 구분합니다. 새 프로젝트는 자신의 연결/값/증거를 `pending`에서 검증하며 원본 사례의 거리·속도·품질 상태·권한을 승계하지 않습니다.
+
 ## 모바일 Web 입력과 반응형 화면
 
 터치·작은 화면을 지원할 때는 [모바일 입력·좌표 절차](references/mobile-web-input.md)를 읽고 [모바일 검수 양식](references/mobile-input-report.json)을 현재 프로젝트의 근거로 채웁니다. pointer ID별 이동/look/버튼 소유권과 모든 terminal 경로, 에뮬레이션 마우스의 전달 순서·GUI 재진입, 장치별 action 해제 범위와 merged edge를 함께 검사합니다. 터치 cleanup이 실제 키/패드 hold를 지우거나 메뉴를 닫은 손가락이 공격으로 이어지지 않게 합니다. 상태 주입과 이벤트 전달 API를 구분하고 해당 엔진의 process/physics frame 규칙을 확인합니다.

@@ -21,6 +21,16 @@ description: Implement and verify RUNEFALL GDScript gameplay changes, especially
 
 표시용 검 소켓 전체와 실제 날 피해 구간을 분리하고 캡슐 반구가 손잡이까지 닿는지 확인합니다. 독립 재구성한 날 중심축·접촉점 거리·날 방향 투영을 함께 검사합니다. 피격 이동은 실제 CharacterBody 변위와 요청 거리를 구분하며, 근접 겹침의 충돌 복구도 이동 예산에서 소비하는지 재현합니다. [초기 통과를 기각한 기록](../../../docs/validation/v0.1.8/rejected-contact-summary.json)처럼 새 결함이 확인되면 과거 CI의 녹색 결과를 현재 승인으로 승계하지 않습니다.
 
+## 이동 공격과 진행하는 검기
+
+[이동·검기 제작/검수 계약](../../../docs/LOCOMOTION_WAVE_SLICE.md)을 기준으로 입력→Player motor→해결된 이동 snapshot→표시 bridge→실제 본/검→검기 발사/접촉의 연결을 확인합니다. 별도 helper나 factory 검사만으로 Player에 실제 연결됐다고 판단하지 않습니다.
+
+1. gait는 같은 presentation 구간에서 충돌로 해결된 수평 변위와 방향을 사용합니다. 요청 속도×시간으로 재구성하지 않습니다. light/skill1의 하체 보행과 실제 track-path로 filter한 Spine 자손 공격, heavy/charged의 기존 fullbody·blade curve 소유권을 각각 검사합니다. 콤보 전환의 gait phase, 벽 slide 방향과 정지 후 회수도 실제 본으로 확인합니다.
+2. 실제 진행한 접촉 구간의 거리는 한 번만 소비하고, delta0 hitpause에서는 gait/공격/블렌드·소켓을 보존합니다. 양의 delta에서 벽에 막힌 정지와 pause를 구분하고 hit/death/dodge/parry·epoch 변경에서 이전 layer/trail을 정리합니다. 거리 동기화는 per-foot footplant/terrain IK의 구현 증거가 아닙니다.
+3. 검기는 실제 world 위치로 진행하며 표시 crescent와 물리 hull의 전면·폭·깊이를 대조합니다. 사거리는 발사 시 source에서 leading edge까지인지 명시하고 발사 offset·중심 travel·hurtbox 반경을 구분합니다. 큰 근접 reach나 화면 fan을 이동 검기로 표시하지 않습니다.
+4. 초기 wall overlap과 폭 있는 hull의 `cast_motion`을 함께 처리해 가장 이른 blocker에서 적 sweep/표시를 자릅니다. 모서리·얇은 벽·동시 blocker/target·큰 delta와 range 끝을 검사합니다. 근접/검기는 원래 strike의 target ledger를 공유하며 양쪽 접촉 순서에서도 중복 피해를 막습니다. 늦게 도착한 파가 끝난 공격의 시계를 되돌리거나 새 공격을 hitpause시키지 않게 실제 strike identity를 대조합니다.
+5. 정상 입력의 실제 Game에서 이동→공격/콤보→정지/회수, 벽·가장자리 원거리 접촉·피격 중단을 캡처합니다. 발/허리·손/검·진행파·상대 반응을 정상1배속으로 연속 검수한 뒤 유한 표본으로 원인을 찾습니다. 기능 통과·파일 생성·표본 정합과 실제 시청/청취·질감·실기기/AAA 판정을 나누며 새 증거 전에는 pending을 유지합니다.
+
 ## 실행
 
 활성 동작과 물리 곡선을 함께 바꾸는 경우 [v0.1.10 제작 계약](../../../docs/COMBAT_MOTION_POLISH_SLICE.md)을 확인합니다. curve 파일 SHA·source GLB SHA·좌표계·floor offset·active 양끝/표본 순서·길이·보간 오차를 검증하고, 잘못된 pin을 이전 analytic 경로로 숨기지 않습니다. 모든 curve 경계를 보존한 세분화와 실제 해결된 actor 이동을 사용하며 첫 geometric receipt·최종 표시 시계/잔상을 다시 검사합니다. source/raw 통과·native 기능·실제 화면/skin/브라우저·최종 배포 승인은 별도입니다.

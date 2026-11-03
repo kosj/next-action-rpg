@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "version": "0.1.16",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "scope": "Actual native integration functionality and finite rejected visual only; not continuous audiovisual, browser, deployment, target hardware or AAA approval",
+  "logs": {
+    "native.log": {
+      "bytes": 2018,
+      "sha256": "442859fa855310941bb2f441b27522d0e248b1e2a0c922370c54ec80660f97a7",
+      "errors": 7,
+      "markers": []
+    },
+    "native-002.log": {
+      "bytes": 65798,
+      "sha256": "6fdac05f78f602406445132065a2dbe1a6e2df94953472f8d3bfbd09dc4b7915",
+      "errors": 21,
+      "markers": [
+        "RUNEFALL_TESTS: 797 checks, 21 failures"
+      ]
+    },
+    "native-003.log": {
+      "bytes": 57502,
+      "sha256": "94e3cf8bcc872ae8679c71a04e60a68806f5a74a958aa8ea14fbf8d728e74f36",
+      "errors": 1,
+      "markers": [
+        "RUNEFALL_TESTS: 797 checks, 1 failures"
+      ]
+    },
+    "native-004.log": {
+      "bytes": 57916,
+      "sha256": "6d9b3af6f47296c2969f894800f055f2995dd452f571d3bd0697458f9d1f48b2",
+      "errors": 1,
+      "markers": [
+        "RUNEFALL_PLAYER_STRIDE_WAVE {\"blocked_light_samples\":13,\"late_feedback_events\":3,\"light_samples\":6,\"scope\":\"Actual RunePlayer input, move_and_slide snapshots, wave signal and late-contact pause ownership; no projectile geometry, continuous visual or footplant approval\",\"wave_events\":[{\"elapsed\":0.333333333333333,\"forward\":\"(0.0, 0.0, -1.0)\",\"id\":9,\"presentation_id\":\"light_3\",\"range\":4.5,\"release_time\":0.323}]}",
+        "RUNEFALL_TESTS: 823 checks, 1 failures"
+      ]
+    },
+    "native-005.log": {
+      "bytes": 59662,
+      "sha256": "cb99de1809e710aa6a9e30fdadf33f2426ed11b095be2ef80e8ecfad95a51144",
+      "errors": 0,
+      "markers": [
+        "RUNEFALL_PLAYER_STRIDE_WAVE {\"blocked_light_samples\":9,\"late_feedback_events\":3,\"light_samples\":6,\"scope\":\"Actual RunePlayer input, move_and_slide snapshots, wave signal and late-contact pause ownership; no projectile geometry, continuous visual or footplant approval\",\"wave_events\":[{\"elapsed\":0.333333333333333,\"forward\":\"(0.0, 0.0, -1.0)\",\"id\":9,\"presentation_id\":\"light_3\",\"range\":4.5,\"release_time\":0.323}]}",
+        "RUNEFALL_TESTS: 825 checks, 0 failures"
+      ]
+    },
+    "python-tests.log": {
+      "bytes": 702,
+      "sha256": "50adc0a9fdee68dc5e5001ed6a3cfe54132f620b0817467e1f721fbcaf74018a",
+      "errors": 0,
+      "markers": [
+        "Ran 91 tests in 2.082s"
+      ]
+    },
+    "art-check-002.log": {
+      "bytes": 219,
+      "sha256": "620ccc6713c8cb936fd5d074365d97a86243b0e235e318b2942d23247f421ea6",
+      "errors": 0,
+      "markers": [
+        "ART_PRODUCTION_OK assets=3 references=3 clips=9 attack_resources=3 candidate_sources=24"
+      ]
+    },
+    "native-006.log": {
+      "bytes": 59401,
+      "sha256": "55d8e8fc95e084581ac4a5267275ec91df63742314f614e207473d2d3c70f512",
+      "errors": 0,
+      "markers": [
+        "RUNEFALL_PLAYER_STRIDE_WAVE {\"blocked_light_samples\":9,\"late_feedback_events\":3,\"light_samples\":6,\"scope\":\"Actual RunePlayer input, move_and_slide snapshots, wave signal and late-contact pause ownership; no projectile geometry, continuous visual or footplant approval\",\"wave_events\":[{\"elapsed\":0.333333333333333,\"forward\":\"(0.0, 0.0, -1.0)\",\"id\":12,\"presentation_id\":\"light_3\",\"range\":4.5,\"release_time\":0.323}]}",
+        "RUNEFALL_TESTS: 843 checks, 0 failures"
+      ]
+    }
+  },
+  "final_native": {
+    "checks": 843,
+    "failures": 0,
+    "engine_errors": 0,
+    "command": "GODOT_BIN=... python tools/build.py --test-only",
+    "source_freeze": "runtime-source-freeze-native-006.json",
+    "includes": "Actual separate Game reset/title/restore cancellation before further damage; inactive/epoch/bare owner fixtures; energy shader ALBEDO correction and union boundary visual mesh"
+  },
+  "failure_history": [
+    "Initial new wave fixture WeakRef inference parse error fixed with explicit types",
+    "Early wave stole close charged physical contact; authored forward-slash release fraction .65 preserves strict blade contact assertions",
+    "Thinwall collision reason overwritten by same-tick fade expiration, preserved terminal wall reason",
+    "New wall fixture needed server synchronization and separate physics ticks",
+    "Old manual heal fixture used render delta in move_and_slide despite supplying a physics delta; real physics boundary and support floor now verify actual movement",
+    "Independent source review found prior waves survive reused-player reset/title/restore; immediate Game cancel and optional active/epoch guard now pass actual separate Game regression",
+    "Emission-only unshaded shader compiled without errors but was invisible in actual Compatibility raster; ALBEDO carries unshaded output; independent raster proof precedes next full Game take"
+  ],
+  "native_contracts": {
+    "actual_player_right_m_s": 4.2,
+    "blocked_light_samples": 13,
+    "actual_L3_wave_events": 1,
+    "L3_release_time_s": 0.323,
+    "observed_first_emit_elapsed_s": 0.333333333333333,
+    "late_hit_feedback_events": 3,
+    "light_layer": "Hips/legs distance gait with Spine-descendant exact attack samples",
+    "strong_attacks": "Existing physical model and heavy/charged curves/timing/motor preserved",
+    "wave_ranges_source_leading_m": [
+      4.5,
+      4.5,
+      7.5
+    ],
+    "wave_max_centers_from_spawn_m": [
+      3.9,
+      3.9,
+      6.9
+    ]
+  },
+  "visual_take_001": {
+    "status": "rejected_before_completion",
+    "reason": "Actual wave PNGs showed opaque cyan slab and obscured leading core; interrupted deliberately and retained originals privately",
+    "reviewed_originals": [
+      {
+        "file": "stride-wave-01-live.png",
+        "bytes": 1170474,
+        "sha256": "b45a9d6ebc34d4866866f6d959f18b6064d54341b7b3fbde6217a4a17f14feba"
+      },
+      {
+        "file": "stride-wave-contact-01.png",
+        "bytes": 1181803,
+        "sha256": "691adc4d4614bb772954a84a03aa698937db684d7d8b3a93aca3416cda2abdae"
+      }
+    ],
+    "trace_completed": false,
+    "source_inputs_changed": false,
+    "render_replacement": "Shader gradient energy, no vertex/hull/range changes; actual take002 pending"
+  },
+  "visual_take_002": {
+    "status": "rejected_before_completion",
+    "reason": "Unshaded Compatibility ignores EMISSION-only color when ALBEDO is zero; actual wave disappeared while dealing damage. Fixed ALBEDO=energy and verified a technical raster. Not full normal Game acceptance.",
+    "official_source": "https://github.com/godotengine/godot/blob/4.7.2-stable/drivers/gles3/shaders/scene.glsl#L2775",
+    "source_changed_during_rejected_capture": [
+      "game/scripts/game.gd",
+      "game/assets/shaders/sword_wave.gdshader"
+    ],
+    "full_trace_completed": false
+  },
+  "technical_raster_002": {
+    "status": "finite_technical_visibility_verified",
+    "png_sha256": "5e88b309a170ee98158112cdc7e0db02d7221dd7fb858fc63f475550e2deff71",
+    "png_bytes": 12220,
+    "scope": "Deliberate isolated camera/source placement and floor, not real normal-input Game. Root viewed original raster: white leading filament visible with faint cyan gradient; no AAA acceptance.",
+    "triangles_balanced": 116,
+    "triangles_performance": 88,
+    "geometry": "Duplicate internal rendering caps removed; identical outer hull, all physics prism points and source-leading ranges unchanged.",
+    "remaining": "Fresh final actual normal-input Game take003, Web/mobile/Pages/release"
+  },
+  "current_source_freeze": "runtime-source-freeze.json",
+  "actual_game_final": "actual-game-final.json",
+  "post_native_math": "3signedY pow squares changed to multiplication per GLSLES; actual technical raster003 compiles and output PNG equals002 byte-for-byte. Geometry/physics unchanged. Clean committed CI remains separate."
+}
