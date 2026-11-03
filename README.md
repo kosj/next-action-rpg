@@ -2,7 +2,7 @@
 
 Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬 검사 **리라**가 몰락한 성역의 일곱 봉인을 정화합니다. 빠른 지상 콤보와 회피, 적중으로 충전하는 룬 스킬이 전투의 중심입니다.
 
-**현재 소스 버전: v0.1.14 연속 전투 동작·카메라 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름에 리라와 일반 근접 수호병의 실제 스킨 몸체를 적용했습니다. 이동·3연격·회피·패링·피격과 강공격·차지·스킬·사망·회복 표현을 게임 시간에 맞춰 저작했습니다. 첫 전투 구역의 기둥·문틀과 검도 VARCO 생성·Blender 후처리 자산입니다. 원거리·방패·정예·보스와 나머지 환경·배경음은 기존 프로토타입이며 최종 아트 검수는 진행 중입니다. 목표 플레이 시간 30~60분과 RTX 3060급60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
+**현재 소스 버전: v0.1.15 강한 대검 동작·타격 표현 프로토타입.** 챕터의 시작·전투·성장·보스·결말 흐름에 리라와 일반 근접 수호병의 실제 스킨 몸체를 적용했습니다. 이동·3연격·회피·패링·피격과 강공격·차지·스킬·사망·회복 표현을 게임 시간에 맞춰 저작했습니다. 첫 전투 구역의 기둥·문틀과 검도 VARCO 생성·Blender 후처리 자산입니다. 원거리·방패·정예·보스와 나머지 환경·배경음은 기존 프로토타입이며 최종 아트 검수는 진행 중입니다. 목표 플레이 시간 30~60분과 RTX 3060급60fps는 아직 사용자 플레이테스트로 검증하지 않았습니다.
 
 **최종 아트 목표는 AAA 품질입니다.** [대표 구간 승인 기준](docs/AAA_ART_QUALITY.md)에 얼굴·손·갑옷 변형·움직임·재질·조명과 실제 기기 성능의 검수 조건을 기록합니다. 현재 프리뷰는 이 최종 승인을 받지 않았습니다. 첫 전투 공간에는 출처와 물리적 반복 크기를 검증한 [CC0 PBR 재질](art_source/production/courtyard_materials/README.md)을 사용합니다.
 
@@ -23,6 +23,8 @@ Godot 4.7.2으로 제작하는 3인칭 판타지 액션 RPG입니다. 여성 룬
 [허브 인물·룬 성소](docs/HUB_CHARACTER_RELIC_SLICE.md)에 기록관 **Erin**과 대장장이 **Roen**의 고유 몸체·provider idle, 석재/bronze 제단과 rune crystal을 반입했습니다. 같은 실제 Game 원본에서 인물 역할·relic의 prototype 개선을 확인했고 성능 모드의 두 NPC에는 실제 바닥을 읽는 연한 근사 접지를 추가했습니다. Erin 의상 끝의 작은 자국/틈과 전체 AAA 아트 승인은 남습니다. 완전한 static **RunefallKR430**와 lossless import의 범위·남은 예산, 실제 빌드/화면/브라우저 결과는 [v0.1.13 기록](docs/validation/v0.1.13/README.md)에서 구분합니다. v0.1.13의 PR/main/tag·실제 공개desktop/fullmobile·릴리스 다운로드는 [공개 checkpoint](docs/validation/v0.1.13/published-verification.json)에서 확인했습니다. 웹 화면 하단에서 현재 실행 버전을 확인하세요.
 
 [약공격의 왼팔 연속 동작](docs/COMBAT_CONTINUITY_SLICE.md)을 다시 저작하고 [반투명 장벽 뒤의 전투 카메라](docs/CAMERA_COLLISION_FRAMING_SLICE.md)를 개선했습니다.006 몸체와 최종45초 원본에서 리라·발/검·상대 맥락의 프로토타입 개선을 채택했고 native692/0·양쪽 export를 확인했습니다. [실제 전후 영상과6원본](docs/validation/v0.1.14/gameplay-comparison/README.md)을 볼 수 있습니다. 영상은 dirty v0.1.14 preview이며 후반 위치 변동과 cyan wash·banner·겹침·dark void의 한계를 기록했습니다. clean CI·브라우저·공개 검증, 전체 연속 시청·직접 청취·full skin·AAA·실기기는 아직 미승인입니다. [현재 검증 범위](docs/validation/v0.1.14/README.md)와 이전 공개판을 구분합니다.
+
+[일반 강공격·차지의 양손 머리 위 준비와 내려베기](docs/DECISIVE_SWORD_SLICE.md)를 다시 저작하고 검 잔상·접촉 표현·카메라 pulse·음향 gain을 강화했습니다. 준비 중 미끄러짐을 없애고 실제 칼날 곡선과 판정을 연결했습니다. [전후 원본 영상과 검증 범위](docs/validation/v0.1.15/README.md)에 native714/0·실제 Game의 제한된 시각 채택과 flat fan·국소 skin·연속 시청/청취·실기기/AAA의 남은 한계를 기록합니다. 공개 실행 버전은 화면 하단과 최신 Actions 결과로 확인합니다.
 
 **[웹에서 플레이하기](https://kosj.github.io/next-action-rpg/)** — 모바일은 화면 조이스틱·전투 버튼, PC는 키보드·마우스로 실행합니다.
 

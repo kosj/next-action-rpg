@@ -1,5 +1,9 @@
 # 검증 결과
 
+## v0.1.15 · 강한 대검 동작과 타격 표현
+
+[판본별 기록](validation/v0.1.15/README.md)에 새 세 clip·물리 곡선·준비 중 glide 제거·trail/contact/camera/audio 변경과 native714/0·실제 Game 전후 원본의 finite 검토를 연결합니다. source commit 시점의 clean CI·공개 배포와 full skin·연속 시청/직접 청취·실기기·AAA는 별도이며 최신 공개 실행은 [PR16](https://github.com/kosj/next-action-rpg/pull/16)과 해당 Actions에서 확인합니다.
+
 ## v0.1.12 · 구름 하늘·원경과 입구 석재
 
 - [정적 하늘·원경·바닥 제작 경계](ENVIRONMENT_ATMOSPHERE_SLICE.md)에 따라 기준v0.1.11과 후보002의 실제 q0/q1 시작·전투·전경 원본을 비교했다. 밝은 벽돌 커튼처럼 보이던001은 기각하고 암석과 건축 재질을 나눈002를 제한적으로 채택했다. 구름의 부드러운 경계·반복 건축·단순 NPC/수정·플랫폼 밖 빈 공간은 남아 있다.
