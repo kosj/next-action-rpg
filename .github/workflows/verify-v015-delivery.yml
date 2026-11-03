@@ -1,7 +1,6 @@
 name: Verify v0.1.15 delivery bytes
 on:
-  push:
-    branches: ['verify/v0.1.15-delivery']
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read
