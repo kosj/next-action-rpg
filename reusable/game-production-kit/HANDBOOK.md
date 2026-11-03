@@ -98,6 +98,7 @@
 | `decisive-heavy-action-and-baked-audio-timing` | 일반 강공격과 약공격의 차이를 실제 자세·칼날 곡선·이동·VFX/audio에서 확인하고 baked quiet lead를 먼저 읽는다. | 보존할 light channel, whole-file과 live payload, ordinary/charged LUT·물리 contact, 실제 Game AV와 offline gain, 실제 Web 예산. |
 | `glb-live-reference-compaction-and-curve-path-portability` | live 참조의 payload·의미를 보존한 container remap과 runtime curve의 path metadata 적응을 분리한다. | stride/sparse/skin/image/모든 sampler, 독립 native 서명·negative byte 변형, source 절감과 실제 Web 차이, 미지원 schema 거부. |
 | `skill-attack-profile-inheritance-and-full-journey-errors` | 공격 Resource 복제의 숨은 물리 곡선·flag·phase 계약과 caller의 시간 override를 함께 검증한다. | 실제 player의 모든 스킬 physics·전체 journey 오류 수집, fail-closed 유지, 스킬 없는 짧은 영상의 범위, 수정 전후 source 분리. |
+| `resolved-stride-upper-attack-and-traveling-wave` | 실제 충돌 후 이동거리로 하체 보행을 진행하고 상체 공격 시간·진행체 판정을 연결한다. | 실제 Player 입력/벽 정지·상하체 본·공유 ledger·늦은 hitpause 소유권·1배속 화면을 각각 검사한다. 현재 원본은 pending이며 새 프로젝트의 질감/AAA 승인이 아님 |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -131,6 +132,6 @@
 
 판본1.4.9: source container·의미 보존·실제 native payload·최종 Web payload의 수치를 따로 유지한다. prefix를 보존할 수 없는 remap은 원본을 엄격히 고정한 독립 native 서명과 실제 byte 변형 negative로 검증한다. 작은 source가 전체 Web 절감을 뜻하지 않으며 payload 조사 없이 증가 원인을 추측하지 않는다. 출처는 실제 source commit의72항목으로 고정하며 ZIP/독립 재압축을 검증한다.
 
-새 사례73의 verified는 실제 실패와 독립 스킬 생성·실제3cast native735/0 복구의 범위다. 수정 뒤 전체 모바일/공개 검증은 별도다. 공용 공격을 복제한 스킬이 새 물리 곡선·flag를 숨겨 상속하지 않는지 확인한다. 부분 native/charged 통과와 짧은 모션 영상이 전체 스킬·모바일 오류 검증을 대신하지 않는다. 이전 판본의 근거는 보존하며1.4.11은 실제73항목 source commit에 고정하고 ZIP을 독립 검증한다.
+새 사례73의 verified는 실제 실패와 독립 스킬 생성·실제3cast native735/0 복구의 범위다. 수정 뒤 전체 모바일/공개 검증은 별도다. 공용 공격을 복제한 스킬이 새 물리 곡선·flag를 숨겨 상속하지 않는지 확인한다. 부분 native/charged 통과와 짧은 모션 영상이 전체 스킬·모바일 오류 검증을 대신하지 않는다. 이전 판본의 근거는 보존하며1.4.10은 실제73항목 source commit에 고정하고 ZIP을 독립 검증한다.
 
 이동 공격과 진행체 사례74는 실제 이동과 애니메이션·판정의 연결을 검증하는 방법입니다. 요청 속도 대신 충돌 후 변위를 쓰고, 상하체 계층과 전신 공격 예외를 구분합니다. 검기의 표시 메시·swept query·거리 기준·벽의 최초 접촉과 근접 타격 ledger를 함께 검사합니다. 실제 입력으로 움직이는 Game의 1배속 영상과 피격 기록을 따로 검토하며, 기능 검사만으로 질감·AAA 승인을 하지 않습니다. 이 원본 사례의 상태는 pending입니다.
