@@ -1,0 +1,178 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "verified_core_live_reference_compaction_python_scope_only",
+  "scope": "Core glTF live-data byte/semantic preservation only; no native/visual/performance/AAA approval",
+  "source": {
+    "path": "art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+    "bytes": 25059960,
+    "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+  },
+  "output": {
+    "file": "private compact-v14-validation.glb",
+    "bytes": 19647964,
+    "sha256": "cb0c3ff5fff2d80b1af73bbbd5b91f93a37e4caf222aa55986c1a6ade787cc3c"
+  },
+  "saved_container_bytes": 5411996,
+  "semantic_snapshot_equal": true,
+  "semantic_sha256": "8e0606d1d0c6da5435aae510cb708aeefd9f41a1e5c4f87acadc8d9e9d624151",
+  "accessors": {
+    "before": 4198,
+    "after": 3392
+  },
+  "buffer_views": {
+    "before": 4201,
+    "after": 3395
+  },
+  "buffer_bytes": {
+    "before": 24183560,
+    "after": 18869292
+  },
+  "clips": {
+    "death": {
+      "sha256": "633900d6f21dd4bf1ae574b379c1774b894b663f231b13c3ef8f7cd276191413",
+      "channel_count": 159
+    },
+    "dodge": {
+      "sha256": "8702c886b46f0bdcbb83554e49b7fe3218f3731491f4583e635d284ae2092c5a",
+      "channel_count": 159
+    },
+    "heal": {
+      "sha256": "ea7216c8f9246b1b4d512011910e7ae4e649f0d0736dfc0ce1a8dea784208d9a",
+      "channel_count": 159
+    },
+    "heavy": {
+      "sha256": "001bcd987a0ad4d53e81c33f463ad48c8b9320d416dbf1a294a93288c0ce59fe",
+      "channel_count": 159
+    },
+    "hit": {
+      "sha256": "9ef4f69407618972b97305077cdb0eb806ff1464403346806e43e60f9ddcc865",
+      "channel_count": 159
+    },
+    "idle": {
+      "sha256": "c98d4405f39a6ba7a8ba7afe485482dfe6e99a64a005b692f8df78431c22cfb0",
+      "channel_count": 159
+    },
+    "light_1": {
+      "sha256": "4748773107f32f89bb4197322c47e477e085cb0e34913695d5d072a3316f13b0",
+      "channel_count": 159
+    },
+    "light_2": {
+      "sha256": "dc308dc6b9ff26f62363672fc9f2f77946a43dd9ffaa21411d8d3494ed915e37",
+      "channel_count": 159
+    },
+    "light_3": {
+      "sha256": "75df2aca97aa26bdb07239740fb13563008f11fcf921e7c084f3533958ed0241",
+      "channel_count": 159
+    },
+    "parry": {
+      "sha256": "ebbf9c3ad4031b9de6a9956ffe3cbe3645855f9145c3d64cc0a8119df190ba98",
+      "channel_count": 159
+    },
+    "RESET": {
+      "sha256": "9b4c5fef6f9691284eb48041a6b618409f2cd4b72884d82918cad9a60746f508",
+      "channel_count": 159
+    },
+    "run": {
+      "sha256": "8fcba8266d8d5917c62a1509b4db3bb6f0476bf9db9ec7fc6f78cd787a87acea",
+      "channel_count": 159
+    },
+    "skill_1": {
+      "sha256": "3ee81199508ebaaff5932b0ff4e45a86c3a3271dccd1a12df6f48e443ed24f23",
+      "channel_count": 159
+    },
+    "skill_2": {
+      "sha256": "967c8cd82a1e378011303a29ae5b4eb7a06988e5b49d7e3beabb2518b0b5915b",
+      "channel_count": 159
+    },
+    "skill_3": {
+      "sha256": "6f54429c55079c7b17f13b2dd120a93591d15529b0e6e054c2eff2c605383cd2",
+      "channel_count": 159
+    },
+    "walk": {
+      "sha256": "93b85aa164bfbd054b7ff07f3860319175f71ba54edd499948040651b03d42b8",
+      "channel_count": 159
+    },
+    "walk_back": {
+      "sha256": "ae9bc258b27dc82d7f20333dc69538bcc7dd5a520e90bef829e588be685a8f59",
+      "channel_count": 159
+    },
+    "walk_left": {
+      "sha256": "eafbb87c886d5b3910e908013e00d6e58a4eba35a09e4d538bf11830326c8d83",
+      "channel_count": 159
+    },
+    "walk_right": {
+      "sha256": "1575c6a12efefe4fd0955f24441a00061b01dbf756a8ad9d2d4205b8c746be0d",
+      "channel_count": 159
+    },
+    "charge": {
+      "sha256": "ce5aeb100331f171c0a7de25aaf045e74ecfcc0d5dd427638764fac9b1346599",
+      "channel_count": 159
+    },
+    "charged_heavy": {
+      "sha256": "5041e01e2dce73a5aeaf6aba1818144bd1da2e7d5250e92610126418fff4cfaf",
+      "channel_count": 159
+    }
+  },
+  "helper": {
+    "bytes": 14829,
+    "sha256": "a7fbf7e86bf86fa4f1a7d3758dc7b20c5bd5019d8b234a56f92fb997f7a3028c"
+  },
+  "strict_parser_dependency": {
+    "bytes": 34268,
+    "sha256": "59a16c72e612fc5f9711fdb318c36f4d75111852ee8eecd3305113265b7686cc"
+  },
+  "tracked_tests": {
+    "file": "tools/tests/test_compact_glb_live_data.py",
+    "bytes": 8464,
+    "sha256": "a65fad275b349bdafc8667801e5d7e6e2beb2f7ca6f202b49749cac728a0bbc9",
+    "tests": 11,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 0.231,
+    "log": "compact-tracked-tests.log",
+    "scope": "Independent synthetic stride/sparse/value/image/skin/sampler oracles and malformed/overwrite/cleanup guards"
+  },
+  "first_synthetic_fixture_failure": {
+    "scope": "Wrongnegativefixtureaddress hit sparsevalues instead of indices, correctedtesttarget notcompactorcode; originalfailurekept.",
+    "log_file": "compact-guard-tests-first.log",
+    "sha256": "8e44b76f6c5f53a3f5e74086c67cf861519242ce6ceb43b4cff7621b861fb546"
+  },
+  "contract": "CoreglTF2 singleembeddedbuffer/images; traverse meshattributes/indices/morphs, skininversebinds, ALLanimation samplers andsparsebase/indices/values. Keep referenced rawviewpayloads/decodedvalues/encodedimages/staticnodehierarchy/materials/rest/weights/skins/clips semanticexact, remapaccessor/viewreferences. Unknownchunks/extensions/externalresources failclosed; extrasopaque preserved, customreference schemas notinterpreted. No rebake/quantization/reencode.",
+  "curve_path_portability": {
+    "checked_at": "2026-11-02T23:45:32.507473+00:00",
+    "records": [
+      {
+        "attack": "charged_heavy",
+        "candidate_curve_sha256": "cfcec2e97c6136aa33b15690f3a792ce49f70e4149571cd0427a7541ccb200ad",
+        "runtime_curve_sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+        "runtime_curve_path": "game/data/charged_blade_curve.json",
+        "old_asset_path": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/source-006.glb",
+        "new_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+        "numeric_samples_and_other_bytes_unchanged_inverse_path_exact": true
+      },
+      {
+        "attack": "heavy",
+        "candidate_curve_sha256": "cbf175e04e0906b314421cd1f57b9a16f6f7f396f6293ef1b5505b7b60c3818f",
+        "runtime_curve_sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+        "runtime_curve_path": "game/data/heavy_blade_curve.json",
+        "old_asset_path": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/source-006.glb",
+        "new_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+        "numeric_samples_and_other_bytes_unchanged_inverse_path_exact": true
+      }
+    ],
+    "reason": "Runtime source basename/address validation, no geometric/timing gate relaxation"
+  },
+  "limits": [
+    "No oldBINprefixclaim afterremap",
+    "Nativeactualcorestaticbodypreservation+threeindependentbyte-mutationnegatives passed; notwholemotion/skin/visualapproval",
+    "WholeactualWebgrew63348BdespitenetnewGLBsource−5411836B; noWeboptimizationclaim/importerPCKcauseinferred",
+    "CurrentGameAV/directhearing/hardware/AAA pending"
+  ],
+  "source_reports_sha256": {
+    "compact_validation": "2946903b6aa8d66d977962540b7ceb570cca0919dbe7c428b192e281ae334cbc",
+    "source_ready": "98f9a1a02cd5b95bfcfeee07d2b51af641a71d1e595f53b568872e1e5b0c4bcc",
+    "tracked_tests_log": "94ae128500f53cb5140017ba4abcb90e9dee5f4b0612a8a3d8cdf0b19ffb642e",
+    "curve_adaptation": "42537ad6b2eb81491cfea772fa0968d6cfe5623096126c1209e87b6204f88d2d"
+  },
+  "subsequent_native_live_body": "native-and-preview-002.json"
+}

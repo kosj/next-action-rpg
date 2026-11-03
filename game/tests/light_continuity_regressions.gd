@@ -4,9 +4,18 @@ extends RefCounted
 
 const BASELINE_PATH := "res://../art_source/production/candidates/lyra-fury-001/source.glb"
 const BASELINE_SHA := "f2edbd3709d2f06ceb2f4c7ec7ddecdbf80cc2e97bee71664044eeac04a74beb"
-const ORIGINAL_CURVE_SHA := "601adad7389ae4f22563db2deeb6982651c9776daa05be070a781d44bd322e6e"
-const LEFT_TARGET_PATH := "res://../art_source/production/candidates/lyra-continuity-001/source-006-guarded.targets.json"
-const LEFT_TARGET_SHA := "0f94df41666376c56ea88df75437454f1c48612700d87de603b2e5b1639f0c7a"
+const LIGHT_AUTHORING_PATH := "res://../art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb"
+const LIGHT_AUTHORING_SHA := "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+const ORIGINAL_LEFT_TARGET_PATH := "res://../art_source/production/candidates/lyra-continuity-001/source-006-guarded.targets.json"
+const ORIGINAL_LEFT_TARGET_SHA := "0f94df41666376c56ea88df75437454f1c48612700d87de603b2e5b1639f0c7a"
+const LEFT_TARGET_PATH := "res://../art_source/production/candidates/lyra-decisive-001/source-006.targets.json"
+const LEFT_TARGET_SHA := "4439a63f1cf2433b7c1482538af5ae2fff595d13484765ce120820dbdcfe6345"
+const LIGHT_LINEAGE_PATH := "res://../art_source/production/candidates/lyra-decisive-001/source-006.lineage.json"
+const LIGHT_LINEAGE_SHA := "bc85827024dd409b508767d463b55d4863cffc43d1595111bf8b712b1ebe5d9a"
+const ORIGINAL_LIGHT_FINGERPRINTS := {
+	"light_1":"4748773107f32f89bb4197322c47e477e085cb0e34913695d5d072a3316f13b0",
+	"light_2":"dc308dc6b9ff26f62363672fc9f2f77946a43dd9ffaa21411d8d3494ed915e37",
+	"light_3":"75df2aca97aa26bdb07239740fb13563008f11fcf921e7c084f3533958ed0241"}
 const SPEED_LIMIT_DEG_S := 2700.0 # Existing45deg per1/60s; never relaxed.
 const LIGHTS := ["light_1", "light_2", "light_3"]
 
@@ -177,22 +186,60 @@ static func _continuity(visual: ActorVisual, baseline: Dictionary, clip: String,
 static func _hand(skeleton: Skeleton3D, name: String) -> Transform3D:
 	return skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone(name))
 
-static func _left_targets(runtime_sha: String, floor_y: float, check: Callable) -> Dictionary:
-	var path := ProjectSettings.globalize_path(LEFT_TARGET_PATH).simplify_path()
-	if FileAccess.get_sha256(path) != LEFT_TARGET_SHA:
-		check.call(false,"Authored free-left targets retain their explicit source-sidecar SHA")
+static func _pinned_json(resource: String, sha: String, label: String, check: Callable) -> Dictionary:
+	var path := ProjectSettings.globalize_path(resource).simplify_path()
+	if FileAccess.get_sha256(path) != sha:
+		check.call(false,label+" retains its explicit immutable SHA")
 		return {}
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not parsed is Dictionary:
-		check.call(false,"Authored free-left target sidecar parses as a dictionary")
+		check.call(false,label+" parses as a dictionary")
 		return {}
-	var targets: Dictionary = parsed
+	return parsed
+
+static func _left_targets(runtime_sha: String, floor_y: float, check: Callable) -> Dictionary:
+	var targets := _pinned_json(LEFT_TARGET_PATH,LEFT_TARGET_SHA,"Rebound free-left targets",check)
+	var original := _pinned_json(ORIGINAL_LEFT_TARGET_PATH,ORIGINAL_LEFT_TARGET_SHA,"Original006 targets",check)
+	var proof := _pinned_json(LIGHT_LINEAGE_PATH,LIGHT_LINEAGE_SHA,"Unchanged-light raw lineage",check)
+	if targets.is_empty() or original.is_empty() or proof.is_empty():
+		return {}
 	var metadata: Dictionary = targets.get("source_metadata",{})
+	var lineage: Dictionary = targets.get("target_lineage",{})
 	var conversion: Dictionary = targets.get("conversion",{})
 	var valid: bool = targets.get("schema_version")==1 and targets.get("coordinate_system")=="actor_y_up_minus_z_forward" and targets.get("time_units")=="source_clip_seconds"
 	valid = valid and conversion.get("offset_already_in_actor_coordinates",false) and absf(float(targets.get("floor_offset_m",-1.0))-floor_y)<0.000001
-	valid = valid and metadata.get("sha256","")==runtime_sha and metadata.get("parent_sha256","")==BASELINE_SHA and targets.get("clips",{}) is Dictionary
-	check.call(valid,"Authored free-left oracle binds the actual candidate and archived parent with PI/floor conversion already applied")
+	valid = valid and metadata.get("sha256","")==runtime_sha and metadata.get("parent_sha256","")==LIGHT_AUTHORING_SHA and original.source_metadata.get("sha256","")==LIGHT_AUTHORING_SHA and original.source_metadata.get("parent_sha256","")==BASELINE_SHA
+	valid = valid and FileAccess.get_sha256(ProjectSettings.globalize_path(LIGHT_AUTHORING_PATH).simplify_path())==LIGHT_AUTHORING_SHA
+	valid = valid and lineage.get("original_target_path","")==ORIGINAL_LEFT_TARGET_PATH.trim_prefix("res://../") and lineage.get("original_target_sha256","")==ORIGINAL_LEFT_TARGET_SHA
+	valid = valid and lineage.get("authoring_source_path","")==LIGHT_AUTHORING_PATH.trim_prefix("res://../") and lineage.get("authoring_source_sha256","")==LIGHT_AUTHORING_SHA
+	valid = valid and lineage.get("preservation_report_path","")==LIGHT_LINEAGE_PATH.trim_prefix("res://../") and lineage.get("preservation_report_sha256","")==LIGHT_LINEAGE_SHA and lineage.get("original_source_metadata",{})==original.source_metadata
+	for field in ["coordinate_system","units","time_units","floor_offset_m","source_coordinate_system","conversion","clips"]:
+		valid = valid and targets.get(field)==original.get(field)
+	check.call(valid,"New whole-body source rebinds exact original006 light targets/provenance without a second PI/floor conversion")
+	var untouched: Dictionary = proof.get("untouched_clips",{})
+	var selected: Dictionary = proof.get("selected_untouched_clips",{})
+	var source_lights: Dictionary = proof.get("source_light_clips",{})
+	var selected_lights: Dictionary = proof.get("selected_light_clips",{})
+	var compact: Dictionary = proof.get("compaction",{})
+	var raw_exact: bool = proof.get("source_sha256","")==LIGHT_AUTHORING_SHA and proof.get("output_sha256","")==runtime_sha and proof.get("static_semantic_exact",false)
+	raw_exact = raw_exact and untouched.size()==18 and untouched.has("RESET") and untouched==selected and source_lights.size()==3 and source_lights==selected_lights
+	raw_exact = raw_exact and compact.get("passed",false) and compact.get("semantic_snapshot_equal",false) and compact.get("output",{}).get("sha256","")==runtime_sha
+	raw_exact = raw_exact and proof.get("graft_semantic_snapshot_sha256","")==proof.get("selected_semantic_snapshot_sha256","") and compact.get("semantic_sha256","")==proof.get("selected_semantic_snapshot_sha256","")
+	for clip: String in LIGHTS:
+		var before: Dictionary = source_lights.get(clip,{})
+		var channels: Array = before.get("channels",[])
+		raw_exact = raw_exact and before.get("sha256","")==ORIGINAL_LIGHT_FINGERPRINTS[clip] and int(before.get("channel_count",0))==159 and channels.size()==159 and before==untouched.get(clip,{})
+		var pairs := {}
+		var bones := {}
+		for channel: Dictionary in channels:
+			var bone := int(channel.get("node_index",-1))
+			var property := String(channel.get("path",""))
+			pairs["%d|%s" % [bone,property]] = true
+			bones[bone] = true
+			raw_exact = raw_exact and property in ["translation","rotation","scale"] and not String(channel.get("input_value_bytes_sha256","")).is_empty() and not String(channel.get("output_value_bytes_sha256","")).is_empty()
+		raw_exact = raw_exact and pairs.size()==159 and bones.size()==53
+	check.call(raw_exact,"Pinned raw source audit preserves all18 untouched clips and every159-channel light fingerprint through lossless compaction")
+	valid = valid and raw_exact
 	return targets if valid else {}
 
 static func _authored_left(visual: ActorVisual, actor: Node3D, clip: String, target_clip: Dictionary) -> Dictionary:
@@ -342,9 +389,10 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var report := {"scope":"Actual native all53bone light continuity, authored free-left key/mid targets and original right-hand/socket contracts; no fullskin, naturalness, AV, hardware or AAA approval",
 		"baseline_sha256":BASELINE_SHA,"runtime_sha256":FileAccess.get_sha256(ProductionCharacterArt.definition("hero").path),
 		"authored_left_target_path":LEFT_TARGET_PATH,"authored_left_target_sha256":LEFT_TARGET_SHA,"authored_left_metadata":targets.source_metadata,
+		"unchanged_light_target_lineage":targets.target_lineage,"unchanged_light_lineage_sha256":LIGHT_LINEAGE_SHA,
 		"baseline_loader":"Independent in-memory GLTF100Hz/removeImmutablefalse for original three light controls only; actual Skeleton/AnimationPlayer. Current production500Hz+100Hz posthook unchanged.",
 		"angular_method":"Normalized abs(dot) shortest quaternion, local and actual world bone bases; velocity bound2700deg/s (45deg/60Hz)",
-		"left_target_policy":"Intentional free-left reauthor: explicit source-sidecar actor-space key AND midpoint targets within3mm; old left positions/orientations reported only. No second PI/floor offset.",
+		"left_target_policy":"Unchanged006 free-left actor-space key AND midpoint targets rebound through pinned exact channel lineage, within3mm; old f2 left positions/orientations diagnostic only. No second PI/floor offset.",
 		"clips":{}}
 	for index in range(LIGHTS.size()):
 		var clip: String = LIGHTS[index]
@@ -371,10 +419,15 @@ static func run(world: Node3D, check: Callable) -> bool:
 		check.call(all_hands.right_hand_m<0.003 and all_hands.grip_m<0.003 and all_hands.tip_m<0.003,"Structurally untouched right branch preserves hand/Grip/Tip at60/120Hz and every key/midpoint within3mm: "+clip)
 		var previous: String = LIGHTS[index-1] if index>0 else ""
 		report.clips[clip] = {"continuity":metrics,"original_right_key_identity_old_left_diagnostic":hands,"authored_free_left_targets":authored_left,"all_schedule_right_identity_old_left_diagnostic":all_hands,"joins":_joins(visual,clip,previous,14000+index*10,check)}
-	var curve := RunePlayer.CHARGED_HEAVY.blade_curve_report()
-	var text := FileAccess.get_file_as_string(RunePlayer.CHARGED_HEAVY.blade_curve_path)
+	var data := RunePlayer.CHARGED_HEAVY
+	var curve := data.blade_curve_report()
+	var curve_document: Variant = JSON.parse_string(FileAccess.get_file_as_string(data.blade_curve_path))
 	var source_sha := String(curve.get("source_sha256",""))
-	check.call(curve.ok and source_sha==String(report.runtime_sha256) and source_sha!=BASELINE_SHA and text.count(source_sha)==1 and text.replace(source_sha,BASELINE_SHA).sha256_text()==ORIGINAL_CURVE_SHA,"Only curve source-SHA metadata changes; inverse substitution preserves every original91-sample curve byte")
+	var source_path := "game/"+String(ProductionCharacterArt.definition("hero").path).trim_prefix("res://")
+	var current_curve_valid: bool = curve.ok and source_sha==String(report.runtime_sha256) and String(curve.get("source_asset_path",""))==source_path
+	current_curve_valid = current_curve_valid and FileAccess.get_sha256(data.blade_curve_path)==data.blade_curve_sha256 and String(curve.get("sha256",""))==data.blade_curve_sha256 and data.blade_curve_validation_error(curve_document).is_empty()
+	check.call(current_curve_valid,"Reauthored charged curve binds actual source/whole-file pin and finite full-active500Hz/frame/floor/length/chord contracts; new shape is not old601a metadata-only identity")
+	report["reauthored_charged_curve_contract"] = curve
 	var path := ProjectSettings.globalize_path("res://../build/verification/light-continuity/native.json").simplify_path()
 	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
 	var file := FileAccess.open(path,FileAccess.WRITE)

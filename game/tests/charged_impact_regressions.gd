@@ -33,8 +33,12 @@ static func _write_contact_proof(report: Dictionary) -> void:
 class BladeProbe:
 	extends StaticBody3D
 	var hits: int = 0
+	var damages: Array[float] = []
+	var last_context: Dictionary = {}
 	func receive_hit(_amount: float, _poise: float, _origin: Vector3, _parryable: bool = true, _context: Dictionary = {}) -> void:
 		hits += 1
+		damages.append(_amount)
+		last_context = _context.duplicate(true)
 
 static func _probe(parent: Node3D, point: Vector3) -> BladeProbe:
 	var probe := BladeProbe.new()
@@ -165,6 +169,33 @@ static func run(world: Node3D, check: Callable) -> bool:
 	player.begin_attack(true, 0)
 	check.call(player.strike.data == RunePlayer.HEAVY and is_equal_approx(player.strike.multiplier,1.0), "A sub-threshold heavy retains its original resource and damage")
 	var ordinary_attack_serial := player.strike.attack_instance_id
+	var ordinary_start := player.global_position
+	check.call(await _finish_attack(player,tree),"An ordinary heavy miss completes through the actual player controller")
+	var ordinary_travel := Vector2(player.global_position.x-ordinary_start.x,player.global_position.z-ordinary_start.z).length()
+	check.call(absf(ordinary_travel-.704)<.008 and events.is_empty() and amounts.is_empty(),
+		"The ordinary heavy motor resolves0.704m cut-only travel and a miss cannot create contact damage or impact events")
+	_ready_player(player,start)
+	# Place an independent receiver on the actually displayed ordinary blade,
+	# then let a large physics step find it through the new LUT and real shape.
+	player.visual.pose(0.0,0.0,-1.0,false,false,false,{"speed":0.0,"attack_id":"heavy","attack_elapsed":.43,
+		"attack_duration":.86,"attack_startup":.32,"attack_active":.22})
+	var ordinary_grip := player.visual.rig_weapon.find_child("GripOrigin",true,false) as Node3D
+	var ordinary_tip := player.visual.rig_weapon.find_child("BladeTip",true,false) as Node3D
+	var ordinary_probe := _probe(fixture,ordinary_grip.global_position.lerp(ordinary_tip.global_position,.65))
+	await _tick(tree)
+	await _tick(tree)
+	var ordinary_sweep := CombatStrike.new(player,RunePlayer.HEAVY,1.0)
+	ordinary_sweep.step(.31,Vector3.FORWARD,4)
+	check.call(ordinary_probe.hits==0,"The new ordinary overhead preparation cannot damage its future displayed cut receiver")
+	ordinary_sweep.step(.55,Vector3.FORWARD,4)
+	ordinary_sweep.step(.8,Vector3.FORWARD,4)
+	check.call(ordinary_probe.hits==1 and ordinary_probe.damages.size()==1 and is_equal_approx(ordinary_probe.damages[0],42.0)
+		and String(ordinary_probe.last_context.get("strength",""))=="heavy"
+		and float(ordinary_probe.last_context.get("contact_phase",-1.0))>=0.0,
+		"The actual ordinary physical sweep finds the imported blade once for42 damage, retaining its own heavy presentation")
+	ordinary_probe.queue_free()
+	await _tick(tree)
+	_ready_player(player,start)
 	player.heavy_held = 0.65
 	player.begin_attack(true, 0)
 	check.call(player.strike.data == RunePlayer.CHARGED_HEAVY and player.strike.presentation_id == &"charged_heavy" and player.strike.attack_instance_id > ordinary_attack_serial, "A completed charge selects a distinct gameplay, presentation and attack-event identity")

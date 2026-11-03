@@ -1,0 +1,150 @@
+{
+  "checked_on": "2026-11-02",
+  "status": "actual_native_and_both_exports_passed_dirty_preview",
+  "version": "0.1.15",
+  "source_head": "87fcefdd9a7e24f575e9d1b2df2e9273da29a8ab",
+  "native": {
+    "sha256": "d357cce24225d4cbeb220a14865ea4d798d3ecd5dea85a802d553a8aa60afef8",
+    "checks": 714,
+    "failures": 0,
+    "strict_errors": 0,
+    "exit_code": 0,
+    "log_file": "native-export-body-002.log",
+    "bytes": 106732
+  },
+  "first_failed_attempt": {
+    "file": "native-export-body-001.log",
+    "bytes": 67308,
+    "sha256": "74ae8ca1f20f0628e18bc314152f3c13331cfeda5cd9f9b278b948b20d0f64cd",
+    "checks": 707,
+    "failures": 3,
+    "scope": "Priorfailedsource/path/prefixguards retained; notmotionphysicsfailure, notnativePASS."
+  },
+  "independent_native_body": {
+    "matched": true,
+    "original_live_sha256": "26cc76e6e4913e43bae277b5759a276011d41e5427c42c5417e36519b2fb1304",
+    "original_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "runtime_live_sha256": "26cc76e6e4913e43bae277b5759a276011d41e5427c42c5417e36519b2fb1304",
+    "runtime_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "scope": "Direct native known-core live body/rest/texture bytes; animation and dead container storage excluded, not skin/visual approval"
+  },
+  "native_body_negative_controls": {
+    "payloads": [
+      "position",
+      "PNG",
+      "inverse_bind"
+    ],
+    "mutation": "Independentin-memorysinglebyteXOR of actualoriginalpayload; eachsignaturechanges, originalfilesneverwritten.",
+    "original_strict_source_sha256": "4cc9ae5b9340263b824d549ad59a7955705c927859bf35949d66984cd647ed0c",
+    "scope": "Nativeknowncorebody/rest/texturepreservation, animation/deadstorageexcluded. Notfullskin/eyesocclusion/AAA."
+  },
+  "eye_attachment": {
+    "actual_pose_max_error_m": 4.76837158203125e-07,
+    "actual_pose_samples": 60,
+    "body_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "diameters_m": [
+      0.0248002260923386,
+      0.0248000547289848
+    ],
+    "external_1_25_diameters_m": [
+      0.0310001838952303,
+      0.0310001280158758
+    ],
+    "external_transform_anchor_max_error_m": 1.86210866104375e-06,
+    "eyes_sha256": "d7d984fb10637be102a740e91e89316580b33c53d4b6a2cd1055108675ef3ef4",
+    "import_vertex_max_error_m": 1.29653085423342e-06,
+    "rest_anchor_max_error_m": 1.29387763081468e-06,
+    "scope": "Attachment/units/materials only; eyelid collisions and AAA visual approval are separate."
+  },
+  "actual_imported_alignment": {
+    "curve": {
+      "interpolation": "linear_grip_tip",
+      "ok": true,
+      "path": "res://data/charged_blade_curve.json",
+      "reason": "",
+      "sample_count": 91,
+      "sample_step_s": 0.002,
+      "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+      "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+      "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+    },
+    "full_window_query_samples": 137,
+    "imported_charged_right_hand_keys": 531,
+    "imported_unchanged_light_1_max_keys": 53,
+    "max_grip_error_m": 0.00011471474863356,
+    "max_interpolated_blade_length_error_m": 0.000532808303832955,
+    "max_query_endpoint_step_m": 0.0596969164907932,
+    "max_tip_error_m": 0.000635382137261331,
+    "nominal_support_foot_drift_m": 1.53775363287423e-05,
+    "ordinary_heavy": {
+      "curve": {
+        "interpolation": "linear_grip_tip",
+        "ok": true,
+        "path": "res://data/heavy_blade_curve.json",
+        "reason": "",
+        "sample_count": 111,
+        "sample_step_s": 0.002,
+        "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+        "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+        "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+      },
+      "imported_max_keys": 87,
+      "max_chord_error_m": 0.00036877632141108,
+      "max_grip_error_m": 7.91624042904004e-05,
+      "max_tip_error_m": 0.000440670584794134,
+      "nominal_support_foot_drift_m": 1.55246925714891e-05,
+      "ok": true,
+      "scope": "Actual imported markers and declared nominal plant window only, not terrain IK or visual approval"
+    },
+    "scope": "Imported actual marker/nominal stance and moving-charge layer alignment only; no terrain IK, normal-speed AV, target-device or AAA approval",
+    "source_body_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+    "raw_report": {
+      "bytes": 65466,
+      "sha256": "131376c83d6031960e596799280e1c7e41395ae835a0f6f0975125383c23d201",
+      "scope": "Actualimportedmarker/LUT/nominalplant summary; repeatedper-time rowsomittedonly."
+    }
+  },
+  "native_ordinary_physics": {
+    "whiff_active_phase_travel_m": 0.704,
+    "actual_imported_point_probe_damage_once": 42,
+    "preparation_damage": 0,
+    "scope": "Actualordinaryphysicalcontrollerprobe/importedLUT point, nothuman/browserinput ornewGameAVrasterapproval."
+  },
+  "charged_contract": {
+    "damage": 69.3,
+    "scope": "Newactivegeometrycanlegitimatelychangefirstcontacttime; noforcedoldphase/oldshapecontactclaim."
+  },
+  "export_manifest": {
+    "version": "0.1.15",
+    "godot": "4.7.2",
+    "commit": "87fcefdd",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119129172,
+        "sha256": "09a7b11294bf035e7fe275c906dab4524045ce088b28d2d6037c5c0f955e812c"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 146970528,
+        "sha256": "8da75a42fac6e04a7d289a612726c02ffbfe82ff89b03af1fcf4772ce1022ae6"
+      }
+    ]
+  },
+  "raw_web": {
+    "bytes": 149791667,
+    "cap_bytes": 150000000,
+    "remaining_bytes": 208333,
+    "file_count": 14,
+    "actual_delta_vs_v014_bytes": 63348,
+    "scope": "ActualcompleteWeb+63348B; netnewGLBsource−5411836B isnotWebsaving. NoPCKcausalexplanationwithoutpayloadinspection."
+  },
+  "source_freeze": "runtime-source-freeze-002.json",
+  "source_fingerprint": "159aec8cde7ed0a430114460cb4fac7fa12a26fdb9a738bac359763d756fb472",
+  "pending": [
+    "Actualcandidate14Gamecapture/rootvisualreview",
+    "desktop/mobile/CI/public/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ],
+  "subsequent_capture_pipeline": "actual-game-pipeline-preliminary.json"
+}

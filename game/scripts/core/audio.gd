@@ -146,7 +146,7 @@ func play_attack(attack_id: String, pitch: float = 1.0) -> void:
 	if attack_id.is_empty():
 		_last_attack = {"accepted":false, "reason":"empty_attack"}
 		return
-	var gain := -11.0 if key == "impact_swing_charged" else (-12.0 if key == "impact_swing_heavy" else -8.0)
+	var gain := -8.0 if key == "impact_swing_charged" else (-9.0 if key == "impact_swing_heavy" else -8.0)
 	var played := _play_clip(key, pitch, gain)
 	_last_attack = {"accepted":played, "attack_id":attack_id, "pitch":pitch,
 		"phase":"attack_start_swing_only", "sound_key":key, "impact_layers":0}
@@ -156,10 +156,10 @@ func _impact_profile(context: Dictionary) -> Dictionary:
 	if bool(context.get("blocked", false)):
 		return {"style":"blocked_metal", "layers":[{"key":"contact_tick", "db":-22.0}, {"key":"metal_block", "db":-13.0}, {"key":"debris_tail", "db":-28.0}]}
 	if strength == "charged":
-		return {"style":"charged", "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-13.0}, {"key":"body_thump", "db":-15.0}, {"key":"charge_sub", "db":-18.0}, {"key":"debris_tail", "db":-23.0}]}
+		return {"style":"charged", "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-10.0}, {"key":"body_thump", "db":-11.0}, {"key":"charge_sub", "db":-13.0}, {"key":"debris_tail", "db":-23.0}]}
 	if strength in ["heavy", "skill"]:
-		return {"style":strength, "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-15.0}, {"key":"body_thump", "db":-14.0}, {"key":"debris_tail", "db":-25.0}]}
-	return {"style":"light", "layers":[{"key":"contact_tick", "db":-18.0}, {"key":"metal_light", "db":-18.0}]}
+		return {"style":strength, "layers":[{"key":"contact_tick", "db":-16.0}, {"key":"metal_heavy", "db":-12.0}, {"key":"body_thump", "db":-11.0}, {"key":"debris_tail", "db":-24.0}]}
+	return {"style":"light", "layers":[{"key":"contact_tick", "db":-16.0}, {"key":"metal_light", "db":-15.0}]}
 
 func play_impact(context: Dictionary) -> void:
 	# Only the confirmed impact dispatcher calls this API. The context is copied

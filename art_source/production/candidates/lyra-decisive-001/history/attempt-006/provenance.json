@@ -1,0 +1,14 @@
+{
+  "stage": "pre-run",
+  "reason": "Accept unique actual glTF importer clip suffix and preserve author-stage data before postprocessing; pose/sampling unchanged from005",
+  "files": {
+    "recipe.json": {
+      "bytes": 2730,
+      "sha256": "0fb64a9288e6e48da43652376a1a8428ea6dcc848213c7728b18dc67ab9529b7"
+    },
+    "author_decisive_actions.py": {
+      "bytes": 23363,
+      "sha256": "146ea52da6263a6afd40917ed7fa3ad47fb285204cb5a5681e514675091f8f8b"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "source_parent_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "selected_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "attempts": [
+    {
+      "attempt": "001",
+      "status": "rejected_before_export",
+      "reason": "Existing closest axial twist decomposition reached180deg swing/twist ambiguity in new charge at.318s RightForeArm; denominator<.02. No limit widened",
+      "glb_written": false,
+      "tool_recipe_snapshot": "history/attempt-001/provenance.json",
+      "log": "history/attempt-001/author.log"
+    },
+    {
+      "attempt": "002",
+      "status": "rejected_before_export",
+      "reason": "Charged recovery through grip at.570s exceeded right arm reach by1.901mm;1mm limit maintained. Re-authored through target inward/up",
+      "glb_written": false,
+      "tool_recipe_snapshot": "history/attempt-002/provenance.json",
+      "log": "history/attempt-002/author.log"
+    },
+    {
+      "attempt": "003",
+      "status": "rejected_before_export",
+      "reason": "Ordinaryheavy startup front step-.62m exceeded leg reach11.786mm at.240s. Plant changed to-.52m without altering active root travel",
+      "glb_written": false,
+      "tool_recipe_snapshot": "history/attempt-003/provenance.json",
+      "log": "history/attempt-003/author.log"
+    },
+    {
+      "attempt": "004",
+      "status": "rejected_export_contract",
+      "reason": "Blender export_anim_single_armature=True collects all actions even in ACTIVE_ACTIONS; duplicate channels merged all3names to charge.65s. Actual imported joins rejected by existing gate; fixed explicit flagFalse and per-sampler duration/keycount assertions",
+      "glb_written": true,
+      "file": "source-004.glb",
+      "bytes": 23833328,
+      "sha256": "95485fa51caa7953353f06221f3467c76984a47cbd501ce8024d21e3991429ae",
+      "tool_recipe_snapshot": "history/attempt-004/provenance.json",
+      "log": "history/attempt-004/author.log"
+    },
+    {
+      "attempt": "005",
+      "status": "postprocess_incomplete_byte_identical_to006",
+      "reason": "Correct perclip GLB/lineage/reimport joins passed; LUT extraction exact action-name lookup rejected Blender suffix.006 changes only unique suffix handling/report durability; actual GLB bytes are identical",
+      "file": "source-005.glb",
+      "bytes": 19648124,
+      "sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+      "tool_recipe_snapshot": "history/attempt-005/provenance.json",
+      "log": "history/attempt-005/author.log"
+    }
+  ],
+  "ankle_scope_diagnostic": {
+    "file": "source-006.ankle-wide-diagnostic.json",
+    "reason": "Initial custom ROI weight>.5/Y<.04m included upper-boot vertices blended with moving Leg; measured39.13/42.38mm. Preserved as boot-deformation diagnostic. Existing sole gate instead uses original published >=.98Foot/Toe +floor25mm criterion acrossALL140vertices, not only32 representatives; no10mm threshold change."
+  }
+}

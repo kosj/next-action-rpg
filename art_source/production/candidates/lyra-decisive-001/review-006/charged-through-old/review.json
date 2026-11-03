@@ -1,0 +1,87 @@
+{
+  "scope": "Actual new GLB reimport with its original body/materials, runtime sword and physical socket; neutral fixed Blender studio, not gameplay/AAA approval.",
+  "input": "/workspace/next-action-rpg/art_source/production/candidates/lyra-continuity-001/source-006-guarded.glb",
+  "input_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "weapon": "/workspace/next-action-rpg/game/assets/models/production/rune_sword_web.glb",
+  "weapon_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "eyes_sha256": null,
+  "blender": "4.3.2",
+  "motion_profile": "baseline",
+  "camera_and_lights_follow_nominal_root": true,
+  "view": "full",
+  "clip": "charged_heavy",
+  "imported_action": "charged_heavy_Armature",
+  "frame_start": 0.0,
+  "sample_hz": 100,
+  "camera_matrix": [
+    [
+      0.8339322209358215,
+      -0.15282638370990753,
+      0.53028404712677,
+      4.5
+    ],
+    [
+      0.551866888999939,
+      0.2309376746416092,
+      -0.8013181090354919,
+      -7.576000213623047
+    ],
+    [
+      -3.19237969392816e-09,
+      0.9608911871910095,
+      0.276926189661026,
+      3.5999999046325684
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "orthographic_scale": 4.199999809265137,
+  "shots": [
+    {
+      "time_s": 0.6,
+      "file": "charged_heavy-0600.png",
+      "sha256": "14bb6ed9fe7d6e8565f0426f20e9afab22d5a2b356d4bfa02c2da6ed03dc1a5a",
+      "virtual_actor_travel_m": 0.576,
+      "camera_matrix": [
+        [
+          0.8339322209358215,
+          -0.15282638370990753,
+          0.53028404712677,
+          4.5
+        ],
+        [
+          0.551866888999939,
+          0.2309376746416092,
+          -0.8013181090354919,
+          -7.576000213623047
+        ],
+        [
+          -3.19237969392816e-09,
+          0.9608911871910095,
+          0.276926189661026,
+          3.5999999046325684
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "actual_weapon_grip_m": [
+        0.18340708315372467,
+        -0.8311861157417297,
+        1.0523862838745117
+      ],
+      "actual_weapon_tip_m": [
+        1.0324528217315674,
+        -1.1352241039276123,
+        0.27599579095840454
+      ]
+    }
+  ]
+}

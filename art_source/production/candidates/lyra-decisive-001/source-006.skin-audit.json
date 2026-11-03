@@ -1,0 +1,509 @@
+{
+  "scope": "Read-only actual raw glTF LBS at every source/candidate charge+charged+ordinaryheavy key and midpoint, arm/hand/shoulder regions. Finite sampling is not continuous collision, skin intersection, visual, hardware or AAA approval.",
+  "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618",
+  "candidate_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "audit_script_sha256": "6ad7be4842aa5eb21128d544d21faa90486d391d46d5823304bdf79f027c8d81",
+  "skin_helper_sha256": "8b517ac6c97bd3d2af3321c3311ee2ba68d23d68506be4fc665f7a5fd13c086b",
+  "primitives": [
+    {
+      "primitive": 0,
+      "samples_keys_and_midpoints": 1885,
+      "regional_vertices": 11014,
+      "regional_edges": 23800,
+      "regional_triangles": 13290,
+      "scope": "Edges with at least one arm/hand/shoulder-influenced vertex and adjacent triangles; no skin intersection/anatomical/visual approval.",
+      "old_max_absolute_extension_mm": 38.61814890507607,
+      "new_max_absolute_extension_mm": 45.01153740288708,
+      "old_p99_edge_ratio": 1.684873819044061,
+      "new_p99_edge_ratio": 1.668897621534451,
+      "old_max_ratio": 4.710154462656586,
+      "new_max_ratio": 4.314576331411087,
+      "new_collateral_edges_above1mm": 1191,
+      "old_min_triangle_area_ratio": 0.0007545263006576371,
+      "new_min_triangle_area_ratio": 0.0003653922342572308,
+      "largest_same_edge_envelope_worsening": [
+        {
+          "edge_index_in_region": 4285,
+          "vertex_ids": [
+            1937,
+            1947
+          ],
+          "rest_length_mm": 22.58085371902589,
+          "old_envelope_extension_mm": 10.496708762574077,
+          "new_envelope_extension_mm": 28.934229027982937,
+          "worsening_mm": 18.43752026540886,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.21868691357103298,
+              1.3925745684193036,
+              -0.026236160932289077
+            ],
+            [
+              -0.1963014095919089,
+              1.3947235724535514,
+              -0.024195095538566563
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.8205536007881165,
+              "RightShoulder": 0.14380623400211334,
+              "Spine2": 0.03235616534948349,
+              "Spine1": 0.003284059464931488
+            },
+            {
+              "RightArm": 0.607633650302887,
+              "RightShoulder": 0.24926820397377014,
+              "Spine2": 0.08578559756278992,
+              "Spine1": 0.057312559336423874
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 14293,
+          "vertex_ids": [
+            16522,
+            16543
+          ],
+          "rest_length_mm": 27.246265118500908,
+          "old_envelope_extension_mm": 0.8971392983850093,
+          "new_envelope_extension_mm": 18.599454266468147,
+          "worsening_mm": 17.702314968083137,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2540000081062317
+          },
+          "rest_vertices_world_m": [
+            [
+              0.16553161240400696,
+              1.389256099063682,
+              -0.07728435389223764
+            ],
+            [
+              0.1899774626603597,
+              1.3989434113558927,
+              -0.07014885470123491
+            ]
+          ],
+          "weights": [
+            {
+              "LeftShoulder": 0.44150251150131226,
+              "LeftArm": 0.3574092984199524,
+              "Spine2": 0.13042457401752472,
+              "Spine1": 0.07066360116004944
+            },
+            {
+              "LeftArm": 0.6074635982513428,
+              "LeftShoulder": 0.29293331503868103,
+              "Spine2": 0.07334278523921967,
+              "Spine1": 0.026260288432240486
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 4279,
+          "vertex_ids": [
+            1935,
+            1947
+          ],
+          "rest_length_mm": 29.949156618725503,
+          "old_envelope_extension_mm": 6.850290087654611,
+          "new_envelope_extension_mm": 22.859050696220105,
+          "worsening_mm": 16.008760608565492,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.2178679805931334,
+              1.3904158536892874,
+              -0.044524349250154215
+            ],
+            [
+              -0.1963014095919089,
+              1.3947235724535514,
+              -0.024195095538566563
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.8358019590377808,
+              "RightShoulder": 0.14023908972740173,
+              "Spine2": 0.023557817563414574,
+              "Spine1": 0.00040113963768817484
+            },
+            {
+              "RightArm": 0.607633650302887,
+              "RightShoulder": 0.24926820397377014,
+              "Spine2": 0.08578559756278992,
+              "Spine1": 0.057312559336423874
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 2489,
+          "vertex_ids": [
+            1106,
+            1108
+          ],
+          "rest_length_mm": 24.642268681417157,
+          "old_envelope_extension_mm": -2.4351035591986743,
+          "new_envelope_extension_mm": 13.540271925217489,
+          "worsening_mm": 15.975375484416164,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.18950458295338385,
+              1.429909017993365,
+              0.028836132692275158
+            ],
+            [
+              -0.16661811197715556,
+              1.4262101561843528,
+              0.03718893302146086
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.4390169084072113,
+              "RightShoulder": 0.4289795160293579,
+              "Spine2": 0.09469563513994217,
+              "Spine1": 0.03730786219239235
+            },
+            {
+              "RightShoulder": 0.488961786031723,
+              "RightArm": 0.27988770604133606,
+              "Spine2": 0.15924108028411865,
+              "Spine1": 0.07190942764282227
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 4278,
+          "vertex_ids": [
+            1935,
+            1946
+          ],
+          "rest_length_mm": 21.434671045761654,
+          "old_envelope_extension_mm": 12.315912820413665,
+          "new_envelope_extension_mm": 27.320710831515168,
+          "worsening_mm": 15.004798011101501,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.2178679805931334,
+              1.3904158536892874,
+              -0.044524349250154215
+            ],
+            [
+              -0.19674010622757251,
+              1.3935375952863924,
+              -0.04634445282797414
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.8358019590377808,
+              "RightShoulder": 0.14023908972740173,
+              "Spine2": 0.023557817563414574,
+              "Spine1": 0.00040113963768817484
+            },
+            {
+              "RightArm": 0.6415473818778992,
+              "RightShoulder": 0.23717506229877472,
+              "Spine2": 0.0748501643538475,
+              "Spine1": 0.04642742499709129
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 6536,
+          "vertex_ids": [
+            4628,
+            4637
+          ],
+          "rest_length_mm": 22.756825601285882,
+          "old_envelope_extension_mm": -4.787514474236455,
+          "new_envelope_extension_mm": 9.76430894617792,
+          "worsening_mm": 14.551823420414376,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.186505805150475,
+              1.5269988927333062,
+              0.03521108185066666
+            ],
+            [
+              -0.16441318360412133,
+              1.5291383306513149,
+              0.030189927595725127
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.695243239402771,
+              "RightShoulder": 0.3047567307949066
+            },
+            {
+              "RightArm": 0.5035125613212585,
+              "RightShoulder": 0.49648740887641907
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 21740,
+          "vertex_ids": [
+            23736,
+            23767
+          ],
+          "rest_length_mm": 31.205188862706667,
+          "old_envelope_extension_mm": 21.26600613881888,
+          "new_envelope_extension_mm": 35.396297784262885,
+          "worsening_mm": 14.130291645444004,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.15035596739431656,
+              1.3416342408137103,
+              0.08817484234489721
+            ],
+            [
+              -0.1463696240828654,
+              1.3256827308291421,
+              0.11469695025834675
+            ]
+          ],
+          "weights": [
+            {
+              "Spine2": 0.39184093475341797,
+              "Spine1": 0.3796445429325104,
+              "RightShoulder": 0.144407719373703,
+              "RightArm": 0.08410678803920746
+            },
+            {
+              "Spine1": 0.45284268260002136,
+              "Spine2": 0.37659966945648193,
+              "RightShoulder": 0.10224611312150955,
+              "Spine": 0.06831154227256775
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 21810,
+          "vertex_ids": [
+            23766,
+            23775
+          ],
+          "rest_length_mm": 26.821153583213864,
+          "old_envelope_extension_mm": 16.714637302000114,
+          "new_envelope_extension_mm": 30.14967988081289,
+          "worsening_mm": 13.435042578812777,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.14640705783561497,
+              1.3483831799136503,
+              0.10970127032150584
+            ],
+            [
+              -0.13838799677168445,
+              1.343079548028803,
+              0.13474004880643456
+            ]
+          ],
+          "weights": [
+            {
+              "Spine1": 0.4179513156414032,
+              "Spine2": 0.3757798671722412,
+              "RightShoulder": 0.1342717558145523,
+              "RightArm": 0.07199706882238388
+            },
+            {
+              "Spine1": 0.4709274172782898,
+              "Spine2": 0.3683509826660156,
+              "RightShoulder": 0.10414019972085953,
+              "Spine": 0.056581415235996246
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 2432,
+          "vertex_ids": [
+            1082,
+            1086
+          ],
+          "rest_length_mm": 22.865437247520557,
+          "old_envelope_extension_mm": -5.391206771066963,
+          "new_envelope_extension_mm": 7.961476124484942,
+          "worsening_mm": 13.352682895551904,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.15800000727176666
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.21437142187306465,
+              1.480407105555686,
+              0.01856778263966569
+            ],
+            [
+              -0.19204396374095814,
+              1.4783099019377142,
+              0.023030357105609887
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.7225903272628784,
+              "RightShoulder": 0.27740970253944397
+            },
+            {
+              "RightArm": 0.49329569935798645,
+              "RightShoulder": 0.4884999394416809,
+              "Spine2": 0.018204351887106895
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 7601,
+          "vertex_ids": [
+            7933,
+            7938
+          ],
+          "rest_length_mm": 25.066788845306736,
+          "old_envelope_extension_mm": 6.721721811561679,
+          "new_envelope_extension_mm": 19.855631550831212,
+          "worsening_mm": 13.133909739269534,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.3199999928474426
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.15802306713781214,
+              1.4849637252967096,
+              0.04560353693824918
+            ],
+            [
+              -0.1379946392889927,
+              1.470176616352927,
+              0.048527128907819156
+            ]
+          ],
+          "weights": [
+            {
+              "RightShoulder": 0.4888606369495392,
+              "RightArm": 0.45543336868286133,
+              "Spine2": 0.05570601671934128
+            },
+            {
+              "RightShoulder": 0.578137218952179,
+              "RightArm": 0.26366013288497925,
+              "Spine2": 0.1349640190601349,
+              "Spine1": 0.0232386514544487
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 4288,
+          "vertex_ids": [
+            1938,
+            1946
+          ],
+          "rest_length_mm": 21.500480415621077,
+          "old_envelope_extension_mm": 11.359561669954552,
+          "new_envelope_extension_mm": 24.395679343410933,
+          "worsening_mm": 13.036117673456381,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.21620607761866018,
+              1.3920841400121942,
+              -0.055357448094242034
+            ],
+            [
+              -0.19674010622757251,
+              1.3935375952863924,
+              -0.04634445282797414
+            ]
+          ],
+          "weights": [
+            {
+              "RightArm": 0.8322774171829224,
+              "RightShoulder": 0.14600948989391327,
+              "Spine2": 0.02171306498348713
+            },
+            {
+              "RightArm": 0.6415473818778992,
+              "RightShoulder": 0.23717506229877472,
+              "Spine2": 0.0748501643538475,
+              "Spine1": 0.04642742499709129
+            }
+          ]
+        },
+        {
+          "edge_index_in_region": 6582,
+          "vertex_ids": [
+            4648,
+            4674
+          ],
+          "rest_length_mm": 17.311790227855525,
+          "old_envelope_extension_mm": 2.0162791817048173,
+          "new_envelope_extension_mm": 14.664545468062022,
+          "worsening_mm": 12.648266286357204,
+          "new_peak": {
+            "clip": "charged_heavy",
+            "time_s": 0.2619999945163727
+          },
+          "rest_vertices_world_m": [
+            [
+              -0.15570059658769989,
+              1.4862827261520803,
+              0.046986776505050634
+            ],
+            [
+              -0.13916732525039952,
+              1.4904070969167416,
+              0.0500426864474547
+            ]
+          ],
+          "weights": [
+            {
+              "RightShoulder": 0.48620182275772095,
+              "RightArm": 0.4570519030094147,
+              "Spine2": 0.056746263056993484
+            },
+            {
+              "RightShoulder": 0.6080064177513123,
+              "RightArm": 0.29804736375808716,
+              "Spine2": 0.0939461961388588
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

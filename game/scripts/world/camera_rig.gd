@@ -6,7 +6,7 @@ const FREE_DISTANCE := 4.5
 const MAX_LOCK_DISTANCE := 8.6
 const FOLLOW_HEIGHT := 2.4
 const SHOULDER_OFFSET := 1.2
-const IMPACT_DURATION := 0.19
+const IMPACT_DURATION := 0.22
 const HERO_HEIGHT := 1.82
 const COLLISION_FOCUS_HEIGHT := 0.9
 const MAX_COLLISION_LIFT := 1.6
@@ -65,7 +65,7 @@ func apply_impact(context: Dictionary) -> void:
 	if motion is Vector3 and motion.is_finite() and motion.length_squared()>0.000001:
 		# Follow the accepted cut's direction, never an authored ground-slam kick.
 		impact_direction = (impact_direction*0.65+motion.normalized()*0.35).normalized()
-	impact_amplitude = 0.085 if strength == "charged" else 0.055
+	impact_amplitude = 0.13 if strength == "charged" else 0.075
 
 func impact_report() -> Dictionary:
 	return {"age":impact_age,"amplitude":impact_amplitude,"duration":IMPACT_DURATION,
@@ -404,7 +404,10 @@ func _physics_process(delta: float) -> void:
 	shake_strength = maxf(0.0, shake_strength - delta * 1.6)
 	camera.fov = BASE_FOV
 	if Session.shake and impact_age<IMPACT_DURATION:
-		var envelope := sin(PI*impact_age/IMPACT_DURATION)*exp(-impact_age*12.0)
+		# A short, directional attack followed by a smooth release gives the
+		# confirmed cut a distinct punctuation without extending random shake.
+		var release := 1.0-clampf(impact_age/IMPACT_DURATION,0.0,1.0)
+		var envelope := smoothstep(0.0,0.025,impact_age)*release*release*release
 		camera.global_position += (impact_direction+Vector3.UP*0.2)*impact_amplitude*envelope
 		camera.fov -= impact_amplitude * 34.0 * envelope
 	if Session.shake and shake_strength > 0:

@@ -1,0 +1,13 @@
+{
+  "stage": "pre-run",
+  "files": {
+    "recipe.json": {
+      "bytes": 2730,
+      "sha256": "dd96d6c4227a2e6b1d5506cfd73c374ba22c04ccbd9051f8cea3fb448fb34c9e"
+    },
+    "author_decisive_actions.py": {
+      "bytes": 22175,
+      "sha256": "be39b331c2d83a0678decc62cdbcc4acf530dffd7fba821da92323767c6ee7a5"
+    }
+  }
+}

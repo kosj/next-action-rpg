@@ -1,0 +1,14 @@
+{
+  "stage": "pre-run",
+  "reason": "Bound recovery hand target inside actual .52147m arm reach; overhead and active trajectory unchanged",
+  "files": {
+    "recipe.json": {
+      "bytes": 2730,
+      "sha256": "dd96d6c4227a2e6b1d5506cfd73c374ba22c04ccbd9051f8cea3fb448fb34c9e"
+    },
+    "author_decisive_actions.py": {
+      "bytes": 22176,
+      "sha256": "a9bb34ec027adc16685fccb8d9e2fa64faaa98325a74a95ca0890a068f219f06"
+    }
+  }
+}

@@ -10,6 +10,68 @@ static func _attack(time: float) -> Dictionary:
 	return {"attack_id":"charged_heavy","attack_elapsed":time,"attack_duration":data.duration(),
 		"attack_startup":data.startup,"attack_active":data.active,"speed":0.0}
 
+static func _ordinary_heavy_alignment(actor: RunePlayer, visual: ActorVisual, grip: Node3D, tip: Node3D, check: Callable) -> Dictionary:
+	# The new ordinary two-handed cut has its own independently imported path.
+	# Checking the charged path cannot detect an accidentally retained old arc.
+	var data := RunePlayer.HEAVY
+	var curve := data.blade_curve_report()
+	var source_sha := FileAccess.get_sha256(ProductionCharacterArt.definition("hero").path)
+	check.call(data.physical_blade_sweep and data.phase_lunge and curve.ok and String(curve.get("source_sha256",""))==source_sha,
+		"Ordinary heavy uses its own source-bound physical blade instead of the former generic horizontal reach")
+	if not curve.ok:
+		return {"ok":false,"curve":curve}
+	var max_grip := 0.0
+	var max_tip := 0.0
+	var max_chord := 0.0
+	for actor_scale in [1.0,1.25]:
+		actor.scale = Vector3.ONE*actor_scale
+		actor.rotation.y = 0.7
+		for index in range((int(curve.sample_count)-1)*2+1):
+			var phase := float(index)/((int(curve.sample_count)-1)*2)
+			_pose(visual,{"attack_id":"heavy","attack_elapsed":data.startup+data.active*phase,
+				"attack_duration":data.duration(),"attack_startup":data.startup,"attack_active":data.active,"speed":0.0})
+			var expected := data.blade_points(phase)
+			var into_actor := actor.global_transform.affine_inverse()
+			max_grip = maxf(max_grip,(into_actor*grip.global_position).distance_to(expected[0]))
+			max_tip = maxf(max_tip,(into_actor*tip.global_position).distance_to(expected[1]))
+			max_chord = maxf(max_chord,absf(expected[0].distance_to(expected[1])-data.blade_length))
+	check.call(max_grip<.003 and max_tip<.003 and max_chord<.002,
+		"The independently displayed ordinary heavy matches every LUT key/midpoint within3mm and2mm chord at two scales")
+	var phases := data.blade_sweep_phases(0.0,1.0,0.0,1.0)
+	var retains_keys := true
+	for index in range(int(curve.sample_count)):
+		var phase := float(index)/(int(curve.sample_count)-1)
+		var found := false
+		for queried: float in phases:
+			found = found or absf(queried-phase)<.000000001
+		retains_keys = retains_keys and found
+	check.call(retains_keys,"One large ordinary-heavy physics step retains every authored bend in its own physical path")
+	var animation := visual.skeletal_bridge.animation_player.get_animation(&"heavy")
+	var maximum_keys := 0
+	for track in range(animation.get_track_count()):
+		maximum_keys = maxi(maximum_keys,animation.track_get_key_count(track))
+	check.call(maximum_keys==87,"Ordinary heavy retains its actual100Hz87-key authored motion without scene-wide500Hz inflation")
+	actor.scale = Vector3.ONE
+	actor.rotation.y = 0.0
+	var skeleton := visual.skeletal_bridge.get_skeleton()
+	var foot := skeleton.find_bone("LeftFoot")
+	var planted := Vector3.ZERO
+	var drift := 0.0
+	for time: float in [.28,.32,.34,.40,.48,.54]:
+		var travel := data.lunge_between(0.0,time)*time
+		actor.position = Vector3.FORWARD*travel
+		_pose(visual,{"attack_id":"heavy","attack_elapsed":time,"attack_duration":data.duration(),
+			"attack_startup":data.startup,"attack_active":data.active,"speed":0.0})
+		var point := (skeleton.global_transform*skeleton.get_bone_global_pose(foot)).origin
+		if time==.28:
+			planted = point
+		drift = maxf(drift,point.distance_to(planted))
+	check.call(is_zero_approx(data.lunge_between(0.0,data.startup)) and absf(data.lunge_between(0.0,data.duration())*data.duration()-.704)<.00001 and drift<.005,
+		"Ordinary heavy plants its support foot within5mm through0.704m nominal cut travel while preparation stays in place")
+	return {"ok":true,"curve":curve,"max_grip_error_m":max_grip,"max_tip_error_m":max_tip,
+		"max_chord_error_m":max_chord,"nominal_support_foot_drift_m":drift,"imported_max_keys":maximum_keys,
+		"scope":"Actual imported markers and declared nominal plant window only, not terrain IK or visual approval"}
+
 static func run(world: Node3D, check: Callable) -> bool:
 	var fixture := Node3D.new()
 	world.add_child(fixture)
@@ -105,6 +167,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 			planted = actual
 		foot_drift = maxf(foot_drift, actual.distance_to(planted))
 	check.call(foot_drift < 0.005, "The actual imported support foot stays within 5mm through nominal 0.576m attack travel")
+	var normal_heavy := _ordinary_heavy_alignment(actor,visual,grip,tip,check)
 	actor.position = Vector3.ZERO
 	visual.skeletal_bridge.reset_presentation()
 	var walking := {"speed":6.4,"move_local_x":0.0,"move_local_z":-1.0}
@@ -122,6 +185,7 @@ static func run(world: Node3D, check: Callable) -> bool:
 	var chest := skeleton.find_bone("Spine2")
 	check.call(visual.skeletal_bridge.selected_state == &"walk" and visual.skeletal_bridge.transition_report().charge_upper_body and legs_unchanged and not before[chest].is_equal_approx(skeleton.get_bone_pose(chest)), "Moving charge displays the loaded upper body while preserving the real walking hips and legs")
 	var report := {"scope":"Imported actual marker/nominal stance and moving-charge layer alignment only; no terrain IK, normal-speed AV, target-device or AAA approval",
+		"ordinary_heavy":normal_heavy,
 		"max_grip_error_m":max_grip_error,"max_tip_error_m":max_tip_error,"nominal_support_foot_drift_m":foot_drift,
 		"curve":curve,"max_interpolated_blade_length_error_m":max_blade_length_error,
 		"full_window_query_samples":query_phases.size(),"max_query_endpoint_step_m":max_query_gap,

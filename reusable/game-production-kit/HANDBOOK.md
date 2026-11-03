@@ -95,6 +95,8 @@
 | `generated-npc-budget-and-relic-role-authority` | [생성 NPC/guard의 공유 자산과 relic의 역할](skills/generated-3d-game-art/references/art-review.md#생성-npc공유-리그와-기능-오브젝트)을 실제 export 여유와 연결한다. | 최신 provider 도구·비용/권리·raw/rig/idle 파생, source/import/PCK/ZIP/GPU 차이와 이미 제외된 dependency, NPC/Enemy playback 독립성, 표시 pivot과 checkpoint/heal/save 권한·정상 입력. 생성/preview·구조 수치·재사용을 AAA/실기기 승인으로 승계하지 않음 |
 | `continuous-arm-chain-observer-and-mixer-evidence` | 의도한 손 목표와 잘못된 중간 FK를 구분하고, 본의 연속성·국소 skin·관측 수명·실제 mixer 음향을 각각 검증한다. | 원래 키 보존과 새 목표 저작의 범위, local/world·key/mid 표본, 원본 곡선의 byte 보존, 실제 게임 AV와 직접 시청·청취의 차이 |
 | `obstructed-camera-framing-and-latent-follow-state` | 주인공과 적이 함께 읽히는지 확인하고, 명시한 저투명도 임시 장벽의 카메라 정책을 actor 충돌과 분리한다. | 같은 World·실효 재질·모든 카메라 질의, 불투명 벽과 실제 capsule 차단, 이동 volume·latent follow 상태, body-only 기각과 실제 전후 구도·후반 위치 차이 |
+| `decisive-heavy-action-and-baked-audio-timing` | 일반 강공격과 약공격의 차이를 실제 자세·칼날 곡선·이동·VFX/audio에서 확인하고 baked quiet lead를 먼저 읽는다. | 보존할 light channel, whole-file과 live payload, ordinary/charged LUT·물리 contact, 실제 Game AV와 offline gain, 실제 Web 예산. |
+| `glb-live-reference-compaction-and-curve-path-portability` | live 참조의 payload·의미를 보존한 container remap과 runtime curve의 path metadata 적응을 분리한다. | stride/sparse/skin/image/모든 sampler, 독립 native 서명·negative byte 변형, source 절감과 실제 Web 차이, 미지원 schema 거부. |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -121,3 +123,9 @@
 사례 70 camera 기록은 실제 gate/focus lag/short boom witness, endpoint와 이동 volume의 차이, latent follow base와 feedback 누적을 나눕니다. native 조건과 실패 원장을 보존하고 analytic 보존을 runtime bit 동일로 확대하지 않습니다. 실제 조립된 무기 profile은 파일명보다 source/geometry/marker SHA로 확인합니다.
 
 원본 사례 69/70에서는 제한된 source/native/실제45초 구도 검증을 확인했습니다. browser/public·전체 시청/직접 청취/skin·목표 하드웨어/AAA는 pending입니다. body-only metric의 기각과 최종 actual pair의 late position variance를 보존하며, exact AV 배포를 지각 AV 승인으로 이전하지 않습니다. 고정 출처/ZIP은 source commit 후 별도로 관리합니다.
+
+새 원본 사례71의 verified는 source/native와 실제 scripted Game의 제한된 관측·원본 검토 범위다. 사용자에게 약하게 읽힌 일반 강공격과 약공격을 같은 phase에서 비교하고, 새로운 몸 동작·실제 칼날 LUT·motor·VFX/audio를 함께 검증하는 절차를 준비한다. 기존 PCM의 baked quiet lead를 확인하기 전에 playback 지연을 더하지 않으며, offline gain 검사와 실제 Game/청취 승인을 구분한다. 새 후보의 native·export·실제 Game 원본에서 준비/검 궤적 개선을 확인했다. flat fan·국소 skin 위험·연속 시청/청취·실기기·AAA는 미승인이다.
+
+새 사례72의 verified는 core GLB live-reference compaction의 별도 private 검증과 독립 guard 범위다. 참조 payload와 의미를 보존한 remap을 BIN prefix 동일과 구분하고, runtime curve의 path metadata를 numeric sample과 따로 검증한다. 독립 native core payload 보존은 확인했다. 실제 전체 Web은 증가했으므로 Web 최적화 성공으로 쓰지 않으며 시각/게임 승인은 pending이다.
+
+다음1.4.9 prose 준비: source container·의미 보존·실제 native payload·최종 Web payload의 수치를 따로 유지한다. prefix를 보존할 수 없는 remap은 원본을 엄격히 고정한 독립 native 서명과 실제 byte 변형 negative로 검증한다. 작은 source가 전체 Web 절감을 뜻하지 않으며 payload 조사 없이 증가 원인을 추측하지 않는다. pin·판본 배포·ZIP은 source commit 뒤 root가 관리한다.

@@ -1,0 +1,14 @@
+{
+  "stage": "pre-run",
+  "reason": "Disable all-single-armature action collection during ACTIVE_ACTIONS export and assert actual per-channel sample counts/duration before graft",
+  "files": {
+    "recipe.json": {
+      "bytes": 2730,
+      "sha256": "0fb64a9288e6e48da43652376a1a8428ea6dcc848213c7728b18dc67ab9529b7"
+    },
+    "author_decisive_actions.py": {
+      "bytes": 22890,
+      "sha256": "77c92d1b9300bdca7cd4cb3b6dc2ec4834b5d46233e167d6db0dbd44f0e02b66"
+    }
+  }
+}

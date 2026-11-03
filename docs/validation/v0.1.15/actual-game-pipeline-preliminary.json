@@ -1,0 +1,208 @@
+{
+  "checked_on": "2026-11-03",
+  "status": "actual_two_capture_pipelines_complete_post_take_audit_and_visual_verdict_pending",
+  "scope": "Capture.json readback only, pending captureagent finalsource/receipt/geometry/PCM audit and peer/rootfinalvisualverdict. No new claim of directlyviewedalloriginals, continuouswatch/hearing/AAA.",
+  "takes": {
+    "before": {
+      "capture_status": "scripted_native_gameplay_captured",
+      "elapsed_wall_s": 471.0418574810028,
+      "processes_closed": true,
+      "actual": {
+        "charged_contacts": 1,
+        "paired_pause_frames": 5,
+        "actual_models": {
+          "hero": {
+            "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+            "sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+          },
+          "sentinel_melee": {
+            "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+            "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+          }
+        },
+        "actual_curve": {
+          "interpolation": "linear_grip_tip",
+          "ok": true,
+          "path": "res://data/charged_blade_curve.json",
+          "reason": "",
+          "resource_sha256": "c6c4d22cb7514520e26f550d87d7e27bf7df04a7c9bf1ef33cadbaed9cc18469",
+          "sample_count": 91,
+          "sample_step_s": 0.002,
+          "sha256": "8946d0a499c50a0df8e26576a23221d54ef56d3099f1c2e01cbb25aa4e8f21e2",
+          "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+          "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+        },
+        "contact_tick": 610,
+        "release_tick": 586,
+        "actual_build_id": "0.1.14 · development",
+        "start_health": 120.0,
+        "end_health": 88.0,
+        "frame_count": 864,
+        "gameplay_frames": 840,
+        "capture_policy": "continuity_plus_ordinary_heavy_v015",
+        "include_heavy": true,
+        "observed_coverage": {
+          "heal_input_attempts": 1,
+          "light_active_samples": {
+            "light_1": 11,
+            "light_2": 11,
+            "light_3": 14
+          },
+          "maximum_locomotion_displacement_m": 47.9422798156738,
+          "observed_potion_consumptions": 0,
+          "observed_successful_parries": 0,
+          "ordinary_heavy_active_samples": 13,
+          "ordinary_heavy_attack_instance_id": 4,
+          "ordinary_heavy_whiff": true,
+          "safe_charged_whiff": true,
+          "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+          "whiff_attack_instance_id": 5
+        },
+        "scenario_name": "continuity"
+      },
+      "engine_errors": [],
+      "cleanup": {
+        "actual_audio_weakrefs_released": true,
+        "audio_stop_report": {
+          "epoch": 1,
+          "pending_playbacks": 0,
+          "players": 0,
+          "stopped": true
+        },
+        "scope": "Post-record resource release only; not audio-hearing approval"
+      },
+      "raw_video_frames": 868,
+      "raw_PCM_sample_frames": 694400,
+      "raw_PCM_rate": 48000,
+      "raw_PCM_channels": 2,
+      "WAV_PCM_sample_frames": 691200,
+      "WAV_prefix_exact": true,
+      "delivery": {
+        "sha256": "fa17bb7941d068755cf391919f996ba0c298c1ad29183e48dc74901f7594d131",
+        "logical_speed": 1.0,
+        "video_frames": 864,
+        "seconds": 14.4,
+        "audio_seconds": 14.4,
+        "no_speed_or_time_interpolation": true,
+        "no_added_audio": true,
+        "direct_hearing_approval": false
+      },
+      "sync": {
+        "sample_frames_per_video_frame": 800,
+        "raw_counts_exact": true,
+        "trimmed_video_frames": 4,
+        "trimmed_audio_sample_frames": 3200,
+        "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+      },
+      "original_capture": {
+        "file": "build/art-review/decisive-sword-before-14-001/capture.json",
+        "bytes": 23932,
+        "sha256": "1c02da9a49e7aba376d018ea7867fe6b7051063a955d7c621594dc1cd3a074f9"
+      }
+    },
+    "after": {
+      "capture_status": "scripted_native_gameplay_captured",
+      "elapsed_wall_s": 327.1441671848297,
+      "processes_closed": true,
+      "actual": {
+        "charged_contacts": 1,
+        "paired_pause_frames": 5,
+        "actual_models": {
+          "hero": {
+            "path": "res://assets/models/production/lyra_fury_gameplay.glb",
+            "sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+          },
+          "sentinel_melee": {
+            "path": "res://assets/models/production/sentinel_weight_gameplay.glb",
+            "sha256": "e7e2b5bd5d5d6dbf0e3ada3fe373c3bb8acbd4918ece0519a2e5c55417d5f619"
+          }
+        },
+        "actual_curve": {
+          "interpolation": "linear_grip_tip",
+          "ok": true,
+          "path": "res://data/charged_blade_curve.json",
+          "reason": "",
+          "resource_sha256": "7aea294157978a1f70949eb7b5f2c7936006012449e5ff2a34b01d1da4d4ffd2",
+          "sample_count": 91,
+          "sample_step_s": 0.002,
+          "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+          "source_asset_path": "game/assets/models/production/lyra_fury_gameplay.glb",
+          "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+        },
+        "contact_tick": 621,
+        "release_tick": 595,
+        "actual_build_id": "0.1.15 · 87fcefdd",
+        "start_health": 120.0,
+        "end_health": 88.0,
+        "frame_count": 864,
+        "gameplay_frames": 840,
+        "capture_policy": "continuity_plus_ordinary_heavy_v015",
+        "include_heavy": true,
+        "observed_coverage": {
+          "heal_input_attempts": 1,
+          "light_active_samples": {
+            "light_1": 11,
+            "light_2": 11,
+            "light_3": 14
+          },
+          "maximum_locomotion_displacement_m": 49.1072883605957,
+          "observed_potion_consumptions": 0,
+          "observed_successful_parries": 0,
+          "ordinary_heavy_active_samples": 13,
+          "ordinary_heavy_attack_instance_id": 4,
+          "ordinary_heavy_whiff": true,
+          "safe_charged_whiff": true,
+          "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+          "whiff_attack_instance_id": 5
+        },
+        "scenario_name": "continuity"
+      },
+      "engine_errors": [],
+      "cleanup": {
+        "actual_audio_weakrefs_released": true,
+        "audio_stop_report": {
+          "epoch": 1,
+          "pending_playbacks": 0,
+          "players": 0,
+          "stopped": true
+        },
+        "scope": "Post-record resource release only; not audio-hearing approval"
+      },
+      "raw_video_frames": 868,
+      "raw_PCM_sample_frames": 694400,
+      "raw_PCM_rate": 48000,
+      "raw_PCM_channels": 2,
+      "WAV_PCM_sample_frames": 691200,
+      "WAV_prefix_exact": true,
+      "delivery": {
+        "sha256": "00f4a1b9bac4d7fc3c542ddc18f3f8dc7134b74efa6e8b22384e3dcbb4ce1704",
+        "logical_speed": 1.0,
+        "video_frames": 864,
+        "seconds": 14.4,
+        "audio_seconds": 14.4,
+        "no_speed_or_time_interpolation": true,
+        "no_added_audio": true,
+        "direct_hearing_approval": false
+      },
+      "sync": {
+        "sample_frames_per_video_frame": 800,
+        "raw_counts_exact": true,
+        "trimmed_video_frames": 4,
+        "trimmed_audio_sample_frames": 3200,
+        "scope": "Container/sample-clock alignment only; perceived whoosh/contact timing requires continuous AV review"
+      },
+      "original_capture": {
+        "file": "build/art-review/decisive-sword-after-14-001/capture.json",
+        "bytes": 23908,
+        "sha256": "c50a07e4c35def2d7e396d7bb8066129097c1b3d552c7401b1092f27f0adc574"
+      }
+    }
+  },
+  "root_preliminary_visual_scope": "Root reported directlyviewedactualordinaryheavyfirstactive andcontact04 before/after: overhead/fan distinct. This is preliminary two-view observation, notpeerfinalverdict oralloriginalsinspection.",
+  "remaining": [
+    "Finalcaptureagentreceipt/source107/peakdecodeaudit",
+    "Peer/rootboundedactualGamevisualverdict",
+    "desktop/mobile/CI/public/release",
+    "continuouswatch/directhearing/fullskin/hardware/AAA"
+  ]
+}

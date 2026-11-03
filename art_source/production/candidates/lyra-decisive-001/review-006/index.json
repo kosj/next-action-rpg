@@ -1,0 +1,53 @@
+{
+  "scope": "Eight finite neutral-studio originals; no actualGame/continuousAV/AAA approval",
+  "jobs": [
+    {
+      "label": "loaded-worst",
+      "role": "old",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/loaded-worst-old",
+      "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+    },
+    {
+      "label": "loaded-worst",
+      "role": "new",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/loaded-worst-new",
+      "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+    },
+    {
+      "label": "ordinary-first-active",
+      "role": "old",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/ordinary-first-active-old",
+      "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+    },
+    {
+      "label": "ordinary-first-active",
+      "role": "new",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/ordinary-first-active-new",
+      "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+    },
+    {
+      "label": "charged-mid",
+      "role": "old",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/charged-mid-old",
+      "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+    },
+    {
+      "label": "charged-mid",
+      "role": "new",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/charged-mid-new",
+      "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+    },
+    {
+      "label": "charged-through",
+      "role": "old",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/charged-through-old",
+      "source_sha256": "14e5069ab4fa3b4119c1e1b67cb220300cfd23f0c9ccb1fd18063f9ec8255618"
+    },
+    {
+      "label": "charged-through",
+      "role": "new",
+      "file": "/workspace/next-action-rpg/art_source/production/candidates/lyra-decisive-001/review-006/charged-through-new",
+      "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f"
+    }
+  ]
+}

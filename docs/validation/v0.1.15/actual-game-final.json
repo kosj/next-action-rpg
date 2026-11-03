@@ -1,0 +1,384 @@
+{
+  "checked_on": "2026-11-03",
+  "status": "native_Game_pipeline_and_finite_root_independent_review_verified",
+  "scope": "Actual scripted native Game snapshots/physics/PCM and selected original raster review only. Direct continuous watch/hearing/fullskin/hardware/AAA separate pending. Publication CI/public runtime has not yet run.",
+  "original_audit": {
+    "path": "build/art-review/decisive-sword-after-14-001/post-take-paired-audit.json",
+    "bytes": 22514,
+    "sha256": "e998f4745438613664811fb96bf7bfb93505b7c3ebf08a0b9ae15711cc020a17"
+  },
+  "independent_review": {
+    "file": "independent-actual-game-review.md",
+    "sha256": "680a08ea293941d3049c067b57e5cd8c740519c579684d5c817d3a23df137022",
+    "verdict": "ACCEPT bounded prototype preparation and trajectory improvement; flat geometric fan/close actor overlap/precise handshoulder/readability limits remain"
+  },
+  "runtime_source_frozen": {
+    "source_count": 107,
+    "fingerprint": "159aec8cde7ed0a430114460cb4fac7fa12a26fdb9a738bac359763d756fb472",
+    "root_readback_source_export_ZIP_manifest_unchanged": true
+  },
+  "pipeline": {
+    "processes_closed": true,
+    "engine_errors": [],
+    "root_frozen_107_readback": {
+      "frozen_source_count": 107,
+      "frozen_fingerprint": "159aec8cde7ed0a430114460cb4fac7fa12a26fdb9a738bac359763d756fb472",
+      "captured_Game_subset_count": 79,
+      "Game_subset_mismatches": [],
+      "scope": "OriginalcurrentGamesnapshot BEFOREphysicaldisplayoverride comparedonlyactualgame/ subset. OutsideGamerecipes/tools/nativeexportsnotexecutedinsideGamecopy."
+    },
+    "same_requested_controls": {
+      "runner_sha256": true,
+      "fixture_sha256": true,
+      "helper_sha256": true,
+      "physical_capture_size": true,
+      "logical_viewport": true,
+      "raster_profile": true,
+      "capture_policy": true,
+      "include_heavy": true
+    },
+    "comparison_policy_limits": "Sameevent-driveninputpolicy, NOTidenticalabsolutecamera/positions/contacttiming. Ordinarymotor/body/physicalLUT/VFX/gainintentionalchanges. Existingcharged69.3/hurtbox/3light/heavymiss/chargedmiss/pause/PCMchecksunchanged.",
+    "quality": {
+      "requested_and_actual": 1,
+      "label": "PERFORMANCE",
+      "native_render_scale_values": [
+        0.649999976158142
+      ],
+      "sun_shadows": false,
+      "particle_policy_intentional_delta": "Oldimpactcodequality1highercount; newquality0rich24/quality1budget10, withlargernewgeometry/fan; levelkeptsame, geometrynotclaimedidentical."
+    },
+    "observed_coverage": {
+      "before": {
+        "heal_input_attempts": 1,
+        "light_active_samples": {
+          "light_1": 11,
+          "light_2": 11,
+          "light_3": 14
+        },
+        "maximum_locomotion_displacement_m": 47.9422798156738,
+        "observed_potion_consumptions": 0,
+        "observed_successful_parries": 0,
+        "ordinary_heavy_active_samples": 13,
+        "ordinary_heavy_attack_instance_id": 4,
+        "ordinary_heavy_whiff": true,
+        "safe_charged_whiff": true,
+        "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+        "whiff_attack_instance_id": 5
+      },
+      "after": {
+        "heal_input_attempts": 1,
+        "light_active_samples": {
+          "light_1": 11,
+          "light_2": 11,
+          "light_3": 14
+        },
+        "maximum_locomotion_displacement_m": 49.1072883605957,
+        "observed_potion_consumptions": 0,
+        "observed_successful_parries": 0,
+        "ordinary_heavy_active_samples": 13,
+        "ordinary_heavy_attack_instance_id": 4,
+        "ordinary_heavy_whiff": true,
+        "safe_charged_whiff": true,
+        "scope": "Actual observed/attempted coverage only. Potion consumption, parry success and contact are not injected; no skin/AV/hearing approval.",
+        "whiff_attack_instance_id": 5
+      }
+    },
+    "actual_timing": {
+      "before": {
+        "release_tick": 586,
+        "contact_tick": 610
+      },
+      "after": {
+        "release_tick": 595,
+        "contact_tick": 621
+      },
+      "limit": "Naturaltimingchangedby9ticksapproach/11tickscontact; didnotretime/forcecontact."
+    },
+    "ordinary_heavy_root_motor": {
+      "before": {
+        "first_tick": 183,
+        "last_tick": 234,
+        "observed_horizontal_root_displacement_m": 2.09125113487244,
+        "coarse_current_snapshot_phase_distance_m": {
+          "startup": 1.1666676998138499,
+          "active": 0.7583341598510702,
+          "recovery": 0.16624927520751998
+        },
+        "boundary_classification_limit": "Coarselabel usesCURRENTendtime; onepartiallyactiveboundarytickcanappearinthefirstrecoveryrow. Exactcandidatephasecontractcheckedwithintervalintegration.",
+        "candidate_source_active_overlap_integration_max_error_m": null,
+        "candidate_boundary_ticks": []
+      },
+      "after": {
+        "first_tick": 183,
+        "last_tick": 234,
+        "observed_horizontal_root_displacement_m": 0.7039995193481499,
+        "coarse_current_snapshot_phase_distance_m": {
+          "startup": 0.0,
+          "active": 0.6826660633087198,
+          "recovery": 0.021333456039430043
+        },
+        "boundary_classification_limit": "Coarselabel usesCURRENTendtime; onepartiallyactiveboundarytickcanappearinthefirstrecoveryrow. Exactcandidatephasecontractcheckedwithintervalintegration.",
+        "candidate_source_active_overlap_integration_max_error_m": 1.227060955066861e-07,
+        "candidate_boundary_ticks": [
+          {
+            "tick": 203,
+            "from_elapsed": 0.316666666666667,
+            "to_elapsed": 0.333333333333333,
+            "observed_horizontal_m": 0.042666673660279875,
+            "expected_active_overlap_m": 0.04266666666666552
+          },
+          {
+            "tick": 216,
+            "from_elapsed": 0.533333333333333,
+            "to_elapsed": 0.55,
+            "observed_horizontal_m": 0.021333456039430043,
+            "expected_active_overlap_m": 0.021333333333334537
+          }
+        ]
+      }
+    },
+    "nominal_camera_projection": {
+      "before": {
+        "Hero": {
+          "samples": 840,
+          "outside_or_nonfinite_or_behind_count": 0,
+          "ticks": []
+        },
+        "actual_locked_foe": {
+          "samples": 404,
+          "outside_or_nonfinite_or_behind_count": 0,
+          "ticks": []
+        }
+      },
+      "after": {
+        "Hero": {
+          "samples": 840,
+          "outside_or_nonfinite_or_behind_count": 0,
+          "ticks": []
+        },
+        "actual_locked_foe": {
+          "samples": 395,
+          "outside_or_nonfinite_or_behind_count": 0,
+          "ticks": []
+        }
+      }
+    },
+    "contact_receipt": {
+      "serial": 7,
+      "amount": 69.3,
+      "contact_source": "hurtbox_ray",
+      "paired_pause_frames": 5,
+      "source_curve_sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+      "source_model_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+      "audio_attackID_matches": true,
+      "audio_point_matches": true,
+      "Audio_has_serial": false
+    },
+    "audio_source_and_comparison": {
+      "WAV_count_checked": 16,
+      "WAV_files_different": [],
+      "root_policy": "GAINONLY/newbody+VFX,9WAVunchanged,bakedquietleadheavy.20/charged.28,noPlayercuechange",
+      "metadata_limit": "attack_start_swing_only atelapsed0isnotaudibleonset. No directhearing/isolatedonset/perceptualsyncapproval. WholePCMmixmetricsincludesambience/othervoices,notisolatedgainattribution."
+    },
+    "actual_marker_projection": {
+      "points": {
+        "Hero.LeftFoot": {
+          "samples": 840,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "Hero.LeftToeBase": {
+          "samples": 840,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "Hero.RightFoot": {
+          "samples": 840,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "Hero.RightToeBase": {
+          "samples": 840,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "Hero.blade_grip_world": {
+          "samples": 840,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "Hero.blade_tip_world": {
+          "samples": 840,
+          "outside_or_behind": 5,
+          "nonfinite": 0,
+          "first_bad_ticks": [
+            736,
+            737,
+            738,
+            739,
+            740
+          ]
+        },
+        "engaged_foe.LeftFoot": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "engaged_foe.LeftToeBase": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "engaged_foe.RightFoot": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "engaged_foe.RightToeBase": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "engaged_foe.blade_grip_world": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        },
+        "engaged_foe.blade_tip_world": {
+          "samples": 395,
+          "outside_or_behind": 0,
+          "nonfinite": 0,
+          "first_bad_ticks": []
+        }
+      },
+      "scope": "Actualevaluatedfeet/toebones+weapongrip/tip projectedwithretainedactualCamera basis/FOV. Pointframecontainmentonly, notwholemesh/depthocclusion/UIvisibilityapproval."
+    },
+    "actual_blade_tip_edge_cases_before_after": {
+      "before": [
+        {
+          "tick": 738,
+          "movie_frame": 737,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.019694446596898674,
+            0.43355220932839766
+          ]
+        },
+        {
+          "tick": 739,
+          "movie_frame": 738,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.037169934399830296,
+            0.4424622316394727
+          ]
+        },
+        {
+          "tick": 740,
+          "movie_frame": 739,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.05167379014867535,
+            0.4528899034087727
+          ]
+        }
+      ],
+      "after": [
+        {
+          "tick": 736,
+          "movie_frame": 735,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.007649547863660788,
+            0.4453193266728849
+          ]
+        },
+        {
+          "tick": 737,
+          "movie_frame": 736,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.023079119179119978,
+            0.45118697514002193
+          ]
+        },
+        {
+          "tick": 738,
+          "movie_frame": 737,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.03605671694336321,
+            0.45773181992447975
+          ]
+        },
+        {
+          "tick": 739,
+          "movie_frame": 738,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.04640648275234427,
+            0.4651206896700567
+          ]
+        },
+        {
+          "tick": 740,
+          "movie_frame": 739,
+          "stage": "normal_recovery",
+          "pose": "dodge",
+          "attack": "",
+          "UV": [
+            -0.05419519015209118,
+            0.47243427090797063
+          ]
+        }
+      ]
+    }
+  },
+  "media": "media/manifest.json",
+  "actual_AV_counts": {
+    "delivery_frames": 864,
+    "delivery_seconds": 14.4,
+    "raw_frames": 868,
+    "raw_PCM_sample_frames": 694400,
+    "WAV_exact_prefix_sample_frames": 691200,
+    "rate": 48000,
+    "channels": 2,
+    "added_audio": false,
+    "time_interpolation": false,
+    "clipped_PCM_samples": 0
+  },
+  "finite_root_review": {
+    "directly_viewed": "12 paired raw decoded originals plus native ordinary firstactive and confirmed-contact originals before/after",
+    "observed": "Distinct twohand overhead preparation and larger blade cutting plane. Reviewed contact samples retain Hero/feet/surrounding opponents. No full-screen washout in those points.",
+    "limitations": "Bright flat fan still needs shape/taper polish; isolated burst visibility and full attack/reaction/recovery rhythm/hearing not approved. Later unchanged dodge tip outside left in5/840 vsbaseline3/840; no universal whole-mesh/UI containment claim."
+  },
+  "remaining": [
+    "clean committed desktop/mobile/charged CI and actual Pages/release",
+    "continuous AV watching/direct hearing",
+    "shoulder skin/wrists/fingers/recovery polish and actual device/Windows OS/AAA"
+  ]
+}

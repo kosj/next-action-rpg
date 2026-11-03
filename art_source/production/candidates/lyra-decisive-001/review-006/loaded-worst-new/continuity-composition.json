@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "scope": "Actual base root/markers/PBR material plus actual runtime Hero broadblade mesh replacement in neutral Blender studio. Finite stills and raw marker calibration only; not actual Game camera, gameplay, continuous AV, hardware or AAA approval.",
+  "helper_sha256": "1476a5917fd6ec3b1c517f20f55961146641a63bed8b9d54c3cd34a2e0d6ad8c",
+  "borrowed_renderer_sha256": "8219ca2f9579ed711db9d230a336d1cfef199a8bdfa1ee316219eacbdd665992",
+  "raw_fk_helper_sha256": "fc73a40251ba3eae4ff986fccdffbbbf2c67f3398d8346fbf14d24022c3bd137",
+  "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "weapon_base_sha256": "68dfaca4a44b6f56bf8025e469bfb4f03270363f0bb0e6dc35e78c05cb165448",
+  "actual_weapon_geometry_sha256": "4fd76a77ea3a796ecb84750cd74d9efdd709a760e6902735026fd1d42b7fbf7b",
+  "runtime_grip_sha256": "6d04ad12f913fe55687bd697eebfb298f0c24bb172a9743bf22c2afd87ecd8c0",
+  "runtime_composition_reference": "game/scripts/actors/actor_visual.gd:apply_hero_blade_profile",
+  "runtime_composition_source_sha256": "368cbcf0e49f7bfccb08574ed347132009bb3d23d6a3e83f26f77496bf2252ec",
+  "composition": {
+    "composed": true,
+    "material_names": [
+      "material_0.001"
+    ],
+    "material_reference_preserved": true,
+    "mesh_vertices": 2799,
+    "mesh_polygons": 4000
+  },
+  "studio_coordinate_system": "Blender point=[source_glTF_x,-source_glTF_z,source_glTF_y]; pre-gameplay-PI/floor studio, distances/relative composition unchanged",
+  "camera_override": [
+    -4.5,
+    -7.0,
+    3.6
+  ],
+  "aim_override": [
+    0.0,
+    -0.2,
+    1.25
+  ],
+  "ortho_override_m": 4.2,
+  "captured_camera_matrix": [
+    [
+      0.8339322209358215,
+      0.15282638370990753,
+      -0.53028404712677,
+      -4.5
+    ],
+    [
+      -0.551866888999939,
+      0.2309376746416092,
+      -0.8013181090354919,
+      -7.0
+    ],
+    [
+      3.19237969392816e-09,
+      0.9608911871910095,
+      0.276926189661026,
+      3.5999999046325684
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "raw_marker_limit_m": 0.003,
+  "maximum_grip_error_m": 7.100074944103479e-08,
+  "maximum_tip_error_m": 6.634364461744948e-07,
+  "raw_marker_samples": [
+    {
+      "time_s": 0.262,
+      "grip_expected_blender_m": [
+        -0.05807202681899071,
+        0.024010084569454193,
+        1.5540812015533447
+      ],
+      "grip_actual_blender_m": [
+        -0.05807195603847504,
+        0.024010078981518745,
+        1.5540812015533447
+      ],
+      "grip_error_m": 7.100074944103479e-08,
+      "tip_expected_blender_m": [
+        -0.0633235052227974,
+        0.325758159160614,
+        2.705177068710327
+      ],
+      "tip_actual_blender_m": [
+        -0.06332311034202576,
+        0.3257576823234558,
+        2.705176830291748
+      ],
+      "tip_error_m": 6.634364461744948e-07
+    }
+  ],
+  "motion_profile": "decisive",
+  "studio_rig_tracks_nominal_actor_root": true,
+  "original_base_report": "review.json",
+  "shots": [
+    {
+      "time_s": 0.262,
+      "file": "charged_heavy-0262.png",
+      "sha256": "dc4642909b86fe34fc6f74a7efb497569256bf1caacf04d6cebb74832bf197a6",
+      "virtual_actor_travel_m": 0.0,
+      "camera_matrix": [
+        [
+          0.8339322209358215,
+          0.15282638370990753,
+          -0.53028404712677,
+          -4.5
+        ],
+        [
+          -0.551866888999939,
+          0.2309376746416092,
+          -0.8013181090354919,
+          -7.0
+        ],
+        [
+          3.19237969392816e-09,
+          0.9608911871910095,
+          0.276926189661026,
+          3.5999999046325684
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "actual_weapon_grip_m": [
+        -0.05807195603847504,
+        0.024010078981518745,
+        1.5540812015533447
+      ],
+      "actual_weapon_tip_m": [
+        -0.06332311034202576,
+        0.3257576823234558,
+        2.705176830291748
+      ]
+    }
+  ],
+  "raw_markers_passed": true
+}

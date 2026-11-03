@@ -11,9 +11,9 @@ SEED=71031
 PEAK=.58
 SWING_LEADS={'swing_heavy':.20,'swing_charged':.28}
 PROFILES={
- 'light':[('contact_tick',-18),('metal_light',-18)],
- 'heavy':[('contact_tick',-17),('metal_heavy',-15),('body_thump',-14),('debris_tail',-25)],
- 'charged':[('contact_tick',-17),('metal_heavy',-13),('body_thump',-15),('charge_sub',-18),('debris_tail',-23)],
+ 'light':[('contact_tick',-16),('metal_light',-15)],
+ 'heavy':[('contact_tick',-16),('metal_heavy',-12),('body_thump',-11),('debris_tail',-24)],
+ 'charged':[('contact_tick',-17),('metal_heavy',-10),('body_thump',-11),('charge_sub',-13),('debris_tail',-23)],
  'blocked_metal':[('contact_tick',-22),('metal_block',-13),('debris_tail',-28)]}
 
 def lowpass(x,cutoff):

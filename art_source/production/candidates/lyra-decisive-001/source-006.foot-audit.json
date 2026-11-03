@@ -1,0 +1,56 @@
+{
+  "scope": "Actual raw glTF LBS at all active keys/midpoints plus exact boundaries; nominal collision-free root movement3.2m/s. Supporting front sole only; rear foot intentionally catch-steps. Broad ankle ROI including leg-blended upper boot is separately preserved as ankle-wide diagnostic, not silently treated as sole. Not real controller collisions, dynamic foot IK, terrain, visual or AAA acceptance.",
+  "source_sha256": "9bb9025621c7aec3690c47a35e0d6946b322f9b4f73f736a10696d1170071a9f",
+  "tool_sha256": "ab8a5b0700176ed8e712d859ee35d8fb1fcdc08f10838e75142234902f0df3e1",
+  "reports": [
+    {
+      "primitive": 0,
+      "clip": "charged_heavy",
+      "samples": 181,
+      "front_sole_vertices": 140,
+      "selection": "Same existing character_gait._sole_samples criterion: static LeftFoot/LeftToeBase summed weight>=.98, restY<=primitiveFloor+.025m; all referenced vertices, not only32 representatives; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.0022244505106005035,
+      "worst": {
+        "time_s": 0.5199999809265137,
+        "vertex_index": 17712,
+        "anchor_raw_gltf_m": [
+          0.2434904940726197,
+          0.010128649897088629,
+          0.5881137549985308
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.24376233356979976,
+          0.0092152371241034,
+          0.5861037897082755
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": true
+    },
+    {
+      "primitive": 0,
+      "clip": "heavy",
+      "samples": 45,
+      "front_sole_vertices": 140,
+      "selection": "Same existing character_gait._sole_samples criterion: static LeftFoot/LeftToeBase summed weight>=.98, restY<=primitiveFloor+.025m; all referenced vertices, not only32 representatives; no mesh/weight edits",
+      "maximum_nominal_active_drift_m": 0.0024243997833244594,
+      "worst": {
+        "time_s": 0.5349999666213989,
+        "vertex_index": 17712,
+        "anchor_raw_gltf_m": [
+          0.24335641298421595,
+          0.01023072628279034,
+          0.5881786876491161
+        ],
+        "nominal_world_raw_gltf_m": [
+          0.24378447382874047,
+          0.009002529966443667,
+          0.5861327130570742
+        ]
+      },
+      "limit_m": 0.01,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
