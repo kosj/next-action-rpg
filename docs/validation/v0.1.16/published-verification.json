@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "version": "0.1.16",
+  "observed_at": "2026-11-03T11:19:17.151068+00:00",
+  "main_commit": "9a1e9dc77a3929cd2ee07e6203e913026a59b1a8",
+  "feature_head": "a8ce991c7a915cc46981d64b98cf7f4f0a7226ce",
+  "PR": "https://github.com/kosj/next-action-rpg/pull/17",
+  "tag": {
+    "name": "v0.1.16",
+    "object_sha": "c11853e25f4d8a9f9cf0765f6c43b463249855c8",
+    "commit": "9a1e9dc77a3929cd2ee07e6203e913026a59b1a8"
+  },
+  "source_binding": {
+    "selected_files": 163,
+    "mismatches": [],
+    "scope": "Actual committed main Git blobs equal selected final runtime/producer/test SHA256 map; not validation by status strings",
+    "freeze_sha256": "fa86e58c5fbe2ec09bedb2870c23e27e57f6166ed8d4cc731a1bfc0208e5c894"
+  },
+  "native_local": {
+    "checks": 843,
+    "failures": 0,
+    "errors": 0,
+    "evidence": "native-and-first-visual.json",
+    "original_source_freeze": "runtime-source-freeze-native-006.json",
+    "post_native_shader": "3signed square multiplication; technical raster PNG byte-identical, final CI separate"
+  },
+  "actual_game": "actual-game-final.json",
+  "knowledge_kit": {
+    "version": "1.4.11",
+    "entries": 74,
+    "source_commit": "8377d29472d9354e55e3b5111c793c5c96f7a5e8",
+    "zip_bytes": 148338,
+    "zip_sha256": "805f9a31150811ddc5343931b4a596c0141b4ae90f707fb1fb3d0ffc708cf88a",
+    "independent_checks": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "runs": {
+    "main": {
+      "id": 41626199077,
+      "number": 80,
+      "url": "https://github.com/kosj/next-action-rpg/actions/runs/41626199077",
+      "status": "pending"
+    },
+    "tag": {
+      "id": 41626269271,
+      "number": 81,
+      "url": "https://github.com/kosj/next-action-rpg/actions/runs/41626269271",
+      "status": "pending"
+    }
+  },
+  "pages": {
+    "url": "https://kosj.github.io/next-action-rpg/",
+    "status": "newversion_publication_and_actualbrowserverification_pending"
+  },
+  "release": {
+    "url": "https://github.com/kosj/next-action-rpg/releases/tag/v0.1.16",
+    "status": "workflow_validation_and_assets_pending"
+  },
+  "scope_limits": [
+    "Finite prototype visual adoption; no direct continuous watching/hearing approval",
+    "No terrainIK/fullskin/targethardware/AAA approval",
+    "Windows export and downloaded binary integrity are separate from actual Windows device execution"
+  ]
+}
