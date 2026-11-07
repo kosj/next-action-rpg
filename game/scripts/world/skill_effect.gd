@@ -248,19 +248,26 @@ func _motes(label: String, radius: float, height: float, count: int, material: S
 func _build_dash() -> void:
 	var body := _material(Color("1fa8ef"), Color("b4f5ff"), 1.65, 0)
 	var accent := _material(Color("217dd0"), Color("81eaff"), 1.2, 3)
+	var forward_edge := _material(Color("089ba7"), Color("66e8df"), 1.4, 0)
+	var wake_material := _material(Color("1265c7"), Color("67d9ff"), 1.3, 3)
 	var glyph := _material(Color("21b6bb"), Color("c0ffff"), 1.0, 1)
-	var lance := _lance("DashBlade", minf(_reach - 0.3, 4.2), 0.65, 0.28, body)
-	lance.position = Vector3(0, 1.0, -0.15)
-	var left := _arc("DashWingLeft", 0.95, 115, 0.25, 0.12, 0.28, accent)
-	left.position = Vector3(-0.18, 0.9, -0.45)
-	var right := _arc("DashWingRight", 0.95, 115, 0.25, 0.12, -0.28, accent)
-	right.position = Vector3(0.18, 0.9, -0.45)
-	right.rotation.y = PI
+	# A tall diamond section survives the rear camera's foreshortening. The
+	# tip still ends inside the unchanged attack reach; this is no hit volume.
+	var lance := _lance("DashBlade", minf(_reach - 0.3, 4.2), 1.0, 0.84, body)
+	lance.position = Vector3(0, 1.3, -0.15)
+	# Rear gameplay cameras foreshorten a straight lance into the actor. A
+	# broad, tall FORWARD crescent carries the readable release instead.
+	# Both arcs stay inside the unchanged 160-degree / 4.5m attack envelope;
+	# neither rotates behind the caster or becomes a full cyclone ring.
+	var left := _arc("DashWingLeft", 3.6, 148, 0.42, 0.60, 0.16, forward_edge)
+	left.position.y = 1.05
+	var right := _arc("DashWingRight", 3.15, 138, 0.20, 0.28, -0.15, accent)
+	right.position.y = 1.4
 	var rune := _rune("DashRunes", 0.85, glyph)
 	rune.position.y = 0.06
 	var count := 6 if _quality == 0 else 4
 	for index in range(count):
-		var segment := _lance("Wake%d" % index, 1.0, 0.42, 0.18, accent)
+		var segment := _lance("Wake%d" % index, 1.0, 0.8, 0.32, wake_material)
 		segment.top_level = true
 		segment.hide()
 		_wake.append(segment)
@@ -280,16 +287,21 @@ func _build_cyclone() -> void:
 	motes.position.y = 0.18
 
 func _build_judgement() -> void:
-	var gold := _material(Color("d9a12b"), Color("fff2bf"), 1.7, 0)
+	var gold := _material(Color("d9a12b"), Color("ffe3a0"), 1.4, 0)
 	var orange := _material(Color("c26b1e"), Color("ffd78b"), 1.35, 0)
 	var rune_material := _material(Color("c0953b"), Color("ffe3a2"), 0.92, 1)
 	var shards := _material(Color("bc8d36"), Color("fff0bc"), 1.15, 2)
-	var blade := _lance("JudgementBlade", 3.6, 0.78, 0.32, gold)
+	# Keep the same ground tip (.12m), leaving room above the blade for a
+	# readable crossguard and short grip inside the gameplay camera.
+	var blade := _lance("JudgementBlade", 3.2, 0.68, 0.32, gold)
 	blade.rotation.x = -PI * 0.5
-	blade.position = Vector3(0, 3.72, -1.55)
-	var guard := _arc("JudgementGuard", 0.65, 160, 0.16, 0.16, 0.0, orange)
-	guard.rotation.x = PI * 0.5
-	guard.position = Vector3(0, 3.9, -1.55)
+	blade.position = Vector3(0, 3.32, -1.55)
+	var hilt_vertices := PackedVector3Array()
+	var hilt_uvs := PackedVector2Array()
+	_box_geometry(hilt_vertices, hilt_uvs, Vector3.ZERO, Vector3(0.72, 0.075, 0.10))
+	_box_geometry(hilt_vertices, hilt_uvs, Vector3(0, 0.23, 0), Vector3(0.065, 0.19, 0.065))
+	var guard := _mesh("JudgementGuard", hilt_vertices, hilt_uvs, orange)
+	guard.position = Vector3(0, 3.35, -1.55)
 	var crown := _arc("JudgementCrown", 1.0, 300, 0.13, 0.15, 0.0, gold)
 	crown.position = Vector3(0, 0.18, -1.55)
 	var rune := _rune("JudgementRunes", _reach, rune_material)
@@ -316,6 +328,22 @@ func _build_judgement() -> void:
 func _node(label: String) -> MeshInstance3D:
 	return _layers[label] as MeshInstance3D
 
+func _box_geometry(vertices: PackedVector3Array, uvs: PackedVector2Array, center: Vector3, half_size: Vector3) -> void:
+	var a := center + Vector3(-half_size.x, -half_size.y, -half_size.z)
+	var b := center + Vector3(half_size.x, -half_size.y, -half_size.z)
+	var c := center + Vector3(half_size.x, half_size.y, -half_size.z)
+	var d := center + Vector3(-half_size.x, half_size.y, -half_size.z)
+	var e := center + Vector3(-half_size.x, -half_size.y, half_size.z)
+	var f := center + Vector3(half_size.x, -half_size.y, half_size.z)
+	var g := center + Vector3(half_size.x, half_size.y, half_size.z)
+	var h := center + Vector3(-half_size.x, half_size.y, half_size.z)
+	_quad(vertices, uvs, a, b, c, d)
+	_quad(vertices, uvs, e, h, g, f)
+	_quad(vertices, uvs, a, e, f, b)
+	_quad(vertices, uvs, d, c, g, h)
+	_quad(vertices, uvs, a, d, h, e)
+	_quad(vertices, uvs, b, f, g, c)
+
 func _update_visuals() -> void:
 	_visual_updates += 1
 	var preparation := clampf(_age / maxf(_attack.data.startup, 0.000001), 0.0, 1.0)
@@ -329,10 +357,25 @@ func _update_visuals() -> void:
 		material.set_shader_parameter("effect_age", _age + _tail)
 		material.set_shader_parameter("opacity", opacity * float(entry.weight))
 	if _kind == "dash":
-		var extension := 0.12 + preparation * 0.26 if is_preparation else 1.0 - active * 0.12
-		_node("DashBlade").scale = Vector3(1.0, 1.0, extension)
-		_node("DashWingLeft").rotation.y = -0.25 - active * 0.55
-		_node("DashWingRight").rotation.y = PI + 0.25 + active * 0.55
+		# Authoritative active entry owns a brief thick release, then the long
+		# blade collapses during recovery. No separate wall-clock flash.
+		var release := exp(-active * 14.0) if not is_preparation else 0.0
+		var extension := 0.10 + preparation * 0.18 if is_preparation else (1.0 - active * 0.08) * (1.0 - recovery * 0.62)
+		var blade := _node("DashBlade")
+		blade.scale = Vector3(0.78 + release * 0.48, 0.80 + release * 0.24, extension)
+		var blade_material := blade.material_override as ShaderMaterial
+		blade_material.set_shader_parameter("energy", 1.45 + release * 0.55)
+		blade_material.set_shader_parameter("opacity", (0.08 + preparation * 0.24) if is_preparation else (0.62 + release * 0.22) * fade)
+		var wing_scale := 0.30 + preparation * 0.25 if is_preparation else 1.0 - recovery * 0.12
+		var forward_edge := _node("DashWingLeft")
+		forward_edge.scale = Vector3(wing_scale, 1.0, wing_scale)
+		forward_edge.rotation.y = -0.07 + active * 0.14
+		forward_edge.position.y = 1.05 + sin(active * PI) * 0.12
+		var edge_material := forward_edge.material_override as ShaderMaterial
+		edge_material.set_shader_parameter("energy", 1.25 + release * 0.4)
+		edge_material.set_shader_parameter("opacity", (0.08 + preparation * 0.22) if is_preparation else (0.72 + release * 0.12) * fade)
+		_node("DashWingRight").scale = Vector3(wing_scale, 1.0, wing_scale)
+		_node("DashWingRight").rotation.y = 0.06 - active * 0.12
 		_node("DashRunes").scale = Vector3.ONE * (0.65 + preparation * 0.35)
 		_update_wake()
 	elif _kind == "cyclone":
@@ -351,10 +394,10 @@ func _update_visuals() -> void:
 	else:
 		var drop := 2.7 * (1.0 - preparation * preparation * preparation) if is_preparation else 0.0
 		var blade := _node("JudgementBlade")
-		blade.position.y = 3.72 + drop
+		blade.position.y = 3.32 + drop
 		blade.scale = Vector3.ONE * (1.0 - active * 0.35)
 		blade.visible = is_preparation or active < 0.73
-		_node("JudgementGuard").position.y = 3.9 + drop
+		_node("JudgementGuard").position.y = 3.35 + drop
 		_node("JudgementGuard").visible = blade.visible
 		var eruption := 0.15 + preparation * 0.2 if is_preparation else 0.7 + sin(active * PI * 0.5) * 0.3
 		_node("JudgementCrown").scale = Vector3.ONE * (0.65 + active * 1.4)
@@ -373,15 +416,17 @@ func _update_wake() -> void:
 		if history_index < 0:
 			segment.hide()
 			continue
-		var newer := _history[history_index + 1] + Vector3.UP * 0.35
-		var older := _history[history_index] + Vector3.UP * 0.35
+		var newer := _history[history_index + 1] + Vector3.UP * 0.48
+		var older := _history[history_index] + Vector3.UP * 0.48
 		var difference := older - newer
 		if difference.length_squared() < 0.000001:
 			segment.hide()
 			continue
 		segment.show()
-		segment.global_transform = Transform3D(Basis.looking_at(difference.normalized(), Vector3.UP), newer)
-		segment.scale = Vector3(1.0 - float(index) / _wake.size() * 0.65, 1.0, difference.length())
+		# Leave a gap at both ends of each actual resolved motion segment so
+		# the trailing streaks read separately from the forward release blade.
+		segment.global_transform = Transform3D(Basis.looking_at(difference.normalized(), Vector3.UP), newer + difference * 0.15)
+		segment.scale = Vector3(1.0 - float(index) / _wake.size() * 0.65, 1.0, difference.length() * 0.70)
 
 func presentation_report() -> Dictionary:
 	return {"valid":_valid, "reason":_reason, "attack_id":_attack_id, "kind":_kind,

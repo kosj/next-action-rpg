@@ -22,6 +22,10 @@ var skill_contacts: Dictionary = {}
 var technical_resource_writes: Array[Dictionary] = []
 var observed_skill_serials: Dictionary = {}
 var next_technical_cast_tick := 0
+var completed_skill_casts: Dictionary = {}
+var requested_cast: CombatStrike
+var last_accepted_skill_tick := -1
+var completion_reason := ""
 
 func _ready() -> void:
 	super._ready()
@@ -36,6 +40,11 @@ func _ready() -> void:
 		return
 	provenance["capture_script"] = {"path":"res://tests/skill_vfx_capture.gd", "sha256":FileAccess.get_sha256("res://tests/skill_vfx_capture.gd")}
 	provenance["skill_capture_mode"] = skill_mode
+	provenance["capture_completion_policy"] = {"frame_budget":int(config.frames),
+		"stop_when_complete":bool(config.get("stop_when_complete", false)),
+		"quiet_after_last_accept_ticks":90, "software_threads":int(config.get("software_threads", 1)),
+		"scope":"Frame budget remains unchanged. Either explicitly enabled mode may end on observed full skill recovery, expired effects and90quiet ticks. Technical mode still requires3recorded rune-funding writes. Software thread count is not measured hardware FPS.",
+		"comparison_scope":"A shorter completed take is compared at matching actual ticks/skill phases, not as an equal-duration full movie to an older exact-budget take."}
 	provenance["input_policy"] = "Normal UI and native skill keys. Normal mode earns resources through actual parries and traverses ordinary encounters. Technical mode explicitly assigns rune100 before each safe-hub cast. No damage, health, actor position or camera writes."
 	provenance["not_established"] = ["human play", "direct continuous watching/hearing", "actual target-device FPS", "AAA approval"]
 
@@ -169,6 +178,7 @@ func _closest_living_enemy() -> RuneEnemy:
 
 func _request_skill(index: int) -> void:
 	requested_skill = index
+	requested_cast = null
 	last_skill_attempt = tick
 	events.append({"tick":tick, "type":"skill_key_request", "skill_index":index, "rune_before":player.rune, "cost":SKILL_COSTS[index], "technical_resource_funded":skill_mode == "technical"})
 	_tap_key(SKILL_KEYS[index], "skill_%d" % (index+1))
@@ -181,8 +191,17 @@ func _wait_for_cast_end() -> void:
 			_fail("Ordinary skill key did not produce an accepted cast: "+label)
 		return
 	if player.strike == null:
+		var completed := requested_cast != null and requested_cast.elapsed >= requested_cast.data.duration()-0.000001
+		if completed:
+			completed_skill_casts[label] = int(completed_skill_casts.get(label, 0))+1
+		events.append({"tick":tick, "type":"skill_cast_end_observed", "attack_id":label,
+			"attack_instance_id":requested_cast.attack_instance_id if requested_cast != null else 0,
+			"elapsed":requested_cast.elapsed if requested_cast != null else -1.0,
+			"duration":requested_cast.data.duration() if requested_cast != null else -1.0,
+			"full_recovery":completed})
 		skill_cursor += 1
 		requested_skill = -1
+		requested_cast = null
 		next_technical_cast_tick = tick+90
 		_transition("skill_%d_recovered" % skill_cursor)
 
@@ -199,8 +218,11 @@ func record_after_physics(delta: float) -> void:
 		var attack := player.strike
 		var label := String(attack.presentation_id)
 		if label in ["skill_1", "skill_2", "skill_3"]:
+			if requested_skill >= 0 and label == "skill_%d" % (requested_skill+1):
+				requested_cast = attack
 			if not observed_skill_serials.has(attack.attack_instance_id):
 				observed_skill_serials[attack.attack_instance_id] = label
+				last_accepted_skill_tick = tick
 				skill_casts[label] = int(skill_casts.get(label, 0))+1
 				events.append({"tick":tick, "type":"accepted_skill_observed", "attack_id":label, "attack_instance_id":attack.attack_instance_id, "rune_after":player.rune})
 			var phase := "preparation" if attack.elapsed < attack.data.startup else ("active" if attack.elapsed < attack.data.startup+attack.data.active else "recovery")
@@ -216,6 +238,21 @@ func record_after_physics(delta: float) -> void:
 				skill_phase_images[late_key] = true
 				pending_images.append(late_key)
 	row["skill_effects_after_physics"] = _effect_reports()
+	if not finishing and bool(config.get("stop_when_complete", false)) and _capture_completion_ready():
+		completion_reason = "all_three_skills_recovered_and_effects_expired"
+		_validate_finish()
+
+func _capture_completion_ready() -> bool:
+	if player.dead or not player.active or get_tree().paused or skill_cursor < 3 or requested_skill >= 0 or player.strike != null or last_accepted_skill_tick < 0 or tick-last_accepted_skill_tick < 90:
+		return false
+	if (skill_mode == "normal" and not technical_resource_writes.is_empty()) or (skill_mode == "technical" and technical_resource_writes.size() != 3):
+		return false
+	for label: String in ["skill_1", "skill_2", "skill_3"]:
+		if int(skill_casts.get(label, 0)) < 1 or int(skill_active_samples.get(label, 0)) < 1 or int(completed_skill_casts.get(label, 0)) < 1:
+			return false
+		if bool(config.get("require_skill_effects", true)) and int(skill_effect_samples.get(label, 0)) < 1:
+			return false
+	return _effect_reports().is_empty()
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -268,6 +305,11 @@ func _validate_finish() -> void:
 	if skill_mode == "normal" and not technical_resource_writes.is_empty():
 		_fail("Normal-input mode unexpectedly wrote resources")
 		return
+	if (skill_mode == "normal" or bool(config.get("stop_when_complete", false))) and not _capture_completion_ready():
+		_fail("Take ended before all3skills fully recovered, effects expired and90quiet ticks elapsed")
+		return
+	if completion_reason.is_empty():
+		completion_reason = "exact_frame_budget_complete"
 	pending_images.append("skills-final-gameplay")
 	finishing = true
 
@@ -275,5 +317,12 @@ func _write_result() -> void:
 	provenance["skill_vfx_coverage"] = {"mode":skill_mode, "accepted_casts":skill_casts,
 		"active_samples":skill_active_samples, "new_effect_samples":skill_effect_samples,
 		"confirmed_contacts":skill_contacts, "technical_resource_writes":technical_resource_writes,
+		"completed_skill_casts":completed_skill_casts, "last_accepted_skill_tick":last_accepted_skill_tick,
+		"frame_budget":int(config.get("frames", 0)), "actual_gameplay_frames":tick-gameplay_start+1 if gameplay_start >= 0 else 0,
+		"stop_when_complete":bool(config.get("stop_when_complete", false)),
+		"completion_reason":completion_reason, "quiet_after_last_accept_ticks":tick-last_accepted_skill_tick if last_accepted_skill_tick >= 0 else 0,
+		"all_skill_requests_recovered":skill_cursor >= 3 and requested_skill < 0 and requested_cast == null,
+		"live_skill_effect_count":_effect_reports().size() if is_instance_valid(world) else -1,
+		"comparison_scope":"Compare matching original ticks/skill phases. Optional completed takes may be shorter than an older exact-frame-budget take; no full-movie equal-duration claim.",
 		"scope":"Technical mode establishes resource-funded actual Game skill presentation only. Normal mode earns resources with real input. Neither mode establishes direct continuous watching/hearing, hardware or AAA approval."}
 	super._write_result()
