@@ -1,0 +1,617 @@
+{
+  "status": "passed",
+  "source_commit": "29c10d7642ed795483676d606aa20238f5ff0b1e",
+  "version": "0.1.18",
+  "workflow_source": "88ccb7da822b0638e33ede5c29432d7b0fab47b2",
+  "run_checks": [
+    {
+      "run": 42337791841,
+      "jobs": [
+        {
+          "id": 128298614601,
+          "name": "build",
+          "conclusion": "success"
+        },
+        {
+          "id": 128305473696,
+          "name": "deploy",
+          "conclusion": "success"
+        },
+        {
+          "id": 128302768740,
+          "name": "verify_charged_impact",
+          "conclusion": "success"
+        },
+        {
+          "id": 128302768778,
+          "name": "verify_mobile_export",
+          "conclusion": "success"
+        },
+        {
+          "id": 128305521744,
+          "name": "verify_public_mobile",
+          "conclusion": "success"
+        },
+        {
+          "id": 128305521787,
+          "name": "verify_public_web",
+          "conclusion": "success"
+        }
+      ],
+      "native": {
+        "checks": 913,
+        "failures": 0
+      },
+      "build_log_sha256": "f44b531cca731ee9a475e5e88f3008a03cfdba15854bbc117d1c45caaf7215ca"
+    },
+    {
+      "run": 42336992556,
+      "jobs": [
+        {
+          "id": 128296036602,
+          "name": "build",
+          "conclusion": "success"
+        },
+        {
+          "id": 128305574072,
+          "name": "release",
+          "conclusion": "success"
+        },
+        {
+          "id": 128301087005,
+          "name": "verify_charged_impact",
+          "conclusion": "success"
+        },
+        {
+          "id": 128301087032,
+          "name": "verify_mobile_export",
+          "conclusion": "success"
+        }
+      ],
+      "native": {
+        "checks": 913,
+        "failures": 0
+      },
+      "build_log_sha256": "a82309c127dde6a32a918c917992325eba5f0f24571e9be666edb2e85d46ed65"
+    }
+  ],
+  "selected_visual_runtime9_exact": true,
+  "declared_browser_producer_subset": 123,
+  "downloads": [
+    {
+      "name": "manifest.json",
+      "bytes": 406,
+      "sha256": "c19d3f7b60382d930d7ca480b41b5c14c52921a8cffd786e515fc93ebed707e9",
+      "HTTP": 200,
+      "anonymous": true,
+      "default_TLS_verified": true,
+      "matches_API": true
+    },
+    {
+      "name": "runefall-web.zip",
+      "bytes": 119164368,
+      "sha256": "58d2f2e62bf2b68ff70be8be2bb85159e358a81fc04d7d655a2bf5baa1ed0888",
+      "HTTP": 200,
+      "anonymous": true,
+      "default_TLS_verified": true,
+      "matches_API": true
+    },
+    {
+      "name": "runefall-windows.zip",
+      "bytes": 147005724,
+      "sha256": "54a9f1dda895d28267b8fe5d6833216aa93fd759d00c1776ea82e9cc04f292c5",
+      "HTTP": 200,
+      "anonymous": true,
+      "default_TLS_verified": true,
+      "matches_API": true
+    }
+  ],
+  "packaging": {
+    "version": "0.1.18",
+    "godot": "4.7.2",
+    "expected_main_sha": "29c10d7642ed795483676d606aa20238f5ff0b1e",
+    "manifest_commit": "29c10d76",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119164368,
+        "sha256": "58d2f2e62bf2b68ff70be8be2bb85159e358a81fc04d7d655a2bf5baa1ed0888",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 149919327
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 147005724,
+        "sha256": "54a9f1dda895d28267b8fe5d6833216aa93fd759d00c1776ea82e9cc04f292c5",
+        "sha256_verified": true,
+        "zip_crc_ok": true,
+        "licenses_present": true,
+        "playable_files_present": true,
+        "uncompressed_bytes": 219339214
+      }
+    ],
+    "status": "verified",
+    "scope": "Downloaded bytes and packaging; no hardware or art approval"
+  },
+  "PCK": [
+    {
+      "zip": "runefall-web.zip",
+      "entries": 208,
+      "all_payload_MD5": true,
+      "footer": "0.1.18 · 29c10d76",
+      "curves": [
+        {
+          "file": "heavy_blade_curve.json",
+          "samples": 111,
+          "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+          "equal_main_blob": true
+        },
+        {
+          "file": "charged_blade_curve.json",
+          "samples": 91,
+          "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+          "equal_main_blob": true
+        }
+      ],
+      "wave_paths": [
+        "assets/shaders/sword_wave.gdshader",
+        "scripts/world/sword_wave.gd.remap",
+        "scripts/world/sword_wave.gdc"
+      ],
+      "wave_shader_raw_equals_main": true,
+      "skill_paths": [
+        "assets/shaders/skill_energy.gdshader",
+        "scripts/world/skill_effect.gd.remap",
+        "scripts/world/skill_effect.gdc"
+      ],
+      "skill_shader_equal_main": true
+    },
+    {
+      "zip": "runefall-windows.zip",
+      "entries": 208,
+      "all_payload_MD5": true,
+      "footer": "0.1.18 · 29c10d76",
+      "curves": [
+        {
+          "file": "heavy_blade_curve.json",
+          "samples": 111,
+          "sha256": "3fc023d2a5ea4ad265f172295de392f978b9cb3ce10c5b91b3b42d2c49cdce36",
+          "equal_main_blob": true
+        },
+        {
+          "file": "charged_blade_curve.json",
+          "samples": 91,
+          "sha256": "378be01c011cb9eebe5c7cff813ab46a323319db65a1bc301910972f9d6dd3a6",
+          "equal_main_blob": true
+        }
+      ],
+      "wave_paths": [
+        "assets/shaders/sword_wave.gdshader",
+        "scripts/world/sword_wave.gd.remap",
+        "scripts/world/sword_wave.gdc"
+      ],
+      "wave_shader_raw_equals_main": true,
+      "skill_paths": [
+        "assets/shaders/skill_energy.gdshader",
+        "scripts/world/skill_effect.gd.remap",
+        "scripts/world/skill_effect.gdc"
+      ],
+      "skill_shader_equal_main": true
+    }
+  ],
+  "browser_proofs": [
+    {
+      "kind": "main-desktop",
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "restart": true,
+      "quality": [
+        1,
+        0,
+        1
+      ],
+      "artifact_id": 13560741649,
+      "bytes": 4667742,
+      "API_SHA256": "4756814324f7da65ea91b41a505d7436e87b40e680992c74fbb5beaf9ae5bd12",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "main-mobile",
+      "seconds": 647.817,
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        1622.3000000000466,
+        1892.4000000000233,
+        876,
+        1196,
+        1900.8000000000466
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "active_skill_vfx": {
+        "age_s": 0.266666666666667,
+        "attack_id": "skill_1",
+        "attack_instance_id": 3,
+        "history_count": 7,
+        "history_points": [
+          [
+            -7.79713344573975,
+            -0.0249407235532999,
+            5.19166469573975
+          ],
+          [
+            -8.01264476776123,
+            -0.0249877795577049,
+            5.16932249069214
+          ],
+          [
+            -8.22815608978271,
+            -0.0247842334210873,
+            5.14698028564453
+          ],
+          [
+            -8.44366836547852,
+            -0.0245878398418427,
+            5.12463808059692
+          ],
+          [
+            -8.6591796875,
+            -0.0244136173278093,
+            5.10229587554932
+          ],
+          [
+            -8.87469100952148,
+            -0.024766443297267,
+            5.07995367050171
+          ],
+          [
+            -9.09020328521729,
+            -0.0245090387761593,
+            5.0576114654541
+          ]
+        ],
+        "kind": "dash",
+        "mesh_count": 10,
+        "origin": [
+          -5.64201736450195,
+          -0.0251024384051561,
+          5.4150857925415
+        ],
+        "owner_id": 90596970113,
+        "phase": "active",
+        "position": [
+          -9.09020328521729,
+          -0.0245090387761593,
+          5.0576114654541
+        ],
+        "quality": 0,
+        "reach_m": 4.5,
+        "reason": "playing",
+        "source_epoch": 2,
+        "tail_limit_s": 0.36,
+        "tail_s": 0,
+        "triangles": 548,
+        "valid": true,
+        "visual_update_count": 16
+      },
+      "skill_vfx_expired": true,
+      "active_skill_vfx_scope": "Copied live snapshot; separately requested PNG need not show that same active frame. Rune25cost was enforced by the pinned trusted-touch driver, not independently recalculated here.",
+      "declared_source123_exact_main": true,
+      "isolated_helper": {
+        "cases": 3,
+        "timeout_ms": 15000,
+        "browser_closed": true,
+        "scope": "isolated observer only"
+      },
+      "artifact_id": 13561257049,
+      "bytes": 11254702,
+      "API_SHA256": "f45d5a223baa20079875b03364f65d404ebb511d8f4d88d88d47dace7f78356b",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "main-charged",
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "amount": 69.3,
+      "actual_physical_curve_validated": true,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "snapshot at wave contact clock, not physical blade contact clock",
+        "attack_instance_id": 5,
+        "gameplay_attack_elapsed_s": 0.536,
+        "wave_sequences": [
+          2,
+          3
+        ]
+      },
+      "wave_contacts": 2,
+      "shared_ledger_unique": true,
+      "artifact_id": 13561141253,
+      "bytes": 1687056,
+      "API_SHA256": "d3d76ed9b5412170faf29665c966f46b79e08f30298c6a08cd375a6f45198ca6",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "tag-mobile",
+      "seconds": 1084.4,
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        3077.5,
+        4244.5,
+        1079.5,
+        2563.7999999998137,
+        2556.2999999998137
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "active_skill_vfx": {
+        "age_s": 0.266666666666667,
+        "attack_id": "skill_1",
+        "attack_instance_id": 3,
+        "history_count": 7,
+        "history_points": [
+          [
+            -7.78452777862549,
+            -0.0247469618916512,
+            5.22612810134888
+          ],
+          [
+            -8.00013160705566,
+            -0.0245489943772554,
+            5.2046947479248
+          ],
+          [
+            -8.21573543548584,
+            -0.0249710120260715,
+            5.18326091766357
+          ],
+          [
+            -8.43133926391602,
+            -0.0248500537127256,
+            5.1618275642395
+          ],
+          [
+            -8.64694404602051,
+            -0.0249646995216608,
+            5.14039421081543
+          ],
+          [
+            -8.86254787445068,
+            -0.0251212362200022,
+            5.11896085739136
+          ],
+          [
+            -9.07815170288086,
+            -0.0249998476356268,
+            5.09752750396729
+          ]
+        ],
+        "kind": "dash",
+        "mesh_count": 10,
+        "origin": [
+          -5.62848854064941,
+          -0.0241689085960388,
+          5.44046354293823
+        ],
+        "owner_id": 90596970113,
+        "phase": "active",
+        "position": [
+          -9.07815170288086,
+          -0.0249998476356268,
+          5.09752750396729
+        ],
+        "quality": 0,
+        "reach_m": 4.5,
+        "reason": "playing",
+        "source_epoch": 2,
+        "tail_limit_s": 0.36,
+        "tail_s": 0,
+        "triangles": 548,
+        "valid": true,
+        "visual_update_count": 16
+      },
+      "skill_vfx_expired": true,
+      "active_skill_vfx_scope": "Copied live snapshot; separately requested PNG need not show that same active frame. Rune25cost was enforced by the pinned trusted-touch driver, not independently recalculated here.",
+      "declared_source123_exact_main": true,
+      "isolated_helper": {
+        "cases": 3,
+        "timeout_ms": 15000,
+        "browser_closed": true,
+        "scope": "isolated observer only"
+      },
+      "artifact_id": 13561675088,
+      "bytes": 11254361,
+      "API_SHA256": "dda12f8031e26cd759ced176c9aef5f6bff0737ef3c4e6800e1c4a74049b269e",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "tag-charged",
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "amount": 69.3,
+      "actual_physical_curve_validated": true,
+      "frozen_contact_check": {
+        "observed": false,
+        "reason": "snapshot at wave contact clock, not physical blade contact clock",
+        "attack_instance_id": 5,
+        "gameplay_attack_elapsed_s": 0.536,
+        "wave_sequences": [
+          2,
+          3
+        ]
+      },
+      "wave_contacts": 2,
+      "shared_ledger_unique": true,
+      "artifact_id": 13560414353,
+      "bytes": 1684300,
+      "API_SHA256": "80d9c999535d72bda7ec48147703a7ffa2e303c4e1bb513c3436cfee31bed618",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "public-desktop",
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "restart": true,
+      "quality": [
+        1,
+        0,
+        1
+      ],
+      "artifact_id": 13561063311,
+      "bytes": 4626632,
+      "API_SHA256": "23af42e7eb9ff76a5d9566865a6d4812a19787af4dc132b6942c91d755212cea",
+      "ZIP_CRC": true
+    },
+    {
+      "kind": "public-mobile",
+      "seconds": 751.124,
+      "footer": "0.1.18 · 29c10d76",
+      "errors": [],
+      "trusted_touch_points": 3,
+      "matched_actions": 5,
+      "IDB_ms": [
+        1779.8000000000466,
+        4264.399999999907,
+        979.2000000000698,
+        412.19999999995343,
+        1064
+      ],
+      "quality": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "restart": {
+        "quality": 1,
+        "health": 120,
+        "checkpoint": 0,
+        "z": 6
+      },
+      "active_skill_vfx": {
+        "age_s": 0.4,
+        "attack_id": "skill_1",
+        "attack_instance_id": 3,
+        "history_count": 7,
+        "history_points": [
+          [
+            -9.65187358856201,
+            -0.0246140956878662,
+            4.55336809158325
+          ],
+          [
+            -9.8661470413208,
+            -0.024400033056736,
+            4.52125263214111
+          ],
+          [
+            -10.0804176330566,
+            -0.0260666813701391,
+            4.48913764953613
+          ],
+          [
+            -10.2946910858154,
+            -0.0249127745628357,
+            4.45702219009399
+          ],
+          [
+            -10.5089645385742,
+            -0.0251088421791792,
+            4.42490673065186
+          ],
+          [
+            -10.723237991333,
+            -0.0247064307332039,
+            4.39279079437256
+          ],
+          [
+            -10.9375114440918,
+            -0.0247704144567251,
+            4.36067533493042
+          ]
+        ],
+        "kind": "dash",
+        "mesh_count": 10,
+        "origin": [
+          -5.79495477676392,
+          -0.0258545931428671,
+          5.13144731521606
+        ],
+        "owner_id": 90596970113,
+        "phase": "active",
+        "position": [
+          -10.9375114440918,
+          -0.0247704144567251,
+          4.36067533493042
+        ],
+        "quality": 0,
+        "reach_m": 4.5,
+        "reason": "playing",
+        "source_epoch": 2,
+        "tail_limit_s": 0.36,
+        "tail_s": 0,
+        "triangles": 548,
+        "valid": true,
+        "visual_update_count": 24
+      },
+      "skill_vfx_expired": true,
+      "active_skill_vfx_scope": "Copied live snapshot; separately requested PNG need not show that same active frame. Rune25cost was enforced by the pinned trusted-touch driver, not independently recalculated here.",
+      "artifact_id": 13561503306,
+      "bytes": 11239830,
+      "API_SHA256": "7406cddd2bb59cc349d48ff36e087f1b77650620d5e18fa21d0c376b10f6fa13",
+      "ZIP_CRC": true
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "03-portrait-gameplay.png",
+      "bytes": 1337775,
+      "sha256": "8eb72af72f3b43a294b1d6b39d9dd58f38932345b6211c329928bba72f76e837"
+    },
+    {
+      "name": "08-skill-one.png",
+      "bytes": 1264473,
+      "sha256": "9ddb116ffe2e31d92f71a775cf766f0abdf6a7324f5d3dc777e8539c080c1527"
+    },
+    {
+      "name": "10-landscape-gameplay.png",
+      "bytes": 1209724,
+      "sha256": "a5e5aea2b1c2b5e4d44a45c0d9e55b7ef073b905637b558e8fd49e7632f93b13"
+    },
+    {
+      "name": "12-narrow-gameplay.png",
+      "bytes": 956893,
+      "sha256": "e70f17a1eb74b7d74d020e5951a31091630ee8152e6f69fd1a4b4ce17fc0905b"
+    }
+  ],
+  "scope": "Read exact immutable CI artifacts and anonymous release bytes; no game/browser rerun, timeout changes, Windows device execution, continuous hearing, hardware or AAA approval."
+}

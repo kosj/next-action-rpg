@@ -1,5 +1,9 @@
 # v0.1.18 검사 스킬 VFX
 
+[공개 웹 플레이](https://kosj.github.io/next-action-rpg/) · [Windows/Web 다운로드](https://github.com/kosj/next-action-rpg/releases/tag/v0.1.18) · [게시 검증 원장](published-verification.json) · [실제 CI/릴리스 자료 대조](delivery-proof.json)
+
+공개 실행 footer `0.1.18 · 29c10d76`, PC·모바일 에뮬레이션의 WebGL/실제 터치/품질 전환/완전 재시작 저장을 확인했다. 릴리스3파일의 익명 HTTPS 다운로드·SHA·ZIP CRC와 두 PCK의 실제 새 스킬/셰이더·원래 칼날 곡선을 검증했다. [공개 모바일 PNG](published-images/08-skill-one.png)는 active snapshot 이후 별도 RPC로 찍혀 효과 종료 뒤 화면이다. 이를 활성 VFX 이미지로 표시하지 않으며, 실제 active/소멸 snapshot 근거와 native 원본의 형태 검수를 구분한다.
+
 같은 링을 사용하던 세 기술을 전방 청록 초승달, 보라/청록 회전 검기, 금빛 낙하 검으로 구분했다. 피해·범위·룬 비용·공격 시간은 유지하고, 확정 접촉의 색·카메라 pulse·심판의 저역 타격음을 연결했다.
 
 - [이전 실제 게임 영상](media/skills-before-logical1x.mp4) · [수정 후 실제 게임 영상](media/skills-after-logical1x.mp4)

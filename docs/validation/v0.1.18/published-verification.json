@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "version": "0.1.18",
+  "status": "published_verified",
+  "observed_at": "2026-11-07T05:07:02.779911+00:00",
+  "main_commit": "29c10d7642ed795483676d606aa20238f5ff0b1e",
+  "PR": "https://github.com/kosj/next-action-rpg/pull/19",
+  "public_url": "https://kosj.github.io/next-action-rpg/",
+  "expected_live_footer": "0.1.18 · 29c10d76",
+  "runs": {
+    "PR": 42334574994,
+    "main": 42337791841,
+    "tag": 42336992556,
+    "readonly_delivery_proof": 42340156344
+  },
+  "source_binding": {
+    "subtrees": {
+      "game/scripts": {
+        "adopted_feature": "ca2da90c484d7deda454f8773309e37b5f4120a4",
+        "published_main": "ca2da90c484d7deda454f8773309e37b5f4120a4",
+        "equal": true
+      },
+      "game/assets": {
+        "adopted_feature": "02c8d7b01919970c32a5e5c2c35d55323045eaf6",
+        "published_main": "02c8d7b01919970c32a5e5c2c35d55323045eaf6",
+        "equal": true
+      },
+      "game/data": {
+        "adopted_feature": "262bd7fad6783a9496b495842b9a13d9dc5eafb6",
+        "published_main": "262bd7fad6783a9496b495842b9a13d9dc5eafb6",
+        "equal": true
+      },
+      "game/scenes": {
+        "adopted_feature": "11caff82a28206f9a4c779e2cff6cd1559362008",
+        "published_main": "11caff82a28206f9a4c779e2cff6cd1559362008",
+        "equal": true
+      },
+      "game/import": {
+        "adopted_feature": "0c7b5cadeec713c8bb9120b4c87dd84c20c909d2",
+        "published_main": "0c7b5cadeec713c8bb9120b4c87dd84c20c909d2",
+        "equal": true
+      },
+      "game/web": {
+        "adopted_feature": "4d1744a1475be5dbe214bbb805e7f52cdc92c4f3",
+        "published_main": "4d1744a1475be5dbe214bbb805e7f52cdc92c4f3",
+        "equal": true
+      },
+      "game/project.godot": {
+        "adopted_feature": "2349f216268afd8897c066685ba7b49814d8e785",
+        "published_main": "2349f216268afd8897c066685ba7b49814d8e785",
+        "equal": true
+      },
+      "game/export_presets.cfg": {
+        "adopted_feature": "6d201bc9390005b44734a38043ecf2519032e6b1",
+        "published_main": "6d201bc9390005b44734a38043ecf2519032e6b1",
+        "equal": true
+      },
+      "tools": {
+        "adopted_feature": "cff9c5051e78fbb750234f44498795f8b5cdc204",
+        "published_main": "cff9c5051e78fbb750234f44498795f8b5cdc204",
+        "equal": true
+      }
+    },
+    "selected_visual_runtime_files": 9,
+    "declared_browser_producer_files": 123,
+    "scope": "Runtime and tool Git trees equal adopted feature source; generated build stamp and whole exported bytes differ. Full123producer source map separately checked inside immutable mobile artifacts."
+  },
+  "delivery_artifact": {
+    "id": 13561032849,
+    "bytes": 4774579,
+    "sha256": "ad00813d071d27ba5182d6573b8bce93f15813ebe54a6ccd8fbe3d7944e90491",
+    "local_download_sha_and_zip_crc_verified": true
+  },
+  "verification_branch_knowledge_kit": {
+    "version": "1.7.2",
+    "source_commit": "c824801e3b7bc23c5138d1dde28564fa73168dbb",
+    "entries": 79,
+    "skills": 5,
+    "bytes": 197198,
+    "sha256": "583c243ad6bbd495434509010cb9bc660d5f25b24073e242ae76fdcc07937bd8",
+    "independent_checks": [
+      {
+        "id": "pinned-catalog-and-handbook",
+        "name": "Pinned source catalog, provenance and handbook coverage agree",
+        "details": {
+          "commit": "c824801e3b7bc23c5138d1dde28564fa73168dbb",
+          "catalog_path": "knowledge/entries.json",
+          "catalog_bytes": 248946,
+          "catalog_sha256": "9d73a204e0de0d3668805f424aa7925988a7f499404f97c97543d06548c96c96",
+          "source_entries": 79,
+          "handbook_covered_ids": 79,
+          "evidence_urls": 781,
+          "source_status_counts": {
+            "pending": 5,
+            "superseded": 2,
+            "verified": 72
+          },
+          "matched_fields": [
+            "id",
+            "title",
+            "status",
+            "checked_on",
+            "context",
+            "sources"
+          ],
+          "external_url_freshness_checked": false
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "git",
+              "--no-replace-objects",
+              "-C",
+              "/workspace/next-action-rpg",
+              "show",
+              "c824801e3b7bc23c5138d1dde28564fa73168dbb:knowledge/entries.json"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.021323,
+            "stdout_bytes": 248946,
+            "stdout_sha256": "9d73a204e0de0d3668805f424aa7925988a7f499404f97c97543d06548c96c96",
+            "stdout_omitted": true,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "standalone-renamed-kit",
+        "name": "Extracted renamed kit checks and verifies source outside the repository",
+        "details": {
+          "renamed_root": "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle",
+          "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+          "outside_repository": true,
+          "python_isolated_mode": true,
+          "extracted_check": {
+            "status": "valid_source",
+            "skills": 5,
+            "source_entries": 79,
+            "files": 32
+          }
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/workspace/next-action-rpg/reusable/game-production-kit/scripts/package.py",
+              "--check"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.10122,
+            "stdout_bytes": 85,
+            "stdout_sha256": "bbd60437674c88ebad763a36f008b202e59c407a067ef31d4d1b056d35e353ac",
+            "stdout": "{\n  \"status\": \"valid_source\",\n  \"skills\": 5,\n  \"source_entries\": 79,\n  \"files\": 32\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/workspace/next-action-rpg/reusable/game-production-kit/scripts/package.py",
+              "--verify-source",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.097813,
+            "stdout_bytes": 129,
+            "stdout_sha256": "200f2127e6f51908118deb09cc882259beb64e72048cd34d22edd8e431a7f0c3",
+            "stdout": "{\n  \"file\": \"/workspace/next-action-rpg/reusable/game-production-kit.zip\",\n  \"files\": 32,\n  \"status\": \"matches_current_source\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/workspace/next-action-rpg/reusable/game-production-kit/scripts/package.py",
+              "--verify",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.106485,
+            "stdout_bytes": 125,
+            "stdout_sha256": "d8715720e7596933c9358fe7329cfa0341b9137e6c4f8090c2427355b1e0ef77",
+            "stdout": "{\n  \"file\": \"/workspace/next-action-rpg/reusable/game-production-kit.zip\",\n  \"files\": 33,\n  \"status\": \"verified_integrity\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--check"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.0778,
+            "stdout_bytes": 85,
+            "stdout_sha256": "bbd60437674c88ebad763a36f008b202e59c407a067ef31d4d1b056d35e353ac",
+            "stdout": "{\n  \"status\": \"valid_source\",\n  \"skills\": 5,\n  \"source_entries\": 79,\n  \"files\": 32\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--verify",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.059434,
+            "stdout_bytes": 125,
+            "stdout_sha256": "d8715720e7596933c9358fe7329cfa0341b9137e6c4f8090c2427355b1e0ef77",
+            "stdout": "{\n  \"file\": \"/workspace/next-action-rpg/reusable/game-production-kit.zip\",\n  \"files\": 33,\n  \"status\": \"verified_integrity\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--verify-source",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.075777,
+            "stdout_bytes": 129,
+            "stdout_sha256": "200f2127e6f51908118deb09cc882259beb64e72048cd34d22edd8e431a7f0c3",
+            "stdout": "{\n  \"file\": \"/workspace/next-action-rpg/reusable/game-production-kit.zip\",\n  \"files\": 32,\n  \"status\": \"matches_current_source\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "same-runtime-repack",
+        "name": "Standalone repack in this Python/zlib runtime has identical archive bytes",
+        "details": {
+          "original_sha256": "583c243ad6bbd495434509010cb9bc660d5f25b24073e242ae76fdcc07937bd8",
+          "repacked_sha256": "583c243ad6bbd495434509010cb9bc660d5f25b24073e242ae76fdcc07937bd8",
+          "repacked_bytes": 197198,
+          "archive_bytes_equal": true
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--output",
+              "/tmp/portable-knowledge-check-m7c6uu1v/same-runtime-repacked.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.105589,
+            "stdout_bytes": 251,
+            "stdout_sha256": "4d7fdeb8249bf0c9af5f23a63e450eac3c75137d569fe8771d61c1880038a7e8",
+            "stdout": "{\n  \"file\": \"/tmp/portable-knowledge-check-m7c6uu1v/same-runtime-repacked.zip\",\n  \"bytes\": 197198,\n  \"sha256\": \"583c243ad6bbd495434509010cb9bc660d5f25b24073e242ae76fdcc07937bd8\",\n  \"skills\": 5,\n  \"source_entries\": 79,\n  \"status\": \"verified_package\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--verify-source",
+              "/tmp/portable-knowledge-check-m7c6uu1v/same-runtime-repacked.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.07787,
+            "stdout_bytes": 134,
+            "stdout_sha256": "2722df3db6ca7affcf4d399297e9f66ce57f78bbd9ef9627b3bc0b8e70351f53",
+            "stdout": "{\n  \"file\": \"/tmp/portable-knowledge-check-m7c6uu1v/same-runtime-repacked.zip\",\n  \"files\": 32,\n  \"status\": \"matches_current_source\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "valid-crc-payload-tamper",
+        "name": "Changed same-length payload with valid CRC fails manifest SHA verification",
+        "details": {
+          "payload": "game-production-kit/README.md",
+          "payload_bytes": 19187,
+          "before_sha256": "a5f0f987e720c0bc59a50f9b6722a9fdd40e9635d546f95e4fd133214a65565e",
+          "after_sha256": "0814c8f6ca30ff8ac43169e11485af35af9cfd674ad3702eac752ae6f0bc5eeb",
+          "valid_crc": true,
+          "manifest_unchanged": true
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py",
+              "--verify",
+              "/tmp/portable-knowledge-check-m7c6uu1v/valid-crc-changed-payload.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 1,
+            "timed_out": false,
+            "duration_seconds": 0.065145,
+            "stdout_bytes": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout": "",
+            "stdout_truncated": false,
+            "stderr_bytes": 558,
+            "stderr_sha256": "99bd26e88e4402fd333f50abe6bef8ab96d52af023c169058f460ba3ed70fca2",
+            "stderr": "Traceback (most recent call last):\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py\", line 173, in <module>\n    main()\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py\", line 166, in main\n    result = verify(args.verify)\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/renamed-consumer-bundle/scripts/package.py\", line 137, in verify\n    raise ValueError(\"Manifest bytes/hash differ: \" + name)\nValueError: Manifest bytes/hash differ: README.md\n",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "changed-source-old-archive",
+        "name": "Internally valid old ZIP is rejected after source content changes",
+        "details": {
+          "changed_file": "README.md",
+          "before_sha256": "a5f0f987e720c0bc59a50f9b6722a9fdd40e9635d546f95e4fd133214a65565e",
+          "after_sha256": "dae0cafacaa21a63af335ffc75d3d662ba59eb3e091b0377d109a089baf4603d",
+          "source_still_structurally_valid": true,
+          "old_archive_still_internally_valid": true
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py",
+              "--check"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.120196,
+            "stdout_bytes": 85,
+            "stdout_sha256": "bbd60437674c88ebad763a36f008b202e59c407a067ef31d4d1b056d35e353ac",
+            "stdout": "{\n  \"status\": \"valid_source\",\n  \"skills\": 5,\n  \"source_entries\": 79,\n  \"files\": 32\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py",
+              "--verify",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 0,
+            "timed_out": false,
+            "duration_seconds": 0.088944,
+            "stdout_bytes": 125,
+            "stdout_sha256": "d8715720e7596933c9358fe7329cfa0341b9137e6c4f8090c2427355b1e0ef77",
+            "stdout": "{\n  \"file\": \"/workspace/next-action-rpg/reusable/game-production-kit.zip\",\n  \"files\": 33,\n  \"status\": \"verified_integrity\"\n}\n",
+            "stdout_truncated": false,
+            "stderr_bytes": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "stderr_truncated": false
+          },
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py",
+              "--verify-source",
+              "/workspace/next-action-rpg/reusable/game-production-kit.zip"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 1,
+            "timed_out": false,
+            "duration_seconds": 0.110403,
+            "stdout_bytes": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout": "",
+            "stdout_truncated": false,
+            "stderr_bytes": 631,
+            "stderr_sha256": "a03db67f852c99aad2d2a4ff4003f409ea98eb716eb1a19d31adea408a0a95a0",
+            "stderr": "Traceback (most recent call last):\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py\", line 173, in <module>\n    main()\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py\", line 168, in main\n    result = verify_source(ROOT, args.verify_source)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/changed-source-consumer/scripts/package.py\", line 148, in verify_source\n    raise ValueError(\"Distributed ZIP differs from current source files\")\nValueError: Distributed ZIP differs from current source files\n",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "broken-local-link",
+        "name": "Broken local documentation link is rejected",
+        "details": {
+          "changed_file": "README.md",
+          "missing_local_target": "portable-missing-probe.md"
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/broken-link-consumer/scripts/package.py",
+              "--check"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 1,
+            "timed_out": false,
+            "duration_seconds": 0.079667,
+            "stdout_bytes": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout": "",
+            "stdout_truncated": false,
+            "stderr_bytes": 634,
+            "stderr_sha256": "116f6cf7cbd13f5c1e7b34c1172f49ac2f8aeff4295a33484c1cb16d5b32ba71",
+            "stderr": "Traceback (most recent call last):\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/broken-link-consumer/scripts/package.py\", line 173, in <module>\n    main()\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/broken-link-consumer/scripts/package.py\", line 161, in main\n    files, provenance = validate(ROOT)\n                        ^^^^^^^^^^^^^^\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/broken-link-consumer/scripts/package.py\", line 92, in validate\n    raise ValueError(\"Missing/outside portable local link: \" + str(relative) + \" -> \" + link)\nValueError: Missing/outside portable local link: README.md -> portable-missing-probe.md\n",
+            "stderr_truncated": false
+          }
+        ]
+      },
+      {
+        "id": "external-symlink",
+        "name": "Symlink to material outside the kit is rejected",
+        "details": {
+          "link": "skills/generated-3d-game-art/references/outside-probe.md",
+          "target_outside_kit": true
+        },
+        "status": "passed",
+        "commands": [
+          {
+            "argv": [
+              "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+              "-I",
+              "/tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/scripts/package.py",
+              "--check"
+            ],
+            "cwd": "/tmp/portable-knowledge-check-m7c6uu1v/unrelated-working-directory",
+            "returncode": 1,
+            "timed_out": false,
+            "duration_seconds": 0.076719,
+            "stdout_bytes": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout": "",
+            "stdout_truncated": false,
+            "stderr_bytes": 858,
+            "stderr_sha256": "4d3469e19b6bb0909035fd5ebb646c15bde9880784d1acf972c912ce3c267604",
+            "stderr": "Traceback (most recent call last):\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/scripts/package.py\", line 173, in <module>\n    main()\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/scripts/package.py\", line 161, in main\n    files, provenance = validate(ROOT)\n                        ^^^^^^^^^^^^^^\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/scripts/package.py\", line 41, in validate\n    files = source_files(root)\n            ^^^^^^^^^^^^^^^^^^\n  File \"/tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/scripts/package.py\", line 28, in source_files\n    raise ValueError(\"Package source must not contain symlinks: \" + str(path))\nValueError: Package source must not contain symlinks: /tmp/portable-knowledge-check-m7c6uu1v/symlink-consumer/skills/generated-3d-game-art/references/outside-probe.md\n",
+            "stderr_truncated": false
+          }
+        ]
+      }
+    ],
+    "scope": "Updated reusable camera-readability lessons on verification branch; Main release source carries kit1.7.1, independently rechecked in deliveryproof."
+  },
+  "direct_public_image_review": {
+    "files": [
+      "published-images/08-skill-one.png",
+      "published-images/10-landscape-gameplay.png"
+    ],
+    "observed": "Actual public portrait and landscape body/UI are visible. 08 PNG was requested after the copied active snapshot and shows no remaining skill effect; it is not an active-VFX visual approval. Active dash and expiry are proven by separate immutable live snapshots. Native finite3skill original phase PNGs establish the adopted prototype silhouettes."
+  },
+  "historical_delivery_event": {
+    "manual_main_run": 42337069056,
+    "replacement_automatic_push_run": 42337791841,
+    "same_source_commit": "29c10d7642ed795483676d606aa20238f5ff0b1e",
+    "manual_conclusion": "cancelled",
+    "scope": "Delayed same-source push run replaced manual dispatch through ref concurrency. No code/test failure or tag move; actual successful run IDs used in proof."
+  },
+  "scope": "Native913/0 and actual exported/public Chromium desktop+mobile emulation, trusted touch/live active skill/rune cost/expiry, quality0/1, full browser restart persistence; anonymous defaultTLS release downloads, SHA256/ZIPCRC/PCK MD5, skill shader and original curves. No actual Windows/Android/iOS hardware execution, continuous direct AV/hearing or final AAA approval."
+}
