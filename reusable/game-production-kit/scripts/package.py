@@ -11,7 +11,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "game-production-kit"
-SKILLS = {"evidence-led-project-memory", "godot-web-production", "generated-3d-game-art"}
+SKILLS = {"evidence-led-project-memory", "godot-web-production", "generated-3d-game-art", "realtime-combat-vfx"}
 LINK = re.compile(r"\]\(([^)]+)\)")
 
 
@@ -59,7 +59,7 @@ def validate(root):
                 raise ValueError("Source evidence must use permanent HTTPS URLs")
     skills = {p.parent.name for p in files if p.name == "SKILL.md"}
     if skills != SKILLS:
-        raise ValueError("Expected the three documented portable skills")
+        raise ValueError("Expected the four documented portable skills")
     for path in files:
         content = path.read_text(encoding="utf-8")
         if path.suffix == ".json":

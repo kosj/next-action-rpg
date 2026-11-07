@@ -2809,6 +2809,40 @@
         "tools/tests/test_sword_wave_contact_observer.py",
         "tools/tests/fixtures/charged_wave_contact_main_9a1e9dc.json"
       ]
+    },
+    {
+      "id": "public-vfx-curriculum-to-runtime-production-skill",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "공개 VFX 강좌의 확인 범위를 명시하고 런타임 제작·검수 스킬로 독립 재작성한다",
+      "summary": "RedefineFX 공개 소개·목차와 공식 Godot/Epic 자료를 확인해 재사용 VFX 제작 절차를 작성했다. 레이어/시간·베이크/플립북·타격 이벤트·웹 기능과 검수 범위를 분리한다. 강의 전체 영상·실습과 새 효과의 실행·시각·성능/AAA는 미검증이다.",
+      "tags": [
+        "vfx",
+        "art",
+        "skill",
+        "knowledge",
+        "blender",
+        "godot",
+        "web",
+        "particles"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Public outline and official document review, independently authored skill. Package/link validation recorded separately; no new game VFX execution or quality approval.",
+        "reference": "https://redefinefx.com/witcher/ public page observed UE5.8,20videos,7setups; trailer fetch throttled, full lesson videos/assets not studied; separate HTTP client403 is not a paywall conclusion.",
+        "transfer": "Self-contained realtime-combat-vfx folder: workflow, independent recipes, source scope, pending brief/review templates. RUNEFALL adapter separately binds current runtime and preserves gameplay contracts.",
+        "capability": "Godot4.7 Compatibility supports GPU emitter itself; emit_particle/manual dispatch, built-in trails and SDF collision have separate limits. No compute/volumetricfog; depth/screen/glow not blanket unavailable. Confirm specific APIs and actual export per project.",
+        "remaining": "All new bake/import/gameplay effect, continuous AV, actual device performance and AAA acceptance remain pending; skill authoring does not change the deployed game."
+      },
+      "sources": [
+        "https://redefinefx.com/witcher/",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/niagara-flipbook-baker-quick-start-guide-in-unreal-engine",
+        "https://docs.godotengine.org/en/4.7/tutorials/rendering/renderers.html",
+        ".agents/skills/runefall-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/source-notes.md",
+        "docs/research/VFX_RUNTIME_CAPABILITY_NOTES.md"
+      ]
     }
   ]
 }

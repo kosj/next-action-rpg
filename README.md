@@ -89,6 +89,7 @@ GitHub Actions는 PR과 main 변경에서 회귀 검사와 웹 ZIP을 만들며,
 - [모바일 터치 조작·반응형 UI](docs/MOBILE_WEB.md)
 - [설계와 현재 구현 상태](docs/DESIGN.md)
 - [Blender·VARCO 아트 제작 가이드](docs/ART_PIPELINE.md)
+- [VFX 제작 스킬](.agents/skills/runefall-vfx/SKILL.md) · [다른 프로젝트용 VFX 스킬](reusable/game-production-kit/skills/realtime-combat-vfx/SKILL.md)
 - [대표 구간 제작 명세·참조 이미지·검수 기준](docs/ART_SLICE.md)
 - [AAA 최종 아트 승인 기준](docs/AAA_ART_QUALITY.md)
 - [캐릭터 눈·검 잔상 개선과 반려 기록](docs/CHARACTER_POLISH.md)

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "effect_id": "",
+  "goal": "",
+  "observed_problem": "",
+  "project": {
+    "engine_version": "",
+    "blender_version": "",
+    "renderer": "",
+    "platforms": [],
+    "target_devices": [],
+    "camera_context": ""
+  },
+  "source": {
+    "baseline_commit": "",
+    "baseline_assets": [],
+    "references": [],
+    "rights_and_attribution": "",
+    "course_access_scope": ""
+  },
+  "design": {
+    "silhouette": "",
+    "direction": "",
+    "palette": "",
+    "core_body_detail_tail": [],
+    "timing_seconds": {
+      "anticipation": null,
+      "release": null,
+      "contact_event_driven": true,
+      "tail": null
+    },
+    "representation": "",
+    "fallback": "",
+    "reason": ""
+  },
+  "gameplay_contract": {
+    "authority": "",
+    "event_and_identity_fields": [],
+    "coordinate_space": "",
+    "visual_vs_damage_volume": "",
+    "pause_and_hitstop_policy": "",
+    "cancel_restore_cleanup": "",
+    "randomness_owner": ""
+  },
+  "bake": {
+    "required": false,
+    "recipe_path": "",
+    "source_sha256": "",
+    "cache_path": "",
+    "fps": null,
+    "first_frame": null,
+    "frame_count": null,
+    "columns": null,
+    "rows": null,
+    "texture_size_px": [],
+    "pivot": "",
+    "alpha_mode": "",
+    "color_space": "",
+    "loop_policy": "",
+    "process_exit_code": null
+  },
+  "runtime": {
+    "scene_path": "",
+    "shader_paths": [],
+    "per_instance_clock": "",
+    "max_concurrent": null,
+    "emitter_particle_light_caps": {},
+    "visibility_bounds": "",
+    "depth_blend_shadow_policy": ""
+  },
+  "budget": {
+    "frame_time_ms": null,
+    "texture_memory_bytes": null,
+    "download_delta_bytes": null,
+    "measurement_conditions": "",
+    "measured_off_on": {}
+  },
+  "verification": {
+    "source_import": "pending",
+    "actual_renderer_visibility": "pending",
+    "gameplay_contacts": "pending",
+    "continuous_normal_speed_visual": "pending",
+    "direct_audio_listening": "pending",
+    "web_mobile": "pending",
+    "target_hardware": "pending",
+    "final_art_quality": "pending",
+    "evidence": []
+  },
+  "decision": {
+    "status": "pending",
+    "adopt_or_reject_reason": "",
+    "residuals": []
+  }
+}
