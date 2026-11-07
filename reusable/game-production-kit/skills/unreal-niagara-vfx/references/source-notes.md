@@ -26,3 +26,7 @@
 실제 엔진/plugin 버전과 상태, RHI·기기·목표 빌드, 자료형·소켓/단위·동결 정책, graph의 pin과 asset reference를 확인한다. 특히 GPU 결과의 gameplay readback/네트워크 권한, pool·Auto Destroy 수명, cache의 attribute·재생 제약은 사용하는 구현에서 시험한다.
 
 이 스킬에는 `.uasset`, `.uproject`, 실제 bake/cook/package 결과가 포함되지 않는다. 템플릿의 runtime·성능·시각/음향·AAA 상태는 모두 `pending`이며 패키지의 문서/무결성 검사로 이를 승격하지 않는다.
+
+## 공개 제작글을 이용한 후속 보강
+
+2026-11-07 추가 조사에서는 [제작 실험 노트](redefinefx-production-lab.md)에 연결한 RedefineFX의 유리 파괴 제작기·Magic 소개·Pyro/Liquids 업데이트·MCP 소개 본문을 읽었다. 목차 밖의 공개 기술 설명을 확인한 범위다. 출처의 사실과 자체적인 증상 진단/튜닝/반증 기준은 구분한다. 전체 영상·유료 강의·원본 프로젝트를 열람한 것으로 바꾸지 않으며 새 효과의 실행은 여전히 pending이다.

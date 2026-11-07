@@ -1,6 +1,6 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.6.0** · 정리일 **2026-11-07**.
+버전 **1.7.0** · 정리일 **2026-11-07**.
 
 기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
@@ -93,3 +93,5 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 판본1.5.0은 독립 설치 가능한 `realtime-combat-vfx`를 추가합니다. RedefineFX 공개 강좌 소개·목차의 확인 범위와 공식 Godot/Epic 자료 대조를 기록하고, 레이어/시간 설계·Blender 베이크/atlas·실제 타격 연결·웹 기능 선택·정상1배속/성능 검수 절차와 빈 양식을 제공합니다. 강의 전체 시청·실습, 제공 자산 복제 또는 새 VFX의 실제 제작·AAA 승인을 주장하지 않습니다.
 
 판본1.6.0은 Godot용과 독립 설치 가능한 `unreal-niagara-vfx`를 추가합니다. Epic 공식 자료를 기반으로 System/Emitter/Renderer·User Parameters·Fluids·Blueprint 수명·Sim Cache/플립북·Effect Type/Debugger와 cook/package 검수를 분리합니다. 강의 내부 recipe 복원·새 `.uasset` 제작·엔진 전환·실제 성능 승인을 주장하지 않습니다.
+
+판본1.7.0은 RedefineFX의 공개 제작글을 추가로 대조해 두 VFX 스킬의 개선 실험을 보강합니다. 출처 관찰→자체 가설→고정 입력→제어군→기각 조건→실제 근거를 기록하고, 국소 접촉/연쇄 억제·큰 형태/미세 디테일·힘/충돌·변형/시드·MCP 결과 재확인을 다룹니다. 각 스킬에 동일한 공통 실험 노트와 pending 양식을 내장해 독립 복사를 유지합니다. 두 공통 노트/양식을 수정할 때 사본의 byte 일치를 확인합니다. 전체 강의 실습·새 runtime·AAA 승인은 별도입니다.

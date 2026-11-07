@@ -10,6 +10,10 @@ description: >
 
 [재사용 VFX 스킬](../../../reusable/game-production-kit/skills/realtime-combat-vfx/SKILL.md)을 기본 절차로 사용한다. [출처·열람 범위](../../../reusable/game-production-kit/skills/realtime-combat-vfx/references/source-notes.md)는 공개 강좌 소개와 공식 문서 대조이며 전체 강의 이수나 새 VFX 제작 승인이 아니다. 런타임 선택은 [공식 기능 조사](../../../docs/research/VFX_RUNTIME_CAPABILITY_NOTES.md)로 다시 확인한다.
 
+## 개선 요청의 우선 절차
+
+[RedefineFX 참고 제작 실험](../../../reusable/game-production-kit/skills/realtime-combat-vfx/references/redefinefx-production-lab.md)에 따라 현재 보이는 결함 하나와 고정할 입력을 고른다. [독립 근거 조사](../../../docs/research/REDEFINEFX_VFX_IMPROVEMENT_EVIDENCE.md)의 공개 관찰과 자체 가설을 구분한다. 형상·시간·접촉 인과를 먼저 비교하고 미세 입자로 모션의 약함을 가리지 않는다.
+
 ## 현재 프로젝트에 적용
 
 1. [개발 스킬](../runefall-development/SKILL.md)·[아트 스킬](../runefall-art/SKILL.md)과 지식 DB의 `resolved-stride-upper-attack-and-traveling-wave`, `mixed-delivery-contact-oracles-and-same-strike-ledger`를 읽는다. 엔진 버전은 `tools/toolchain.json`, 렌더러/품질은 실제 프로젝트 설정을 원본으로 삼는다.

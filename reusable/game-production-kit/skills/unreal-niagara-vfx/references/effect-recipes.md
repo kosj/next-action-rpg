@@ -46,3 +46,11 @@
 ## 검기 비교 후보의 작업 순서
 
 동일 gameplay release/trajectory에서 **geometry만 변경 → mask/밝기 분포 → tail → 접촉 디테일** 순으로 비교한다. 각 후보의 renderer/material·입자 수·bounds·품질을 기록하고 최종 후보만 다중 교전/packaged build로 확대한다. 카메라·노출·피격 모션을 바꿨다면 VFX 단독 개선 결과와 나눠 기록한다.
+
+## 국소 반응·크기 계층·힘을 포함한 제작 실험
+
+[RedefineFX 참고 실험 절차](redefinefx-production-lab.md)를 적용한다. 파괴/보호막 후보는 원상태와 확정 접촉 후 상태, 인접 비대상의 무반응을 분리해 시험한다. 큰 조각/주 실루엣과 미세 입자는 독립된 후보로 비교하고, 작은 변형군은 진단용 고정 시드와 별도 시각 RNG로 재현한다. 충돌 표면·반발/흡입·장식 흐름의 소유자를 명시하고, 시각 노이즈를 실제 힘 구현으로 승인하지 않는다. 아래의 레시피·선택은 자체 응용이며 공개 강의의 내부 구현이 아니다.
+
+### Fluids 제어군을 순서대로 확인
+
+Source/debug로 주입의 위치·속도를 확인한다 → domain/해상도·경계를 맞춘다 → 흐름/감쇠를 조정한다 → density/temperature의 Render mapping을 다듬는다 → 낮은 품질·실제 교전에서 비용을 확인한다. 실제 template에 없는 pin/속성을 추측하지 않는다. Chaos 파괴가 요청된 경우에만 anchor/strain/force·활성 영역을 다루고 원래 gameplay의 확정 접촉과 분리한다.

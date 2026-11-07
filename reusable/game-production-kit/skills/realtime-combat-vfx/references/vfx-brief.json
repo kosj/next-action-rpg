@@ -17,7 +17,8 @@
     "baseline_assets": [],
     "references": [],
     "rights_and_attribution": "",
-    "course_access_scope": ""
+    "course_access_scope": "",
+    "observation_records": []
   },
   "design": {
     "silhouette": "",
@@ -32,7 +33,10 @@
     },
     "representation": "",
     "fallback": "",
-    "reason": ""
+    "reason": "",
+    "causal_state_transition": "",
+    "large_form_vs_detail": "",
+    "force_collision_or_visual_only": ""
   },
   "gameplay_contract": {
     "authority": "",
@@ -85,11 +89,14 @@
     "web_mobile": "pending",
     "target_hardware": "pending",
     "final_art_quality": "pending",
-    "evidence": []
+    "evidence": [],
+    "unintended_cascade": "pending",
+    "variation_and_visual_rng": "pending"
   },
   "decision": {
     "status": "pending",
     "adopt_or_reject_reason": "",
     "residuals": []
-  }
+  },
+  "improvement_experiment_record": ""
 }

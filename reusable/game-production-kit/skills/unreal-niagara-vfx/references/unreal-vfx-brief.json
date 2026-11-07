@@ -22,7 +22,8 @@
     "assets_and_hashes": [],
     "references": [],
     "reference_access_scope": "",
-    "licenses_and_attribution": ""
+    "licenses_and_attribution": "",
+    "observation_records": []
   },
   "design": {
     "role": "",
@@ -32,7 +33,10 @@
     "representation": "",
     "live_cache_or_flipbook": "",
     "selection_reason": "",
-    "lower_quality_fallback": ""
+    "lower_quality_fallback": "",
+    "causal_state_transition": "",
+    "large_form_vs_detail": "",
+    "force_collision_or_visual_only": ""
   },
   "niagara": {
     "system_asset": "",
@@ -98,11 +102,14 @@
     "cook_package": "pending",
     "target_device_performance": "pending",
     "final_art_quality": "pending",
-    "evidence": []
+    "evidence": [],
+    "unintended_cascade": "pending",
+    "variation_and_visual_rng": "pending"
   },
   "decision": {
     "status": "pending",
     "adopt_or_reject_reason": "",
     "remaining": []
-  }
+  },
+  "improvement_experiment_record": ""
 }

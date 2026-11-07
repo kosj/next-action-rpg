@@ -2877,6 +2877,41 @@
         "https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Niagara/SpawnSystematLocation",
         "https://dev.epicgames.com/documentation/en-us/unreal-engine/scalability-and-best-practices-for-niagara"
       ]
+    },
+    {
+      "id": "redefinefx-causal-layering-and-controlled-vfx-experiments",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "RedefineFX 공개 제작 설명을 국소 인과·크기 계층·통제된 VFX 개선 실험에 연결한다",
+      "summary": "공개 제작글에서 국소 trigger/상태 전환, 큰 형태와 미세 입자, force/collider 구분을 확인하고 두 VFX 스킬의 실험 절차를 보강했다. 관찰·자체 가설·고정 조건·제어군·기각 기준과 실제 근거를 분리한다. 전체 강의/새 효과 실행·품질은 미검증이다.",
+      "tags": [
+        "vfx",
+        "redefinefx",
+        "art",
+        "skill",
+        "knowledge",
+        "unreal",
+        "godot",
+        "experiments"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Primary public RedefineFX article/outline text research and independently authored skill refinement. No full video/transcript/course project analysis or new engine/game runtime test.",
+        "source_scope": "gta-6-destruction-vfx public technical account; magic public large/small motion composition; unreal-5-8-niagara-vfx update force versus collider; unreal-mcp-vfx course introduction. No premium lesson schema or server implementation inferred.",
+        "adaptation": "Same standalone lab and pending experiment JSON embedded in both Godot/Blender and Unreal skill folders; source observation→hypothesis→fixed inputs→control family→falsifier→evidence. Shape/timing/causality/hierarchy/variation/cost gates have no invented AAA score.",
+        "boundary": "A cinematic pre-contact activation is not authority to generate gameplay hits/damage before confirmation. Forces, collision, cosmetic flow and particle/large-piece roles remain separate.",
+        "remaining": "All new asset authoring/bake/MCP edits/readback, actual gameplay/continuous AV, hardware and final AAA pending. No new paid calls made for this investigation."
+      },
+      "sources": [
+        "docs/research/REDEFINEFX_VFX_IMPROVEMENT_EVIDENCE.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/redefinefx-production-lab.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/redefinefx-production-lab.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/improvement-experiment.json",
+        "https://redefinefx.com/gta-6-destruction-vfx/",
+        "https://redefinefx.com/magic/",
+        "https://redefinefx.com/unreal-5-8-niagara-vfx/",
+        "https://redefinefx.com/unreal-mcp-vfx/"
+      ]
     }
   ]
 }

@@ -13,6 +13,10 @@ description: >
 
 [출처·버전·열람 범위](references/source-notes.md), [효과별 제작안](references/effect-recipes.md), [제작 명세](references/unreal-vfx-brief.json), [검수 기록](references/review-checklist.md)을 사용한다. 공개 RedefineFX 강좌 소개와 Epic 공식 문서를 참고해 독립 작성했다. 전체 강의 실습이나 실제 `.uasset` 제작을 완료했다는 뜻은 아니다.
 
+## 개선 요청에 먼저 적용할 실험 루프
+
+“더 강하게/자연스럽게/덜 단순하게” 요청을 받으면 [RedefineFX 참고 제작 실험](references/redefinefx-production-lab.md)을 먼저 읽고 [실험 기록](references/improvement-experiment.json)을 후보에 복사한다. 증상 하나를 고르고 **출처의 관찰 → 자체 원인 가설 → 보존할 조건 → 변경할 제어군 → 기각 조건 → 실제 근거**를 연결한다. 큰 형태/시간/인과를 먼저 고친 뒤 미세 입자·변형·최적화를 추가한다. 전체 효과를 동시에 바꾼 결과를 단일 수정의 성공으로 적지 않는다.
+
 ## 1. 대상 프로젝트와 효과 계약을 확인한다
 
 1. 실제 `.uproject`, Unreal 버전/빌드, Niagara 관련 plugin, 대상 RHI/플랫폼·품질, 카메라·노출, 목표 기기와 성능 예산을 확인한다. 참고 페이지의 버전을 설치 버전이나 권장 최신 버전으로 간주하지 않는다. 기존 사용자 답변을 재사용하고 통상적인 제작 선택은 작은 실험으로 결정한다.

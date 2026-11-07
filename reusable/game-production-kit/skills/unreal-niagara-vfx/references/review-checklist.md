@@ -23,3 +23,17 @@
 | 정상1배속 연속 시각·직접 청취·최종 아트/AAA | pending | |
 
 미리보기·단일 emitter·PIE·Sequencer·packaged build를 같은 결과로 취급하지 않는다. 녹화 프레임 수와 실제 측정 frame time을 구분한다. 문서/스킬 자체를 검사한 경우에만 그 구조 검사 결과를 기록하고 나머지는 남겨 둔다.
+
+## RedefineFX 참고 개선 실험
+
+[제작 실험 절차](redefinefx-production-lab.md)와 [빈 실험 기록](improvement-experiment.json)을 사용한다. 참고 출처의 확인 주장과 자체 가설을 분리하고 같은 조건의 후보를 비교한다.
+
+| 추가 확인 | pending / pass / fail | 근거 |
+| --- | --- | --- |
+| 큰 형태와 작은 디테일의 계층·압축본 가독성 | pending | |
+| 접촉 전 상태·국소 활성·인접 비대상/연쇄 반응 | pending | |
+| force/collider/시각 노이즈의 역할과 실제 반응 | pending | |
+| 변형/고정 시드·gameplay RNG 보존 | pending | |
+| 변경 제어군·보존 조건·기각 사유/후보 이력 | pending | |
+
+형태·시간·인과·계층·변형·비용 gate는 실제 근거를 따로 남긴다. 하나의 총점이나 자료의 효과 수로 AAA를 승인하지 않는다.

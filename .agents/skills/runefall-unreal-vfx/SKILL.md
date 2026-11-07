@@ -13,3 +13,5 @@ description: >
 현재 RUNEFALL의 Godot 코드·버전·웹 배포 설정과 별도의 문서/제작 경로다. 이 스킬 추가를 엔진 전환·Unreal 설치·프로젝트 생성·새 효과 실행으로 해석하지 않는다. 실제 제작 요청에는 지정한 `.uproject`와 설치 버전·대상 플랫폼을 확인한 뒤 그 프로젝트의 지침을 따른다. 제공된 맥락으로 실행 가능한 준비를 진행하고 새로운 외부 도구 권한을 임의로 만들지 않는다.
 
 기술 조사·문서 검증과 Unreal 실습·cook/package·게임 화면/성능 승인을 구분해 기록한다. 재사용 원칙은 [지식 관리 스킬](../runefall-knowledge/SKILL.md)에 따라 축적한다.
+
+개선 요청에는 [RedefineFX 참고 제작 실험](../../../reusable/game-production-kit/skills/unreal-niagara-vfx/references/redefinefx-production-lab.md)을 먼저 적용한다. 공개 기술글의 관찰과 자체 가설·수정/기각 기준을 나누고, 국소 활성·큰 형태/작은 디테일·force/collider·MCP readback을 실제 대상 프로젝트에서 검수한다. 조사 범위는 [독립 근거 문서](../../../docs/research/REDEFINEFX_VFX_IMPROVEMENT_EVIDENCE.md)에 남긴다.

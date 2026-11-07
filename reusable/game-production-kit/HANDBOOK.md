@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.6.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.7.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -102,6 +102,7 @@
 | `mixed-delivery-contact-oracles-and-same-strike-ledger` | 같은 공격을 공유하는 서로 다른 전달 수단의 계약을 분리하고 전체 타격 ledger를 먼저 검사한다. | 실제 혼합 receipt, 이전 기하/시간 guards 보존, 새 수단별 기하·피해·원점·사거리, predicate/최종집계/freeze/proof/source 동시 검토. 실패 원인과 순수 데이터 복구·새 live 승인 구분 |
 | `public-vfx-curriculum-to-runtime-production-skill` | 공개 목차에서 확인한 범위와 독립 재저작 절차를 구분하고 목표 렌더러의 세부 기능을 대조한다. | 강의 미열람 범위, GPU emitter와 수동 방출/trail 제한의 차이, 베이크/atlas와 runtime, 실제 시각·성능/AAA는 각각 새 증거 필요. |
 | `unreal-niagara-runtime-cache-and-integration-skill` | Unreal 전용 자산/이벤트·User Parameter·수명과 Sim Cache/atlas·scalability를 분리한 독립 스킬로 관리한다. | 실제 설치본 API/plugin 상태, 비활성 생성 후 초기화, Position/Vector·좌표, GPU의 CPU 비용, bounds/cull, 실제 cook/package·교전·기기 성능은 새 근거로 검사. |
+| `redefinefx-causal-layering-and-controlled-vfx-experiments` | 공개 제작 설명을 자체 가설·고정 조건·변경 제어군·반증/기각 기준에 연결한다. | 국소 활성/비대상, 큰 형태/미세 디테일, 힘/충돌/표시, 재현 시드와 비교 매체를 구분한다. 자료 확인을 강의 실습·새 효과·AAA 승인으로 바꾸지 않음. |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
