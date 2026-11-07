@@ -30,7 +30,7 @@ jobs:
           from pathlib import Path
           from concurrent.futures import ThreadPoolExecutor
           ROOT=Path.cwd();MAIN="29c10d7642ed795483676d606aa20238f5ff0b1e";VERSION="0.1.18";EXPECTED=VERSION+" · "+MAIN[:8]
-          MAIN_RUN=42337069056;TAG_RUN=42336992556
+          MAIN_RUN=42337791841;TAG_RUN=42336992556
           assert subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()==MAIN
           out=ROOT/"delivery-proof";out.mkdir()
           def api(path):
