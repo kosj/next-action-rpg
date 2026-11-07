@@ -1,0 +1,222 @@
+{
+  "version": "0.1.18",
+  "stage": "finite_technical_visual_adoption",
+  "source_commit": "992825b20d77bd1d19e9f0c3703e369e34e2c4c0",
+  "source_dirty_at_capture": false,
+  "baseline_commit": "951f314359685706a1db53a8f2351a26c4512222",
+  "runtime_inputs": {
+    "scripts/world/skill_effect.gd": {
+      "sha256": "ee493911bae530b76f440dbb6d7d6df052089ff5b535f7f6b78166e324f4814b",
+      "bytes": 20619
+    },
+    "assets/shaders/skill_energy.gdshader": {
+      "sha256": "73b8fcd47f3db2aa9ef361c0e7625e62e01b645feba6f2139167bad45b850241",
+      "bytes": 1455
+    },
+    "scripts/actors/player.gd": {
+      "sha256": "93c23085524d389181708796369d972940a6dfbae097023d34a3faef9744e984",
+      "bytes": 15409
+    },
+    "scripts/game.gd": {
+      "sha256": "37eb349ede648e626d4f04d97f512cb748b5aca8c547cc52f7499cd2e855bb5e",
+      "bytes": 28278
+    },
+    "scripts/world/impact_effect.gd": {
+      "sha256": "841265c05d1c08983aa941bc7274cd27a6e9f4fdf86bbdcbbb5f249072f241eb",
+      "bytes": 18629
+    },
+    "scripts/core/audio.gd": {
+      "sha256": "c65c7aaef26205964d5b74e307281f9e0f0bb5a041ebc7c1267056382a413861",
+      "bytes": 9007
+    },
+    "scripts/ui/hud.gd": {
+      "sha256": "2a14a916f309a6f2ca1c879f30dbe280752bb2a17c534591995c11c24b77b532",
+      "bytes": 35688
+    },
+    "tests/skill_vfx_regressions.gd": {
+      "sha256": "a84fa455e6dd47b5678e1d3fbbdc077de1574c9a136a5c1eb9e8a7d2e2c03c9d",
+      "bytes": 18714
+    },
+    "scripts/world/camera_rig.gd": {
+      "sha256": "1192b2bfa8e65b73c5c63d14e888a43a78bcfc2df0fa01d137146cf0577edef7",
+      "bytes": 23219
+    }
+  },
+  "before": {
+    "mode": "technical",
+    "gameplay_frames": 840,
+    "quality": 1,
+    "coverage": {
+      "accepted_casts": {
+        "skill_1": 1,
+        "skill_2": 1,
+        "skill_3": 1
+      },
+      "active_samples": {
+        "skill_1": 21,
+        "skill_2": 21,
+        "skill_3": 21
+      },
+      "confirmed_contacts": {},
+      "mode": "technical",
+      "new_effect_samples": {},
+      "scope": "Technical mode establishes resource-funded actual Game skill presentation only. Normal mode earns resources with real input. Neither mode establishes direct continuous watching/hearing, hardware or AAA approval.",
+      "technical_resource_writes": [
+        {
+          "after": 100.0,
+          "before": 35.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 49
+        },
+        {
+          "after": 100.0,
+          "before": 75.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 188
+        },
+        {
+          "after": 100.0,
+          "before": 55.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 327
+        }
+      ]
+    },
+    "actual_skill_contacts": 0,
+    "actual_build_id": "0.1.17 · development",
+    "normal_resource_earning_proven": false,
+    "scope": "Actual main Game, actors, camera, skill API and VFX at logical1x/60Hz. Script-generated native UI/key inputs, not human play. Technical mode uses explicit rune100 funding per skill and establishes presentation only; normal mode earns resources through real parries and ordinary encounters. No direct continuous watching/hearing, target hardware performance or AAA approval."
+  },
+  "after": {
+    "mode": "technical",
+    "gameplay_frames": 394,
+    "frame_budget": 840,
+    "completion_reason": "all_three_skills_recovered_and_effects_expired",
+    "software_threads": 4,
+    "quality": 1,
+    "coverage": {
+      "accepted_casts": {
+        "skill_1": 1,
+        "skill_2": 1,
+        "skill_3": 1
+      },
+      "active_samples": {
+        "skill_1": 21,
+        "skill_2": 21,
+        "skill_3": 21
+      },
+      "actual_gameplay_frames": 394,
+      "all_skill_requests_recovered": true,
+      "comparison_scope": "Compare matching original ticks/skill phases. Optional completed takes may be shorter than an older exact-frame-budget take; no full-movie equal-duration claim.",
+      "completed_skill_casts": {
+        "skill_1": 1,
+        "skill_2": 1,
+        "skill_3": 1
+      },
+      "completion_reason": "all_three_skills_recovered_and_effects_expired",
+      "confirmed_contacts": {},
+      "frame_budget": 840,
+      "last_accepted_skill_tick": 328,
+      "live_skill_effect_count": 0,
+      "mode": "technical",
+      "new_effect_samples": {
+        "skill_1": 68,
+        "skill_2": 68,
+        "skill_3": 68
+      },
+      "quiet_after_last_accept_ticks": 90,
+      "scope": "Technical mode establishes resource-funded actual Game skill presentation only. Normal mode earns resources with real input. Neither mode establishes direct continuous watching/hearing, hardware or AAA approval.",
+      "stop_when_complete": true,
+      "technical_resource_writes": [
+        {
+          "after": 100.0,
+          "before": 35.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 49
+        },
+        {
+          "after": 100.0,
+          "before": 75.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 188
+        },
+        {
+          "after": 100.0,
+          "before": 55.0,
+          "field": "player.rune",
+          "purpose": "technical presentation coverage only",
+          "tick": 327
+        }
+      ]
+    },
+    "actual_skill_contacts": 0,
+    "actual_build_id": "0.1.16 · stride-preview",
+    "normal_resource_earning_proven": false,
+    "comparison_scope": "Match actual ticks/skill phases; optional completed takes need not have the same whole-movie length as an older exact-budget take",
+    "scope": "Actual main Game, actors, camera, skill API and VFX at logical1x/60Hz. Script-generated native UI/key inputs, not human play. Technical mode uses explicit rune100 funding per skill and establishes presentation only; normal mode earns resources through real parries and ordinary encounters. No direct continuous watching/hearing, target hardware performance or AAA approval. Optional observed completion may shorten post-coverage idle; compare matching actual ticks/skill phases, not equal-duration whole movies."
+  },
+  "capture_errors": 0,
+  "audio_cleanup": {
+    "actual_audio_weakrefs_released": true,
+    "audio_stop_report": {
+      "epoch": 1,
+      "pending_playbacks": 0,
+      "players": 0,
+      "stopped": true
+    },
+    "scope": "Post-record resource release only; not audio-hearing approval"
+  },
+  "media": [
+    {
+      "path": "media/skills-before-logical1x.mp4",
+      "bytes": 1936438,
+      "sha256": "4ca52ad7078dba43a8a0d9d671ab6f1d64a05feb78074b9d1edaad5bff8171a1"
+    },
+    {
+      "path": "media/skills-after-logical1x.mp4",
+      "bytes": 1884757,
+      "sha256": "3ca2a01e9c94dfe86d9c2956dab75a892312954fbead7ab9bfdf0d70ef3617fa"
+    },
+    {
+      "path": "media/skill-1-active.png",
+      "bytes": 757844,
+      "sha256": "26ff032b1b2d5b6af32a34c00a1ee2a5d4bf5f0747b5c7f3ed27f0b388fa8684"
+    },
+    {
+      "path": "media/skill-2-active.png",
+      "bytes": 761246,
+      "sha256": "97f7b4b422854d4460462a072b194c31a6d8d89181af615477388c975b005bd4"
+    },
+    {
+      "path": "media/skill-3-active.png",
+      "bytes": 767417,
+      "sha256": "c2b922c10aea6e1297b5043f33f31dcf2d40240921eb67757a6591b924362e09"
+    },
+    {
+      "path": "media/rejected-dash-before-crescent.png",
+      "bytes": 758479,
+      "sha256": "24f1b9b70e79d6aaf040b335bde1cdd28fbe84562f9901a3eec3a55a25398aa7"
+    }
+  ],
+  "adoption": {
+    "skill_1": "Third candidate adopted after direct inspection of all four phases. Large front cyan crescent reads outside actor silhouette; previous two narrow lance candidates rejected.",
+    "skill_2": "Violet/cyan orbit crescents, broken floor runes and short fragments; active/late/recovery inspected.",
+    "skill_3": "Gold descending blade with visible crossguard/grip, radial fissures and finite fragments. Active/late/recovery inspected.",
+    "scope": "Actual native Game at quality1,960x600. Bounded original PNG inspection and exact logical1x media; no continuous direct AV/hearing, hardware or final AAA approval."
+  },
+  "provenance_notes": [
+    "Three explicit rune100 assignments per technical take, ordinary native1/2/3 inputs. No actor health/position/damage/camera writes. Safe hub, no skill contact proof.",
+    "Before is exact840gameplay frames; final after ends at observed all3fullrecovery+effects0+90quietticks within unchanged840budget. Compare matching originalticks/phases; videos have unequal durations and are not retimed.",
+    "Ignored development build_id.txt in native captures contains an older preview label. Captured source commit/project version and file hashes are authoritative for this diagnostic; final exported/public build stamp is verified separately."
+  ],
+  "remaining": [
+    "Final integrated native and exports after source992825b",
+    "Normal earned-resource gameplay",
+    "Final PR/main/tag CI, actual Web/mobile/public and release verification"
+  ]
+}

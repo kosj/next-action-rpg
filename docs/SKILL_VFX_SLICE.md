@@ -36,9 +36,9 @@
 
 ## 현재 기록
 
-- source 구현: 세 cast의 전용 표시와 실제 접촉 피드백 연결 완료, 시각 채택은 pending
+- source 구현: 세 cast의 전용 표시와 실제 접촉 피드백 연결 완료. [실제 세 번째 후보](validation/v0.1.18/README.md)의 유한 PNG 비교에서 프로토타입 시각 채택
 - [초기 native 진단](validation/v0.1.18/initial-native.json): 910검사/0실패·ERROR0. 이후 추가한 실제 벽 이력 fixture를 포함한 최종 native는 별도
-- 기술 비교·정상 gameplay·export/browser·게시: pending
+- [기술 비교·원본 미디어와 source SHA](validation/v0.1.18/technical-visual.json): 후방 카메라에서 가려진 섬광 두 후보를 기각하고 큰 전방 초승달을 채택. 정상 gameplay·최종 export/browser·게시는 별도 검증
 - 새 유료 생성: 없음
 
 최종 검증 기록은 해당 source와 실제 산출물이 확보된 뒤 이 절의 링크로 연결한다.
