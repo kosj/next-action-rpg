@@ -13,3 +13,5 @@
 [최종 native·export](final-native-export.json): 실제 벽/이동 잔상 검사를 포함한913검사/0실패·엔진ERROR0, Web/Windows export 성공, raw Web149,918,911bytes. [초기 진단](initial-native.json)과 구분한다. 정상 입력 gameplay·모바일/공개 주소·릴리스 결과는 해당 source와 산출물에서 따로 검증한다. 연속 직접 시청/청취, 실제 Android/iOS/Windows GPU 성능과 AAA 최종 아트 승인은 남는다.
 
 [정상 자원 획득 gameplay](normal-gameplay.json) · [실제 게임 영상](media/skills-normal-earned-logical1x.mp4): 룬 보충 없이 실제 UI/키·패링·두 전투 구역 이동으로 세 기술을 각각 한 번 사용하고 회복/연출 종료를 확인했다. 실제 접촉은 심판3회(각150), 섬광3회(각65)다. 폭풍은 첫 구역의 적이 쓰러진 후 발동해 이 take에서는 빗나갔다. 모든 기술의 실제 접촉은 별도 native 회귀에서 확인하며 이 영상의 범위를 확대하지 않는다.1256gameplay frames의 논리1배속 기록이고 인간 플레이·실시간60fps·난이도/밸런스 승인이 아니다.
+
+[4.15초 하이라이트](media/skills-highlights-logical1x.mp4)는 위 정상 영상의 두 실제 구간을 자른 편집본이다. 속도 변경이나 추가 VFX·카메라·음향은 없으며 연속 플레이로 표시하지 않는다. [원본 frame 범위·SHA](highlights.json)로 재현할 수 있다.

@@ -1,0 +1,25 @@
+{
+  "source_video": "media/skills-normal-earned-logical1x.mp4",
+  "source_sha256": "75b94d4d4e85e0164e4a397c7c9141bca99c90c9c4cd3a3f4021880f533bcee6",
+  "highlight_video": "media/skills-highlights-logical1x.mp4",
+  "highlight_sha256": "c98e37df0924e53b7543730977b45093c4a8298c9e3602e9652f70feae6dc250",
+  "bytes": 1658411,
+  "source_frame_ranges_exclusive_end": [
+    [
+      634,
+      780
+    ],
+    [
+      1177,
+      1280
+    ]
+  ],
+  "probe": {
+    "width": 960,
+    "height": 600,
+    "r_frame_rate": "60/1",
+    "duration": "4.133334",
+    "nb_read_frames": "249"
+  },
+  "scope": "Two actual recorded gameplay segments at unchanged logical1x/60Hz, cut together for quick viewing; not continuous gameplay, no added VFX/camera/audio layers and no listening or targethardware approval."
+}
