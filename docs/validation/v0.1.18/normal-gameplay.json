@@ -1,0 +1,567 @@
+{
+  "version": "0.1.18",
+  "stage": "normal_native_input_resource_earning_captured",
+  "source_commit": "a61b61f4fdbf3268d6303dce7d41af22fff85c84",
+  "same_runtime_inputs_as_technical003": true,
+  "actual": {
+    "mode": "normal",
+    "gameplay_frames": 1256,
+    "frame_budget": 2700,
+    "completion_reason": "all_three_skills_recovered_and_effects_expired",
+    "software_threads": 4,
+    "quality": 1,
+    "coverage": {
+      "accepted_casts": {
+        "skill_1": 1,
+        "skill_2": 1,
+        "skill_3": 1
+      },
+      "active_samples": {
+        "skill_1": 30,
+        "skill_2": 21,
+        "skill_3": 24
+      },
+      "actual_gameplay_frames": 1256,
+      "all_skill_requests_recovered": true,
+      "comparison_scope": "Compare matching original ticks/skill phases. Optional completed takes may be shorter than an older exact-frame-budget take; no full-movie equal-duration claim.",
+      "completed_skill_casts": {
+        "skill_1": 1,
+        "skill_2": 1,
+        "skill_3": 1
+      },
+      "completion_reason": "all_three_skills_recovered_and_effects_expired",
+      "confirmed_contacts": {
+        "skill_1": 3,
+        "skill_3": 3
+      },
+      "frame_budget": 2700,
+      "last_accepted_skill_tick": 1190,
+      "live_skill_effect_count": 0,
+      "mode": "normal",
+      "new_effect_samples": {
+        "skill_1": 77,
+        "skill_2": 68,
+        "skill_3": 53
+      },
+      "quiet_after_last_accept_ticks": 90,
+      "scope": "Technical mode establishes resource-funded actual Game skill presentation only. Normal mode earns resources with real input. Neither mode establishes direct continuous watching/hearing, hardware or AAA approval.",
+      "stop_when_complete": true,
+      "technical_resource_writes": []
+    },
+    "actual_skill_contacts": 6,
+    "actual_build_id": "0.1.18 · a61b61f4",
+    "normal_resource_earning_proven": true,
+    "comparison_scope": "Match actual ticks/skill phases; optional completed takes need not have the same whole-movie length as an older exact-budget take",
+    "scope": "Actual main Game, actors, camera, skill API and VFX at logical1x/60Hz. Script-generated native UI/key inputs, not human play. Technical mode uses explicit rune100 funding per skill and establishes presentation only; normal mode earns resources through real parries and ordinary encounters. No direct continuous watching/hearing, target hardware performance or AAA approval. Optional observed completion may shorten post-coverage idle; compare matching actual ticks/skill phases, not equal-duration whole movies."
+  },
+  "events": [
+    {
+      "cost": 80.0,
+      "rune_before": 100.0,
+      "skill_index": 2,
+      "technical_resource_funded": false,
+      "tick": 645,
+      "type": "skill_key_request"
+    },
+    {
+      "attack_id": "skill_3",
+      "attack_instance_id": 7,
+      "rune_after": 20.0,
+      "tick": 646,
+      "type": "accepted_skill_observed"
+    },
+    {
+      "attack_id": "skill_3",
+      "attack_instance_id": 7,
+      "duration": 0.79,
+      "elapsed": 0.800000000000001,
+      "full_recovery": true,
+      "tick": 697,
+      "type": "skill_cast_end_observed"
+    },
+    {
+      "cost": 45.0,
+      "rune_before": 61.0,
+      "skill_index": 1,
+      "technical_resource_funded": false,
+      "tick": 698,
+      "type": "skill_key_request"
+    },
+    {
+      "attack_id": "skill_2",
+      "attack_instance_id": 8,
+      "rune_after": 16.0,
+      "tick": 699,
+      "type": "accepted_skill_observed"
+    },
+    {
+      "attack_id": "skill_2",
+      "attack_instance_id": 8,
+      "duration": 0.79,
+      "elapsed": 0.800000000000001,
+      "full_recovery": true,
+      "tick": 747,
+      "type": "skill_cast_end_observed"
+    },
+    {
+      "cost": 25.0,
+      "rune_before": 38.0,
+      "skill_index": 0,
+      "technical_resource_funded": false,
+      "tick": 1189,
+      "type": "skill_key_request"
+    },
+    {
+      "attack_id": "skill_1",
+      "attack_instance_id": 10,
+      "rune_after": 13.0,
+      "tick": 1190,
+      "type": "accepted_skill_observed"
+    },
+    {
+      "attack_id": "skill_1",
+      "attack_instance_id": 10,
+      "duration": 0.79,
+      "elapsed": 0.800000000000001,
+      "full_recovery": true,
+      "tick": 1247,
+      "type": "skill_cast_end_observed"
+    }
+  ],
+  "native_parry_events": [
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": true,
+      "tick": 331,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": false,
+      "tick": 332,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": true,
+      "tick": 510,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": false,
+      "tick": 511,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": true,
+      "tick": 635,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": false,
+      "tick": 636,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": true,
+      "tick": 1179,
+      "type": "native_key"
+    },
+    {
+      "action": "skill_capture_earn_parry",
+      "code": 70,
+      "pressed": false,
+      "tick": 1180,
+      "type": "native_key"
+    }
+  ],
+  "receipts": [
+    {
+      "attack_id": "skill_3",
+      "attack_instance_id": 7,
+      "target_id": 140878287359,
+      "amount": 150.0,
+      "blocked": false,
+      "killed": true,
+      "contact_source": "hurtbox_ray",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.166666666666667,
+      "point": [
+        -0.955027937889099,
+        1.09598767757416,
+        -32.1641731262207
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 655,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_3",
+        "blocked": false,
+        "contact_source": "hurtbox_ray",
+        "density_headroom_db": -5.02182518111363,
+        "epoch": 0,
+        "killed": true,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -22.0218251811136
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -16.0218251811136
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -16.0218251811136
+          },
+          {
+            "key": "charge_sub",
+            "volume_db": -19.0218251811136
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -29.0218251811136
+          }
+        ],
+        "point": [
+          -0.955027937889099,
+          1.09598767757416,
+          -32.1641731262207
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "judgement"
+      }
+    },
+    {
+      "attack_id": "skill_3",
+      "attack_instance_id": 7,
+      "target_id": 139016016285,
+      "amount": 150.0,
+      "blocked": false,
+      "killed": true,
+      "contact_source": "hurtbox_ray",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.166666666666667,
+      "point": [
+        0.955041348934174,
+        1.095987200737,
+        -32.164249420166
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 655,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_3",
+        "blocked": false,
+        "contact_source": "hurtbox_ray",
+        "density_headroom_db": -10.2866538766053,
+        "epoch": 0,
+        "killed": true,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -27.2866538766053
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -21.2866538766053
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -21.2866538766053
+          },
+          {
+            "key": "charge_sub",
+            "volume_db": -24.2866538766053
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -34.2866538766053
+          }
+        ],
+        "point": [
+          0.955041348934174,
+          1.095987200737,
+          -32.164249420166
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "judgement"
+      }
+    },
+    {
+      "attack_id": "skill_3",
+      "attack_instance_id": 7,
+      "target_id": 133831856328,
+      "amount": 150.0,
+      "blocked": false,
+      "killed": true,
+      "contact_source": "hurtbox_ray",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.166666666666667,
+      "point": [
+        1.02621161204297e-05,
+        1.08757269382477,
+        -31.1662502288818
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 655,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_3",
+        "blocked": false,
+        "contact_source": "hurtbox_ray",
+        "density_headroom_db": -13.5411998265592,
+        "epoch": 0,
+        "killed": true,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -30.5411998265593
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -24.5411998265593
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -24.5411998265593
+          },
+          {
+            "key": "charge_sub",
+            "volume_db": -27.5411998265593
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -37.5411998265593
+          }
+        ],
+        "point": [
+          1.02621161204297e-05,
+          1.08757269382477,
+          -31.1662502288818
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "judgement"
+      }
+    },
+    {
+      "attack_id": "skill_1",
+      "attack_instance_id": 10,
+      "target_id": 227566162687,
+      "amount": 65.0,
+      "blocked": false,
+      "killed": false,
+      "contact_source": "hurtbox_ray",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.166666666666667,
+      "point": [
+        8.34603500366211,
+        1.0873863697052,
+        -84.2226028442383
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 1199,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_1",
+        "blocked": false,
+        "contact_source": "hurtbox_ray",
+        "density_headroom_db": -5.02182518111363,
+        "epoch": 0,
+        "killed": false,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -21.0218251811136
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -17.0218251811136
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -16.0218251811136
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -29.0218251811136
+          }
+        ],
+        "point": [
+          8.34603500366211,
+          1.0873863697052,
+          -84.2226028442383
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "skill"
+      }
+    },
+    {
+      "attack_id": "skill_1",
+      "attack_instance_id": 10,
+      "target_id": 230753833373,
+      "amount": 65.0,
+      "blocked": false,
+      "killed": false,
+      "contact_source": "hurtbox_proxy",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.25,
+      "point": [
+        10.9385547637939,
+        1.1008392572403,
+        -86.5420837402344
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 1207,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_1",
+        "blocked": false,
+        "contact_source": "hurtbox_proxy",
+        "density_headroom_db": -8.54365036222725,
+        "epoch": 0,
+        "killed": false,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -24.5436503622273
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -20.5436503622273
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -19.5436503622273
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -32.5436503622273
+          }
+        ],
+        "point": [
+          10.9385547637939,
+          1.1008392572403,
+          -86.5420837402344
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "skill"
+      }
+    },
+    {
+      "attack_id": "skill_1",
+      "attack_instance_id": 10,
+      "target_id": 232616104136,
+      "amount": 65.0,
+      "blocked": false,
+      "killed": false,
+      "contact_source": "hurtbox_proxy",
+      "contact_phase": -1.0,
+      "attack_elapsed": 0.35,
+      "point": [
+        8.60824966430664,
+        1.1003075838089,
+        -88.3257904052734
+      ],
+      "hitstop": 0.035,
+      "observed_tick": 1216,
+      "audio_report_matches_attack_id": true,
+      "audio_report_matches_point": true,
+      "audio_profile": {
+        "accepted": true,
+        "attack_id": "skill_1",
+        "blocked": false,
+        "contact_source": "hurtbox_proxy",
+        "density_headroom_db": -10.2866538766053,
+        "epoch": 0,
+        "killed": false,
+        "layers": [
+          {
+            "key": "contact_tick",
+            "volume_db": -26.2866538766053
+          },
+          {
+            "key": "metal_heavy",
+            "volume_db": -22.2866538766053
+          },
+          {
+            "key": "body_thump",
+            "volume_db": -21.2866538766053
+          },
+          {
+            "key": "debris_tail",
+            "volume_db": -34.2866538766053
+          }
+        ],
+        "point": [
+          8.60824966430664,
+          1.1003075838089,
+          -88.3257904052734
+        ],
+        "poise_broken": true,
+        "strength": "skill",
+        "style": "skill"
+      }
+    }
+  ],
+  "engine_errors": 0,
+  "cleanup": {
+    "actual_audio_weakrefs_released": true,
+    "audio_stop_report": {
+      "epoch": 1,
+      "pending_playbacks": 0,
+      "players": 0,
+      "stopped": true
+    },
+    "scope": "Post-record resource release only; not audio-hearing approval"
+  },
+  "media": [
+    {
+      "path": "media/skills-normal-earned-logical1x.mp4",
+      "bytes": 10997089,
+      "sha256": "75b94d4d4e85e0164e4a397c7c9141bca99c90c9c4cd3a3f4021880f533bcee6"
+    },
+    {
+      "path": "media/skill-1-normal-contact.png",
+      "bytes": 558800,
+      "sha256": "392e56d0d17284f34cb4fa5d5a232fe54c2b1b77a06f60419526bee10d7be28f"
+    },
+    {
+      "path": "media/skill-3-normal-contact.png",
+      "bytes": 831858,
+      "sha256": "3c2e90e5d55c9d668eed55f4b2c44087692dea22381a483e366da64454018aca"
+    }
+  ],
+  "visual_inspection": "Direct bounded original PNG inspection: Judgement confirmedcontact, Storm active, Flash active/confirmedcontact and finalexpiry. Main actor and enemies remain visible. Not continuous direct AV/hearing approval.",
+  "limits": [
+    "Storm had0contacts in this take after Judgement cleared the first encounter; do not claim all3skills hit. Flash3contacts at65 and Judgement3contacts at150 are actual receipts. Native regressions separately cover all3real hurtbox contacts.",
+    "Automation uses actual UI/keys and reactiveparries; not human play, difficulty/balance measurement, targethardware or AAA approval.",
+    "No rune/health/position/damage/camera writes. Budget2700logicalframes; observed fullcompletion after1256gameplayframes, movie includes UI preamble."
+  ]
+}
