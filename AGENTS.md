@@ -14,6 +14,8 @@
 | 모바일 터치·반응형 UI | 개발 스킬과 [공식 모바일 근거](docs/MOBILE_WEB_RESEARCH.md), 고정 MIT 공개 [입력](.agents/skills/input-handling/SKILL.md)·[반응형 UI](.agents/skills/responsive-ui/SKILL.md) 스킬 |
 | 웹·Windows 빌드·릴리스·Pages | [.agents/skills/runefall-release/SKILL.md](.agents/skills/runefall-release/SKILL.md) |
 | Blender·VARCO·리그·반입 | [.agents/skills/runefall-art/SKILL.md](.agents/skills/runefall-art/SKILL.md) |
+| 검기·타격·파티클·플립북 VFX | [.agents/skills/runefall-vfx/SKILL.md](.agents/skills/runefall-vfx/SKILL.md) |
+| 별도 Unreal/Niagara VFX 제작·참고 | [.agents/skills/runefall-unreal-vfx/SKILL.md](.agents/skills/runefall-unreal-vfx/SKILL.md) |
 | 지식 추가·오류 정정·스킬 갱신 | [.agents/skills/runefall-knowledge/SKILL.md](.agents/skills/runefall-knowledge/SKILL.md) |
 
 다른 프로젝트로 가져갈 절차는 [재사용 지식 묶음](reusable/game-production-kit/README.md)에 관리합니다. 이 배포용 스킬은 프로젝트 전용 지침과 분리하며, 선택한 스킬 폴더를 대상 프로젝트에 복사한 뒤 그 프로젝트의 버전·값·근거로 다시 검증합니다.

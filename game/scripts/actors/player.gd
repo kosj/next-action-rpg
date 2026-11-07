@@ -7,6 +7,7 @@ signal landed_hit(amount: float, position: Vector3)
 signal impact_confirmed(context: Dictionary)
 signal parried
 signal wave_requested(attack: CombatStrike, forward: Vector3)
+signal skill_started(attack: CombatStrike)
 signal skill_effect(position: Vector3, radius: float, color: Color)
 
 const LIGHTS: Array[AttackData] = [preload("res://data/light_1.tres"), preload("res://data/light_2.tres"), preload("res://data/light_3.tres")]
@@ -371,6 +372,6 @@ func use_skill(index: int) -> bool:
 	data.recovery = 0.28
 	strike = CombatStrike.new(self, data, 1.0 + Session.upgrades[0] * 0.15, StringName("skill_%d" % (index+1)))
 	invulnerability = 0.3 if index < 2 else 0.65
-	skill_effect.emit(global_position, data.reach, Color("b8f7e3") if index == 2 else Color("53d5d0"))
+	skill_started.emit(strike)
 	Audio.play_sound("rune", 0.85 + index * 0.15)
 	return true

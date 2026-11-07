@@ -1,0 +1,31 @@
+{
+  "version": "0.1.18",
+  "stage": "initial_dirty_native_diagnostic",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "exit_code": 0,
+  "checks": 910,
+  "failures": 0,
+  "engine_errors": 0,
+  "log_sha256": "c6f34ae649f05e432e4b91bf0898111d0b954e799b6dbf0dfe9fa2ccb0f352f0",
+  "scope": "Actual Game skill wiring, phases, immutable strike clock/geometry freeze, shared gameplay damage, real confirmed contact camera/audio, resource gates, caps and owner lifecycle. Before the later actual-wall fixture addition; not final native/export or visual approval.",
+  "skill_geometry_q0_triangles": [
+    548,
+    736,
+    798
+  ],
+  "skill_camera_amplitudes": [
+    0.075,
+    0.095,
+    0.14
+  ],
+  "remaining": [
+    "final integrated native including new wall fixture",
+    "actual technical A/B images and normal gameplay",
+    "final exports/browser/CI/public/release",
+    "continuous direct visual/audio/hardware/AAA"
+  ],
+  "historical_failure": {
+    "stage": "native-001 importer",
+    "cause": "Root Game report variable inferred from an untyped group Node. Explicit Dictionary annotation restored import; source diagnostic preserved privately."
+  }
+}

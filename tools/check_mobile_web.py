@@ -75,6 +75,8 @@ def main():
               "art_source/production/character_actions/sentinel-weight-recovery.json",
               "tools/generate_impact_audio.py", "tools/render_impact_review.py",
               "game/scripts/world/sword_wave.gd", "game/assets/shaders/sword_wave.gdshader",
+              "game/scripts/world/skill_effect.gd", "game/assets/shaders/skill_energy.gdshader",
+              "game/tests/skill_vfx_regressions.gd",
               "game/data/light_1.tres", "game/data/light_2.tres", "game/data/light_3.tres",
               "game/tests/moving_attack_regressions.gd", "game/tests/sword_wave_regressions.gd",
               "game/tests/player_stride_wave_regressions.gd", "game/tests/wave_encounter_lifecycle_regressions.gd",

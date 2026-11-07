@@ -5,6 +5,8 @@ description: Create and import RUNEFALL Blender or VARCO assets, evaluate Blende
 
 # RUNEFALL 아트 제작과 반입
 
+검기·타격·불/연기·룬 효과·플립북 제작은 [runefall-vfx](../runefall-vfx/SKILL.md)를 함께 적용합니다. 공개 강좌의 확인 범위와 실제 Blender/Godot 재저작·런타임 검증을 구분하며 원본 아트·판정·시계 계약을 보존합니다.
+
 [아트 파이프라인](../../../docs/ART_PIPELINE.md)과 [재검증 기록](../../../docs/ART_REVIEW.md)을 먼저 확인합니다. `python tools/knowledge.py search --tag art`로 실험 결과와 라이선스 조건을 찾습니다. 리그·애니메이션 변경에는 [godot-animation](../godot-animation/SKILL.md)을 적용합니다.
 
 현재 사용자 목표는 AAA 아트 품질입니다. [대표 구간 AAA 승인 기준](../../../docs/AAA_ART_QUALITY.md)을 적용하고 리라·일반 근접 수호병·첫 전투 공간을 함께 검수합니다. 현재 스켈레톤·재질·장면 프리뷰는 검토 가능한 제작 단계이며 최종 AAA 승인은 `pending`입니다. 생성 성공·삼각형/본/클립 수·텍스처 해상도·구조 검사나 저작 표본 수치를 시각 품질 인증으로 사용하지 않습니다.

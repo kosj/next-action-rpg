@@ -246,7 +246,7 @@ class MobileRun:
         status = await self.wait("!document.getElementById('loading') && s.touch && s.touch.available", timeout=120000)
         required = {"physics_frame", "x", "z", "camera_yaw", "camera_pitch", "max_health", "rune", "potions",
                     "charge_elapsed", "dodge_cooldown", "parry_cooldown", "locked", "locked_target_id",
-                    "interaction_kind", "interaction_index", "interaction_targets", "render_scale", "dpr", "ui", "touch"}
+                    "interaction_kind", "interaction_index", "interaction_targets", "render_scale", "dpr", "ui", "touch", "skill_vfx"}
         assert required <= set(status), ("Missing readonly mobile QA fields", sorted(required-set(status)))
         expected = os.environ.get("RUNEFALL_EXPECTED_COMMIT")
         if expected:
@@ -1006,6 +1006,7 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                                 await qa.touch_action(action_name)
                                 after_gated = await qa.stable(gated)
                                 assert abs(after_gated["rune"]-gated["rune"]) < .01
+                                assert after_gated["skill_vfx"]["cast_count"] == gated["skill_vfx"]["cast_count"], after_gated["skill_vfx"]
                                 await qa.record(action_name + "-resource-gated", status=after_gated)
                         await qa.record("dodge", status=await qa.observe_tap("dodge","s.dodge_cooldown>0"))
                         await qa.idle()
@@ -1023,8 +1024,12 @@ async def run(url, output=Path("build/verification/mobile"), phase="full", rotat
                         await qa.safe_spawn()
                         skill = await qa.idle()
                         assert skill["rune"] >= 25, skill
-                        await qa.record("08-skill-one", screenshot=True, status=await qa.observe_tap("skill_1","s.hero_art.state==='skill_1' && Math.abs(s.rune-(a-25))<.01",skill["rune"]))
+                        active_skill = await qa.observe_tap("skill_1",
+                            "s.hero_art.state==='skill_1' && Math.abs(s.rune-(a.rune-25))<.01 && s.skill_vfx.cast_count===a.casts+1 && s.skill_vfx.effects.some(e=>e.valid && e.attack_id==='skill_1' && e.kind==='dash' && e.phase==='active' && e.triangles>0 && e.mesh_count>0)",
+                            {"rune":skill["rune"], "casts":skill["skill_vfx"]["cast_count"]})
+                        await qa.record("08-skill-one", screenshot=True, status=active_skill)
                         await qa.idle()
+                        await qa.record("skill-vfx-expired", status=await qa.wait("s.skill_vfx.count===0"))
                         await qa.safe_spawn()
 
                     qa.mark("pause_cancel_focus_and_quality")

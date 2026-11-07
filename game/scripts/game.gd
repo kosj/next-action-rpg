@@ -16,6 +16,8 @@ var play_seconds: float = 0.0
 var impact_count: int = 0
 var impact_spawn_count: int = 0
 var impact_history: Array[Dictionary] = []
+var skill_cast_count: int = 0
+var skill_cast_history: Array[Dictionary] = []
 
 const LORE: Array[String] = [
 	"이 성역의 룬은 빛을 만드는 것이 아니라, 어둠을 가두는 자물쇠였다.\n\n수호자 아스테르는 누구도 기억하지 못하는 서약을 지켰다.\n그의 검이 우리를 향한다면… 그가 지키는 것은 무엇일까?",
@@ -40,6 +42,7 @@ func _ready() -> void:
 		ui.floating_damage(amount, point))
 	player.impact_confirmed.connect(_on_impact_confirmed)
 	player.skill_effect.connect(spawn_ring)
+	player.skill_started.connect(_spawn_skill_effect)
 	player.wave_requested.connect(_spawn_sword_wave)
 	rig = RuneCamera.new()
 	rig.player = player
@@ -69,6 +72,30 @@ func _ready() -> void:
 			DirAccess.remove_absolute(Session.save_path + suffix)
 		Session.save_path = original_path
 		get_tree().quit()
+
+func _spawn_skill_effect(attack: CombatStrike) -> void:
+	var effect := RuneSkillEffect3D.new()
+	add_child(effect)
+	effect.setup(player, attack, Session.quality)
+	skill_cast_count += 1
+	skill_cast_history.append({"attack_id":String(attack.presentation_id),"attack_instance_id":attack.attack_instance_id,"physics_frame":Engine.get_physics_frames(),"epoch":player.presentation_epoch})
+	if skill_cast_history.size() > 16:
+		skill_cast_history.pop_front()
+
+func skill_presentation_report() -> Dictionary:
+	var effects: Array[Dictionary] = []
+	for effect in get_tree().get_nodes_in_group("skill_effects"):
+		if effect is RuneSkillEffect3D and effect.get_parent() == self and not effect.is_queued_for_deletion():
+			var report: Dictionary = effect.presentation_report()
+			for key: String in ["origin", "position"]:
+				var point: Vector3 = report[key]
+				report[key] = [point.x, point.y, point.z]
+			var history: Array = []
+			for point: Vector3 in report.history_points:
+				history.append([point.x, point.y, point.z])
+			report.history_points = history
+			effects.append(report)
+	return {"effects":effects,"count":effects.size(),"cast_count":skill_cast_count,"history":skill_cast_history.duplicate(true)}
 
 func _spawn_sword_wave(attack: CombatStrike, forward: Vector3) -> void:
 	var wave := RuneSwordWave.new()
@@ -166,7 +193,7 @@ func reset_encounter() -> void:
 	active_encounter = -1
 	boss = null
 	for child in get_children():
-		if child is RuneSwordWave:
+		if child is RuneSwordWave or child is RuneSkillEffect3D:
 			child.cancel()
 		elif child is RuneProjectile:
 			child.queue_free()

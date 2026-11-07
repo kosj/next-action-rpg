@@ -157,6 +157,8 @@ func _impact_profile(context: Dictionary) -> Dictionary:
 		return {"style":"blocked_metal", "layers":[{"key":"contact_tick", "db":-22.0}, {"key":"metal_block", "db":-13.0}, {"key":"debris_tail", "db":-28.0}]}
 	if strength == "charged":
 		return {"style":"charged", "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-10.0}, {"key":"body_thump", "db":-11.0}, {"key":"charge_sub", "db":-13.0}, {"key":"debris_tail", "db":-23.0}]}
+	if strength == "skill" and String(context.get("attack_id", "")) == "skill_3":
+		return {"style":"judgement", "layers":[{"key":"contact_tick", "db":-17.0}, {"key":"metal_heavy", "db":-11.0}, {"key":"body_thump", "db":-11.0}, {"key":"charge_sub", "db":-14.0}, {"key":"debris_tail", "db":-24.0}]}
 	if strength in ["heavy", "skill"]:
 		return {"style":strength, "layers":[{"key":"contact_tick", "db":-16.0}, {"key":"metal_heavy", "db":-12.0}, {"key":"body_thump", "db":-11.0}, {"key":"debris_tail", "db":-24.0}]}
 	return {"style":"light", "layers":[{"key":"contact_tick", "db":-16.0}, {"key":"metal_light", "db":-15.0}]}

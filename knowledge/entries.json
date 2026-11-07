@@ -2809,6 +2809,142 @@
         "tools/tests/test_sword_wave_contact_observer.py",
         "tools/tests/fixtures/charged_wave_contact_main_9a1e9dc.json"
       ]
+    },
+    {
+      "id": "public-vfx-curriculum-to-runtime-production-skill",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "공개 VFX 강좌의 확인 범위를 명시하고 런타임 제작·검수 스킬로 독립 재작성한다",
+      "summary": "RedefineFX 공개 소개·목차와 공식 Godot/Epic 자료를 확인해 재사용 VFX 제작 절차를 작성했다. 레이어/시간·베이크/플립북·타격 이벤트·웹 기능과 검수 범위를 분리한다. 강의 전체 영상·실습과 새 효과의 실행·시각·성능/AAA는 미검증이다.",
+      "tags": [
+        "vfx",
+        "art",
+        "skill",
+        "knowledge",
+        "blender",
+        "godot",
+        "web",
+        "particles"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Public outline and official document review, independently authored skill. Package/link validation recorded separately; no new game VFX execution or quality approval.",
+        "reference": "https://redefinefx.com/witcher/ public page observed UE5.8,20videos,7setups; trailer fetch throttled, full lesson videos/assets not studied; separate HTTP client403 is not a paywall conclusion.",
+        "transfer": "Self-contained realtime-combat-vfx folder: workflow, independent recipes, source scope, pending brief/review templates. RUNEFALL adapter separately binds current runtime and preserves gameplay contracts.",
+        "capability": "Godot4.7 Compatibility supports GPU emitter itself; emit_particle/manual dispatch, built-in trails and SDF collision have separate limits. No compute/volumetricfog; depth/screen/glow not blanket unavailable. Confirm specific APIs and actual export per project.",
+        "remaining": "All new bake/import/gameplay effect, continuous AV, actual device performance and AAA acceptance remain pending; skill authoring does not change the deployed game."
+      },
+      "sources": [
+        "https://redefinefx.com/witcher/",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/niagara-flipbook-baker-quick-start-guide-in-unreal-engine",
+        "https://docs.godotengine.org/en/4.7/tutorials/rendering/renderers.html",
+        ".agents/skills/runefall-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/source-notes.md",
+        "docs/research/VFX_RUNTIME_CAPABILITY_NOTES.md"
+      ]
+    },
+    {
+      "id": "unreal-niagara-runtime-cache-and-integration-skill",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "Unreal Niagara VFX는 별도 스킬에서 자산·캐시·이벤트 초기화와 실제 빌드 검수를 관리한다",
+      "summary": "Epic 공식 문서를 대조해 Unreal 전용 독립 제작 스킬과 빈 양식을 작성했다. Sim Cache/플립북·live, Blueprint 초기 User Parameters/소유권, GPU의 CPU 비용·Effect Type/Debugger를 분리한다. 실제 Unreal 자산·엔진 실행·기기/AAA는 미검증이다.",
+      "tags": [
+        "unreal",
+        "niagara",
+        "vfx",
+        "skill",
+        "art",
+        "knowledge",
+        "cache",
+        "blueprint"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Official document research and independently authored standalone Unreal VFX workflow; no Unreal project execution, new asset or quality approval.",
+        "version_scope": "Epic pages displayed UE5.8 but some paragraphs describe UE5.2/5.4 introductions. Installed engine/plugin/API and experimental status must be checked per receiving project.",
+        "contracts": "System/Emitter/Renderer roles; live vs selected simulation-attribute cache vs baked image atlas; inactive component creation then typed user parameters then activation as a proposed integration policy. Gameplay authority, per-instance identity/time and pooling/cleanup stay explicit.",
+        "performance": "GPU particles do not imply zero CPU System/Emitter work. Effect Type/scalability/bounds and representative packaged-build CPU/GPU/memory/hitch measurements are separate from Editor or MRQ captures.",
+        "remaining": "All actual Unreal compilation, Blueprint gameplay, cache/bake playback, cook/package, continuous AV, hardware and final AAA acceptance remain pending. Current Godot game/deployment unchanged."
+      },
+      "sources": [
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/source-notes.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/unreal-vfx-brief.json",
+        ".agents/skills/runefall-unreal-vfx/SKILL.md",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/caching-and-reusing-your-system",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Niagara/SpawnSystematLocation",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/scalability-and-best-practices-for-niagara"
+      ]
+    },
+    {
+      "id": "redefinefx-causal-layering-and-controlled-vfx-experiments",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "RedefineFX 공개 제작 설명을 국소 인과·크기 계층·통제된 VFX 개선 실험에 연결한다",
+      "summary": "공개 제작글에서 국소 trigger/상태 전환, 큰 형태와 미세 입자, force/collider 구분을 확인하고 두 VFX 스킬의 실험 절차를 보강했다. 관찰·자체 가설·고정 조건·제어군·기각 기준과 실제 근거를 분리한다. 전체 강의/새 효과 실행·품질은 미검증이다.",
+      "tags": [
+        "vfx",
+        "redefinefx",
+        "art",
+        "skill",
+        "knowledge",
+        "unreal",
+        "godot",
+        "experiments"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Primary public RedefineFX article/outline text research and independently authored skill refinement. No full video/transcript/course project analysis or new engine/game runtime test.",
+        "source_scope": "gta-6-destruction-vfx public technical account; magic public large/small motion composition; unreal-5-8-niagara-vfx update force versus collider; unreal-mcp-vfx course introduction. No premium lesson schema or server implementation inferred.",
+        "adaptation": "Same standalone lab and pending experiment JSON embedded in both Godot/Blender and Unreal skill folders; source observation→hypothesis→fixed inputs→control family→falsifier→evidence. Shape/timing/causality/hierarchy/variation/cost gates have no invented AAA score.",
+        "boundary": "A cinematic pre-contact activation is not authority to generate gameplay hits/damage before confirmation. Forces, collision, cosmetic flow and particle/large-piece roles remain separate.",
+        "remaining": "All new asset authoring/bake/MCP edits/readback, actual gameplay/continuous AV, hardware and final AAA pending. No new paid calls made for this investigation."
+      },
+      "sources": [
+        "docs/research/REDEFINEFX_VFX_IMPROVEMENT_EVIDENCE.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/redefinefx-production-lab.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/redefinefx-production-lab.md",
+        "reusable/game-production-kit/skills/realtime-combat-vfx/references/improvement-experiment.json",
+        "https://redefinefx.com/gta-6-destruction-vfx/",
+        "https://redefinefx.com/magic/",
+        "https://redefinefx.com/unreal-5-8-niagara-vfx/",
+        "https://redefinefx.com/unreal-mcp-vfx/"
+      ]
+    },
+    {
+      "id": "skill-cast-presentation-versus-confirmed-contact-and-strike-clock",
+      "kind": "workflow",
+      "status": "pending",
+      "title": "스킬 발동 표시와 확정 접촉을 분리하고 실제 공격 시계의 새 접촉 표본 뒤에 동결한다",
+      "summary": "세 기술의 동일 토러스 대신 별도 cast 표시와 확정 접촉 피드백을 연결한 후보를 검수 중이다. 초기native910/0은 자원/판정·시계/동결·수명·접촉camera/audio를 확인했지만 이후 실제벽 fixture와 최종visual/export/public 검증은 남는다.",
+      "tags": [
+        "vfx",
+        "skill",
+        "combat",
+        "godot",
+        "presentation",
+        "web"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "version": "0.1.18 dirty candidate; source and final delivery verification pending",
+        "initial_verification": "Actual initial native002910/0ERROR0 before final wall fixture. No full suite claim for a later test file; final export build must execute it. No actual new visual/media approval yet.",
+        "authority": "Accepted skill_started(CombatStrike) owns castvisual, confirmedhurtbox owns impact/camera/audio; costs25/45/80, damage65/55/150, poise65/65/160 and .16/.35/.28 timing remain original. Independent AttackData factory remains.",
+        "clock": "Sample original strike.elapsed once when contact advanced then hitpause; do not unconditional early-return before consuming that new sample. World-resolved dash history differs from requested velocity. Tail/cancel/sourceepoch/reset scoped separately.",
+        "profile": "Three procedural color/geometry profiles plus q0/q1 cap; no large texture or gameplay RNG change. Source cast root/fixed origin and confirmed effect instance are distinct owners.",
+        "remaining": "Final wall native, technical finite visual adoption, normal earned-resource gameplay, final exports/browser/CI/Pages/release, direct continuous AV/targethardware/AAA pending."
+      },
+      "sources": [
+        "docs/SKILL_VFX_SLICE.md",
+        "docs/validation/v0.1.18/initial-native.json",
+        "game/scripts/world/skill_effect.gd",
+        "game/assets/shaders/skill_energy.gdshader",
+        "game/tests/skill_vfx_regressions.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/game.gd"
+      ]
     }
   ]
 }

@@ -9,6 +9,8 @@ var _valid := false
 var _reason := "not_configured"
 var _quality := 0
 var _strength := "light"
+var _skill_variant := ""
+var _skill_tint := Color(1.0, 0.70, 0.24)
 var _blocked := false
 var _normal := Vector3.UP
 var _direction := Vector3.FORWARD
@@ -67,6 +69,8 @@ func setup(context: Dictionary, quality: int) -> void:
 		"contact_source":String(context.contact_source), "material":String(context.get("material", "metal")),
 		"blocked":bool(context.get("blocked", false)), "killed":bool(context.get("killed", false)),
 		"poise_broken":bool(context.get("poise_broken", false)), "target_id":str(context.get("target_id", ""))}
+	_skill_variant = String(context.attack_id) if _strength == "skill" and String(context.attack_id) in ["skill_1", "skill_2", "skill_3"] else ""
+	_skill_tint = Color("65e8ff") if _skill_variant == "skill_1" else (Color("bd8dff") if _skill_variant == "skill_2" else Color("ffd074"))
 	_quality = clampi(quality, 0, 1)
 	_blocked = _context.blocked
 	_normal = context.normal.normalized()
@@ -135,6 +139,18 @@ func setup(context: Dictionary, quality: int) -> void:
 		duration = 0.38
 		_core_radius = 0.05
 		_core_duration = 0.06
+	if _skill_variant == "skill_3":
+		count = 26
+		energy = 1.8
+		duration = 0.64
+		_core_radius = 0.15
+		_core_duration = 0.11
+		_cut_length = 1.10
+		_cut_width = 0.10
+	elif _skill_variant == "skill_1":
+		count = 16
+		_cut_length = 0.82
+		_core_radius = 0.075
 	if _blocked:
 		count = 14
 		energy = 1.0
@@ -291,7 +307,7 @@ func _rebuild() -> void:
 	var up := right.cross(view).normalized()
 	var vertices := PackedVector3Array()
 	var colors := PackedColorArray()
-	var tint := Color(1.0, 0.70, 0.24) if not _blocked else Color(0.65, 0.82, 1.0)
+	var tint := (_skill_tint if not _skill_variant.is_empty() else Color(1.0, 0.70, 0.24)) if not _blocked else Color(0.65, 0.82, 1.0)
 	# Only the brief point core faces the camera. Project the confirmed cut
 	# direction so its orientation still follows contact; a view-parallel cut
 	# has no meaningful screen direction and uses the camera's right vector.
@@ -309,7 +325,7 @@ func _rebuild() -> void:
 		var phase := clampf(elapsed/_core_flash_duration if flash else (elapsed-_core_flash_duration)/(_core_duration-_core_flash_duration),0.0,1.0)
 		var fade := 1.0-0.75*phase if flash else 0.25*pow(1.0-phase,1.35)
 		var radius := _core_radius*((0.8+0.2*phase) if flash else (1.0-0.22*phase))
-		var ember := tint if flash else Color(0.28,0.76,1.0)
+		var ember := tint if flash or not _skill_variant.is_empty() else Color(0.28,0.76,1.0)
 		var white := Color(1.0,0.97,0.84) if flash else Color(0.65,0.92,1.0)
 		for index in range(12):
 			var angle_a := TAU*float(index)/12.0
@@ -341,6 +357,8 @@ func _rebuild() -> void:
 					var width := _cut_width*(1.45 if layer==0 else (0.55 if layer==1 else 0.14))*sin(PI*fraction)
 					vertices.append(center+_cut_side*width*(-1.0 if corner%2==0 else 1.0))
 					var color := Color(0.20,0.64,1.0) if layer==0 else (Color(1.0,0.58,0.16) if layer==1 else Color(1.0,0.98,0.84))
+					if not _skill_variant.is_empty() and not _blocked:
+						color = _skill_tint.lerp(Color.WHITE, 0.72) if layer == 2 else _skill_tint
 					if _blocked:
 						color = Color(0.30,0.57,0.83) if layer==0 else Color(0.76,0.90,1.0)
 					colors.append(Color(color,fade*(0.34 if layer==0 else (0.48 if layer==1 else 0.98))))
@@ -400,7 +418,7 @@ func _rebuild() -> void:
 
 func presentation_report() -> Dictionary:
 	return {"valid":_valid, "reason":_reason, "attack_id":String(_context.get("attack_id", "")),
-		"style":"blocked_metal" if _blocked else _strength, "quality":_quality,
+		"style":"blocked_metal" if _blocked else _strength, "skill_variant":_skill_variant, "quality":_quality,
 		"spark_count":_sparks.size(), "spark_budget":24 if _quality == 0 else 10,
 		"debris_count":_debris.size(), "dust_count":_dust.size(), "triangles":_triangles,
 		"age":elapsed, "duration":duration, "maximum_lifetime":MAX_LIFETIME,

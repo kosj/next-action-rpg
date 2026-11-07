@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "status": "pending",
+  "effect_id": "",
+  "engine_path": "",
+  "observed_symptom": "",
+  "baseline_commit_and_assets": [],
+  "source_observations": [],
+  "hypothesis": {
+    "proposed_cause": "",
+    "independent_adaptation": "",
+    "source_claim_boundary": "",
+    "expected_visible_change": "",
+    "falsifying_result": ""
+  },
+  "comparison": {
+    "camera_exposure_resolution_quality": "",
+    "input_event_policy": "",
+    "seed_and_visual_rng_policy": "",
+    "fixed_inputs": [],
+    "dynamic_variances": [],
+    "original_and_delivery_media": ""
+  },
+  "candidate_plan": {
+    "selected_control_group": "",
+    "controls_to_change": [],
+    "controls_to_preserve": [],
+    "reason_for_order": "",
+    "maximum_scope": ""
+  },
+  "causality": {
+    "intact_release_contact_tail_states": "",
+    "activation_authority": "",
+    "affected_targets_and_volume": "",
+    "neighbor_negative_control": "",
+    "shared_hit_ledger": "",
+    "collision_force_visual_roles": ""
+  },
+  "variation": {
+    "large_form_representation": "",
+    "fine_detail_representation": "",
+    "variant_library": "",
+    "diagnostic_fixed_seed": "",
+    "gameplay_rng_preservation": ""
+  },
+  "trials": [],
+  "quality_gates": {
+    "shape": "pending",
+    "timing": "pending",
+    "causality": "pending",
+    "hierarchy": "pending",
+    "variation": "pending",
+    "cost": "pending"
+  },
+  "required_cases": [
+    "confirmed_hit",
+    "whiff",
+    "wall_blocked",
+    "adjacent_non_target",
+    "repeat_cast",
+    "interrupt_restore",
+    "multiple_instances"
+  ],
+  "evidence": {
+    "reference_observation_records": [],
+    "continuous_normal_speed_media": [],
+    "finite_frames": [],
+    "gameplay_receipts": [],
+    "performance_measurements": [],
+    "audio_listening": "pending"
+  },
+  "decision": {
+    "status": "pending",
+    "adopt_or_reject_reason": "",
+    "regressions": [],
+    "unverified": [],
+    "next_small_experiment": ""
+  }
+}
