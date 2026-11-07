@@ -2912,6 +2912,39 @@
         "https://redefinefx.com/unreal-5-8-niagara-vfx/",
         "https://redefinefx.com/unreal-mcp-vfx/"
       ]
+    },
+    {
+      "id": "skill-cast-presentation-versus-confirmed-contact-and-strike-clock",
+      "kind": "workflow",
+      "status": "pending",
+      "title": "스킬 발동 표시와 확정 접촉을 분리하고 실제 공격 시계의 새 접촉 표본 뒤에 동결한다",
+      "summary": "세 기술의 동일 토러스 대신 별도 cast 표시와 확정 접촉 피드백을 연결한 후보를 검수 중이다. 초기native910/0은 자원/판정·시계/동결·수명·접촉camera/audio를 확인했지만 이후 실제벽 fixture와 최종visual/export/public 검증은 남는다.",
+      "tags": [
+        "vfx",
+        "skill",
+        "combat",
+        "godot",
+        "presentation",
+        "web"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "version": "0.1.18 dirty candidate; source and final delivery verification pending",
+        "initial_verification": "Actual initial native002910/0ERROR0 before final wall fixture. No full suite claim for a later test file; final export build must execute it. No actual new visual/media approval yet.",
+        "authority": "Accepted skill_started(CombatStrike) owns castvisual, confirmedhurtbox owns impact/camera/audio; costs25/45/80, damage65/55/150, poise65/65/160 and .16/.35/.28 timing remain original. Independent AttackData factory remains.",
+        "clock": "Sample original strike.elapsed once when contact advanced then hitpause; do not unconditional early-return before consuming that new sample. World-resolved dash history differs from requested velocity. Tail/cancel/sourceepoch/reset scoped separately.",
+        "profile": "Three procedural color/geometry profiles plus q0/q1 cap; no large texture or gameplay RNG change. Source cast root/fixed origin and confirmed effect instance are distinct owners.",
+        "remaining": "Final wall native, technical finite visual adoption, normal earned-resource gameplay, final exports/browser/CI/Pages/release, direct continuous AV/targethardware/AAA pending."
+      },
+      "sources": [
+        "docs/SKILL_VFX_SLICE.md",
+        "docs/validation/v0.1.18/initial-native.json",
+        "game/scripts/world/skill_effect.gd",
+        "game/assets/shaders/skill_energy.gdshader",
+        "game/tests/skill_vfx_regressions.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/game.gd"
+      ]
     }
   ]
 }

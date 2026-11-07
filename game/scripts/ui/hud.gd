@@ -677,6 +677,7 @@ func _process(delta: float) -> void:
 			"touch":TouchControls.presentation_report(),"ui":_qa_ui_report(),
 			"encounter":world.active_encounter, "hits":player.combo_hits,
 			"impact":world.impact_presentation_report(), "hit_pause":player.hit_pause,
+			"skill_vfx":world.skill_presentation_report(),
 			"attack":player.presentation_snapshot(),
 			"input_ready":player.active and not player.dead and not get_tree().paused and player.ui_input_guard == 0,
 			"hero_art":_qa_character_art(player.visual), "enemy_art":enemy_art,

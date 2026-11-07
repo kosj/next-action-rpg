@@ -205,6 +205,7 @@ func run() -> void:
 	check(await load("res://tests/player_stride_wave_regressions.gd").run(world, check) == true, "Actual player input, resolved stride and one-per-swing wave lifecycle remain authoritative")
 	check(await load("res://tests/sword_wave_regressions.gd").run(world, check) == true, "Traveling sword waves respect real range, walls, damage ledger and lifecycle")
 	check(await load("res://tests/moving_attack_regressions.gd").run(world, check) == true, "Moving attacks combine actual-distance gait with authoritative upper-body attacks")
+	check(await load("res://tests/skill_vfx_regressions.gd").run(world, check) == true, "Actual skill VFX preserve phases, resource gates, damage authority and presentation lifecycle")
 	check(await load("res://tests/combat_regressions.gd").run(world, check) == true, "Combat regression suite completes")
 	check(await load("res://tests/charged_impact_regressions.gd").run(world, check) == true, "Charged blade contacts, shared hitstop and collision recoil suite completes")
 	check(await load("res://tests/impact_presentation_regressions.gd").run(world, check) == true, "Contact camera, effect crowd budget and lifetime suite completes")

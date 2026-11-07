@@ -55,7 +55,8 @@ func apply_impact(context: Dictionary) -> void:
 	_last_impact_accepted = true
 	var blocked := bool(context.get("blocked", false))
 	shake_strength = maxf(shake_strength,0.16 if blocked else (0.28 if strength=="charged" else 0.20))
-	if strength not in ["heavy", "charged"] or blocked:
+	var skill_index := ["skill_1", "skill_2", "skill_3"].find(String(context.get("attack_id", ""))) if strength == "skill" else -1
+	if (strength not in ["heavy", "charged"] and skill_index < 0) or blocked:
 		return
 	impact_age = 0.0
 	impact_direction = context.get("direction", Vector3.FORWARD)
@@ -65,7 +66,7 @@ func apply_impact(context: Dictionary) -> void:
 	if motion is Vector3 and motion.is_finite() and motion.length_squared()>0.000001:
 		# Follow the accepted cut's direction, never an authored ground-slam kick.
 		impact_direction = (impact_direction*0.65+motion.normalized()*0.35).normalized()
-	impact_amplitude = 0.13 if strength == "charged" else 0.075
+	impact_amplitude = [0.075, 0.095, 0.14][skill_index] if skill_index >= 0 else (0.13 if strength == "charged" else 0.075)
 
 func impact_report() -> Dictionary:
 	return {"age":impact_age,"amplitude":impact_amplitude,"duration":IMPACT_DURATION,
