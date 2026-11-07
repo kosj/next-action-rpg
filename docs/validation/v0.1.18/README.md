@@ -10,4 +10,4 @@
 
 첫 두 섬광 후보는 긴 전방 날이 뒤 카메라에서 몸과 기존 흰 궤적에 가려져 기각했다. [기각한 화면](media/rejected-dash-before-crescent.png)을 남겼다. 세 번째 후보의 큰 전방 초승달은 실제 준비/활성/후반/회수 PNG에서 방향·양옆 끝·캐릭터 가독성을 확인해 프로토타입으로 채택했다. 심판은 가드·손잡이를 추가해 광창과 검의 형태를 구분했다.
 
-[초기 native 진단](initial-native.json) 이후 최종 native·정상 입력 gameplay·최종 Web/Windows·모바일/공개 주소·릴리스 결과는 해당 source와 산출물에서 따로 검증한다. 연속 직접 시청/청취, 실제 Android/iOS/Windows GPU 성능과 AAA 최종 아트 승인은 남는다.
+[최종 native·export](final-native-export.json): 실제 벽/이동 잔상 검사를 포함한913검사/0실패·엔진ERROR0, Web/Windows export 성공, raw Web149,918,911bytes. [초기 진단](initial-native.json)과 구분한다. 정상 입력 gameplay·모바일/공개 주소·릴리스 결과는 해당 source와 산출물에서 따로 검증한다. 연속 직접 시청/청취, 실제 Android/iOS/Windows GPU 성능과 AAA 최종 아트 승인은 남는다.

@@ -1,0 +1,29 @@
+{
+  "version": "0.1.18",
+  "source_commit": "a61b61f4fdbf3268d6303dce7d41af22fff85c84",
+  "engine": "4.7.2",
+  "exit_code": 0,
+  "checks": 913,
+  "failures": 0,
+  "engine_errors": 0,
+  "log_sha256": "7c63180af870cce38b8468829957685cc241c3326ee90f3b37a797c1dae5b68e",
+  "raw_web_bytes": 149918911,
+  "manifest": {
+    "version": "0.1.18",
+    "godot": "4.7.2",
+    "commit": "a61b61f4",
+    "artifacts": [
+      {
+        "file": "runefall-web.zip",
+        "bytes": 119162589,
+        "sha256": "f84cfdd18b66f187b47dbc9e01abb939f599958a11cf55ff487ea85fd8264d1c"
+      },
+      {
+        "file": "runefall-windows.zip",
+        "bytes": 147003945,
+        "sha256": "2c789e60e3f50d8d4d5dfc0c87954934adfa31666d1462e28fef1d40e50e5f75"
+      }
+    ]
+  },
+  "scope": "Final integrated native including actual wall/history, and Web/Windows exports. Browser/public and Windows hardware execution separate."
+}

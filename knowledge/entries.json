@@ -2916,9 +2916,9 @@
     {
       "id": "skill-cast-presentation-versus-confirmed-contact-and-strike-clock",
       "kind": "workflow",
-      "status": "pending",
+      "status": "verified",
       "title": "스킬 발동 표시와 확정 접촉을 분리하고 실제 공격 시계의 새 접촉 표본 뒤에 동결한다",
-      "summary": "세 기술의 동일 토러스 대신 별도 cast 표시와 확정 접촉 피드백을 연결한 후보를 검수 중이다. 초기native910/0은 자원/판정·시계/동결·수명·접촉camera/audio를 확인했지만 이후 실제벽 fixture와 최종visual/export/public 검증은 남는다.",
+      "summary": "실제 세 cast 표시와 확정 접촉을 분리하고 접촉 tick의 새 시각 표본 뒤에 동결한다. 최종native913/0과Web/Windows export, 실제후방카메라 유한PNG에서 확인했다. 몸에 가려진 섬광 두 후보를 기각하고 큰 전방 초승달을 채택했으며 시각 채택을 전체AV·실기기·AAA 승인으로 확대하지 않는다.",
       "tags": [
         "vfx",
         "skill",
@@ -2929,12 +2929,13 @@
       ],
       "checked_on": "2026-11-07",
       "context": {
-        "version": "0.1.18 dirty candidate; source and final delivery verification pending",
-        "initial_verification": "Actual initial native002910/0ERROR0 before final wall fixture. No full suite claim for a later test file; final export build must execute it. No actual new visual/media approval yet.",
+        "version": "0.1.18 source a61b61f4fdbf3268d6303dce7d41af22fff85c84; same runtime inputs as finite visual source992825b",
+        "initial_verification": "Historical initialnative002910/0 before finalwall fixture remains preserved. Final integrated native913/0/ERROR0 includes actual wall/history and Web/Windows exports; see final-native-export.json.",
         "authority": "Accepted skill_started(CombatStrike) owns castvisual, confirmedhurtbox owns impact/camera/audio; costs25/45/80, damage65/55/150, poise65/65/160 and .16/.35/.28 timing remain original. Independent AttackData factory remains.",
         "clock": "Sample original strike.elapsed once when contact advanced then hitpause; do not unconditional early-return before consuming that new sample. World-resolved dash history differs from requested velocity. Tail/cancel/sourceepoch/reset scoped separately.",
         "profile": "Three procedural color/geometry profiles plus q0/q1 cap; no large texture or gameplay RNG change. Source cast root/fixed origin and confirmed effect instance are distinct owners.",
-        "remaining": "Final wall native, technical finite visual adoption, normal earned-resource gameplay, final exports/browser/CI/Pages/release, direct continuous AV/targethardware/AAA pending."
+        "remaining": "Normal earned-resource take and final remote browser/CI/public/release are separately recorded in the delivery ledger, not inferred from this technical resource-funded take. Direct continuous AV/listening, target-device performance and final AAA remain separate.",
+        "camera": "Two actual rear-camera candidates hid a long thin forward lance behind the actor/old trail even after thickness grew. Third broad front crescent reads outside the actor silhouette in actual phase PNGs; normal camera is the acceptance condition, not length/triangle count."
       },
       "sources": [
         "docs/SKILL_VFX_SLICE.md",
@@ -2943,7 +2944,9 @@
         "game/assets/shaders/skill_energy.gdshader",
         "game/tests/skill_vfx_regressions.gd",
         "game/scripts/actors/player.gd",
-        "game/scripts/game.gd"
+        "game/scripts/game.gd",
+        "docs/validation/v0.1.18/technical-visual.json",
+        "docs/validation/v0.1.18/final-native-export.json"
       ]
     }
   ]
