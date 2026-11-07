@@ -2843,6 +2843,40 @@
         "reusable/game-production-kit/skills/realtime-combat-vfx/references/source-notes.md",
         "docs/research/VFX_RUNTIME_CAPABILITY_NOTES.md"
       ]
+    },
+    {
+      "id": "unreal-niagara-runtime-cache-and-integration-skill",
+      "kind": "workflow",
+      "status": "verified",
+      "title": "Unreal Niagara VFX는 별도 스킬에서 자산·캐시·이벤트 초기화와 실제 빌드 검수를 관리한다",
+      "summary": "Epic 공식 문서를 대조해 Unreal 전용 독립 제작 스킬과 빈 양식을 작성했다. Sim Cache/플립북·live, Blueprint 초기 User Parameters/소유권, GPU의 CPU 비용·Effect Type/Debugger를 분리한다. 실제 Unreal 자산·엔진 실행·기기/AAA는 미검증이다.",
+      "tags": [
+        "unreal",
+        "niagara",
+        "vfx",
+        "skill",
+        "art",
+        "knowledge",
+        "cache",
+        "blueprint"
+      ],
+      "checked_on": "2026-11-07",
+      "context": {
+        "verified_scope": "Official document research and independently authored standalone Unreal VFX workflow; no Unreal project execution, new asset or quality approval.",
+        "version_scope": "Epic pages displayed UE5.8 but some paragraphs describe UE5.2/5.4 introductions. Installed engine/plugin/API and experimental status must be checked per receiving project.",
+        "contracts": "System/Emitter/Renderer roles; live vs selected simulation-attribute cache vs baked image atlas; inactive component creation then typed user parameters then activation as a proposed integration policy. Gameplay authority, per-instance identity/time and pooling/cleanup stay explicit.",
+        "performance": "GPU particles do not imply zero CPU System/Emitter work. Effect Type/scalability/bounds and representative packaged-build CPU/GPU/memory/hitch measurements are separate from Editor or MRQ captures.",
+        "remaining": "All actual Unreal compilation, Blueprint gameplay, cache/bake playback, cook/package, continuous AV, hardware and final AAA acceptance remain pending. Current Godot game/deployment unchanged."
+      },
+      "sources": [
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/SKILL.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/source-notes.md",
+        "reusable/game-production-kit/skills/unreal-niagara-vfx/references/unreal-vfx-brief.json",
+        ".agents/skills/runefall-unreal-vfx/SKILL.md",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/caching-and-reusing-your-system",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/BlueprintAPI/Niagara/SpawnSystematLocation",
+        "https://dev.epicgames.com/documentation/en-us/unreal-engine/scalability-and-best-practices-for-niagara"
+      ]
     }
   ]
 }

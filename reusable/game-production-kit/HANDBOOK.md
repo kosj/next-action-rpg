@@ -1,6 +1,6 @@
 # 재사용 가능한 실패 사례와 제작 원칙
 
-이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.5.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
+이 문서는 특정 게임의 설정을 복사하기 위한 문서가 아닙니다. **관찰 → 원인/한계 → 재사용할 원칙 → 목표 프로젝트에서 다시 확인할 값**을 연결합니다. 판본 **1.6.0**의 원본 항목 수·ID·상태·날짜·고정 커밋 근거는 [provenance.json](provenance.json)에 있습니다. 아래 ID는 그 출처를 찾는 키입니다.
 
 주요 원관찰 환경은 Godot4.7.2·Blender4.3.2·Playwright1.62입니다. Blender 새 판본 실험이나 클라우드 브라우저의 상태는 해당 실험의 결과입니다. 새 프로젝트·다른 버전에서도 동일하다는 보장은 아니며, 과거 `verified`나 비용/치수를 목표 프로젝트의 현재 값으로 가져오지 않습니다.
 
@@ -101,6 +101,7 @@
 | `resolved-stride-upper-attack-and-traveling-wave` | 실제 충돌 후 이동거리로 하체 보행을 진행하고 상체 공격 시간·진행체 판정을 연결한다. | 실제 Player 입력/벽 정지·상하체 본·공유 ledger·늦은 hitpause 소유권·1배속 화면을 각각 검사한다. 원본의 기능·유한 실제Game관측 verified 범위이며 새 프로젝트의 질감/AAA 승인이 아님 |
 | `mixed-delivery-contact-oracles-and-same-strike-ledger` | 같은 공격을 공유하는 서로 다른 전달 수단의 계약을 분리하고 전체 타격 ledger를 먼저 검사한다. | 실제 혼합 receipt, 이전 기하/시간 guards 보존, 새 수단별 기하·피해·원점·사거리, predicate/최종집계/freeze/proof/source 동시 검토. 실패 원인과 순수 데이터 복구·새 live 승인 구분 |
 | `public-vfx-curriculum-to-runtime-production-skill` | 공개 목차에서 확인한 범위와 독립 재저작 절차를 구분하고 목표 렌더러의 세부 기능을 대조한다. | 강의 미열람 범위, GPU emitter와 수동 방출/trail 제한의 차이, 베이크/atlas와 runtime, 실제 시각·성능/AAA는 각각 새 증거 필요. |
+| `unreal-niagara-runtime-cache-and-integration-skill` | Unreal 전용 자산/이벤트·User Parameter·수명과 Sim Cache/atlas·scalability를 분리한 독립 스킬로 관리한다. | 실제 설치본 API/plugin 상태, 비활성 생성 후 초기화, Position/Vector·좌표, GPU의 CPU 비용, bounds/cull, 실제 cook/package·교전·기기 성능은 새 근거로 검사. |
 | `aaa-representative-slice-acceptance`, `target-hardware-validation` | 대표 캐릭터·적·환경을 같은 판본으로 검수하고 최종 품질·실기기 성능은 별도 승인한다. | 전신/근접/플레이 영상, 조명/VFX 가독성, 목표 GPU·해상도·frame time·draw call·메모리 |
 | `audio-server-deferred-playback-shutdown` | stop 요청과 mixer 최종 해제를 구분한다. 실제 참조 해제와 callback 재생 차단을 유한 조건으로 검사한다. | 대상 엔진의 audio 수명 모델, WeakRef/노드 해제, 반복 stop·명시 start |
 
@@ -141,3 +142,5 @@
 사례75의 verified는 실제 실패와 혼합 receipt 순수 데이터 replay·음성 검사 복구 범위다. 새 투사체를 추가한 뒤 기존 공격명만으로 모든 접촉을 같은 물리 타격으로 검증하면 정상 기능을 기각할 수 있다. 반대로 새 접촉을 무시해 통과시키지 않는다. 코드·분류·시계·공유 ledger·source binding을 같이 확인하며 새 live/browser/공개와 대상 프로젝트의 승인은 별도로 남긴다.
 
 [실시간 전투 VFX 스킬](skills/realtime-combat-vfx/SKILL.md)은 레이어/시간 설계부터 Blender 베이크·플립북·Godot 연결·실제 전투 검수까지 다룹니다. 공개 목차 기반의 참고 범위와 공식 문서의 기술 사실을 분리하며, 정확한 강의 recipe를 복원했다고 주장하지 않습니다.
+
+[Unreal Niagara VFX 스킬](skills/unreal-niagara-vfx/SKILL.md)은 기존 Godot용을 덮어쓰지 않고 별도 폴더로 복사해 사용합니다. Sim Cache·플립북·live의 의미, Blueprint 초기화와 pool 수명, 실제 대상 빌드 검수를 해당 프로젝트 조건으로 채웁니다.

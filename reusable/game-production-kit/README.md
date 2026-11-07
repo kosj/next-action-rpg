@@ -1,6 +1,6 @@
 # 다른 프로젝트에 가져가는 제작 지식 묶음
 
-버전 **1.5.0** · 정리일 **2026-11-07**.
+버전 **1.6.0** · 정리일 **2026-11-07**.
 
 기존 프로젝트에서 축적한 지식을 **재사용 절차·실패 사례·작성 템플릿**으로 정리했습니다. 원본 항목 수·ID·상태·고정 커밋은 [출처 스냅샷](provenance.json)을 원본으로 확인합니다. 프로젝트 주소, 캐릭터 치수, Flow ID, 공격 시간, 비용과 용량 목표를 새 프로젝트의 설정으로 강제하지 않습니다. 원래 검증 결과는 출처 사례이며, 가져간 프로젝트의 검증 상태는 새로 기록합니다.
 
@@ -13,6 +13,7 @@
 | [모바일 Web 절차](skills/godot-web-production/references/mobile-web-input.md)·[검수 양식](skills/godot-web-production/references/mobile-input-report.json) | 포인터 수명·에뮬레이션·동시 물리 입력과 CSS/viewport·safe area를 함께 검수할 때 |
 | [generated-3d-game-art](skills/generated-3d-game-art/SKILL.md) | 생성형 3D·Blender·리그·모션·PBR·아트 품질을 검수할 때 |
 | [realtime-combat-vfx](skills/realtime-combat-vfx/SKILL.md) | 검기·타격·불/연기·룬 효과의 설계, Blender 베이크/플립북, Godot 런타임 연결과 실제 화면·성능 검수 |
+| [unreal-niagara-vfx](skills/unreal-niagara-vfx/SKILL.md) | Unreal 전용 Niagara/Fluids·머티리얼·Blueprint 연결, Sim Cache/플립북, Effect Type·실제 빌드 검수 |
 | [사례집](HANDBOOK.md) | 문제의 원인, 재사용할 원칙, 다시 확인할 조건을 빠르게 찾을 때 |
 | [출처 스냅샷](provenance.json) | 원래 항목의 상태·날짜·고정 커밋 근거를 추적할 때 |
 
@@ -90,3 +91,5 @@ python reusable/game-production-kit/scripts/package.py --verify-source build/kno
 판본1.4.12는 같은 공격의 새 전달 수단이 기존 오라클과 혼동된 실제 회귀 사례75를 추가합니다. 이전 계약은 유지하고 새 계약도 별도 검증하며 공유 타격 ledger·동결 시계·증거 schema·source 목록까지 함께 검토합니다. 원본은 실패와 순수 데이터/단위 복구 검증 범위이며 새 프로젝트/새 live CI·AAA 승인은 별도입니다.
 
 판본1.5.0은 독립 설치 가능한 `realtime-combat-vfx`를 추가합니다. RedefineFX 공개 강좌 소개·목차의 확인 범위와 공식 Godot/Epic 자료 대조를 기록하고, 레이어/시간 설계·Blender 베이크/atlas·실제 타격 연결·웹 기능 선택·정상1배속/성능 검수 절차와 빈 양식을 제공합니다. 강의 전체 시청·실습, 제공 자산 복제 또는 새 VFX의 실제 제작·AAA 승인을 주장하지 않습니다.
+
+판본1.6.0은 Godot용과 독립 설치 가능한 `unreal-niagara-vfx`를 추가합니다. Epic 공식 자료를 기반으로 System/Emitter/Renderer·User Parameters·Fluids·Blueprint 수명·Sim Cache/플립북·Effect Type/Debugger와 cook/package 검수를 분리합니다. 강의 내부 recipe 복원·새 `.uasset` 제작·엔진 전환·실제 성능 승인을 주장하지 않습니다.
