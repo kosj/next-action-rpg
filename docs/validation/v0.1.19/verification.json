@@ -76,8 +76,19 @@
  "browser_mobile": {
   "command": "CHROMIUM_PATH=/usr/bin/google-chrome python tools/check_mobile_web.py",
   "exit": 0,
-  "seconds": 947.326,
-  "result": "RUNEFALL_MOBILE_OK · full workflow"
+  "result": "RUNEFALL_MOBILE_OK · full workflow",
+  "runs": [
+   {
+    "export": "binary tokens (fe8380b tree)",
+    "seconds": 947.326,
+    "exit": 0
+   },
+   {
+    "export": "Web compressed binary tokens",
+    "seconds": 949.999,
+    "exit": 0
+   }
+  ]
  },
  "render_review": {
   "tool": "tools/render_combat_feedback.py --quality 0 1",
@@ -155,12 +166,13 @@
   }
  },
  "not_verified": [
-  "clean CI on the PR commit",
   "GitHub Pages / release",
   "normal-input gameplay video",
   "continuous watching/listening",
   "real Android/iOS/Windows GPU performance of the screen grade and afterimage bake",
-  "AAA art approval"
+  "AAA art approval",
+  "CI on later docs-only commits",
+  "deploy/Pages/release (skipped for PR runs)"
  ],
  "sources": [
   {
@@ -243,5 +255,23 @@
    "path": "tools/render_combat_feedback.py",
    "sha256": "c25b3280001ce3fbb593032528615f242224d32e5d3ea3395f7a5596f651a53e"
   }
- ]
+ ],
+ "ci": {
+  "first_commit": {
+   "sha": "fe8380b",
+   "run": 45354631455,
+   "result": "build failed: raw Web 29,043 B over cap; native 965/0 passed"
+  },
+  "budget_fix_commit": {
+   "sha": "5e63329",
+   "run": 45357814841,
+   "note": "668aed7 run 45357797647 was cancelled by the next push",
+   "jobs": {
+    "build": "success",
+    "verify_charged_impact": "success",
+    "verify_mobile_export": "success"
+   },
+   "conclusion": "success"
+  }
+ }
 }
