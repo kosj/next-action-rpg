@@ -9,11 +9,16 @@ signal parried
 signal wave_requested(attack: CombatStrike, forward: Vector3)
 signal skill_started(attack: CombatStrike)
 signal skill_effect(position: Vector3, radius: float, color: Color)
+signal perfect_dodged(origin: Vector3)
 
 const LIGHTS: Array[AttackData] = [preload("res://data/light_1.tres"), preload("res://data/light_2.tres"), preload("res://data/light_3.tres")]
 const HEAVY: AttackData = preload("res://data/heavy.tres")
 const CHARGED_HEAVY: AttackData = preload("res://data/charged_heavy.tres")
 const HEAL_PRESENTATION_DURATION: float = 0.35
+## A hostile contact inside the first part of a dodge is a perfect dodge.
+const DODGE_DURATION: float = 0.32
+const PERFECT_DODGE_WINDOW: float = 0.16
+const PERFECT_DODGE_RUNE: float = 15.0
 var visual: ActorVisual
 var max_health: float = 120.0
 var health: float = 120.0
@@ -48,6 +53,10 @@ var presentation_epoch: int = 0
 var movement_distance: float = 0.0
 var resolved_velocity: Vector3 = Vector3.ZERO
 var world: Node3D
+var feedback: ActorFeedback
+## One perfect dodge per dodge; consumed by the first hostile contact.
+var perfect_dodge_ready: bool = false
+var perfect_dodge_count: int = 0
 
 func _ready() -> void:
 	name = "Player"
@@ -64,6 +73,9 @@ func _ready() -> void:
 	add_child(visual)
 	visual.setup("hero")
 	visual.use_production_profile("hero")
+	feedback = ActorFeedback.new()
+	add_child(feedback)
+	feedback.setup(visual, capsule.height, Session.quality)
 	refresh_stats()
 	health = max_health
 	floor_snap_length = 0.5
@@ -94,6 +106,7 @@ func restore(point: Vector3) -> void:
 	dodge_time = 0.0
 	dodge_direction = Vector3.ZERO
 	dodge_cooldown = 0.0
+	perfect_dodge_ready = false
 	parry_time = 0.0
 	parry_cooldown = 0.0
 	stagger = 0.0
@@ -159,9 +172,10 @@ func _physics_process(delta: float) -> void:
 	if TouchControls.action_just_pressed("dodge") and dodge_cooldown <= 0.0 and stagger <= 0.0 and (strike == null or strike.data.can_cancel(strike.elapsed)):
 		strike = null
 		presentation_heal_remaining = 0.0
-		dodge_time = 0.32
+		dodge_time = DODGE_DURATION
 		dodge_cooldown = 0.48
 		invulnerability = 0.29
+		perfect_dodge_ready = true
 		dodge_direction = direction.normalized() if direction.length() > 0.1 else facing
 		Audio.play_sound("dodge")
 	if TouchControls.action_just_pressed("parry") and parry_cooldown <= 0.0 and strike == null and dodge_time <= 0.0:
@@ -323,7 +337,10 @@ func on_hit(amount: float, point: Vector3, context: Dictionary = {}) -> void:
 		Audio.play_sound("hit", randf_range(0.9, 1.15))
 
 func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool = true, _context: Dictionary = {}) -> void:
-	if dead or invulnerability > 0.0 or not active:
+	if dead or not active:
+		return
+	if invulnerability > 0.0:
+		_try_perfect_dodge(origin)
 		return
 	var incoming := origin - global_position
 	incoming.y = 0
@@ -342,6 +359,9 @@ func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool 
 	invulnerability = 0.7
 	stagger = 0.15
 	strike = null
+	perfect_dodge_ready = false
+	if is_instance_valid(feedback):
+		feedback.flash("hurt")
 	hurt.emit()
 	Audio.play_sound("hit", 0.7)
 	if health <= 0:
@@ -349,6 +369,19 @@ func receive_hit(amount: float, _poise: float, origin: Vector3, parryable: bool 
 		presentation_death_elapsed = 0.0
 		Audio.play_sound("death")
 		died.emit()
+
+func _try_perfect_dodge(origin: Vector3) -> bool:
+	# Only an actual hostile contact during the early dodge counts. Skill,
+	# parry and respawn invulnerability never qualify, and each dodge pays once.
+	if not perfect_dodge_ready or dodge_time <= 0.0 or DODGE_DURATION - dodge_time > PERFECT_DODGE_WINDOW + 0.0001:
+		return false
+	perfect_dodge_ready = false
+	perfect_dodge_count += 1
+	rune = minf(max_rune, rune + PERFECT_DODGE_RUNE)
+	# Cover the rest of this dodge so a second sweep in the same burst is moot.
+	invulnerability = maxf(invulnerability, dodge_time + 0.05)
+	perfect_dodged.emit(origin)
+	return true
 
 func use_skill(index: int) -> bool:
 	var costs: Array[float] = [25.0, 45.0, 80.0]

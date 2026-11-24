@@ -219,6 +219,7 @@ func run() -> void:
 	check(await load("res://tests/skeletal_transition_regressions.gd").run(world, check) == true, "Production skeletal transitions preserve clocks, priority and same-frame sockets")
 	check(await load("res://tests/blade_trail_regressions.gd").run(world, check) == true, "Displayed blade trails preserve action windows, world-space history and lifecycle")
 	check(await load("res://tests/feedback_polish_regressions.gd").run(world, check) == true, "Combat framing and confirmed contact feedback preserve projection, depth and lifecycle contracts")
+	check(await load("res://tests/combat_feedback_regressions.gd").run(world, check) == true, "Enemy flash/dissolve/status plate, perfect-dodge Rune Haste, screen FX, HUD trails and quality glow keep presentation-only contracts")
 	check(await load("res://tests/camera_collision_regressions.gd").run(world, check) == true, "Collision-constrained camera framing preserves hero readability, wall clearance and ordinary camera contracts")
 	check(load("res://tests/lighting_quality_regressions.gd").run(world, check) == true, "Lighting quality follows named roles while preserving balanced/performance resolution and shadow semantics")
 	check(await load("res://tests/atmosphere_regressions.gd").run(world, check) == true, "Static atmosphere and visual stone skins preserve real support, light alignment and bounded non-gameplay geometry")

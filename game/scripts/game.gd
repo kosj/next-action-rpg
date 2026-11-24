@@ -18,6 +18,14 @@ var impact_spawn_count: int = 0
 var impact_history: Array[Dictionary] = []
 var skill_cast_count: int = 0
 var skill_cast_history: Array[Dictionary] = []
+var screen_fx: RuneScreenFX
+## Rune Haste: enemy-only slowed time after a perfect dodge. Real seconds.
+const HASTE_DURATION := 1.6
+const HASTE_SCALE := 0.3
+const HASTE_RELEASE := 0.3
+var haste_remaining: float = 0.0
+var perfect_dodge_history: Array[Dictionary] = []
+var _last_damage_label: Label
 
 const LORE: Array[String] = [
 	"이 성역의 룬은 빛을 만드는 것이 아니라, 어둠을 가두는 자물쇠였다.\n\n수호자 아스테르는 누구도 기억하지 못하는 서약을 지켰다.\n그의 검이 우리를 향한다면… 그가 지키는 것은 무엇일까?",
@@ -33,13 +41,16 @@ func _ready() -> void:
 	add_child(player)
 	player.position = Vector3(0,0.1,5)
 	player.died.connect(_on_player_died)
-	player.hurt.connect(func(): rig.shake_strength = 0.7)
+	player.hurt.connect(func():
+		rig.shake_strength = 0.7
+		screen_fx.trigger_hurt())
+	player.perfect_dodged.connect(_on_perfect_dodge)
 	player.parried.connect(func():
 		rig.shake_strength = 1.0
 		spawn_ring(player.global_position + Vector3.UP, 3.0, Color("efd39b"))
 		ui.toast("완벽한 패링 · 룬 +22"))
 	player.landed_hit.connect(func(amount: float, point: Vector3):
-		ui.floating_damage(amount, point))
+		_last_damage_label = ui.floating_damage(amount, point))
 	player.impact_confirmed.connect(_on_impact_confirmed)
 	player.skill_effect.connect(spawn_ring)
 	player.skill_started.connect(_spawn_skill_effect)
@@ -47,6 +58,9 @@ func _ready() -> void:
 	rig = RuneCamera.new()
 	rig.player = player
 	add_child(rig)
+	screen_fx = RuneScreenFX.new()
+	screen_fx.world = self
+	add_child(screen_fx)
 	ui = RuneHUD.new()
 	ui.world = self
 	add_child(ui)
@@ -105,6 +119,10 @@ func _spawn_sword_wave(attack: CombatStrike, forward: Vector3) -> void:
 func _on_impact_confirmed(context: Dictionary) -> void:
 	rig.apply_impact(context)
 	Audio.play_impact(context)
+	if is_instance_valid(_last_damage_label):
+		ui.style_damage(_last_damage_label, context)
+	_last_damage_label = null
+	screen_fx.trigger_impact(context, rig.camera)
 	# A bounded presentation budget also covers radial attacks hitting a crowd.
 	var effects: Array[Node] = []
 	for active_effect in get_tree().get_nodes_in_group("impact_effects"):
@@ -199,9 +217,62 @@ func reset_encounter() -> void:
 			child.queue_free()
 	for effect in get_tree().get_nodes_in_group("impact_effects"):
 		effect.queue_free()
+	for ghost in get_tree().get_nodes_in_group("afterimages"):
+		ghost.queue_free()
+	haste_remaining = 0.0
+	if is_instance_valid(screen_fx):
+		screen_fx.reset()
+
+func enemy_time_scale() -> float:
+	# Linear release over the final HASTE_RELEASE seconds avoids a hard snap.
+	if haste_remaining <= 0.0:
+		return 1.0
+	return lerpf(1.0, HASTE_SCALE, clampf(haste_remaining / HASTE_RELEASE, 0.0, 1.0))
+
+func haste_intensity() -> float:
+	return clampf(haste_remaining / HASTE_RELEASE, 0.0, 1.0) if haste_remaining > 0.0 else 0.0
+
+func _on_perfect_dodge(origin: Vector3) -> void:
+	haste_remaining = HASTE_DURATION
+	perfect_dodge_history.append({"physics_frame":Engine.get_physics_frames(), "rune":player.rune,
+		"origin":[origin.x, origin.y, origin.z], "epoch":player.presentation_epoch})
+	if perfect_dodge_history.size() > 8:
+		perfect_dodge_history.pop_front()
+	ui.toast("완벽한 회피 · 룬 가속  +%d" % int(RunePlayer.PERFECT_DODGE_RUNE))
+	Audio.play_sound("parry", 1.35)
+	spawn_ring(player.global_position, 2.4, Color("6fe9ff"))
+	if Session.quality == 0:
+		for previous_ghost in get_tree().get_nodes_in_group("afterimages"):
+			previous_ghost.queue_free()
+		var away := player.global_position - origin
+		away.y = 0.0
+		var ghost := RuneAfterimage.new()
+		add_child(ghost)
+		ghost.capture(player.visual, -player.dodge_direction if player.dodge_direction.length_squared() > 0.01 else away)
+
+func combat_feedback_report() -> Dictionary:
+	# Read-only presentation values for browser QA and native checks.
+	var enemies: Array[Dictionary] = []
+	for enemy in active_enemies:
+		if is_instance_valid(enemy) and is_instance_valid(enemy.feedback):
+			var report: Dictionary = enemy.feedback.presentation_report()
+			report["id"] = enemy.get_instance_id()
+			enemies.append(report)
+	return {"haste_remaining":haste_remaining, "enemy_time_scale":enemy_time_scale(),
+		"perfect_dodges":player.perfect_dodge_count if is_instance_valid(player) else 0,
+		"perfect_dodge_history":perfect_dodge_history.duplicate(true),
+		"afterimages":get_tree().get_nodes_in_group("afterimages").size(),
+		"screen":screen_fx.presentation_report() if is_instance_valid(screen_fx) else {},
+		"hero":player.feedback.presentation_report() if is_instance_valid(player) and is_instance_valid(player.feedback) else {},
+		"enemies":enemies}
 
 func _physics_process(delta: float) -> void:
 	TouchControls.set_gameplay_active(started and not player.dead)
+	if haste_remaining > 0.0:
+		haste_remaining = maxf(0.0, haste_remaining - delta) if started and not player.dead else 0.0
+		for effect in get_children():
+			if effect is RuneEffect and effect.warning:
+				effect.time_scale = enemy_time_scale()
 	if not started or player.dead:
 		return
 	play_seconds += delta
@@ -441,6 +512,7 @@ func telegraph(point: Vector3, radius: float, duration: float) -> void:
 func spawn_projectile(point: Vector3, target: Vector3) -> void:
 	var projectile := RuneProjectile.new()
 	projectile.player = player
+	projectile.world = self
 	projectile.position = point
 	projectile.direction = (target-point).normalized()
 	add_child(projectile)

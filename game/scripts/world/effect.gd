@@ -6,6 +6,8 @@ var elapsed: float = 0.0
 var radius: float = 3.0
 var color: Color = Color("79d8cc")
 var warning: bool = false
+## Enemy telegraphs follow Rune Haste's enemy-only time; other rings stay 1.0.
+var time_scale: float = 1.0
 var ring: MeshInstance3D
 
 func _ready() -> void:
@@ -26,7 +28,7 @@ func _ready() -> void:
 		ring.scale = Vector3(radius, 0.35, radius)
 
 func _process(delta: float) -> void:
-	elapsed += delta
+	elapsed += delta * clampf(time_scale, 0.0, 1.0)
 	var progress := clampf(elapsed / duration, 0, 1)
 	if warning:
 		ring.scale = Vector3.ONE * radius * (0.85 + progress * 0.15)

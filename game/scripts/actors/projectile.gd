@@ -3,6 +3,7 @@ extends Node3D
 
 var direction: Vector3
 var player: RunePlayer
+var world: Node3D
 var life: float = 5.0
 
 func _ready() -> void:
@@ -21,6 +22,9 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(player) or not player.active or player.dead:
 		queue_free()
 		return
+	# Hostile projectiles share Rune Haste's enemy-only time.
+	if is_instance_valid(world) and world.has_method("enemy_time_scale"):
+		delta *= clampf(float(world.call("enemy_time_scale")), 0.05, 1.0)
 	var next := global_position + direction * 10.0 * delta
 	var query := PhysicsRayQueryParameters3D.create(global_position, next, 1 | 2)
 	var result := get_world_3d().direct_space_state.intersect_ray(query)

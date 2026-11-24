@@ -2945,6 +2945,50 @@
         "game/scripts/actors/player.gd",
         "game/scripts/game.gd"
       ]
+    },
+    {
+      "id": "receiver-side-combat-feedback-and-enemy-only-haste",
+      "kind": "decision",
+      "status": "pending",
+      "title": "피격자·화면 연출은 표시 전용으로 붙이고 완벽한 회피 슬로모는 Engine.time_scale 대신 적 전용 시간으로 구현한다",
+      "summary": "v0.1.19는 적 림 섬광(material_overlay)·사망 불씨 디졸브(자체RNG MultiMesh+재질 사본 alpha-hash)·데미지 잔상/자세 상태판·예고 문양, 완벽한 회피(0.16s,Rune+15)와 적·투사체·예고링만 0.3배속인 룬 가속, 화면 비네트/그레이드, HUD 잔상·숫자·레티클을 추가했다. 캡처 도구가 Engine.time_scale==1을 요구하므로 전역 슬로모를 쓰지 않는다. 파티클 노드는 전역 RNG를 쓸 수 있어 불씨는 자체 RNG로 그린다. Compatibility(llvmpipe)에서 GeometryInstance3D.transparency는 몸체를 지우지 못했고 Glow는 임계와 무관하게 화면 전체 톤을 바꿔 기각했다.",
+      "tags": [
+        "combat",
+        "vfx",
+        "presentation",
+        "ui",
+        "godot",
+        "web",
+        "rng"
+      ],
+      "checked_on": "2026-11-24",
+      "context": {
+        "version": "0.1.19 candidate on feature branch; native/export/visual results recorded in docs/validation/v0.1.19",
+        "authority": "Damage, poise, attack timing, hit detection, save schema, animation clips and Engine.time_scale unchanged. Gameplay additions: perfect-dodge Rune +15 and enemy-only time scale.",
+        "time": "Game.enemy_time_scale() scales RuneEnemy delta after its real hit-stop branch, RuneProjectile delta and RuneEffect warning rings. Player, physics tick and hit stop stay real.",
+        "rng": "Embers and damage-number drift use owned RandomNumberGenerator; native test re-seeds global RNG and compares the next randf().",
+        "materials": "Hit flash attaches material_overlay only while active; imported surface materials compared before/after.",
+        "remaining": "Normal-input gameplay capture, continuous AV, real device/browser performance of screen grade and afterimage bake, CI/Pages/release and AAA acceptance pending.",
+        "transparency": "4.7.2 Compatibility llvmpipe: GeometryInstance3D.transparency=1 left imported opaque bodies fully visible. Per-actor BaseMaterial3D duplicates with TRANSPARENCY_ALPHA_HASH and albedo alpha fade worked; originals untouched. Headless dummy renderer errors on assigning those copies, so assignment is skipped there.",
+        "glow": "Rejected: same frozen camera, glow on at HDR threshold 4.0/intensity 0.1 changed floor mean RGB about +3/+8/+12 and std about 22->17, identical to softlight 1.05. Tone shift independent of glow parameters on llvmpipe; real GPU/browser cause not checked.",
+        "skin_bake": "bake_mesh_from_current_skeleton_pose needs a skin reference whose skeleton RID is valid; headless dummy renderer has none and logs an engine error, so the afterimage skips such skinned surfaces there. Real Compatibility render baked the full body."
+      },
+      "sources": [
+        "docs/COMBAT_FEEDBACK_SLICE.md",
+        "game/scripts/actors/actor_feedback.gd",
+        "game/scripts/ui/screen_fx.gd",
+        "game/scripts/world/afterimage.gd",
+        "game/scripts/actors/player.gd",
+        "game/scripts/actors/enemy.gd",
+        "game/scripts/game.gd",
+        "game/scripts/ui/hud.gd",
+        "game/tests/combat_feedback_regressions.gd",
+        "game/tests/combat_gameplay_capture.gd",
+        "docs/research/VFX_RUNTIME_CAPABILITY_NOTES.md",
+        "docs/validation/v0.1.19/README.md",
+        "docs/validation/v0.1.19/verification.json",
+        "tools/render_combat_feedback.py"
+      ]
     }
   ]
 }

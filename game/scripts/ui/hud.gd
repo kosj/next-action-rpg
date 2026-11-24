@@ -11,6 +11,7 @@ var menu: Control
 var hud: Control
 var modal: Control
 var health_bar: ProgressBar
+var health_trail: ProgressBar
 var rune_bar: ProgressBar
 var health_text: Label
 var rune_text: Label
@@ -20,14 +21,32 @@ var counter_text: Label
 var potion_text: Label
 var combo_text: Label
 var boss_box: Control
+var boss_stack: Control
 var boss_bar: ProgressBar
+var boss_trail: ProgressBar
+var boss_poise: ProgressBar
 var boss_title: Label
 var interaction: Label
 var toast_label: Label
 var banner_title: Label
 var banner_subtitle: Label
 var debug_text: Label
-var lock_marker: Label
+var lock_marker: LockReticle
+var combo_rank: Label
+var combo_timer: ColorRect
+var skill_panels: Array[PanelContainer] = []
+const SKILL_COSTS: Array[float] = [25.0, 45.0, 80.0]
+const TRAIL_HOLD := 0.45
+## Presentation-only RNG: damage-number drift never draws from the global
+## RNG that enemy timing uses.
+var _fx_rng := RandomNumberGenerator.new()
+var _health_trail_value := -1.0
+var _health_trail_hold := 0.0
+var _boss_trail_value := -1.0
+var _boss_trail_hold := 0.0
+var _boss_trail_id := 0
+var _combo_seen := 0
+var _combo_punch := 0.0
 var toast_time: float = 0
 var banner_time: float = 0
 var damage_numbers: Array[Dictionary] = []
@@ -121,17 +140,21 @@ func button(text: String, callback: Callable, parent: Node) -> Button:
 	parent.add_child(node)
 	return node
 
-func bar(color: Color) -> ProgressBar:
+func bar(color: Color, overlay: bool = false) -> ProgressBar:
 	var node := ProgressBar.new()
 	node.show_percentage = false
 	node.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var background := StyleBoxFlat.new()
-	background.bg_color = Color(0.02,0.05,0.06,0.8)
-	background.border_color = Color("4e5955")
-	background.set_border_width_all(1)
 	var fill := StyleBoxFlat.new()
 	fill.bg_color = color
-	node.add_theme_stylebox_override("background", background)
+	if overlay:
+		# Drawn over its delayed-damage trail, which owns the frame.
+		node.add_theme_stylebox_override("background", StyleBoxEmpty.new())
+	else:
+		var background := StyleBoxFlat.new()
+		background.bg_color = Color(0.02,0.05,0.06,0.8)
+		background.border_color = Color("4e5955")
+		background.set_border_width_all(1)
+		node.add_theme_stylebox_override("background", background)
 	node.add_theme_stylebox_override("fill", fill)
 	return node
 
@@ -154,7 +177,9 @@ func build_hud() -> void:
 	place(stats_title, stats, Vector2.ZERO, Vector2(180,30))
 	health_text = label("120 / 120", 13)
 	place(health_text, stats, Vector2(225,6), Vector2(150,25))
-	health_bar = bar(Color("b88470"))
+	health_trail = bar(Color("f1d9a8"))
+	place(health_trail, stats, Vector2(0,38), Vector2(340,12))
+	health_bar = bar(Color("b88470"), true)
 	place(health_bar, stats, Vector2(0,38), Vector2(340,12))
 	rune_bar = bar(MINT)
 	place(rune_bar, stats, Vector2(0,60), Vector2(340,6))
@@ -186,27 +211,51 @@ func build_hud() -> void:
 		column.add_child(title)
 		column.add_child(label(["25 RUNE", "45 RUNE", "80 RUNE"][index], 10, MINT))
 		skills.add_child(box)
+		skill_panels.append(box)
 	keyboard_hint = label("LMB 공격  ·  RMB 강공격  ·  SPACE 회피  ·  F 패링  ·  TAB 고정", 11, Color("aabdb8"))
 	var hint := keyboard_hint
 	hud.add_child(hint)
 	anchored(hint, Control.PRESET_BOTTOM_RIGHT, Vector2(-485,-42), Vector2(450,25))
 	combo_text = label("", 42, GOLD)
 	place(combo_text, hud, Vector2(44,260), Vector2(250,70))
+	combo_text.add_theme_constant_override("outline_size", 8)
+	combo_text.add_theme_color_override("font_outline_color", Color(0.02,0.03,0.03,0.8))
+	combo_text.pivot_offset = Vector2(0, 35)
+	combo_rank = label("", 13, MINT)
+	combo_rank.add_theme_constant_override("outline_size", 5)
+	combo_rank.add_theme_color_override("font_outline_color", Color(0.02,0.03,0.03,0.8))
+	place(combo_rank, hud, Vector2(46,322), Vector2(250,22))
+	combo_timer = ColorRect.new()
+	combo_timer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	combo_timer.color = Color(GOLD, 0.85)
+	place(combo_timer, hud, Vector2(46,346), Vector2(150,3))
+	combo_timer.hide()
 	boss_box = VBoxContainer.new()
 	hud.add_child(boss_box)
 	anchored(boss_box, Control.PRESET_CENTER_TOP, Vector2(-265,32), Vector2(530,60))
 	boss_title = label("성역의 파수꾼, 아스테르", 17, GOLD)
 	boss_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	boss_box.add_child(boss_title)
-	boss_bar = bar(Color("b07861"))
-	boss_bar.custom_minimum_size = Vector2(530,8)
-	boss_box.add_child(boss_bar)
+	# Health over a delayed damage trail, then a thin poise (stagger) gauge.
+	boss_stack = Control.new()
+	boss_stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	boss_stack.custom_minimum_size = Vector2(530,8)
+	boss_box.add_child(boss_stack)
+	boss_trail = bar(Color("f0d6a4"))
+	boss_stack.add_child(boss_trail)
+	boss_trail.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	boss_bar = bar(Color("b07861"), true)
+	boss_stack.add_child(boss_bar)
+	boss_bar.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	boss_poise = bar(Color("f0b354"))
+	boss_poise.custom_minimum_size = Vector2(530,3)
+	boss_box.add_child(boss_poise)
 	boss_box.hide()
 	interaction = label("", 18, GOLD)
 	hud.add_child(interaction)
 	anchored(interaction, Control.PRESET_CENTER_BOTTOM, Vector2(-300,-225), Vector2(600,40))
 	interaction.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lock_marker = label("◇", 35, GOLD)
+	lock_marker = LockReticle.new()
 	hud.add_child(lock_marker)
 	toast_label = label("", 15, MINT)
 	toast_label.z_index = 20
@@ -256,6 +305,7 @@ func _apply_layout() -> void:
 	anchored(stats_box, Control.PRESET_TOP_LEFT, safe.position, Vector2(stats_width,78))
 	anchored(health_text, Control.PRESET_TOP_LEFT, Vector2.ZERO, Vector2(stats_width-84,24))
 	anchored(potion_text, Control.PRESET_TOP_LEFT, Vector2(stats_width-84,0), Vector2(84,24))
+	anchored(health_trail, Control.PRESET_TOP_LEFT, Vector2(0,28), Vector2(stats_width,10))
 	anchored(health_bar, Control.PRESET_TOP_LEFT, Vector2(0,28), Vector2(stats_width,10))
 	anchored(rune_bar, Control.PRESET_TOP_LEFT, Vector2(0,46), Vector2(stats_width,6))
 	anchored(rune_text, Control.PRESET_TOP_LEFT, Vector2(0,56), Vector2(stats_width,24))
@@ -268,9 +318,14 @@ func _apply_layout() -> void:
 	counter_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	combo_text.add_theme_font_size_override("font_size", 22)
 	anchored(combo_text, Control.PRESET_TOP_LEFT, safe.position+Vector2(0,148 if portrait else 82), Vector2(180,32))
+	combo_text.pivot_offset = Vector2(0,16)
+	combo_rank.add_theme_font_size_override("font_size", 12)
+	anchored(combo_rank, Control.PRESET_TOP_LEFT, combo_text.position+Vector2(2,30), Vector2(180,18))
+	anchored(combo_timer, Control.PRESET_TOP_LEFT, combo_text.position+Vector2(2,48), Vector2(110,3))
 	boss_title.add_theme_font_size_override("font_size", 16)
 	boss_title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	boss_bar.custom_minimum_size.x = 0
+	boss_stack.custom_minimum_size.x = 0
+	boss_poise.custom_minimum_size.x = 0
 	var boss_width := minf(530,safe.size.x)
 	anchored(boss_box, Control.PRESET_TOP_LEFT, Vector2(safe.get_center().x-boss_width/2,safe.position.y+(166 if portrait else 86)), Vector2(boss_width,42))
 	var prompt_y := maxf(safe.position.y,safe.end.y-(252 if root.size.x < 380 else 236))
@@ -511,10 +566,53 @@ func announce(title: String, subtitle: String = "") -> void:
 	banner_subtitle.text = subtitle
 	banner_time = 4.5
 
-func floating_damage(amount: float, position_3d: Vector3) -> void:
+func floating_damage(amount: float, position_3d: Vector3) -> Label:
 	var node := label(str(roundi(amount)), 23 if amount < 50 else 31, WHITE if amount < 50 else GOLD)
+	node.add_theme_constant_override("outline_size", 7)
+	node.add_theme_color_override("font_outline_color", Color(0.03,0.025,0.02,0.88))
+	node.pivot_offset = Vector2(24, 18)
 	root.add_child(node)
-	damage_numbers.append({"label":node, "point":position_3d, "time":0.0})
+	damage_numbers.append({"label":node, "point":position_3d, "time":0.0,
+		"drift":Vector2(_fx_rng.randf_range(-26.0, 26.0), 0.0), "pop":1.45, "life":0.8})
+	return node
+
+func style_damage(node: Label, context: Dictionary) -> void:
+	# Context comes from the confirmed impact dispatcher; text style only.
+	if not is_instance_valid(node):
+		return
+	var strength := String(context.get("strength", "light"))
+	var attack_id := String(context.get("attack_id", ""))
+	var size := node.get_theme_font_size("font_size")
+	var color := node.get_theme_color("font_color")
+	var pop := 1.45
+	if bool(context.get("blocked", false)):
+		node.text = "%s  BLOCK" % node.text
+		color = Color("9fb6c9")
+		size = 19
+		pop = 1.15
+	elif strength == "charged":
+		color = Color("ffd27a")
+		size = 38
+		pop = 1.75
+	elif strength == "heavy":
+		color = GOLD
+		size = maxi(size, 30)
+		pop = 1.6
+	elif strength == "skill":
+		color = Color("78ecff") if attack_id == "skill_1" else (Color("cba2ff") if attack_id == "skill_2" else Color("ffd27a"))
+		size = maxi(size, 32)
+		pop = 1.65
+	if bool(context.get("killed", false)):
+		node.text = "✦ " + node.text
+		size += 3
+	elif bool(context.get("poise_broken", false)):
+		node.text = node.text + "  BREAK"
+	node.add_theme_font_size_override("font_size", size)
+	node.add_theme_color_override("font_color", color)
+	for entry in damage_numbers:
+		if entry.label == node:
+			entry.pop = pop
+			entry.life = 0.95 if strength in ["charged", "heavy", "skill"] else 0.8
 
 func _qa_character_art(visual: ActorVisual) -> Dictionary:
 	# Export values only. Browser QA cannot use this snapshot to drive a rig.
@@ -678,6 +776,7 @@ func _process(delta: float) -> void:
 			"encounter":world.active_encounter, "hits":player.combo_hits,
 			"impact":world.impact_presentation_report(), "hit_pause":player.hit_pause,
 			"skill_vfx":world.skill_presentation_report(),
+			"combat_feedback":world.combat_feedback_report(),
 			"attack":player.presentation_snapshot(),
 			"input_ready":player.active and not player.dead and not get_tree().paused and player.ui_input_guard == 0,
 			"hero_art":_qa_character_art(player.visual), "enemy_art":enemy_art,
@@ -686,6 +785,13 @@ func _process(delta: float) -> void:
 		JavaScriptBridge.eval("window.__RUNEFALL_STATE = " + JSON.stringify(status))
 	health_bar.max_value = player.max_health
 	health_bar.value = player.health
+	if _health_trail_value < 0.0:
+		_health_trail_value = player.health
+	var trail := _follow_trail(player.health, _health_trail_value, _health_trail_hold, delta, player.max_health)
+	_health_trail_value = trail.x
+	_health_trail_hold = trail.y
+	health_trail.max_value = player.max_health
+	health_trail.value = _health_trail_value
 	rune_bar.max_value = player.max_rune
 	rune_bar.value = player.rune
 	health_text.text = ("HP %d / %d" if TouchControls.available else "%d / %d") % [player.health,player.max_health]
@@ -694,27 +800,99 @@ func _process(delta: float) -> void:
 	if TouchControls.available:
 		interaction.text = _touch_copy(interaction.text)
 	combo_text.text = "%02d  HITS" % player.combo_hits if player.combo_hits >= 2 else ""
+	_present_combo(player, delta)
+	_present_skills(player)
 	counter_text.text = "성역 정화  %d / 7     룬 조각 %d" % [Session.completed.size(),Session.shards]
 	debug_text.text = "FPS %d · HP %.1f · RUNE %.1f\n%s  /  %s" % [Engine.get_frames_per_second(),player.health,player.rune,str(player.global_position),Session.build_id]
 	boss_box.visible = is_instance_valid(world.boss) and not world.boss.dead
 	if boss_box.visible:
-		boss_bar.max_value = world.boss.max_health
-		boss_bar.value = world.boss.health
-		boss_title.text = "성역의 파수꾼, 아스테르" + ("  ·  해방" if world.boss.phase == 2 else "")
-	lock_marker.visible = is_instance_valid(player.locked_target) and not player.locked_target.dead and hud.visible
+		var boss := world.boss as RuneEnemy
+		boss_bar.max_value = boss.max_health
+		boss_bar.value = boss.health
+		if boss.get_instance_id() != _boss_trail_id or _boss_trail_value < 0.0 or boss.health >= _boss_trail_value:
+			_boss_trail_id = boss.get_instance_id()
+			_boss_trail_value = boss.health
+			_boss_trail_hold = 0.0
+		var boss_trail_state := _follow_trail(boss.health, _boss_trail_value, _boss_trail_hold, delta, boss.max_health)
+		_boss_trail_value = boss_trail_state.x
+		_boss_trail_hold = boss_trail_state.y
+		boss_trail.max_value = boss.max_health
+		boss_trail.value = _boss_trail_value
+		boss_poise.max_value = 1.0
+		boss_poise.value = boss.poise_ratio()
+		boss_poise.modulate.a = 0.35 + 0.65 * boss.poise_ratio()
+		var phase_fill := boss_bar.get_theme_stylebox("fill") as StyleBoxFlat
+		if phase_fill != null:
+			phase_fill.bg_color = Color("c4543f") if boss.phase == 2 else Color("b07861")
+		boss_title.text = "성역의 파수꾼, 아스테르" + ("  ·  해방" if boss.phase == 2 else "")
+	lock_marker.visible = is_instance_valid(player.locked_target) and player.locked_target is RuneEnemy and not player.locked_target.dead and hud.visible
 	if lock_marker.visible:
-		var point: Vector3 = player.locked_target.global_position + Vector3.UP * 1.5
+		var target := player.locked_target as RuneEnemy
+		var point: Vector3 = target.global_position + Vector3.UP * (2.2 if target.is_boss else 1.25)
 		lock_marker.visible = not world.rig.camera.is_position_behind(point)
-		lock_marker.position = world.rig.camera.unproject_position(point) - Vector2(16,28)
+		lock_marker.retarget(target.get_instance_id(), target.is_boss or target.elite)
+		lock_marker.position = world.rig.camera.unproject_position(point) - lock_marker.size * 0.5
 	for entry in damage_numbers.duplicate():
 		entry.time += delta
 		entry.point += Vector3.UP * delta * 0.9
-		entry.label.position = world.rig.camera.unproject_position(entry.point)
+		var life: float = entry.get("life", 0.8)
+		var pop_t := clampf(entry.time / 0.13, 0.0, 1.0)
+		var scale_value := lerpf(float(entry.get("pop", 1.0)), 1.0, 1.0 - pow(1.0 - pop_t, 3.0))
+		entry.label.scale = Vector2.ONE * scale_value
+		var drift: Vector2 = entry.get("drift", Vector2.ZERO)
+		entry.label.position = world.rig.camera.unproject_position(entry.point) + drift * minf(1.0, entry.time * 3.0) - entry.label.pivot_offset
 		entry.label.visible = not world.rig.camera.is_position_behind(entry.point)
-		entry.label.modulate.a = 1.0 - entry.time / 0.8
-		if entry.time >= 0.8:
+		entry.label.modulate.a = clampf(1.0 - maxf(0.0, entry.time - life * 0.55) / (life * 0.45), 0.0, 1.0)
+		if entry.time >= life:
 			entry.label.queue_free()
 			damage_numbers.erase(entry)
+
+func _follow_trail(current: float, trail: float, hold: float, delta: float, maximum: float) -> Vector2:
+	# Returns (trail, hold). hold > 0: pausing after a drop; hold < 0: the
+	# chip is easing down; 0: idle. Healing lifts the trail immediately.
+	if current >= trail:
+		return Vector2(current, 0.0)
+	if hold == 0.0:
+		return Vector2(trail, TRAIL_HOLD)
+	if hold > 0.0:
+		hold -= delta
+		return Vector2(trail, hold if hold > 0.0 else -1.0)
+	trail = maxf(current, trail - delta * maxf((trail - current) * 3.2, maximum * 0.08))
+	return Vector2(trail, 0.0 if trail <= current else -1.0)
+
+func _present_combo(player: RunePlayer, delta: float) -> void:
+	var hits := player.combo_hits
+	if hits > _combo_seen and hits >= 2:
+		_combo_punch = 1.0
+	_combo_seen = hits
+	_combo_punch = maxf(0.0, _combo_punch - delta * 7.0)
+	combo_text.scale = Vector2.ONE * (1.0 + 0.32 * _combo_punch)
+	var color := GOLD
+	var rank := ""
+	if hits >= 20:
+		color = Color("ffd27a")
+		rank = "RUNEBOUND"
+	elif hits >= 10:
+		color = MINT
+		rank = "RELENTLESS"
+	elif hits >= 5:
+		rank = "FLOWING"
+	combo_text.add_theme_color_override("font_color", color.lerp(WHITE, _combo_punch * 0.6))
+	# Phones keep only the count and timer: the top band is already busy.
+	combo_rank.text = rank if hits >= 2 and not TouchControls.available else ""
+	combo_rank.add_theme_color_override("font_color", color)
+	combo_timer.visible = hits >= 2 and player.combo_timeout > 0.0
+	if combo_timer.visible:
+		var full := 110.0 if TouchControls.available else 150.0
+		combo_timer.size.x = full * clampf(player.combo_timeout / 3.0, 0.0, 1.0)
+		combo_timer.color = Color(color, 0.85)
+
+func _present_skills(player: RunePlayer) -> void:
+	if not skills_box.visible:
+		return
+	for index in range(mini(skill_panels.size(), SKILL_COSTS.size())):
+		var affordable := player.rune >= SKILL_COSTS[index]
+		skill_panels[index].modulate = Color(1, 1, 1, 1.0) if affordable else Color(0.72, 0.72, 0.72, 0.62)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if TouchControls.event_pressed(event, "pause"):
