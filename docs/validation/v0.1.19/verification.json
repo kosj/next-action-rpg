@@ -24,30 +24,54 @@
  },
  "knowledge": "python tools/knowledge.py check passed",
  "build": {
-  "command": "python tools/build.py --windows",
+  "command": "python tools/build.py --windows; python tools/audit_runtime_package.py build/web --asset-prefix assets/models/production/erin_idle_gameplay --asset-prefix assets/models/production/roen_idle_gameplay",
   "exit": 0,
-  "web_export_raw_bytes_budget_metric": 149917761,
+  "ci_raw_web_bytes": 149277699,
   "web_budget_bytes": 150000000,
-  "web_margin_bytes": 82239,
-  "baseline_same_metric_bytes": 149808029,
-  "delta_bytes": 109732,
-  "baseline_method": "git worktree at base_commit with the same imported cache, --export-release Web, sum of exported files before licenses (build.py budget metric)",
+  "ci_raw_web_remaining_bytes": 722301,
   "web_zip": {
-   "bytes": 119273857,
-   "sha256": "4636e34f0e18643206a31c05edfed46a42fe3938f08dd7d704c33a0161232061"
+   "bytes": 119262208,
+   "sha256": "c196ed2161b595894fcdbf6f48426a3acb053b8c5cbdd6877bc5f1e58e841a65"
   },
   "windows_zip": {
-   "bytes": 147974367,
-   "sha256": "04e88559369a8caeaa4b5fd45a2d86eb0503af51618bdba708e54e65cdb5b5d4"
+   "bytes": 147974374,
+   "sha256": "cf05ada8723ffcaaa951f406b3a1a2f8e02af651c7ff16e087d50b275bd3a4b0"
   },
-  "scope": "Local dirty-preview artifacts; CI will rebuild from the PR commit."
+  "first_commit_failure": {
+   "commit": "fe8380b",
+   "ci_run": 45354631455,
+   "raw_web_bytes": 150029043,
+   "over_cap_bytes": 29043,
+   "local_build_py_metric_bytes": 149917761,
+   "note": "build.py measures before adding license files; CI audit counts all 14 files."
+  },
+  "script_export_mode_change": {
+   "preset": "Web",
+   "from": 1,
+   "to": 2,
+   "gdc_bytes_before": 1068952,
+   "gdc_bytes_after": 317555,
+   "saved_bytes": 751397
+  },
+  "scope": "Local dirty-preview artifacts; CI rebuilds from the PR commit."
  },
  "browser_desktop": {
   "command": "CHROMIUM_PATH=/usr/bin/google-chrome python tools/check_web.py",
   "exit": 0,
-  "seconds": 327.871,
   "result": "RUNEFALL_BROWSER_OK · WebGL, skeletal hero/melee, hand weapon, quality 0/1, input, combat, browser restart persistence",
-  "live_combat_feedback": "browser-state combat_feedback: one enemy flash_count 2, bar_health 0.53; hero hurt_count 1"
+  "live_combat_feedback": "browser-state combat_feedback: one enemy flash_count 2, bar_health 0.53; hero hurt_count 1",
+  "runs": [
+   {
+    "export": "binary tokens (fe8380b tree)",
+    "seconds": 327.871,
+    "exit": 0
+   },
+   {
+    "export": "Web compressed binary tokens",
+    "seconds": 293.986,
+    "exit": 0
+   }
+  ]
  },
  "browser_mobile": {
   "command": "CHROMIUM_PATH=/usr/bin/google-chrome python tools/check_mobile_web.py",

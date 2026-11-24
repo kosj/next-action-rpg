@@ -2989,6 +2989,35 @@
         "docs/validation/v0.1.19/verification.json",
         "tools/render_combat_feedback.py"
       ]
+    },
+    {
+      "id": "web-budget-compressed-script-tokens",
+      "kind": "decision",
+      "status": "verified",
+      "title": "원시 Web 예산은 audit_runtime_package 기준으로 재고, Web 프리셋은 압축 바이너리 토큰으로 스크립트를 내보낸다",
+      "summary": "build.py의 150MB 검사는 라이선스 파일 추가 전 합이라 CI audit_runtime_package.py(14파일 전체)보다 약 111KB 작다. v0.1.19 첫 커밋은 로컬 build.py를 통과했지만 CI에서 29,043B 초과로 실패했다. Web 프리셋 script_export_mode 1→2로 .gdc 합 1,068,952→317,555B, 원시 Web 149,277,699B(여유 722,301B)가 됐고 데스크톱·모바일 브라우저 검사를 다시 통과했다.",
+      "tags": [
+        "web",
+        "build",
+        "budget",
+        "godot",
+        "export"
+      ],
+      "checked_on": "2026-11-24",
+      "context": {
+        "version": "0.1.19 feature branch; Godot 4.7.2 Web preset",
+        "failure": "CI run 45354631455 on fe8380b: native 965/0 passed, audit_runtime_package raw_web 150029043B > cap 150000000B.",
+        "cause": "Binary token .gdc can exceed source size (actor_feedback.gd ~12KB text -> 35,644B .gdc). New v0.1.19 scripts/shaders added 75,559B and grown hud/game/player/enemy .gdc added ~32KB.",
+        "fix": "Web preset only: script_export_mode=2 (compressed binary tokens). Windows unchanged because no execution check is available here.",
+        "measure": "Run python tools/audit_runtime_package.py build/web --asset-prefix ... locally after build.py; do not rely on build.py's pre-license total near the cap."
+      },
+      "sources": [
+        "game/export_presets.cfg",
+        "tools/build.py",
+        "tools/audit_runtime_package.py",
+        ".github/workflows/build.yml",
+        "docs/validation/v0.1.19/README.md"
+      ]
     }
   ]
 }

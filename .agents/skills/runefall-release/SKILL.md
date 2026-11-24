@@ -23,6 +23,8 @@ python tools/check_web.py
 python tools/check_mobile_web.py
 ```
 
+원시 Web 150MB 예산은 CI와 같은 `python tools/audit_runtime_package.py build/web --asset-prefix assets/models/production/erin_idle_gameplay --asset-prefix assets/models/production/roen_idle_gameplay`로 확인합니다. `build.py`의 내장 검사는 라이선스 파일을 더하기 전에 재므로 상한 근처에서는 CI보다 약 111KB 작게 나옵니다. 스크립트가 늘면 Web 프리셋의 압축 바이너리 토큰(`script_export_mode=2`)이 유지되는지 확인합니다. 근거는 지식 DB `web-budget-compressed-script-tokens`입니다.
+
 웹 전용 변경이면 `--windows` 없이 실행합니다. 실제 웹 검사는 하위 URL과 동일 프로필의 브라우저 종료·재시작을 포함합니다. 실패한 산출물을 성공 빌드로 배포하지 않습니다. Windows 내보내기 성공과 Windows 실기기 실행·성능 측정을 구분합니다.
 
 설정 UI의 완료와 브라우저의 영구 저장 완료는 별도로 확인합니다. [Godot의 웹 파일 close 콜백과 main loop](https://github.com/godotengine/godot/blob/4.7.2-stable/platform/web/os_web.cpp)는 쓰기 후 dirty flag를 세우고 다음 프레임에 비동기 IndexedDB 동기화를 시작합니다. 같은 소스의 `force_fs_sync()`도 그 flag만 세우므로 정상적인 `FileAccess.close()` 뒤에 중복 호출한 것을 저장 결함 수정으로 기록하지 않습니다. 저장 실패·rename 결함과 브라우저 종료 전 미완료 커밋을 실제 파일과 엔진 소스로 구분합니다.
