@@ -1,0 +1,277 @@
+{
+ "version": "0.1.19",
+ "checked_on": "2026-11-24",
+ "base_commit": "29c10d7642ed795483676d606aa20238f5ff0b1e",
+ "environment": "Linux cloud workspace, 2 vCPU; pinned Godot 4.7.2.stable.official.ed1daf0bf from tools/setup_godot.sh; Mesa llvmpipe for renders; Google Chrome for browser checks",
+ "source_state": "Uncommitted working tree on top of base_commit at verification time; the PR commit is the source of record. Not a clean-CI or published result.",
+ "native": {
+  "command": "godot --headless --path game res://tests/runner.tscn",
+  "checks": 965,
+  "failures": 0,
+  "engine_errors": 0,
+  "exit": 0,
+  "new_suite": "game/tests/combat_feedback_regressions.gd",
+  "earlier_attempts": [
+   "Parse error (untyped Vector3 inference) fixed",
+   "far-origin float32 projectile tolerance fixed",
+   "headless skin bake and material-copy engine errors removed by renderer checks"
+  ]
+ },
+ "python": {
+  "command": "python -m unittest discover -s tools/tests -p 'test_*.py'",
+  "tests": 104,
+  "result": "OK"
+ },
+ "knowledge": "python tools/knowledge.py check passed",
+ "build": {
+  "command": "python tools/build.py --windows; python tools/audit_runtime_package.py build/web --asset-prefix assets/models/production/erin_idle_gameplay --asset-prefix assets/models/production/roen_idle_gameplay",
+  "exit": 0,
+  "ci_raw_web_bytes": 149277699,
+  "web_budget_bytes": 150000000,
+  "ci_raw_web_remaining_bytes": 722301,
+  "web_zip": {
+   "bytes": 119262208,
+   "sha256": "c196ed2161b595894fcdbf6f48426a3acb053b8c5cbdd6877bc5f1e58e841a65"
+  },
+  "windows_zip": {
+   "bytes": 147974374,
+   "sha256": "cf05ada8723ffcaaa951f406b3a1a2f8e02af651c7ff16e087d50b275bd3a4b0"
+  },
+  "first_commit_failure": {
+   "commit": "fe8380b",
+   "ci_run": 45354631455,
+   "raw_web_bytes": 150029043,
+   "over_cap_bytes": 29043,
+   "local_build_py_metric_bytes": 149917761,
+   "note": "build.py measures before adding license files; CI audit counts all 14 files."
+  },
+  "script_export_mode_change": {
+   "preset": "Web",
+   "from": 1,
+   "to": 2,
+   "gdc_bytes_before": 1068952,
+   "gdc_bytes_after": 317555,
+   "saved_bytes": 751397
+  },
+  "scope": "Local dirty-preview artifacts; CI rebuilds from the PR commit."
+ },
+ "browser_desktop": {
+  "command": "CHROMIUM_PATH=/usr/bin/google-chrome python tools/check_web.py",
+  "exit": 0,
+  "result": "RUNEFALL_BROWSER_OK · WebGL, skeletal hero/melee, hand weapon, quality 0/1, input, combat, browser restart persistence",
+  "live_combat_feedback": "browser-state combat_feedback: one enemy flash_count 2, bar_health 0.53; hero hurt_count 1",
+  "runs": [
+   {
+    "export": "binary tokens (fe8380b tree)",
+    "seconds": 327.871,
+    "exit": 0
+   },
+   {
+    "export": "Web compressed binary tokens",
+    "seconds": 293.986,
+    "exit": 0
+   }
+  ]
+ },
+ "browser_mobile": {
+  "command": "CHROMIUM_PATH=/usr/bin/google-chrome python tools/check_mobile_web.py",
+  "exit": 0,
+  "result": "RUNEFALL_MOBILE_OK · full workflow",
+  "runs": [
+   {
+    "export": "binary tokens (fe8380b tree)",
+    "seconds": 947.326,
+    "exit": 0
+   },
+   {
+    "export": "Web compressed binary tokens",
+    "seconds": 949.999,
+    "exit": 0
+   }
+  ]
+ },
+ "render_review": {
+  "tool": "tools/render_combat_feedback.py --quality 0 1",
+  "renderer": "gl_compatibility / opengl3 on Xvfb + llvmpipe, 960x600, fixed 60fps",
+  "scope": "Staged finite stills in the actual Game scene with directly triggered presentation. Not normal-input gameplay, continuous AV, device performance or AAA approval.",
+  "media": [
+   {
+    "file": "media/dissolve-early-q0.png",
+    "sha256": "04db66a379f3c02f6e154e26810480b224c7ff7e3e66b3fb07ec8fb7397196e5",
+    "bytes": 1084870
+   },
+   {
+    "file": "media/dissolve-late-q0.png",
+    "sha256": "5d4f6cdfbf715d678c9ee47c9f7889c3be1cc6b082aa46149d63e4a39feaa7ea",
+    "bytes": 1079532
+   },
+   {
+    "file": "media/hit-flash-q0.png",
+    "sha256": "75e6a70515ebe1abd106f7e2ea290b7ee68c8d404bb1df3582a165300a49261c",
+    "bytes": 1085298
+   },
+   {
+    "file": "media/hud-combat-q0.png",
+    "sha256": "e0be65afb0676d89661f0ebb91af6860cbcf06c183c65e6e3abad9c24dbbc244",
+    "bytes": 885475
+   },
+   {
+    "file": "media/impact-grade-q0.png",
+    "sha256": "d42e0ac29d7d9abbbe09ee3e2b561a3fb6292a7196deb43fe47057f9201fbd4f",
+    "bytes": 864801
+   },
+   {
+    "file": "media/low-health-q0.png",
+    "sha256": "ec8cc22c72ca85d75176cdd3c9bb529b0b55008d2c9812d3bae4674b9e3ef35a",
+    "bytes": 1045506
+   },
+   {
+    "file": "media/perfect-dodge-haste-q0.png",
+    "sha256": "2701e9b5f30d25572e55d4ee52bc437610ec600c4823ca2f1d7056b3050e9954",
+    "bytes": 1051439
+   },
+   {
+    "file": "media/perfect-dodge-haste-q1.png",
+    "sha256": "a0cd9c623937e8c2552a1ee01060408bb0490193a4893f422c9ae92de424cb2f",
+    "bytes": 722161
+   },
+   {
+    "file": "media/scene-glow-rejected-q0.png",
+    "sha256": "1a88d0bb1dbed0e2ec7a3af8d9271a2e75c03c22748efa093c9e937a00fcd2d0",
+    "bytes": 1055630
+   },
+   {
+    "file": "media/scene-q0.png",
+    "sha256": "4a3e0f251467e1684a935b8846c19f48a92450187e0d089e9332d06feac50dd8",
+    "bytes": 1084352
+   },
+   {
+    "file": "media/status-trail-telegraph-q0.png",
+    "sha256": "c6892f74c04b02519458ae7773ce17f15f07c8b99edb021edf29bee571544afd",
+    "bytes": 1085068
+   }
+  ]
+ },
+ "rejected": {
+  "glow": {
+   "candidate": "Environment.glow in balanced quality, softlight, HDR threshold 1.05",
+   "evidence": "Frozen-camera A/B on llvmpipe: glow on raised floor mean RGB from about (142.8,113.5,88.5) to (146.0,121.9,100.2) and lowered std from about (21.9,18.4,20.8) to (17.2,16.0,19.7); an unreachable threshold 4.0 with intensity 0.1 produced the same shift, so the tone change is independent of bloom parameters.",
+   "decision": "Glow stays off in both qualities; regression asserts it.",
+   "media": "media/scene-q0.png vs media/scene-glow-rejected-q0.png"
+  },
+  "instance_transparency": {
+   "candidate": "GeometryInstance3D.transparency for the death fade",
+   "evidence": "Actual render: a dead enemy with dissolve 1.0 and transparency 1.0 remained fully opaque until its 3s removal.",
+   "decision": "Per-actor material copies with TRANSPARENCY_ALPHA_HASH and fading albedo alpha; originals untouched; meshes hidden at fade 1."
+  }
+ },
+ "not_verified": [
+  "GitHub Pages / release",
+  "normal-input gameplay video",
+  "continuous watching/listening",
+  "real Android/iOS/Windows GPU performance of the screen grade and afterimage bake",
+  "AAA art approval",
+  "CI on later docs-only commits",
+  "deploy/Pages/release (skipped for PR runs)"
+ ],
+ "sources": [
+  {
+   "path": "game/scripts/actors/actor_feedback.gd",
+   "sha256": "7e6ddb7159a05e37ebb598f6c643af90a8afe91155a5e6b0f3f4efcf760a9fb6"
+  },
+  {
+   "path": "game/scripts/ui/screen_fx.gd",
+   "sha256": "ec5887e65872db7fb66db29ea6e1fd3de2e89c5f8ff14c4d17ad1c45e9d6c4f8"
+  },
+  {
+   "path": "game/scripts/ui/lock_reticle.gd",
+   "sha256": "e54b253361cb689b29927e76af19ceb35db4c2cdabe5d445fad9524f42c11bdb"
+  },
+  {
+   "path": "game/scripts/world/afterimage.gd",
+   "sha256": "07ed89d568e34e8a7fc0decb910a1b8f6f050446a8706153793cddc77d07cb2f"
+  },
+  {
+   "path": "game/scripts/actors/enemy.gd",
+   "sha256": "46ac40bcfe111d0cc773f95a3097dd7969ababb1e7d2273cc6cea0a40b4755fd"
+  },
+  {
+   "path": "game/scripts/actors/player.gd",
+   "sha256": "6503294b2543914aa952dc4da3868256b1f5e3976425f277093062b6bd26654c"
+  },
+  {
+   "path": "game/scripts/actors/projectile.gd",
+   "sha256": "759e9a482c5a6efe8ec3be40d56ac263d1dac28256c28acf4ba5e965ea7ba31b"
+  },
+  {
+   "path": "game/scripts/game.gd",
+   "sha256": "62492ce1057720b230375d089225510848db666d7611983e5f0c133b2dc96ae4"
+  },
+  {
+   "path": "game/scripts/ui/hud.gd",
+   "sha256": "7c1a0e3c360e657f1be8845abd5e53d7712f4f0dc106acd83f636733bcad6119"
+  },
+  {
+   "path": "game/scripts/world/effect.gd",
+   "sha256": "34c110ee647afec4e3e1636eb27254c64929716af7fd0112c1c7d4f4cab47a68"
+  },
+  {
+   "path": "game/scripts/world/sanctuary.gd",
+   "sha256": "af3145abe40ab77c4e92141757453b02a0707e52b10a6bb774841631f234eaef"
+  },
+  {
+   "path": "game/assets/shaders/actor_feedback.gdshader",
+   "sha256": "2aad3e1818fcd1d4e1037e4adff3d79ab34a845183c07af41ea09a10d87dcf00"
+  },
+  {
+   "path": "game/assets/shaders/enemy_status_bar.gdshader",
+   "sha256": "ef464df5b0c0cb9d448cef9c021781241df4fe730a374b4c70572f737a414df1"
+  },
+  {
+   "path": "game/assets/shaders/attack_telegraph.gdshader",
+   "sha256": "33b55756cf443e7671f9a18799218e3950c0c6d514b2ff0b355d9b3feb2e6366"
+  },
+  {
+   "path": "game/assets/shaders/ember.gdshader",
+   "sha256": "6be79a4e48eb5221f0fa8af11ec72ea1c77ddb9f063b367de0be0418466e695a"
+  },
+  {
+   "path": "game/assets/shaders/screen_vignette.gdshader",
+   "sha256": "91ec44407a03ca24935e74c844f888cb85cc879aad0ac7500db5619c78974586"
+  },
+  {
+   "path": "game/assets/shaders/screen_grade.gdshader",
+   "sha256": "23c4ea6ce4419d5ce1478880ee31d731cb75a3ae928654bc16e682d8d6e6311b"
+  },
+  {
+   "path": "game/tests/combat_feedback_regressions.gd",
+   "sha256": "c8b9009ffc568e61007c72eacaf29a431d0f62dc6d9fbc54316a1f45cc62da97"
+  },
+  {
+   "path": "game/tests/combat_feedback_capture.gd",
+   "sha256": "80f462e91919e365c419a9f53137dad262979a8d43d99f6dfdb5306960b85ccd"
+  },
+  {
+   "path": "tools/render_combat_feedback.py",
+   "sha256": "c25b3280001ce3fbb593032528615f242224d32e5d3ea3395f7a5596f651a53e"
+  }
+ ],
+ "ci": {
+  "first_commit": {
+   "sha": "fe8380b",
+   "run": 45354631455,
+   "result": "build failed: raw Web 29,043 B over cap; native 965/0 passed"
+  },
+  "budget_fix_commit": {
+   "sha": "5e63329",
+   "run": 45357814841,
+   "note": "668aed7 run 45357797647 was cancelled by the next push",
+   "jobs": {
+    "build": "success",
+    "verify_charged_impact": "success",
+    "verify_mobile_export": "success"
+   },
+   "conclusion": "success"
+  }
+ }
+}

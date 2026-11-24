@@ -34,7 +34,10 @@ var burst_time: float = 0.0
 var death_time: float = 0.0
 var bar: MeshInstance3D
 var warning: MeshInstance3D
+var feedback: ActorFeedback
 var home: Vector3
+const POISE_BREAK := 65.0
+const BOSS_POISE_BREAK := 180.0
 
 func _ready() -> void:
 	collision_layer = 4
@@ -57,6 +60,9 @@ func _ready() -> void:
 		visual.use_production_profile("sentinel_melee")
 	if elite:
 		visual.scale *= 1.15
+	feedback = ActorFeedback.new()
+	add_child(feedback)
+	feedback.setup(visual, capsule.height, Session.quality)
 	if kind == "shield":
 		var shield := MeshInstance3D.new()
 		var mesh := BoxMesh.new()
@@ -68,15 +74,13 @@ func _ready() -> void:
 		mat.metallic = 0.6
 		shield.material_override = mat
 		visual.add_child(shield)
-	bar = _plane(Vector2(1.0, 0.07), Color("da715a"))
-	bar.position.y = 2.45 if not is_boss else 4.0
+	# Billboarded health/poise plate with a delayed damage chip, and a rune
+	# warning glyph driven by the attack's own startup progress.
+	bar = feedback.make_status_bar(Vector2(1.05, 0.12), elite)
+	bar.position.y = 2.25 if not is_boss else 3.95
 	add_child(bar)
-	var bar_mat: StandardMaterial3D = bar.material_override
-	bar_mat.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
-	warning = _plane(Vector2(0.18, 0.65), Color("ffb876"))
-	warning.position.y = 2.8 if not is_boss else 4.3
-	var warn_mat: StandardMaterial3D = warning.material_override
-	warn_mat.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
+	warning = feedback.make_telegraph(Vector2(0.46, 0.46))
+	warning.position.y = 2.62 if not is_boss else 4.35
 	add_child(warning)
 	warning.visible = false
 	bar.visible = false
@@ -101,6 +105,9 @@ func _physics_process(delta: float) -> void:
 			hit_pause = maxf(0.0, hit_pause - delta)
 		visual.pose(0.0, 0.0, -1.0, false, false, dead, presentation_snapshot())
 		return
+	# Rune Haste slows enemy time only. The physics tick and hit stop above
+	# remain real; Engine.time_scale is never changed.
+	delta *= time_scale()
 	if dead:
 		death_time += delta
 		visual.pose(delta, 0.0, -1.0, false, false, true, presentation_snapshot())
@@ -133,8 +140,7 @@ func _physics_process(delta: float) -> void:
 		recoil_travelled_m += Vector2(resolved_step.x,resolved_step.z).length()
 		recoil_remaining = maxf(0.0, recoil_remaining - delta)
 		visual.pose(delta, Vector2(velocity.x, velocity.z).length(), -1.0, false, false, false, presentation_snapshot())
-		bar.visible = health < max_health and not is_boss
-		bar.scale.x = maxf(0.01, health / max_health)
+		_present_status()
 		return
 	if is_boss and phase == 1 and health <= max_health * 0.5:
 		phase = 2
@@ -208,9 +214,7 @@ func _physics_process(delta: float) -> void:
 	visual.rotation.y = lerp_angle(visual.rotation.y, atan2(-facing.x, -facing.z), minf(1, delta * 9))
 	var swing := clampf((strike.elapsed - strike.data.startup + 0.15) / (strike.data.active + 0.15), 0, 1) if strike != null else -1.0
 	visual.pose(delta, Vector2(velocity.x, velocity.z).length(), swing, false, false, false, presentation_snapshot())
-	warning.visible = strike != null and strike.elapsed < strike.data.startup
-	bar.visible = health < max_health and not is_boss
-	bar.scale.x = maxf(0.01, health / max_health)
+	_present_status()
 
 func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool = true, context: Dictionary = {}) -> void:
 	if dead:
@@ -222,7 +226,7 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 	var health_before := health
 	health = maxf(0.0, health - amount)
 	poise_meter += poise
-	var poise_broken := poise_meter >= (180.0 if is_boss else 65.0)
+	var poise_broken := poise_meter >= (BOSS_POISE_BREAK if is_boss else POISE_BREAK)
 	var impact := _resolved_impact(context, origin, amount, blocked, poise_broken)
 	impact.health_before = health_before
 	impact.health_after = health
@@ -254,8 +258,11 @@ func receive_hit(amount: float, poise: float, origin: Vector3, _parryable: bool 
 		bar.hide()
 		warning.hide()
 		Session.shards += 80 if is_boss else (20 if elite else 9)
-	bar.visible = health > 0.0 and health < max_health and not is_boss
-	bar.scale.x = maxf(0.01, health / max_health)
+	if is_instance_valid(feedback):
+		feedback.flash(String(impact.strength), blocked, dead)
+		if dead:
+			feedback.begin_death()
+	_present_status()
 	visual.pose(0.0, 0.0, -1.0, false, false, dead, presentation_snapshot())
 	player.on_hit(amount, impact.point, impact)
 	if dead:
@@ -312,6 +319,27 @@ func interrupt_attack(duration: float, reaction: String = "hit") -> void:
 	burst_time = 0.0
 	if is_instance_valid(warning):
 		warning.hide()
+
+func time_scale() -> float:
+	if is_instance_valid(world) and world.has_method("enemy_time_scale"):
+		return clampf(float(world.call("enemy_time_scale")), 0.05, 1.0)
+	return 1.0
+
+func poise_ratio() -> float:
+	return clampf(poise_meter / (BOSS_POISE_BREAK if is_boss else POISE_BREAK), 0.0, 1.0)
+
+func _present_status() -> void:
+	# Presentation mirror of authoritative values; no timers or health writes.
+	var telegraphing := not dead and ((strike != null and strike.elapsed < strike.data.startup) or burst_time > 0.0)
+	warning.visible = telegraphing
+	if telegraphing and is_instance_valid(feedback):
+		if strike != null:
+			feedback.set_telegraph(strike.elapsed / maxf(strike.data.startup, 0.001), not strike.data.parryable)
+		else:
+			feedback.set_telegraph(1.0 - burst_time / 1.15, true)
+	bar.visible = not dead and health > 0.0 and (health < max_health or poise_meter > 0.5) and not is_boss
+	if is_instance_valid(feedback):
+		feedback.update_status(health / max_health, poise_ratio())
 
 func presentation_snapshot() -> Dictionary:
 	var movement := SkeletalVisualBridge.local_direction(velocity, facing)

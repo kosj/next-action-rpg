@@ -1,5 +1,11 @@
 # 검증 결과
 
+## v0.1.19 · 전투 피드백·화면 연출
+
+- [제작 계약](COMBAT_FEEDBACK_SLICE.md)과 [판본별 기록](validation/v0.1.19/README.md): 적 림 섬광·불씨 디졸브·데미지 잔상/자세 상태판·예고 문양, 완벽한 회피와 적 전용 룬 가속, 화면 비네트/그레이드, HUD 잔상·데미지 숫자·콤보·레티클.
+- 로컬 pinned Godot 4.7.2 native **965검사/실패0**·ERROR0, Python 104/0, 지식 DB 검사, Web/Windows 내보내기와 CI 원시 Web 예산 149,277,699B/150,000,000B를 확인했다. 첫 PR 커밋은 원시 Web이 29,043B 초과해 CI에서 실패했고, Web 프리셋을 압축 바이너리 토큰으로 바꿔 751,397B를 줄였다. 실제 Chrome의 데스크톱 브라우저 검사와 모바일 터치 검사 결과는 판본별 기록에 둔다.
+- 블룸(Glow) 후보와 `GeometryInstance3D.transparency` 디졸브는 실제 Compatibility 렌더에서 기각했다. 정상 입력 플레이 영상, 연속 시청/청취, 실기기 성능, CI/Pages/릴리스, AAA 승인은 별도다.
+
 ## v0.1.15 · 강한 대검 동작과 타격 표현
 
 [판본별 기록](validation/v0.1.15/README.md)에 새 세 clip·물리 곡선·준비 중 glide 제거·trail/contact/camera/audio 변경과 native735/0·실제 Game 전후 원본의 finite 검토를 연결합니다. source commit 시점의 clean CI·공개 배포와 full skin·연속 시청/직접 청취·실기기·AAA는 별도이며 최신 공개 실행은 [PR16](https://github.com/kosj/next-action-rpg/pull/16)과 해당 Actions에서 확인합니다.

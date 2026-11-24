@@ -121,6 +121,9 @@ func lighting() -> void:
 	env.fog_depth_end = 210.0
 	env.fog_depth_curve = 1.35
 	env.fog_sky_affect = 0.10
+	# Glow stays off: in the 4.7.2 Compatibility renderer enabling it lifted and
+	# flattened the whole frame even at an unreachable HDR threshold
+	# (docs/validation/v0.1.19). Emissive VFX carry their own brightness.
 	environment_node.environment = env
 	add_child(environment_node)
 	var sun := DirectionalLight3D.new()

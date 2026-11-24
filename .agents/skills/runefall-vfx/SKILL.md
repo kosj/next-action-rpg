@@ -25,6 +25,16 @@ description: >
 
 [세 스킬 제작 사례](../../../docs/SKILL_VFX_SLICE.md)처럼 후방 카메라에서 긴 전방 날이 몸과 기존 무기 궤적 뒤에 겹치면, 두께를 늘려도 길이가 읽히지 않을 수 있다. 실제 그 카메라에서 준비/활성/회수를 비교하고, 몸 양옆으로 읽히는 전방 초승달처럼 주 형태를 바꾼다. 길이·삼각형 수나 측면 미리보기만으로 개선을 승인하지 않는다. 변경한 형상은 기존 판정 범위와 접촉 권한 안에서 검수한다.
 
+## 피격자·화면 연출
+
+[v0.1.19 사례](../../../docs/COMBAT_FEEDBACK_SLICE.md)와 지식 DB `receiver-side-combat-feedback-and-enemy-only-haste`를 먼저 읽는다.
+
+1. 피격 섬광은 `material_overlay`로 활성 중에만 붙이고 원본 표면 재질은 바꾸지 않는다. 몸체를 지울 때는 개체별 재질 사본을 쓰며 `GeometryInstance3D.transparency`가 Compatibility에서 동작한다고 가정하지 않는다.
+2. 표시용 무작위(불씨·숫자 흩어짐)는 자체 `RandomNumberGenerator`를 쓴다. 파티클 노드가 적 쿨다운의 전역 RNG를 소비하지 않게 하고 native에서 재시드 비교로 확인한다.
+3. 슬로모는 `Engine.time_scale` 대신 대상별 시간 배율로 만든다. 캡처 도구는 1배속을 요구하며 히트스톱은 실제 시간으로 둔다.
+4. 화면을 읽는 그레이드는 효과가 있을 때만 보이게 하고, 움직임 효과(방사 블러)는 화면 흔들림 설정을 따른다. Glow처럼 화면 전체 톤을 바꿀 수 있는 설정은 같은 고정 카메라 A/B로 먼저 확인한다.
+5. headless 더미 렌더러는 스킨 굽기·BaseMaterial3D 사본 할당에서 엔진 ERROR를 낸다. 해당 경로를 건너뛰는 조건을 두고 실제 렌더(`tools/render_combat_feedback.py`)로 동작을 따로 확인한다.
+
 ## 제작·검증·기록
 
 [제작 양식](../../../reusable/game-production-kit/skills/realtime-combat-vfx/references/vfx-brief.json)을 작업 후보에 복사한다. 확정 접촉·실제 화면/그림자/오버드로·취소/복귀·웹/모바일·정상1배속 AV를 검수하고, 미실행 항목은 `pending`이다. 게임 코드를 바꾸면 기존 native 회귀와 해당 export/browser 검사를 적용한다. 문서·스킬만 바꿨다면 엔진/게임 배포를 반복하지 않는다.
